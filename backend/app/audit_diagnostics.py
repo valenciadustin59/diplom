@@ -120,6 +120,16 @@ def _build_stage_diagnostics(stage: str, events: list[AuditEvent]) -> AuditTimel
     )
 
 
+def _derive_run_status(fallback_status: str, last_event: AuditEvent) -> str:
+    if last_event.stage == "pipeline" and last_event.event == "completed":
+        details = last_event.details if isinstance(last_event.details, dict) else None
+        final_status = details.get("final_status") if isinstance(details, dict) else None
+        return str(final_status or fallback_status)
+    if last_event.stage == "pipeline" and last_event.event in {"failed", "aborted"}:
+        return "failed"
+    return fallback_status
+
+
 def build_audit_timeline_diagnostics(
     *,
     audit_id: str,
@@ -163,7 +173,7 @@ def build_audit_timeline_diagnostics(
             terminal_count=stage.terminal_count,
         )
         for stage in stage_breakdown
-        if stage.critical_path_duration_ms is not None and stage.critical_path_duration_ms > 0
+        if stage.critical_path_duration_ms is not None
     ]
     fan_out_stage = next((stage for stage in stage_breakdown if stage.stage in FAN_OUT_STAGES), None)
     fan_out = None
@@ -191,7 +201,7 @@ def build_audit_timeline_diagnostics(
     return AuditTimelineDiagnosticsRead(
         audit_id=audit_id,
         processing_version=processing_version,
-        status=audit_status,
+        status=_derive_run_status(audit_status, last_event),
         event_count=len(events),
         dispatch_count=sum(1 for event in events if event.event == "dispatched"),
         started_at=first_event.created_at,

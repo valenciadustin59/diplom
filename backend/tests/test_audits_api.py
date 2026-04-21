@@ -416,6 +416,22 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
         'error_message': 'HTTP 403',
     }
 
+    diagnostics_response = integration_client.get(f'/audits/{audit_id}/events/diagnostics')
+
+    assert diagnostics_response.status_code == 200
+    diagnostics_payload = diagnostics_response.json()
+    stage_breakdown = {item['stage']: item for item in diagnostics_payload['stage_breakdown']}
+    assert diagnostics_payload['audit_id'] == audit_id
+    assert diagnostics_payload['processing_version'] == 1
+    assert diagnostics_payload['status'] == 'failed'
+    assert diagnostics_payload['terminal_stage'] == 'pipeline'
+    assert diagnostics_payload['terminal_event'] == 'aborted'
+    assert diagnostics_payload['critical_path_duration_ms'] is not None
+    assert stage_breakdown['fetch']['completed_count'] == 1
+    assert stage_breakdown['pipeline']['aborted_count'] == 1
+    assert stage_breakdown['pipeline']['latest_event'] == 'aborted'
+    assert diagnostics_payload['fan_out'] is None
+
 def test_create_audit_returns_scoring_failure_context(integration_client, monkeypatch):
     from app.tasks import process_audit
 
@@ -566,6 +582,122 @@ def test_create_audit_exposes_failed_timeline_for_exception_path(integration_cli
     assert stage_breakdown['scoring']['failed_count'] == 1
     assert stage_breakdown['pipeline']['failed_count'] == 1
     assert 'scoring' in critical_path_stages
+
+
+def test_audit_timeline_diagnostics_can_target_historical_processing_version(integration_client, monkeypatch):
+    from app.tasks import process_audit
+
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'final_url': url,
+            'http_status': 200,
+            'html': '<html><body><h1>Title</h1><p>Body</p></body></html>',
+            'text': 'Title Body',
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_features',
+        lambda html, text, query: {
+            'text_length_chars': 10,
+            'query_in_text': 1,
+            'semantic_similarity': 0.81,
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.explain_score',
+        lambda features: {
+            'final_score': 77.5,
+            'rule_score': 74.0,
+            'ml_score': 84.0,
+            'methodology': 'Test methodology',
+            'model_info': {'source': 'bootstrap'},
+            'positives': [],
+            'negatives': [],
+            'factors': [],
+        },
+    )
+    monkeypatch.setattr('app.tasks.search_competitor_pages', lambda query, target_url, limit: [])
+    monkeypatch.setattr(
+        'app.tasks.build_comparison_summary',
+        lambda user_features, user_score, competitor_results: {
+            'user_score': 77.5,
+            'competitors_average_score': None,
+            'score_difference': None,
+            'competitors_count': 0,
+            'competitors_found': 0,
+            'competitors_analyzed': 0,
+            'competitors_failed': 0,
+        },
+    )
+    monkeypatch.setattr('app.tasks.generate_recommendations', lambda page_features, page_score, competitor_pages_features: [])
+
+    created = integration_client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+            'top_n': 5,
+        },
+    )
+
+    assert created.status_code == 201
+    audit_id = created.json()['id']
+
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'failed',
+            'fetch_method': 'browser',
+            'fetch_error_code': 'http_403',
+            'fetch_error_message': 'HTTP 403',
+            'final_url': url,
+            'http_status': 403,
+            'html': None,
+            'text': None,
+        },
+    )
+
+    rerun_result = process_audit.run(audit_id)
+
+    assert rerun_result == {
+        'audit_id': audit_id,
+        'status': 'failed',
+        'error_code': 'http_403',
+    }
+
+    latest_response = integration_client.get(f'/audits/{audit_id}/events/diagnostics')
+    run1_response = integration_client.get(f'/audits/{audit_id}/events/diagnostics?processing_version=1')
+    run2_response = integration_client.get(f'/audits/{audit_id}/events/diagnostics?processing_version=2')
+
+    assert latest_response.status_code == 200
+    assert run1_response.status_code == 200
+    assert run2_response.status_code == 200
+
+    latest_payload = latest_response.json()
+    run1_payload = run1_response.json()
+    run2_payload = run2_response.json()
+    run1_stage_breakdown = {item['stage']: item for item in run1_payload['stage_breakdown']}
+    run2_stage_breakdown = {item['stage']: item for item in run2_payload['stage_breakdown']}
+
+    assert latest_payload['processing_version'] == 2
+    assert latest_payload['terminal_event'] == 'aborted'
+    assert run1_payload['processing_version'] == 1
+    assert run1_payload['status'] == 'completed_with_warnings'
+    assert run1_payload['terminal_event'] == 'completed'
+    assert run1_stage_breakdown['competitors']['completed_count'] == 1
+    assert run1_stage_breakdown['competitor_aggregation']['completed_count'] == 1
+    assert run1_stage_breakdown['finalize']['completed_count'] == 1
+    assert run2_payload['processing_version'] == 2
+    assert run2_payload['status'] == 'failed'
+    assert run2_payload['terminal_event'] == 'aborted'
+    assert run2_stage_breakdown['fetch']['completed_count'] == 1
+    assert run2_stage_breakdown['pipeline']['aborted_count'] == 1
+    assert run1_payload['event_count'] != run2_payload['event_count']
 def test_create_audit_returns_search_failure_context(integration_client, monkeypatch):
     from app.tasks import process_audit
 
