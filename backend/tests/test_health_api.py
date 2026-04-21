@@ -12,6 +12,7 @@ from app.health import (
     check_database_health,
     collect_broker_runtime_metrics,
     collect_database_runtime_metrics,
+    collect_worker_runtime_metrics,
 )
 from app.models import Audit, AuditCompetitor
 from sqlalchemy import create_engine
@@ -366,12 +367,17 @@ def test_collect_database_runtime_metrics_aggregates_pipeline_state(tmp_path):
 
 
 def test_collect_broker_runtime_metrics_returns_queue_depths(monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setattr(
+        "app.health.celery_app.conf.broker_transport_options",
+        {"global_keyprefix": "celery::"},
+    )
+
     class FakeRedis:
         def __init__(self):
-            self._depths = {queue_name: index + 1 for index, queue_name in enumerate(AUDIT_QUEUES)}
+            self._depths = {f"celery::{queue_name}": index + 1 for index, queue_name in enumerate(AUDIT_QUEUES)}
 
-        def llen(self, queue_name: str) -> int:
-            return self._depths[queue_name]
+        def llen(self, queue_key: str) -> int:
+            return self._depths[queue_key]
 
         def close(self) -> None:
             return None
@@ -384,6 +390,53 @@ def test_collect_broker_runtime_metrics_returns_queue_depths(monkeypatch: pytest
     assert payload["queue_depths"][AUDIT_QUEUES[0]] == 1
     assert payload["queue_depths"][AUDIT_QUEUES[-1]] == len(AUDIT_QUEUES)
     assert payload["total_depth"] == sum(range(1, len(AUDIT_QUEUES) + 1))
+    assert payload["queue_key_contract"] == "default_redis_list_name_with_optional_global_keyprefix"
+
+
+def test_collect_worker_runtime_metrics_aggregates_inspect_payload(monkeypatch: pytest.MonkeyPatch):
+    class FakeInspect:
+        def stats(self):
+            return {
+                "celery@test": {
+                    "pid": 1234,
+                    "pool": {"max-concurrency": 4},
+                }
+            }
+
+        def active(self):
+            return {"celery@test": [{"name": "app.process_audit_fetch_target"}]}
+
+        def reserved(self):
+            return {"celery@test": [{"name": "app.process_audit_score_target"}]}
+
+        def scheduled(self):
+            return {"celery@test": [{"request": {"name": "app.process_audit_finalize"}}]}
+
+        def active_queues(self):
+            return {
+                "celery@test": [
+                    {"name": AUDIT_QUEUES[0]},
+                    {"name": AUDIT_QUEUES[1]},
+                ]
+            }
+
+    class FakeControl:
+        def inspect(self, timeout: float):
+            assert timeout == 0.5
+            return FakeInspect()
+
+    monkeypatch.setattr("app.health.celery_app.control", FakeControl())
+
+    payload = collect_worker_runtime_metrics(Settings())
+
+    assert payload["status"] == "ok"
+    assert payload["online_count"] == 1
+    assert payload["active_tasks_total"] == 1
+    assert payload["reserved_tasks_total"] == 1
+    assert payload["scheduled_tasks_total"] == 1
+    assert payload["workers"]["celery@test"]["queues"] == sorted([AUDIT_QUEUES[0], AUDIT_QUEUES[1]])
+    assert payload["workers"]["celery@test"]["pool_max_concurrency"] == 4
+    assert payload["workers"]["celery@test"]["pid"] == 1234
 
 
 def test_build_metrics_payload_reports_degraded_when_workers_are_missing(monkeypatch: pytest.MonkeyPatch):

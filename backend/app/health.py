@@ -78,6 +78,16 @@ def _age_seconds(reference_time: datetime, value: datetime | None) -> float | No
     return round((reference_time - value).total_seconds(), 2)
 
 
+def _resolve_redis_queue_depth_key(queue_name: str) -> str:
+    transport_options = celery_app.conf.broker_transport_options or {}
+    key_prefix = str(transport_options.get("global_keyprefix") or "")
+
+    # Runtime queue depth metrics assume the default Celery Redis list naming scheme,
+    # optionally prefixed via `global_keyprefix`. If transport-level key naming changes
+    # beyond that, this endpoint should be updated together with the broker config.
+    return f"{key_prefix}{queue_name}"
+
+
 def check_database_health(settings: Settings) -> ComponentHealth:
     database_url = settings.database_url
     health_engine = create_engine(
@@ -376,12 +386,16 @@ def collect_broker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             socket_timeout=1,
             decode_responses=True,
         )
-        queue_depths = {queue_name: int(client.llen(queue_name)) for queue_name in AUDIT_QUEUES}
+        queue_depths = {
+            queue_name: int(client.llen(_resolve_redis_queue_depth_key(queue_name)))
+            for queue_name in AUDIT_QUEUES
+        }
         return {
             "status": "ok",
             "broker_url": settings.celery_broker_url,
             "queue_depths": queue_depths,
             "total_depth": sum(queue_depths.values()),
+            "queue_key_contract": "default_redis_list_name_with_optional_global_keyprefix",
         }
     except Exception as exc:  # pragma: no cover - depends on broker availability
         return {

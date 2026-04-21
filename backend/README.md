@@ -93,6 +93,8 @@ Backend теперь различает liveness и настоящую readiness
 - online workers, их queue coverage и количество `active/reserved/scheduled` задач
 - укрупнённая статистика по `AuditCompetitor`
 
+Контракт Redis backlog telemetry сейчас такой: endpoint считает глубину очередей по default Celery Redis list keys и поддерживает `broker_transport_options.global_keyprefix`. Если транспортный формат ключей будет переопределён глубже этого уровня, логику `/health/metrics` нужно обновлять вместе с Celery broker config.
+
 Когда все обязательные компоненты доступны, endpoint возвращает `200` и `status=ready`. Если Redis недоступен, worker не отвечает или не обслуживаются все audit queues, либо недоступен обязательный `SearxNG`, endpoint возвращает `503` и `status=not_ready` с расшифровкой проблемного компонента.
 
 Это важно для текущей stage-based distributed architecture: backend считается готовым только тогда, когда он не просто запущен, а реально может dispatch'ить и выполнять audit stages по всем очередям.

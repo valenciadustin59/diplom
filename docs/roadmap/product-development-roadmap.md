@@ -58,6 +58,25 @@
 - добавить health/readiness checks для backend и worker-стека;
 - оценить необходимость разделения агрегата `Audit` на write model и отдельную read model результатов.
 
+### Distributed Computing Backlog
+
+Для темы диплома `Разработка web-приложения машинного обучения на основе распределённых вычислений` внутри этапа архитектуры зафиксирована отдельная последовательность distributed-задач. Она показывает не просто использование Celery, а поэтапное усиление реально распределённого runtime.
+
+Уже выполнено:
+
+- `D1` - разрезать monolithic `process_audit` на stage-based pipeline tasks
+- `D2` - маршрутизировать стадии в отдельные Celery queues
+- `D3` - вынести обработку competitor pages в distributed fan-out subtasks
+- `D4` - сделать orchestration retry-safe и version-aware
+- `D5` - добавить `health/live` и `health/ready` для backend/worker stack
+- `D6` - добавить `health/metrics` и runtime telemetry для очередей, worker activity и pipeline counters
+
+Следующий шаг:
+
+- `D7` - сохранить структурированные execution events и stage duration telemetry в persistent audit event log, чтобы анализировать не только текущее состояние runtime, но и историю распределённого исполнения каждого аудита
+
+Именно эта последовательность должна использоваться как актуальный distributed backlog для следующих GitHub issues и следующих задач `task 7+`.
+
 ## Этап 5. Продуктовые расширения
 
 После стабилизации основы проект можно расширять в сторону реальной прикладной ценности для digital-команд.
