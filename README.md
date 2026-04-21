@@ -153,8 +153,9 @@ SEARCH_TIMEOUT=20
 2. Открыть `http://127.0.0.1:8000/docs` или порт, который вывел root dev script.
 3. Открыть `http://127.0.0.1:8000/health/live` и убедиться, что backend process жив.
 4. Открыть `http://127.0.0.1:8000/health/ready` и убедиться, что distributed stack вернул `status=ready`.
-5. Открыть frontend URL из `vite` output.
-6. Создать аудит и убедиться, что worker обрабатывает задачу, а статус не остаётся в `queued`.
+5. Открыть `http://127.0.0.1:8000/health/metrics` и убедиться, что backend показывает queue depth, worker activity и pipeline counters.
+6. Открыть frontend URL из `vite` output.
+7. Создать аудит и убедиться, что worker обрабатывает задачу, а статус не остаётся в `queued`.
 
 `/health/ready` теперь проверяет не только сам API, но и реальные зависимости распределённого контура:
 

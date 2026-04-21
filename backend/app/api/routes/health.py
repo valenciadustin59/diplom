@@ -3,7 +3,7 @@ from typing import Any
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
-from app.health import build_liveness_payload, build_readiness_payload
+from app.health import build_liveness_payload, build_metrics_payload, build_readiness_payload
 
 router = APIRouter(tags=["health"])
 
@@ -22,3 +22,8 @@ def liveness_endpoint() -> dict[str, Any]:
 def readiness_endpoint() -> JSONResponse:
     payload, is_ready = build_readiness_payload()
     return JSONResponse(status_code=200 if is_ready else 503, content=payload)
+
+
+@router.get("/health/metrics")
+def metrics_endpoint() -> dict[str, Any]:
+    return build_metrics_payload()

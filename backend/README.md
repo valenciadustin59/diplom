@@ -76,6 +76,7 @@ Backend теперь различает liveness и настоящую readiness
 - `GET /health` - legacy совместимый минимальный healthcheck, возвращает только `{"status":"ok"}`
 - `GET /health/live` - liveness процесса API, без проверки внешних зависимостей
 - `GET /health/ready` - readiness всего backend/runtime-контура, включая зависимости распределённого пайплайна
+- `GET /health/metrics` - runtime telemetry по распределённому пайплайну: backlog очередей, worker activity и агрегированные pipeline counters
 
 `/health/ready` проверяет:
 
@@ -83,6 +84,14 @@ Backend теперь различает liveness и настоящую readiness
 - `redis` - broker ping через `Redis.from_url(...).ping()`
 - `celery_workers` - отвечает ли хотя бы один worker и покрыты ли все expected audit queues
 - `serp` - доступен ли `SearxNG JSON API`, если `SERP_PROVIDER=searxng`
+
+`/health/metrics` дополняет readiness операционной телеметрией:
+
+- агрегированные counts аудитов по `status`
+- counts активных аудитов по `orchestration_stage`
+- оценка backlog по Redis queue depth для всех `AUDIT_QUEUES`
+- online workers, их queue coverage и количество `active/reserved/scheduled` задач
+- укрупнённая статистика по `AuditCompetitor`
 
 Когда все обязательные компоненты доступны, endpoint возвращает `200` и `status=ready`. Если Redis недоступен, worker не отвечает или не обслуживаются все audit queues, либо недоступен обязательный `SearxNG`, endpoint возвращает `503` и `status=not_ready` с расшифровкой проблемного компонента.
 
@@ -102,6 +111,7 @@ cd backend
 ```powershell
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/live"
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/ready"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 ```
 
 Если `/health/ready` возвращает `503`, в payload будет видно, какой именно компонент не готов: `redis`, `celery_workers`, `serp` или `database`.

@@ -1,8 +1,21 @@
+from datetime import datetime
+
 import pytest
 
 from app.celery_app import AUDIT_QUEUES
 from app.config import Settings
-from app.health import ComponentHealth, build_readiness_payload, check_database_health
+from app.db import Base
+from app.health import (
+    ComponentHealth,
+    build_metrics_payload,
+    build_readiness_payload,
+    check_database_health,
+    collect_broker_runtime_metrics,
+    collect_database_runtime_metrics,
+)
+from app.models import Audit, AuditCompetitor
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, sessionmaker
 
 
 def test_health_endpoint_returns_legacy_ok_payload(client):
@@ -21,6 +34,25 @@ def test_live_health_endpoint_returns_runtime_metadata(client):
     assert payload["app_name"]
     assert payload["environment"]
     assert payload["checked_at"]
+
+
+def test_metrics_endpoint_returns_runtime_payload(client, monkeypatch: pytest.MonkeyPatch):
+    payload = {
+        "status": "ok",
+        "app_name": "Site Audit API",
+        "environment": "test",
+        "checked_at": "2026-04-21T10:00:00+00:00",
+        "orchestration": {"expected_queues": list(AUDIT_QUEUES)},
+        "database": {"status": "ok", "audits": {"total": 2}, "competitors": {"total": 3}},
+        "broker": {"status": "ok", "total_depth": 5},
+        "workers": {"status": "ok", "online_count": 1},
+    }
+    monkeypatch.setattr("app.api.routes.health.build_metrics_payload", lambda: payload)
+
+    response = client.get("/health/metrics")
+
+    assert response.status_code == 200
+    assert response.json() == payload
 
 
 def test_ready_health_endpoint_returns_200_when_dependencies_are_ready(client, monkeypatch: pytest.MonkeyPatch):
@@ -238,3 +270,144 @@ def test_check_database_health_uses_runtime_settings_database_url(tmp_path):
 
     assert health.status == "ok"
     assert health.details["database_url"] == f"sqlite:///{database_path}"
+
+
+def test_collect_database_runtime_metrics_aggregates_pipeline_state(tmp_path):
+    db_path = tmp_path / "metrics.db"
+    engine = create_engine(
+        f"sqlite:///{db_path}",
+        connect_args={"check_same_thread": False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+
+    with testing_session_local() as db:
+        db.add_all(
+            [
+                Audit(
+                    id="queued-audit",
+                    query="q1",
+                    target_url="https://example.com/1",
+                    top_n=10,
+                    status="queued",
+                    created_at=datetime(2026, 4, 21, 10, 0, 0),
+                    updated_at=datetime(2026, 4, 21, 10, 0, 0),
+                    processing_version=1,
+                ),
+                Audit(
+                    id="processing-audit",
+                    query="q2",
+                    target_url="https://example.com/2",
+                    top_n=10,
+                    status="processing",
+                    created_at=datetime(2026, 4, 21, 9, 0, 0),
+                    updated_at=datetime(2026, 4, 21, 9, 30, 0),
+                    processing_version=2,
+                    orchestration_stage="scoring",
+                ),
+                Audit(
+                    id="completed-audit",
+                    query="q3",
+                    target_url="https://example.com/3",
+                    top_n=10,
+                    status="completed",
+                    created_at=datetime(2026, 4, 21, 8, 0, 0),
+                    updated_at=datetime(2026, 4, 21, 8, 5, 0),
+                    processing_version=1,
+                ),
+            ]
+        )
+        db.add_all(
+            [
+                AuditCompetitor(
+                    id="competitor-1",
+                    audit_id="processing-audit",
+                    url="https://competitor-1.test",
+                    domain="competitor-1.test",
+                    title="Competitor 1",
+                    snippet="Snippet 1",
+                    serp_rank=1,
+                    serp_page=0,
+                    status="pending",
+                    created_at=datetime(2026, 4, 21, 9, 0, 0),
+                    updated_at=datetime(2026, 4, 21, 9, 0, 0),
+                ),
+                AuditCompetitor(
+                    id="competitor-2",
+                    audit_id="processing-audit",
+                    url="https://competitor-2.test",
+                    domain="competitor-2.test",
+                    title="Competitor 2",
+                    snippet="Snippet 2",
+                    serp_rank=2,
+                    serp_page=0,
+                    status="completed",
+                    created_at=datetime(2026, 4, 21, 9, 1, 0),
+                    updated_at=datetime(2026, 4, 21, 9, 2, 0),
+                ),
+            ]
+        )
+        db.commit()
+
+    payload = collect_database_runtime_metrics(Settings(database_url=f"sqlite:///{db_path}"))
+
+    assert payload["status"] == "ok"
+    assert payload["audits"]["total"] == 3
+    assert payload["audits"]["by_status"]["queued"] == 1
+    assert payload["audits"]["by_status"]["processing"] == 1
+    assert payload["audits"]["active_by_stage"]["scoring"] == 1
+    assert payload["competitors"]["total"] == 2
+    assert payload["competitors"]["by_status"]["pending"] == 1
+    assert payload["competitors"]["by_status"]["completed"] == 1
+    assert payload["audits"]["recent_terminal_duration_ms"]["sample_size"] == 1
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
+def test_collect_broker_runtime_metrics_returns_queue_depths(monkeypatch: pytest.MonkeyPatch):
+    class FakeRedis:
+        def __init__(self):
+            self._depths = {queue_name: index + 1 for index, queue_name in enumerate(AUDIT_QUEUES)}
+
+        def llen(self, queue_name: str) -> int:
+            return self._depths[queue_name]
+
+        def close(self) -> None:
+            return None
+
+    monkeypatch.setattr("app.health.Redis.from_url", lambda *args, **kwargs: FakeRedis())
+
+    payload = collect_broker_runtime_metrics(Settings(celery_broker_url="redis://localhost:6379/0"))
+
+    assert payload["status"] == "ok"
+    assert payload["queue_depths"][AUDIT_QUEUES[0]] == 1
+    assert payload["queue_depths"][AUDIT_QUEUES[-1]] == len(AUDIT_QUEUES)
+    assert payload["total_depth"] == sum(range(1, len(AUDIT_QUEUES) + 1))
+
+
+def test_build_metrics_payload_reports_degraded_when_workers_are_missing(monkeypatch: pytest.MonkeyPatch):
+    settings = Settings(
+        app_name="Site Audit API",
+        app_env="test",
+        database_url="sqlite:///:memory:",
+        celery_broker_url="redis://localhost:6379/0",
+        celery_result_backend="redis://localhost:6379/0",
+    )
+    monkeypatch.setattr(
+        "app.health.collect_database_runtime_metrics",
+        lambda runtime_settings: {"status": "ok", "database_url": runtime_settings.database_url, "audits": {}, "competitors": {}},
+    )
+    monkeypatch.setattr(
+        "app.health.collect_broker_runtime_metrics",
+        lambda runtime_settings: {"status": "ok", "broker_url": runtime_settings.celery_broker_url, "queue_depths": {}, "total_depth": 0},
+    )
+    monkeypatch.setattr(
+        "app.health.collect_worker_runtime_metrics",
+        lambda runtime_settings: {"status": "warning", "online_count": 0, "workers": {}, "warning": "No Celery workers responded to inspect."},
+    )
+
+    payload = build_metrics_payload(settings)
+
+    assert payload["status"] == "degraded"
+    assert payload["workers"]["status"] == "warning"
