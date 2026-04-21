@@ -37,3 +37,6 @@ frontend/*.tsbuildinfo
 
 .DS_Store
 Thumbs.db
+
+backend/data/*.manifest.json
+!backend/data/ru_commercial_dataset.manifest.json

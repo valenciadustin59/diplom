@@ -214,3 +214,59 @@ Invoke-RestMethod `
 cd backend
 .venv\Scripts\python.exe -m pytest
 ```
+
+## Dataset quality manifest
+
+`task 6` now relies on a reproducible RU-commercial dataset workflow instead of an ad hoc CSV snapshot.
+
+What the workflow produces:
+
+- `data\training_query_seeds.csv` — seed pack for RU commercial queries.
+- `data\training_queries.txt` — legacy flat list of the same queries.
+- `<dataset>.manifest.json` — coverage report and quality gates for the collected dataset.
+
+Seed catalog source of truth:
+
+- 25 commercial categories
+- 8 cities
+- 200 unique query seeds in total
+
+Generate the seed pack:
+
+```powershell
+cd backend
+.venv\Scripts\python.exe ..\scripts\generate_training_queries.py
+```
+
+Build dataset quality manifest for an existing dataset:
+
+```powershell
+cd backend
+.venv\Scripts\python.exe -m app.ml.dataset_quality `
+  --dataset data\training_dataset.csv `
+  --failures data\training_failures.csv `
+  --seeds data\training_query_seeds.csv
+```
+
+Run batched collection with quality gates:
+
+```powershell
+cd backend
+.venv\Scripts\python.exe ..\scripts\run_training_batches.py `
+  --seeds-file data\training_query_seeds.csv `
+  --dataset data\training_dataset.csv `
+  --failures data\training_failures.csv `
+  --checkpoint data\training_dataset.checkpoint.json `
+  --target-rows 400 `
+  --batch-size 40
+```
+
+Default production-like quality gates:
+
+- at least 400 successful rows;
+- at least 40 unique queries;
+- at least 250 unique domains;
+- at least 6 categories and 6 cities represented in successful rows;
+- at least 20% successful seed coverage;
+- at least 5 rows per successful query on average;
+- failure rate no higher than 20%.
