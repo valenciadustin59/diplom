@@ -6,13 +6,10 @@ from typing import Any
 
 import httpx
 from redis import Redis
-from sqlalchemy import text
+from sqlalchemy import create_engine, text
 
 from app.celery_app import AUDIT_QUEUES, celery_app
 from app.config import Settings, get_settings
-from app.db import engine
-
-
 @dataclass(slots=True)
 class ComponentHealth:
     status: str
@@ -31,10 +28,13 @@ def _checked_at() -> str:
 
 
 def check_database_health(settings: Settings) -> ComponentHealth:
-    del settings
-    database_url = engine.url.render_as_string(hide_password=False)
+    database_url = settings.database_url
+    health_engine = create_engine(
+        database_url,
+        connect_args={"check_same_thread": False} if database_url.startswith("sqlite") else {},
+    )
     try:
-        with engine.connect() as connection:
+        with health_engine.connect() as connection:
             connection.execute(text("SELECT 1"))
         return ComponentHealth(
             status="ok",
@@ -47,6 +47,8 @@ def check_database_health(settings: Settings) -> ComponentHealth:
             required=True,
             details={"database_url": database_url, "error": str(exc)},
         )
+    finally:
+        health_engine.dispose()
 
 
 def check_redis_health(settings: Settings) -> ComponentHealth:

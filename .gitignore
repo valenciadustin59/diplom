@@ -23,6 +23,8 @@ gcm-diagnose.log
 
 backend/audit.db
 backend/*.db
+audit.db
+*.db
 
 backend/artifacts/*.pkl
 backend/data/training_dataset.csv
@@ -31,6 +33,7 @@ backend/data/*.checkpoint.json
 backend/data/training_dataset_batch*.csv
 backend/data/training_failures_batch*.csv
 backend/catboost_info/
+catboost_info/
 backend/site_audit_backend.egg-info/
 
 frontend/*.tsbuildinfo

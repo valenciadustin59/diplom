@@ -2,7 +2,7 @@ import pytest
 
 from app.celery_app import AUDIT_QUEUES
 from app.config import Settings
-from app.health import ComponentHealth, build_readiness_payload
+from app.health import ComponentHealth, build_readiness_payload, check_database_health
 
 
 def test_health_endpoint_returns_legacy_ok_payload(client):
@@ -152,3 +152,89 @@ def test_build_readiness_payload_skips_serp_when_provider_is_not_searxng(monkeyp
     assert is_ready is True
     assert payload["checks"]["serp"]["status"] == "skipped"
     assert payload["checks"]["serp"]["required"] is False
+
+
+def test_build_readiness_payload_fails_when_celery_workers_do_not_cover_all_expected_queues(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    partial_queue_coverage = list(AUDIT_QUEUES[:-1])
+    settings = Settings(
+        app_name="Site Audit API",
+        app_env="test",
+        database_url="sqlite:///:memory:",
+        celery_broker_url="redis://localhost:6379/0",
+        celery_result_backend="redis://localhost:6379/0",
+        serp_provider="mock",
+        searxng_base_url=None,
+    )
+    monkeypatch.setattr(
+        "app.health.check_database_health",
+        lambda runtime_settings: ComponentHealth("ok", True, {"database_url": runtime_settings.database_url}),
+    )
+    monkeypatch.setattr(
+        "app.health.check_redis_health",
+        lambda runtime_settings: ComponentHealth("ok", True, {"broker_url": runtime_settings.celery_broker_url}),
+    )
+    monkeypatch.setattr(
+        "app.health.check_celery_worker_health",
+        lambda runtime_settings: ComponentHealth(
+            "error",
+            True,
+            {
+                "worker_count": 1,
+                "workers": ["celery@test"],
+                "worker_queues": {"celery@test": partial_queue_coverage},
+                "expected_queues": list(AUDIT_QUEUES),
+                "missing_queues": [AUDIT_QUEUES[-1]],
+                "error": "Not all expected audit queues are served by active workers.",
+            },
+        ),
+    )
+
+    payload, is_ready = build_readiness_payload(settings)
+
+    assert is_ready is False
+    assert payload["status"] == "not_ready"
+    assert payload["checks"]["celery_workers"]["status"] == "error"
+    assert payload["checks"]["celery_workers"]["missing_queues"] == [AUDIT_QUEUES[-1]]
+
+
+def test_build_readiness_payload_fails_when_searxng_is_required_but_not_configured(monkeypatch: pytest.MonkeyPatch):
+    settings = Settings(
+        app_name="Site Audit API",
+        app_env="test",
+        database_url="sqlite:///:memory:",
+        celery_broker_url="redis://localhost:6379/0",
+        celery_result_backend="redis://localhost:6379/0",
+        serp_provider="searxng",
+        searxng_base_url=None,
+    )
+    monkeypatch.setattr(
+        "app.health.check_database_health",
+        lambda runtime_settings: ComponentHealth("ok", True, {"database_url": runtime_settings.database_url}),
+    )
+    monkeypatch.setattr(
+        "app.health.check_redis_health",
+        lambda runtime_settings: ComponentHealth("ok", True, {"broker_url": runtime_settings.celery_broker_url}),
+    )
+    monkeypatch.setattr(
+        "app.health.check_celery_worker_health",
+        lambda runtime_settings: ComponentHealth("ok", True, {"expected_queues": list(AUDIT_QUEUES)}),
+    )
+
+    payload, is_ready = build_readiness_payload(settings)
+
+    assert is_ready is False
+    assert payload["status"] == "not_ready"
+    assert payload["checks"]["serp"]["status"] == "error"
+    assert payload["checks"]["serp"]["error"] == "SEARXNG_BASE_URL is not configured."
+
+
+def test_check_database_health_uses_runtime_settings_database_url(tmp_path):
+    database_path = tmp_path / "readiness-test.db"
+    settings = Settings(database_url=f"sqlite:///{database_path}")
+
+    health = check_database_health(settings)
+
+    assert health.status == "ok"
+    assert health.details["database_url"] == f"sqlite:///{database_path}"
