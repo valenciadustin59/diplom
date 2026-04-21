@@ -3,6 +3,8 @@ services:
     image: redis:7-alpine
     container_name: diplom-searxng-redis
     restart: unless-stopped
+    ports:
+      - "6379:6379"
 
   searxng:
     image: searxng/searxng:latest

@@ -2,6 +2,8 @@
 
 FastAPI backend для аудитов сайтов, асинхронной обработки и ML scoring.
 
+Полный локальный setup для всего стека описан в [../README.md](../README.md). Этот файл фокусируется на backend-командах, ML pipeline и backend-specific деталях.
+
 ## Требования
 
 - Python 3.12 или 3.13
@@ -20,7 +22,7 @@ python -m pip install -e ".[dev]"
 
 ## Локальный SearxNG
 
-Рекомендуемый бесплатный режим для проекта — свой локальный `SearxNG` в Docker.
+Рекомендуемый бесплатный режим для проекта — свой локальный `SearxNG` в Docker. Текущий Docker stack также поднимает `Redis`, который используется как Celery broker/result backend для фоновой обработки аудитов.
 
 Поднять локальный search provider:
 
@@ -46,11 +48,12 @@ npm run searxng:down
 Локальный instance публикуется как:
 
 - `http://127.0.0.1:8888`
+- `redis://127.0.0.1:6379/0`
 
 Конфигурация лежит в:
 
-- [docker-compose.searxng.yml](/E:/codexPROJ/diplom/docker-compose.searxng.yml)
-- [infra/searxng/settings.yml](/E:/codexPROJ/diplom/infra/searxng/settings.yml)
+- [../docker-compose.searxng.yml](../docker-compose.searxng.yml)
+- [../infra/searxng/settings.yml](../infra/searxng/settings.yml)
 
 ## Run API
 
@@ -62,9 +65,18 @@ python -m uvicorn app.main:app --reload
 
 API будет доступен на `http://127.0.0.1:8000`.
 
+## Run Celery worker
+
+```powershell
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits --pool=solo
+```
+
+Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен, новые аудиты будут поставлены в очередь и останутся в `queued`.
+
 ## Env
 
-Скопируйте [backend/.env.example](/E:/codexPROJ/diplom/backend/.env.example) в `backend/.env`.
+Скопируйте [`.env.example`](./.env.example) в `backend/.env`.
 
 Минимальная локальная конфигурация:
 
@@ -87,11 +99,13 @@ npm run searxng:check
 npm run dev
 ```
 
-Или одной командой поднять локальный поиск и затем frontend + backend:
+Или одной командой поднять локальный поиск, Redis, frontend, backend и Celery worker:
 
 ```powershell
 npm run dev:full
 ```
+
+`npm run dev` поднимает только backend и frontend.
 
 ## RU training seeds
 
@@ -172,7 +186,7 @@ Runtime по-прежнему использует один entrypoint: `predict
 
 ## Feature inventory
 
-- [docs/ml_feature_inventory.md](/E:/codexPROJ/diplom/backend/docs/ml_feature_inventory.md)
+- [docs/ml_feature_inventory.md](./docs/ml_feature_inventory.md)
 
 ## Example API requests
 
