@@ -20,6 +20,58 @@ from app.parser import fetch_page
 from app.recommendations import generate_recommendations
 logger = get_task_logger(__name__)
 settings = get_settings()
+
+
+def _derive_failure_code(error: BaseException) -> str:
+    exception_name = error.__class__.__name__.strip()
+    if not exception_name:
+        return 'unknown_error'
+
+    rendered: list[str] = []
+    for character in exception_name:
+        if character.isupper() and rendered:
+            rendered.append('_')
+        rendered.append(character.lower())
+    return ''.join(rendered)
+
+
+def _map_step_to_failure_stage(step: str) -> str:
+    if step == 'competitors':
+        return 'search'
+    if step in {'fetch', 'features', 'scoring', 'recommendations'}:
+        return step
+    return 'pipeline'
+
+
+def _build_failure_context(
+    *,
+    stage: str,
+    message: str,
+    code: str | None = None,
+    details: dict[str, object] | None = None,
+) -> dict[str, object]:
+    return {
+        'stage': stage,
+        'code': code,
+        'message': message,
+        'details': details or None,
+    }
+
+
+class AuditStepExecutionError(RuntimeError):
+    def __init__(self, step: str, original_error: Exception):
+        super().__init__(str(original_error))
+        self.step = step
+        self.original_error = original_error
+
+    def to_failure_context(self) -> dict[str, object]:
+        return _build_failure_context(
+            stage=_map_step_to_failure_stage(self.step),
+            code=_derive_failure_code(self.original_error),
+            message=str(self.original_error),
+        )
+
+
 def _utc_now() -> datetime:
     return datetime.now(UTC).replace(tzinfo=None)
 def _redis_available() -> bool:
@@ -76,7 +128,7 @@ def _run_logged_step(
             _round_duration_ms(started_at),
             exc,
         )
-        raise
+        raise AuditStepExecutionError(step, exc) from exc
     summary = summarize_result(result)
     _log_audit_step(
         logging.INFO,
@@ -144,15 +196,19 @@ def _mark_audit_processing(audit: Audit) -> None:
     audit.status = transition_status(audit.status, PROCESSING)
     audit.updated_at = _utc_now()
     audit.error_message = None
+    audit.failure_context = None
     audit.warnings = []
     _clear_analysis_outputs(audit)
     _clear_fetch_outputs(audit)
-def _mark_audit_failed(audit: Audit, error_message: str | None) -> None:
+
+
+def _mark_audit_failed(audit: Audit, failure_context: dict[str, object]) -> None:
     try:
         audit.status = transition_status(audit.status, FAILED)
     except ValueError:
         audit.status = FAILED
-    audit.error_message = error_message or 'Audit processing failed'
+    audit.error_message = str(failure_context.get('message') or 'Audit processing failed')
+    audit.failure_context = failure_context
     audit.warnings = []
     _clear_analysis_outputs(audit)
     audit.updated_at = _utc_now()
@@ -179,6 +235,7 @@ def _mark_audit_completed(
     audit.recommendations = recommendations
     audit.warnings = warnings
     audit.error_message = None
+    audit.failure_context = None
     audit.updated_at = _utc_now()
     return final_status
 def enqueue_audit_processing(audit_id: str) -> None:
@@ -213,7 +270,23 @@ def process_audit(audit_id: str) -> dict[str, object]:
         audit.target_fetch_error_code = str(target_fetch.get('fetch_error_code') or '') or None
         audit.target_fetch_error_message = str(target_fetch.get('fetch_error_message') or '') or None
         if target_fetch['status'] != 'success':
-            _mark_audit_failed(audit, audit.target_fetch_error_message or 'Target page fetch failed')
+            failure_details = {
+                key: value
+                for key, value in {
+                    'fetch_method': audit.target_fetch_method,
+                    'http_status': target_fetch.get('http_status'),
+                }.items()
+                if value is not None
+            }
+            _mark_audit_failed(
+                audit,
+                _build_failure_context(
+                    stage='fetch',
+                    code=audit.target_fetch_error_code,
+                    message=audit.target_fetch_error_message or 'Target page fetch failed',
+                    details=failure_details,
+                ),
+            )
             db.commit()
             _log_audit_step(
                 logging.WARNING,
@@ -319,10 +392,29 @@ def process_audit(audit_id: str) -> dict[str, object]:
         }
     except Exception as exc:
         logger.exception('Audit processing failed: %s', audit_id)
+        failure_context = (
+            exc.to_failure_context()
+            if isinstance(exc, AuditStepExecutionError)
+            else _build_failure_context(
+                stage='pipeline',
+                code=_derive_failure_code(exc),
+                message=str(exc),
+            )
+        )
         if audit is not None:
-            _mark_audit_failed(audit, str(exc))
+            _mark_audit_failed(audit, failure_context)
             db.commit()
-        _log_audit_step(logging.ERROR, audit_id, 'pipeline', 'failed', error=str(exc))
+        _log_audit_step(
+            logging.ERROR,
+            audit_id,
+            'pipeline',
+            'failed',
+            error=str(failure_context['message']),
+            failure_code=failure_context.get('code'),
+            failure_stage=failure_context['stage'],
+        )
+        if isinstance(exc, AuditStepExecutionError):
+            raise exc.original_error from exc
         raise
     finally:
         db.close()

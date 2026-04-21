@@ -1,5 +1,13 @@
 export type AuditStatus = "queued" | "processing" | "completed" | "completed_with_warnings" | "failed";
 export type AuditTab = "overview" | "pages" | "competitors" | "recommendations";
+export type FailureStage = "fetch" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
+
+export type FailureContext = {
+  stage: FailureStage;
+  code: string | null;
+  message: string;
+  details: Record<string, unknown> | null;
+};
 
 export type Recommendation = {
   code: string;
@@ -55,6 +63,7 @@ export type AuditStatusResponse = {
   target_fetch_method: FetchMethod;
   target_fetch_error_code: string | null;
   target_fetch_error_message: string | null;
+  failure_context: FailureContext | null;
   warnings: WarningMessage[] | null;
   error_message: string | null;
 };
@@ -72,6 +81,7 @@ export type AuditResultsResponse = {
   target_fetch_method: FetchMethod;
   target_fetch_error_code: string | null;
   target_fetch_error_message: string | null;
+  failure_context: FailureContext | null;
   warnings: WarningMessage[] | null;
   error_message: string | null;
 };
@@ -80,6 +90,7 @@ export type AuditRecommendationsResponse = {
   audit_id: string;
   status: AuditStatus;
   recommendations: Recommendation[];
+  failure_context: FailureContext | null;
   error_message: string | null;
 };
 

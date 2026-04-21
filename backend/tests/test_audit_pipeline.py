@@ -138,6 +138,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         assert stored.target_fetch_status == 'success'
         assert stored.target_fetch_method == 'http'
         assert stored.target_fetch_error_code is None
+        assert stored.failure_context is None
         assert stored.score == 77.5
         assert stored.comparison_summary == {
             'user_score': 77.5,
@@ -217,6 +218,15 @@ def test_process_audit_fails_when_target_fetch_fails(monkeypatch, tmp_path):
         assert stored.target_fetch_method == 'browser'
         assert stored.target_fetch_error_code == 'http_403'
         assert stored.error_message == 'HTTP 403'
+        assert stored.failure_context == {
+            'stage': 'fetch',
+            'code': 'http_403',
+            'message': 'HTTP 403',
+            'details': {
+                'fetch_method': 'browser',
+                'http_status': 403,
+            },
+        }
     assert result == {
         'audit_id': 'audit-2',
         'status': 'failed',
@@ -274,6 +284,15 @@ def test_process_audit_clears_stale_results_when_retry_fails(monkeypatch, tmp_pa
         assert stored.target_fetch_status == 'failed'
         assert stored.target_fetch_method == 'browser'
         assert stored.target_fetch_error_code == 'http_403'
+        assert stored.failure_context == {
+            'stage': 'fetch',
+            'code': 'http_403',
+            'message': 'HTTP 403',
+            'details': {
+                'fetch_method': 'browser',
+                'http_status': 403,
+            },
+        }
         assert stored.extracted_text is None
         assert stored.features is None
         assert stored.score is None
@@ -341,6 +360,12 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
         assert stored is not None
         assert stored.status == 'failed'
         assert stored.error_message == 'feature extraction exploded'
+        assert stored.failure_context == {
+            'stage': 'features',
+            'code': 'runtime_error',
+            'message': 'feature extraction exploded',
+            'details': None,
+        }
         assert stored.target_fetch_status == 'success'
         assert stored.target_fetch_method == 'http'
         assert stored.target_fetch_error_code is None
@@ -356,7 +381,12 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
     log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
     assert any('step=features event=started' in message for message in log_messages)
     assert any('step=features event=failed' in message and 'feature extraction exploded' in message for message in log_messages)
-    assert any('step=pipeline event=failed' in message and 'feature extraction exploded' in message for message in log_messages)
+    assert any(
+        'step=pipeline event=failed' in message
+        and 'feature extraction exploded' in message
+        and 'failure_stage=features' in message
+        for message in log_messages
+    )
     Base.metadata.drop_all(bind=engine)
     engine.dispose()
 def test_enqueue_audit_processing_falls_back_when_celery_enqueue_fails(monkeypatch):

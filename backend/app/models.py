@@ -27,5 +27,6 @@ class Audit(Base):
     target_fetch_method: Mapped[str | None] = mapped_column(String(32), nullable=True)
     target_fetch_error_code: Mapped[str | None] = mapped_column(String(64), nullable=True)
     target_fetch_error_message: Mapped[str | None] = mapped_column(Text, nullable=True)
+    failure_context: Mapped[dict[str, object] | None] = mapped_column(JSON, nullable=True)
     warnings: Mapped[list[str] | None] = mapped_column(JSON, nullable=True)
     error_message: Mapped[str | None] = mapped_column(Text, nullable=True)

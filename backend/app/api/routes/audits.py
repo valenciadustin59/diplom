@@ -75,6 +75,7 @@ def get_audit_results_endpoint(
         target_fetch_method=audit.target_fetch_method,
         target_fetch_error_code=audit.target_fetch_error_code,
         target_fetch_error_message=audit.target_fetch_error_message,
+        failure_context=audit.failure_context,
         warnings=audit.warnings,
         error_message=audit.error_message,
     )
@@ -90,5 +91,6 @@ def get_audit_recommendations_endpoint(
         audit_id=audit.id,
         status=audit.status,
         recommendations=audit.recommendations or [],
+        failure_context=audit.failure_context,
         error_message=audit.error_message,
     )

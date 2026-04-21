@@ -57,6 +57,7 @@ def _ensure_sqlite_columns() -> None:
         "target_fetch_method": "ALTER TABLE audits ADD COLUMN target_fetch_method TEXT",
         "target_fetch_error_code": "ALTER TABLE audits ADD COLUMN target_fetch_error_code TEXT",
         "target_fetch_error_message": "ALTER TABLE audits ADD COLUMN target_fetch_error_message TEXT",
+        "failure_context": "ALTER TABLE audits ADD COLUMN failure_context JSON",
         "warnings": "ALTER TABLE audits ADD COLUMN warnings JSON",
         "error_message": "ALTER TABLE audits ADD COLUMN error_message TEXT",
     }

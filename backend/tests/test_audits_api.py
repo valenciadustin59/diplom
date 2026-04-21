@@ -184,6 +184,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert created_payload['status'] == 'queued'
     assert created_payload['score'] is None
     assert created_payload['target_fetch_status'] is None
+    assert created_payload['failure_context'] is None
     assert created_payload['recommendations'] is None
     assert created_payload['warnings'] is None
     status_response = integration_client.get(f'/audits/{audit_id}')
@@ -214,6 +215,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
                 'message': 'Test recommendation',
             }
         ],
+        'failure_context': None,
         'error_message': None,
     }
 def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integration_client, monkeypatch):
@@ -244,6 +246,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
     assert created_payload['error_message'] is None
     assert created_payload['target_fetch_status'] is None
     assert created_payload['target_fetch_error_code'] is None
+    assert created_payload['failure_context'] is None
     assert created_payload['score'] is None
     assert created_payload['recommendations'] is None
     status_response = integration_client.get(f'/audits/{audit_id}')
@@ -257,6 +260,15 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
     recommendations_payload = recommendations_response.json()
     assert status_payload['status'] == 'failed'
     assert status_payload['error_message'] == 'HTTP 403'
+    assert status_payload['failure_context'] == {
+        'stage': 'fetch',
+        'code': 'http_403',
+        'message': 'HTTP 403',
+        'details': {
+            'fetch_method': 'browser',
+            'http_status': 403,
+        },
+    }
     assert results_payload == {
         'audit_id': audit_id,
         'status': 'failed',
@@ -270,6 +282,15 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
         'target_fetch_method': 'browser',
         'target_fetch_error_code': 'http_403',
         'target_fetch_error_message': 'HTTP 403',
+        'failure_context': {
+            'stage': 'fetch',
+            'code': 'http_403',
+            'message': 'HTTP 403',
+            'details': {
+                'fetch_method': 'browser',
+                'http_status': 403,
+            },
+        },
         'warnings': [],
         'error_message': 'HTTP 403',
     }
@@ -277,8 +298,149 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
         'audit_id': audit_id,
         'status': 'failed',
         'recommendations': [],
+        'failure_context': {
+            'stage': 'fetch',
+            'code': 'http_403',
+            'message': 'HTTP 403',
+            'details': {
+                'fetch_method': 'browser',
+                'http_status': 403,
+            },
+        },
         'error_message': 'HTTP 403',
     }
+def test_create_audit_returns_scoring_failure_context(integration_client, monkeypatch):
+    from app.tasks import process_audit
+
+    def inline_enqueue_ignore_failures(audit_id: str) -> None:
+        try:
+            process_audit.run(audit_id)
+        except RuntimeError:
+            pass
+
+    monkeypatch.setattr('app.api.routes.audits.enqueue_audit_processing', inline_enqueue_ignore_failures)
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'final_url': url,
+            'http_status': 200,
+            'html': '<html><body><h1>Title</h1><p>Body</p></body></html>',
+            'text': 'Title Body',
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_features',
+        lambda html, text, query: {
+            'text_length_chars': 10,
+            'query_in_text': 1,
+            'semantic_similarity': 0.81,
+        },
+    )
+    def fail_scoring(features):
+        raise RuntimeError('model calibration failed')
+    monkeypatch.setattr('app.tasks.explain_score', fail_scoring)
+    created = integration_client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+        },
+    )
+    assert created.status_code == 201
+    audit_id = created.json()['id']
+    status_response = integration_client.get(f'/audits/{audit_id}')
+    results_response = integration_client.get(f'/audits/{audit_id}/results')
+    recommendations_response = integration_client.get(f'/audits/{audit_id}/recommendations')
+    assert status_response.status_code == 200
+    assert results_response.status_code == 200
+    assert recommendations_response.status_code == 200
+    expected_failure_context = {
+        'stage': 'scoring',
+        'code': 'runtime_error',
+        'message': 'model calibration failed',
+        'details': None,
+    }
+    assert status_response.json()['failure_context'] == expected_failure_context
+    assert status_response.json()['error_message'] == 'model calibration failed'
+    assert results_response.json()['failure_context'] == expected_failure_context
+    assert results_response.json()['error_message'] == 'model calibration failed'
+    assert recommendations_response.json()['failure_context'] == expected_failure_context
+    assert recommendations_response.json()['error_message'] == 'model calibration failed'
+def test_create_audit_returns_search_failure_context(integration_client, monkeypatch):
+    from app.tasks import process_audit
+
+    def inline_enqueue_ignore_failures(audit_id: str) -> None:
+        try:
+            process_audit.run(audit_id)
+        except RuntimeError:
+            pass
+
+    monkeypatch.setattr('app.api.routes.audits.enqueue_audit_processing', inline_enqueue_ignore_failures)
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'final_url': url,
+            'http_status': 200,
+            'html': '<html><body><h1>Title</h1><p>Body</p></body></html>',
+            'text': 'Title Body',
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_features',
+        lambda html, text, query: {
+            'text_length_chars': 10,
+            'query_in_text': 1,
+            'semantic_similarity': 0.81,
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.explain_score',
+        lambda features: {
+            'final_score': 77.5,
+            'rule_score': 74.0,
+            'ml_score': 84.0,
+            'methodology': 'Test methodology',
+            'model_info': {'source': 'bootstrap'},
+            'positives': [],
+            'negatives': [],
+            'factors': [],
+        },
+    )
+    def fail_search(query, target_url, top_n):
+        raise RuntimeError('SERP provider unavailable')
+    monkeypatch.setattr('app.tasks.build_competitor_results', fail_search)
+    created = integration_client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+        },
+    )
+    assert created.status_code == 201
+    audit_id = created.json()['id']
+    status_response = integration_client.get(f'/audits/{audit_id}')
+    results_response = integration_client.get(f'/audits/{audit_id}/results')
+    recommendations_response = integration_client.get(f'/audits/{audit_id}/recommendations')
+    expected_failure_context = {
+        'stage': 'search',
+        'code': 'runtime_error',
+        'message': 'SERP provider unavailable',
+        'details': None,
+    }
+    assert status_response.json()['failure_context'] == expected_failure_context
+    assert status_response.json()['error_message'] == 'SERP provider unavailable'
+    assert results_response.json()['failure_context'] == expected_failure_context
+    assert results_response.json()['error_message'] == 'SERP provider unavailable'
+    assert recommendations_response.json()['failure_context'] == expected_failure_context
+    assert recommendations_response.json()['error_message'] == 'SERP provider unavailable'
 def test_get_audit_returns_404_for_unknown_id(client):
     response = client.get('/audits/0fd2bce7-8f57-417f-9f62-3aebf7cc4da8')
     assert response.status_code == 404

@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { AuditPage } from "../pages/AuditPage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
-import { getAuditStatusLabel } from "../lib/ui";
+import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
 import { AuditTabs } from "./AuditTabs";
 import { AuditLaunchForm } from "./AuditLaunchForm";
 import { Card } from "./Card";
@@ -18,6 +18,7 @@ import type {
   AuditTab,
   ComparisonSummary,
   CompetitorScore,
+  FailureContext,
   PageRow,
   Recommendation,
   ScoreBreakdown,
@@ -171,12 +172,39 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
   );
 }
 
+function FailureContextBanner({
+  context,
+  title,
+}: {
+  context: FailureContext;
+  title?: string;
+}) {
+  const detailEntries = getFailureDetailEntries(context);
+
+  return (
+    <div className="feedback-banner feedback-banner--error">
+      <div>
+        <strong>{title ?? `Ошибка на этапе ${getFailureStageLabel(context.stage)}`}</strong>
+      </div>
+      <div>{context.message}</div>
+      {context.code ? <div>Код: {context.code}</div> : null}
+      {detailEntries.map((entry) => (
+        <div key={`${entry.label}:${entry.value}`}>
+          {entry.label}: {entry.value}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function AuditWarnings({
   currentAudit,
   currentResults,
-}: Pick<AuditWorkspaceProps, "currentAudit" | "currentResults">) {
+  failureContext,
+}: Pick<AuditWorkspaceProps, "currentAudit" | "currentResults"> & {
+  failureContext: FailureContext | null;
+}) {
   const warnings = currentResults?.warnings ?? currentAudit?.warnings ?? [];
-  const failedMessage = currentResults?.target_fetch_error_message ?? currentAudit?.target_fetch_error_message;
 
   return (
     <>
@@ -188,8 +216,11 @@ function AuditWarnings({
         </div>
       ) : null}
 
-      {currentAudit?.status === "failed" && failedMessage ? (
-        <div className="feedback-banner feedback-banner--error">{failedMessage}</div>
+      {currentAudit?.status === "failed" && failureContext ? (
+        <FailureContextBanner
+          context={failureContext}
+          title={`Аудит остановился на этапе ${getFailureStageLabel(failureContext.stage)}`}
+        />
       ) : null}
     </>
   );
@@ -293,10 +324,13 @@ function CompetitorsPanel({
   comparisonSummary,
   loading,
   error,
+  failureContext,
 }: Pick<
   AuditWorkspaceProps,
   "currentResults" | "competitorScores" | "comparisonSummary" | "loading" | "error"
->) {
+> & {
+  failureContext: FailureContext | null;
+}) {
   const competitors = currentResults?.competitor_results ?? [];
   const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
   const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
@@ -309,8 +343,11 @@ function CompetitorsPanel({
     >
       {loading ? <div className="empty-state">Подбираем конкурентные страницы...</div> : null}
       {!loading && error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
+      {!loading && !error && failureContext?.stage === "search" ? (
+        <FailureContextBanner context={failureContext} title="Сравнение с конкурентами не построено" />
+      ) : null}
 
-      {!loading && !error && competitors.length === 0 ? (
+      {!loading && !error && competitors.length === 0 && failureContext?.stage !== "search" ? (
         <div className="empty-state">
           По этому запросу пока не удалось собрать релевантные страницы конкурентов. Повторите аудит позже или уточните поисковый запрос.
         </div>
@@ -513,6 +550,8 @@ export function AuditWorkspace({
     return <div className="empty-state">Выберите аудит, чтобы открыть рабочее пространство.</div>;
   }
 
+  const failureContext = resolveAuditFailureContext(currentAudit, currentResults);
+
   return (
     <div className="workspace">
       <div className="workspace__header">
@@ -528,7 +567,7 @@ export function AuditWorkspace({
         </div>
       </div>
 
-      <AuditWarnings currentAudit={currentAudit} currentResults={currentResults} />
+      <AuditWarnings currentAudit={currentAudit} currentResults={currentResults} failureContext={failureContext} />
 
       <AuditTabs activeTab={activeTab} onChange={onTabChange} />
 
@@ -554,6 +593,7 @@ export function AuditWorkspace({
             comparisonSummary={comparisonSummary}
             loading={loading}
             error={error}
+            failureContext={failureContext}
           />
         ) : null}
 
@@ -563,6 +603,7 @@ export function AuditWorkspace({
             auditStatus={auditStatus}
             loading={loading}
             error={error}
+            failureContext={failureContext}
           />
         ) : null}
       </div>
