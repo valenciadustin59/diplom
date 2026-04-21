@@ -61,6 +61,8 @@ npm run dev:full
 - запускает frontend и прокидывает в него актуальный `VITE_API_URL`
 - запускает Celery worker для очереди `audits`
 
+Если `backend/.env` отсутствует, root dev script сам подставляет локальные dev defaults для `SEARXNG_BASE_URL`, `CELERY_BROKER_URL` и `CELERY_RESULT_BACKEND`, чтобы полный стек не запускался в деградированном режиме.
+
 На Windows worker автоматически стартует с `--pool=solo`, потому что это самый надёжный режим для локального запуска Celery.
 
 ## Ручной запуск по частям

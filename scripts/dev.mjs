@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import net from "node:net";
 import path from "node:path";
 import process from "node:process";
+import { pathToFileURL } from "node:url";
 
 const rootDir = process.cwd();
 const backendDir = path.join(rootDir, "backend");
@@ -12,6 +13,17 @@ const includeWorker = process.argv.includes("--with-worker");
 
 const children = [];
 let shuttingDown = false;
+
+export function buildBackendRuntimeEnv(extraEnv = {}, sourceEnv = process.env) {
+  return {
+    SERP_PROVIDER: sourceEnv.SERP_PROVIDER ?? "searxng",
+    SEARXNG_BASE_URL: sourceEnv.SEARXNG_BASE_URL ?? "http://127.0.0.1:8888",
+    SEARXNG_LANGUAGE: sourceEnv.SEARXNG_LANGUAGE ?? "ru-RU",
+    CELERY_BROKER_URL: sourceEnv.CELERY_BROKER_URL ?? "redis://127.0.0.1:6379/0",
+    CELERY_RESULT_BACKEND: sourceEnv.CELERY_RESULT_BACKEND ?? "redis://127.0.0.1:6379/0",
+    ...extraEnv,
+  };
+}
 
 function resolveBackendPython() {
   const candidates = [
@@ -117,7 +129,7 @@ async function main() {
     resolveBackendPython(),
     ["-m", "uvicorn", "app.main:app", "--reload", "--host", "127.0.0.1", "--port", String(backendPort)],
     backendDir,
-    { BACKEND_PORT: String(backendPort) },
+    buildBackendRuntimeEnv({ BACKEND_PORT: String(backendPort) }),
   );
 
   runProcess("frontend", npmCommand, ["run", "dev"], frontendDir, {
@@ -125,14 +137,18 @@ async function main() {
   });
 
   if (includeWorker) {
-    runProcess("worker", resolveBackendPython(), buildCeleryWorkerArgs(), backendDir);
+    runProcess("worker", resolveBackendPython(), buildCeleryWorkerArgs(), backendDir, buildBackendRuntimeEnv());
   }
 
   process.on("SIGINT", () => stopAll(0));
   process.on("SIGTERM", () => stopAll(0));
 }
 
-main().catch((error) => {
-  console.error(`[dev] ${error instanceof Error ? error.message : String(error)}`);
-  process.exit(1);
-});
+const isDirectExecution = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isDirectExecution) {
+  main().catch((error) => {
+    console.error(`[dev] ${error instanceof Error ? error.message : String(error)}`);
+    process.exit(1);
+  });
+}

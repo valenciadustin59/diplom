@@ -6,6 +6,7 @@
     "dev": "node scripts/dev.mjs",
     "dev:full": "npm run searxng:up && npm run searxng:check && npm run dev -- --with-worker",
     "build": "npm --prefix frontend run build",
+    "test:scripts": "node --test scripts/dev.test.mjs scripts/searxng-healthcheck.test.mjs",
     "preview": "npm --prefix frontend run preview",
     "searxng:up": "node scripts/searxng-manager.mjs up",
     "searxng:down": "node scripts/searxng-manager.mjs down",
