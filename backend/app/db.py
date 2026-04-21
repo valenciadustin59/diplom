@@ -46,6 +46,8 @@ def _ensure_sqlite_columns() -> None:
     required_columns = {
         "top_n": "ALTER TABLE audits ADD COLUMN top_n INTEGER NOT NULL DEFAULT 10",
         "updated_at": "ALTER TABLE audits ADD COLUMN updated_at DATETIME",
+        "processing_version": "ALTER TABLE audits ADD COLUMN processing_version INTEGER NOT NULL DEFAULT 0",
+        "orchestration_stage": "ALTER TABLE audits ADD COLUMN orchestration_stage TEXT",
         "extracted_text": "ALTER TABLE audits ADD COLUMN extracted_text TEXT",
         "target_html": "ALTER TABLE audits ADD COLUMN target_html TEXT",
         "competitor_processing_status": "ALTER TABLE audits ADD COLUMN competitor_processing_status TEXT",

@@ -16,6 +16,8 @@ class Audit(Base):
     status: Mapped[str] = mapped_column(String(32), nullable=False, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=False), nullable=False)
     updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=False), nullable=True)
+    processing_version: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    orchestration_stage: Mapped[str | None] = mapped_column(String(64), nullable=True)
     extracted_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     target_html: Mapped[str | None] = mapped_column(Text, nullable=True)
     competitor_processing_status: Mapped[str | None] = mapped_column(String(32), nullable=True)

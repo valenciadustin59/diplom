@@ -504,6 +504,116 @@ def test_stage_tasks_are_registered_for_distributed_execution():
     assert resolve_task_queue(process_audit_finalize.name) == AUDIT_FINALIZE_QUEUE
 
 
+def test_process_audit_resumes_current_stage_without_incrementing_processing_version(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-resume.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+
+    dispatched: list[tuple[tuple[object, ...], str]] = []
+
+    def fake_apply_async(*, args, queue):
+        dispatched.append((args, queue))
+
+    monkeypatch.setattr('app.tasks.process_audit_score_target.apply_async', fake_apply_async)
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-resume',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=7,
+            orchestration_stage='scoring',
+            extracted_text='Body',
+            features={'query_in_text': 1},
+        )
+        db.add(audit)
+        db.commit()
+
+    result = process_audit.run('audit-resume')
+
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-resume')
+        assert stored is not None
+        assert stored.processing_version == 7
+        assert stored.orchestration_stage == 'scoring'
+
+    assert dispatched == [
+        (
+            ('audit-resume', 7),
+            AUDIT_SCORING_QUEUE,
+        )
+    ]
+    assert result == {
+        'audit_id': 'audit-resume',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_score_target',
+        'next_queue': AUDIT_SCORING_QUEUE,
+        'dispatch_mode': 'queued',
+    }
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
+def test_stage_task_ignores_stale_processing_version(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-stale-version.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-stale',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=3,
+            orchestration_stage='features',
+            extracted_text='Body',
+            target_html='<html></html>',
+        )
+        db.add(audit)
+        db.commit()
+
+    result = process_audit_extract_features.run('audit-stale', 2)
+
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-stale')
+        assert stored is not None
+        assert stored.processing_version == 3
+        assert stored.orchestration_stage == 'features'
+        assert stored.features is None
+
+    assert result == {
+        'audit_id': 'audit-stale',
+        'status': 'ignored',
+        'reason': 'stale_processing_version',
+        'processing_version': 2,
+        'current_version': 3,
+        'current_stage': 'features',
+    }
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
 def test_dispatch_stage_task_routes_next_stage_to_stage_queue(monkeypatch):
     captured: dict[str, object] = {}
 
@@ -576,13 +686,15 @@ def test_collect_competitors_fans_out_competitor_page_tasks(monkeypatch, tmp_pat
             status='processing',
             created_at=datetime.now(UTC).replace(tzinfo=None),
             updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=1,
+            orchestration_stage='competitors',
             features={'query_in_text': 1},
             score=88.0,
         )
         db.add(audit)
         db.commit()
 
-    result = process_audit_collect_competitors.run('audit-fanout')
+    result = process_audit_collect_competitors.run('audit-fanout', 1)
 
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-fanout')
@@ -601,6 +713,7 @@ def test_collect_competitors_fans_out_competitor_page_tasks(monkeypatch, tmp_pat
         'next_stage': 'app.process_audit_collect_competitor_page',
         'next_queue': AUDIT_COMPETITOR_PAGES_QUEUE,
         'dispatch_mode': 'queued',
+        'processing_version': 1,
         'competitor_tasks_dispatched': 2,
         'competitor_tasks_enqueued': 2,
     }
@@ -657,6 +770,8 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
             status='processing',
             created_at=datetime.now(UTC).replace(tzinfo=None),
             updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=1,
+            orchestration_stage='competitors',
             competitor_processing_status='collecting',
             features={'query_in_text': 1},
             score=88.0,
@@ -694,7 +809,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         )
         db.commit()
 
-    first_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 'competitor-1')
+    first_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-1')
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-aggregation-race')
         assert stored is not None
@@ -706,7 +821,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         'status': 'processing',
     }
 
-    second_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 'competitor-2')
+    second_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-aggregation-race')
         assert stored is not None
@@ -714,7 +829,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
 
     assert dispatched == [
         (
-            ('audit-aggregation-race',),
+            ('audit-aggregation-race', 1),
             AUDIT_COMPETITORS_QUEUE,
         )
     ]
@@ -726,7 +841,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         'dispatch_mode': 'queued',
     }
 
-    duplicate_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 'competitor-2')
+    duplicate_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
     assert duplicate_result == {
         'audit_id': 'audit-aggregation-race',
         'competitor_id': 'competitor-2',
@@ -734,7 +849,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
     }
     assert dispatched == [
         (
-            ('audit-aggregation-race',),
+            ('audit-aggregation-race', 1),
             AUDIT_COMPETITORS_QUEUE,
         )
     ]

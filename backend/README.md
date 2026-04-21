@@ -107,6 +107,18 @@ cd backend
 
 Это позволяет запускать один универсальный worker на всех очередях или поднимать специализированные worker-процессы под конкретные типы нагрузки. Например, сетевые стадии (`fetch`, `competitors`, `competitor_pages`) и CPU/ML стадии (`features`, `scoring`) теперь можно масштабировать независимо. В D3 конкурентные страницы больше не обрабатываются последовательно внутри одной задачи: каждая SERP-страница стала отдельной distributed subtask с последующей агрегацией.
 
+## Retry-safe orchestration
+
+Для D4 orchestration стал version-aware и retry-safe:
+
+- каждый новый запуск аудита получает `processing_version`;
+- stage tasks исполняются только если их `processing_version` совпадает с текущей версией аудита;
+- если Celery повторно доставляет stale task старого запуска, backend игнорирует её как `stale_processing_version`;
+- `process_audit` умеет безопасно возобновить текущий run и пере-dispatch'ить актуальную стадию без нового сброса состояния;
+- fan-out конкурентных subtasks и aggregation защищены от повторного запуска старым orchestration state.
+
+Это важно для распределённого исполнения: при падении worker'а, duplicate delivery или ручном requeue старые задачи не должны перетирать более новый audit run.
+
 Примеры специализированных worker-процессов:
 
 ```powershell
