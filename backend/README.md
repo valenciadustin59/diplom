@@ -318,7 +318,7 @@ cd backend
 
 ## Dataset quality manifest
 
-`task 6` now relies on a reproducible RU-commercial dataset workflow instead of an ad hoc CSV snapshot.
+The RU-commercial dataset workflow now relies on a reproducible manifest-based process instead of an ad hoc CSV snapshot.
 
 What the workflow produces:
 
