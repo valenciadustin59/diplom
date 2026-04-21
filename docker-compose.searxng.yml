@@ -1,0 +1,18 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: diplom-searxng-redis
+    restart: unless-stopped
+
+  searxng:
+    image: searxng/searxng:latest
+    container_name: diplom-searxng
+    restart: unless-stopped
+    depends_on:
+      - redis
+    environment:
+      SEARXNG_BASE_URL: http://127.0.0.1:8888/
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./infra/searxng/settings.yml:/etc/searxng/settings.yml:rw

@@ -1,0 +1,22 @@
+use_default_settings: true
+
+general:
+  instance_name: "Diplom Local SearxNG"
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  formats:
+    - html
+    - json
+
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "diplom-local-searxng-secret-key"
+  limiter: false
+  image_proxy: true
+  public_instance: false
+
+redis:
+  url: redis://redis:6379/0

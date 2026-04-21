@@ -1,0 +1,15 @@
+{
+  "name": "diplom",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:full": "npm run searxng:up && npm run searxng:check && npm run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "searxng:up": "node scripts/searxng-manager.mjs up",
+    "searxng:down": "node scripts/searxng-manager.mjs down",
+    "searxng:logs": "node scripts/searxng-manager.mjs logs",
+    "searxng:check": "node scripts/searxng-healthcheck.mjs"
+  }
+}
