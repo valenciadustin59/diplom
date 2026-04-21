@@ -1,3 +1,5 @@
+﻿from __future__ import annotations
+import logging
 from datetime import UTC, datetime
 import pytest
 from sqlalchemy import create_engine
@@ -5,7 +7,7 @@ from sqlalchemy.orm import Session, sessionmaker
 from app.db import Base
 from app.models import Audit
 from app.tasks import enqueue_audit_processing, process_audit
-def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path):
+def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     db_path = tmp_path / 'pipeline.db'
     engine = create_engine(
         f'sqlite:///{db_path}',
@@ -42,6 +44,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path):
             'rule_score': 74.0,
             'ml_score': 84.0,
             'methodology': '╨в╨╡╤Б╤В╨╛╨▓╨░╤П ╨╝╨╡╤В╨╛╨┤╨╛╨╗╨╛╨│╨╕╤П',
+            'model_info': {'source': 'bootstrap'},
             'positives': [
                 {
                     'code': 'GOOD_TITLE',
@@ -125,6 +128,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path):
         )
         db.add(audit)
         db.commit()
+    caplog.set_level(logging.INFO, logger='app.tasks')
     result = process_audit.run('audit-1')
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-1')
@@ -154,6 +158,14 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path):
         assert stored.warnings
         assert '╨Ю╨▒╤А╨░╨▒╨╛╤В╨░╨╜╨╛ 1 ╨╕╨╖ 2' in stored.warnings[0]
         assert stored.updated_at is not None
+    log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
+    assert any('step=fetch event=started' in message for message in log_messages)
+    assert any('step=fetch event=completed' in message and 'status=success' in message for message in log_messages)
+    assert any('step=features event=completed' in message for message in log_messages)
+    assert any('step=scoring event=completed' in message and 'final_score=77.5000' in message for message in log_messages)
+    assert any('step=competitors event=completed' in message and 'competitors_found=2' in message for message in log_messages)
+    assert any('step=recommendations event=completed' in message and 'recommendations_count=1' in message for message in log_messages)
+    assert any('step=pipeline event=completed' in message and 'final_status=completed_with_warnings' in message for message in log_messages)
     assert result == {
         'audit_id': 'audit-1',
         'status': 'completed_with_warnings',
@@ -277,7 +289,7 @@ def test_process_audit_clears_stale_results_when_retry_fails(monkeypatch, tmp_pa
     }
     Base.metadata.drop_all(bind=engine)
     engine.dispose()
-def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(monkeypatch, tmp_path):
+def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(monkeypatch, tmp_path, caplog):
     db_path = tmp_path / 'pipeline-exception.db'
     engine = create_engine(
         f'sqlite:///{db_path}',
@@ -321,6 +333,7 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
         )
         db.add(audit)
         db.commit()
+    caplog.set_level(logging.INFO, logger='app.tasks')
     with pytest.raises(RuntimeError, match='feature extraction exploded'):
         process_audit.run('audit-4')
     with testing_session_local() as db:
@@ -340,6 +353,10 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
         assert stored.comparison_summary is None
         assert stored.recommendations is None
         assert stored.warnings == []
+    log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
+    assert any('step=features event=started' in message for message in log_messages)
+    assert any('step=features event=failed' in message and 'feature extraction exploded' in message for message in log_messages)
+    assert any('step=pipeline event=failed' in message and 'feature extraction exploded' in message for message in log_messages)
     Base.metadata.drop_all(bind=engine)
     engine.dispose()
 def test_enqueue_audit_processing_falls_back_when_celery_enqueue_fails(monkeypatch):
@@ -359,4 +376,3 @@ def test_enqueue_audit_processing_falls_back_when_celery_enqueue_fails(monkeypat
         ('process_audit', ('audit-queue',), True),
         ('started', (), True),
     ]
-
