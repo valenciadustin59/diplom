@@ -16,6 +16,10 @@
 - `Node.js 20+` и `npm`
 - `Docker Desktop` или совместимый Docker runtime
 
+Перед запуском `npm run dev:full` и `npm run searxng:*` убедитесь, что Docker Desktop уже запущен и Docker daemon успел подняться.
+
+Во всех командах ниже `<repo-root>` означает корень этого репозитория.
+
 ## Рекомендуемый режим: полный локальный стек
 
 Этот режим рекомендуется для обычной разработки и демонстрации диплома. Он поднимает поиск, Redis, backend, frontend и Celery worker.
@@ -23,7 +27,7 @@
 ### 1. Установить root и frontend зависимости
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm install
 npm --prefix frontend install
 ```
@@ -31,7 +35,8 @@ npm --prefix frontend install
 ### 2. Подготовить backend окружение
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -44,7 +49,7 @@ copy .env.example .env
 ### 3. Запустить полный локальный стек
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run dev:full
 ```
 
@@ -65,7 +70,7 @@ npm run dev:full
 ### Инфраструктура: SearxNG и Redis
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:up
 npm run searxng:check
 ```
@@ -78,14 +83,16 @@ npm run searxng:check
 ### Backend API
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
 ### Celery worker
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits --pool=solo
 ```
 
@@ -94,7 +101,8 @@ cd E:\codexPROJ\diplom\backend
 ### Frontend
 
 ```powershell
-cd E:\codexPROJ\diplom\frontend
+cd <repo-root>
+cd frontend
 set VITE_API_URL=http://127.0.0.1:8000
 npm run dev
 ```
@@ -136,14 +144,15 @@ SEARCH_TIMEOUT=20
 ### Backend tests
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m pytest
 ```
 
 ### Frontend build
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run build
 ```
 

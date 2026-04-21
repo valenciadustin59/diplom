@@ -4,11 +4,15 @@ FastAPI backend для аудитов сайтов, асинхронной об�
 
 Полный локальный setup для всего стека описан в [../README.md](../README.md). Этот файл фокусируется на backend-командах, ML pipeline и backend-specific деталях.
 
+Во всех командах ниже `<repo-root>` означает корень этого репозитория.
+
 ## Требования
 
 - Python 3.12 или 3.13
 - Redis для Celery
 - Docker для локального бесплатного `SearxNG`
+
+Перед запуском `npm run searxng:*` убедитесь, что Docker Desktop уже запущен и Docker daemon готов принимать команды.
 
 ## Setup
 
@@ -27,21 +31,21 @@ python -m pip install -e ".[dev]"
 Поднять локальный search provider:
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:up
 ```
 
 Проверить, что JSON API доступен:
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:check
 ```
 
 Остановить контейнеры:
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:down
 ```
 

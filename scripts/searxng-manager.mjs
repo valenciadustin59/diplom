@@ -63,6 +63,23 @@ if (dockerVersion.status !== 0) {
   process.exit(1);
 }
 
+const dockerInfo = run(dockerCommand, ["info", "--format", "{{json .ServerVersion}}"]);
+if (dockerInfo.status !== 0) {
+  console.error(
+    JSON.stringify(
+      {
+        status: "error",
+        action,
+        message:
+          "Docker Desktop is installed but the Docker daemon is not running. Start Docker Desktop, wait until the engine is ready, and then run the command again.",
+      },
+      null,
+      2,
+    ),
+  );
+  process.exit(1);
+}
+
 const argsByAction = {
   up: ["compose", "-f", composeFile, "up", "-d"],
   down: ["compose", "-f", composeFile, "down"],

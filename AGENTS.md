@@ -1,10 +1,10 @@
 # AGENTS
 
-Этот файл описывает фактическое состояние репозитория `E:\codexPROJ\diplom` и служит стартовой инструкцией для любого агента или разработчика.
+Этот файл описывает фактическое состояние репозитория `<repo-root>` и служит стартовой инструкцией для любого агента или разработчика. В текущем локальном окружении `<repo-root>` соответствует `E:\codexPROJ\diplom`.
 
 ## Обязательные ограничения работы
 
-- Работать только внутри `E:\codexPROJ\diplom`.
+- Работать только внутри `<repo-root>`.
 - Не создавать временные директории, junction/symlink, вспомогательные клоны и файлы на других дисках или вне репозитория.
 - Если для автоматизации нужен временный скрипт, создавать его только внутри репозитория и удалять после использования.
 - Перед закрытием GitHub issue убедиться, что реализация закоммичена, запушена и подтверждена проверками.
@@ -59,7 +59,8 @@
 ### Backend setup
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -71,14 +72,15 @@ python -m pip install -e ".[dev]"
 ### Backend run
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m uvicorn app.main:app --reload
 ```
 
 ### Local SearxNG up
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:up
 ```
 
@@ -87,28 +89,30 @@ npm run searxng:up
 ### Local SearxNG check
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:check
 ```
 
 ### Local SearxNG down
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run searxng:down
 ```
 
 ### Backend tests
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m pytest
 ```
 
 ### RU training seed generation
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe ..\scripts\generate_training_queries.py
 ```
 
@@ -120,7 +124,8 @@ cd E:\codexPROJ\diplom\backend
 ### ML dataset build
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m app.ml.dataset_builder `
   --seeds-file data\training_query_seeds.csv `
   --output data\training_dataset.csv `
@@ -134,7 +139,8 @@ cd E:\codexPROJ\diplom\backend
 ### Batch dataset build + train
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe ..\scripts\run_training_batches.py `
   --seeds-file data\training_query_seeds.csv `
   --dataset data\training_dataset.csv `
@@ -150,7 +156,8 @@ cd E:\codexPROJ\diplom\backend
 ### ML training
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m app.ml.train `
   --dataset data\training_dataset.csv `
   --model-output artifacts\page_quality_model.pkl
@@ -159,7 +166,8 @@ cd E:\codexPROJ\diplom\backend
 ### Frontend run
 
 ```powershell
-cd E:\codexPROJ\diplom\frontend
+cd <repo-root>
+cd frontend
 npm install
 npm run dev
 ```
@@ -167,7 +175,7 @@ npm run dev
 ### Root convenience run
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run dev
 ```
 
@@ -176,7 +184,7 @@ npm run dev
 ### Root full stack run
 
 ```powershell
-cd E:\codexPROJ\diplom
+cd <repo-root>
 npm run dev:full
 ```
 
@@ -277,7 +285,8 @@ npm run dev:full
 6. Для задач по backend pipeline проходят как минимум:
 
 ```powershell
-cd E:\codexPROJ\diplom\backend
+cd <repo-root>
+cd backend
 .venv\Scripts\python.exe -m pytest backend\tests\test_audit_pipeline.py
 .venv\Scripts\python.exe -m pytest backend\tests\test_audits_api.py
 ```
@@ -285,6 +294,7 @@ cd E:\codexPROJ\diplom\backend
 7. Для задач по frontend проходит как минимум:
 
 ```powershell
-cd E:\codexPROJ\diplom\frontend
+cd <repo-root>
+cd frontend
 npm run build
 ```
