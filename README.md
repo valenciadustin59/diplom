@@ -10,6 +10,30 @@
 - `scripts/` — root-level dev scripts и утилиты локальной разработки
 - `docs/roadmap/` — roadmap и GitHub backlog дальнейшего развития
 
+## Distributed Backlog Status
+
+Для текущего этапа диплома каноническим backlog считается не старый product backlog, а distributed sequence `D1-D12`.
+
+Уже выполнено:
+
+- `D1` — stage-based decomposition audit pipeline
+- `D2` — routing стадий по отдельным Celery queues
+- `D3` — distributed fan-out по competitor pages
+- `D4` — retry-safe / version-aware orchestration
+- `D5` — `health/live` и `health/ready`
+- `D6` — `health/metrics` и runtime telemetry
+
+Ещё предстоит:
+
+- `D7` — persistent audit event log и stage duration telemetry
+- `D8` — audit timeline diagnostics API и critical-path breakdown
+- `D9` — queue pressure snapshots и detector stuck/backlogged execution
+- `D10` — admission control при деградированном runtime capacity
+- `D11` — worker topology profiles и queue affinity validation
+- `D12` — benchmark/reporting workflow для демонстрации distributed runtime в дипломе
+
+Подробный статус и последовательность находятся в [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md).
+
 ## Требования
 
 - `Python 3.12` или `3.13`

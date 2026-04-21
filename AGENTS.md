@@ -34,16 +34,29 @@
 
 ## Текущий статус backlog
 
-На текущий момент уже реализованы и должны сохраняться без регрессий следующие задачи:
+Старые product issues `#1-#25` больше не считаются активным backlog source of truth. Они остаются в GitHub только как архив уже выполненных задач.
 
-- GitHub issue `#1` — стабилизированы переходы статусов аудита и обработка повторных запусков/ошибок
-- GitHub issue `#2` — добавлено структурированное логирование шагов аудита
-- GitHub issue `#3` — добавлены backend integration tests для полного жизненного цикла аудита через API
+Актуальный backlog для текущего этапа диплома — distributed computing sequence `D1-D12`.
 
-Следующие известные задачи backlog:
+Уже выполнено:
 
-- GitHub issue `#4` — документация полного локального setup
-- GitHub issue `#5` — отображение причин ошибок аудита во frontend workspace
+- `D1` — stage-based decomposition audit pipeline
+- `D2` — per-stage Celery queues and routing
+- `D3` — distributed fan-out по competitor pages
+- `D4` — retry-safe / version-aware orchestration
+- `D5` — `health/live` и `health/ready` для backend/worker stack
+- `D6` — `health/metrics` и runtime telemetry по очередям, worker activity и pipeline counters
+
+Следующие задачи:
+
+- GitHub issue `#26` — `D7: Persist structured audit execution events and stage duration telemetry`
+- GitHub issue `#30` — `D8: Add audit timeline diagnostics API and critical-path breakdown`
+- GitHub issue `#28` — `D9: Add queue pressure snapshots and stuck/backlogged execution detector`
+- GitHub issue `#31` — `D10: Introduce admission control and scheduling guards for degraded runtime capacity`
+- GitHub issue `#27` — `D11: Add worker topology profiles and queue-affinity validation`
+- GitHub issue `#29` — `D12: Add benchmark and reporting workflow for distributed runtime metrics`
+
+Если возникает конфликт между старым roadmap и текущими distributed задачами, приоритет всегда у `D1-D12`.
 
 ## Стек проекта
 
@@ -239,11 +252,13 @@ npm run dev:full
 6. Добавить комментарий в соответствующий GitHub issue с кратким итогом и SHA commit.
 7. Закрыть issue только после успешного push и локальной проверки.
 
-Если issue связан с уже реализованными задачами `#1-#3`, новые изменения не должны ломать:
+Если новые изменения затрагивают distributed pipeline, они не должны ломать:
 
 - явную модель переходов статусов аудита
 - step-level logging в pipeline
 - backend API lifecycle tests
+- stage-based routing по Celery queues
+- readiness / metrics endpoints и telemetry contracts
 
 ## Предпочтительные инструменты локального анализа
 
@@ -281,7 +296,7 @@ npm run dev:full
 2. Backend поднимается локально.
 3. `pytest` проходит.
 4. Для заметных изменений в ML обновлены команды и документация.
-5. Если менялся training pipeline, обновлены `README.md`, `AGENTS.md` и соответствующий ExecPlan.
+5. Если менялся training pipeline или distributed backlog/status, обновлены `README.md`, `AGENTS.md` и `docs/roadmap/product-development-roadmap.md`.
 6. Для задач по backend pipeline проходят как минимум:
 
 ```powershell

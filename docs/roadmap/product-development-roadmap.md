@@ -60,9 +60,9 @@
 
 ### Distributed Computing Backlog
 
-Для темы диплома `Разработка web-приложения машинного обучения на основе распределённых вычислений` внутри этапа архитектуры зафиксирована отдельная последовательность distributed-задач. Она показывает не просто использование Celery, а поэтапное усиление реально распределённого runtime.
+Для темы диплома `Разработка web-приложения машинного обучения на основе распределённых вычислений` каноническим backlog теперь считается именно линия `D1-D12`. Она описывает не старые product tasks, а последовательное усиление распределённого исполнения, наблюдаемости, управления нагрузкой и доказательной базы для диплома.
 
-Уже выполнено:
+#### Уже выполнено
 
 - `D1` - разрезать monolithic `process_audit` на stage-based pipeline tasks
 - `D2` - маршрутизировать стадии в отдельные Celery queues
@@ -71,11 +71,20 @@
 - `D5` - добавить `health/live` и `health/ready` для backend/worker stack
 - `D6` - добавить `health/metrics` и runtime telemetry для очередей, worker activity и pipeline counters
 
-Следующий шаг:
+#### Предстоит выполнить
 
-- `D7` - сохранить структурированные execution events и stage duration telemetry в persistent audit event log, чтобы анализировать не только текущее состояние runtime, но и историю распределённого исполнения каждого аудита
+- `D7` - сохранить structured execution events и stage duration telemetry в persistent audit event log (`GitHub #26`)
+- `D8` - добавить API диагностики audit timeline и critical-path/fan-out breakdown по каждому запуску (`GitHub #30`)
+- `D9` - ввести queue pressure snapshots и detector stuck/backlogged execution для распределённого runtime (`GitHub #28`)
+- `D10` - добавить admission control и scheduling guards при деградированном worker/broker capacity (`GitHub #31`)
+- `D11` - оформить и реализовать worker topology profiles для разных типов нагрузки (`pipeline`, `network`, `cpu/ml`) с проверяемой queue affinity (`GitHub #27`)
+- `D12` - добавить benchmark/reporting workflow с измеримыми distributed метриками (latency, backlog, throughput, worker utilization) для дипломной демонстрации (`GitHub #29`)
 
-Именно эта последовательность должна использоваться как актуальный distributed backlog для следующих GitHub issues и следующих задач `task 7+`.
+#### Зачем нужна именно такая последовательность
+
+Эти задачи выстроены по принципу: сначала сделать pipeline действительно распределённым, затем сделать его наблюдаемым, потом управляемым под нагрузкой и в конце — измеримым и убедительным для защиты диплома. Это превращает Celery из инфраструктурной детали в реально доказуемую распределённую архитектуру.
+
+Именно эта последовательность должна использоваться как актуальный backlog для следующих GitHub issues и следующих задач `task 7+`.
 
 ## Этап 5. Продуктовые расширения
 
@@ -101,49 +110,11 @@
 
 Этот порядок выбран потому, что он минимизирует технический риск и одновременно усиливает дипломную ценность проекта. Сначала нужна надёжность, затем содержательная ML-часть, затем глубина пользовательской аналитики.
 
-## GitHub Task Backlog
+## Legacy Backlog Note
 
-Ниже приведён стартовый backlog задач. Формулировки можно переносить в GitHub issues почти без изменений.
+Старые продуктовые задачи `#1-#25` уже либо реализованы, либо больше не используются как основной ориентир для текущего этапа диплома. Они остаются в GitHub issue history как архив выполнения, но больше не считаются активным roadmap source of truth.
 
-### Epic 1. MVP Stability
-
-- `Stabilize audit pipeline error handling and status transitions`
-- `Add structured audit step logging for fetch, features, competitors and scoring`
-- `Add backend integration tests for full audit lifecycle`
-- `Document full local setup for backend, frontend, Redis and SearxNG`
-- `Surface fetch/search/scoring failure reasons in frontend workspace`
-
-### Epic 2. ML Quality
-
-- `Collect production-like RU commercial dataset for page quality model`
-- `Train and publish primary ML artifact from real dataset`
-- `Add offline evaluation script with ranking-aware metrics`
-- `Version model artifacts and expose dataset metadata in runtime`
-- `Document ML methodology and model limitations for diploma appendix`
-
-### Epic 3. UX and Analytics
-
-- `Add competitor detail view with feature breakdown and score explanation`
-- `Show delta versus competitors for key page signals`
-- `Add recommendation grouping and filtering by priority`
-- `Add audit result export to shareable report format`
-- `Improve audit history with search, filters and rerun action`
-
-### Epic 4. Architecture and Operations
-
-- `Refactor monolithic tasks.py orchestration into pipeline services`
-- `Introduce resilient retry strategy for Celery audit jobs`
-- `Prepare Docker-based local full-stack environment`
-- `Add health and readiness checks for backend worker stack`
-- `Evaluate splitting Audit aggregate into write model and result read model`
-
-### Epic 5. Product Expansion
-
-- `Support multi-page audits for one domain`
-- `Add query clustering and landing page matching`
-- `Track audit progress over time with run-to-run comparison`
-- `Add project workspace for multiple domains`
-- `Add recommendation presets by business type`
+Актуальный рабочий backlog проекта теперь находится в секции `Distributed Computing Backlog` и должен синхронизироваться с GitHub issues `D7+`.
 
 ## Что считать успешным ближайшим релизом
 
@@ -156,4 +127,4 @@
 
 ## Примечание по GitHub
 
-Этот документ специально оформлен как исходник для GitHub issue backlog. После публикации репозитория в `https://github.com/valenciadustin59/diplom` задачи из раздела `GitHub Task Backlog` нужно перенести в issues и при возможности сгруппировать по milestone или project board.
+Этот документ теперь является каноническим источником для distributed backlog `D1-D12`. GitHub issues должны синхронизироваться именно с этой последовательностью, а не со старым product backlog.
