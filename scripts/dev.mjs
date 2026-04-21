@@ -11,6 +11,17 @@ const frontendDir = path.join(rootDir, "frontend");
 const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 const includeWorker = process.argv.includes("--with-worker");
 
+export const CELERY_AUDIT_QUEUES = [
+  "audits.pipeline",
+  "audits.fetch",
+  "audits.features",
+  "audits.scoring",
+  "audits.competitors",
+  "audits.competitor_pages",
+  "audits.recommendations",
+  "audits.finalize",
+];
+
 const children = [];
 let shuttingDown = false;
 
@@ -89,8 +100,17 @@ function runProcess(name, command, args, cwd, extraEnv = {}) {
   children.push(child);
 }
 
-function buildCeleryWorkerArgs() {
-  const args = ["-m", "celery", "-A", "app.celery_app:celery_app", "worker", "--loglevel=info", "-Q", "audits"];
+export function buildCeleryWorkerArgs() {
+  const args = [
+    "-m",
+    "celery",
+    "-A",
+    "app.celery_app:celery_app",
+    "worker",
+    "--loglevel=info",
+    "-Q",
+    CELERY_AUDIT_QUEUES.join(","),
+  ];
 
   // Celery on Windows is most reliable in local development with the solo pool.
   if (process.platform === "win32") {

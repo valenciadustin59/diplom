@@ -609,6 +609,140 @@ def test_collect_competitors_fans_out_competitor_page_tasks(monkeypatch, tmp_pat
     engine.dispose()
 
 
+def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-aggregation-race.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+    monkeypatch.setattr(
+        'app.tasks.analyze_competitor_page',
+        lambda result, query: {
+            'url': str(result['url']),
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result['rank']),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'score': 81.5,
+            'features': {
+                'text_length_chars': 20,
+                'query_in_text': 1,
+                'semantic_similarity': 0.83,
+            },
+        },
+    )
+
+    dispatched: list[tuple[tuple[object, ...], str]] = []
+
+    def fake_apply_async(*, args, queue):
+        dispatched.append((args, queue))
+
+    monkeypatch.setattr('app.tasks.process_audit_aggregate_competitors.apply_async', fake_apply_async)
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-aggregation-race',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            competitor_processing_status='collecting',
+            features={'query_in_text': 1},
+            score=88.0,
+        )
+        db.add(audit)
+        db.add(
+            AuditCompetitor(
+                id='competitor-1',
+                audit_id='audit-aggregation-race',
+                url='https://competitor-1.example',
+                domain='competitor-1.example',
+                title='Competitor 1',
+                snippet='Snippet 1',
+                serp_rank=1,
+                serp_page=0,
+                status='pending',
+                created_at=datetime.now(UTC).replace(tzinfo=None),
+                updated_at=datetime.now(UTC).replace(tzinfo=None),
+            )
+        )
+        db.add(
+            AuditCompetitor(
+                id='competitor-2',
+                audit_id='audit-aggregation-race',
+                url='https://competitor-2.example',
+                domain='competitor-2.example',
+                title='Competitor 2',
+                snippet='Snippet 2',
+                serp_rank=2,
+                serp_page=0,
+                status='pending',
+                created_at=datetime.now(UTC).replace(tzinfo=None),
+                updated_at=datetime.now(UTC).replace(tzinfo=None),
+            )
+        )
+        db.commit()
+
+    first_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 'competitor-1')
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-aggregation-race')
+        assert stored is not None
+        assert stored.competitor_processing_status == 'collecting'
+    assert dispatched == []
+    assert first_result == {
+        'audit_id': 'audit-aggregation-race',
+        'competitor_id': 'competitor-1',
+        'status': 'processing',
+    }
+
+    second_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 'competitor-2')
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-aggregation-race')
+        assert stored is not None
+        assert stored.competitor_processing_status == 'aggregating'
+
+    assert dispatched == [
+        (
+            ('audit-aggregation-race',),
+            AUDIT_COMPETITORS_QUEUE,
+        )
+    ]
+    assert second_result == {
+        'audit_id': 'audit-aggregation-race',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_aggregate_competitors',
+        'next_queue': AUDIT_COMPETITORS_QUEUE,
+        'dispatch_mode': 'queued',
+    }
+
+    duplicate_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 'competitor-2')
+    assert duplicate_result == {
+        'audit_id': 'audit-aggregation-race',
+        'competitor_id': 'competitor-2',
+        'status': 'completed',
+    }
+    assert dispatched == [
+        (
+            ('audit-aggregation-race',),
+            AUDIT_COMPETITORS_QUEUE,
+        )
+    ]
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
 def test_celery_config_declares_stage_queues_and_routes():
     configured_queues = {queue.name for queue in celery_app.conf.task_queues}
 
