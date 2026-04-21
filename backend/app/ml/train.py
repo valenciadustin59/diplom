@@ -238,6 +238,7 @@ def train_quality_model(
     test_size: float = 0.2,
     random_state: int = 42,
     dataset_version: str | None = None,
+    artifact_metadata: dict[str, Any] | None = None,
 ) -> dict[str, object]:
     _x, _y, rows = prepare_training_data(dataset_path)
     if len(rows) < 4:
@@ -268,6 +269,8 @@ def train_quality_model(
         "domains_count": domains_count,
         "source": "local_dataset",
         "dataset_version": resolved_dataset_version,
+        "artifact_version": resolved_dataset_version,
+        **(artifact_metadata or {}),
     }
     metrics = {
         **best_candidate["metrics"],
@@ -294,6 +297,7 @@ def train_quality_model(
         "metrics": metrics,
         "benchmark": benchmark,
         "dataset_version": resolved_dataset_version,
+        "artifact_version": str(model_metadata["artifact_version"]),
     }
 
 
@@ -318,3 +322,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

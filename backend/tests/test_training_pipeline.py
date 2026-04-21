@@ -1,4 +1,4 @@
-import csv
+﻿import csv
 from types import SimpleNamespace
 
 from app.ml import (
@@ -227,3 +227,4 @@ def test_predict_score_falls_back_to_bootstrap_model(tmp_path):
     assert isinstance(score, float)
     assert 0.0 <= score <= 100.0
     assert explanation["model_info"]["source"] == "bootstrap"
+

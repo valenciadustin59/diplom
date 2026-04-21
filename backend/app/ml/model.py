@@ -337,19 +337,78 @@ def load_saved_model(model_path: str | Path | None = None) -> dict[str, object] 
     return payload
 
 
+def _safe_optional_float(value: object) -> float | None:
+    if value is None or value == "":
+        return None
+    try:
+        return round(float(value), 6)
+    except (TypeError, ValueError):
+        return None
+
+
+def _normalize_dataset_metadata(payload: dict[str, object], normalized_metrics: dict[str, object]) -> dict[str, object]:
+    raw_metadata = payload.get("dataset_metadata")
+    metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
+    return {
+        "dataset_version": metadata.get("dataset_version") or payload.get("dataset_version"),
+        "rows_count": int(metadata.get("rows_count") or payload.get("rows_count") or normalized_metrics.get("rows_count") or 0),
+        "queries_count": int(metadata.get("queries_count") or payload.get("queries_count") or 0),
+        "domains_count": int(metadata.get("domains_count") or payload.get("domains_count") or 0),
+        "categories_count": int(metadata.get("categories_count") or 0),
+        "cities_count": int(metadata.get("cities_count") or 0),
+        "failure_rate": _safe_optional_float(metadata.get("failure_rate")),
+        "query_coverage_ratio": _safe_optional_float(metadata.get("query_coverage_ratio")),
+        "attempted_query_coverage_ratio": _safe_optional_float(metadata.get("attempted_query_coverage_ratio")),
+        "manifest_generated_at": metadata.get("manifest_generated_at"),
+    }
+
+
+def _build_metrics_summary(normalized_metrics: dict[str, object]) -> dict[str, object]:
+    summary_keys = (
+        "rmse",
+        "mae",
+        "spearman_mean",
+        "ndcg_at_10",
+        "top_3_hit_rate",
+        "validation_queries",
+        "split_mode",
+    )
+    return {
+        key: normalized_metrics[key]
+        for key in summary_keys
+        if key in normalized_metrics
+    }
+
+
 def _bootstrap_artifact() -> dict[str, object]:
     bootstrap_model = train_model()
     return {
         "model": bootstrap_model,
         "metrics": {},
+        "metrics_summary": {},
         "feature_columns": FEATURE_COLUMNS,
         "trained_at": None,
+        "published_at": None,
         "source": "bootstrap",
         "model_type": bootstrap_model.__class__.__name__,
         "rows_count": 0,
         "queries_count": 0,
         "domains_count": 0,
         "dataset_version": None,
+        "artifact_version": "bootstrap",
+        "artifact_family": "page_quality_model",
+        "dataset_metadata": {
+            "dataset_version": None,
+            "rows_count": 0,
+            "queries_count": 0,
+            "domains_count": 0,
+            "categories_count": 0,
+            "cities_count": 0,
+            "failure_rate": None,
+            "query_coverage_ratio": None,
+            "attempted_query_coverage_ratio": None,
+            "manifest_generated_at": None,
+        },
     }
 
 
@@ -363,17 +422,23 @@ def _ensure_artifact_compatibility(payload: dict[str, object]) -> dict[str, obje
 
     metrics = payload.get("metrics")
     normalized_metrics = metrics if isinstance(metrics, dict) else {}
+    dataset_metadata = _normalize_dataset_metadata(payload, normalized_metrics)
     return {
         "model": model,
         "metrics": normalized_metrics,
+        "metrics_summary": _build_metrics_summary(normalized_metrics),
         "feature_columns": FEATURE_COLUMNS,
         "trained_at": payload.get("trained_at"),
+        "published_at": payload.get("published_at") or payload.get("trained_at"),
         "source": payload.get("source", "local_dataset"),
         "model_type": payload.get("model_type", model.__class__.__name__),
-        "rows_count": int(payload.get("rows_count") or normalized_metrics.get("rows_count") or 0),
-        "queries_count": int(payload.get("queries_count") or 0),
-        "domains_count": int(payload.get("domains_count") or 0),
-        "dataset_version": payload.get("dataset_version"),
+        "rows_count": int(dataset_metadata["rows_count"]),
+        "queries_count": int(dataset_metadata["queries_count"]),
+        "domains_count": int(dataset_metadata["domains_count"]),
+        "dataset_version": dataset_metadata["dataset_version"],
+        "artifact_version": payload.get("artifact_version") or dataset_metadata["dataset_version"] or "unversioned",
+        "artifact_family": payload.get("artifact_family") or DEFAULT_MODEL_PATH.stem,
+        "dataset_metadata": dataset_metadata,
     }
 
 
@@ -404,12 +469,25 @@ def get_model_artifact(model_path: str | Path | None = None) -> dict[str, object
 
 
 def _build_model_info(artifact: dict[str, object]) -> dict[str, object]:
+    dataset_metadata = artifact.get("dataset_metadata") if isinstance(artifact.get("dataset_metadata"), dict) else {}
     return {
         "source": artifact.get("source", "unknown"),
         "model_type": artifact.get("model_type", artifact["model"].__class__.__name__),
         "trained_at": artifact.get("trained_at"),
-        "dataset_rows": int(artifact.get("rows_count") or 0),
-        "dataset_version": artifact.get("dataset_version"),
+        "published_at": artifact.get("published_at"),
+        "artifact_version": artifact.get("artifact_version"),
+        "artifact_family": artifact.get("artifact_family"),
+        "dataset_version": dataset_metadata.get("dataset_version") or artifact.get("dataset_version"),
+        "dataset_rows": int(dataset_metadata.get("rows_count") or artifact.get("rows_count") or 0),
+        "dataset_queries": int(dataset_metadata.get("queries_count") or artifact.get("queries_count") or 0),
+        "dataset_domains": int(dataset_metadata.get("domains_count") or artifact.get("domains_count") or 0),
+        "dataset_categories": int(dataset_metadata.get("categories_count") or 0),
+        "dataset_cities": int(dataset_metadata.get("cities_count") or 0),
+        "dataset_failure_rate": dataset_metadata.get("failure_rate"),
+        "dataset_query_coverage_ratio": dataset_metadata.get("query_coverage_ratio"),
+        "dataset_attempted_query_coverage_ratio": dataset_metadata.get("attempted_query_coverage_ratio"),
+        "dataset_manifest_generated_at": dataset_metadata.get("manifest_generated_at"),
+        "metrics_summary": artifact.get("metrics_summary") if isinstance(artifact.get("metrics_summary"), dict) else {},
     }
 
 
@@ -630,4 +708,6 @@ def train_and_predict(
         "source": str(model_info["source"]),
         "model_info": model_info,
     }
+
+
 

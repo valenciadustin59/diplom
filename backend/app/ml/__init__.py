@@ -63,12 +63,20 @@ _QUERY_SEED_EXPORTS = {
 }
 
 _PUBLISH_EXPORTS = {
+    "ARTIFACTS_DIR",
     "DEFAULT_PRIMARY_DATASET_PATH",
     "DEFAULT_PRIMARY_MANIFEST_PATH",
+    "VERSIONED_ARTIFACTS_DIR",
+    "build_artifact_metadata_path",
+    "build_artifact_public_metadata",
+    "build_dataset_metadata",
+    "build_primary_artifact_version",
     "build_primary_dataset_version",
+    "build_versioned_artifact_path",
     "ensure_manifest_ready",
     "load_training_manifest",
     "publish_primary_model",
+    "write_artifact_public_metadata",
 }
 
 _EVALUATE_EXPORTS = {"evaluate_candidate_models"}

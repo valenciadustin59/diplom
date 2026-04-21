@@ -323,3 +323,32 @@ Key metrics to watch before publish:
 - `RMSE`
 
 Use this step before `python -m app.ml.publish` when you want to validate that the next candidate is not weaker than the currently published primary artifact.
+
+## Artifact versioning and runtime metadata
+
+Published primary models now produce two artifact forms:
+
+- `artifacts\page_quality_model.pkl` — current runtime alias used by the scoring pipeline;
+- `artifacts\versions\page_quality_model--<artifact_version>.pkl` — immutable versioned release copy.
+
+Each published artifact also has a public JSON sidecar:
+
+- `artifacts\page_quality_model.metadata.json`
+- `artifacts\versions\page_quality_model--<artifact_version>.metadata.json`
+
+The runtime `score_breakdown.model_info` now exposes:
+
+- `artifact_version`
+- `artifact_family`
+- `trained_at`
+- `published_at`
+- `dataset_version`
+- `dataset_rows`, `dataset_queries`, `dataset_domains`
+- `dataset_categories`, `dataset_cities`
+- `dataset_failure_rate`
+- `dataset_query_coverage_ratio`
+- `dataset_attempted_query_coverage_ratio`
+- `dataset_manifest_generated_at`
+- `metrics_summary`
+
+This makes the active scoring model traceable in runtime: you can see exactly which artifact version is active, what dataset coverage it was trained on and what the key validation metrics were at publish time.
