@@ -352,3 +352,4 @@ The runtime `score_breakdown.model_info` now exposes:
 - `metrics_summary`
 
 This makes the active scoring model traceable in runtime: you can see exactly which artifact version is active, what dataset coverage it was trained on and what the key validation metrics were at publish time.
+- [docs/ml_methodology_appendix.md](./docs/ml_methodology_appendix.md) - ML methodology, dataset design, evaluation and known limitations for diploma appendix

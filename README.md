@@ -163,3 +163,4 @@ npm run build
 - [backend/README.md](./backend/README.md) — backend-specific команды, training pipeline и ML workflow
 - [AGENTS.md](./AGENTS.md) — operational instructions для агентов и разработчиков
 - [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md) — roadmap и GitHub backlog
+- [backend/docs/ml_methodology_appendix.md](./backend/docs/ml_methodology_appendix.md) - appendix-ready description of ML methodology, evaluation and limitations
