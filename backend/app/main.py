@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes.audits import router as audits_router
+from app.api.routes.health import router as health_router
 from app.config import get_settings
 from app.db import init_db
 
@@ -26,10 +27,7 @@ def create_application() -> FastAPI:
         allow_headers=["*"],
     )
     app.include_router(audits_router)
-
-    @app.get("/health", tags=["health"])
-    def healthcheck() -> dict[str, str]:
-        return {"status": "ok"}
+    app.include_router(health_router)
 
     return app
 

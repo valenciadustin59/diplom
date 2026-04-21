@@ -69,6 +69,25 @@ python -m uvicorn app.main:app --reload
 
 API будет доступен на `http://127.0.0.1:8000`.
 
+## Health and readiness
+
+Backend теперь различает liveness и настоящую readiness distributed stack:
+
+- `GET /health` - legacy совместимый минимальный healthcheck, возвращает только `{"status":"ok"}`
+- `GET /health/live` - liveness процесса API, без проверки внешних зависимостей
+- `GET /health/ready` - readiness всего backend/runtime-контура, включая зависимости распределённого пайплайна
+
+`/health/ready` проверяет:
+
+- `database` - SQLAlchemy connection и `SELECT 1`
+- `redis` - broker ping через `Redis.from_url(...).ping()`
+- `celery_workers` - отвечает ли хотя бы один worker и покрыты ли все expected audit queues
+- `serp` - доступен ли `SearxNG JSON API`, если `SERP_PROVIDER=searxng`
+
+Когда все обязательные компоненты доступны, endpoint возвращает `200` и `status=ready`. Если Redis недоступен, worker не отвечает или не обслуживаются все audit queues, либо недоступен обязательный `SearxNG`, endpoint возвращает `503` и `status=not_ready` с расшифровкой проблемного компонента.
+
+Это важно для текущей stage-based distributed architecture: backend считается готовым только тогда, когда он не просто запущен, а реально может dispatch'ить и выполнять audit stages по всем очередям.
+
 ## Run Celery worker
 
 ```powershell
@@ -77,6 +96,15 @@ cd backend
 ```
 
 Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен, новые аудиты будут поставлены в очередь и останутся в `queued`.
+
+Быстрая операционная проверка после старта стека:
+
+```powershell
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/live"
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/ready"
+```
+
+Если `/health/ready` возвращает `503`, в payload будет видно, какой именно компонент не готов: `redis`, `celery_workers`, `serp` или `database`.
 
 ## Distributed audit pipeline
 
