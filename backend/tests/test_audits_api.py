@@ -354,6 +354,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
         },
         'error_message': 'HTTP 403',
     }
+
 def test_create_audit_returns_scoring_failure_context(integration_client, monkeypatch):
     from app.tasks import process_audit
 
@@ -415,6 +416,77 @@ def test_create_audit_returns_scoring_failure_context(integration_client, monkey
     assert results_response.json()['error_message'] == 'model calibration failed'
     assert recommendations_response.json()['failure_context'] == expected_failure_context
     assert recommendations_response.json()['error_message'] == 'model calibration failed'
+
+
+def test_create_audit_exposes_failed_timeline_for_exception_path(integration_client, monkeypatch):
+    from app.tasks import process_audit
+
+    def inline_enqueue_ignore_failures(audit_id: str) -> None:
+        try:
+            process_audit.run(audit_id)
+        except RuntimeError:
+            pass
+
+    monkeypatch.setattr('app.api.routes.audits.enqueue_audit_processing', inline_enqueue_ignore_failures)
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'final_url': url,
+            'http_status': 200,
+            'html': '<html><body><h1>Title</h1><p>Body</p></body></html>',
+            'text': 'Title Body',
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_features',
+        lambda html, text, query: {
+            'text_length_chars': 10,
+            'query_in_text': 1,
+            'semantic_similarity': 0.81,
+        },
+    )
+
+    def fail_scoring(features):
+        raise RuntimeError('model calibration failed')
+
+    monkeypatch.setattr('app.tasks.explain_score', fail_scoring)
+
+    created = integration_client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+        },
+    )
+
+    assert created.status_code == 201
+    audit_id = created.json()['id']
+
+    events_response = integration_client.get(f'/audits/{audit_id}/events')
+
+    assert events_response.status_code == 200
+    events_payload = events_response.json()
+    assert events_payload['audit_id'] == audit_id
+    assert events_payload['processing_version'] == 1
+    assert events_payload['events'][0]['stage'] == 'pipeline'
+    assert events_payload['events'][0]['event'] == 'started'
+    assert any(
+        event['stage'] == 'scoring'
+        and event['event'] == 'failed'
+        and event['duration_ms'] is not None
+        for event in events_payload['events']
+    )
+    assert any(
+        event['stage'] == 'pipeline'
+        and event['event'] == 'failed'
+        and event['details'] is not None
+        and event['details'].get('failure_stage') == 'scoring'
+        for event in events_payload['events']
+    )
 def test_create_audit_returns_search_failure_context(integration_client, monkeypatch):
     from app.tasks import process_audit
 
