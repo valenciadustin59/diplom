@@ -18,7 +18,7 @@ from app.celery_app import (
     resolve_task_queue,
 )
 from app.db import Base
-from app.models import Audit, AuditCompetitor
+from app.models import Audit, AuditCompetitor, AuditEvent
 from app.tasks import (
     _dispatch_stage_task,
     enqueue_audit_processing,
@@ -171,6 +171,11 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-1')
         competitors = db.scalars(select(AuditCompetitor).where(AuditCompetitor.audit_id == 'audit-1')).all()
+        audit_events = db.scalars(
+            select(AuditEvent)
+            .where(AuditEvent.audit_id == 'audit-1')
+            .order_by(AuditEvent.id.asc())
+        ).all()
         assert stored is not None
         assert stored.status == 'completed_with_warnings'
         assert stored.competitor_processing_status == 'aggregated'
@@ -214,6 +219,13 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         assert len(competitors) == 2
         assert {item.status for item in competitors} == {'completed'}
         assert {item.fetch_status for item in competitors} == {'success', 'failed'}
+        assert len(audit_events) > 0
+        assert audit_events[0].stage == 'pipeline'
+        assert audit_events[0].event == 'started'
+        assert all(event.processing_version == 1 for event in audit_events)
+        assert any(event.stage == 'fetch' and event.event == 'completed' and event.duration_ms is not None for event in audit_events)
+        assert any(event.event == 'dispatched' and isinstance(event.details, dict) and event.details.get('queue') for event in audit_events)
+        assert any(event.stage == 'pipeline' and event.event == 'completed' for event in audit_events)
     log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
     assert any('step=fetch event=started' in message for message in log_messages)
     assert any('step=fetch event=completed' in message and 'status=success' in message for message in log_messages)
@@ -414,6 +426,11 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
         process_audit.run('audit-4')
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-4')
+        audit_events = db.scalars(
+            select(AuditEvent)
+            .where(AuditEvent.audit_id == 'audit-4')
+            .order_by(AuditEvent.id.asc())
+        ).all()
         assert stored is not None
         assert stored.status == 'failed'
         assert stored.error_message == 'feature extraction exploded'
@@ -435,6 +452,14 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
         assert stored.comparison_summary is None
         assert stored.recommendations is None
         assert stored.warnings == []
+        assert any(event.stage == 'features' and event.event == 'failed' and event.duration_ms is not None for event in audit_events)
+        assert any(
+            event.stage == 'pipeline'
+            and event.event == 'failed'
+            and isinstance(event.details, dict)
+            and event.details.get('failure_stage') == 'features'
+            for event in audit_events
+        )
     log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
     assert any('step=features event=started' in message for message in log_messages)
     assert any('step=features event=failed' in message and 'feature extraction exploded' in message for message in log_messages)

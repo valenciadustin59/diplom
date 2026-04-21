@@ -56,3 +56,16 @@ class AuditCompetitor(Base):
     features: Mapped[dict[str, float | int] | None] = mapped_column(JSON, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=False), nullable=False)
     updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=False), nullable=True)
+
+
+class AuditEvent(Base):
+    __tablename__ = "audit_events"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    audit_id: Mapped[str] = mapped_column(String(36), nullable=False, index=True)
+    processing_version: Mapped[int | None] = mapped_column(Integer, nullable=True, index=True)
+    stage: Mapped[str] = mapped_column(String(64), nullable=False, index=True)
+    event: Mapped[str] = mapped_column(String(32), nullable=False, index=True)
+    duration_ms: Mapped[float | None] = mapped_column(Float, nullable=True)
+    details: Mapped[dict[str, object] | None] = mapped_column(JSON, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=False), nullable=False, index=True)

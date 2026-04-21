@@ -82,6 +82,26 @@ def test_get_audit_recommendations_returns_list(client):
     assert payload['audit_id'] == audit_id
     assert payload['status'] == 'queued'
     assert payload['recommendations'] == []
+
+
+def test_get_audit_events_returns_empty_timeline_for_new_audit(client):
+    created = client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+        },
+    )
+    audit_id = created.json()['id']
+
+    response = client.get(f'/audits/{audit_id}/events')
+
+    assert response.status_code == 200
+    assert response.json() == {
+        'audit_id': audit_id,
+        'processing_version': None,
+        'events': [],
+    }
 def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integration_client, monkeypatch):
     monkeypatch.setattr(
         'app.tasks.fetch_page',
@@ -203,12 +223,15 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     status_response = integration_client.get(f'/audits/{audit_id}')
     results_response = integration_client.get(f'/audits/{audit_id}/results')
     recommendations_response = integration_client.get(f'/audits/{audit_id}/recommendations')
+    events_response = integration_client.get(f'/audits/{audit_id}/events')
     assert status_response.status_code == 200
     assert results_response.status_code == 200
     assert recommendations_response.status_code == 200
+    assert events_response.status_code == 200
     status_payload = status_response.json()
     results_payload = results_response.json()
     recommendations_payload = recommendations_response.json()
+    events_payload = events_response.json()
     assert status_payload['status'] == 'completed_with_warnings'
     assert status_payload['score'] == 77.5
     assert status_payload['comparison_summary']['competitors_found'] == 2
@@ -231,6 +254,15 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
         'failure_context': None,
         'error_message': None,
     }
+    assert events_payload['audit_id'] == audit_id
+    assert events_payload['processing_version'] == 1
+    assert len(events_payload['events']) > 0
+    assert events_payload['events'][0]['stage'] == 'pipeline'
+    assert events_payload['events'][0]['event'] == 'started'
+    assert any(event['stage'] == 'fetch' and event['event'] == 'started' for event in events_payload['events'])
+    assert any(event['stage'] == 'fetch' and event['event'] == 'completed' and event['duration_ms'] is not None for event in events_payload['events'])
+    assert any(event['event'] == 'dispatched' for event in events_payload['events'])
+    assert any(event['stage'] == 'pipeline' and event['event'] == 'completed' for event in events_payload['events'])
 def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integration_client, monkeypatch):
     monkeypatch.setattr(
         'app.tasks.fetch_page',

@@ -28,7 +28,7 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def init_db() -> None:
-    from app.models import Audit, AuditCompetitor  # noqa: F401
+    from app.models import Audit, AuditCompetitor, AuditEvent  # noqa: F401
 
     Base.metadata.create_all(bind=engine)
     _ensure_sqlite_columns()

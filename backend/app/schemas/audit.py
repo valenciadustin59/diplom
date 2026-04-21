@@ -74,3 +74,22 @@ class AuditRecommendationsRead(BaseModel):
     recommendations: list[dict[str, str]]
     failure_context: AuditFailureContextRead | None = None
     error_message: str | None = None
+
+
+class AuditEventRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    audit_id: str
+    processing_version: int | None = None
+    stage: str
+    event: str
+    duration_ms: float | None = None
+    details: dict[str, object] | None = None
+    created_at: datetime
+
+
+class AuditEventTimelineRead(BaseModel):
+    audit_id: str
+    processing_version: int | None = None
+    events: list[AuditEventRead]

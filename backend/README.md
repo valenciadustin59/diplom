@@ -309,6 +309,25 @@ Invoke-RestMethod `
   -Uri "http://127.0.0.1:8000/audits/<AUDIT_ID>/results"
 ```
 
+```powershell
+Invoke-RestMethod `
+  -Method Get `
+  -Uri "http://127.0.0.1:8000/audits/<AUDIT_ID>/events"
+```
+
+`GET /audits/{audit_id}/events` возвращает persisted timeline исполнения распределённого аудита:
+
+- stage transitions `started/completed/failed/aborted`
+- queue dispatch events для переходов между стадиями
+- `duration_ms` для завершённых и упавших шагов
+- `processing_version`, чтобы различать повторные запуски одного и того же аудита
+
+Поведение endpoint:
+
+- без query-параметров возвращается timeline последнего run этого аудита;
+- с `?processing_version=<N>` можно запросить конкретический исторический run;
+- response упорядочен по времени записи событий и подходит для построения timeline/debug UI.
+
 ## Tests
 
 ```powershell
