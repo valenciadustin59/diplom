@@ -78,6 +78,20 @@ cd backend
 
 Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен, новые аудиты будут поставлены в очередь и останутся в `queued`.
 
+## Distributed audit pipeline
+
+Аудит больше не исполняется одной длинной фоновой задачей. Runtime-пайплайн разрезан на отдельные stage tasks, чтобы их можно было независимо маршрутизировать, ретраить и масштабировать:
+
+- `app.process_audit` - kickoff и перевод аудита в `processing`
+- `app.process_audit_fetch_target` - загрузка целевой страницы
+- `app.process_audit_extract_features` - извлечение признаков
+- `app.process_audit_score_target` - scoring через rule-based + ML breakdown
+- `app.process_audit_collect_competitors` - сбор и сравнение конкурентов
+- `app.process_audit_generate_recommendations` - генерация рекомендаций
+- `app.process_audit_finalize` - финализация результата и warning-агрегация
+
+Если Redis/Celery доступны, каждый stage dispatch'ится как отдельная задача. Если брокер недоступен, backend сохраняет ту же бизнес-логику и исполняет стадии inline, что позволяет локально разрабатывать и тестировать пайплайн без отдельного worker-процесса.
+
 ## Env
 
 Скопируйте [`.env.example`](./.env.example) в `backend/.env`.

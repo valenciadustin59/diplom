@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 import logging
 from datetime import UTC, datetime
 import pytest
@@ -6,7 +6,16 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 from app.db import Base
 from app.models import Audit
-from app.tasks import enqueue_audit_processing, process_audit
+from app.tasks import (
+    enqueue_audit_processing,
+    process_audit,
+    process_audit_collect_competitors,
+    process_audit_extract_features,
+    process_audit_fetch_target,
+    process_audit_finalize,
+    process_audit_generate_recommendations,
+    process_audit_score_target,
+)
 def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     db_path = tmp_path / 'pipeline.db'
     engine = create_engine(
@@ -158,8 +167,18 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         ]
         assert stored.warnings is not None
         assert len(stored.warnings) == 2
-        assert '1' in stored.warnings[0]
-        assert '2' in stored.warnings[0]
+        expected_warning_prefix = (
+            r"\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043e 1 \u0438\u0437 2"
+            .encode('ascii')
+            .decode('unicode_escape')
+        )
+        expected_warning_subject = (
+            r"\u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u043d\u044b\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446"
+            .encode('ascii')
+            .decode('unicode_escape')
+        )
+        assert stored.warnings[0].startswith(expected_warning_prefix)
+        assert expected_warning_subject in stored.warnings[0]
         assert stored.updated_at is not None
     log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
     assert any('step=fetch event=started' in message for message in log_messages)
@@ -408,3 +427,13 @@ def test_enqueue_audit_processing_falls_back_when_celery_enqueue_fails(monkeypat
         ('process_audit', ('audit-queue',), True),
         ('started', (), True),
     ]
+
+
+def test_stage_tasks_are_registered_for_distributed_execution():
+    assert process_audit.name == 'app.process_audit'
+    assert process_audit_fetch_target.name == 'app.process_audit_fetch_target'
+    assert process_audit_extract_features.name == 'app.process_audit_extract_features'
+    assert process_audit_score_target.name == 'app.process_audit_score_target'
+    assert process_audit_collect_competitors.name == 'app.process_audit_collect_competitors'
+    assert process_audit_generate_recommendations.name == 'app.process_audit_generate_recommendations'
+    assert process_audit_finalize.name == 'app.process_audit_finalize'
