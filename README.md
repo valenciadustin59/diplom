@@ -22,11 +22,11 @@
 - `D4` — retry-safe / version-aware orchestration
 - `D5` — `health/live` и `health/ready`
 - `D6` — `health/metrics` и runtime telemetry
+- `D7` — persistent audit event log и stage duration telemetry
+- `D8` — audit timeline diagnostics API и critical-path breakdown
 
 Ещё предстоит:
 
-- `D7` — persistent audit event log и stage duration telemetry
-- `D8` — audit timeline diagnostics API и critical-path breakdown
 - `D9` — queue pressure snapshots и detector stuck/backlogged execution
 - `D10` — admission control при деградированном runtime capacity
 - `D11` — worker topology profiles и queue affinity validation

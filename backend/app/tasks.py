@@ -372,6 +372,20 @@ def _summarize_recommendations(recommendations: list[dict[str, str]]) -> dict[st
     return {"recommendations_count": len(recommendations)}
 
 
+def _summarize_finalize_result(result: dict[str, object]) -> dict[str, object]:
+    recommendations = result.get("recommendations") if isinstance(result, dict) else None
+    warnings = result.get("warnings") if isinstance(result, dict) else None
+    comparison_summary = result.get("comparison_summary") if isinstance(result, dict) else None
+    score = result.get("score") if isinstance(result, dict) else None
+    return {
+        "score": score,
+        "competitors_found": comparison_summary.get("competitors_found") if isinstance(comparison_summary, dict) else None,
+        "competitors_failed": comparison_summary.get("competitors_failed") if isinstance(comparison_summary, dict) else None,
+        "recommendations_count": len(recommendations) if isinstance(recommendations, list) else None,
+        "warnings_count": len(warnings) if isinstance(warnings, list) else None,
+    }
+
+
 def _summarize_competitor_pages(pages: list[dict[str, object]]) -> dict[str, object]:
     return {"competitors_found": len(pages), "competitor_tasks_planned": len(pages)}
 
@@ -390,6 +404,23 @@ def _serialize_audit_competitor(competitor: AuditCompetitor) -> dict[str, object
         "fetch_error_message": competitor.fetch_error_message,
         "score": competitor.score,
         "features": competitor.features,
+    }
+
+
+def _build_competitor_aggregation_result(
+    *,
+    user_features: dict[str, float | int],
+    user_score: float,
+    competitors: list[AuditCompetitor],
+) -> dict[str, object]:
+    competitor_results = [_serialize_audit_competitor(item) for item in competitors]
+    return {
+        "competitor_results": competitor_results,
+        "comparison_summary": build_comparison_summary(
+            user_features=user_features,
+            user_score=user_score,
+            competitor_results=competitor_results,
+        ),
     }
 
 
@@ -1288,25 +1319,22 @@ def process_audit_aggregate_competitors(audit_id: str, processing_version: int) 
             .where(AuditCompetitor.audit_id == audit_id)
             .order_by(AuditCompetitor.serp_rank.asc(), AuditCompetitor.created_at.asc())
         ).all()
-        competitor_results = [_serialize_audit_competitor(item) for item in competitors]
-        audit.competitor_results = competitor_results
-        audit.comparison_summary = build_comparison_summary(
-            user_features=audit.features,
-            user_score=float(audit.score),
-            competitor_results=competitor_results,
-        )
-        audit.competitor_processing_status = COMPETITOR_PROCESSING_AGGREGATED
-        _set_next_orchestration_stage(audit, RECOMMENDATIONS_STAGE)
-
-        _log_audit_step(
-            logging.INFO,
+        aggregation_result = _run_logged_step(
             audit_id,
             COMPETITOR_AGGREGATION_STAGE,
-            "completed",
+            lambda: _build_competitor_aggregation_result(
+                user_features=audit.features,
+                user_score=float(audit.score),
+                competitors=competitors,
+            ),
             processing_version=processing_version,
             event_buffer=event_buffer,
-            **_summarize_competitors(competitor_results),
+            summarize_result=lambda payload: _summarize_competitors(payload["competitor_results"]),
         )
+        audit.competitor_results = aggregation_result["competitor_results"]
+        audit.comparison_summary = aggregation_result["comparison_summary"]
+        audit.competitor_processing_status = COMPETITOR_PROCESSING_AGGREGATED
+        _set_next_orchestration_stage(audit, RECOMMENDATIONS_STAGE)
         _flush_audit_events(db, event_buffer)
         db.commit()
     except Exception as exc:
@@ -1394,14 +1422,26 @@ def process_audit_finalize(audit_id: str, processing_version: int) -> dict[str, 
         if audit.score is None or not isinstance(audit.comparison_summary, dict):
             raise RuntimeError("Audit summary is incomplete and cannot be finalized")
 
-        recommendations = audit.recommendations or []
-        warnings = _build_completion_warnings(audit.comparison_summary)
+        finalize_payload = _run_logged_step(
+            audit_id,
+            FINALIZE_STAGE,
+            lambda: {
+                "recommendations": audit.recommendations or [],
+                "warnings": _build_completion_warnings(audit.comparison_summary),
+                "comparison_summary": audit.comparison_summary,
+                "score": float(audit.score),
+            },
+            processing_version=processing_version,
+            event_buffer=event_buffer,
+            summarize_result=_summarize_finalize_result,
+        )
+        recommendations = list(finalize_payload["recommendations"])
+        warnings = list(finalize_payload["warnings"])
         final_status = _mark_audit_completed(
             audit,
             recommendations=recommendations,
             warnings=warnings,
         )
-        db.commit()
         _log_audit_step(
             logging.INFO,
             audit_id,

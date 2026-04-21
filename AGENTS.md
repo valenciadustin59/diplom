@@ -46,11 +46,11 @@
 - `D4` — retry-safe / version-aware orchestration
 - `D5` — `health/live` и `health/ready` для backend/worker stack
 - `D6` — `health/metrics` и runtime telemetry по очередям, worker activity и pipeline counters
+- `D7` — persistent audit event log и stage duration telemetry
+- `D8` — audit timeline diagnostics API и critical-path/fan-out breakdown
 
 Следующие задачи:
 
-- GitHub issue `#26` — `D7: Persist structured audit execution events and stage duration telemetry`
-- GitHub issue `#30` — `D8: Add audit timeline diagnostics API and critical-path breakdown`
 - GitHub issue `#28` — `D9: Add queue pressure snapshots and stuck/backlogged execution detector`
 - GitHub issue `#31` — `D10: Introduce admission control and scheduling guards for degraded runtime capacity`
 - GitHub issue `#27` — `D11: Add worker topology profiles and queue-affinity validation`

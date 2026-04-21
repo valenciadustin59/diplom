@@ -328,6 +328,15 @@ Invoke-RestMethod `
 - с `?processing_version=<N>` можно запросить конкретический исторический run;
 - response упорядочен по времени записи событий и подходит для построения timeline/debug UI.
 
+`GET /audits/{audit_id}/events/diagnostics` строит поверх event log уже агрегированную диагностику конкретного run:
+
+- stage breakdown по `fetch/features/scoring/competitors/...`;
+- terminal status run и общее `total_duration_ms`;
+- critical-path breakdown с учётом fan-out стадии `competitor_page`;
+- отдельный `fan_out` summary для distributed subtask execution.
+
+Endpoint использует persisted D7 events, а не scraping runtime logs, поэтому подходит для исторического разбора уже завершённых запусков.
+
 ## Tests
 
 ```powershell

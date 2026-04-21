@@ -93,3 +93,57 @@ class AuditEventTimelineRead(BaseModel):
     audit_id: str
     processing_version: int | None = None
     events: list[AuditEventRead]
+
+
+class AuditTimelineStageDiagnosticsRead(BaseModel):
+    stage: str
+    dispatch_count: int
+    started_count: int
+    completed_count: int
+    failed_count: int
+    aborted_count: int
+    terminal_count: int
+    total_duration_ms: float | None = None
+    average_duration_ms: float | None = None
+    max_duration_ms: float | None = None
+    critical_path_mode: str
+    critical_path_duration_ms: float | None = None
+    first_event_at: datetime | None = None
+    last_event_at: datetime | None = None
+    latest_event: str | None = None
+
+
+class AuditTimelineCriticalPathStageRead(BaseModel):
+    stage: str
+    contribution_duration_ms: float | None = None
+    mode: str
+    terminal_count: int
+
+
+class AuditTimelineFanOutRead(BaseModel):
+    stage: str
+    dispatch_count: int
+    started_count: int
+    terminal_count: int
+    in_flight_count: int
+    total_duration_ms: float | None = None
+    average_duration_ms: float | None = None
+    max_duration_ms: float | None = None
+    critical_path_duration_ms: float | None = None
+
+
+class AuditTimelineDiagnosticsRead(BaseModel):
+    audit_id: str
+    processing_version: int | None = None
+    status: str
+    event_count: int
+    dispatch_count: int
+    started_at: datetime | None = None
+    finished_at: datetime | None = None
+    total_duration_ms: float | None = None
+    terminal_stage: str | None = None
+    terminal_event: str | None = None
+    critical_path_duration_ms: float | None = None
+    critical_path_stages: list[AuditTimelineCriticalPathStageRead]
+    stage_breakdown: list[AuditTimelineStageDiagnosticsRead]
+    fan_out: AuditTimelineFanOutRead | None = None

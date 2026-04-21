@@ -102,6 +102,37 @@ def test_get_audit_events_returns_empty_timeline_for_new_audit(client):
         'processing_version': None,
         'events': [],
     }
+
+
+def test_get_audit_timeline_diagnostics_returns_empty_timeline_for_new_audit(client):
+    created = client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+        },
+    )
+    audit_id = created.json()['id']
+
+    response = client.get(f'/audits/{audit_id}/events/diagnostics')
+
+    assert response.status_code == 200
+    assert response.json() == {
+        'audit_id': audit_id,
+        'processing_version': None,
+        'status': 'queued',
+        'event_count': 0,
+        'dispatch_count': 0,
+        'started_at': None,
+        'finished_at': None,
+        'total_duration_ms': None,
+        'terminal_stage': None,
+        'terminal_event': None,
+        'critical_path_duration_ms': None,
+        'critical_path_stages': [],
+        'stage_breakdown': [],
+        'fan_out': None,
+    }
 def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integration_client, monkeypatch):
     monkeypatch.setattr(
         'app.tasks.fetch_page',
@@ -263,6 +294,36 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert any(event['stage'] == 'fetch' and event['event'] == 'completed' and event['duration_ms'] is not None for event in events_payload['events'])
     assert any(event['event'] == 'dispatched' for event in events_payload['events'])
     assert any(event['stage'] == 'pipeline' and event['event'] == 'completed' for event in events_payload['events'])
+
+    diagnostics_response = integration_client.get(f'/audits/{audit_id}/events/diagnostics')
+
+    assert diagnostics_response.status_code == 200
+    diagnostics_payload = diagnostics_response.json()
+    stage_breakdown = {item['stage']: item for item in diagnostics_payload['stage_breakdown']}
+    critical_path_stages = {item['stage']: item for item in diagnostics_payload['critical_path_stages']}
+    assert diagnostics_payload['audit_id'] == audit_id
+    assert diagnostics_payload['processing_version'] == 1
+    assert diagnostics_payload['status'] == 'completed_with_warnings'
+    assert diagnostics_payload['event_count'] == len(events_payload['events'])
+    assert diagnostics_payload['dispatch_count'] >= 1
+    assert diagnostics_payload['total_duration_ms'] is not None
+    assert diagnostics_payload['critical_path_duration_ms'] is not None
+    assert diagnostics_payload['terminal_stage'] == 'pipeline'
+    assert diagnostics_payload['terminal_event'] == 'completed'
+    assert stage_breakdown['fetch']['completed_count'] == 1
+    assert stage_breakdown['fetch']['critical_path_duration_ms'] is not None
+    assert stage_breakdown['competitor_page']['started_count'] == 2
+    assert stage_breakdown['competitor_page']['completed_count'] == 2
+    assert stage_breakdown['competitor_page']['critical_path_mode'] == 'fan_out_max'
+    assert stage_breakdown['competitor_aggregation']['completed_count'] == 1
+    assert stage_breakdown['finalize']['completed_count'] == 1
+    assert diagnostics_payload['fan_out'] is not None
+    assert diagnostics_payload['fan_out']['stage'] == 'competitor_page'
+    assert diagnostics_payload['fan_out']['terminal_count'] == 2
+    assert diagnostics_payload['fan_out']['critical_path_duration_ms'] == stage_breakdown['competitor_page']['critical_path_duration_ms']
+    assert 'fetch' in critical_path_stages
+    assert 'competitor_page' in critical_path_stages
+    assert 'finalize' in critical_path_stages
 def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integration_client, monkeypatch):
     monkeypatch.setattr(
         'app.tasks.fetch_page',
@@ -487,6 +548,24 @@ def test_create_audit_exposes_failed_timeline_for_exception_path(integration_cli
         and event['details'].get('failure_stage') == 'scoring'
         for event in events_payload['events']
     )
+
+    diagnostics_response = integration_client.get(f'/audits/{audit_id}/events/diagnostics')
+
+    assert diagnostics_response.status_code == 200
+    diagnostics_payload = diagnostics_response.json()
+    stage_breakdown = {item['stage']: item for item in diagnostics_payload['stage_breakdown']}
+    critical_path_stages = {item['stage']: item for item in diagnostics_payload['critical_path_stages']}
+    assert diagnostics_payload['audit_id'] == audit_id
+    assert diagnostics_payload['processing_version'] == 1
+    assert diagnostics_payload['status'] == 'failed'
+    assert diagnostics_payload['terminal_stage'] == 'pipeline'
+    assert diagnostics_payload['terminal_event'] == 'failed'
+    assert diagnostics_payload['critical_path_duration_ms'] is not None
+    assert stage_breakdown['fetch']['completed_count'] == 1
+    assert stage_breakdown['features']['completed_count'] == 1
+    assert stage_breakdown['scoring']['failed_count'] == 1
+    assert stage_breakdown['pipeline']['failed_count'] == 1
+    assert 'scoring' in critical_path_stages
 def test_create_audit_returns_search_failure_context(integration_client, monkeypatch):
     from app.tasks import process_audit
 

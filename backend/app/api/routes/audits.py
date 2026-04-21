@@ -6,11 +6,13 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_db_session
-from app.models import Audit, AuditEvent
+from app.audit_diagnostics import build_audit_timeline_diagnostics, load_audit_events
+from app.models import Audit
 from app.schemas.audit import (
     AuditCreate,
     AuditEventRead,
     AuditEventTimelineRead,
+    AuditTimelineDiagnosticsRead,
     AuditRead,
     AuditRecommendationsRead,
     AuditResultsRead,
@@ -110,28 +112,25 @@ def get_audit_events_endpoint(
     db: Session = Depends(get_db_session),
 ) -> AuditEventTimelineRead:
     audit = _get_audit_or_404(db, audit_id)
-    statement = (
-        select(AuditEvent)
-        .where(AuditEvent.audit_id == audit_id)
-        .order_by(AuditEvent.id.asc())
-    )
-    effective_processing_version = processing_version
-    if effective_processing_version is not None:
-        statement = statement.where(AuditEvent.processing_version == effective_processing_version)
-    else:
-        latest_processing_version = db.scalar(
-            select(AuditEvent.processing_version)
-            .where(AuditEvent.audit_id == audit_id, AuditEvent.processing_version.is_not(None))
-            .order_by(AuditEvent.processing_version.desc(), AuditEvent.id.desc())
-            .limit(1)
-        )
-        if latest_processing_version is not None:
-            effective_processing_version = int(latest_processing_version)
-            statement = statement.where(AuditEvent.processing_version == effective_processing_version)
-
-    events = db.scalars(statement).all()
+    effective_processing_version, events = load_audit_events(db, audit_id, processing_version)
     return AuditEventTimelineRead(
         audit_id=audit.id,
         processing_version=effective_processing_version,
         events=[AuditEventRead.model_validate(event) for event in events],
+    )
+
+
+@router.get("/audits/{audit_id}/events/diagnostics", response_model=AuditTimelineDiagnosticsRead)
+def get_audit_timeline_diagnostics_endpoint(
+    audit_id: str,
+    processing_version: int | None = None,
+    db: Session = Depends(get_db_session),
+) -> AuditTimelineDiagnosticsRead:
+    audit = _get_audit_or_404(db, audit_id)
+    effective_processing_version, events = load_audit_events(db, audit_id, processing_version)
+    return build_audit_timeline_diagnostics(
+        audit_id=audit.id,
+        audit_status=audit.status,
+        processing_version=effective_processing_version,
+        events=events,
     )
