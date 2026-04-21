@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
@@ -40,13 +40,13 @@ def prepare_training_data(
     return x, y, rows
 
 
-def _rows_to_matrix(rows: list[dict[str, str]]) -> tuple[list[list[float]], list[float]]:
+def rows_to_matrix(rows: list[dict[str, str]]) -> tuple[list[list[float]], list[float]]:
     x = [[float(row.get(feature_name, 0.0) or 0.0) for feature_name in FEATURE_COLUMNS] for row in rows]
     y = [float(row["target_score"]) for row in rows]
     return x, y
 
 
-def _group_split_rows(
+def split_dataset_rows(
     rows: list[dict[str, str]],
     test_size: float,
     random_state: int,
@@ -101,7 +101,7 @@ def _top_3_hit_rate(query_rows: list[dict[str, Any]]) -> float:
     return 1.0 if predicted_urls & actual_urls else 0.0
 
 
-def _ranking_metrics(validation_rows: list[dict[str, str]], predictions: list[float]) -> dict[str, float]:
+def ranking_metrics(validation_rows: list[dict[str, str]], predictions: list[float]) -> dict[str, float]:
     grouped_rows: dict[str, list[dict[str, Any]]] = {}
     for row, prediction in zip(validation_rows, predictions, strict=False):
         enriched_row: dict[str, Any] = dict(row)
@@ -131,14 +131,14 @@ def _ranking_metrics(validation_rows: list[dict[str, str]], predictions: list[fl
     }
 
 
-def _evaluate_model(model: Any, validation_rows: list[dict[str, str]]) -> dict[str, float]:
-    x_validation, y_validation = _rows_to_matrix(validation_rows)
+def evaluate_model_rows(model: Any, validation_rows: list[dict[str, str]]) -> dict[str, float]:
+    x_validation, y_validation = rows_to_matrix(validation_rows)
     predictions = [float(value) for value in model.predict(x_validation)]
     metrics = {
         "rmse": round(_rmse(y_validation, predictions), 6),
         "mae": round(float(mean_absolute_error(y_validation, predictions)), 6),
     }
-    metrics.update(_ranking_metrics(validation_rows, predictions))
+    metrics.update(ranking_metrics(validation_rows, predictions))
     return metrics
 
 
@@ -147,7 +147,7 @@ def _train_random_forest(
     validation_rows: list[dict[str, str]],
     random_state: int,
 ) -> tuple[Any, dict[str, float]]:
-    x_train, y_train = _rows_to_matrix(train_rows)
+    x_train, y_train = rows_to_matrix(train_rows)
     model = RandomForestRegressor(
         n_estimators=400,
         max_depth=14,
@@ -157,7 +157,7 @@ def _train_random_forest(
         n_jobs=-1,
     )
     model.fit(x_train, y_train)
-    return model, _evaluate_model(model, validation_rows)
+    return model, evaluate_model_rows(model, validation_rows)
 
 
 def _train_catboost(
@@ -170,7 +170,7 @@ def _train_catboost(
     except ImportError:
         return None, {}, "catboost_not_installed"
 
-    x_train, y_train = _rows_to_matrix(train_rows)
+    x_train, y_train = rows_to_matrix(train_rows)
     model = CatBoostRegressor(
         loss_function="RMSE",
         depth=6,
@@ -180,14 +180,14 @@ def _train_catboost(
         verbose=False,
     )
     model.fit(x_train, y_train)
-    return model, _evaluate_model(model, validation_rows), None
+    return model, evaluate_model_rows(model, validation_rows), None
 
 
-def _should_benchmark_catboost(metrics: dict[str, float]) -> bool:
+def should_benchmark_catboost(metrics: dict[str, float]) -> bool:
     return float(metrics.get("mae", 0.0)) > 12.0 or float(metrics.get("spearman_mean", 0.0)) < 0.45
 
 
-def _candidate_sort_key(candidate: dict[str, Any]) -> tuple[float, float, float, float]:
+def candidate_sort_key(candidate: dict[str, Any]) -> tuple[float, float, float, float]:
     metrics = candidate["metrics"]
     return (
         float(metrics.get("spearman_mean", 0.0)),
@@ -197,27 +197,17 @@ def _candidate_sort_key(candidate: dict[str, Any]) -> tuple[float, float, float,
     )
 
 
-def train_quality_model(
-    dataset_path: str | Path = DEFAULT_DATASET_PATH,
-    model_path: str | Path = DEFAULT_MODEL_PATH,
-    test_size: float = 0.2,
-    random_state: int = 42,
-    dataset_version: str | None = None,
-) -> dict[str, object]:
-    _x, _y, rows = prepare_training_data(dataset_path)
-    if len(rows) < 4:
-        raise ValueError("At least 4 dataset rows are required for training")
-
-    train_rows, validation_rows, split_metadata = _group_split_rows(rows, test_size=test_size, random_state=random_state)
-    if not train_rows or not validation_rows:
-        raise ValueError("Training split produced an empty train or validation set")
-
+def train_candidate_models(
+    train_rows: list[dict[str, str]],
+    validation_rows: list[dict[str, str]],
+    random_state: int,
+) -> tuple[list[dict[str, Any]], dict[str, object]]:
     candidates: list[dict[str, Any]] = []
     rf_model, rf_metrics = _train_random_forest(train_rows, validation_rows, random_state=random_state)
     candidates.append({"model": rf_model, "model_type": "RandomForestRegressor", "metrics": rf_metrics})
 
     benchmark: dict[str, object] = {"enabled": False}
-    if _should_benchmark_catboost(rf_metrics):
+    if should_benchmark_catboost(rf_metrics):
         benchmark["enabled"] = True
         catboost_model, catboost_metrics, catboost_error = _train_catboost(
             train_rows,
@@ -235,8 +225,35 @@ def train_quality_model(
             benchmark["catboost_metrics"] = catboost_metrics
         else:
             benchmark["catboost_error"] = catboost_error
+    return candidates, benchmark
 
-    best_candidate = max(candidates, key=_candidate_sort_key)
+
+def select_best_candidate(candidates: list[dict[str, Any]]) -> dict[str, Any]:
+    return max(candidates, key=candidate_sort_key)
+
+
+def train_quality_model(
+    dataset_path: str | Path = DEFAULT_DATASET_PATH,
+    model_path: str | Path = DEFAULT_MODEL_PATH,
+    test_size: float = 0.2,
+    random_state: int = 42,
+    dataset_version: str | None = None,
+) -> dict[str, object]:
+    _x, _y, rows = prepare_training_data(dataset_path)
+    if len(rows) < 4:
+        raise ValueError("At least 4 dataset rows are required for training")
+
+    train_rows, validation_rows, split_metadata = split_dataset_rows(rows, test_size=test_size, random_state=random_state)
+    if not train_rows or not validation_rows:
+        raise ValueError("Training split produced an empty train or validation set")
+
+    candidates, benchmark = train_candidate_models(
+        train_rows,
+        validation_rows,
+        random_state=random_state,
+    )
+
+    best_candidate = select_best_candidate(candidates)
     rows_count = len(rows)
     queries_count = len({str(row.get("query") or "") for row in rows})
     domains_count = len({str(row.get("domain") or "") for row in rows})

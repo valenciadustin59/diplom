@@ -295,3 +295,31 @@ Expected runtime effect:
 - `score_breakdown.model_info.source` becomes `local_dataset`;
 - `score_breakdown.model_info.dataset_version` points to the published RU-commercial snapshot version;
 - the scoring pipeline no longer depends on the bootstrap fallback when the published artifact is present.
+
+## Offline model evaluation
+
+Before publishing a new artifact, run offline evaluation on the same dataset split and compare candidate models against the currently published runtime model:
+
+```powershell
+cd backend
+.venv\Scripts\python.exe -m app.ml.evaluate `
+  --dataset data\ru_commercial_dataset.csv `
+  --reference-model artifacts\page_quality_model.pkl
+```
+
+What the offline evaluation reports:
+
+- query-grouped train/validation split metadata;
+- ranking-aware metrics for each newly trained candidate model;
+- the best candidate on the validation set;
+- optional comparison against the currently published runtime artifact on the same validation rows.
+
+Key metrics to watch before publish:
+
+- `Spearman mean`
+- `NDCG@10`
+- `Top-3 hit rate`
+- `MAE`
+- `RMSE`
+
+Use this step before `python -m app.ml.publish` when you want to validate that the next candidate is not weaker than the currently published primary artifact.

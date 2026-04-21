@@ -9,6 +9,7 @@ from app.ml.model import (
     create_dataset,
     explain_score,
     get_model_artifact,
+    load_model_artifact,
     load_saved_model,
     predict_score,
     save_model,
@@ -32,7 +33,16 @@ _DATASET_BUILDER_EXPORTS = {
     "rank_to_score",
 }
 
-_TRAIN_EXPORTS = {"load_dataset_rows", "prepare_training_data", "train_quality_model"}
+_TRAIN_EXPORTS = {
+    "evaluate_model_rows",
+    "load_dataset_rows",
+    "prepare_training_data",
+    "rows_to_matrix",
+    "select_best_candidate",
+    "split_dataset_rows",
+    "train_candidate_models",
+    "train_quality_model",
+}
 
 _DATASET_QUALITY_EXPORTS = {
     "DatasetQualityThresholds",
@@ -61,6 +71,8 @@ _PUBLISH_EXPORTS = {
     "publish_primary_model",
 }
 
+_EVALUATE_EXPORTS = {"evaluate_candidate_models"}
+
 
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
@@ -83,6 +95,10 @@ def __getattr__(name: str):
         module = importlib.import_module("app.ml.publish")
         return getattr(module, name)
 
+    if name in _EVALUATE_EXPORTS:
+        module = importlib.import_module("app.ml.evaluate")
+        return getattr(module, name)
+
     raise AttributeError(name)
 
 
@@ -95,6 +111,7 @@ __all__ = [
     "create_dataset",
     "explain_score",
     "get_model_artifact",
+    "load_model_artifact",
     "load_saved_model",
     "predict_score",
     "save_model",
@@ -106,4 +123,5 @@ __all__ = [
     *_DATASET_QUALITY_EXPORTS,
     *_QUERY_SEED_EXPORTS,
     *_PUBLISH_EXPORTS,
+    *_EVALUATE_EXPORTS,
 ]
