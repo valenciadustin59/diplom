@@ -52,6 +52,15 @@ _QUERY_SEED_EXPORTS = {
     "build_training_seed_rows",
 }
 
+_PUBLISH_EXPORTS = {
+    "DEFAULT_PRIMARY_DATASET_PATH",
+    "DEFAULT_PRIMARY_MANIFEST_PATH",
+    "build_primary_dataset_version",
+    "ensure_manifest_ready",
+    "load_training_manifest",
+    "publish_primary_model",
+}
+
 
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
@@ -68,6 +77,10 @@ def __getattr__(name: str):
 
     if name in _QUERY_SEED_EXPORTS:
         module = importlib.import_module("app.ml.query_seeds")
+        return getattr(module, name)
+
+    if name in _PUBLISH_EXPORTS:
+        module = importlib.import_module("app.ml.publish")
         return getattr(module, name)
 
     raise AttributeError(name)
@@ -92,4 +105,5 @@ __all__ = [
     *_TRAIN_EXPORTS,
     *_DATASET_QUALITY_EXPORTS,
     *_QUERY_SEED_EXPORTS,
+    *_PUBLISH_EXPORTS,
 ]

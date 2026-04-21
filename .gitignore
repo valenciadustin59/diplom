@@ -40,3 +40,4 @@ Thumbs.db
 
 backend/data/*.manifest.json
 !backend/data/ru_commercial_dataset.manifest.json
+!backend/artifacts/page_quality_model.pkl

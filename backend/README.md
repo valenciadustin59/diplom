@@ -270,3 +270,28 @@ Default production-like quality gates:
 - at least 20% successful seed coverage;
 - at least 5 rows per successful query on average;
 - failure rate no higher than 20%.
+
+## Primary model publish
+
+To publish the real primary artifact from the committed RU-commercial dataset snapshot, run:
+
+```powershell
+cd backend
+.venv\Scripts\python.exe -m app.ml.publish `
+  --dataset data\ru_commercial_dataset.csv `
+  --manifest data\ru_commercial_dataset.manifest.json `
+  --model-output artifacts\page_quality_model.pkl
+```
+
+What this does:
+
+- validates that the dataset manifest is `ready_for_training`;
+- trains the primary model from the real local dataset snapshot;
+- writes the default runtime artifact to `artifacts\page_quality_model.pkl`;
+- embeds `dataset_version`, `trained_at`, `rows_count`, `queries_count` and `domains_count` into the artifact metadata.
+
+Expected runtime effect:
+
+- `score_breakdown.model_info.source` becomes `local_dataset`;
+- `score_breakdown.model_info.dataset_version` points to the published RU-commercial snapshot version;
+- the scoring pipeline no longer depends on the bootstrap fallback when the published artifact is present.
