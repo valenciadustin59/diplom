@@ -11,6 +11,7 @@ AUDIT_FETCH_QUEUE = "audits.fetch"
 AUDIT_FEATURES_QUEUE = "audits.features"
 AUDIT_SCORING_QUEUE = "audits.scoring"
 AUDIT_COMPETITORS_QUEUE = "audits.competitors"
+AUDIT_COMPETITOR_PAGES_QUEUE = "audits.competitor_pages"
 AUDIT_RECOMMENDATIONS_QUEUE = "audits.recommendations"
 AUDIT_FINALIZE_QUEUE = "audits.finalize"
 
@@ -20,6 +21,8 @@ AUDIT_TASK_ROUTES: dict[str, str] = {
     "app.process_audit_extract_features": AUDIT_FEATURES_QUEUE,
     "app.process_audit_score_target": AUDIT_SCORING_QUEUE,
     "app.process_audit_collect_competitors": AUDIT_COMPETITORS_QUEUE,
+    "app.process_audit_collect_competitor_page": AUDIT_COMPETITOR_PAGES_QUEUE,
+    "app.process_audit_aggregate_competitors": AUDIT_COMPETITORS_QUEUE,
     "app.process_audit_generate_recommendations": AUDIT_RECOMMENDATIONS_QUEUE,
     "app.process_audit_finalize": AUDIT_FINALIZE_QUEUE,
     "app.process_page": AUDIT_FETCH_QUEUE,

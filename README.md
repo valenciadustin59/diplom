@@ -59,7 +59,7 @@ npm run dev:full
 - проверяет доступность `SearxNG` по `http://127.0.0.1:8888`
 - запускает backend API на свободном локальном порту, начиная с `8000`
 - запускает frontend и прокидывает в него актуальный `VITE_API_URL`
-- запускает Celery worker для очереди `audits`
+- запускает Celery worker для stage-based audit queues
 
 Если `backend/.env` отсутствует, root dev script сам подставляет локальные dev defaults для `SEARXNG_BASE_URL`, `CELERY_BROKER_URL` и `CELERY_RESULT_BACKEND`, чтобы полный стек не запускался в деградированном режиме.
 
@@ -95,7 +95,7 @@ cd backend
 ```powershell
 cd <repo-root>
 cd backend
-.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.recommendations,audits.finalize --pool=solo
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.competitor_pages,audits.recommendations,audits.finalize --pool=solo
 ```
 
 Для Linux/macOS флаг `--pool=solo` можно убрать, но для Windows его лучше оставить.
@@ -105,7 +105,7 @@ cd backend
 ```powershell
 cd <repo-root>
 cd backend
-.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.fetch,audits.competitors --pool=solo
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.fetch,audits.competitors,audits.competitor_pages --pool=solo
 ```
 
 ```powershell

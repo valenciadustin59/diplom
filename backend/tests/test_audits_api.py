@@ -118,35 +118,48 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
         },
     )
     monkeypatch.setattr(
-        'app.tasks.build_competitor_results',
-        lambda query, target_url, top_n: [
+        'app.tasks.search_competitor_pages',
+        lambda query, target_url, limit: [
             {
                 'url': 'https://competitor-a.example',
                 'domain': 'competitor-a.example',
                 'title': 'Competitor A',
-                'score': 82.4,
-                'features': {
-                    'text_length_chars': 18,
-                    'query_in_text': 1,
-                    'semantic_similarity': 0.87,
-                },
-                'fetch_status': 'success',
-                'fetch_method': 'http',
-                'fetch_error_code': None,
-                'fetch_error_message': None,
+                'snippet': 'Snippet A',
+                'rank': 1,
+                'serp_page': 0,
             },
             {
                 'url': 'https://competitor-b.example',
                 'domain': 'competitor-b.example',
                 'title': 'Competitor B',
-                'score': None,
-                'features': None,
-                'fetch_status': 'failed',
-                'fetch_method': 'browser',
-                'fetch_error_code': 'http_403',
-                'fetch_error_message': 'HTTP 403',
+                'snippet': 'Snippet B',
+                'rank': 2,
+                'serp_page': 0,
             },
         ],
+    )
+    monkeypatch.setattr(
+        'app.tasks.analyze_competitor_page',
+        lambda result, query: {
+            'url': str(result['url']),
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result['rank']),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success' if 'competitor-a' in str(result['url']) else 'failed',
+            'fetch_method': 'http' if 'competitor-a' in str(result['url']) else 'browser',
+            'fetch_error_code': None if 'competitor-a' in str(result['url']) else 'http_403',
+            'fetch_error_message': None if 'competitor-a' in str(result['url']) else 'HTTP 403',
+            'score': 82.4 if 'competitor-a' in str(result['url']) else None,
+            'features': {
+                'text_length_chars': 18,
+                'query_in_text': 1,
+                'semantic_similarity': 0.87,
+            }
+            if 'competitor-a' in str(result['url'])
+            else None,
+        },
     )
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
@@ -414,9 +427,9 @@ def test_create_audit_returns_search_failure_context(integration_client, monkeyp
             'factors': [],
         },
     )
-    def fail_search(query, target_url, top_n):
+    def fail_search(query, target_url, limit):
         raise RuntimeError('SERP provider unavailable')
-    monkeypatch.setattr('app.tasks.build_competitor_results', fail_search)
+    monkeypatch.setattr('app.tasks.search_competitor_pages', fail_search)
     created = integration_client.post(
         '/audits',
         json={

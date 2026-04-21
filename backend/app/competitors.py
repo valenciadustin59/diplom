@@ -242,6 +242,29 @@ def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, 
     return competitor_payload
 
 
+def build_failed_competitor_result(
+    result: dict[str, object],
+    error: Exception | str,
+    *,
+    fetch_error_code: str = "unknown_fetch_error",
+    fetch_method: str | None = None,
+) -> dict[str, object]:
+    return {
+        "url": str(result.get("url") or ""),
+        "domain": str(result.get("domain") or ""),
+        "title": str(result.get("title") or ""),
+        "snippet": str(result.get("snippet") or ""),
+        "serp_rank": int(result.get("rank") or 0),
+        "serp_page": int(result.get("serp_page") or 0),
+        "fetch_status": "failed",
+        "fetch_method": fetch_method,
+        "fetch_error_code": fetch_error_code,
+        "fetch_error_message": str(error),
+        "score": None,
+        "features": None,
+    }
+
+
 def build_competitor_results(query: str, target_url: str, top_n: int) -> list[dict[str, object]]:
     competitor_pages = search_competitor_pages(query=query, target_url=target_url, limit=top_n)
     results: list[dict[str, object]] = []
@@ -251,22 +274,7 @@ def build_competitor_results(query: str, target_url: str, top_n: int) -> list[di
             results.append(analyze_competitor_page(competitor_page, query))
         except Exception as error:
             logger.warning("Competitor analysis failed for %s: %s", competitor_page.get("url"), error)
-            results.append(
-                {
-                    "url": str(competitor_page.get("url") or ""),
-                    "domain": str(competitor_page.get("domain") or ""),
-                    "title": str(competitor_page.get("title") or ""),
-                    "snippet": str(competitor_page.get("snippet") or ""),
-                    "serp_rank": int(competitor_page.get("rank") or 0),
-                    "serp_page": int(competitor_page.get("serp_page") or 0),
-                    "fetch_status": "failed",
-                    "fetch_method": None,
-                    "fetch_error_code": "unknown_fetch_error",
-                    "fetch_error_message": str(error),
-                    "score": None,
-                    "features": None,
-                }
-            )
+            results.append(build_failed_competitor_result(competitor_page, error))
 
     return results
 

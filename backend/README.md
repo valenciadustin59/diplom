@@ -73,7 +73,7 @@ API будет доступен на `http://127.0.0.1:8000`.
 
 ```powershell
 cd backend
-.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.recommendations,audits.finalize --pool=solo
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.competitor_pages,audits.recommendations,audits.finalize --pool=solo
 ```
 
 Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен, новые аудиты будут поставлены в очередь и останутся в `queued`.
@@ -87,6 +87,8 @@ cd backend
 - `app.process_audit_extract_features` - извлечение признаков
 - `app.process_audit_score_target` - scoring через rule-based + ML breakdown
 - `app.process_audit_collect_competitors` - сбор и сравнение конкурентов
+- `app.process_audit_collect_competitor_page` - обработка одной конкурентной страницы как отдельной distributed subtask
+- `app.process_audit_aggregate_competitors` - агрегация fan-out результатов конкурентов обратно в audit summary
 - `app.process_audit_generate_recommendations` - генерация рекомендаций
 - `app.process_audit_finalize` - финализация результата и warning-агрегация
 
@@ -99,17 +101,18 @@ cd backend
 - `audits.features`
 - `audits.scoring`
 - `audits.competitors`
+- `audits.competitor_pages`
 - `audits.recommendations`
 - `audits.finalize`
 
-Это позволяет запускать один универсальный worker на всех очередях или поднимать специализированные worker-процессы под конкретные типы нагрузки. Например, сетевые стадии (`fetch`, `competitors`) и CPU/ML стадии (`features`, `scoring`) теперь можно масштабировать независимо.
+Это позволяет запускать один универсальный worker на всех очередях или поднимать специализированные worker-процессы под конкретные типы нагрузки. Например, сетевые стадии (`fetch`, `competitors`, `competitor_pages`) и CPU/ML стадии (`features`, `scoring`) теперь можно масштабировать независимо. В D3 конкурентные страницы больше не обрабатываются последовательно внутри одной задачи: каждая SERP-страница стала отдельной distributed subtask с последующей агрегацией.
 
 Примеры специализированных worker-процессов:
 
 ```powershell
 # network-heavy worker
 cd backend
-.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.fetch,audits.competitors --pool=solo
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.fetch,audits.competitors,audits.competitor_pages --pool=solo
 ```
 
 ```powershell

@@ -6,19 +6,27 @@ from datetime import UTC, datetime
 from threading import Thread
 from time import perf_counter
 from typing import Any, Callable
+from uuid import uuid4
 
 from celery.utils.log import get_task_logger
 from redis import Redis
 from redis.exceptions import RedisError
+from sqlalchemy import delete, func, select, update
 
 from app.audit_status import COMPLETED, COMPLETED_WITH_WARNINGS, FAILED, PROCESSING, transition_status
 from app.celery_app import celery_app, resolve_task_queue
-from app.competitors import MIN_COMPETITORS_FOR_COMPARISON, build_comparison_summary, build_competitor_results
+from app.competitors import (
+    MIN_COMPETITORS_FOR_COMPARISON,
+    analyze_competitor_page,
+    build_comparison_summary,
+    build_failed_competitor_result,
+    search_competitor_pages,
+)
 from app.config import get_settings
 from app.db import SessionLocal
 from app.features import build_features
 from app.ml import explain_score
-from app.models import Audit
+from app.models import Audit, AuditCompetitor
 from app.parser import fetch_page
 from app.recommendations import generate_recommendations
 
@@ -34,6 +42,16 @@ COMPETITORS_STAGE = "competitors"
 RECOMMENDATIONS_STAGE = "recommendations"
 FINALIZE_STAGE = "finalize"
 PIPELINE_STAGE = "pipeline"
+COMPETITOR_PAGE_STAGE = "competitor_page"
+COMPETITOR_AGGREGATION_STAGE = "competitor_aggregation"
+
+COMPETITOR_PENDING = "pending"
+COMPETITOR_COMPLETED = "completed"
+COMPETITOR_FAILED = "failed"
+
+COMPETITOR_PROCESSING_COLLECTING = "collecting"
+COMPETITOR_PROCESSING_AGGREGATING = "aggregating"
+COMPETITOR_PROCESSING_AGGREGATED = "aggregated"
 
 
 def _derive_failure_code(error: BaseException) -> str:
@@ -214,6 +232,71 @@ def _summarize_recommendations(recommendations: list[dict[str, str]]) -> dict[st
     return {"recommendations_count": len(recommendations)}
 
 
+def _summarize_competitor_pages(pages: list[dict[str, object]]) -> dict[str, object]:
+    return {"competitors_found": len(pages), "competitor_tasks_planned": len(pages)}
+
+
+def _serialize_audit_competitor(competitor: AuditCompetitor) -> dict[str, object]:
+    return {
+        "url": competitor.url,
+        "domain": competitor.domain,
+        "title": competitor.title,
+        "snippet": competitor.snippet,
+        "serp_rank": competitor.serp_rank,
+        "serp_page": competitor.serp_page,
+        "fetch_status": competitor.fetch_status,
+        "fetch_method": competitor.fetch_method,
+        "fetch_error_code": competitor.fetch_error_code,
+        "fetch_error_message": competitor.fetch_error_message,
+        "score": competitor.score,
+        "features": competitor.features,
+    }
+
+
+def _upsert_audit_competitor_result(competitor: AuditCompetitor, result: dict[str, object], *, status: str) -> None:
+    competitor.title = str(result.get("title") or "")
+    competitor.snippet = str(result.get("snippet") or "")
+    competitor.serp_rank = int(result.get("serp_rank") or competitor.serp_rank or 0)
+    competitor.serp_page = int(result.get("serp_page") or competitor.serp_page or 0)
+    competitor.fetch_status = str(result.get("fetch_status") or "") or None
+    competitor.fetch_method = str(result.get("fetch_method") or "") or None
+    competitor.fetch_error_code = str(result.get("fetch_error_code") or "") or None
+    competitor.fetch_error_message = str(result.get("fetch_error_message") or "") or None
+    competitor.score = float(result["score"]) if isinstance(result.get("score"), (int, float)) else None
+    competitor.features = result.get("features") if isinstance(result.get("features"), dict) else None
+    competitor.status = status
+    competitor.updated_at = _utc_now()
+
+
+def _load_audit_competitor(db, competitor_id: str, audit_id: str) -> AuditCompetitor | None:
+    competitor = db.get(AuditCompetitor, competitor_id)
+    if competitor is None or competitor.audit_id != audit_id:
+        logger.warning("Audit competitor not found for audit %s: %s", audit_id, competitor_id)
+        _log_audit_step(
+            logging.WARNING,
+            audit_id,
+            COMPETITOR_PAGE_STAGE,
+            "aborted",
+            reason="competitor_not_found",
+            competitor_id=competitor_id,
+        )
+        return None
+    return competitor
+
+
+def _enqueue_task(task, *args: object) -> dict[str, object]:
+    audit_id = str(args[0]) if args else ""
+    queue_name = resolve_task_queue(task.name)
+    task.apply_async(args=args, queue=queue_name)
+    return {
+        "audit_id": audit_id,
+        "status": PROCESSING,
+        "next_stage": task.name,
+        "next_queue": queue_name,
+        "dispatch_mode": "queued",
+    }
+
+
 def _start_inline_audit_processing(audit_id: str) -> None:
     logger.warning("Celery is unavailable, running distributed audit pipeline inline in background thread: %s", audit_id)
     Thread(target=process_audit.run, args=(audit_id,), daemon=True).start()
@@ -222,6 +305,7 @@ def _start_inline_audit_processing(audit_id: str) -> None:
 def _clear_analysis_outputs(audit: Audit) -> None:
     audit.extracted_text = None
     audit.target_html = None
+    audit.competitor_processing_status = None
     audit.features = None
     audit.score = None
     audit.score_breakdown = None
@@ -284,22 +368,14 @@ def _load_audit(db, audit_id: str, stage: str) -> Audit | None:
 
 
 def _dispatch_stage_task(task, audit_id: str) -> Any:
-    queue_name = resolve_task_queue(task.name)
     if _redis_available():
         try:
-            task.apply_async(args=(audit_id,), queue=queue_name)
-            return {
-                "audit_id": audit_id,
-                "status": PROCESSING,
-                "next_stage": task.name,
-                "next_queue": queue_name,
-                "dispatch_mode": "queued",
-            }
+            return _enqueue_task(task, audit_id)
         except Exception:
             logger.exception(
                 "Failed to enqueue stage task %s on queue %s for %s, falling back to inline execution",
                 task.name,
-                queue_name,
+                resolve_task_queue(task.name),
                 audit_id,
             )
     return task.run(audit_id)
@@ -340,6 +416,7 @@ def _handle_stage_failure(audit_id: str, exc: Exception) -> None:
         )
         if audit is not None:
             _mark_audit_failed(audit, failure_context)
+            db.execute(delete(AuditCompetitor).where(AuditCompetitor.audit_id == audit_id))
             db.commit()
         _log_audit_step(
             logging.ERROR,
@@ -352,6 +429,49 @@ def _handle_stage_failure(audit_id: str, exc: Exception) -> None:
         )
     finally:
         db.close()
+
+
+def _dispatch_competitor_aggregation_if_ready(audit_id: str) -> dict[str, object] | None:
+    db = SessionLocal()
+    should_dispatch = False
+    try:
+        audit = db.get(Audit, audit_id)
+        if audit is None or audit.competitor_processing_status != COMPETITOR_PROCESSING_COLLECTING:
+            return None
+
+        pending_count = int(
+            db.scalar(
+                select(func.count())
+                .select_from(AuditCompetitor)
+                .where(
+                    AuditCompetitor.audit_id == audit_id,
+                    AuditCompetitor.status == COMPETITOR_PENDING,
+                )
+            )
+            or 0
+        )
+        if pending_count > 0:
+            return None
+
+        update_result = db.execute(
+            update(Audit)
+            .where(
+                Audit.id == audit_id,
+                Audit.competitor_processing_status == COMPETITOR_PROCESSING_COLLECTING,
+            )
+            .values(
+                competitor_processing_status=COMPETITOR_PROCESSING_AGGREGATING,
+                updated_at=_utc_now(),
+            )
+        )
+        should_dispatch = bool(update_result.rowcount)
+        db.commit()
+    finally:
+        db.close()
+
+    if not should_dispatch:
+        return None
+    return _dispatch_stage_task(process_audit_aggregate_competitors, audit_id)
 
 
 def enqueue_audit_processing(audit_id: str) -> None:
@@ -515,6 +635,7 @@ def process_audit_score_target(audit_id: str) -> dict[str, object]:
 @celery_app.task(name="app.process_audit_collect_competitors")
 def process_audit_collect_competitors(audit_id: str) -> dict[str, object]:
     db = SessionLocal()
+    competitor_ids: list[str] = []
     try:
         audit = _load_audit(db, audit_id, COMPETITORS_STAGE)
         if audit is None:
@@ -524,24 +645,202 @@ def process_audit_collect_competitors(audit_id: str) -> dict[str, object]:
         if audit.score is None:
             raise RuntimeError("Target page score is not available for competitor comparison")
 
-        competitor_results = _run_logged_step(
+        competitor_pages = _run_logged_step(
             audit_id,
             COMPETITORS_STAGE,
-            lambda: build_competitor_results(
+            lambda: search_competitor_pages(
                 query=audit.query,
                 target_url=audit.target_url,
-                top_n=audit.top_n,
+                limit=audit.top_n,
             ),
-            summarize_result=_summarize_competitors,
+            summarize_result=_summarize_competitor_pages,
         )
+        db.execute(delete(AuditCompetitor).where(AuditCompetitor.audit_id == audit_id))
+        audit.competitor_processing_status = COMPETITOR_PROCESSING_COLLECTING
+        audit.competitor_results = None
+        audit.comparison_summary = None
+
+        for competitor_page in competitor_pages:
+            competitor_id = str(uuid4())
+            db.add(
+                AuditCompetitor(
+                    id=competitor_id,
+                    audit_id=audit_id,
+                    url=str(competitor_page.get("url") or ""),
+                    domain=str(competitor_page.get("domain") or ""),
+                    title=str(competitor_page.get("title") or ""),
+                    snippet=str(competitor_page.get("snippet") or ""),
+                    serp_rank=int(competitor_page.get("rank") or 0),
+                    serp_page=int(competitor_page.get("serp_page") or 0),
+                    status=COMPETITOR_PENDING,
+                    created_at=_utc_now(),
+                    updated_at=_utc_now(),
+                )
+            )
+            competitor_ids.append(competitor_id)
+
+        audit.updated_at = _utc_now()
+        db.commit()
+    except Exception as exc:
+        _handle_stage_failure(audit_id, exc)
+        if isinstance(exc, AuditStepExecutionError):
+            raise exc.original_error from exc
+        raise
+    finally:
+        db.close()
+
+    if not competitor_ids:
+        return _dispatch_stage_task(process_audit_aggregate_competitors, audit_id)
+
+    if _redis_available():
+        db = SessionLocal()
+        try:
+            enqueued_count = 0
+            for competitor_id in competitor_ids:
+                try:
+                    _enqueue_task(process_audit_collect_competitor_page, audit_id, competitor_id)
+                    enqueued_count += 1
+                except Exception as error:
+                    logger.exception(
+                        "Failed to enqueue competitor task for audit %s competitor %s",
+                        audit_id,
+                        competitor_id,
+                    )
+                    competitor = db.get(AuditCompetitor, competitor_id)
+                    if competitor is None:
+                        continue
+                    failed_result = build_failed_competitor_result(
+                        {
+                            "url": competitor.url,
+                            "domain": competitor.domain,
+                            "title": competitor.title,
+                            "snippet": competitor.snippet,
+                            "rank": competitor.serp_rank,
+                            "serp_page": competitor.serp_page,
+                        },
+                        error,
+                        fetch_error_code="queue_dispatch_failed",
+                    )
+                    _upsert_audit_competitor_result(competitor, failed_result, status=COMPETITOR_FAILED)
+            db.commit()
+        finally:
+            db.close()
+
+        aggregate_result = _dispatch_competitor_aggregation_if_ready(audit_id)
+        if aggregate_result is not None:
+            return aggregate_result
+        return {
+            "audit_id": audit_id,
+            "status": PROCESSING,
+            "next_stage": process_audit_collect_competitor_page.name,
+            "next_queue": resolve_task_queue(process_audit_collect_competitor_page.name),
+            "dispatch_mode": "queued",
+            "competitor_tasks_dispatched": len(competitor_ids),
+            "competitor_tasks_enqueued": enqueued_count,
+        }
+
+    last_result: dict[str, object] | None = None
+    for competitor_id in competitor_ids:
+        last_result = process_audit_collect_competitor_page.run(audit_id, competitor_id)
+    if last_result is not None:
+        return last_result
+    return _dispatch_stage_task(process_audit_aggregate_competitors, audit_id)
+
+
+@celery_app.task(name="app.process_audit_collect_competitor_page")
+def process_audit_collect_competitor_page(audit_id: str, competitor_id: str) -> dict[str, object]:
+    db = SessionLocal()
+    try:
+        audit = _load_audit(db, audit_id, COMPETITOR_PAGE_STAGE)
+        if audit is None:
+            return {"audit_id": audit_id, "status": "not_found"}
+
+        competitor = _load_audit_competitor(db, competitor_id, audit_id)
+        if competitor is None:
+            return {"audit_id": audit_id, "status": "competitor_not_found", "competitor_id": competitor_id}
+        if competitor.status != COMPETITOR_PENDING:
+            return {
+                "audit_id": audit_id,
+                "competitor_id": competitor_id,
+                "status": competitor.status,
+            }
+
+        search_result = {
+            "url": competitor.url,
+            "domain": competitor.domain,
+            "title": competitor.title,
+            "snippet": competitor.snippet,
+            "rank": competitor.serp_rank,
+            "serp_page": competitor.serp_page,
+        }
+        try:
+            result = _run_logged_step(
+                audit_id,
+                COMPETITOR_PAGE_STAGE,
+                lambda: analyze_competitor_page(search_result, audit.query),
+                summarize_result=lambda payload: {
+                    "competitor_id": competitor_id,
+                    "domain": payload.get("domain"),
+                    "fetch_status": payload.get("fetch_status"),
+                    "score": payload.get("score"),
+                },
+            )
+            competitor_status = COMPETITOR_COMPLETED
+        except Exception as error:
+            logger.warning("Competitor analysis failed for %s: %s", competitor.url, error)
+            result = build_failed_competitor_result(search_result, error)
+            competitor_status = COMPETITOR_FAILED
+
+        _upsert_audit_competitor_result(competitor, result, status=competitor_status)
+        db.commit()
+    finally:
+        db.close()
+
+    aggregate_result = _dispatch_competitor_aggregation_if_ready(audit_id)
+    if aggregate_result is not None:
+        return aggregate_result
+    return {
+        "audit_id": audit_id,
+        "competitor_id": competitor_id,
+        "status": PROCESSING,
+    }
+
+
+@celery_app.task(name="app.process_audit_aggregate_competitors")
+def process_audit_aggregate_competitors(audit_id: str) -> dict[str, object]:
+    db = SessionLocal()
+    try:
+        audit = _load_audit(db, audit_id, COMPETITOR_AGGREGATION_STAGE)
+        if audit is None:
+            return {"audit_id": audit_id, "status": "not_found"}
+        if not isinstance(audit.features, dict):
+            raise RuntimeError("Target page features are not available for competitor aggregation")
+        if audit.score is None:
+            raise RuntimeError("Target page score is not available for competitor aggregation")
+
+        competitors = db.scalars(
+            select(AuditCompetitor)
+            .where(AuditCompetitor.audit_id == audit_id)
+            .order_by(AuditCompetitor.serp_rank.asc(), AuditCompetitor.created_at.asc())
+        ).all()
+        competitor_results = [_serialize_audit_competitor(item) for item in competitors]
         audit.competitor_results = competitor_results
         audit.comparison_summary = build_comparison_summary(
             user_features=audit.features,
             user_score=float(audit.score),
             competitor_results=competitor_results,
         )
+        audit.competitor_processing_status = COMPETITOR_PROCESSING_AGGREGATED
         audit.updated_at = _utc_now()
         db.commit()
+
+        _log_audit_step(
+            logging.INFO,
+            audit_id,
+            COMPETITOR_AGGREGATION_STAGE,
+            "completed",
+            **_summarize_competitors(competitor_results),
+        )
     except Exception as exc:
         _handle_stage_failure(audit_id, exc)
         if isinstance(exc, AuditStepExecutionError):

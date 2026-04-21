@@ -28,7 +28,7 @@ def get_db() -> Generator[Session, None, None]:
 
 
 def init_db() -> None:
-    from app.models import Audit  # noqa: F401
+    from app.models import Audit, AuditCompetitor  # noqa: F401
 
     Base.metadata.create_all(bind=engine)
     _ensure_sqlite_columns()
@@ -48,6 +48,7 @@ def _ensure_sqlite_columns() -> None:
         "updated_at": "ALTER TABLE audits ADD COLUMN updated_at DATETIME",
         "extracted_text": "ALTER TABLE audits ADD COLUMN extracted_text TEXT",
         "target_html": "ALTER TABLE audits ADD COLUMN target_html TEXT",
+        "competitor_processing_status": "ALTER TABLE audits ADD COLUMN competitor_processing_status TEXT",
         "features": "ALTER TABLE audits ADD COLUMN features JSON",
         "score": "ALTER TABLE audits ADD COLUMN score FLOAT",
         "score_breakdown": "ALTER TABLE audits ADD COLUMN score_breakdown JSON",
