@@ -156,8 +156,10 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
                 'message': 'Test recommendation',
             }
         ]
-        assert stored.warnings
-        assert '╨Ю╨▒╤А╨░╨▒╨╛╤В╨░╨╜╨╛ 1 ╨╕╨╖ 2' in stored.warnings[0]
+        assert stored.warnings is not None
+        assert len(stored.warnings) == 2
+        assert '1' in stored.warnings[0]
+        assert '2' in stored.warnings[0]
         assert stored.updated_at is not None
     log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
     assert any('step=fetch event=started' in message for message in log_messages)

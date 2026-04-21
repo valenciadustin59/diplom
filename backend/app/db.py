@@ -47,6 +47,7 @@ def _ensure_sqlite_columns() -> None:
         "top_n": "ALTER TABLE audits ADD COLUMN top_n INTEGER NOT NULL DEFAULT 10",
         "updated_at": "ALTER TABLE audits ADD COLUMN updated_at DATETIME",
         "extracted_text": "ALTER TABLE audits ADD COLUMN extracted_text TEXT",
+        "target_html": "ALTER TABLE audits ADD COLUMN target_html TEXT",
         "features": "ALTER TABLE audits ADD COLUMN features JSON",
         "score": "ALTER TABLE audits ADD COLUMN score FLOAT",
         "score_breakdown": "ALTER TABLE audits ADD COLUMN score_breakdown JSON",

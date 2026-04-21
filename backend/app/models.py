@@ -17,6 +17,7 @@ class Audit(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=False), nullable=False)
     updated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=False), nullable=True)
     extracted_text: Mapped[str | None] = mapped_column(Text, nullable=True)
+    target_html: Mapped[str | None] = mapped_column(Text, nullable=True)
     features: Mapped[dict[str, float | int] | None] = mapped_column(JSON, nullable=True)
     score: Mapped[float | None] = mapped_column(Float, nullable=True)
     score_breakdown: Mapped[dict[str, object] | None] = mapped_column(JSON, nullable=True)
