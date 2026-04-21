@@ -441,6 +441,24 @@ def test_enqueue_audit_processing_falls_back_when_celery_enqueue_fails(monkeypat
     ]
 
 
+def test_enqueue_audit_processing_routes_start_task_to_pipeline_queue(monkeypatch):
+    captured: dict[str, object] = {}
+
+    def fake_apply_async(*, args, queue):
+        captured['args'] = args
+        captured['queue'] = queue
+
+    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+    monkeypatch.setattr('app.tasks.process_audit.apply_async', fake_apply_async)
+
+    enqueue_audit_processing('audit-start-queue')
+
+    assert captured == {
+        'args': ('audit-start-queue',),
+        'queue': AUDIT_PIPELINE_QUEUE,
+    }
+
+
 def test_stage_tasks_are_registered_for_distributed_execution():
     assert process_audit.name == 'app.process_audit'
     assert process_audit_fetch_target.name == 'app.process_audit_fetch_target'

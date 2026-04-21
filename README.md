@@ -100,6 +100,26 @@ cd backend
 
 Для Linux/macOS флаг `--pool=solo` можно убрать, но для Windows его лучше оставить.
 
+Если нужно явно разделить нагрузку между worker-процессами, можно поднимать их по группам очередей:
+
+```powershell
+cd <repo-root>
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.fetch,audits.competitors --pool=solo
+```
+
+```powershell
+cd <repo-root>
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.features,audits.scoring,audits.recommendations,audits.finalize --pool=solo
+```
+
+```powershell
+cd <repo-root>
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline --pool=solo
+```
+
 ### Frontend
 
 ```powershell

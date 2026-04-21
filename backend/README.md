@@ -104,6 +104,26 @@ cd backend
 
 Это позволяет запускать один универсальный worker на всех очередях или поднимать специализированные worker-процессы под конкретные типы нагрузки. Например, сетевые стадии (`fetch`, `competitors`) и CPU/ML стадии (`features`, `scoring`) теперь можно масштабировать независимо.
 
+Примеры специализированных worker-процессов:
+
+```powershell
+# network-heavy worker
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.fetch,audits.competitors --pool=solo
+```
+
+```powershell
+# CPU/ML-heavy worker
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.features,audits.scoring,audits.recommendations,audits.finalize --pool=solo
+```
+
+```powershell
+# lightweight orchestration worker
+cd backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline --pool=solo
+```
+
 ## Env
 
 Скопируйте [`.env.example`](./.env.example) в `backend/.env`.
