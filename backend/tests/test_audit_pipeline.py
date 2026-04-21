@@ -858,6 +858,96 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
     engine.dispose()
 
 
+def test_competitor_page_duplicate_delivery_does_not_repeat_expensive_analysis(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-duplicate-delivery.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+
+    analyze_calls: list[str] = []
+
+    def fake_analyze(result, query):
+        analyze_calls.append(str(result['url']))
+        return {
+            'url': str(result['url']),
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result['rank']),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'score': 80.0,
+            'features': {
+                'text_length_chars': 20,
+                'query_in_text': 1,
+                'semantic_similarity': 0.82,
+            },
+        }
+
+    monkeypatch.setattr('app.tasks.analyze_competitor_page', fake_analyze)
+    monkeypatch.setattr('app.tasks._dispatch_competitor_aggregation_if_ready', lambda audit_id, processing_version: None)
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-duplicate-delivery',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=4,
+            orchestration_stage='competitors',
+            competitor_processing_status='collecting',
+            features={'query_in_text': 1},
+            score=88.0,
+        )
+        competitor = AuditCompetitor(
+            id='competitor-duplicate',
+            audit_id='audit-duplicate-delivery',
+            url='https://competitor-duplicate.example',
+            domain='competitor-duplicate.example',
+            title='Competitor Duplicate',
+            snippet='Snippet duplicate',
+            serp_rank=1,
+            serp_page=0,
+            status='pending',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+        )
+        db.add(audit)
+        db.add(competitor)
+        db.commit()
+
+        competitor.status = 'processing'
+        competitor.updated_at = datetime.now(UTC).replace(tzinfo=None)
+        db.commit()
+
+    duplicate_result = process_audit_collect_competitor_page.run('audit-duplicate-delivery', 4, 'competitor-duplicate')
+
+    assert duplicate_result == {
+        'audit_id': 'audit-duplicate-delivery',
+        'competitor_id': 'competitor-duplicate',
+        'status': 'processing',
+    }
+    assert analyze_calls == []
+
+    with testing_session_local() as db:
+        competitor = db.get(AuditCompetitor, 'competitor-duplicate')
+        assert competitor is not None
+        assert competitor.status == 'processing'
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
 def test_celery_config_declares_stage_queues_and_routes():
     configured_queues = {queue.name for queue in celery_app.conf.task_queues}
 

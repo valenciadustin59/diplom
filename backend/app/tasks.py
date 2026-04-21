@@ -46,6 +46,7 @@ COMPETITOR_PAGE_STAGE = "competitor_page"
 COMPETITOR_AGGREGATION_STAGE = "competitor_aggregation"
 
 COMPETITOR_PENDING = "pending"
+COMPETITOR_PROCESSING = "processing"
 COMPETITOR_COMPLETED = "completed"
 COMPETITOR_FAILED = "failed"
 
@@ -300,6 +301,22 @@ def _load_audit_competitor(db, competitor_id: str, audit_id: str) -> AuditCompet
     return competitor
 
 
+def _claim_audit_competitor_processing(db, audit_id: str, competitor_id: str) -> bool:
+    claim_result = db.execute(
+        update(AuditCompetitor)
+        .where(
+            AuditCompetitor.id == competitor_id,
+            AuditCompetitor.audit_id == audit_id,
+            AuditCompetitor.status == COMPETITOR_PENDING,
+        )
+        .values(
+            status=COMPETITOR_PROCESSING,
+            updated_at=_utc_now(),
+        )
+    )
+    return bool(claim_result.rowcount)
+
+
 def _enqueue_task(task, *args: object) -> dict[str, object]:
     audit_id = str(args[0]) if args else ""
     queue_name = resolve_task_queue(task.name)
@@ -532,7 +549,7 @@ def _dispatch_competitor_aggregation_if_ready(audit_id: str, processing_version:
                 .select_from(AuditCompetitor)
                 .where(
                     AuditCompetitor.audit_id == audit_id,
-                    AuditCompetitor.status == COMPETITOR_PENDING,
+                    AuditCompetitor.status.in_([COMPETITOR_PENDING, COMPETITOR_PROCESSING]),
                 )
             )
             or 0
@@ -808,6 +825,13 @@ def process_audit_collect_competitors(audit_id: str, processing_version: int) ->
 
         if audit.competitor_processing_status == COMPETITOR_PROCESSING_COLLECTING and existing_competitors:
             competitor_ids = [item.id for item in existing_competitors if item.status == COMPETITOR_PENDING]
+            if not competitor_ids and any(item.status == COMPETITOR_PROCESSING for item in existing_competitors):
+                return {
+                    "audit_id": audit_id,
+                    "status": PROCESSING,
+                    "processing_version": processing_version,
+                    "reason": "competitor_tasks_in_progress",
+                }
         else:
             competitor_pages = _run_logged_step(
                 audit_id,
@@ -854,7 +878,15 @@ def process_audit_collect_competitors(audit_id: str, processing_version: int) ->
         db.close()
 
     if not competitor_ids:
-        return _dispatch_stage_task(process_audit_aggregate_competitors, audit_id, processing_version)
+        aggregate_result = _dispatch_competitor_aggregation_if_ready(audit_id, processing_version)
+        if aggregate_result is not None:
+            return aggregate_result
+        return {
+            "audit_id": audit_id,
+            "status": PROCESSING,
+            "processing_version": processing_version,
+            "reason": "competitor_tasks_in_progress",
+        }
 
     if _redis_available():
         db = SessionLocal()
@@ -932,12 +964,36 @@ def process_audit_collect_competitor_page(audit_id: str, processing_version: int
         competitor = _load_audit_competitor(db, competitor_id, audit_id)
         if competitor is None:
             return {"audit_id": audit_id, "status": "competitor_not_found", "competitor_id": competitor_id}
-        if competitor.status != COMPETITOR_PENDING:
+        if competitor.status not in {COMPETITOR_PENDING, COMPETITOR_PROCESSING}:
             return {
                 "audit_id": audit_id,
                 "competitor_id": competitor_id,
                 "status": competitor.status,
             }
+        claimed = False
+        if competitor.status == COMPETITOR_PENDING:
+            claimed = _claim_audit_competitor_processing(db, audit_id, competitor_id)
+            if not claimed:
+                db.rollback()
+                competitor = _load_audit_competitor(db, competitor_id, audit_id)
+                if competitor is None:
+                    return {"audit_id": audit_id, "status": "competitor_not_found", "competitor_id": competitor_id}
+                return {
+                    "audit_id": audit_id,
+                    "competitor_id": competitor_id,
+                    "status": competitor.status,
+                }
+
+        if competitor.status == COMPETITOR_PROCESSING and not claimed:
+            return {
+                "audit_id": audit_id,
+                "competitor_id": competitor_id,
+                "status": competitor.status,
+            }
+
+        competitor = _load_audit_competitor(db, competitor_id, audit_id)
+        if competitor is None:
+            return {"audit_id": audit_id, "status": "competitor_not_found", "competitor_id": competitor_id}
 
         search_result = {
             "url": competitor.url,
