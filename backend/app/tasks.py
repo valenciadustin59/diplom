@@ -12,7 +12,7 @@ from redis import Redis
 from redis.exceptions import RedisError
 
 from app.audit_status import COMPLETED, COMPLETED_WITH_WARNINGS, FAILED, PROCESSING, transition_status
-from app.celery_app import celery_app
+from app.celery_app import celery_app, resolve_task_queue
 from app.competitors import MIN_COMPETITORS_FOR_COMPARISON, build_comparison_summary, build_competitor_results
 from app.config import get_settings
 from app.db import SessionLocal
@@ -284,17 +284,24 @@ def _load_audit(db, audit_id: str, stage: str) -> Audit | None:
 
 
 def _dispatch_stage_task(task, audit_id: str) -> Any:
+    queue_name = resolve_task_queue(task.name)
     if _redis_available():
         try:
-            task.delay(audit_id)
+            task.apply_async(args=(audit_id,), queue=queue_name)
             return {
                 "audit_id": audit_id,
                 "status": PROCESSING,
                 "next_stage": task.name,
+                "next_queue": queue_name,
                 "dispatch_mode": "queued",
             }
         except Exception:
-            logger.exception("Failed to enqueue stage task %s for %s, falling back to inline execution", task.name, audit_id)
+            logger.exception(
+                "Failed to enqueue stage task %s on queue %s for %s, falling back to inline execution",
+                task.name,
+                queue_name,
+                audit_id,
+            )
     return task.run(audit_id)
 
 
@@ -350,7 +357,7 @@ def _handle_stage_failure(audit_id: str, exc: Exception) -> None:
 def enqueue_audit_processing(audit_id: str) -> None:
     if _redis_available():
         try:
-            process_audit.delay(audit_id)
+            process_audit.apply_async(args=(audit_id,), queue=resolve_task_queue(process_audit.name))
             return
         except Exception:
             logger.exception("Failed to enqueue audit via Celery, falling back to inline thread: %s", audit_id)

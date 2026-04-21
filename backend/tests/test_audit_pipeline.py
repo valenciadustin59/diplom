@@ -4,9 +4,21 @@ from datetime import UTC, datetime
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
+from app.celery_app import (
+    AUDIT_COMPETITORS_QUEUE,
+    AUDIT_FEATURES_QUEUE,
+    AUDIT_FETCH_QUEUE,
+    AUDIT_FINALIZE_QUEUE,
+    AUDIT_PIPELINE_QUEUE,
+    AUDIT_RECOMMENDATIONS_QUEUE,
+    AUDIT_SCORING_QUEUE,
+    celery_app,
+    resolve_task_queue,
+)
 from app.db import Base
 from app.models import Audit
 from app.tasks import (
+    _dispatch_stage_task,
     enqueue_audit_processing,
     process_audit,
     process_audit_collect_competitors,
@@ -420,7 +432,7 @@ def test_enqueue_audit_processing_falls_back_when_celery_enqueue_fails(monkeypat
     def fail_delay(audit_id: str):
         raise RuntimeError(f'queue down for {audit_id}')
     monkeypatch.setattr('app.tasks._redis_available', lambda: True)
-    monkeypatch.setattr('app.tasks.process_audit.delay', fail_delay)
+    monkeypatch.setattr('app.tasks.process_audit.apply_async', lambda args, queue: fail_delay(str(args[0])))
     monkeypatch.setattr('app.tasks.Thread', FakeThread)
     enqueue_audit_processing('audit-queue')
     assert started == [
@@ -437,3 +449,57 @@ def test_stage_tasks_are_registered_for_distributed_execution():
     assert process_audit_collect_competitors.name == 'app.process_audit_collect_competitors'
     assert process_audit_generate_recommendations.name == 'app.process_audit_generate_recommendations'
     assert process_audit_finalize.name == 'app.process_audit_finalize'
+    assert resolve_task_queue(process_audit.name) == AUDIT_PIPELINE_QUEUE
+    assert resolve_task_queue(process_audit_fetch_target.name) == AUDIT_FETCH_QUEUE
+    assert resolve_task_queue(process_audit_extract_features.name) == AUDIT_FEATURES_QUEUE
+    assert resolve_task_queue(process_audit_score_target.name) == AUDIT_SCORING_QUEUE
+    assert resolve_task_queue(process_audit_collect_competitors.name) == AUDIT_COMPETITORS_QUEUE
+    assert resolve_task_queue(process_audit_generate_recommendations.name) == AUDIT_RECOMMENDATIONS_QUEUE
+    assert resolve_task_queue(process_audit_finalize.name) == AUDIT_FINALIZE_QUEUE
+
+
+def test_dispatch_stage_task_routes_next_stage_to_stage_queue(monkeypatch):
+    captured: dict[str, object] = {}
+
+    def fake_apply_async(*, args, queue):
+        captured['args'] = args
+        captured['queue'] = queue
+
+    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+    monkeypatch.setattr('app.tasks.process_audit_fetch_target.apply_async', fake_apply_async)
+
+    result = _dispatch_stage_task(process_audit_fetch_target, 'audit-queue-routing')
+
+    assert captured == {
+        'args': ('audit-queue-routing',),
+        'queue': AUDIT_FETCH_QUEUE,
+    }
+    assert result == {
+        'audit_id': 'audit-queue-routing',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_fetch_target',
+        'next_queue': AUDIT_FETCH_QUEUE,
+        'dispatch_mode': 'queued',
+    }
+
+
+def test_celery_config_declares_stage_queues_and_routes():
+    configured_queues = {queue.name for queue in celery_app.conf.task_queues}
+
+    assert configured_queues == {
+        AUDIT_PIPELINE_QUEUE,
+        AUDIT_FETCH_QUEUE,
+        AUDIT_FEATURES_QUEUE,
+        AUDIT_SCORING_QUEUE,
+        AUDIT_COMPETITORS_QUEUE,
+        AUDIT_RECOMMENDATIONS_QUEUE,
+        AUDIT_FINALIZE_QUEUE,
+    }
+    assert celery_app.conf.task_default_queue == AUDIT_PIPELINE_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit']['queue'] == AUDIT_PIPELINE_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_fetch_target']['queue'] == AUDIT_FETCH_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_extract_features']['queue'] == AUDIT_FEATURES_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_score_target']['queue'] == AUDIT_SCORING_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_collect_competitors']['queue'] == AUDIT_COMPETITORS_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_generate_recommendations']['queue'] == AUDIT_RECOMMENDATIONS_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_finalize']['queue'] == AUDIT_FINALIZE_QUEUE

@@ -73,7 +73,7 @@ API будет доступен на `http://127.0.0.1:8000`.
 
 ```powershell
 cd backend
-.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits --pool=solo
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.recommendations,audits.finalize --pool=solo
 ```
 
 Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен, новые аудиты будут поставлены в очередь и останутся в `queued`.
@@ -91,6 +91,18 @@ cd backend
 - `app.process_audit_finalize` - финализация результата и warning-агрегация
 
 Если Redis/Celery доступны, каждый stage dispatch'ится как отдельная задача. Если брокер недоступен, backend сохраняет ту же бизнес-логику и исполняет стадии inline, что позволяет локально разрабатывать и тестировать пайплайн без отдельного worker-процесса.
+
+Для D2 каждая стадия уже маршрутизируется в отдельную очередь:
+
+- `audits.pipeline`
+- `audits.fetch`
+- `audits.features`
+- `audits.scoring`
+- `audits.competitors`
+- `audits.recommendations`
+- `audits.finalize`
+
+Это позволяет запускать один универсальный worker на всех очередях или поднимать специализированные worker-процессы под конкретные типы нагрузки. Например, сетевые стадии (`fetch`, `competitors`) и CPU/ML стадии (`features`, `scoring`) теперь можно масштабировать независимо.
 
 ## Env
 

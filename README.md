@@ -95,7 +95,7 @@ cd backend
 ```powershell
 cd <repo-root>
 cd backend
-.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits --pool=solo
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.recommendations,audits.finalize --pool=solo
 ```
 
 Для Linux/macOS флаг `--pool=solo` можно убрать, но для Windows его лучше оставить.
