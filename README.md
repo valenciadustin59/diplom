@@ -25,6 +25,8 @@ The benchmark/reporting workflow measures the real runtime surface instead of a 
 
 Reports are written to `backend/artifacts/benchmarks/<timestamp>-<benchmark-name>/` as `benchmark-report.json` and `benchmark-report.md`.
 
+If an older legacy subsection below still mentions `D12` as pending, treat it as historical text only. The canonical status is that `D12` is implemented.
+
 Р”Р»СЏ С‚РµРєСѓС‰РµРіРѕ СЌС‚Р°РїР° РґРёРїР»РѕРјР° РєР°РЅРѕРЅРёС‡РµСЃРєРёРј backlog СЃС‡РёС‚Р°РµС‚СЃСЏ РЅРµ СЃС‚Р°СЂС‹Р№ product backlog, Р° distributed sequence `D1-D12`.
 
 РЈР¶Рµ РІС‹РїРѕР»РЅРµРЅРѕ:
@@ -265,5 +267,4 @@ npm run build
 - [AGENTS.md](./AGENTS.md) вЂ” operational instructions РґР»СЏ Р°РіРµРЅС‚РѕРІ Рё СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ
 - [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md) вЂ” roadmap Рё GitHub backlog
 - [backend/docs/ml_methodology_appendix.md](./backend/docs/ml_methodology_appendix.md) - appendix-ready description of ML methodology, evaluation and limitations
-
 

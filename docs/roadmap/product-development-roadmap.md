@@ -73,6 +73,8 @@ The benchmark/reporting workflow is part of the production runtime evidence rath
 
 Benchmark artifacts are written to `backend/artifacts/benchmarks/` as JSON and Markdown reports.
 
+If any older subsection below still lists `D12` as pending, treat it as historical text only. The canonical status is that `D12` is implemented.
+
 Р”Р»СЏ С‚РµРјС‹ РґРёРїР»РѕРјР° `Р Р°Р·СЂР°Р±РѕС‚РєР° web-РїСЂРёР»РѕР¶РµРЅРёСЏ РјР°С€РёРЅРЅРѕРіРѕ РѕР±СѓС‡РµРЅРёСЏ РЅР° РѕСЃРЅРѕРІРµ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅС‹С… РІС‹С‡РёСЃР»РµРЅРёР№` РєР°РЅРѕРЅРёС‡РµСЃРєРёРј backlog С‚РµРїРµСЂСЊ СЃС‡РёС‚Р°РµС‚СЃСЏ РёРјРµРЅРЅРѕ Р»РёРЅРёСЏ `D1-D12`. РћРЅР° РѕРїРёСЃС‹РІР°РµС‚ РЅРµ СЃС‚Р°СЂС‹Рµ product tasks, Р° РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРµ СѓСЃРёР»РµРЅРёРµ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ РёСЃРїРѕР»РЅРµРЅРёСЏ, РЅР°Р±Р»СЋРґР°РµРјРѕСЃС‚Рё, СѓРїСЂР°РІР»РµРЅРёСЏ РЅР°РіСЂСѓР·РєРѕР№ Рё РґРѕРєР°Р·Р°С‚РµР»СЊРЅРѕР№ Р±Р°Р·С‹ РґР»СЏ РґРёРїР»РѕРјР°.
 
 #### РЈР¶Рµ РІС‹РїРѕР»РЅРµРЅРѕ
