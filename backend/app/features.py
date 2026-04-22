@@ -1,11 +1,172 @@
 from __future__ import annotations
 
+import json
 import re
 from collections import Counter
+from typing import Any
 from urllib.parse import parse_qsl, urljoin, urlsplit
 
 from app.parser import ensure_extraction_artifact, extract_document
 from app.semantic import build_semantic_features
+
+
+TECHNICAL_SEO_FEATURE_COLUMNS = [
+    "http_status_code",
+    "http_status_ok",
+    "redirect_count",
+    "has_redirect",
+    "canonical_present",
+    "canonical_matches_final_url",
+    "meta_robots_present",
+    "x_robots_tag_present",
+    "robots_noindex",
+    "robots_nofollow",
+    "page_indexable",
+    "viewport_present",
+    "lang_present",
+    "hreflang_count",
+    "hreflang_present",
+    "url_depth",
+    "url_parameter_count",
+    "url_has_query_parameters",
+    "redirect_efficiency_score",
+    "url_hygiene_score",
+    "technical_metadata_score",
+    "canonical_signal_score",
+    "technical_seo_score",
+]
+
+COMMERCIAL_TRUST_FEATURE_COLUMNS = [
+    "phone_present",
+    "phone_count",
+    "email_present",
+    "address_present",
+    "business_hours_present",
+    "price_present",
+    "currency_present",
+    "delivery_info_present",
+    "payment_info_present",
+    "warranty_info_present",
+    "returns_info_present",
+    "reviews_present",
+    "rating_present",
+    "faq_present",
+    "cta_present",
+    "cta_count",
+    "messenger_present",
+    "value_proposition_present",
+    "legal_requisites_present",
+    "company_identity_present",
+    "contact_options_score",
+    "commercial_signal_count",
+    "trust_signal_count",
+    "commercial_signals_score",
+    "trust_signals_score",
+    "commercial_trust_score",
+]
+
+SNAPSHOT_AUXILIARY_FEATURE_COLUMNS = [
+    *TECHNICAL_SEO_FEATURE_COLUMNS,
+    *COMMERCIAL_TRUST_FEATURE_COLUMNS,
+]
+
+PHONE_PATTERN = re.compile(r"(?:\+?\d[\d\s\-()]{8,}\d)")
+EMAIL_PATTERN = re.compile(r"[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}", flags=re.IGNORECASE)
+PRICE_PATTERN = re.compile(
+    r"(?:от\s+)?\d[\d\s]{1,12}(?:[.,]\d{1,2})?\s?(?:₽|р\.|руб(?:\.|лей)?|€|eur|usd|\$)",
+    flags=re.IGNORECASE,
+)
+CURRENCY_PATTERN = re.compile(r"(?:₽|р\.|руб(?:\.|лей)?|€|eur|usd|\$)", flags=re.IGNORECASE)
+RATING_PATTERN = re.compile(r"(?:ratingvalue|рейтинг|rating)\D{0,12}([1-5](?:[.,]\d)?)", flags=re.IGNORECASE)
+
+ADDRESS_KEYWORDS = (
+    "адрес",
+    "ул.",
+    "улица",
+    "проспект",
+    "пр-т",
+    "дом ",
+    "офис",
+    "строение",
+    "корпус",
+    "street",
+    "avenue",
+    "suite",
+)
+BUSINESS_HOURS_KEYWORDS = (
+    "режим работы",
+    "часы работы",
+    "график работы",
+    "время работы",
+    "opening hours",
+    "mon",
+    "пн-пт",
+    "понедельник",
+)
+DELIVERY_KEYWORDS = (
+    "доставка",
+    "shipping",
+    "самовывоз",
+    "курьер",
+)
+PAYMENT_KEYWORDS = (
+    "оплата",
+    "payment",
+    "безнал",
+    "наличн",
+    "карта",
+    "visa",
+    "mastercard",
+)
+WARRANTY_KEYWORDS = ("гаранти", "warranty")
+RETURNS_KEYWORDS = ("возврат", "return", "refund", "обмен")
+REVIEWS_KEYWORDS = ("отзывы", "reviews", "testimonial")
+FAQ_KEYWORDS = ("faq", "вопросы и ответы", "часто задаваемые вопросы", "ответы на вопросы")
+MESSENGER_KEYWORDS = ("whatsapp", "telegram", "t.me", "wa.me", "viber", "vk.me")
+CTA_KEYWORDS = (
+    "купить",
+    "заказать",
+    "оставить заявку",
+    "получить",
+    "связаться",
+    "позвонить",
+    "отправить",
+    "подобрать",
+    "узнать цену",
+    "консультац",
+    "request",
+    "contact",
+    "buy",
+    "order",
+)
+VALUE_PROPOSITION_KEYWORDS = (
+    "бесплатн",
+    "скидк",
+    "акци",
+    "опыт",
+    "лет на рынке",
+    "под ключ",
+    "официаль",
+    "сертиф",
+    "собственное производство",
+    "от производителя",
+    "качество",
+    "быстро",
+    "за 1 день",
+    "рассроч",
+    "выезд замерщика",
+)
+LEGAL_KEYWORDS = (
+    "инн",
+    "огрн",
+    "кпп",
+    "ооо",
+    "ип ",
+    "реквизит",
+    "llc",
+    "ltd",
+    "inc",
+)
 
 
 def _tokenize(value: str) -> list[str]:
@@ -23,6 +184,75 @@ def _document_count(counts: dict[str, object], key: str) -> int:
     if isinstance(value, (int, float)):
         return int(value)
     return 0
+
+
+def _normalize_scan_text(*values: object) -> str:
+    rendered = " ".join(str(value or "") for value in values if value is not None)
+    return re.sub(r"\s+", " ", rendered).strip().lower()
+
+
+def _contains_any(text: str, keywords: tuple[str, ...]) -> bool:
+    return any(keyword in text for keyword in keywords)
+
+
+def _nested_key_present(value: object, target_key: str) -> bool:
+    if isinstance(value, dict):
+        if target_key in value:
+            return True
+        return any(_nested_key_present(item, target_key) for item in value.values())
+    if isinstance(value, list):
+        return any(_nested_key_present(item, target_key) for item in value)
+    return False
+
+
+def _nested_string_present(value: object, keywords: tuple[str, ...]) -> bool:
+    if isinstance(value, dict):
+        return any(_nested_string_present(item, keywords) for item in value.values())
+    if isinstance(value, list):
+        return any(_nested_string_present(item, keywords) for item in value)
+    if isinstance(value, str):
+        normalized = value.lower()
+        return _contains_any(normalized, keywords)
+    return False
+
+
+def _json_ld_objects(snapshot: dict[str, object]) -> list[dict[str, object]]:
+    raw_items = snapshot.get("json_ld")
+    if not isinstance(raw_items, list):
+        return []
+
+    objects: list[dict[str, object]] = []
+
+    def append_items(value: object) -> None:
+        if isinstance(value, dict):
+            objects.append(value)
+            graph = value.get("@graph")
+            if isinstance(graph, list):
+                append_items(graph)
+        elif isinstance(value, list):
+            for item in value:
+                append_items(item)
+
+    for raw_item in raw_items:
+        if not isinstance(raw_item, str) or not raw_item.strip():
+            continue
+        try:
+            append_items(json.loads(raw_item))
+        except json.JSONDecodeError:
+            continue
+
+    return objects
+
+
+def _json_ld_type_present(objects: list[dict[str, object]], *types: str) -> bool:
+    normalized_types = {item.lower() for item in types}
+    for obj in objects:
+        raw_type = obj.get("@type")
+        if isinstance(raw_type, str) and raw_type.lower() in normalized_types:
+            return True
+        if isinstance(raw_type, list) and any(str(item).lower() in normalized_types for item in raw_type):
+            return True
+    return False
 
 
 def _document_payload(snapshot: dict[str, object]) -> dict[str, object]:
@@ -102,18 +332,21 @@ def _url_parameter_count(url: str) -> int:
     return len(parse_qsl(parsed.query, keep_blank_values=True))
 
 
-def build_technical_seo_features(snapshot: dict[str, object] | None) -> dict[str, float | int]:
+def _normalize_snapshot(snapshot: dict[str, object] | None) -> dict[str, object] | None:
     if not isinstance(snapshot, dict):
-        return {}
-
+        return None
     requested_url = str(snapshot.get("requested_url") or snapshot.get("final_url") or "").strip()
     if not requested_url:
+        return None
+    return ensure_extraction_artifact(requested_url=requested_url, artifact=snapshot)
+
+
+def build_technical_seo_features(snapshot: dict[str, object] | None) -> dict[str, float | int]:
+    normalized_snapshot = _normalize_snapshot(snapshot)
+    if normalized_snapshot is None:
         return {}
 
-    normalized_snapshot = ensure_extraction_artifact(
-        requested_url=requested_url,
-        artifact=snapshot,
-    )
+    requested_url = str(normalized_snapshot.get("requested_url") or "").strip()
     final_url = str(normalized_snapshot.get("final_url") or requested_url).strip()
     document = _document_payload(normalized_snapshot)
     headers = _headers_payload(normalized_snapshot)
@@ -210,6 +443,186 @@ def merge_technical_seo_features(
         **features,
         **technical_features,
     }
+
+
+def build_commercial_trust_features(snapshot: dict[str, object] | None) -> dict[str, float | int]:
+    normalized_snapshot = _normalize_snapshot(snapshot)
+    if normalized_snapshot is None:
+        return {}
+
+    document = _document_payload(normalized_snapshot)
+    text = str(normalized_snapshot.get("text") or "")
+    html = str(normalized_snapshot.get("html") or "")
+    links = document.get("links") if isinstance(document.get("links"), list) else []
+    button_texts = _document_text_list(document.get("button_texts"))
+    counts = document.get("counts") if isinstance(document.get("counts"), dict) else {}
+    json_ld_objects = _json_ld_objects(normalized_snapshot)
+
+    link_hrefs = [str(item.get("href") or "").strip().lower() for item in links if isinstance(item, dict)]
+    link_texts = [str(item.get("text") or "").strip() for item in links if isinstance(item, dict)]
+    visible_text = _normalize_scan_text(text, " ".join(link_texts), " ".join(button_texts))
+    html_text = html.lower()
+    full_scan_text = _normalize_scan_text(visible_text, html_text)
+
+    phone_matches = {
+        re.sub(r"\D", "", match)
+        for match in PHONE_PATTERN.findall(f"{text} {' '.join(link_hrefs)}")
+        if len(re.sub(r"\D", "", match)) >= 10
+    }
+    if any(_nested_key_present(obj, "telephone") for obj in json_ld_objects):
+        phone_matches.add("schema-phone")
+    phone_count = len(phone_matches)
+    phone_present = int(phone_count > 0 or any(href.startswith("tel:") for href in link_hrefs))
+
+    email_matches = {match.lower() for match in EMAIL_PATTERN.findall(f"{text} {' '.join(link_hrefs)}")}
+    email_present = int(bool(email_matches or any(href.startswith("mailto:") for href in link_hrefs)))
+
+    address_present = int(
+        _contains_any(full_scan_text, ADDRESS_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "address")
+        or _json_ld_type_present(json_ld_objects, "PostalAddress")
+    )
+    business_hours_present = int(
+        _contains_any(full_scan_text, BUSINESS_HOURS_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "openingHours")
+        or _nested_key_present(json_ld_objects, "openingHoursSpecification")
+    )
+    price_present = int(
+        bool(PRICE_PATTERN.search(full_scan_text))
+        or _nested_key_present(json_ld_objects, "price")
+        or _nested_key_present(json_ld_objects, "lowPrice")
+    )
+    currency_present = int(
+        bool(CURRENCY_PATTERN.search(full_scan_text))
+        or _nested_key_present(json_ld_objects, "priceCurrency")
+    )
+    delivery_info_present = int(
+        _contains_any(full_scan_text, DELIVERY_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "shippingDetails")
+        or _nested_key_present(json_ld_objects, "availableDeliveryMethod")
+    )
+    payment_info_present = int(_contains_any(full_scan_text, PAYMENT_KEYWORDS))
+    warranty_info_present = int(
+        _contains_any(full_scan_text, WARRANTY_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "warranty")
+    )
+    returns_info_present = int(
+        _contains_any(full_scan_text, RETURNS_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "hasMerchantReturnPolicy")
+    )
+    reviews_present = int(
+        _contains_any(full_scan_text, REVIEWS_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "review")
+    )
+    rating_present = int(
+        bool(RATING_PATTERN.search(full_scan_text))
+        or _nested_key_present(json_ld_objects, "aggregateRating")
+        or _nested_key_present(json_ld_objects, "ratingValue")
+    )
+    faq_present = int(
+        _contains_any(full_scan_text, FAQ_KEYWORDS)
+        or _json_ld_type_present(json_ld_objects, "FAQPage")
+    )
+
+    cta_count = sum(1 for candidate in [*button_texts, *link_texts] if _contains_any(candidate.lower(), CTA_KEYWORDS))
+    if _document_count(counts, "form") > 0 and cta_count == 0:
+        cta_count = 1
+    cta_present = int(cta_count > 0)
+
+    messenger_present = int(
+        any(_contains_any(href, MESSENGER_KEYWORDS) for href in link_hrefs)
+        or _contains_any(full_scan_text, MESSENGER_KEYWORDS)
+    )
+    value_proposition_present = int(_contains_any(full_scan_text, VALUE_PROPOSITION_KEYWORDS))
+    legal_requisites_present = int(
+        _contains_any(full_scan_text, LEGAL_KEYWORDS)
+        or _nested_key_present(json_ld_objects, "taxID")
+        or _nested_key_present(json_ld_objects, "vatID")
+    )
+    company_identity_present = int(
+        legal_requisites_present
+        or _json_ld_type_present(json_ld_objects, "Organization", "LocalBusiness", "Corporation", "Store")
+    )
+
+    contact_signals = [phone_present, email_present, address_present, business_hours_present, messenger_present]
+    commercial_signals = [
+        phone_present,
+        address_present,
+        business_hours_present,
+        price_present,
+        delivery_info_present,
+        payment_info_present,
+        faq_present,
+        cta_present,
+        value_proposition_present,
+    ]
+    trust_signals = [
+        email_present,
+        address_present,
+        business_hours_present,
+        warranty_info_present,
+        returns_info_present,
+        reviews_present,
+        rating_present,
+        legal_requisites_present,
+        company_identity_present,
+    ]
+    contact_options_score = sum(contact_signals) / len(contact_signals)
+    commercial_signal_count = sum(commercial_signals)
+    trust_signal_count = sum(trust_signals)
+    commercial_signals_score = commercial_signal_count / len(commercial_signals)
+    trust_signals_score = trust_signal_count / len(trust_signals)
+    commercial_trust_score = (commercial_signals_score + trust_signals_score + contact_options_score) / 3.0
+
+    return {
+        "phone_present": phone_present,
+        "phone_count": phone_count,
+        "email_present": email_present,
+        "address_present": address_present,
+        "business_hours_present": business_hours_present,
+        "price_present": price_present,
+        "currency_present": currency_present,
+        "delivery_info_present": delivery_info_present,
+        "payment_info_present": payment_info_present,
+        "warranty_info_present": warranty_info_present,
+        "returns_info_present": returns_info_present,
+        "reviews_present": reviews_present,
+        "rating_present": rating_present,
+        "faq_present": faq_present,
+        "cta_present": cta_present,
+        "cta_count": cta_count,
+        "messenger_present": messenger_present,
+        "value_proposition_present": value_proposition_present,
+        "legal_requisites_present": legal_requisites_present,
+        "company_identity_present": company_identity_present,
+        "contact_options_score": round(contact_options_score, 6),
+        "commercial_signal_count": commercial_signal_count,
+        "trust_signal_count": trust_signal_count,
+        "commercial_signals_score": round(commercial_signals_score, 6),
+        "trust_signals_score": round(trust_signals_score, 6),
+        "commercial_trust_score": round(commercial_trust_score, 6),
+    }
+
+
+def merge_commercial_trust_features(
+    features: dict[str, float | int],
+    snapshot: dict[str, object] | None,
+) -> dict[str, float | int]:
+    commercial_features = build_commercial_trust_features(snapshot)
+    if not commercial_features:
+        return dict(features)
+    return {
+        **features,
+        **commercial_features,
+    }
+
+
+def merge_snapshot_auxiliary_features(
+    features: dict[str, float | int],
+    snapshot: dict[str, object] | None,
+) -> dict[str, float | int]:
+    with_technical = merge_technical_seo_features(features, snapshot)
+    return merge_commercial_trust_features(with_technical, snapshot)
 
 
 def build_features(html: str, text: str, query: str) -> dict[str, float | int]:

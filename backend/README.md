@@ -5,12 +5,12 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - создание и хранение аудитов;
 - распределённую обработку stage-based pipeline через `Celery`;
 - получение и нормализацию данных по целевой странице и конкурентам;
-- извлечение контентных, семантических, коммерческих и технических SEO-признаков;
+- извлечение контентных, семантических, технических, commercial и trust-признаков;
 - ML scoring и формирование score breakdown;
 - генерацию приоритетных рекомендаций;
 - runtime telemetry, readiness и диагностику распределённого исполнения.
 
-Корневой сценарий запуска всего проекта описан в `../README.md`. Этот файл сфокусирован именно на backend-архитектуре, API и распределённом runtime.
+Корневой сценарий запуска всего проекта описан в `../README.md`. Этот файл сфокусирован на backend-архитектуре, API и распределённом runtime.
 
 ## Стек
 
@@ -30,9 +30,9 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - `app/main.py` — вход в FastAPI-приложение.
 - `app/api/routes/` — HTTP endpoints.
 - `app/tasks.py` — orchestration и Celery stages.
-- `app/parser.py` — загрузка страниц, fallback-стратегии, snapshot/extraction artifact.
-- `app/features.py` — контентные, семантические и technical SEO features.
-- `app/recommendations.py` — рекомендационный движок.
+- `app/parser.py` — загрузка страниц, fallback-стратегии, snapshot/extraction artifact и DOM-derived document payload.
+- `app/features.py` — контентные, семантические, technical SEO и commercial/trust features.
+- `app/recommendations.py` — recommendation engine.
 - `app/ml/` — scoring, training, dataset builder и model artifact workflow.
 - `app/health.py` — liveness, readiness и runtime metrics.
 - `app/distributed_benchmark.py` — benchmark/reporting workflow для distributed runtime.
@@ -74,7 +74,7 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - `status_code` и `response_headers`;
 - `redirect_chain`;
 - `html` и извлечённый `text`;
-- DOM-derived document payload: `title`, `meta_description`, `meta_robots`, `canonical`, `viewport`, `lang`, `hreflang_links`, counts и т.д.
+- DOM-derived document payload: `title`, `meta_description`, `meta_robots`, `canonical`, `viewport`, `lang`, `hreflang_links`, `links`, `button_texts`, heading texts и структурные counts.
 
 Это позволяет:
 
@@ -84,47 +84,68 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 
 ## D14: Technical SEO Feature Pack
 
-Задача `D14` добавила в backend технический SEO-слой поверх snapshot-пайплайна из `D13`.
+Задача `D14` добавила технический SEO-слой поверх snapshot-пайплайна из `D13`.
 
-### Какие сигналы теперь считаются
-
-Backend теперь извлекает и использует snapshot-derived technical signals:
+Backend теперь извлекает и использует:
 
 - HTTP status и признак корректного ответа;
-- `redirect_count` и `has_redirect`;
+- `redirect_count`, `has_redirect`;
 - наличие `canonical` и его соответствие `final_url`;
 - `meta robots` и `X-Robots-Tag`;
 - `robots_noindex`, `robots_nofollow`, `page_indexable`;
-- наличие `viewport`;
-- наличие `lang`;
-- `hreflang_count` и `hreflang_present`;
-- глубину URL;
-- количество query-параметров;
+- наличие `viewport`, `lang`, `hreflang`;
+- глубину URL и количество query-параметров;
 - производные technical scores: `redirect_efficiency_score`, `url_hygiene_score`, `technical_metadata_score`, `canonical_signal_score`, `technical_seo_score`.
 
-### Где эти сигналы используются
-
-Технические признаки проходят через три основных потока:
+Эти сигналы проходят через:
 
 - target page feature extraction;
 - competitor page analysis;
-- dataset builder для будущей training-схемы.
+- rule-based score explanation;
+- recommendation layer.
 
-Также они используются в:
+## D15: Commercial And Trust Feature Pack
 
-- `score explanation` как дополнительные rule factors;
-- рекомендациях пользователя (`TECHNICAL_*` codes);
-- сравнении с конкурентами, когда контекст позволяет делать вывод без ложных срабатываний.
+Задача `D15` расширила snapshot-derived feature layer для коммерческих landing pages.
 
-### Важное ограничение D14
+### Какие сигналы теперь считаются
 
-В `D14` intentionally не менялся `FEATURE_COLUMNS` текущей ML-модели.
+Backend теперь извлекает и использует commercial/trust signals:
 
-Причина простая: опубликованный model artifact всё ещё совместим со старой векторной схемой. Поэтому D14:
+- `phone_present`, `phone_count`;
+- `email_present`;
+- `address_present`;
+- `business_hours_present`;
+- `price_present`, `currency_present`;
+- `delivery_info_present`, `payment_info_present`;
+- `warranty_info_present`, `returns_info_present`;
+- `reviews_present`, `rating_present`;
+- `faq_present`;
+- `cta_present`, `cta_count`;
+- `messenger_present`;
+- `value_proposition_present`;
+- `legal_requisites_present`, `company_identity_present`;
+- агрегаты `contact_options_score`, `commercial_signals_score`, `trust_signals_score`, `commercial_trust_score`.
 
-- расширяет runtime features и rule explanation;
-- не ломает существующий ML artifact;
-- оставляет расширение train-time feature schema на следующие задачи (`D17/D18`).
+### Где эти сигналы используются
+
+Новые D15 signals проходят через:
+
+- target page feature extraction;
+- competitor analysis;
+- dataset builder для будущего retraining;
+- recommendation layer (`COMMERCIAL_*` и `TRUST_*` codes);
+- score explanation как дополнительные rule factors.
+
+### Ограничение D15
+
+Как и в `D14`, задача сознательно не меняет текущий `FEATURE_COLUMNS` production-model schema.
+
+Причина: опубликованный ML artifact должен оставаться совместимым с текущим runtime. Поэтому D15:
+
+- делает новые signals доступными продукту уже сейчас;
+- экспортирует их в dataset builder для следующей волны retraining;
+- не ломает текущий model artifact до задач `D17/D18`.
 
 ## Установка
 
@@ -174,24 +195,9 @@ Backend предоставляет четыре основных health/runtime 
 - `GET /health/ready` — readiness всего distributed stack;
 - `GET /health/metrics` — runtime telemetry по очередям, workers и backlog.
 
-### Что проверяет `/health/ready`
+Если один из обязательных компонентов не готов, `GET /health/ready` возвращает `503`.
 
-- доступность БД;
-- доступность Redis;
-- наличие активных Celery workers;
-- покрытие ожидаемых audit queues;
-- доступность `SearxNG`, если используется provider `searxng`.
-
-Если один из обязательных компонентов не готов, endpoint возвращает `503`.
-
-### Что показывает `/health/metrics`
-
-- queue depth по audit queues;
-- queue pressure snapshots;
-- worker activity и queue coverage;
-- worker topology profiles и queue affinity;
-- alerts от stuck/backlogged detector;
-- агрегированные pipeline counters.
+`GET /health/metrics` показывает queue depth, queue pressure, worker activity, queue coverage, topology validation и runtime alerts.
 
 ## Audit API
 
@@ -205,23 +211,19 @@ Backend предоставляет четыре основных health/runtime 
 - `GET /audits/{audit_id}/events` — timeline событий аудита;
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
 
-### Что важно в результатах после D13/D14
+### Что важно в результатах после D13-D15
 
 При успешном аудите API теперь может отдавать:
 
 - `feature_schema_version`;
 - `target_snapshot_summary`;
-- expanded `features`, включая technical SEO keys;
-- score breakdown с technical rule factors;
-- рекомендации с `TECHNICAL_*` codes при наличии обоснованных technical signals.
+- expanded `features`, включая technical SEO и commercial/trust keys;
+- score breakdown с technical/commercial/trust rule factors;
+- рекомендации с `TECHNICAL_*`, `COMMERCIAL_*` и `TRUST_*` codes.
 
 ## Admission control
 
-Начиная с `D10`, `POST /audits` может вернуть `503`, если runtime capacity деградирована:
-
-- очередь `audits.pipeline` backlogged/stuck;
-- detector фиксирует длительное ожидание queued/dispatched работ;
-- runtime не готов принимать новый audit без усугубления backlog.
+Начиная с `D10`, `POST /audits` может вернуть `503`, если runtime capacity деградирована.
 
 Это нормальная часть архитектуры, а не баг API по умолчанию.
 
@@ -288,16 +290,16 @@ cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m pytest
 ```
 
-Фокусный набор после D14:
+Фокусный набор после D15:
 
 ```powershell
 cd E:\codexPROJ\diplom
 backend\.venv\Scripts\python.exe -m pytest \
+  backend\tests\test_parser.py \
   backend\tests\test_features.py \
   backend\tests\test_recommendations.py \
-  backend\tests\test_audit_pipeline.py \
-  backend\tests\test_audits_api.py \
-  backend\tests\test_training_pipeline.py
+  backend\tests\test_training_pipeline.py \
+  backend\tests\test_audit_pipeline.py
 ```
 
 ## Связанные документы

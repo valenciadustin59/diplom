@@ -116,6 +116,9 @@ def test_build_dataset_from_seed_csv_writes_dataset_and_failures(monkeypatch, tm
     assert rows[0]["title"] == "Page 1"
     assert rows[0]["fetch_status"] == "ok"
     assert rows[0]["page_type"] == "content"
+    assert "phone_present" in rows[0]
+    assert "commercial_signals_score" in rows[0]
+    assert rows[0]["phone_present"] == "0.0"
 
     assert len(failures) == 1
     assert failures[0]["url"] == "https://example.com/page-2"
@@ -227,4 +230,3 @@ def test_predict_score_falls_back_to_bootstrap_model(tmp_path):
     assert isinstance(score, float)
     assert 0.0 <= score <= 100.0
     assert explanation["model_info"]["source"] == "bootstrap"
-

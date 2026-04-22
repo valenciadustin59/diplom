@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 
 from app.competitors import _normalize_domain
 from app.competitors import search_serp_urls
-from app.features import build_features, merge_technical_seo_features
+from app.features import SNAPSHOT_AUXILIARY_FEATURE_COLUMNS, build_features, merge_snapshot_auxiliary_features
 from app.ml.model import FEATURE_COLUMNS
 from app.parser import ensure_extraction_artifact, fetch_page
 from app.serp import SerpConfigurationError, SerpProviderError, search as search_serp
@@ -44,7 +44,7 @@ DATASET_COLUMNS = [
     "fetch_status",
     "fetch_error",
     "target_score",
-] + FEATURE_COLUMNS
+] + FEATURE_COLUMNS + SNAPSHOT_AUXILIARY_FEATURE_COLUMNS
 
 FAILURE_COLUMNS = [
     "query",
@@ -274,7 +274,7 @@ def _process_search_result(seed: TrainingSeed, result: dict[str, object]) -> tup
             fetch_method=str(fetch_result.get("fetch_method") or "") or None,
             redirect_chain=fetch_result.get("redirect_chain") if isinstance(fetch_result.get("redirect_chain"), list) else [],
         )
-        features = merge_technical_seo_features(
+        features = merge_snapshot_auxiliary_features(
             build_features(html=html, text=text, query=seed.query),
             snapshot,
         )
@@ -284,6 +284,8 @@ def _process_search_result(seed: TrainingSeed, result: dict[str, object]) -> tup
             "fetch_error": "",
         }
         for feature_name in FEATURE_COLUMNS:
+            success_row[feature_name] = float(features.get(feature_name, 0.0))
+        for feature_name in SNAPSHOT_AUXILIARY_FEATURE_COLUMNS:
             success_row[feature_name] = float(features.get(feature_name, 0.0))
         return "success", success_row, not bool(text.strip())
     except Exception as error:

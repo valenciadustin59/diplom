@@ -1,6 +1,6 @@
 import httpx
 
-from app.parser import FEATURE_SCHEMA_VERSION, extract_text, fetch_page, summarize_extraction_artifact
+from app.parser import FEATURE_SCHEMA_VERSION, extract_document, extract_text, fetch_page, summarize_extraction_artifact
 from app.tasks import process_page
 
 
@@ -23,6 +23,26 @@ def test_extract_text_removes_script_and_style():
     text = extract_text(html)
 
     assert text == "Hello World"
+
+
+def test_extract_document_captures_links_and_buttons():
+    html = """
+    <html>
+      <body>
+        <a href="tel:+79990000000" rel="nofollow">Позвонить</a>
+        <a href="https://t.me/example">Telegram</a>
+        <button>Оставить заявку</button>
+      </body>
+    </html>
+    """
+
+    document = extract_document(html)
+
+    assert document["links"] == [
+        {"href": "tel:+79990000000", "text": "Позвонить", "rel": "nofollow"},
+        {"href": "https://t.me/example", "text": "Telegram", "rel": ""},
+    ]
+    assert document["button_texts"] == ["Оставить заявку"]
 
 
 def test_fetch_page_returns_success_result(monkeypatch):

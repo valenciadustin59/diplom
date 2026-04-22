@@ -16,6 +16,26 @@ TECHNICAL_FEATURE_KEYS = {
     "url_has_query_parameters",
     "url_depth",
 }
+COMMERCIAL_TRUST_FEATURE_KEYS = {
+    "phone_present",
+    "email_present",
+    "address_present",
+    "business_hours_present",
+    "price_present",
+    "delivery_info_present",
+    "payment_info_present",
+    "reviews_present",
+    "rating_present",
+    "faq_present",
+    "cta_present",
+    "messenger_present",
+    "value_proposition_present",
+    "legal_requisites_present",
+    "company_identity_present",
+    "contact_options_score",
+    "commercial_signals_score",
+    "trust_signals_score",
+}
 
 
 def average_competitor_features(
@@ -56,6 +76,7 @@ def generate_recommendations(
     competitor_avg_features = average_competitor_features(competitor_pages_features) if has_competitor_context else {}
     competitors_average_score = average_score(competitor_pages_features) if has_competitor_context else 0.0
     has_technical_context = any(_has_feature(page_features, key) for key in TECHNICAL_FEATURE_KEYS)
+    has_commercial_trust_context = any(_has_feature(page_features, key) for key in COMMERCIAL_TRUST_FEATURE_KEYS)
 
     def add_recommendation(code: str, priority: str, message: str) -> None:
         recommendations.append(
@@ -70,13 +91,13 @@ def generate_recommendations(
         add_recommendation(
             "LOW_PAGE_SCORE",
             "high",
-            "Существенно улучшите структуру, релевантность и техническое качество страницы: текущий score слишком низкий.",
+            "Существенно улучшите структуру, релевантность, коммерческую полноту и техническое качество страницы: текущий score слишком низкий.",
         )
     elif competitors_average_score and page_score < competitors_average_score - 7:
         add_recommendation(
             "BELOW_COMPETITORS",
             "high",
-            "Страница заметно уступает конкурентам по качеству. Усильте контент, коммерческие блоки и технические сигналы.",
+            "Страница заметно уступает конкурентам по качеству. Усильте контент, коммерческие блоки, trust-сигналы и техническую базу.",
         )
     elif competitors_average_score and page_score < competitors_average_score:
         add_recommendation(
@@ -273,11 +294,151 @@ def generate_recommendations(
                 "Конкуренты используют hreflang. Если страница участвует в мультирегиональной или мультиязычной выдаче, добавьте hreflang-разметку.",
             )
 
+    if has_commercial_trust_context:
+        competitor_phone = float(competitor_avg_features.get("phone_present", 0.0)) if has_competitor_context else 0.0
+        competitor_address = float(competitor_avg_features.get("address_present", 0.0)) if has_competitor_context else 0.0
+        competitor_hours = float(competitor_avg_features.get("business_hours_present", 0.0)) if has_competitor_context else 0.0
+        competitor_price = float(competitor_avg_features.get("price_present", 0.0)) if has_competitor_context else 0.0
+        competitor_delivery = float(competitor_avg_features.get("delivery_info_present", 0.0)) if has_competitor_context else 0.0
+        competitor_payment = float(competitor_avg_features.get("payment_info_present", 0.0)) if has_competitor_context else 0.0
+        competitor_cta = float(competitor_avg_features.get("cta_present", 0.0)) if has_competitor_context else 0.0
+        competitor_messenger = float(competitor_avg_features.get("messenger_present", 0.0)) if has_competitor_context else 0.0
+        competitor_value = float(competitor_avg_features.get("value_proposition_present", 0.0)) if has_competitor_context else 0.0
+        competitor_reviews = float(competitor_avg_features.get("reviews_present", 0.0)) if has_competitor_context else 0.0
+        competitor_rating = float(competitor_avg_features.get("rating_present", 0.0)) if has_competitor_context else 0.0
+        competitor_legal = float(competitor_avg_features.get("legal_requisites_present", 0.0)) if has_competitor_context else 0.0
+        competitor_warranty = float(competitor_avg_features.get("warranty_info_present", 0.0)) if has_competitor_context else 0.0
+        competitor_returns = float(competitor_avg_features.get("returns_info_present", 0.0)) if has_competitor_context else 0.0
+
+        if _has_feature(page_features, "phone_present") and _int_feature(page_features, "phone_present") == 0:
+            if has_competitor_context or _float_feature(page_features, "contact_options_score") < 0.4:
+                add_recommendation(
+                    "COMMERCIAL_MISSING_PHONE",
+                    "high" if competitor_phone >= 0.4 else "medium",
+                    "Добавьте заметный телефон или другой прямой контакт в первый экран и основные коммерческие блоки страницы.",
+                )
+
+        if _has_feature(page_features, "address_present") and _int_feature(page_features, "address_present") == 0:
+            if competitor_address >= 0.3 or _float_feature(page_features, "trust_signals_score") < 0.45:
+                add_recommendation(
+                    "COMMERCIAL_MISSING_ADDRESS",
+                    "medium",
+                    "Добавьте адрес или понятную географическую привязку бизнеса, чтобы усилить локальное доверие и коммерческую полноту страницы.",
+                )
+
+        if _has_feature(page_features, "business_hours_present") and _int_feature(page_features, "business_hours_present") == 0:
+            if competitor_hours >= 0.3:
+                add_recommendation(
+                    "COMMERCIAL_MISSING_BUSINESS_HOURS",
+                    "medium",
+                    "Укажите режим работы или время ответа, чтобы снизить неопределённость для пользователя.",
+                )
+
+        if _has_feature(page_features, "price_present") and _int_feature(page_features, "price_present") == 0:
+            if competitor_price >= 0.4:
+                add_recommendation(
+                    "COMMERCIAL_MISSING_PRICE_SIGNAL",
+                    "medium",
+                    "Добавьте ценовой ориентир, диапазон цен или понятный оффер, если конкуренты уже дают пользователю ценовой сигнал.",
+                )
+
+        if (
+            _has_feature(page_features, "delivery_info_present")
+            and _int_feature(page_features, "delivery_info_present") == 0
+            and competitor_delivery >= 0.4
+        ):
+            add_recommendation(
+                "COMMERCIAL_MISSING_DELIVERY_INFO",
+                "medium",
+                "Добавьте блок с условиями доставки или получения услуги, если это важно в конкурентной выдаче.",
+            )
+
+        if (
+            _has_feature(page_features, "payment_info_present")
+            and _int_feature(page_features, "payment_info_present") == 0
+            and competitor_payment >= 0.4
+        ):
+            add_recommendation(
+                "COMMERCIAL_MISSING_PAYMENT_INFO",
+                "medium",
+                "Укажите способы оплаты или условия расчёта, если конкуренты уже дают этот сигнал доверия.",
+            )
+
+        if _has_feature(page_features, "cta_present") and _int_feature(page_features, "cta_present") == 0:
+            if competitor_cta >= 0.5 or form_count == 0:
+                add_recommendation(
+                    "COMMERCIAL_WEAK_CTA",
+                    "medium",
+                    "Сделайте CTA-блок явнее: добавьте кнопки действия, заявку, звонок или консультацию в ключевые зоны страницы.",
+                )
+
+        if (
+            _has_feature(page_features, "messenger_present")
+            and _int_feature(page_features, "messenger_present") == 0
+            and competitor_messenger >= 0.5
+        ):
+            add_recommendation(
+                "COMMERCIAL_NO_MESSENGERS",
+                "low",
+                "Добавьте мессенджеры как дополнительный канал связи, если это уже стало нормой в выдаче по вашему запросу.",
+            )
+
+        if (
+            _has_feature(page_features, "value_proposition_present")
+            and _int_feature(page_features, "value_proposition_present") == 0
+            and competitor_value >= 0.4
+        ):
+            add_recommendation(
+                "COMMERCIAL_WEAK_VALUE_PROPOSITION",
+                "medium",
+                "Сформулируйте ценностное предложение страницы: почему пользователь должен выбрать именно вас, а не конкурента.",
+            )
+
+        if _float_feature(page_features, "contact_options_score") < 0.4:
+            add_recommendation(
+                "TRUST_WEAK_CONTACT_BLOCK",
+                "high",
+                "Усильте contact-блок: добавьте больше прозрачных способов связи, адрес, график работы и понятную контактную зону.",
+            )
+
+        if (
+            _has_feature(page_features, "legal_requisites_present")
+            and _int_feature(page_features, "legal_requisites_present") == 0
+            and (_int_feature(page_features, "company_identity_present") == 0 or competitor_legal >= 0.3)
+        ):
+            add_recommendation(
+                "TRUST_MISSING_BUSINESS_ID",
+                "medium",
+                "Добавьте юридические реквизиты, сведения о компании или другой явный business identity block, чтобы усилить доверие.",
+            )
+
+        if (
+            _int_feature(page_features, "reviews_present") == 0
+            and _int_feature(page_features, "rating_present") == 0
+            and (competitor_reviews >= 0.4 or competitor_rating >= 0.4)
+        ):
+            add_recommendation(
+                "TRUST_MISSING_SOCIAL_PROOF",
+                "medium",
+                "Добавьте отзывы, кейсы или рейтинговые сигналы, если конкуренты уже показывают социальное доказательство на посадочной странице.",
+            )
+
+        if (
+            _int_feature(page_features, "warranty_info_present") == 0
+            and _int_feature(page_features, "returns_info_present") == 0
+            and (competitor_warranty >= 0.4 or competitor_returns >= 0.4)
+        ):
+            add_recommendation(
+                "TRUST_MISSING_POST_SALE_INFO",
+                "low",
+                "Добавьте гарантию, условия возврата или постпродажные обязательства, если это используется конкурентами как trust-сигнал.",
+            )
+
     if not recommendations:
         add_recommendation(
             "NO_CRITICAL_ISSUES",
             "low",
-            "Критичных проблем не найдено. Можно точечно усиливать контент, коммерческие блоки и технические сигналы.",
+            "Критичных проблем не найдено. Можно точечно усиливать контент, коммерческие блоки, trust-сигналы и техническую базу.",
         )
 
     recommendations.sort(key=lambda item: (PRIORITY_ORDER[item["priority"]], item["code"]))

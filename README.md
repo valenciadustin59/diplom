@@ -20,6 +20,7 @@
 - пошаговая распределённая обработка аудита по stage-based pipeline;
 - ML-scoring страницы и сохранение breakdown по оценке;
 - technical SEO feature pack на основе snapshot-артефакта страницы;
+- commercial/trust feature pack для коммерческих landing pages;
 - выдача рекомендаций по улучшению страницы;
 - timeline событий аудита и диагностика критического пути;
 - runtime telemetry для очередей, workers, backlog и admission control;
@@ -322,7 +323,8 @@ npm run test
 
 - `D13` - версионированный extraction pipeline и `feature schema v2`: постоянный `target_snapshot`, DOM-based extraction, повторяемый пересчёт признаков из сохранённого snapshot и API-поля `feature_schema_version` и `target_snapshot_summary`.
 - `D14` - пакет технических SEO-признаков: technical signals из snapshot, технические рекомендации и technical factors в score explanation без изменения текущей ML-схемы признаков.
+- `D15` - пакет commercial/trust signals: телефоны, адрес, часы работы, цены, доставка, оплата, гарантия, возврат, отзывы, рейтинг, FAQ, CTA, мессенджеры, legal/business identity признаки, агрегированные commercial/trust scores и новый recommendation layer.
 
 В работе дальше:
 
-- `D15-D20` - commercial/trust signals, intent-aware features, dataset v2, ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.
+- `D16-D20` - intent-aware features, dataset v2, ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.

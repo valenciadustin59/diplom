@@ -140,3 +140,103 @@ def test_generate_recommendations_adds_technical_seo_recommendations():
     assert "TECHNICAL_QUERY_PARAMETERS_IN_URL" in codes
     assert "TECHNICAL_DEEP_URL" in codes
     assert "TECHNICAL_MISSING_HREFLANG" in codes
+
+
+def test_generate_recommendations_adds_commercial_and_trust_recommendations():
+    page_features = {
+        "title_present": 1,
+        "query_in_title": 1,
+        "meta_description_present": 1,
+        "h1_count": 1,
+        "query_in_text": 1,
+        "keyword_coverage_ratio": 1.0,
+        "semantic_similarity": 0.85,
+        "text_length_chars": 2600,
+        "text_to_html_ratio": 0.2,
+        "link_count": 10,
+        "image_count": 2,
+        "form_count": 1,
+        "phone_present": 0,
+        "address_present": 0,
+        "business_hours_present": 0,
+        "price_present": 0,
+        "delivery_info_present": 0,
+        "payment_info_present": 0,
+        "cta_present": 0,
+        "messenger_present": 0,
+        "value_proposition_present": 0,
+        "reviews_present": 0,
+        "rating_present": 0,
+        "warranty_info_present": 0,
+        "returns_info_present": 0,
+        "legal_requisites_present": 0,
+        "company_identity_present": 0,
+        "contact_options_score": 0.0,
+        "commercial_signals_score": 0.1,
+        "trust_signals_score": 0.1,
+    }
+    competitor_pages_features = [
+        {
+            "text_length_chars": 2400,
+            "link_count": 12,
+            "image_count": 2,
+            "form_count": 1,
+            "phone_present": 1,
+            "address_present": 1,
+            "business_hours_present": 1,
+            "price_present": 1,
+            "delivery_info_present": 1,
+            "payment_info_present": 1,
+            "cta_present": 1,
+            "messenger_present": 1,
+            "value_proposition_present": 1,
+            "reviews_present": 1,
+            "rating_present": 1,
+            "warranty_info_present": 1,
+            "returns_info_present": 1,
+            "legal_requisites_present": 1,
+            "company_identity_present": 1,
+        },
+        {
+            "text_length_chars": 2600,
+            "link_count": 14,
+            "image_count": 3,
+            "form_count": 1,
+            "phone_present": 1,
+            "address_present": 1,
+            "business_hours_present": 1,
+            "price_present": 1,
+            "delivery_info_present": 1,
+            "payment_info_present": 1,
+            "cta_present": 1,
+            "messenger_present": 1,
+            "value_proposition_present": 1,
+            "reviews_present": 1,
+            "rating_present": 1,
+            "warranty_info_present": 1,
+            "returns_info_present": 1,
+            "legal_requisites_present": 1,
+            "company_identity_present": 1,
+        },
+    ]
+
+    recommendations = generate_recommendations(
+        page_features=page_features,
+        page_score=61.0,
+        competitor_pages_features=competitor_pages_features,
+    )
+    codes = {item["code"] for item in recommendations}
+
+    assert "COMMERCIAL_MISSING_PHONE" in codes
+    assert "COMMERCIAL_MISSING_ADDRESS" in codes
+    assert "COMMERCIAL_MISSING_BUSINESS_HOURS" in codes
+    assert "COMMERCIAL_MISSING_PRICE_SIGNAL" in codes
+    assert "COMMERCIAL_MISSING_DELIVERY_INFO" in codes
+    assert "COMMERCIAL_MISSING_PAYMENT_INFO" in codes
+    assert "COMMERCIAL_WEAK_CTA" in codes
+    assert "COMMERCIAL_NO_MESSENGERS" in codes
+    assert "COMMERCIAL_WEAK_VALUE_PROPOSITION" in codes
+    assert "TRUST_WEAK_CONTACT_BLOCK" in codes
+    assert "TRUST_MISSING_BUSINESS_ID" in codes
+    assert "TRUST_MISSING_SOCIAL_PROOF" in codes
+    assert "TRUST_MISSING_POST_SALE_INFO" in codes

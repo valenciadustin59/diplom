@@ -669,6 +669,39 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
             }
         )
 
+    if _has_feature(features, "commercial_signals_score"):
+        commercial_signals_score = _feature_value(features, "commercial_signals_score")
+        factors.append(
+            {
+                "key": "commercial_completeness",
+                "label": "Commercial completeness",
+                "impact": round((commercial_signals_score - 0.35) * 10.0, 4),
+                "value": round(commercial_signals_score, 4),
+            }
+        )
+
+    if _has_feature(features, "trust_signals_score"):
+        trust_signals_score = _feature_value(features, "trust_signals_score")
+        factors.append(
+            {
+                "key": "trust_signals",
+                "label": "Trust signals",
+                "impact": round((trust_signals_score - 0.35) * 9.0, 4),
+                "value": round(trust_signals_score, 4),
+            }
+        )
+
+    if _has_feature(features, "contact_options_score"):
+        contact_options_score = _feature_value(features, "contact_options_score")
+        factors.append(
+            {
+                "key": "contact_accessibility",
+                "label": "Contact accessibility",
+                "impact": round((contact_options_score - 0.4) * 6.0, 4),
+                "value": round(contact_options_score, 4),
+            }
+        )
+
     rule_score = _rounded_score(sum(float(item["impact"]) for item in factors))
     return rule_score, factors
 
@@ -774,5 +807,4 @@ def train_and_predict(
         "source": str(model_info["source"]),
         "model_info": model_info,
     }
-
 

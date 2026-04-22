@@ -40,7 +40,7 @@ class _DocumentParser(HTMLParser):
         super().__init__()
         self._skip_depth = 0
         self._text_chunks: list[str] = []
-        self._capture_stack: list[tuple[str, list[str]]] = []
+        self._capture_stack: list[tuple[str, dict[str, str], list[str]]] = []
         self._json_ld_buffer: list[str] | None = None
 
         self.lang = ""
@@ -51,6 +51,8 @@ class _DocumentParser(HTMLParser):
         self.canonical = ""
         self.json_ld: list[str] = []
         self.hreflang_links: list[dict[str, str]] = []
+        self.links: list[dict[str, str]] = []
+        self.button_texts: list[str] = []
         self.h1_texts: list[str] = []
         self.h2_texts: list[str] = []
         self.h3_texts: list[str] = []
@@ -98,8 +100,8 @@ class _DocumentParser(HTMLParser):
             if normalized_tag == "script" and "application/ld+json" in attrs_map.get("type", "").lower():
                 self._json_ld_buffer = []
 
-        if normalized_tag in {"title", "h1", "h2", "h3"}:
-            self._capture_stack.append((normalized_tag, []))
+        if normalized_tag in {"title", "h1", "h2", "h3", "a", "button"}:
+            self._capture_stack.append((normalized_tag, dict(attrs_map), []))
 
         if normalized_tag == "p":
             self.counts["paragraph"] += 1
@@ -134,8 +136,23 @@ class _DocumentParser(HTMLParser):
                 self._json_ld_buffer = None
 
         if self._capture_stack and self._capture_stack[-1][0] == normalized_tag:
-            _captured_tag, buffer = self._capture_stack.pop()
+            _captured_tag, attrs_map, buffer = self._capture_stack.pop()
             captured_text = _collapse_whitespace(" ".join(buffer))
+            if normalized_tag == "a":
+                href = attrs_map.get("href", "")
+                if href or captured_text:
+                    self.links.append(
+                        {
+                            "href": href,
+                            "text": captured_text,
+                            "rel": attrs_map.get("rel", ""),
+                        }
+                    )
+                return
+            if normalized_tag == "button":
+                if captured_text:
+                    self.button_texts.append(captured_text)
+                return
             if not captured_text:
                 return
             if normalized_tag == "title" and not self.title:
@@ -157,7 +174,7 @@ class _DocumentParser(HTMLParser):
 
         if self._skip_depth == 0:
             self._text_chunks.append(normalized)
-            for _tag, buffer in self._capture_stack:
+            for _tag, _attrs, buffer in self._capture_stack:
                 buffer.append(normalized)
 
     def as_document(self) -> dict[str, object]:
@@ -172,6 +189,8 @@ class _DocumentParser(HTMLParser):
             "lang": self.lang,
             "json_ld": list(self.json_ld),
             "hreflang_links": list(self.hreflang_links),
+            "links": list(self.links),
+            "button_texts": list(self.button_texts),
             "h1_texts": list(self.h1_texts),
             "h2_texts": list(self.h2_texts),
             "h3_texts": list(self.h3_texts),
@@ -257,6 +276,8 @@ def build_extraction_artifact(
         "canonical": str(document.get("canonical") or ""),
         "lang": str(document.get("lang") or ""),
         "hreflang_links": list(document.get("hreflang_links") or []),
+        "links": list(document.get("links") or []),
+        "button_texts": list(document.get("button_texts") or []),
         "h1_texts": list(document.get("h1_texts") or []),
         "h2_texts": list(document.get("h2_texts") or []),
         "h3_texts": list(document.get("h3_texts") or []),

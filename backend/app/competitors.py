@@ -7,7 +7,7 @@ from urllib.parse import parse_qs, unquote, urlparse
 
 import httpx
 
-from app.features import build_features, merge_technical_seo_features
+from app.features import build_features, merge_snapshot_auxiliary_features
 from app.ml.model import compare_with_competitors, predict_score
 from app.parser import ensure_extraction_artifact, fetch_page
 from app.serp import SerpConfigurationError, SerpProviderError, search as search_serp
@@ -243,7 +243,7 @@ def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, 
         fetch_method=str(fetch_result.get("fetch_method") or "") or None,
         redirect_chain=fetch_result.get("redirect_chain") if isinstance(fetch_result.get("redirect_chain"), list) else [],
     )
-    features = merge_technical_seo_features(
+    features = merge_snapshot_auxiliary_features(
         build_features(html=html, text=text, query=query),
         snapshot,
     )
