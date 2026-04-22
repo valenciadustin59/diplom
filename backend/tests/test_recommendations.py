@@ -43,6 +43,7 @@ def test_generate_recommendations_returns_structured_list():
     assert any(item["code"] == "LOW_PAGE_SCORE" for item in recommendations)
     assert any(item["code"] == "MISSING_TITLE" for item in recommendations)
     assert any(item["code"] == "LOW_SEMANTIC_RELEVANCE" for item in recommendations)
+    assert any("страницы" in item["message"] or "странице" in item["message"] for item in recommendations)
     assert recommendations[0]["priority"] == "high"
 
 

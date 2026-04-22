@@ -145,6 +145,7 @@ Backend теперь извлекает и использует commercial/trust
 
 - делает новые signals доступными продукту уже сейчас;
 - экспортирует их в dataset builder для следующей волны retraining;
+- сохраняет совместимость текущих `train.py` и `publish.py`, потому что они по-прежнему используют только `FEATURE_COLUMNS` и игнорируют вспомогательные D14/D15 dataset columns;
 - не ломает текущий model artifact до задач `D17/D18`.
 
 ## Установка
@@ -301,6 +302,15 @@ backend\.venv\Scripts\python.exe -m pytest \
   backend\tests\test_training_pipeline.py \
   backend\tests\test_audit_pipeline.py
 ```
+
+Отдельно для совместимости training/publish workflow после D15 полезно проверить:
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m pytest tests\test_training_pipeline.py tests\test_model_publish.py tests\test_model_evaluate.py
+```
+
+Этот набор подтверждает, что CSV с новыми auxiliary columns из dataset builder по-прежнему совместим с текущим retraining-пайплайном.
 
 ## Связанные документы
 

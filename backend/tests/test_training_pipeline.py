@@ -9,6 +9,7 @@ from app.ml import (
     predict_score,
     train_quality_model,
 )
+from app.ml.dataset_builder import DATASET_COLUMNS
 
 
 def _feature_row(multiplier: float) -> dict[str, float]:
@@ -230,3 +231,54 @@ def test_predict_score_falls_back_to_bootstrap_model(tmp_path):
     assert isinstance(score, float)
     assert 0.0 <= score <= 100.0
     assert explanation["model_info"]["source"] == "bootstrap"
+
+
+def test_train_quality_model_accepts_dataset_with_auxiliary_snapshot_columns(tmp_path):
+    dataset_path = tmp_path / "dataset-with-auxiliary-columns.csv"
+    model_path = tmp_path / "model-with-auxiliary-columns.pkl"
+
+    with dataset_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
+        writer.writeheader()
+        for query_index, query in enumerate(["ремонт квартир москва", "пластиковые окна москва"], start=1):
+            for rank in range(1, 4):
+                row = {column: "" for column in DATASET_COLUMNS}
+                row.update(
+                    {
+                        "query": query,
+                        "category": "category",
+                        "intent": "commercial",
+                        "city": "москва",
+                        "region_code": 213,
+                        "url": f"https://example{query_index}.com/page-{rank}",
+                        "domain": f"example{query_index}.com",
+                        "rank": rank,
+                        "serp_page": 0,
+                        "title": f"Title {rank}",
+                        "snippet": f"Snippet {rank}",
+                        "page_type": "content",
+                        "fetch_status": "ok",
+                        "fetch_error": "",
+                        "target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "phone_present": 1,
+                        "address_present": 1,
+                        "price_present": 1,
+                        "commercial_signals_score": 0.8,
+                        "trust_signals_score": 0.7,
+                        "commercial_trust_score": 0.75,
+                    }
+                )
+                for index, feature_name in enumerate(FEATURE_COLUMNS, start=1):
+                    row[feature_name] = float(index * (query_index * 2 + rank))
+                writer.writerow(row)
+
+    result = train_quality_model(dataset_path=dataset_path, model_path=model_path, test_size=0.34)
+    explanation = explain_score(
+        {feature_name: float(index * 2) for index, feature_name in enumerate(FEATURE_COLUMNS, start=1)},
+        model_path=model_path,
+    )
+
+    assert model_path.exists()
+    assert result["rows_count"] == 6
+    assert result["queries_count"] == 2
+    assert explanation["model_info"]["source"] == "local_dataset"
