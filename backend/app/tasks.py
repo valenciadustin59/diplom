@@ -27,7 +27,12 @@ from app.db import SessionLocal
 from app.features import build_features
 from app.ml import explain_score
 from app.models import Audit, AuditCompetitor, AuditEvent
-from app.parser import fetch_page
+from app.parser import (
+    ensure_extraction_artifact,
+    extraction_artifact_html,
+    extraction_artifact_text,
+    fetch_page,
+)
 from app.recommendations import generate_recommendations
 from app.runtime_capacity import evaluate_queue_dispatch
 
@@ -587,6 +592,8 @@ def _clear_fetch_outputs(audit: Audit) -> None:
     audit.target_fetch_method = None
     audit.target_fetch_error_code = None
     audit.target_fetch_error_message = None
+    audit.target_snapshot = None
+    audit.feature_schema_version = None
 
 
 def _mark_audit_processing(audit: Audit) -> None:
@@ -890,6 +897,21 @@ def process_audit_fetch_target(audit_id: str, processing_version: int) -> dict[s
         audit.target_fetch_method = str(target_fetch.get("fetch_method") or "") or None
         audit.target_fetch_error_code = str(target_fetch.get("fetch_error_code") or "") or None
         audit.target_fetch_error_message = str(target_fetch.get("fetch_error_message") or "") or None
+        target_snapshot = ensure_extraction_artifact(
+            requested_url=audit.target_url,
+            artifact=target_fetch.get("snapshot") if isinstance(target_fetch.get("snapshot"), dict) else None,
+            final_url=str(target_fetch.get("final_url") or audit.target_url),
+            status_code=(
+                int(target_fetch.get("http_status")) if isinstance(target_fetch.get("http_status"), (int, float)) else None
+            ),
+            html=str(target_fetch.get("html") or "") or None,
+            extracted_text=str(target_fetch.get("text") or "") or None,
+            fetch_method=audit.target_fetch_method,
+        )
+        audit.target_snapshot = target_snapshot
+        audit.feature_schema_version = str(target_snapshot.get("feature_schema_version") or "") or None
+        audit.target_html = extraction_artifact_html(target_snapshot) or None
+        audit.extracted_text = extraction_artifact_text(target_snapshot) or None
 
         if target_fetch["status"] != "success":
             failure_details = {
@@ -928,8 +950,6 @@ def process_audit_fetch_target(audit_id: str, processing_version: int) -> dict[s
                 "error_code": audit.target_fetch_error_code,
             }
 
-        audit.target_html = str(target_fetch.get("html") or "")
-        audit.extracted_text = str(target_fetch.get("text") or "")
         _set_next_orchestration_stage(audit, FEATURES_STAGE)
         _flush_audit_events(db, event_buffer)
         db.commit()
@@ -962,8 +982,16 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
         if skip_result is not None:
             return skip_result
 
-        html = str(audit.target_html or "")
-        text = str(audit.extracted_text or "")
+        target_snapshot = ensure_extraction_artifact(
+            requested_url=audit.target_url,
+            artifact=audit.target_snapshot if isinstance(audit.target_snapshot, dict) else None,
+            final_url=audit.target_url,
+            html=str(audit.target_html or "") or None,
+            extracted_text=str(audit.extracted_text or "") or None,
+            fetch_method=audit.target_fetch_method,
+        )
+        html = extraction_artifact_html(target_snapshot)
+        text = extraction_artifact_text(target_snapshot)
         if not html or not text:
             raise RuntimeError("Target page content is not available for feature extraction")
 
@@ -975,6 +1003,8 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
             event_buffer=event_buffer,
             summarize_result=_summarize_features,
         )
+        audit.target_snapshot = target_snapshot
+        audit.feature_schema_version = str(target_snapshot.get("feature_schema_version") or audit.feature_schema_version or "") or None
         audit.features = features
         audit.target_html = None
         _set_next_orchestration_stage(audit, SCORING_STAGE)

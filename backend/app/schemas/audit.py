@@ -35,6 +35,7 @@ class AuditRead(BaseModel):
     created_at: datetime
     updated_at: datetime | None = None
     extracted_text: str | None = None
+    feature_schema_version: str | None = None
     features: dict[str, float | int] | None = None
     score: float | None = None
     score_breakdown: dict[str, object] | None = None
@@ -55,6 +56,8 @@ class AuditResultsRead(BaseModel):
     status: str
     score: float | None = None
     extracted_text: str | None = None
+    feature_schema_version: str | None = None
+    target_snapshot_summary: dict[str, object] | None = None
     features: dict[str, float | int] | None = None
     score_breakdown: dict[str, object] | None = None
     competitor_results: list[dict[str, object]] | None = None

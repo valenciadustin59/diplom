@@ -1,87 +1,62 @@
 import re
 from collections import Counter
-from html import unescape
 
+from app.parser import extract_document
 from app.semantic import build_semantic_features
-
-
-def _count_tag(html: str, tag_name: str) -> int:
-    return len(re.findall(rf"<{tag_name}\b[^>]*>", html, flags=re.IGNORECASE))
-
-
-def _extract_title(html: str) -> str:
-    match = re.search(r"<title\b[^>]*>(.*?)</title>", html, flags=re.IGNORECASE | re.DOTALL)
-    if not match:
-        return ""
-    return re.sub(r"\s+", " ", match.group(1)).strip()
-
-
-def _extract_meta_description(html: str) -> str:
-    match = re.search(
-        r'<meta\b[^>]*name=["\']description["\'][^>]*content=["\'](.*?)["\'][^>]*>',
-        html,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    if match:
-        return re.sub(r"\s+", " ", match.group(1)).strip()
-
-    match = re.search(
-        r'<meta\b[^>]*content=["\'](.*?)["\'][^>]*name=["\']description["\'][^>]*>',
-        html,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    if not match:
-        return ""
-    return re.sub(r"\s+", " ", match.group(1)).strip()
-
-
-def _strip_tags(value: str) -> str:
-    without_tags = re.sub(r"<[^>]+>", " ", value)
-    return re.sub(r"\s+", " ", unescape(without_tags)).strip()
-
-
-def _extract_tag_texts(html: str, tag_name: str) -> list[str]:
-    matches = re.findall(
-        rf"<{tag_name}\b[^>]*>(.*?)</{tag_name}>",
-        html,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    return [text for text in (_strip_tags(match) for match in matches) if text]
 
 
 def _tokenize(value: str) -> list[str]:
     return re.findall(r"\w+", value.lower(), flags=re.UNICODE)
 
 
+def _document_text_list(value: object) -> list[str]:
+    if not isinstance(value, list):
+        return []
+    return [rendered for rendered in (str(item).strip() for item in value) if rendered]
+
+
+def _document_count(counts: dict[str, object], key: str) -> int:
+    value = counts.get(key)
+    if isinstance(value, (int, float)):
+        return int(value)
+    return 0
+
+
 def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
-    text = text.strip()
+    document = extract_document(html)
+    counts = document.get("counts") if isinstance(document.get("counts"), dict) else {}
+
+    normalized_text = text.strip() or str(document.get("text") or "")
     query = query.strip().lower()
-    text_lower = text.lower()
-    title = _extract_title(html)
+    text_lower = normalized_text.lower()
+    title = str(document.get("title") or "")
     title_lower = title.lower()
-    meta_description = _extract_meta_description(html)
+    meta_description = str(document.get("meta_description") or "")
     meta_description_lower = meta_description.lower()
-    h1_texts = _extract_tag_texts(html, "h1")
-    h2_texts = _extract_tag_texts(html, "h2")
-    h3_texts = _extract_tag_texts(html, "h3")
+    h1_texts = _document_text_list(document.get("h1_texts"))
+    h2_texts = _document_text_list(document.get("h2_texts"))
+    h3_texts = _document_text_list(document.get("h3_texts"))
     heading_text = " ".join([*h1_texts, *h2_texts, *h3_texts]).strip()
     heading_text_lower = heading_text.lower()
 
-    words = _tokenize(text)
+    words = _tokenize(normalized_text)
     query_words = _tokenize(query)
     first_200_words = words[:200]
     word_count = len(words)
     unique_word_count = len(set(words))
     unique_word_ratio = (unique_word_count / word_count) if word_count else 0.0
-    sentence_count = max(len(re.findall(r"[.!?]+", text)), 1 if text else 0)
-    paragraph_count = max(_count_tag(html, "p"), sum(1 for part in re.split(r"\n\s*\n", text) if part.strip()))
-    link_count = len(re.findall(r"<a\b[^>]*href=", html, flags=re.IGNORECASE))
-    image_count = len(re.findall(r"<img\b", html, flags=re.IGNORECASE))
-    list_item_count = len(re.findall(r"<li\b", html, flags=re.IGNORECASE))
-    strong_count = len(re.findall(r"<(strong|b)\b", html, flags=re.IGNORECASE))
-    form_count = len(re.findall(r"<form\b", html, flags=re.IGNORECASE))
-    input_count = len(re.findall(r"<input\b", html, flags=re.IGNORECASE))
-    heading_count = len(h1_texts) + len(h2_texts) + len(h3_texts)
+    sentence_count = max(len(re.findall(r"[.!?]+", normalized_text)), 1 if normalized_text else 0)
+    paragraph_count = max(_document_count(counts, "paragraph"), 1 if normalized_text else 0)
+    h1_count = _document_count(counts, "h1")
+    h2_count = _document_count(counts, "h2")
+    h3_count = _document_count(counts, "h3")
+    link_count = _document_count(counts, "link")
+    image_count = _document_count(counts, "image")
+    list_item_count = _document_count(counts, "list_item")
+    strong_count = _document_count(counts, "strong")
+    form_count = _document_count(counts, "form")
+    input_count = _document_count(counts, "input")
+    heading_count = h1_count + h2_count + h3_count
 
     query_term_count = 0
     query_term_matches = 0
@@ -122,12 +97,12 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
     avg_sentence_length = (word_count / sentence_count) if sentence_count else 0.0
     avg_paragraph_length = (word_count / paragraph_count) if paragraph_count else 0.0
     inputs_per_form_ratio = (input_count / form_count) if form_count else 0.0
-    text_to_html_ratio = (len(text) / len(html)) if html else 0.0
+    text_to_html_ratio = (len(normalized_text) / len(html)) if html else 0.0
     per_1000_words = (1000.0 / word_count) if word_count else 0.0
     early_query_coverage_ratio = (first_200_words_query_term_count / len(query_words)) if query_words else 0.0
 
     features: dict[str, float | int] = {
-        "text_length_chars": len(text),
+        "text_length_chars": len(normalized_text),
         "html_length_chars": len(html),
         "word_count": word_count,
         "unique_word_count": unique_word_count,
@@ -136,9 +111,9 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         "sentence_count": sentence_count,
         "avg_sentence_length": round(avg_sentence_length, 4),
         "paragraph_count": paragraph_count,
-        "h1_count": _count_tag(html, "h1"),
-        "h2_count": _count_tag(html, "h2"),
-        "h3_count": _count_tag(html, "h3"),
+        "h1_count": h1_count,
+        "h2_count": h2_count,
+        "h3_count": h3_count,
         "heading_count": heading_count,
         "title_present": int(bool(title)),
         "title_length": len(title),
@@ -171,7 +146,7 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         "strong_density_per_1000_words": round(strong_count * per_1000_words, 6),
         "text_to_html_ratio": round(text_to_html_ratio, 6),
     }
-    features.update(build_semantic_features(text=text, query=query))
+    features.update(build_semantic_features(text=normalized_text, query=query))
 
     semantic_similarity = float(features.get("semantic_similarity", 0.0))
     conversion_signal_score = (

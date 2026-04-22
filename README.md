@@ -1,4 +1,4 @@
-# Site Audit
+﻿# Site Audit
 
 Веб-приложение для автоматизации SEO-аудита посадочных страниц по поисковому запросу.
 
@@ -312,3 +312,16 @@ npm run test
 - конкурентоспособность относительно страниц из выдачи.
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
+
+## D13 Status
+
+The next backlog wave is `D13-D20`.
+
+Completed:
+
+- `D13` - versioned extraction pipeline and `feature schema v2`: persistent `target_snapshot`, DOM-based extraction, replayable feature calculation from saved snapshot, API fields `feature_schema_version` and `target_snapshot_summary`.
+
+Pending:
+
+- `D14-D20` - advanced technical SEO signals, commercial/trust signals, intent-aware features, dataset v2, ranking-oriented model v2, UI/API expansion, and heavy distributed analyzers.
+

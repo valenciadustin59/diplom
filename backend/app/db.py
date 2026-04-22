@@ -50,6 +50,8 @@ def _ensure_sqlite_columns() -> None:
         "orchestration_stage": "ALTER TABLE audits ADD COLUMN orchestration_stage TEXT",
         "extracted_text": "ALTER TABLE audits ADD COLUMN extracted_text TEXT",
         "target_html": "ALTER TABLE audits ADD COLUMN target_html TEXT",
+        "target_snapshot": "ALTER TABLE audits ADD COLUMN target_snapshot JSON",
+        "feature_schema_version": "ALTER TABLE audits ADD COLUMN feature_schema_version TEXT",
         "competitor_processing_status": "ALTER TABLE audits ADD COLUMN competitor_processing_status TEXT",
         "features": "ALTER TABLE audits ADD COLUMN features JSON",
         "score": "ALTER TABLE audits ADD COLUMN score FLOAT",

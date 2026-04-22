@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from app.api.dependencies import get_db_session
 from app.audit_diagnostics import build_audit_timeline_diagnostics, load_audit_events
 from app.models import Audit
+from app.parser import summarize_extraction_artifact
 from app.runtime_capacity import evaluate_new_audit_admission
 from app.schemas.audit import (
     AuditCreate,
@@ -85,6 +86,8 @@ def get_audit_results_endpoint(
         score=audit.score,
         score_breakdown=audit.score_breakdown,
         extracted_text=audit.extracted_text,
+        feature_schema_version=audit.feature_schema_version,
+        target_snapshot_summary=summarize_extraction_artifact(audit.target_snapshot),
         features=audit.features,
         competitor_results=audit.competitor_results,
         comparison_summary=audit.comparison_summary,

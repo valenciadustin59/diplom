@@ -180,6 +180,11 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         assert stored.status == 'completed_with_warnings'
         assert stored.competitor_processing_status == 'aggregated'
         assert stored.extracted_text == 'Title Body'
+        assert stored.feature_schema_version == 'v2'
+        assert isinstance(stored.target_snapshot, dict)
+        assert stored.target_snapshot['requested_url'] == 'https://example.com'
+        assert stored.target_snapshot['final_url'] == 'https://example.com'
+        assert stored.target_snapshot['document']['h1_texts'] == ['Title']
         assert stored.target_fetch_status == 'success'
         assert stored.target_fetch_method == 'http'
         assert stored.target_fetch_error_code is None
@@ -286,6 +291,9 @@ def test_process_audit_fails_when_target_fetch_fails(monkeypatch, tmp_path):
         assert stored.target_fetch_status == 'failed'
         assert stored.target_fetch_method == 'browser'
         assert stored.target_fetch_error_code == 'http_403'
+        assert stored.feature_schema_version == 'v2'
+        assert isinstance(stored.target_snapshot, dict)
+        assert stored.target_snapshot['status_code'] == 403
         assert stored.error_message == 'HTTP 403'
         assert stored.failure_context == {
             'stage': 'fetch',
@@ -353,6 +361,9 @@ def test_process_audit_clears_stale_results_when_retry_fails(monkeypatch, tmp_pa
         assert stored.target_fetch_status == 'failed'
         assert stored.target_fetch_method == 'browser'
         assert stored.target_fetch_error_code == 'http_403'
+        assert stored.feature_schema_version == 'v2'
+        assert isinstance(stored.target_snapshot, dict)
+        assert stored.target_snapshot['status_code'] == 403
         assert stored.failure_context == {
             'stage': 'fetch',
             'code': 'http_403',
@@ -444,6 +455,9 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
         assert stored.target_fetch_method == 'http'
         assert stored.target_fetch_error_code is None
         assert stored.target_fetch_error_message is None
+        assert stored.feature_schema_version == 'v2'
+        assert isinstance(stored.target_snapshot, dict)
+        assert stored.target_snapshot['final_url'] == 'https://example.com'
         assert stored.extracted_text is None
         assert stored.features is None
         assert stored.score is None
@@ -633,6 +647,96 @@ def test_stage_task_ignores_stale_processing_version(monkeypatch, tmp_path):
         'processing_version': 2,
         'current_version': 3,
         'current_stage': 'features',
+    }
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
+def test_process_audit_extract_features_rebuilds_from_saved_snapshot(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-snapshot-features.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+
+    captured: dict[str, str] = {}
+
+    def fake_build_features(html, text, query):
+        captured['html'] = html
+        captured['text'] = text
+        captured['query'] = query
+        return {
+            'text_length_chars': len(text),
+            'query_in_text': 1,
+            'semantic_similarity': 0.91,
+        }
+
+    monkeypatch.setattr('app.tasks.build_features', fake_build_features)
+    monkeypatch.setattr(
+        'app.tasks._dispatch_stage_task',
+        lambda task, audit_id, processing_version=None: {
+            'audit_id': audit_id,
+            'status': 'processing',
+            'next_stage': task.name,
+        },
+    )
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-snapshot-features',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=1,
+            orchestration_stage='features',
+            target_snapshot={
+                'requested_url': 'https://example.com',
+                'final_url': 'https://example.com/final',
+                'status_code': 200,
+                'fetch_method': 'http',
+                'response_headers': {},
+                'redirect_chain': [],
+                'html': '<html><body><h1>Snapshot</h1><p>Body</p></body></html>',
+                'text': 'Snapshot Body',
+                'json_ld': [],
+            },
+            extracted_text=None,
+            target_html=None,
+        )
+        db.add(audit)
+        db.commit()
+
+    result = process_audit_extract_features.run('audit-snapshot-features', 1)
+
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-snapshot-features')
+        assert stored is not None
+        assert stored.feature_schema_version == 'v2'
+        assert stored.features == {
+            'text_length_chars': len('Snapshot Body'),
+            'query_in_text': 1,
+            'semantic_similarity': 0.91,
+        }
+        assert stored.target_html is None
+        assert isinstance(stored.target_snapshot, dict)
+        assert stored.target_snapshot['final_url'] == 'https://example.com/final'
+
+    assert captured == {
+        'html': '<html><body><h1>Snapshot</h1><p>Body</p></body></html>',
+        'text': 'Snapshot Body',
+        'query': 'seo audit',
+    }
+    assert result == {
+        'audit_id': 'audit-snapshot-features',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_score_target',
     }
 
     Base.metadata.drop_all(bind=engine)

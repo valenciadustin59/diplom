@@ -20,6 +20,8 @@ class Audit(Base):
     orchestration_stage: Mapped[str | None] = mapped_column(String(64), nullable=True)
     extracted_text: Mapped[str | None] = mapped_column(Text, nullable=True)
     target_html: Mapped[str | None] = mapped_column(Text, nullable=True)
+    target_snapshot: Mapped[dict[str, object] | None] = mapped_column(JSON, nullable=True)
+    feature_schema_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
     competitor_processing_status: Mapped[str | None] = mapped_column(String(32), nullable=True)
     features: Mapped[dict[str, float | int] | None] = mapped_column(JSON, nullable=True)
     score: Mapped[float | None] = mapped_column(Float, nullable=True)

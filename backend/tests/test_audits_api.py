@@ -15,6 +15,7 @@ def test_create_audit_returns_created_record(client, queued_audit_ids):
     assert payload['top_n'] == 10
     assert payload['status'] == 'queued'
     assert payload['created_at']
+    assert payload['feature_schema_version'] is None
     assert payload['target_fetch_status'] is None
     assert payload['warnings'] is None
     assert queued_audit_ids == [payload['id']]
@@ -35,6 +36,7 @@ def test_get_audit_returns_existing_record(client):
     assert payload['target_url'] == 'https://example.com/'
     assert payload['top_n'] == 10
     assert payload['status'] == 'queued'
+    assert payload['feature_schema_version'] is None
     assert payload['target_fetch_method'] is None
 def test_list_audits_returns_created_items(client):
     client.post(
@@ -65,6 +67,8 @@ def test_get_audit_results_returns_structured_payload(client):
     assert payload['audit_id'] == audit_id
     assert payload['status'] == 'queued'
     assert payload['score'] is None
+    assert payload['feature_schema_version'] is None
+    assert payload['target_snapshot_summary'] is None
     assert payload['target_fetch_status'] is None
     assert payload['warnings'] is None
 def test_get_audit_recommendations_returns_list(client):
@@ -247,6 +251,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     audit_id = created_payload['id']
     assert created_payload['status'] == 'queued'
     assert created_payload['score'] is None
+    assert created_payload['feature_schema_version'] is None
     assert created_payload['target_fetch_status'] is None
     assert created_payload['failure_context'] is None
     assert created_payload['recommendations'] is None
@@ -269,7 +274,11 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert results_payload['audit_id'] == audit_id
     assert results_payload['status'] == 'completed_with_warnings'
     assert results_payload['score_breakdown']['final_score'] == 77.5
+    assert results_payload['feature_schema_version'] == 'v2'
     assert results_payload['features']['semantic_similarity'] == 0.81
+    assert results_payload['target_snapshot_summary']['feature_schema_version'] == 'v2'
+    assert results_payload['target_snapshot_summary']['requested_url'] == 'https://example.com/'
+    assert results_payload['target_snapshot_summary']['status_code'] == 200
     assert results_payload['target_fetch_method'] == 'http'
     assert len(results_payload['competitor_results']) == 2
     assert recommendations_payload == {
@@ -350,6 +359,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
     audit_id = created_payload['id']
     assert created_payload['status'] == 'queued'
     assert created_payload['error_message'] is None
+    assert created_payload['feature_schema_version'] is None
     assert created_payload['target_fetch_status'] is None
     assert created_payload['target_fetch_error_code'] is None
     assert created_payload['failure_context'] is None
@@ -375,31 +385,33 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
             'http_status': 403,
         },
     }
-    assert results_payload == {
-        'audit_id': audit_id,
-        'status': 'failed',
-        'score': None,
-        'extracted_text': None,
-        'features': None,
-        'score_breakdown': None,
-        'competitor_results': None,
-        'comparison_summary': None,
-        'target_fetch_status': 'failed',
-        'target_fetch_method': 'browser',
-        'target_fetch_error_code': 'http_403',
-        'target_fetch_error_message': 'HTTP 403',
-        'failure_context': {
-            'stage': 'fetch',
-            'code': 'http_403',
-            'message': 'HTTP 403',
-            'details': {
-                'fetch_method': 'browser',
-                'http_status': 403,
-            },
+    assert results_payload['audit_id'] == audit_id
+    assert results_payload['status'] == 'failed'
+    assert results_payload['score'] is None
+    assert results_payload['extracted_text'] is None
+    assert results_payload['feature_schema_version'] == 'v2'
+    assert results_payload['features'] is None
+    assert results_payload['score_breakdown'] is None
+    assert results_payload['competitor_results'] is None
+    assert results_payload['comparison_summary'] is None
+    assert results_payload['target_fetch_status'] == 'failed'
+    assert results_payload['target_fetch_method'] == 'browser'
+    assert results_payload['target_fetch_error_code'] == 'http_403'
+    assert results_payload['target_fetch_error_message'] == 'HTTP 403'
+    assert results_payload['target_snapshot_summary']['feature_schema_version'] == 'v2'
+    assert results_payload['target_snapshot_summary']['requested_url'] == 'https://blocked.example.com/'
+    assert results_payload['target_snapshot_summary']['status_code'] == 403
+    assert results_payload['failure_context'] == {
+        'stage': 'fetch',
+        'code': 'http_403',
+        'message': 'HTTP 403',
+        'details': {
+            'fetch_method': 'browser',
+            'http_status': 403,
         },
-        'warnings': [],
-        'error_message': 'HTTP 403',
     }
+    assert results_payload['warnings'] == []
+    assert results_payload['error_message'] == 'HTTP 403'
     assert recommendations_payload == {
         'audit_id': audit_id,
         'status': 'failed',

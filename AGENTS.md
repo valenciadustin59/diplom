@@ -1,4 +1,4 @@
-# AGENTS
+﻿# AGENTS
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
@@ -198,4 +198,13 @@ npm run build
 - Коммитить только после проверок.
 - Не заявлять о закрытии issue, если push не выполнен.
 - Если используется `Closes #<n>`, issue должен закрываться через push в `main`, а не вручную без кода.
-﻿
+
+
+## D13 Status
+
+Current next-wave backlog: `D13-D20`.
+
+- `D13` - completed: versioned extraction pipeline, `feature schema v2`, persistent `target_snapshot`, DOM-based extraction, and API snapshot summary.
+- `D14-D20` - pending.
+
+
