@@ -52,6 +52,11 @@
 - `D10` вЂ” admission control Рё scheduling guards РїСЂРё РґРµРіСЂР°РґРёСЂРѕРІР°РЅРЅРѕРј runtime capacity
 - `D11` - worker topology profiles and queue-affinity validation
 
+- `D12` - benchmark/reporting workflow for distributed runtime evidence across `/health/metrics`, `/audits/{audit_id}` and `/audits/{audit_id}/events/diagnostics`
+
+Distributed backlog `D1-D12` is complete. Benchmark reports are generated via `scripts/run_distributed_benchmark.py` and stored in `backend/artifacts/benchmarks/`.
+The older pending note below is archival only and should not be used as the current backlog status.
+
 РЎР»РµРґСѓСЋС‰РёРµ Р·Р°РґР°С‡Рё:
 
 - GitHub issue `#29` вЂ” `D12: Add benchmark and reporting workflow for distributed runtime metrics`
@@ -313,5 +318,4 @@ cd <repo-root>
 cd frontend
 npm run build
 ```
-
 

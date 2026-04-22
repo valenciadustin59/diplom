@@ -12,6 +12,19 @@
 
 ## Distributed Backlog Status
 
+### D12 Update
+
+`D12` is implemented. The distributed backlog `D1-D12` is now complete.
+
+The benchmark/reporting workflow measures the real runtime surface instead of a synthetic demo path:
+
+- `POST /audits` records admission and launch behavior.
+- `GET /audits/{audit_id}` tracks lifecycle completion for each benchmark audit.
+- `GET /audits/{audit_id}/events/diagnostics` provides end-to-end latency and critical-path timing.
+- `GET /health/metrics` provides backlog, queue pressure, worker utilization and runtime alerts.
+
+Reports are written to `backend/artifacts/benchmarks/<timestamp>-<benchmark-name>/` as `benchmark-report.json` and `benchmark-report.md`.
+
 Р”Р»СЏ С‚РµРєСѓС‰РµРіРѕ СЌС‚Р°РїР° РґРёРїР»РѕРјР° РєР°РЅРѕРЅРёС‡РµСЃРєРёРј backlog СЃС‡РёС‚Р°РµС‚СЃСЏ РЅРµ СЃС‚Р°СЂС‹Р№ product backlog, Р° distributed sequence `D1-D12`.
 
 РЈР¶Рµ РІС‹РїРѕР»РЅРµРЅРѕ:
@@ -212,6 +225,25 @@ pm run dev:full` РёР»Рё Р·Р°РїСѓСЃРєР°Р№С‚Рµ worker 
 
 ## РџСЂРѕРІРµСЂРєРё
 
+## Distributed benchmark workflow
+
+Run the benchmark after `npm run dev:full` or after bringing up `backend`, `Redis`, Celery workers and `SearxNG` separately:
+
+```powershell
+cd <repo-root>
+backend\.venv\Scripts\python.exe scripts\run_distributed_benchmark.py `
+  --base-url http://127.0.0.1:8000 `
+  --workload-file scripts\distributed_benchmark.workload.example.json `
+  --benchmark-name diploma-distributed-runtime `
+  --max-inflight 3 `
+  --poll-interval 1.0 `
+  --metrics-interval 2.0 `
+  --timeout 600 `
+  --print-markdown
+```
+
+The script drives the live HTTP API, samples runtime metrics during execution and writes machine-readable plus human-readable evidence under `backend/artifacts/benchmarks/`.
+
 ### Backend tests
 
 ```powershell
@@ -233,6 +265,5 @@ npm run build
 - [AGENTS.md](./AGENTS.md) вЂ” operational instructions РґР»СЏ Р°РіРµРЅС‚РѕРІ Рё СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ
 - [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md) вЂ” roadmap Рё GitHub backlog
 - [backend/docs/ml_methodology_appendix.md](./backend/docs/ml_methodology_appendix.md) - appendix-ready description of ML methodology, evaluation and limitations
-
 
 

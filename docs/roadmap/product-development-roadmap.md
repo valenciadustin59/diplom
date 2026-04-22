@@ -60,6 +60,19 @@
 
 ### Distributed Computing Backlog
 
+### Current status
+
+`D12` is implemented. The distributed backlog `D1-D12` is complete.
+
+The benchmark/reporting workflow is part of the production runtime evidence rather than a synthetic demo path:
+
+- `POST /audits` captures admission and launch behavior.
+- `GET /audits/{audit_id}` captures lifecycle completion for each benchmark audit.
+- `GET /audits/{audit_id}/events/diagnostics` captures end-to-end latency and critical-path timing.
+- `GET /health/metrics` captures backlog, queue pressure, worker utilization and runtime alerts.
+
+Benchmark artifacts are written to `backend/artifacts/benchmarks/` as JSON and Markdown reports.
+
 Р”Р»СЏ С‚РµРјС‹ РґРёРїР»РѕРјР° `Р Р°Р·СЂР°Р±РѕС‚РєР° web-РїСЂРёР»РѕР¶РµРЅРёСЏ РјР°С€РёРЅРЅРѕРіРѕ РѕР±СѓС‡РµРЅРёСЏ РЅР° РѕСЃРЅРѕРІРµ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅС‹С… РІС‹С‡РёСЃР»РµРЅРёР№` РєР°РЅРѕРЅРёС‡РµСЃРєРёРј backlog С‚РµРїРµСЂСЊ СЃС‡РёС‚Р°РµС‚СЃСЏ РёРјРµРЅРЅРѕ Р»РёРЅРёСЏ `D1-D12`. РћРЅР° РѕРїРёСЃС‹РІР°РµС‚ РЅРµ СЃС‚Р°СЂС‹Рµ product tasks, Р° РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕРµ СѓСЃРёР»РµРЅРёРµ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ РёСЃРїРѕР»РЅРµРЅРёСЏ, РЅР°Р±Р»СЋРґР°РµРјРѕСЃС‚Рё, СѓРїСЂР°РІР»РµРЅРёСЏ РЅР°РіСЂСѓР·РєРѕР№ Рё РґРѕРєР°Р·Р°С‚РµР»СЊРЅРѕР№ Р±Р°Р·С‹ РґР»СЏ РґРёРїР»РѕРјР°.
 
 #### РЈР¶Рµ РІС‹РїРѕР»РЅРµРЅРѕ
@@ -128,4 +141,3 @@
 ## РџСЂРёРјРµС‡Р°РЅРёРµ РїРѕ GitHub
 
 Р­С‚РѕС‚ РґРѕРєСѓРјРµРЅС‚ С‚РµРїРµСЂСЊ СЏРІР»СЏРµС‚СЃСЏ РєР°РЅРѕРЅРёС‡РµСЃРєРёРј РёСЃС‚РѕС‡РЅРёРєРѕРј РґР»СЏ distributed backlog `D1-D12`. GitHub issues РґРѕР»Р¶РЅС‹ СЃРёРЅС…СЂРѕРЅРёР·РёСЂРѕРІР°С‚СЊСЃСЏ РёРјРµРЅРЅРѕ СЃ СЌС‚РѕР№ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊСЋ, Р° РЅРµ СЃРѕ СЃС‚Р°СЂС‹Рј product backlog.
-

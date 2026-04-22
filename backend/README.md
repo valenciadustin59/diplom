@@ -355,6 +355,32 @@ Invoke-RestMethod `
 
 Endpoint РёСЃРїРѕР»СЊР·СѓРµС‚ persisted D7 events, Р° РЅРµ scraping runtime logs, РїРѕСЌС‚РѕРјСѓ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РёСЃС‚РѕСЂРёС‡РµСЃРєРѕРіРѕ СЂР°Р·Р±РѕСЂР° СѓР¶Рµ Р·Р°РІРµСЂС€С‘РЅРЅС‹С… Р·Р°РїСѓСЃРєРѕРІ.
 
+## Distributed benchmark workflow
+
+Use the benchmark runner against a live backend/runtime stack to generate diploma-ready evidence for the distributed execution path:
+
+```powershell
+cd <repo-root>
+backend\.venv\Scripts\python.exe scripts\run_distributed_benchmark.py `
+  --base-url http://127.0.0.1:8000 `
+  --workload-file scripts\distributed_benchmark.workload.example.json `
+  --benchmark-name diploma-distributed-runtime `
+  --max-inflight 3 `
+  --poll-interval 1.0 `
+  --metrics-interval 2.0 `
+  --timeout 600 `
+  --print-markdown
+```
+
+What the workflow measures from the production API surface:
+
+- `POST /audits` admission success vs rejection under `D10` capacity guards.
+- `GET /audits/{audit_id}` lifecycle completion and terminal status counts.
+- `GET /audits/{audit_id}/events/diagnostics` end-to-end latency and critical-path timing.
+- `GET /health/metrics` backlog depth, queue pressure, worker utilization and runtime alerts.
+
+Output reports are written to `backend/artifacts/benchmarks/<timestamp>-<benchmark-name>/` as `benchmark-report.json` and `benchmark-report.md`.
+
 ## Tests
 
 ```powershell
@@ -500,4 +526,3 @@ The runtime `score_breakdown.model_info` now exposes:
 
 This makes the active scoring model traceable in runtime: you can see exactly which artifact version is active, what dataset coverage it was trained on and what the key validation metrics were at publish time.
 - [docs/ml_methodology_appendix.md](./docs/ml_methodology_appendix.md) - ML methodology, dataset design, evaluation and known limitations for diploma appendix
-
