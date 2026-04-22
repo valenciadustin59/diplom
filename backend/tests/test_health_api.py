@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import UTC, datetime, timedelta
 
 import pytest
 
@@ -7,14 +7,16 @@ from app.config import Settings
 from app.db import Base
 from app.health import (
     ComponentHealth,
+    build_execution_detector_payload,
     build_metrics_payload,
+    build_queue_pressure_snapshots,
     build_readiness_payload,
     check_database_health,
     collect_broker_runtime_metrics,
     collect_database_runtime_metrics,
     collect_worker_runtime_metrics,
 )
-from app.models import Audit, AuditCompetitor
+from app.models import Audit, AuditCompetitor, AuditEvent
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -366,6 +368,56 @@ def test_collect_database_runtime_metrics_aggregates_pipeline_state(tmp_path):
     engine.dispose()
 
 
+def test_collect_database_runtime_metrics_detects_dispatch_waiting_processing_audits(tmp_path):
+    now = datetime.now(UTC).replace(tzinfo=None, microsecond=0)
+    db_path = tmp_path / "metrics-dispatch-wait.db"
+    engine = create_engine(
+        f"sqlite:///{db_path}",
+        connect_args={"check_same_thread": False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+
+    with testing_session_local() as db:
+        db.add(
+            Audit(
+                id="processing-audit",
+                query="q1",
+                target_url="https://example.com/1",
+                top_n=10,
+                status="processing",
+                created_at=now - timedelta(minutes=20),
+                updated_at=now - timedelta(minutes=4),
+                processing_version=2,
+                orchestration_stage="fetch",
+            )
+        )
+        db.add(
+            AuditEvent(
+                audit_id="processing-audit",
+                processing_version=2,
+                stage="app.process_audit_fetch_target",
+                event="dispatched",
+                duration_ms=None,
+                details={"queue": "audits.fetch", "dispatch_mode": "queued"},
+                created_at=now - timedelta(minutes=4),
+            )
+        )
+        db.commit()
+
+    payload = collect_database_runtime_metrics(Settings(database_url=f"sqlite:///{db_path}"))
+
+    assert payload["status"] == "ok"
+    assert payload["audits"]["dispatch_waiting_count"] == 1
+    assert payload["audits"]["dispatch_waiting_sample"][0]["audit_id"] == "processing-audit"
+    assert payload["audits"]["dispatch_waiting_sample"][0]["dispatch_stage"] == "fetch"
+    assert payload["audits"]["dispatch_waiting_sample"][0]["dispatch_queue"] == "audits.fetch"
+    assert payload["audits"]["dispatch_waiting_sample"][0]["dispatch_age_seconds"] >= 240.0
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
 def test_collect_broker_runtime_metrics_returns_queue_depths(monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(
         "app.health.celery_app.conf.broker_transport_options",
@@ -437,6 +489,95 @@ def test_collect_worker_runtime_metrics_aggregates_inspect_payload(monkeypatch: 
     assert payload["workers"]["celery@test"]["queues"] == sorted([AUDIT_QUEUES[0], AUDIT_QUEUES[1]])
     assert payload["workers"]["celery@test"]["pool_max_concurrency"] == 4
     assert payload["workers"]["celery@test"]["pid"] == 1234
+    assert payload["queue_activity"][AUDIT_QUEUES[1]]["active_tasks"] == 1
+    assert payload["queue_activity"][AUDIT_QUEUES[3]]["reserved_tasks"] == 1
+    assert payload["queue_activity"][AUDIT_QUEUES[-1]]["scheduled_tasks"] == 1
+
+
+def test_build_queue_pressure_snapshots_marks_backlogged_and_stuck_queues():
+    broker_metrics = {
+        "status": "ok",
+        "queue_depths": {
+            AUDIT_QUEUES[0]: 4,
+            AUDIT_QUEUES[1]: 1,
+        },
+    }
+    worker_metrics = {
+        "status": "ok",
+        "queue_activity": {
+            AUDIT_QUEUES[0]: {
+                "workers": ["celery@pipeline"],
+                "worker_count": 1,
+                "estimated_concurrency": 1,
+                "active_tasks": 0,
+                "reserved_tasks": 0,
+                "scheduled_tasks": 0,
+                "inflight_tasks": 0,
+                "available_capacity_estimate": 1,
+            },
+            AUDIT_QUEUES[1]: {
+                "workers": [],
+                "worker_count": 0,
+                "estimated_concurrency": 0,
+                "active_tasks": 0,
+                "reserved_tasks": 0,
+                "scheduled_tasks": 0,
+                "inflight_tasks": 0,
+                "available_capacity_estimate": 0,
+            },
+        },
+    }
+
+    payload = build_queue_pressure_snapshots(broker_metrics, worker_metrics)
+
+    assert payload["status"] == "degraded"
+    assert AUDIT_QUEUES[0] in payload["backlogged_queues"]
+    assert AUDIT_QUEUES[1] in payload["stuck_queues"]
+    assert payload["queues"][AUDIT_QUEUES[0]]["pressure_status"] == "backlogged"
+    assert payload["queues"][AUDIT_QUEUES[1]]["pressure_status"] == "stuck"
+
+
+def test_build_execution_detector_payload_reports_runtime_alerts():
+    database_metrics = {
+        "status": "ok",
+        "audits": {
+            "stuck_processing_count": 2,
+            "oldest_queued_age_seconds": 900.0,
+            "dispatch_waiting_count": 1,
+            "dispatch_waiting_sample": [
+                {
+                    "audit_id": "audit-1",
+                    "processing_version": 2,
+                    "dispatch_stage": "fetch",
+                    "dispatch_queue": "audits.fetch",
+                    "dispatch_age_seconds": 240.0,
+                }
+            ],
+        },
+    }
+    queue_pressure = {
+        "status": "degraded",
+        "queues": {
+            AUDIT_QUEUES[0]: {"depth": 4, "active_tasks": 0, "reserved_tasks": 0, "scheduled_tasks": 0},
+            AUDIT_QUEUES[1]: {"depth": 1, "active_tasks": 0, "reserved_tasks": 0, "scheduled_tasks": 0},
+        },
+        "backlogged_queues": [AUDIT_QUEUES[0]],
+        "stuck_queues": [AUDIT_QUEUES[1]],
+    }
+
+    payload = build_execution_detector_payload(database_metrics, queue_pressure)
+
+    assert payload["status"] == "degraded"
+    assert payload["summary"]["alert_count"] == 5
+    assert payload["summary"]["stuck_processing_count"] == 2
+    assert payload["summary"]["dispatch_waiting_count"] == 1
+    assert {alert["code"] for alert in payload["alerts"]} == {
+        "stuck_processing_audits",
+        "queued_audits_waiting_too_long",
+        "dispatched_stages_waiting_too_long",
+        "queue_without_workers",
+        "queue_backlog_detected",
+    }
 
 
 def test_build_metrics_payload_reports_degraded_when_workers_are_missing(monkeypatch: pytest.MonkeyPatch):

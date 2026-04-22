@@ -72,10 +72,10 @@
 - `D6` - добавить `health/metrics` и runtime telemetry для очередей, worker activity и pipeline counters
 - `D7` - сохранить structured execution events и stage duration telemetry в persistent audit event log
 - `D8` - добавить API диагностики audit timeline и critical-path/fan-out breakdown по каждому запуску
+- `D9` - ввести queue pressure snapshots и detector stuck/backlogged execution для распределённого runtime
 
 #### Предстоит выполнить
 
-- `D9` - ввести queue pressure snapshots и detector stuck/backlogged execution для распределённого runtime (`GitHub #28`)
 - `D10` - добавить admission control и scheduling guards при деградированном worker/broker capacity (`GitHub #31`)
 - `D11` - оформить и реализовать worker topology profiles для разных типов нагрузки (`pipeline`, `network`, `cpu/ml`) с проверяемой queue affinity (`GitHub #27`)
 - `D12` - добавить benchmark/reporting workflow с измеримыми distributed метриками (latency, backlog, throughput, worker utilization) для дипломной демонстрации (`GitHub #29`)

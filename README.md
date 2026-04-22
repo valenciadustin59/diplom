@@ -24,10 +24,10 @@
 - `D6` — `health/metrics` и runtime telemetry
 - `D7` — persistent audit event log и stage duration telemetry
 - `D8` — audit timeline diagnostics API и critical-path breakdown
+- `D9` — queue pressure snapshots и stuck/backlogged execution detector
 
 Ещё предстоит:
 
-- `D9` — queue pressure snapshots и detector stuck/backlogged execution
 - `D10` — admission control при деградированном runtime capacity
 - `D11` — worker topology profiles и queue affinity validation
 - `D12` — benchmark/reporting workflow для демонстрации distributed runtime в дипломе

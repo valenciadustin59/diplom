@@ -10,13 +10,30 @@ from sqlalchemy import create_engine, func, select, text
 from sqlalchemy.orm import Session, sessionmaker
 
 from app.audit_status import PROCESSING, QUEUED, TERMINAL_STATUSES
-from app.celery_app import AUDIT_QUEUES, celery_app
+from app.celery_app import AUDIT_QUEUES, celery_app, resolve_task_queue
 from app.config import Settings, get_settings
-from app.models import Audit, AuditCompetitor
+from app.models import Audit, AuditCompetitor, AuditEvent
 
 
 STALE_PROCESSING_THRESHOLD_MINUTES = 15
 RECENT_TERMINAL_AUDIT_SAMPLE_SIZE = 50
+QUEUED_BACKLOG_THRESHOLD_SECONDS = 300.0
+DISPATCH_WAIT_THRESHOLD_SECONDS = 180.0
+QUEUE_BACKLOG_DEPTH_MULTIPLIER = 3.0
+DETECTOR_SAMPLE_LIMIT = 10
+
+
+TASK_STAGE_NAMES: dict[str, str] = {
+    "app.process_audit": "pipeline",
+    "app.process_audit_fetch_target": "fetch",
+    "app.process_audit_extract_features": "features",
+    "app.process_audit_score_target": "scoring",
+    "app.process_audit_collect_competitors": "competitors",
+    "app.process_audit_collect_competitor_page": "competitor_page",
+    "app.process_audit_aggregate_competitors": "competitor_aggregation",
+    "app.process_audit_generate_recommendations": "recommendations",
+    "app.process_audit_finalize": "finalize",
+}
 @dataclass(slots=True)
 class ComponentHealth:
     status: str
@@ -28,6 +45,26 @@ class ComponentHealth:
         details = payload.pop("details")
         payload.update(details)
         return payload
+
+
+def _normalize_stage_name(value: str | None) -> str | None:
+    if value is None:
+        return None
+    return TASK_STAGE_NAMES.get(value, value)
+
+
+def _extract_task_name(task_payload: Any) -> str | None:
+    if not isinstance(task_payload, dict):
+        return None
+    name = task_payload.get("name")
+    if isinstance(name, str) and name:
+        return name
+    request_payload = task_payload.get("request")
+    if isinstance(request_payload, dict):
+        request_name = request_payload.get("name")
+        if isinstance(request_name, str) and request_name:
+            return request_name
+    return None
 
 
 def _checked_at() -> str:
@@ -334,6 +371,73 @@ def collect_database_runtime_metrics(settings: Settings) -> dict[str, Any]:
                 if created_at is not None and updated_at is not None
             ]
 
+            processing_rows = db.execute(
+                select(
+                    Audit.id,
+                    Audit.processing_version,
+                    Audit.orchestration_stage,
+                    Audit.updated_at,
+                ).where(
+                    Audit.status == PROCESSING,
+                    Audit.processing_version > 0,
+                )
+            ).all()
+            processing_keys = {
+                (str(audit_id), int(processing_version)): {
+                    "orchestration_stage": _normalize_stage_name(str(orchestration_stage) if orchestration_stage else None),
+                    "updated_at": updated_at,
+                }
+                for audit_id, processing_version, orchestration_stage, updated_at in processing_rows
+            }
+            dispatch_waiting_sample: list[dict[str, Any]] = []
+            if processing_keys:
+                processing_audit_ids = sorted({audit_id for audit_id, _ in processing_keys.keys()})
+                processing_versions = sorted({processing_version for _, processing_version in processing_keys.keys()})
+                latest_processing_events: dict[tuple[str, int], AuditEvent] = {}
+                processing_events = db.scalars(
+                    select(AuditEvent)
+                    .where(
+                        AuditEvent.audit_id.in_(processing_audit_ids),
+                        AuditEvent.processing_version.in_(processing_versions),
+                    )
+                    .order_by(
+                        AuditEvent.audit_id.asc(),
+                        AuditEvent.processing_version.asc(),
+                        AuditEvent.id.desc(),
+                    )
+                ).all()
+                for event in processing_events:
+                    if event.processing_version is None:
+                        continue
+                    event_key = (str(event.audit_id), int(event.processing_version))
+                    if event_key in processing_keys and event_key not in latest_processing_events:
+                        latest_processing_events[event_key] = event
+
+                for (audit_id, processing_version), audit_payload in processing_keys.items():
+                    latest_event = latest_processing_events.get((audit_id, processing_version))
+                    if latest_event is None or latest_event.event != "dispatched":
+                        continue
+                    dispatch_age_seconds = _age_seconds(reference_time, latest_event.created_at)
+                    if dispatch_age_seconds is None or dispatch_age_seconds < DISPATCH_WAIT_THRESHOLD_SECONDS:
+                        continue
+                    dispatch_waiting_sample.append(
+                        {
+                            "audit_id": audit_id,
+                            "processing_version": processing_version,
+                            "dispatch_stage": _normalize_stage_name(str(latest_event.stage)),
+                            "dispatch_queue": resolve_task_queue(str(latest_event.stage)),
+                            "dispatch_age_seconds": dispatch_age_seconds,
+                            "orchestration_stage": audit_payload["orchestration_stage"],
+                            "updated_age_seconds": _age_seconds(reference_time, audit_payload["updated_at"]),
+                        }
+                    )
+
+                dispatch_waiting_sample.sort(
+                    key=lambda item: float(item.get("dispatch_age_seconds") or 0.0),
+                    reverse=True,
+                )
+                dispatch_waiting_sample = dispatch_waiting_sample[:DETECTOR_SAMPLE_LIMIT]
+
             competitors_total = int(db.scalar(select(func.count()).select_from(AuditCompetitor)) or 0)
             competitors_by_status = _normalize_grouped_counts(
                 db.execute(select(AuditCompetitor.status, func.count()).group_by(AuditCompetitor.status)).all()
@@ -350,6 +454,8 @@ def collect_database_runtime_metrics(settings: Settings) -> dict[str, Any]:
                 "oldest_queued_age_seconds": _age_seconds(reference_time, oldest_queued_created_at),
                 "oldest_processing_update_age_seconds": _age_seconds(reference_time, oldest_processing_updated_at),
                 "recent_terminal_duration_ms": _duration_summary_ms(terminal_durations_ms),
+                "dispatch_waiting_count": len(dispatch_waiting_sample),
+                "dispatch_waiting_sample": dispatch_waiting_sample,
             },
             "competitors": {
                 "total": competitors_total,
@@ -439,6 +545,17 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
     )
 
     worker_payload: dict[str, dict[str, Any]] = {}
+    queue_activity: dict[str, dict[str, Any]] = {
+        queue_name: {
+            "workers": [],
+            "worker_count": 0,
+            "estimated_concurrency": 0,
+            "active_tasks": 0,
+            "reserved_tasks": 0,
+            "scheduled_tasks": 0,
+        }
+        for queue_name in AUDIT_QUEUES
+    }
     for worker_name in worker_names:
         stats_entry = stats_response.get(worker_name) if isinstance(stats_response.get(worker_name), dict) else {}
         pool_entry = stats_entry.get("pool") if isinstance(stats_entry.get("pool"), dict) else {}
@@ -456,6 +573,53 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             "pid": stats_entry.get("pid"),
         }
 
+        worker_concurrency = worker_payload[worker_name]["pool_max_concurrency"] or (1 if queue_names else 0)
+        for queue_name in queue_names:
+            queue_snapshot = queue_activity.setdefault(
+                queue_name,
+                {
+                    "workers": [],
+                    "worker_count": 0,
+                    "estimated_concurrency": 0,
+                    "active_tasks": 0,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                },
+            )
+            queue_snapshot["workers"].append(worker_name)
+            queue_snapshot["estimated_concurrency"] += worker_concurrency
+
+        for task_payload in active_response.get(worker_name, []):
+            task_name = _extract_task_name(task_payload)
+            if task_name is None:
+                continue
+            queue_activity[resolve_task_queue(task_name)]["active_tasks"] += 1
+
+        for task_payload in reserved_response.get(worker_name, []):
+            task_name = _extract_task_name(task_payload)
+            if task_name is None:
+                continue
+            queue_activity[resolve_task_queue(task_name)]["reserved_tasks"] += 1
+
+        for task_payload in scheduled_response.get(worker_name, []):
+            task_name = _extract_task_name(task_payload)
+            if task_name is None:
+                continue
+            queue_activity[resolve_task_queue(task_name)]["scheduled_tasks"] += 1
+
+    for queue_name, snapshot in queue_activity.items():
+        snapshot["workers"] = sorted(set(str(worker_name) for worker_name in snapshot["workers"]))
+        snapshot["worker_count"] = len(snapshot["workers"])
+        snapshot["inflight_tasks"] = (
+            int(snapshot["active_tasks"])
+            + int(snapshot["reserved_tasks"])
+            + int(snapshot["scheduled_tasks"])
+        )
+        snapshot["available_capacity_estimate"] = max(
+            int(snapshot["estimated_concurrency"]) - int(snapshot["active_tasks"]),
+            0,
+        )
+
     status = "ok" if worker_names else "warning"
     return {
         "status": status,
@@ -465,18 +629,186 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
         "reserved_tasks_total": sum(item["reserved_tasks"] for item in worker_payload.values()),
         "scheduled_tasks_total": sum(item["scheduled_tasks"] for item in worker_payload.values()),
         "expected_queues": list(AUDIT_QUEUES),
+        "queue_activity": queue_activity,
         **({"warning": "No Celery workers responded to inspect."} if not worker_names else {}),
+    }
+
+
+def build_queue_pressure_snapshots(
+    broker_metrics: dict[str, Any],
+    worker_metrics: dict[str, Any],
+) -> dict[str, Any]:
+    queue_depths = broker_metrics.get("queue_depths") if isinstance(broker_metrics.get("queue_depths"), dict) else {}
+    queue_activity = worker_metrics.get("queue_activity") if isinstance(worker_metrics.get("queue_activity"), dict) else {}
+    queue_snapshots: dict[str, dict[str, Any]] = {}
+    backlogged_queues: list[str] = []
+    stuck_queues: list[str] = []
+
+    for queue_name in AUDIT_QUEUES:
+        queue_payload = queue_activity.get(queue_name) if isinstance(queue_activity.get(queue_name), dict) else {}
+        depth = int(queue_depths.get(queue_name) or 0)
+        worker_count = int(queue_payload.get("worker_count") or 0)
+        estimated_concurrency = int(queue_payload.get("estimated_concurrency") or 0)
+        active_tasks = int(queue_payload.get("active_tasks") or 0)
+        reserved_tasks = int(queue_payload.get("reserved_tasks") or 0)
+        scheduled_tasks = int(queue_payload.get("scheduled_tasks") or 0)
+        inflight_tasks = int(queue_payload.get("inflight_tasks") or (active_tasks + reserved_tasks + scheduled_tasks))
+        available_capacity_estimate = int(
+            queue_payload.get("available_capacity_estimate")
+            if isinstance(queue_payload.get("available_capacity_estimate"), int)
+            else max(estimated_concurrency - active_tasks, 0)
+        )
+
+        pressure_status = "idle"
+        reasons: list[str] = []
+        if depth == 0:
+            if inflight_tasks > 0:
+                pressure_status = "busy"
+                reasons.append("inflight_without_backlog")
+        elif worker_count == 0:
+            pressure_status = "stuck"
+            reasons.append("no_workers_serving_queue")
+        elif inflight_tasks == 0:
+            pressure_status = "backlogged"
+            reasons.append("queued_tasks_without_drain_activity")
+        elif depth > max(estimated_concurrency, 1) * QUEUE_BACKLOG_DEPTH_MULTIPLIER:
+            pressure_status = "backlogged"
+            reasons.append("depth_exceeds_estimated_capacity")
+        else:
+            pressure_status = "draining"
+            reasons.append("queue_is_draining")
+
+        if pressure_status == "backlogged":
+            backlogged_queues.append(queue_name)
+        if pressure_status == "stuck":
+            stuck_queues.append(queue_name)
+
+        queue_snapshots[queue_name] = {
+            "depth": depth,
+            "workers": list(queue_payload.get("workers") or []),
+            "worker_count": worker_count,
+            "estimated_concurrency": estimated_concurrency,
+            "active_tasks": active_tasks,
+            "reserved_tasks": reserved_tasks,
+            "scheduled_tasks": scheduled_tasks,
+            "inflight_tasks": inflight_tasks,
+            "available_capacity_estimate": available_capacity_estimate,
+            "pressure_status": pressure_status,
+            "reasons": reasons,
+        }
+
+    return {
+        "status": "degraded" if backlogged_queues or stuck_queues else "ok",
+        "thresholds": {
+            "queue_backlog_depth_multiplier": QUEUE_BACKLOG_DEPTH_MULTIPLIER,
+        },
+        "queues": queue_snapshots,
+        "backlogged_queues": backlogged_queues,
+        "stuck_queues": stuck_queues,
+    }
+
+
+def build_execution_detector_payload(
+    database_metrics: dict[str, Any],
+    queue_pressure: dict[str, Any],
+) -> dict[str, Any]:
+    audits_metrics = database_metrics.get("audits") if isinstance(database_metrics.get("audits"), dict) else {}
+    alerts: list[dict[str, Any]] = []
+
+    stuck_processing_count = int(audits_metrics.get("stuck_processing_count") or 0)
+    if stuck_processing_count > 0:
+        alerts.append(
+            {
+                "code": "stuck_processing_audits",
+                "severity": "error",
+                "count": stuck_processing_count,
+                "threshold_minutes": STALE_PROCESSING_THRESHOLD_MINUTES,
+            }
+        )
+
+    oldest_queued_age_seconds = audits_metrics.get("oldest_queued_age_seconds")
+    if isinstance(oldest_queued_age_seconds, (int, float)) and oldest_queued_age_seconds >= QUEUED_BACKLOG_THRESHOLD_SECONDS:
+        alerts.append(
+            {
+                "code": "queued_audits_waiting_too_long",
+                "severity": "warning",
+                "oldest_age_seconds": round(float(oldest_queued_age_seconds), 2),
+                "threshold_seconds": QUEUED_BACKLOG_THRESHOLD_SECONDS,
+                "queue": resolve_task_queue("app.process_audit"),
+            }
+        )
+
+    dispatch_waiting_count = int(audits_metrics.get("dispatch_waiting_count") or 0)
+    dispatch_waiting_sample = list(audits_metrics.get("dispatch_waiting_sample") or [])
+    if dispatch_waiting_count > 0:
+        alerts.append(
+            {
+                "code": "dispatched_stages_waiting_too_long",
+                "severity": "warning",
+                "count": dispatch_waiting_count,
+                "threshold_seconds": DISPATCH_WAIT_THRESHOLD_SECONDS,
+                "sample": dispatch_waiting_sample,
+            }
+        )
+
+    for queue_name in queue_pressure.get("stuck_queues", []):
+        queue_snapshot = queue_pressure.get("queues", {}).get(queue_name, {})
+        alerts.append(
+            {
+                "code": "queue_without_workers",
+                "severity": "error",
+                "queue": queue_name,
+                "depth": int(queue_snapshot.get("depth") or 0),
+            }
+        )
+
+    for queue_name in queue_pressure.get("backlogged_queues", []):
+        queue_snapshot = queue_pressure.get("queues", {}).get(queue_name, {})
+        alerts.append(
+            {
+                "code": "queue_backlog_detected",
+                "severity": "warning",
+                "queue": queue_name,
+                "depth": int(queue_snapshot.get("depth") or 0),
+                "active_tasks": int(queue_snapshot.get("active_tasks") or 0),
+                "reserved_tasks": int(queue_snapshot.get("reserved_tasks") or 0),
+                "scheduled_tasks": int(queue_snapshot.get("scheduled_tasks") or 0),
+            }
+        )
+
+    return {
+        "status": "degraded" if alerts else "ok",
+        "thresholds": {
+            "stale_processing_threshold_minutes": STALE_PROCESSING_THRESHOLD_MINUTES,
+            "queued_backlog_threshold_seconds": QUEUED_BACKLOG_THRESHOLD_SECONDS,
+            "dispatch_wait_threshold_seconds": DISPATCH_WAIT_THRESHOLD_SECONDS,
+        },
+        "alerts": alerts,
+        "summary": {
+            "alert_count": len(alerts),
+            "stuck_processing_count": stuck_processing_count,
+            "dispatch_waiting_count": dispatch_waiting_count,
+            "stuck_queue_count": len(queue_pressure.get("stuck_queues", [])),
+            "backlogged_queue_count": len(queue_pressure.get("backlogged_queues", [])),
+        },
     }
 
 
 def build_metrics_payload(settings: Settings | None = None) -> dict[str, Any]:
     runtime_settings = settings or get_settings()
+    database_metrics = collect_database_runtime_metrics(runtime_settings)
+    broker_metrics = collect_broker_runtime_metrics(runtime_settings)
+    worker_metrics = collect_worker_runtime_metrics(runtime_settings)
+    queue_pressure = build_queue_pressure_snapshots(broker_metrics, worker_metrics)
+    execution_detector = build_execution_detector_payload(database_metrics, queue_pressure)
     components = {
-        "database": collect_database_runtime_metrics(runtime_settings),
-        "broker": collect_broker_runtime_metrics(runtime_settings),
-        "workers": collect_worker_runtime_metrics(runtime_settings),
+        "database": database_metrics,
+        "broker": broker_metrics,
+        "workers": worker_metrics,
+        "queue_pressure": queue_pressure,
+        "execution_detector": execution_detector,
     }
-    degraded_statuses = {"error", "warning"}
+    degraded_statuses = {"error", "warning", "degraded"}
     overall_status = (
         "degraded"
         if any(component.get("status") in degraded_statuses for component in components.values())

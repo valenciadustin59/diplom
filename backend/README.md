@@ -92,8 +92,22 @@ Backend теперь различает liveness и настоящую readiness
 - оценка backlog по Redis queue depth для всех `AUDIT_QUEUES`
 - online workers, их queue coverage и количество `active/reserved/scheduled` задач
 - укрупнённая статистика по `AuditCompetitor`
+- `queue_pressure` snapshots по каждой audit queue: depth, consumers, inflight tasks, estimated capacity и derived pressure status
+- `execution_detector` alerts для stuck/backlogged runtime: stale processing audits, queued audits waiting too long и dispatched stages, которые слишком долго не стартуют
 
 Контракт Redis backlog telemetry сейчас такой: endpoint считает глубину очередей по default Celery Redis list keys и поддерживает `broker_transport_options.global_keyprefix`. Если транспортный формат ключей будет переопределён глубже этого уровня, логику `/health/metrics` нужно обновлять вместе с Celery broker config.
+
+Для D9 `queue_pressure` использует два слоя сигналов одновременно:
+
+- Redis queue depth как snapshot фактического backlog;
+- Celery worker inspect payload как snapshot consumer coverage, inflight tasks и estimated queue capacity.
+
+`execution_detector` поверх этого добавляет audit-level сигналы из базы и event log:
+
+- `stuck_processing_audits` — processing run слишком давно не обновлялся;
+- `queued_audits_waiting_too_long` — новые аудиты слишком долго стоят до старта pipeline;
+- `dispatched_stages_waiting_too_long` — stage уже dispatch'нут, но слишком долго не начал исполняться;
+- `queue_without_workers` и `queue_backlog_detected` — operational backlog на уровне очередей.
 
 Когда все обязательные компоненты доступны, endpoint возвращает `200` и `status=ready`. Если Redis недоступен, worker не отвечает или не обслуживаются все audit queues, либо недоступен обязательный `SearxNG`, endpoint возвращает `503` и `status=not_ready` с расшифровкой проблемного компонента.
 

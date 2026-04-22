@@ -48,10 +48,10 @@
 - `D6` — `health/metrics` и runtime telemetry по очередям, worker activity и pipeline counters
 - `D7` — persistent audit event log и stage duration telemetry
 - `D8` — audit timeline diagnostics API и critical-path/fan-out breakdown
+- `D9` — queue pressure snapshots и stuck/backlogged execution detector
 
 Следующие задачи:
 
-- GitHub issue `#28` — `D9: Add queue pressure snapshots and stuck/backlogged execution detector`
 - GitHub issue `#31` — `D10: Introduce admission control and scheduling guards for degraded runtime capacity`
 - GitHub issue `#27` — `D11: Add worker topology profiles and queue-affinity validation`
 - GitHub issue `#29` — `D12: Add benchmark and reporting workflow for distributed runtime metrics`
