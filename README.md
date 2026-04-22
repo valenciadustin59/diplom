@@ -1,54 +1,57 @@
 # Site Audit
 
-Веб-приложение для автоматизированного SEO-аудита посадочных страниц по поисковому запросу. Пользователь указывает запрос и URL своей страницы, после чего система находит конкурентов, собирает признаки страницы, считает ML score, сравнивает результат с SERP и формирует рекомендации.
+Р’РµР±-РїСЂРёР»РѕР¶РµРЅРёРµ РґР»СЏ Р°РІС‚РѕРјР°С‚РёР·РёСЂРѕРІР°РЅРЅРѕРіРѕ SEO-Р°СѓРґРёС‚Р° РїРѕСЃР°РґРѕС‡РЅС‹С… СЃС‚СЂР°РЅРёС† РїРѕ РїРѕРёСЃРєРѕРІРѕРјСѓ Р·Р°РїСЂРѕСЃСѓ. РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓРєР°Р·С‹РІР°РµС‚ Р·Р°РїСЂРѕСЃ Рё URL СЃРІРѕРµР№ СЃС‚СЂР°РЅРёС†С‹, РїРѕСЃР»Рµ С‡РµРіРѕ СЃРёСЃС‚РµРјР° РЅР°С…РѕРґРёС‚ РєРѕРЅРєСѓСЂРµРЅС‚РѕРІ, СЃРѕР±РёСЂР°РµС‚ РїСЂРёР·РЅР°РєРё СЃС‚СЂР°РЅРёС†С‹, СЃС‡РёС‚Р°РµС‚ ML score, СЃСЂР°РІРЅРёРІР°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ СЃ SERP Рё С„РѕСЂРјРёСЂСѓРµС‚ СЂРµРєРѕРјРµРЅРґР°С†РёРё.
 
-## Что находится в репозитории
+## Р§С‚Рѕ РЅР°С…РѕРґРёС‚СЃСЏ РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё
 
-- `backend/` — FastAPI API, SQLite, Celery orchestration и ML scoring pipeline
-- `frontend/` — React + TypeScript интерфейс для запуска аудитов и просмотра результатов
-- `docker-compose.searxng.yml` — локальный Docker stack для `SearxNG` и `Redis`
-- `scripts/` — root-level dev scripts и утилиты локальной разработки
-- `docs/roadmap/` — roadmap и GitHub backlog дальнейшего развития
+- `backend/` вЂ” FastAPI API, SQLite, Celery orchestration Рё ML scoring pipeline
+- `frontend/` вЂ” React + TypeScript РёРЅС‚РµСЂС„РµР№СЃ РґР»СЏ Р·Р°РїСѓСЃРєР° Р°СѓРґРёС‚РѕРІ Рё РїСЂРѕСЃРјРѕС‚СЂР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ
+- `docker-compose.searxng.yml` вЂ” Р»РѕРєР°Р»СЊРЅС‹Р№ Docker stack РґР»СЏ `SearxNG` Рё `Redis`
+- `scripts/` вЂ” root-level dev scripts Рё СѓС‚РёР»РёС‚С‹ Р»РѕРєР°Р»СЊРЅРѕР№ СЂР°Р·СЂР°Р±РѕС‚РєРё
+- `docs/roadmap/` вЂ” roadmap Рё GitHub backlog РґР°Р»СЊРЅРµР№С€РµРіРѕ СЂР°Р·РІРёС‚РёСЏ
 
 ## Distributed Backlog Status
 
-Для текущего этапа диплома каноническим backlog считается не старый product backlog, а distributed sequence `D1-D12`.
+Р”Р»СЏ С‚РµРєСѓС‰РµРіРѕ СЌС‚Р°РїР° РґРёРїР»РѕРјР° РєР°РЅРѕРЅРёС‡РµСЃРєРёРј backlog СЃС‡РёС‚Р°РµС‚СЃСЏ РЅРµ СЃС‚Р°СЂС‹Р№ product backlog, Р° distributed sequence `D1-D12`.
 
-Уже выполнено:
+РЈР¶Рµ РІС‹РїРѕР»РЅРµРЅРѕ:
 
-- `D1` — stage-based decomposition audit pipeline
-- `D2` — routing стадий по отдельным Celery queues
-- `D3` — distributed fan-out по competitor pages
-- `D4` — retry-safe / version-aware orchestration
-- `D5` — `health/live` и `health/ready`
-- `D6` — `health/metrics` и runtime telemetry
-- `D7` — persistent audit event log и stage duration telemetry
-- `D8` — audit timeline diagnostics API и critical-path breakdown
-- `D9` — queue pressure snapshots и stuck/backlogged execution detector
-- `D10` — admission control и scheduling guards при деградированном runtime capacity
+- `D1` вЂ” stage-based decomposition audit pipeline
+- `D2` вЂ” routing СЃС‚Р°РґРёР№ РїРѕ РѕС‚РґРµР»СЊРЅС‹Рј Celery queues
+- `D3` вЂ” distributed fan-out РїРѕ competitor pages
+- `D4` вЂ” retry-safe / version-aware orchestration
+- `D5` вЂ” `health/live` Рё `health/ready`
+- `D6` вЂ” `health/metrics` Рё runtime telemetry
+- `D7` вЂ” persistent audit event log Рё stage duration telemetry
+- `D8` вЂ” audit timeline diagnostics API Рё critical-path breakdown
+- `D9` вЂ” queue pressure snapshots Рё stuck/backlogged execution detector
+- `D10` вЂ” admission control Рё scheduling guards РїСЂРё РґРµРіСЂР°РґРёСЂРѕРІР°РЅРЅРѕРј runtime capacity
+- `D11` вЂ” worker topology profiles Рё queue affinity validation
 
-Ещё предстоит:
+Р•С‰С‘ РїСЂРµРґСЃС‚РѕРёС‚:
 
-- `D11` — worker topology profiles и queue affinity validation
-- `D12` — benchmark/reporting workflow для демонстрации distributed runtime в дипломе
+- `D12` вЂ” benchmark/reporting workflow РґР»СЏ РґРµРјРѕРЅСЃС‚СЂР°С†РёРё distributed runtime РІ РґРёРїР»РѕРјРµ
 
-Подробный статус и последовательность находятся в [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md).
+РџРѕРґСЂРѕР±РЅС‹Р№ СЃС‚Р°С‚СѓСЃ Рё РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РЅР°С…РѕРґСЏС‚СЃСЏ РІ [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md).
 
-## Требования
+## РўСЂРµР±РѕРІР°РЅРёСЏ
 
-- `Python 3.12` или `3.13`
-- `Node.js 20+` и `npm`
-- `Docker Desktop` или совместимый Docker runtime
+- `Python 3.12` РёР»Рё `3.13`
+- `Node.js 20+` Рё 
+pm`
+- `Docker Desktop` РёР»Рё СЃРѕРІРјРµСЃС‚РёРјС‹Р№ Docker runtime
 
-Перед запуском `npm run dev:full` и `npm run searxng:*` убедитесь, что Docker Desktop уже запущен и Docker daemon успел подняться.
+РџРµСЂРµРґ Р·Р°РїСѓСЃРєРѕРј 
+pm run dev:full` Рё 
+pm run searxng:*` СѓР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ Docker Desktop СѓР¶Рµ Р·Р°РїСѓС‰РµРЅ Рё Docker daemon СѓСЃРїРµР» РїРѕРґРЅСЏС‚СЊСЃСЏ.
 
-Во всех командах ниже `<repo-root>` означает корень этого репозитория.
+Р’Рѕ РІСЃРµС… РєРѕРјР°РЅРґР°С… РЅРёР¶Рµ `<repo-root>` РѕР·РЅР°С‡Р°РµС‚ РєРѕСЂРµРЅСЊ СЌС‚РѕРіРѕ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ.
 
-## Рекомендуемый режим: полный локальный стек
+## Р РµРєРѕРјРµРЅРґСѓРµРјС‹Р№ СЂРµР¶РёРј: РїРѕР»РЅС‹Р№ Р»РѕРєР°Р»СЊРЅС‹Р№ СЃС‚РµРє
 
-Этот режим рекомендуется для обычной разработки и демонстрации диплома. Он поднимает поиск, Redis, backend, frontend и Celery worker.
+Р­С‚РѕС‚ СЂРµР¶РёРј СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РґР»СЏ РѕР±С‹С‡РЅРѕР№ СЂР°Р·СЂР°Р±РѕС‚РєРё Рё РґРµРјРѕРЅСЃС‚СЂР°С†РёРё РґРёРїР»РѕРјР°. РћРЅ РїРѕРґРЅРёРјР°РµС‚ РїРѕРёСЃРє, Redis, backend, frontend Рё Celery worker.
 
-### 1. Установить root и frontend зависимости
+### 1. РЈСЃС‚Р°РЅРѕРІРёС‚СЊ root Рё frontend Р·Р°РІРёСЃРёРјРѕСЃС‚Рё
 
 ```powershell
 cd <repo-root>
@@ -56,7 +59,7 @@ npm install
 npm --prefix frontend install
 ```
 
-### 2. Подготовить backend окружение
+### 2. РџРѕРґРіРѕС‚РѕРІРёС‚СЊ backend РѕРєСЂСѓР¶РµРЅРёРµ
 
 ```powershell
 cd <repo-root>
@@ -68,32 +71,32 @@ python -m pip install -e ".[dev]"
 copy .env.example .env
 ```
 
-Если используется `Python 3.13`, команда установки остаётся той же, если текущий `pyproject.toml` её допускает.
+Р•СЃР»Рё РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ `Python 3.13`, РєРѕРјР°РЅРґР° СѓСЃС‚Р°РЅРѕРІРєРё РѕСЃС‚Р°С‘С‚СЃСЏ С‚РѕР№ Р¶Рµ, РµСЃР»Рё С‚РµРєСѓС‰РёР№ `pyproject.toml` РµС‘ РґРѕРїСѓСЃРєР°РµС‚.
 
-### 3. Запустить полный локальный стек
+### 3. Р—Р°РїСѓСЃС‚РёС‚СЊ РїРѕР»РЅС‹Р№ Р»РѕРєР°Р»СЊРЅС‹Р№ СЃС‚РµРє
 
 ```powershell
 cd <repo-root>
 npm run dev:full
 ```
 
-Команда делает следующее:
+РљРѕРјР°РЅРґР° РґРµР»Р°РµС‚ СЃР»РµРґСѓСЋС‰РµРµ:
 
-- поднимает Docker services `diplom-searxng` и `diplom-searxng-redis`
-- проверяет доступность `SearxNG` по `http://127.0.0.1:8888`
-- запускает backend API на свободном локальном порту, начиная с `8000`
-- запускает frontend и прокидывает в него актуальный `VITE_API_URL`
-- запускает Celery worker для stage-based audit queues
+- РїРѕРґРЅРёРјР°РµС‚ Docker services `diplom-searxng` Рё `diplom-searxng-redis`
+- РїСЂРѕРІРµСЂСЏРµС‚ РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ `SearxNG` РїРѕ `http://127.0.0.1:8888`
+- Р·Р°РїСѓСЃРєР°РµС‚ backend API РЅР° СЃРІРѕР±РѕРґРЅРѕРј Р»РѕРєР°Р»СЊРЅРѕРј РїРѕСЂС‚Сѓ, РЅР°С‡РёРЅР°СЏ СЃ `8000`
+- Р·Р°РїСѓСЃРєР°РµС‚ frontend Рё РїСЂРѕРєРёРґС‹РІР°РµС‚ РІ РЅРµРіРѕ Р°РєС‚СѓР°Р»СЊРЅС‹Р№ `VITE_API_URL`
+- Р·Р°РїСѓСЃРєР°РµС‚ Celery worker РґР»СЏ stage-based audit queues
 
-Если `backend/.env` отсутствует, root dev script сам подставляет локальные dev defaults для `SEARXNG_BASE_URL`, `CELERY_BROKER_URL` и `CELERY_RESULT_BACKEND`, чтобы полный стек не запускался в деградированном режиме.
+Р•СЃР»Рё `backend/.env` РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚, root dev script СЃР°Рј РїРѕРґСЃС‚Р°РІР»СЏРµС‚ Р»РѕРєР°Р»СЊРЅС‹Рµ dev defaults РґР»СЏ `SEARXNG_BASE_URL`, `CELERY_BROKER_URL` Рё `CELERY_RESULT_BACKEND`, С‡С‚РѕР±С‹ РїРѕР»РЅС‹Р№ СЃС‚РµРє РЅРµ Р·Р°РїСѓСЃРєР°Р»СЃСЏ РІ РґРµРіСЂР°РґРёСЂРѕРІР°РЅРЅРѕРј СЂРµР¶РёРјРµ.
 
-На Windows worker автоматически стартует с `--pool=solo`, потому что это самый надёжный режим для локального запуска Celery.
+РќР° Windows worker Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё СЃС‚Р°СЂС‚СѓРµС‚ СЃ `--pool=solo`, РїРѕС‚РѕРјСѓ С‡С‚Рѕ СЌС‚Рѕ СЃР°РјС‹Р№ РЅР°РґС‘Р¶РЅС‹Р№ СЂРµР¶РёРј РґР»СЏ Р»РѕРєР°Р»СЊРЅРѕРіРѕ Р·Р°РїСѓСЃРєР° Celery.
 
-## Ручной запуск по частям
+## Р СѓС‡РЅРѕР№ Р·Р°РїСѓСЃРє РїРѕ С‡Р°СЃС‚СЏРј
 
-Этот режим удобен, если нужно отдельно перезапускать только один компонент.
+Р­С‚РѕС‚ СЂРµР¶РёРј СѓРґРѕР±РµРЅ, РµСЃР»Рё РЅСѓР¶РЅРѕ РѕС‚РґРµР»СЊРЅРѕ РїРµСЂРµР·Р°РїСѓСЃРєР°С‚СЊ С‚РѕР»СЊРєРѕ РѕРґРёРЅ РєРѕРјРїРѕРЅРµРЅС‚.
 
-### Инфраструктура: SearxNG и Redis
+### РРЅС„СЂР°СЃС‚СЂСѓРєС‚СѓСЂР°: SearxNG Рё Redis
 
 ```powershell
 cd <repo-root>
@@ -101,7 +104,7 @@ npm run searxng:up
 npm run searxng:check
 ```
 
-После запуска доступны:
+РџРѕСЃР»Рµ Р·Р°РїСѓСЃРєР° РґРѕСЃС‚СѓРїРЅС‹:
 
 - `SearxNG`: `http://127.0.0.1:8888`
 - `Redis`: `redis://127.0.0.1:6379/0`
@@ -114,7 +117,9 @@ cd backend
 .venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-### Celery worker
+### Celery workers
+
+Starting with `D11`, `npm run dev:full` launches three queue-affinity profiles (`pipeline`, `network`, `cpu_ml`). The single all-queues worker command below is now a legacy fallback for debugging only; the canonical topology for `health/ready` is the three profile workers shown after it.
 
 ```powershell
 cd <repo-root>
@@ -122,9 +127,9 @@ cd backend
 .venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.competitor_pages,audits.recommendations,audits.finalize --pool=solo
 ```
 
-Для Linux/macOS флаг `--pool=solo` можно убрать, но для Windows его лучше оставить.
+Р”Р»СЏ Linux/macOS С„Р»Р°Рі `--pool=solo` РјРѕР¶РЅРѕ СѓР±СЂР°С‚СЊ, РЅРѕ РґР»СЏ Windows РµРіРѕ Р»СѓС‡С€Рµ РѕСЃС‚Р°РІРёС‚СЊ.
 
-Если нужно явно разделить нагрузку между worker-процессами, можно поднимать их по группам очередей:
+Р•СЃР»Рё РЅСѓР¶РЅРѕ СЏРІРЅРѕ СЂР°Р·РґРµР»РёС‚СЊ РЅР°РіСЂСѓР·РєСѓ РјРµР¶РґСѓ worker-РїСЂРѕС†РµСЃСЃР°РјРё, РјРѕР¶РЅРѕ РїРѕРґРЅРёРјР°С‚СЊ РёС… РїРѕ РіСЂСѓРїРїР°Рј РѕС‡РµСЂРµРґРµР№:
 
 ```powershell
 cd <repo-root>
@@ -153,9 +158,9 @@ set VITE_API_URL=http://127.0.0.1:8000
 npm run dev
 ```
 
-## Настройки окружения backend
+## РќР°СЃС‚СЂРѕР№РєРё РѕРєСЂСѓР¶РµРЅРёСЏ backend
 
-Минимальная локальная конфигурация описана в [`backend/.env.example`](./backend/.env.example):
+РњРёРЅРёРјР°Р»СЊРЅР°СЏ Р»РѕРєР°Р»СЊРЅР°СЏ РєРѕРЅС„РёРіСѓСЂР°С†РёСЏ РѕРїРёСЃР°РЅР° РІ [`backend/.env.example`](./backend/.env.example):
 
 ```env
 APP_NAME=Site Audit API
@@ -169,38 +174,43 @@ SEARXNG_LANGUAGE=ru-RU
 SEARCH_TIMEOUT=20
 ```
 
-Если `SEARXNG_BASE_URL` не настроен или `SearxNG` временно недоступен, часть search/competitor сценариев может деградировать. Для нормального полного audit lifecycle рекомендуется держать `SearxNG`, `Redis` и Celery worker запущенными одновременно.
+Р•СЃР»Рё `SEARXNG_BASE_URL` РЅРµ РЅР°СЃС‚СЂРѕРµРЅ РёР»Рё `SearxNG` РІСЂРµРјРµРЅРЅРѕ РЅРµРґРѕСЃС‚СѓРїРµРЅ, С‡Р°СЃС‚СЊ search/competitor СЃС†РµРЅР°СЂРёРµРІ РјРѕР¶РµС‚ РґРµРіСЂР°РґРёСЂРѕРІР°С‚СЊ. Р”Р»СЏ РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РїРѕР»РЅРѕРіРѕ audit lifecycle СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РґРµСЂР¶Р°С‚СЊ `SearxNG`, `Redis` Рё Celery worker Р·Р°РїСѓС‰РµРЅРЅС‹РјРё РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ.
 
-## Что проверить после запуска
+## Р§С‚Рѕ РїСЂРѕРІРµСЂРёС‚СЊ РїРѕСЃР»Рµ Р·Р°РїСѓСЃРєР°
 
-1. Открыть `http://127.0.0.1:8888` и убедиться, что `SearxNG` отвечает.
-2. Открыть `http://127.0.0.1:8000/docs` или порт, который вывел root dev script.
-3. Открыть `http://127.0.0.1:8000/health/live` и убедиться, что backend process жив.
-4. Открыть `http://127.0.0.1:8000/health/ready` и убедиться, что distributed stack вернул `status=ready`.
-5. Открыть `http://127.0.0.1:8000/health/metrics` и убедиться, что backend показывает queue depth, worker activity и pipeline counters.
-6. Открыть frontend URL из `vite` output.
-7. Создать аудит и убедиться, что worker обрабатывает задачу, а статус не остаётся в `queued`.
+1. РћС‚РєСЂС‹С‚СЊ `http://127.0.0.1:8888` Рё СѓР±РµРґРёС‚СЊСЃСЏ, С‡С‚Рѕ `SearxNG` РѕС‚РІРµС‡Р°РµС‚.
+2. РћС‚РєСЂС‹С‚СЊ `http://127.0.0.1:8000/docs` РёР»Рё РїРѕСЂС‚, РєРѕС‚РѕСЂС‹Р№ РІС‹РІРµР» root dev script.
+3. РћС‚РєСЂС‹С‚СЊ `http://127.0.0.1:8000/health/live` Рё СѓР±РµРґРёС‚СЊСЃСЏ, С‡С‚Рѕ backend process Р¶РёРІ.
+4. РћС‚РєСЂС‹С‚СЊ `http://127.0.0.1:8000/health/ready` Рё СѓР±РµРґРёС‚СЊСЃСЏ, С‡С‚Рѕ distributed stack РІРµСЂРЅСѓР» `status=ready`.
+5. РћС‚РєСЂС‹С‚СЊ `http://127.0.0.1:8000/health/metrics` Рё СѓР±РµРґРёС‚СЊСЃСЏ, С‡С‚Рѕ backend РїРѕРєР°Р·С‹РІР°РµС‚ queue depth, worker activity Рё pipeline counters.
+6. РћС‚РєСЂС‹С‚СЊ frontend URL РёР· `vite` output.
+7. РЎРѕР·РґР°С‚СЊ Р°СѓРґРёС‚ Рё СѓР±РµРґРёС‚СЊСЃСЏ, С‡С‚Рѕ worker РѕР±СЂР°Р±Р°С‚С‹РІР°РµС‚ Р·Р°РґР°С‡Сѓ, Р° СЃС‚Р°С‚СѓСЃ РЅРµ РѕСЃС‚Р°С‘С‚СЃСЏ РІ `queued`.
 
-`/health/ready` теперь проверяет не только сам API, но и реальные зависимости распределённого контура:
+`/health/ready` С‚РµРїРµСЂСЊ РїСЂРѕРІРµСЂСЏРµС‚ РЅРµ С‚РѕР»СЊРєРѕ СЃР°Рј API, РЅРѕ Рё СЂРµР°Р»СЊРЅС‹Рµ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ РєРѕРЅС‚СѓСЂР°:
 
-- базу данных;
+- Р±Р°Р·Сѓ РґР°РЅРЅС‹С…;
 - Redis broker/result backend;
-- активные Celery worker'ы;
-- покрытие всех expected audit queues;
-- доступность `SearxNG`, если выбран provider `searxng`.
+- Р°РєС‚РёРІРЅС‹Рµ Celery worker'С‹;
+- РїРѕРєСЂС‹С‚РёРµ РІСЃРµС… expected audit queues;
+- РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ `SearxNG`, РµСЃР»Рё РІС‹Р±СЂР°РЅ provider `searxng`.
 
-Если endpoint вернул `503`, это значит, что стек не готов к полноценному distributed audit execution, даже если `FastAPI` процесс уже поднялся.
+Р•СЃР»Рё endpoint РІРµСЂРЅСѓР» `503`, СЌС‚Рѕ Р·РЅР°С‡РёС‚, С‡С‚Рѕ СЃС‚РµРє РЅРµ РіРѕС‚РѕРІ Рє РїРѕР»РЅРѕС†РµРЅРЅРѕРјСѓ distributed audit execution, РґР°Р¶Рµ РµСЃР»Рё `FastAPI` РїСЂРѕС†РµСЃСЃ СѓР¶Рµ РїРѕРґРЅСЏР»СЃСЏ.
 
-Начиная с `D10`, backend использует эти runtime-сигналы не только для observability, но и для управления нагрузкой. Если `POST /audits` видит, что `audits.pipeline` уже `backlogged`/`stuck` или detector фиксирует слишком долгую очередь ожидающих запусков, API возвращает `503` и не создаёт новый audit. Для уже исполняющихся стадий orchestration, наоборот, предпочитает `inline`-fallback вместо дальнейшего раздувания деградировавшей очереди.
+РќР°С‡РёРЅР°СЏ СЃ `D10`, backend РёСЃРїРѕР»СЊР·СѓРµС‚ СЌС‚Рё runtime-СЃРёРіРЅР°Р»С‹ РЅРµ С‚РѕР»СЊРєРѕ РґР»СЏ observability, РЅРѕ Рё РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ РЅР°РіСЂСѓР·РєРѕР№. Р•СЃР»Рё `POST /audits` РІРёРґРёС‚, С‡С‚Рѕ `audits.pipeline` СѓР¶Рµ `backlogged`/`stuck` РёР»Рё detector С„РёРєСЃРёСЂСѓРµС‚ СЃР»РёС€РєРѕРј РґРѕР»РіСѓСЋ РѕС‡РµСЂРµРґСЊ РѕР¶РёРґР°СЋС‰РёС… Р·Р°РїСѓСЃРєРѕРІ, API РІРѕР·РІСЂР°С‰Р°РµС‚ `503` Рё РЅРµ СЃРѕР·РґР°С‘С‚ РЅРѕРІС‹Р№ audit. Р”Р»СЏ СѓР¶Рµ РёСЃРїРѕР»РЅСЏСЋС‰РёС…СЃСЏ СЃС‚Р°РґРёР№ orchestration, РЅР°РѕР±РѕСЂРѕС‚, РїСЂРµРґРїРѕС‡РёС‚Р°РµС‚ `inline`-fallback РІРјРµСЃС‚Рѕ РґР°Р»СЊРЅРµР№С€РµРіРѕ СЂР°Р·РґСѓРІР°РЅРёСЏ РґРµРіСЂР°РґРёСЂРѕРІР°РІС€РµР№ РѕС‡РµСЂРµРґРё.
 
-## Разница между `npm run dev` и `npm run dev:full`
+## Р Р°Р·РЅРёС†Р° РјРµР¶РґСѓ 
+pm run dev` Рё 
+pm run dev:full`
 
-- `npm run dev` запускает только backend и frontend.
-- `npm run dev:full` запускает `SearxNG`, `Redis`, backend, frontend и Celery worker.
+- 
+pm run dev` Р·Р°РїСѓСЃРєР°РµС‚ С‚РѕР»СЊРєРѕ backend Рё frontend.
+- 
+pm run dev:full` Р·Р°РїСѓСЃРєР°РµС‚ `SearxNG`, `Redis`, backend, frontend Рё Celery worker.
 
-Если `Redis` уже доступен, но worker не запущен или целевые очереди не обслуживаются, новые аудиты могут быть отклонены сразу с `503` по admission guard `D10`, а не оставлены молча в `queued`. Для полноценной локальной работы используйте именно `npm run dev:full` или запускайте worker отдельной командой.
+Р•СЃР»Рё `Redis` СѓР¶Рµ РґРѕСЃС‚СѓРїРµРЅ, РЅРѕ worker РЅРµ Р·Р°РїСѓС‰РµРЅ РёР»Рё С†РµР»РµРІС‹Рµ РѕС‡РµСЂРµРґРё РЅРµ РѕР±СЃР»СѓР¶РёРІР°СЋС‚СЃСЏ, РЅРѕРІС‹Рµ Р°СѓРґРёС‚С‹ РјРѕРіСѓС‚ Р±С‹С‚СЊ РѕС‚РєР»РѕРЅРµРЅС‹ СЃСЂР°Р·Сѓ СЃ `503` РїРѕ admission guard `D10`, Р° РЅРµ РѕСЃС‚Р°РІР»РµРЅС‹ РјРѕР»С‡Р° РІ `queued`. Р”Р»СЏ РїРѕР»РЅРѕС†РµРЅРЅРѕР№ Р»РѕРєР°Р»СЊРЅРѕР№ СЂР°Р±РѕС‚С‹ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ РёРјРµРЅРЅРѕ 
+pm run dev:full` РёР»Рё Р·Р°РїСѓСЃРєР°Р№С‚Рµ worker РѕС‚РґРµР»СЊРЅРѕР№ РєРѕРјР°РЅРґРѕР№.
 
-## Проверки
+## РџСЂРѕРІРµСЂРєРё
 
 ### Backend tests
 
@@ -217,9 +227,12 @@ cd <repo-root>
 npm run build
 ```
 
-## Полезные ссылки
+## РџРѕР»РµР·РЅС‹Рµ СЃСЃС‹Р»РєРё
 
-- [backend/README.md](./backend/README.md) — backend-specific команды, training pipeline и ML workflow
-- [AGENTS.md](./AGENTS.md) — operational instructions для агентов и разработчиков
-- [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md) — roadmap и GitHub backlog
+- [backend/README.md](./backend/README.md) вЂ” backend-specific РєРѕРјР°РЅРґС‹, training pipeline Рё ML workflow
+- [AGENTS.md](./AGENTS.md) вЂ” operational instructions РґР»СЏ Р°РіРµРЅС‚РѕРІ Рё СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ
+- [docs/roadmap/product-development-roadmap.md](./docs/roadmap/product-development-roadmap.md) вЂ” roadmap Рё GitHub backlog
 - [backend/docs/ml_methodology_appendix.md](./backend/docs/ml_methodology_appendix.md) - appendix-ready description of ML methodology, evaluation and limitations
+
+
+

@@ -1,18 +1,18 @@
 # Backend
 
-FastAPI backend для аудитов сайтов, асинхронной обработки и ML scoring.
+FastAPI backend РґР»СЏ Р°СѓРґРёС‚РѕРІ СЃР°Р№С‚РѕРІ, Р°СЃРёРЅС…СЂРѕРЅРЅРѕР№ РѕР±СЂР°Р±РѕС‚РєРё Рё ML scoring.
 
-Полный локальный setup для всего стека описан в [../README.md](../README.md). Этот файл фокусируется на backend-командах, ML pipeline и backend-specific деталях.
+РџРѕР»РЅС‹Р№ Р»РѕРєР°Р»СЊРЅС‹Р№ setup РґР»СЏ РІСЃРµРіРѕ СЃС‚РµРєР° РѕРїРёСЃР°РЅ РІ [../README.md](../README.md). Р­С‚РѕС‚ С„Р°Р№Р» С„РѕРєСѓСЃРёСЂСѓРµС‚СЃСЏ РЅР° backend-РєРѕРјР°РЅРґР°С…, ML pipeline Рё backend-specific РґРµС‚Р°Р»СЏС….
 
-Во всех командах ниже `<repo-root>` означает корень этого репозитория.
+Р’Рѕ РІСЃРµС… РєРѕРјР°РЅРґР°С… РЅРёР¶Рµ `<repo-root>` РѕР·РЅР°С‡Р°РµС‚ РєРѕСЂРµРЅСЊ СЌС‚РѕРіРѕ СЂРµРїРѕР·РёС‚РѕСЂРёСЏ.
 
-## Требования
+## РўСЂРµР±РѕРІР°РЅРёСЏ
 
-- Python 3.12 или 3.13
-- Redis для Celery
-- Docker для локального бесплатного `SearxNG`
+- Python 3.12 РёР»Рё 3.13
+- Redis РґР»СЏ Celery
+- Docker РґР»СЏ Р»РѕРєР°Р»СЊРЅРѕРіРѕ Р±РµСЃРїР»Р°С‚РЅРѕРіРѕ `SearxNG`
 
-Перед запуском `npm run searxng:*` убедитесь, что Docker Desktop уже запущен и Docker daemon готов принимать команды.
+РџРµСЂРµРґ Р·Р°РїСѓСЃРєРѕРј `npm run searxng:*` СѓР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ Docker Desktop СѓР¶Рµ Р·Р°РїСѓС‰РµРЅ Рё Docker daemon РіРѕС‚РѕРІ РїСЂРёРЅРёРјР°С‚СЊ РєРѕРјР°РЅРґС‹.
 
 ## Setup
 
@@ -24,37 +24,37 @@ python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 ```
 
-## Локальный SearxNG
+## Р›РѕРєР°Р»СЊРЅС‹Р№ SearxNG
 
-Рекомендуемый бесплатный режим для проекта — свой локальный `SearxNG` в Docker. Текущий Docker stack также поднимает `Redis`, который используется как Celery broker/result backend для фоновой обработки аудитов.
+Р РµРєРѕРјРµРЅРґСѓРµРјС‹Р№ Р±РµСЃРїР»Р°С‚РЅС‹Р№ СЂРµР¶РёРј РґР»СЏ РїСЂРѕРµРєС‚Р° вЂ” СЃРІРѕР№ Р»РѕРєР°Р»СЊРЅС‹Р№ `SearxNG` РІ Docker. РўРµРєСѓС‰РёР№ Docker stack С‚Р°РєР¶Рµ РїРѕРґРЅРёРјР°РµС‚ `Redis`, РєРѕС‚РѕСЂС‹Р№ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РєР°Рє Celery broker/result backend РґР»СЏ С„РѕРЅРѕРІРѕР№ РѕР±СЂР°Р±РѕС‚РєРё Р°СѓРґРёС‚РѕРІ.
 
-Поднять локальный search provider:
+РџРѕРґРЅСЏС‚СЊ Р»РѕРєР°Р»СЊРЅС‹Р№ search provider:
 
 ```powershell
 cd <repo-root>
 npm run searxng:up
 ```
 
-Проверить, что JSON API доступен:
+РџСЂРѕРІРµСЂРёС‚СЊ, С‡С‚Рѕ JSON API РґРѕСЃС‚СѓРїРµРЅ:
 
 ```powershell
 cd <repo-root>
 npm run searxng:check
 ```
 
-Остановить контейнеры:
+РћСЃС‚Р°РЅРѕРІРёС‚СЊ РєРѕРЅС‚РµР№РЅРµСЂС‹:
 
 ```powershell
 cd <repo-root>
 npm run searxng:down
 ```
 
-Локальный instance публикуется как:
+Р›РѕРєР°Р»СЊРЅС‹Р№ instance РїСѓР±Р»РёРєСѓРµС‚СЃСЏ РєР°Рє:
 
 - `http://127.0.0.1:8888`
 - `redis://127.0.0.1:6379/0`
 
-Конфигурация лежит в:
+РљРѕРЅС„РёРіСѓСЂР°С†РёСЏ Р»РµР¶РёС‚ РІ:
 
 - [../docker-compose.searxng.yml](../docker-compose.searxng.yml)
 - [../infra/searxng/settings.yml](../infra/searxng/settings.yml)
@@ -67,64 +67,66 @@ cd backend
 python -m uvicorn app.main:app --reload
 ```
 
-API будет доступен на `http://127.0.0.1:8000`.
+API Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ РЅР° `http://127.0.0.1:8000`.
 
 ## Health and readiness
 
-Backend теперь различает liveness и настоящую readiness distributed stack:
+Backend С‚РµРїРµСЂСЊ СЂР°Р·Р»РёС‡Р°РµС‚ liveness Рё РЅР°СЃС‚РѕСЏС‰СѓСЋ readiness distributed stack:
 
-- `GET /health` - legacy совместимый минимальный healthcheck, возвращает только `{"status":"ok"}`
-- `GET /health/live` - liveness процесса API, без проверки внешних зависимостей
-- `GET /health/ready` - readiness всего backend/runtime-контура, включая зависимости распределённого пайплайна
-- `GET /health/metrics` - runtime telemetry по распределённому пайплайну: backlog очередей, worker activity и агрегированные pipeline counters
+- `GET /health` - legacy СЃРѕРІРјРµСЃС‚РёРјС‹Р№ РјРёРЅРёРјР°Р»СЊРЅС‹Р№ healthcheck, РІРѕР·РІСЂР°С‰Р°РµС‚ С‚РѕР»СЊРєРѕ `{"status":"ok"}`
+- `GET /health/live` - liveness РїСЂРѕС†РµСЃСЃР° API, Р±РµР· РїСЂРѕРІРµСЂРєРё РІРЅРµС€РЅРёС… Р·Р°РІРёСЃРёРјРѕСЃС‚РµР№
+- `GET /health/ready` - readiness РІСЃРµРіРѕ backend/runtime-РєРѕРЅС‚СѓСЂР°, РІРєР»СЋС‡Р°СЏ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ РїР°Р№РїР»Р°Р№РЅР°
+- `GET /health/metrics` - runtime telemetry РїРѕ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРјСѓ РїР°Р№РїР»Р°Р№РЅСѓ: backlog РѕС‡РµСЂРµРґРµР№, worker activity Рё Р°РіСЂРµРіРёСЂРѕРІР°РЅРЅС‹Рµ pipeline counters
 
-`/health/ready` проверяет:
+`/health/ready` РїСЂРѕРІРµСЂСЏРµС‚:
 
-- `database` - SQLAlchemy connection и `SELECT 1`
-- `redis` - broker ping через `Redis.from_url(...).ping()`
-- `celery_workers` - отвечает ли хотя бы один worker и покрыты ли все expected audit queues
-- `serp` - доступен ли `SearxNG JSON API`, если `SERP_PROVIDER=searxng`
+- `database` - SQLAlchemy connection Рё `SELECT 1`
+- `redis` - broker ping С‡РµСЂРµР· `Redis.from_url(...).ping()`
+- `celery_workers` - РѕС‚РІРµС‡Р°РµС‚ Р»Рё С…РѕС‚СЏ Р±С‹ РѕРґРёРЅ worker Рё РїРѕРєСЂС‹С‚С‹ Р»Рё РІСЃРµ expected audit queues
+- `serp` - РґРѕСЃС‚СѓРїРµРЅ Р»Рё `SearxNG JSON API`, РµСЃР»Рё `SERP_PROVIDER=searxng`
 
-`/health/metrics` дополняет readiness операционной телеметрией:
+`/health/metrics` РґРѕРїРѕР»РЅСЏРµС‚ readiness РѕРїРµСЂР°С†РёРѕРЅРЅРѕР№ С‚РµР»РµРјРµС‚СЂРёРµР№:
 
-- агрегированные counts аудитов по `status`
-- counts активных аудитов по `orchestration_stage`
-- оценка backlog по Redis queue depth для всех `AUDIT_QUEUES`
-- online workers, их queue coverage и количество `active/reserved/scheduled` задач
-- укрупнённая статистика по `AuditCompetitor`
-- `queue_pressure` snapshots по каждой audit queue: depth, consumers, inflight tasks, estimated capacity и derived pressure status
-- `execution_detector` alerts для stuck/backlogged runtime: stale processing audits, queued audits waiting too long и dispatched stages, которые слишком долго не стартуют
+- Р°РіСЂРµРіРёСЂРѕРІР°РЅРЅС‹Рµ counts Р°СѓРґРёС‚РѕРІ РїРѕ `status`
+- counts Р°РєС‚РёРІРЅС‹С… Р°СѓРґРёС‚РѕРІ РїРѕ `orchestration_stage`
+- РѕС†РµРЅРєР° backlog РїРѕ Redis queue depth РґР»СЏ РІСЃРµС… `AUDIT_QUEUES`
+- online workers, РёС… queue coverage Рё РєРѕР»РёС‡РµСЃС‚РІРѕ `active/reserved/scheduled` Р·Р°РґР°С‡
+- СѓРєСЂСѓРїРЅС‘РЅРЅР°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР° РїРѕ `AuditCompetitor`
+- `queue_pressure` snapshots РїРѕ РєР°Р¶РґРѕР№ audit queue: depth, consumers, inflight tasks, estimated capacity Рё derived pressure status
+- `execution_detector` alerts РґР»СЏ stuck/backlogged runtime: stale processing audits, queued audits waiting too long Рё dispatched stages, РєРѕС‚РѕСЂС‹Рµ СЃР»РёС€РєРѕРј РґРѕР»РіРѕ РЅРµ СЃС‚Р°СЂС‚СѓСЋС‚
 
-Контракт Redis backlog telemetry сейчас такой: endpoint считает глубину очередей по default Celery Redis list keys и поддерживает `broker_transport_options.global_keyprefix`. Если транспортный формат ключей будет переопределён глубже этого уровня, логику `/health/metrics` нужно обновлять вместе с Celery broker config.
+РљРѕРЅС‚СЂР°РєС‚ Redis backlog telemetry СЃРµР№С‡Р°СЃ С‚Р°РєРѕР№: endpoint СЃС‡РёС‚Р°РµС‚ РіР»СѓР±РёРЅСѓ РѕС‡РµСЂРµРґРµР№ РїРѕ default Celery Redis list keys Рё РїРѕРґРґРµСЂР¶РёРІР°РµС‚ `broker_transport_options.global_keyprefix`. Р•СЃР»Рё С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹Р№ С„РѕСЂРјР°С‚ РєР»СЋС‡РµР№ Р±СѓРґРµС‚ РїРµСЂРµРѕРїСЂРµРґРµР»С‘РЅ РіР»СѓР±Р¶Рµ СЌС‚РѕРіРѕ СѓСЂРѕРІРЅСЏ, Р»РѕРіРёРєСѓ `/health/metrics` РЅСѓР¶РЅРѕ РѕР±РЅРѕРІР»СЏС‚СЊ РІРјРµСЃС‚Рµ СЃ Celery broker config.
 
-Для D9 `queue_pressure` использует два слоя сигналов одновременно:
+Р”Р»СЏ D9 `queue_pressure` РёСЃРїРѕР»СЊР·СѓРµС‚ РґРІР° СЃР»РѕСЏ СЃРёРіРЅР°Р»РѕРІ РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕ:
 
-- Redis queue depth как snapshot фактического backlog;
-- Celery worker inspect payload как snapshot consumer coverage, inflight tasks и estimated queue capacity.
+- Redis queue depth РєР°Рє snapshot С„Р°РєС‚РёС‡РµСЃРєРѕРіРѕ backlog;
+- Celery worker inspect payload РєР°Рє snapshot consumer coverage, inflight tasks Рё estimated queue capacity.
 
-`execution_detector` поверх этого добавляет audit-level сигналы из базы и event log:
+`execution_detector` РїРѕРІРµСЂС… СЌС‚РѕРіРѕ РґРѕР±Р°РІР»СЏРµС‚ audit-level СЃРёРіРЅР°Р»С‹ РёР· Р±Р°Р·С‹ Рё event log:
 
-- `stuck_processing_audits` — processing run слишком давно не обновлялся;
-- `queued_audits_waiting_too_long` — новые аудиты слишком долго стоят до старта pipeline;
-- `dispatched_stages_waiting_too_long` — stage уже dispatch'нут, но слишком долго не начал исполняться;
-- `queue_without_workers` и `queue_backlog_detected` — operational backlog на уровне очередей.
+- `stuck_processing_audits` вЂ” processing run СЃР»РёС€РєРѕРј РґР°РІРЅРѕ РЅРµ РѕР±РЅРѕРІР»СЏР»СЃСЏ;
+- `queued_audits_waiting_too_long` вЂ” РЅРѕРІС‹Рµ Р°СѓРґРёС‚С‹ СЃР»РёС€РєРѕРј РґРѕР»РіРѕ СЃС‚РѕСЏС‚ РґРѕ СЃС‚Р°СЂС‚Р° pipeline;
+- `dispatched_stages_waiting_too_long` вЂ” stage СѓР¶Рµ dispatch'РЅСѓС‚, РЅРѕ СЃР»РёС€РєРѕРј РґРѕР»РіРѕ РЅРµ РЅР°С‡Р°Р» РёСЃРїРѕР»РЅСЏС‚СЊСЃСЏ;
+- `queue_without_workers` Рё `queue_backlog_detected` вЂ” operational backlog РЅР° СѓСЂРѕРІРЅРµ РѕС‡РµСЂРµРґРµР№.
 
-Начиная с `D10`, эти сигналы используются не только для наблюдаемости. `POST /audits` применяет admission guard: если очередь `audits.pipeline` уже `backlogged`/`stuck` или detector показывает накопившийся backlog новых запусков, API возвращает `503` и не создаёт новый audit run. Для уже исполняющихся аудитов stage dispatcher и competitor fan-out используют тот же runtime snapshot, но вместо reject переходят на `inline`-fallback, чтобы не усиливать деградировавший backlog дополнительным queue dispatch.
+РќР°С‡РёРЅР°СЏ СЃ `D10`, СЌС‚Рё СЃРёРіРЅР°Р»С‹ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РЅРµ С‚РѕР»СЊРєРѕ РґР»СЏ РЅР°Р±Р»СЋРґР°РµРјРѕСЃС‚Рё. `POST /audits` РїСЂРёРјРµРЅСЏРµС‚ admission guard: РµСЃР»Рё РѕС‡РµСЂРµРґСЊ `audits.pipeline` СѓР¶Рµ `backlogged`/`stuck` РёР»Рё detector РїРѕРєР°Р·С‹РІР°РµС‚ РЅР°РєРѕРїРёРІС€РёР№СЃСЏ backlog РЅРѕРІС‹С… Р·Р°РїСѓСЃРєРѕРІ, API РІРѕР·РІСЂР°С‰Р°РµС‚ `503` Рё РЅРµ СЃРѕР·РґР°С‘С‚ РЅРѕРІС‹Р№ audit run. Р”Р»СЏ СѓР¶Рµ РёСЃРїРѕР»РЅСЏСЋС‰РёС…СЃСЏ Р°СѓРґРёС‚РѕРІ stage dispatcher Рё competitor fan-out РёСЃРїРѕР»СЊР·СѓСЋС‚ С‚РѕС‚ Р¶Рµ runtime snapshot, РЅРѕ РІРјРµСЃС‚Рѕ reject РїРµСЂРµС…РѕРґСЏС‚ РЅР° `inline`-fallback, С‡С‚РѕР±С‹ РЅРµ СѓСЃРёР»РёРІР°С‚СЊ РґРµРіСЂР°РґРёСЂРѕРІР°РІС€РёР№ backlog РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рј queue dispatch.
 
-Когда все обязательные компоненты доступны, endpoint возвращает `200` и `status=ready`. Если Redis недоступен, worker не отвечает или не обслуживаются все audit queues, либо недоступен обязательный `SearxNG`, endpoint возвращает `503` и `status=not_ready` с расшифровкой проблемного компонента.
+РљРѕРіРґР° РІСЃРµ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ РєРѕРјРїРѕРЅРµРЅС‚С‹ РґРѕСЃС‚СѓРїРЅС‹, endpoint РІРѕР·РІСЂР°С‰Р°РµС‚ `200` Рё `status=ready`. Р•СЃР»Рё Redis РЅРµРґРѕСЃС‚СѓРїРµРЅ, worker РЅРµ РѕС‚РІРµС‡Р°РµС‚ РёР»Рё РЅРµ РѕР±СЃР»СѓР¶РёРІР°СЋС‚СЃСЏ РІСЃРµ audit queues, Р»РёР±Рѕ РЅРµРґРѕСЃС‚СѓРїРµРЅ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Р№ `SearxNG`, endpoint РІРѕР·РІСЂР°С‰Р°РµС‚ `503` Рё `status=not_ready` СЃ СЂР°СЃС€РёС„СЂРѕРІРєРѕР№ РїСЂРѕР±Р»РµРјРЅРѕРіРѕ РєРѕРјРїРѕРЅРµРЅС‚Р°.
 
-Это важно для текущей stage-based distributed architecture: backend считается готовым только тогда, когда он не просто запущен, а реально может dispatch'ить и выполнять audit stages по всем очередям.
+Р­С‚Рѕ РІР°Р¶РЅРѕ РґР»СЏ С‚РµРєСѓС‰РµР№ stage-based distributed architecture: backend СЃС‡РёС‚Р°РµС‚СЃСЏ РіРѕС‚РѕРІС‹Рј С‚РѕР»СЊРєРѕ С‚РѕРіРґР°, РєРѕРіРґР° РѕРЅ РЅРµ РїСЂРѕСЃС‚Рѕ Р·Р°РїСѓС‰РµРЅ, Р° СЂРµР°Р»СЊРЅРѕ РјРѕР¶РµС‚ dispatch'РёС‚СЊ Рё РІС‹РїРѕР»РЅСЏС‚СЊ audit stages РїРѕ РІСЃРµРј РѕС‡РµСЂРµРґСЏРј.
 
-## Run Celery worker
+## Run Celery workers
+
+Starting with `D11`, `health/ready` and `health/metrics` validate worker queue-affinity, not only total queue coverage. The single all-queues worker command below is now a legacy fallback for debugging only; the canonical topology is the specialized `pipeline`, `network` and `cpu_ml` profile split shown later in this file.
 
 ```powershell
 cd backend
 .venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.competitor_pages,audits.recommendations,audits.finalize --pool=solo
 ```
 
-Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен или не обслуживается нужная очередь, новые аудиты могут быть отклонены admission guard'ом `D10` с `503`, а уже выполняющиеся стадии перейдут на `inline`-fallback вместо дальнейшего queue fan-out.
+Р”Р»СЏ Windows СЂРµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РѕСЃС‚Р°РІР»СЏС‚СЊ `--pool=solo`. Р•СЃР»Рё backend РІРёРґРёС‚ Redis, РЅРѕ worker РЅРµ Р·Р°РїСѓС‰РµРЅ РёР»Рё РЅРµ РѕР±СЃР»СѓР¶РёРІР°РµС‚СЃСЏ РЅСѓР¶РЅР°СЏ РѕС‡РµСЂРµРґСЊ, РЅРѕРІС‹Рµ Р°СѓРґРёС‚С‹ РјРѕРіСѓС‚ Р±С‹С‚СЊ РѕС‚РєР»РѕРЅРµРЅС‹ admission guard'РѕРј `D10` СЃ `503`, Р° СѓР¶Рµ РІС‹РїРѕР»РЅСЏСЋС‰РёРµСЃСЏ СЃС‚Р°РґРёРё РїРµСЂРµР№РґСѓС‚ РЅР° `inline`-fallback РІРјРµСЃС‚Рѕ РґР°Р»СЊРЅРµР№С€РµРіРѕ queue fan-out.
 
-Быстрая операционная проверка после старта стека:
+Р‘С‹СЃС‚СЂР°СЏ РѕРїРµСЂР°С†РёРѕРЅРЅР°СЏ РїСЂРѕРІРµСЂРєР° РїРѕСЃР»Рµ СЃС‚Р°СЂС‚Р° СЃС‚РµРєР°:
 
 ```powershell
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/live"
@@ -132,25 +134,25 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/ready"
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 ```
 
-Если `/health/ready` возвращает `503`, в payload будет видно, какой именно компонент не готов: `redis`, `celery_workers`, `serp` или `database`.
+Р•СЃР»Рё `/health/ready` РІРѕР·РІСЂР°С‰Р°РµС‚ `503`, РІ payload Р±СѓРґРµС‚ РІРёРґРЅРѕ, РєР°РєРѕР№ РёРјРµРЅРЅРѕ РєРѕРјРїРѕРЅРµРЅС‚ РЅРµ РіРѕС‚РѕРІ: `redis`, `celery_workers`, `serp` РёР»Рё `database`.
 
 ## Distributed audit pipeline
 
-Аудит больше не исполняется одной длинной фоновой задачей. Runtime-пайплайн разрезан на отдельные stage tasks, чтобы их можно было независимо маршрутизировать, ретраить и масштабировать:
+РђСѓРґРёС‚ Р±РѕР»СЊС€Рµ РЅРµ РёСЃРїРѕР»РЅСЏРµС‚СЃСЏ РѕРґРЅРѕР№ РґР»РёРЅРЅРѕР№ С„РѕРЅРѕРІРѕР№ Р·Р°РґР°С‡РµР№. Runtime-РїР°Р№РїР»Р°Р№РЅ СЂР°Р·СЂРµР·Р°РЅ РЅР° РѕС‚РґРµР»СЊРЅС‹Рµ stage tasks, С‡С‚РѕР±С‹ РёС… РјРѕР¶РЅРѕ Р±С‹Р»Рѕ РЅРµР·Р°РІРёСЃРёРјРѕ РјР°СЂС€СЂСѓС‚РёР·РёСЂРѕРІР°С‚СЊ, СЂРµС‚СЂР°РёС‚СЊ Рё РјР°СЃС€С‚Р°Р±РёСЂРѕРІР°С‚СЊ:
 
-- `app.process_audit` - kickoff и перевод аудита в `processing`
-- `app.process_audit_fetch_target` - загрузка целевой страницы
-- `app.process_audit_extract_features` - извлечение признаков
-- `app.process_audit_score_target` - scoring через rule-based + ML breakdown
-- `app.process_audit_collect_competitors` - сбор и сравнение конкурентов
-- `app.process_audit_collect_competitor_page` - обработка одной конкурентной страницы как отдельной distributed subtask
-- `app.process_audit_aggregate_competitors` - агрегация fan-out результатов конкурентов обратно в audit summary
-- `app.process_audit_generate_recommendations` - генерация рекомендаций
-- `app.process_audit_finalize` - финализация результата и warning-агрегация
+- `app.process_audit` - kickoff Рё РїРµСЂРµРІРѕРґ Р°СѓРґРёС‚Р° РІ `processing`
+- `app.process_audit_fetch_target` - Р·Р°РіСЂСѓР·РєР° С†РµР»РµРІРѕР№ СЃС‚СЂР°РЅРёС†С‹
+- `app.process_audit_extract_features` - РёР·РІР»РµС‡РµРЅРёРµ РїСЂРёР·РЅР°РєРѕРІ
+- `app.process_audit_score_target` - scoring С‡РµСЂРµР· rule-based + ML breakdown
+- `app.process_audit_collect_competitors` - СЃР±РѕСЂ Рё СЃСЂР°РІРЅРµРЅРёРµ РєРѕРЅРєСѓСЂРµРЅС‚РѕРІ
+- `app.process_audit_collect_competitor_page` - РѕР±СЂР°Р±РѕС‚РєР° РѕРґРЅРѕР№ РєРѕРЅРєСѓСЂРµРЅС‚РЅРѕР№ СЃС‚СЂР°РЅРёС†С‹ РєР°Рє РѕС‚РґРµР»СЊРЅРѕР№ distributed subtask
+- `app.process_audit_aggregate_competitors` - Р°РіСЂРµРіР°С†РёСЏ fan-out СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РєРѕРЅРєСѓСЂРµРЅС‚РѕРІ РѕР±СЂР°С‚РЅРѕ РІ audit summary
+- `app.process_audit_generate_recommendations` - РіРµРЅРµСЂР°С†РёСЏ СЂРµРєРѕРјРµРЅРґР°С†РёР№
+- `app.process_audit_finalize` - С„РёРЅР°Р»РёР·Р°С†РёСЏ СЂРµР·СѓР»СЊС‚Р°С‚Р° Рё warning-Р°РіСЂРµРіР°С†РёСЏ
 
-Если Redis/Celery доступны, каждый stage dispatch'ится как отдельная задача. Если брокер недоступен, backend сохраняет ту же бизнес-логику и исполняет стадии inline, что позволяет локально разрабатывать и тестировать пайплайн без отдельного worker-процесса.
+Р•СЃР»Рё Redis/Celery РґРѕСЃС‚СѓРїРЅС‹, РєР°Р¶РґС‹Р№ stage dispatch'РёС‚СЃСЏ РєР°Рє РѕС‚РґРµР»СЊРЅР°СЏ Р·Р°РґР°С‡Р°. Р•СЃР»Рё Р±СЂРѕРєРµСЂ РЅРµРґРѕСЃС‚СѓРїРµРЅ, backend СЃРѕС…СЂР°РЅСЏРµС‚ С‚Сѓ Р¶Рµ Р±РёР·РЅРµСЃ-Р»РѕРіРёРєСѓ Рё РёСЃРїРѕР»РЅСЏРµС‚ СЃС‚Р°РґРёРё inline, С‡С‚Рѕ РїРѕР·РІРѕР»СЏРµС‚ Р»РѕРєР°Р»СЊРЅРѕ СЂР°Р·СЂР°Р±Р°С‚С‹РІР°С‚СЊ Рё С‚РµСЃС‚РёСЂРѕРІР°С‚СЊ РїР°Р№РїР»Р°Р№РЅ Р±РµР· РѕС‚РґРµР»СЊРЅРѕРіРѕ worker-РїСЂРѕС†РµСЃСЃР°.
 
-Для D2 каждая стадия уже маршрутизируется в отдельную очередь:
+Р”Р»СЏ D2 РєР°Р¶РґР°СЏ СЃС‚Р°РґРёСЏ СѓР¶Рµ РјР°СЂС€СЂСѓС‚РёР·РёСЂСѓРµС‚СЃСЏ РІ РѕС‚РґРµР»СЊРЅСѓСЋ РѕС‡РµСЂРµРґСЊ:
 
 - `audits.pipeline`
 - `audits.fetch`
@@ -161,21 +163,21 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 - `audits.recommendations`
 - `audits.finalize`
 
-Это позволяет запускать один универсальный worker на всех очередях или поднимать специализированные worker-процессы под конкретные типы нагрузки. Например, сетевые стадии (`fetch`, `competitors`, `competitor_pages`) и CPU/ML стадии (`features`, `scoring`) теперь можно масштабировать независимо. В D3 конкурентные страницы больше не обрабатываются последовательно внутри одной задачи: каждая SERP-страница стала отдельной distributed subtask с последующей агрегацией.
+Р­С‚Рѕ РїРѕР·РІРѕР»СЏРµС‚ Р·Р°РїСѓСЃРєР°С‚СЊ РѕРґРёРЅ СѓРЅРёРІРµСЂСЃР°Р»СЊРЅС‹Р№ worker РЅР° РІСЃРµС… РѕС‡РµСЂРµРґСЏС… РёР»Рё РїРѕРґРЅРёРјР°С‚СЊ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹Рµ worker-РїСЂРѕС†РµСЃСЃС‹ РїРѕРґ РєРѕРЅРєСЂРµС‚РЅС‹Рµ С‚РёРїС‹ РЅР°РіСЂСѓР·РєРё. РќР°РїСЂРёРјРµСЂ, СЃРµС‚РµРІС‹Рµ СЃС‚Р°РґРёРё (`fetch`, `competitors`, `competitor_pages`) Рё CPU/ML СЃС‚Р°РґРёРё (`features`, `scoring`) С‚РµРїРµСЂСЊ РјРѕР¶РЅРѕ РјР°СЃС€С‚Р°Р±РёСЂРѕРІР°С‚СЊ РЅРµР·Р°РІРёСЃРёРјРѕ. Р’ D3 РєРѕРЅРєСѓСЂРµРЅС‚РЅС‹Рµ СЃС‚СЂР°РЅРёС†С‹ Р±РѕР»СЊС€Рµ РЅРµ РѕР±СЂР°Р±Р°С‚С‹РІР°СЋС‚СЃСЏ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕ РІРЅСѓС‚СЂРё РѕРґРЅРѕР№ Р·Р°РґР°С‡Рё: РєР°Р¶РґР°СЏ SERP-СЃС‚СЂР°РЅРёС†Р° СЃС‚Р°Р»Р° РѕС‚РґРµР»СЊРЅРѕР№ distributed subtask СЃ РїРѕСЃР»РµРґСѓСЋС‰РµР№ Р°РіСЂРµРіР°С†РёРµР№.
 
 ## Retry-safe orchestration
 
-Для D4 orchestration стал version-aware и retry-safe:
+Р”Р»СЏ D4 orchestration СЃС‚Р°Р» version-aware Рё retry-safe:
 
-- каждый новый запуск аудита получает `processing_version`;
-- stage tasks исполняются только если их `processing_version` совпадает с текущей версией аудита;
-- если Celery повторно доставляет stale task старого запуска, backend игнорирует её как `stale_processing_version`;
-- `process_audit` умеет безопасно возобновить текущий run и пере-dispatch'ить актуальную стадию без нового сброса состояния;
-- fan-out конкурентных subtasks и aggregation защищены от повторного запуска старым orchestration state.
+- РєР°Р¶РґС‹Р№ РЅРѕРІС‹Р№ Р·Р°РїСѓСЃРє Р°СѓРґРёС‚Р° РїРѕР»СѓС‡Р°РµС‚ `processing_version`;
+- stage tasks РёСЃРїРѕР»РЅСЏСЋС‚СЃСЏ С‚РѕР»СЊРєРѕ РµСЃР»Рё РёС… `processing_version` СЃРѕРІРїР°РґР°РµС‚ СЃ С‚РµРєСѓС‰РµР№ РІРµСЂСЃРёРµР№ Р°СѓРґРёС‚Р°;
+- РµСЃР»Рё Celery РїРѕРІС‚РѕСЂРЅРѕ РґРѕСЃС‚Р°РІР»СЏРµС‚ stale task СЃС‚Р°СЂРѕРіРѕ Р·Р°РїСѓСЃРєР°, backend РёРіРЅРѕСЂРёСЂСѓРµС‚ РµС‘ РєР°Рє `stale_processing_version`;
+- `process_audit` СѓРјРµРµС‚ Р±РµР·РѕРїР°СЃРЅРѕ РІРѕР·РѕР±РЅРѕРІРёС‚СЊ С‚РµРєСѓС‰РёР№ run Рё РїРµСЂРµ-dispatch'РёС‚СЊ Р°РєС‚СѓР°Р»СЊРЅСѓСЋ СЃС‚Р°РґРёСЋ Р±РµР· РЅРѕРІРѕРіРѕ СЃР±СЂРѕСЃР° СЃРѕСЃС‚РѕСЏРЅРёСЏ;
+- fan-out РєРѕРЅРєСѓСЂРµРЅС‚РЅС‹С… subtasks Рё aggregation Р·Р°С‰РёС‰РµРЅС‹ РѕС‚ РїРѕРІС‚РѕСЂРЅРѕРіРѕ Р·Р°РїСѓСЃРєР° СЃС‚Р°СЂС‹Рј orchestration state.
 
-Это важно для распределённого исполнения: при падении worker'а, duplicate delivery или ручном requeue старые задачи не должны перетирать более новый audit run.
+Р­С‚Рѕ РІР°Р¶РЅРѕ РґР»СЏ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ РёСЃРїРѕР»РЅРµРЅРёСЏ: РїСЂРё РїР°РґРµРЅРёРё worker'Р°, duplicate delivery РёР»Рё СЂСѓС‡РЅРѕРј requeue СЃС‚Р°СЂС‹Рµ Р·Р°РґР°С‡Рё РЅРµ РґРѕР»Р¶РЅС‹ РїРµСЂРµС‚РёСЂР°С‚СЊ Р±РѕР»РµРµ РЅРѕРІС‹Р№ audit run.
 
-Примеры специализированных worker-процессов:
+РџСЂРёРјРµСЂС‹ СЃРїРµС†РёР°Р»РёР·РёСЂРѕРІР°РЅРЅС‹С… worker-РїСЂРѕС†РµСЃСЃРѕРІ:
 
 ```powershell
 # network-heavy worker
@@ -197,9 +199,9 @@ cd backend
 
 ## Env
 
-Скопируйте [`.env.example`](./.env.example) в `backend/.env`.
+РЎРєРѕРїРёСЂСѓР№С‚Рµ [`.env.example`](./.env.example) РІ `backend/.env`.
 
-Минимальная локальная конфигурация:
+РњРёРЅРёРјР°Р»СЊРЅР°СЏ Р»РѕРєР°Р»СЊРЅР°СЏ РєРѕРЅС„РёРіСѓСЂР°С†РёСЏ:
 
 ```env
 SERP_PROVIDER=searxng
@@ -208,11 +210,11 @@ SEARXNG_LANGUAGE=ru-RU
 SEARCH_TIMEOUT=20
 ```
 
-Если локальный `SearxNG` временно недоступен, competitor lookup и dataset build могут откатиться на HTML fallback.
+Р•СЃР»Рё Р»РѕРєР°Р»СЊРЅС‹Р№ `SearxNG` РІСЂРµРјРµРЅРЅРѕ РЅРµРґРѕСЃС‚СѓРїРµРЅ, competitor lookup Рё dataset build РјРѕРіСѓС‚ РѕС‚РєР°С‚РёС‚СЊСЃСЏ РЅР° HTML fallback.
 
 ## Root commands
 
-Из корня проекта доступны:
+РР· РєРѕСЂРЅСЏ РїСЂРѕРµРєС‚Р° РґРѕСЃС‚СѓРїРЅС‹:
 
 ```powershell
 npm run searxng:up
@@ -220,31 +222,31 @@ npm run searxng:check
 npm run dev
 ```
 
-Или одной командой поднять локальный поиск, Redis, frontend, backend и Celery worker:
+РР»Рё РѕРґРЅРѕР№ РєРѕРјР°РЅРґРѕР№ РїРѕРґРЅСЏС‚СЊ Р»РѕРєР°Р»СЊРЅС‹Р№ РїРѕРёСЃРє, Redis, frontend, backend Рё Celery worker:
 
 ```powershell
 npm run dev:full
 ```
 
-`npm run dev` поднимает только backend и frontend.
+`npm run dev` РїРѕРґРЅРёРјР°РµС‚ С‚РѕР»СЊРєРѕ backend Рё frontend.
 
 ## RU training seeds
 
-Сгенерировать RU commercial seed pack:
+РЎРіРµРЅРµСЂРёСЂРѕРІР°С‚СЊ RU commercial seed pack:
 
 ```powershell
 cd backend
 .venv\Scripts\python.exe ..\scripts\generate_training_queries.py
 ```
 
-Скрипт создаёт:
+РЎРєСЂРёРїС‚ СЃРѕР·РґР°С‘С‚:
 
 - `data\training_query_seeds.csv`
 - `data\training_queries.txt`
 
 ## Dataset build
 
-Обычный прогон:
+РћР±С‹С‡РЅС‹Р№ РїСЂРѕРіРѕРЅ:
 
 ```powershell
 cd backend
@@ -258,7 +260,7 @@ cd backend
   --query-delay 1.0
 ```
 
-Пакетный прогон по 60 seed-ов с автотренировкой после достижения целевого объёма:
+РџР°РєРµС‚РЅС‹Р№ РїСЂРѕРіРѕРЅ РїРѕ 60 seed-РѕРІ СЃ Р°РІС‚РѕС‚СЂРµРЅРёСЂРѕРІРєРѕР№ РїРѕСЃР»Рµ РґРѕСЃС‚РёР¶РµРЅРёСЏ С†РµР»РµРІРѕРіРѕ РѕР±СЉС‘РјР°:
 
 ```powershell
 cd backend
@@ -283,7 +285,7 @@ cd backend
   --model-output artifacts\page_quality_model.pkl
 ```
 
-Во время обучения используется group-based split по `query`, считаются:
+Р’Рѕ РІСЂРµРјСЏ РѕР±СѓС‡РµРЅРёСЏ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ group-based split РїРѕ `query`, СЃС‡РёС‚Р°СЋС‚СЃСЏ:
 
 - `RMSE`
 - `MAE`
@@ -291,19 +293,19 @@ cd backend
 - `NDCG@10`
 - `Top-3 hit rate`
 
-Если baseline `RandomForestRegressor` даёт слабую ranking-aware валидацию, pipeline пробует benchmark на `CatBoostRegressor`.
+Р•СЃР»Рё baseline `RandomForestRegressor` РґР°С‘С‚ СЃР»Р°Р±СѓСЋ ranking-aware РІР°Р»РёРґР°С†РёСЋ, pipeline РїСЂРѕР±СѓРµС‚ benchmark РЅР° `CatBoostRegressor`.
 
 ## Runtime scoring
 
-Runtime по-прежнему использует один entrypoint: `predict_score(features)`.
+Runtime РїРѕ-РїСЂРµР¶РЅРµРјСѓ РёСЃРїРѕР»СЊР·СѓРµС‚ РѕРґРёРЅ entrypoint: `predict_score(features)`.
 
-Поведение:
+РџРѕРІРµРґРµРЅРёРµ:
 
-- если задан `SEARXNG_BASE_URL`, поиск идёт через локальный или внешний `SearxNG JSON API`;
-- если `SearxNG` недоступен, competitor lookup и dataset build могут откатиться на HTML fallback;
-- если есть `artifacts\page_quality_model.pkl` с совместимой схемой features, он становится основной моделью;
-- если артефакта нет или schema несовместима, используется bootstrap fallback;
-- `score_breakdown.model_info` показывает источник модели, тип, дату обучения и версию датасета.
+- РµСЃР»Рё Р·Р°РґР°РЅ `SEARXNG_BASE_URL`, РїРѕРёСЃРє РёРґС‘С‚ С‡РµСЂРµР· Р»РѕРєР°Р»СЊРЅС‹Р№ РёР»Рё РІРЅРµС€РЅРёР№ `SearxNG JSON API`;
+- РµСЃР»Рё `SearxNG` РЅРµРґРѕСЃС‚СѓРїРµРЅ, competitor lookup Рё dataset build РјРѕРіСѓС‚ РѕС‚РєР°С‚РёС‚СЊСЃСЏ РЅР° HTML fallback;
+- РµСЃР»Рё РµСЃС‚СЊ `artifacts\page_quality_model.pkl` СЃ СЃРѕРІРјРµСЃС‚РёРјРѕР№ СЃС…РµРјРѕР№ features, РѕРЅ СЃС‚Р°РЅРѕРІРёС‚СЃСЏ РѕСЃРЅРѕРІРЅРѕР№ РјРѕРґРµР»СЊСЋ;
+- РµСЃР»Рё Р°СЂС‚РµС„Р°РєС‚Р° РЅРµС‚ РёР»Рё schema РЅРµСЃРѕРІРјРµСЃС‚РёРјР°, РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ bootstrap fallback;
+- `score_breakdown.model_info` РїРѕРєР°Р·С‹РІР°РµС‚ РёСЃС‚РѕС‡РЅРёРє РјРѕРґРµР»Рё, С‚РёРї, РґР°С‚Сѓ РѕР±СѓС‡РµРЅРёСЏ Рё РІРµСЂСЃРёСЋ РґР°С‚Р°СЃРµС‚Р°.
 
 ## Feature inventory
 
@@ -316,7 +318,7 @@ Invoke-RestMethod `
   -Method Post `
   -Uri "http://127.0.0.1:8000/audits" `
   -ContentType "application/json" `
-  -Body '{"query":"ремонт квартир екатеринбург","target_url":"https://example.com","top_n":10}'
+  -Body '{"query":"СЂРµРјРѕРЅС‚ РєРІР°СЂС‚РёСЂ РµРєР°С‚РµСЂРёРЅР±СѓСЂРі","target_url":"https://example.com","top_n":10}'
 ```
 
 ```powershell
@@ -331,27 +333,27 @@ Invoke-RestMethod `
   -Uri "http://127.0.0.1:8000/audits/<AUDIT_ID>/events"
 ```
 
-`GET /audits/{audit_id}/events` возвращает persisted timeline исполнения распределённого аудита:
+`GET /audits/{audit_id}/events` РІРѕР·РІСЂР°С‰Р°РµС‚ persisted timeline РёСЃРїРѕР»РЅРµРЅРёСЏ СЂР°СЃРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ Р°СѓРґРёС‚Р°:
 
 - stage transitions `started/completed/failed/aborted`
-- queue dispatch events для переходов между стадиями
-- `duration_ms` для завершённых и упавших шагов
-- `processing_version`, чтобы различать повторные запуски одного и того же аудита
+- queue dispatch events РґР»СЏ РїРµСЂРµС…РѕРґРѕРІ РјРµР¶РґСѓ СЃС‚Р°РґРёСЏРјРё
+- `duration_ms` РґР»СЏ Р·Р°РІРµСЂС€С‘РЅРЅС‹С… Рё СѓРїР°РІС€РёС… С€Р°РіРѕРІ
+- `processing_version`, С‡С‚РѕР±С‹ СЂР°Р·Р»РёС‡Р°С‚СЊ РїРѕРІС‚РѕСЂРЅС‹Рµ Р·Р°РїСѓСЃРєРё РѕРґРЅРѕРіРѕ Рё С‚РѕРіРѕ Р¶Рµ Р°СѓРґРёС‚Р°
 
-Поведение endpoint:
+РџРѕРІРµРґРµРЅРёРµ endpoint:
 
-- без query-параметров возвращается timeline последнего run этого аудита;
-- с `?processing_version=<N>` можно запросить конкретический исторический run;
-- response упорядочен по времени записи событий и подходит для построения timeline/debug UI.
+- Р±РµР· query-РїР°СЂР°РјРµС‚СЂРѕРІ РІРѕР·РІСЂР°С‰Р°РµС‚СЃСЏ timeline РїРѕСЃР»РµРґРЅРµРіРѕ run СЌС‚РѕРіРѕ Р°СѓРґРёС‚Р°;
+- СЃ `?processing_version=<N>` РјРѕР¶РЅРѕ Р·Р°РїСЂРѕСЃРёС‚СЊ РєРѕРЅРєСЂРµС‚РёС‡РµСЃРєРёР№ РёСЃС‚РѕСЂРёС‡РµСЃРєРёР№ run;
+- response СѓРїРѕСЂСЏРґРѕС‡РµРЅ РїРѕ РІСЂРµРјРµРЅРё Р·Р°РїРёСЃРё СЃРѕР±С‹С‚РёР№ Рё РїРѕРґС…РѕРґРёС‚ РґР»СЏ РїРѕСЃС‚СЂРѕРµРЅРёСЏ timeline/debug UI.
 
-`GET /audits/{audit_id}/events/diagnostics` строит поверх event log уже агрегированную диагностику конкретного run:
+`GET /audits/{audit_id}/events/diagnostics` СЃС‚СЂРѕРёС‚ РїРѕРІРµСЂС… event log СѓР¶Рµ Р°РіСЂРµРіРёСЂРѕРІР°РЅРЅСѓСЋ РґРёР°РіРЅРѕСЃС‚РёРєСѓ РєРѕРЅРєСЂРµС‚РЅРѕРіРѕ run:
 
-- stage breakdown по `fetch/features/scoring/competitors/...`;
-- terminal status run и общее `total_duration_ms`;
-- critical-path breakdown с учётом fan-out стадии `competitor_page`;
-- отдельный `fan_out` summary для distributed subtask execution.
+- stage breakdown РїРѕ `fetch/features/scoring/competitors/...`;
+- terminal status run Рё РѕР±С‰РµРµ `total_duration_ms`;
+- critical-path breakdown СЃ СѓС‡С‘С‚РѕРј fan-out СЃС‚Р°РґРёРё `competitor_page`;
+- РѕС‚РґРµР»СЊРЅС‹Р№ `fan_out` summary РґР»СЏ distributed subtask execution.
 
-Endpoint использует persisted D7 events, а не scraping runtime logs, поэтому подходит для исторического разбора уже завершённых запусков.
+Endpoint РёСЃРїРѕР»СЊР·СѓРµС‚ persisted D7 events, Р° РЅРµ scraping runtime logs, РїРѕСЌС‚РѕРјСѓ РїРѕРґС…РѕРґРёС‚ РґР»СЏ РёСЃС‚РѕСЂРёС‡РµСЃРєРѕРіРѕ СЂР°Р·Р±РѕСЂР° СѓР¶Рµ Р·Р°РІРµСЂС€С‘РЅРЅС‹С… Р·Р°РїСѓСЃРєРѕРІ.
 
 ## Tests
 
@@ -366,9 +368,9 @@ The RU-commercial dataset workflow now relies on a reproducible manifest-based p
 
 What the workflow produces:
 
-- `data\training_query_seeds.csv` — seed pack for RU commercial queries.
-- `data\training_queries.txt` — legacy flat list of the same queries.
-- `<dataset>.manifest.json` — coverage report and quality gates for the collected dataset.
+- `data\training_query_seeds.csv` вЂ” seed pack for RU commercial queries.
+- `data\training_queries.txt` вЂ” legacy flat list of the same queries.
+- `<dataset>.manifest.json` вЂ” coverage report and quality gates for the collected dataset.
 
 Seed catalog source of truth:
 
@@ -473,8 +475,8 @@ Use this step before `python -m app.ml.publish` when you want to validate that t
 
 Published primary models now produce two artifact forms:
 
-- `artifacts\page_quality_model.pkl` — current runtime alias used by the scoring pipeline;
-- `artifacts\versions\page_quality_model--<artifact_version>.pkl` — immutable versioned release copy.
+- `artifacts\page_quality_model.pkl` вЂ” current runtime alias used by the scoring pipeline;
+- `artifacts\versions\page_quality_model--<artifact_version>.pkl` вЂ” immutable versioned release copy.
 
 Each published artifact also has a public JSON sidecar:
 
@@ -498,3 +500,4 @@ The runtime `score_breakdown.model_info` now exposes:
 
 This makes the active scoring model traceable in runtime: you can see exactly which artifact version is active, what dataset coverage it was trained on and what the key validation metrics were at publish time.
 - [docs/ml_methodology_appendix.md](./docs/ml_methodology_appendix.md) - ML methodology, dataset design, evaluation and known limitations for diploma appendix
+

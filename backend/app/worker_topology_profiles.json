@@ -1,0 +1,36 @@
+{
+  "profiles": [
+    {
+      "name": "pipeline",
+      "workload_class": "pipeline",
+      "description": "Serial orchestration, admission control and stage dispatch coordination.",
+      "recommended_concurrency": 1,
+      "queues": [
+        "audits.pipeline"
+      ]
+    },
+    {
+      "name": "network",
+      "workload_class": "network",
+      "description": "SERP lookups and HTTP-bound page collection for target and competitor pages.",
+      "recommended_concurrency": 4,
+      "queues": [
+        "audits.fetch",
+        "audits.competitors",
+        "audits.competitor_pages"
+      ]
+    },
+    {
+      "name": "cpu_ml",
+      "workload_class": "cpu_ml",
+      "description": "Feature extraction, ML scoring, recommendations and finalize stage execution.",
+      "recommended_concurrency": 2,
+      "queues": [
+        "audits.features",
+        "audits.scoring",
+        "audits.recommendations",
+        "audits.finalize"
+      ]
+    }
+  ]
+}

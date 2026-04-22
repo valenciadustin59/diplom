@@ -584,13 +584,16 @@ def test_collect_worker_runtime_metrics_aggregates_inspect_payload(monkeypatch: 
     monkeypatch.setattr("app.health.celery_app.control", FakeControl())
 
     payload = collect_worker_runtime_metrics(Settings())
-
-    assert payload["status"] == "ok"
+    assert payload["status"] == "degraded"
     assert payload["online_count"] == 1
     assert payload["active_tasks_total"] == 1
     assert payload["reserved_tasks_total"] == 1
     assert payload["scheduled_tasks_total"] == 1
+    assert payload["topology"]["status"] == "error"
+    assert payload["topology"]["invalid_workers"] == ["celery@test"]
     assert payload["workers"]["celery@test"]["queues"] == sorted([AUDIT_QUEUES[0], AUDIT_QUEUES[1]])
+    assert payload["workers"]["celery@test"]["profile_name"] is None
+    assert payload["workers"]["celery@test"]["profile_status"] == "error"
     assert payload["workers"]["celery@test"]["pool_max_concurrency"] == 4
     assert payload["workers"]["celery@test"]["pid"] == 1234
     assert payload["queue_activity"][AUDIT_QUEUES[1]]["active_tasks"] == 1

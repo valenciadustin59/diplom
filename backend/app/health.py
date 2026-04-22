@@ -13,6 +13,7 @@ from app.audit_status import PROCESSING, QUEUED, TERMINAL_STATUSES
 from app.celery_app import AUDIT_QUEUES, celery_app, resolve_task_queue
 from app.config import Settings, get_settings
 from app.models import Audit, AuditCompetitor, AuditEvent
+from app.worker_topology import build_worker_topology_contract, evaluate_worker_topology
 
 
 STALE_PROCESSING_THRESHOLD_MINUTES = 15
@@ -176,76 +177,66 @@ def check_redis_health(settings: Settings) -> ComponentHealth:
 
 
 def check_celery_worker_health(settings: Settings) -> ComponentHealth:
-    del settings
-    try:
-        inspector = celery_app.control.inspect(timeout=0.5)
-        ping_response = inspector.ping() or {}
-        active_queues_response = inspector.active_queues() or {}
-    except Exception as exc:  # pragma: no cover - depends on broker availability
+    worker_metrics = collect_worker_runtime_metrics(settings)
+    worker_payload = worker_metrics.get("workers") if isinstance(worker_metrics.get("workers"), dict) else {}
+    worker_names = sorted(str(worker_name) for worker_name in worker_payload.keys())
+    worker_queues = {
+        worker_name: list(worker_info.get("queues") or [])
+        for worker_name, worker_info in worker_payload.items()
+        if isinstance(worker_info, dict)
+    }
+    topology = worker_metrics.get("topology") if isinstance(worker_metrics.get("topology"), dict) else {}
+    details = {
+        "worker_count": int(worker_metrics.get("online_count") or 0),
+        "workers": worker_names,
+        "worker_queues": worker_queues,
+        "expected_queues": list(AUDIT_QUEUES),
+        "missing_queues": list(worker_metrics.get("missing_queues") or []),
+        "topology": topology,
+        "topology_contract": worker_metrics.get("topology_contract") or build_worker_topology_contract(),
+    }
+    if worker_metrics.get("status") == "error":
         return ComponentHealth(
             status="error",
             required=True,
             details={
-                "worker_count": 0,
-                "workers": [],
-                "worker_queues": {},
-                "expected_queues": list(AUDIT_QUEUES),
-                "error": str(exc),
+                **details,
+                "error": str(worker_metrics.get("error") or "Unable to inspect Celery workers."),
             },
         )
-
-    workers = sorted(ping_response.keys())
-    worker_queues = {
-        worker_name: sorted(
-            queue_info.get("name", "")
-            for queue_info in active_queues_response.get(worker_name, [])
-            if isinstance(queue_info, dict) and queue_info.get("name")
-        )
-        for worker_name in workers
-    }
-
-    if not workers:
+    if not worker_names:
         return ComponentHealth(
             status="error",
             required=True,
             details={
-                "worker_count": 0,
-                "workers": [],
-                "worker_queues": {},
-                "expected_queues": list(AUDIT_QUEUES),
+                **details,
                 "error": "No Celery workers responded to ping.",
             },
         )
-
-    missing_queues = sorted(
-        queue_name
-        for queue_name in AUDIT_QUEUES
-        if not any(queue_name in queues for queues in worker_queues.values())
-    )
-    if missing_queues:
+    if details["missing_queues"]:
         return ComponentHealth(
             status="error",
             required=True,
             details={
-                "worker_count": len(workers),
-                "workers": workers,
-                "worker_queues": worker_queues,
-                "expected_queues": list(AUDIT_QUEUES),
-                "missing_queues": missing_queues,
+                **details,
                 "error": "Not all expected audit queues are served by active workers.",
             },
         )
-
+    if topology.get("status") == "error":
+        return ComponentHealth(
+            status="error",
+            required=True,
+            details={
+                **details,
+                "error": "Active workers violate the configured queue-affinity topology.",
+            },
+        )
     return ComponentHealth(
         status="ok",
         required=True,
-        details={
-            "worker_count": len(workers),
-            "workers": workers,
-            "worker_queues": worker_queues,
-            "expected_queues": list(AUDIT_QUEUES),
-        },
+        details=details,
     )
+
 
 
 def check_serp_health(settings: Settings) -> ComponentHealth:
@@ -518,6 +509,20 @@ def collect_broker_runtime_metrics(settings: Settings) -> dict[str, Any]:
 
 def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
     del settings
+    topology_contract = build_worker_topology_contract()
+    empty_queue_activity = {
+        queue_name: {
+            "workers": [],
+            "worker_count": 0,
+            "estimated_concurrency": 0,
+            "active_tasks": 0,
+            "reserved_tasks": 0,
+            "scheduled_tasks": 0,
+            "inflight_tasks": 0,
+            "available_capacity_estimate": 0,
+        }
+        for queue_name in AUDIT_QUEUES
+    }
     try:
         inspector = celery_app.control.inspect(timeout=0.5)
         stats_response = inspector.stats() or {}
@@ -526,6 +531,7 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
         scheduled_response = inspector.scheduled() or {}
         active_queues_response = inspector.active_queues() or {}
     except Exception as exc:  # pragma: no cover - depends on broker availability
+        empty_topology = evaluate_worker_topology({})
         return {
             "status": "error",
             "online_count": 0,
@@ -533,9 +539,13 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             "active_tasks_total": 0,
             "reserved_tasks_total": 0,
             "scheduled_tasks_total": 0,
+            "expected_queues": list(AUDIT_QUEUES),
+            "missing_queues": list(empty_topology.get("missing_queues") or []),
+            "queue_activity": empty_queue_activity,
+            "topology": empty_topology,
+            "topology_contract": topology_contract,
             "error": str(exc),
         }
-
     worker_names = sorted(
         set(stats_response.keys())
         | set(active_response.keys())
@@ -543,7 +553,6 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
         | set(scheduled_response.keys())
         | set(active_queues_response.keys())
     )
-
     worker_payload: dict[str, dict[str, Any]] = {}
     queue_activity: dict[str, dict[str, Any]] = {
         queue_name: {
@@ -572,7 +581,6 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             "pool_max_concurrency": int(pool_entry.get("max-concurrency") or 0),
             "pid": stats_entry.get("pid"),
         }
-
         worker_concurrency = worker_payload[worker_name]["pool_max_concurrency"] or (1 if queue_names else 0)
         for queue_name in queue_names:
             queue_snapshot = queue_activity.setdefault(
@@ -588,25 +596,21 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             )
             queue_snapshot["workers"].append(worker_name)
             queue_snapshot["estimated_concurrency"] += worker_concurrency
-
         for task_payload in active_response.get(worker_name, []):
             task_name = _extract_task_name(task_payload)
             if task_name is None:
                 continue
             queue_activity[resolve_task_queue(task_name)]["active_tasks"] += 1
-
         for task_payload in reserved_response.get(worker_name, []):
             task_name = _extract_task_name(task_payload)
             if task_name is None:
                 continue
             queue_activity[resolve_task_queue(task_name)]["reserved_tasks"] += 1
-
         for task_payload in scheduled_response.get(worker_name, []):
             task_name = _extract_task_name(task_payload)
             if task_name is None:
                 continue
             queue_activity[resolve_task_queue(task_name)]["scheduled_tasks"] += 1
-
     for queue_name, snapshot in queue_activity.items():
         snapshot["workers"] = sorted(set(str(worker_name) for worker_name in snapshot["workers"]))
         snapshot["worker_count"] = len(snapshot["workers"])
@@ -619,8 +623,23 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             int(snapshot["estimated_concurrency"]) - int(snapshot["active_tasks"]),
             0,
         )
-
-    status = "ok" if worker_names else "warning"
+    topology = evaluate_worker_topology(
+        {
+            worker_name: list(worker_info.get("queues") or [])
+            for worker_name, worker_info in worker_payload.items()
+        }
+    )
+    for worker_name, topology_entry in topology.get("worker_profiles", {}).items():
+        if worker_name not in worker_payload or not isinstance(topology_entry, dict):
+            continue
+        worker_payload[worker_name]["profile_name"] = topology_entry.get("profile_name")
+        worker_payload[worker_name]["profile_status"] = topology_entry.get("status")
+    if not worker_names:
+        status = "warning"
+    elif topology.get("status") == "error":
+        status = "degraded"
+    else:
+        status = "ok"
     return {
         "status": status,
         "online_count": len(worker_names),
@@ -629,9 +648,13 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
         "reserved_tasks_total": sum(item["reserved_tasks"] for item in worker_payload.values()),
         "scheduled_tasks_total": sum(item["scheduled_tasks"] for item in worker_payload.values()),
         "expected_queues": list(AUDIT_QUEUES),
+        "missing_queues": list(topology.get("missing_queues") or []),
         "queue_activity": queue_activity,
+        "topology": topology,
+        "topology_contract": topology_contract,
         **({"warning": "No Celery workers responded to inspect."} if not worker_names else {}),
     }
+
 
 
 def build_queue_pressure_snapshots(
@@ -827,6 +850,7 @@ def build_metrics_payload(settings: Settings | None = None) -> dict[str, Any]:
             "expected_queues": list(AUDIT_QUEUES),
             "broker_url": runtime_settings.celery_broker_url,
             "result_backend": runtime_settings.celery_result_backend,
+            "worker_topology": build_worker_topology_contract(),
         },
         **components,
     }
@@ -856,6 +880,7 @@ def build_readiness_payload(settings: Settings | None = None) -> tuple[dict[str,
             "expected_queues": list(AUDIT_QUEUES),
             "broker_url": runtime_settings.celery_broker_url,
             "result_backend": runtime_settings.celery_result_backend,
+            "worker_topology": build_worker_topology_contract(),
         },
     }
     return payload, ready
