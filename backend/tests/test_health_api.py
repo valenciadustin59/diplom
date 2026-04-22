@@ -58,6 +58,110 @@ def test_metrics_endpoint_returns_runtime_payload(client, monkeypatch: pytest.Mo
     assert response.json() == payload
 
 
+def test_metrics_endpoint_includes_queue_pressure_and_execution_detector(client, monkeypatch: pytest.MonkeyPatch):
+    monkeypatch.setattr(
+        "app.health.collect_database_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "database_url": runtime_settings.database_url,
+            "audits": {
+                "total": 3,
+                "by_status": {"processing": 1, "queued": 1, "completed": 1},
+                "active_by_stage": {"fetch": 1},
+                "stuck_processing_count": 1,
+                "oldest_queued_age_seconds": 900.0,
+                "oldest_processing_update_age_seconds": 400.0,
+                "recent_terminal_duration_ms": {"sample_size": 1, "average_ms": 5000.0, "min_ms": 5000.0, "max_ms": 5000.0},
+                "dispatch_waiting_count": 1,
+                "dispatch_waiting_sample": [
+                    {
+                        "audit_id": "audit-1",
+                        "processing_version": 2,
+                        "dispatch_stage": "fetch",
+                        "dispatch_queue": "audits.fetch",
+                        "dispatch_age_seconds": 240.0,
+                        "orchestration_stage": "fetch",
+                        "updated_age_seconds": 200.0,
+                    }
+                ],
+            },
+            "competitors": {"total": 0, "by_status": {}},
+        },
+    )
+    monkeypatch.setattr(
+        "app.health.collect_broker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "broker_url": runtime_settings.celery_broker_url,
+            "queue_depths": {
+                AUDIT_QUEUES[0]: 4,
+                AUDIT_QUEUES[1]: 0,
+                AUDIT_QUEUES[2]: 0,
+                AUDIT_QUEUES[3]: 0,
+                AUDIT_QUEUES[4]: 0,
+                AUDIT_QUEUES[5]: 1,
+                AUDIT_QUEUES[6]: 0,
+                AUDIT_QUEUES[7]: 0,
+            },
+            "total_depth": 5,
+        },
+    )
+    monkeypatch.setattr(
+        "app.health.collect_worker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "online_count": 1,
+            "workers": {"celery@test": {"queues": [AUDIT_QUEUES[0]], "active_tasks": 0, "reserved_tasks": 0, "scheduled_tasks": 0, "pool_max_concurrency": 1, "pid": 123}},
+            "active_tasks_total": 0,
+            "reserved_tasks_total": 0,
+            "scheduled_tasks_total": 0,
+            "expected_queues": list(AUDIT_QUEUES),
+            "queue_activity": {
+                AUDIT_QUEUES[0]: {
+                    "workers": ["celery@test"],
+                    "worker_count": 1,
+                    "estimated_concurrency": 1,
+                    "active_tasks": 0,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "inflight_tasks": 0,
+                    "available_capacity_estimate": 1,
+                },
+                AUDIT_QUEUES[5]: {
+                    "workers": [],
+                    "worker_count": 0,
+                    "estimated_concurrency": 0,
+                    "active_tasks": 0,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "inflight_tasks": 0,
+                    "available_capacity_estimate": 0,
+                },
+            },
+        },
+    )
+
+    response = client.get("/health/metrics")
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["status"] == "degraded"
+    assert payload["queue_pressure"]["status"] == "degraded"
+    assert payload["queue_pressure"]["queues"][AUDIT_QUEUES[0]]["pressure_status"] == "backlogged"
+    assert payload["queue_pressure"]["queues"][AUDIT_QUEUES[5]]["pressure_status"] == "stuck"
+    assert AUDIT_QUEUES[0] in payload["queue_pressure"]["backlogged_queues"]
+    assert AUDIT_QUEUES[5] in payload["queue_pressure"]["stuck_queues"]
+    assert payload["execution_detector"]["status"] == "degraded"
+    assert payload["execution_detector"]["summary"]["alert_count"] == 5
+    assert {alert["code"] for alert in payload["execution_detector"]["alerts"]} == {
+        "stuck_processing_audits",
+        "queued_audits_waiting_too_long",
+        "dispatched_stages_waiting_too_long",
+        "queue_without_workers",
+        "queue_backlog_detected",
+    }
+
+
 def test_ready_health_endpoint_returns_200_when_dependencies_are_ready(client, monkeypatch: pytest.MonkeyPatch):
     payload = {
         "status": "ready",
@@ -535,6 +639,37 @@ def test_build_queue_pressure_snapshots_marks_backlogged_and_stuck_queues():
     assert AUDIT_QUEUES[1] in payload["stuck_queues"]
     assert payload["queues"][AUDIT_QUEUES[0]]["pressure_status"] == "backlogged"
     assert payload["queues"][AUDIT_QUEUES[1]]["pressure_status"] == "stuck"
+
+
+def test_build_queue_pressure_snapshots_marks_small_fresh_queue_as_waiting():
+    broker_metrics = {
+        "status": "ok",
+        "queue_depths": {
+            AUDIT_QUEUES[0]: 1,
+        },
+    }
+    worker_metrics = {
+        "status": "ok",
+        "queue_activity": {
+            AUDIT_QUEUES[0]: {
+                "workers": ["celery@pipeline"],
+                "worker_count": 1,
+                "estimated_concurrency": 1,
+                "active_tasks": 0,
+                "reserved_tasks": 0,
+                "scheduled_tasks": 0,
+                "inflight_tasks": 0,
+                "available_capacity_estimate": 1,
+            },
+        },
+    }
+
+    payload = build_queue_pressure_snapshots(broker_metrics, worker_metrics)
+
+    assert payload["status"] == "ok"
+    assert payload["queues"][AUDIT_QUEUES[0]]["pressure_status"] == "waiting"
+    assert payload["queues"][AUDIT_QUEUES[0]]["reasons"] == ["queued_tasks_pending_pickup"]
+    assert payload["backlogged_queues"] == []
 
 
 def test_build_execution_detector_payload_reports_runtime_alerts():

@@ -668,9 +668,12 @@ def build_queue_pressure_snapshots(
         elif worker_count == 0:
             pressure_status = "stuck"
             reasons.append("no_workers_serving_queue")
-        elif inflight_tasks == 0:
+        elif inflight_tasks == 0 and depth > max(estimated_concurrency, 1):
             pressure_status = "backlogged"
             reasons.append("queued_tasks_without_drain_activity")
+        elif inflight_tasks == 0:
+            pressure_status = "waiting"
+            reasons.append("queued_tasks_pending_pickup")
         elif depth > max(estimated_concurrency, 1) * QUEUE_BACKLOG_DEPTH_MULTIPLIER:
             pressure_status = "backlogged"
             reasons.append("depth_exceeds_estimated_capacity")
