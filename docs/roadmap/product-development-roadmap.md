@@ -73,10 +73,10 @@
 - `D7` - сохранить structured execution events и stage duration telemetry в persistent audit event log
 - `D8` - добавить API диагностики audit timeline и critical-path/fan-out breakdown по каждому запуску
 - `D9` - ввести queue pressure snapshots и detector stuck/backlogged execution для распределённого runtime
+- `D10` - добавить admission control для новых аудитов и scheduling guards для stage dispatch/fan-out при деградированном worker/broker capacity
 
 #### Предстоит выполнить
 
-- `D10` - добавить admission control и scheduling guards при деградированном worker/broker capacity (`GitHub #31`)
 - `D11` - оформить и реализовать worker topology profiles для разных типов нагрузки (`pipeline`, `network`, `cpu/ml`) с проверяемой queue affinity (`GitHub #27`)
 - `D12` - добавить benchmark/reporting workflow с измеримыми distributed метриками (latency, backlog, throughput, worker utilization) для дипломной демонстрации (`GitHub #29`)
 
@@ -84,7 +84,7 @@
 
 Эти задачи выстроены по принципу: сначала сделать pipeline действительно распределённым, затем сделать его наблюдаемым, потом управляемым под нагрузкой и в конце — измеримым и убедительным для защиты диплома. Это превращает Celery из инфраструктурной детали в реально доказуемую распределённую архитектуру.
 
-Именно эта последовательность должна использоваться как актуальный backlog для следующих GitHub issues и следующих задач `task 7+`.
+Именно эта последовательность должна использоваться как актуальный backlog для следующих GitHub issues и следующих задач `D11+`.
 
 ## Этап 5. Продуктовые расширения
 

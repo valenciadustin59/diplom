@@ -791,3 +791,40 @@ def test_create_audit_rejects_invalid_url(client):
         },
     )
     assert response.status_code == 422
+
+
+def test_create_audit_rejects_when_runtime_capacity_is_degraded(client, monkeypatch):
+    monkeypatch.setattr(
+        'app.api.routes.audits.evaluate_new_audit_admission',
+        lambda: type(
+            'Decision',
+            (),
+            {
+                'action': 'reject',
+                'to_http_detail': lambda self: {
+                    'code': 'pipeline_queue_capacity_exhausted',
+                    'message': 'Runtime capacity is degraded.',
+                    'queue_name': 'audits.pipeline',
+                    'details': {'pressure_status': 'backlogged'},
+                },
+            },
+        )(),
+    )
+
+    response = client.post(
+        '/audits',
+        json={
+            'query': 'seo audit',
+            'target_url': 'https://example.com',
+        },
+    )
+
+    assert response.status_code == 503
+    assert response.json() == {
+        'detail': {
+            'code': 'pipeline_queue_capacity_exhausted',
+            'message': 'Runtime capacity is degraded.',
+            'queue_name': 'audits.pipeline',
+            'details': {'pressure_status': 'backlogged'},
+        }
+    }

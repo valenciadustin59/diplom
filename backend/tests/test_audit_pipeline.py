@@ -664,6 +664,38 @@ def test_dispatch_stage_task_routes_next_stage_to_stage_queue(monkeypatch):
     }
 
 
+def test_dispatch_stage_task_runs_inline_when_runtime_guard_blocks_queue(monkeypatch):
+    captured: dict[str, object] = {'ran_inline': False}
+
+    class Decision:
+        action = 'inline'
+        reason = 'queue_capacity_guard'
+        message = 'Queue is degraded.'
+        details = {'pressure_status': 'backlogged'}
+
+    monkeypatch.setattr('app.tasks.evaluate_queue_dispatch', lambda queue_name: Decision())
+    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+    monkeypatch.setattr(
+        'app.tasks.process_audit_fetch_target.run',
+        lambda audit_id: captured.update({'ran_inline': True, 'audit_id': audit_id}) or {'audit_id': audit_id, 'status': 'inline'},
+    )
+    monkeypatch.setattr(
+        'app.tasks.process_audit_fetch_target.apply_async',
+        lambda *args, **kwargs: pytest.fail('queue dispatch should be blocked by runtime guard'),
+    )
+
+    result = _dispatch_stage_task(process_audit_fetch_target, 'audit-inline-guard')
+
+    assert captured == {
+        'ran_inline': True,
+        'audit_id': 'audit-inline-guard',
+    }
+    assert result == {
+        'audit_id': 'audit-inline-guard',
+        'status': 'inline',
+    }
+
+
 def test_collect_competitors_fans_out_competitor_page_tasks(monkeypatch, tmp_path):
     db_path = tmp_path / 'pipeline-fanout.db'
     engine = create_engine(
@@ -741,6 +773,127 @@ def test_collect_competitors_fans_out_competitor_page_tasks(monkeypatch, tmp_pat
         'processing_version': 1,
         'competitor_tasks_dispatched': 2,
         'competitor_tasks_enqueued': 2,
+    }
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
+def test_collect_competitors_runs_competitor_processing_inline_when_runtime_guard_blocks_fanout(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-fanout-inline-guard.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+    monkeypatch.setattr(
+        'app.tasks.search_competitor_pages',
+        lambda query, target_url, limit: [
+            {
+                'url': 'https://competitor-a.example',
+                'domain': 'competitor-a.example',
+                'title': 'Competitor A',
+                'snippet': 'Snippet A',
+                'rank': 1,
+                'serp_page': 0,
+            },
+            {
+                'url': 'https://competitor-b.example',
+                'domain': 'competitor-b.example',
+                'title': 'Competitor B',
+                'snippet': 'Snippet B',
+                'rank': 2,
+                'serp_page': 0,
+            },
+        ],
+    )
+
+    class Decision:
+        action = 'inline'
+        reason = 'queue_capacity_guard'
+        message = 'Competitor fan-out queue is degraded.'
+        details = {'pressure_status': 'backlogged'}
+
+    monkeypatch.setattr(
+        'app.tasks.evaluate_queue_dispatch',
+        lambda queue_name: Decision(),
+    )
+    monkeypatch.setattr(
+        'app.tasks.process_audit_collect_competitor_page.apply_async',
+        lambda *args, **kwargs: pytest.fail('competitor fan-out should not enqueue when runtime guard blocks the queue'),
+    )
+    monkeypatch.setattr(
+        'app.tasks.analyze_competitor_page',
+        lambda result, query: {
+            'url': str(result['url']),
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result['rank']),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'score': 81.0,
+            'features': {
+                'text_length_chars': 20,
+                'query_in_text': 1,
+                'semantic_similarity': 0.82,
+            },
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_comparison_summary',
+        lambda user_features, user_score, competitor_results: {
+            'user_score': user_score,
+            'competitors_average_score': 81.0,
+            'score_difference': 0.0,
+            'competitors_count': 2,
+            'competitors_found': 2,
+            'competitors_analyzed': 2,
+            'competitors_failed': 0,
+        },
+    )
+    monkeypatch.setattr('app.tasks.generate_recommendations', lambda page_features, page_score, competitor_pages_features: [])
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-fanout-inline',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=1,
+            orchestration_stage='competitors',
+            features={'query_in_text': 1},
+            score=88.0,
+        )
+        db.add(audit)
+        db.commit()
+
+    result = process_audit_collect_competitors.run('audit-fanout-inline', 1)
+
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-fanout-inline')
+        competitors = db.scalars(select(AuditCompetitor).where(AuditCompetitor.audit_id == 'audit-fanout-inline')).all()
+        assert stored is not None
+        assert stored.status == 'completed'
+        assert stored.competitor_processing_status == 'aggregated'
+        assert len(competitors) == 2
+        assert {item.status for item in competitors} == {'completed'}
+
+    assert result == {
+        'audit_id': 'audit-fanout-inline',
+        'status': 'completed',
+        'score': 88.0,
+        'competitors_count': 2,
+        'recommendations_count': 0,
     }
 
     Base.metadata.drop_all(bind=engine)

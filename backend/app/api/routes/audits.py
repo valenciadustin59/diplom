@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from app.api.dependencies import get_db_session
 from app.audit_diagnostics import build_audit_timeline_diagnostics, load_audit_events
 from app.models import Audit
+from app.runtime_capacity import evaluate_new_audit_admission
 from app.schemas.audit import (
     AuditCreate,
     AuditEventRead,
@@ -40,6 +41,13 @@ def create_audit_endpoint(
     payload: AuditCreate,
     db: Session = Depends(get_db_session),
 ) -> AuditRead:
+    admission_decision = evaluate_new_audit_admission()
+    if admission_decision.action == "reject":
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail=admission_decision.to_http_detail(),
+        )
+
     audit = Audit(
         id=str(uuid4()),
         query=payload.query,

@@ -29,6 +29,7 @@ from app.ml import explain_score
 from app.models import Audit, AuditCompetitor, AuditEvent
 from app.parser import fetch_page
 from app.recommendations import generate_recommendations
+from app.runtime_capacity import evaluate_queue_dispatch
 
 
 logger = get_task_logger(__name__)
@@ -639,6 +640,20 @@ def _dispatch_stage_task(task, *args: object) -> Any:
     audit_id = str(args[0]) if args else ""
     queue_name = resolve_task_queue(task.name)
     processing_version = int(args[1]) if len(args) > 1 and isinstance(args[1], int) else None
+    dispatch_decision = evaluate_queue_dispatch(queue_name)
+    if dispatch_decision.action == "inline":
+        _log_audit_step(
+            logging.WARNING,
+            audit_id,
+            task.name,
+            "inline_fallback",
+            processing_version=processing_version,
+            queue=queue_name,
+            reason=dispatch_decision.reason,
+            guard_message=dispatch_decision.message,
+            guard_details=dispatch_decision.details or None,
+        )
+        return task.run(*args)
     if _redis_available():
         try:
             return _enqueue_task(task, *args)
@@ -1120,7 +1135,9 @@ def process_audit_collect_competitors(audit_id: str, processing_version: int) ->
             "reason": "competitor_tasks_in_progress",
         }
 
-    if _redis_available():
+    queue_name = resolve_task_queue(process_audit_collect_competitor_page.name)
+    dispatch_decision = evaluate_queue_dispatch(queue_name)
+    if dispatch_decision.action == "allow" and _redis_available():
         db = SessionLocal()
         try:
             enqueued_count = 0
@@ -1167,6 +1184,19 @@ def process_audit_collect_competitors(audit_id: str, processing_version: int) ->
             "competitor_tasks_dispatched": len(competitor_ids),
             "competitor_tasks_enqueued": enqueued_count,
         }
+
+    if dispatch_decision.action == "inline":
+        _log_audit_step(
+            logging.WARNING,
+            audit_id,
+            process_audit_collect_competitor_page.name,
+            "inline_fallback",
+            processing_version=processing_version,
+            queue=queue_name,
+            reason=dispatch_decision.reason,
+            guard_message=dispatch_decision.message,
+            guard_details=dispatch_decision.details or None,
+        )
 
     last_result: dict[str, object] | None = None
     for competitor_id in competitor_ids:

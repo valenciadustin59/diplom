@@ -25,10 +25,10 @@
 - `D7` — persistent audit event log и stage duration telemetry
 - `D8` — audit timeline diagnostics API и critical-path breakdown
 - `D9` — queue pressure snapshots и stuck/backlogged execution detector
+- `D10` — admission control и scheduling guards при деградированном runtime capacity
 
 Ещё предстоит:
 
-- `D10` — admission control при деградированном runtime capacity
 - `D11` — worker topology profiles и queue affinity validation
 - `D12` — benchmark/reporting workflow для демонстрации distributed runtime в дипломе
 
@@ -191,12 +191,14 @@ SEARCH_TIMEOUT=20
 
 Если endpoint вернул `503`, это значит, что стек не готов к полноценному distributed audit execution, даже если `FastAPI` процесс уже поднялся.
 
+Начиная с `D10`, backend использует эти runtime-сигналы не только для observability, но и для управления нагрузкой. Если `POST /audits` видит, что `audits.pipeline` уже `backlogged`/`stuck` или detector фиксирует слишком долгую очередь ожидающих запусков, API возвращает `503` и не создаёт новый audit. Для уже исполняющихся стадий orchestration, наоборот, предпочитает `inline`-fallback вместо дальнейшего раздувания деградировавшей очереди.
+
 ## Разница между `npm run dev` и `npm run dev:full`
 
 - `npm run dev` запускает только backend и frontend.
 - `npm run dev:full` запускает `SearxNG`, `Redis`, backend, frontend и Celery worker.
 
-Если `Redis` уже доступен, но worker не запущен, новые аудиты будут поставлены в очередь и могут остаться в `queued`. Для полноценной локальной работы используйте именно `npm run dev:full` или запускайте worker отдельной командой.
+Если `Redis` уже доступен, но worker не запущен или целевые очереди не обслуживаются, новые аудиты могут быть отклонены сразу с `503` по admission guard `D10`, а не оставлены молча в `queued`. Для полноценной локальной работы используйте именно `npm run dev:full` или запускайте worker отдельной командой.
 
 ## Проверки
 

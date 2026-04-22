@@ -109,6 +109,8 @@ Backend теперь различает liveness и настоящую readiness
 - `dispatched_stages_waiting_too_long` — stage уже dispatch'нут, но слишком долго не начал исполняться;
 - `queue_without_workers` и `queue_backlog_detected` — operational backlog на уровне очередей.
 
+Начиная с `D10`, эти сигналы используются не только для наблюдаемости. `POST /audits` применяет admission guard: если очередь `audits.pipeline` уже `backlogged`/`stuck` или detector показывает накопившийся backlog новых запусков, API возвращает `503` и не создаёт новый audit run. Для уже исполняющихся аудитов stage dispatcher и competitor fan-out используют тот же runtime snapshot, но вместо reject переходят на `inline`-fallback, чтобы не усиливать деградировавший backlog дополнительным queue dispatch.
+
 Когда все обязательные компоненты доступны, endpoint возвращает `200` и `status=ready`. Если Redis недоступен, worker не отвечает или не обслуживаются все audit queues, либо недоступен обязательный `SearxNG`, endpoint возвращает `503` и `status=not_ready` с расшифровкой проблемного компонента.
 
 Это важно для текущей stage-based distributed architecture: backend считается готовым только тогда, когда он не просто запущен, а реально может dispatch'ить и выполнять audit stages по всем очередям.
@@ -120,7 +122,7 @@ cd backend
 .venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info -Q audits.pipeline,audits.fetch,audits.features,audits.scoring,audits.competitors,audits.competitor_pages,audits.recommendations,audits.finalize --pool=solo
 ```
 
-Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен, новые аудиты будут поставлены в очередь и останутся в `queued`.
+Для Windows рекомендуется оставлять `--pool=solo`. Если backend видит Redis, но worker не запущен или не обслуживается нужная очередь, новые аудиты могут быть отклонены admission guard'ом `D10` с `503`, а уже выполняющиеся стадии перейдут на `inline`-fallback вместо дальнейшего queue fan-out.
 
 Быстрая операционная проверка после старта стека:
 
