@@ -1,4 +1,4 @@
-from app.features import build_features
+from app.features import build_features, build_technical_seo_features, merge_technical_seo_features
 
 
 def test_build_features_includes_semantic_fields(monkeypatch):
@@ -34,3 +34,45 @@ def test_build_features_includes_semantic_fields(monkeypatch):
     assert "keyword_balance_score" in features
     assert "semantic_content_richness" in features
     assert "cta_semantic_score" in features
+
+
+def test_build_technical_seo_features_from_snapshot():
+    snapshot = {
+        "requested_url": "https://example.com/catalog?utm_source=ads",
+        "final_url": "https://example.com/catalog?utm_source=ads",
+        "status_code": 200,
+        "response_headers": {"X-Robots-Tag": "googlebot: nofollow"},
+        "redirect_chain": [{"url": "https://example.com/catalog", "status_code": 301}],
+        "html": (
+            "<html lang='ru'><head>"
+            "<link rel='canonical' href='https://example.com/catalog'>"
+            "<meta name='robots' content='index,follow'>"
+            "<meta name='viewport' content='width=device-width, initial-scale=1'>"
+            "<link rel='alternate' hreflang='ru' href='https://example.com/ru/catalog'>"
+            "</head><body><p>Каталог</p></body></html>"
+        ),
+        "text": "Каталог",
+        "json_ld": [],
+    }
+
+    features = build_technical_seo_features(snapshot)
+    merged = merge_technical_seo_features({"semantic_similarity": 0.82}, snapshot)
+
+    assert features["http_status_code"] == 200
+    assert features["http_status_ok"] == 1
+    assert features["redirect_count"] == 1
+    assert features["has_redirect"] == 1
+    assert features["canonical_present"] == 1
+    assert features["canonical_matches_final_url"] == 1
+    assert features["x_robots_tag_present"] == 1
+    assert features["robots_nofollow"] == 1
+    assert features["page_indexable"] == 1
+    assert features["viewport_present"] == 1
+    assert features["lang_present"] == 1
+    assert features["hreflang_count"] == 1
+    assert features["hreflang_present"] == 1
+    assert features["url_parameter_count"] == 1
+    assert features["url_has_query_parameters"] == 1
+    assert 0.0 < float(features["technical_seo_score"]) <= 1.0
+    assert merged["semantic_similarity"] == 0.82
+    assert merged["technical_seo_score"] == features["technical_seo_score"]

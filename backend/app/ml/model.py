@@ -102,6 +102,10 @@ def _feature_value(features: dict[str, float | int], key: str) -> float:
     return float(features.get(key, 0.0))
 
 
+def _has_feature(features: dict[str, float | int], key: str) -> bool:
+    return key in features
+
+
 def create_dataset(n_samples: int = 500, seed: int = 42) -> tuple[list[list[float]], list[float]]:
     rng = random.Random(seed)
     rows: list[list[float]] = []
@@ -603,6 +607,68 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
         },
     ]
 
+    if _has_feature(features, "page_indexable"):
+        page_indexable = _feature_value(features, "page_indexable")
+        factors.append(
+            {
+                "key": "technical_indexability",
+                "label": "Technical indexability",
+                "impact": round(6.0 if page_indexable >= 1.0 else -12.0, 4),
+                "value": round(page_indexable, 4),
+            }
+        )
+
+    if _has_feature(features, "canonical_present") or _has_feature(features, "canonical_matches_final_url"):
+        canonical_present = _feature_value(features, "canonical_present")
+        canonical_matches_final_url = _feature_value(features, "canonical_matches_final_url")
+        canonical_impact = 0.0
+        if canonical_present >= 1.0 and canonical_matches_final_url >= 1.0:
+            canonical_impact = 4.0
+        elif canonical_present >= 1.0 and canonical_matches_final_url < 1.0:
+            canonical_impact = -6.0
+        factors.append(
+            {
+                "key": "technical_canonical",
+                "label": "Canonical consistency",
+                "impact": round(canonical_impact, 4),
+                "value": round(canonical_matches_final_url if canonical_present >= 1.0 else canonical_present, 4),
+            }
+        )
+
+    if _has_feature(features, "redirect_efficiency_score") or _has_feature(features, "redirect_count"):
+        redirect_efficiency_score = _feature_value(features, "redirect_efficiency_score")
+        redirect_count = _feature_value(features, "redirect_count")
+        factors.append(
+            {
+                "key": "technical_redirects",
+                "label": "Redirect efficiency",
+                "impact": round((redirect_efficiency_score * 4.0) - min(redirect_count, 3.0), 4),
+                "value": round(redirect_efficiency_score, 4),
+            }
+        )
+
+    if _has_feature(features, "url_hygiene_score"):
+        url_hygiene_score = _feature_value(features, "url_hygiene_score")
+        factors.append(
+            {
+                "key": "technical_url_hygiene",
+                "label": "URL hygiene",
+                "impact": round((url_hygiene_score - 0.5) * 6.0, 4),
+                "value": round(url_hygiene_score, 4),
+            }
+        )
+
+    if _has_feature(features, "technical_metadata_score"):
+        technical_metadata_score = _feature_value(features, "technical_metadata_score")
+        factors.append(
+            {
+                "key": "technical_metadata",
+                "label": "Technical metadata",
+                "impact": round((technical_metadata_score - 0.5) * 4.0, 4),
+                "value": round(technical_metadata_score, 4),
+            }
+        )
+
     rule_score = _rounded_score(sum(float(item["impact"]) for item in factors))
     return rule_score, factors
 
@@ -708,6 +774,5 @@ def train_and_predict(
         "source": str(model_info["source"]),
         "model_info": model_info,
     }
-
 
 

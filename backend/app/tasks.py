@@ -24,7 +24,7 @@ from app.competitors import (
 )
 from app.config import get_settings
 from app.db import SessionLocal
-from app.features import build_features
+from app.features import build_features, merge_technical_seo_features
 from app.ml import explain_score
 from app.models import Audit, AuditCompetitor, AuditEvent
 from app.parser import (
@@ -998,7 +998,10 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
         features = _run_logged_step(
             audit_id,
             FEATURES_STAGE,
-            lambda: build_features(html=html, text=text, query=audit.query),
+            lambda: merge_technical_seo_features(
+                build_features(html=html, text=text, query=audit.query),
+                target_snapshot,
+            ),
             processing_version=processing_version,
             event_buffer=event_buffer,
             summarize_result=_summarize_features,

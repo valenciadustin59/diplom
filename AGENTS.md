@@ -200,11 +200,10 @@ npm run build
 - Если используется `Closes #<n>`, issue должен закрываться через push в `main`, а не вручную без кода.
 
 
-## D13 Status
+## D13-D20 Status
 
 Current next-wave backlog: `D13-D20`.
 
 - `D13` - completed: versioned extraction pipeline, `feature schema v2`, persistent `target_snapshot`, DOM-based extraction, and API snapshot summary.
-- `D14-D20` - pending.
-
-
+- `D14` - completed: пакет технических SEO-сигналов поверх `target_snapshot`, включая canonical/redirect/indexability/url-hygiene признаки, технические рекомендации и технические факторы в score explanation без изменения текущего `FEATURE_COLUMNS`.
+- `D15-D20` - pending.

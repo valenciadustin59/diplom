@@ -6,7 +6,7 @@
 
 - находит конкурентные страницы в выдаче;
 - анализирует целевую страницу и конкурентов;
-- извлекает SEO, текстовые, коммерческие и поведенчески значимые признаки;
+- извлекает SEO, технические, текстовые, коммерческие и поведенчески значимые признаки;
 - оценивает качество страницы с помощью ML-модели;
 - показывает сравнение с конкурентами;
 - формирует рекомендации с приоритетами.
@@ -19,6 +19,7 @@
 - сбор конкурентов через `SearxNG`;
 - пошаговая распределённая обработка аудита по stage-based pipeline;
 - ML-scoring страницы и сохранение breakdown по оценке;
+- technical SEO feature pack на основе snapshot-артефакта страницы;
 - выдача рекомендаций по улучшению страницы;
 - timeline событий аудита и диагностика критического пути;
 - runtime telemetry для очередей, workers, backlog и admission control;
@@ -313,15 +314,15 @@ npm run test
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
 
-## D13 Status
+## Статус D13-D20
 
-The next backlog wave is `D13-D20`.
+Текущая продуктовая волна backlog — `D13-D20`.
 
-Completed:
+Выполнено:
 
-- `D13` - versioned extraction pipeline and `feature schema v2`: persistent `target_snapshot`, DOM-based extraction, replayable feature calculation from saved snapshot, API fields `feature_schema_version` and `target_snapshot_summary`.
+- `D13` - версионированный extraction pipeline и `feature schema v2`: постоянный `target_snapshot`, DOM-based extraction, повторяемый пересчёт признаков из сохранённого snapshot и API-поля `feature_schema_version` и `target_snapshot_summary`.
+- `D14` - пакет технических SEO-признаков: technical signals из snapshot, технические рекомендации и technical factors в score explanation без изменения текущей ML-схемы признаков.
 
-Pending:
+В работе дальше:
 
-- `D14-D20` - advanced technical SEO signals, commercial/trust signals, intent-aware features, dataset v2, ranking-oriented model v2, UI/API expansion, and heavy distributed analyzers.
-
+- `D15-D20` - commercial/trust signals, intent-aware features, dataset v2, ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.

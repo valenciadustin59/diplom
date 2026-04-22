@@ -719,11 +719,13 @@ def test_process_audit_extract_features_rebuilds_from_saved_snapshot(monkeypatch
         stored = db.get(Audit, 'audit-snapshot-features')
         assert stored is not None
         assert stored.feature_schema_version == 'v2'
-        assert stored.features == {
-            'text_length_chars': len('Snapshot Body'),
-            'query_in_text': 1,
-            'semantic_similarity': 0.91,
-        }
+        assert stored.features is not None
+        assert stored.features['text_length_chars'] == len('Snapshot Body')
+        assert stored.features['query_in_text'] == 1
+        assert stored.features['semantic_similarity'] == 0.91
+        assert stored.features['http_status_code'] == 200
+        assert stored.features['page_indexable'] == 1
+        assert stored.features['canonical_present'] == 0
         assert stored.target_html is None
         assert isinstance(stored.target_snapshot, dict)
         assert stored.target_snapshot['final_url'] == 'https://example.com/final'

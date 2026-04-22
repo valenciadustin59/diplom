@@ -7,9 +7,9 @@ from urllib.parse import parse_qs, unquote, urlparse
 
 import httpx
 
-from app.features import build_features
+from app.features import build_features, merge_technical_seo_features
 from app.ml.model import compare_with_competitors, predict_score
-from app.parser import fetch_page
+from app.parser import ensure_extraction_artifact, fetch_page
 from app.serp import SerpConfigurationError, SerpProviderError, search as search_serp
 
 
@@ -232,7 +232,21 @@ def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, 
 
     html = str(fetch_result.get("html") or "")
     text = str(fetch_result.get("text") or "")
-    features = build_features(html=html, text=text, query=query)
+    snapshot = ensure_extraction_artifact(
+        requested_url=url,
+        artifact=fetch_result.get("snapshot") if isinstance(fetch_result.get("snapshot"), dict) else None,
+        final_url=str(fetch_result.get("final_url") or url),
+        status_code=int(fetch_result.get("http_status")) if isinstance(fetch_result.get("http_status"), (int, float)) else None,
+        response_headers=fetch_result.get("response_headers") if isinstance(fetch_result.get("response_headers"), dict) else {},
+        html=html or None,
+        extracted_text=text or None,
+        fetch_method=str(fetch_result.get("fetch_method") or "") or None,
+        redirect_chain=fetch_result.get("redirect_chain") if isinstance(fetch_result.get("redirect_chain"), list) else [],
+    )
+    features = merge_technical_seo_features(
+        build_features(html=html, text=text, query=query),
+        snapshot,
+    )
     score = predict_score(features)
     if not competitor_payload["title"]:
         competitor_payload["title"] = _extract_title(html)
