@@ -36,6 +36,26 @@ COMMERCIAL_TRUST_FEATURE_KEYS = {
     "commercial_signals_score",
     "trust_signals_score",
 }
+INTENT_ALIGNMENT_FEATURE_KEYS = {
+    "intent_is_commercial",
+    "intent_is_local_commercial",
+    "intent_is_informational",
+    "intent_is_navigational",
+    "intent_alignment_score",
+    "commercial_intent_alignment",
+    "local_intent_alignment",
+    "informational_intent_alignment",
+    "navigational_intent_alignment",
+}
+SERP_RELATIVE_FEATURE_KEYS = {
+    "serp_relative_context_available",
+    "serp_relative_percentile",
+    "serp_relative_gap_score",
+    "relative_gap_to_top_semantic_relevance",
+    "relative_gap_to_top_technical_seo",
+    "relative_gap_to_top_commercial_trust",
+    "relative_gap_to_top_intent_alignment",
+}
 
 
 def average_competitor_features(
@@ -77,6 +97,11 @@ def generate_recommendations(
     competitors_average_score = average_score(competitor_pages_features) if has_competitor_context else 0.0
     has_technical_context = any(_has_feature(page_features, key) for key in TECHNICAL_FEATURE_KEYS)
     has_commercial_trust_context = any(_has_feature(page_features, key) for key in COMMERCIAL_TRUST_FEATURE_KEYS)
+    has_intent_context = any(_has_feature(page_features, key) for key in INTENT_ALIGNMENT_FEATURE_KEYS)
+    has_relative_context = (
+        any(_has_feature(page_features, key) for key in SERP_RELATIVE_FEATURE_KEYS)
+        and _int_feature(page_features, "serp_relative_context_available") == 1
+    )
 
     def add_recommendation(code: str, priority: str, message: str) -> None:
         recommendations.append(
@@ -432,6 +457,67 @@ def generate_recommendations(
                 "TRUST_MISSING_POST_SALE_INFO",
                 "low",
                 "Добавьте гарантию, условия возврата или постпродажные обязательства, если это используется конкурентами как trust-сигнал.",
+            )
+
+    if has_intent_context:
+        if _int_feature(page_features, "intent_is_local_commercial") == 1 and _float_feature(page_features, "local_intent_alignment") < 0.55:
+            add_recommendation(
+                "INTENT_WEAK_LOCAL_ALIGNMENT",
+                "high",
+                "Запрос выглядит локально-коммерческим. Усильте адрес, телефон, режим работы и локальные коммерческие сигналы на странице.",
+            )
+
+        if _int_feature(page_features, "intent_is_commercial") == 1 and _float_feature(page_features, "commercial_intent_alignment") < 0.55:
+            add_recommendation(
+                "INTENT_WEAK_COMMERCIAL_ALIGNMENT",
+                "high",
+                "Страница недостаточно соответствует коммерческому интенту: добавьте явные офферы, CTA, цены и блоки доверия.",
+            )
+
+        if _int_feature(page_features, "intent_is_informational") == 1 and _float_feature(page_features, "informational_intent_alignment") < 0.55:
+            add_recommendation(
+                "INTENT_WEAK_INFORMATIONAL_ALIGNMENT",
+                "medium",
+                "Для информационного запроса не хватает глубины ответа: расширьте объяснения, структуру и FAQ-блоки.",
+            )
+
+    if has_relative_context:
+        relative_percentile = _float_feature(page_features, "serp_relative_percentile")
+        relative_gap_score = _float_feature(page_features, "serp_relative_gap_score")
+
+        if relative_percentile < 0.35 or relative_gap_score < 0.55:
+            add_recommendation(
+                "RELATIVE_SERP_GAP",
+                "high",
+                "Страница заметно отстаёт от SERP-лидеров по совокупности ключевых групп сигналов. Приоритетно закрывайте разрывы относительно топа, а не только общие SEO-ошибки.",
+            )
+
+        if _float_feature(page_features, "relative_gap_to_top_semantic_relevance") < -0.12:
+            add_recommendation(
+                "RELATIVE_SEMANTIC_GAP",
+                "high",
+                "Семантическая релевантность ниже лидеров выдачи. Усильте соответствие интенту в title, заголовках и основном тексте.",
+            )
+
+        if _float_feature(page_features, "relative_gap_to_top_technical_seo") < -0.12:
+            add_recommendation(
+                "RELATIVE_TECHNICAL_GAP",
+                "medium",
+                "Технический профиль страницы слабее конкурентов из топа. Проверьте indexability, canonical, URL hygiene и meta-signals.",
+            )
+
+        if _float_feature(page_features, "relative_gap_to_top_commercial_trust") < -0.12:
+            add_recommendation(
+                "RELATIVE_COMMERCIAL_TRUST_GAP",
+                "high",
+                "Коммерческие и trust-сигналы отстают от топа. Усильте контакты, офферы, цены, условия покупки и блоки доверия.",
+            )
+
+        if _float_feature(page_features, "relative_gap_to_top_intent_alignment") < -0.12:
+            add_recommendation(
+                "RELATIVE_INTENT_ALIGNMENT_GAP",
+                "high",
+                "Даже при наличии базовых SEO-сигналов страница хуже конкурентов совпадает с интентом запроса. Пересоберите структуру страницы под сценарий пользователя.",
             )
 
     if not recommendations:

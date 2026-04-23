@@ -36,11 +36,12 @@ class AuditRead(BaseModel):
     updated_at: datetime | None = None
     extracted_text: str | None = None
     feature_schema_version: str | None = None
+    query_intent: dict[str, object] | None = None
     features: dict[str, float | int] | None = None
     score: float | None = None
     score_breakdown: dict[str, object] | None = None
     competitor_results: list[dict[str, object]] | None = None
-    comparison_summary: dict[str, float | int] | None = None
+    comparison_summary: dict[str, object] | None = None
     recommendations: list[dict[str, str]] | None = None
     target_fetch_status: str | None = None
     target_fetch_method: str | None = None
@@ -58,10 +59,11 @@ class AuditResultsRead(BaseModel):
     extracted_text: str | None = None
     feature_schema_version: str | None = None
     target_snapshot_summary: dict[str, object] | None = None
+    query_intent: dict[str, object] | None = None
     features: dict[str, float | int] | None = None
     score_breakdown: dict[str, object] | None = None
     competitor_results: list[dict[str, object]] | None = None
-    comparison_summary: dict[str, float | int] | None = None
+    comparison_summary: dict[str, object] | None = None
     target_fetch_status: str | None = None
     target_fetch_method: str | None = None
     target_fetch_error_code: str | None = None

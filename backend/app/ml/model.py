@@ -702,8 +702,87 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
             }
         )
 
+    if _has_feature(features, "intent_alignment_score"):
+        intent_alignment_score = _feature_value(features, "intent_alignment_score")
+        factors.append(
+            {
+                "key": "intent_alignment",
+                "label": "Intent alignment",
+                "impact": round((intent_alignment_score - 0.5) * 10.0, 4),
+                "value": round(intent_alignment_score, 4),
+            }
+        )
+
+    if _feature_value(features, "intent_is_local_commercial") >= 1.0 and _has_feature(features, "local_intent_alignment"):
+        local_intent_alignment = _feature_value(features, "local_intent_alignment")
+        factors.append(
+            {
+                "key": "local_intent_fit",
+                "label": "Local commercial fit",
+                "impact": round((local_intent_alignment - 0.55) * 8.0, 4),
+                "value": round(local_intent_alignment, 4),
+            }
+        )
+
+    if _feature_value(features, "intent_is_commercial") >= 1.0 and _has_feature(features, "commercial_intent_alignment"):
+        commercial_intent_alignment = _feature_value(features, "commercial_intent_alignment")
+        factors.append(
+            {
+                "key": "commercial_intent_fit",
+                "label": "Commercial fit",
+                "impact": round((commercial_intent_alignment - 0.55) * 7.0, 4),
+                "value": round(commercial_intent_alignment, 4),
+            }
+        )
+
+    if _feature_value(features, "intent_is_informational") >= 1.0 and _has_feature(features, "informational_intent_alignment"):
+        informational_intent_alignment = _feature_value(features, "informational_intent_alignment")
+        factors.append(
+            {
+                "key": "informational_intent_fit",
+                "label": "Informational fit",
+                "impact": round((informational_intent_alignment - 0.55) * 6.0, 4),
+                "value": round(informational_intent_alignment, 4),
+            }
+        )
+
     rule_score = _rounded_score(sum(float(item["impact"]) for item in factors))
     return rule_score, factors
+
+
+def _build_serp_relative_factors(features: dict[str, float | int]) -> list[dict[str, object]]:
+    if _feature_value(features, "serp_relative_context_available") < 1.0:
+        return []
+
+    mappings = [
+        ("query_match", "Query match"),
+        ("semantic_relevance", "SERP semantic relevance"),
+        ("content_depth", "SERP content depth"),
+        ("technical_seo", "SERP technical SEO"),
+        ("commercial_trust", "SERP commercial and trust"),
+        ("intent_alignment", "SERP intent alignment"),
+    ]
+    factors: list[dict[str, object]] = []
+
+    for key, label in mappings:
+        gap_key = f"relative_gap_to_top_{key}"
+        percentile_key = f"relative_percentile_{key}"
+        if not _has_feature(features, gap_key) or not _has_feature(features, percentile_key):
+            continue
+
+        gap_to_top = _feature_value(features, gap_key)
+        percentile = _feature_value(features, percentile_key)
+        factors.append(
+            {
+                "key": f"relative_{key}",
+                "label": label,
+                "gap_to_top": round(gap_to_top, 4),
+                "percentile": round(percentile, 4),
+                "direction": "leading" if gap_to_top >= 0.0 else "below_top",
+            }
+        )
+
+    return factors
 
 
 def _predict_model_score(features: dict[str, float | int], model_path: str | Path | None = None) -> float:
@@ -734,6 +813,7 @@ def explain_score(
         [factor for factor in factors if float(factor["impact"]) <= 0],
         key=lambda item: float(item["impact"]),
     )[:5]
+    serp_relative_factors = _build_serp_relative_factors(features)
 
     return {
         "final_score": final_score,
@@ -746,6 +826,7 @@ def explain_score(
         },
         "top_positive_factors": positives,
         "top_negative_factors": negatives,
+        "serp_relative_factors": serp_relative_factors,
     }
 
 
@@ -807,4 +888,3 @@ def train_and_predict(
         "source": str(model_info["source"]),
         "model_info": model_info,
     }
-

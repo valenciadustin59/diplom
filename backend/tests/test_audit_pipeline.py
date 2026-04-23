@@ -135,7 +135,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     )
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
-        lambda user_features, user_score, competitor_results: {
+        lambda user_features, user_score, competitor_results, **kwargs: {
             'user_score': 77.5,
             'competitors_average_score': 82.4,
             'score_difference': -4.9,
@@ -181,6 +181,8 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         assert stored.competitor_processing_status == 'aggregated'
         assert stored.extracted_text == 'Title Body'
         assert stored.feature_schema_version == 'v2'
+        assert isinstance(stored.query_intent, dict)
+        assert 'label' in stored.query_intent
         assert isinstance(stored.target_snapshot, dict)
         assert stored.target_snapshot['requested_url'] == 'https://example.com'
         assert stored.target_snapshot['final_url'] == 'https://example.com'
@@ -954,7 +956,7 @@ def test_collect_competitors_runs_competitor_processing_inline_when_runtime_guar
     )
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
-        lambda user_features, user_score, competitor_results: {
+        lambda user_features, user_score, competitor_results, **kwargs: {
             'user_score': user_score,
             'competitors_average_score': 81.0,
             'score_difference': 0.0,

@@ -207,4 +207,5 @@ Current next-wave backlog: `D13-D20`.
 - `D13` - completed: versioned extraction pipeline, `feature schema v2`, persistent `target_snapshot`, DOM-based extraction, and API snapshot summary.
 - `D14` - completed: пакет технических SEO-сигналов поверх `target_snapshot`, включая canonical/redirect/indexability/url-hygiene признаки, технические рекомендации и технические факторы в score explanation без изменения текущего `FEATURE_COLUMNS`.
 - `D15` - completed: пакет commercial/trust signals для коммерческих landing pages, включая contact/business identity признаки, CTA/messenger detection, агрегированные commercial/trust scores и recommendation layer, доступный также в dataset builder.
-- `D16-D20` - pending.
+- `D16` - completed: query intent detection, intent-alignment features for target and competitors, persisted `query_intent` in `Audit`, SERP-relative gaps/percentiles/z-scores for key signal groups, and relative/intent-aware explanation and recommendation rules.
+- `D17-D20` - pending.

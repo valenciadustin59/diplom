@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+from math import sqrt
 import re
 from collections import Counter
+from statistics import median
 from typing import Any
 from urllib.parse import parse_qsl, urljoin, urlsplit
 
@@ -69,6 +71,196 @@ SNAPSHOT_AUXILIARY_FEATURE_COLUMNS = [
     *TECHNICAL_SEO_FEATURE_COLUMNS,
     *COMMERCIAL_TRUST_FEATURE_COLUMNS,
 ]
+
+INTENT_ALIGNMENT_FEATURE_COLUMNS = [
+    "intent_is_commercial",
+    "intent_is_local_commercial",
+    "intent_is_informational",
+    "intent_is_navigational",
+    "intent_confidence",
+    "query_local_modifier",
+    "commercial_intent_score",
+    "local_intent_score",
+    "informational_intent_score",
+    "navigational_intent_score",
+    "commercial_intent_alignment",
+    "local_intent_alignment",
+    "informational_intent_alignment",
+    "navigational_intent_alignment",
+    "intent_alignment_score",
+]
+
+SERP_RELATIVE_FEATURE_COLUMNS = [
+    "serp_relative_context_available",
+    "serp_relative_context_count",
+    "serp_relative_group_count",
+    "serp_relative_percentile",
+    "serp_relative_gap_score",
+    "relative_gap_to_top_query_match",
+    "relative_gap_to_median_query_match",
+    "relative_percentile_query_match",
+    "relative_z_score_query_match",
+    "relative_gap_to_top_semantic_relevance",
+    "relative_gap_to_median_semantic_relevance",
+    "relative_percentile_semantic_relevance",
+    "relative_z_score_semantic_relevance",
+    "relative_gap_to_top_content_depth",
+    "relative_gap_to_median_content_depth",
+    "relative_percentile_content_depth",
+    "relative_z_score_content_depth",
+    "relative_gap_to_top_technical_seo",
+    "relative_gap_to_median_technical_seo",
+    "relative_percentile_technical_seo",
+    "relative_z_score_technical_seo",
+    "relative_gap_to_top_commercial_trust",
+    "relative_gap_to_median_commercial_trust",
+    "relative_percentile_commercial_trust",
+    "relative_z_score_commercial_trust",
+    "relative_gap_to_top_intent_alignment",
+    "relative_gap_to_median_intent_alignment",
+    "relative_percentile_intent_alignment",
+    "relative_z_score_intent_alignment",
+]
+
+QUERY_INTENT_LABELS = (
+    "commercial",
+    "local_commercial",
+    "informational",
+    "navigational",
+    "other",
+)
+
+COMMERCIAL_INTENT_KEYWORDS = {
+    "buy",
+    "order",
+    "price",
+    "pricing",
+    "cost",
+    "service",
+    "services",
+    "quote",
+    "install",
+    "installation",
+    "repair",
+    "delivery",
+    "купить",
+    "заказать",
+    "цена",
+    "стоимость",
+    "прайс",
+    "услуга",
+    "услуги",
+    "монтаж",
+    "ремонт",
+    "доставка",
+}
+
+LOCAL_INTENT_KEYWORDS = {
+    "near",
+    "nearby",
+    "local",
+    "city",
+    "map",
+    "address",
+    "район",
+    "рядом",
+    "поблизости",
+    "в",
+    "на",
+    "карте",
+    "адрес",
+    "город",
+    "москва",
+    "спб",
+    "санкт",
+    "петербург",
+    "екатеринбург",
+    "казань",
+    "новосибирск",
+    "краснодар",
+}
+
+INFORMATIONAL_INTENT_KEYWORDS = {
+    "how",
+    "what",
+    "why",
+    "guide",
+    "review",
+    "reviews",
+    "comparison",
+    "examples",
+    "instruction",
+    "instructions",
+    "faq",
+    "как",
+    "что",
+    "почему",
+    "зачем",
+    "обзор",
+    "обзоры",
+    "отзывы",
+    "сравнение",
+    "пример",
+    "примеры",
+    "инструкция",
+    "инструкции",
+}
+
+NAVIGATIONAL_INTENT_KEYWORDS = {
+    "official",
+    "site",
+    "website",
+    "login",
+    "sign",
+    "account",
+    "cabinet",
+    "contacts",
+    "официальный",
+    "сайт",
+    "вход",
+    "личный",
+    "кабинет",
+    "контакты",
+}
+
+SERP_RELATIVE_GROUPS = {
+    "query_match": (
+        "keyword_coverage_ratio",
+        "query_prominence_score",
+        "title_heading_keyword_alignment",
+        "early_query_coverage_ratio",
+    ),
+    "semantic_relevance": (
+        "semantic_similarity",
+        "query_semantic_alignment",
+        "title_semantic_alignment",
+        "heading_semantic_alignment",
+    ),
+    "content_depth": (
+        "content_depth_semantic_score",
+        "semantic_content_richness",
+        "conversion_signal_score",
+    ),
+    "technical_seo": (
+        "technical_seo_score",
+        "technical_metadata_score",
+        "canonical_signal_score",
+        "url_hygiene_score",
+    ),
+    "commercial_trust": (
+        "commercial_trust_score",
+        "commercial_signals_score",
+        "trust_signals_score",
+        "contact_options_score",
+    ),
+    "intent_alignment": (
+        "intent_alignment_score",
+        "commercial_intent_alignment",
+        "local_intent_alignment",
+        "informational_intent_alignment",
+        "navigational_intent_alignment",
+    ),
+}
 
 PHONE_PATTERN = re.compile(r"(?:\+?\d[\d\s\-()]{8,}\d)")
 EMAIL_PATTERN = re.compile(r"[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}", flags=re.IGNORECASE)
@@ -167,6 +359,269 @@ LEGAL_KEYWORDS = (
     "ltd",
     "inc",
 )
+
+
+def _feature_value(features: dict[str, float | int], key: str) -> float:
+    return float(features.get(key, 0.0))
+
+
+def _bounded_ratio(value: float, *, target: float) -> float:
+    if target <= 0.0:
+        return 0.0
+    return max(0.0, min(value / target, 1.0))
+
+
+def _keyword_score(tokens: list[str], keywords: set[str]) -> float:
+    if not tokens:
+        return 0.0
+    token_matches = sum(1 for token in tokens if token in keywords)
+    normalized_query = " ".join(tokens)
+    phrase_matches = sum(1 for keyword in keywords if " " in keyword and keyword in normalized_query)
+    return min((token_matches + phrase_matches) / max(len(tokens), 1), 1.0)
+
+
+def detect_query_intent(query: str) -> dict[str, object]:
+    normalized_query = query.strip().lower()
+    tokens = _tokenize(normalized_query)
+
+    commercial_score = _keyword_score(tokens, COMMERCIAL_INTENT_KEYWORDS)
+    local_score = _keyword_score(tokens, LOCAL_INTENT_KEYWORDS)
+    informational_score = _keyword_score(tokens, INFORMATIONAL_INTENT_KEYWORDS)
+    navigational_score = _keyword_score(tokens, NAVIGATIONAL_INTENT_KEYWORDS)
+
+    if re.search(r"\b(цена|стоимость|купить|заказать|монтаж|ремонт|price|buy|order)\b", normalized_query):
+        commercial_score = min(commercial_score + 0.2, 1.0)
+    if re.search(r"\b(москва|спб|екатеринбург|казань|рядом|near|nearby|адрес)\b", normalized_query):
+        local_score = min(local_score + 0.25, 1.0)
+    if re.search(r"\b(как|что|почему|обзор|отзывы|guide|review|comparison)\b", normalized_query):
+        informational_score = min(informational_score + 0.2, 1.0)
+    if re.search(r"\b(официальный|сайт|вход|login|account|contacts)\b", normalized_query):
+        navigational_score = min(navigational_score + 0.2, 1.0)
+
+    if commercial_score >= 0.2 and local_score >= 0.2:
+        label = "local_commercial"
+    else:
+        ranked = sorted(
+            (
+                ("commercial", commercial_score),
+                ("informational", informational_score),
+                ("navigational", navigational_score),
+            ),
+            key=lambda item: item[1],
+            reverse=True,
+        )
+        label = ranked[0][0] if ranked[0][1] >= 0.15 else "other"
+
+    scores = {
+        "commercial": round(max(0.0, min(1.0, commercial_score)), 6),
+        "local": round(max(0.0, min(1.0, local_score)), 6),
+        "informational": round(max(0.0, min(1.0, informational_score)), 6),
+        "navigational": round(max(0.0, min(1.0, navigational_score)), 6),
+    }
+    ordered_scores = sorted(scores.values(), reverse=True)
+    confidence = ordered_scores[0] - ordered_scores[1] if len(ordered_scores) > 1 else ordered_scores[0]
+
+    return {
+        "label": label,
+        "confidence": round(max(0.0, min(1.0, confidence)), 6),
+        "scores": scores,
+        "modifiers": {
+            "local_modifier": int(local_score >= 0.2),
+            "commercial_modifier": int(commercial_score >= 0.2),
+            "informational_modifier": int(informational_score >= 0.2),
+            "navigational_modifier": int(navigational_score >= 0.2),
+        },
+    }
+
+
+def build_intent_alignment_features(
+    features: dict[str, float | int],
+    query_intent: dict[str, object] | None,
+) -> dict[str, float | int]:
+    if not isinstance(query_intent, dict):
+        return {}
+
+    label = str(query_intent.get("label") or "other")
+    scores = query_intent.get("scores") if isinstance(query_intent.get("scores"), dict) else {}
+    modifiers = query_intent.get("modifiers") if isinstance(query_intent.get("modifiers"), dict) else {}
+
+    common_alignment = (
+        _feature_value(features, "semantic_similarity") * 0.35
+        + _feature_value(features, "query_semantic_alignment") * 0.25
+        + _feature_value(features, "query_prominence_score") * 0.2
+        + _feature_value(features, "keyword_coverage_ratio") * 0.2
+    )
+    commercial_support = (
+        _feature_value(features, "commercial_signals_score") * 0.45
+        + _feature_value(features, "contact_options_score") * 0.25
+        + _feature_value(features, "conversion_signal_score") * 0.15
+        + _feature_value(features, "cta_semantic_score") * 0.15
+    )
+    local_support = (
+        _feature_value(features, "address_present") * 0.35
+        + _feature_value(features, "business_hours_present") * 0.2
+        + _feature_value(features, "phone_present") * 0.2
+        + _feature_value(features, "contact_options_score") * 0.25
+    )
+    informational_support = (
+        _feature_value(features, "content_depth_semantic_score") * 0.35
+        + _feature_value(features, "semantic_content_richness") * 0.3
+        + _bounded_ratio(_feature_value(features, "heading_count"), target=6.0) * 0.2
+        + _feature_value(features, "faq_present") * 0.15
+    )
+    technical_support = (
+        _feature_value(features, "technical_seo_score") * 0.55
+        + _feature_value(features, "title_semantic_alignment") * 0.25
+        + _feature_value(features, "heading_semantic_alignment") * 0.2
+    )
+
+    commercial_alignment = min(max(common_alignment * 0.45 + commercial_support * 0.4 + technical_support * 0.15, 0.0), 1.0)
+    local_alignment = min(max(common_alignment * 0.3 + commercial_support * 0.25 + local_support * 0.3 + technical_support * 0.15, 0.0), 1.0)
+    informational_alignment = min(max(common_alignment * 0.45 + informational_support * 0.4 + technical_support * 0.15, 0.0), 1.0)
+    navigational_alignment = min(max(common_alignment * 0.35 + technical_support * 0.45 + commercial_support * 0.2, 0.0), 1.0)
+
+    alignment_by_label = {
+        "commercial": commercial_alignment,
+        "local_commercial": local_alignment,
+        "informational": informational_alignment,
+        "navigational": navigational_alignment,
+        "other": min(max((common_alignment + technical_support) / 2.0, 0.0), 1.0),
+    }
+    dominant_alignment = alignment_by_label.get(label, alignment_by_label["other"])
+
+    return {
+        "intent_is_commercial": int(label == "commercial"),
+        "intent_is_local_commercial": int(label == "local_commercial"),
+        "intent_is_informational": int(label == "informational"),
+        "intent_is_navigational": int(label == "navigational"),
+        "intent_confidence": round(float(query_intent.get("confidence") or 0.0), 6),
+        "query_local_modifier": int(modifiers.get("local_modifier") or 0),
+        "commercial_intent_score": round(float(scores.get("commercial") or 0.0), 6),
+        "local_intent_score": round(float(scores.get("local") or 0.0), 6),
+        "informational_intent_score": round(float(scores.get("informational") or 0.0), 6),
+        "navigational_intent_score": round(float(scores.get("navigational") or 0.0), 6),
+        "commercial_intent_alignment": round(commercial_alignment, 6),
+        "local_intent_alignment": round(local_alignment, 6),
+        "informational_intent_alignment": round(informational_alignment, 6),
+        "navigational_intent_alignment": round(navigational_alignment, 6),
+        "intent_alignment_score": round(dominant_alignment, 6),
+    }
+
+
+def _serp_feature_value(features: dict[str, float | int], key: str) -> float | None:
+    if key not in features:
+        return None
+    return float(features.get(key, 0.0))
+
+
+def _serp_group_value(features: dict[str, float | int], keys: tuple[str, ...]) -> float | None:
+    values = [value for key in keys if (value := _serp_feature_value(features, key)) is not None]
+    if not values:
+        return None
+    return sum(values) / len(values)
+
+
+def _serp_percentile(target_value: float, competitor_values: list[float]) -> float:
+    if not competitor_values:
+        return 0.0
+    lower_count = sum(1 for value in competitor_values if value < target_value)
+    equal_count = sum(1 for value in competitor_values if value == target_value)
+    return (lower_count + 0.5 * equal_count) / len(competitor_values)
+
+
+def _serp_z_score(target_value: float, competitor_values: list[float]) -> float:
+    if not competitor_values:
+        return 0.0
+    mean_value = sum(competitor_values) / len(competitor_values)
+    variance = sum((value - mean_value) ** 2 for value in competitor_values) / len(competitor_values)
+    if variance <= 0.0:
+        return 0.0
+    return (target_value - mean_value) / sqrt(variance)
+
+
+def build_serp_relative_analysis(
+    page_features: dict[str, float | int],
+    competitor_pages_features: list[dict[str, float | int]],
+) -> dict[str, object]:
+    competitor_context = [item for item in competitor_pages_features if isinstance(item, dict)]
+    relative_features: dict[str, float | int] = {
+        "serp_relative_context_available": int(bool(competitor_context)),
+        "serp_relative_context_count": len(competitor_context),
+        "serp_relative_group_count": 0,
+        "serp_relative_percentile": 0.0,
+        "serp_relative_gap_score": 0.0,
+    }
+    group_summary: dict[str, dict[str, float]] = {}
+
+    if not competitor_context:
+        return {
+            "features": relative_features,
+            "summary": {
+                "context_available": 0,
+                "context_count": 0,
+                "group_count": 0,
+                "aggregate_percentile": 0.0,
+                "aggregate_gap_score": 0.0,
+                "groups": {},
+            },
+        }
+
+    percentiles: list[float] = []
+    gap_scores: list[float] = []
+
+    for group_name, metric_keys in SERP_RELATIVE_GROUPS.items():
+        target_value = _serp_group_value(page_features, metric_keys)
+        competitor_values = [
+            value
+            for features in competitor_context
+            if (value := _serp_group_value(features, metric_keys)) is not None
+        ]
+        if target_value is None or not competitor_values:
+            continue
+
+        top_value = max(competitor_values)
+        median_value = float(median(competitor_values))
+        percentile_value = _serp_percentile(target_value, competitor_values)
+        z_score_value = _serp_z_score(target_value, competitor_values)
+        gap_to_top = target_value - top_value
+        gap_to_median = target_value - median_value
+        gap_score = 1.0 - min(max(-gap_to_top, 0.0), 1.0)
+
+        relative_features.update(
+            {
+                f"relative_gap_to_top_{group_name}": round(gap_to_top, 6),
+                f"relative_gap_to_median_{group_name}": round(gap_to_median, 6),
+                f"relative_percentile_{group_name}": round(percentile_value, 6),
+                f"relative_z_score_{group_name}": round(z_score_value, 6),
+            }
+        )
+        group_summary[group_name] = {
+            "target_value": round(target_value, 6),
+            "top_value": round(top_value, 6),
+            "median_value": round(median_value, 6),
+            "gap_to_top": round(gap_to_top, 6),
+            "gap_to_median": round(gap_to_median, 6),
+            "percentile": round(percentile_value, 6),
+            "z_score": round(z_score_value, 6),
+        }
+        percentiles.append(percentile_value)
+        gap_scores.append(gap_score)
+
+    relative_features["serp_relative_group_count"] = len(group_summary)
+    relative_features["serp_relative_percentile"] = round(sum(percentiles) / len(percentiles), 6) if percentiles else 0.0
+    relative_features["serp_relative_gap_score"] = round(sum(gap_scores) / len(gap_scores), 6) if gap_scores else 0.0
+
+    return {
+        "features": relative_features,
+        "summary": {
+            "context_available": 1,
+            "context_count": len(competitor_context),
+            "group_count": len(group_summary),
+            "aggregate_percentile": relative_features["serp_relative_percentile"],
+            "aggregate_gap_score": relative_features["serp_relative_gap_score"],
+            "groups": group_summary,
+        },
+    }
 
 
 def _tokenize(value: str) -> list[str]:
@@ -623,6 +1078,32 @@ def merge_snapshot_auxiliary_features(
 ) -> dict[str, float | int]:
     with_technical = merge_technical_seo_features(features, snapshot)
     return merge_commercial_trust_features(with_technical, snapshot)
+
+
+def merge_intent_alignment_features(
+    features: dict[str, float | int],
+    query_intent: dict[str, object] | None,
+) -> dict[str, float | int]:
+    intent_features = build_intent_alignment_features(features, query_intent)
+    if not intent_features:
+        return dict(features)
+    return {
+        **features,
+        **intent_features,
+    }
+
+
+def merge_serp_relative_features(
+    features: dict[str, float | int],
+    competitor_pages_features: list[dict[str, float | int]],
+) -> tuple[dict[str, float | int], dict[str, object]]:
+    relative_analysis = build_serp_relative_analysis(features, competitor_pages_features)
+    relative_features = relative_analysis.get("features") if isinstance(relative_analysis.get("features"), dict) else {}
+    relative_summary = relative_analysis.get("summary") if isinstance(relative_analysis.get("summary"), dict) else {}
+    return {
+        **features,
+        **relative_features,
+    }, relative_summary
 
 
 def build_features(html: str, text: str, query: str) -> dict[str, float | int]:

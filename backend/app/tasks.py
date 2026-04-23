@@ -24,7 +24,13 @@ from app.competitors import (
 )
 from app.config import get_settings
 from app.db import SessionLocal
-from app.features import build_features, merge_snapshot_auxiliary_features
+from app.features import (
+    build_features,
+    detect_query_intent,
+    merge_intent_alignment_features,
+    merge_serp_relative_features,
+    merge_snapshot_auxiliary_features,
+)
 from app.ml import explain_score
 from app.models import Audit, AuditCompetitor, AuditEvent
 from app.parser import (
@@ -346,6 +352,7 @@ def _summarize_features(features: dict[str, float | int]) -> dict[str, object]:
         "feature_count": len(features),
         "text_length_chars": features.get("text_length_chars"),
         "semantic_similarity": features.get("semantic_similarity"),
+        "intent_alignment_score": features.get("intent_alignment_score"),
     }
 
 
@@ -418,14 +425,24 @@ def _build_competitor_aggregation_result(
     user_features: dict[str, float | int],
     user_score: float,
     competitors: list[AuditCompetitor],
+    query_intent: dict[str, object] | None,
 ) -> dict[str, object]:
     competitor_results = [_serialize_audit_competitor(item) for item in competitors]
+    competitor_features = [
+        item["features"]
+        for item in competitor_results
+        if isinstance(item.get("features"), dict)
+    ]
+    enriched_user_features, serp_relative_summary = merge_serp_relative_features(user_features, competitor_features)
     return {
         "competitor_results": competitor_results,
+        "user_features": enriched_user_features,
         "comparison_summary": build_comparison_summary(
-            user_features=user_features,
+            user_features=enriched_user_features,
             user_score=user_score,
             competitor_results=competitor_results,
+            query_intent=query_intent,
+            serp_relative_summary=serp_relative_summary,
         ),
     }
 
@@ -995,12 +1012,16 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
         if not html or not text:
             raise RuntimeError("Target page content is not available for feature extraction")
 
+        query_intent = detect_query_intent(audit.query)
         features = _run_logged_step(
             audit_id,
             FEATURES_STAGE,
-            lambda: merge_snapshot_auxiliary_features(
-                build_features(html=html, text=text, query=audit.query),
-                target_snapshot,
+            lambda: merge_intent_alignment_features(
+                merge_snapshot_auxiliary_features(
+                    build_features(html=html, text=text, query=audit.query),
+                    target_snapshot,
+                ),
+                query_intent,
             ),
             processing_version=processing_version,
             event_buffer=event_buffer,
@@ -1008,6 +1029,7 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
         )
         audit.target_snapshot = target_snapshot
         audit.feature_schema_version = str(target_snapshot.get("feature_schema_version") or audit.feature_schema_version or "") or None
+        audit.query_intent = query_intent
         audit.features = features
         audit.target_html = None
         _set_next_orchestration_stage(audit, SCORING_STAGE)
@@ -1389,11 +1411,21 @@ def process_audit_aggregate_competitors(audit_id: str, processing_version: int) 
                 user_features=audit.features,
                 user_score=float(audit.score),
                 competitors=competitors,
+                query_intent=audit.query_intent if isinstance(audit.query_intent, dict) else None,
             ),
             processing_version=processing_version,
             event_buffer=event_buffer,
             summarize_result=lambda payload: _summarize_competitors(payload["competitor_results"]),
         )
+        audit.features = aggregation_result["user_features"]
+        if isinstance(audit.score_breakdown, dict):
+            relative_explanation = explain_score(aggregation_result["user_features"])
+            audit.score_breakdown = {
+                **audit.score_breakdown,
+                "serp_relative_factors": relative_explanation.get("serp_relative_factors")
+                if isinstance(relative_explanation, dict)
+                else [],
+            }
         audit.competitor_results = aggregation_result["competitor_results"]
         audit.comparison_summary = aggregation_result["comparison_summary"]
         audit.competitor_processing_status = COMPETITOR_PROCESSING_AGGREGATED

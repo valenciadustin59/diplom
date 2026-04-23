@@ -52,6 +52,7 @@ def _ensure_sqlite_columns() -> None:
         "target_html": "ALTER TABLE audits ADD COLUMN target_html TEXT",
         "target_snapshot": "ALTER TABLE audits ADD COLUMN target_snapshot JSON",
         "feature_schema_version": "ALTER TABLE audits ADD COLUMN feature_schema_version TEXT",
+        "query_intent": "ALTER TABLE audits ADD COLUMN query_intent JSON",
         "competitor_processing_status": "ALTER TABLE audits ADD COLUMN competitor_processing_status TEXT",
         "features": "ALTER TABLE audits ADD COLUMN features JSON",
         "score": "ALTER TABLE audits ADD COLUMN score FLOAT",

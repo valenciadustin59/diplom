@@ -327,4 +327,5 @@ npm run test
 
 В работе дальше:
 
-- `D16-D20` - intent-aware features, dataset v2, ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.
+- `D16` - SERP-relative и intent-aware слой: `query_intent`, intent-alignment features для target/competitors, relative gaps/percentiles/z-scores по ключевым signal groups и новый explanation/recommendation context.
+- `D17-D20` - dataset v2, ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.

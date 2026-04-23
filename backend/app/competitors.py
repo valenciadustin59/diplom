@@ -7,7 +7,12 @@ from urllib.parse import parse_qs, unquote, urlparse
 
 import httpx
 
-from app.features import build_features, merge_snapshot_auxiliary_features
+from app.features import (
+    build_features,
+    detect_query_intent,
+    merge_intent_alignment_features,
+    merge_snapshot_auxiliary_features,
+)
 from app.ml.model import compare_with_competitors, predict_score
 from app.parser import ensure_extraction_artifact, fetch_page
 from app.serp import SerpConfigurationError, SerpProviderError, search as search_serp
@@ -210,6 +215,7 @@ def search_competitor_urls(query: str, target_url: str, limit: int) -> list[str]
 
 def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, object]:
     url = str(result["url"])
+    query_intent = detect_query_intent(query)
     fetch_result = fetch_page(url)
 
     competitor_payload: dict[str, object] = {
@@ -243,9 +249,12 @@ def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, 
         fetch_method=str(fetch_result.get("fetch_method") or "") or None,
         redirect_chain=fetch_result.get("redirect_chain") if isinstance(fetch_result.get("redirect_chain"), list) else [],
     )
-    features = merge_snapshot_auxiliary_features(
-        build_features(html=html, text=text, query=query),
-        snapshot,
+    features = merge_intent_alignment_features(
+        merge_snapshot_auxiliary_features(
+            build_features(html=html, text=text, query=query),
+            snapshot,
+        ),
+        query_intent,
     )
     score = predict_score(features)
     if not competitor_payload["title"]:
@@ -297,7 +306,9 @@ def build_comparison_summary(
     user_features: dict[str, float | int],
     user_score: float,
     competitor_results: list[dict[str, object]],
-) -> dict[str, float | int]:
+    query_intent: dict[str, object] | None = None,
+    serp_relative_summary: dict[str, object] | None = None,
+) -> dict[str, object]:
     analyzed_results = [
         item
         for item in competitor_results
@@ -328,6 +339,8 @@ def build_comparison_summary(
         "competitors_found": competitors_found,
         "competitors_analyzed": competitors_analyzed,
         "competitors_failed": competitors_failed,
+        "query_intent": query_intent if isinstance(query_intent, dict) else None,
+        "serp_relative_summary": serp_relative_summary if isinstance(serp_relative_summary, dict) else None,
     }
 
 

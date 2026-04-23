@@ -1,7 +1,10 @@
 from app.features import (
+    build_intent_alignment_features,
     build_commercial_trust_features,
     build_features,
+    detect_query_intent,
     build_technical_seo_features,
+    merge_serp_relative_features,
     merge_technical_seo_features,
 )
 
@@ -149,3 +152,109 @@ def test_build_commercial_trust_features_from_snapshot():
     assert float(features["commercial_signals_score"]) > 0.6
     assert float(features["trust_signals_score"]) > 0.6
     assert float(features["commercial_trust_score"]) > 0.6
+
+
+def test_detect_query_intent_and_build_alignment_features_for_local_commercial_query():
+    query_intent = detect_query_intent("купить пластиковые окна москва")
+
+    features = build_intent_alignment_features(
+        {
+            "semantic_similarity": 0.83,
+            "query_semantic_alignment": 0.78,
+            "query_prominence_score": 0.74,
+            "keyword_coverage_ratio": 0.8,
+            "commercial_signals_score": 0.82,
+            "contact_options_score": 0.75,
+            "conversion_signal_score": 0.65,
+            "cta_semantic_score": 0.72,
+            "address_present": 1,
+            "business_hours_present": 1,
+            "phone_present": 1,
+            "content_depth_semantic_score": 0.66,
+            "semantic_content_richness": 0.61,
+            "heading_count": 6,
+            "faq_present": 1,
+            "technical_seo_score": 0.88,
+            "title_semantic_alignment": 0.79,
+            "heading_semantic_alignment": 0.74,
+        },
+        query_intent,
+    )
+
+    assert query_intent["label"] == "local_commercial"
+    assert features["intent_is_local_commercial"] == 1
+    assert float(features["local_intent_alignment"]) > 0.7
+    assert float(features["intent_alignment_score"]) > 0.7
+
+
+def test_merge_serp_relative_features_builds_gaps_and_fallbacks_with_single_competitor():
+    merged, summary = merge_serp_relative_features(
+        {
+            "semantic_similarity": 0.62,
+            "query_semantic_alignment": 0.54,
+            "title_semantic_alignment": 0.51,
+            "heading_semantic_alignment": 0.48,
+            "keyword_coverage_ratio": 0.58,
+            "query_prominence_score": 0.56,
+            "title_heading_keyword_alignment": 0.5,
+            "early_query_coverage_ratio": 0.55,
+            "content_depth_semantic_score": 0.52,
+            "semantic_content_richness": 0.5,
+            "conversion_signal_score": 0.45,
+            "technical_seo_score": 0.63,
+            "technical_metadata_score": 0.58,
+            "canonical_signal_score": 0.61,
+            "url_hygiene_score": 0.57,
+            "commercial_trust_score": 0.44,
+            "commercial_signals_score": 0.4,
+            "trust_signals_score": 0.42,
+            "contact_options_score": 0.39,
+            "intent_alignment_score": 0.5,
+            "commercial_intent_alignment": 0.52,
+            "local_intent_alignment": 0.46,
+            "informational_intent_alignment": 0.44,
+            "navigational_intent_alignment": 0.41,
+        },
+        [
+            {
+                "semantic_similarity": 0.8,
+                "query_semantic_alignment": 0.74,
+                "title_semantic_alignment": 0.69,
+                "heading_semantic_alignment": 0.67,
+                "keyword_coverage_ratio": 0.76,
+                "query_prominence_score": 0.71,
+                "title_heading_keyword_alignment": 0.7,
+                "early_query_coverage_ratio": 0.68,
+                "content_depth_semantic_score": 0.73,
+                "semantic_content_richness": 0.75,
+                "conversion_signal_score": 0.64,
+                "technical_seo_score": 0.8,
+                "technical_metadata_score": 0.76,
+                "canonical_signal_score": 0.74,
+                "url_hygiene_score": 0.72,
+                "commercial_trust_score": 0.78,
+                "commercial_signals_score": 0.74,
+                "trust_signals_score": 0.76,
+                "contact_options_score": 0.7,
+                "intent_alignment_score": 0.79,
+                "commercial_intent_alignment": 0.77,
+                "local_intent_alignment": 0.75,
+                "informational_intent_alignment": 0.65,
+                "navigational_intent_alignment": 0.58,
+            }
+        ],
+    )
+
+    assert merged["serp_relative_context_available"] == 1
+    assert merged["serp_relative_context_count"] == 1
+    assert merged["serp_relative_group_count"] >= 4
+    assert float(merged["relative_gap_to_top_semantic_relevance"]) < 0.0
+    assert float(merged["relative_z_score_semantic_relevance"]) == 0.0
+    assert summary["context_count"] == 1
+    assert "semantic_relevance" in summary["groups"]
+
+    empty_merged, empty_summary = merge_serp_relative_features({"semantic_similarity": 0.5}, [])
+
+    assert empty_merged["serp_relative_context_available"] == 0
+    assert empty_merged["serp_relative_group_count"] == 0
+    assert empty_summary["context_available"] == 0

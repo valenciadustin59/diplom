@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_db_session
 from app.audit_diagnostics import build_audit_timeline_diagnostics, load_audit_events
+from app.features import detect_query_intent
 from app.models import Audit
 from app.parser import summarize_extraction_artifact
 from app.runtime_capacity import evaluate_new_audit_admission
@@ -57,6 +58,7 @@ def create_audit_endpoint(
         status="queued",
         created_at=datetime.now(UTC).replace(tzinfo=None),
         updated_at=datetime.now(UTC).replace(tzinfo=None),
+        query_intent=detect_query_intent(payload.query),
     )
     db.add(audit)
     db.commit()
@@ -87,6 +89,7 @@ def get_audit_results_endpoint(
         score_breakdown=audit.score_breakdown,
         extracted_text=audit.extracted_text,
         feature_schema_version=audit.feature_schema_version,
+        query_intent=audit.query_intent,
         target_snapshot_summary=summarize_extraction_artifact(audit.target_snapshot),
         features=audit.features,
         competitor_results=audit.competitor_results,

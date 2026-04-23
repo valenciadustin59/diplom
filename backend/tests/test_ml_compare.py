@@ -1,4 +1,4 @@
-from app.ml import compare_with_competitors
+from app.ml import compare_with_competitors, explain_score
 
 
 def test_compare_with_competitors_returns_score_difference():
@@ -111,3 +111,34 @@ def test_compare_with_competitors_returns_score_difference():
         result["user_average_score"] - result["competitors_average_score"],
         4,
     )
+
+
+def test_explain_score_includes_serp_relative_factors_when_context_is_available():
+    explanation = explain_score(
+        {
+            "word_count": 900,
+            "title_present": 1,
+            "title_length_quality": 0.9,
+            "meta_description_present": 1,
+            "meta_length_quality": 0.85,
+            "heading_count": 6,
+            "semantic_similarity": 0.81,
+            "keyword_coverage_ratio": 0.78,
+            "title_semantic_alignment": 0.72,
+            "heading_semantic_alignment": 0.69,
+            "content_depth_semantic_score": 0.74,
+            "semantic_content_richness": 0.71,
+            "keyword_balance_score": 0.65,
+            "conversion_signal_score": 0.5,
+            "query_prominence_score": 0.7,
+            "text_to_html_ratio": 0.22,
+            "unique_word_ratio": 0.66,
+            "serp_relative_context_available": 1,
+            "relative_gap_to_top_semantic_relevance": -0.18,
+            "relative_percentile_semantic_relevance": 0.2,
+            "relative_gap_to_top_commercial_trust": -0.11,
+            "relative_percentile_commercial_trust": 0.3,
+        }
+    )
+
+    assert any(item["key"] == "relative_semantic_relevance" for item in explanation["serp_relative_factors"])

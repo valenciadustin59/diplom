@@ -16,6 +16,7 @@ def test_create_audit_returns_created_record(client, queued_audit_ids):
     assert payload['status'] == 'queued'
     assert payload['created_at']
     assert payload['feature_schema_version'] is None
+    assert isinstance(payload['query_intent'], dict)
     assert payload['target_fetch_status'] is None
     assert payload['warnings'] is None
     assert queued_audit_ids == [payload['id']]
@@ -37,6 +38,7 @@ def test_get_audit_returns_existing_record(client):
     assert payload['top_n'] == 10
     assert payload['status'] == 'queued'
     assert payload['feature_schema_version'] is None
+    assert isinstance(payload['query_intent'], dict)
     assert payload['target_fetch_method'] is None
 def test_list_audits_returns_created_items(client):
     client.post(
@@ -68,6 +70,7 @@ def test_get_audit_results_returns_structured_payload(client):
     assert payload['status'] == 'queued'
     assert payload['score'] is None
     assert payload['feature_schema_version'] is None
+    assert isinstance(payload['query_intent'], dict)
     assert payload['target_snapshot_summary'] is None
     assert payload['target_fetch_status'] is None
     assert payload['warnings'] is None
@@ -218,7 +221,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     )
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
-        lambda user_features, user_score, competitor_results: {
+        lambda user_features, user_score, competitor_results, **kwargs: {
             'user_score': 77.5,
             'competitors_average_score': 82.4,
             'score_difference': -4.9,
@@ -252,6 +255,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert created_payload['status'] == 'queued'
     assert created_payload['score'] is None
     assert created_payload['feature_schema_version'] is None
+    assert isinstance(created_payload['query_intent'], dict)
     assert created_payload['target_fetch_status'] is None
     assert created_payload['failure_context'] is None
     assert created_payload['recommendations'] is None
@@ -271,9 +275,11 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert status_payload['status'] == 'completed_with_warnings'
     assert status_payload['score'] == 77.5
     assert status_payload['comparison_summary']['competitors_found'] == 2
+    assert isinstance(status_payload['query_intent'], dict)
     assert results_payload['audit_id'] == audit_id
     assert results_payload['status'] == 'completed_with_warnings'
     assert results_payload['score_breakdown']['final_score'] == 77.5
+    assert isinstance(results_payload['query_intent'], dict)
     assert results_payload['feature_schema_version'] == 'v2'
     assert results_payload['features']['semantic_similarity'] == 0.81
     assert results_payload['target_snapshot_summary']['feature_schema_version'] == 'v2'
@@ -390,6 +396,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
     assert results_payload['score'] is None
     assert results_payload['extracted_text'] is None
     assert results_payload['feature_schema_version'] == 'v2'
+    assert isinstance(results_payload['query_intent'], dict)
     assert results_payload['features'] is None
     assert results_payload['score_breakdown'] is None
     assert results_payload['competitor_results'] is None
@@ -636,7 +643,7 @@ def test_audit_timeline_diagnostics_can_target_historical_processing_version(int
     monkeypatch.setattr('app.tasks.search_competitor_pages', lambda query, target_url, limit: [])
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
-        lambda user_features, user_score, competitor_results: {
+        lambda user_features, user_score, competitor_results, **kwargs: {
             'user_score': 77.5,
             'competitors_average_score': None,
             'score_difference': None,

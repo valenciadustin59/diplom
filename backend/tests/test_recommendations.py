@@ -241,3 +241,47 @@ def test_generate_recommendations_adds_commercial_and_trust_recommendations():
     assert "TRUST_MISSING_BUSINESS_ID" in codes
     assert "TRUST_MISSING_SOCIAL_PROOF" in codes
     assert "TRUST_MISSING_POST_SALE_INFO" in codes
+
+
+def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
+    recommendations = generate_recommendations(
+        page_features={
+            "title_present": 1,
+            "query_in_title": 1,
+            "meta_description_present": 1,
+            "h1_count": 1,
+            "query_in_text": 1,
+            "keyword_coverage_ratio": 0.72,
+            "semantic_similarity": 0.74,
+            "text_length_chars": 2200,
+            "text_to_html_ratio": 0.2,
+            "link_count": 8,
+            "image_count": 2,
+            "form_count": 1,
+            "intent_is_local_commercial": 1,
+            "intent_is_commercial": 0,
+            "intent_is_informational": 0,
+            "local_intent_alignment": 0.42,
+            "commercial_intent_alignment": 0.46,
+            "serp_relative_context_available": 1,
+            "serp_relative_percentile": 0.21,
+            "serp_relative_gap_score": 0.41,
+            "relative_gap_to_top_semantic_relevance": -0.18,
+            "relative_gap_to_top_technical_seo": -0.14,
+            "relative_gap_to_top_commercial_trust": -0.19,
+            "relative_gap_to_top_intent_alignment": -0.23,
+        },
+        page_score=63.0,
+        competitor_pages_features=[
+            {"text_length_chars": 2400, "link_count": 11, "image_count": 3, "form_count": 1},
+            {"text_length_chars": 2500, "link_count": 10, "image_count": 3, "form_count": 1},
+        ],
+    )
+    codes = {item["code"] for item in recommendations}
+
+    assert "INTENT_WEAK_LOCAL_ALIGNMENT" in codes
+    assert "RELATIVE_SERP_GAP" in codes
+    assert "RELATIVE_SEMANTIC_GAP" in codes
+    assert "RELATIVE_TECHNICAL_GAP" in codes
+    assert "RELATIVE_COMMERCIAL_TRUST_GAP" in codes
+    assert "RELATIVE_INTENT_ALIGNMENT_GAP" in codes
