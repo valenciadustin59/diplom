@@ -237,7 +237,7 @@ def _train_catboost(
     random_state: int,
 ) -> tuple[Any | None, dict[str, float], str | None]:
     try:
-        from catboost import CatBoostRegressor
+        from catboost import CatBoostError, CatBoostRegressor
     except ImportError:
         return None, {}, "catboost_not_installed"
 
@@ -250,7 +250,10 @@ def _train_catboost(
         random_seed=random_state,
         verbose=False,
     )
-    model.fit(x_train, y_train)
+    try:
+        model.fit(x_train, y_train)
+    except CatBoostError as error:
+        return None, {}, f"catboost_training_failed: {error}"
     return model, evaluate_model_rows(model, validation_rows), None
 
 
@@ -408,3 +411,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

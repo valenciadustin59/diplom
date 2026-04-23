@@ -134,12 +134,19 @@ def test_build_dataset_from_seed_csv_writes_dataset_failures_artifacts_and_hybri
     assert len(rows) == 1
     assert rows[0]["dataset_version"] == "dataset-v2-test"
     assert rows[0]["query"] == "ремонт квартир москва"
+    assert rows[0]["category"] == "ремонт квартир"
+    assert rows[0]["rank"] == "1"
+    assert rows[0]["title"] == "Page 1"
+    assert rows[0]["fetch_status"] == "ok"
+    assert rows[0]["page_type"] == "content"
     assert rows[0]["label_source"] == "hybrid"
     assert rows[0]["weak_target_score"] == "100.0"
     assert rows[0]["expert_target_score"] == "80.0"
     assert rows[0]["target_score"] == "86.0"
     assert rows[0]["artifact_path"]
     assert (dataset_path.parent / rows[0]["artifact_path"]).exists()
+    assert "phone_present" in rows[0]
+    assert "commercial_signals_score" in rows[0]
     assert rows[0]["phone_present"] == "0.0"
 
     assert len(failures) == 1
@@ -160,6 +167,10 @@ def test_build_dataset_from_seed_csv_writes_dataset_failures_artifacts_and_hybri
         query_delay_seconds=0.0,
     )
     assert second_run["processed_seed_pages"] == 0
+
+    with dataset_path.open("r", encoding="utf-8", newline="") as file:
+        rows_after_resume = list(csv.DictReader(file))
+    assert len(rows_after_resume) == 1
 
 
 def test_freeze_primary_dataset_as_baseline_copies_bundle(monkeypatch, tmp_path):
@@ -196,7 +207,7 @@ def test_freeze_primary_dataset_as_baseline_copies_bundle(monkeypatch, tmp_path)
     assert Path(result["metadata_path"]).exists()
 
 
-def test_train_quality_model_saves_model_and_split_manifest(tmp_path):
+def test_train_quality_model_saves_model_and_exposes_model_info_with_split_manifest(tmp_path):
     dataset_path = tmp_path / "dataset.csv"
     model_path = tmp_path / "model.pkl"
     split_path = tmp_path / "split.json"
@@ -232,6 +243,12 @@ def test_train_quality_model_saves_model_and_split_manifest(tmp_path):
                         "fetch_status": "ok",
                         "fetch_error": "",
                         "target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "phone_present": 1,
+                        "address_present": 1,
+                        "price_present": 1,
+                        "commercial_signals_score": 0.8,
+                        "trust_signals_score": 0.7,
+                        "commercial_trust_score": 0.75,
                     }
                 )
                 for index, feature_name in enumerate(FEATURE_COLUMNS, start=1):
@@ -251,6 +268,11 @@ def test_train_quality_model_saves_model_and_split_manifest(tmp_path):
     assert result["queries_count"] == 3
     assert result["domains_count"] == 3
     assert result["metrics"]["split_mode"] == "group_by_query"
+    assert "rmse" in result["metrics"]
+    assert "mae" in result["metrics"]
+    assert "spearman_mean" in result["metrics"]
+    assert "ndcg_at_10" in result["metrics"]
+    assert "top_3_hit_rate" in result["metrics"]
     assert result["dataset_version"] == "dataset-v2-test"
     assert result["split"]["split_mode"] == "group_by_query"
     assert result["split"]["split_path"] == str(split_path)
@@ -269,3 +291,141 @@ def test_train_quality_model_saves_model_and_split_manifest(tmp_path):
     assert 0.0 <= score <= 100.0
     assert explanation["model_info"]["source"] == "local_dataset"
     assert explanation["model_info"]["dataset_rows"] == 9
+
+
+def test_predict_score_falls_back_to_bootstrap_model(tmp_path):
+    missing_model_path = tmp_path / "missing.pkl"
+    features = {feature_name: float(index + 1) for index, feature_name in enumerate(FEATURE_COLUMNS)}
+
+    score = predict_score(features, model_path=missing_model_path)
+    explanation = explain_score(features, model_path=missing_model_path)
+
+    assert isinstance(score, float)
+    assert 0.0 <= score <= 100.0
+    assert explanation["model_info"]["source"] == "bootstrap"
+
+
+def test_train_quality_model_accepts_dataset_with_auxiliary_snapshot_columns(tmp_path):
+    dataset_path = tmp_path / "dataset-with-auxiliary-columns.csv"
+    model_path = tmp_path / "model-with-auxiliary-columns.pkl"
+
+    with dataset_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
+        writer.writeheader()
+        for query_index, query in enumerate(["ремонт квартир москва", "пластиковые окна москва"], start=1):
+            for rank in range(1, 4):
+                row = {column: "" for column in DATASET_COLUMNS}
+                row.update(
+                    {
+                        "dataset_version": "dataset-v2-aux",
+                        "feature_schema_version": "v2",
+                        "extraction_artifact_version": "extraction-v2",
+                        "label_schema_version": "hybrid-v1",
+                        "label_source": "weak_serp",
+                        "weak_target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "expert_target_score": "",
+                        "query": query,
+                        "category": "category",
+                        "intent": "commercial",
+                        "city": "москва",
+                        "region_code": 213,
+                        "url": f"https://example{query_index}.com/page-{rank}",
+                        "domain": f"example{query_index}.com",
+                        "rank": rank,
+                        "serp_page": 0,
+                        "title": f"Title {rank}",
+                        "snippet": f"Snippet {rank}",
+                        "page_type": "content",
+                        "fetch_status": "ok",
+                        "fetch_error": "",
+                        "target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "phone_present": 1,
+                        "address_present": 1,
+                        "price_present": 1,
+                        "commercial_signals_score": 0.8,
+                        "trust_signals_score": 0.7,
+                        "commercial_trust_score": 0.75,
+                    }
+                )
+                for index, feature_name in enumerate(FEATURE_COLUMNS, start=1):
+                    row[feature_name] = float(index * (query_index * 2 + rank))
+                writer.writerow(row)
+
+    result = train_quality_model(dataset_path=dataset_path, model_path=model_path, test_size=0.34)
+    explanation = explain_score(
+        {feature_name: float(index * 2) for index, feature_name in enumerate(FEATURE_COLUMNS, start=1)},
+        model_path=model_path,
+    )
+
+    assert model_path.exists()
+    assert result["rows_count"] == 6
+    assert result["queries_count"] == 2
+    assert result["dataset_version"] == "dataset-v2-aux"
+    assert explanation["model_info"]["source"] == "local_dataset"
+import csv
+from pathlib import Path
+
+import pytest
+
+from app.ml import FEATURE_COLUMNS, load_saved_model, train_quality_model
+
+
+def _write_small_constant_dataset(path: Path) -> None:
+    fieldnames = [
+        "query",
+        "category",
+        "intent",
+        "city",
+        "region_code",
+        "url",
+        "domain",
+        "rank",
+        "serp_page",
+        "title",
+        "snippet",
+        "page_type",
+        "fetch_status",
+        "fetch_error",
+        "target_score",
+    ] + FEATURE_COLUMNS
+    with path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        for query_index, query in enumerate(("q1", "q2"), start=1):
+            for rank in range(1, 3):
+                row = {
+                    "query": query,
+                    "category": "category",
+                    "intent": "commercial",
+                    "city": "moscow",
+                    "region_code": 213,
+                    "url": f"https://example{query_index}.com/page-{rank}",
+                    "domain": f"example{query_index}.com",
+                    "rank": rank,
+                    "serp_page": 0,
+                    "title": f"Title {rank}",
+                    "snippet": f"Snippet {rank}",
+                    "page_type": "content",
+                    "fetch_status": "ok",
+                    "fetch_error": "",
+                    "target_score": round(((2 - rank) / 1) * 100.0, 4),
+                }
+                for feature_name in FEATURE_COLUMNS:
+                    row[feature_name] = 1.0
+                writer.writerow(row)
+
+
+def test_train_quality_model_survives_catboost_benchmark_failure(tmp_path):
+    dataset_path = tmp_path / "constant-dataset.csv"
+    model_path = tmp_path / "constant-model.pkl"
+    _write_small_constant_dataset(dataset_path)
+
+    result = train_quality_model(dataset_path=dataset_path, model_path=model_path, test_size=0.5, random_state=7)
+
+    assert model_path.exists()
+    assert load_saved_model(model_path) is not None
+    assert result["model_type"] == "RandomForestRegressor"
+    benchmark = result["benchmark"]
+    if benchmark.get("enabled"):
+        assert "catboost_error" in benchmark
+        assert str(benchmark["catboost_error"]).startswith("catboost_training_failed:")
