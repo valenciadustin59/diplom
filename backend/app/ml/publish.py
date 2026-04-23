@@ -45,6 +45,11 @@ def ensure_manifest_ready(manifest: dict[str, Any]) -> None:
 
 
 def build_primary_dataset_version(dataset_path: str | Path, manifest: dict[str, Any]) -> str:
+    dataset_metadata = manifest.get("dataset") if isinstance(manifest.get("dataset"), dict) else {}
+    explicit_version = dataset_metadata.get("version") if isinstance(dataset_metadata, dict) else None
+    if explicit_version:
+        return str(explicit_version)
+
     resolved_dataset_path = Path(dataset_path)
     generated_at_raw = str(manifest.get("generated_at") or "")
     generated_at = datetime.fromisoformat(generated_at_raw) if generated_at_raw else None
@@ -58,8 +63,13 @@ def build_primary_artifact_version(dataset_version: str, published_at: datetime)
 
 def build_dataset_metadata(manifest: dict[str, Any], dataset_version: str) -> dict[str, object]:
     coverage = manifest.get("coverage") if isinstance(manifest.get("coverage"), dict) else {}
+    dataset = manifest.get("dataset") if isinstance(manifest.get("dataset"), dict) else {}
+    labeling = manifest.get("labeling") if isinstance(manifest.get("labeling"), dict) else {}
+    artifacts = manifest.get("artifacts") if isinstance(manifest.get("artifacts"), dict) else {}
+    split = manifest.get("split") if isinstance(manifest.get("split"), dict) else {}
     return {
         "dataset_version": dataset_version,
+        "baseline_version": dataset.get("baseline_version"),
         "rows_count": int(coverage.get("rows_count") or 0),
         "queries_count": int(coverage.get("unique_queries") or 0),
         "domains_count": int(coverage.get("unique_domains") or 0),
@@ -68,6 +78,15 @@ def build_dataset_metadata(manifest: dict[str, Any], dataset_version: str) -> di
         "failure_rate": float(coverage.get("failure_rate") or 0.0),
         "query_coverage_ratio": float(coverage.get("query_coverage_ratio") or 0.0),
         "attempted_query_coverage_ratio": float(coverage.get("attempted_query_coverage_ratio") or 0.0),
+        "feature_schema_versions": list(dataset.get("feature_schema_versions") or []),
+        "extraction_artifact_versions": list(dataset.get("extraction_artifact_versions") or []),
+        "label_schema_versions": list(dataset.get("label_schema_versions") or []),
+        "label_source_distribution": dict(labeling.get("label_source_distribution") or {}),
+        "expert_rows_count": int(labeling.get("expert_rows_count") or 0),
+        "hybrid_rows_count": int(labeling.get("hybrid_rows_count") or 0),
+        "artifact_coverage_ratio": float(artifacts.get("artifact_coverage_ratio") or 0.0),
+        "split_mode": split.get("split_mode"),
+        "split_path": dataset.get("split_path"),
         "manifest_generated_at": manifest.get("generated_at"),
     }
 
@@ -123,6 +142,7 @@ def publish_primary_model(
     published_at = datetime.now(UTC)
     artifact_version = build_primary_artifact_version(dataset_version, published_at)
     dataset_metadata = build_dataset_metadata(manifest, dataset_version=dataset_version)
+    split_output_path = str(dataset_metadata.get("split_path") or "") or None
 
     training_result = train_quality_model(
         dataset_path=resolved_dataset_path,
@@ -130,6 +150,7 @@ def publish_primary_model(
         test_size=test_size,
         random_state=random_state,
         dataset_version=dataset_version,
+        split_output_path=split_output_path,
         artifact_metadata={
             "artifact_version": artifact_version,
             "artifact_family": resolved_model_path.stem,

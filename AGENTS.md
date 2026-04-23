@@ -208,4 +208,22 @@ Current next-wave backlog: `D13-D20`.
 - `D14` - completed: пакет технических SEO-сигналов поверх `target_snapshot`, включая canonical/redirect/indexability/url-hygiene признаки, технические рекомендации и технические факторы в score explanation без изменения текущего `FEATURE_COLUMNS`.
 - `D15` - completed: пакет commercial/trust signals для коммерческих landing pages, включая contact/business identity признаки, CTA/messenger detection, агрегированные commercial/trust scores и recommendation layer, доступный также в dataset builder.
 - `D16` - completed: query intent detection, intent-alignment features for target and competitors, persisted `query_intent` in `Audit`, SERP-relative gaps/percentiles/z-scores for key signal groups, and relative/intent-aware explanation and recommendation rules.
-- `D17-D20` - pending.
+- `D17` - completed: versioned dataset workflow, frozen `baseline-v1`, prepared `dataset-v2` seed bundle, hybrid labeling contract (`weak_target_score`, `expert_target_score`, `target_score`, `label_source`), raw extraction artifacts for dataset rows, enriched dataset manifest and persisted `group_by_query` split.
+- `D18-D20` - pending.
+
+## Dataset Bundles (`D17`)
+
+Начиная с `D17`, каноническое место для обучающих датасетов и их metadata:
+
+- `backend/data/dataset_versions/baseline-v1/`
+- `backend/data/dataset_versions/dataset-v2/`
+
+Что важно для следующего агента:
+
+- `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
+- `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
+- `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
+- `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
+- `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
+- `app.ml.train` умеет сохранять persisted split manifest.
+- `app.ml.publish` использует manifest dataset version и dataset split metadata.

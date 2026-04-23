@@ -8,7 +8,9 @@ from datetime import UTC, datetime
 import json
 from pathlib import Path
 from statistics import fmean
-from typing import Mapping, Sequence
+from typing import Any, Mapping, Sequence
+
+from app.ml.dataset_versions import BASELINE_DATASET_VERSION, infer_dataset_version
 
 
 @dataclass(frozen=True, slots=True)
@@ -198,6 +200,19 @@ def evaluate_dataset_quality(
     }
 
 
+def _load_split_summary(split_path: Path | None) -> dict[str, object] | None:
+    if split_path is None or not split_path.exists():
+        return None
+    payload = json.loads(split_path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        return None
+    return payload
+
+
+def _non_empty_counter(rows: Sequence[Mapping[str, str]], key: str, default: str) -> Counter[str]:
+    return Counter(str(row.get(key) or "").strip() or default for row in rows)
+
+
 def build_dataset_manifest(
     dataset_path: str | Path,
     failures_path: str | Path | None = None,
@@ -205,10 +220,16 @@ def build_dataset_manifest(
     seed_rows: Sequence[Mapping[str, object]] | None = None,
     seeds_path: str | Path | None = None,
     thresholds: DatasetQualityThresholds = PRODUCTION_LIKE_DATASET_THRESHOLDS,
+    dataset_version: str | None = None,
+    baseline_version: str | None = BASELINE_DATASET_VERSION,
+    artifacts_dir: str | Path | None = None,
+    split_path: str | Path | None = None,
 ) -> dict[str, object]:
     resolved_dataset_path = Path(dataset_path)
     resolved_failures_path = Path(failures_path) if failures_path is not None else None
     resolved_seeds_path = Path(seeds_path) if seeds_path is not None else None
+    resolved_split_path = Path(split_path) if split_path is not None else None
+    resolved_artifacts_dir = Path(artifacts_dir) if artifacts_dir is not None else None
 
     success_rows = _load_csv_rows(resolved_dataset_path)
     failure_rows = _load_csv_rows(resolved_failures_path)
@@ -234,6 +255,13 @@ def build_dataset_manifest(
     failure_rate = _round_metric(failures_count / attempts_count) if attempts_count else 0.0
     average_rows_per_query = _round_metric(rows_count / len(success_queries)) if success_queries else 0.0
     average_rank = _round_metric(fmean(rank_values)) if rank_values else 0.0
+
+    label_source_distribution = _non_empty_counter(success_rows, "label_source", "weak_serp")
+    feature_schema_distribution = _non_empty_counter(success_rows, "feature_schema_version", "unknown")
+    extraction_artifact_distribution = _non_empty_counter(success_rows, "extraction_artifact_version", "unknown")
+    label_schema_distribution = _non_empty_counter(success_rows, "label_schema_version", "unknown")
+    rows_with_artifacts = sum(1 for row in success_rows if str(row.get("artifact_path") or "").strip())
+    rows_with_expert_labels = sum(1 for row in success_rows if str(row.get("expert_target_score") or "").strip())
 
     coverage = {
         "rows_count": rows_count,
@@ -262,12 +290,35 @@ def build_dataset_manifest(
     coverage["category_coverage"] = _coverage_breakdown(normalized_seed_rows, success_rows, "category")
     coverage["city_coverage"] = _coverage_breakdown(normalized_seed_rows, success_rows, "city")
 
+    inferred_version = dataset_version or infer_dataset_version(resolved_dataset_path, rows=success_rows)
+    split_summary = _load_split_summary(resolved_split_path)
+
     return {
         "generated_at": datetime.now(UTC).isoformat(),
         "dataset_path": str(resolved_dataset_path),
         "failures_path": str(resolved_failures_path) if resolved_failures_path is not None else None,
         "seeds_path": str(resolved_seeds_path) if resolved_seeds_path is not None else None,
+        "dataset": {
+            "version": inferred_version,
+            "baseline_version": baseline_version,
+            "feature_schema_versions": sorted(feature_schema_distribution),
+            "extraction_artifact_versions": sorted(extraction_artifact_distribution),
+            "label_schema_versions": sorted(label_schema_distribution),
+            "artifacts_dir": str(resolved_artifacts_dir) if resolved_artifacts_dir is not None else None,
+            "split_path": str(resolved_split_path) if resolved_split_path is not None else None,
+        },
         "coverage": coverage,
+        "labeling": {
+            "label_source_distribution": _counter_to_sorted_dict(label_source_distribution),
+            "expert_rows_count": rows_with_expert_labels,
+            "weak_only_rows_count": rows_count - rows_with_expert_labels,
+            "hybrid_rows_count": int(label_source_distribution.get("hybrid", 0)),
+        },
+        "artifacts": {
+            "rows_with_artifacts": rows_with_artifacts,
+            "artifact_coverage_ratio": _round_metric(rows_with_artifacts / rows_count) if rows_count else 0.0,
+        },
+        "split": split_summary,
         "quality_gates": evaluate_dataset_quality(coverage, thresholds=thresholds),
     }
 
@@ -280,6 +331,10 @@ def save_dataset_manifest(
     seeds_path: str | Path | None = None,
     output_path: str | Path | None = None,
     thresholds: DatasetQualityThresholds = PRODUCTION_LIKE_DATASET_THRESHOLDS,
+    dataset_version: str | None = None,
+    baseline_version: str | None = BASELINE_DATASET_VERSION,
+    artifacts_dir: str | Path | None = None,
+    split_path: str | Path | None = None,
 ) -> dict[str, object]:
     manifest = build_dataset_manifest(
         dataset_path=dataset_path,
@@ -287,6 +342,10 @@ def save_dataset_manifest(
         seed_rows=seed_rows,
         seeds_path=seeds_path,
         thresholds=thresholds,
+        dataset_version=dataset_version,
+        baseline_version=baseline_version,
+        artifacts_dir=artifacts_dir,
+        split_path=split_path,
     )
     resolved_output_path = Path(output_path) if output_path is not None else default_manifest_path(dataset_path)
     resolved_output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -303,6 +362,10 @@ def main() -> None:
     parser.add_argument("--failures", default="")
     parser.add_argument("--seeds", default="")
     parser.add_argument("--output", default="")
+    parser.add_argument("--dataset-version", default="")
+    parser.add_argument("--baseline-version", default=BASELINE_DATASET_VERSION)
+    parser.add_argument("--artifacts-dir", default="")
+    parser.add_argument("--split", default="")
     parser.add_argument("--min-rows", type=int, default=PRODUCTION_LIKE_DATASET_THRESHOLDS.min_rows)
     parser.add_argument(
         "--min-unique-queries",
@@ -357,6 +420,10 @@ def main() -> None:
         seeds_path=args.seeds or None,
         output_path=args.output or None,
         thresholds=thresholds,
+        dataset_version=args.dataset_version or None,
+        baseline_version=args.baseline_version or None,
+        artifacts_dir=args.artifacts_dir or None,
+        split_path=args.split or None,
     )
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
 

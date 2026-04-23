@@ -1,4 +1,4 @@
-# Backend
+﻿# Backend
 
 Backend проекта `Site Audit` построен на `FastAPI` и отвечает за полный серверный цикл SEO-аудита:
 
@@ -335,3 +335,76 @@ cd E:\codexPROJ\diplom\backend
 - не требует немедленного retraining;
 - не пересчитывает уже полученный audit score на competitor aggregation;
 - корректно работает при неполном competitor set через fallback relative-context markers.
+
+## D17: Dataset V2 And Labeling Pipeline
+
+`D17` переводит training data workflow из режима одного неявного CSV в воспроизводимый versioned bundle.
+
+Что добавлено:
+
+- `baseline-v1` — замороженная копия текущего production-like dataset в `backend/data/dataset_versions/baseline-v1/`;
+- `dataset-v2` — отдельный versioned bundle в `backend/data/dataset_versions/dataset-v2/`;
+- raw extraction artifacts per row через snapshot-артефакты `D13`;
+- hybrid labeling contract: `weak_target_score`, `expert_target_score`, `target_score`, `label_source`;
+- version-aware manifest с информацией о label provenance, artifacts coverage и baseline lineage;
+- persisted `group_by_query` split в отдельном `split.json`.
+
+### Новый dataset contract
+
+Строка dataset v2 теперь хранит:
+
+- `dataset_version`;
+- `feature_schema_version` и `extraction_artifact_version`;
+- `label_schema_version`, `label_source`, `weak_target_score`, `expert_target_score`, `target_score`;
+- `artifact_path`, `artifact_sha1`, `artifact_size_bytes`.
+
+Это позволяет показать для диплома не просто "CSV для обучения", а воспроизводимую data pipeline с происхождением данных, версией схемы и сохранёнными артефактами extraction layer.
+
+### Seed bundle `dataset-v2`
+
+В репозитории уже подготовлен seed bundle:
+
+- `backend/data/dataset_versions/dataset-v2/seeds.csv`
+- `backend/data/dataset_versions/dataset-v2/expert_labels.csv`
+- `backend/data/dataset_versions/dataset-v2/dataset.json`
+
+Он задаёт `450` запросов:
+
+- `25` категорий;
+- `8` городов;
+- `2` intent-типа;
+- `4` query pattern templates.
+
+### Сборка dataset v2
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.dataset_builder `
+  --dataset-version dataset-v2 `
+  --versioned-layout `
+  --freeze-baseline `
+  --seeds-file backend\data\dataset_versions\dataset-v2\seeds.csv `
+  --expert-labels backend\data\dataset_versions\dataset-v2\expert_labels.csv `
+  --overwrite
+```
+
+### Manifest и split
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.dataset_quality `
+  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
+  --failures backend\data\dataset_versions\dataset-v2\failures.csv `
+  --seeds backend\data\dataset_versions\dataset-v2\seeds.csv `
+  --dataset-version dataset-v2 `
+  --baseline-version baseline-v1 `
+  --artifacts-dir backend\data\dataset_versions\dataset-v2\artifacts `
+  --split backend\data\dataset_versions\dataset-v2\split.json `
+  --output backend\data\dataset_versions\dataset-v2\manifest.json
+
+.venv\Scripts\python.exe -m app.ml.train `
+  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
+  --dataset-version dataset-v2 `
+  --split-output backend\data\dataset_versions\dataset-v2\split.json
+```
+

@@ -4,6 +4,7 @@ import argparse
 import csv
 from datetime import UTC, datetime
 from math import log2, sqrt
+import json
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.model_selection import GroupShuffleSplit, train_test_split
 
 from app.ml.dataset_builder import DEFAULT_DATASET_PATH
+from app.ml.dataset_versions import infer_dataset_version
 from app.ml.model import DEFAULT_MODEL_PATH, FEATURE_COLUMNS, clear_model_cache, save_model
 
 
@@ -50,7 +52,7 @@ def split_dataset_rows(
     rows: list[dict[str, str]],
     test_size: float,
     random_state: int,
-) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, float]]:
+) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, object]]:
     unique_queries = {str(row.get("query") or "") for row in rows}
     if len(unique_queries) < 2:
         validation_count = max(1, int(round(len(rows) * test_size)))
@@ -69,6 +71,75 @@ def split_dataset_rows(
     train_rows = [rows[index] for index in train_indices]
     validation_rows = [rows[index] for index in validation_indices]
     return train_rows, validation_rows, {"split_mode": "group_by_query"}
+
+
+def build_dataset_split_manifest(
+    train_rows: list[dict[str, str]],
+    validation_rows: list[dict[str, str]],
+    *,
+    dataset_path: str | Path,
+    dataset_version: str,
+    test_size: float,
+    random_state: int,
+    split_metadata: dict[str, object],
+) -> dict[str, object]:
+    train_queries = {str(row.get("query") or "") for row in train_rows if str(row.get("query") or "").strip()}
+    validation_queries = {str(row.get("query") or "") for row in validation_rows if str(row.get("query") or "").strip()}
+    partition_map: dict[str, str] = {}
+    for query in sorted(train_queries | validation_queries):
+        in_train = query in train_queries
+        in_validation = query in validation_queries
+        if in_train and in_validation:
+            partition_map[query] = "both"
+        elif in_train:
+            partition_map[query] = "train"
+        else:
+            partition_map[query] = "validation"
+
+    return {
+        "generated_at": datetime.now(UTC).isoformat(),
+        "dataset_path": str(Path(dataset_path)),
+        "dataset_version": dataset_version,
+        "split_mode": str(split_metadata.get("split_mode") or "unknown"),
+        "test_size": float(test_size),
+        "random_state": int(random_state),
+        "train_rows_count": len(train_rows),
+        "validation_rows_count": len(validation_rows),
+        "train_queries_count": len(train_queries),
+        "validation_queries_count": len(validation_queries),
+        "train_queries": sorted(train_queries),
+        "validation_queries": sorted(validation_queries),
+        "query_assignments": [
+            {"query": query, "partition": partition_map[query]}
+            for query in sorted(partition_map)
+        ],
+    }
+
+
+def save_dataset_split_manifest(
+    train_rows: list[dict[str, str]],
+    validation_rows: list[dict[str, str]],
+    *,
+    dataset_path: str | Path,
+    dataset_version: str,
+    test_size: float,
+    random_state: int,
+    split_metadata: dict[str, object],
+    output_path: str | Path,
+) -> dict[str, object]:
+    manifest = build_dataset_split_manifest(
+        train_rows,
+        validation_rows,
+        dataset_path=dataset_path,
+        dataset_version=dataset_version,
+        test_size=test_size,
+        random_state=random_state,
+        split_metadata=split_metadata,
+    )
+    resolved_output_path = Path(output_path)
+    resolved_output_path.parent.mkdir(parents=True, exist_ok=True)
+    resolved_output_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    return {**manifest, "split_path": str(resolved_output_path)}
 
 
 def _rmse(y_true: list[float], y_pred: list[float]) -> float:
@@ -239,6 +310,7 @@ def train_quality_model(
     random_state: int = 42,
     dataset_version: str | None = None,
     artifact_metadata: dict[str, Any] | None = None,
+    split_output_path: str | Path | None = None,
 ) -> dict[str, object]:
     _x, _y, rows = prepare_training_data(dataset_path)
     if len(rows) < 4:
@@ -258,9 +330,20 @@ def train_quality_model(
     rows_count = len(rows)
     queries_count = len({str(row.get("query") or "") for row in rows})
     domains_count = len({str(row.get("domain") or "") for row in rows})
-    resolved_dataset_version = dataset_version or (
-        f"{Path(dataset_path).stem}-{datetime.now(UTC).strftime('%Y%m%d%H%M%S')}"
-    )
+    resolved_dataset_version = dataset_version or infer_dataset_version(dataset_path, rows=rows)
+
+    split_manifest: dict[str, object] | None = None
+    if split_output_path is not None:
+        split_manifest = save_dataset_split_manifest(
+            train_rows,
+            validation_rows,
+            dataset_path=dataset_path,
+            dataset_version=resolved_dataset_version,
+            test_size=test_size,
+            random_state=random_state,
+            split_metadata=split_metadata,
+            output_path=split_output_path,
+        )
 
     model_metadata = {
         "model_type": best_candidate["model_type"],
@@ -298,6 +381,7 @@ def train_quality_model(
         "benchmark": benchmark,
         "dataset_version": resolved_dataset_version,
         "artifact_version": str(model_metadata["artifact_version"]),
+        "split": split_manifest,
     }
 
 
@@ -308,6 +392,7 @@ def main() -> None:
     parser.add_argument("--test-size", type=float, default=0.2)
     parser.add_argument("--random-state", type=int, default=42)
     parser.add_argument("--dataset-version", default="")
+    parser.add_argument("--split-output", default="")
     args = parser.parse_args()
 
     result = train_quality_model(
@@ -316,10 +401,10 @@ def main() -> None:
         test_size=args.test_size,
         random_state=args.random_state,
         dataset_version=args.dataset_version or None,
+        split_output_path=args.split_output or None,
     )
     print(result)
 
 
 if __name__ == "__main__":
     main()
-

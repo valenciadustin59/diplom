@@ -38,7 +38,16 @@ def test_ensure_manifest_ready_rejects_not_ready_manifest():
         )
 
 
-def test_build_primary_dataset_version_uses_manifest_timestamp():
+def test_build_primary_dataset_version_prefers_manifest_dataset_version():
+    version = build_primary_dataset_version(
+        dataset_path=Path("backend/data/dataset_versions/dataset-v2/dataset.csv"),
+        manifest={"dataset": {"version": "dataset-v2"}},
+    )
+
+    assert version == "dataset-v2"
+
+
+def test_build_primary_dataset_version_uses_manifest_timestamp_when_explicit_version_is_missing():
     version = build_primary_dataset_version(
         dataset_path=Path("backend/data/ru_commercial_dataset.csv"),
         manifest={"generated_at": "2026-04-21T17:23:49.060829+00:00"},
@@ -64,11 +73,28 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
     dataset_path = tmp_path / "dataset.csv"
     manifest_path = tmp_path / "dataset.manifest.json"
     model_path = tmp_path / "page_quality_model.pkl"
+    split_path = tmp_path / "split.json"
     dataset_path.write_text("query,target_score\n", encoding="utf-8")
     manifest_path.write_text(
         json.dumps(
             {
                 "generated_at": "2026-04-21T17:23:49.060829+00:00",
+                "dataset": {
+                    "version": "dataset-v2-test",
+                    "baseline_version": "baseline-v1",
+                    "feature_schema_versions": ["v2"],
+                    "extraction_artifact_versions": ["extraction-v2"],
+                    "label_schema_versions": ["hybrid-v1"],
+                    "split_path": str(split_path),
+                },
+                "labeling": {
+                    "label_source_distribution": {"hybrid": 112, "weak_serp": 324},
+                    "expert_rows_count": 112,
+                    "hybrid_rows_count": 112,
+                },
+                "artifacts": {
+                    "artifact_coverage_ratio": 1.0,
+                },
                 "coverage": {
                     "rows_count": 436,
                     "unique_queries": 47,
@@ -79,6 +105,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
                     "query_coverage_ratio": 0.235,
                     "attempted_query_coverage_ratio": 0.235,
                 },
+                "split": {"split_mode": "group_by_query"},
                 "quality_gates": {"ready_for_training": True, "unmet_requirements": []},
             }
         ),
@@ -87,7 +114,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
 
     captured: dict[str, object] = {}
 
-    def fake_train_quality_model(*, dataset_path, model_path, test_size, random_state, dataset_version, artifact_metadata):
+    def fake_train_quality_model(*, dataset_path, model_path, test_size, random_state, dataset_version, artifact_metadata, split_output_path=None):
         captured.update(
             {
                 "dataset_path": dataset_path,
@@ -96,6 +123,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
                 "random_state": random_state,
                 "dataset_version": dataset_version,
                 "artifact_metadata": artifact_metadata,
+                "split_output_path": split_output_path,
             }
         )
         save_model(
@@ -119,6 +147,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
             "domains_count": 385,
             "model_type": "RandomForestRegressor",
             "metrics": {"ndcg_at_10": 0.84},
+            "split": {"split_path": split_output_path, "split_mode": "group_by_query"},
         }
 
     monkeypatch.setattr("app.ml.publish.train_quality_model", fake_train_quality_model)
@@ -136,13 +165,13 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
     assert captured["model_path"] == model_path
     assert captured["test_size"] == 0.3
     assert captured["random_state"] == 7
-    assert captured["dataset_version"] == "dataset-20260421-primary"
+    assert captured["dataset_version"] == "dataset-v2-test"
+    assert captured["split_output_path"] == str(split_path)
     assert captured["artifact_metadata"]["dataset_metadata"]["queries_count"] == 47
+    assert captured["artifact_metadata"]["dataset_metadata"]["expert_rows_count"] == 112
     assert result["published_model_path"] == str(model_path)
     assert result["manifest_path"] == str(manifest_path)
     assert Path(result["published_metadata_path"]).exists()
     assert Path(result["versioned_model_path"]).exists()
     assert Path(result["versioned_metadata_path"]).exists()
-    assert result["artifact_version"].startswith("dataset-20260421-primary-")
-
-
+    assert result["artifact_version"].startswith("dataset-v2-test-")

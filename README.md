@@ -324,8 +324,59 @@ npm run test
 - `D13` - версионированный extraction pipeline и `feature schema v2`: постоянный `target_snapshot`, DOM-based extraction, повторяемый пересчёт признаков из сохранённого snapshot и API-поля `feature_schema_version` и `target_snapshot_summary`.
 - `D14` - пакет технических SEO-признаков: technical signals из snapshot, технические рекомендации и technical factors в score explanation без изменения текущей ML-схемы признаков.
 - `D15` - пакет commercial/trust signals: телефоны, адрес, часы работы, цены, доставка, оплата, гарантия, возврат, отзывы, рейтинг, FAQ, CTA, мессенджеры, legal/business identity признаки, агрегированные commercial/trust scores и новый recommendation layer.
+- `D16` - SERP-relative и intent-aware слой: `query_intent`, intent-alignment features для target/competitors, relative gaps/percentiles/z-scores по ключевым signal groups и новый explanation/recommendation context.
+- `D17` - versioned dataset workflow: заморожен `baseline-v1`, добавлен `dataset-v2` bundle, hybrid labeling (`weak_serp + expert subset`), сохранение raw extraction artifacts, versioned manifest и воспроизводимый `group_by_query` split.
 
 В работе дальше:
 
-- `D16` - SERP-relative и intent-aware слой: `query_intent`, intent-alignment features для target/competitors, relative gaps/percentiles/z-scores по ключевым signal groups и новый explanation/recommendation context.
-- `D17-D20` - dataset v2, ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.
+- `D18-D20` - ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.
+
+## Dataset V2 Workflow (`D17`)
+
+Начиная с `D17`, обучающие данные больше не рассматриваются как один неявный CSV в `backend/data/`. Для ML-части введён versioned bundle в `backend/data/dataset_versions/`.
+
+Что уже есть в репозитории:
+
+- `backend/data/dataset_versions/baseline-v1/` — зафиксированная копия текущего primary dataset, manifest, checkpoint и seeds.
+- `backend/data/dataset_versions/dataset-v2/` — seed bundle нового датасета, metadata-файл, шаблон `expert_labels.csv` и целевая структура для `dataset.csv`, `failures.csv`, `manifest.json`, `split.json` и raw `artifacts/`.
+
+Ключевые принципы `D17`:
+
+- слабая метка строится из позиции в выдаче (`weak_target_score`);
+- экспертная разметка хранится отдельно (`expert_target_score`);
+- итоговая training label сохраняется как `target_score` и помечается `label_source`;
+- по каждой строке dataset v2 может сохраняться raw snapshot-артефакт extraction schema v2;
+- train/validation split сохраняется отдельно и воспроизводимо в формате `group_by_query`.
+
+Базовый workflow построения `dataset-v2`:
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.dataset_builder `
+  --dataset-version dataset-v2 `
+  --versioned-layout `
+  --freeze-baseline `
+  --seeds-file backend\data\dataset_versions\dataset-v2\seeds.csv `
+  --expert-labels backend\data\dataset_versions\dataset-v2\expert_labels.csv `
+  --overwrite
+```
+
+После сборки manifest и split формируются так:
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.dataset_quality `
+  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
+  --failures backend\data\dataset_versions\dataset-v2\failures.csv `
+  --seeds backend\data\dataset_versions\dataset-v2\seeds.csv `
+  --dataset-version dataset-v2 `
+  --baseline-version baseline-v1 `
+  --artifacts-dir backend\data\dataset_versions\dataset-v2\artifacts `
+  --split backend\data\dataset_versions\dataset-v2\split.json `
+  --output backend\data\dataset_versions\dataset-v2\manifest.json
+
+.venv\Scripts\python.exe -m app.ml.train `
+  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
+  --dataset-version dataset-v2 `
+  --split-output backend\data\dataset_versions\dataset-v2\split.json
+```

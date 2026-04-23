@@ -1,0 +1,71 @@
+{
+  "version": "dataset-v2",
+  "kind": "dataset",
+  "status": "seed_bundle_ready",
+  "baseline_version": "baseline-v1",
+  "feature_schema_version": "v2",
+  "extraction_artifact_version": "extraction-v2",
+  "label_schema_version": "hybrid-v1",
+  "paths": {
+    "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\dataset.csv",
+    "failures_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\failures.csv",
+    "checkpoint_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\checkpoint.json",
+    "manifest_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\manifest.json",
+    "split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\split.json",
+    "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\seeds.csv",
+    "artifacts_dir": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\artifacts",
+    "expert_labels_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\expert_labels.csv"
+  },
+  "seed_summary": {
+    "seed_rows_count": 450,
+    "queries_count": 450,
+    "categories_count": 25,
+    "cities_count": 8,
+    "intent_count": 2,
+    "intents": [
+      "commercial",
+      "informational"
+    ],
+    "query_patterns_count": 4,
+    "target_query_range": "300-500"
+  },
+  "labeling": {
+    "weak_label_source": "serp_rank",
+    "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score",
+    "expert_subset_status": "template_created"
+  },
+  "notes": [
+    "dataset.csv and failures.csv are produced by app.ml.dataset_builder with --versioned-layout",
+    "split.json is produced by app.ml.train with --split-output or by publish workflow",
+    "artifacts directory stores raw extraction snapshots per dataset row"
+  ],
+  "baseline_freeze": {
+    "version": "baseline-v1",
+    "kind": "baseline",
+    "source_aliases": {
+      "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\ru_commercial_dataset.csv",
+      "failures_path": "E:\\codexPROJ\\diplom\\backend\\data\\ru_commercial_dataset_failures.csv",
+      "manifest_path": "E:\\codexPROJ\\diplom\\backend\\data\\ru_commercial_dataset.manifest.json",
+      "checkpoint_path": "E:\\codexPROJ\\diplom\\backend\\data\\ru_commercial_dataset.checkpoint.json",
+      "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\training_query_seeds.csv"
+    },
+    "paths": {
+      "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\dataset.csv",
+      "failures_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\failures.csv",
+      "manifest_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\manifest.json",
+      "checkpoint_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\checkpoint.json",
+      "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\seeds.csv",
+      "artifacts_dir": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\artifacts",
+      "split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\split.json"
+    },
+    "copied_files": [
+      "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\dataset.csv",
+      "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\failures.csv",
+      "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\manifest.json",
+      "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\checkpoint.json",
+      "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\seeds.csv"
+    ],
+    "frozen": true,
+    "metadata_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\baseline-v1\\dataset.json"
+  }
+}

@@ -1,11 +1,13 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
+from hashlib import sha1
 import json
 from pathlib import Path
+import shutil
 import time
 from typing import Any
 from urllib.parse import urlparse
@@ -13,8 +15,22 @@ from urllib.parse import urlparse
 from app.competitors import _normalize_domain
 from app.competitors import search_serp_urls
 from app.features import SNAPSHOT_AUXILIARY_FEATURE_COLUMNS, build_features, merge_snapshot_auxiliary_features
+from app.ml.dataset_versions import (
+    BASELINE_DATASET_VERSION,
+    DEFAULT_DATASET_VERSION,
+    LABEL_SCHEMA_VERSION,
+    PRIMARY_CHECKPOINT_PATH,
+    PRIMARY_DATASET_PATH,
+    PRIMARY_FAILURES_PATH,
+    PRIMARY_MANIFEST_PATH,
+    PRIMARY_SEEDS_PATH,
+    build_dataset_bundle_paths,
+    build_dataset_row_artifact_path,
+    freeze_primary_dataset_as_baseline,
+    write_dataset_metadata,
+)
 from app.ml.model import FEATURE_COLUMNS
-from app.parser import ensure_extraction_artifact, fetch_page
+from app.parser import EXTRACTION_ARTIFACT_VERSION, FEATURE_SCHEMA_VERSION, ensure_extraction_artifact, fetch_page
 from app.serp import SerpConfigurationError, SerpProviderError, search as search_serp
 
 import httpx
@@ -27,8 +43,16 @@ DEFAULT_FAILURES_PATH = DATA_DIR / "training_failures.csv"
 DEFAULT_SEEDS_PATH = DATA_DIR / "training_query_seeds.csv"
 DEFAULT_QUERIES_PATH = DATA_DIR / "training_queries.txt"
 DEFAULT_CHECKPOINT_PATH = DATA_DIR / "training_dataset.checkpoint.json"
+DEFAULT_EXPERT_LABELS_PATH = DATA_DIR / "training_expert_labels.csv"
 
 DATASET_COLUMNS = [
+    "dataset_version",
+    "feature_schema_version",
+    "extraction_artifact_version",
+    "label_schema_version",
+    "label_source",
+    "weak_target_score",
+    "expert_target_score",
     "query",
     "category",
     "intent",
@@ -43,10 +67,20 @@ DATASET_COLUMNS = [
     "page_type",
     "fetch_status",
     "fetch_error",
+    "artifact_path",
+    "artifact_sha1",
+    "artifact_size_bytes",
     "target_score",
 ] + FEATURE_COLUMNS + SNAPSHOT_AUXILIARY_FEATURE_COLUMNS
 
 FAILURE_COLUMNS = [
+    "dataset_version",
+    "feature_schema_version",
+    "extraction_artifact_version",
+    "label_schema_version",
+    "label_source",
+    "weak_target_score",
+    "expert_target_score",
     "query",
     "category",
     "intent",
@@ -61,6 +95,9 @@ FAILURE_COLUMNS = [
     "page_type",
     "fetch_status",
     "fetch_error",
+    "artifact_path",
+    "artifact_sha1",
+    "artifact_size_bytes",
     "target_score",
 ]
 
@@ -94,6 +131,13 @@ class TrainingSeed:
         )
 
 
+@dataclass(frozen=True, slots=True)
+class ExpertLabel:
+    score: float
+    source: str
+    labeler: str
+
+
 def infer_page_type(url: str) -> str:
     parsed = urlparse(url)
     path = (parsed.path or "/").lower()
@@ -122,6 +166,13 @@ def _parse_int(value: str | None, default: int | None = None) -> int | None:
     if not normalized:
         return default
     return int(normalized)
+
+
+def _safe_float(value: object) -> float | None:
+    try:
+        return round(float(value), 4) if value not in {None, ""} else None
+    except (TypeError, ValueError):
+        return None
 
 
 def _seed_from_query(query: str, top_n: int) -> TrainingSeed:
@@ -168,6 +219,28 @@ def load_seed_rows(
                 )
             )
     return seeds
+
+
+def load_expert_labels(expert_labels_path: str | Path | None = None) -> dict[str, ExpertLabel]:
+    resolved_path = Path(expert_labels_path) if expert_labels_path is not None else DEFAULT_EXPERT_LABELS_PATH
+    if not resolved_path.exists():
+        return {}
+
+    labels: dict[str, ExpertLabel] = {}
+    with resolved_path.open("r", encoding="utf-8-sig", newline="") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            query = str(row.get("query") or "").strip().replace("\ufeff", "")
+            url = str(row.get("url") or "").strip()
+            score = _safe_float(row.get("expert_target_score") or row.get("target_score"))
+            if not query or not url or score is None:
+                continue
+            labels[_row_key(query, url)] = ExpertLabel(
+                score=score,
+                source=str(row.get("label_source") or "expert").strip() or "expert",
+                labeler=str(row.get("labeler") or "").strip(),
+            )
+    return labels
 
 
 def _slice_seed_rows(
@@ -234,9 +307,54 @@ def _write_rows(rows: list[dict[str, object]], output_path: Path, fieldnames: li
         writer.writerows(rows)
 
 
-def _base_row(seed: TrainingSeed, result: dict[str, object]) -> dict[str, object]:
+def _artifact_digest(payload: str) -> str:
+    return sha1(payload.encode("utf-8")).hexdigest()
+
+
+def _persist_snapshot_artifact(
+    snapshot: dict[str, object],
+    *,
+    artifacts_dir: Path | None,
+    query: str,
+    url: str,
+    dataset_root: Path,
+) -> tuple[str, str, int]:
+    if artifacts_dir is None:
+        return "", "", 0
+
+    artifact_path = build_dataset_row_artifact_path(artifacts_dir, query=query, url=url)
+    artifact_path.parent.mkdir(parents=True, exist_ok=True)
+    payload = json.dumps(snapshot, ensure_ascii=False, indent=2)
+    artifact_path.write_text(payload, encoding="utf-8")
+    return str(artifact_path.relative_to(dataset_root)), _artifact_digest(payload), len(payload.encode("utf-8"))
+
+
+def resolve_target_label(weak_target_score: float, expert_label: ExpertLabel | None) -> tuple[float, float | None, str]:
+    if expert_label is None:
+        return round(weak_target_score, 4), None, "weak_serp"
+
+    effective_score = round((float(expert_label.score) * 0.7) + (float(weak_target_score) * 0.3), 4)
+    return effective_score, round(float(expert_label.score), 4), "hybrid"
+
+
+def _base_row(
+    seed: TrainingSeed,
+    result: dict[str, object],
+    *,
+    dataset_version: str,
+    expert_label: ExpertLabel | None,
+) -> dict[str, object]:
     url = str(result.get("url") or "").strip()
+    weak_target_score = rank_to_score(int(result.get("rank") or 1), seed.max_rank)
+    target_score, expert_target_score, label_source = resolve_target_label(weak_target_score, expert_label)
     return {
+        "dataset_version": dataset_version,
+        "feature_schema_version": FEATURE_SCHEMA_VERSION,
+        "extraction_artifact_version": EXTRACTION_ARTIFACT_VERSION,
+        "label_schema_version": LABEL_SCHEMA_VERSION,
+        "label_source": label_source,
+        "weak_target_score": weak_target_score,
+        "expert_target_score": expert_target_score or "",
         "query": seed.query,
         "category": seed.category,
         "intent": seed.intent,
@@ -249,12 +367,31 @@ def _base_row(seed: TrainingSeed, result: dict[str, object]) -> dict[str, object
         "title": str(result.get("title") or "").strip(),
         "snippet": str(result.get("snippet") or "").strip(),
         "page_type": infer_page_type(url),
-        "target_score": rank_to_score(int(result.get("rank") or 1), seed.max_rank),
+        "fetch_status": "",
+        "fetch_error": "",
+        "artifact_path": "",
+        "artifact_sha1": "",
+        "artifact_size_bytes": 0,
+        "target_score": target_score,
     }
 
 
-def _process_search_result(seed: TrainingSeed, result: dict[str, object]) -> tuple[str, dict[str, object], bool]:
-    row = _base_row(seed, result)
+def _process_search_result(
+    seed: TrainingSeed,
+    result: dict[str, object],
+    *,
+    dataset_version: str,
+    expert_labels: dict[str, ExpertLabel],
+    artifacts_dir: Path | None,
+    dataset_root: Path,
+) -> tuple[str, dict[str, object], bool]:
+    result_url = str(result.get("url") or "").strip()
+    row = _base_row(
+        seed,
+        result,
+        dataset_version=dataset_version,
+        expert_label=expert_labels.get(_row_key(seed.query, result_url)),
+    )
     url = str(row["url"])
 
     try:
@@ -278,10 +415,20 @@ def _process_search_result(seed: TrainingSeed, result: dict[str, object]) -> tup
             build_features(html=html, text=text, query=seed.query),
             snapshot,
         )
+        artifact_path, artifact_sha1, artifact_size_bytes = _persist_snapshot_artifact(
+            snapshot,
+            artifacts_dir=artifacts_dir,
+            query=seed.query,
+            url=url,
+            dataset_root=dataset_root,
+        )
         success_row = {
             **row,
             "fetch_status": "ok",
             "fetch_error": "",
+            "artifact_path": artifact_path,
+            "artifact_sha1": artifact_sha1,
+            "artifact_size_bytes": artifact_size_bytes,
         }
         for feature_name in FEATURE_COLUMNS:
             success_row[feature_name] = float(features.get(feature_name, 0.0))
@@ -357,7 +504,18 @@ def build_dataset_for_query(
     results = _fetch_seed_page(seed, serp_page=0)
     rows: list[dict[str, object]] = []
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = [executor.submit(_process_search_result, seed, result) for result in results]
+        futures = [
+            executor.submit(
+                _process_search_result,
+                seed,
+                result,
+                dataset_version=DEFAULT_DATASET_VERSION,
+                expert_labels={},
+                artifacts_dir=None,
+                dataset_root=Path(DEFAULT_DATASET_PATH).parent,
+            )
+            for result in results
+        ]
         for future in as_completed(futures):
             status, row, _empty_text = future.result()
             if status == "success":
@@ -377,15 +535,33 @@ def build_dataset(
     query_delay_seconds: float = 1.0,
     seed_offset: int = 0,
     seed_limit: int | None = None,
+    dataset_version: str = DEFAULT_DATASET_VERSION,
+    artifacts_dir: str | Path | None = None,
+    expert_labels_path: str | Path | None = None,
+    freeze_baseline: bool = False,
 ) -> dict[str, object]:
     dataset_path = Path(output_path)
     failures_csv_path = Path(failures_path)
     checkpoint_json_path = Path(checkpoint_path)
+    resolved_artifacts_dir = Path(artifacts_dir) if artifacts_dir is not None else dataset_path.with_name(f"{dataset_path.stem}.artifacts")
+    expert_labels = load_expert_labels(expert_labels_path)
+
+    if freeze_baseline:
+        freeze_primary_dataset_as_baseline(
+            version=BASELINE_DATASET_VERSION,
+            dataset_path=PRIMARY_DATASET_PATH,
+            failures_path=PRIMARY_FAILURES_PATH,
+            manifest_path=PRIMARY_MANIFEST_PATH,
+            checkpoint_path=PRIMARY_CHECKPOINT_PATH,
+            seeds_path=PRIMARY_SEEDS_PATH,
+        )
 
     if overwrite:
         for path in (dataset_path, failures_csv_path, checkpoint_json_path):
             if path.exists():
                 path.unlink()
+        if resolved_artifacts_dir.exists():
+            shutil.rmtree(resolved_artifacts_dir)
 
     if queries:
         seeds = [_seed_from_query(query, top_n=top_n) for query in queries if query.strip()]
@@ -423,7 +599,18 @@ def build_dataset(
             success_rows: list[dict[str, object]] = []
             failure_rows: list[dict[str, object]] = []
             with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                futures = [executor.submit(_process_search_result, seed, result) for result in raw_results]
+                futures = [
+                    executor.submit(
+                        _process_search_result,
+                        seed,
+                        result,
+                        dataset_version=dataset_version,
+                        expert_labels=expert_labels,
+                        artifacts_dir=resolved_artifacts_dir,
+                        dataset_root=dataset_path.parent,
+                    )
+                    for result in raw_results
+                ]
                 for future in as_completed(futures):
                     status, row, is_empty_text = future.result()
                     written_keys.add(_row_key(str(row["query"]), str(row["url"])))
@@ -454,10 +641,42 @@ def build_dataset(
     total_attempts = success_count + failure_count
     failure_rate = round((failure_count / total_attempts), 6) if total_attempts else 0.0
     empty_text_rate = round((empty_text_count / success_count), 6) if success_count else 0.0
+    metadata_payload = {
+        "version": dataset_version,
+        "kind": "dataset",
+        "feature_schema_version": FEATURE_SCHEMA_VERSION,
+        "extraction_artifact_version": EXTRACTION_ARTIFACT_VERSION,
+        "label_schema_version": LABEL_SCHEMA_VERSION,
+        "paths": {
+            "dataset_path": str(dataset_path),
+            "failures_path": str(failures_csv_path),
+            "checkpoint_path": str(checkpoint_json_path),
+            "artifacts_dir": str(resolved_artifacts_dir),
+            "seeds_path": str(seeds_file),
+        },
+        "labeling": {
+            "expert_labels_path": str(Path(expert_labels_path)) if expert_labels_path else None,
+            "expert_labels_loaded": len(expert_labels),
+            "weak_label_source": "serp_rank",
+            "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score",
+        },
+        "coverage": {
+            "rows_count": success_count,
+            "failures_count": failure_count,
+            "unique_queries": len(unique_queries),
+            "unique_domains": len(unique_domains),
+            "failure_rate": failure_rate,
+            "empty_text_rate": empty_text_rate,
+        },
+    }
+    metadata_path = write_dataset_metadata(dataset_path.with_name(f"{dataset_path.stem}.dataset.json"), metadata_payload)
     return {
         "dataset_path": str(dataset_path),
         "failures_path": str(failures_csv_path),
         "checkpoint_path": str(checkpoint_json_path),
+        "artifacts_dir": str(resolved_artifacts_dir),
+        "dataset_version": dataset_version,
+        "metadata_path": str(metadata_path),
         "seeds_count": len(seeds),
         "processed_seed_pages": processed_seed_pages,
         "rows_count": success_count,
@@ -474,10 +693,15 @@ def main() -> None:
     parser.add_argument("--query", action="append", default=[])
     parser.add_argument("--queries-file", default="")
     parser.add_argument("--seeds-file", default=str(DEFAULT_SEEDS_PATH))
+    parser.add_argument("--expert-labels", default="")
     parser.add_argument("--top-n", type=int, default=10)
     parser.add_argument("--output", default=str(DEFAULT_DATASET_PATH))
     parser.add_argument("--failures-output", default=str(DEFAULT_FAILURES_PATH))
     parser.add_argument("--checkpoint", default=str(DEFAULT_CHECKPOINT_PATH))
+    parser.add_argument("--dataset-version", default=DEFAULT_DATASET_VERSION)
+    parser.add_argument("--artifacts-dir", default="")
+    parser.add_argument("--versioned-layout", action="store_true")
+    parser.add_argument("--freeze-baseline", action="store_true")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--max-workers", type=int, default=6)
     parser.add_argument("--query-delay", type=float, default=1.0)
@@ -489,19 +713,37 @@ def main() -> None:
     if args.queries_file and Path(args.queries_file).exists():
         queries.extend(_load_queries_from_file(args.queries_file))
 
+    output = Path(args.output)
+    failures_output = Path(args.failures_output)
+    checkpoint_output = Path(args.checkpoint)
+    artifacts_dir = Path(args.artifacts_dir) if args.artifacts_dir else None
+    seeds_file = Path(args.seeds_file)
+    if args.versioned_layout:
+        bundle = build_dataset_bundle_paths(args.dataset_version)
+        output = bundle.dataset_path
+        failures_output = bundle.failures_path
+        checkpoint_output = bundle.checkpoint_path
+        artifacts_dir = bundle.artifacts_dir
+        if not queries and seeds_file == DEFAULT_SEEDS_PATH and bundle.seeds_path.exists():
+            seeds_file = bundle.seeds_path
+
     try:
         result = build_dataset(
             queries=queries or None,
             top_n=args.top_n,
-            output_path=args.output,
-            failures_path=args.failures_output,
-            checkpoint_path=args.checkpoint,
-            seeds_file=args.seeds_file,
+            output_path=output,
+            failures_path=failures_output,
+            checkpoint_path=checkpoint_output,
+            seeds_file=seeds_file,
             overwrite=args.overwrite,
             max_workers=args.max_workers,
             query_delay_seconds=args.query_delay,
             seed_offset=args.seed_offset,
             seed_limit=args.seed_limit or None,
+            dataset_version=args.dataset_version,
+            artifacts_dir=artifacts_dir,
+            expert_labels_path=args.expert_labels or None,
+            freeze_baseline=args.freeze_baseline,
         )
         print(result)
     except SerpConfigurationError as error:

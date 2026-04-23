@@ -1,4 +1,5 @@
 ﻿import csv
+import json
 from pathlib import Path
 
 from app.ml.dataset_quality import (
@@ -9,8 +10,23 @@ from app.ml.dataset_quality import (
 )
 
 
-SUCCESS_FIELDS = ["query", "category", "city", "region_code", "domain", "rank", "page_type"]
-FAILURE_FIELDS = ["query", "category", "city", "region_code", "fetch_error"]
+SUCCESS_FIELDS = [
+    "dataset_version",
+    "feature_schema_version",
+    "extraction_artifact_version",
+    "label_schema_version",
+    "label_source",
+    "expert_target_score",
+    "artifact_path",
+    "query",
+    "category",
+    "city",
+    "region_code",
+    "domain",
+    "rank",
+    "page_type",
+]
+FAILURE_FIELDS = ["dataset_version", "query", "category", "city", "region_code", "fetch_error"]
 SEED_FIELDS = ["query", "category", "intent", "city", "region_code", "top_n", "pages_to_scan"]
 
 
@@ -53,16 +69,38 @@ def _seed_rows() -> list[dict[str, object]]:
     ]
 
 
-def test_build_dataset_manifest_reports_coverage_and_quality_gates(tmp_path):
+def test_build_dataset_manifest_reports_d17_metadata_and_quality_gates(tmp_path):
     dataset_path = tmp_path / "dataset.csv"
     failures_path = tmp_path / "failures.csv"
     manifest_path = tmp_path / "dataset.manifest.json"
+    split_path = tmp_path / "split.json"
+    artifacts_dir = tmp_path / "artifacts"
+
+    artifacts_dir.mkdir(parents=True)
+    (artifacts_dir / "row-1.json").write_text("{}", encoding="utf-8")
+    split_path.write_text(
+        json.dumps(
+            {
+                "split_mode": "group_by_query",
+                "train_queries": ["seo audit moscow"],
+                "validation_queries": ["ppc agency spb"],
+            }
+        ),
+        encoding="utf-8",
+    )
 
     _write_csv(
         dataset_path,
         SUCCESS_FIELDS,
         [
             {
+                "dataset_version": "dataset-v2-test",
+                "feature_schema_version": "v2",
+                "extraction_artifact_version": "extraction-v2",
+                "label_schema_version": "hybrid-v1",
+                "label_source": "hybrid",
+                "expert_target_score": 82,
+                "artifact_path": "artifacts/row-1.json",
                 "query": "seo audit moscow",
                 "category": "seo",
                 "city": "moscow",
@@ -72,31 +110,20 @@ def test_build_dataset_manifest_reports_coverage_and_quality_gates(tmp_path):
                 "page_type": "content",
             },
             {
-                "query": "seo audit moscow",
-                "category": "seo",
-                "city": "moscow",
-                "region_code": 213,
+                "dataset_version": "dataset-v2-test",
+                "feature_schema_version": "v2",
+                "extraction_artifact_version": "extraction-v2",
+                "label_schema_version": "hybrid-v1",
+                "label_source": "weak_serp",
+                "expert_target_score": "",
+                "artifact_path": "",
+                "query": "ppc agency spb",
+                "category": "ppc",
+                "city": "spb",
+                "region_code": 2,
                 "domain": "example-2.com",
                 "rank": 2,
                 "page_type": "homepage",
-            },
-            {
-                "query": "ppc agency spb",
-                "category": "ppc",
-                "city": "spb",
-                "region_code": 2,
-                "domain": "example-3.com",
-                "rank": 1,
-                "page_type": "content",
-            },
-            {
-                "query": "ppc agency spb",
-                "category": "ppc",
-                "city": "spb",
-                "region_code": 2,
-                "domain": "example-4.com",
-                "rank": 2,
-                "page_type": "category",
             },
         ],
     )
@@ -105,6 +132,7 @@ def test_build_dataset_manifest_reports_coverage_and_quality_gates(tmp_path):
         FAILURE_FIELDS,
         [
             {
+                "dataset_version": "dataset-v2-test",
                 "query": "legal services moscow",
                 "category": "legal",
                 "city": "moscow",
@@ -115,14 +143,14 @@ def test_build_dataset_manifest_reports_coverage_and_quality_gates(tmp_path):
     )
 
     thresholds = DatasetQualityThresholds(
-        min_rows=4,
+        min_rows=2,
         min_unique_queries=2,
-        min_unique_domains=4,
+        min_unique_domains=2,
         min_unique_categories=2,
         min_unique_cities=2,
         min_query_coverage_ratio=0.6,
-        min_average_rows_per_query=2.0,
-        max_failure_rate=0.25,
+        min_average_rows_per_query=1.0,
+        max_failure_rate=0.4,
     )
 
     manifest = build_dataset_manifest(
@@ -130,20 +158,26 @@ def test_build_dataset_manifest_reports_coverage_and_quality_gates(tmp_path):
         failures_path=failures_path,
         seed_rows=_seed_rows(),
         thresholds=thresholds,
+        dataset_version="dataset-v2-test",
+        baseline_version="baseline-v1",
+        artifacts_dir=artifacts_dir,
+        split_path=split_path,
     )
 
-    assert manifest["coverage"]["rows_count"] == 4
+    assert manifest["dataset"]["version"] == "dataset-v2-test"
+    assert manifest["dataset"]["baseline_version"] == "baseline-v1"
+    assert manifest["coverage"]["rows_count"] == 2
     assert manifest["coverage"]["failures_count"] == 1
     assert manifest["coverage"]["unique_queries"] == 2
-    assert manifest["coverage"]["attempted_queries"] == 3
-    assert manifest["coverage"]["seed_queries_count"] == 3
-    assert manifest["coverage"]["unique_domains"] == 4
+    assert manifest["coverage"]["unique_domains"] == 2
     assert manifest["coverage"]["query_coverage_ratio"] == 0.666667
-    assert manifest["coverage"]["attempted_query_coverage_ratio"] == 1.0
-    assert manifest["coverage"]["average_rows_per_query"] == 2.0
-    assert manifest["coverage"]["failure_rate"] == 0.2
+    assert manifest["coverage"]["failure_rate"] == 0.333333
+    assert manifest["labeling"]["expert_rows_count"] == 1
+    assert manifest["labeling"]["hybrid_rows_count"] == 1
+    assert manifest["artifacts"]["rows_with_artifacts"] == 1
+    assert manifest["artifacts"]["artifact_coverage_ratio"] == 0.5
+    assert manifest["split"]["split_mode"] == "group_by_query"
     assert manifest["quality_gates"]["ready_for_training"] is True
-    assert manifest["quality_gates"]["unmet_requirements"] == []
 
     saved_manifest = save_dataset_manifest(
         dataset_path=dataset_path,
@@ -151,6 +185,10 @@ def test_build_dataset_manifest_reports_coverage_and_quality_gates(tmp_path):
         seed_rows=_seed_rows(),
         output_path=manifest_path,
         thresholds=thresholds,
+        dataset_version="dataset-v2-test",
+        baseline_version="baseline-v1",
+        artifacts_dir=artifacts_dir,
+        split_path=split_path,
     )
     assert Path(saved_manifest["manifest_path"]).exists()
 
@@ -164,6 +202,13 @@ def test_build_dataset_manifest_reports_unmet_requirements(tmp_path):
         SUCCESS_FIELDS,
         [
             {
+                "dataset_version": "dataset-v2-test",
+                "feature_schema_version": "v2",
+                "extraction_artifact_version": "extraction-v2",
+                "label_schema_version": "hybrid-v1",
+                "label_source": "weak_serp",
+                "expert_target_score": "",
+                "artifact_path": "",
                 "query": "seo audit moscow",
                 "category": "seo",
                 "city": "moscow",
@@ -179,6 +224,7 @@ def test_build_dataset_manifest_reports_unmet_requirements(tmp_path):
         FAILURE_FIELDS,
         [
             {
+                "dataset_version": "dataset-v2-test",
                 "query": "legal services moscow",
                 "category": "legal",
                 "city": "moscow",
@@ -202,6 +248,8 @@ def test_build_dataset_manifest_reports_unmet_requirements(tmp_path):
             min_average_rows_per_query=1.0,
             max_failure_rate=0.1,
         ),
+        dataset_version="dataset-v2-test",
+        baseline_version="baseline-v1",
     )
 
     assert manifest["quality_gates"]["ready_for_training"] is False

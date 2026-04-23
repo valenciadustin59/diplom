@@ -23,21 +23,26 @@ _DATASET_BUILDER_EXPORTS = {
     "DATASET_COLUMNS",
     "DEFAULT_CHECKPOINT_PATH",
     "DEFAULT_DATASET_PATH",
+    "DEFAULT_EXPERT_LABELS_PATH",
     "DEFAULT_FAILURES_PATH",
     "DEFAULT_QUERIES_PATH",
     "DEFAULT_SEEDS_PATH",
     "build_dataset",
     "build_dataset_for_query",
     "infer_page_type",
+    "load_expert_labels",
     "load_seed_rows",
     "rank_to_score",
+    "resolve_target_label",
 }
 
 _TRAIN_EXPORTS = {
+    "build_dataset_split_manifest",
     "evaluate_model_rows",
     "load_dataset_rows",
     "prepare_training_data",
     "rows_to_matrix",
+    "save_dataset_split_manifest",
     "select_best_candidate",
     "split_dataset_rows",
     "train_candidate_models",
@@ -54,12 +59,26 @@ _DATASET_QUALITY_EXPORTS = {
 }
 
 _QUERY_SEED_EXPORTS = {
+    "DATASET_V2_QUERY_PATTERNS",
     "RU_COMMERCIAL_CATEGORIES",
     "RU_COMMERCIAL_CITIES",
     "TRAINING_SEED_FIELDS",
+    "build_dataset_v2_seed_rows",
+    "build_dataset_v2_seed_summary",
     "build_seed_catalog_summary",
     "build_training_queries",
     "build_training_seed_rows",
+    "save_seed_rows",
+}
+
+_DATASET_VERSION_EXPORTS = {
+    "BASELINE_DATASET_VERSION",
+    "DATASET_VERSIONS_DIR",
+    "DEFAULT_DATASET_VERSION",
+    "LABEL_SCHEMA_VERSION",
+    "build_dataset_bundle_paths",
+    "freeze_primary_dataset_as_baseline",
+    "infer_dataset_version",
 }
 
 _PUBLISH_EXPORTS = {
@@ -99,6 +118,10 @@ def __getattr__(name: str):
         module = importlib.import_module("app.ml.query_seeds")
         return getattr(module, name)
 
+    if name in _DATASET_VERSION_EXPORTS:
+        module = importlib.import_module("app.ml.dataset_versions")
+        return getattr(module, name)
+
     if name in _PUBLISH_EXPORTS:
         module = importlib.import_module("app.ml.publish")
         return getattr(module, name)
@@ -130,6 +153,7 @@ __all__ = [
     *_TRAIN_EXPORTS,
     *_DATASET_QUALITY_EXPORTS,
     *_QUERY_SEED_EXPORTS,
+    *_DATASET_VERSION_EXPORTS,
     *_PUBLISH_EXPORTS,
     *_EVALUATE_EXPORTS,
 ]
