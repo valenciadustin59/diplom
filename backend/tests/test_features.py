@@ -187,6 +187,27 @@ def test_detect_query_intent_and_build_alignment_features_for_local_commercial_q
     assert float(features["intent_alignment_score"]) > 0.7
 
 
+def test_detect_query_intent_does_not_mark_plain_commercial_query_as_local():
+    query_intent = detect_query_intent("купить пластиковые окна")
+
+    assert query_intent["label"] == "commercial"
+    assert float(query_intent["scores"]["local"]) < 0.2
+
+
+def test_detect_query_intent_marks_informational_query_without_local_false_positive():
+    query_intent = detect_query_intent("как выбрать пластиковые окна")
+
+    assert query_intent["label"] == "informational"
+    assert float(query_intent["scores"]["local"]) < 0.2
+
+
+def test_detect_query_intent_marks_navigational_query_without_local_false_positive():
+    query_intent = detect_query_intent("официальный сайт rehau")
+
+    assert query_intent["label"] == "navigational"
+    assert float(query_intent["scores"]["local"]) < 0.2
+
+
 def test_merge_serp_relative_features_builds_gaps_and_fallbacks_with_single_competitor():
     merged, summary = merge_serp_relative_features(
         {

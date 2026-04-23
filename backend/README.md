@@ -318,3 +318,20 @@ cd E:\codexPROJ\diplom\backend
 - `../AGENTS.md` — operational notes и текущее состояние репозитория.
 - `../docs/roadmap/product-development-roadmap.md` — roadmap и backlog.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
+
+## D16: SERP-Relative And Intent-Aware Features
+
+`D16` добавляет поверх текущего audit pipeline сравнительный слой:
+
+- определение и сохранение `query_intent` в `Audit` уже при создании аудита;
+- intent-alignment признаки для target и competitor pages;
+- SERP-relative gaps, median gaps, percentiles и z-scores по ключевым группам сигналов;
+- `query_intent` в API payloads и `serp_relative_factors` в `score_breakdown`;
+- новые relative и intent-aware recommendation codes.
+
+Ограничения `D16`:
+
+- не меняет `FEATURE_COLUMNS`;
+- не требует немедленного retraining;
+- не пересчитывает уже полученный audit score на competitor aggregation;
+- корректно работает при неполном competitor set через fallback relative-context markers.
