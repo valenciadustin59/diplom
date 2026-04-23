@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import argparse
 import csv
@@ -16,6 +16,7 @@ from sklearn.model_selection import GroupShuffleSplit, train_test_split
 from app.ml.dataset_builder import DEFAULT_DATASET_PATH
 from app.ml.dataset_versions import infer_dataset_version
 from app.ml.model import DEFAULT_MODEL_PATH, FEATURE_COLUMNS, clear_model_cache, save_model
+from app.ml.model_schema import DEFAULT_TRAINING_MODEL_SCHEMA_VERSION, resolve_model_feature_schema
 
 
 def load_dataset_rows(dataset_path: str | Path = DEFAULT_DATASET_PATH) -> list[dict[str, str]]:
@@ -29,25 +30,21 @@ def load_dataset_rows(dataset_path: str | Path = DEFAULT_DATASET_PATH) -> list[d
 
 def prepare_training_data(
     dataset_path: str | Path = DEFAULT_DATASET_PATH,
+    feature_columns: list[str] | tuple[str, ...] | None = None,
 ) -> tuple[list[list[float]], list[float], list[dict[str, str]]]:
     rows = load_dataset_rows(dataset_path)
     if not rows:
         raise ValueError("Dataset is empty")
-
-    x: list[list[float]] = []
-    y: list[float] = []
-    for row in rows:
-        x.append([float(row.get(feature_name, 0.0) or 0.0) for feature_name in FEATURE_COLUMNS])
-        y.append(float(row["target_score"]))
+    x, y = rows_to_matrix(rows, feature_columns=feature_columns)
     return x, y, rows
-
-
-def rows_to_matrix(rows: list[dict[str, str]]) -> tuple[list[list[float]], list[float]]:
-    x = [[float(row.get(feature_name, 0.0) or 0.0) for feature_name in FEATURE_COLUMNS] for row in rows]
+def rows_to_matrix(
+    rows: list[dict[str, str]],
+    feature_columns: list[str] | tuple[str, ...] | None = None,
+) -> tuple[list[list[float]], list[float]]:
+    resolved_feature_columns = feature_columns or FEATURE_COLUMNS
+    x = [[float(row.get(feature_name, 0.0) or 0.0) for feature_name in resolved_feature_columns] for row in rows]
     y = [float(row["target_score"]) for row in rows]
     return x, y
-
-
 def split_dataset_rows(
     rows: list[dict[str, str]],
     test_size: float,
@@ -202,8 +199,12 @@ def ranking_metrics(validation_rows: list[dict[str, str]], predictions: list[flo
     }
 
 
-def evaluate_model_rows(model: Any, validation_rows: list[dict[str, str]]) -> dict[str, float]:
-    x_validation, y_validation = rows_to_matrix(validation_rows)
+def evaluate_model_rows(
+    model: Any,
+    validation_rows: list[dict[str, str]],
+    feature_columns: list[str] | tuple[str, ...] | None = None,
+) -> dict[str, float]:
+    x_validation, y_validation = rows_to_matrix(validation_rows, feature_columns=feature_columns)
     predictions = [float(value) for value in model.predict(x_validation)]
     metrics = {
         "rmse": round(_rmse(y_validation, predictions), 6),
@@ -211,14 +212,13 @@ def evaluate_model_rows(model: Any, validation_rows: list[dict[str, str]]) -> di
     }
     metrics.update(ranking_metrics(validation_rows, predictions))
     return metrics
-
-
 def _train_random_forest(
     train_rows: list[dict[str, str]],
     validation_rows: list[dict[str, str]],
     random_state: int,
+    feature_columns: list[str] | tuple[str, ...] | None = None,
 ) -> tuple[Any, dict[str, float]]:
-    x_train, y_train = rows_to_matrix(train_rows)
+    x_train, y_train = rows_to_matrix(train_rows, feature_columns=feature_columns)
     model = RandomForestRegressor(
         n_estimators=400,
         max_depth=14,
@@ -228,20 +228,18 @@ def _train_random_forest(
         n_jobs=-1,
     )
     model.fit(x_train, y_train)
-    return model, evaluate_model_rows(model, validation_rows)
-
-
+    return model, evaluate_model_rows(model, validation_rows, feature_columns=feature_columns)
 def _train_catboost(
     train_rows: list[dict[str, str]],
     validation_rows: list[dict[str, str]],
     random_state: int,
+    feature_columns: list[str] | tuple[str, ...] | None = None,
 ) -> tuple[Any | None, dict[str, float], str | None]:
     try:
         from catboost import CatBoostError, CatBoostRegressor
     except ImportError:
         return None, {}, "catboost_not_installed"
-
-    x_train, y_train = rows_to_matrix(train_rows)
+    x_train, y_train = rows_to_matrix(train_rows, feature_columns=feature_columns)
     model = CatBoostRegressor(
         loss_function="RMSE",
         depth=6,
@@ -254,9 +252,7 @@ def _train_catboost(
         model.fit(x_train, y_train)
     except CatBoostError as error:
         return None, {}, f"catboost_training_failed: {error}"
-    return model, evaluate_model_rows(model, validation_rows), None
-
-
+    return model, evaluate_model_rows(model, validation_rows, feature_columns=feature_columns), None
 def should_benchmark_catboost(metrics: dict[str, float]) -> bool:
     return float(metrics.get("mae", 0.0)) > 12.0 or float(metrics.get("spearman_mean", 0.0)) < 0.45
 
@@ -275,11 +271,16 @@ def train_candidate_models(
     train_rows: list[dict[str, str]],
     validation_rows: list[dict[str, str]],
     random_state: int,
+    feature_columns: list[str] | tuple[str, ...] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, object]]:
     candidates: list[dict[str, Any]] = []
-    rf_model, rf_metrics = _train_random_forest(train_rows, validation_rows, random_state=random_state)
+    rf_model, rf_metrics = _train_random_forest(
+        train_rows,
+        validation_rows,
+        random_state=random_state,
+        feature_columns=feature_columns,
+    )
     candidates.append({"model": rf_model, "model_type": "RandomForestRegressor", "metrics": rf_metrics})
-
     benchmark: dict[str, object] = {"enabled": False}
     if should_benchmark_catboost(rf_metrics):
         benchmark["enabled"] = True
@@ -287,6 +288,7 @@ def train_candidate_models(
             train_rows,
             validation_rows,
             random_state=random_state,
+            feature_columns=feature_columns,
         )
         if catboost_model is not None:
             candidates.append(
@@ -300,8 +302,6 @@ def train_candidate_models(
         else:
             benchmark["catboost_error"] = catboost_error
     return candidates, benchmark
-
-
 def select_best_candidate(candidates: list[dict[str, Any]]) -> dict[str, Any]:
     return max(candidates, key=candidate_sort_key)
 
@@ -314,27 +314,31 @@ def train_quality_model(
     dataset_version: str | None = None,
     artifact_metadata: dict[str, Any] | None = None,
     split_output_path: str | Path | None = None,
+    model_schema_version: str = DEFAULT_TRAINING_MODEL_SCHEMA_VERSION,
+    feature_columns: list[str] | tuple[str, ...] | None = None,
 ) -> dict[str, object]:
-    _x, _y, rows = prepare_training_data(dataset_path)
+    resolved_schema = resolve_model_feature_schema(
+        model_schema_version=model_schema_version,
+        feature_columns=feature_columns,
+        default_version=DEFAULT_TRAINING_MODEL_SCHEMA_VERSION,
+    )
+    _x, _y, rows = prepare_training_data(dataset_path, feature_columns=resolved_schema.feature_columns)
     if len(rows) < 4:
         raise ValueError("At least 4 dataset rows are required for training")
-
     train_rows, validation_rows, split_metadata = split_dataset_rows(rows, test_size=test_size, random_state=random_state)
     if not train_rows or not validation_rows:
         raise ValueError("Training split produced an empty train or validation set")
-
     candidates, benchmark = train_candidate_models(
         train_rows,
         validation_rows,
         random_state=random_state,
+        feature_columns=resolved_schema.feature_columns,
     )
-
     best_candidate = select_best_candidate(candidates)
     rows_count = len(rows)
     queries_count = len({str(row.get("query") or "") for row in rows})
     domains_count = len({str(row.get("domain") or "") for row in rows})
     resolved_dataset_version = dataset_version or infer_dataset_version(dataset_path, rows=rows)
-
     split_manifest: dict[str, object] | None = None
     if split_output_path is not None:
         split_manifest = save_dataset_split_manifest(
@@ -347,7 +351,6 @@ def train_quality_model(
             split_metadata=split_metadata,
             output_path=split_output_path,
         )
-
     model_metadata = {
         "model_type": best_candidate["model_type"],
         "rows_count": rows_count,
@@ -356,6 +359,8 @@ def train_quality_model(
         "source": "local_dataset",
         "dataset_version": resolved_dataset_version,
         "artifact_version": resolved_dataset_version,
+        "model_schema_version": resolved_schema.version,
+        "feature_columns": list(resolved_schema.feature_columns),
         **(artifact_metadata or {}),
     }
     metrics = {
@@ -364,7 +369,6 @@ def train_quality_model(
         "validation_rows": float(len(validation_rows)),
         **split_metadata,
     }
-
     saved_model_path = save_model(
         model=best_candidate["model"],
         metrics=metrics,
@@ -372,7 +376,6 @@ def train_quality_model(
         metadata=model_metadata,
     )
     clear_model_cache()
-
     return {
         "dataset_path": str(Path(dataset_path)),
         "model_path": str(saved_model_path),
@@ -380,14 +383,14 @@ def train_quality_model(
         "queries_count": queries_count,
         "domains_count": domains_count,
         "model_type": best_candidate["model_type"],
+        "model_schema_version": resolved_schema.version,
+        "feature_count": len(resolved_schema.feature_columns),
         "metrics": metrics,
         "benchmark": benchmark,
         "dataset_version": resolved_dataset_version,
         "artifact_version": str(model_metadata["artifact_version"]),
         "split": split_manifest,
     }
-
-
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default=str(DEFAULT_DATASET_PATH))
@@ -396,8 +399,8 @@ def main() -> None:
     parser.add_argument("--random-state", type=int, default=42)
     parser.add_argument("--dataset-version", default="")
     parser.add_argument("--split-output", default="")
+    parser.add_argument("--model-schema-version", default=DEFAULT_TRAINING_MODEL_SCHEMA_VERSION)
     args = parser.parse_args()
-
     result = train_quality_model(
         dataset_path=args.dataset,
         model_path=args.model_output,
@@ -405,10 +408,9 @@ def main() -> None:
         random_state=args.random_state,
         dataset_version=args.dataset_version or None,
         split_output_path=args.split_output or None,
+        model_schema_version=args.model_schema_version,
     )
     print(result)
-
-
 if __name__ == "__main__":
     main()
 

@@ -98,7 +98,7 @@ This makes the training pipeline reproducible and prevents publishing a model fr
 
 ## Feature engineering methodology
 
-The model currently uses `59` engineered features.
+The runtime now supports two artifact-compatible feature schemas: legacy `v1` with `59` engineered features, and ranking-oriented `v2` that extends those `59` baseline signals with reproducible snapshot auxiliary technical, commercial and trust features. New training and publish flows default to `v2`, while runtime inference remains backward-compatible with previously published `v1` artifacts.
 
 They are intentionally heterogeneous and cover three signal families:
 

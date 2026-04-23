@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from datetime import UTC, datetime
 from functools import lru_cache
@@ -10,70 +10,17 @@ from typing import Any
 
 from sklearn.ensemble import RandomForestRegressor
 
+from app.ml.model_schema import (
+    BASELINE_FEATURE_COLUMNS,
+    DEFAULT_RUNTIME_MODEL_SCHEMA_VERSION,
+    MODEL_SCHEMA_VERSION_V1,
+    resolve_model_feature_schema,
+)
+
 
 logger = logging.getLogger(__name__)
 
-FEATURE_COLUMNS = [
-    "text_length_chars",
-    "html_length_chars",
-    "word_count",
-    "unique_word_count",
-    "unique_word_ratio",
-    "avg_word_length",
-    "sentence_count",
-    "avg_sentence_length",
-    "paragraph_count",
-    "h1_count",
-    "h2_count",
-    "h3_count",
-    "heading_count",
-    "title_present",
-    "title_length",
-    "meta_description_present",
-    "meta_description_length",
-    "query_in_title",
-    "query_in_text",
-    "exact_query_count",
-    "query_term_count",
-    "title_query_term_count",
-    "meta_query_term_count",
-    "title_keyword_coverage_ratio",
-    "meta_keyword_coverage_ratio",
-    "query_terms_in_headings",
-    "heading_query_coverage_ratio",
-    "first_200_words_query_term_count",
-    "query_density",
-    "keyword_coverage_ratio",
-    "link_count",
-    "image_count",
-    "list_item_count",
-    "strong_tag_count",
-    "form_count",
-    "input_count",
-    "inputs_per_form_ratio",
-    "avg_paragraph_length",
-    "link_density_per_1000_words",
-    "image_density_per_1000_words",
-    "list_density_per_1000_words",
-    "strong_density_per_1000_words",
-    "text_to_html_ratio",
-    "semantic_similarity",
-    "early_query_coverage_ratio",
-    "conversion_signal_score",
-    "content_link_ratio",
-    "heading_paragraph_balance",
-    "query_semantic_alignment",
-    "title_semantic_alignment",
-    "heading_semantic_alignment",
-    "title_heading_keyword_alignment",
-    "content_depth_semantic_score",
-    "query_prominence_score",
-    "title_length_quality",
-    "meta_length_quality",
-    "keyword_balance_score",
-    "semantic_content_richness",
-    "cta_semantic_score",
-]
+FEATURE_COLUMNS = list(BASELINE_FEATURE_COLUMNS)
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
 ARTIFACTS_DIR = BACKEND_DIR / "artifacts"
@@ -94,8 +41,12 @@ def _bounded_quality(value: float, target: float) -> float:
     return max(0.0, 1.0 - (abs(value - target) / target))
 
 
-def _vectorize_features(features: dict[str, float | int]) -> list[float]:
-    return [float(features.get(name, 0.0)) for name in FEATURE_COLUMNS]
+def _vectorize_features(
+    features: dict[str, float | int],
+    feature_columns: list[str] | tuple[str, ...] | None = None,
+) -> list[float]:
+    resolved_feature_columns = feature_columns or FEATURE_COLUMNS
+    return [float(features.get(name, 0.0)) for name in resolved_feature_columns]
 
 
 def _feature_value(features: dict[str, float | int], key: str) -> float:
@@ -316,10 +267,16 @@ def save_model(
     output_path = _resolve_model_path(model_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     payload_metadata = dict(metadata or {})
+    resolved_schema = resolve_model_feature_schema(
+        model_schema_version=payload_metadata.pop("model_schema_version", None),
+        feature_columns=payload_metadata.pop("feature_columns", None),
+        default_version=MODEL_SCHEMA_VERSION_V1,
+    )
     payload = {
         "model": model,
         "metrics": dict(metrics),
-        "feature_columns": payload_metadata.pop("feature_columns", FEATURE_COLUMNS),
+        "feature_columns": list(resolved_schema.feature_columns),
+        "model_schema_version": resolved_schema.version,
         "trained_at": payload_metadata.pop("trained_at", datetime.now(UTC).isoformat()),
         "source": payload_metadata.pop("source", "local_dataset"),
         "model_type": payload_metadata.pop("model_type", model.__class__.__name__),
@@ -328,8 +285,6 @@ def save_model(
     with output_path.open("wb") as file:
         pickle.dump(payload, file)
     return output_path
-
-
 def load_saved_model(model_path: str | Path | None = None) -> dict[str, object] | None:
     resolved_path = _resolve_model_path(model_path)
     if not resolved_path.exists():
@@ -386,11 +341,13 @@ def _build_metrics_summary(normalized_metrics: dict[str, object]) -> dict[str, o
 
 def _bootstrap_artifact() -> dict[str, object]:
     bootstrap_model = train_model()
+    bootstrap_schema = resolve_model_feature_schema(default_version=DEFAULT_RUNTIME_MODEL_SCHEMA_VERSION)
     return {
         "model": bootstrap_model,
         "metrics": {},
         "metrics_summary": {},
-        "feature_columns": FEATURE_COLUMNS,
+        "feature_columns": list(bootstrap_schema.feature_columns),
+        "model_schema_version": bootstrap_schema.version,
         "trained_at": None,
         "published_at": None,
         "source": "bootstrap",
@@ -414,16 +371,20 @@ def _bootstrap_artifact() -> dict[str, object]:
             "manifest_generated_at": None,
         },
     }
-
-
 def _ensure_artifact_compatibility(payload: dict[str, object]) -> dict[str, object]:
     model = payload.get("model")
     if model is None or not hasattr(model, "predict"):
         raise TypeError("Saved artifact does not contain a compatible model with predict().")
     feature_columns = payload.get("feature_columns")
-    if feature_columns != FEATURE_COLUMNS:
-        raise ValueError("Saved artifact feature schema does not match current FEATURE_COLUMNS.")
-
+    if feature_columns is None:
+        feature_columns = FEATURE_COLUMNS
+    if not isinstance(feature_columns, (list, tuple)):
+        raise TypeError("Saved artifact feature_columns must be a list or tuple.")
+    resolved_schema = resolve_model_feature_schema(
+        model_schema_version=payload.get("model_schema_version") if isinstance(payload.get("model_schema_version"), str) else None,
+        feature_columns=feature_columns,
+        default_version=DEFAULT_RUNTIME_MODEL_SCHEMA_VERSION,
+    )
     metrics = payload.get("metrics")
     normalized_metrics = metrics if isinstance(metrics, dict) else {}
     dataset_metadata = _normalize_dataset_metadata(payload, normalized_metrics)
@@ -431,7 +392,8 @@ def _ensure_artifact_compatibility(payload: dict[str, object]) -> dict[str, obje
         "model": model,
         "metrics": normalized_metrics,
         "metrics_summary": _build_metrics_summary(normalized_metrics),
-        "feature_columns": FEATURE_COLUMNS,
+        "feature_columns": list(resolved_schema.feature_columns),
+        "model_schema_version": resolved_schema.version,
         "trained_at": payload.get("trained_at"),
         "published_at": payload.get("published_at") or payload.get("trained_at"),
         "source": payload.get("source", "local_dataset"),
@@ -444,8 +406,6 @@ def _ensure_artifact_compatibility(payload: dict[str, object]) -> dict[str, obje
         "artifact_family": payload.get("artifact_family") or DEFAULT_MODEL_PATH.stem,
         "dataset_metadata": dataset_metadata,
     }
-
-
 def load_model_artifact(model_path: str | Path | None = None) -> dict[str, object] | None:
     saved_payload = load_saved_model(model_path)
     if saved_payload is None:
@@ -474,9 +434,12 @@ def get_model_artifact(model_path: str | Path | None = None) -> dict[str, object
 
 def _build_model_info(artifact: dict[str, object]) -> dict[str, object]:
     dataset_metadata = artifact.get("dataset_metadata") if isinstance(artifact.get("dataset_metadata"), dict) else {}
+    feature_columns = artifact.get("feature_columns") if isinstance(artifact.get("feature_columns"), (list, tuple)) else FEATURE_COLUMNS
     return {
         "source": artifact.get("source", "unknown"),
         "model_type": artifact.get("model_type", artifact["model"].__class__.__name__),
+        "model_schema_version": artifact.get("model_schema_version"),
+        "feature_count": len(feature_columns),
         "trained_at": artifact.get("trained_at"),
         "published_at": artifact.get("published_at"),
         "artifact_version": artifact.get("artifact_version"),
@@ -493,8 +456,6 @@ def _build_model_info(artifact: dict[str, object]) -> dict[str, object]:
         "dataset_manifest_generated_at": dataset_metadata.get("manifest_generated_at"),
         "metrics_summary": artifact.get("metrics_summary") if isinstance(artifact.get("metrics_summary"), dict) else {},
     }
-
-
 def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[dict[str, object]]]:
     word_count = _feature_value(features, "word_count")
     title_present = _feature_value(features, "title_present")
@@ -788,10 +749,9 @@ def _build_serp_relative_factors(features: dict[str, float | int]) -> list[dict[
 def _predict_model_score(features: dict[str, float | int], model_path: str | Path | None = None) -> float:
     artifact = get_model_artifact(model_path)
     model = artifact["model"]
-    vector = _vectorize_features(features)
+    feature_columns = artifact.get("feature_columns") if isinstance(artifact.get("feature_columns"), (list, tuple)) else FEATURE_COLUMNS
+    vector = _vectorize_features(features, feature_columns)
     return _rounded_score(float(model.predict([vector])[0]))
-
-
 def explain_score(
     features: dict[str, float | int],
     model_path: str | Path | None = None,
@@ -880,7 +840,7 @@ def train_and_predict(
     model_info = _build_model_info(artifact)
     return {
         "model_type": str(model_info["model_type"]),
-        "feature_count": len(FEATURE_COLUMNS),
+        "feature_count": int(model_info["feature_count"]),
         "rule_score": float(explanation["rule_score"]),
         "ml_score": float(explanation["ml_score"]),
         "final_score": float(explanation["final_score"]),

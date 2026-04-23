@@ -1,4 +1,4 @@
-﻿import csv
+import csv
 from pathlib import Path
 
 from app.ml import FEATURE_COLUMNS
@@ -84,10 +84,13 @@ def test_evaluate_candidate_models_returns_candidate_and_reference_metrics(tmp_p
     assert result["validation_rows"] > 0
     assert result["split"]["split_mode"] == "group_by_query"
     assert result["best_candidate"]["model_type"] in {"RandomForestRegressor", "CatBoostRegressor"}
+    assert result["best_candidate"]["model_schema_version"] == "v2"
+    assert result["best_candidate"]["feature_count"] > len(FEATURE_COLUMNS)
     assert "ndcg_at_10" in result["best_candidate"]["metrics"]
     assert "top_3_hit_rate" in result["best_candidate"]["metrics"]
     assert result["reference_model"] is not None
     assert result["reference_model"]["model_info"]["dataset_version"] == "reference-v1"
+    assert result["reference_model"]["model_info"]["model_schema_version"] == "v1"
     assert result["reference_model"]["metrics"]["split_mode"] == "group_by_query"
 
 

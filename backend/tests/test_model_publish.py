@@ -1,4 +1,4 @@
-﻿import json
+import json
 from datetime import datetime
 from pathlib import Path
 
@@ -14,6 +14,7 @@ from app.ml.publish import (
     publish_primary_model,
 )
 from app.ml.model import save_model, train_model
+from app.ml.model_schema import get_model_feature_schema
 
 
 def test_load_training_manifest_reads_json_payload(tmp_path):
@@ -114,7 +115,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
 
     captured: dict[str, object] = {}
 
-    def fake_train_quality_model(*, dataset_path, model_path, test_size, random_state, dataset_version, artifact_metadata, split_output_path=None):
+    def fake_train_quality_model(*, dataset_path, model_path, test_size, random_state, dataset_version, artifact_metadata, split_output_path=None, model_schema_version="v2"):
         captured.update(
             {
                 "dataset_path": dataset_path,
@@ -124,6 +125,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
                 "dataset_version": dataset_version,
                 "artifact_metadata": artifact_metadata,
                 "split_output_path": split_output_path,
+                "model_schema_version": model_schema_version,
             }
         )
         save_model(
@@ -134,6 +136,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
                 "model_type": "RandomForestRegressor",
                 "source": "local_dataset",
                 "dataset_version": dataset_version,
+                "model_schema_version": model_schema_version,
                 **artifact_metadata,
             },
         )
@@ -166,6 +169,7 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
     assert captured["test_size"] == 0.3
     assert captured["random_state"] == 7
     assert captured["dataset_version"] == "dataset-v2-test"
+    assert captured["model_schema_version"] == "v2"
     assert captured["split_output_path"] == str(split_path)
     assert captured["artifact_metadata"]["dataset_metadata"]["queries_count"] == 47
     assert captured["artifact_metadata"]["dataset_metadata"]["expert_rows_count"] == 112
@@ -175,3 +179,8 @@ def test_publish_primary_model_trains_default_artifact_from_ready_manifest(monke
     assert Path(result["versioned_model_path"]).exists()
     assert Path(result["versioned_metadata_path"]).exists()
     assert result["artifact_version"].startswith("dataset-v2-test-")
+    assert result["model_schema_version"] == "v2"
+
+    published_metadata = json.loads(Path(result["published_metadata_path"]).read_text(encoding="utf-8"))
+    assert published_metadata["model_schema_version"] == "v2"
+    assert published_metadata["feature_count"] == len(get_model_feature_schema("v2").feature_columns)
