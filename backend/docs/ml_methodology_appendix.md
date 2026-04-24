@@ -367,3 +367,30 @@ The most important next steps are:
 - `backend/docs/ml_feature_inventory.md`
 - `backend/data/ru_commercial_dataset.manifest.json`
 - `backend/artifacts/page_quality_model.metadata.json`
+
+
+## D18 ranking benchmark workflow
+A dedicated ranking benchmark workflow now exists in `app/ml/ranking_benchmark.py`.
+Its purpose is to compare the current published baseline artifact against ranking-oriented candidates on the same grouped validation split.
+The workflow supports the following candidate families:
+- `CatBoostRanker` (`YetiRankPairwise`)
+- `LightGBMRanker` when the dependency is available
+- `XGBoost rank:pairwise` when the dependency is available
+The benchmark report is written in both JSON and Markdown formats and includes:
+- `NDCG@10`
+- `Top-3 hit rate`
+- `Spearman mean`
+- stability across query groups
+- stability across intents
+- feature-importance summary for candidates that expose importances
+This makes the D18 experiment reproducible and thesis-ready once the `dataset-v2` bundle has been materialized.
+Example commands:
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.ranking_benchmark   --dataset data\dataset_versions\dataset-v2\dataset.csv   --manifest data\dataset_versions\dataset-v2\manifest.json   --reference-model artifacts\page_quality_model.pkl   --output-dir artifacts\ranking_reports\dataset-v2
+```
+To publish the best ranking candidate as the new primary artifact:
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.ranking_benchmark   --dataset data\dataset_versions\dataset-v2\dataset.csv   --manifest data\dataset_versions\dataset-v2\manifest.json   --reference-model artifacts\page_quality_model.pkl   --publish-best
+```

@@ -1,0 +1,165 @@
+import csv
+import json
+from pathlib import Path
+from app.ml.dataset_builder import DATASET_COLUMNS
+from app.ml.model import load_saved_model, save_model, train_model
+from app.ml.model_schema import get_model_feature_schema
+from app.ml.ranking_benchmark import publish_best_ranking_model, run_ranking_benchmark
+V2_FEATURE_COLUMNS = get_model_feature_schema("v2").feature_columns
+def _write_dataset(path: Path) -> None:
+    with path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
+        writer.writeheader()
+        query_specs = (
+            ("╤А╨╡╨╝╨╛╨╜╤В ╨║╨▓╨░╤А╤В╨╕╤А ╨╝╨╛╤Б╨║╨▓╨░", "commercial"),
+            ("╨┐╨╗╨░╤Б╤В╨╕╨║╨╛╨▓╤Л╨╡ ╨╛╨║╨╜╨░ ╨╝╨╛╤Б╨║╨▓╨░", "commercial"),
+            ("╨║╨░╨║ ╨▓╤Л╨▒╤А╨░╤В╤М ╨┐╨╗╨░╤Б╤В╨╕╨║╨╛╨▓╤Л╨╡ ╨╛╨║╨╜╨░", "informational"),
+            ("seo ╨░╤Г╨┤╨╕╤В ╤Б╨░╨╣╤В╨░", "informational"),
+        )
+        for query_index, (query, intent) in enumerate(query_specs, start=1):
+            for rank in range(1, 4):
+                row = {column: "" for column in DATASET_COLUMNS}
+                row.update(
+                    {
+                        "dataset_version": "dataset-v2-test",
+                        "feature_schema_version": "v2",
+                        "extraction_artifact_version": "extraction-v2",
+                        "label_schema_version": "hybrid-v1",
+                        "label_source": "weak_serp",
+                        "weak_target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "expert_target_score": "",
+                        "query": query,
+                        "category": "services",
+                        "intent": intent,
+                        "city": "╨╝╨╛╤Б╨║╨▓╨░",
+                        "region_code": 213,
+                        "url": f"https://example{query_index}.com/page-{rank}",
+                        "domain": f"example{query_index}.com",
+                        "rank": rank,
+                        "serp_page": 0,
+                        "title": f"Title {rank}",
+                        "snippet": f"Snippet {rank}",
+                        "page_type": "content",
+                        "fetch_status": "ok",
+                        "fetch_error": "",
+                        "target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "phone_present": 1,
+                        "address_present": 1,
+                        "price_present": 1,
+                        "commercial_signals_score": 0.8,
+                        "trust_signals_score": 0.7,
+                        "commercial_trust_score": 0.75,
+                        "page_indexable": 1,
+                        "technical_seo_score": 0.85,
+                    }
+                )
+                for feature_index, feature_name in enumerate(V2_FEATURE_COLUMNS, start=1):
+                    row[feature_name] = float((feature_index + 1) * (query_index * 2 + (4 - rank)))
+                writer.writerow(row)
+def _write_ready_manifest(path: Path) -> None:
+    path.write_text(
+        json.dumps(
+            {
+                "generated_at": "2026-04-24T10:00:00+00:00",
+                "dataset": {
+                    "version": "dataset-v2-test",
+                    "baseline_version": "baseline-v1",
+                    "feature_schema_versions": ["v2"],
+                    "extraction_artifact_versions": ["extraction-v2"],
+                    "label_schema_versions": ["hybrid-v1"],
+                },
+                "labeling": {
+                    "label_source_distribution": {"weak_serp": 12},
+                    "expert_rows_count": 0,
+                    "hybrid_rows_count": 0,
+                },
+                "artifacts": {"artifact_coverage_ratio": 1.0},
+                "coverage": {
+                    "rows_count": 12,
+                    "unique_queries": 4,
+                    "unique_domains": 4,
+                    "unique_categories": 1,
+                    "unique_cities": 1,
+                    "failure_rate": 0.0,
+                    "query_coverage_ratio": 1.0,
+                    "attempted_query_coverage_ratio": 1.0,
+                },
+                "split": {"split_mode": "group_by_query"},
+                "quality_gates": {"ready_for_training": True, "unmet_requirements": []},
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+def _write_reference_model(path: Path) -> None:
+    save_model(
+        model=train_model(n_samples=60, seed=7),
+        metrics={"rmse": 10.0, "ndcg_at_10": 0.7, "top_3_hit_rate": 0.75, "spearman_mean": 0.3},
+        model_path=path,
+        metadata={
+            "source": "local_dataset",
+            "dataset_version": "baseline-v1",
+            "artifact_version": "baseline-v1-artifact",
+        },
+    )
+def test_run_ranking_benchmark_builds_report_and_reference_comparison(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    reference_model_path = tmp_path / "reference.pkl"
+    report_dir = tmp_path / "reports"
+    _write_dataset(dataset_path)
+    _write_reference_model(reference_model_path)
+    report = run_ranking_benchmark(
+        dataset_path=dataset_path,
+        reference_model_path=reference_model_path,
+        test_size=0.25,
+        random_state=7,
+        output_dir=report_dir,
+    )
+    candidate_map = {candidate["candidate_name"]: candidate for candidate in report["candidates"]}
+    assert report["dataset_version"] == "dataset-v2-test"
+    assert report["model_schema_version"] == "v2"
+    assert report["feature_count"] == len(V2_FEATURE_COLUMNS)
+    assert report["reference_model"] is not None
+    assert report["reference_model"]["model_info"]["model_schema_version"] == "v1"
+    assert candidate_map["catboost_ranker"]["status"] == "available"
+    assert candidate_map["catboost_ranker"]["feature_importance_summary"]["available"] is True
+    assert candidate_map["lightgbm_ranker"]["status"] == "unavailable"
+    assert candidate_map["xgboost_rank_pairwise"]["status"] == "unavailable"
+    assert report["best_candidate"]["candidate_name"] == "catboost_ranker"
+    assert report["comparison_to_reference"] is not None
+    assert Path(report["report_paths"]["json_path"]).exists()
+    assert Path(report["report_paths"]["markdown_path"]).exists()
+def test_publish_best_ranking_model_writes_artifact_metadata_and_report(monkeypatch, tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    manifest_path = tmp_path / "manifest.json"
+    model_path = tmp_path / "page_quality_model.pkl"
+    reference_model_path = tmp_path / "reference.pkl"
+    report_dir = tmp_path / "reports"
+    _write_dataset(dataset_path)
+    _write_ready_manifest(manifest_path)
+    _write_reference_model(reference_model_path)
+    monkeypatch.setattr("app.ml.publish.VERSIONED_ARTIFACTS_DIR", tmp_path / "versions")
+    result = publish_best_ranking_model(
+        dataset_path=dataset_path,
+        manifest_path=manifest_path,
+        model_path=model_path,
+        reference_model_path=reference_model_path,
+        test_size=0.25,
+        random_state=7,
+        report_output_dir=report_dir,
+        force_publish=True,
+    )
+    saved_payload = load_saved_model(model_path)
+    assert saved_payload is not None
+    assert saved_payload["model_schema_version"] == "v2"
+    assert saved_payload["candidate_name"] == "catboost_ranker"
+    assert Path(result["published_model_path"]).exists()
+    assert Path(result["versioned_model_path"]).exists()
+    assert Path(result["published_metadata_path"]).exists()
+    assert Path(result["versioned_metadata_path"]).exists()
+    assert Path(result["report_paths"]["json_path"]).exists()
+    assert Path(result["report_paths"]["markdown_path"]).exists()
+    published_metadata = json.loads(Path(result["published_metadata_path"]).read_text(encoding="utf-8"))
+    assert published_metadata["candidate_name"] == "catboost_ranker"
+    assert published_metadata["feature_importance_summary"]["available"] is True

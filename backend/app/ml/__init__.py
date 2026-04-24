@@ -1,5 +1,4 @@
-﻿import importlib
-
+import importlib
 from app.ml.model import (
     DEFAULT_MODEL_PATH,
     FEATURE_COLUMNS,
@@ -17,8 +16,6 @@ from app.ml.model import (
     train_and_predict,
     train_model,
 )
-
-
 _DATASET_BUILDER_EXPORTS = {
     "DATASET_COLUMNS",
     "DEFAULT_CHECKPOINT_PATH",
@@ -35,7 +32,6 @@ _DATASET_BUILDER_EXPORTS = {
     "rank_to_score",
     "resolve_target_label",
 }
-
 _TRAIN_EXPORTS = {
     "build_dataset_split_manifest",
     "evaluate_model_rows",
@@ -48,7 +44,6 @@ _TRAIN_EXPORTS = {
     "train_candidate_models",
     "train_quality_model",
 }
-
 _DATASET_QUALITY_EXPORTS = {
     "DatasetQualityThresholds",
     "PRODUCTION_LIKE_DATASET_THRESHOLDS",
@@ -57,7 +52,6 @@ _DATASET_QUALITY_EXPORTS = {
     "evaluate_dataset_quality",
     "save_dataset_manifest",
 }
-
 _QUERY_SEED_EXPORTS = {
     "DATASET_V2_QUERY_PATTERNS",
     "RU_COMMERCIAL_CATEGORIES",
@@ -70,7 +64,6 @@ _QUERY_SEED_EXPORTS = {
     "build_training_seed_rows",
     "save_seed_rows",
 }
-
 _DATASET_VERSION_EXPORTS = {
     "BASELINE_DATASET_VERSION",
     "DATASET_VERSIONS_DIR",
@@ -80,7 +73,6 @@ _DATASET_VERSION_EXPORTS = {
     "freeze_primary_dataset_as_baseline",
     "infer_dataset_version",
 }
-
 _PUBLISH_EXPORTS = {
     "ARTIFACTS_DIR",
     "DEFAULT_PRIMARY_DATASET_PATH",
@@ -97,42 +89,51 @@ _PUBLISH_EXPORTS = {
     "publish_primary_model",
     "write_artifact_public_metadata",
 }
-
 _EVALUATE_EXPORTS = {"evaluate_candidate_models"}
-
-
+_RANKING_BENCHMARK_EXPORTS = {
+    "CATBOOST_RANKER_CANDIDATE",
+    "DEFAULT_RANKING_DATASET_PATH",
+    "DEFAULT_RANKING_MANIFEST_PATH",
+    "DEFAULT_RANKING_REPORTS_DIR",
+    "LIGHTGBM_RANKER_CANDIDATE",
+    "RANKING_CANDIDATE_NAMES",
+    "XGBOOST_RANKER_CANDIDATE",
+    "build_feature_importance_summary",
+    "build_intent_breakdown",
+    "build_query_group_breakdown",
+    "build_ranking_benchmark_comparison",
+    "build_stability_summary",
+    "publish_best_ranking_model",
+    "render_ranking_benchmark_markdown",
+    "run_ranking_benchmark",
+    "write_ranking_benchmark_report",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
         return getattr(module, name)
-
     if name in _TRAIN_EXPORTS:
         module = importlib.import_module("app.ml.train")
         return getattr(module, name)
-
     if name in _DATASET_QUALITY_EXPORTS:
         module = importlib.import_module("app.ml.dataset_quality")
         return getattr(module, name)
-
     if name in _QUERY_SEED_EXPORTS:
         module = importlib.import_module("app.ml.query_seeds")
         return getattr(module, name)
-
     if name in _DATASET_VERSION_EXPORTS:
         module = importlib.import_module("app.ml.dataset_versions")
         return getattr(module, name)
-
     if name in _PUBLISH_EXPORTS:
         module = importlib.import_module("app.ml.publish")
         return getattr(module, name)
-
     if name in _EVALUATE_EXPORTS:
         module = importlib.import_module("app.ml.evaluate")
         return getattr(module, name)
-
+    if name in _RANKING_BENCHMARK_EXPORTS:
+        module = importlib.import_module("app.ml.ranking_benchmark")
+        return getattr(module, name)
     raise AttributeError(name)
-
-
 __all__ = [
     "DEFAULT_MODEL_PATH",
     "FEATURE_COLUMNS",
@@ -156,4 +157,5 @@ __all__ = [
     *_DATASET_VERSION_EXPORTS,
     *_PUBLISH_EXPORTS,
     *_EVALUATE_EXPORTS,
+    *_RANKING_BENCHMARK_EXPORTS,
 ]
