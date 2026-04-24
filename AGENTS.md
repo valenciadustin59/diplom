@@ -14,6 +14,25 @@
 - Не закрывать GitHub issue до тех пор, пока реализация не проверена, не закоммичена и не запушена.
 - Для backlog-задач придерживаться порядка: реализация -> проверки -> commit -> push.
 
+## Быстрый Handoff Для Нового Чата
+
+Если новый агент только открыл репозиторий, ему нужно сразу понимать следующее.
+
+- Проект: distributed ML web-приложение для SEO-аудита посадочных страниц по поисковому запросу.
+- Практический сценарий: пользователь вводит query + URL, система сама собирает конкурентов из SERP, анализирует target/competitors, считает score, показывает competitor-aware сравнение и выдаёт рекомендации.
+- Дипломный акцент: важны одновременно и ML, и распределённые вычисления. Поэтому в проекте уже есть stage-based Celery runtime, queue topology, diagnostics, benchmark workflow, versioned dataset/model pipeline и explainable recommendation layer.
+- Канонический корень репозитория: `E:\codexPROJ\diplom`.
+- Сразу смотреть сюда:
+  - `AGENTS.md` — этот файл;
+  - `README.md` — обзор продукта и локальный запуск;
+  - `backend/app/tasks.py` — orchestration audit pipeline;
+  - `backend/app/recommendations.py` — recommendation engine и explainability payload;
+  - `backend/app/schemas/audit.py` — API contracts для audit/status/results/recommendations;
+  - `frontend/src/components/AuditWorkspace.tsx` — основная рабочая область аудита;
+  - `frontend/src/pages/RecommendationsPage.tsx` и `frontend/src/components/RecommendationList.tsx` — recommendation UI;
+  - `frontend/src/types.ts` — frontend contracts;
+  - `backend/tests/` и `frontend/src/lib/ui.test.tsx` — регрессии.
+
 ## Кратко о проекте
 
 Проект автоматизирует SEO-аудит посадочных страниц по поисковому запросу.
@@ -209,7 +228,62 @@ Current next-wave backlog: `D13-D20`.
 - `D15` - completed: пакет commercial/trust signals для коммерческих landing pages, включая contact/business identity признаки, CTA/messenger detection, агрегированные commercial/trust scores и recommendation layer, доступный также в dataset builder.
 - `D16` - completed: query intent detection, intent-alignment features for target and competitors, persisted `query_intent` in `Audit`, SERP-relative gaps/percentiles/z-scores for key signal groups, and relative/intent-aware explanation and recommendation rules.
 - `D17` - completed: versioned dataset workflow, frozen `baseline-v1`, prepared `dataset-v2` seed bundle, hybrid labeling contract (`weak_target_score`, `expert_target_score`, `target_score`, `label_source`), raw extraction artifacts for dataset rows, enriched dataset manifest and persisted `group_by_query` split.
-- `D18-D20` - pending.
+- `D18` - completed: model schema v2, artifact-driven runtime/training/publish flow, ranking benchmark workflow, ranking candidate publish/report path.
+- `D19` - completed: grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload, legacy recommendation normalization for old audits.
+- `D20` - pending.
+
+## Актуальное состояние после D19
+
+Состояние `main` после последней реализации:
+
+- Commit в `main`: `c3e6788`.
+- `D19` уже реализован, запушен и issue `#38` закрыт.
+- Полный backend suite был зелёным: `109 passed`.
+- Frontend проверки были зелёными: `npm test`, `npm run build`.
+
+Что реально изменилось в `D19`:
+
+- recommendations endpoint больше не отдаёт простой список `{code, priority, message}`;
+- теперь backend отдаёт versioned grouped explainability payload с `summary` + `groups`;
+- каждая recommendation group содержит `items`, `deviations`, `status`, `empty_state`;
+- UI рекомендаций разделён по группам факторов;
+- overview показывает compact preview, а recommendations-tab показывает полный explainability bundle;
+- старые аудиты с legacy recommendation list нормализуются на сервере в новый payload.
+
+Ключевые места D19:
+
+- `backend/app/recommendations.py`
+  - `generate_recommendations(...)`
+  - `normalize_recommendations_payload(...)`
+  - `get_recommendation_count(...)`
+- `backend/app/tasks.py`
+  - `_summarize_recommendations(...)`
+  - `_summarize_finalize_result(...)`
+  - `process_audit_generate_recommendations(...)`
+  - `_mark_audit_completed(...)`
+- `backend/app/schemas/audit.py`
+  - typed models for recommendation payload
+- `frontend/src/lib/recommendations.ts`
+  - flatten/top-preview helpers
+- `frontend/src/components/RecommendationList.tsx`
+  - full grouped renderer + compact preview renderer
+
+## Что Делать Дальше
+
+Если следующий чат продолжает развитие проекта, то ближайший логичный фокус — `D20`.
+
+Перед началом любой новой задачи:
+
+- сначала перечитать `AGENTS.md` и `README.md`;
+- затем проверить `git status`;
+- затем посмотреть open issues в GitHub и соотнести их с текущим `D20` scope;
+- не откатывать уже выполненные `D13-D19` без прямой причины.
+
+## GitHub И Секреты
+
+- Для GitHub-операций на этой машине уже использовался локальный credential helper (`manager`).
+- Не печатать секреты, токены и значения из credential store в вывод и не писать их в файлы репозитория.
+- Если нужен GitHub API или push, использовать локальный credential helper или запросить новый токен у пользователя, но не сохранять его в репозитории.
 
 ## Dataset Bundles (`D17`)
 

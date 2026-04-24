@@ -327,9 +327,14 @@ npm run test
 - `D16` - SERP-relative и intent-aware слой: `query_intent`, intent-alignment features для target/competitors, relative gaps/percentiles/z-scores по ключевым signal groups и новый explanation/recommendation context.
 - `D17` - versioned dataset workflow: заморожен `baseline-v1`, добавлен `dataset-v2` bundle, hybrid labeling (`weak_serp + expert subset`), сохранение raw extraction artifacts, versioned manifest и воспроизводимый `group_by_query` split.
 
+Выполнено дополнительно:
+
+- `D18` - model schema v2, artifact-driven runtime/training/publish flow, ranking benchmark workflow и publish/report path.
+- `D19` - grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload и legacy normalization для старых аудитов.
+
 В работе дальше:
 
-- `D18-D20` - ranking-oriented model v2, UI/API expansion и тяжёлые distributed analyzers.
+- `D20` - следующий этап backlog после завершения `D19`.
 
 ## Dataset V2 Workflow (`D17`)
 
