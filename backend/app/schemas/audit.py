@@ -1,6 +1,15 @@
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
+
+from app.recommendations import normalize_recommendations_payload
+
+
+RecommendationPriority = Literal["high", "medium", "low"]
+RecommendationGroupKey = Literal["technical_seo", "commercial_trust", "semantic_intent", "competitor_gap"]
+RecommendationGroupStatus = Literal["critical", "attention", "monitor", "competitive", "not_enough_data"]
+RecommendationTrend = Literal["behind", "ahead", "aligned"]
 
 
 class AuditFailureContextRead(BaseModel):
@@ -8,6 +17,64 @@ class AuditFailureContextRead(BaseModel):
     code: str | None = None
     message: str
     details: dict[str, object] | None = None
+
+
+class AuditRecommendationEvidenceRead(BaseModel):
+    label: str
+    value: str
+    benchmark: str | None = None
+    benchmark_label: str | None = None
+
+
+class AuditRecommendationItemRead(BaseModel):
+    code: str
+    priority: RecommendationPriority
+    impact: RecommendationPriority
+    title: str
+    message: str
+    expected_outcome: str
+    evidence: list[AuditRecommendationEvidenceRead]
+    related_metrics: list[str]
+
+
+class AuditRecommendationDeviationRead(BaseModel):
+    code: str
+    label: str
+    unit: str
+    current_value: float
+    benchmark_value: float
+    benchmark_label: str
+    delta: float
+    gap: float
+    trend: RecommendationTrend
+    priority: RecommendationPriority
+    summary: str
+
+
+class AuditRecommendationGroupRead(BaseModel):
+    key: RecommendationGroupKey
+    label: str
+    description: str
+    status: RecommendationGroupStatus
+    items: list[AuditRecommendationItemRead]
+    deviations: list[AuditRecommendationDeviationRead]
+    empty_state: str
+
+
+class AuditRecommendationSummaryRead(BaseModel):
+    total_recommendations: int
+    high_priority_count: int
+    medium_priority_count: int
+    low_priority_count: int
+    groups_with_issues: int
+    competitor_context: bool
+    score_gap_vs_competitors: float | None = None
+
+
+class AuditRecommendationPayloadRead(BaseModel):
+    schema_version: str
+    summary: AuditRecommendationSummaryRead
+    groups: list[AuditRecommendationGroupRead]
 
 
 class AuditCreate(BaseModel):
@@ -42,7 +109,7 @@ class AuditRead(BaseModel):
     score_breakdown: dict[str, object] | None = None
     competitor_results: list[dict[str, object]] | None = None
     comparison_summary: dict[str, object] | None = None
-    recommendations: list[dict[str, str]] | None = None
+    recommendations: AuditRecommendationPayloadRead | None = None
     target_fetch_status: str | None = None
     target_fetch_method: str | None = None
     target_fetch_error_code: str | None = None
@@ -50,6 +117,11 @@ class AuditRead(BaseModel):
     failure_context: AuditFailureContextRead | None = None
     warnings: list[str] | None = None
     error_message: str | None = None
+
+    @field_validator("recommendations", mode="before")
+    @classmethod
+    def normalize_recommendations(cls, value: object) -> object:
+        return normalize_recommendations_payload(value)
 
 
 class AuditResultsRead(BaseModel):
@@ -76,9 +148,14 @@ class AuditResultsRead(BaseModel):
 class AuditRecommendationsRead(BaseModel):
     audit_id: str
     status: str
-    recommendations: list[dict[str, str]]
+    recommendations: AuditRecommendationPayloadRead | None = None
     failure_context: AuditFailureContextRead | None = None
     error_message: str | None = None
+
+    @field_validator("recommendations", mode="before")
+    @classmethod
+    def normalize_recommendations(cls, value: object) -> object:
+        return normalize_recommendations_payload(value)
 
 
 class AuditEventRead(BaseModel):

@@ -29,7 +29,7 @@ class Audit(Base):
     score_breakdown: Mapped[dict[str, object] | None] = mapped_column(JSON, nullable=True)
     competitor_results: Mapped[list[dict[str, object]] | None] = mapped_column(JSON, nullable=True)
     comparison_summary: Mapped[dict[str, object] | None] = mapped_column(JSON, nullable=True)
-    recommendations: Mapped[list[dict[str, str]] | None] = mapped_column(JSON, nullable=True)
+    recommendations: Mapped[dict[str, object] | list[dict[str, object]] | None] = mapped_column(JSON, nullable=True)
     target_fetch_status: Mapped[str | None] = mapped_column(String(32), nullable=True)
     target_fetch_method: Mapped[str | None] = mapped_column(String(32), nullable=True)
     target_fetch_error_code: Mapped[str | None] = mapped_column(String(64), nullable=True)

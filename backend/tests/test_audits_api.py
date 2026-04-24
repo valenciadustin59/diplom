@@ -88,7 +88,7 @@ def test_get_audit_recommendations_returns_list(client):
     payload = response.json()
     assert payload['audit_id'] == audit_id
     assert payload['status'] == 'queued'
-    assert payload['recommendations'] == []
+    assert payload['recommendations'] is None
 
 
 def test_get_audit_events_returns_empty_timeline_for_new_audit(client):
@@ -233,13 +233,67 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     )
     monkeypatch.setattr(
         'app.tasks.generate_recommendations',
-        lambda page_features, page_score, competitor_pages_features: [
-            {
-                'code': 'TEST_REC',
-                'priority': 'medium',
-                'message': 'Test recommendation',
-            }
-        ],
+        lambda page_features, page_score, competitor_pages_features: {
+            'schema_version': 'recommendations-v2',
+            'summary': {
+                'total_recommendations': 1,
+                'high_priority_count': 0,
+                'medium_priority_count': 1,
+                'low_priority_count': 0,
+                'groups_with_issues': 1,
+                'competitor_context': True,
+                'score_gap_vs_competitors': -4.9,
+            },
+            'groups': [
+                {
+                    'key': 'technical_seo',
+                    'label': 'Technical SEO',
+                    'description': 'Technical block',
+                    'status': 'competitive',
+                    'items': [],
+                    'deviations': [],
+                    'empty_state': 'No issues',
+                },
+                {
+                    'key': 'commercial_trust',
+                    'label': 'Commercial and Trust',
+                    'description': 'Commercial block',
+                    'status': 'competitive',
+                    'items': [],
+                    'deviations': [],
+                    'empty_state': 'No issues',
+                },
+                {
+                    'key': 'semantic_intent',
+                    'label': 'Semantic and Intent',
+                    'description': 'Semantic block',
+                    'status': 'attention',
+                    'items': [
+                        {
+                            'code': 'TEST_REC',
+                            'priority': 'medium',
+                            'impact': 'medium',
+                            'title': 'Test recommendation',
+                            'message': 'Test recommendation',
+                            'expected_outcome': 'Test impact',
+                            'evidence': [],
+                            'related_metrics': [],
+                        }
+                    ],
+                    'deviations': [],
+                    'empty_state': 'No issues',
+                },
+                {
+                    'key': 'competitor_gap',
+                    'label': 'Competitor Gap',
+                    'description': 'Gap block',
+                    'status': 'competitive',
+                    'items': [],
+                    'deviations': [],
+                    'empty_state': 'No issues',
+                },
+            ],
+        },
     )
     created = integration_client.post(
         '/audits',
@@ -275,6 +329,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert status_payload['status'] == 'completed_with_warnings'
     assert status_payload['score'] == 77.5
     assert status_payload['comparison_summary']['competitors_found'] == 2
+    assert status_payload['recommendations']['summary']['total_recommendations'] == 1
     assert isinstance(status_payload['query_intent'], dict)
     assert results_payload['audit_id'] == audit_id
     assert results_payload['status'] == 'completed_with_warnings'
@@ -287,19 +342,25 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert results_payload['target_snapshot_summary']['status_code'] == 200
     assert results_payload['target_fetch_method'] == 'http'
     assert len(results_payload['competitor_results']) == 2
-    assert recommendations_payload == {
-        'audit_id': audit_id,
-        'status': 'completed_with_warnings',
-        'recommendations': [
-            {
-                'code': 'TEST_REC',
-                'priority': 'medium',
-                'message': 'Test recommendation',
-            }
-        ],
-        'failure_context': None,
-        'error_message': None,
+    assert recommendations_payload['audit_id'] == audit_id
+    assert recommendations_payload['status'] == 'completed_with_warnings'
+    assert recommendations_payload['failure_context'] is None
+    assert recommendations_payload['error_message'] is None
+    assert recommendations_payload['recommendations']['schema_version'] == 'recommendations-v2'
+    assert recommendations_payload['recommendations']['summary'] == {
+        'total_recommendations': 1,
+        'high_priority_count': 0,
+        'medium_priority_count': 1,
+        'low_priority_count': 0,
+        'groups_with_issues': 1,
+        'competitor_context': True,
+        'score_gap_vs_competitors': -4.9,
     }
+    semantic_group = next(
+        group for group in recommendations_payload['recommendations']['groups'] if group['key'] == 'semantic_intent'
+    )
+    assert semantic_group['items'][0]['code'] == 'TEST_REC'
+    assert semantic_group['items'][0]['title'] == 'Test recommendation'
     assert events_payload['audit_id'] == audit_id
     assert events_payload['processing_version'] == 1
     assert len(events_payload['events']) > 0
@@ -422,7 +483,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integratio
     assert recommendations_payload == {
         'audit_id': audit_id,
         'status': 'failed',
-        'recommendations': [],
+        'recommendations': None,
         'failure_context': {
             'stage': 'fetch',
             'code': 'http_403',
@@ -510,6 +571,7 @@ def test_create_audit_returns_scoring_failure_context(integration_client, monkey
     assert status_response.json()['error_message'] == 'model calibration failed'
     assert results_response.json()['failure_context'] == expected_failure_context
     assert results_response.json()['error_message'] == 'model calibration failed'
+    assert recommendations_response.json()['recommendations'] is None
     assert recommendations_response.json()['failure_context'] == expected_failure_context
     assert recommendations_response.json()['error_message'] == 'model calibration failed'
 
@@ -786,6 +848,7 @@ def test_create_audit_returns_search_failure_context(integration_client, monkeyp
     assert status_response.json()['error_message'] == 'SERP provider unavailable'
     assert results_response.json()['failure_context'] == expected_failure_context
     assert results_response.json()['error_message'] == 'SERP provider unavailable'
+    assert recommendations_response.json()['recommendations'] is None
     assert recommendations_response.json()['failure_context'] == expected_failure_context
     assert recommendations_response.json()['error_message'] == 'SERP provider unavailable'
 def test_get_audit_returns_404_for_unknown_id(client):

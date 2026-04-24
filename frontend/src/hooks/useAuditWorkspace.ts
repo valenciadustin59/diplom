@@ -10,7 +10,7 @@ import type {
   CompetitorResult,
   CompetitorScore,
   PageRow,
-  Recommendation,
+  RecommendationsBundle,
 } from "../types";
 
 function getDomainFromUrl(url: string): string {
@@ -138,7 +138,7 @@ export function useAuditWorkspace() {
   const [selectedAuditId, setSelectedAuditId] = useState<string | null>(null);
   const [currentAudit, setCurrentAudit] = useState<AuditStatusResponse | null>(null);
   const [results, setResults] = useState<AuditResultsResponse | null>(null);
-  const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
+  const [recommendations, setRecommendations] = useState<RecommendationsBundle | null>(null);
   const [loadingRecent, setLoadingRecent] = useState(true);
   const [loadingAudit, setLoadingAudit] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -232,7 +232,7 @@ export function useAuditWorkspace() {
         setCurrentAudit(audit);
         setSelectedAuditId(audit.id);
         setResults(null);
-        setRecommendations([]);
+        setRecommendations(null);
         setSuccess("Аудит успешно запущен.");
         await refreshAudits();
         return audit;
@@ -250,7 +250,7 @@ export function useAuditWorkspace() {
     setSelectedAuditId(auditId);
     setCurrentAudit(null);
     setResults(null);
-    setRecommendations([]);
+    setRecommendations(null);
     setSuccess(null);
     setWorkspaceError(null);
   }, []);

@@ -9,10 +9,67 @@ export type FailureContext = {
   details: Record<string, unknown> | null;
 };
 
+export type RecommendationPriority = "high" | "medium" | "low";
+export type RecommendationGroupKey = "technical_seo" | "commercial_trust" | "semantic_intent" | "competitor_gap";
+export type RecommendationGroupStatus = "critical" | "attention" | "monitor" | "competitive" | "not_enough_data";
+export type RecommendationTrend = "behind" | "ahead" | "aligned";
+
+export type RecommendationEvidence = {
+  label: string;
+  value: string;
+  benchmark: string | null;
+  benchmark_label: string | null;
+};
+
 export type Recommendation = {
   code: string;
-  priority: "high" | "medium" | "low";
+  priority: RecommendationPriority;
+  impact: RecommendationPriority;
+  title: string;
   message: string;
+  expected_outcome: string;
+  evidence: RecommendationEvidence[];
+  related_metrics: string[];
+};
+
+export type RecommendationDeviation = {
+  code: string;
+  label: string;
+  unit: string;
+  current_value: number;
+  benchmark_value: number;
+  benchmark_label: string;
+  delta: number;
+  gap: number;
+  trend: RecommendationTrend;
+  priority: RecommendationPriority;
+  summary: string;
+};
+
+export type RecommendationGroup = {
+  key: RecommendationGroupKey;
+  label: string;
+  description: string;
+  status: RecommendationGroupStatus;
+  items: Recommendation[];
+  deviations: RecommendationDeviation[];
+  empty_state: string;
+};
+
+export type RecommendationsSummary = {
+  total_recommendations: number;
+  high_priority_count: number;
+  medium_priority_count: number;
+  low_priority_count: number;
+  groups_with_issues: number;
+  competitor_context: boolean;
+  score_gap_vs_competitors: number | null;
+};
+
+export type RecommendationsBundle = {
+  schema_version: string;
+  summary: RecommendationsSummary;
+  groups: RecommendationGroup[];
 };
 
 export type ScoreFactor = {
@@ -58,7 +115,7 @@ export type AuditStatusResponse = {
   score_breakdown: ScoreBreakdown | null;
   competitor_results: CompetitorResult[] | null;
   comparison_summary: ComparisonSummary | null;
-  recommendations: Recommendation[] | null;
+  recommendations: RecommendationsBundle | null;
   target_fetch_status: FetchStatus | null;
   target_fetch_method: FetchMethod;
   target_fetch_error_code: string | null;
@@ -89,7 +146,7 @@ export type AuditResultsResponse = {
 export type AuditRecommendationsResponse = {
   audit_id: string;
   status: AuditStatus;
-  recommendations: Recommendation[];
+  recommendations: RecommendationsBundle | null;
   failure_context: FailureContext | null;
   error_message: string | null;
 };

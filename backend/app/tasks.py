@@ -39,7 +39,7 @@ from app.parser import (
     extraction_artifact_text,
     fetch_page,
 )
-from app.recommendations import generate_recommendations
+from app.recommendations import generate_recommendations, get_recommendation_count
 from app.runtime_capacity import evaluate_queue_dispatch
 
 
@@ -381,8 +381,8 @@ def _summarize_competitors(competitor_results: list[dict[str, object]]) -> dict[
     }
 
 
-def _summarize_recommendations(recommendations: list[dict[str, str]]) -> dict[str, object]:
-    return {"recommendations_count": len(recommendations)}
+def _summarize_recommendations(recommendations: object) -> dict[str, object]:
+    return {"recommendations_count": get_recommendation_count(recommendations)}
 
 
 def _summarize_finalize_result(result: dict[str, object]) -> dict[str, object]:
@@ -394,7 +394,7 @@ def _summarize_finalize_result(result: dict[str, object]) -> dict[str, object]:
         "score": score,
         "competitors_found": comparison_summary.get("competitors_found") if isinstance(comparison_summary, dict) else None,
         "competitors_failed": comparison_summary.get("competitors_failed") if isinstance(comparison_summary, dict) else None,
-        "recommendations_count": len(recommendations) if isinstance(recommendations, list) else None,
+        "recommendations_count": get_recommendation_count(recommendations),
         "warnings_count": len(warnings) if isinstance(warnings, list) else None,
     }
 
@@ -638,7 +638,7 @@ def _mark_audit_failed(audit: Audit, failure_context: dict[str, object]) -> None
 def _mark_audit_completed(
     audit: Audit,
     *,
-    recommendations: list[dict[str, str]],
+    recommendations: dict[str, object] | list[dict[str, object]],
     warnings: list[str],
 ) -> str:
     final_status = COMPLETED_WITH_WARNINGS if warnings else COMPLETED
@@ -1530,7 +1530,7 @@ def process_audit_finalize(audit_id: str, processing_version: int) -> dict[str, 
             event_buffer=event_buffer,
             summarize_result=_summarize_finalize_result,
         )
-        recommendations = list(finalize_payload["recommendations"])
+        recommendations = finalize_payload["recommendations"]
         warnings = list(finalize_payload["warnings"])
         final_status = _mark_audit_completed(
             audit,
@@ -1548,7 +1548,7 @@ def process_audit_finalize(audit_id: str, processing_version: int) -> dict[str, 
             score=float(audit.score),
             competitors_found=int(audit.comparison_summary.get("competitors_found") or 0),
             competitors_failed=int(audit.comparison_summary.get("competitors_failed") or 0),
-            recommendations_count=len(recommendations),
+            recommendations_count=get_recommendation_count(recommendations),
             warnings_count=len(warnings),
         )
         _flush_audit_events(db, event_buffer)
@@ -1558,7 +1558,7 @@ def process_audit_finalize(audit_id: str, processing_version: int) -> dict[str, 
             "status": final_status,
             "score": float(audit.score),
             "competitors_count": len(audit.competitor_results or []),
-            "recommendations_count": len(recommendations),
+            "recommendations_count": get_recommendation_count(recommendations),
         }
     except Exception as exc:
         _handle_stage_failure(audit_id, exc, processing_version=processing_version, event_buffer=event_buffer)

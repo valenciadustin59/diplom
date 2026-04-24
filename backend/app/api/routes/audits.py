@@ -113,7 +113,7 @@ def get_audit_recommendations_endpoint(
     return AuditRecommendationsRead(
         audit_id=audit.id,
         status=audit.status,
-        recommendations=audit.recommendations or [],
+        recommendations=audit.recommendations,
         failure_context=audit.failure_context,
         error_message=audit.error_message,
     )

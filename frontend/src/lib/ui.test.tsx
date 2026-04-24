@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
-import type { AuditResultsResponse, AuditStatusResponse, FailureContext } from "../types";
+import type { AuditResultsResponse, AuditStatusResponse, FailureContext, RecommendationsBundle } from "../types";
 import { resolveAuditFailureContext } from "./ui";
 
 function createAudit(overrides: Partial<AuditStatusResponse> = {}): AuditStatusResponse {
@@ -49,6 +49,91 @@ function createResults(overrides: Partial<AuditResultsResponse> = {}): AuditResu
     warnings: null,
     error_message: null,
     ...overrides,
+  };
+}
+
+function createRecommendationsBundle(): RecommendationsBundle {
+  return {
+    schema_version: "recommendations-v2",
+    summary: {
+      total_recommendations: 1,
+      high_priority_count: 1,
+      medium_priority_count: 0,
+      low_priority_count: 0,
+      groups_with_issues: 1,
+      competitor_context: true,
+      score_gap_vs_competitors: -5.4,
+    },
+    groups: [
+      {
+        key: "technical_seo",
+        label: "Technical SEO",
+        description: "Technical description",
+        status: "critical",
+        items: [
+          {
+            code: "TECHNICAL_INDEXING_BLOCK",
+            priority: "high",
+            impact: "high",
+            title: "Есть блокирующая проблема индексации",
+            message: "Страница закрыта от индексации.",
+            expected_outcome: "Исправление может заметно поднять итоговый score.",
+            evidence: [
+              {
+                label: "Индексируемость страницы",
+                value: "Нет",
+                benchmark: "Да",
+                benchmark_label: "Среднее по конкурентам",
+              },
+            ],
+            related_metrics: ["page_indexable"],
+          },
+        ],
+        deviations: [
+          {
+            code: "page_indexable",
+            label: "Индексируемость страницы",
+            unit: "binary",
+            current_value: 0,
+            benchmark_value: 1,
+            benchmark_label: "Среднее по конкурентам",
+            delta: -1,
+            gap: 1,
+            trend: "behind",
+            priority: "high",
+            summary: "Страница отстаёт от среднего по конкурентам.",
+          },
+        ],
+        empty_state: "No issues",
+      },
+      {
+        key: "commercial_trust",
+        label: "Commercial and Trust",
+        description: "Commercial description",
+        status: "competitive",
+        items: [],
+        deviations: [],
+        empty_state: "No issues",
+      },
+      {
+        key: "semantic_intent",
+        label: "Semantic and Intent",
+        description: "Semantic description",
+        status: "competitive",
+        items: [],
+        deviations: [],
+        empty_state: "No issues",
+      },
+      {
+        key: "competitor_gap",
+        label: "Competitor Gap",
+        description: "Gap description",
+        status: "competitive",
+        items: [],
+        deviations: [],
+        empty_state: "No issues",
+      },
+    ],
   };
 }
 
@@ -106,7 +191,7 @@ describe("RecommendationsPage", () => {
 
     const markup = renderToStaticMarkup(
       <RecommendationsPage
-        items={[]}
+        recommendations={null}
         auditStatus="failed"
         loading={false}
         error={null}
@@ -118,5 +203,22 @@ describe("RecommendationsPage", () => {
     expect(markup).toContain("поиск и анализ конкурентов");
     expect(markup).toContain("SERP provider unavailable");
     expect(markup).toContain("runtime_error");
+  });
+
+  it("renders grouped recommendation sections", () => {
+    const markup = renderToStaticMarkup(
+      <RecommendationsPage
+        recommendations={createRecommendationsBundle()}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        failureContext={null}
+      />,
+    );
+
+    expect(markup).toContain("Technical SEO");
+    expect(markup).toContain("Commercial and Trust");
+    expect(markup).toContain("Есть блокирующая проблема индексации");
+    expect(markup).toContain("Среднее по конкурентам");
   });
 });

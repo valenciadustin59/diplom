@@ -1,12 +1,13 @@
 import { useMemo, useState } from "react";
 import { AuditPage } from "../pages/AuditPage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
+import { getTopRecommendationItems } from "../lib/recommendations";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
 import { AuditTabs } from "./AuditTabs";
 import { AuditLaunchForm } from "./AuditLaunchForm";
 import { Card } from "./Card";
 import { ComparisonChart } from "./ComparisonChart";
-import { RecommendationList } from "./RecommendationList";
+import { RecommendationPreviewList } from "./RecommendationList";
 import { RecentAuditList } from "./RecentAuditList";
 import { ScoreRing } from "./ScoreRing";
 import type {
@@ -20,7 +21,7 @@ import type {
   CompetitorScore,
   FailureContext,
   PageRow,
-  Recommendation,
+  RecommendationsBundle,
   ScoreBreakdown,
   ScoreFactor,
 } from "../types";
@@ -28,7 +29,7 @@ import type {
 type AuditWorkspaceProps = {
   currentAudit: AuditStatusResponse | null;
   currentResults: AuditResultsResponse | null;
-  recommendations: Recommendation[];
+  recommendations: RecommendationsBundle | null;
   pageRows: PageRow[];
   competitorScores: CompetitorScore[];
   comparisonSummary: ComparisonSummary | null;
@@ -236,7 +237,7 @@ function OverviewPanel({
   AuditWorkspaceProps,
   "currentAudit" | "currentResults" | "recommendations" | "competitorScores" | "comparisonSummary"
 >) {
-  const topRecommendations = recommendations.slice(0, 3);
+  const topRecommendationItems = getTopRecommendationItems(recommendations, 3);
   const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
   const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
   const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
@@ -308,8 +309,8 @@ function OverviewPanel({
         title="Ключевые рекомендации"
         subtitle="Первые действия, которые сильнее всего влияют на качество страницы."
       >
-        {topRecommendations.length > 0 ? (
-          <RecommendationList items={topRecommendations} />
+        {topRecommendationItems.length > 0 ? (
+          <RecommendationPreviewList items={topRecommendationItems} />
         ) : (
           <div className="empty-state">Рекомендации появятся после завершения обработки аудита.</div>
         )}
@@ -599,7 +600,7 @@ export function AuditWorkspace({
 
         {activeTab === "recommendations" ? (
           <RecommendationsPage
-            items={recommendations}
+            recommendations={recommendations}
             auditStatus={auditStatus}
             loading={loading}
             error={error}

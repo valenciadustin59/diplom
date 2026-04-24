@@ -1,7 +1,19 @@
-from app.recommendations import generate_recommendations
+from app.recommendations import generate_recommendations, normalize_recommendations_payload
 
 
-def test_generate_recommendations_returns_structured_list():
+def flatten_codes(payload: dict[str, object]) -> set[str]:
+    return {
+        str(item["code"])
+        for group in payload["groups"]
+        for item in group["items"]
+    }
+
+
+def get_group(payload: dict[str, object], key: str) -> dict[str, object]:
+    return next(group for group in payload["groups"] if group["key"] == key)
+
+
+def test_generate_recommendations_returns_grouped_payload():
     page_features = {
         "title_present": 0,
         "meta_description_present": 0,
@@ -15,6 +27,13 @@ def test_generate_recommendations_returns_structured_list():
         "link_count": 2,
         "image_count": 0,
         "form_count": 0,
+        "serp_relative_context_available": 1,
+        "serp_relative_percentile": 0.22,
+        "serp_relative_gap_score": 0.44,
+        "relative_gap_to_top_semantic_relevance": -0.17,
+        "relative_gap_to_top_technical_seo": -0.12,
+        "relative_gap_to_top_commercial_trust": -0.15,
+        "relative_gap_to_top_intent_alignment": -0.19,
     }
     competitor_pages_features = [
         {
@@ -22,12 +41,18 @@ def test_generate_recommendations_returns_structured_list():
             "link_count": 12,
             "image_count": 4,
             "form_count": 1,
+            "semantic_similarity": 0.78,
+            "keyword_coverage_ratio": 0.74,
+            "intent_alignment_score": 0.71,
         },
         {
             "text_length_chars": 2600,
             "link_count": 10,
             "image_count": 3,
             "form_count": 1,
+            "semantic_similarity": 0.81,
+            "keyword_coverage_ratio": 0.77,
+            "intent_alignment_score": 0.75,
         },
     ]
 
@@ -37,14 +62,25 @@ def test_generate_recommendations_returns_structured_list():
         competitor_pages_features=competitor_pages_features,
     )
 
-    assert isinstance(recommendations, list)
-    assert recommendations
-    assert all(set(item.keys()) == {"code", "priority", "message"} for item in recommendations)
-    assert any(item["code"] == "LOW_PAGE_SCORE" for item in recommendations)
-    assert any(item["code"] == "MISSING_TITLE" for item in recommendations)
-    assert any(item["code"] == "LOW_SEMANTIC_RELEVANCE" for item in recommendations)
-    assert any("страницы" in item["message"] or "странице" in item["message"] for item in recommendations)
-    assert recommendations[0]["priority"] == "high"
+    assert recommendations["schema_version"] == "recommendations-v2"
+    assert recommendations["summary"]["total_recommendations"] > 0
+    assert recommendations["summary"]["competitor_context"] is True
+    assert [group["key"] for group in recommendations["groups"]] == [
+        "technical_seo",
+        "commercial_trust",
+        "semantic_intent",
+        "competitor_gap",
+    ]
+    assert any(group["deviations"] for group in recommendations["groups"])
+
+    semantic_group = get_group(recommendations, "semantic_intent")
+    competitor_gap_group = get_group(recommendations, "competitor_gap")
+
+    assert any(item["code"] == "LOW_PAGE_SCORE" for item in competitor_gap_group["items"])
+    assert any(item["code"] == "MISSING_TITLE" for item in semantic_group["items"])
+    assert any(item["code"] == "LOW_SEMANTIC_RELEVANCE" for item in semantic_group["items"])
+    assert any(item["evidence"] for item in semantic_group["items"])
+    assert any(deviation["trend"] == "behind" for deviation in competitor_gap_group["deviations"])
 
 
 def test_generate_recommendations_skips_competitor_rules_with_single_competitor():
@@ -77,7 +113,11 @@ def test_generate_recommendations_skips_competitor_rules_with_single_competitor(
         competitor_pages_features=competitor_pages_features,
     )
 
-    assert all(item["code"] not in {"BELOW_COMPETITORS", "SLIGHTLY_BELOW_COMPETITORS"} for item in recommendations)
+    codes = flatten_codes(recommendations)
+
+    assert recommendations["summary"]["competitor_context"] is False
+    assert "BELOW_COMPETITORS" not in codes
+    assert "SLIGHTLY_BELOW_COMPETITORS" not in codes
 
 
 def test_generate_recommendations_adds_technical_seo_recommendations():
@@ -115,6 +155,10 @@ def test_generate_recommendations_adds_technical_seo_recommendations():
             "form_count": 1,
             "canonical_present": 1,
             "hreflang_present": 1,
+            "page_indexable": 1,
+            "redirect_count": 0,
+            "viewport_present": 1,
+            "url_depth": 2,
         },
         {
             "text_length_chars": 2600,
@@ -123,6 +167,10 @@ def test_generate_recommendations_adds_technical_seo_recommendations():
             "form_count": 1,
             "canonical_present": 1,
             "hreflang_present": 1,
+            "page_indexable": 1,
+            "redirect_count": 0,
+            "viewport_present": 1,
+            "url_depth": 2,
         },
     ]
 
@@ -131,8 +179,10 @@ def test_generate_recommendations_adds_technical_seo_recommendations():
         page_score=58.0,
         competitor_pages_features=competitor_pages_features,
     )
-    codes = {item["code"] for item in recommendations}
+    technical_group = get_group(recommendations, "technical_seo")
+    codes = {item["code"] for item in technical_group["items"]}
 
+    assert technical_group["status"] == "critical"
     assert "TECHNICAL_INDEXING_BLOCK" in codes
     assert "TECHNICAL_CANONICAL_MISMATCH" in codes
     assert "TECHNICAL_REDIRECT_CHAIN" in codes
@@ -141,6 +191,7 @@ def test_generate_recommendations_adds_technical_seo_recommendations():
     assert "TECHNICAL_QUERY_PARAMETERS_IN_URL" in codes
     assert "TECHNICAL_DEEP_URL" in codes
     assert "TECHNICAL_MISSING_HREFLANG" in codes
+    assert any(deviation["code"] == "page_indexable" for deviation in technical_group["deviations"])
 
 
 def test_generate_recommendations_adds_commercial_and_trust_recommendations():
@@ -178,10 +229,6 @@ def test_generate_recommendations_adds_commercial_and_trust_recommendations():
     }
     competitor_pages_features = [
         {
-            "text_length_chars": 2400,
-            "link_count": 12,
-            "image_count": 2,
-            "form_count": 1,
             "phone_present": 1,
             "address_present": 1,
             "business_hours_present": 1,
@@ -197,12 +244,12 @@ def test_generate_recommendations_adds_commercial_and_trust_recommendations():
             "returns_info_present": 1,
             "legal_requisites_present": 1,
             "company_identity_present": 1,
+            "contact_options_score": 0.84,
+            "commercial_signals_score": 0.82,
+            "trust_signals_score": 0.8,
+            "price_present": 1,
         },
         {
-            "text_length_chars": 2600,
-            "link_count": 14,
-            "image_count": 3,
-            "form_count": 1,
             "phone_present": 1,
             "address_present": 1,
             "business_hours_present": 1,
@@ -218,6 +265,10 @@ def test_generate_recommendations_adds_commercial_and_trust_recommendations():
             "returns_info_present": 1,
             "legal_requisites_present": 1,
             "company_identity_present": 1,
+            "contact_options_score": 0.78,
+            "commercial_signals_score": 0.79,
+            "trust_signals_score": 0.77,
+            "price_present": 1,
         },
     ]
 
@@ -226,8 +277,10 @@ def test_generate_recommendations_adds_commercial_and_trust_recommendations():
         page_score=61.0,
         competitor_pages_features=competitor_pages_features,
     )
-    codes = {item["code"] for item in recommendations}
+    commercial_group = get_group(recommendations, "commercial_trust")
+    codes = {item["code"] for item in commercial_group["items"]}
 
+    assert commercial_group["status"] == "critical"
     assert "COMMERCIAL_MISSING_PHONE" in codes
     assert "COMMERCIAL_MISSING_ADDRESS" in codes
     assert "COMMERCIAL_MISSING_BUSINESS_HOURS" in codes
@@ -241,6 +294,7 @@ def test_generate_recommendations_adds_commercial_and_trust_recommendations():
     assert "TRUST_MISSING_BUSINESS_ID" in codes
     assert "TRUST_MISSING_SOCIAL_PROOF" in codes
     assert "TRUST_MISSING_POST_SALE_INFO" in codes
+    assert any(deviation["code"] == "contact_options_score" for deviation in commercial_group["deviations"])
 
 
 def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
@@ -258,6 +312,7 @@ def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
             "link_count": 8,
             "image_count": 2,
             "form_count": 1,
+            "intent_alignment_score": 0.49,
             "intent_is_local_commercial": 1,
             "intent_is_commercial": 0,
             "intent_is_informational": 0,
@@ -273,11 +328,29 @@ def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
         },
         page_score=63.0,
         competitor_pages_features=[
-            {"text_length_chars": 2400, "link_count": 11, "image_count": 3, "form_count": 1},
-            {"text_length_chars": 2500, "link_count": 10, "image_count": 3, "form_count": 1},
+            {
+                "text_length_chars": 2400,
+                "link_count": 11,
+                "image_count": 3,
+                "form_count": 1,
+                "semantic_similarity": 0.81,
+                "keyword_coverage_ratio": 0.77,
+                "intent_alignment_score": 0.72,
+            },
+            {
+                "text_length_chars": 2500,
+                "link_count": 10,
+                "image_count": 3,
+                "form_count": 1,
+                "semantic_similarity": 0.79,
+                "keyword_coverage_ratio": 0.75,
+                "intent_alignment_score": 0.7,
+            },
         ],
     )
-    codes = {item["code"] for item in recommendations}
+    codes = flatten_codes(recommendations)
+    semantic_group = get_group(recommendations, "semantic_intent")
+    competitor_gap_group = get_group(recommendations, "competitor_gap")
 
     assert "INTENT_WEAK_LOCAL_ALIGNMENT" in codes
     assert "RELATIVE_SERP_GAP" in codes
@@ -285,3 +358,25 @@ def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
     assert "RELATIVE_TECHNICAL_GAP" in codes
     assert "RELATIVE_COMMERCIAL_TRUST_GAP" in codes
     assert "RELATIVE_INTENT_ALIGNMENT_GAP" in codes
+    assert semantic_group["status"] in {"attention", "critical"}
+    assert competitor_gap_group["status"] == "critical"
+    assert any(deviation["code"] == "serp_relative_gap_score" for deviation in competitor_gap_group["deviations"])
+
+
+def test_normalize_recommendations_payload_converts_legacy_list():
+    legacy_payload = [
+        {
+            "code": "TECHNICAL_REDIRECT_CHAIN",
+            "priority": "high",
+            "message": "Legacy message",
+        }
+    ]
+
+    normalized = normalize_recommendations_payload(legacy_payload)
+
+    assert normalized is not None
+    assert normalized["schema_version"] == "recommendations-v2"
+    assert normalized["summary"]["total_recommendations"] == 1
+    technical_group = get_group(normalized, "technical_seo")
+    assert technical_group["items"][0]["code"] == "TECHNICAL_REDIRECT_CHAIN"
+    assert technical_group["items"][0]["message"] == "Legacy message"
