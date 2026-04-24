@@ -21,6 +21,7 @@
 - ML-scoring страницы и сохранение breakdown по оценке;
 - technical SEO feature pack на основе snapshot-артефакта страницы;
 - commercial/trust feature pack для коммерческих landing pages;
+- изоляция тяжёлых analyzer-стадий в отдельную distributed queue;
 - выдача рекомендаций по улучшению страницы;
 - timeline событий аудита и диагностика критического пути;
 - runtime telemetry для очередей, workers, backlog и admission control;
@@ -43,6 +44,7 @@
 
 - `audits.pipeline` — orchestration, admission control, dispatch стадий;
 - `audits.fetch` — загрузка целевой страницы;
+- `audits.heavy_analysis` — snapshot-based тяжёлые анализаторы target и semantic/ML анализ competitor pages;
 - `audits.features` — извлечение признаков;
 - `audits.scoring` — rule-based и ML scoring;
 - `audits.competitors` — поиск и подготовка конкурентов;
@@ -52,10 +54,11 @@
 
 ### Профили workers
 
-Начиная с `D11`, каноническая топология workers выглядит так:
+Начиная с `D20`, каноническая топология workers выглядит так:
 
 - `pipeline` — orchestration и dispatch;
 - `network` — сетевые стадии: `fetch`, `competitors`, `competitor_pages`;
+- `heavy_analysis` — тяжёлые snapshot/semantic/ML analyzer-задачи;
 - `cpu_ml` — `features`, `scoring`, `recommendations`, `finalize`.
 
 Именно эта топология проверяется через `GET /health/ready` и `GET /health/metrics`.
@@ -127,7 +130,7 @@ npm run dev:full
 - проверяет доступность `SearxNG`;
 - запускает backend API;
 - запускает frontend;
-- запускает три worker-профиля: `pipeline`, `network`, `cpu_ml`.
+- запускает четыре worker-профиля: `pipeline`, `network`, `heavy_analysis`, `cpu_ml`.
 
 Это рекомендуемый режим для полноценного аудита и для демонстрации распределённой архитектуры.
 
@@ -204,6 +207,13 @@ cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info --hostname site-audit.network@%h -Q audits.fetch,audits.competitors,audits.competitor_pages --pool=solo
 ```
 
+`heavy_analysis`:
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info --hostname site-audit.heavy_analysis@%h -Q audits.heavy_analysis --pool=solo
+```
+
 `cpu_ml`:
 
 ```powershell
@@ -258,7 +268,7 @@ Benchmark использует:
 - `POST /audits` — admission и запуск аудитов;
 - `GET /audits/{audit_id}` — отслеживание жизненного цикла;
 - `GET /audits/{audit_id}/events/diagnostics` — latency и critical path;
-- `GET /health/metrics` — backlog, queue pressure, worker utilization и alerts.
+- `GET /health/metrics` — backlog, queue pressure, topology profiles, worker utilization и alerts.
 
 Артефакты сохраняются в:
 
@@ -331,10 +341,9 @@ npm run test
 
 - `D18` - model schema v2, artifact-driven runtime/training/publish flow, ranking benchmark workflow и publish/report path.
 - `D19` - grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload и legacy normalization для старых аудитов.
+- `D20` - dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, queue-pressure metrics and benchmark topology-profile summary.
 
-В работе дальше:
-
-- `D20` - следующий этап backlog после завершения `D19`.
+Текущая волна `D13-D20` завершена. Следующий этап следует брать из актуального GitHub backlog после проверки open issues.
 
 ## Dataset V2 Workflow (`D17`)
 

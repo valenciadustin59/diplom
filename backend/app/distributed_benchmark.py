@@ -312,6 +312,9 @@ def render_benchmark_report_markdown(report: dict[str, Any]) -> str:
     worker_utilization = runtime.get("worker_utilization", {}) if isinstance(runtime.get("worker_utilization"), dict) else {}
     overall_utilization = worker_utilization.get("overall", {}) if isinstance(worker_utilization.get("overall"), dict) else {}
     profile_utilization = worker_utilization.get("by_profile", {}) if isinstance(worker_utilization.get("by_profile"), dict) else {}
+    topology_profiles = runtime.get("topology_profiles", {}) if isinstance(runtime.get("topology_profiles"), dict) else {}
+    configured_profiles = topology_profiles.get("configured_profiles", {}) if isinstance(topology_profiles.get("configured_profiles"), dict) else {}
+    profile_pressure_counts = topology_profiles.get("profile_queue_pressure_counts", {}) if isinstance(topology_profiles.get("profile_queue_pressure_counts"), dict) else {}
     alerts = runtime.get("alerts", {}) if isinstance(runtime.get("alerts"), dict) else {}
     alert_code_counts = alerts.get("alert_code_counts", {}) if isinstance(alerts.get("alert_code_counts"), dict) else {}
     lines = [
@@ -343,15 +346,40 @@ def render_benchmark_report_markdown(report: dict[str, Any]) -> str:
         f"- Average / Max Total Queue Depth: {backlog.get('average_total_depth')} / {backlog.get('max_total_depth')}",
         f"- Queue Pressure Status Counts: {json.dumps(backlog.get('queue_pressure_status_counts', {}), ensure_ascii=False, sort_keys=True)}",
         "",
-        "## Worker Utilization",
+        "## Topology Profiles",
         "",
-        f"- Overall Average Active Utilization Ratio: {overall_utilization.get('average_active_utilization_ratio')}",
-        f"- Overall Peak Active Utilization Ratio: {overall_utilization.get('peak_active_utilization_ratio')}",
-        f"- Average Active / Reserved / Scheduled Tasks: {overall_utilization.get('average_active_tasks')} / {overall_utilization.get('average_reserved_tasks')} / {overall_utilization.get('average_scheduled_tasks')}",
+        f"- Heavy Analysis Isolated: {topology_profiles.get('heavy_analysis_isolated')}",
         "",
-        "| Profile | Workers Seen | Avg Utilization | Peak Utilization | Avg Active Tasks | Avg Concurrency |",
-        "| --- | --- | --- | --- | --- | --- |",
+        "| Profile | Queues | Queue Pressure Counts |",
+        "| --- | --- | --- |",
     ]
+    for profile_name, profile_payload in sorted(configured_profiles.items()):
+        if not isinstance(profile_payload, dict):
+            continue
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    profile_name,
+                    ", ".join(profile_payload.get("queues", [])) or "-",
+                    json.dumps(profile_pressure_counts.get(profile_name, {}), ensure_ascii=False, sort_keys=True),
+                ]
+            )
+            + " |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Worker Utilization",
+            "",
+            f"- Overall Average Active Utilization Ratio: {overall_utilization.get('average_active_utilization_ratio')}",
+            f"- Overall Peak Active Utilization Ratio: {overall_utilization.get('peak_active_utilization_ratio')}",
+            f"- Average Active / Reserved / Scheduled Tasks: {overall_utilization.get('average_active_tasks')} / {overall_utilization.get('average_reserved_tasks')} / {overall_utilization.get('average_scheduled_tasks')}",
+            "",
+            "| Profile | Workers Seen | Avg Utilization | Peak Utilization | Avg Active Tasks | Avg Concurrency |",
+            "| --- | --- | --- | --- | --- | --- |",
+        ]
+    )
     for profile_name, profile_payload in sorted(profile_utilization.items()):
         if not isinstance(profile_payload, dict):
             continue
@@ -489,8 +517,58 @@ def _build_runtime_summary(runtime_samples: Sequence[BenchmarkRuntimeSample]) ->
         "status_counts": dict(sorted(status_counts.items())),
         "queue_backlog": _build_queue_backlog_summary(good_samples),
         "worker_utilization": _build_worker_utilization_summary(good_samples),
+        "topology_profiles": _build_topology_profile_summary(good_samples),
         "alerts": _build_alert_summary(good_samples),
     }
+
+
+def _build_topology_profile_summary(runtime_samples: Sequence[BenchmarkRuntimeSample]) -> dict[str, Any]:
+    configured_profiles: dict[str, dict[str, Any]] = {}
+    queue_profile_map: dict[str, str] = {}
+    profile_pressure_counts: dict[str, Counter[str]] = defaultdict(Counter)
+    heavy_analysis_isolated = False
+
+    for sample in runtime_samples:
+        worker_section = sample.payload.get("workers") if isinstance(sample.payload.get("workers"), dict) else {}
+        topology_contract = worker_section.get("topology_contract") if isinstance(worker_section.get("topology_contract"), dict) else {}
+        raw_profiles = topology_contract.get("profiles") if isinstance(topology_contract.get("profiles"), list) else []
+        for raw_profile in raw_profiles:
+            if not isinstance(raw_profile, dict):
+                continue
+            profile_name = str(raw_profile.get("name") or "").strip()
+            queues = [str(queue_name) for queue_name in raw_profile.get("queues", []) if str(queue_name)] if isinstance(raw_profile.get("queues"), list) else []
+            if not profile_name:
+                continue
+            configured_profiles[profile_name] = {
+                "workload_class": raw_profile.get("workload_class"),
+                "recommended_concurrency": raw_profile.get("recommended_concurrency"),
+                "queues": sorted(queues),
+            }
+            for queue_name in queues:
+                queue_profile_map[queue_name] = profile_name
+            if profile_name == "heavy_analysis" and queues == ["audits.heavy_analysis"]:
+                heavy_analysis_isolated = True
+
+        queue_pressure = sample.payload.get("queue_pressure") if isinstance(sample.payload.get("queue_pressure"), dict) else {}
+        queue_snapshots = queue_pressure.get("queues") if isinstance(queue_pressure.get("queues"), dict) else {}
+        for queue_name, snapshot in queue_snapshots.items():
+            if not isinstance(snapshot, dict):
+                continue
+            profile_name = queue_profile_map.get(str(queue_name), "unassigned")
+            pressure_status = str(snapshot.get("pressure_status") or "unknown")
+            profile_pressure_counts[profile_name][pressure_status] += 1
+
+    return {
+        "configured_profiles": {name: configured_profiles[name] for name in sorted(configured_profiles)},
+        "queue_profile_map": dict(sorted(queue_profile_map.items())),
+        "profile_queue_pressure_counts": {
+            profile_name: dict(sorted(counter.items()))
+            for profile_name, counter in sorted(profile_pressure_counts.items())
+        },
+        "heavy_analysis_isolated": heavy_analysis_isolated,
+    }
+
+
 def _build_queue_backlog_summary(runtime_samples: Sequence[BenchmarkRuntimeSample]) -> dict[str, Any]:
     total_depth_values: list[float] = []
     per_queue_max_depth: dict[str, float] = defaultdict(float)

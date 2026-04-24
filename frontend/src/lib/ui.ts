@@ -21,6 +21,8 @@ export function getFailureStageLabel(stage: FailureStage): string {
   switch (stage) {
     case "fetch":
       return "загрузка целевой страницы";
+    case "heavy_analysis":
+      return "тяжёлый анализ страницы";
     case "features":
       return "извлечение признаков страницы";
     case "scoring":

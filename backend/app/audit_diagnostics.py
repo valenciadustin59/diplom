@@ -18,29 +18,33 @@ from app.schemas.audit import (
 LOGICAL_STAGE_ORDER = {
     "pipeline": 0,
     "fetch": 1,
-    "features": 2,
-    "scoring": 3,
-    "competitors": 4,
-    "competitor_page": 5,
-    "competitor_aggregation": 6,
-    "recommendations": 7,
-    "finalize": 8,
+    "heavy_analysis": 2,
+    "features": 3,
+    "scoring": 4,
+    "competitors": 5,
+    "competitor_page": 6,
+    "competitor_analysis": 7,
+    "competitor_aggregation": 8,
+    "recommendations": 9,
+    "finalize": 10,
 }
 
 TASK_STAGE_MAP = {
     "app.process_audit": "pipeline",
     "app.process_audit_fetch_target": "fetch",
+    "app.process_audit_run_heavy_analysis": "heavy_analysis",
     "app.process_audit_extract_features": "features",
     "app.process_audit_score_target": "scoring",
     "app.process_audit_collect_competitors": "competitors",
     "app.process_audit_collect_competitor_page": "competitor_page",
+    "app.process_audit_analyze_competitor_page": "competitor_analysis",
     "app.process_audit_aggregate_competitors": "competitor_aggregation",
     "app.process_audit_generate_recommendations": "recommendations",
     "app.process_audit_finalize": "finalize",
 }
 
 TERMINAL_EVENTS = {"completed", "failed", "aborted"}
-FAN_OUT_STAGES = {"competitor_page"}
+FAN_OUT_STAGES = {"competitor_page", "competitor_analysis"}
 
 
 def resolve_audit_events_processing_version(

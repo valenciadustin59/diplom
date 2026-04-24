@@ -89,6 +89,7 @@ def get_audit_results_endpoint(
         score_breakdown=audit.score_breakdown,
         extracted_text=audit.extracted_text,
         feature_schema_version=audit.feature_schema_version,
+        heavy_analysis=audit.heavy_analysis,
         query_intent=audit.query_intent,
         target_snapshot_summary=summarize_extraction_artifact(audit.target_snapshot),
         features=audit.features,

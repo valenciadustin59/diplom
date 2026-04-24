@@ -196,29 +196,57 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
             },
         ],
     )
-    monkeypatch.setattr(
-        'app.tasks.analyze_competitor_page',
-        lambda result, query: {
+    def fake_fetch_competitor_page(result):
+        url = str(result['url'])
+        success = 'competitor-a' in url
+        return {
+            'url': url,
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success' if success else 'failed',
+            'fetch_method': 'http' if success else 'browser',
+            'fetch_error_code': None if success else 'http_403',
+            'fetch_error_message': None if success else 'HTTP 403',
+            'snapshot': {
+                'requested_url': url,
+                'final_url': url,
+                'status_code': 200,
+                'fetch_method': 'http',
+                'html': '<html><body><h1>Competitor A</h1><p>Body</p></body></html>',
+                'text': 'Competitor A Body',
+                'json_ld': [],
+            }
+            if success
+            else None,
+        }
+
+    def fake_analyze_competitor_snapshot(result, query, snapshot):
+        assert query == 'seo audit'
+        assert isinstance(snapshot, dict)
+        return {
             'url': str(result['url']),
             'domain': str(result['domain']),
             'title': str(result['title']),
             'snippet': str(result['snippet']),
-            'serp_rank': int(result['rank']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
             'serp_page': int(result['serp_page']),
-            'fetch_status': 'success' if 'competitor-a' in str(result['url']) else 'failed',
-            'fetch_method': 'http' if 'competitor-a' in str(result['url']) else 'browser',
-            'fetch_error_code': None if 'competitor-a' in str(result['url']) else 'http_403',
-            'fetch_error_message': None if 'competitor-a' in str(result['url']) else 'HTTP 403',
-            'score': 82.4 if 'competitor-a' in str(result['url']) else None,
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'score': 82.4,
             'features': {
                 'text_length_chars': 18,
                 'query_in_text': 1,
                 'semantic_similarity': 0.87,
-            }
-            if 'competitor-a' in str(result['url'])
-            else None,
-        },
-    )
+            },
+        }
+
+    monkeypatch.setattr('app.tasks.fetch_competitor_page', fake_fetch_competitor_page)
+    monkeypatch.setattr('app.tasks.analyze_competitor_snapshot', fake_analyze_competitor_snapshot)
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
         lambda user_features, user_score, competitor_results, **kwargs: {
@@ -308,6 +336,7 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     audit_id = created_payload['id']
     assert created_payload['status'] == 'queued'
     assert created_payload['score'] is None
+    assert created_payload['heavy_analysis'] is None
     assert created_payload['feature_schema_version'] is None
     assert isinstance(created_payload['query_intent'], dict)
     assert created_payload['target_fetch_status'] is None
@@ -328,12 +357,16 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     events_payload = events_response.json()
     assert status_payload['status'] == 'completed_with_warnings'
     assert status_payload['score'] == 77.5
+    assert isinstance(status_payload['heavy_analysis'], dict)
+    assert status_payload['heavy_analysis']['schema_version'] == 'heavy-analysis-v1'
     assert status_payload['comparison_summary']['competitors_found'] == 2
     assert status_payload['recommendations']['summary']['total_recommendations'] == 1
     assert isinstance(status_payload['query_intent'], dict)
     assert results_payload['audit_id'] == audit_id
     assert results_payload['status'] == 'completed_with_warnings'
     assert results_payload['score_breakdown']['final_score'] == 77.5
+    assert isinstance(results_payload['heavy_analysis'], dict)
+    assert results_payload['heavy_analysis']['schema_version'] == 'heavy-analysis-v1'
     assert isinstance(results_payload['query_intent'], dict)
     assert results_payload['feature_schema_version'] == 'v2'
     assert results_payload['features']['semantic_similarity'] == 0.81
@@ -388,9 +421,13 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert diagnostics_payload['terminal_event'] == 'completed'
     assert stage_breakdown['fetch']['completed_count'] == 1
     assert stage_breakdown['fetch']['critical_path_duration_ms'] is not None
+    assert stage_breakdown['heavy_analysis']['completed_count'] == 1
     assert stage_breakdown['competitor_page']['started_count'] == 2
     assert stage_breakdown['competitor_page']['completed_count'] == 2
     assert stage_breakdown['competitor_page']['critical_path_mode'] == 'fan_out_max'
+    assert stage_breakdown['competitor_analysis']['started_count'] == 1
+    assert stage_breakdown['competitor_analysis']['completed_count'] == 1
+    assert stage_breakdown['competitor_analysis']['critical_path_mode'] == 'fan_out_max'
     assert stage_breakdown['competitor_aggregation']['completed_count'] == 1
     assert stage_breakdown['finalize']['completed_count'] == 1
     assert diagnostics_payload['fan_out'] is not None
@@ -398,7 +435,9 @@ def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integra
     assert diagnostics_payload['fan_out']['terminal_count'] == 2
     assert diagnostics_payload['fan_out']['critical_path_duration_ms'] == stage_breakdown['competitor_page']['critical_path_duration_ms']
     assert 'fetch' in critical_path_stages
+    assert 'heavy_analysis' in critical_path_stages
     assert 'competitor_page' in critical_path_stages
+    assert 'competitor_analysis' in critical_path_stages
     assert 'finalize' in critical_path_stages
 def test_create_audit_runs_full_lifecycle_and_returns_failed_payloads(integration_client, monkeypatch):
     monkeypatch.setattr(

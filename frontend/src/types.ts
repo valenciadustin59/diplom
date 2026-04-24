@@ -1,6 +1,6 @@
 export type AuditStatus = "queued" | "processing" | "completed" | "completed_with_warnings" | "failed";
 export type AuditTab = "overview" | "pages" | "competitors" | "recommendations";
-export type FailureStage = "fetch" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
+export type FailureStage = "fetch" | "heavy_analysis" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
 
 export type FailureContext = {
   stage: FailureStage;
@@ -110,6 +110,7 @@ export type AuditStatusResponse = {
   created_at: string;
   updated_at: string | null;
   extracted_text: string | null;
+  heavy_analysis: Record<string, unknown> | null;
   features: Record<string, number> | null;
   score: number | null;
   score_breakdown: ScoreBreakdown | null;
@@ -130,6 +131,7 @@ export type AuditResultsResponse = {
   status: AuditStatus;
   score: number | null;
   extracted_text: string | null;
+  heavy_analysis: Record<string, unknown> | null;
   features: Record<string, number> | null;
   score_breakdown: ScoreBreakdown | null;
   competitor_results: CompetitorResult[] | null;

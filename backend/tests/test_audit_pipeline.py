@@ -11,6 +11,7 @@ from app.celery_app import (
     AUDIT_FEATURES_QUEUE,
     AUDIT_FETCH_QUEUE,
     AUDIT_FINALIZE_QUEUE,
+    AUDIT_HEAVY_ANALYSIS_QUEUE,
     AUDIT_PIPELINE_QUEUE,
     AUDIT_RECOMMENDATIONS_QUEUE,
     AUDIT_SCORING_QUEUE,
@@ -23,6 +24,7 @@ from app.tasks import (
     _dispatch_stage_task,
     enqueue_audit_processing,
     process_audit,
+    process_audit_analyze_competitor_page,
     process_audit_aggregate_competitors,
     process_audit_collect_competitor_page,
     process_audit_collect_competitors,
@@ -30,6 +32,7 @@ from app.tasks import (
     process_audit_fetch_target,
     process_audit_finalize,
     process_audit_generate_recommendations,
+    process_audit_run_heavy_analysis,
     process_audit_score_target,
 )
 def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
@@ -110,29 +113,57 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
             },
         ],
     )
-    monkeypatch.setattr(
-        'app.tasks.analyze_competitor_page',
-        lambda result, query: {
+    def fake_fetch_competitor_page(result):
+        url = str(result['url'])
+        success = 'competitor-a' in url
+        return {
+            'url': url,
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success' if success else 'failed',
+            'fetch_method': 'http' if success else 'browser',
+            'fetch_error_code': None if success else 'http_403',
+            'fetch_error_message': None if success else 'HTTP 403',
+            'snapshot': {
+                'requested_url': url,
+                'final_url': url,
+                'status_code': 200,
+                'fetch_method': 'http',
+                'html': '<html><body><h1>Competitor A</h1><p>Body</p></body></html>',
+                'text': 'Competitor A Body',
+                'json_ld': [],
+            }
+            if success
+            else None,
+        }
+
+    def fake_analyze_competitor_snapshot(result, query, snapshot):
+        assert query == 'plastic windows'
+        assert isinstance(snapshot, dict)
+        return {
             'url': str(result['url']),
             'domain': str(result['domain']),
             'title': str(result['title']),
             'snippet': str(result['snippet']),
-            'serp_rank': int(result['rank']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
             'serp_page': int(result['serp_page']),
-            'fetch_status': 'success' if 'competitor-a' in str(result['url']) else 'failed',
-            'fetch_method': 'http' if 'competitor-a' in str(result['url']) else 'browser',
-            'fetch_error_code': None if 'competitor-a' in str(result['url']) else 'http_403',
-            'fetch_error_message': None if 'competitor-a' in str(result['url']) else 'HTTP 403',
-            'score': 82.4 if 'competitor-a' in str(result['url']) else None,
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'score': 82.4,
             'features': {
                 'text_length_chars': 18,
                 'query_in_text': 1,
                 'semantic_similarity': 0.87,
-            }
-            if 'competitor-a' in str(result['url'])
-            else None,
-        },
-    )
+            },
+        }
+
+    monkeypatch.setattr('app.tasks.fetch_competitor_page', fake_fetch_competitor_page)
+    monkeypatch.setattr('app.tasks.analyze_competitor_snapshot', fake_analyze_competitor_snapshot)
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
         lambda user_features, user_score, competitor_results, **kwargs: {
@@ -187,6 +218,9 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         assert stored.target_snapshot['requested_url'] == 'https://example.com'
         assert stored.target_snapshot['final_url'] == 'https://example.com'
         assert stored.target_snapshot['document']['h1_texts'] == ['Title']
+        assert isinstance(stored.heavy_analysis, dict)
+        assert stored.heavy_analysis['schema_version'] == 'heavy-analysis-v1'
+        assert stored.heavy_analysis['features']['heavy_analysis_available'] == 1
         assert stored.target_fetch_status == 'success'
         assert stored.target_fetch_method == 'http'
         assert stored.target_fetch_error_code is None
@@ -224,7 +258,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         assert expected_warning_subject in stored.warnings[0]
         assert stored.updated_at is not None
         assert len(competitors) == 2
-        assert {item.status for item in competitors} == {'completed'}
+        assert {item.status for item in competitors} == {'completed', 'failed'}
         assert {item.fetch_status for item in competitors} == {'success', 'failed'}
         assert len(audit_events) > 0
         assert audit_events[0].stage == 'pipeline'
@@ -236,10 +270,12 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     log_messages = [record.getMessage() for record in caplog.records if record.name == 'app.tasks']
     assert any('step=fetch event=started' in message for message in log_messages)
     assert any('step=fetch event=completed' in message and 'status=success' in message for message in log_messages)
+    assert any('step=heavy_analysis event=completed' in message for message in log_messages)
     assert any('step=features event=completed' in message for message in log_messages)
     assert any('step=scoring event=completed' in message and 'final_score=77.5000' in message for message in log_messages)
     assert any('step=competitors event=completed' in message and 'competitors_found=2' in message for message in log_messages)
     assert any('step=competitor_page event=completed' in message and 'competitor_id=' in message for message in log_messages)
+    assert any('step=competitor_analysis event=completed' in message and 'competitor_id=' in message for message in log_messages)
     assert any('step=competitor_aggregation event=completed' in message and 'competitors_found=2' in message for message in log_messages)
     assert any('step=recommendations event=completed' in message and 'recommendations_count=1' in message for message in log_messages)
     assert any('step=pipeline event=completed' in message and 'final_status=completed_with_warnings' in message for message in log_messages)
@@ -527,19 +563,23 @@ def test_enqueue_audit_processing_routes_start_task_to_pipeline_queue(monkeypatc
 def test_stage_tasks_are_registered_for_distributed_execution():
     assert process_audit.name == 'app.process_audit'
     assert process_audit_fetch_target.name == 'app.process_audit_fetch_target'
+    assert process_audit_run_heavy_analysis.name == 'app.process_audit_run_heavy_analysis'
     assert process_audit_extract_features.name == 'app.process_audit_extract_features'
     assert process_audit_score_target.name == 'app.process_audit_score_target'
     assert process_audit_collect_competitors.name == 'app.process_audit_collect_competitors'
     assert process_audit_collect_competitor_page.name == 'app.process_audit_collect_competitor_page'
+    assert process_audit_analyze_competitor_page.name == 'app.process_audit_analyze_competitor_page'
     assert process_audit_aggregate_competitors.name == 'app.process_audit_aggregate_competitors'
     assert process_audit_generate_recommendations.name == 'app.process_audit_generate_recommendations'
     assert process_audit_finalize.name == 'app.process_audit_finalize'
     assert resolve_task_queue(process_audit.name) == AUDIT_PIPELINE_QUEUE
     assert resolve_task_queue(process_audit_fetch_target.name) == AUDIT_FETCH_QUEUE
+    assert resolve_task_queue(process_audit_run_heavy_analysis.name) == AUDIT_HEAVY_ANALYSIS_QUEUE
     assert resolve_task_queue(process_audit_extract_features.name) == AUDIT_FEATURES_QUEUE
     assert resolve_task_queue(process_audit_score_target.name) == AUDIT_SCORING_QUEUE
     assert resolve_task_queue(process_audit_collect_competitors.name) == AUDIT_COMPETITORS_QUEUE
     assert resolve_task_queue(process_audit_collect_competitor_page.name) == AUDIT_COMPETITOR_PAGES_QUEUE
+    assert resolve_task_queue(process_audit_analyze_competitor_page.name) == AUDIT_HEAVY_ANALYSIS_QUEUE
     assert resolve_task_queue(process_audit_aggregate_competitors.name) == AUDIT_COMPETITORS_QUEUE
     assert resolve_task_queue(process_audit_generate_recommendations.name) == AUDIT_RECOMMENDATIONS_QUEUE
     assert resolve_task_queue(process_audit_finalize.name) == AUDIT_FINALIZE_QUEUE
@@ -747,6 +787,73 @@ def test_process_audit_extract_features_rebuilds_from_saved_snapshot(monkeypatch
     engine.dispose()
 
 
+def test_process_audit_run_heavy_analysis_persists_payload_and_routes_to_features(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-heavy-analysis.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr(
+        'app.tasks._dispatch_stage_task',
+        lambda task, audit_id, processing_version=None, **kwargs: {
+            'audit_id': audit_id,
+            'status': 'processing',
+            'next_stage': task.name,
+            'next_queue': resolve_task_queue(task.name),
+        },
+    )
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-heavy-analysis',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=1,
+            orchestration_stage='heavy_analysis',
+            target_snapshot={
+                'requested_url': 'https://example.com',
+                'final_url': 'https://example.com',
+                'status_code': 200,
+                'fetch_method': 'browser',
+                'response_headers': {},
+                'redirect_chain': [],
+                'html': '<html><head><meta name="viewport" content="width=device-width"><script type="application/ld+json">{"@type":"Organization"}</script></head><body><h1>Title</h1><p>Body</p></body></html>',
+                'text': 'Title Body',
+                'json_ld': ['{"@type":"Organization"}'],
+            },
+        )
+        db.add(audit)
+        db.commit()
+
+    result = process_audit_run_heavy_analysis.run('audit-heavy-analysis', 1)
+
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-heavy-analysis')
+        assert stored is not None
+        assert stored.orchestration_stage == 'features'
+        assert isinstance(stored.heavy_analysis, dict)
+        assert stored.heavy_analysis['summary']['analyzer_count'] == 4
+        assert stored.heavy_analysis['features']['structured_data_business_schema_present'] == 1
+        assert stored.heavy_analysis['features']['rendering_browser_fetch_used'] == 1
+
+    assert result == {
+        'audit_id': 'audit-heavy-analysis',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_extract_features',
+        'next_queue': AUDIT_FEATURES_QUEUE,
+    }
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
 def test_dispatch_stage_task_routes_next_stage_to_stage_queue(monkeypatch):
     captured: dict[str, object] = {}
 
@@ -896,7 +1003,7 @@ def test_collect_competitors_runs_competitor_processing_inline_when_runtime_guar
     testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
-    monkeypatch.setattr('app.tasks._redis_available', lambda: True)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
     monkeypatch.setattr(
         'app.tasks.search_competitor_pages',
         lambda query, target_url, limit: [
@@ -933,14 +1040,39 @@ def test_collect_competitors_runs_competitor_processing_inline_when_runtime_guar
         'app.tasks.process_audit_collect_competitor_page.apply_async',
         lambda *args, **kwargs: pytest.fail('competitor fan-out should not enqueue when runtime guard blocks the queue'),
     )
-    monkeypatch.setattr(
-        'app.tasks.analyze_competitor_page',
-        lambda result, query: {
+    def fake_fetch_competitor_page(result):
+        url = str(result['url'])
+        return {
+            'url': url,
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'snapshot': {
+                'requested_url': url,
+                'final_url': url,
+                'status_code': 200,
+                'fetch_method': 'http',
+                'html': '<html><body><h1>Competitor</h1><p>Body</p></body></html>',
+                'text': 'Competitor Body',
+                'json_ld': [],
+            },
+        }
+
+    def fake_analyze_competitor_snapshot(result, query, snapshot):
+        assert query == 'seo audit'
+        assert isinstance(snapshot, dict)
+        return {
             'url': str(result['url']),
             'domain': str(result['domain']),
             'title': str(result['title']),
             'snippet': str(result['snippet']),
-            'serp_rank': int(result['rank']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
             'serp_page': int(result['serp_page']),
             'fetch_status': 'success',
             'fetch_method': 'http',
@@ -952,8 +1084,10 @@ def test_collect_competitors_runs_competitor_processing_inline_when_runtime_guar
                 'query_in_text': 1,
                 'semantic_similarity': 0.82,
             },
-        },
-    )
+        }
+
+    monkeypatch.setattr('app.tasks.fetch_competitor_page', fake_fetch_competitor_page)
+    monkeypatch.setattr('app.tasks.analyze_competitor_snapshot', fake_analyze_competitor_snapshot)
     monkeypatch.setattr(
         'app.tasks.build_comparison_summary',
         lambda user_features, user_score, competitor_results, **kwargs: {
@@ -1019,13 +1153,37 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
     monkeypatch.setattr('app.tasks._redis_available', lambda: True)
     monkeypatch.setattr(
-        'app.tasks.analyze_competitor_page',
-        lambda result, query: {
+        'app.tasks.fetch_competitor_page',
+        lambda result: {
             'url': str(result['url']),
             'domain': str(result['domain']),
             'title': str(result['title']),
             'snippet': str(result['snippet']),
-            'serp_rank': int(result['rank']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'snapshot': {
+                'requested_url': str(result['url']),
+                'final_url': str(result['url']),
+                'status_code': 200,
+                'fetch_method': 'http',
+                'html': '<html><body><h1>Competitor</h1><p>Body</p></body></html>',
+                'text': 'Competitor Body',
+                'json_ld': [],
+            },
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.analyze_competitor_snapshot',
+        lambda result, query, snapshot: {
+            'url': str(result['url']),
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
             'serp_page': int(result['serp_page']),
             'fetch_status': 'success',
             'fetch_method': 'http',
@@ -1040,12 +1198,17 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         },
     )
 
-    dispatched: list[tuple[tuple[object, ...], str]] = []
+    analysis_dispatched: list[tuple[tuple[object, ...], str]] = []
+    aggregation_dispatched: list[tuple[tuple[object, ...], str]] = []
 
-    def fake_apply_async(*, args, queue):
-        dispatched.append((args, queue))
+    def fake_analysis_apply_async(*, args, queue):
+        analysis_dispatched.append((args, queue))
 
-    monkeypatch.setattr('app.tasks.process_audit_aggregate_competitors.apply_async', fake_apply_async)
+    def fake_aggregation_apply_async(*, args, queue):
+        aggregation_dispatched.append((args, queue))
+
+    monkeypatch.setattr('app.tasks.process_audit_analyze_competitor_page.apply_async', fake_analysis_apply_async)
+    monkeypatch.setattr('app.tasks.process_audit_aggregate_competitors.apply_async', fake_aggregation_apply_async)
 
     with testing_session_local() as db:
         audit = Audit(
@@ -1098,28 +1261,76 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
     first_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-1')
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-aggregation-race')
+        competitor_1 = db.get(AuditCompetitor, 'competitor-1')
         assert stored is not None
         assert stored.competitor_processing_status == 'collecting'
-    assert dispatched == []
+        assert competitor_1 is not None
+        assert competitor_1.status == 'analysis_pending'
+    assert aggregation_dispatched == []
     assert first_result == {
+        'audit_id': 'audit-aggregation-race',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_analyze_competitor_page',
+        'next_queue': AUDIT_HEAVY_ANALYSIS_QUEUE,
+        'dispatch_mode': 'queued',
+    }
+
+    fetch_second_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-aggregation-race')
+        competitor_2 = db.get(AuditCompetitor, 'competitor-2')
+        assert stored is not None
+        assert stored.competitor_processing_status == 'collecting'
+        assert competitor_2 is not None
+        assert competitor_2.status == 'analysis_pending'
+
+    assert analysis_dispatched == [
+        (
+            ('audit-aggregation-race', 1, 'competitor-1'),
+            AUDIT_HEAVY_ANALYSIS_QUEUE,
+        ),
+        (
+            ('audit-aggregation-race', 1, 'competitor-2'),
+            AUDIT_HEAVY_ANALYSIS_QUEUE,
+        )
+    ]
+    assert aggregation_dispatched == []
+    assert fetch_second_result == {
+        'audit_id': 'audit-aggregation-race',
+        'status': 'processing',
+        'next_stage': 'app.process_audit_analyze_competitor_page',
+        'next_queue': AUDIT_HEAVY_ANALYSIS_QUEUE,
+        'dispatch_mode': 'queued',
+    }
+
+    first_analysis_result = process_audit_analyze_competitor_page.run('audit-aggregation-race', 1, 'competitor-1')
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-aggregation-race')
+        competitor_1 = db.get(AuditCompetitor, 'competitor-1')
+        assert stored is not None
+        assert stored.competitor_processing_status == 'collecting'
+        assert competitor_1 is not None
+        assert competitor_1.status == 'completed'
+    assert first_analysis_result == {
         'audit_id': 'audit-aggregation-race',
         'competitor_id': 'competitor-1',
         'status': 'processing',
     }
+    assert aggregation_dispatched == []
 
-    second_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
+    second_analysis_result = process_audit_analyze_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
     with testing_session_local() as db:
         stored = db.get(Audit, 'audit-aggregation-race')
         assert stored is not None
         assert stored.competitor_processing_status == 'aggregating'
 
-    assert dispatched == [
+    assert aggregation_dispatched == [
         (
             ('audit-aggregation-race', 1),
             AUDIT_COMPETITORS_QUEUE,
         )
     ]
-    assert second_result == {
+    assert second_analysis_result == {
         'audit_id': 'audit-aggregation-race',
         'status': 'processing',
         'next_stage': 'app.process_audit_aggregate_competitors',
@@ -1127,13 +1338,13 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         'dispatch_mode': 'queued',
     }
 
-    duplicate_result = process_audit_collect_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
+    duplicate_result = process_audit_analyze_competitor_page.run('audit-aggregation-race', 1, 'competitor-2')
     assert duplicate_result == {
         'audit_id': 'audit-aggregation-race',
         'competitor_id': 'competitor-2',
         'status': 'completed',
     }
-    assert dispatched == [
+    assert aggregation_dispatched == [
         (
             ('audit-aggregation-race', 1),
             AUDIT_COMPETITORS_QUEUE,
@@ -1144,7 +1355,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
     engine.dispose()
 
 
-def test_competitor_page_duplicate_delivery_does_not_repeat_expensive_analysis(monkeypatch, tmp_path):
+def test_competitor_page_duplicate_delivery_does_not_repeat_network_fetch(monkeypatch, tmp_path):
     db_path = tmp_path / 'pipeline-duplicate-delivery.db'
     engine = create_engine(
         f'sqlite:///{db_path}',
@@ -1154,30 +1365,33 @@ def test_competitor_page_duplicate_delivery_does_not_repeat_expensive_analysis(m
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
 
-    analyze_calls: list[str] = []
+    fetch_calls: list[str] = []
 
-    def fake_analyze(result, query):
-        analyze_calls.append(str(result['url']))
+    def fake_fetch(result):
+        fetch_calls.append(str(result['url']))
         return {
             'url': str(result['url']),
             'domain': str(result['domain']),
             'title': str(result['title']),
             'snippet': str(result['snippet']),
-            'serp_rank': int(result['rank']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
             'serp_page': int(result['serp_page']),
             'fetch_status': 'success',
             'fetch_method': 'http',
             'fetch_error_code': None,
             'fetch_error_message': None,
-            'score': 80.0,
-            'features': {
-                'text_length_chars': 20,
-                'query_in_text': 1,
-                'semantic_similarity': 0.82,
+            'snapshot': {
+                'requested_url': str(result['url']),
+                'final_url': str(result['url']),
+                'status_code': 200,
+                'fetch_method': 'http',
+                'html': '<html><body><h1>Competitor</h1><p>Body</p></body></html>',
+                'text': 'Competitor Body',
+                'json_ld': [],
             },
         }
 
-    monkeypatch.setattr('app.tasks.analyze_competitor_page', fake_analyze)
+    monkeypatch.setattr('app.tasks.fetch_competitor_page', fake_fetch)
     monkeypatch.setattr('app.tasks._dispatch_competitor_aggregation_if_ready', lambda audit_id, processing_version: None)
 
     with testing_session_local() as db:
@@ -1223,12 +1437,111 @@ def test_competitor_page_duplicate_delivery_does_not_repeat_expensive_analysis(m
         'competitor_id': 'competitor-duplicate',
         'status': 'processing',
     }
-    assert analyze_calls == []
+    assert fetch_calls == []
 
     with testing_session_local() as db:
         competitor = db.get(AuditCompetitor, 'competitor-duplicate')
         assert competitor is not None
         assert competitor.status == 'processing'
+
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
+def test_competitor_analysis_duplicate_delivery_does_not_repeat_heavy_analysis(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-duplicate-analysis-delivery.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+
+    analysis_calls: list[str] = []
+
+    def fake_analyze(result, query, snapshot):
+        analysis_calls.append(str(result['url']))
+        return {
+            'url': str(result['url']),
+            'domain': str(result['domain']),
+            'title': str(result['title']),
+            'snippet': str(result['snippet']),
+            'serp_rank': int(result.get('rank') or result.get('serp_rank') or 0),
+            'serp_page': int(result['serp_page']),
+            'fetch_status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'score': 80.0,
+            'features': {
+                'text_length_chars': 20,
+                'query_in_text': 1,
+                'semantic_similarity': 0.82,
+            },
+        }
+
+    monkeypatch.setattr('app.tasks.analyze_competitor_snapshot', fake_analyze)
+    monkeypatch.setattr('app.tasks._dispatch_competitor_aggregation_if_ready', lambda audit_id, processing_version: None)
+
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-duplicate-analysis-delivery',
+            query='seo audit',
+            target_url='https://example.com',
+            top_n=5,
+            status='processing',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+            processing_version=4,
+            orchestration_stage='competitors',
+            competitor_processing_status='collecting',
+            features={'query_in_text': 1},
+            score=88.0,
+        )
+        competitor = AuditCompetitor(
+            id='competitor-duplicate-analysis',
+            audit_id='audit-duplicate-analysis-delivery',
+            url='https://competitor-duplicate.example',
+            domain='competitor-duplicate.example',
+            title='Competitor Duplicate',
+            snippet='Snippet duplicate',
+            serp_rank=1,
+            serp_page=0,
+            status='analyzing',
+            snapshot={
+                'requested_url': 'https://competitor-duplicate.example',
+                'final_url': 'https://competitor-duplicate.example',
+                'status_code': 200,
+                'fetch_method': 'http',
+                'html': '<html><body><h1>Competitor</h1><p>Body</p></body></html>',
+                'text': 'Competitor Body',
+                'json_ld': [],
+            },
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+            updated_at=datetime.now(UTC).replace(tzinfo=None),
+        )
+        db.add(audit)
+        db.add(competitor)
+        db.commit()
+
+    duplicate_result = process_audit_analyze_competitor_page.run(
+        'audit-duplicate-analysis-delivery',
+        4,
+        'competitor-duplicate-analysis',
+    )
+
+    assert duplicate_result == {
+        'audit_id': 'audit-duplicate-analysis-delivery',
+        'competitor_id': 'competitor-duplicate-analysis',
+        'status': 'analyzing',
+    }
+    assert analysis_calls == []
+
+    with testing_session_local() as db:
+        competitor = db.get(AuditCompetitor, 'competitor-duplicate-analysis')
+        assert competitor is not None
+        assert competitor.status == 'analyzing'
 
     Base.metadata.drop_all(bind=engine)
     engine.dispose()
@@ -1240,6 +1553,7 @@ def test_celery_config_declares_stage_queues_and_routes():
     assert configured_queues == {
         AUDIT_PIPELINE_QUEUE,
         AUDIT_FETCH_QUEUE,
+        AUDIT_HEAVY_ANALYSIS_QUEUE,
         AUDIT_FEATURES_QUEUE,
         AUDIT_SCORING_QUEUE,
         AUDIT_COMPETITORS_QUEUE,
@@ -1250,10 +1564,12 @@ def test_celery_config_declares_stage_queues_and_routes():
     assert celery_app.conf.task_default_queue == AUDIT_PIPELINE_QUEUE
     assert celery_app.conf.task_routes['app.process_audit']['queue'] == AUDIT_PIPELINE_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_fetch_target']['queue'] == AUDIT_FETCH_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_run_heavy_analysis']['queue'] == AUDIT_HEAVY_ANALYSIS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_extract_features']['queue'] == AUDIT_FEATURES_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_score_target']['queue'] == AUDIT_SCORING_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_collect_competitors']['queue'] == AUDIT_COMPETITORS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_collect_competitor_page']['queue'] == AUDIT_COMPETITOR_PAGES_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_analyze_competitor_page']['queue'] == AUDIT_HEAVY_ANALYSIS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_aggregate_competitors']['queue'] == AUDIT_COMPETITORS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_generate_recommendations']['queue'] == AUDIT_RECOMMENDATIONS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_finalize']['queue'] == AUDIT_FINALIZE_QUEUE

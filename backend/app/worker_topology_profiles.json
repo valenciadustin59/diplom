@@ -21,9 +21,18 @@
       ]
     },
     {
+      "name": "heavy_analysis",
+      "workload_class": "heavy_analysis",
+      "description": "Snapshot-based heavy analyzers, semantic feature extraction and competitor ML analysis.",
+      "recommended_concurrency": 2,
+      "queues": [
+        "audits.heavy_analysis"
+      ]
+    },
+    {
       "name": "cpu_ml",
       "workload_class": "cpu_ml",
-      "description": "Feature extraction, ML scoring, recommendations and finalize stage execution.",
+      "description": "Lightweight target feature merge, ML scoring, recommendations and finalize stage execution.",
       "recommended_concurrency": 2,
       "queues": [
         "audits.features",

@@ -30,6 +30,7 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - `app/main.py` — вход в FastAPI-приложение.
 - `app/api/routes/` — HTTP endpoints.
 - `app/tasks.py` — orchestration и Celery stages.
+- `app/heavy_analysis.py` — snapshot-based тяжёлые анализаторы для structured data, mobile/rendering и performance proxy.
 - `app/parser.py` — загрузка страниц, fallback-стратегии, snapshot/extraction artifact и DOM-derived document payload.
 - `app/features.py` — контентные, семантические, technical SEO и commercial/trust features.
 - `app/recommendations.py` — recommendation engine.
@@ -47,6 +48,7 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 
 - `audits.pipeline` — orchestration и dispatch;
 - `audits.fetch` — загрузка целевой страницы;
+- `audits.heavy_analysis` — target heavy analysis и competitor semantic/ML analysis;
 - `audits.features` — извлечение признаков;
 - `audits.scoring` — rule-based и ML scoring;
 - `audits.competitors` — поиск конкурентов;
@@ -56,10 +58,11 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 
 ### 2. Каноническая worker topology
 
-Начиная с `D11`, backend ориентирован на три профиля workers:
+Начиная с `D20`, backend ориентирован на четыре профиля workers:
 
 - `pipeline` — orchestration и dispatch;
 - `network` — `fetch`, `competitors`, `competitor_pages`;
+- `heavy_analysis` — snapshot-based тяжёлые анализаторы и competitor semantic/ML scoring;
 - `cpu_ml` — `features`, `scoring`, `recommendations`, `finalize`.
 
 Эта topology проверяется через readiness и runtime metrics. Single all-queues worker допустим только как debugging fallback.
@@ -81,6 +84,23 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - воспроизводимо пересчитывать признаки без повторной загрузки страницы;
 - объяснять итоговую оценку из сохранённого артефакта;
 - расширять feature-pack без дублирования источников данных.
+
+### 4. Heavy Analysis Isolation (`D20`)
+
+`D20` выносит тяжёлые analyzer-задачи из сетевых и lightweight CPU очередей в отдельную очередь `audits.heavy_analysis`.
+
+Что изолировано:
+
+- target stage `heavy_analysis` после fetch и до feature extraction;
+- snapshot-based анализ structured data, mobile readiness, rendering/JS dependency risk и performance proxy;
+- competitor flow split: `competitor_pages` делает только network fetch и сохраняет snapshot, а `competitor_analysis` выполняет semantic feature extraction и ML scoring в heavy queue.
+
+Практический эффект для distributed runtime:
+
+- сетевой worker больше не блокируется CPU/semantic анализом competitors;
+- `GET /health/metrics` отдельно показывает pressure для `audits.heavy_analysis`;
+- admission guard может отклонить новый audit при backlogged/stuck heavy queue;
+- benchmark report содержит `Topology Profiles` и признак `Heavy Analysis Isolated`.
 
 ## D14: Technical SEO Feature Pack
 
@@ -212,12 +232,13 @@ Backend предоставляет четыре основных health/runtime 
 - `GET /audits/{audit_id}/events` — timeline событий аудита;
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
 
-### Что важно в результатах после D13-D15
+### Что важно в результатах после D13-D20
 
 При успешном аудите API теперь может отдавать:
 
 - `feature_schema_version`;
 - `target_snapshot_summary`;
+- `heavy_analysis` с versioned analyzer payload и proxy features;
 - expanded `features`, включая technical SEO и commercial/trust keys;
 - score breakdown с technical/commercial/trust rule factors;
 - рекомендации с `TECHNICAL_*`, `COMMERCIAL_*` и `TRUST_*` codes.
@@ -227,6 +248,8 @@ Backend предоставляет четыре основных health/runtime 
 Начиная с `D10`, `POST /audits` может вернуть `503`, если runtime capacity деградирована.
 
 Это нормальная часть архитектуры, а не баг API по умолчанию.
+
+После `D20` admission учитывает не только pipeline backlog, но и состояние `audits.heavy_analysis`: если heavy queue `backlogged` или `stuck`, новый audit отклоняется с кодом `heavy_analysis_queue_capacity_exhausted`.
 
 ## Ручной запуск workers
 
@@ -242,6 +265,13 @@ cd E:\codexPROJ\diplom\backend
 ```powershell
 cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info --hostname site-audit.network@%h -Q audits.fetch,audits.competitors,audits.competitor_pages --pool=solo
+```
+
+`heavy_analysis`:
+
+```powershell
+cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app worker --loglevel=info --hostname site-audit.heavy_analysis@%h -Q audits.heavy_analysis --pool=solo
 ```
 
 `cpu_ml`:
@@ -277,6 +307,8 @@ Benchmark работает поверх production API surface:
 - `GET /audits/{audit_id}/events/diagnostics`
 - `GET /health/metrics`
 
+После `D20` markdown/JSON report дополнительно содержит section `Topology Profiles`: configured worker profiles, queue-to-profile map, per-profile queue pressure counts и флаг изоляции heavy analyzers.
+
 Артефакты сохраняются в:
 
 - `backend/artifacts/benchmarks/<timestamp>-<benchmark-name>/benchmark-report.json`
@@ -291,16 +323,16 @@ cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m pytest
 ```
 
-Фокусный набор после D15:
+Фокусный набор для distributed runtime и D20:
 
 ```powershell
 cd E:\codexPROJ\diplom
 backend\.venv\Scripts\python.exe -m pytest \
-  backend\tests\test_parser.py \
-  backend\tests\test_features.py \
-  backend\tests\test_recommendations.py \
-  backend\tests\test_training_pipeline.py \
-  backend\tests\test_audit_pipeline.py
+  backend\tests\test_audit_pipeline.py \
+  backend\tests\test_audits_api.py \
+  backend\tests\test_health_api.py \
+  backend\tests\test_distributed_benchmark.py \
+  backend\tests\test_worker_topology.py
 ```
 
 Отдельно для совместимости training/publish workflow после D15 полезно проверить:
@@ -407,4 +439,3 @@ cd E:\codexPROJ\diplom\backend
   --dataset-version dataset-v2 `
   --split-output backend\data\dataset_versions\dataset-v2\split.json
 ```
-

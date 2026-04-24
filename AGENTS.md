@@ -117,10 +117,11 @@
 
 ## Каноническая worker topology
 
-Начиная с `D11`, проект использует три профиля workers:
+Начиная с `D20`, проект использует четыре профиля workers:
 
 - `pipeline`
 - `network`
+- `heavy_analysis`
 - `cpu_ml`
 
 Соответствие очередей задаётся в:
@@ -230,54 +231,62 @@ Current next-wave backlog: `D13-D20`.
 - `D17` - completed: versioned dataset workflow, frozen `baseline-v1`, prepared `dataset-v2` seed bundle, hybrid labeling contract (`weak_target_score`, `expert_target_score`, `target_score`, `label_source`), raw extraction artifacts for dataset rows, enriched dataset manifest and persisted `group_by_query` split.
 - `D18` - completed: model schema v2, artifact-driven runtime/training/publish flow, ranking benchmark workflow, ranking candidate publish/report path.
 - `D19` - completed: grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload, legacy recommendation normalization for old audits.
-- `D20` - pending.
+- `D20` - completed: dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, metrics pressure visibility and benchmark topology profile summary.
 
-## Актуальное состояние после D19
+## Актуальное состояние после D20
 
-Состояние `main` после последней реализации:
+Состояние реализации после D20:
 
-- Commit в `main`: `c3e6788`.
-- `D19` уже реализован, запушен и issue `#38` закрыт.
-- Полный backend suite был зелёным: `109 passed`.
-- Frontend проверки были зелёными: `npm test`, `npm run build`.
+- `D20` реализует GitHub issue `#39`.
+- Каноническая topology теперь: `pipeline`, `network`, `heavy_analysis`, `cpu_ml`.
+- Новая очередь: `audits.heavy_analysis`.
+- Target pipeline теперь идёт `fetch -> heavy_analysis -> features -> scoring`.
+- Competitor fan-out split: `competitor_page` выполняет network fetch и сохраняет snapshot, `competitor_analysis` выполняет semantic/ML analysis в heavy queue.
+- `GET /health/metrics` и benchmark report показывают отдельную pressure/topology evidence для heavy queue.
+- Admission control отклоняет новые аудиты при `backlogged`/`stuck` heavy queue с кодом `heavy_analysis_queue_capacity_exhausted`.
 
-Что реально изменилось в `D19`:
+Что реально изменилось в `D20`:
 
-- recommendations endpoint больше не отдаёт простой список `{code, priority, message}`;
-- теперь backend отдаёт versioned grouped explainability payload с `summary` + `groups`;
-- каждая recommendation group содержит `items`, `deviations`, `status`, `empty_state`;
-- UI рекомендаций разделён по группам факторов;
-- overview показывает compact preview, а recommendations-tab показывает полный explainability bundle;
-- старые аудиты с legacy recommendation list нормализуются на сервере в новый payload.
+- добавлен `backend/app/heavy_analysis.py` с deterministic snapshot-based heavy analyzer payload;
+- добавлены JSON columns `audits.heavy_analysis` и `audit_competitors.snapshot`;
+- `AuditRead` и `AuditResultsRead` теперь отдают `heavy_analysis`;
+- `worker_topology_profiles.json` содержит отдельный profile `heavy_analysis`;
+- `scripts/dev.mjs` автоматически запускает heavy worker через JSON topology;
+- timeline diagnostics знает стадии `heavy_analysis` и `competitor_analysis`;
+- benchmark markdown содержит section `Topology Profiles` и `Heavy Analysis Isolated`.
 
-Ключевые места D19:
+Ключевые места D20:
 
-- `backend/app/recommendations.py`
-  - `generate_recommendations(...)`
-  - `normalize_recommendations_payload(...)`
-  - `get_recommendation_count(...)`
+- `backend/app/heavy_analysis.py`
+  - `build_heavy_analysis_payload(...)`
+  - `merge_heavy_analysis_features(...)`
+- `backend/app/competitors.py`
+  - `fetch_competitor_page(...)`
+  - `analyze_competitor_snapshot(...)`
 - `backend/app/tasks.py`
-  - `_summarize_recommendations(...)`
-  - `_summarize_finalize_result(...)`
-  - `process_audit_generate_recommendations(...)`
-  - `_mark_audit_completed(...)`
+  - `process_audit_run_heavy_analysis(...)`
+  - `process_audit_collect_competitor_page(...)`
+  - `process_audit_analyze_competitor_page(...)`
+- `backend/app/celery_app.py`
+  - `AUDIT_HEAVY_ANALYSIS_QUEUE`
+  - heavy task routes and task annotations
+- `backend/app/worker_topology_profiles.json`
+  - `heavy_analysis` worker profile
+- `backend/app/distributed_benchmark.py`
+  - topology profile summary in JSON/markdown report
 - `backend/app/schemas/audit.py`
-  - typed models for recommendation payload
-- `frontend/src/lib/recommendations.ts`
-  - flatten/top-preview helpers
-- `frontend/src/components/RecommendationList.tsx`
-  - full grouped renderer + compact preview renderer
+  - `heavy_analysis` fields in audit/results contracts
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, то ближайший логичный фокус — `D20`.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из актуальных open GitHub issues после push D20.
 
 Перед началом любой новой задачи:
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- затем посмотреть open issues в GitHub и соотнести их с текущим `D20` scope;
-- не откатывать уже выполненные `D13-D19` без прямой причины.
+- затем посмотреть open issues в GitHub и выбрать следующий backlog scope;
+- не откатывать уже выполненные `D13-D20` без прямой причины.
 
 ## GitHub И Секреты
 

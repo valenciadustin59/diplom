@@ -2,7 +2,7 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from app.celery_app import AUDIT_QUEUES
+from app.celery_app import AUDIT_HEAVY_ANALYSIS_QUEUE, AUDIT_QUEUES, resolve_task_queue
 from app.config import Settings
 from app.db import Base
 from app.health import (
@@ -17,6 +17,7 @@ from app.health import (
     collect_worker_runtime_metrics,
 )
 from app.models import Audit, AuditCompetitor, AuditEvent
+from app.runtime_capacity import evaluate_new_audit_admission
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -596,9 +597,9 @@ def test_collect_worker_runtime_metrics_aggregates_inspect_payload(monkeypatch: 
     assert payload["workers"]["celery@test"]["profile_status"] == "error"
     assert payload["workers"]["celery@test"]["pool_max_concurrency"] == 4
     assert payload["workers"]["celery@test"]["pid"] == 1234
-    assert payload["queue_activity"][AUDIT_QUEUES[1]]["active_tasks"] == 1
-    assert payload["queue_activity"][AUDIT_QUEUES[3]]["reserved_tasks"] == 1
-    assert payload["queue_activity"][AUDIT_QUEUES[-1]]["scheduled_tasks"] == 1
+    assert payload["queue_activity"][resolve_task_queue("app.process_audit_fetch_target")]["active_tasks"] == 1
+    assert payload["queue_activity"][resolve_task_queue("app.process_audit_score_target")]["reserved_tasks"] == 1
+    assert payload["queue_activity"][resolve_task_queue("app.process_audit_finalize")]["scheduled_tasks"] == 1
 
 
 def test_build_queue_pressure_snapshots_marks_backlogged_and_stuck_queues():
@@ -743,3 +744,48 @@ def test_build_metrics_payload_reports_degraded_when_workers_are_missing(monkeyp
 
     assert payload["status"] == "degraded"
     assert payload["workers"]["status"] == "warning"
+
+
+def test_evaluate_new_audit_admission_rejects_when_heavy_analysis_queue_is_backlogged(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_broker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "broker_url": runtime_settings.celery_broker_url,
+            "queue_depths": {AUDIT_HEAVY_ANALYSIS_QUEUE: 8},
+            "total_depth": 8,
+        },
+    )
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_worker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "online_count": 1,
+            "workers": {"heavy@test": {"queues": [AUDIT_HEAVY_ANALYSIS_QUEUE]}},
+            "queue_activity": {
+                AUDIT_HEAVY_ANALYSIS_QUEUE: {
+                    "workers": ["heavy@test"],
+                    "worker_count": 1,
+                    "estimated_concurrency": 1,
+                    "active_tasks": 0,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "inflight_tasks": 0,
+                    "available_capacity_estimate": 1,
+                }
+            },
+        },
+    )
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_database_runtime_metrics",
+        lambda runtime_settings: {"status": "ok", "audits": {}, "competitors": {}},
+    )
+
+    decision = evaluate_new_audit_admission(Settings())
+
+    assert decision.action == "reject"
+    assert decision.reason == "heavy_analysis_queue_capacity_exhausted"
+    assert decision.queue_name == AUDIT_HEAVY_ANALYSIS_QUEUE
+    assert decision.details["pressure_status"] == "backlogged"

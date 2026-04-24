@@ -4,19 +4,19 @@
       "label": "seo-audit-example-1",
       "query": "seo аудит сайта",
       "target_url": "https://example.com/",
-      "top_n": 5
+      "top_n": 8
     },
     {
       "label": "seo-audit-example-2",
       "query": "анализ landing page seo",
       "target_url": "https://example.com/",
-      "top_n": 5
+      "top_n": 8
     },
     {
       "label": "seo-audit-example-3",
       "query": "улучшение коммерческой посадочной страницы",
       "target_url": "https://example.com/",
-      "top_n": 5
+      "top_n": 8
     }
   ]
 }

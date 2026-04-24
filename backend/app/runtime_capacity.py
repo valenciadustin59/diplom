@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Literal
 
-from app.celery_app import resolve_task_queue
+from app.celery_app import AUDIT_HEAVY_ANALYSIS_QUEUE, resolve_task_queue
 from app.config import Settings, get_settings
 from app.health import (
     build_execution_detector_payload,
@@ -57,6 +57,7 @@ def evaluate_new_audit_admission(settings: Settings | None = None) -> RuntimeCap
     execution_detector = snapshot["execution_detector"]
     pipeline_queue = resolve_task_queue(PIPELINE_TASK_NAME)
     pipeline_snapshot = queue_pressure.get("queues", {}).get(pipeline_queue, {})
+    heavy_analysis_snapshot = queue_pressure.get("queues", {}).get(AUDIT_HEAVY_ANALYSIS_QUEUE, {})
 
     # If broker telemetry itself is unavailable, keep the existing inline-fallback behavior.
     if broker_metrics.get("status") != "ok":
@@ -79,6 +80,20 @@ def evaluate_new_audit_admission(settings: Settings | None = None) -> RuntimeCap
                 "depth": pipeline_snapshot.get("depth"),
                 "worker_count": pipeline_snapshot.get("worker_count"),
                 "reasons": pipeline_snapshot.get("reasons"),
+            },
+        )
+
+    if heavy_analysis_snapshot.get("pressure_status") in {"backlogged", "stuck"}:
+        return RuntimeCapacityDecision(
+            action="reject",
+            reason="heavy_analysis_queue_capacity_exhausted",
+            message="Невозможно запустить новый аудит: очередь тяжёлых анализаторов перегружена или не обслуживается worker'ами.",
+            queue_name=AUDIT_HEAVY_ANALYSIS_QUEUE,
+            details={
+                "pressure_status": heavy_analysis_snapshot.get("pressure_status"),
+                "depth": heavy_analysis_snapshot.get("depth"),
+                "worker_count": heavy_analysis_snapshot.get("worker_count"),
+                "reasons": heavy_analysis_snapshot.get("reasons"),
             },
         )
 

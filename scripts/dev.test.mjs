@@ -29,10 +29,11 @@ test("buildBackendRuntimeEnv preserves explicit source environment values", () =
   assert.equal(env.CELERY_RESULT_BACKEND, "redis://redis.internal:6380/1");
 });
 test("worker topology profiles cover distributed audit queues exactly once", () => {
-  assert.deepEqual(CELERY_WORKER_PROFILES.map((profile) => profile.name), ["pipeline", "network", "cpu_ml"]);
+  assert.deepEqual(CELERY_WORKER_PROFILES.map((profile) => profile.name), ["pipeline", "network", "heavy_analysis", "cpu_ml"]);
   assert.deepEqual([...CELERY_AUDIT_QUEUES].sort(), [
     "audits.pipeline",
     "audits.fetch",
+    "audits.heavy_analysis",
     "audits.competitors",
     "audits.competitor_pages",
     "audits.features",
@@ -53,6 +54,17 @@ test("buildCeleryWorkerArgs subscribes network worker only to network-affinity q
   assert.equal(args[queueIndex + 1], networkProfile.queues.join(","));
   assert.match(args[queueIndex + 1], /audits\.competitor_pages/);
   assert.doesNotMatch(args[queueIndex + 1], /audits\.scoring/);
+  assert.doesNotMatch(args[queueIndex + 1], /audits\.heavy_analysis/);
+});
+
+test("buildCeleryWorkerArgs subscribes heavy-analysis worker only to analyzer queue", () => {
+  const args = buildCeleryWorkerArgs("heavy_analysis");
+  const queueIndex = args.indexOf("-Q");
+  const hostnameIndex = args.indexOf("--hostname");
+  assert.notEqual(queueIndex, -1);
+  assert.notEqual(hostnameIndex, -1);
+  assert.equal(args[hostnameIndex + 1], "site-audit.heavy_analysis@%h");
+  assert.equal(args[queueIndex + 1], "audits.heavy_analysis");
 });
 test("buildCeleryWorkerArgs preserves platform-specific execution settings", () => {
   const args = buildCeleryWorkerArgs("cpu_ml");

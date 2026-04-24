@@ -213,9 +213,8 @@ def search_competitor_urls(query: str, target_url: str, limit: int) -> list[str]
     return [str(item["url"]) for item in search_competitor_pages(query=query, target_url=target_url, limit=limit)]
 
 
-def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, object]:
+def fetch_competitor_page(result: dict[str, object]) -> dict[str, object]:
     url = str(result["url"])
-    query_intent = detect_query_intent(query)
     fetch_result = fetch_page(url)
 
     competitor_payload: dict[str, object] = {
@@ -231,6 +230,7 @@ def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, 
         "fetch_error_message": fetch_result.get("fetch_error_message"),
         "score": None,
         "features": None,
+        "snapshot": None,
     }
 
     if fetch_result["status"] != "success":
@@ -249,20 +249,63 @@ def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, 
         fetch_method=str(fetch_result.get("fetch_method") or "") or None,
         redirect_chain=fetch_result.get("redirect_chain") if isinstance(fetch_result.get("redirect_chain"), list) else [],
     )
+    competitor_payload["snapshot"] = snapshot
+    if not competitor_payload["title"]:
+        competitor_payload["title"] = _extract_title(html)
+    return competitor_payload
+
+
+def analyze_competitor_snapshot(
+    result: dict[str, object],
+    query: str,
+    snapshot: dict[str, object] | None,
+) -> dict[str, object]:
+    if not isinstance(snapshot, dict):
+        raise RuntimeError("Competitor page snapshot is not available for heavy analysis")
+
+    url = str(result["url"])
+    query_intent = detect_query_intent(query)
+    normalized_snapshot = ensure_extraction_artifact(
+        requested_url=url,
+        artifact=snapshot,
+        final_url=str(snapshot.get("final_url") or url),
+        html=str(snapshot.get("html") or "") or None,
+        extracted_text=str(snapshot.get("text") or "") or None,
+        fetch_method=str(snapshot.get("fetch_method") or "") or None,
+    )
+    html = str(normalized_snapshot.get("html") or "")
+    text = str(normalized_snapshot.get("text") or "")
     features = merge_intent_alignment_features(
         merge_snapshot_auxiliary_features(
             build_features(html=html, text=text, query=query),
-            snapshot,
+            normalized_snapshot,
         ),
         query_intent,
     )
     score = predict_score(features)
-    if not competitor_payload["title"]:
-        competitor_payload["title"] = _extract_title(html)
+    return {
+        "url": url,
+        "domain": str(result.get("domain") or _normalize_domain(url) or url),
+        "title": str(result.get("title") or "").strip() or _extract_title(html),
+        "snippet": str(result.get("snippet") or "").strip(),
+        "serp_rank": int(result.get("rank") or result.get("serp_rank") or 0),
+        "serp_page": int(result.get("serp_page") or 0),
+        "fetch_status": str(result.get("fetch_status") or "success"),
+        "fetch_method": result.get("fetch_method") or normalized_snapshot.get("fetch_method"),
+        "fetch_error_code": result.get("fetch_error_code"),
+        "fetch_error_message": result.get("fetch_error_message"),
+        "score": score,
+        "features": features,
+    }
 
-    competitor_payload["score"] = score
-    competitor_payload["features"] = features
-    return competitor_payload
+
+def analyze_competitor_page(result: dict[str, object], query: str) -> dict[str, object]:
+    fetch_payload = fetch_competitor_page(result)
+    if fetch_payload["fetch_status"] != "success":
+        fetch_payload.pop("snapshot", None)
+        return fetch_payload
+    snapshot = fetch_payload.get("snapshot") if isinstance(fetch_payload.get("snapshot"), dict) else None
+    return analyze_competitor_snapshot(fetch_payload, query, snapshot)
 
 
 def build_failed_competitor_result(

@@ -27,10 +27,12 @@ DETECTOR_SAMPLE_LIMIT = 10
 TASK_STAGE_NAMES: dict[str, str] = {
     "app.process_audit": "pipeline",
     "app.process_audit_fetch_target": "fetch",
+    "app.process_audit_run_heavy_analysis": "heavy_analysis",
     "app.process_audit_extract_features": "features",
     "app.process_audit_score_target": "scoring",
     "app.process_audit_collect_competitors": "competitors",
     "app.process_audit_collect_competitor_page": "competitor_page",
+    "app.process_audit_analyze_competitor_page": "competitor_analysis",
     "app.process_audit_aggregate_competitors": "competitor_aggregation",
     "app.process_audit_generate_recommendations": "recommendations",
     "app.process_audit_finalize": "finalize",

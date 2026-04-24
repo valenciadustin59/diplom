@@ -12,6 +12,7 @@ from app.distributed_benchmark import (
     run_distributed_benchmark,
     write_distributed_benchmark_report,
 )
+from app.worker_topology import build_worker_topology_contract
 class FakeClock:
     def __init__(self, start: datetime):
         self.current = start
@@ -27,6 +28,7 @@ def _build_runtime_metrics_payload(
     total_depth: int,
     network_active_tasks: int,
     network_reserved_tasks: int = 0,
+    heavy_active_tasks: int = 0,
     pressure_status: str = "draining",
     alert_codes: tuple[str, ...] = (),
 ) -> dict[str, object]:
@@ -39,6 +41,7 @@ def _build_runtime_metrics_payload(
             "queue_depths": {
                 "audits.pipeline": max(total_depth - 1, 0),
                 "audits.fetch": 1,
+                "audits.heavy_analysis": 0,
                 "audits.features": 0,
                 "audits.scoring": 0,
                 "audits.competitors": 0,
@@ -49,10 +52,11 @@ def _build_runtime_metrics_payload(
         },
         "workers": {
             "status": "ok",
-            "online_count": 3,
-            "active_tasks_total": 1 + network_active_tasks,
+            "online_count": 4,
+            "active_tasks_total": 1 + network_active_tasks + heavy_active_tasks,
             "reserved_tasks_total": network_reserved_tasks,
             "scheduled_tasks_total": 0,
+            "topology_contract": build_worker_topology_contract(),
             "workers": {
                 "pipeline@test": {
                     "profile_name": "pipeline",
@@ -72,6 +76,15 @@ def _build_runtime_metrics_payload(
                     "pool_max_concurrency": 4,
                     "pid": 1002,
                 },
+                "heavy@test": {
+                    "profile_name": "heavy_analysis",
+                    "queues": ["audits.heavy_analysis"],
+                    "active_tasks": heavy_active_tasks,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "pool_max_concurrency": 2,
+                    "pid": 1003,
+                },
                 "cpu@test": {
                     "profile_name": "cpu_ml",
                     "queues": ["audits.features", "audits.scoring", "audits.recommendations", "audits.finalize"],
@@ -79,7 +92,7 @@ def _build_runtime_metrics_payload(
                     "reserved_tasks": 0,
                     "scheduled_tasks": 0,
                     "pool_max_concurrency": 2,
-                    "pid": 1003,
+                    "pid": 1004,
                 },
             },
         },
@@ -99,7 +112,19 @@ def _build_runtime_metrics_payload(
                     "inflight_tasks": network_active_tasks + network_reserved_tasks,
                     "available_capacity_estimate": max(4 - network_active_tasks, 0),
                     "reasons": [pressure_status],
-                }
+                },
+                "audits.heavy_analysis": {
+                    "depth": 0,
+                    "pressure_status": "busy" if heavy_active_tasks else "idle",
+                    "worker_count": 1,
+                    "estimated_concurrency": 2,
+                    "active_tasks": heavy_active_tasks,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "inflight_tasks": heavy_active_tasks,
+                    "available_capacity_estimate": max(2 - heavy_active_tasks, 0),
+                    "reasons": ["inflight_without_backlog"] if heavy_active_tasks else [],
+                },
             },
         },
         "execution_detector": {
@@ -192,12 +217,16 @@ def test_build_distributed_benchmark_report_summarizes_runtime_metrics_and_write
     assert report["audits"]["latency_ms"]["p95"] == 4200.0
     assert report["runtime"]["queue_backlog"]["max_total_depth"] == 8.0
     assert report["runtime"]["worker_utilization"]["by_profile"]["network"]["peak_active_utilization_ratio"] == 0.75
+    assert report["runtime"]["topology_profiles"]["heavy_analysis_isolated"] is True
+    assert report["runtime"]["topology_profiles"]["queue_profile_map"]["audits.heavy_analysis"] == "heavy_analysis"
     assert report["runtime"]["alerts"]["alert_code_counts"] == {"queue_backlog_detected": 1}
     output_paths = write_distributed_benchmark_report(report, tmp_path / "report")
     markdown = render_benchmark_report_markdown(report)
     assert (tmp_path / "report" / "benchmark-report.json").exists()
     assert (tmp_path / "report" / "benchmark-report.md").exists()
     assert output_paths["json_path"].endswith("benchmark-report.json")
+    assert "## Topology Profiles" in markdown
+    assert "Heavy Analysis Isolated: True" in markdown
     assert "## Worker Utilization" in markdown
     assert "queue_backlog_detected" in markdown
 def test_run_distributed_benchmark_collects_runtime_metrics_and_diagnostics():

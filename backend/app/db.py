@@ -51,6 +51,7 @@ def _ensure_sqlite_columns() -> None:
         "extracted_text": "ALTER TABLE audits ADD COLUMN extracted_text TEXT",
         "target_html": "ALTER TABLE audits ADD COLUMN target_html TEXT",
         "target_snapshot": "ALTER TABLE audits ADD COLUMN target_snapshot JSON",
+        "heavy_analysis": "ALTER TABLE audits ADD COLUMN heavy_analysis JSON",
         "feature_schema_version": "ALTER TABLE audits ADD COLUMN feature_schema_version TEXT",
         "query_intent": "ALTER TABLE audits ADD COLUMN query_intent JSON",
         "competitor_processing_status": "ALTER TABLE audits ADD COLUMN competitor_processing_status TEXT",
@@ -69,6 +70,29 @@ def _ensure_sqlite_columns() -> None:
         "error_message": "ALTER TABLE audits ADD COLUMN error_message TEXT",
     }
 
+    missing_statements = [
+        statement
+        for column_name, statement in required_columns.items()
+        if column_name not in existing_columns
+    ]
+    if not missing_statements:
+        _ensure_sqlite_competitor_columns(inspector)
+        return
+
+    with engine.begin() as connection:
+        for statement in missing_statements:
+            connection.execute(text(statement))
+    _ensure_sqlite_competitor_columns(inspector)
+
+
+def _ensure_sqlite_competitor_columns(inspector) -> None:
+    if "audit_competitors" not in inspector.get_table_names():
+        return
+
+    existing_columns = {column["name"] for column in inspector.get_columns("audit_competitors")}
+    required_columns = {
+        "snapshot": "ALTER TABLE audit_competitors ADD COLUMN snapshot JSON",
+    }
     missing_statements = [
         statement
         for column_name, statement in required_columns.items()
