@@ -197,7 +197,7 @@ describe("audit timeline model", () => {
     expect(normalizeTimelineStage("app.process_audit_analyze_competitor_page")).toBe("competitor_analysis");
   });
 
-  it("orders stages, keeps queue evidence and marks critical path stages", () => {
+  it("orders stages, keeps queue evidence and marks critical-path contribution stages", () => {
     const model = buildAuditTimelineModel({
       audit: createAudit(),
       results: createResults(),
@@ -209,6 +209,7 @@ describe("audit timeline model", () => {
     const stageNames = model.stageRows.map((stage) => stage.stage);
     expect(stageNames.indexOf("heavy_analysis")).toBeLessThan(stageNames.indexOf("competitor_analysis"));
     expect(model.summaryMetrics.find((metric) => metric.label === "Critical path")?.value).toBe("7 s");
+    expect(model.summaryMetrics.find((metric) => metric.label === "Critical path")?.note).toContain("Contribution");
 
     const heavyAnalysis = model.stageRows.find((stage) => stage.stage === "heavy_analysis");
     expect(heavyAnalysis?.queueLabel).toBe("audits.heavy_analysis");
@@ -226,9 +227,70 @@ describe("audit timeline model", () => {
     });
 
     expect(model.fanOut?.stage).toBe("competitor_analysis");
+    expect(model.fanOutStages).toHaveLength(1);
     expect(model.fanOut?.branchCount).toBe(2);
     expect(model.fanOut?.maxDurationLabel).toBe("4 s");
     expect(model.fanOut?.note).toContain("slowest parallel branch");
+  });
+
+  it("surfaces every observed fan-out stage when diagnostics names only one", () => {
+    const baseDiagnostics = createDiagnostics();
+    const baseEvents = createEvents();
+    const model = buildAuditTimelineModel({
+      audit: createAudit(),
+      results: createResults(),
+      diagnostics: createDiagnostics({
+        fan_out: {
+          stage: "competitor_page",
+          dispatch_count: 2,
+          started_count: 2,
+          terminal_count: 2,
+          in_flight_count: 0,
+          total_duration_ms: 5_000,
+          average_duration_ms: 2_500,
+          max_duration_ms: 3_000,
+          critical_path_duration_ms: 3_000,
+        },
+        stage_breakdown: [
+          ...baseDiagnostics.stage_breakdown,
+          {
+            stage: "competitor_page",
+            dispatch_count: 2,
+            started_count: 2,
+            completed_count: 2,
+            failed_count: 0,
+            aborted_count: 0,
+            terminal_count: 2,
+            total_duration_ms: 5_000,
+            average_duration_ms: 2_500,
+            max_duration_ms: 3_000,
+            critical_path_mode: "fan_out_max",
+            critical_path_duration_ms: 3_000,
+            first_event_at: "2026-01-01T10:00:03",
+            last_event_at: "2026-01-01T10:00:07",
+            latest_event: "completed",
+          },
+        ],
+      }),
+      events: createEvents({
+        events: [
+          {
+            id: 5,
+            audit_id: "audit-1",
+            processing_version: 1,
+            stage: "competitor_page",
+            event: "dispatched",
+            duration_ms: null,
+            details: { queue: "audits.competitor_pages" },
+            created_at: "2026-01-01T10:00:03",
+          },
+          ...baseEvents.events,
+        ],
+      }),
+      failureContext: null,
+    });
+
+    expect(model.fanOutStages.map((fanOut) => fanOut.stage)).toEqual(["competitor_page", "competitor_analysis"]);
   });
 
   it("surfaces warnings and failed stage context", () => {

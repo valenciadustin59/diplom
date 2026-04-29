@@ -3,6 +3,7 @@ import { Card } from "../components/Card";
 import {
   buildAuditTimelineModel,
   type TimelineEventRow,
+  type TimelineFanOutModel,
   type TimelineMetric,
   type TimelineStageRow,
 } from "../lib/auditTimeline";
@@ -58,7 +59,7 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
       </div>
       <div className="timeline-stage-card__heading">
         <h3>{stage.label}</h3>
-        {stage.isCriticalPath ? <span className="timeline-badge">Critical path</span> : null}
+        {stage.isCriticalPath ? <span className="timeline-badge">Runtime contributor</span> : null}
       </div>
       <p>{stage.description}</p>
       <dl className="timeline-stage-card__metrics">
@@ -83,45 +84,49 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
   );
 }
 
-function FanOutCard({ fanOut }: { fanOut: ReturnType<typeof buildAuditTimelineModel>["fanOut"] }) {
+function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
   return (
     <Card
-      title="Fan-out"
-      subtitle="Показывает, где pipeline разветвлялся на параллельные задачи и как это влияет на critical path."
+      title="Fan-out stages"
+      subtitle="Показывает все найденные parallel stages; backend diagnostics может выбрать один fan_out, поэтому UI также выводит fan-out из raw events."
     >
-      {fanOut ? (
+      {fanOutStages.length > 0 ? (
         <div className="timeline-fanout">
-          <div className="timeline-fanout__summary">
-            <span className="eyebrow-pill">{fanOut.stageLabel}</span>
-            <strong>{fanOut.branchCount} branches</strong>
-            <p>{fanOut.note}</p>
-          </div>
-          <div className="metric-strip timeline-fanout__metrics">
-            <div className="metric-box">
-              <span className="metric-box__label">Dispatched</span>
-              <strong className="metric-box__value">{fanOut.dispatchCount}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">Terminal</span>
-              <strong className="metric-box__value">{fanOut.terminalCount}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">In flight</span>
-              <strong className="metric-box__value">{fanOut.inFlightCount}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">Max branch</span>
-              <strong className="metric-box__value">{fanOut.maxDurationLabel}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">Average branch</span>
-              <strong className="metric-box__value">{fanOut.averageDurationLabel}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">Critical contribution</span>
-              <strong className="metric-box__value">{fanOut.criticalPathDurationLabel}</strong>
-            </div>
-          </div>
+          {fanOutStages.map((fanOut) => (
+            <article key={fanOut.stage} className="timeline-fanout__stage">
+              <div className="timeline-fanout__summary">
+                <span className="eyebrow-pill">{fanOut.stageLabel}</span>
+                <strong>{fanOut.branchCount} branches</strong>
+                <p>{fanOut.note}</p>
+              </div>
+              <div className="metric-strip timeline-fanout__metrics">
+                <div className="metric-box">
+                  <span className="metric-box__label">Dispatched</span>
+                  <strong className="metric-box__value">{fanOut.dispatchCount}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Terminal</span>
+                  <strong className="metric-box__value">{fanOut.terminalCount}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">In flight</span>
+                  <strong className="metric-box__value">{fanOut.inFlightCount}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Max branch</span>
+                  <strong className="metric-box__value">{fanOut.maxDurationLabel}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Average branch</span>
+                  <strong className="metric-box__value">{fanOut.averageDurationLabel}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Critical contribution</span>
+                  <strong className="metric-box__value">{fanOut.criticalPathDurationLabel}</strong>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       ) : (
         <div className="empty-state">
@@ -148,7 +153,7 @@ function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
               <th>Started / terminal</th>
               <th>Completed / failed</th>
               <th>Duration</th>
-              <th>Critical path</th>
+              <th>Runtime contribution</th>
             </tr>
           </thead>
           <tbody>
@@ -185,7 +190,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
   return (
     <Card
       title="Event stream"
-      subtitle="Raw events из backend event log: очередь, worker stage, terminal durations и полезные details."
+      subtitle="Raw events из backend event log. Порядок строк сохраняет backend event-log order; в parallel branches timestamps могут идти не строго по времени."
     >
       {events.length > 0 ? (
         <div className="report-table-shell timeline-event-stream">
@@ -260,7 +265,7 @@ export function AuditTimelinePage({
             <h2 className="timeline-hero__title">{model.title}</h2>
             <p className="timeline-hero__text">
               Visual trace of the distributed Celery pipeline: queues, worker stages, fan-out branches, warnings,
-              failures and the critical path that determined runtime.
+              failures and the critical-path contribution estimate reported by diagnostics.
             </p>
             <div className="workspace-meta">
               <span className="workspace-meta__item">Status: {model.statusLabel}</span>
@@ -307,14 +312,14 @@ export function AuditTimelinePage({
         >
           <div className="empty-state">
             Откройте аудит после завершения или дождитесь первого события pipeline, чтобы увидеть stage lifecycle,
-            очереди, fan-out и critical path.
+            очереди, fan-out и critical-path contribution hints.
           </div>
         </Card>
       ) : (
         <>
           <Card
             title="Stage lifecycle"
-            subtitle="Ordered view of the distributed audit execution stages. Critical path badge marks stages that contributed to total runtime."
+            subtitle="Ordered view of the distributed audit execution stages. Runtime contributor marks stages included in backend critical-path contribution diagnostics, not an exclusive single route."
           >
             <div className="timeline-stage-grid">
               {model.stageRows.map((stage, index) => (
@@ -323,7 +328,7 @@ export function AuditTimelinePage({
             </div>
           </Card>
 
-          <FanOutCard fanOut={model.fanOut} />
+          <FanOutCard fanOutStages={model.fanOutStages} />
           <StageDiagnosticsTable stages={model.stageRows} />
           <EventStreamTable events={model.eventRows} />
         </>

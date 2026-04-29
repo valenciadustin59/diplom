@@ -831,6 +831,15 @@ select {
   gap: 16px;
 }
 
+.timeline-fanout__stage {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(79, 124, 255, 0.12);
+  background: rgba(255, 255, 255, 0.62);
+}
+
 .timeline-fanout__summary {
   display: grid;
   gap: 8px;

@@ -113,6 +113,7 @@ export type AuditTimelineModel = {
   summaryMetrics: TimelineMetric[];
   stageRows: TimelineStageRow[];
   fanOut: TimelineFanOutModel | null;
+  fanOutStages: TimelineFanOutModel[];
   eventRows: TimelineEventRow[];
   warnings: string[];
   failure: TimelineFailureModel | null;
@@ -652,7 +653,7 @@ function buildSummaryMetrics(
     {
       label: "Critical path",
       value: formatTimelineDuration(diagnostics?.critical_path_duration_ms),
-      note: `Terminal event: ${terminalStage} / ${terminalEvent}.`,
+      note: `Contribution estimate from backend diagnostics; terminal event: ${terminalStage} / ${terminalEvent}.`,
     },
   ];
 }
@@ -676,11 +677,7 @@ function buildFanOutFromDiagnostics(fanOut: AuditTimelineFanOut): TimelineFanOut
   };
 }
 
-function buildFanOutFromStageRows(stageRows: TimelineStageRow[]): TimelineFanOutModel | null {
-  const row = stageRows.find((stageRow) => FAN_OUT_STAGES.has(stageRow.stage) && stageRow.eventCount > 0);
-  if (!row) {
-    return null;
-  }
+function buildFanOutFromStageRow(row: TimelineStageRow): TimelineFanOutModel {
   return {
     stage: row.stage,
     stageLabel: row.label,
@@ -695,6 +692,38 @@ function buildFanOutFromStageRows(stageRows: TimelineStageRow[]): TimelineFanOut
     criticalPathDurationLabel: row.criticalPathDurationLabel,
     note: "Critical path uses the slowest parallel branch, not the sum of all fan-out work.",
   };
+}
+
+function hasFanOutEvidence(stageRow: TimelineStageRow): boolean {
+  return (
+    FAN_OUT_STAGES.has(stageRow.stage) &&
+    (stageRow.eventCount > 0 || stageRow.dispatchCount > 0 || stageRow.startedCount > 0 || stageRow.terminalCount > 0)
+  );
+}
+
+function buildFanOutStages(
+  diagnostics: AuditTimelineDiagnosticsResponse | null,
+  stageRows: TimelineStageRow[],
+): TimelineFanOutModel[] {
+  const fanOutStages: TimelineFanOutModel[] = [];
+  const knownStages = new Set<string>();
+
+  if (diagnostics?.fan_out) {
+    const fanOut = buildFanOutFromDiagnostics(diagnostics.fan_out);
+    fanOutStages.push(fanOut);
+    knownStages.add(fanOut.stage);
+  }
+
+  for (const stageRow of stageRows) {
+    if (!hasFanOutEvidence(stageRow) || knownStages.has(stageRow.stage)) {
+      continue;
+    }
+    const fanOut = buildFanOutFromStageRow(stageRow);
+    fanOutStages.push(fanOut);
+    knownStages.add(fanOut.stage);
+  }
+
+  return fanOutStages.sort((left, right) => sortStages(left.stage, right.stage));
 }
 
 function buildEventRows(events: AuditTimelineEvent[]): TimelineEventRow[] {
@@ -741,9 +770,8 @@ export function buildAuditTimelineModel(input: AuditTimelineInput): AuditTimelin
   const domain = getDomainFromUrl(input.audit.target_url);
   const status = input.diagnostics?.status ?? input.results?.status ?? input.audit.status;
   const eventCount = getRawEventCount(input.diagnostics, events);
-  const fanOut = input.diagnostics?.fan_out
-    ? buildFanOutFromDiagnostics(input.diagnostics.fan_out)
-    : buildFanOutFromStageRows(stageRows);
+  const fanOutStages = buildFanOutStages(input.diagnostics, stageRows);
+  const fanOut = fanOutStages[0] ?? null;
 
   return {
     title: domain,
@@ -756,6 +784,7 @@ export function buildAuditTimelineModel(input: AuditTimelineInput): AuditTimelin
     summaryMetrics: buildSummaryMetrics(input.diagnostics, events),
     stageRows,
     fanOut,
+    fanOutStages,
     eventRows: buildEventRows(events),
     warnings: buildWarnings(input.audit, input.results),
     failure: buildFailure(input.failureContext),
