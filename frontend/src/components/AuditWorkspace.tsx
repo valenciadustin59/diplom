@@ -57,6 +57,7 @@ type EmptyWorkspaceProps = {
   recentAudits: AuditSummary[];
   activeAuditId?: string | null;
   loadingRecent: boolean;
+  recentError: string | null;
   submitting: boolean;
   submissionError: string | null;
   success: string | null;
@@ -64,6 +65,8 @@ type EmptyWorkspaceProps = {
   loadingRuntime: boolean;
   runtimeError: string | null;
   onRefreshRuntime: () => void;
+  onOpenRuntime: () => void;
+  onRefreshRecent: () => void;
   onCreateAudit: (payload: AuditCreatePayload) => Promise<boolean>;
   onSelectAudit: (auditId: string) => void;
 };
@@ -91,45 +94,6 @@ function getDomain(url: string): string {
 function formatImpact(value: number): string {
   const rounded = Math.round(value * 10) / 10;
   return `${rounded > 0 ? "+" : ""}${rounded}`;
-}
-
-function normalizeHistoryKeyPart(value: string): string {
-  return value.trim().toLowerCase().replace(/\s+/g, " ");
-}
-
-function hasBrokenHistoryText(value: string): boolean {
-  return /\?{3,}|\uFFFD/.test(value);
-}
-
-function isStaleInFlightAudit(audit: AuditSummary): boolean {
-  if (audit.status !== "queued" && audit.status !== "processing") {
-    return false;
-  }
-
-  if (audit.createdAtTimestamp === null) {
-    return false;
-  }
-
-  const staleAfterMs = 12 * 60 * 60 * 1000;
-  return Date.now() - audit.createdAtTimestamp > staleAfterMs && audit.score === 0;
-}
-
-function getCleanHistoryAudits(audits: AuditSummary[], activeAuditId?: string | null): AuditSummary[] {
-  const cleanAudits = new Map<string, AuditSummary>();
-
-  for (const audit of audits) {
-    const isActive = audit.id === activeAuditId;
-    if (!isActive && (hasBrokenHistoryText(audit.query) || isStaleInFlightAudit(audit))) {
-      continue;
-    }
-
-    const key = `${normalizeHistoryKeyPart(audit.domain)}:${normalizeHistoryKeyPart(audit.query)}`;
-    if (!cleanAudits.has(key) || isActive) {
-      cleanAudits.set(key, audit);
-    }
-  }
-
-  return Array.from(cleanAudits.values());
 }
 
 function getScoreFactorId(item: ScoreFactor, index: number): string {
@@ -525,10 +489,19 @@ function NewAuditWorkspace({
   loadingRuntime,
   runtimeError,
   onRefreshRuntime,
+  onOpenRuntime,
   onCreateAudit,
 }: Pick<
   EmptyWorkspaceProps,
-  "submitting" | "submissionError" | "success" | "runtimeHealth" | "loadingRuntime" | "runtimeError" | "onRefreshRuntime" | "onCreateAudit"
+  | "submitting"
+  | "submissionError"
+  | "success"
+  | "runtimeHealth"
+  | "loadingRuntime"
+  | "runtimeError"
+  | "onRefreshRuntime"
+  | "onOpenRuntime"
+  | "onCreateAudit"
 >) {
   return (
     <div className="workspace-empty">
@@ -563,6 +536,7 @@ function NewAuditWorkspace({
         loading={loadingRuntime}
         error={runtimeError}
         onRefresh={onRefreshRuntime}
+        onOpenFull={onOpenRuntime}
       />
     </div>
   );
@@ -572,22 +546,27 @@ function HistoryWorkspace({
   recentAudits,
   activeAuditId,
   loadingRecent,
+  recentError,
+  onRefreshRecent,
+  onOpenRuntime,
   onSelectAudit,
-}: Pick<EmptyWorkspaceProps, "recentAudits" | "activeAuditId" | "loadingRecent" | "onSelectAudit">) {
+}: Pick<
+  EmptyWorkspaceProps,
+  "recentAudits" | "activeAuditId" | "loadingRecent" | "recentError" | "onRefreshRecent" | "onOpenRuntime" | "onSelectAudit"
+>) {
   const [statusFilter, setStatusFilter] = useState<"all" | AuditStatus>("all");
   const [domainFilter, setDomainFilter] = useState("");
   const [searchFilter, setSearchFilter] = useState("");
 
   const filteredAudits = useMemo(() => {
-    const cleanAudits = getCleanHistoryAudits(recentAudits, activeAuditId);
-    return cleanAudits.filter((audit) => {
+    return recentAudits.filter((audit) => {
       const matchesStatus = statusFilter === "all" || audit.status === statusFilter;
       const matchesDomain = audit.domain.toLowerCase().includes(domainFilter.toLowerCase());
       const searchValue = `${audit.query} ${audit.domain}`.toLowerCase();
       const matchesSearch = searchValue.includes(searchFilter.toLowerCase());
       return matchesStatus && matchesDomain && matchesSearch;
     });
-  }, [activeAuditId, domainFilter, recentAudits, searchFilter, statusFilter]);
+  }, [domainFilter, recentAudits, searchFilter, statusFilter]);
 
   return (
     <div className="workspace-empty">
@@ -639,8 +618,11 @@ function HistoryWorkspace({
       </Card>
 
       <Card title="Список аудитов">
+        {recentError ? <div className="feedback-banner feedback-banner--error">{recentError}</div> : null}
         {loadingRecent ? (
           <div className="empty-state">Загружаем историю аудитов...</div>
+        ) : filteredAudits.length === 0 && recentAudits.length > 0 ? (
+          <div className="empty-state">По текущим фильтрам ничего не найдено. Очистите фильтры, чтобы снова увидеть записи истории.</div>
         ) : (
           <RecentAuditList
             items={filteredAudits}
@@ -648,6 +630,20 @@ function HistoryWorkspace({
             onSelect={onSelectAudit}
           />
         )}
+      </Card>
+
+      <Card
+        title="Состояние рабочего стека"
+        subtitle="Если новый аудит не запускается, проверьте API, Redis, SearXNG, Celery-воркеры и очереди."
+        action={
+          <button className="secondary-button" type="button" onClick={onOpenRuntime}>
+            Открыть стек
+          </button>
+        }
+      >
+        <button className="secondary-button" type="button" onClick={onRefreshRecent}>
+          Обновить историю
+        </button>
       </Card>
     </div>
   );
@@ -786,6 +782,7 @@ export function EmptyWorkspace({
   recentAudits,
   activeAuditId,
   loadingRecent,
+  recentError,
   submitting,
   submissionError,
   success,
@@ -793,6 +790,8 @@ export function EmptyWorkspace({
   loadingRuntime,
   runtimeError,
   onRefreshRuntime,
+  onOpenRuntime,
+  onRefreshRecent,
   onCreateAudit,
   onSelectAudit,
 }: EmptyWorkspaceProps) {
@@ -802,6 +801,9 @@ export function EmptyWorkspace({
         recentAudits={recentAudits}
         activeAuditId={activeAuditId}
         loadingRecent={loadingRecent}
+        recentError={recentError}
+        onRefreshRecent={onRefreshRecent}
+        onOpenRuntime={onOpenRuntime}
         onSelectAudit={onSelectAudit}
       />
     );
@@ -816,6 +818,7 @@ export function EmptyWorkspace({
       loadingRuntime={loadingRuntime}
       runtimeError={runtimeError}
       onRefreshRuntime={onRefreshRuntime}
+      onOpenRuntime={onOpenRuntime}
       onCreateAudit={onCreateAudit}
     />
   );

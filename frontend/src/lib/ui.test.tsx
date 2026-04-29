@@ -1,6 +1,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { AuditWorkspace } from "../components/AuditWorkspace";
+import { AuditWorkspace, EmptyWorkspace } from "../components/AuditWorkspace";
+import { ControlRail } from "../components/ControlRail";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
 import type {
@@ -330,6 +331,21 @@ const runtimeWorkspaceProps = {
   onRefreshRuntime: () => undefined,
 };
 
+const emptyWorkspaceBaseProps = {
+  recentAudits: [],
+  activeAuditId: null,
+  loadingRecent: false,
+  recentError: null,
+  submitting: false,
+  submissionError: null,
+  success: null,
+  ...runtimeWorkspaceProps,
+  onOpenRuntime: () => undefined,
+  onRefreshRecent: () => undefined,
+  onCreateAudit: () => Promise.resolve(true),
+  onSelectAudit: () => undefined,
+};
+
 function createRecommendationsBundle(): RecommendationsBundle {
   return {
     schema_version: "recommendations-v2",
@@ -502,6 +518,47 @@ describe("RecommendationsPage", () => {
 });
 
 describe("AuditWorkspace", () => {
+  it("renders the root navigation entry for stack diagnostics", () => {
+    const markup = renderToStaticMarkup(
+      <ControlRail
+        activeView="new"
+        onOpenNew={() => undefined}
+        onOpenHistory={() => undefined}
+        onOpenRuntime={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Новый аудит");
+    expect(markup).toContain("История");
+    expect(markup).toContain("Стек");
+  });
+
+  it("renders history records returned by the API without hiding stale in-flight rows", () => {
+    const markup = renderToStaticMarkup(
+      <EmptyWorkspace
+        {...emptyWorkspaceBaseProps}
+        mode="history"
+        recentAudits={[
+          {
+            id: "audit-stale",
+            domain: "stale.example",
+            query: "старый аудит в обработке",
+            score: 0,
+            status: "processing",
+            createdAt: "1 янв. 2026 г., 10:00",
+            createdAtTimestamp: 0,
+          },
+        ]}
+      />,
+    );
+
+    expect(markup).toContain("История аудитов");
+    expect(markup).toContain("stale.example");
+    expect(markup).toContain("старый аудит в обработке");
+    expect(markup).toContain("Состояние рабочего стека");
+    expect(markup).toContain("Открыть стек");
+  });
+
   it("renders score breakdowns that use top factor fields", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
@@ -757,6 +814,7 @@ describe("AuditWorkspace", () => {
         loading={false}
         error={null}
         onRefresh={() => undefined}
+        onOpenFull={() => undefined}
       />,
     );
 
@@ -764,6 +822,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Рабочий стек не готов");
     expect(markup).toContain("audits.heavy_analysis");
     expect(markup).toContain("Проверено:");
+    expect(markup).toContain("Открыть стек");
   });
 
   it("renders report recommendations from the stored audit data when endpoint data is absent", () => {

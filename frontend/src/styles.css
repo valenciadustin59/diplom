@@ -340,6 +340,13 @@ select {
   box-shadow: 0 10px 25px rgba(30, 55, 110, 0.05);
 }
 
+.runtime-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 .control-rail__filters {
   display: grid;
   gap: 10px;

@@ -6,6 +6,7 @@ type RuntimeStatusProps = {
   loading: boolean;
   error: string | null;
   onRefresh: () => void;
+  onOpenFull?: () => void;
 };
 
 function getToneClass(tone: RuntimeTone): string {
@@ -56,12 +57,25 @@ function RuntimeMetricGrid({ model }: { model: RuntimeHealthModel }) {
   );
 }
 
-export function RuntimeStatusCompactCard({ model, loading, error, onRefresh }: RuntimeStatusProps) {
+function RuntimeCardActions({ loading, onRefresh, onOpenFull }: Pick<RuntimeStatusProps, "loading" | "onRefresh" | "onOpenFull">) {
+  return (
+    <div className="runtime-card-actions">
+      {onOpenFull ? (
+        <button className="secondary-button" type="button" onClick={onOpenFull}>
+          Открыть стек
+        </button>
+      ) : null}
+      <RefreshButton loading={loading} onRefresh={onRefresh} />
+    </div>
+  );
+}
+
+export function RuntimeStatusCompactCard({ model, loading, error, onRefresh, onOpenFull }: RuntimeStatusProps) {
   return (
     <Card
       title="Готовность рабочего стека"
       subtitle="Проверяет API, Redis, SearXNG, Celery-воркеры и очереди до запуска нового аудита."
-      action={<RefreshButton loading={loading} onRefresh={onRefresh} />}
+      action={<RuntimeCardActions loading={loading} onRefresh={onRefresh} onOpenFull={onOpenFull} />}
       className="runtime-compact-card"
     >
       {!model ? (

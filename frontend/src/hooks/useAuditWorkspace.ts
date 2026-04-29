@@ -156,6 +156,7 @@ export function useAuditWorkspace() {
   const [loadingRecent, setLoadingRecent] = useState(true);
   const [loadingAudit, setLoadingAudit] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [recentError, setRecentError] = useState<string | null>(null);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
   const [workspaceError, setWorkspaceError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
@@ -165,8 +166,9 @@ export function useAuditWorkspace() {
       setLoadingRecent(true);
       const audits = await auditsApi.list();
       setRecentAudits(audits.map(mapSummary));
+      setRecentError(null);
     } catch (nextError) {
-      setWorkspaceError(getErrorMessage(nextError));
+      setRecentError(getErrorMessage(nextError));
     } finally {
       setLoadingRecent(false);
     }
@@ -339,6 +341,7 @@ export function useAuditWorkspace() {
     selectedAuditId,
     loadingRecent,
     loadingAudit,
+    recentError,
     submitting,
     submissionError,
     workspaceError,

@@ -138,6 +138,7 @@ function AppShell() {
                     recentAudits={workspace.recentAudits}
                     activeAuditId={activeAuditId}
                     loadingRecent={workspace.loadingRecent}
+                    recentError={workspace.recentError}
                     submitting={workspace.submitting}
                     submissionError={workspace.submissionError}
                     success={workspace.success}
@@ -145,6 +146,8 @@ function AppShell() {
                     loadingRuntime={runtime.loadingRuntime}
                     runtimeError={runtime.runtimeError}
                     onRefreshRuntime={() => runtime.refreshRuntimeHealth()}
+                    onOpenRuntime={() => navigate("/?view=runtime")}
+                    onRefreshRecent={() => workspace.refreshAudits()}
                     onCreateAudit={handleCreateAudit}
                     onSelectAudit={handleSelectAudit}
                   />
