@@ -69,7 +69,7 @@
 Завершённые волны текущего дипломного проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, queue topology, fan-out, health/metrics, event log, diagnostics, admission control и benchmark evidence.
-- `D13-D24` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей и audit history management.
+- `D13-D25` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management и recommendation action tracking.
 
 Активная frontend/product wave: `D21-D26` — frontend/product layer без изменения ядра анализа:
 
@@ -77,10 +77,10 @@
 - `D22` / GitHub `#41` — completed: audit execution timeline UI;
 - `D23` / GitHub `#42` — completed: панель состояния рабочего стека и здоровья очередей;
 - `D24` / GitHub `#43` — completed: audit history management;
-- `D25` / GitHub `#44` — recommendation action tracking;
+- `D25` / GitHub `#44` — completed: recommendation action tracking;
 - `D26` / GitHub `#45` — interface copy and terminology polish.
 
-Текущий практический фокус: не переписывать backend и не добавлять demo mode, а усиливать демонстрационный и управленческий frontend layer, который показывает уже существующие SEO/ML/distributed evidence. Если пользователь просит новый backlog scope без конкретного GitHub issue, ближайший логичный кандидат после `D24` — `D25` / `#44`: recommendation action tracking.
+Текущий практический фокус: не переписывать backend и не добавлять demo mode, а усиливать демонстрационный и управленческий frontend layer, который показывает уже существующие SEO/ML/distributed evidence. Если пользователь просит новый backlog scope без конкретного GitHub issue, ближайший логичный кандидат после `D25` — `D26` / `#45`: interface copy and terminology polish.
 
 ### D1-D12 Summary
 
@@ -240,7 +240,7 @@ npm run build
 
 - `README.md` — обзор проекта и локальный запуск.
 - `backend/README.md` — backend, API, workers, benchmark.
-- `docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D24`.
+- `docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D25`.
 - `backend/docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## Git и публикация
@@ -250,9 +250,9 @@ npm run build
 - Если используется `Closes #<n>`, issue должен закрываться через push в `main`, а не вручную без кода.
 
 
-## D13-D24 Status
+## D13-D25 Status
 
-Completed product/ML/SEO/frontend evidence wave: `D13-D24`.
+Completed product/ML/SEO/frontend evidence wave: `D13-D25`.
 
 - `D13` - completed: versioned extraction pipeline, `feature schema v2`, persistent `target_snapshot`, DOM-based extraction, and API snapshot summary.
 - `D14` - completed: пакет технических SEO-сигналов поверх `target_snapshot`, включая canonical/redirect/indexability/url-hygiene признаки, технические рекомендации и технические факторы в score explanation без изменения текущего `FEATURE_COLUMNS`.
@@ -266,6 +266,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D24`.
 - `D22` - completed: audit execution timeline tab, raw audit event stream consumption, stage lifecycle model, queue/worker/fan-out/critical-path visualization and warnings/failure context over existing event diagnostics APIs.
 - `D23` - completed: панель состояния рабочего стека и здоровья очередей, компактная карточка готовности перед запуском, вкладка `Стек`, использование `/health/live`, `/health/ready`, `/health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и понятные подсказки восстановления.
 - `D24` - completed: audit history management panel with metrics, status/domain/query/focus filters, stale/problematic/hidden slices, quick latest-successful open, repeat audit action, and local hide/restore without backend deletion.
+- `D25` - completed: recommendation action tracking with local per-audit action statuses, progress summary, group-level closure counts, and recommendation card status controls without mutating backend recommendation payloads.
 
 ## Актуальное состояние после D20
 
@@ -335,9 +336,9 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D24`.
 - `frontend/src/components/AuditTabs.tsx` и `frontend/src/App.tsx` — вкладка `report`, explicit tab routing и default navigation в `Обзор`;
 - `scripts/site-content-check.mjs` — smoke-check ключевых строк report/export UI.
 
-## Актуальное состояние после D24
+## Актуальное состояние после D25
 
-Состояние реализации после D24:
+Состояние реализации после D25:
 
 - `D22` реализовал GitHub issue `#41`: в audit workspace есть вкладка `Таймлайн`, которая использует `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics` без изменения backend orchestration.
 - `D22` показывает lifecycle стадий, dispatch-события очередей, raw event stream, fan-out branches, critical path, warnings/failure context и graceful empty state для старых аудитов без event log.
@@ -347,31 +348,37 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D24`.
 - `D24` реализовал GitHub issue `#43`: экран истории стал audit management panel поверх существующего `GET /audits`.
 - Пользователь может фильтровать историю по статусу, домену, запросу и фокусу (`успешные`, `проблемные`, `зависшие/устаревшие`, `скрытые локально`), открыть последний успешный аудит, повторить запуск из строки и локально скрыть/восстановить запись.
 - D24 не добавляет backend delete/hide endpoint: скрытие хранится в `localStorage`, а повтор использует существующий `POST /audits` с исходными `query`, `target_url`, `top_n`.
-- `site:check` проверяет ключевые строки timeline UI, report/export UI, панели состояния рабочего стека и управления историей в production bundle.
+- `site:check` проверяет ключевые строки timeline UI, report/export UI, панели состояния рабочего стека, управления историей и плана действий в production bundle.
+- `D25` реализует GitHub issue `#44`: страница рекомендаций стала локальным планом действий.
+- Пользователь может отмечать каждую рекомендацию статусами `Не начато`, `В работе`, `Исправлено`, `Игнорируется`; UI показывает `План действий`, общее число закрытых действий, процент прогресса и закрытие по группам.
+- D25 не меняет backend recommendation payload: action tracking сохраняется per-audit в `localStorage` и остаётся user workflow metadata.
 
-Ключевые места D23-D24:
+Ключевые места D23-D25:
 
 - `frontend/src/lib/runtimeHealth.ts` — pure view model состояния рабочего стека поверх ответов live/ready/metrics;
 - `frontend/src/hooks/useRuntimeHealth.ts` — периодический frontend polling диагностики рабочего стека;
 - `frontend/src/pages/RuntimeStatusPage.tsx` — полная панель состояния стека и компактная карточка готовности перед запуском;
 - `frontend/src/api/api.ts` — `runtimeApi.getLiveness()`, `getReadiness()`, `getMetrics()`;
 - `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `runtime`, route wiring и компактная карточка на экране запуска;
-- `scripts/site-content-check.mjs` — smoke-check ключевых строк панели состояния рабочего стека и управления историей;
+- `scripts/site-content-check.mjs` — smoke-check ключевых строк панели состояния рабочего стека, управления историей и плана действий;
 - `frontend/src/lib/auditHistory.ts` — pure model истории, фильтров, stale/problematic/hidden classification и repeat payload;
 - `frontend/src/components/AuditHistoryPanel.tsx` — панель истории, localStorage hide/restore, метрики, фильтры и быстрые действия;
 - `frontend/src/components/RecentAuditList.tsx` — строки истории без nested buttons, row actions `Открыть`, `Повторить аудит`, `Скрыть локально`/`Восстановить`;
-- `frontend/src/App.tsx` — repeat audit wiring через существующий create-audit flow.
+- `frontend/src/App.tsx` — repeat audit wiring через существующий create-audit flow;
+- `frontend/src/lib/recommendationActions.ts` — pure model статусов действий, persisted state validation, summaries and group progress;
+- `frontend/src/pages/RecommendationsPage.tsx` — localStorage state, `План действий`, summary metrics and status updates;
+- `frontend/src/components/RecommendationList.tsx` — controls на карточках рекомендаций и group-level progress.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из явно выбранной пользователем задачи или из актуальных open GitHub issues. Актуальная новая волна создана в GitHub как `#40-#45`; после завершения `D24` приоритет реализации — `D25` / `#44` recommendation action tracking. Demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из явно выбранной пользователем задачи или из актуальных open GitHub issues. Актуальная новая волна создана в GitHub как `#40-#45`; после завершения `D25` приоритет реализации — `D26` / `#45` interface copy and terminology polish. Demo mode намеренно не входит в backlog.
 
 Перед началом любой новой задачи:
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
 - если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов;
-- не откатывать уже выполненные `D13-D24` без прямой причины.
+- не откатывать уже выполненные `D13-D25` без прямой причины.
 
 ## Последняя runtime smoke-проверка
 

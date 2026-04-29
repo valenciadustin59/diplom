@@ -23,6 +23,7 @@
 - commercial/trust feature pack для коммерческих landing pages;
 - изоляция тяжёлых analyzer-стадий в отдельную distributed queue;
 - выдача рекомендаций по улучшению страницы;
+- локальное отслеживание статусов рекомендаций как плана работ;
 - единый audit report dashboard с экспортом в печатный HTML/PDF-like view, HTML и Markdown;
 - timeline событий аудита и диагностика критического пути;
 - диагностика рабочего стека для очередей, воркеров, накопления задач и контроля допуска;
@@ -79,7 +80,7 @@
 Завершённые волны проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, per-stage queues, fan-out, health/metrics, diagnostics, admission control и benchmark evidence.
-- `D13-D24` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей и audit history management.
+- `D13-D25` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management и recommendation action tracking.
 
 Итог: проект уже закрывает ключевые требования дипломной темы — web-приложение машинного обучения с доказуемым распределённым runtime.
 
@@ -89,10 +90,10 @@
 - `D22` / `#41` — completed: audit execution timeline UI.
 - `D23` / `#42` — completed: панель состояния рабочего стека и здоровья очередей.
 - `D24` / `#43` — completed: audit history management.
-- `D25` / `#44` — recommendation action tracking.
+- `D25` / `#44` — completed: recommendation action tracking.
 - `D26` / `#45` — interface copy and terminology polish.
 
-Приоритет ближайшей разработки после `D24`: recommendation action tracking (`D25`). Demo mode в текущий backlog не входит.
+Приоритет ближайшей разработки после `D25`: interface copy and terminology polish (`D26`). Demo mode в текущий backlog не входит.
 
 ### Distributed foundation `D1-D12`
 
@@ -103,7 +104,7 @@
 - `D9-D11` — детектор нагрузки очередей, контроль допуска под нагрузкой, профили топологии воркеров.
 - `D12` — benchmark/reporting workflow для измеримого подтверждения распределённого runtime.
 
-Итог: backlog `D1-D12` завершён. После `D24` следующий практический фокус — не новый серверный слой исполнения, а recommendation action tracking (`D25` / `#44`), который развивает product workflow вокруг уже сформированных рекомендаций.
+Итог: backlog `D1-D12` завершён. После `D25` следующий практический фокус — не новый серверный слой исполнения, а interface copy and terminology polish (`D26` / `#45`), который стабилизирует язык интерфейса для демонстрации.
 
 ## Требования
 
@@ -363,9 +364,9 @@ npm run test
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
 
-## Статус D13-D24
+## Статус D13-D25
 
-Продуктовая волна backlog — `D13-D24` — завершена.
+Продуктовая волна backlog — `D13-D25` — завершена.
 
 Выполнено:
 
@@ -384,8 +385,9 @@ npm run test
 - `D22` - audit execution timeline UI: вкладка `Таймлайн`, raw event stream, stage lifecycle, queues, fan-out branch summary, critical path, warnings/failure context поверх существующих events APIs.
 - `D23` - панель состояния рабочего стека и здоровья очередей: компактная панель `Готовность рабочего стека` на экране запуска, вкладка `Стек` в audit workspace, использование `health/live`, `health/ready`, `health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и человекочитаемые подсказки восстановления.
 - `D24` - audit history management: панель истории с метриками, фильтрами по статусу/домену/запросу/фокусу, быстрым открытием последнего успешного аудита, повторным запуском из строки и локальным скрытием/восстановлением записей без удаления backend-данных.
+- `D25` - recommendation action tracking: локальный план действий на странице рекомендаций, статусы `Не начато`, `В работе`, `Исправлено`, `Игнорируется`, summary закрытых действий и прогресс по группам без изменения backend analysis data.
 
-Текущая волна `D13-D24` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D25` / `#44` recommendation action tracking и `D26` / `#45` copy polish.
+Текущая волна `D13-D25` завершена. Если нет явно выбранного GitHub issue, ближайшая открытая задача: `D26` / `#45` copy polish.
 
 ## Dataset V2 Workflow (`D17`)
 

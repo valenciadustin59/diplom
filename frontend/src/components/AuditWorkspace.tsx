@@ -659,6 +659,7 @@ export function AuditWorkspace({
 
         {activeTab === "recommendations" ? (
           <RecommendationsPage
+            auditId={currentAudit.id}
             recommendations={recommendations}
             auditStatus={auditStatus}
             loading={loading}

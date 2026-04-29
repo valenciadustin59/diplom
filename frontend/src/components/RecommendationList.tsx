@@ -1,4 +1,10 @@
 import { PriorityBadge } from "./PriorityBadge";
+import {
+  getRecommendationActionKey,
+  recommendationActionStatusOptions,
+  type RecommendationActionModel,
+  type RecommendationActionStatus,
+} from "../lib/recommendationActions";
 import type {
   RecommendationDeviation,
   RecommendationGroup,
@@ -9,10 +15,18 @@ import type { RecommendationPreviewItem } from "../lib/recommendations";
 
 type RecommendationListProps = {
   recommendations: RecommendationsBundle;
+  actionModel: RecommendationActionModel;
+  onActionStatusChange: (actionKey: string, status: RecommendationActionStatus) => void;
 };
 
 type RecommendationPreviewListProps = {
   items: RecommendationPreviewItem[];
+};
+
+type RecommendationActionControlProps = {
+  actionKey: string;
+  status: RecommendationActionStatus;
+  statusLabel: string;
 };
 
 function getImpactLabel(priority: "high" | "medium" | "low"): string {
@@ -79,11 +93,43 @@ function renderDeviation(deviation: RecommendationDeviation) {
   );
 }
 
-function renderRecommendationCard(item: RecommendationPreviewItem | RecommendationGroup["items"][number], compact = false) {
+function renderRecommendationActionControl(
+  actionControl: RecommendationActionControlProps,
+  onActionStatusChange: RecommendationListProps["onActionStatusChange"],
+) {
+  return (
+    <div className="recommendation-item__tracking">
+      <span className={`recommendation-action-status recommendation-action-status--${actionControl.status}`}>
+        {actionControl.statusLabel}
+      </span>
+      <label className="recommendation-action-control">
+        <span>Статус действия</span>
+        <select
+          value={actionControl.status}
+          onChange={(event) => onActionStatusChange(actionControl.actionKey, event.target.value as RecommendationActionStatus)}
+        >
+          {recommendationActionStatusOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </label>
+    </div>
+  );
+}
+
+function renderRecommendationCard(
+  item: RecommendationPreviewItem | RecommendationGroup["items"][number],
+  compact = false,
+  actionControl: RecommendationActionControlProps | null = null,
+  onActionStatusChange?: RecommendationListProps["onActionStatusChange"],
+) {
   const className = [
     "recommendation-item",
     `recommendation-item--${item.priority}`,
     compact ? "recommendation-item--compact" : "",
+    actionControl ? `recommendation-item--status-${actionControl.status}` : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -105,6 +151,7 @@ function renderRecommendationCard(item: RecommendationPreviewItem | Recommendati
       </div>
       <p className="recommendation-item__message">{item.message}</p>
       {!compact ? <p className="recommendation-item__outcome">{item.expected_outcome}</p> : null}
+      {!compact && actionControl && onActionStatusChange ? renderRecommendationActionControl(actionControl, onActionStatusChange) : null}
       {!compact && item.evidence.length > 0 ? (
         <div className="recommendation-evidence-list">
           {item.evidence.map((evidence) => (
@@ -124,7 +171,19 @@ function renderRecommendationCard(item: RecommendationPreviewItem | Recommendati
   );
 }
 
-function RecommendationGroupSection({ group, defaultOpen }: { group: RecommendationGroup; defaultOpen: boolean }) {
+function RecommendationGroupSection({
+  group,
+  defaultOpen,
+  actionModel,
+  onActionStatusChange,
+}: {
+  group: RecommendationGroup;
+  defaultOpen: boolean;
+  actionModel: RecommendationActionModel;
+  onActionStatusChange: RecommendationListProps["onActionStatusChange"];
+}) {
+  const groupActionSummary = actionModel.groupSummariesByKey[group.key];
+
   return (
     <details className={`recommendation-group recommendation-group--${group.status}`} open={defaultOpen}>
       <summary className="recommendation-group__header">
@@ -132,9 +191,16 @@ function RecommendationGroupSection({ group, defaultOpen }: { group: Recommendat
           <h3 className="recommendation-group__title">{group.label}</h3>
           <p className="recommendation-group__description">{group.description}</p>
         </div>
-        <span className={`recommendation-group__status recommendation-group__status--${group.status}`}>
-          {getGroupStatusLabel(group.status)}
-        </span>
+        <div className="recommendation-group__status-stack">
+          <span className={`recommendation-group__status recommendation-group__status--${group.status}`}>
+            {getGroupStatusLabel(group.status)}
+          </span>
+          {groupActionSummary && groupActionSummary.total > 0 ? (
+            <span className="recommendation-action-summary">
+              Закрыто {groupActionSummary.closed}/{groupActionSummary.total}
+            </span>
+          ) : null}
+        </div>
       </summary>
 
       <div className="recommendation-group__body">
@@ -153,8 +219,18 @@ function RecommendationGroupSection({ group, defaultOpen }: { group: Recommendat
             <div className="recommendation-subsection__header">
               <span className="recommendation-subsection__kicker">Что улучшить</span>
               <span className="recommendation-subsection__count">{group.items.length}</span>
+              {groupActionSummary && groupActionSummary.total > 0 ? (
+                <span className="recommendation-subsection__progress">Прогресс: {groupActionSummary.progressPercent}%</span>
+              ) : null}
             </div>
-            <div className="recommendation-group__items">{group.items.map((item) => renderRecommendationCard(item))}</div>
+            <div className="recommendation-group__items">
+              {group.items.map((item) => {
+                const actionKey = getRecommendationActionKey(group.key, item.code);
+                const itemState = actionModel.itemStatesByKey[actionKey];
+
+                return renderRecommendationCard(item, false, itemState ?? null, onActionStatusChange);
+              })}
+            </div>
           </section>
         ) : (
           <div className="empty-state recommendation-group__empty">{group.empty_state}</div>
@@ -164,7 +240,7 @@ function RecommendationGroupSection({ group, defaultOpen }: { group: Recommendat
   );
 }
 
-export function RecommendationList({ recommendations }: RecommendationListProps) {
+export function RecommendationList({ recommendations, actionModel, onActionStatusChange }: RecommendationListProps) {
   const firstIssueIndex = recommendations.groups.findIndex(
     (group) => group.items.length > 0 || group.deviations.length > 0,
   );
@@ -172,7 +248,13 @@ export function RecommendationList({ recommendations }: RecommendationListProps)
   return (
     <div className="recommendation-list">
       {recommendations.groups.map((group, index) => (
-        <RecommendationGroupSection key={group.key} group={group} defaultOpen={index === firstIssueIndex} />
+        <RecommendationGroupSection
+          key={group.key}
+          group={group}
+          defaultOpen={index === firstIssueIndex}
+          actionModel={actionModel}
+          onActionStatusChange={onActionStatusChange}
+        />
       ))}
     </div>
   );

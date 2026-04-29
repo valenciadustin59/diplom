@@ -514,6 +514,10 @@ describe("RecommendationsPage", () => {
     expect(markup).toContain("Technical SEO");
     expect(markup).toContain("Commercial and Trust");
     expect(markup).toContain("Есть блокирующая проблема индексации");
+    expect(markup).toContain("План действий");
+    expect(markup).toContain("Статус действия");
+    expect(markup).toContain("Не начато");
+    expect(markup).toContain("Закрыто 0/1");
     expect(markup).toContain("Среднее по конкурентам");
   });
 });
