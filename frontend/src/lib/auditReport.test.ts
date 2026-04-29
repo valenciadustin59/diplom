@@ -315,10 +315,14 @@ describe("audit report export", () => {
     expect(markdown).toContain("## Distributed Runtime Evidence");
     expect(markdown).toContain("### Action Backlog");
     expect(markdown).toContain("TECHNICAL_LOW");
+    expect(markdown.split("\n").filter((line) => line.startsWith("- ["))).toHaveLength(6);
+    expect(markdown.indexOf("TECHNICAL_INDEXING")).toBeLessThan(markdown.indexOf("TECHNICAL_CANONICAL"));
+    expect(markdown.indexOf("TECHNICAL_SNIPPET")).toBeLessThan(markdown.indexOf("TECHNICAL_LOW"));
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("window.print");
     expect(html).toContain("SEO Evidence");
     expect(html).toContain("TECHNICAL_LOW");
+    expect(html.match(/TECHNICAL_/g)).toHaveLength(6);
   });
 
   it("creates stable filenames and human-readable durations", () => {
