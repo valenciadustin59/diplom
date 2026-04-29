@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import os from "node:os";
 import test from "node:test";
-import { buildBackendRuntimeEnv, buildCeleryWorkerArgs, CELERY_AUDIT_QUEUES, CELERY_WORKER_PROFILES } from "./dev.mjs";
+import {
+  buildBackendRuntimeEnv,
+  buildCeleryWorkerArgs,
+  buildFrontendDevArgs,
+  CELERY_AUDIT_QUEUES,
+  CELERY_WORKER_PROFILES,
+} from "./dev.mjs";
 test("buildBackendRuntimeEnv provides local development defaults", () => {
   const env = buildBackendRuntimeEnv({ BACKEND_PORT: "8000" }, {});
   assert.equal(env.SERP_PROVIDER, "searxng");
@@ -75,4 +81,8 @@ test("buildCeleryWorkerArgs preserves platform-specific execution settings", () 
     assert.equal(args.includes("--pool=solo"), false);
     assert.match(args.join(" "), /--concurrency 2/);
   }
+});
+
+test("buildFrontendDevArgs binds Vite to loopback IPv4 for smoke checks", () => {
+  assert.deepEqual(buildFrontendDevArgs(), ["run", "dev", "--", "--host", "127.0.0.1"]);
 });

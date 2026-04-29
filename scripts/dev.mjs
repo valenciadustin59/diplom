@@ -112,6 +112,11 @@ export function buildCeleryWorkerArgs(profileName) {
   }
   return args;
 }
+
+export function buildFrontendDevArgs() {
+  return ["run", "dev", "--", "--host", "127.0.0.1"];
+}
+
 function stopAll(code = 0) {
   if (shuttingDown) {
     return;
@@ -137,7 +142,7 @@ async function main() {
     backendDir,
     buildBackendRuntimeEnv({ BACKEND_PORT: String(backendPort) }),
   );
-  runProcess("frontend", npmCommand, ["run", "dev"], frontendDir, {
+  runProcess("frontend", npmCommand, buildFrontendDevArgs(), frontendDir, {
     VITE_API_URL: apiUrl,
   });
   if (includeWorker) {

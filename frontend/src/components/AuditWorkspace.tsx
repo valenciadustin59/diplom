@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { AuditPage } from "../pages/AuditPage";
+import { AuditReportPage } from "../pages/AuditReportPage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
@@ -17,6 +18,7 @@ import type {
   AuditStatusResponse,
   AuditSummary,
   AuditTab,
+  AuditTimelineDiagnosticsResponse,
   ComparisonSummary,
   CompetitorScore,
   FailureContext,
@@ -30,6 +32,7 @@ type AuditWorkspaceProps = {
   currentAudit: AuditStatusResponse | null;
   currentResults: AuditResultsResponse | null;
   recommendations: RecommendationsBundle | null;
+  timelineDiagnostics: AuditTimelineDiagnosticsResponse | null;
   pageRows: PageRow[];
   competitorScores: CompetitorScore[];
   comparisonSummary: ComparisonSummary | null;
@@ -77,6 +80,79 @@ function formatImpact(value: number): string {
   return `${rounded > 0 ? "+" : ""}${rounded}`;
 }
 
+function normalizeHistoryKeyPart(value: string): string {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function hasBrokenHistoryText(value: string): boolean {
+  return /\?{3,}|\uFFFD/.test(value);
+}
+
+function isStaleInFlightAudit(audit: AuditSummary): boolean {
+  if (audit.status !== "queued" && audit.status !== "processing") {
+    return false;
+  }
+
+  if (audit.createdAtTimestamp === null) {
+    return false;
+  }
+
+  const staleAfterMs = 12 * 60 * 60 * 1000;
+  return Date.now() - audit.createdAtTimestamp > staleAfterMs && audit.score === 0;
+}
+
+function getCleanHistoryAudits(audits: AuditSummary[], activeAuditId?: string | null): AuditSummary[] {
+  const cleanAudits = new Map<string, AuditSummary>();
+
+  for (const audit of audits) {
+    const isActive = audit.id === activeAuditId;
+    if (!isActive && (hasBrokenHistoryText(audit.query) || isStaleInFlightAudit(audit))) {
+      continue;
+    }
+
+    const key = `${normalizeHistoryKeyPart(audit.domain)}:${normalizeHistoryKeyPart(audit.query)}`;
+    if (!cleanAudits.has(key) || isActive) {
+      cleanAudits.set(key, audit);
+    }
+  }
+
+  return Array.from(cleanAudits.values());
+}
+
+function getScoreFactorId(item: ScoreFactor, index: number): string {
+  return item.code ?? item.key ?? `${item.label}:${index}`;
+}
+
+function formatScoreFactorDetail(item: ScoreFactor): string {
+  if (item.detail) {
+    return item.detail;
+  }
+
+  if (item.value !== undefined && item.value !== null) {
+    return `Значение фактора: ${item.value}`;
+  }
+
+  return "Фактор участвует в объяснении итогового score.";
+}
+
+function formatScoreWeight(value: number | undefined): string | null {
+  if (typeof value !== "number" || Number.isNaN(value)) {
+    return null;
+  }
+  return `${Math.round(value * 100)}%`;
+}
+
+function getScoreMethodologyText(breakdown: ScoreBreakdown): string {
+  const ruleWeight = formatScoreWeight(breakdown.weights?.rule_weight);
+  const mlWeight = formatScoreWeight(breakdown.weights?.ml_weight);
+
+  if (ruleWeight && mlWeight) {
+    return `Score рассчитывается как гибрид объяснимых SEO/semantic-сигналов и ML-калибровки: ${ruleWeight} веса дают rule-based факторы, ${mlWeight} — модель. Ниже показаны метрики, которые сильнее всего подняли или снизили итоговую оценку.`;
+  }
+
+  return "Score рассчитывается по набору объяснимых SEO, semantic, technical и commercial/trust сигналов с ML-калибровкой итоговой оценки. Ниже показаны факторы, которые сильнее всего повлияли на результат.";
+}
+
 const interactionSignalLabels: Record<string, string> = {
   query_semantic_alignment: "Семантика + покрытие запроса",
   title_semantic_alignment: "Title + семантика",
@@ -89,11 +165,11 @@ const interactionSignalLabels: Record<string, string> = {
 
 function ScoreFactorList({
   title,
-  items,
+  items = [],
   tone,
 }: {
   title: string;
-  items: ScoreFactor[];
+  items?: ScoreFactor[];
   tone: "positive" | "negative";
 }) {
   return (
@@ -101,13 +177,13 @@ function ScoreFactorList({
       <h4 className="score-factor-group__title">{title}</h4>
       {items.length > 0 ? (
         <div className="score-factor-list">
-          {items.map((item) => (
-            <article key={item.code} className={`score-factor score-factor--${tone}`}>
+          {items.map((item, index) => (
+            <article key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
               <div className="score-factor__top">
                 <strong>{item.label}</strong>
                 <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
               </div>
-              <p className="score-factor__detail">{item.detail}</p>
+              <p className="score-factor__detail">{formatScoreFactorDetail(item)}</p>
             </article>
           ))}
         </div>
@@ -130,13 +206,17 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
     );
   }
 
+  const positiveFactors = breakdown.positives ?? breakdown.top_positive_factors ?? [];
+  const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
+  const methodology = getScoreMethodologyText(breakdown);
+
   return (
     <Card
       title="Как формируется score"
       subtitle="Итог складывается из объяснимых SEO и semantic сигналов и отдельной ML-калибровки."
     >
       <div className="score-breakdown">
-        <p className="score-breakdown__methodology">{breakdown.methodology}</p>
+        <p className="score-breakdown__methodology">{methodology}</p>
 
         <div className="metric-strip metric-strip--comparison">
           <div className="metric-box">
@@ -165,8 +245,8 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
         ) : null}
 
         <div className="score-breakdown__grid">
-          <ScoreFactorList title="Что помогает странице" items={breakdown.positives} tone="positive" />
-          <ScoreFactorList title="Что тянет score вниз" items={breakdown.negatives} tone="negative" />
+          <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
+          <ScoreFactorList title="Что тянет score вниз" items={negativeFactors} tone="negative" />
         </div>
       </div>
     </Card>
@@ -224,6 +304,25 @@ function AuditWarnings({
         />
       ) : null}
     </>
+  );
+}
+
+function AuditProgressBanner({ status }: { status: AuditStatus }) {
+  if (status !== "queued" && status !== "processing") {
+    return null;
+  }
+
+  const title = status === "queued" ? "Аудит запускается" : "Аудит обрабатывается";
+  const message =
+    status === "queued"
+      ? "Подготавливаем этапы анализа. Обычно первый статус меняется через несколько секунд."
+      : "Система загружает страницу, собирает конкурентов и пересчитывает score. Данные обновляются автоматически.";
+
+  return (
+    <div className="feedback-banner feedback-banner--info">
+      <strong>{title}</strong>
+      <div>{message}</div>
+    </div>
   );
 }
 
@@ -453,14 +552,15 @@ function HistoryWorkspace({
   const [searchFilter, setSearchFilter] = useState("");
 
   const filteredAudits = useMemo(() => {
-    return recentAudits.filter((audit) => {
+    const cleanAudits = getCleanHistoryAudits(recentAudits, activeAuditId);
+    return cleanAudits.filter((audit) => {
       const matchesStatus = statusFilter === "all" || audit.status === statusFilter;
       const matchesDomain = audit.domain.toLowerCase().includes(domainFilter.toLowerCase());
       const searchValue = `${audit.query} ${audit.domain}`.toLowerCase();
       const matchesSearch = searchValue.includes(searchFilter.toLowerCase());
       return matchesStatus && matchesDomain && matchesSearch;
     });
-  }, [domainFilter, recentAudits, searchFilter, statusFilter]);
+  }, [activeAuditId, domainFilter, recentAudits, searchFilter, statusFilter]);
 
   return (
     <div className="workspace-empty">
@@ -473,7 +573,7 @@ function HistoryWorkspace({
               Здесь собраны все запуски. Отфильтруйте список и откройте нужный аудит, чтобы перейти к его результатам.
             </p>
           </div>
-          <ScoreRing value={filteredAudits[0]?.score ?? 0} label="Последний score" />
+          <ScoreRing value={filteredAudits[0]?.score ?? 0} label="Последний" />
         </div>
       </Card>
 
@@ -483,7 +583,7 @@ function HistoryWorkspace({
             <span>Статус</span>
             <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value as "all" | AuditStatus)}>
               <option value="all">Все статусы</option>
-              <option value="queued">В очереди</option>
+              <option value="queued">Запускается</option>
               <option value="processing">Обработка</option>
               <option value="completed">Завершён</option>
               <option value="completed_with_warnings">С предупреждениями</option>
@@ -511,7 +611,7 @@ function HistoryWorkspace({
         </div>
       </Card>
 
-      <Card title="Список аудитов" subtitle="Откройте любой аудит, чтобы перейти в его рабочую область.">
+      <Card title="Список аудитов">
         {loadingRecent ? (
           <div className="empty-state">Загружаем историю аудитов...</div>
         ) : (
@@ -530,6 +630,7 @@ export function AuditWorkspace({
   currentAudit,
   currentResults,
   recommendations,
+  timelineDiagnostics,
   pageRows,
   competitorScores,
   comparisonSummary,
@@ -569,6 +670,7 @@ export function AuditWorkspace({
       </div>
 
       <AuditWarnings currentAudit={currentAudit} currentResults={currentResults} failureContext={failureContext} />
+      <AuditProgressBanner status={currentAudit.status as AuditStatus} />
 
       <AuditTabs activeTab={activeTab} onChange={onTabChange} />
 
@@ -580,6 +682,19 @@ export function AuditWorkspace({
             recommendations={recommendations}
             competitorScores={competitorScores}
             comparisonSummary={comparisonSummary}
+          />
+        ) : null}
+
+        {activeTab === "report" ? (
+          <AuditReportPage
+            currentAudit={currentAudit}
+            currentResults={currentResults}
+            recommendations={recommendations}
+            timelineDiagnostics={timelineDiagnostics}
+            auditStatus={auditStatus}
+            loading={loading}
+            error={error}
+            failureContext={failureContext}
           />
         ) : null}
 

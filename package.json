@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
+    "start": "npm run dev:full",
     "dev": "node scripts/dev.mjs",
     "dev:full": "npm run searxng:up && npm run searxng:check && npm run dev -- --with-worker",
     "build": "npm --prefix frontend run build",
-    "test:scripts": "node --test scripts/dev.test.mjs scripts/searxng-healthcheck.test.mjs",
+    "site:check": "npm run build && node scripts/site-content-check.mjs",
+    "test:scripts": "node --test scripts/dev.test.mjs scripts/searxng-healthcheck.test.mjs scripts/site-content-check.test.mjs",
     "preview": "npm --prefix frontend run preview",
     "searxng:up": "node scripts/searxng-manager.mjs up",
     "searxng:down": "node scripts/searxng-manager.mjs down",

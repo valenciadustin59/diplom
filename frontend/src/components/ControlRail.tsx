@@ -15,10 +15,6 @@ export function ControlRail({ activeView, onOpenNew, onOpenHistory }: ControlRai
             <h1 className="control-rail__title">Audit Cloud</h1>
           </div>
         </div>
-        <p className="control-rail__text">
-          Слева только навигация. Создание нового аудита и просмотр истории открываются в центральной рабочей области.
-        </p>
-
         <div className="control-rail__switcher" role="tablist" aria-label="Навигация по приложению">
           <button
             type="button"

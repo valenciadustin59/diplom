@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { auditsApi, ApiError } from "../api/api";
 import type {
   AuditCreatePayload,
@@ -6,6 +6,7 @@ import type {
   AuditStatus,
   AuditStatusResponse,
   AuditSummary,
+  AuditTimelineDiagnosticsResponse,
   ComparisonSummary,
   CompetitorResult,
   CompetitorScore,
@@ -33,6 +34,14 @@ function formatCreatedAt(value: string): string {
   }).format(date);
 }
 
+function getCreatedAtTimestamp(value: string): number | null {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return null;
+  }
+  return date.getTime();
+}
+
 function mapSummary(audit: AuditStatusResponse): AuditSummary {
   return {
     id: audit.id,
@@ -41,6 +50,7 @@ function mapSummary(audit: AuditStatusResponse): AuditSummary {
     score: Math.round(audit.score ?? 0),
     status: audit.status,
     createdAt: formatCreatedAt(audit.created_at),
+    createdAtTimestamp: getCreatedAtTimestamp(audit.created_at),
   };
 }
 
@@ -134,11 +144,13 @@ function getErrorMessage(error: unknown): string {
 }
 
 export function useAuditWorkspace() {
+  const loadRequestRef = useRef(0);
   const [recentAudits, setRecentAudits] = useState<AuditSummary[]>([]);
   const [selectedAuditId, setSelectedAuditId] = useState<string | null>(null);
   const [currentAudit, setCurrentAudit] = useState<AuditStatusResponse | null>(null);
   const [results, setResults] = useState<AuditResultsResponse | null>(null);
   const [recommendations, setRecommendations] = useState<RecommendationsBundle | null>(null);
+  const [timelineDiagnostics, setTimelineDiagnostics] = useState<AuditTimelineDiagnosticsResponse | null>(null);
   const [loadingRecent, setLoadingRecent] = useState(true);
   const [loadingAudit, setLoadingAudit] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -161,6 +173,7 @@ export function useAuditWorkspace() {
   const loadAuditBundle = useCallback(
     async (auditId: string, options?: { silent?: boolean }) => {
       const silent = options?.silent ?? false;
+      const requestId = ++loadRequestRef.current;
 
       try {
         if (!silent) {
@@ -169,19 +182,45 @@ export function useAuditWorkspace() {
         setWorkspaceError(null);
 
         const status = await auditsApi.getStatus(auditId);
+        if (requestId !== loadRequestRef.current) {
+          return;
+        }
         setCurrentAudit(status);
 
-        const [nextResults, nextRecommendations] = await Promise.all([
+        const [nextResults, nextRecommendations, nextTimelineDiagnostics] = await Promise.allSettled([
           auditsApi.getResults(auditId),
           auditsApi.getRecommendations(auditId),
-        ]);
+          auditsApi.getTimelineDiagnostics(auditId),
+        ] as const);
 
-        setResults(nextResults);
-        setRecommendations(nextRecommendations.recommendations);
+        if (requestId !== loadRequestRef.current) {
+          return;
+        }
+
+        if (nextResults.status === "fulfilled") {
+          setResults(nextResults.value);
+        } else {
+          setResults(null);
+        }
+
+        if (nextRecommendations.status === "fulfilled") {
+          setRecommendations(nextRecommendations.value.recommendations);
+        } else {
+          setRecommendations(null);
+        }
+
+        if (nextTimelineDiagnostics.status === "fulfilled") {
+          setTimelineDiagnostics(nextTimelineDiagnostics.value);
+        } else {
+          setTimelineDiagnostics(null);
+        }
       } catch (nextError) {
+        if (requestId !== loadRequestRef.current) {
+          return;
+        }
         setWorkspaceError(getErrorMessage(nextError));
       } finally {
-        if (!silent) {
+        if (requestId === loadRequestRef.current && !silent) {
           setLoadingAudit(false);
         }
       }
@@ -192,13 +231,6 @@ export function useAuditWorkspace() {
   useEffect(() => {
     void refreshAudits();
   }, [refreshAudits]);
-
-  useEffect(() => {
-    if (!selectedAuditId) {
-      return;
-    }
-    void loadAuditBundle(selectedAuditId);
-  }, [selectedAuditId, loadAuditBundle]);
 
   useEffect(() => {
     if (!selectedAuditId) {
@@ -229,10 +261,12 @@ export function useAuditWorkspace() {
         setSuccess(null);
 
         const audit = await auditsApi.create(payload);
+        loadRequestRef.current += 1;
         setCurrentAudit(audit);
         setSelectedAuditId(audit.id);
         setResults(null);
         setRecommendations(null);
+        setTimelineDiagnostics(null);
         setSuccess("Аудит успешно запущен.");
         await refreshAudits();
         return audit;
@@ -247,13 +281,16 @@ export function useAuditWorkspace() {
   );
 
   const selectAudit = useCallback((auditId: string) => {
+    loadRequestRef.current += 1;
     setSelectedAuditId(auditId);
     setCurrentAudit(null);
     setResults(null);
     setRecommendations(null);
+    setTimelineDiagnostics(null);
     setSuccess(null);
     setWorkspaceError(null);
-  }, []);
+    void loadAuditBundle(auditId);
+  }, [loadAuditBundle]);
 
   const overallScore = Math.round(results?.score ?? currentAudit?.score ?? 0);
   const comparisonSummary = (results?.comparison_summary ?? currentAudit?.comparison_summary ?? null) as ComparisonSummary | null;
@@ -280,6 +317,7 @@ export function useAuditWorkspace() {
     currentAudit,
     currentResults: results,
     recommendations,
+    timelineDiagnostics,
     pageRows,
     overallScore,
     competitorScores,

@@ -207,6 +207,26 @@ cd E:\codexPROJ\diplom
 npm run dev:full
 ```
 
+Короткий эквивалент:
+
+```powershell
+cd E:\codexPROJ\diplom
+npm start
+```
+
+Frontend dev server при запуске через root scripts явно привязывается к `127.0.0.1`, поэтому сайт должен открываться по адресу:
+
+- `http://127.0.0.1:5173/`
+
+Перед демонстрацией frontend production bundle можно проверить командой:
+
+```powershell
+cd E:\codexPROJ\diplom
+npm run site:check
+```
+
+Она выполняет `npm run build` и проверяет `frontend/dist/index.html`, подключённые JS/CSS assets и ключевые тексты интерфейса.
+
 ## Health endpoints
 
 Backend предоставляет четыре основных health/runtime endpoint'а:
@@ -232,7 +252,7 @@ Backend предоставляет четыре основных health/runtime 
 - `GET /audits/{audit_id}/events` — timeline событий аудита;
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
 
-### Что важно в результатах после D13-D20
+### Что важно в результатах после D13-D21
 
 При успешном аудите API теперь может отдавать:
 
@@ -242,6 +262,8 @@ Backend предоставляет четыре основных health/runtime 
 - expanded `features`, включая technical SEO и commercial/trust keys;
 - score breakdown с technical/commercial/trust rule factors;
 - рекомендации с `TECHNICAL_*`, `COMMERCIAL_*` и `TRUST_*` codes.
+
+После `D21` frontend использует эти payloads вместе с `GET /audits/{audit_id}/events/diagnostics`, чтобы собрать единый audit report/export dashboard без повторного backend-анализа страницы.
 
 ## Admission control
 
@@ -347,8 +369,8 @@ cd E:\codexPROJ\diplom\backend
 ## Связанные документы
 
 - `../README.md` — обзор проекта и полный локальный запуск.
-- `../AGENTS.md` — operational notes и текущее состояние репозитория.
-- `../docs/roadmap/product-development-roadmap.md` — roadmap и backlog.
+- `../AGENTS.md` — operational notes, текущий backlog и GitHub issues `D22-D26` (`#41-#45`).
+- `../docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D21`, включая frontend/product wave без изменения ядра backend-анализа.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -415,8 +437,8 @@ cd E:\codexPROJ\diplom\backend
   --dataset-version dataset-v2 `
   --versioned-layout `
   --freeze-baseline `
-  --seeds-file backend\data\dataset_versions\dataset-v2\seeds.csv `
-  --expert-labels backend\data\dataset_versions\dataset-v2\expert_labels.csv `
+  --seeds-file data\dataset_versions\dataset-v2\seeds.csv `
+  --expert-labels data\dataset_versions\dataset-v2\expert_labels.csv `
   --overwrite
 ```
 
@@ -425,17 +447,17 @@ cd E:\codexPROJ\diplom\backend
 ```powershell
 cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m app.ml.dataset_quality `
-  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
-  --failures backend\data\dataset_versions\dataset-v2\failures.csv `
-  --seeds backend\data\dataset_versions\dataset-v2\seeds.csv `
+  --dataset data\dataset_versions\dataset-v2\dataset.csv `
+  --failures data\dataset_versions\dataset-v2\failures.csv `
+  --seeds data\dataset_versions\dataset-v2\seeds.csv `
   --dataset-version dataset-v2 `
   --baseline-version baseline-v1 `
-  --artifacts-dir backend\data\dataset_versions\dataset-v2\artifacts `
-  --split backend\data\dataset_versions\dataset-v2\split.json `
-  --output backend\data\dataset_versions\dataset-v2\manifest.json
+  --artifacts-dir data\dataset_versions\dataset-v2\artifacts `
+  --split data\dataset_versions\dataset-v2\split.json `
+  --output data\dataset_versions\dataset-v2\manifest.json
 
 .venv\Scripts\python.exe -m app.ml.train `
-  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
+  --dataset data\dataset_versions\dataset-v2\dataset.csv `
   --dataset-version dataset-v2 `
-  --split-output backend\data\dataset_versions\dataset-v2\split.json
+  --split-output data\dataset_versions\dataset-v2\split.json
 ```

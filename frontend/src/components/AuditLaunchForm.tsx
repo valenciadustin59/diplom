@@ -17,11 +17,27 @@ export function AuditLaunchForm({
   const [query, setQuery] = useState("");
   const [targetUrl, setTargetUrl] = useState("");
 
+  function normalizeTargetUrl(value: string): string {
+    const trimmed = value.trim();
+    if (!trimmed) {
+      return "";
+    }
+
+    if (/^https?:\/\//i.test(trimmed)) {
+      return trimmed;
+    }
+
+    return `https://${trimmed}`;
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const normalizedUrl = normalizeTargetUrl(targetUrl);
+    setTargetUrl(normalizedUrl);
+
     const isCreated = await onSubmit({
-      query,
-      target_url: targetUrl,
+      query: query.trim(),
+      target_url: normalizedUrl,
     });
 
     if (isCreated) {
@@ -40,7 +56,7 @@ export function AuditLaunchForm({
         <input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="ремонт квартир москва"
+          placeholder="например: купить козловой кран"
           required
         />
       </label>
@@ -50,8 +66,10 @@ export function AuditLaunchForm({
         <input
           value={targetUrl}
           onChange={(event) => setTargetUrl(event.target.value)}
-          placeholder="https://example.com"
-          type="url"
+          onBlur={() => setTargetUrl(normalizeTargetUrl(targetUrl))}
+          placeholder="example.com или https://example.com"
+          inputMode="url"
+          type="text"
           required
         />
       </label>

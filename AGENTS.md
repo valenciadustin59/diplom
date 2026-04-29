@@ -58,17 +58,33 @@
 - `backend/` — FastAPI backend, SQLite, Celery runtime, ML scoring, training workflow.
 - `frontend/` — React + TypeScript интерфейс.
 - `scripts/` — dev scripts, benchmark runner, training utilities.
-- `docs/roadmap/` — roadmap и backlog.
+- `docs/roadmap/` — стратегический roadmap; operational source of truth остаётся `AGENTS.md`.
 - `plans/` и `PLANS.md` — вспомогательные planning-документы.
 - `docker-compose.searxng.yml` — локальный стек `SearxNG + Redis`.
 
-## Текущий backlog
+## Статус backlog
 
 Старые product issues `#1-#25` больше не считаются активным backlog source of truth. Они остаются только как архив истории проекта.
 
-Канонический backlog текущего этапа — distributed sequence `D1-D12`.
+Завершённые волны текущего дипломного проекта:
 
-Статус:
+- `D1-D12` — distributed runtime foundation: stage-based pipeline, queue topology, fan-out, health/metrics, event log, diagnostics, admission control и benchmark evidence.
+- `D13-D21` — SEO/ML/product wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue и audit report/export dashboard.
+
+Активная планируемая волна после `D21`: `D22-D26` — frontend/product layer без изменения ядра анализа:
+
+- `D21` / GitHub `#40` — completed: audit report and export dashboard;
+- `D22` / GitHub `#41` — audit execution timeline UI;
+- `D23` / GitHub `#42` — runtime status and queue health UI;
+- `D24` / GitHub `#43` — audit history management;
+- `D25` / GitHub `#44` — recommendation action tracking;
+- `D26` / GitHub `#45` — interface copy and terminology polish.
+
+Текущий практический фокус: не переписывать backend и не добавлять demo mode, а усиливать демонстрационный и управленческий frontend layer, который показывает уже существующие SEO/ML/distributed evidence. Если пользователь просит новый backlog scope без конкретного GitHub issue, ближайший логичный кандидат после `D21` — `D22` / `#41`: audit execution timeline UI.
+
+### D1-D12 Summary
+
+Статус `D1-D12`: завершено.
 
 - `D1` — stage-based decomposition audit pipeline
 - `D2` — per-stage Celery queues and routing
@@ -83,9 +99,7 @@
 - `D11` — worker topology profiles и queue-affinity validation
 - `D12` — benchmark/reporting workflow для distributed runtime evidence
 
-Итог: backlog `D1-D12` завершён.
-
-Если ниже в каких-либо старых документах встречаются упоминания о незавершённом `D12`, считать их историческими и неактуальными.
+Если в старых документах встречаются упоминания о незавершённом `D12`, считать их историческими и неактуальными.
 
 ## Архитектурные ориентиры
 
@@ -185,6 +199,22 @@ npm --prefix frontend install
 npm run dev:full
 ```
 
+Короткий эквивалент полного запуска:
+
+```powershell
+cd E:\codexPROJ\diplom
+npm start
+```
+
+### Frontend site smoke-check
+
+```powershell
+cd E:\codexPROJ\diplom
+npm run site:check
+```
+
+Команда собирает frontend и проверяет, что `frontend/dist` содержит production `index.html`, подключённые JS/CSS assets и ключевые тексты интерфейса.
+
 ### Backend tests
 
 ```powershell
@@ -210,7 +240,7 @@ npm run build
 
 - `README.md` — обзор проекта и локальный запуск.
 - `backend/README.md` — backend, API, workers, benchmark.
-- `docs/roadmap/product-development-roadmap.md` — roadmap и backlog.
+- `docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D20`.
 - `backend/docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## Git и публикация
@@ -220,9 +250,9 @@ npm run build
 - Если используется `Closes #<n>`, issue должен закрываться через push в `main`, а не вручную без кода.
 
 
-## D13-D20 Status
+## D13-D21 Status
 
-Current next-wave backlog: `D13-D20`.
+Completed product/ML/SEO/frontend evidence wave: `D13-D21`.
 
 - `D13` - completed: versioned extraction pipeline, `feature schema v2`, persistent `target_snapshot`, DOM-based extraction, and API snapshot summary.
 - `D14` - completed: пакет технических SEO-сигналов поверх `target_snapshot`, включая canonical/redirect/indexability/url-hygiene признаки, технические рекомендации и технические факторы в score explanation без изменения текущего `FEATURE_COLUMNS`.
@@ -232,6 +262,7 @@ Current next-wave backlog: `D13-D20`.
 - `D18` - completed: model schema v2, artifact-driven runtime/training/publish flow, ranking benchmark workflow, ranking candidate publish/report path.
 - `D19` - completed: grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload, legacy recommendation normalization for old audits.
 - `D20` - completed: dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, metrics pressure visibility and benchmark topology profile summary.
+- `D21` - completed: audit report tab, client-side export dashboard, printable HTML/PDF-like view, downloadable Markdown/HTML report, compact SEO/ML/recommendation/competitor/runtime evidence summary using existing audit results and timeline diagnostics APIs.
 
 ## Актуальное состояние после D20
 
@@ -277,16 +308,52 @@ Current next-wave backlog: `D13-D20`.
 - `backend/app/schemas/audit.py`
   - `heavy_analysis` fields in audit/results contracts
 
+## Актуальное состояние после D21
+
+Состояние реализации после D21:
+
+- `D21` реализует GitHub issue `#40`.
+- В audit workspace добавлена вкладка `Отчёт`.
+- После создания или выбора аудита frontend открывает отчёт как основной demonstration view (`?tab=report`).
+- Отчёт агрегирует `results`, grouped `recommendations`, competitor evidence и `events/diagnostics`.
+- Экспорт выполняется на клиенте без повторного анализа страницы:
+  - printable HTML view с возможностью `Save as PDF`;
+  - downloadable HTML;
+  - downloadable Markdown.
+- `site:check` теперь проверяет наличие report/export UI в production bundle.
+
+Ключевые места D21:
+
+- `frontend/src/pages/AuditReportPage.tsx` — report dashboard и export actions;
+- `frontend/src/lib/auditReport.ts` — pure report model, Markdown/HTML export builders и filename helper;
+- `frontend/src/hooks/useAuditWorkspace.ts` — загрузка timeline diagnostics вместе с results/recommendations;
+- `frontend/src/api/api.ts` — `getTimelineDiagnostics(...)`;
+- `frontend/src/types.ts` — frontend contracts для timeline diagnostics, `query_intent`, `feature_schema_version`, `target_snapshot_summary`;
+- `frontend/src/components/AuditTabs.tsx` и `frontend/src/App.tsx` — вкладка `report` и default navigation в отчёт;
+- `scripts/site-content-check.mjs` — smoke-check ключевых строк report/export UI.
+
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из актуальных open GitHub issues после push D20.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из явно выбранной пользователем задачи или из актуальных open GitHub issues. Актуальная новая волна создана в GitHub как `#40-#45`; после завершения `D21` приоритет реализации — `D22` / `#41` timeline UI, затем `D23` / `#42` runtime status. Demo mode намеренно не входит в backlog.
 
 Перед началом любой новой задачи:
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- затем посмотреть open issues в GitHub и выбрать следующий backlog scope;
-- не откатывать уже выполненные `D13-D20` без прямой причины.
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов;
+- не откатывать уже выполненные `D13-D21` без прямой причины.
+
+## Последняя runtime smoke-проверка
+
+Последняя проверка полного локального stack после запуска Docker Desktop выполнялась `2026-04-24`:
+
+- `npm start` поднял `Redis`, `SearxNG`, backend, frontend и четыре Celery worker-профиля;
+- frontend отвечал на `http://127.0.0.1:5173/`;
+- `GET /health/live` вернул `200 OK`;
+- `GET /health/ready` вернул `200 OK` и показал workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml`;
+- smoke audit `seo audit` / `https://example.com/` / `top_n=2` завершился со status `completed`, score `48.3578`, `2` competitors и `26` recommendations.
+
+Локальный `GET /health/metrics` может показывать `degraded`, если в игнорируемой SQLite БД остались старые audit rows со статусом `processing`. Это не означает, что текущий worker stack не поднялся: для готовности distributed runtime сначала смотреть `GET /health/ready` и queue/worker statuses внутри metrics.
 
 ## GitHub И Секреты
 

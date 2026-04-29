@@ -80,8 +80,16 @@ function renderDeviation(deviation: RecommendationDeviation) {
 }
 
 function renderRecommendationCard(item: RecommendationPreviewItem | RecommendationGroup["items"][number], compact = false) {
+  const className = [
+    "recommendation-item",
+    `recommendation-item--${item.priority}`,
+    compact ? "recommendation-item--compact" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <article key={item.code} className={`recommendation-item${compact ? " recommendation-item--compact" : ""}`}>
+    <article key={item.code} className={className}>
       <div className="recommendation-item__top">
         <div className="recommendation-item__heading">
           {"groupLabel" in item ? <span className="recommendation-item__group">{item.groupLabel}</span> : null}
@@ -116,34 +124,58 @@ function renderRecommendationCard(item: RecommendationPreviewItem | Recommendati
   );
 }
 
-function RecommendationGroupSection({ group }: { group: RecommendationGroup }) {
+function RecommendationGroupSection({ group, defaultOpen }: { group: RecommendationGroup; defaultOpen: boolean }) {
   return (
-    <section className="recommendation-group">
-      <div className="recommendation-group__header">
-        <div>
+    <details className={`recommendation-group recommendation-group--${group.status}`} open={defaultOpen}>
+      <summary className="recommendation-group__header">
+        <div className="recommendation-group__heading">
           <h3 className="recommendation-group__title">{group.label}</h3>
           <p className="recommendation-group__description">{group.description}</p>
         </div>
         <span className={`recommendation-group__status recommendation-group__status--${group.status}`}>
           {getGroupStatusLabel(group.status)}
         </span>
+      </summary>
+
+      <div className="recommendation-group__body">
+        {group.deviations.length > 0 ? (
+          <section className="recommendation-subsection recommendation-subsection--metrics" aria-label="Сравнение с конкурентами">
+            <div className="recommendation-subsection__header">
+              <span className="recommendation-subsection__kicker">Сравнение</span>
+              <span className="recommendation-subsection__count">{group.deviations.length}</span>
+            </div>
+            <div className="recommendation-deviation-list">{group.deviations.map(renderDeviation)}</div>
+          </section>
+        ) : null}
+
+        {group.items.length > 0 ? (
+          <section className="recommendation-subsection recommendation-subsection--actions" aria-label="Рекомендации к улучшению">
+            <div className="recommendation-subsection__header">
+              <span className="recommendation-subsection__kicker">Что улучшить</span>
+              <span className="recommendation-subsection__count">{group.items.length}</span>
+            </div>
+            <div className="recommendation-group__items">{group.items.map((item) => renderRecommendationCard(item))}</div>
+          </section>
+        ) : (
+          <div className="empty-state recommendation-group__empty">{group.empty_state}</div>
+        )}
       </div>
-
-      {group.deviations.length > 0 ? (
-        <div className="recommendation-deviation-list">{group.deviations.map(renderDeviation)}</div>
-      ) : null}
-
-      {group.items.length > 0 ? (
-        <div className="recommendation-group__items">{group.items.map((item) => renderRecommendationCard(item))}</div>
-      ) : (
-        <div className="empty-state recommendation-group__empty">{group.empty_state}</div>
-      )}
-    </section>
+    </details>
   );
 }
 
 export function RecommendationList({ recommendations }: RecommendationListProps) {
-  return <div className="recommendation-list">{recommendations.groups.map((group) => <RecommendationGroupSection key={group.key} group={group} />)}</div>;
+  const firstIssueIndex = recommendations.groups.findIndex(
+    (group) => group.items.length > 0 || group.deviations.length > 0,
+  );
+
+  return (
+    <div className="recommendation-list">
+      {recommendations.groups.map((group, index) => (
+        <RecommendationGroupSection key={group.key} group={group} defaultOpen={index === firstIssueIndex} />
+      ))}
+    </div>
+  );
 }
 
 export function RecommendationPreviewList({ items }: RecommendationPreviewListProps) {

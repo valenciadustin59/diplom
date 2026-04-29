@@ -1,5 +1,5 @@
 export type AuditStatus = "queued" | "processing" | "completed" | "completed_with_warnings" | "failed";
-export type AuditTab = "overview" | "pages" | "competitors" | "recommendations";
+export type AuditTab = "overview" | "report" | "pages" | "competitors" | "recommendations";
 export type FailureStage = "fetch" | "heavy_analysis" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
 
 export type FailureContext = {
@@ -73,21 +73,28 @@ export type RecommendationsBundle = {
 };
 
 export type ScoreFactor = {
-  code: string;
+  code?: string;
+  key?: string;
   label: string;
   impact: number;
-  detail: string;
+  detail?: string;
+  value?: number | string | null;
 };
 
 export type ScoreBreakdown = {
   final_score: number;
   rule_score: number;
   ml_score: number;
-  methodology: string;
+  methodology?: string;
   interaction_signals?: Record<string, number>;
-  positives: ScoreFactor[];
-  negatives: ScoreFactor[];
-  factors: ScoreFactor[];
+  positives?: ScoreFactor[];
+  negatives?: ScoreFactor[];
+  factors?: ScoreFactor[];
+  top_positive_factors?: ScoreFactor[];
+  top_negative_factors?: ScoreFactor[];
+  serp_relative_factors?: Array<Record<string, unknown>>;
+  model_info?: Record<string, unknown>;
+  weights?: Record<string, number>;
 };
 
 export type FetchStatus = "success" | "failed";
@@ -110,7 +117,9 @@ export type AuditStatusResponse = {
   created_at: string;
   updated_at: string | null;
   extracted_text: string | null;
+  feature_schema_version: string | null;
   heavy_analysis: Record<string, unknown> | null;
+  query_intent: Record<string, unknown> | null;
   features: Record<string, number> | null;
   score: number | null;
   score_breakdown: ScoreBreakdown | null;
@@ -131,7 +140,10 @@ export type AuditResultsResponse = {
   status: AuditStatus;
   score: number | null;
   extracted_text: string | null;
+  feature_schema_version: string | null;
+  target_snapshot_summary: Record<string, unknown> | null;
   heavy_analysis: Record<string, unknown> | null;
+  query_intent: Record<string, unknown> | null;
   features: Record<string, number> | null;
   score_breakdown: ScoreBreakdown | null;
   competitor_results: CompetitorResult[] | null;
@@ -143,6 +155,60 @@ export type AuditResultsResponse = {
   failure_context: FailureContext | null;
   warnings: WarningMessage[] | null;
   error_message: string | null;
+};
+
+export type AuditTimelineStageDiagnostics = {
+  stage: string;
+  dispatch_count: number;
+  started_count: number;
+  completed_count: number;
+  failed_count: number;
+  aborted_count: number;
+  terminal_count: number;
+  total_duration_ms: number | null;
+  average_duration_ms: number | null;
+  max_duration_ms: number | null;
+  critical_path_mode: string;
+  critical_path_duration_ms: number | null;
+  first_event_at: string | null;
+  last_event_at: string | null;
+  latest_event: string | null;
+};
+
+export type AuditTimelineCriticalPathStage = {
+  stage: string;
+  contribution_duration_ms: number | null;
+  mode: string;
+  terminal_count: number;
+};
+
+export type AuditTimelineFanOut = {
+  stage: string;
+  dispatch_count: number;
+  started_count: number;
+  terminal_count: number;
+  in_flight_count: number;
+  total_duration_ms: number | null;
+  average_duration_ms: number | null;
+  max_duration_ms: number | null;
+  critical_path_duration_ms: number | null;
+};
+
+export type AuditTimelineDiagnosticsResponse = {
+  audit_id: string;
+  processing_version: number | null;
+  status: AuditStatus;
+  event_count: number;
+  dispatch_count: number;
+  started_at: string | null;
+  finished_at: string | null;
+  total_duration_ms: number | null;
+  terminal_stage: string | null;
+  terminal_event: string | null;
+  critical_path_duration_ms: number | null;
+  critical_path_stages: AuditTimelineCriticalPathStage[];
+  stage_breakdown: AuditTimelineStageDiagnostics[];
+  fan_out: AuditTimelineFanOut | null;
 };
 
 export type AuditRecommendationsResponse = {
@@ -160,6 +226,7 @@ export type AuditSummary = {
   score: number;
   status: AuditStatus;
   createdAt: string;
+  createdAtTimestamp: number | null;
 };
 
 export type CompetitorScore = {

@@ -3,7 +3,7 @@ import type { AuditResultsResponse, AuditStatus, AuditStatusResponse, FailureCon
 export function getAuditStatusLabel(status: AuditStatus): string {
   switch (status) {
     case "queued":
-      return "В очереди";
+      return "Запускается";
     case "processing":
       return "Обработка";
     case "completed":

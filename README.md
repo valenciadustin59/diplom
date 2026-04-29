@@ -23,6 +23,7 @@
 - commercial/trust feature pack для коммерческих landing pages;
 - изоляция тяжёлых analyzer-стадий в отдельную distributed queue;
 - выдача рекомендаций по улучшению страницы;
+- единый audit report dashboard с экспортом в печатный HTML/PDF-like view, HTML и Markdown;
 - timeline событий аудита и диагностика критического пути;
 - runtime telemetry для очередей, workers, backlog и admission control;
 - benchmark/reporting workflow для демонстрации распределённого исполнения.
@@ -68,13 +69,31 @@
 - `backend/` — FastAPI backend, Celery runtime, ML и тесты backend.
 - `frontend/` — React frontend.
 - `scripts/` — dev-скрипты, benchmark workflow, генерация обучающих запросов.
-- `docs/roadmap/` — roadmap и backlog текущего этапа проекта.
+- `docs/roadmap/` — стратегический roadmap; operational handoff находится в `AGENTS.md`.
 - `docker-compose.searxng.yml` — локальный стек `SearxNG + Redis`.
 - `plans/` и `PLANS.md` — вспомогательные проектные материалы.
 
-## Статус distributed backlog
+## Статус backlog
 
-Текущий канонический backlog проекта — линия `D1-D12`.
+Завершённые волны проекта:
+
+- `D1-D12` — distributed runtime foundation: stage-based pipeline, per-stage queues, fan-out, health/metrics, diagnostics, admission control и benchmark evidence.
+- `D13-D21` — SEO/ML/product wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue и audit report/export dashboard.
+
+Итог: проект уже закрывает ключевые требования дипломной темы — web-приложение машинного обучения с доказуемым распределённым runtime.
+
+Актуальная frontend/product wave после `D21` заведена в GitHub:
+
+- `D21` / `#40` — completed: audit report and export dashboard.
+- `D22` / `#41` — audit execution timeline UI.
+- `D23` / `#42` — runtime status and queue health UI.
+- `D24` / `#43` — audit history management.
+- `D25` / `#44` — recommendation action tracking.
+- `D26` / `#45` — interface copy and terminology polish.
+
+Приоритет ближайшей разработки после `D21`: timeline UI (`D22`), затем runtime status (`D23`). Demo mode в текущий backlog не входит.
+
+### Distributed foundation `D1-D12`
 
 Выполнено:
 
@@ -83,7 +102,7 @@
 - `D9-D11` — queue pressure detector, admission control под нагрузкой, worker topology profiles.
 - `D12` — benchmark/reporting workflow для измеримого подтверждения распределённого runtime.
 
-Итог: backlog `D1-D12` завершён.
+Итог: backlog `D1-D12` завершён. После `D21` следующий практический фокус — не новый backend-runtime слой, а timeline UI (`D22` / `#41`) и runtime status (`D23` / `#42`), которые углубляют уже существующую frontend-доказательную базу.
 
 ## Требования
 
@@ -124,6 +143,13 @@ cd E:\codexPROJ\diplom
 npm run dev:full
 ```
 
+Короткий эквивалент для запуска из консоли:
+
+```powershell
+cd E:\codexPROJ\diplom
+npm start
+```
+
 Команда:
 
 - поднимает `SearxNG` и `Redis`;
@@ -133,6 +159,17 @@ npm run dev:full
 - запускает четыре worker-профиля: `pipeline`, `network`, `heavy_analysis`, `cpu_ml`.
 
 Это рекомендуемый режим для полноценного аудита и для демонстрации распределённой архитектуры.
+
+### Проверка сборки и содержимого frontend
+
+Перед демонстрацией можно проверить, что production-сборка собирается и содержит ключевые экраны интерфейса:
+
+```powershell
+cd E:\codexPROJ\diplom
+npm run site:check
+```
+
+Команда выполняет `frontend` build и проверяет `frontend/dist/index.html`, подключённые JS/CSS assets и основные тексты интерфейса: запуск аудита, историю аудитов, рабочее пространство, конкурентов, рекомендации, score и ML-калибровку.
 
 ### 4. Проверить готовность runtime
 
@@ -325,9 +362,9 @@ npm run test
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
 
-## Статус D13-D20
+## Статус D13-D21
 
-Текущая продуктовая волна backlog — `D13-D20`.
+Продуктовая волна backlog — `D13-D21` — завершена.
 
 Выполнено:
 
@@ -342,8 +379,9 @@ npm run test
 - `D18` - model schema v2, artifact-driven runtime/training/publish flow, ranking benchmark workflow и publish/report path.
 - `D19` - grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload и legacy normalization для старых аудитов.
 - `D20` - dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, queue-pressure metrics and benchmark topology-profile summary.
+- `D21` - audit report/export dashboard: вкладка `Отчёт`, компактная сводка SEO/ML/recommendation/competitor/runtime evidence, printable HTML/PDF-like view, downloadable HTML и Markdown export без повторного анализа страницы.
 
-Текущая волна `D13-D20` завершена. Следующий этап следует брать из актуального GitHub backlog после проверки open issues.
+Текущая волна `D13-D21` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D22` / `#41` timeline, `D23` / `#42` runtime status, `D24` / `#43` history management, `D25` / `#44` recommendation action tracking, `D26` / `#45` copy polish.
 
 ## Dataset V2 Workflow (`D17`)
 
@@ -370,8 +408,8 @@ cd E:\codexPROJ\diplom\backend
   --dataset-version dataset-v2 `
   --versioned-layout `
   --freeze-baseline `
-  --seeds-file backend\data\dataset_versions\dataset-v2\seeds.csv `
-  --expert-labels backend\data\dataset_versions\dataset-v2\expert_labels.csv `
+  --seeds-file data\dataset_versions\dataset-v2\seeds.csv `
+  --expert-labels data\dataset_versions\dataset-v2\expert_labels.csv `
   --overwrite
 ```
 
@@ -380,17 +418,17 @@ cd E:\codexPROJ\diplom\backend
 ```powershell
 cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m app.ml.dataset_quality `
-  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
-  --failures backend\data\dataset_versions\dataset-v2\failures.csv `
-  --seeds backend\data\dataset_versions\dataset-v2\seeds.csv `
+  --dataset data\dataset_versions\dataset-v2\dataset.csv `
+  --failures data\dataset_versions\dataset-v2\failures.csv `
+  --seeds data\dataset_versions\dataset-v2\seeds.csv `
   --dataset-version dataset-v2 `
   --baseline-version baseline-v1 `
-  --artifacts-dir backend\data\dataset_versions\dataset-v2\artifacts `
-  --split backend\data\dataset_versions\dataset-v2\split.json `
-  --output backend\data\dataset_versions\dataset-v2\manifest.json
+  --artifacts-dir data\dataset_versions\dataset-v2\artifacts `
+  --split data\dataset_versions\dataset-v2\split.json `
+  --output data\dataset_versions\dataset-v2\manifest.json
 
 .venv\Scripts\python.exe -m app.ml.train `
-  --dataset backend\data\dataset_versions\dataset-v2\dataset.csv `
+  --dataset data\dataset_versions\dataset-v2\dataset.csv `
   --dataset-version dataset-v2 `
-  --split-output backend\data\dataset_versions\dataset-v2\split.json
+  --split-output data\dataset_versions\dataset-v2\split.json
 ```

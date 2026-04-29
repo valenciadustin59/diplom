@@ -14,7 +14,7 @@ import { ControlRail } from "./components/ControlRail";
 import { useAuditWorkspace } from "./hooks/useAuditWorkspace";
 import type { AuditCreatePayload, AuditTab } from "./types";
 
-const validTabs: AuditTab[] = ["overview", "pages", "competitors", "recommendations"];
+const validTabs: AuditTab[] = ["overview", "report", "pages", "competitors", "recommendations"];
 
 type AuditWorkspaceRouteProps = ReturnType<typeof useAuditWorkspace>;
 
@@ -41,16 +41,27 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
     return <Navigate to="/" replace />;
   }
 
+  const isActiveAuditRoute = auditId === selectedAuditId;
+  const currentAudit = isActiveAuditRoute ? props.currentAudit : null;
+  const currentResults = isActiveAuditRoute ? props.currentResults : null;
+  const recommendations = isActiveAuditRoute ? props.recommendations : null;
+  const timelineDiagnostics = isActiveAuditRoute ? props.timelineDiagnostics : null;
+  const pageRows = isActiveAuditRoute ? props.pageRows : [];
+  const competitorScores = isActiveAuditRoute ? props.competitorScores : [];
+  const comparisonSummary = isActiveAuditRoute ? props.comparisonSummary : null;
+  const isAuditRoutePending = !isActiveAuditRoute || (!currentAudit && !props.workspaceError);
+
   return (
     <AuditWorkspace
-      currentAudit={props.currentAudit}
-      currentResults={props.currentResults}
-      recommendations={props.recommendations}
-      pageRows={props.pageRows}
-      competitorScores={props.competitorScores}
-      comparisonSummary={props.comparisonSummary}
+      currentAudit={currentAudit}
+      currentResults={currentResults}
+      recommendations={recommendations}
+      timelineDiagnostics={timelineDiagnostics}
+      pageRows={pageRows}
+      competitorScores={competitorScores}
+      comparisonSummary={comparisonSummary}
       auditStatus={props.auditStatus}
-      loading={props.loadingAudit}
+      loading={props.loadingAudit || isAuditRoutePending}
       error={props.workspaceError}
       activeTab={activeTab}
       onTabChange={(tab) => setSearchParams({ tab })}
@@ -73,13 +84,13 @@ function AppShell() {
       return false;
     }
 
-    navigate(`/audits/${audit.id}?tab=overview`);
+    navigate(`/audits/${audit.id}?tab=report`);
     return true;
   }
 
   function handleSelectAudit(auditId: string) {
     workspace.selectAudit(auditId);
-    navigate(`/audits/${auditId}?tab=overview`);
+    navigate(`/audits/${auditId}?tab=report`);
   }
 
   return (

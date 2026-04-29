@@ -2,7 +2,9 @@
 
 This ExecPlan is a living document. The sections `Progress`, `Surprises & Discoveries`, `Decision Log`, and `Outcomes & Retrospective` must be kept up to date as work proceeds.
 
-This document must be maintained in accordance with [PLANS.md](/E:/codexPROJ/diplom/PLANS.md).
+This document must be maintained in accordance with `PLANS.md` in the repository root.
+
+Status note for future agents: this plan is historical. Its core implementation path was completed and later superseded by the `D17` versioned dataset workflow and `D18` artifact-driven model workflow. Do not use the unchecked 1500-2000 row target as the current source of truth without first checking `AGENTS.md`, `README.md`, `backend/data/dataset_versions/`, and the current model artifact metadata.
 
 ## Purpose / Big Picture
 
@@ -18,9 +20,9 @@ This document must be maintained in accordance with [PLANS.md](/E:/codexPROJ/dip
 - [x] (2026-04-15 19:05 +05:00) Добавлены `backend/.env.example`, новый `scripts/generate_training_queries.py`, `scripts/run_training_batches.py`, обновлены `backend/README.md` и `AGENTS.md`.
 - [x] (2026-04-15 19:08 +05:00) Сгенерирован `backend/data/training_query_seeds.csv` на 200 RU commercial seed-запросов и обновлён `backend/data/training_queries.txt`.
 - [x] (2026-04-15 19:11 +05:00) Тесты обновлены под новый pipeline; `pytest` проходит полностью.
-- [ ] (2026-04-15 19:11 +05:00) Собрать live датасет на `1500-2000` успешных страниц через SearxNG JSON API или стабильный HTML fallback.
-- [ ] (2026-04-15 19:11 +05:00) Обучить production-like артефакт `backend/artifacts/page_quality_model.pkl` на реальном CSV.
-- [ ] (2026-04-15 19:11 +05:00) Провести smoke-аудит с реальным артефактом и зафиксировать evidence, что runtime берёт `source=local_dataset`.
+- [x] (2026-04-21 17:49 +05:00) Обучен и опубликован runtime artifact `backend/artifacts/page_quality_model.pkl` с `source=local_dataset`, `artifact_version=ru_commercial_dataset-20260421-primary-20260421174901`, `rows_count=436`, `queries_count=47`, `domains_count=385`.
+- [x] (2026-04-24 14:06 +05:00) Проведён smoke-аудит полного distributed runtime через `npm start`; новый audit дошёл до `completed`, runtime использовал локальный model artifact, score был `48.3578`.
+- [ ] Опционально усилить ML evidence перед защитой: собрать больший экспертно/гибридно размеченный dataset v2, обновить manifest, ranking benchmark и методологическое приложение.
 
 ## Surprises & Discoveries
 
@@ -60,7 +62,9 @@ This document must be maintained in accordance with [PLANS.md](/E:/codexPROJ/dip
 
 ## Outcomes & Retrospective
 
-Промежуточный итог на 2026-04-15: кодовая часть real training pipeline доведена до рабочего состояния. В репозитории уже есть единый provider-слой, структурированный RU seed pack, dataset builder с failures/checkpoint, ranking-aware training и runtime metadata. Основной незавершённый кусок теперь не в секрете, а в фактическом длительном live collection: нужно выбрать рабочий `SEARXNG_BASE_URL` или опереться на fallback, собрать `1500-2000` успешных страниц и обучить production-like артефакт на реальном CSV.
+Промежуточный итог на 2026-04-15: кодовая часть real training pipeline была доведена до рабочего состояния. В репозитории появился единый provider-слой, структурированный RU seed pack, dataset builder с failures/checkpoint, ranking-aware training и runtime metadata.
+
+Итог после `D17-D18`: основной runtime больше не обязан работать от bootstrap fallback. В `backend/artifacts/page_quality_model.pkl` опубликован локальный артефакт с `source=local_dataset`. Dataset workflow переведён в versioned layout (`baseline-v1`, `dataset-v2`), а model publish flow стал artifact-driven. Оставшийся пункт — не blocker, а усиление доказательной базы: собрать более крупный и лучше размеченный dataset v2 и зафиксировать ranking benchmark в дипломных материалах.
 
 ## Context and Orientation
 
@@ -83,9 +87,9 @@ This document must be maintained in accordance with [PLANS.md](/E:/codexPROJ/dip
 
 ## Plan of Work
 
-Сначала подготовить локальное окружение backend и при желании заполнить `backend/.env` значением `SEARXNG_BASE_URL`. Затем сгенерировать или обновить `backend/data/training_query_seeds.csv` через `scripts/generate_training_queries.py`. После этого запускать dataset build либо одним проходом через `app.ml.dataset_builder`, либо пакетами через `scripts/run_training_batches.py`.
+Исторический план работы был таким: подготовить локальное окружение backend, при желании заполнить `backend/.env` значением `SEARXNG_BASE_URL`, затем сгенерировать или обновить `backend/data/training_query_seeds.csv` через `scripts/generate_training_queries.py`. После этого запускать dataset build либо одним проходом через `app.ml.dataset_builder`, либо пакетами через `scripts/run_training_batches.py`.
 
-Когда CSV дойдёт минимум до `1500` успешных строк, выполнить `app.ml.train` и сохранить `backend/artifacts/page_quality_model.pkl`. Затем поднять backend, создать новый аудит и проверить, что в `GET /audits/{id}/results` поле `score_breakdown.model_info.source` равно `local_dataset`.
+Изначальная цель `1500` успешных строк теперь является optional hardening target, а не blocker. Текущий рабочий runtime уже использует `backend/artifacts/page_quality_model.pkl` с `source=local_dataset`. Если план возобновляется для усиления ML evidence, ориентироваться нужно на `D17/D18` versioned dataset/model workflow и обновлять `backend/data/dataset_versions/dataset-v2/`, manifest, ranking benchmark и методологическое приложение.
 
 ## Concrete Steps
 
@@ -113,12 +117,12 @@ This document must be maintained in accordance with [PLANS.md](/E:/codexPROJ/dip
 
 ## Validation and Acceptance
 
-Проверка считается успешной, если выполняются все условия:
+Историческая проверка считалась успешной по условиям ниже. Для текущего состояния проекта пункты 1, 2, 4 и 5 уже закрыты, а пункт 3 является optional hardening target перед защитой:
 
 1. Без `SEARXNG_BASE_URL` система может продолжить работу через HTML fallback, а при наличии `SEARXNG_BASE_URL` использует бесплатный JSON provider.
 2. `backend/data/training_query_seeds.csv` существует и содержит 200 seed rows, то есть 25 категорий на 8 городов.
-3. После live collection основной CSV содержит не менее `1500` успешных строк, а failures пишутся отдельно в `training_failures.csv`.
-4. `app.ml.train` создаёт `backend/artifacts/page_quality_model.pkl`, а metadata внутри артефакта содержит `source=local_dataset`.
+3. Для optional hardening после live collection основной CSV или versioned dataset v2 содержит существенно больше строк и failures пишутся отдельно; исходная цель этого historical plan была `1500` успешных строк.
+4. `app.ml.train` создаёт или уже опубликованный runtime использует `backend/artifacts/page_quality_model.pkl`, а metadata внутри артефакта содержит `source=local_dataset`.
 5. После старта backend новый аудит доходит до `completed`, а `score_breakdown.model_info.source` указывает на `local_dataset`.
 
 ## Idempotence and Recovery
