@@ -163,7 +163,7 @@ function createEvents(overrides: Partial<AuditTimelineEventsResponse> = {}): Aud
         stage: "heavy_analysis",
         event: "completed",
         duration_ms: 3_000,
-        details: { overall_score: 72, risk_level: "medium" },
+        details: { status: "success", overall_score: 72, risk_level: "medium", duration_ms: 3_000 },
         created_at: "2026-01-01T10:00:04",
       },
       {
@@ -215,6 +215,11 @@ describe("audit timeline model", () => {
     expect(heavyAnalysis?.queueLabel).toBe("audits.heavy_analysis");
     expect(heavyAnalysis?.status).toBe("completed");
     expect(heavyAnalysis?.isCriticalPath).toBe(true);
+
+    const heavyAnalysisEvent = model.eventRows.find((event) => event.id === 2);
+    expect(heavyAnalysisEvent?.detailSummary).toContain("Статус: успешно");
+    expect(heavyAnalysisEvent?.detailSummary).toContain("Риск: средний");
+    expect(heavyAnalysisEvent?.detailSummary).not.toContain("duration_ms");
   });
 
   it("summarizes fan-out with max branch duration", () => {

@@ -87,8 +87,8 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
 function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
   return (
     <Card
-      title="Параллельные ветки (fan-out)"
-      subtitle="Показывает все найденные параллельные stages. Backend diagnostics может выбрать один fan_out, поэтому UI дополнительно выводит fan-out по raw events."
+      title="Параллельные ветки"
+      subtitle="Показывает все найденные параллельные этапы. Серверная диагностика может выбрать один признак ветвления, поэтому интерфейс дополнительно выводит ветвление по сырым событиям."
     >
       {fanOutStages.length > 0 ? (
         <div className="timeline-fanout">
@@ -141,7 +141,7 @@ function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
   return (
     <Card
       title="Диагностика этапов"
-      subtitle="Агрегированные счётчики по каждому логическому этапу audit pipeline."
+      subtitle="Агрегированные счётчики по каждому логическому этапу конвейера аудита."
     >
       <div className="report-table-shell">
         <table className="report-table timeline-table">
@@ -153,7 +153,7 @@ function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
               <th>Запущено / завершено</th>
               <th>Успешно / ошибок</th>
               <th>Длительность</th>
-              <th>Вклад в runtime</th>
+              <th>Вклад во время выполнения</th>
             </tr>
           </thead>
           <tbody>
@@ -190,7 +190,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
   return (
     <Card
       title="Поток событий"
-      subtitle="Сырые события из backend event log. Порядок строк сохраняет порядок записи событий; в параллельных ветках timestamps могут идти не строго по времени."
+      subtitle="Сырые события из серверного журнала. Порядок строк сохраняет порядок записи событий; в параллельных ветках метки времени могут идти не строго по времени."
     >
       {events.length > 0 ? (
         <div className="report-table-shell timeline-event-stream">
@@ -226,7 +226,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
         </div>
       ) : (
         <div className="empty-state">
-          Поток сырых событий пока недоступен. Диагностика этапов выше остаётся источником агрегированной runtime evidence.
+          Поток сырых событий пока недоступен. Диагностика этапов выше остаётся источником агрегированных данных о выполнении.
         </div>
       )}
     </Card>
@@ -264,14 +264,14 @@ export function AuditTimelinePage({
             <span className="eyebrow-pill">Таймлайн выполнения аудита</span>
             <h2 className="timeline-hero__title">{model.title}</h2>
             <p className="timeline-hero__text">
-              Наглядный след распределённого Celery pipeline: очереди, этапы worker'ов, параллельные fan-out ветки,
+              Наглядный след распределённого конвейера Celery: очереди, этапы воркеров, параллельные ветки,
               предупреждения, ошибки и оценка вклада в критический путь из диагностики.
             </p>
             <div className="workspace-meta">
               <span className="workspace-meta__item">Статус: {model.statusLabel}</span>
               <span className="workspace-meta__item">Версия обработки: {model.processingVersionLabel}</span>
               <span className="workspace-meta__item">События: {model.rangeLabel}</span>
-              <span className="workspace-meta__item">{model.targetUrl}</span>
+              <span className="workspace-meta__item">Целевая страница: {model.targetUrl}</span>
             </div>
           </div>
         </div>
@@ -285,9 +285,9 @@ export function AuditTimelinePage({
       {error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
       {model.failure ? (
         <div className="feedback-banner feedback-banner--error">
-          <strong>Pipeline остановился на этапе: {model.failure.stageLabel}</strong>
+          <strong>Конвейер остановился на этапе: {model.failure.stageLabel}</strong>
           <div>{model.failure.message}</div>
-          {model.failure.code ? <div>Code: {model.failure.code}</div> : null}
+          {model.failure.code ? <div>Код: {model.failure.code}</div> : null}
           {model.failure.details.map((detail) => (
             <div key={`${detail.label}:${detail.value}`}>
               {detail.label}: {detail.value}
@@ -308,18 +308,18 @@ export function AuditTimelinePage({
       {!model.hasData ? (
         <Card
           title="Диагностика таймлайна пока недоступна"
-          subtitle="Для старых аудитов event log может отсутствовать, а для новых запусков в очереди события появятся после первого этапа worker'а."
+          subtitle="Для старых аудитов журнал событий может отсутствовать, а для новых запусков в очереди события появятся после первого этапа воркера."
         >
           <div className="empty-state">
-            Откройте аудит после завершения или дождитесь первого события pipeline, чтобы увидеть жизненный цикл этапов,
-            очереди, fan-out и подсказки по вкладу в критический путь.
+            Откройте аудит после завершения или дождитесь первого события конвейера, чтобы увидеть жизненный цикл этапов,
+            очереди, параллельные ветки и подсказки по вкладу в критический путь.
           </div>
         </Card>
       ) : (
         <>
           <Card
             title="Жизненный цикл этапов"
-            subtitle="Упорядоченный вид этапов распределённого аудита. Бейдж показывает stages, включённые в backend diagnostics вклада в критический путь, а не единственный эксклюзивный маршрут."
+            subtitle="Упорядоченный вид этапов распределённого аудита. Метка показывает этапы, включённые в серверную диагностику вклада в критический путь, а не единственный эксклюзивный маршрут."
           >
             <div className="timeline-stage-grid">
               {model.stageRows.map((stage, index) => (

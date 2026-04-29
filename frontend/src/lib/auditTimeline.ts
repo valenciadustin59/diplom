@@ -138,10 +138,10 @@ const FAN_OUT_STAGES = new Set(["competitor_page", "competitor_analysis"]);
 
 const STAGE_LABELS: Record<string, string> = {
   pipeline: "Конвейер аудита",
-  fetch: "Загрузка target",
+  fetch: "Загрузка целевой страницы",
   heavy_analysis: "Тяжёлый анализ",
   features: "Извлечение признаков",
-  scoring: "Расчёт score",
+  scoring: "Расчёт оценки",
   competitors: "Поиск конкурентов",
   competitor_page: "Загрузка конкурентов",
   competitor_analysis: "Анализ конкурентов",
@@ -151,22 +151,22 @@ const STAGE_LABELS: Record<string, string> = {
 };
 
 const STAGE_DESCRIPTIONS: Record<string, string> = {
-  pipeline: "Родительский orchestrator запускает и завершает распределённый аудит.",
-  fetch: "Загружает целевую посадочную страницу и сохраняет fetch-диагностику.",
-  heavy_analysis: "Выполняет тяжёлый анализ контента и SEO-проверки по сохранённому snapshot.",
-  features: "Извлекает структурированные ranking, semantic, technical и trust signals.",
-  scoring: "Собирает rule-based и ML-сигналы в итоговый score.",
-  competitors: "Собирает конкурентов из SERP и планирует параллельные ветки.",
-  competitor_page: "Fan-out задачи загружают посадочные страницы конкурентов.",
-  competitor_analysis: "Fan-out задачи анализируют успешно загруженных конкурентов.",
+  pipeline: "Родительский оркестратор запускает и завершает распределённый аудит.",
+  fetch: "Загружает целевую посадочную страницу и сохраняет диагностику загрузки.",
+  heavy_analysis: "Выполняет тяжёлый анализ контента и SEO-проверки по сохранённому снимку страницы.",
+  features: "Извлекает структурированные сигналы ранжирования, семантики, технического качества и доверия.",
+  scoring: "Собирает правила и ML-сигналы в итоговую оценку.",
+  competitors: "Собирает конкурентов из поисковой выдачи и планирует параллельные ветки.",
+  competitor_page: "Задачи параллельного ветвления загружают посадочные страницы конкурентов.",
+  competitor_analysis: "Задачи параллельного ветвления анализируют успешно загруженных конкурентов.",
   competitor_aggregation: "Собирает результаты конкурентных веток обратно в один аудит.",
-  recommendations: "Формирует backlog рекомендаций из target и competitor evidence.",
-  finalize: "Фиксирует финальный статус, score, warnings и summary counts.",
+  recommendations: "Формирует список рекомендаций из данных целевой страницы и конкурентов.",
+  finalize: "Фиксирует финальный статус, оценку, предупреждения и сводные счётчики.",
 };
 
 const EVENT_LABELS: Record<string, string> = {
   dispatched: "Отправлено в очередь",
-  started: "Запущено worker'ом",
+  started: "Запущено воркером",
   completed: "Завершено",
   failed: "Ошибка",
   aborted: "Прервано",
@@ -182,39 +182,40 @@ const STAGE_STATUS_LABELS: Record<TimelineStageStatus, string> = {
 };
 
 const CRITICAL_PATH_MODE_LABELS: Record<string, string> = {
+  serial: "последовательный вклад",
   serial_sum: "сумма последовательных задач",
-  fan_out_max: "самая долгая fan-out ветка",
+  fan_out_max: "самая долгая параллельная ветка",
 };
 
 const DETAIL_LABELS: Record<string, string> = {
   queue: "Очередь",
   status: "Статус",
   final_status: "Финальный статус",
-  fetch_method: "Fetch",
-  fetch_status: "Статус fetch",
+  fetch_method: "Способ загрузки",
+  fetch_status: "Статус загрузки",
   error_code: "Ошибка",
   http_status: "HTTP",
   text_length: "Длина текста",
   text_length_chars: "Символов текста",
   schema_version: "Схема",
-  overall_score: "Общий score",
+  overall_score: "Общая оценка",
   risk_level: "Риск",
   feature_count: "Признаков",
-  final_score: "Итоговый score",
-  rule_score: "Rule score",
-  ml_score: "ML score",
+  final_score: "Итоговая оценка",
+  rule_score: "Оценка по правилам",
+  ml_score: "ML-оценка",
   model_source: "Модель",
   competitors_found: "Найдено",
   competitor_tasks_planned: "Запланировано веток",
   competitors_analyzed: "Проанализировано",
   competitors_failed: "Ошибки конкурентов",
   recommendations_count: "Рекомендаций",
-  warnings_count: "Warnings",
+  warnings_count: "Предупреждений",
   competitor_id: "ID конкурента",
   domain: "Домен",
-  score: "Score",
+  score: "Оценка",
   semantic_similarity: "Семантическая близость",
-  intent_alignment_score: "Соответствие intent",
+  intent_alignment_score: "Соответствие намерению",
 };
 
 const PRIORITY_DETAIL_KEYS = [
@@ -247,6 +248,41 @@ const PRIORITY_DETAIL_KEYS = [
   "intent_alignment_score",
   "risk_level",
 ] as const;
+
+const IGNORED_DETAIL_KEYS = new Set(["duration_ms"]);
+
+const DETAIL_VALUE_LABELS: Record<string, Record<string, string>> = {
+  status: {
+    success: "успешно",
+    failed: "ошибка",
+    completed: "завершён",
+    completed_with_warnings: "завершён с предупреждениями",
+    processing: "в обработке",
+    queued: "в очереди",
+  },
+  final_status: {
+    completed: "завершён",
+    completed_with_warnings: "завершён с предупреждениями",
+    failed: "ошибка",
+  },
+  fetch_status: {
+    success: "успешно",
+    failed: "ошибка",
+  },
+  fetch_method: {
+    browser: "браузер",
+    http: "HTTP",
+    http_retry: "повтор HTTP",
+  },
+  risk_level: {
+    low: "низкий",
+    medium: "средний",
+    high: "высокий",
+  },
+  model_source: {
+    local_dataset: "локальный набор данных",
+  },
+};
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -325,7 +361,7 @@ export function getTimelineStageLabel(stage: string | null | undefined): string 
 }
 
 function getStageDescription(stage: string): string {
-  return STAGE_DESCRIPTIONS[stage] ?? "Дополнительный backend stage из event log аудита.";
+  return STAGE_DESCRIPTIONS[stage] ?? "Дополнительный серверный этап из журнала событий аудита.";
 }
 
 function getStageOrderIndex(stage: string): number {
@@ -382,7 +418,11 @@ function formatDetailValue(key: string, value: unknown): string | null {
     return null;
   }
   if (typeof value === "string") {
-    return value.trim() ? value : null;
+    const trimmedValue = value.trim();
+    if (!trimmedValue) {
+      return null;
+    }
+    return DETAIL_VALUE_LABELS[key]?.[trimmedValue] ?? trimmedValue;
   }
   if (typeof value === "number") {
     if (!Number.isFinite(value)) {
@@ -394,7 +434,7 @@ function formatDetailValue(key: string, value: unknown): string | null {
     return String(value);
   }
   if (typeof value === "boolean") {
-    return value ? "yes" : "no";
+    return value ? "да" : "нет";
   }
   return null;
 }
@@ -416,7 +456,7 @@ function buildDetailSummary(details: Record<string, unknown> | null | undefined)
 
   if (entries.length < 5) {
     for (const [key, rawValue] of Object.entries(details)) {
-      if (usedKeys.has(key)) {
+      if (usedKeys.has(key) || IGNORED_DETAIL_KEYS.has(key)) {
         continue;
       }
       const value = formatDetailValue(key, rawValue);
@@ -429,7 +469,7 @@ function buildDetailSummary(details: Record<string, unknown> | null | undefined)
     }
   }
 
-  return entries.length > 0 ? entries.join("; ") : "details captured";
+  return entries.length > 0 ? entries.join("; ") : "детали записаны";
 }
 
 function getRawEventDetails(event: AuditTimelineEvent): Record<string, unknown> | null {
@@ -622,9 +662,9 @@ function getRangeLabel(diagnostics: AuditTimelineDiagnosticsResponse | null, eve
   const firstEventAt = diagnostics?.started_at ?? events[0]?.created_at ?? null;
   const lastEventAt = diagnostics?.finished_at ?? getLastEvent(events)?.created_at ?? null;
   if (!firstEventAt && !lastEventAt) {
-    return "No event timestamps";
+    return "Нет меток времени событий";
   }
-  return `${formatDateTime(firstEventAt)} -> ${formatDateTime(lastEventAt)}`;
+  return `с ${formatDateTime(firstEventAt)} по ${formatDateTime(lastEventAt)}`;
 }
 
 function buildSummaryMetrics(
@@ -638,22 +678,22 @@ function buildSummaryMetrics(
     {
       label: "События таймлайна",
       value: formatCount(getRawEventCount(diagnostics, events)),
-      note: "Записи event log для выбранной версии обработки аудита.",
+      note: "Записи журнала событий для выбранной версии обработки аудита.",
     },
     {
       label: "Отправлено в очереди",
       value: formatCount(getRawDispatchCount(diagnostics, events)),
-      note: "Сколько stage-задач было отправлено в Celery queues.",
+      note: "Сколько задач этапов было отправлено в очереди Celery.",
     },
     {
       label: "Общая длительность",
       value: formatTimelineDuration(totalDurationMs),
-      note: "Wall-clock время между первым и последним событием аудита.",
+      note: "Фактическое время между первым и последним событием аудита.",
     },
     {
       label: "Критический путь",
       value: formatTimelineDuration(diagnostics?.critical_path_duration_ms),
-      note: `Оценка вклада из backend diagnostics; финальное событие: ${terminalStage} / ${terminalEvent}.`,
+      note: `Оценка вклада из серверной диагностики; финальное событие: ${terminalStage} / ${terminalEvent}.`,
     },
   ];
 }
@@ -673,7 +713,7 @@ function buildFanOutFromDiagnostics(fanOut: AuditTimelineFanOut): TimelineFanOut
     averageDurationLabel: formatTimelineDuration(fanOut.average_duration_ms),
     maxDurationLabel: formatTimelineDuration(fanOut.max_duration_ms),
     criticalPathDurationLabel: formatTimelineDuration(fanOut.critical_path_duration_ms),
-    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех fan-out задач.",
+    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех параллельных задач.",
   };
 }
 
@@ -690,7 +730,7 @@ function buildFanOutFromStageRow(row: TimelineStageRow): TimelineFanOutModel {
     averageDurationLabel: row.averageDurationLabel,
     maxDurationLabel: row.maxDurationLabel,
     criticalPathDurationLabel: row.criticalPathDurationLabel,
-    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех fan-out задач.",
+    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех параллельных задач.",
   };
 }
 

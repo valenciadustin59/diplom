@@ -523,10 +523,23 @@ describe("AuditWorkspace", () => {
     );
 
     expect(markup).toContain("Таймлайн выполнения аудита");
+    expect(markup).toContain("События таймлайна");
+    expect(markup).toContain("Отправлено в очереди");
     expect(markup).toContain("Критический путь");
+    expect(markup).toContain("Жизненный цикл этапов");
+    expect(markup).toContain("Вклад в критический путь");
     expect(markup).toContain("Параллельные ветки");
+    expect(markup).toContain("Диагностика этапов");
+    expect(markup).toContain("Поток событий");
+    expect(markup).toContain("Сырые события из серверного журнала");
     expect(markup).toContain("Тяжёлый анализ");
     expect(markup).toContain("audits.heavy_analysis");
+    expect(markup).not.toContain("Runtime contributor");
+    expect(markup).not.toContain("Fan-out stages");
+    expect(markup).not.toContain("fan-out");
+    expect(markup).not.toContain("Celery pipeline");
+    expect(markup).not.toContain("Pipeline остановился");
+    expect(markup).not.toContain("backend-журнала");
   });
 
   it("renders report recommendations from the stored audit payload when endpoint data is absent", () => {
