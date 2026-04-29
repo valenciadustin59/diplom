@@ -8,6 +8,7 @@ type AuditTabsProps = {
 const tabs: Array<{ id: AuditTab; label: string }> = [
   { id: "overview", label: "Обзор" },
   { id: "report", label: "Отчёт" },
+  { id: "timeline", label: "Таймлайн" },
   { id: "pages", label: "Страницы" },
   { id: "competitors", label: "Конкуренты" },
   { id: "recommendations", label: "Рекомендации" },

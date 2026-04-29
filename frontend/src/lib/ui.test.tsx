@@ -6,6 +6,7 @@ import type {
   AuditResultsResponse,
   AuditStatusResponse,
   AuditTimelineDiagnosticsResponse,
+  AuditTimelineEventsResponse,
   FailureContext,
   RecommendationsBundle,
 } from "../types";
@@ -109,6 +110,46 @@ function createTimelineDiagnostics(
       },
     ],
     fan_out: null,
+    ...overrides,
+  };
+}
+
+function createTimelineEvents(overrides: Partial<AuditTimelineEventsResponse> = {}): AuditTimelineEventsResponse {
+  return {
+    audit_id: "audit-1",
+    processing_version: 1,
+    events: [
+      {
+        id: 1,
+        audit_id: "audit-1",
+        processing_version: 1,
+        stage: "heavy_analysis",
+        event: "dispatched",
+        duration_ms: null,
+        details: { queue: "audits.heavy_analysis" },
+        created_at: "2026-01-01T10:00:02",
+      },
+      {
+        id: 2,
+        audit_id: "audit-1",
+        processing_version: 1,
+        stage: "heavy_analysis",
+        event: "completed",
+        duration_ms: 3_200,
+        details: { overall_score: 72, risk_level: "medium" },
+        created_at: "2026-01-01T10:00:05",
+      },
+      {
+        id: 3,
+        audit_id: "audit-1",
+        processing_version: 1,
+        stage: "competitor_analysis",
+        event: "dispatched",
+        duration_ms: null,
+        details: { queue: "audits.competitor_analysis", domain: "competitor.example" },
+        created_at: "2026-01-01T10:00:06",
+      },
+    ],
     ...overrides,
   };
 }
@@ -325,6 +366,7 @@ describe("AuditWorkspace", () => {
         })}
         recommendations={null}
         timelineDiagnostics={null}
+        timelineEvents={null}
         pageRows={[]}
         competitorScores={[]}
         comparisonSummary={{
@@ -407,6 +449,7 @@ describe("AuditWorkspace", () => {
         })}
         recommendations={createRecommendationsBundle()}
         timelineDiagnostics={createTimelineDiagnostics()}
+        timelineEvents={createTimelineEvents()}
         pageRows={[]}
         competitorScores={[]}
         comparisonSummary={{
@@ -431,6 +474,61 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Heavy analysis");
   });
 
+  it("renders audit execution timeline with stages, queues, fan-out and critical path", () => {
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        currentAudit={createAudit({
+          status: "completed",
+          score: 72.4,
+          comparison_summary: {
+            user_score: 72.4,
+            competitors_average_score: 78.2,
+            score_difference: -5.8,
+            competitors_count: 2,
+          },
+        })}
+        currentResults={createResults({
+          status: "completed",
+          score: 72.4,
+        })}
+        recommendations={createRecommendationsBundle()}
+        timelineDiagnostics={createTimelineDiagnostics({
+          fan_out: {
+            stage: "competitor_analysis",
+            dispatch_count: 1,
+            started_count: 1,
+            terminal_count: 0,
+            in_flight_count: 1,
+            total_duration_ms: null,
+            average_duration_ms: null,
+            max_duration_ms: null,
+            critical_path_duration_ms: null,
+          },
+        })}
+        timelineEvents={createTimelineEvents()}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={{
+          user_score: 72.4,
+          competitors_average_score: 78.2,
+          score_difference: -5.8,
+          competitors_count: 2,
+        }}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="timeline"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Таймлайн выполнения аудита");
+    expect(markup).toContain("Critical path");
+    expect(markup).toContain("Fan-out");
+    expect(markup).toContain("Heavy analysis");
+    expect(markup).toContain("audits.heavy_analysis");
+  });
+
   it("renders report recommendations from the stored audit payload when endpoint data is absent", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
@@ -448,6 +546,7 @@ describe("AuditWorkspace", () => {
         currentResults={null}
         recommendations={null}
         timelineDiagnostics={null}
+        timelineEvents={null}
         pageRows={[]}
         competitorScores={[]}
         comparisonSummary={{

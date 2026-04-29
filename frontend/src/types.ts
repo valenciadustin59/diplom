@@ -1,5 +1,5 @@
 export type AuditStatus = "queued" | "processing" | "completed" | "completed_with_warnings" | "failed";
-export type AuditTab = "overview" | "report" | "pages" | "competitors" | "recommendations";
+export type AuditTab = "overview" | "report" | "timeline" | "pages" | "competitors" | "recommendations";
 export type FailureStage = "fetch" | "heavy_analysis" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
 
 export type FailureContext = {
@@ -155,6 +155,23 @@ export type AuditResultsResponse = {
   failure_context: FailureContext | null;
   warnings: WarningMessage[] | null;
   error_message: string | null;
+};
+
+export type AuditTimelineEvent = {
+  id: number;
+  audit_id: string;
+  processing_version: number | null;
+  stage: string;
+  event: string;
+  duration_ms: number | null;
+  details: Record<string, unknown> | null;
+  created_at: string;
+};
+
+export type AuditTimelineEventsResponse = {
+  audit_id: string;
+  processing_version: number | null;
+  events: AuditTimelineEvent[];
 };
 
 export type AuditTimelineStageDiagnostics = {

@@ -14,7 +14,7 @@ import { ControlRail } from "./components/ControlRail";
 import { useAuditWorkspace } from "./hooks/useAuditWorkspace";
 import type { AuditCreatePayload, AuditTab } from "./types";
 
-const validTabs: AuditTab[] = ["overview", "report", "pages", "competitors", "recommendations"];
+const validTabs: AuditTab[] = ["overview", "report", "timeline", "pages", "competitors", "recommendations"];
 
 type AuditWorkspaceRouteProps = ReturnType<typeof useAuditWorkspace>;
 
@@ -50,6 +50,7 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
   const currentResults = isActiveAuditRoute ? props.currentResults : null;
   const recommendations = isActiveAuditRoute ? props.recommendations : null;
   const timelineDiagnostics = isActiveAuditRoute ? props.timelineDiagnostics : null;
+  const timelineEvents = isActiveAuditRoute ? props.timelineEvents : null;
   const pageRows = isActiveAuditRoute ? props.pageRows : [];
   const competitorScores = isActiveAuditRoute ? props.competitorScores : [];
   const comparisonSummary = isActiveAuditRoute ? props.comparisonSummary : null;
@@ -61,6 +62,7 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
       currentResults={currentResults}
       recommendations={recommendations}
       timelineDiagnostics={timelineDiagnostics}
+      timelineEvents={timelineEvents}
       pageRows={pageRows}
       competitorScores={competitorScores}
       comparisonSummary={comparisonSummary}

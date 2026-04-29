@@ -63,4 +63,43 @@ describe("auditsApi", () => {
       globalThis.fetch = originalFetch;
     }
   });
+
+  it("requests raw timeline events from the audit events endpoint", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = ((input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({
+            audit_id: "audit-1",
+            processing_version: 1,
+            events: [
+              {
+                id: 1,
+                audit_id: "audit-1",
+                processing_version: 1,
+                stage: "pipeline",
+                event: "started",
+                duration_ms: null,
+                details: null,
+                created_at: "2026-01-01T10:00:00",
+              },
+            ],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    }) as typeof fetch;
+
+    try {
+      const { auditsApi } = await import("./api");
+      const timeline = await auditsApi.getTimelineEvents("audit-1");
+      expect(timeline.events).toHaveLength(1);
+      expect(calls[0]).toContain("/audits/audit-1/events");
+      expect(calls[0]).not.toContain("/events/diagnostics");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
 });

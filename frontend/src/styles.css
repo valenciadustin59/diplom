@@ -685,6 +685,209 @@ select {
   font-size: 0.88rem;
 }
 
+.timeline-dashboard {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-hero {
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(246, 250, 255, 0.92)),
+    radial-gradient(circle at right top, rgba(79, 124, 255, 0.18), transparent 42%);
+}
+
+.timeline-hero__content {
+  display: grid;
+  gap: 22px;
+}
+
+.timeline-hero__title {
+  margin: 14px 0 10px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.timeline-hero__text {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline-metric-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.timeline-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.timeline-stage-card {
+  position: relative;
+  min-width: 0;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
+  overflow: hidden;
+}
+
+.timeline-stage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: rgba(79, 124, 255, 0.18);
+}
+
+.timeline-stage-card--completed::before {
+  background: rgba(62, 170, 112, 0.48);
+}
+
+.timeline-stage-card--running::before,
+.timeline-stage-card--dispatched::before {
+  background: rgba(79, 124, 255, 0.5);
+}
+
+.timeline-stage-card--failed::before,
+.timeline-stage-card--aborted::before {
+  background: rgba(236, 95, 95, 0.54);
+}
+
+.timeline-stage-card__top,
+.timeline-stage-card__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.timeline-stage-card__index {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(79, 124, 255, 0.1);
+  color: #335fce;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.timeline-stage-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.timeline-stage-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.timeline-stage-card__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.timeline-stage-card__metrics div {
+  min-width: 0;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(21, 36, 64, 0.07);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-stage-card__metrics dt {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.timeline-stage-card__metrics dd {
+  margin: 3px 0 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.timeline-badge {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(79, 124, 255, 0.1);
+  color: #335fce;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.timeline-fanout {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline-fanout__summary {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(79, 124, 255, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.timeline-fanout__summary strong {
+  font-size: 1.45rem;
+}
+
+.timeline-fanout__summary p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline-fanout__metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 0;
+}
+
+.timeline-table td {
+  overflow-wrap: anywhere;
+}
+
+.timeline-table__muted {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.timeline-event-stream {
+  max-height: 560px;
+  overflow: auto;
+}
+
+.timeline-event-tone {
+  font-weight: 700;
+}
+
+.timeline-event-tone--completed {
+  color: #217a4f;
+}
+
+.timeline-event-tone--running,
+.timeline-event-tone--dispatched {
+  color: #335fce;
+}
+
+.timeline-event-tone--failed,
+.timeline-event-tone--aborted {
+  color: #af3535;
+}
+
 .score-breakdown {
   display: grid;
   gap: 18px;
@@ -1730,11 +1933,14 @@ select {
   .workspace-metric-strip,
   .report-metric-grid,
   .report-group-list,
+  .timeline-metric-grid,
+  .timeline-fanout__metrics,
   .score-breakdown__grid {
     grid-template-columns: 1fr;
   }
 
-  .report-hero__content {
+  .report-hero__content,
+  .timeline-hero__content {
     grid-template-columns: 1fr;
   }
 
@@ -1820,7 +2026,8 @@ select {
 
   .hero-card__content,
   .workspace-hero__content,
-  .report-hero__content {
+  .report-hero__content,
+  .timeline-hero__content {
     gap: 16px;
   }
 

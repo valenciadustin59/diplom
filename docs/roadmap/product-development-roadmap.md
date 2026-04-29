@@ -11,9 +11,9 @@
 Завершённые волны:
 
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
-- `D13-D21` — SEO/ML/product wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue и audit report/export dashboard.
+- `D13-D22` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard и audit execution timeline UI.
 
-После `D21` проект уже соответствует дипломной теме и имеет отдельный report/export view для демонстрации результата. Следующий этап должен в первую очередь углублять frontend-доказательную базу distributed runtime, а не переписывать backend runtime или добавлять новый анализ без необходимости.
+После `D22` проект уже соответствует дипломной теме, имеет отдельный report/export view и dedicated timeline UI для демонстрации distributed runtime. Следующий этап должен в первую очередь углублять frontend-доказательную базу runtime health, а не переписывать backend runtime или добавлять новый анализ без необходимости.
 
 ## Активная волна: D22-D26 Frontend/Product Layer
 
@@ -37,15 +37,19 @@
 
 ### D22 / #41: Audit Execution Timeline UI
 
+Статус: выполнено.
+
 Цель — визуально показать жизненный цикл распределённого аудита.
 
-Ожидаемый состав:
+Реализованный состав:
 
-- timeline стадий `fetch`, `heavy_analysis`, `features`, `scoring`, `competitors`, `competitor_page`, `competitor_analysis`, `recommendations`, `finalize`;
-- длительности, ошибки, warnings и critical-path hints, если они доступны из existing events/diagnostics API;
-- понятное состояние для completed, completed_with_warnings и failed audits.
+- вкладка `Таймлайн` в audit workspace;
+- timeline стадий `pipeline`, `fetch`, `heavy_analysis`, `features`, `scoring`, `competitors`, `competitor_page`, `competitor_analysis`, `competitor_aggregation`, `recommendations`, `finalize`;
+- raw event stream из `GET /audits/{audit_id}/events`;
+- длительности, ошибки, warnings, queues, fan-out summary и critical-path hints из existing events/diagnostics API;
+- понятное состояние для completed, completed_with_warnings, failed и старых audits без event log.
 
-Приёмка: пользователь может открыть аудит и понять, какие стадии прошли, где была задержка или ошибка, и как это связано с распределённой архитектурой.
+Приёмка выполнена: пользователь может открыть аудит и понять, какие стадии прошли, где была задержка или ошибка, какие очереди/workers участвовали, где был fan-out и как это связано с распределённой архитектурой.
 
 ### D23 / #42: Runtime Status And Queue Health UI
 
@@ -111,8 +115,8 @@
 
 1. Прочитать `AGENTS.md` и `README.md`.
 2. Проверить `git status`.
-3. Если задача не задана явно, выбрать следующий open GitHub issue из `D22-D26`, начиная с `D22` / `#41`.
-4. Не откатывать `D13-D21` без прямой причины.
+3. Если задача не задана явно, выбрать следующий open GitHub issue из `D23-D26`, начиная с `D23` / `#42`.
+4. Не откатывать `D13-D22` без прямой причины.
 5. Если нужен GitHub, использовать локальный credential helper или запросить токен вручную, не печатая секреты в чат, logs или файлы.
 
-Канонический статус сейчас: `D1-D21` завершены, активный практический backlog — `D22-D26` frontend/product layer, первый приоритет — audit execution timeline UI.
+Канонический статус сейчас: `D1-D22` завершены, активный практический backlog — `D23-D26` frontend/product layer, первый приоритет — runtime status and queue health UI.

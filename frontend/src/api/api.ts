@@ -4,6 +4,7 @@ import type {
   AuditResultsResponse,
   AuditStatusResponse,
   AuditTimelineDiagnosticsResponse,
+  AuditTimelineEventsResponse,
 } from "../types";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
@@ -128,5 +129,9 @@ export const auditsApi = {
 
   getTimelineDiagnostics(auditId: string): Promise<AuditTimelineDiagnosticsResponse> {
     return request<AuditTimelineDiagnosticsResponse>(`/audits/${auditId}/events/diagnostics`);
+  },
+
+  getTimelineEvents(auditId: string): Promise<AuditTimelineEventsResponse> {
+    return request<AuditTimelineEventsResponse>(`/audits/${auditId}/events`);
   },
 };

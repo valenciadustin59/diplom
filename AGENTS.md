@@ -69,18 +69,18 @@
 Завершённые волны текущего дипломного проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, queue topology, fan-out, health/metrics, event log, diagnostics, admission control и benchmark evidence.
-- `D13-D21` — SEO/ML/product wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue и audit report/export dashboard.
+- `D13-D22` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard и audit execution timeline UI.
 
 Активная планируемая волна после `D21`: `D22-D26` — frontend/product layer без изменения ядра анализа:
 
 - `D21` / GitHub `#40` — completed: audit report and export dashboard;
-- `D22` / GitHub `#41` — audit execution timeline UI;
+- `D22` / GitHub `#41` — completed: audit execution timeline UI;
 - `D23` / GitHub `#42` — runtime status and queue health UI;
 - `D24` / GitHub `#43` — audit history management;
 - `D25` / GitHub `#44` — recommendation action tracking;
 - `D26` / GitHub `#45` — interface copy and terminology polish.
 
-Текущий практический фокус: не переписывать backend и не добавлять demo mode, а усиливать демонстрационный и управленческий frontend layer, который показывает уже существующие SEO/ML/distributed evidence. Если пользователь просит новый backlog scope без конкретного GitHub issue, ближайший логичный кандидат после `D21` — `D22` / `#41`: audit execution timeline UI.
+Текущий практический фокус: не переписывать backend и не добавлять demo mode, а усиливать демонстрационный и управленческий frontend layer, который показывает уже существующие SEO/ML/distributed evidence. Если пользователь просит новый backlog scope без конкретного GitHub issue, ближайший логичный кандидат после `D22` — `D23` / `#42`: runtime status and queue health UI.
 
 ### D1-D12 Summary
 
@@ -250,9 +250,9 @@ npm run build
 - Если используется `Closes #<n>`, issue должен закрываться через push в `main`, а не вручную без кода.
 
 
-## D13-D21 Status
+## D13-D22 Status
 
-Completed product/ML/SEO/frontend evidence wave: `D13-D21`.
+Completed product/ML/SEO/frontend evidence wave: `D13-D22`.
 
 - `D13` - completed: versioned extraction pipeline, `feature schema v2`, persistent `target_snapshot`, DOM-based extraction, and API snapshot summary.
 - `D14` - completed: пакет технических SEO-сигналов поверх `target_snapshot`, включая canonical/redirect/indexability/url-hygiene признаки, технические рекомендации и технические факторы в score explanation без изменения текущего `FEATURE_COLUMNS`.
@@ -263,6 +263,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D21`.
 - `D19` - completed: grouped recommendations API/UI, factor groups (`Technical SEO`, `Commercial and Trust`, `Semantic and Intent`, `Competitor Gap`), competitor-relative deviations, richer explainability payload, legacy recommendation normalization for old audits.
 - `D20` - completed: dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, metrics pressure visibility and benchmark topology profile summary.
 - `D21` - completed: audit report tab, client-side export dashboard, printable HTML/PDF-like view, downloadable Markdown/HTML report, compact SEO/ML/recommendation/competitor/runtime evidence summary using existing audit results and timeline diagnostics APIs.
+- `D22` - completed: audit execution timeline tab, raw audit event stream consumption, stage lifecycle model, queue/worker/fan-out/critical-path visualization and warnings/failure context over existing event diagnostics APIs.
 
 ## Актуальное состояние после D20
 
@@ -314,7 +315,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D21`.
 
 - `D21` реализует GitHub issue `#40`.
 - В audit workspace добавлена вкладка `Отчёт`.
-- После создания или выбора аудита frontend открывает отчёт как основной demonstration view (`?tab=report`).
+- После создания или выбора аудита frontend открывает `Обзор`; `Отчёт` остаётся явной вкладкой (`?tab=report`).
 - Отчёт агрегирует `results`, grouped `recommendations`, competitor evidence и `events/diagnostics`.
 - Экспорт выполняется на клиенте без повторного анализа страницы:
   - printable HTML view с возможностью `Save as PDF`;
@@ -329,19 +330,40 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D21`.
 - `frontend/src/hooks/useAuditWorkspace.ts` — загрузка timeline diagnostics вместе с results/recommendations;
 - `frontend/src/api/api.ts` — `getTimelineDiagnostics(...)`;
 - `frontend/src/types.ts` — frontend contracts для timeline diagnostics, `query_intent`, `feature_schema_version`, `target_snapshot_summary`;
-- `frontend/src/components/AuditTabs.tsx` и `frontend/src/App.tsx` — вкладка `report` и default navigation в отчёт;
+- `frontend/src/components/AuditTabs.tsx` и `frontend/src/App.tsx` — вкладка `report`, explicit tab routing и default navigation в `Обзор`;
 - `scripts/site-content-check.mjs` — smoke-check ключевых строк report/export UI.
+
+## Актуальное состояние после D22
+
+Состояние реализации после D22:
+
+- `D22` реализует GitHub issue `#41`.
+- В audit workspace добавлена вкладка `Таймлайн`.
+- Timeline UI использует существующие backend endpoints `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics`; backend orchestration не менялся.
+- Пользователь видит stage lifecycle, очереди dispatch events, raw event stream, fan-out branch summary, critical path, warnings и failure context.
+- Для старых аудитов без event log есть graceful empty state вместо ошибки.
+- `site:check` теперь проверяет наличие timeline UI строк в production bundle.
+
+Ключевые места D22:
+
+- `frontend/src/pages/AuditTimelinePage.tsx` — dedicated timeline tab UI;
+- `frontend/src/lib/auditTimeline.ts` — pure timeline view model, stage normalization, queue/fan-out/critical-path aggregation;
+- `frontend/src/hooks/useAuditWorkspace.ts` — загрузка raw timeline events вместе с diagnostics/results/recommendations;
+- `frontend/src/api/api.ts` — `getTimelineEvents(...)`;
+- `frontend/src/types.ts` — frontend contracts для raw audit events;
+- `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `timeline` и routing;
+- `scripts/site-content-check.mjs` — smoke-check ключевых строк timeline UI.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из явно выбранной пользователем задачи или из актуальных open GitHub issues. Актуальная новая волна создана в GitHub как `#40-#45`; после завершения `D21` приоритет реализации — `D22` / `#41` timeline UI, затем `D23` / `#42` runtime status. Demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из явно выбранной пользователем задачи или из актуальных open GitHub issues. Актуальная новая волна создана в GitHub как `#40-#45`; после завершения `D22` приоритет реализации — `D23` / `#42` runtime status and queue health UI. Demo mode намеренно не входит в backlog.
 
 Перед началом любой новой задачи:
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
 - если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов;
-- не откатывать уже выполненные `D13-D21` без прямой причины.
+- не откатывать уже выполненные `D13-D22` без прямой причины.
 
 ## Последняя runtime smoke-проверка
 

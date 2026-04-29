@@ -7,6 +7,7 @@ import type {
   AuditStatusResponse,
   AuditSummary,
   AuditTimelineDiagnosticsResponse,
+  AuditTimelineEventsResponse,
   ComparisonSummary,
   CompetitorResult,
   CompetitorScore,
@@ -151,6 +152,7 @@ export function useAuditWorkspace() {
   const [results, setResults] = useState<AuditResultsResponse | null>(null);
   const [recommendations, setRecommendations] = useState<RecommendationsBundle | null>(null);
   const [timelineDiagnostics, setTimelineDiagnostics] = useState<AuditTimelineDiagnosticsResponse | null>(null);
+  const [timelineEvents, setTimelineEvents] = useState<AuditTimelineEventsResponse | null>(null);
   const [loadingRecent, setLoadingRecent] = useState(true);
   const [loadingAudit, setLoadingAudit] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -188,10 +190,11 @@ export function useAuditWorkspace() {
         setCurrentAudit(status);
         const statusRecommendations = status.recommendations ?? null;
 
-        const [nextResults, nextRecommendations, nextTimelineDiagnostics] = await Promise.allSettled([
+        const [nextResults, nextRecommendations, nextTimelineDiagnostics, nextTimelineEvents] = await Promise.allSettled([
           auditsApi.getResults(auditId),
           auditsApi.getRecommendations(auditId),
           auditsApi.getTimelineDiagnostics(auditId),
+          auditsApi.getTimelineEvents(auditId),
         ] as const);
 
         if (requestId !== loadRequestRef.current) {
@@ -214,6 +217,12 @@ export function useAuditWorkspace() {
           setTimelineDiagnostics(nextTimelineDiagnostics.value);
         } else {
           setTimelineDiagnostics(null);
+        }
+
+        if (nextTimelineEvents.status === "fulfilled") {
+          setTimelineEvents(nextTimelineEvents.value);
+        } else {
+          setTimelineEvents(null);
         }
       } catch (nextError) {
         if (requestId !== loadRequestRef.current) {
@@ -268,6 +277,7 @@ export function useAuditWorkspace() {
         setResults(null);
         setRecommendations(null);
         setTimelineDiagnostics(null);
+        setTimelineEvents(null);
         setSuccess("Аудит успешно запущен.");
         await refreshAudits();
         return audit;
@@ -288,6 +298,7 @@ export function useAuditWorkspace() {
     setResults(null);
     setRecommendations(null);
     setTimelineDiagnostics(null);
+    setTimelineEvents(null);
     setSuccess(null);
     setWorkspaceError(null);
     void loadAuditBundle(auditId);
@@ -319,6 +330,7 @@ export function useAuditWorkspace() {
     currentResults: results,
     recommendations,
     timelineDiagnostics,
+    timelineEvents,
     pageRows,
     overallScore,
     competitorScores,

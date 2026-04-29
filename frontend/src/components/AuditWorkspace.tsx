@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { AuditPage } from "../pages/AuditPage";
 import { AuditReportPage } from "../pages/AuditReportPage";
+import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
@@ -19,6 +20,7 @@ import type {
   AuditSummary,
   AuditTab,
   AuditTimelineDiagnosticsResponse,
+  AuditTimelineEventsResponse,
   ComparisonSummary,
   CompetitorScore,
   FailureContext,
@@ -33,6 +35,7 @@ type AuditWorkspaceProps = {
   currentResults: AuditResultsResponse | null;
   recommendations: RecommendationsBundle | null;
   timelineDiagnostics: AuditTimelineDiagnosticsResponse | null;
+  timelineEvents: AuditTimelineEventsResponse | null;
   pageRows: PageRow[];
   competitorScores: CompetitorScore[];
   comparisonSummary: ComparisonSummary | null;
@@ -631,6 +634,7 @@ export function AuditWorkspace({
   currentResults,
   recommendations,
   timelineDiagnostics,
+  timelineEvents,
   pageRows,
   competitorScores,
   comparisonSummary,
@@ -691,6 +695,19 @@ export function AuditWorkspace({
             currentResults={currentResults}
             recommendations={recommendations}
             timelineDiagnostics={timelineDiagnostics}
+            auditStatus={auditStatus}
+            loading={loading}
+            error={error}
+            failureContext={failureContext}
+          />
+        ) : null}
+
+        {activeTab === "timeline" ? (
+          <AuditTimelinePage
+            currentAudit={currentAudit}
+            currentResults={currentResults}
+            timelineDiagnostics={timelineDiagnostics}
+            timelineEvents={timelineEvents}
             auditStatus={auditStatus}
             loading={loading}
             error={error}
