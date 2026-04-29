@@ -17,7 +17,7 @@ describe("getApiErrorMessage", () => {
         },
         503,
       ),
-    ).toContain("Очередь audits.pipeline сейчас без активных воркеров");
+    ).toContain("Проверьте Runtime и запустите профиль оркестратора");
   });
 
   it("keeps plain detail strings", () => {
@@ -98,6 +98,82 @@ describe("auditsApi", () => {
       expect(timeline.events).toHaveLength(1);
       expect(calls[0]).toContain("/audits/audit-1/events");
       expect(calls[0]).not.toContain("/events/diagnostics");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+});
+
+describe("runtimeApi", () => {
+  it("accepts not-ready readiness responses as runtime state payloads", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = ((input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({
+            status: "not_ready",
+            app_name: "site-audit",
+            environment: "local",
+            checked_at: "2026-01-01T10:00:00Z",
+            checks: {},
+            orchestration: {
+              expected_queues: [],
+              broker_url: "redis://localhost:6379/0",
+              result_backend: "redis://localhost:6379/0",
+              worker_topology: { profiles: [], expected_queues: [] },
+            },
+          }),
+          { status: 503, headers: { "content-type": "application/json" } },
+        ),
+      );
+    }) as typeof fetch;
+
+    try {
+      const { runtimeApi } = await import("./api");
+      const readiness = await runtimeApi.getReadiness();
+      expect(readiness.status).toBe("not_ready");
+      expect(calls[0]).toContain("/health/ready");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
+  it("requests runtime metrics from the health metrics endpoint", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = ((input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({
+            status: "ok",
+            app_name: "site-audit",
+            environment: "local",
+            checked_at: "2026-01-01T10:00:00Z",
+            orchestration: {
+              expected_queues: [],
+              broker_url: "redis://localhost:6379/0",
+              result_backend: "redis://localhost:6379/0",
+              worker_topology: { profiles: [], expected_queues: [] },
+            },
+            database: { status: "ok" },
+            broker: { status: "ok", queue_depths: {}, total_depth: 0 },
+            workers: { status: "ok", online_count: 0, workers: {}, missing_queues: [], queue_activity: {} },
+            queue_pressure: { status: "ok", queues: {}, backlogged_queues: [], stuck_queues: [] },
+            execution_detector: { status: "ok", alerts: [], summary: { alert_count: 0 } },
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    }) as typeof fetch;
+
+    try {
+      const { runtimeApi } = await import("./api");
+      const metrics = await runtimeApi.getMetrics();
+      expect(metrics.status).toBe("ok");
+      expect(calls[0]).toContain("/health/metrics");
     } finally {
       globalThis.fetch = originalFetch;
     }

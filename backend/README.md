@@ -252,7 +252,7 @@ Backend предоставляет четыре основных health/runtime 
 - `GET /audits/{audit_id}/events` — timeline событий аудита;
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
 
-### Что важно в результатах после D13-D22
+### Что важно в результатах после D13-D23
 
 При успешном аудите API теперь может отдавать:
 
@@ -264,6 +264,8 @@ Backend предоставляет четыре основных health/runtime 
 - рекомендации с `TECHNICAL_*`, `COMMERCIAL_*` и `TRUST_*` codes.
 
 После `D22` frontend использует эти payloads вместе с `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics`, чтобы собрать report/export dashboard и отдельный timeline UI без повторного backend-анализа страницы.
+
+После `D23` frontend также использует `GET /health/live`, `GET /health/ready` и `GET /health/metrics`, чтобы показать готовность runtime, worker-profile coverage, queue pressure, backlog и stuck queues перед запуском аудита и во вкладке `Runtime`.
 
 ## Admission control
 
@@ -369,8 +371,8 @@ cd E:\codexPROJ\diplom\backend
 ## Связанные документы
 
 - `../README.md` — обзор проекта и полный локальный запуск.
-- `../AGENTS.md` — operational notes, текущий backlog и GitHub issues `D23-D26` (`#42-#45`).
-- `../docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D22`, включая frontend/product wave без изменения ядра backend-анализа.
+- `../AGENTS.md` — operational notes, текущий backlog и GitHub issues `D24-D26` (`#43-#45`).
+- `../docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D23`, включая frontend/product wave без изменения ядра backend-анализа.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features

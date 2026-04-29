@@ -78,7 +78,7 @@
 Завершённые волны проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, per-stage queues, fan-out, health/metrics, diagnostics, admission control и benchmark evidence.
-- `D13-D22` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard и audit execution timeline UI.
+- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI и runtime status/queue health UI.
 
 Итог: проект уже закрывает ключевые требования дипломной темы — web-приложение машинного обучения с доказуемым распределённым runtime.
 
@@ -86,12 +86,12 @@
 
 - `D21` / `#40` — completed: audit report and export dashboard.
 - `D22` / `#41` — completed: audit execution timeline UI.
-- `D23` / `#42` — runtime status and queue health UI.
+- `D23` / `#42` — completed: runtime status and queue health UI.
 - `D24` / `#43` — audit history management.
 - `D25` / `#44` — recommendation action tracking.
 - `D26` / `#45` — interface copy and terminology polish.
 
-Приоритет ближайшей разработки после `D22`: runtime status (`D23`). Demo mode в текущий backlog не входит.
+Приоритет ближайшей разработки после `D23`: audit history management (`D24`). Demo mode в текущий backlog не входит.
 
 ### Distributed foundation `D1-D12`
 
@@ -102,7 +102,7 @@
 - `D9-D11` — queue pressure detector, admission control под нагрузкой, worker topology profiles.
 - `D12` — benchmark/reporting workflow для измеримого подтверждения распределённого runtime.
 
-Итог: backlog `D1-D12` завершён. После `D22` следующий практический фокус — не новый backend-runtime слой, а runtime status (`D23` / `#42`), который углубляет уже существующую frontend-доказательную базу.
+Итог: backlog `D1-D12` завершён. После `D23` следующий практический фокус — не новый backend-runtime слой, а audit history management (`D24` / `#43`), который развивает продуктовый workflow вокруг уже существующих аудитов.
 
 ## Требования
 
@@ -362,9 +362,9 @@ npm run test
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
 
-## Статус D13-D22
+## Статус D13-D23
 
-Продуктовая волна backlog — `D13-D22` — завершена.
+Продуктовая волна backlog — `D13-D23` — завершена.
 
 Выполнено:
 
@@ -381,8 +381,9 @@ npm run test
 - `D20` - dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, queue-pressure metrics and benchmark topology-profile summary.
 - `D21` - audit report/export dashboard: вкладка `Отчёт`, компактная сводка SEO/ML/recommendation/competitor/runtime evidence, printable HTML/PDF-like view, downloadable HTML и Markdown export без повторного анализа страницы.
 - `D22` - audit execution timeline UI: вкладка `Таймлайн`, raw event stream, stage lifecycle, queues, fan-out branch summary, critical path, warnings/failure context поверх существующих events APIs.
+- `D23` - runtime status and queue health UI: компактная панель готовности runtime на экране запуска, вкладка `Runtime` в audit workspace, health/live/ready/metrics consumption, worker profile coverage, queue pressure/backlog/stuck queues и человекочитаемые подсказки восстановления.
 
-Текущая волна `D13-D22` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D23` / `#42` runtime status, `D24` / `#43` history management, `D25` / `#44` recommendation action tracking, `D26` / `#45` copy polish.
+Текущая волна `D13-D23` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D24` / `#43` history management, `D25` / `#44` recommendation action tracking, `D26` / `#45` copy polish.
 
 ## Dataset V2 Workflow (`D17`)
 

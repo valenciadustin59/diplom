@@ -10,6 +10,7 @@ import type {
   FailureContext,
   RecommendationsBundle,
 } from "../types";
+import { buildRuntimeHealthModel } from "./runtimeHealth";
 import { resolveAuditFailureContext } from "./ui";
 
 function createAudit(overrides: Partial<AuditStatusResponse> = {}): AuditStatusResponse {
@@ -153,6 +154,180 @@ function createTimelineEvents(overrides: Partial<AuditTimelineEventsResponse> = 
     ...overrides,
   };
 }
+
+const runtimeTopology = {
+  expected_queues: ["audits.pipeline", "audits.heavy_analysis"],
+  profiles: [
+    {
+      name: "pipeline",
+      workload_class: "pipeline",
+      description: "Pipeline orchestration.",
+      recommended_concurrency: 1,
+      queues: ["audits.pipeline"],
+    },
+    {
+      name: "heavy_analysis",
+      workload_class: "heavy_analysis",
+      description: "Heavy analysis.",
+      recommended_concurrency: 2,
+      queues: ["audits.heavy_analysis"],
+    },
+  ],
+};
+
+const runtimeWorkspaceProps = {
+  runtimeHealth: buildRuntimeHealthModel({
+    live: {
+      status: "ok",
+      app_name: "site-audit",
+      environment: "local",
+      checked_at: "2026-01-01T10:00:00Z",
+    },
+    readiness: {
+      status: "not_ready",
+      app_name: "site-audit",
+      environment: "local",
+      checked_at: "2026-01-01T10:00:00Z",
+      checks: {
+        database: { status: "ok", required: true, database_url: "sqlite:///app.db" },
+        redis: { status: "ok", required: true, broker_url: "redis://localhost:6379/0" },
+        serp: { status: "ok", required: true, provider: "searxng", base_url: "http://localhost:8080" },
+        celery_workers: {
+          status: "error",
+          required: true,
+          worker_count: 1,
+          workers: ["site-audit.pipeline@test"],
+          expected_queues: ["audits.pipeline", "audits.heavy_analysis"],
+          missing_queues: ["audits.heavy_analysis"],
+        },
+      },
+      orchestration: {
+        expected_queues: ["audits.pipeline", "audits.heavy_analysis"],
+        broker_url: "redis://localhost:6379/0",
+        result_backend: "redis://localhost:6379/0",
+        worker_topology: runtimeTopology,
+      },
+    },
+    metrics: {
+      status: "degraded",
+      app_name: "site-audit",
+      environment: "local",
+      checked_at: "2026-01-01T10:00:00Z",
+      orchestration: {
+        expected_queues: ["audits.pipeline", "audits.heavy_analysis"],
+        broker_url: "redis://localhost:6379/0",
+        result_backend: "redis://localhost:6379/0",
+        worker_topology: runtimeTopology,
+      },
+      database: { status: "ok" },
+      broker: {
+        status: "ok",
+        queue_depths: { "audits.pipeline": 0, "audits.heavy_analysis": 2 },
+        total_depth: 2,
+      },
+      workers: {
+        status: "degraded",
+        online_count: 1,
+        workers: {
+          "site-audit.pipeline@test": {
+            queues: ["audits.pipeline"],
+            active_tasks: 0,
+            reserved_tasks: 0,
+            scheduled_tasks: 0,
+            pool_max_concurrency: 1,
+            profile_name: "pipeline",
+            profile_status: "ok",
+          },
+        },
+        active_tasks_total: 0,
+        reserved_tasks_total: 0,
+        scheduled_tasks_total: 0,
+        expected_queues: ["audits.pipeline", "audits.heavy_analysis"],
+        missing_queues: ["audits.heavy_analysis"],
+        queue_activity: {},
+        topology: {
+          status: "error",
+          profiles: {
+            pipeline: {
+              workload_class: "pipeline",
+              description: "Pipeline orchestration.",
+              recommended_concurrency: 1,
+              queues: ["audits.pipeline"],
+              covered_queues: ["audits.pipeline"],
+              missing_queues: [],
+              workers: ["site-audit.pipeline@test"],
+              worker_count: 1,
+            },
+            heavy_analysis: {
+              workload_class: "heavy_analysis",
+              description: "Heavy analysis.",
+              recommended_concurrency: 2,
+              queues: ["audits.heavy_analysis"],
+              covered_queues: [],
+              missing_queues: ["audits.heavy_analysis"],
+              workers: [],
+              worker_count: 0,
+            },
+          },
+          worker_profiles: {},
+          invalid_workers: [],
+          missing_profiles: ["heavy_analysis"],
+          profiles_with_missing_queues: ["heavy_analysis"],
+          missing_queues: ["audits.heavy_analysis"],
+        },
+        topology_contract: runtimeTopology,
+      },
+      queue_pressure: {
+        status: "degraded",
+        queues: {
+          "audits.pipeline": {
+            depth: 0,
+            workers: ["site-audit.pipeline@test"],
+            worker_count: 1,
+            estimated_concurrency: 1,
+            active_tasks: 0,
+            reserved_tasks: 0,
+            scheduled_tasks: 0,
+            inflight_tasks: 0,
+            available_capacity_estimate: 1,
+            pressure_status: "idle",
+            reasons: [],
+          },
+          "audits.heavy_analysis": {
+            depth: 2,
+            workers: [],
+            worker_count: 0,
+            estimated_concurrency: 0,
+            active_tasks: 0,
+            reserved_tasks: 0,
+            scheduled_tasks: 0,
+            inflight_tasks: 0,
+            available_capacity_estimate: 0,
+            pressure_status: "stuck",
+            reasons: ["no_workers_serving_queue"],
+          },
+        },
+        backlogged_queues: [],
+        stuck_queues: ["audits.heavy_analysis"],
+      },
+      execution_detector: {
+        status: "degraded",
+        alerts: [
+          {
+            code: "queue_without_workers",
+            severity: "error",
+            queue: "audits.heavy_analysis",
+            depth: 2,
+          },
+        ],
+        summary: { alert_count: 1 },
+      },
+    },
+  }),
+  loadingRuntime: false,
+  runtimeError: null,
+  onRefreshRuntime: () => undefined,
+};
 
 function createRecommendationsBundle(): RecommendationsBundle {
   return {
@@ -329,6 +504,7 @@ describe("AuditWorkspace", () => {
   it("renders score breakdowns that use top factor fields", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
+        {...runtimeWorkspaceProps}
         currentAudit={createAudit({
           status: "completed",
           score: 48.3,
@@ -390,6 +566,7 @@ describe("AuditWorkspace", () => {
   it("renders audit report dashboard with export actions and runtime evidence", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
+        {...runtimeWorkspaceProps}
         currentAudit={createAudit({
           status: "completed",
           score: 72.4,
@@ -477,6 +654,7 @@ describe("AuditWorkspace", () => {
   it("renders audit execution timeline with stages, queues, fan-out and critical path", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
+        {...runtimeWorkspaceProps}
         currentAudit={createAudit({
           status: "completed",
           score: 72.4,
@@ -542,9 +720,39 @@ describe("AuditWorkspace", () => {
     expect(markup).not.toContain("backend-журнала");
   });
 
+  it("renders runtime status with queue health and missing worker guidance", () => {
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({ status: "processing" })}
+        currentResults={createResults({ status: "processing" })}
+        recommendations={null}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={null}
+        auditStatus="processing"
+        loading={false}
+        error={null}
+        activeTab="runtime"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Состояние distributed stack");
+    expect(markup).toContain("Готовность");
+    expect(markup).toContain("Профили воркеров");
+    expect(markup).toContain("Очереди Celery");
+    expect(markup).toContain("audits.heavy_analysis");
+    expect(markup).toContain("Очередь audits.heavy_analysis без воркеров");
+    expect(markup).toContain("Тяжёлый анализ");
+  });
+
   it("renders report recommendations from the stored audit payload when endpoint data is absent", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
+        {...runtimeWorkspaceProps}
         currentAudit={createAudit({
           status: "completed",
           score: 72.4,

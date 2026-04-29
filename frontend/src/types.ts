@@ -1,5 +1,5 @@
 export type AuditStatus = "queued" | "processing" | "completed" | "completed_with_warnings" | "failed";
-export type AuditTab = "overview" | "report" | "timeline" | "pages" | "competitors" | "recommendations";
+export type AuditTab = "overview" | "report" | "timeline" | "runtime" | "pages" | "competitors" | "recommendations";
 export type FailureStage = "fetch" | "heavy_analysis" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
 
 export type FailureContext = {
@@ -234,6 +234,145 @@ export type AuditRecommendationsResponse = {
   recommendations: RecommendationsBundle | null;
   failure_context: FailureContext | null;
   error_message: string | null;
+};
+
+export type RuntimeComponentStatus = "ok" | "ready" | "not_ready" | "degraded" | "warning" | "error" | "skipped" | string;
+
+export type RuntimeHealthCheck = {
+  status: RuntimeComponentStatus;
+  required?: boolean;
+  error?: string;
+  [key: string]: unknown;
+};
+
+export type RuntimeWorkerTopologyProfile = {
+  name: string;
+  workload_class: string;
+  description: string;
+  recommended_concurrency: number;
+  queues: string[];
+};
+
+export type RuntimeWorkerTopologyContract = {
+  profiles: RuntimeWorkerTopologyProfile[];
+  expected_queues: string[];
+};
+
+export type RuntimeWorkerTopologyCoverage = {
+  workload_class?: string;
+  description?: string;
+  recommended_concurrency?: number;
+  queues: string[];
+  covered_queues?: string[];
+  missing_queues?: string[];
+  workers: string[];
+  worker_count: number;
+};
+
+export type RuntimeWorkerTopology = {
+  status: RuntimeComponentStatus;
+  profiles: Record<string, RuntimeWorkerTopologyCoverage>;
+  worker_profiles?: Record<string, RuntimeHealthCheck>;
+  invalid_workers?: string[];
+  missing_profiles?: string[];
+  profiles_with_missing_queues?: string[];
+  missing_queues?: string[];
+};
+
+export type RuntimeWorkerSnapshot = {
+  queues: string[];
+  active_tasks: number;
+  reserved_tasks: number;
+  scheduled_tasks: number;
+  pool_max_concurrency: number;
+  pid?: number | null;
+  profile_name?: string | null;
+  profile_status?: RuntimeComponentStatus | null;
+};
+
+export type RuntimeQueuePressureStatus = "idle" | "busy" | "waiting" | "draining" | "backlogged" | "stuck" | string;
+
+export type RuntimeQueueSnapshot = {
+  depth: number;
+  workers: string[];
+  worker_count: number;
+  estimated_concurrency: number;
+  active_tasks: number;
+  reserved_tasks: number;
+  scheduled_tasks: number;
+  inflight_tasks: number;
+  available_capacity_estimate: number;
+  pressure_status: RuntimeQueuePressureStatus;
+  reasons: string[];
+};
+
+export type RuntimeLivenessResponse = {
+  status: RuntimeComponentStatus;
+  app_name: string;
+  environment: string;
+  checked_at: string;
+};
+
+export type RuntimeReadinessResponse = {
+  status: RuntimeComponentStatus;
+  app_name: string;
+  environment: string;
+  checked_at: string;
+  checks: {
+    database?: RuntimeHealthCheck;
+    redis?: RuntimeHealthCheck;
+    celery_workers?: RuntimeHealthCheck;
+    serp?: RuntimeHealthCheck;
+    [key: string]: RuntimeHealthCheck | undefined;
+  };
+  orchestration: {
+    expected_queues: string[];
+    broker_url: string;
+    result_backend: string;
+    worker_topology: RuntimeWorkerTopologyContract;
+  };
+};
+
+export type RuntimeMetricsResponse = {
+  status: RuntimeComponentStatus;
+  app_name: string;
+  environment: string;
+  checked_at: string;
+  orchestration: {
+    expected_queues: string[];
+    broker_url: string;
+    result_backend: string;
+    worker_topology: RuntimeWorkerTopologyContract;
+  };
+  database: RuntimeHealthCheck;
+  broker: RuntimeHealthCheck & {
+    queue_depths?: Record<string, number>;
+    total_depth?: number;
+  };
+  workers: RuntimeHealthCheck & {
+    online_count?: number;
+    workers?: Record<string, RuntimeWorkerSnapshot>;
+    active_tasks_total?: number;
+    reserved_tasks_total?: number;
+    scheduled_tasks_total?: number;
+    expected_queues?: string[];
+    missing_queues?: string[];
+    queue_activity?: Record<string, Omit<RuntimeQueueSnapshot, "depth" | "pressure_status" | "reasons">>;
+    topology?: RuntimeWorkerTopology;
+    topology_contract?: RuntimeWorkerTopologyContract;
+    warning?: string;
+  };
+  queue_pressure: RuntimeHealthCheck & {
+    queues?: Record<string, RuntimeQueueSnapshot>;
+    backlogged_queues?: string[];
+    stuck_queues?: string[];
+    thresholds?: Record<string, number>;
+  };
+  execution_detector: RuntimeHealthCheck & {
+    alerts?: Array<Record<string, unknown>>;
+    summary?: Record<string, number>;
+    thresholds?: Record<string, number>;
+  };
 };
 
 export type AuditSummary = {

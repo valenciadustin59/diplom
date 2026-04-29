@@ -11,11 +11,11 @@
 Завершённые волны:
 
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
-- `D13-D22` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard и audit execution timeline UI.
+- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI и runtime status/queue health UI.
 
-После `D22` проект уже соответствует дипломной теме, имеет отдельный report/export view и dedicated timeline UI для демонстрации distributed runtime. Следующий этап должен в первую очередь углублять frontend-доказательную базу runtime health, а не переписывать backend runtime или добавлять новый анализ без необходимости.
+После `D23` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI и runtime health dashboard для демонстрации distributed runtime. Следующий этап должен в первую очередь углублять product workflow вокруг истории аудитов и действий пользователя, а не переписывать backend runtime или добавлять новый анализ без необходимости.
 
-## Активная волна: D22-D26 Frontend/Product Layer
+## Активная волна: D21-D26 Frontend/Product Layer
 
 Эта волна заведена в GitHub как open issues `#40-#45`. Demo mode намеренно не входит в текущий backlog: пользователь выбрал развивать продуктовые и демонстрационные возможности без отдельного демо-режима.
 
@@ -53,15 +53,20 @@
 
 ### D23 / #42: Runtime Status And Queue Health UI
 
+Статус: выполнено.
+
 Цель — сделать состояние локального distributed stack понятным до запуска аудита и во время работы.
 
-Ожидаемый состав:
+Реализованный состав:
 
-- компактная панель состояния API, Redis, SearxNG, worker profiles и queues;
-- отображение missing workers, queue pressure, backlog и readiness;
-- человекочитаемые сообщения для admission-control ошибок и очередей без активных workers.
+- компактная панель `Готовность runtime` на экране нового аудита;
+- вкладка `Runtime` внутри audit workspace для просмотра health во время работы;
+- frontend consumption `GET /health/live`, `GET /health/ready` и `GET /health/metrics`;
+- отображение API, базы данных, Redis broker, SearXNG, worker profiles и очередей;
+- missing workers, queue pressure, backlog, stuck queues, readiness и runtime detector alerts;
+- человекочитаемые подсказки для admission-control ошибок и очередей без активных воркеров.
 
-Приёмка: пользователь видит, готов ли runtime к новым аудитам, и понимает, что именно нужно восстановить при проблеме.
+Приёмка выполнена: пользователь видит, готов ли runtime к новым аудитам, и понимает, что именно нужно восстановить при проблеме.
 
 ### D24 / #43: Audit History Management
 
@@ -107,7 +112,7 @@
 - SEO depth extensions: schema.org/JSON-LD recommendations, optional PageSpeed/Lighthouse integration, site-wide crawl как отдельная крупная волна;
 - multi-project/domain management и сравнение аудитов во времени.
 
-Их стоит брать только после закрытия или явного отложения `D22-D26`, чтобы не распылять дипломную демонстрацию.
+Их стоит брать только после закрытия или явного отложения `D24-D26`, чтобы не распылять дипломную демонстрацию.
 
 ## Как пользоваться roadmap
 
@@ -115,8 +120,8 @@
 
 1. Прочитать `AGENTS.md` и `README.md`.
 2. Проверить `git status`.
-3. Если задача не задана явно, выбрать следующий open GitHub issue из `D23-D26`, начиная с `D23` / `#42`.
-4. Не откатывать `D13-D22` без прямой причины.
+3. Если задача не задана явно, выбрать следующий open GitHub issue из `D24-D26`, начиная с `D24` / `#43`.
+4. Не откатывать `D13-D23` без прямой причины.
 5. Если нужен GitHub, использовать локальный credential helper или запросить токен вручную, не печатая секреты в чат, logs или файлы.
 
-Канонический статус сейчас: `D1-D22` завершены, активный практический backlog — `D23-D26` frontend/product layer, первый приоритет — runtime status and queue health UI.
+Канонический статус сейчас: `D1-D23` завершены, активный практический backlog — `D24-D26` frontend/product layer, первый приоритет — audit history management.

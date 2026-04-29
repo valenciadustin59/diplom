@@ -1,0 +1,581 @@
+import type {
+  RuntimeHealthCheck,
+  RuntimeLivenessResponse,
+  RuntimeMetricsResponse,
+  RuntimeQueueSnapshot,
+  RuntimeReadinessResponse,
+  RuntimeWorkerTopologyContract,
+  RuntimeWorkerTopologyCoverage,
+  RuntimeWorkerTopologyProfile,
+} from "../types";
+
+export type RuntimeTone = "ok" | "warning" | "error" | "muted";
+
+export type RuntimeMetric = {
+  label: string;
+  value: string;
+  note: string;
+  tone: RuntimeTone;
+};
+
+export type RuntimeComponentRow = {
+  id: string;
+  label: string;
+  status: string;
+  statusLabel: string;
+  tone: RuntimeTone;
+  detail: string;
+};
+
+export type RuntimeWorkerProfileRow = {
+  name: string;
+  label: string;
+  description: string;
+  statusLabel: string;
+  tone: RuntimeTone;
+  workerCount: number;
+  workersLabel: string;
+  queuesLabel: string;
+  missingQueues: string[];
+  recommendedConcurrencyLabel: string;
+};
+
+export type RuntimeQueueRow = {
+  name: string;
+  profileName: string;
+  profileLabel: string;
+  pressureStatus: string;
+  pressureLabel: string;
+  tone: RuntimeTone;
+  depth: number;
+  workerCount: number;
+  workersLabel: string;
+  activeTasks: number;
+  reservedTasks: number;
+  scheduledTasks: number;
+  inflightTasks: number;
+  availableCapacity: number;
+  reasonLabels: string[];
+};
+
+export type RuntimeIssue = {
+  key: string;
+  title: string;
+  detail: string;
+  tone: RuntimeTone;
+};
+
+export type RuntimeHealthModel = {
+  checkedAtLabel: string;
+  appLabel: string;
+  environmentLabel: string;
+  ready: boolean;
+  statusLabel: string;
+  statusDetail: string;
+  statusTone: RuntimeTone;
+  metrics: RuntimeMetric[];
+  components: RuntimeComponentRow[];
+  workerProfiles: RuntimeWorkerProfileRow[];
+  queues: RuntimeQueueRow[];
+  issues: RuntimeIssue[];
+  queueDepthTotal: number;
+  workerCount: number;
+  backloggedQueueCount: number;
+  stuckQueueCount: number;
+};
+type RuntimeHealthInput = {
+  live: RuntimeLivenessResponse | null;
+  readiness: RuntimeReadinessResponse | null;
+  metrics: RuntimeMetricsResponse | null;
+};
+const PROFILE_LABELS: Record<string, string> = {
+  pipeline: "Оркестратор",
+  network: "Сетевой профиль",
+  heavy_analysis: "Тяжёлый анализ",
+  cpu_ml: "CPU/ML профиль",
+};
+const PROFILE_DESCRIPTIONS: Record<string, string> = {
+  pipeline: "Запускает аудит, координирует этапы и admission control.",
+  network: "Обслуживает загрузку целевой страницы, поиск и сбор страниц конкурентов.",
+  heavy_analysis: "Изолирует тяжёлый анализ страницы, семантику и ML-анализ конкурентов.",
+  cpu_ml: "Собирает признаки, считает оценку, рекомендации и финализацию.",
+};
+const STATUS_LABELS: Record<string, string> = {
+  ok: "в норме",
+  ready: "готов",
+  not_ready: "не готов",
+  degraded: "деградация",
+  warning: "внимание",
+  error: "ошибка",
+  skipped: "пропущено",
+};
+const PRESSURE_LABELS: Record<string, string> = {
+  idle: "простаивает",
+  busy: "занята",
+  waiting: "ожидает воркер",
+  draining: "разбирается",
+  backlogged: "backlog",
+  stuck: "без воркеров",
+};
+const REASON_LABELS: Record<string, string> = {
+  inflight_without_backlog: "есть задачи в работе без backlog",
+  no_workers_serving_queue: "очередь не обслуживается активными воркерами",
+  queued_tasks_without_drain_activity: "накопились задачи без признаков разбора",
+  queued_tasks_pending_pickup: "задачи ждут подхвата воркером",
+  depth_exceeds_estimated_capacity: "глубина очереди выше оценочной capacity",
+  queue_is_draining: "воркеры разбирают накопленные задачи",
+};
+const ALERT_LABELS: Record<string, string> = {
+  stuck_processing_audits: "Зависшие аудиты в обработке",
+  queued_audits_waiting_too_long: "Аудиты слишком долго ждут старта",
+  dispatched_stages_waiting_too_long: "Этапы слишком долго ждут выполнения",
+  queue_without_workers: "Очередь без воркеров",
+  queue_backlog_detected: "Backlog в очереди",
+};
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+function asString(value: unknown): string | null {
+  return typeof value === "string" && value.trim() ? value : null;
+}
+function asNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+function asStringArray(value: unknown): string[] {
+  return Array.isArray(value) ? value.flatMap((item) => (typeof item === "string" ? [item] : [])) : [];
+}
+function formatCount(value: number | null | undefined): string {
+  return typeof value === "number" && Number.isFinite(value) ? String(value) : "—";
+}
+function formatCheckedAt(value: string | null | undefined): string {
+  if (!value) {
+    return "нет данных";
+  }
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+  return new Intl.DateTimeFormat("ru-RU", {
+    dateStyle: "medium",
+    timeStyle: "medium",
+  }).format(date);
+}
+function formatDurationSeconds(value: unknown): string {
+  const seconds = asNumber(value);
+  if (seconds === null) {
+    return "—";
+  }
+  if (seconds < 60) {
+    return `${Math.round(seconds)} с`;
+  }
+  return `${Math.round(seconds / 6) / 10} мин`;
+}
+function getStatusLabel(status: string | null | undefined): string {
+  if (!status) {
+    return "нет данных";
+  }
+  return STATUS_LABELS[status] ?? status;
+}
+function getStatusTone(status: string | null | undefined): RuntimeTone {
+  if (status === "ok" || status === "ready" || status === "skipped") {
+    return "ok";
+  }
+  if (status === "warning" || status === "degraded" || status === "not_ready") {
+    return "warning";
+  }
+  if (status === "error" || status === "stuck" || status === "backlogged") {
+    return "error";
+  }
+  return "muted";
+}
+function getQueueTone(status: string): RuntimeTone {
+  if (status === "idle" || status === "busy" || status === "draining") {
+    return "ok";
+  }
+  if (status === "waiting" || status === "backlogged") {
+    return "warning";
+  }
+  if (status === "stuck") {
+    return "error";
+  }
+  return getStatusTone(status);
+}
+function getProfileLabel(profileName: string): string {
+  return PROFILE_LABELS[profileName] ?? profileName;
+}
+function getProfileDescription(profileName: string, fallback: string | null | undefined): string {
+  return PROFILE_DESCRIPTIONS[profileName] ?? fallback ?? "Профиль распределённого runtime.";
+}
+function getHealthCheckDetail(check: RuntimeHealthCheck | undefined, fallback: string): string {
+  if (!check) {
+    return "Нет payload диагностики.";
+  }
+  const error = asString(check.error);
+  if (error) {
+    return error;
+  }
+  const workerCount = asNumber(check.worker_count);
+  if (workerCount !== null) {
+    const missingQueues = asStringArray(check.missing_queues);
+    return missingQueues.length > 0
+      ? `${workerCount} воркеров, не покрыты очереди: ${missingQueues.join(", ")}.`
+      : `${workerCount} воркеров, все ожидаемые очереди покрыты.`;
+  }
+  const brokerUrl = asString(check.broker_url);
+  if (brokerUrl) {
+    return brokerUrl;
+  }
+  const baseUrl = asString(check.base_url);
+  if (baseUrl) {
+    return baseUrl;
+  }
+  const databaseUrl = asString(check.database_url);
+  if (databaseUrl) {
+    return databaseUrl;
+  }
+  return fallback;
+}
+function getTopologyContract(input: RuntimeHealthInput): RuntimeWorkerTopologyContract | null {
+  return (
+    input.metrics?.workers.topology_contract ??
+    input.metrics?.orchestration.worker_topology ??
+    input.readiness?.orchestration.worker_topology ??
+    null
+  );
+}
+function getExpectedQueues(input: RuntimeHealthInput): string[] {
+  return [
+    ...(input.metrics?.orchestration.expected_queues ?? []),
+    ...(input.metrics?.workers.expected_queues ?? []),
+    ...(input.readiness?.orchestration.expected_queues ?? []),
+    ...(getTopologyContract(input)?.expected_queues ?? []),
+    ...Object.keys(input.metrics?.queue_pressure.queues ?? {}),
+  ].filter((queue, index, queues) => queue && queues.indexOf(queue) === index);
+}
+function buildQueueProfileMap(contract: RuntimeWorkerTopologyContract | null): Map<string, RuntimeWorkerTopologyProfile> {
+  return new Map(
+    (contract?.profiles ?? []).flatMap((profile) => profile.queues.map((queueName) => [queueName, profile] as const)),
+  );
+}
+function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
+  const liveStatus = input.live?.status ?? null;
+  const checks = input.readiness?.checks ?? {};
+  const queuePressureStatus = input.metrics?.queue_pressure.status ?? null;
+  const brokerStatus = input.metrics?.broker.status ?? checks.redis?.status ?? null;
+
+  return [
+    {
+      id: "api",
+      label: "API",
+      status: liveStatus ?? "unknown",
+      statusLabel: getStatusLabel(liveStatus),
+      tone: getStatusTone(liveStatus),
+      detail: input.live ? `FastAPI отвечает, окружение: ${input.live.environment}.` : "Liveness endpoint пока недоступен.",
+    },
+    {
+      id: "database",
+      label: "База данных",
+      status: checks.database?.status ?? input.metrics?.database.status ?? "unknown",
+      statusLabel: getStatusLabel(checks.database?.status ?? input.metrics?.database.status),
+      tone: getStatusTone(checks.database?.status ?? input.metrics?.database.status),
+      detail: getHealthCheckDetail(checks.database ?? input.metrics?.database, "SQLite/PostgreSQL доступна backend API."),
+    },
+    {
+      id: "redis",
+      label: "Redis / broker",
+      status: brokerStatus ?? "unknown",
+      statusLabel: getStatusLabel(brokerStatus),
+      tone: getStatusTone(brokerStatus),
+      detail: getHealthCheckDetail(checks.redis ?? input.metrics?.broker, "Redis broker отвечает на runtime telemetry."),
+    },
+    {
+      id: "serp",
+      label: "SearXNG",
+      status: checks.serp?.status ?? "unknown",
+      statusLabel: getStatusLabel(checks.serp?.status),
+      tone: getStatusTone(checks.serp?.status),
+      detail: getHealthCheckDetail(checks.serp, "Поисковый провайдер доступен для сбора конкурентов."),
+    },
+    {
+      id: "workers",
+      label: "Воркеры Celery",
+      status: checks.celery_workers?.status ?? input.metrics?.workers.status ?? "unknown",
+      statusLabel: getStatusLabel(checks.celery_workers?.status ?? input.metrics?.workers.status),
+      tone: getStatusTone(checks.celery_workers?.status ?? input.metrics?.workers.status),
+      detail: getHealthCheckDetail(checks.celery_workers ?? input.metrics?.workers, "Воркеры отвечают на inspect."),
+    },
+    {
+      id: "queues",
+      label: "Очереди",
+      status: queuePressureStatus ?? "unknown",
+      statusLabel: getStatusLabel(queuePressureStatus),
+      tone: getStatusTone(queuePressureStatus),
+      detail: input.metrics?.queue_pressure
+        ? `Backlog: ${(input.metrics.queue_pressure.backlogged_queues ?? []).length}, без воркеров: ${(input.metrics.queue_pressure.stuck_queues ?? []).length}.`
+        : "Queue pressure payload пока недоступен.",
+    },
+  ];
+}
+function buildProfileRows(input: RuntimeHealthInput): RuntimeWorkerProfileRow[] {
+  const contractProfiles = getTopologyContract(input)?.profiles ?? [];
+  const topologyProfiles = input.metrics?.workers.topology?.profiles ?? {};
+
+  return contractProfiles.map((profile) => {
+    const coverage = topologyProfiles[profile.name] as RuntimeWorkerTopologyCoverage | undefined;
+    const queues = coverage?.queues ?? profile.queues;
+    const workers = coverage?.workers ?? [];
+    const missingQueues = coverage?.missing_queues ?? queues;
+    const workerCount = coverage?.worker_count ?? workers.length;
+    const tone: RuntimeTone = missingQueues.length > 0 || workerCount === 0 ? "error" : "ok";
+
+    return {
+      name: profile.name,
+      label: getProfileLabel(profile.name),
+      description: getProfileDescription(profile.name, coverage?.description ?? profile.description),
+      statusLabel: tone === "ok" ? "очереди покрыты" : "требуется воркер",
+      tone,
+      workerCount,
+      workersLabel: workers.length > 0 ? workers.join(", ") : "нет активных воркеров",
+      queuesLabel: queues.join(", "),
+      missingQueues,
+      recommendedConcurrencyLabel: `${coverage?.recommended_concurrency ?? profile.recommended_concurrency}`,
+    };
+  });
+}
+function buildQueueRows(input: RuntimeHealthInput): RuntimeQueueRow[] {
+  const expectedQueues = getExpectedQueues(input);
+  const queueProfileMap = buildQueueProfileMap(getTopologyContract(input));
+  const queueSnapshots = input.metrics?.queue_pressure.queues ?? {};
+  const profileOrder = new Map((getTopologyContract(input)?.profiles ?? []).map((profile, index) => [profile.name, index]));
+
+  return expectedQueues
+    .map((queueName) => {
+      const snapshot = queueSnapshots[queueName] as RuntimeQueueSnapshot | undefined;
+      const profile = queueProfileMap.get(queueName);
+      const pressureStatus = snapshot?.pressure_status ?? "unknown";
+      return {
+        name: queueName,
+        profileName: profile?.name ?? "unassigned",
+        profileLabel: profile ? getProfileLabel(profile.name) : "Не назначена",
+        pressureStatus,
+        pressureLabel: PRESSURE_LABELS[pressureStatus] ?? pressureStatus,
+        tone: getQueueTone(pressureStatus),
+        depth: snapshot?.depth ?? 0,
+        workerCount: snapshot?.worker_count ?? 0,
+        workersLabel: snapshot && snapshot.workers.length > 0 ? snapshot.workers.join(", ") : "нет",
+        activeTasks: snapshot?.active_tasks ?? 0,
+        reservedTasks: snapshot?.reserved_tasks ?? 0,
+        scheduledTasks: snapshot?.scheduled_tasks ?? 0,
+        inflightTasks: snapshot?.inflight_tasks ?? 0,
+        availableCapacity: snapshot?.available_capacity_estimate ?? 0,
+        reasonLabels: (snapshot?.reasons ?? []).map((reason) => REASON_LABELS[reason] ?? reason),
+      };
+    })
+    .sort((left, right) => {
+      const leftProfileOrder = profileOrder.get(left.profileName) ?? Number.MAX_SAFE_INTEGER;
+      const rightProfileOrder = profileOrder.get(right.profileName) ?? Number.MAX_SAFE_INTEGER;
+      return leftProfileOrder - rightProfileOrder || left.name.localeCompare(right.name);
+    });
+}
+function buildAlertIssue(alert: Record<string, unknown>): RuntimeIssue | null {
+  const code = asString(alert.code);
+  if (!code) {
+    return null;
+  }
+  const queue = asString(alert.queue);
+  const severity = asString(alert.severity) ?? "warning";
+  const count = asNumber(alert.count);
+  const depth = asNumber(alert.depth);
+
+  if (code === "queue_without_workers" && queue) {
+    return {
+      key: `${code}:${queue}`,
+      title: "Очередь без активных воркеров",
+      detail: `Запустите профиль, который обслуживает ${queue}. Глубина очереди: ${formatCount(depth)}.`,
+      tone: "error",
+    };
+  }
+  if (code === "queue_backlog_detected" && queue) {
+    return {
+      key: `${code}:${queue}`,
+      title: "Backlog в очереди",
+      detail: `Очередь ${queue} накопила ${formatCount(depth)} задач. Увеличьте воркеры профиля или дождитесь разбора backlog.`,
+      tone: "warning",
+    };
+  }
+  if (code === "queued_audits_waiting_too_long") {
+    return {
+      key: code,
+      title: "Аудиты слишком долго ждут запуска",
+      detail: `Самый старый аудит ждёт ${formatDurationSeconds(alert.oldest_age_seconds)}. Проверьте очередь audits.pipeline и профиль оркестратора.`,
+      tone: "warning",
+    };
+  }
+  if (code === "dispatched_stages_waiting_too_long") {
+    return {
+      key: code,
+      title: "Этапы ожидают выполнения дольше нормы",
+      detail: `${formatCount(count)} этапов ожидают воркеры. Проверьте очереди из sample в runtime telemetry.`,
+      tone: "warning",
+    };
+  }
+  if (code === "stuck_processing_audits") {
+    return {
+      key: code,
+      title: "Есть зависшие аудиты",
+      detail: `${formatCount(count)} аудитов находятся в processing дольше порога. Проверьте воркеры и перезапустите зависшие задачи.`,
+      tone: "error",
+    };
+  }
+
+  return {
+    key: code,
+    title: ALERT_LABELS[code] ?? code,
+    detail: `Runtime detector сообщил severity=${severity}.`,
+    tone: severity === "error" ? "error" : "warning",
+  };
+}
+function dedupeIssues(issues: RuntimeIssue[]): RuntimeIssue[] {
+  return Array.from(new Map(issues.map((issue) => [issue.key, issue])).values());
+}
+function buildIssues(input: RuntimeHealthInput, profileRows: RuntimeWorkerProfileRow[], queueRows: RuntimeQueueRow[]): RuntimeIssue[] {
+  const componentIssues = buildComponentRows(input).flatMap((component) =>
+    component.tone === "ok" || component.id === "queues"
+      ? []
+      : [
+          {
+            key: `component:${component.id}`,
+            title: `${component.label}: ${component.statusLabel}`,
+            detail: component.detail,
+            tone: component.tone,
+          },
+        ],
+  );
+
+  const profileIssues = profileRows.flatMap((profile): RuntimeIssue[] =>
+    profile.tone === "ok"
+      ? []
+      : [
+          {
+            key: `profile:${profile.name}`,
+            title: `Не покрыт профиль "${profile.label}"`,
+            detail:
+              profile.missingQueues.length > 0
+                ? `Запустите воркер профиля. Не покрыты очереди: ${profile.missingQueues.join(", ")}.`
+                : "Профиль не видит активных воркеров.",
+            tone: "error" as const,
+          },
+        ],
+  );
+
+  const queueIssues = queueRows.flatMap((queue): RuntimeIssue[] => {
+    if (queue.pressureStatus === "stuck") {
+      return [
+        {
+          key: `queue:stuck:${queue.name}`,
+          title: `Очередь ${queue.name} без воркеров`,
+          detail: `Запустите профиль "${queue.profileLabel}". Сейчас в очереди ${queue.depth} задач.`,
+          tone: "error" as const,
+        },
+      ];
+    }
+    if (queue.pressureStatus === "backlogged") {
+      return [
+        {
+          key: `queue:backlogged:${queue.name}`,
+          title: `Backlog в ${queue.name}`,
+          detail: `Глубина ${queue.depth}, активных задач ${queue.activeTasks}. Увеличьте воркеры профиля "${queue.profileLabel}" или дождитесь освобождения capacity.`,
+          tone: "warning" as const,
+        },
+      ];
+    }
+    return [];
+  });
+
+  const alertIssues = (input.metrics?.execution_detector.alerts ?? []).flatMap((alert): RuntimeIssue[] => {
+    const issue = isRecord(alert) ? buildAlertIssue(alert) : null;
+    return issue ? [issue] : [];
+  });
+
+  const issues = dedupeIssues([...componentIssues, ...profileIssues, ...queueIssues, ...alertIssues]);
+  return issues.length > 0
+    ? issues
+    : [
+        {
+          key: "runtime-ready",
+          title: "Runtime готов к новым аудитам",
+          detail: "API, Redis, SearXNG, воркеры и очереди отвечают штатно.",
+          tone: "ok",
+        },
+      ];
+}
+function buildMetrics(input: RuntimeHealthInput, issues: RuntimeIssue[]): RuntimeMetric[] {
+  const workerCount = input.metrics?.workers.online_count ?? 0;
+  const queueDepthTotal = input.metrics?.broker.total_depth ?? 0;
+  const backloggedQueueCount = input.metrics?.queue_pressure.backlogged_queues?.length ?? 0;
+  const stuckQueueCount = input.metrics?.queue_pressure.stuck_queues?.length ?? 0;
+  const ready = input.readiness?.status === "ready";
+
+  return [
+    {
+      label: "Готовность",
+      value: ready ? "готов" : "не готов",
+      note: ready ? "Readiness допускает новые аудиты." : "Есть обязательные runtime-компоненты с ошибкой.",
+      tone: ready ? "ok" : "error",
+    },
+    {
+      label: "Воркеры",
+      value: formatCount(workerCount),
+      note: "Активные Celery workers, отвечающие на inspect.",
+      tone: workerCount > 0 ? "ok" : "error",
+    },
+    {
+      label: "Глубина очередей",
+      value: formatCount(queueDepthTotal),
+      note: "Сумма задач в Redis-очередях аудита.",
+      tone: queueDepthTotal === 0 ? "ok" : "warning",
+    },
+    {
+      label: "Проблемы",
+      value: formatCount(issues.filter((issue) => issue.tone !== "ok").length),
+      note: `Backlog: ${backloggedQueueCount}, без воркеров: ${stuckQueueCount}.`,
+      tone: issues.some((issue) => issue.tone === "error")
+        ? "error"
+        : issues.some((issue) => issue.tone === "warning")
+          ? "warning"
+          : "ok",
+    },
+  ];
+}
+export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealthModel {
+  const workerProfiles = buildProfileRows(input);
+  const queues = buildQueueRows(input);
+  const issues = buildIssues(input, workerProfiles, queues);
+  const metrics = buildMetrics(input, issues);
+  const ready = input.readiness?.status === "ready";
+  const hasErrorIssue = issues.some((issue) => issue.tone === "error");
+  const hasWarningIssue = issues.some((issue) => issue.tone === "warning");
+  const statusTone: RuntimeTone = ready && !hasErrorIssue && !hasWarningIssue ? "ok" : hasErrorIssue ? "error" : "warning";
+  const checkedAt = input.metrics?.checked_at ?? input.readiness?.checked_at ?? input.live?.checked_at ?? null;
+
+  return {
+    checkedAtLabel: formatCheckedAt(checkedAt),
+    appLabel: input.live?.app_name ?? input.metrics?.app_name ?? input.readiness?.app_name ?? "backend API",
+    environmentLabel: input.live?.environment ?? input.metrics?.environment ?? input.readiness?.environment ?? "unknown",
+    ready,
+    statusLabel: ready && statusTone === "ok" ? "Runtime готов" : ready ? "Runtime требует внимания" : "Runtime не готов",
+    statusDetail: ready
+      ? "Стек отвечает, но queue pressure может временно ограничивать throughput."
+      : "Новые аудиты могут быть отклонены admission control до восстановления обязательных компонентов.",
+    statusTone,
+    metrics,
+    components: buildComponentRows(input),
+    workerProfiles,
+    queues,
+    issues,
+    queueDepthTotal: input.metrics?.broker.total_depth ?? 0,
+    workerCount: input.metrics?.workers.online_count ?? 0,
+    backloggedQueueCount: input.metrics?.queue_pressure.backlogged_queues?.length ?? 0,
+    stuckQueueCount: input.metrics?.queue_pressure.stuck_queues?.length ?? 0,
+  };
+}

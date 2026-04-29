@@ -1,10 +1,11 @@
 type ControlRailProps = {
-  activeView: "new" | "history";
+  activeView: "new" | "history" | "runtime";
   onOpenNew: () => void;
   onOpenHistory: () => void;
+  onOpenRuntime: () => void;
 };
 
-export function ControlRail({ activeView, onOpenNew, onOpenHistory }: ControlRailProps) {
+export function ControlRail({ activeView, onOpenNew, onOpenHistory, onOpenRuntime }: ControlRailProps) {
   return (
     <aside className="control-rail">
       <div className="control-rail__section control-rail__section--brand">
@@ -29,6 +30,13 @@ export function ControlRail({ activeView, onOpenNew, onOpenHistory }: ControlRai
             onClick={onOpenHistory}
           >
             История
+          </button>
+          <button
+            type="button"
+            className={`control-rail__switcher-button ${activeView === "runtime" ? "control-rail__switcher-button--active" : ""}`}
+            onClick={onOpenRuntime}
+          >
+            Runtime
           </button>
         </div>
       </div>

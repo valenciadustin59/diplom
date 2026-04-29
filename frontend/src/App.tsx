@@ -12,11 +12,13 @@ import {
 import { AuditWorkspace, EmptyWorkspace } from "./components/AuditWorkspace";
 import { ControlRail } from "./components/ControlRail";
 import { useAuditWorkspace } from "./hooks/useAuditWorkspace";
+import { useRuntimeHealth } from "./hooks/useRuntimeHealth";
+import { RuntimeStatusPage } from "./pages/RuntimeStatusPage";
 import type { AuditCreatePayload, AuditTab } from "./types";
 
-const validTabs: AuditTab[] = ["overview", "report", "timeline", "pages", "competitors", "recommendations"];
+const validTabs: AuditTab[] = ["overview", "report", "timeline", "runtime", "pages", "competitors", "recommendations"];
 
-type AuditWorkspaceRouteProps = ReturnType<typeof useAuditWorkspace>;
+type AuditWorkspaceRouteProps = ReturnType<typeof useAuditWorkspace> & ReturnType<typeof useRuntimeHealth>;
 
 export function getActiveTab(value: string | null): AuditTab {
   if (value && validTabs.includes(value as AuditTab)) {
@@ -66,6 +68,10 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
       pageRows={pageRows}
       competitorScores={competitorScores}
       comparisonSummary={comparisonSummary}
+      runtimeHealth={props.runtimeHealth}
+      loadingRuntime={props.loadingRuntime}
+      runtimeError={props.runtimeError}
+      onRefreshRuntime={() => props.refreshRuntimeHealth()}
       auditStatus={props.auditStatus}
       loading={props.loadingAudit || isAuditRoutePending}
       error={props.workspaceError}
@@ -80,9 +86,11 @@ function AppShell() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const workspace = useAuditWorkspace();
+  const runtime = useRuntimeHealth();
   const activeMatch = matchPath("/audits/:auditId", location.pathname);
   const activeAuditId = activeMatch?.params.auditId ?? null;
-  const homeView = searchParams.get("view") === "history" ? "history" : "new";
+  const rawHomeView = searchParams.get("view");
+  const homeView = rawHomeView === "history" || rawHomeView === "runtime" ? rawHomeView : "new";
 
   async function handleCreateAudit(payload: AuditCreatePayload): Promise<boolean> {
     const audit = await workspace.createAudit(payload);
@@ -108,6 +116,7 @@ function AppShell() {
         activeView={activeAuditId ? "history" : homeView}
         onOpenNew={() => navigate("/?view=new")}
         onOpenHistory={() => navigate("/?view=history")}
+        onOpenRuntime={() => navigate("/?view=runtime")}
       />
 
       <main className="content">
@@ -116,20 +125,33 @@ function AppShell() {
             <Route
               path="/"
               element={
-                <EmptyWorkspace
-                  mode={homeView}
-                  recentAudits={workspace.recentAudits}
-                  activeAuditId={activeAuditId}
-                  loadingRecent={workspace.loadingRecent}
-                  submitting={workspace.submitting}
-                  submissionError={workspace.submissionError}
-                  success={workspace.success}
-                  onCreateAudit={handleCreateAudit}
-                  onSelectAudit={handleSelectAudit}
-                />
+                homeView === "runtime" ? (
+                  <RuntimeStatusPage
+                    model={runtime.runtimeHealth}
+                    loading={runtime.loadingRuntime}
+                    error={runtime.runtimeError}
+                    onRefresh={() => runtime.refreshRuntimeHealth()}
+                  />
+                ) : (
+                  <EmptyWorkspace
+                    mode={homeView}
+                    recentAudits={workspace.recentAudits}
+                    activeAuditId={activeAuditId}
+                    loadingRecent={workspace.loadingRecent}
+                    submitting={workspace.submitting}
+                    submissionError={workspace.submissionError}
+                    success={workspace.success}
+                    runtimeHealth={runtime.runtimeHealth}
+                    loadingRuntime={runtime.loadingRuntime}
+                    runtimeError={runtime.runtimeError}
+                    onRefreshRuntime={() => runtime.refreshRuntimeHealth()}
+                    onCreateAudit={handleCreateAudit}
+                    onSelectAudit={handleSelectAudit}
+                  />
+                )
               }
             />
-            <Route path="/audits/:auditId" element={<AuditWorkspaceRoute {...workspace} />} />
+            <Route path="/audits/:auditId" element={<AuditWorkspaceRoute {...workspace} {...runtime} />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>

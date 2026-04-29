@@ -3,7 +3,9 @@ import { AuditPage } from "../pages/AuditPage";
 import { AuditReportPage } from "../pages/AuditReportPage";
 import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
+import { RuntimeStatusCompactCard, RuntimeStatusPage } from "../pages/RuntimeStatusPage";
 import { getTopRecommendationItems } from "../lib/recommendations";
+import type { RuntimeHealthModel } from "../lib/runtimeHealth";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
 import { AuditTabs } from "./AuditTabs";
 import { AuditLaunchForm } from "./AuditLaunchForm";
@@ -39,6 +41,10 @@ type AuditWorkspaceProps = {
   pageRows: PageRow[];
   competitorScores: CompetitorScore[];
   comparisonSummary: ComparisonSummary | null;
+  runtimeHealth: RuntimeHealthModel | null;
+  loadingRuntime: boolean;
+  runtimeError: string | null;
+  onRefreshRuntime: () => void;
   auditStatus: AuditStatus;
   loading: boolean;
   error: string | null;
@@ -54,6 +60,10 @@ type EmptyWorkspaceProps = {
   submitting: boolean;
   submissionError: string | null;
   success: string | null;
+  runtimeHealth: RuntimeHealthModel | null;
+  loadingRuntime: boolean;
+  runtimeError: string | null;
+  onRefreshRuntime: () => void;
   onCreateAudit: (payload: AuditCreatePayload) => Promise<boolean>;
   onSelectAudit: (auditId: string) => void;
 };
@@ -511,8 +521,15 @@ function NewAuditWorkspace({
   submitting,
   submissionError,
   success,
+  runtimeHealth,
+  loadingRuntime,
+  runtimeError,
+  onRefreshRuntime,
   onCreateAudit,
-}: Pick<EmptyWorkspaceProps, "submitting" | "submissionError" | "success" | "onCreateAudit">) {
+}: Pick<
+  EmptyWorkspaceProps,
+  "submitting" | "submissionError" | "success" | "runtimeHealth" | "loadingRuntime" | "runtimeError" | "onRefreshRuntime" | "onCreateAudit"
+>) {
   return (
     <div className="workspace-empty">
       <Card className="hero-card workspace-empty__hero">
@@ -540,6 +557,13 @@ function NewAuditWorkspace({
           {success ? <div className="feedback-banner feedback-banner--success">{success}</div> : null}
         </div>
       </Card>
+
+      <RuntimeStatusCompactCard
+        model={runtimeHealth}
+        loading={loadingRuntime}
+        error={runtimeError}
+        onRefresh={onRefreshRuntime}
+      />
     </div>
   );
 }
@@ -638,6 +662,10 @@ export function AuditWorkspace({
   pageRows,
   competitorScores,
   comparisonSummary,
+  runtimeHealth,
+  loadingRuntime,
+  runtimeError,
+  onRefreshRuntime,
   auditStatus,
   loading,
   error,
@@ -715,6 +743,15 @@ export function AuditWorkspace({
           />
         ) : null}
 
+        {activeTab === "runtime" ? (
+          <RuntimeStatusPage
+            model={runtimeHealth}
+            loading={loadingRuntime}
+            error={runtimeError}
+            onRefresh={onRefreshRuntime}
+          />
+        ) : null}
+
         {activeTab === "pages" ? (
           <AuditPage rows={pageRows} auditStatus={auditStatus} loading={loading} error={error} />
         ) : null}
@@ -752,6 +789,10 @@ export function EmptyWorkspace({
   submitting,
   submissionError,
   success,
+  runtimeHealth,
+  loadingRuntime,
+  runtimeError,
+  onRefreshRuntime,
   onCreateAudit,
   onSelectAudit,
 }: EmptyWorkspaceProps) {
@@ -771,6 +812,10 @@ export function EmptyWorkspace({
       submitting={submitting}
       submissionError={submissionError}
       success={success}
+      runtimeHealth={runtimeHealth}
+      loadingRuntime={loadingRuntime}
+      runtimeError={runtimeError}
+      onRefreshRuntime={onRefreshRuntime}
       onCreateAudit={onCreateAudit}
     />
   );
