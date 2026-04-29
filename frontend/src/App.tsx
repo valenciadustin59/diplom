@@ -13,8 +13,9 @@ import { AuditWorkspace, EmptyWorkspace } from "./components/AuditWorkspace";
 import { ControlRail } from "./components/ControlRail";
 import { useAuditWorkspace } from "./hooks/useAuditWorkspace";
 import { useRuntimeHealth } from "./hooks/useRuntimeHealth";
+import { createRepeatAuditPayload } from "./lib/auditHistory";
 import { RuntimeStatusPage } from "./pages/RuntimeStatusPage";
-import type { AuditCreatePayload, AuditTab } from "./types";
+import type { AuditCreatePayload, AuditSummary, AuditTab } from "./types";
 
 const validTabs: AuditTab[] = ["overview", "report", "timeline", "runtime", "pages", "competitors", "recommendations"];
 
@@ -102,6 +103,10 @@ function AppShell() {
     return true;
   }
 
+  async function handleRepeatAudit(audit: AuditSummary): Promise<void> {
+    await handleCreateAudit(createRepeatAuditPayload(audit));
+  }
+
   function handleSelectAudit(auditId: string) {
     workspace.selectAudit(auditId);
     navigate(buildAuditWorkspacePath(auditId));
@@ -150,6 +155,7 @@ function AppShell() {
                     onRefreshRecent={() => workspace.refreshAudits()}
                     onCreateAudit={handleCreateAudit}
                     onSelectAudit={handleSelectAudit}
+                    onRepeatAudit={handleRepeatAudit}
                   />
                 )
               }

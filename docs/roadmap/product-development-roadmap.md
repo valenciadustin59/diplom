@@ -11,9 +11,9 @@
 Завершённые волны:
 
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
-- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI и панель состояния рабочего стека/очередей.
+- `D13-D24` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей и audit history management.
 
-После `D23` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI и панель состояния рабочего стека для демонстрации распределённого исполнения. Следующий этап должен в первую очередь углублять product workflow вокруг истории аудитов и действий пользователя, а не переписывать серверную оркестрацию или добавлять новый анализ без необходимости.
+После `D24` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека и управляемую историю аудитов для демонстрации распределённого исполнения. Следующий этап должен в первую очередь углублять product workflow вокруг рекомендаций и действий пользователя, а не переписывать серверную оркестрацию или добавлять новый анализ без необходимости.
 
 ## Активная волна: D21-D26 Frontend/Product Layer
 
@@ -70,15 +70,19 @@
 
 ### D24 / #43: Audit History Management
 
+Статус: выполнено.
+
 Цель — превратить историю аудитов из пассивного списка в рабочую панель.
 
-Ожидаемый состав:
+Реализованный состав:
 
-- действия `повторить аудит`, `открыть последний успешный`, безопасно удалить или скрыть локальный audit row;
-- фильтры по статусу, домену, запросу и проблемным/stale запускам;
-- аккуратное разделение dev-only cleanup и обычного product behavior.
+- быстрые действия `Повторить аудит`, `Открыть последний успешный`, `Скрыть локально` и `Восстановить`;
+- фильтры по статусу, домену, запросу и фокусу (`Все записи`, `Успешные`, `Проблемные`, `Зависшие/устаревшие`, `Скрытые локально`);
+- метрики истории: всего, видимые, успешные, проблемные, скрытые;
+- локальное скрытие через browser storage без удаления backend-данных;
+- повторный запуск через существующий `POST /audits` с исходными `query`, `target_url`, `top_n`.
 
-Приёмка: пользователь быстро находит нужный аудит, повторяет запуск и очищает локальную историю без риска случайно сломать данные.
+Приёмка выполнена: пользователь быстро находит нужный аудит, повторяет запуск и очищает локальную историю без риска случайно сломать данные.
 
 ### D25 / #44: Recommendation Action Tracking
 
@@ -112,7 +116,7 @@
 - SEO depth extensions: schema.org/JSON-LD recommendations, optional PageSpeed/Lighthouse integration, site-wide crawl как отдельная крупная волна;
 - multi-project/domain management и сравнение аудитов во времени.
 
-Их стоит брать только после закрытия или явного отложения `D24-D26`, чтобы не распылять дипломную демонстрацию.
+Их стоит брать только после закрытия или явного отложения `D25-D26`, чтобы не распылять дипломную демонстрацию.
 
 ## Как пользоваться roadmap
 
@@ -120,8 +124,8 @@
 
 1. Прочитать `AGENTS.md` и `README.md`.
 2. Проверить `git status`.
-3. Если задача не задана явно, выбрать следующий open GitHub issue из `D24-D26`, начиная с `D24` / `#43`.
-4. Не откатывать `D13-D23` без прямой причины.
+3. Если задача не задана явно, выбрать следующий open GitHub issue из `D25-D26`, начиная с `D25` / `#44`.
+4. Не откатывать `D13-D24` без прямой причины.
 5. Если нужен GitHub, использовать локальный credential helper или запросить токен вручную, не печатая секреты в чат, logs или файлы.
 
-Канонический статус сейчас: `D1-D23` завершены, активный практический backlog — `D24-D26` frontend/product layer, первый приоритет — audit history management.
+Канонический статус сейчас: `D1-D24` завершены, активный практический backlog — `D25-D26` frontend/product layer, первый приоритет — recommendation action tracking.

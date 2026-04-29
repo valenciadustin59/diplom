@@ -379,6 +379,8 @@ export type AuditSummary = {
   id: string;
   domain: string;
   query: string;
+  targetUrl: string;
+  topN: number;
   score: number;
   status: AuditStatus;
   createdAt: string;

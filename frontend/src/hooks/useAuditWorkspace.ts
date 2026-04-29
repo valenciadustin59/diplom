@@ -48,6 +48,8 @@ function mapSummary(audit: AuditStatusResponse): AuditSummary {
     id: audit.id,
     domain: getDomainFromUrl(audit.target_url),
     query: audit.query,
+    targetUrl: audit.target_url,
+    topN: audit.top_n,
     score: Math.round(audit.score ?? 0),
     status: audit.status,
     createdAt: formatCreatedAt(audit.created_at),

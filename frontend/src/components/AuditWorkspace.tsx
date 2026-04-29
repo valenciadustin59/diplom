@@ -1,4 +1,3 @@
-import { useMemo, useState } from "react";
 import { AuditPage } from "../pages/AuditPage";
 import { AuditReportPage } from "../pages/AuditReportPage";
 import { AuditTimelinePage } from "../pages/AuditTimelinePage";
@@ -10,9 +9,9 @@ import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, res
 import { AuditTabs } from "./AuditTabs";
 import { AuditLaunchForm } from "./AuditLaunchForm";
 import { Card } from "./Card";
+import { AuditHistoryPanel } from "./AuditHistoryPanel";
 import { ComparisonChart } from "./ComparisonChart";
 import { RecommendationPreviewList } from "./RecommendationList";
-import { RecentAuditList } from "./RecentAuditList";
 import { ScoreRing } from "./ScoreRing";
 import type {
   AuditCreatePayload,
@@ -69,6 +68,7 @@ type EmptyWorkspaceProps = {
   onRefreshRecent: () => void;
   onCreateAudit: (payload: AuditCreatePayload) => Promise<boolean>;
   onSelectAudit: (auditId: string) => void;
+  onRepeatAudit: (audit: AuditSummary) => Promise<void>;
 };
 
 function formatDate(value: string): string {
@@ -542,112 +542,6 @@ function NewAuditWorkspace({
   );
 }
 
-function HistoryWorkspace({
-  recentAudits,
-  activeAuditId,
-  loadingRecent,
-  recentError,
-  onRefreshRecent,
-  onOpenRuntime,
-  onSelectAudit,
-}: Pick<
-  EmptyWorkspaceProps,
-  "recentAudits" | "activeAuditId" | "loadingRecent" | "recentError" | "onRefreshRecent" | "onOpenRuntime" | "onSelectAudit"
->) {
-  const [statusFilter, setStatusFilter] = useState<"all" | AuditStatus>("all");
-  const [domainFilter, setDomainFilter] = useState("");
-  const [searchFilter, setSearchFilter] = useState("");
-
-  const filteredAudits = useMemo(() => {
-    return recentAudits.filter((audit) => {
-      const matchesStatus = statusFilter === "all" || audit.status === statusFilter;
-      const matchesDomain = audit.domain.toLowerCase().includes(domainFilter.toLowerCase());
-      const searchValue = `${audit.query} ${audit.domain}`.toLowerCase();
-      const matchesSearch = searchValue.includes(searchFilter.toLowerCase());
-      return matchesStatus && matchesDomain && matchesSearch;
-    });
-  }, [domainFilter, recentAudits, searchFilter, statusFilter]);
-
-  return (
-    <div className="workspace-empty">
-      <Card className="hero-card workspace-empty__hero">
-        <div className="hero-card__content">
-          <div>
-            <span className="eyebrow-pill">История</span>
-            <h2 className="hero-card__title">История аудитов</h2>
-            <p className="hero-card__text">
-              Здесь собраны все запуски. Отфильтруйте список и откройте нужный аудит, чтобы перейти к его результатам.
-            </p>
-          </div>
-          <ScoreRing value={filteredAudits[0]?.score ?? 0} label="Последний" />
-        </div>
-      </Card>
-
-      <Card title="Фильтры" subtitle="Быстрый поиск по статусу, домену и запросу.">
-        <div className="filters">
-          <label className="filter-field filter-field--compact">
-            <span>Статус</span>
-            <select value={statusFilter} onChange={(event) => setStatusFilter(event.target.value as "all" | AuditStatus)}>
-              <option value="all">Все статусы</option>
-              <option value="queued">Запускается</option>
-              <option value="processing">Обработка</option>
-              <option value="completed">Завершён</option>
-              <option value="completed_with_warnings">С предупреждениями</option>
-              <option value="failed">Ошибка</option>
-            </select>
-          </label>
-
-          <label className="filter-field filter-field--compact">
-            <span>Домен</span>
-            <input
-              value={domainFilter}
-              onChange={(event) => setDomainFilter(event.target.value)}
-              placeholder="example.com"
-            />
-          </label>
-
-          <label className="filter-field filter-field--compact">
-            <span>Поиск</span>
-            <input
-              value={searchFilter}
-              onChange={(event) => setSearchFilter(event.target.value)}
-              placeholder="query или домен"
-            />
-          </label>
-        </div>
-      </Card>
-
-      <Card title="Список аудитов">
-        {recentError ? <div className="feedback-banner feedback-banner--error">{recentError}</div> : null}
-        {loadingRecent ? (
-          <div className="empty-state">Загружаем историю аудитов...</div>
-        ) : filteredAudits.length === 0 && recentAudits.length > 0 ? (
-          <div className="empty-state">По текущим фильтрам ничего не найдено. Очистите фильтры, чтобы снова увидеть записи истории.</div>
-        ) : (
-          <RecentAuditList
-            items={filteredAudits}
-            activeAuditId={activeAuditId}
-            onSelect={onSelectAudit}
-          />
-        )}
-      </Card>
-
-      <Card
-        title="Состояние рабочего стека"
-        subtitle="Если новый аудит не запускается, проверьте API, Redis, SearXNG, Celery-воркеры и очереди."
-        action={
-          <button className="secondary-button" type="button" onClick={onOpenRuntime}>
-            Открыть стек
-          </button>
-        }
-      >
-        <button className="secondary-button" type="button" onClick={onRefreshRecent}>
-          Обновить историю
-        </button>
-      </Card>
-    </div>
-  );
-}
 
 export function AuditWorkspace({
   currentAudit,
@@ -794,17 +688,22 @@ export function EmptyWorkspace({
   onRefreshRecent,
   onCreateAudit,
   onSelectAudit,
+  onRepeatAudit,
 }: EmptyWorkspaceProps) {
   if (mode === "history") {
     return (
-      <HistoryWorkspace
+      <AuditHistoryPanel
         recentAudits={recentAudits}
         activeAuditId={activeAuditId}
         loadingRecent={loadingRecent}
         recentError={recentError}
+        submitting={submitting}
+        submissionError={submissionError}
+        success={success}
         onRefreshRecent={onRefreshRecent}
         onOpenRuntime={onOpenRuntime}
         onSelectAudit={onSelectAudit}
+        onRepeatAudit={onRepeatAudit}
       />
     );
   }

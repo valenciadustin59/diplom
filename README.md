@@ -26,6 +26,7 @@
 - единый audit report dashboard с экспортом в печатный HTML/PDF-like view, HTML и Markdown;
 - timeline событий аудита и диагностика критического пути;
 - диагностика рабочего стека для очередей, воркеров, накопления задач и контроля допуска;
+- панель истории аудитов с фильтрами, повторным запуском, быстрым открытием последнего успешного аудита и локальным скрытием строк;
 - benchmark/reporting workflow для демонстрации распределённого исполнения.
 
 ## Архитектура
@@ -78,7 +79,7 @@
 Завершённые волны проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, per-stage queues, fan-out, health/metrics, diagnostics, admission control и benchmark evidence.
-- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI и панель состояния рабочего стека/очередей.
+- `D13-D24` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей и audit history management.
 
 Итог: проект уже закрывает ключевые требования дипломной темы — web-приложение машинного обучения с доказуемым распределённым runtime.
 
@@ -87,11 +88,11 @@
 - `D21` / `#40` — completed: audit report and export dashboard.
 - `D22` / `#41` — completed: audit execution timeline UI.
 - `D23` / `#42` — completed: панель состояния рабочего стека и здоровья очередей.
-- `D24` / `#43` — audit history management.
+- `D24` / `#43` — completed: audit history management.
 - `D25` / `#44` — recommendation action tracking.
 - `D26` / `#45` — interface copy and terminology polish.
 
-Приоритет ближайшей разработки после `D23`: audit history management (`D24`). Demo mode в текущий backlog не входит.
+Приоритет ближайшей разработки после `D24`: recommendation action tracking (`D25`). Demo mode в текущий backlog не входит.
 
 ### Distributed foundation `D1-D12`
 
@@ -102,7 +103,7 @@
 - `D9-D11` — детектор нагрузки очередей, контроль допуска под нагрузкой, профили топологии воркеров.
 - `D12` — benchmark/reporting workflow для измеримого подтверждения распределённого runtime.
 
-Итог: backlog `D1-D12` завершён. После `D23` следующий практический фокус — не новый серверный слой исполнения, а audit history management (`D24` / `#43`), который развивает продуктовый workflow вокруг уже существующих аудитов.
+Итог: backlog `D1-D12` завершён. После `D24` следующий практический фокус — не новый серверный слой исполнения, а recommendation action tracking (`D25` / `#44`), который развивает product workflow вокруг уже сформированных рекомендаций.
 
 ## Требования
 
@@ -362,9 +363,9 @@ npm run test
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
 
-## Статус D13-D23
+## Статус D13-D24
 
-Продуктовая волна backlog — `D13-D23` — завершена.
+Продуктовая волна backlog — `D13-D24` — завершена.
 
 Выполнено:
 
@@ -382,8 +383,9 @@ npm run test
 - `D21` - audit report/export dashboard: вкладка `Отчёт`, компактная сводка SEO/ML/recommendation/competitor/runtime evidence, printable HTML/PDF-like view, downloadable HTML и Markdown export без повторного анализа страницы.
 - `D22` - audit execution timeline UI: вкладка `Таймлайн`, raw event stream, stage lifecycle, queues, fan-out branch summary, critical path, warnings/failure context поверх существующих events APIs.
 - `D23` - панель состояния рабочего стека и здоровья очередей: компактная панель `Готовность рабочего стека` на экране запуска, вкладка `Стек` в audit workspace, использование `health/live`, `health/ready`, `health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и человекочитаемые подсказки восстановления.
+- `D24` - audit history management: панель истории с метриками, фильтрами по статусу/домену/запросу/фокусу, быстрым открытием последнего успешного аудита, повторным запуском из строки и локальным скрытием/восстановлением записей без удаления backend-данных.
 
-Текущая волна `D13-D23` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D24` / `#43` history management, `D25` / `#44` recommendation action tracking, `D26` / `#45` copy polish.
+Текущая волна `D13-D24` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D25` / `#44` recommendation action tracking и `D26` / `#45` copy polish.
 
 ## Dataset V2 Workflow (`D17`)
 

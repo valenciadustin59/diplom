@@ -343,6 +343,7 @@ const emptyWorkspaceBaseProps = {
   onOpenRuntime: () => undefined,
   onRefreshRecent: () => undefined,
   onCreateAudit: () => Promise.resolve(true),
+  onRepeatAudit: () => Promise.resolve(),
   onSelectAudit: () => undefined,
 };
 
@@ -543,6 +544,8 @@ describe("AuditWorkspace", () => {
             id: "audit-stale",
             domain: "stale.example",
             query: "старый аудит в обработке",
+            targetUrl: "https://stale.example/landing",
+            topN: 10,
             score: 0,
             status: "processing",
             createdAt: "1 янв. 2026 г., 10:00",
@@ -556,6 +559,11 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("stale.example");
     expect(markup).toContain("старый аудит в обработке");
     expect(markup).toContain("Состояние рабочего стека");
+    expect(markup).toContain("Открыть последний успешный");
+    expect(markup).toContain("Повторить аудит");
+    expect(markup).toContain("Скрыть локально");
+    expect(markup).toContain("Скрытые локально");
+    expect(markup).toContain("Зависший/устаревший");
     expect(markup).toContain("Открыть стек");
   });
 

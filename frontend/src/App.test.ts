@@ -48,6 +48,8 @@ describe("audit workspace routing", () => {
     expect(historyMarkup).toContain("История аудитов");
     expect(historyMarkup).toContain("Список аудитов");
     expect(historyMarkup).toContain("Состояние рабочего стека");
+    expect(historyMarkup).toContain("Открыть последний успешный");
+    expect(historyMarkup).toContain("Скрытые локально");
     expect(historyMarkup).toContain("Открыть стек");
 
     const runtimeMarkup = renderAppAt("/?view=runtime");
