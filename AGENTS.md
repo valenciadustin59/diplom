@@ -222,6 +222,16 @@ cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m pytest
 ```
 
+Если локальный dev stack/Redis содержит очереди без воркеров, тесты admission/dispatch guards могут прочитать live-состояние очередей и упасть со stale `queue_capacity_guard`. Для детерминированной backend-регрессии без привязки к текущему Redis используйте изолированный unavailable broker URL:
+
+```powershell
+cd E:/codexPROJ/diplom/backend
+$env:CELERY_BROKER_URL = "redis://localhost:1/0"
+$env:CELERY_RESULT_BACKEND = "redis://localhost:1/0"
+.venv/Scripts/python.exe -m pytest
+Remove-Item Env:CELERY_BROKER_URL, Env:CELERY_RESULT_BACKEND
+```
+
 ### Script tests
 
 ```powershell
@@ -363,7 +373,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `frontend/src/pages/RuntimeStatusPage.tsx` — полная панель состояния стека и компактная карточка готовности перед запуском;
 - `frontend/src/api/api.ts` — `runtimeApi.getLiveness()`, `getReadiness()`, `getMetrics()`;
 - `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `runtime`, route wiring и компактная карточка на экране запуска;
-- `scripts/site-content-check.mjs` — smoke-check ключевых строк панели состояния рабочего стека, управления историей и плана действий;
+- `scripts/site-content-check.mjs` — production smoke-check ключевых строк панели состояния рабочего стека, управления историей, плана действий, report/export и D26 copy polish;
 - `frontend/src/lib/auditHistory.ts` — pure model истории, фильтров, stale/problematic/hidden classification и repeat payload;
 - `frontend/src/components/AuditHistoryPanel.tsx` — панель истории, localStorage hide/restore, метрики, фильтры и быстрые действия;
 - `frontend/src/components/RecentAuditList.tsx` — строки истории без nested buttons, row actions `Открыть`, `Повторить аудит`, `Скрыть локально`/`Восстановить`;
@@ -374,7 +384,6 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `frontend/src/lib/terminology.ts` — frontend display-label layer для backend-originated labels;
 - `frontend/src/lib/auditReport.ts`, `frontend/src/lib/auditReportHtml.ts`, `frontend/src/pages/AuditReportPage.tsx` — русская report/export copy;
 - `backend/app/recommendations.py` — user-facing recommendation labels/messages polished without schema/code changes;
-- `scripts/site-content-check.mjs` — production smoke фрагменты после copy polish.
 
 ## Что Делать Дальше
 

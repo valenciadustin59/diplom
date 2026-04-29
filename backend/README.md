@@ -353,6 +353,16 @@ cd E:\codexPROJ\diplom\backend
 .venv\Scripts\python.exe -m pytest
 ```
 
+Если параллельно запущен dev stack или в локальном Redis остались очереди без воркеров, тесты queue admission/dispatch могут увидеть stale live Redis state. Для детерминированной проверки backend без привязки к текущему Redis используйте изолированный unavailable broker URL:
+
+```powershell
+cd E:/codexPROJ/diplom/backend
+$env:CELERY_BROKER_URL = "redis://localhost:1/0"
+$env:CELERY_RESULT_BACKEND = "redis://localhost:1/0"
+.venv/Scripts/python.exe -m pytest
+Remove-Item Env:CELERY_BROKER_URL, Env:CELERY_RESULT_BACKEND
+```
+
 Фокусный набор для distributed runtime и D20:
 
 ```powershell
