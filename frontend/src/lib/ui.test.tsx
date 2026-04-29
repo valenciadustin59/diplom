@@ -426,6 +426,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Отчёт аудита");
     expect(markup).toContain("Скачать Markdown");
     expect(markup).toContain("SEO evidence");
+    expect(markup).toContain("report-table--recommendations");
     expect(markup).toContain("Distributed runtime evidence");
     expect(markup).toContain("Heavy analysis");
   });

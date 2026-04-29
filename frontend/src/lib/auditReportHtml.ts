@@ -17,17 +17,19 @@ function renderMetricHtml(metric: ReportMetric): string {
 
 export function createAuditReportHtml(input: AuditReportInput, options: { autoPrint?: boolean } = {}): string {
   const report = buildAuditReportModel(input);
-  const topRecommendations =
-    report.topRecommendations.length > 0
-      ? report.topRecommendations
+  const recommendationRows =
+    report.recommendationActions.length > 0
+      ? report.recommendationActions
           .map(
             (item) =>
-              `<article class="action"><span>${escapeHtml(item.priorityLabel)} / ${escapeHtml(item.groupLabel)}</span><h3>${escapeHtml(
+              `<tr><td>${escapeHtml(item.priorityLabel)}</td><td>${escapeHtml(item.groupLabel)}</td><td><strong>${escapeHtml(
                 item.title,
-              )}</h3><p>${escapeHtml(item.message)}</p><small>${escapeHtml(item.expectedOutcome)}</small></article>`,
+              )}</strong><br><small>${escapeHtml(item.code)}</small></td><td>${escapeHtml(
+                item.message,
+              )}<br><small>${escapeHtml(item.expectedOutcome)}</small></td></tr>`,
           )
           .join("")
-      : "<p>Рекомендации пока не сформированы.</p>";
+      : '<tr><td colspan="4">Рекомендации пока не сформированы.</td></tr>';
   const stages =
     report.stageRows.length > 0
       ? report.stageRows
@@ -71,11 +73,11 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
     .metric { padding: 14px; border-radius: 16px; background: #f8faff; border: 1px solid #edf1fa; }
     .metric strong { display: block; margin-top: 6px; font-size: 18px; }
     .metric p { margin: 8px 0 0; color: #667085; font-size: 13px; }
-    .actions { display: grid; gap: 12px; }
-    .action { padding: 16px; border-left: 4px solid #4f7cff; border-radius: 16px; background: #f8faff; }
     table { width: 100%; border-collapse: collapse; }
     th, td { padding: 12px 10px; border-bottom: 1px solid #edf1fa; text-align: left; vertical-align: top; }
     th { color: #667085; font-size: 13px; }
+    .recommendations td { font-size: 13px; }
+    .recommendations small { display: block; margin-top: 4px; }
     @media print { body { padding: 0; background: #fff; } section, header { box-shadow: none; page-break-inside: avoid; } }
   </style>
 </head>
@@ -114,7 +116,7 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
     <section>
       <h2>Recommendation Plan</h2>
       <div class="grid">${report.recommendationMetrics.map(renderMetricHtml).join("")}</div>
-      <div class="actions">${topRecommendations}</div>
+      <table class="recommendations"><thead><tr><th>Priority</th><th>Group</th><th>Recommendation</th><th>Action</th></tr></thead><tbody>${recommendationRows}</tbody></table>
     </section>
     <section>
       <h2>Distributed Runtime Evidence</h2>

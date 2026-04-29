@@ -119,10 +119,10 @@ function createRecommendations(): RecommendationsBundle {
   return {
     schema_version: "recommendations-v2",
     summary: {
-      total_recommendations: 1,
-      high_priority_count: 1,
-      medium_priority_count: 0,
-      low_priority_count: 0,
+      total_recommendations: 6,
+      high_priority_count: 2,
+      medium_priority_count: 3,
+      low_priority_count: 1,
       groups_with_issues: 1,
       competitor_context: true,
       score_gap_vs_competitors: -5.8,
@@ -143,6 +143,56 @@ function createRecommendations(): RecommendationsBundle {
             expected_outcome: "Повысить релевантность сниппета.",
             evidence: [],
             related_metrics: ["title_length"],
+          },
+          {
+            code: "TECHNICAL_INDEXING",
+            priority: "high",
+            impact: "high",
+            title: "Открыть индексацию",
+            message: "Проверить robots, canonical и HTTP-статус.",
+            expected_outcome: "Снять блокирующий технический риск.",
+            evidence: [],
+            related_metrics: ["page_indexable"],
+          },
+          {
+            code: "TECHNICAL_CANONICAL",
+            priority: "medium",
+            impact: "medium",
+            title: "Уточнить canonical",
+            message: "Canonical должен указывать на целевую посадочную.",
+            expected_outcome: "Снизить риск дублей в выдаче.",
+            evidence: [],
+            related_metrics: ["canonical_present"],
+          },
+          {
+            code: "TECHNICAL_HEADINGS",
+            priority: "medium",
+            impact: "medium",
+            title: "Пересобрать H1/H2",
+            message: "Заголовки должны явно покрывать поисковый интент.",
+            expected_outcome: "Усилить семантическое соответствие.",
+            evidence: [],
+            related_metrics: ["heading_semantic_alignment"],
+          },
+          {
+            code: "TECHNICAL_SNIPPET",
+            priority: "medium",
+            impact: "medium",
+            title: "Усилить meta description",
+            message: "Добавить обещание, УТП и формулировку под запрос.",
+            expected_outcome: "Повысить CTR сниппета.",
+            evidence: [],
+            related_metrics: ["meta_description_length"],
+          },
+          {
+            code: "TECHNICAL_LOW",
+            priority: "low",
+            impact: "low",
+            title: "Почистить вторичные SEO-сигналы",
+            message: "Убрать мелкие несоответствия в служебных тегах.",
+            expected_outcome: "Закрыть остаточные точки роста.",
+            evidence: [],
+            related_metrics: ["secondary_seo_score"],
           },
         ],
         deviations: [],
@@ -229,7 +279,8 @@ describe("audit report export", () => {
     expect(model.domain).toBe("example.com");
     expect(model.scoreLabel).toBe("72.4");
     expect(model.seoMetrics.map((metric) => metric.label)).toContain("Heavy analysis");
-    expect(model.topRecommendations[0].title).toBe("Усилить title");
+    expect(model.recommendationActions.map((item) => item.title)).toContain("Усилить title");
+    expect(model.recommendationActions).toHaveLength(6);
     expect(model.stageRows[0].stage).toBe("Heavy analysis");
   });
 
@@ -245,8 +296,8 @@ describe("audit report export", () => {
       generatedAt: new Date("2026-01-01T12:00:00Z"),
     });
 
-    expect(model.recommendationMetrics[0].value).toBe("1");
-    expect(model.topRecommendations[0].code).toBe("TECHNICAL_TITLE");
+    expect(model.recommendationMetrics[0].value).toBe("6");
+    expect(model.recommendationActions.map((item) => item.code)).toContain("TECHNICAL_TITLE");
   });
 
   it("exports markdown and printable html without repeating audit execution", () => {
@@ -262,10 +313,12 @@ describe("audit report export", () => {
     const html = createAuditReportHtml(input, { autoPrint: true });
 
     expect(markdown).toContain("## Distributed Runtime Evidence");
-    expect(markdown).toContain("TECHNICAL_TITLE");
+    expect(markdown).toContain("### Action Backlog");
+    expect(markdown).toContain("TECHNICAL_LOW");
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("window.print");
     expect(html).toContain("SEO Evidence");
+    expect(html).toContain("TECHNICAL_LOW");
   });
 
   it("creates stable filenames and human-readable durations", () => {

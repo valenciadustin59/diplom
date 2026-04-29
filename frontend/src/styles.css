@@ -627,6 +627,33 @@ select {
   overflow-wrap: anywhere;
 }
 
+.report-table--recommendations td {
+  padding-block: 10px;
+  font-size: 0.9rem;
+}
+
+.report-action-title,
+.report-action-code,
+.report-action-outcome {
+  display: block;
+}
+
+.report-action-title {
+  margin-bottom: 4px;
+}
+
+.report-action-code,
+.report-action-outcome {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.report-action-detail {
+  margin: 0 0 4px;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
 .report-group-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -634,8 +661,7 @@ select {
   margin-top: 18px;
 }
 
-.report-group-card,
-.report-action-card {
+.report-group-card {
   min-width: 0;
   padding: 16px;
   border-radius: 18px;
@@ -648,9 +674,7 @@ select {
   gap: 8px;
 }
 
-.report-group-card span,
-.report-action-card__top,
-.report-action-card small {
+.report-group-card span {
   color: var(--muted);
   font-size: 0.84rem;
 }
@@ -659,33 +683,6 @@ select {
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
-}
-
-.report-action-list {
-  display: grid;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.report-action-card {
-  border-left: 4px solid #4f7cff;
-}
-
-.report-action-card__top {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: space-between;
-}
-
-.report-action-card h3 {
-  margin: 8px 0;
-  font-size: 1.02rem;
-}
-
-.report-action-card p {
-  margin: 0 0 10px;
-  color: var(--muted);
 }
 
 .score-breakdown {

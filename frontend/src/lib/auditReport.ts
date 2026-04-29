@@ -61,7 +61,7 @@ export type AuditReportModel = {
   recommendationMetrics: ReportMetric[];
   competitorMetrics: ReportMetric[];
   runtimeMetrics: ReportMetric[];
-  topRecommendations: ReportRecommendation[];
+  recommendationActions: ReportRecommendation[];
   groupSummaries: ReportMetric[];
   competitors: Array<{
     domain: string;
@@ -355,17 +355,15 @@ function buildRuntimeMetrics(diagnostics: AuditTimelineDiagnosticsResponse | nul
   ];
 }
 
-function buildTopRecommendations(recommendations: RecommendationsBundle | null): ReportRecommendation[] {
-  return flattenRecommendationItems(recommendations)
-    .slice(0, 5)
-    .map((item) => ({
-      code: item.code,
-      groupLabel: item.groupLabel,
-      priorityLabel: priorityLabels[item.priority],
-      title: item.title,
-      message: item.message,
-      expectedOutcome: item.expected_outcome,
-    }));
+function buildRecommendationActions(recommendations: RecommendationsBundle | null): ReportRecommendation[] {
+  return flattenRecommendationItems(recommendations).map((item) => ({
+    code: item.code,
+    groupLabel: item.groupLabel,
+    priorityLabel: priorityLabels[item.priority],
+    title: item.title,
+    message: item.message,
+    expectedOutcome: item.expected_outcome,
+  }));
 }
 
 function buildGroupSummaries(recommendations: RecommendationsBundle | null): ReportMetric[] {
@@ -438,7 +436,7 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     recommendationMetrics: buildRecommendationMetrics(recommendations),
     competitorMetrics: buildCompetitorMetrics(input),
     runtimeMetrics: buildRuntimeMetrics(input.diagnostics),
-    topRecommendations: buildTopRecommendations(recommendations),
+    recommendationActions: buildRecommendationActions(recommendations),
     groupSummaries: buildGroupSummaries(recommendations),
     competitors: buildCompetitorRows(input.results?.competitor_results ?? input.audit.competitor_results),
     stageRows: buildStageRows(input.diagnostics),
@@ -451,9 +449,9 @@ function renderMetricMarkdown(metric: ReportMetric): string {
 
 export function createAuditReportMarkdown(input: AuditReportInput): string {
   const report = buildAuditReportModel(input);
-  const topRecommendations =
-    report.topRecommendations.length > 0
-      ? report.topRecommendations
+  const recommendationActions =
+    report.recommendationActions.length > 0
+      ? report.recommendationActions
           .map(
             (item) =>
               `- [${item.priorityLabel}] ${item.title} (${item.groupLabel}, ${item.code}): ${item.message} Expected: ${item.expectedOutcome}`,
@@ -510,8 +508,8 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
     "### Recommendation Groups",
     groupSummaries,
     "",
-    "### Top Actions",
-    topRecommendations,
+    "### Action Backlog",
+    recommendationActions,
     "",
     "## Competitor Pages",
     competitors,

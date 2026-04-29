@@ -215,7 +215,7 @@ export function AuditReportPage({
         </div>
       </Card>
 
-      <Card title="Recommendation plan" subtitle="Компактная версия grouped recommendations для принятия решений.">
+      <Card title="Recommendation plan" subtitle="Полный action backlog: все рекомендации, отсортированные по приоритету.">
         <MetricGrid items={report.recommendationMetrics} />
         <div className="report-group-list">
           {report.groupSummaries.map((group) => (
@@ -226,22 +226,39 @@ export function AuditReportPage({
             </article>
           ))}
         </div>
-        <div className="report-action-list">
-          {report.topRecommendations.length > 0 ? (
-            report.topRecommendations.map((item) => (
-              <article key={item.code} className="report-action-card">
-                <div className="report-action-card__top">
-                  <span>{item.priorityLabel}</span>
-                  <span>{item.groupLabel}</span>
-                </div>
-                <h3>{item.title}</h3>
-                <p>{item.message}</p>
-                <small>{item.expectedOutcome}</small>
-              </article>
-            ))
-          ) : (
-            <div className="empty-state">Рекомендации появятся после завершения обработки аудита.</div>
-          )}
+        <div className="report-table-shell report-table-shell--recommendations">
+          <table className="report-table report-table--recommendations">
+            <thead>
+              <tr>
+                <th>Приоритет</th>
+                <th>Группа</th>
+                <th>Рекомендация</th>
+                <th>Что изменить</th>
+              </tr>
+            </thead>
+            <tbody>
+              {report.recommendationActions.length > 0 ? (
+                report.recommendationActions.map((item) => (
+                  <tr key={item.code}>
+                    <td>{item.priorityLabel}</td>
+                    <td>{item.groupLabel}</td>
+                    <td>
+                      <strong className="report-action-title">{item.title}</strong>
+                      <small className="report-action-code">{item.code}</small>
+                    </td>
+                    <td>
+                      <p className="report-action-detail">{item.message}</p>
+                      <small className="report-action-outcome">{item.expectedOutcome}</small>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan={4}>Рекомендации появятся после завершения обработки аудита.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </Card>
 
