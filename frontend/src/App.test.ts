@@ -1,5 +1,30 @@
-import { describe, expect, it } from "vitest";
-import { buildAuditWorkspacePath, getActiveTab } from "./App";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { MemoryRouter } from "react-router-dom";
+import { describe, expect, it, vi } from "vitest";
+import App, { buildAuditWorkspacePath, getActiveTab } from "./App";
+
+function renderAppAt(path: string): string {
+  const originalConsoleError = console.error;
+  const consoleError = vi.spyOn(console, "error").mockImplementation((message?: unknown, ...args: unknown[]) => {
+    if (typeof message === "string" && message.includes("useLayoutEffect does nothing on the server")) {
+      return;
+    }
+    originalConsoleError(message, ...args);
+  });
+
+  try {
+    return renderToStaticMarkup(
+      createElement(
+        MemoryRouter,
+        { initialEntries: [path] },
+        createElement(App),
+      ),
+    );
+  } finally {
+    consoleError.mockRestore();
+  }
+}
 
 describe("audit workspace routing", () => {
   it("opens audits on overview by default and keeps report as an explicit tab", () => {
@@ -16,5 +41,18 @@ describe("audit workspace routing", () => {
     expect(getActiveTab("report")).toBe("report");
     expect(getActiveTab("timeline")).toBe("timeline");
     expect(getActiveTab("runtime")).toBe("runtime");
+  });
+
+  it("routes root history and stack views through the app shell", () => {
+    const historyMarkup = renderAppAt("/?view=history");
+    expect(historyMarkup).toContain("История аудитов");
+    expect(historyMarkup).toContain("Список аудитов");
+    expect(historyMarkup).toContain("Состояние рабочего стека");
+    expect(historyMarkup).toContain("Открыть стек");
+
+    const runtimeMarkup = renderAppAt("/?view=runtime");
+    expect(runtimeMarkup).toContain("Стек");
+    expect(runtimeMarkup).toContain("Состояние распределённого стека");
+    expect(runtimeMarkup).toContain("Загружаем диагностику рабочего стека");
   });
 });
