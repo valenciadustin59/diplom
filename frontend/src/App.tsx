@@ -18,11 +18,15 @@ const validTabs: AuditTab[] = ["overview", "report", "pages", "competitors", "re
 
 type AuditWorkspaceRouteProps = ReturnType<typeof useAuditWorkspace>;
 
-function getActiveTab(value: string | null): AuditTab {
+export function getActiveTab(value: string | null): AuditTab {
   if (value && validTabs.includes(value as AuditTab)) {
     return value as AuditTab;
   }
   return "overview";
+}
+
+export function buildAuditWorkspacePath(auditId: string, tab: AuditTab = "overview"): string {
+  return tab === "overview" ? `/audits/${auditId}` : `/audits/${auditId}?tab=${tab}`;
 }
 
 function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
@@ -64,7 +68,7 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
       loading={props.loadingAudit || isAuditRoutePending}
       error={props.workspaceError}
       activeTab={activeTab}
-      onTabChange={(tab) => setSearchParams({ tab })}
+      onTabChange={(tab) => setSearchParams(tab === "overview" ? {} : { tab })}
     />
   );
 }
@@ -84,13 +88,13 @@ function AppShell() {
       return false;
     }
 
-    navigate(`/audits/${audit.id}?tab=report`);
+    navigate(buildAuditWorkspacePath(audit.id));
     return true;
   }
 
   function handleSelectAudit(auditId: string) {
     workspace.selectAudit(auditId);
-    navigate(`/audits/${auditId}?tab=report`);
+    navigate(buildAuditWorkspacePath(auditId));
   }
 
   return (

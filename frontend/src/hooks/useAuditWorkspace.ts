@@ -186,6 +186,7 @@ export function useAuditWorkspace() {
           return;
         }
         setCurrentAudit(status);
+        const statusRecommendations = status.recommendations ?? null;
 
         const [nextResults, nextRecommendations, nextTimelineDiagnostics] = await Promise.allSettled([
           auditsApi.getResults(auditId),
@@ -204,9 +205,9 @@ export function useAuditWorkspace() {
         }
 
         if (nextRecommendations.status === "fulfilled") {
-          setRecommendations(nextRecommendations.value.recommendations);
+          setRecommendations(nextRecommendations.value.recommendations ?? statusRecommendations);
         } else {
-          setRecommendations(null);
+          setRecommendations(statusRecommendations);
         }
 
         if (nextTimelineDiagnostics.status === "fulfilled") {

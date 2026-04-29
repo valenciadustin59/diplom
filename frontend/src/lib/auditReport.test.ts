@@ -233,6 +233,22 @@ describe("audit report export", () => {
     expect(model.stageRows[0].stage).toBe("Heavy analysis");
   });
 
+  it("builds report recommendations from stored audit payloads when endpoint data is unavailable", () => {
+    const model = buildAuditReportModel({
+      audit: {
+        ...createAudit(),
+        recommendations: createRecommendations(),
+      },
+      results: null,
+      recommendations: null,
+      diagnostics: null,
+      generatedAt: new Date("2026-01-01T12:00:00Z"),
+    });
+
+    expect(model.recommendationMetrics[0].value).toBe("1");
+    expect(model.topRecommendations[0].code).toBe("TECHNICAL_TITLE");
+  });
+
   it("exports markdown and printable html without repeating audit execution", () => {
     const input = {
       audit: createAudit(),

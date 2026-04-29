@@ -298,6 +298,10 @@ function buildRecommendationMetrics(recommendations: RecommendationsBundle | nul
   ];
 }
 
+function getEffectiveRecommendations(input: AuditReportInput): RecommendationsBundle | null {
+  return input.recommendations ?? input.audit.recommendations ?? null;
+}
+
 function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
   const summary = input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
   const found = summary?.competitors_found ?? summary?.competitors_count ?? 0;
@@ -397,7 +401,8 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
   const score = input.results?.score ?? input.audit.score;
   const scoreBreakdown = getScoreBreakdown(input.results, input.audit);
   const comparisonSummary = input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
-  const recommendationsSummary = input.recommendations?.summary ?? null;
+  const recommendations = getEffectiveRecommendations(input);
+  const recommendationsSummary = recommendations?.summary ?? null;
   const domain = getDomainFromUrl(input.audit.target_url);
   const analyzedCompetitors =
     comparisonSummary?.competitors_analyzed ??
@@ -430,11 +435,11 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
       )}.`,
     ],
     seoMetrics: buildSeoMetrics(input),
-    recommendationMetrics: buildRecommendationMetrics(input.recommendations),
+    recommendationMetrics: buildRecommendationMetrics(recommendations),
     competitorMetrics: buildCompetitorMetrics(input),
     runtimeMetrics: buildRuntimeMetrics(input.diagnostics),
-    topRecommendations: buildTopRecommendations(input.recommendations),
-    groupSummaries: buildGroupSummaries(input.recommendations),
+    topRecommendations: buildTopRecommendations(recommendations),
+    groupSummaries: buildGroupSummaries(recommendations),
     competitors: buildCompetitorRows(input.results?.competitor_results ?? input.audit.competitor_results),
     stageRows: buildStageRows(input.diagnostics),
   };
