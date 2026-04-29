@@ -12,10 +12,10 @@ export function AuditTable({ rows }: AuditTableProps) {
           <tr>
             <th>Страница</th>
             <th>Тип</th>
-            <th>Fetch</th>
-            <th>Score</th>
+            <th>Загрузка</th>
+            <th>Оценка</th>
             <th>Текст</th>
-            <th>SEO Title</th>
+            <th>SEO-заголовок</th>
             <th>Совпадение запроса</th>
           </tr>
         </thead>

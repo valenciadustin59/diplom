@@ -3,6 +3,7 @@ import type {
   RecommendationGroupKey,
   RecommendationsBundle,
 } from "../types";
+import { getRecommendationGroupLabel } from "./terminology";
 
 export type RecommendationPreviewItem = Recommendation & {
   groupKey: RecommendationGroupKey;
@@ -34,7 +35,7 @@ export function flattenRecommendationItems(
       group.items.map((item) => ({
         ...item,
         groupKey: group.key,
-        groupLabel: group.label,
+        groupLabel: getRecommendationGroupLabel(group.key),
       })),
     )
     .sort(

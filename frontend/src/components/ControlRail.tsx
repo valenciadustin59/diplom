@@ -13,7 +13,7 @@ export function ControlRail({ activeView, onOpenNew, onOpenHistory, onOpenRuntim
           <div className="control-rail__logo">SA</div>
           <div>
             <p className="control-rail__eyebrow">Анализ сайтов</p>
-            <h1 className="control-rail__title">Audit Cloud</h1>
+            <h1 className="control-rail__title">SEO-аудит</h1>
           </div>
         </div>
         <div className="control-rail__switcher" role="tablist" aria-label="Навигация по приложению">

@@ -372,7 +372,7 @@ function createRecommendationsBundle(): RecommendationsBundle {
             impact: "high",
             title: "Есть блокирующая проблема индексации",
             message: "Страница закрыта от индексации.",
-            expected_outcome: "Исправление может заметно поднять итоговый score.",
+            expected_outcome: "Исправление может заметно поднять итоговую оценку.",
             evidence: [
               {
                 label: "Индексируемость страницы",
@@ -511,8 +511,8 @@ describe("RecommendationsPage", () => {
       />,
     );
 
-    expect(markup).toContain("Technical SEO");
-    expect(markup).toContain("Commercial and Trust");
+    expect(markup).toContain("Техническое SEO");
+    expect(markup).toContain("Коммерция и доверие");
     expect(markup).toContain("Есть блокирующая проблема индексации");
     expect(markup).toContain("План действий");
     expect(markup).toContain("Статус действия");
@@ -629,8 +629,8 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Semantic relevance");
-    expect(markup).toContain("Commercial completeness");
+    expect(markup).toContain("Смысловое соответствие");
+    expect(markup).toContain("Коммерческая полнота");
   });
 
   it("renders audit report dashboard with export actions and runtime evidence", () => {
@@ -715,10 +715,10 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Отчёт аудита");
     expect(markup).toContain("Скачать Markdown");
-    expect(markup).toContain("SEO evidence");
+    expect(markup).toContain("SEO-сигналы");
     expect(markup).toContain("report-table--recommendations");
-    expect(markup).toContain("Distributed runtime evidence");
-    expect(markup).toContain("Heavy analysis");
+    expect(markup).toContain("Доказательство распределённого выполнения");
+    expect(markup).toContain("Углублённый анализ");
   });
 
   it("renders audit execution timeline with stages, queues, fan-out and critical path", () => {
@@ -780,7 +780,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Диагностика этапов");
     expect(markup).toContain("Поток событий");
     expect(markup).toContain("Сырые события из серверного журнала");
-    expect(markup).toContain("Тяжёлый анализ");
+    expect(markup).toContain("Углублённый анализ");
     expect(markup).toContain("audits.heavy_analysis");
     expect(markup).not.toContain(["Run", "time contributor"].join(""));
     expect(markup).not.toContain("Fan-out stages");
@@ -816,7 +816,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Очереди Celery");
     expect(markup).toContain("audits.heavy_analysis");
     expect(markup).toContain("Очередь audits.heavy_analysis без воркеров");
-    expect(markup).toContain("Тяжёлый анализ");
+    expect(markup).toContain("Углублённый анализ");
   });
 
   it("renders launch stack readiness compact card before creating an audit", () => {
@@ -872,7 +872,7 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Recommendation plan");
+    expect(markup).toContain("План рекомендаций");
     expect(markup).toContain("Есть блокирующая проблема индексации");
     expect(markup).toContain("1");
   });

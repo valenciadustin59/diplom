@@ -1,4 +1,5 @@
 import type { RecommendationGroupKey, RecommendationsBundle } from "../types";
+import { getRecommendationGroupLabel } from "./terminology";
 
 export type RecommendationActionStatus = "not_started" | "in_progress" | "fixed" | "ignored";
 
@@ -123,6 +124,7 @@ export function buildRecommendationActionModel(
 ): RecommendationActionModel {
   const itemStatesByKey: Record<string, RecommendationActionItemState> = {};
   const groupSummaries = (recommendations?.groups ?? []).map((group) => {
+    const groupLabel = getRecommendationGroupLabel(group.key);
     const groupSummary = group.items.reduce<RecommendationActionSummary>((summary, item) => {
       const actionKey = getRecommendationActionKey(group.key, item.code);
       const status = getRecommendationActionStatus(actionStates, actionKey);
@@ -130,7 +132,7 @@ export function buildRecommendationActionModel(
       itemStatesByKey[actionKey] = {
         actionKey,
         groupKey: group.key,
-        groupLabel: group.label,
+        groupLabel,
         code: item.code,
         status,
         statusLabel: getRecommendationActionStatusLabel(status),
@@ -142,7 +144,7 @@ export function buildRecommendationActionModel(
     return {
       ...finalizeSummary(groupSummary),
       groupKey: group.key,
-      groupLabel: group.label,
+      groupLabel,
     };
   });
   const summary = finalizeSummary(

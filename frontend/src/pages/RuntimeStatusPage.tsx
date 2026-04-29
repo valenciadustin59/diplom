@@ -121,7 +121,7 @@ function RuntimeComponentsCard({ model }: { model: RuntimeHealthModel }) {
 
 function RuntimeProfilesCard({ model }: { model: RuntimeHealthModel }) {
   return (
-    <Card title="Профили воркеров" subtitle="Каноническая топология привязки очередей: каждый профиль обслуживает свой набор очередей.">
+    <Card title="Профили воркеров" subtitle="Каноническая топология привязки очередей: каждый профиль обслуживает свой набор задач.">
       <div className="runtime-profile-grid">
         {model.workerProfiles.map((profile) => (
           <article key={profile.name} className={`runtime-profile runtime-profile--${profile.tone}`}>
@@ -139,7 +139,7 @@ function RuntimeProfilesCard({ model }: { model: RuntimeHealthModel }) {
                 <dd>{profile.workerCount}</dd>
               </div>
               <div>
-                <dt>Рекоменд. параллельность</dt>
+                <dt>Рекомендованная параллельность</dt>
                 <dd>{profile.recommendedConcurrencyLabel}</dd>
               </div>
               <div>

@@ -29,7 +29,7 @@ export function AuditPage({ rows, auditStatus, loading, error }: AuditPageProps)
   }, [minScore, rows, search]);
 
   return (
-    <Card title="Страницы аудита" subtitle="Просматривайте score страниц, текстовые сигналы, SEO-метрики и статус обработки.">
+    <Card title="Страницы аудита" subtitle="Просматривайте оценку страниц, текстовые сигналы, SEO-метрики и статус обработки.">
       <div className="metric-strip">
         <div className="metric-box">
           <span className="metric-box__label">Статус</span>
@@ -51,12 +51,12 @@ export function AuditPage({ rows, auditStatus, loading, error }: AuditPageProps)
           <input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Поиск по URL, title, типу страницы или статусу fetch"
+            placeholder="Поиск по URL, заголовку, типу страницы или статусу загрузки"
           />
         </label>
 
         <label className="filter-field filter-field--compact">
-          <span>Мин. score</span>
+          <span>Мин. оценка</span>
           <select value={minScore} onChange={(event) => setMinScore(event.target.value)}>
             <option value="0">Все</option>
             <option value="60">60+</option>

@@ -11,13 +11,13 @@
 Завершённые волны:
 
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
-- `D13-D25` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management и recommendation action tracking.
+- `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
-После `D25` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов и план действий по рекомендациям для демонстрации распределённого исполнения. Следующий этап должен в первую очередь стабилизировать язык интерфейса и терминологию, а не переписывать серверную оркестрацию или добавлять новый анализ без необходимости.
+После `D26` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов, план действий по рекомендациям и стабильную русскую терминологию интерфейса для демонстрации распределённого исполнения. Следующий этап должен выбираться отдельной задачей, а не переписывать серверную оркестрацию или добавлять новый анализ без необходимости.
 
-## Активная волна: D21-D26 Frontend/Product Layer
+## Завершённая волна: D21-D26 Frontend/Product Layer
 
-Эта волна заведена в GitHub как open issues `#40-#45`. Demo mode намеренно не входит в текущий backlog: пользователь выбрал развивать продуктовые и демонстрационные возможности без отдельного демо-режима.
+Эта волна была заведена в GitHub как issues `#40-#45` и закрыта после D26. Demo mode намеренно не входил в этот backlog: пользователь выбрал развивать продуктовые и демонстрационные возможности без отдельного демо-режима.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -102,15 +102,18 @@
 
 ### D26 / #45: Interface Copy And Terminology Polish
 
+Статус: выполнено.
+
 Цель — сделать язык интерфейса стабильным, понятным и пригодным для дипломной демонстрации.
 
-Ожидаемый состав:
+Реализованный состав:
 
-- пройтись по видимым строкам UI и убрать лишнее смешение `score`, `gap`, `semantic`, внутренних кодов и русских подписей;
-- оставить технические детали вторым уровнем, но добавить человеческие primary labels;
-- исправить оставшиеся mojibake/awkward strings в frontend-facing copy и документации.
+- основные видимые строки UI переведены на русские primary labels без лишнего смешения `score`, `gap`, `semantic` и внутренних кодов;
+- добавлен frontend terminology layer для backend-originated labels в рекомендациях, отчёте и объяснении оценки;
+- отчёт, HTML/Markdown export, рекомендации, timeline/runtime screens, история и production smoke-check используют обновлённые фрагменты;
+- backend recommendation display strings отполированы как пользовательская copy без изменения schema version, group keys или recommendation codes.
 
-Приёмка: основные экраны понятны человеку без знания внутренних API-кодов, а техническая детализация остаётся доступной там, где она полезна.
+Приёмка выполнена: основные экраны понятны человеку без знания внутренних API-кодов, а техническая детализация остаётся доступной вторым уровнем там, где она полезна.
 
 ## Отложенные направления
 
@@ -120,7 +123,7 @@
 - SEO depth extensions: schema.org/JSON-LD recommendations, optional PageSpeed/Lighthouse integration, site-wide crawl как отдельная крупная волна;
 - multi-project/domain management и сравнение аудитов во времени.
 
-Их стоит брать только после закрытия или явного отложения `D26`, чтобы не распылять дипломную демонстрацию.
+Их стоит брать только отдельной новой задачей, чтобы не распылять дипломную демонстрацию.
 
 ## Как пользоваться roadmap
 
@@ -128,8 +131,8 @@
 
 1. Прочитать `AGENTS.md` и `README.md`.
 2. Проверить `git status`.
-3. Если задача не задана явно, выбрать следующий open GitHub issue: `D26` / `#45`.
-4. Не откатывать `D13-D25` без прямой причины.
+3. Если задача не задана явно, проверить актуальные open GitHub issues; не считать закрытый `D26` новым фокусом.
+4. Не откатывать `D13-D26` без прямой причины.
 5. Если нужен GitHub, использовать локальный credential helper или запросить токен вручную, не печатая секреты в чат, logs или файлы.
 
-Канонический статус сейчас: `D1-D25` завершены, активный практический backlog — `D26` frontend/product layer, первый приоритет — interface copy and terminology polish.
+Канонический статус сейчас: `D1-D26` завершены; следующий практический backlog должен быть выбран явно пользователем или через новый open GitHub issue.

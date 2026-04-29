@@ -5,6 +5,12 @@ import {
   type RecommendationActionModel,
   type RecommendationActionStatus,
 } from "../lib/recommendationActions";
+import {
+  getHumanReadableLabel,
+  getRecommendationGroupDescription,
+  getRecommendationGroupEmptyState,
+  getRecommendationGroupLabel,
+} from "../lib/terminology";
 import type {
   RecommendationDeviation,
   RecommendationGroup,
@@ -79,13 +85,13 @@ function renderDeviation(deviation: RecommendationDeviation) {
       className={`recommendation-deviation recommendation-deviation--${deviation.trend}`}
     >
       <div className="recommendation-deviation__top">
-        <strong>{deviation.label}</strong>
+        <strong>{getHumanReadableLabel(deviation.label)}</strong>
         <PriorityBadge priority={deviation.priority} />
       </div>
       <div className="recommendation-deviation__values">
         <span>Страница: {formatDeviationValue(deviation.current_value, deviation.unit)}</span>
         <span>
-          {deviation.benchmark_label}: {formatDeviationValue(deviation.benchmark_value, deviation.unit)}
+          {getHumanReadableLabel(deviation.benchmark_label)}: {formatDeviationValue(deviation.benchmark_value, deviation.unit)}
         </span>
       </div>
       <p className="recommendation-deviation__summary">{deviation.summary}</p>
@@ -140,7 +146,7 @@ function renderRecommendationCard(
         <div className="recommendation-item__heading">
           {"groupLabel" in item ? <span className="recommendation-item__group">{item.groupLabel}</span> : null}
           <strong className="recommendation-item__title">{item.title}</strong>
-          <span className="recommendation-item__code">{item.code}</span>
+          <span className="recommendation-item__code">Код: {item.code}</span>
         </div>
         <div className="recommendation-item__badges">
           <PriorityBadge priority={item.priority} />
@@ -156,11 +162,11 @@ function renderRecommendationCard(
         <div className="recommendation-evidence-list">
           {item.evidence.map((evidence) => (
             <div key={`${item.code}:${evidence.label}`} className="recommendation-evidence">
-              <span className="recommendation-evidence__label">{evidence.label}</span>
+              <span className="recommendation-evidence__label">{getHumanReadableLabel(evidence.label)}</span>
               <span className="recommendation-evidence__value">{evidence.value}</span>
               {evidence.benchmark ? (
                 <span className="recommendation-evidence__benchmark">
-                  {evidence.benchmark_label}: {evidence.benchmark}
+                  {getHumanReadableLabel(evidence.benchmark_label)}: {evidence.benchmark}
                 </span>
               ) : null}
             </div>
@@ -183,13 +189,14 @@ function RecommendationGroupSection({
   onActionStatusChange: RecommendationListProps["onActionStatusChange"];
 }) {
   const groupActionSummary = actionModel.groupSummariesByKey[group.key];
+  const groupLabel = getRecommendationGroupLabel(group.key);
 
   return (
     <details className={`recommendation-group recommendation-group--${group.status}`} open={defaultOpen}>
       <summary className="recommendation-group__header">
         <div className="recommendation-group__heading">
-          <h3 className="recommendation-group__title">{group.label}</h3>
-          <p className="recommendation-group__description">{group.description}</p>
+          <h3 className="recommendation-group__title">{groupLabel}</h3>
+          <p className="recommendation-group__description">{getRecommendationGroupDescription(group)}</p>
         </div>
         <div className="recommendation-group__status-stack">
           <span className={`recommendation-group__status recommendation-group__status--${group.status}`}>
@@ -233,7 +240,7 @@ function RecommendationGroupSection({
             </div>
           </section>
         ) : (
-          <div className="empty-state recommendation-group__empty">{group.empty_state}</div>
+          <div className="empty-state recommendation-group__empty">{getRecommendationGroupEmptyState(group)}</div>
         )}
       </div>
     </details>

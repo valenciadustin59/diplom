@@ -106,36 +106,36 @@ GROUP_ORDER: tuple[RecommendationGroupKey, ...] = (
 )
 GROUP_METADATA: dict[RecommendationGroupKey, dict[str, str]] = {
     "technical_seo": {
-        "label": "Technical SEO",
-        "description": "Индексация, canonical, URL hygiene и другие технические сигналы ранжируемой страницы.",
+        "label": "Техническое SEO",
+        "description": "Индексация, canonical, чистота URL и другие технические сигналы ранжируемой страницы.",
     },
     "commercial_trust": {
-        "label": "Commercial and Trust",
-        "description": "Контакты, офферы, CTA, социальное доказательство и сигналы доверия к бизнесу.",
+        "label": "Коммерция и доверие",
+        "description": "Контакты, офферы, призывы к действию, социальное доказательство и сигналы доверия к бизнесу.",
     },
     "semantic_intent": {
-        "label": "Semantic and Intent",
-        "description": "Насколько структура и контент страницы совпадают с запросом и поисковым интентом.",
+        "label": "Смысл и намерение",
+        "description": "Насколько структура и контент страницы совпадают с запросом и поисковым намерением.",
     },
     "competitor_gap": {
-        "label": "Competitor Gap",
-        "description": "Где страница уступает конкурентам и лидерам SERP по совокупности ключевых факторов.",
+        "label": "Разрыв с конкурентами",
+        "description": "Где страница уступает конкурентам и лидерам выдачи по совокупности ключевых факторов.",
     },
 }
 GROUP_EMPTY_MESSAGES: dict[RecommendationGroupKey, str] = {
     "technical_seo": "Критичных технических просадок в этом блоке не обнаружено.",
-    "commercial_trust": "Коммерческий и trust-профиль выглядит достаточно конкурентным.",
-    "semantic_intent": "Семантический и интентный профиль не показывает явных слабых мест.",
-    "competitor_gap": "Существенных отставаний от SERP-лидеров по главным группам сигналов не выявлено.",
+    "commercial_trust": "Коммерческий профиль и сигналы доверия выглядят достаточно конкурентно.",
+    "semantic_intent": "Смысловой профиль и поисковое намерение не показывают явных слабых мест.",
+    "competitor_gap": "Существенных отставаний от лидеров выдачи по главным группам сигналов не выявлено.",
 }
 IMPACT_LABELS: dict[RecommendationPriority, str] = {
-    "high": "Исправление может заметно поднять итоговый score и сократить отставание от SERP-лидеров.",
+    "high": "Исправление может заметно поднять итоговую оценку и сократить отставание от лидеров выдачи.",
     "medium": "Исправление даст ощутимое улучшение релевантности и конкурентоспособности страницы.",
     "low": "Исправление носит точечный характер, но помогает дожать качество страницы относительно выдачи.",
 }
 
 RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
-    "LOW_PAGE_SCORE": RecommendationTemplate("competitor_gap", "Низкий общий score", ("page_score",)),
+    "LOW_PAGE_SCORE": RecommendationTemplate("competitor_gap", "Низкая итоговая оценка", ("page_score",)),
     "BELOW_COMPETITORS": RecommendationTemplate(
         "competitor_gap",
         "Страница заметно слабее конкурентов",
@@ -146,15 +146,15 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
         "Страница немного уступает конкурентам",
         ("page_score", "competitors_average_score"),
     ),
-    "MISSING_TITLE": RecommendationTemplate("semantic_intent", "Отсутствует title", ("title_present",)),
+    "MISSING_TITLE": RecommendationTemplate("semantic_intent", "Отсутствует заголовок title", ("title_present",)),
     "QUERY_NOT_IN_TITLE": RecommendationTemplate(
         "semantic_intent",
-        "Запрос не отражён в title",
+        "Запрос не отражён в заголовке title",
         ("query_in_title",),
     ),
     "MISSING_META_DESCRIPTION": RecommendationTemplate(
         "technical_seo",
-        "Отсутствует meta description",
+        "Отсутствует мета-описание",
         ("meta_description_present",),
     ),
     "MISSING_H1": RecommendationTemplate("semantic_intent", "Отсутствует H1", ("h1_count",)),
@@ -171,7 +171,7 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "LOW_SEMANTIC_RELEVANCE": RecommendationTemplate(
         "semantic_intent",
-        "Низкая семантическая релевантность",
+        "Низкое смысловое соответствие",
         ("semantic_similarity",),
     ),
     "THIN_CONTENT": RecommendationTemplate(
@@ -213,17 +213,17 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "TECHNICAL_REDIRECT_CHAIN": RecommendationTemplate(
         "technical_seo",
-        "Слишком длинная redirect chain",
+        "Слишком длинная цепочка редиректов",
         ("redirect_count",),
     ),
     "TECHNICAL_REDIRECTED_TARGET": RecommendationTemplate(
         "technical_seo",
-        "Продвигаемый URL редиректит",
+        "Продвигаемый URL делает редирект",
         ("redirect_count",),
     ),
     "TECHNICAL_MISSING_VIEWPORT": RecommendationTemplate(
         "technical_seo",
-        "Нет mobile viewport",
+        "Нет метатега viewport",
         ("viewport_present",),
     ),
     "TECHNICAL_MISSING_LANG": RecommendationTemplate(
@@ -233,7 +233,7 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "TECHNICAL_QUERY_PARAMETERS_IN_URL": RecommendationTemplate(
         "technical_seo",
-        "Продвигаемый URL содержит query-параметры",
+        "Продвигаемый URL содержит параметры запроса",
         ("url_has_query_parameters", "url_parameter_count"),
     ),
     "TECHNICAL_DEEP_URL": RecommendationTemplate(
@@ -278,7 +278,7 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "COMMERCIAL_WEAK_CTA": RecommendationTemplate(
         "commercial_trust",
-        "CTA-блок недостаточно выражен",
+        "Призыв к действию недостаточно заметен",
         ("cta_present", "form_count"),
     ),
     "COMMERCIAL_NO_MESSENGERS": RecommendationTemplate(
@@ -293,17 +293,17 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "TRUST_WEAK_CONTACT_BLOCK": RecommendationTemplate(
         "commercial_trust",
-        "Слабый contact-блок",
+        "Слабый контактный блок",
         ("contact_options_score", "trust_signals_score"),
     ),
     "TRUST_MISSING_BUSINESS_ID": RecommendationTemplate(
         "commercial_trust",
-        "Не хватает business identity signals",
+        "Не хватает сведений о компании",
         ("legal_requisites_present", "company_identity_present"),
     ),
     "TRUST_MISSING_SOCIAL_PROOF": RecommendationTemplate(
         "commercial_trust",
-        "Нет social proof на странице",
+        "Нет социального доказательства на странице",
         ("reviews_present", "rating_present"),
     ),
     "TRUST_MISSING_POST_SALE_INFO": RecommendationTemplate(
@@ -313,27 +313,27 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "INTENT_WEAK_LOCAL_ALIGNMENT": RecommendationTemplate(
         "semantic_intent",
-        "Слабое соответствие локально-коммерческому интенту",
+        "Слабое соответствие локально-коммерческому намерению",
         ("local_intent_alignment",),
     ),
     "INTENT_WEAK_COMMERCIAL_ALIGNMENT": RecommendationTemplate(
         "semantic_intent",
-        "Слабое соответствие коммерческому интенту",
+        "Слабое соответствие коммерческому намерению",
         ("commercial_intent_alignment",),
     ),
     "INTENT_WEAK_INFORMATIONAL_ALIGNMENT": RecommendationTemplate(
         "semantic_intent",
-        "Слабое соответствие информационному интенту",
+        "Слабое соответствие информационному намерению",
         ("informational_intent_alignment",),
     ),
     "RELATIVE_SERP_GAP": RecommendationTemplate(
         "competitor_gap",
-        "Есть заметный интегральный разрыв с SERP",
+        "Есть заметный разрыв с лидерами выдачи",
         ("serp_relative_gap_score", "serp_relative_percentile"),
     ),
     "RELATIVE_SEMANTIC_GAP": RecommendationTemplate(
         "competitor_gap",
-        "Семантическая релевантность слабее топа",
+        "Смысловое соответствие слабее топа",
         ("relative_gap_to_top_semantic_relevance",),
     ),
     "RELATIVE_TECHNICAL_GAP": RecommendationTemplate(
@@ -343,25 +343,25 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "RELATIVE_COMMERCIAL_TRUST_GAP": RecommendationTemplate(
         "competitor_gap",
-        "Коммерческий и trust-профиль слабее топа",
+        "Коммерция и доверие слабее топа",
         ("relative_gap_to_top_commercial_trust",),
     ),
     "RELATIVE_INTENT_ALIGNMENT_GAP": RecommendationTemplate(
         "competitor_gap",
-        "Совпадение с интентом слабее топа",
+        "Соответствие намерению слабее топа",
         ("relative_gap_to_top_intent_alignment",),
     ),
     "NO_CRITICAL_ISSUES": RecommendationTemplate("competitor_gap", "Критичных проблем не найдено", ("page_score",)),
 }
 
 METRIC_SPECS: dict[str, MetricSpec] = {
-    "title_present": MetricSpec("Title", "binary", "higher_is_better"),
-    "query_in_title": MetricSpec("Запрос в title", "binary", "higher_is_better"),
-    "meta_description_present": MetricSpec("Meta description", "binary", "higher_is_better"),
+    "title_present": MetricSpec("Заголовок title", "binary", "higher_is_better"),
+    "query_in_title": MetricSpec("Запрос в заголовке title", "binary", "higher_is_better"),
+    "meta_description_present": MetricSpec("Мета-описание", "binary", "higher_is_better"),
     "h1_count": MetricSpec("Количество H1", "count", "lower_is_better", tolerance=0.2),
     "query_in_text": MetricSpec("Запрос в тексте", "binary", "higher_is_better"),
     "keyword_coverage_ratio": MetricSpec("Покрытие слов запроса", "ratio", "higher_is_better", tolerance=0.08),
-    "semantic_similarity": MetricSpec("Семантическая релевантность", "score", "higher_is_better", tolerance=0.08),
+    "semantic_similarity": MetricSpec("Смысловое соответствие", "score", "higher_is_better", tolerance=0.08),
     "text_length_chars": MetricSpec("Объём текста", "chars", "higher_is_better", tolerance=120.0, minimum_scale=500.0),
     "text_to_html_ratio": MetricSpec("Доля текста в HTML", "ratio", "higher_is_better", tolerance=0.03),
     "link_count": MetricSpec("Количество ссылок", "count", "higher_is_better", tolerance=1.0),
@@ -373,19 +373,19 @@ METRIC_SPECS: dict[str, MetricSpec] = {
     "canonical_present": MetricSpec("Canonical", "binary", "higher_is_better"),
     "canonical_matches_final_url": MetricSpec("Canonical совпадает с URL", "binary", "higher_is_better"),
     "redirect_count": MetricSpec("Количество редиректов", "count", "lower_is_better", tolerance=0.3),
-    "viewport_present": MetricSpec("Meta viewport", "binary", "higher_is_better"),
+    "viewport_present": MetricSpec("Мобильная область просмотра", "binary", "higher_is_better"),
     "lang_present": MetricSpec("Атрибут lang", "binary", "higher_is_better"),
-    "url_has_query_parameters": MetricSpec("Query-параметры в URL", "binary", "lower_is_better", tolerance=0.1),
-    "url_parameter_count": MetricSpec("Количество query-параметров", "count", "lower_is_better", tolerance=1.0),
+    "url_has_query_parameters": MetricSpec("Параметры запроса в URL", "binary", "lower_is_better", tolerance=0.1),
+    "url_parameter_count": MetricSpec("Количество параметров запроса", "count", "lower_is_better", tolerance=1.0),
     "url_depth": MetricSpec("Глубина URL", "count", "lower_is_better", tolerance=1.0),
-    "hreflang_present": MetricSpec("Hreflang", "binary", "higher_is_better"),
+    "hreflang_present": MetricSpec("Hreflang-разметка", "binary", "higher_is_better"),
     "phone_present": MetricSpec("Телефон", "binary", "higher_is_better"),
     "address_present": MetricSpec("Адрес", "binary", "higher_is_better"),
     "business_hours_present": MetricSpec("Режим работы", "binary", "higher_is_better"),
     "price_present": MetricSpec("Ценовой сигнал", "binary", "higher_is_better"),
     "delivery_info_present": MetricSpec("Информация о доставке", "binary", "higher_is_better"),
     "payment_info_present": MetricSpec("Информация об оплате", "binary", "higher_is_better"),
-    "cta_present": MetricSpec("CTA", "binary", "higher_is_better"),
+    "cta_present": MetricSpec("Призыв к действию", "binary", "higher_is_better"),
     "messenger_present": MetricSpec("Мессенджеры", "binary", "higher_is_better"),
     "value_proposition_present": MetricSpec("Ценностное предложение", "binary", "higher_is_better"),
     "reviews_present": MetricSpec("Отзывы", "binary", "higher_is_better"),
@@ -396,29 +396,29 @@ METRIC_SPECS: dict[str, MetricSpec] = {
     "company_identity_present": MetricSpec("Сведения о компании", "binary", "higher_is_better"),
     "contact_options_score": MetricSpec("Контактная полнота", "score", "higher_is_better", tolerance=0.08),
     "commercial_signals_score": MetricSpec("Коммерческие сигналы", "score", "higher_is_better", tolerance=0.08),
-    "trust_signals_score": MetricSpec("Trust-сигналы", "score", "higher_is_better", tolerance=0.08),
-    "intent_alignment_score": MetricSpec("Общее совпадение с интентом", "score", "higher_is_better", tolerance=0.08),
-    "local_intent_alignment": MetricSpec("Локальный интент", "score", "higher_is_better", tolerance=0.08),
-    "commercial_intent_alignment": MetricSpec("Коммерческий интент", "score", "higher_is_better", tolerance=0.08),
-    "informational_intent_alignment": MetricSpec("Информационный интент", "score", "higher_is_better", tolerance=0.08),
+    "trust_signals_score": MetricSpec("Сигналы доверия", "score", "higher_is_better", tolerance=0.08),
+    "intent_alignment_score": MetricSpec("Соответствие поисковому намерению", "score", "higher_is_better", tolerance=0.08),
+    "local_intent_alignment": MetricSpec("Локальное намерение", "score", "higher_is_better", tolerance=0.08),
+    "commercial_intent_alignment": MetricSpec("Коммерческое намерение", "score", "higher_is_better", tolerance=0.08),
+    "informational_intent_alignment": MetricSpec("Информационное намерение", "score", "higher_is_better", tolerance=0.08),
     "serp_relative_gap_score": MetricSpec(
-        "SERP gap score",
+        "Паритет с лидерами выдачи",
         "score",
         "higher_is_better",
         tolerance=0.05,
         target_value=1.0,
-        benchmark_label="Цель: паритет с SERP-лидерами",
+        benchmark_label="Цель: паритет с лидерами выдачи",
     ),
     "serp_relative_percentile": MetricSpec(
-        "SERP percentile",
+        "Позиция относительно выдачи",
         "percentile",
         "higher_is_better",
         tolerance=0.05,
         target_value=0.65,
-        benchmark_label="Цель: конкурентный диапазон SERP",
+        benchmark_label="Цель: конкурентный диапазон выдачи",
     ),
     "relative_gap_to_top_semantic_relevance": MetricSpec(
-        "Gap до топа: семантика",
+        "Разрыв с топом: смысловое соответствие",
         "gap",
         "higher_is_better",
         tolerance=0.03,
@@ -426,7 +426,7 @@ METRIC_SPECS: dict[str, MetricSpec] = {
         benchmark_label="Цель: без разрыва с лидером",
     ),
     "relative_gap_to_top_technical_seo": MetricSpec(
-        "Gap до топа: technical SEO",
+        "Разрыв с топом: техническое SEO",
         "gap",
         "higher_is_better",
         tolerance=0.03,
@@ -434,7 +434,7 @@ METRIC_SPECS: dict[str, MetricSpec] = {
         benchmark_label="Цель: без разрыва с лидером",
     ),
     "relative_gap_to_top_commercial_trust": MetricSpec(
-        "Gap до топа: commercial/trust",
+        "Разрыв с топом: коммерция и доверие",
         "gap",
         "higher_is_better",
         tolerance=0.03,
@@ -442,7 +442,7 @@ METRIC_SPECS: dict[str, MetricSpec] = {
         benchmark_label="Цель: без разрыва с лидером",
     ),
     "relative_gap_to_top_intent_alignment": MetricSpec(
-        "Gap до топа: intent alignment",
+        "Разрыв с топом: соответствие намерению",
         "gap",
         "higher_is_better",
         tolerance=0.03,
@@ -544,9 +544,9 @@ def _resolve_metric_values(
     competitors_average_score: float | None,
 ) -> tuple[float | None, float | None, MetricSpec | None]:
     if metric_code == "page_score":
-        return page_score, competitors_average_score, MetricSpec("Текущий score", "score", "higher_is_better")
+        return page_score, competitors_average_score, MetricSpec("Текущая оценка", "score", "higher_is_better")
     if metric_code == "competitors_average_score":
-        return competitors_average_score, None, MetricSpec("Средний score конкурентов", "score", "higher_is_better")
+        return competitors_average_score, None, MetricSpec("Средняя оценка конкурентов", "score", "higher_is_better")
 
     spec = METRIC_SPECS.get(metric_code)
     if spec is None or metric_code not in page_features:
@@ -899,39 +899,39 @@ def generate_recommendations(
         add_recommendation(
             "LOW_PAGE_SCORE",
             "high",
-            "Существенно улучшите структуру, релевантность, коммерческую полноту и техническое качество страницы: текущий score слишком низкий.",
+            "Существенно улучшите структуру, релевантность, коммерческую полноту и техническое качество страницы: итоговая оценка слишком низкая.",
         )
     elif competitors_average_score and page_score < competitors_average_score - 7:
         add_recommendation(
             "BELOW_COMPETITORS",
             "high",
-            "Страница заметно уступает конкурентам по качеству. Усильте контент, коммерческие блоки, trust-сигналы и техническую базу.",
+            "Страница заметно уступает конкурентам по качеству. Усильте контент, коммерческие блоки, сигналы доверия и техническую базу.",
         )
     elif competitors_average_score and page_score < competitors_average_score:
         add_recommendation(
             "SLIGHTLY_BELOW_COMPETITORS",
             "medium",
-            "Страница немного уступает конкурентам. Стоит доработать ключевые блоки и итоговую релевантность.",
+            "Страница немного уступает конкурентам. Стоит доработать ключевые блоки и итоговое соответствие запросу.",
         )
 
     if _int_feature(page_features, "title_present") == 0:
         add_recommendation(
             "MISSING_TITLE",
             "high",
-            "Добавьте title для страницы, чтобы улучшить поисковую релевантность и CTR сниппета.",
+            "Добавьте заголовок title, чтобы улучшить соответствие запросу и CTR сниппета.",
         )
     elif _int_feature(page_features, "query_in_title") == 0:
         add_recommendation(
             "QUERY_NOT_IN_TITLE",
             "high",
-            "Добавьте основной запрос в title страницы, сохранив естественную формулировку.",
+            "Добавьте основной запрос в заголовок title, сохранив естественную формулировку.",
         )
 
     if _int_feature(page_features, "meta_description_present") == 0:
         add_recommendation(
             "MISSING_META_DESCRIPTION",
             "medium",
-            "Добавьте meta description с кратким описанием страницы и основной темой запроса.",
+            "Добавьте мета-описание с кратким описанием страницы и основной темой запроса.",
         )
 
     h1_count = _int_feature(page_features, "h1_count")
@@ -965,7 +965,7 @@ def generate_recommendations(
         add_recommendation(
             "LOW_SEMANTIC_RELEVANCE",
             "high",
-            "Перепишите текст так, чтобы он точнее отвечал на поисковый запрос и интент пользователя.",
+            "Перепишите текст так, чтобы он точнее отвечал на поисковый запрос и намерение пользователя.",
         )
 
     text_length_chars = _float_feature(page_features, "text_length_chars")
@@ -1014,7 +1014,7 @@ def generate_recommendations(
         add_recommendation(
             "NO_CONVERSION_ELEMENT",
             "medium",
-            "Добавьте форму заявки или другой явный CTA-элемент для конверсии.",
+            "Добавьте форму заявки или другой явный конверсионный элемент.",
         )
 
     if has_technical_context:
@@ -1053,7 +1053,7 @@ def generate_recommendations(
             add_recommendation(
                 "TECHNICAL_REDIRECT_CHAIN",
                 "high",
-                "Сократите redirect chain: несколько последовательных редиректов ухудшают crawl efficiency и техническое качество посадочной страницы.",
+                "Сократите цепочку редиректов: несколько последовательных переходов ухудшают обход страницы поисковыми роботами и техническое качество посадочной страницы.",
             )
         elif _has_feature(page_features, "redirect_count") and redirect_count == 1:
             add_recommendation(
@@ -1066,7 +1066,7 @@ def generate_recommendations(
             add_recommendation(
                 "TECHNICAL_MISSING_VIEWPORT",
                 "medium",
-                "Добавьте meta viewport, чтобы страница корректно адаптировалась на мобильных устройствах.",
+                "Добавьте метатег viewport, чтобы страница корректно адаптировалась на мобильных устройствах.",
             )
 
         if _has_feature(page_features, "lang_present") and _int_feature(page_features, "lang_present") == 0:
@@ -1080,7 +1080,7 @@ def generate_recommendations(
             add_recommendation(
                 "TECHNICAL_QUERY_PARAMETERS_IN_URL",
                 "medium" if _int_feature(page_features, "url_parameter_count") > 1 else "low",
-                "Сведите к минимуму query-параметры в продвигаемом URL или зафиксируйте основную версию через canonical.",
+                "Сведите к минимуму параметры запроса в продвигаемом URL или зафиксируйте основную версию через canonical.",
             )
 
         if _has_feature(page_features, "url_depth") and _int_feature(page_features, "url_depth") >= 4:
@@ -1177,7 +1177,7 @@ def generate_recommendations(
                 add_recommendation(
                     "COMMERCIAL_WEAK_CTA",
                     "medium",
-                    "Сделайте CTA-блок явнее: добавьте кнопки действия, заявку, звонок или консультацию в ключевые зоны страницы.",
+                    "Сделайте призыв к действию заметнее: добавьте кнопки действия, заявку, звонок или консультацию в ключевые зоны страницы.",
                 )
 
         if (
@@ -1206,7 +1206,7 @@ def generate_recommendations(
             add_recommendation(
                 "TRUST_WEAK_CONTACT_BLOCK",
                 "high",
-                "Усильте contact-блок: добавьте больше прозрачных способов связи, адрес, график работы и понятную контактную зону.",
+                "Усильте контактный блок: добавьте больше прозрачных способов связи, адрес, график работы и понятную контактную зону.",
             )
 
         if (
@@ -1217,7 +1217,7 @@ def generate_recommendations(
             add_recommendation(
                 "TRUST_MISSING_BUSINESS_ID",
                 "medium",
-                "Добавьте юридические реквизиты, сведения о компании или другой явный business identity block, чтобы усилить доверие.",
+                "Добавьте юридические реквизиты, сведения о компании или другой явный блок идентичности бизнеса, чтобы усилить доверие.",
             )
 
         if (
@@ -1239,7 +1239,7 @@ def generate_recommendations(
             add_recommendation(
                 "TRUST_MISSING_POST_SALE_INFO",
                 "low",
-                "Добавьте гарантию, условия возврата или постпродажные обязательства, если это используется конкурентами как trust-сигнал.",
+                "Добавьте гарантию, условия возврата или постпродажные обязательства, если это используется конкурентами как сигнал доверия.",
             )
 
     if has_intent_context:
@@ -1254,7 +1254,7 @@ def generate_recommendations(
             add_recommendation(
                 "INTENT_WEAK_COMMERCIAL_ALIGNMENT",
                 "high",
-                "Страница недостаточно соответствует коммерческому интенту: добавьте явные офферы, CTA, цены и блоки доверия.",
+                "Страница недостаточно соответствует коммерческому намерению: добавьте явные офферы, призывы к действию, цены и блоки доверия.",
             )
 
         if _int_feature(page_features, "intent_is_informational") == 1 and _float_feature(page_features, "informational_intent_alignment") < 0.55:
@@ -1272,42 +1272,42 @@ def generate_recommendations(
             add_recommendation(
                 "RELATIVE_SERP_GAP",
                 "high",
-                "Страница заметно отстаёт от SERP-лидеров по совокупности ключевых групп сигналов. Приоритетно закрывайте разрывы относительно топа, а не только общие SEO-ошибки.",
+                "Страница заметно отстаёт от лидеров выдачи по совокупности ключевых групп сигналов. Приоритетно закрывайте разрывы относительно топа, а не только общие SEO-ошибки.",
             )
 
         if _float_feature(page_features, "relative_gap_to_top_semantic_relevance") < -0.12:
             add_recommendation(
                 "RELATIVE_SEMANTIC_GAP",
                 "high",
-                "Семантическая релевантность ниже лидеров выдачи. Усильте соответствие интенту в title, заголовках и основном тексте.",
+                "Смысловое соответствие ниже лидеров выдачи. Усильте соответствие намерению в title, заголовках и основном тексте.",
             )
 
         if _float_feature(page_features, "relative_gap_to_top_technical_seo") < -0.12:
             add_recommendation(
                 "RELATIVE_TECHNICAL_GAP",
                 "medium",
-                "Технический профиль страницы слабее конкурентов из топа. Проверьте indexability, canonical, URL hygiene и meta-signals.",
+                "Технический профиль страницы слабее конкурентов из топа. Проверьте индексируемость, canonical, чистоту URL и метаданные.",
             )
 
         if _float_feature(page_features, "relative_gap_to_top_commercial_trust") < -0.12:
             add_recommendation(
                 "RELATIVE_COMMERCIAL_TRUST_GAP",
                 "high",
-                "Коммерческие и trust-сигналы отстают от топа. Усильте контакты, офферы, цены, условия покупки и блоки доверия.",
+                "Коммерческие сигналы и сигналы доверия отстают от топа. Усильте контакты, офферы, цены, условия покупки и блоки доверия.",
             )
 
         if _float_feature(page_features, "relative_gap_to_top_intent_alignment") < -0.12:
             add_recommendation(
                 "RELATIVE_INTENT_ALIGNMENT_GAP",
                 "high",
-                "Даже при наличии базовых SEO-сигналов страница хуже конкурентов совпадает с интентом запроса. Пересоберите структуру страницы под сценарий пользователя.",
+                "Даже при наличии базовых SEO-сигналов страница хуже конкурентов соответствует намерению запроса. Пересоберите структуру страницы под сценарий пользователя.",
             )
 
     if not drafts:
         add_recommendation(
             "NO_CRITICAL_ISSUES",
             "low",
-            "Критичных проблем не найдено. Можно точечно усиливать контент, коммерческие блоки, trust-сигналы и техническую базу.",
+            "Критичных проблем не найдено. Можно точечно усиливать контент, коммерческие блоки, сигналы доверия и техническую базу.",
         )
 
     drafts.sort(key=lambda item: (PRIORITY_ORDER[item.priority], item.code))

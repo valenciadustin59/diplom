@@ -7,6 +7,7 @@ import type {
   RecommendationsBundle,
 } from "../types";
 import { flattenRecommendationItems } from "./recommendations";
+import { getFetchMethodLabel, getIntentLabel, getRecommendationGroupLabel } from "./terminology";
 
 export type AuditReportInput = {
   audit: AuditStatusResponse;
@@ -95,16 +96,17 @@ const groupStatusLabels = {
 } as const;
 
 const stageLabels: Record<string, string> = {
-  fetch: "Target fetch",
-  heavy_analysis: "Heavy analysis",
-  features: "Feature extraction",
-  scoring: "Scoring",
-  competitors: "SERP competitors",
-  competitor_page: "Competitor fetch",
-  competitor_analysis: "Competitor analysis",
-  recommendations: "Recommendations",
-  finalize: "Finalize",
-  pipeline: "Pipeline",
+  fetch: "Загрузка целевой страницы",
+  heavy_analysis: "Углублённый анализ",
+  features: "Извлечение признаков",
+  scoring: "Расчёт оценки",
+  competitors: "Поиск конкурентов",
+  competitor_page: "Загрузка конкурентов",
+  competitor_analysis: "Анализ конкурентов",
+  competitor_aggregation: "Сводка конкурентов",
+  recommendations: "Формирование рекомендаций",
+  finalize: "Финализация",
+  pipeline: "Конвейер аудита",
 };
 
 function getDomainFromUrl(url: string): string {
@@ -198,7 +200,7 @@ function getRecordString(record: Record<string, unknown> | null | undefined, key
 
 function getScoreVerdict(score: number | null | undefined): string {
   if (typeof score !== "number" || Number.isNaN(score)) {
-    return "Score ещё не рассчитан. Отчёт можно открыть, но итоговые выводы появятся после завершения аудита.";
+    return "Итоговая оценка ещё не рассчитана. Отчёт можно открыть, но выводы появятся после завершения аудита.";
   }
   if (score >= 80) {
     return "Страница выглядит конкурентоспособной: дальше важны точечные улучшения и удержание сильных факторов.";
@@ -206,7 +208,7 @@ function getScoreVerdict(score: number | null | undefined): string {
   if (score >= 60) {
     return "Страница находится в рабочем диапазоне, но видны зоны роста относительно лидеров выдачи.";
   }
-  return "Страница заметно отстаёт по совокупности SEO, semantic, commercial/trust и competitor-relative сигналов.";
+  return "Страница заметно отстаёт по совокупности SEO, смысловых, коммерческих, доверительных и конкурентных сигналов.";
 }
 
 function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditStatusResponse) {
@@ -218,7 +220,7 @@ function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditSta
     mlScore: formatScore(breakdown?.ml_score),
     methodology:
       breakdown?.methodology ??
-      "Гибридная оценка: rule-based SEO/semantic факторы дополняются ML-калибровкой по сохранённым признакам страницы.",
+      "Гибридная оценка: SEO- и смысловые факторы по правилам дополняются ML-калибровкой по сохранённым признакам страницы.",
   };
 }
 
@@ -230,44 +232,44 @@ function buildSeoMetrics(input: AuditReportInput): ReportMetric[] {
 
   return [
     {
-      label: "Feature schema",
+      label: "Версия признаков",
       value: input.results?.feature_schema_version ?? input.audit.feature_schema_version ?? "—",
-      note: "Версия набора признаков, по которому построен score.",
+      note: "Версия набора признаков, по которому построена итоговая оценка.",
     },
     {
-      label: "Query intent",
-      value: getRecordString(queryIntent, "label") ?? "—",
+      label: "Намерение запроса",
+      value: getIntentLabel(getRecordString(queryIntent, "label")),
       note: "Тип поискового намерения, с которым сверяется посадочная страница.",
     },
     {
-      label: "Technical SEO",
+      label: "Техническое SEO",
       value: formatSignalScore(getRecordNumber(features, "technical_seo_score")),
-      note: "Индексируемость, canonical, metadata, redirects и техническая пригодность.",
+      note: "Индексируемость, canonical, метаданные, редиректы и техническая пригодность.",
     },
     {
-      label: "Commercial / trust",
+      label: "Коммерция и доверие",
       value: formatSignalScore(getRecordNumber(features, "commercial_trust_score")),
-      note: "Контакты, CTA, условия, доказательства доверия и коммерческая полнота.",
+      note: "Контакты, призывы к действию, условия, доказательства доверия и коммерческая полнота.",
     },
     {
-      label: "Semantic relevance",
+      label: "Смысловое соответствие",
       value: formatSignalScore(getRecordNumber(features, "semantic_similarity")),
       note: "Насколько текст страницы соответствует поисковому запросу.",
     },
     {
-      label: "Intent alignment",
+      label: "Соответствие намерению",
       value: formatSignalScore(getRecordNumber(features, "intent_alignment_score")),
-      note: "Соответствие страницы доминирующему intent запроса.",
+      note: "Соответствие страницы доминирующему поисковому намерению.",
     },
     {
-      label: "Snapshot status",
+      label: "Статус снимка страницы",
       value: String(snapshot?.status_code ?? "—"),
-      note: `Fetch: ${String(snapshot?.fetch_method ?? input.results?.target_fetch_method ?? input.audit.target_fetch_method ?? "—")}`,
+      note: `Способ загрузки: ${getFetchMethodLabel(String(snapshot?.fetch_method ?? input.results?.target_fetch_method ?? input.audit.target_fetch_method ?? ""))}`,
     },
     {
-      label: "Heavy analysis",
+      label: "Углублённый анализ",
       value: heavyAnalysis ? "Есть" : "—",
-      note: "Snapshot-based тяжёлые analyzer-сигналы сохранены как часть distributed pipeline.",
+      note: "Углублённые сигналы сохранены как часть распределённого конвейера.",
     },
   ];
 }
@@ -291,9 +293,9 @@ function buildRecommendationMetrics(recommendations: RecommendationsBundle | nul
       note: "Сколько блоков анализа требуют внимания.",
     },
     {
-      label: "Gap vs competitors",
+      label: "Разница с конкурентами",
       value: formatSignedScore(summary?.score_gap_vs_competitors),
-      note: summary?.competitor_context ? "Расчёт использует competitor-relative evidence." : "Недостаточно competitor context.",
+      note: summary?.competitor_context ? "Расчёт учитывает сравнение с конкурентами." : "Недостаточно данных по конкурентам.",
     },
   ];
 }
@@ -310,17 +312,17 @@ function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
 
   return [
     {
-      label: "Score target",
+      label: "Оценка страницы",
       value: formatScore(summary?.user_score ?? input.results?.score ?? input.audit.score),
     },
     {
-      label: "Средний score конкурентов",
+      label: "Средняя оценка конкурентов",
       value: formatScore(summary?.competitors_average_score),
     },
     {
       label: "Разница",
       value: formatSignedScore(summary?.score_difference),
-      note: "Положительное значение означает преимущество target.",
+      note: "Положительное значение означает преимущество целевой страницы.",
     },
     {
       label: "Конкуренты",
@@ -333,22 +335,22 @@ function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
 function buildRuntimeMetrics(diagnostics: AuditTimelineDiagnosticsResponse | null): ReportMetric[] {
   return [
     {
-      label: "Timeline events",
+      label: "События таймлайна",
       value: formatCount(diagnostics?.event_count),
-      note: "События распределённого audit pipeline.",
+      note: "События распределённого конвейера аудита.",
     },
     {
-      label: "Dispatch events",
+      label: "Отправлено этапов",
       value: formatCount(diagnostics?.dispatch_count),
-      note: "Сколько stage-задач было отправлено в очереди.",
+      note: "Сколько задач этапов было отправлено в очереди.",
     },
     {
-      label: "Total duration",
+      label: "Общее время",
       value: formatReportDuration(diagnostics?.total_duration_ms),
       note: "Время между первым и последним событием выбранной обработки.",
     },
     {
-      label: "Critical path",
+      label: "Критический путь",
       value: formatReportDuration(diagnostics?.critical_path_duration_ms),
       note: diagnostics?.terminal_stage ? `Финальный этап: ${getStageLabel(diagnostics.terminal_stage)}.` : undefined,
     },
@@ -368,9 +370,9 @@ function buildRecommendationActions(recommendations: RecommendationsBundle | nul
 
 function buildGroupSummaries(recommendations: RecommendationsBundle | null): ReportMetric[] {
   return (recommendations?.groups ?? []).map((group) => ({
-    label: group.label,
+    label: getRecommendationGroupLabel(group.key),
     value: groupStatusLabels[group.status],
-    note: `${group.items.length} рекомендаций, ${group.deviations.length} competitor-relative отклонений.`,
+    note: `${group.items.length} рекомендаций, ${group.deviations.length} отклонений от конкурентов.`,
   }));
 }
 
@@ -409,7 +411,7 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     0;
 
   return {
-    title: `SEO audit report: ${domain}`,
+    title: `SEO-отчёт: ${domain}`,
     domain,
     targetUrl: input.audit.target_url,
     query: input.audit.query,
@@ -421,14 +423,14 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     scoreBreakdown,
     summary: [
       `Аудит по запросу "${input.audit.query}" для ${domain}.`,
-      `Итоговый score: ${formatScore(score)}. ${getScoreVerdict(score)}`,
-      `Competitor context: обработано ${analyzedCompetitors} страниц, gap target vs competitors ${formatSignedScore(
+      `Итоговая оценка: ${formatScore(score)}. ${getScoreVerdict(score)}`,
+      `Конкурентный контекст: обработано ${analyzedCompetitors} страниц, разница с конкурентами ${formatSignedScore(
         comparisonSummary?.score_difference,
       )}.`,
       `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
         recommendationsSummary?.high_priority_count,
       )} высокого приоритета.`,
-      `Distributed evidence: ${formatCount(input.diagnostics?.event_count)} timeline events, critical path ${formatReportDuration(
+      `Распределённое выполнение: ${formatCount(input.diagnostics?.event_count)} событий таймлайна, критический путь ${formatReportDuration(
         input.diagnostics?.critical_path_duration_ms,
       )}.`,
     ],
@@ -454,7 +456,7 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
       ? report.recommendationActions
           .map(
             (item) =>
-              `- [${item.priorityLabel}] ${item.title} (${item.groupLabel}, ${item.code}): ${item.message} Expected: ${item.expectedOutcome}`,
+              `- [${item.priorityLabel}] ${item.title} (${item.groupLabel}, код ${item.code}): ${item.message} Ожидаемый эффект: ${item.expectedOutcome}`,
           )
           .join("\n")
       : "- Рекомендации пока не сформированы.";
@@ -465,7 +467,7 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
   const competitors =
     report.competitors.length > 0
       ? report.competitors
-          .map((competitor) => `- ${competitor.domain}: score ${competitor.score}, status ${competitor.status}, ${competitor.url}`)
+          .map((competitor) => `- ${competitor.domain}: оценка ${competitor.score}, статус ${competitor.status}, ${competitor.url}`)
           .join("\n")
       : "- Конкурентные страницы пока не обработаны.";
   const stages =
@@ -473,51 +475,51 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
       ? report.stageRows
           .map(
             (stage) =>
-              `- ${stage.stage}: completed ${stage.completed}, failed ${stage.failed}, duration ${stage.duration}, critical path ${stage.criticalPath}`,
+              `- ${stage.stage}: завершено ${stage.completed}, ошибок ${stage.failed}, длительность ${stage.duration}, критический путь ${stage.criticalPath}`,
           )
           .join("\n")
-      : "- Timeline diagnostics пока недоступны.";
+      : "- Диагностика таймлайна пока недоступна.";
 
   return [
     `# ${report.title}`,
     "",
-    `Generated: ${report.generatedAt}`,
-    `Audit created: ${report.createdAt}`,
-    `Status: ${report.statusLabel}`,
-    `Query: ${report.query}`,
-    `Target URL: ${report.targetUrl}`,
+    `Сформирован: ${report.generatedAt}`,
+    `Аудит создан: ${report.createdAt}`,
+    `Статус: ${report.statusLabel}`,
+    `Запрос: ${report.query}`,
+    `Целевая страница: ${report.targetUrl}`,
     "",
-    "## Executive Summary",
+    "## Краткий вывод",
     ...report.summary.map((item) => `- ${item}`),
     "",
-    "## Score And ML Explanation",
-    `- Final score: ${report.scoreBreakdown.finalScore}`,
-    `- Rule-based score: ${report.scoreBreakdown.ruleScore}`,
-    `- ML score: ${report.scoreBreakdown.mlScore}`,
-    `- Methodology: ${report.scoreBreakdown.methodology}`,
+    "## Объяснение оценки и ML-калибровки",
+    `- Итоговая оценка: ${report.scoreBreakdown.finalScore}`,
+    `- Оценка по правилам: ${report.scoreBreakdown.ruleScore}`,
+    `- ML-калибровка: ${report.scoreBreakdown.mlScore}`,
+    `- Методика: ${report.scoreBreakdown.methodology}`,
     "",
-    "## SEO Evidence",
+    "## SEO-сигналы",
     ...report.seoMetrics.map(renderMetricMarkdown),
     "",
-    "## Competitor Evidence",
+    "## Конкурентный контекст",
     ...report.competitorMetrics.map(renderMetricMarkdown),
     "",
-    "## Recommendation Plan",
+    "## План рекомендаций",
     ...report.recommendationMetrics.map(renderMetricMarkdown),
     "",
-    "### Recommendation Groups",
+    "### Группы рекомендаций",
     groupSummaries,
     "",
-    "### Action Backlog",
+    "### Список действий",
     recommendationActions,
     "",
-    "## Competitor Pages",
+    "## Страницы конкурентов",
     competitors,
     "",
-    "## Distributed Runtime Evidence",
+    "## Доказательство распределённого выполнения",
     ...report.runtimeMetrics.map(renderMetricMarkdown),
     "",
-    "### Stage Breakdown",
+    "### Разбор этапов",
     stages,
     "",
   ].join("\n");

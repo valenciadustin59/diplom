@@ -80,20 +80,20 @@
 Завершённые волны проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, per-stage queues, fan-out, health/metrics, diagnostics, admission control и benchmark evidence.
-- `D13-D25` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management и recommendation action tracking.
+- `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
 Итог: проект уже закрывает ключевые требования дипломной темы — web-приложение машинного обучения с доказуемым распределённым runtime.
 
-Актуальная frontend/product wave после `D21` заведена в GitHub:
+Завершённая frontend/product wave после `D21` была заведена в GitHub:
 
 - `D21` / `#40` — completed: audit report and export dashboard.
 - `D22` / `#41` — completed: audit execution timeline UI.
 - `D23` / `#42` — completed: панель состояния рабочего стека и здоровья очередей.
 - `D24` / `#43` — completed: audit history management.
 - `D25` / `#44` — completed: recommendation action tracking.
-- `D26` / `#45` — interface copy and terminology polish.
+- `D26` / `#45` — completed: interface copy and terminology polish.
 
-Приоритет ближайшей разработки после `D25`: interface copy and terminology polish (`D26`). Demo mode в текущий backlog не входит.
+Волна `D21-D26` закрыта. Следующий практический фокус выбирается отдельной пользовательской задачей или новым GitHub issue; demo mode в текущий backlog не входит.
 
 ### Distributed foundation `D1-D12`
 
@@ -104,7 +104,7 @@
 - `D9-D11` — детектор нагрузки очередей, контроль допуска под нагрузкой, профили топологии воркеров.
 - `D12` — benchmark/reporting workflow для измеримого подтверждения распределённого runtime.
 
-Итог: backlog `D1-D12` завершён. После `D25` следующий практический фокус — не новый серверный слой исполнения, а interface copy and terminology polish (`D26` / `#45`), который стабилизирует язык интерфейса для демонстрации.
+Итог: backlog `D1-D12` завершён, а frontend/product wave `D21-D26` закрыта без нового серверного слоя исполнения или demo mode.
 
 ## Требования
 
@@ -364,9 +364,9 @@ npm run test
 
 За счёт `Celery`, очередей, fan-out обработки конкурентов, health/metrics, timeline diagnostics и benchmark workflow проект даёт не только ML-оценку, но и убедимую распределённую архитектуру для темы дипломной работы.
 
-## Статус D13-D25
+## Статус D13-D26
 
-Продуктовая волна backlog — `D13-D25` — завершена.
+Продуктовая волна backlog — `D13-D26` — завершена.
 
 Выполнено:
 
@@ -386,8 +386,9 @@ npm run test
 - `D23` - панель состояния рабочего стека и здоровья очередей: компактная панель `Готовность рабочего стека` на экране запуска, вкладка `Стек` в audit workspace, использование `health/live`, `health/ready`, `health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и человекочитаемые подсказки восстановления.
 - `D24` - audit history management: панель истории с метриками, фильтрами по статусу/домену/запросу/фокусу, быстрым открытием последнего успешного аудита, повторным запуском из строки и локальным скрытием/восстановлением записей без удаления backend-данных.
 - `D25` - recommendation action tracking: локальный план действий на странице рекомендаций, статусы `Не начато`, `В работе`, `Исправлено`, `Игнорируется`, summary закрытых действий и прогресс по группам без изменения backend analysis data.
+- `D26` - interface copy and terminology polish: русские primary labels для отчёта, рекомендаций, истории, runtime/timeline и production smoke-фрагментов; технические коды рекомендаций и очередей оставлены вторым уровнем.
 
-Текущая волна `D13-D25` завершена. Если нет явно выбранного GitHub issue, ближайшая открытая задача: `D26` / `#45` copy polish.
+Текущая волна `D13-D26` завершена. Если нет явно выбранного GitHub issue, новый фокус нужно брать из следующей явно поставленной задачи, не из закрытого D26 backlog.
 
 ## Dataset V2 Workflow (`D17`)
 

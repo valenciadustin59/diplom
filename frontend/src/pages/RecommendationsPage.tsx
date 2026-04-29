@@ -152,7 +152,7 @@ export function RecommendationsPage({
   return (
     <Card
       title="Рекомендации"
-      subtitle="Секции по техническим, semantic, commercial и competitor-gap факторам с объяснением причин просадки."
+      subtitle="Секции по техническим, смысловым, коммерческим и конкурентным факторам с объяснением причин просадки."
     >
       <div className="metric-strip">
         <div className="metric-box">
@@ -168,7 +168,7 @@ export function RecommendationsPage({
           <strong className="metric-box__value">{summary?.groups_with_issues ?? 0}</strong>
         </div>
         <div className="metric-box">
-          <span className="metric-box__label">Gap vs конкуренты</span>
+          <span className="metric-box__label">Разница с конкурентами</span>
           <strong className="metric-box__value">{formatScoreGap(summary?.score_gap_vs_competitors ?? null)}</strong>
         </div>
       </div>

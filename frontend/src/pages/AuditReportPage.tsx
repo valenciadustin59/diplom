@@ -8,6 +8,7 @@ import {
   type ReportMetric,
 } from "../lib/auditReport";
 import { createAuditReportHtml } from "../lib/auditReportHtml";
+import { getFailureStageLabel } from "../lib/ui";
 import type {
   AuditResultsResponse,
   AuditStatus,
@@ -106,8 +107,8 @@ export function AuditReportPage({
     const opened = openHtmlDocument(createAuditReportHtml(reportInput, { autoPrint: true }));
     setExportMessage(
       opened
-        ? "Печатная версия открыта в новой вкладке. В диалоге печати можно выбрать Save as PDF."
-        : "Браузер заблокировал новую вкладку. Используйте скачивание HTML или разрешите pop-up для localhost.",
+        ? "Печатная версия открыта в новой вкладке. В диалоге печати можно выбрать сохранение в PDF."
+        : "Браузер заблокировал новую вкладку. Используйте скачивание HTML или разрешите всплывающие окна для localhost.",
     );
   }
 
@@ -119,8 +120,8 @@ export function AuditReportPage({
             <span className="eyebrow-pill">Отчёт аудита</span>
             <h2 className="report-hero__title">{report.domain}</h2>
             <p className="report-hero__text">
-              Единый export dashboard для демонстрации SEO/ML-результата, competitor evidence, рекомендаций и распределённого
-              runtime.
+              Единый отчёт для демонстрации SEO/ML-результата, конкурентного контекста, рекомендаций и распределённого
+              выполнения.
             </p>
             <div className="workspace-meta">
               <span className="workspace-meta__item">Запрос: {report.query}</span>
@@ -129,7 +130,7 @@ export function AuditReportPage({
             </div>
           </div>
           <div className="report-score">
-            <span className="report-score__label">Score</span>
+            <span className="report-score__label">Оценка</span>
             <strong className="report-score__value">{report.scoreLabel}</strong>
           </div>
         </div>
@@ -153,11 +154,11 @@ export function AuditReportPage({
       {!loading && error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
       {auditStatus === "failed" && failureContext ? (
         <div className="feedback-banner feedback-banner--warning">
-          Отчёт частичный: аудит остановился на этапе {failureContext.stage}. Причина: {failureContext.message}
+          Отчёт частичный: аудит остановился на этапе {getFailureStageLabel(failureContext.stage)}. Причина: {failureContext.message}
         </div>
       ) : null}
 
-      <Card title="Executive summary" subtitle="Короткий вывод, который можно показать без расшифровки внутренних полей.">
+      <Card title="Краткий вывод" subtitle="Короткое резюме, которое можно показать без расшифровки внутренних полей.">
         <div className="report-summary-list">
           {report.summary.map((item) => (
             <div key={item} className="report-summary-list__item">
@@ -167,30 +168,30 @@ export function AuditReportPage({
         </div>
       </Card>
 
-      <Card title="Score and ML explanation" subtitle="Отчёт разделяет rule-based SEO-сигналы и ML-калибровку итоговой оценки.">
+      <Card title="Объяснение оценки и ML-калибровки" subtitle="Отчёт разделяет SEO-сигналы по правилам и ML-калибровку итоговой оценки.">
         <MetricGrid
           items={[
-            { label: "Final score", value: report.scoreBreakdown.finalScore },
-            { label: "Rule-based score", value: report.scoreBreakdown.ruleScore },
-            { label: "ML score", value: report.scoreBreakdown.mlScore },
-            { label: "Status", value: report.statusLabel },
+            { label: "Итоговая оценка", value: report.scoreBreakdown.finalScore },
+            { label: "Оценка по правилам", value: report.scoreBreakdown.ruleScore },
+            { label: "ML-калибровка", value: report.scoreBreakdown.mlScore },
+            { label: "Статус", value: report.statusLabel },
           ]}
         />
         <p className="report-section-note">{report.scoreBreakdown.methodology}</p>
       </Card>
 
-      <Card title="SEO evidence" subtitle="Сигналы из feature schema v2, target snapshot и isolated heavy-analysis stage.">
+      <Card title="SEO-сигналы" subtitle="Сигналы из версии признаков v2, снимка целевой страницы и изолированного этапа углублённого анализа.">
         <MetricGrid items={report.seoMetrics} />
       </Card>
 
-      <Card title="Competitor evidence" subtitle="SERP-relative контекст: сколько конкурентов найдено, обработано и каков score gap.">
+      <Card title="Конкурентный контекст" subtitle="Сравнение с выдачей: сколько конкурентов найдено, обработано и насколько отличается итоговая оценка.">
         <MetricGrid items={report.competitorMetrics} />
         <div className="report-table-shell">
           <table className="report-table">
             <thead>
               <tr>
                 <th>Домен</th>
-                <th>Score</th>
+                <th>Оценка</th>
                 <th>Статус</th>
                 <th>URL</th>
               </tr>
@@ -215,7 +216,7 @@ export function AuditReportPage({
         </div>
       </Card>
 
-      <Card title="Recommendation plan" subtitle="Полный action backlog: все рекомендации, отсортированные по приоритету.">
+      <Card title="План рекомендаций" subtitle="Полный список действий: все рекомендации, отсортированные по приоритету.">
         <MetricGrid items={report.recommendationMetrics} />
         <div className="report-group-list">
           {report.groupSummaries.map((group) => (
@@ -244,7 +245,7 @@ export function AuditReportPage({
                     <td>{item.groupLabel}</td>
                     <td>
                       <strong className="report-action-title">{item.title}</strong>
-                      <small className="report-action-code">{item.code}</small>
+                      <small className="report-action-code">Код: {item.code}</small>
                     </td>
                     <td>
                       <p className="report-action-detail">{item.message}</p>
@@ -263,19 +264,19 @@ export function AuditReportPage({
       </Card>
 
       <Card
-        title="Distributed runtime evidence"
-        subtitle="Timeline diagnostics показывает, что аудит выполнялся как stage-based Celery pipeline, а не как один монолитный запрос."
+        title="Доказательство распределённого выполнения"
+        subtitle="Диагностика таймлайна показывает, что аудит выполнялся по этапам Celery, а не как один монолитный запрос."
       >
         <MetricGrid items={report.runtimeMetrics} />
         <div className="report-table-shell">
           <table className="report-table">
             <thead>
               <tr>
-                <th>Stage</th>
-                <th>Completed</th>
-                <th>Failed</th>
-                <th>Duration</th>
-                <th>Critical path</th>
+                <th>Этап</th>
+                <th>Завершено</th>
+                <th>Ошибок</th>
+                <th>Длительность</th>
+                <th>Критический путь</th>
               </tr>
             </thead>
             <tbody>
@@ -291,7 +292,7 @@ export function AuditReportPage({
                 ))
               ) : (
                 <tr>
-                  <td colSpan={5}>Timeline diagnostics пока недоступны.</td>
+                  <td colSpan={5}>Диагностика таймлайна пока недоступна.</td>
                 </tr>
               )}
             </tbody>

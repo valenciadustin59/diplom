@@ -139,7 +139,7 @@ const FAN_OUT_STAGES = new Set(["competitor_page", "competitor_analysis"]);
 const STAGE_LABELS: Record<string, string> = {
   pipeline: "Конвейер аудита",
   fetch: "Загрузка целевой страницы",
-  heavy_analysis: "Тяжёлый анализ",
+  heavy_analysis: "Углублённый анализ",
   features: "Извлечение признаков",
   scoring: "Расчёт оценки",
   competitors: "Поиск конкурентов",
@@ -153,8 +153,8 @@ const STAGE_LABELS: Record<string, string> = {
 const STAGE_DESCRIPTIONS: Record<string, string> = {
   pipeline: "Родительский оркестратор запускает и завершает распределённый аудит.",
   fetch: "Загружает целевую посадочную страницу и сохраняет диагностику загрузки.",
-  heavy_analysis: "Выполняет тяжёлый анализ контента и SEO-проверки по сохранённому снимку страницы.",
-  features: "Извлекает структурированные сигналы ранжирования, семантики, технического качества и доверия.",
+  heavy_analysis: "Выполняет углублённый анализ контента и SEO-проверки по сохранённому снимку страницы.",
+  features: "Извлекает структурированные сигналы ранжирования, смыслового соответствия, технического качества и доверия.",
   scoring: "Собирает правила и ML-сигналы в итоговую оценку.",
   competitors: "Собирает конкурентов из поисковой выдачи и планирует параллельные ветки.",
   competitor_page: "Задачи параллельного ветвления загружают посадочные страницы конкурентов.",
@@ -214,7 +214,7 @@ const DETAIL_LABELS: Record<string, string> = {
   competitor_id: "ID конкурента",
   domain: "Домен",
   score: "Оценка",
-  semantic_similarity: "Семантическая близость",
+  semantic_similarity: "Смысловое соответствие",
   intent_alignment_score: "Соответствие намерению",
 };
 

@@ -91,13 +91,13 @@ type RuntimeHealthInput = {
 const PROFILE_LABELS: Record<string, string> = {
   pipeline: "Оркестратор",
   network: "Сетевой профиль",
-  heavy_analysis: "Тяжёлый анализ",
+  heavy_analysis: "Углублённый анализ",
   cpu_ml: "CPU/ML профиль",
 };
 const PROFILE_DESCRIPTIONS: Record<string, string> = {
   pipeline: "Запускает аудит, координирует этапы и контроль допуска.",
   network: "Обслуживает загрузку целевой страницы, поиск и сбор страниц конкурентов.",
-  heavy_analysis: "Изолирует тяжёлый анализ страницы, семантику и ML-анализ конкурентов.",
+  heavy_analysis: "Изолирует углублённый анализ страницы, смысловые сигналы и ML-анализ конкурентов.",
   cpu_ml: "Собирает признаки, считает оценку, рекомендации и финализацию.",
 };
 const STATUS_LABELS: Record<string, string> = {
@@ -282,7 +282,7 @@ function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
     },
     {
       id: "redis",
-      label: "Redis / broker",
+      label: "Redis-брокер",
       status: brokerStatus ?? "unknown",
       statusLabel: getStatusLabel(brokerStatus),
       tone: getStatusTone(brokerStatus),
@@ -423,7 +423,7 @@ function buildAlertIssue(alert: Record<string, unknown>): RuntimeIssue | null {
     return {
       key: code,
       title: "Есть зависшие аудиты",
-      detail: `${formatCount(count)} аудитов находятся в processing дольше порога. Проверьте воркеры и перезапустите зависшие задачи.`,
+      detail: `${formatCount(count)} аудитов находятся в обработке дольше порога. Проверьте воркеры и перезапустите зависшие задачи.`,
       tone: "error",
     };
   }

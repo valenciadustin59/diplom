@@ -104,7 +104,7 @@ function buildPageRows(
       pageType: "Основная страница",
       score: Math.round(results?.score ?? audit.score ?? 0),
       textLength,
-      seoTitle: titlePresent ? `Title найден (${titleLength} симв.)` : "Title отсутствует",
+      seoTitle: titlePresent ? `Заголовок найден (${titleLength} симв.)` : "Заголовок отсутствует",
       queryMatch: semanticSimilarity,
       fetchStatus: results?.target_fetch_status ?? audit.target_fetch_status ?? "success",
       fetchNote:
@@ -123,7 +123,7 @@ function buildPageRows(
       pageType: isAnalyzed ? "Конкурент" : "Конкурент (не обработан)",
       score: Math.round(competitor.score ?? 0),
       textLength: Number(competitorFeatures.text_length_chars ?? 0),
-      seoTitle: competitor.title || "Title отсутствует",
+      seoTitle: competitor.title || "Заголовок отсутствует",
       queryMatch: Number(competitorFeatures.semantic_similarity ?? 0),
       fetchStatus: competitor.fetch_status,
       fetchNote:

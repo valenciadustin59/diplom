@@ -3,7 +3,7 @@ type ScoreRingProps = {
   label?: string;
 };
 
-export function ScoreRing({ value, label = "Общий score" }: ScoreRingProps) {
+export function ScoreRing({ value, label = "Общая оценка" }: ScoreRingProps) {
   const radius = 58;
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference - (value / 100) * circumference;

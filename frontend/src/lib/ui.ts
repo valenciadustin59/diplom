@@ -26,7 +26,7 @@ export function getFailureStageLabel(stage: FailureStage): string {
     case "features":
       return "извлечение признаков страницы";
     case "scoring":
-      return "расчёт score";
+      return "расчёт итоговой оценки";
     case "search":
       return "поиск и анализ конкурентов";
     case "recommendations":
@@ -54,7 +54,7 @@ function formatFailureDetailValue(value: unknown): string | null {
 export function getFailureDetailEntries(context: FailureContext): Array<{ label: string; value: string }> {
   const details = context.details ?? {};
   const labels: Record<string, string> = {
-    fetch_method: "Способ fetch",
+    fetch_method: "Способ загрузки",
     http_status: "HTTP статус",
   };
 

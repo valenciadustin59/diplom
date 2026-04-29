@@ -6,6 +6,7 @@ import { RuntimeStatusCompactCard, RuntimeStatusPage } from "../pages/RuntimeSta
 import { getTopRecommendationItems } from "../lib/recommendations";
 import type { RuntimeHealthModel } from "../lib/runtimeHealth";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
+import { getFetchMethodLabel, getHumanReadableLabel } from "../lib/terminology";
 import { AuditTabs } from "./AuditTabs";
 import { AuditLaunchForm } from "./AuditLaunchForm";
 import { Card } from "./Card";
@@ -109,7 +110,7 @@ function formatScoreFactorDetail(item: ScoreFactor): string {
     return `Значение фактора: ${item.value}`;
   }
 
-  return "Фактор участвует в объяснении итогового score.";
+  return "Фактор участвует в объяснении итоговой оценки.";
 }
 
 function formatScoreWeight(value: number | undefined): string | null {
@@ -124,20 +125,20 @@ function getScoreMethodologyText(breakdown: ScoreBreakdown): string {
   const mlWeight = formatScoreWeight(breakdown.weights?.ml_weight);
 
   if (ruleWeight && mlWeight) {
-    return `Score рассчитывается как гибрид объяснимых SEO/semantic-сигналов и ML-калибровки: ${ruleWeight} веса дают rule-based факторы, ${mlWeight} — модель. Ниже показаны метрики, которые сильнее всего подняли или снизили итоговую оценку.`;
+    return `Итоговая оценка рассчитывается как гибрид объяснимых SEO- и смысловых сигналов с ML-калибровкой: ${ruleWeight} веса дают правила, ${mlWeight} — модель. Ниже показаны метрики, которые сильнее всего подняли или снизили результат.`;
   }
 
-  return "Score рассчитывается по набору объяснимых SEO, semantic, technical и commercial/trust сигналов с ML-калибровкой итоговой оценки. Ниже показаны факторы, которые сильнее всего повлияли на результат.";
+  return "Итоговая оценка рассчитывается по набору объяснимых SEO, смысловых, технических, коммерческих и доверительных сигналов с ML-калибровкой. Ниже показаны факторы, которые сильнее всего повлияли на результат.";
 }
 
 const interactionSignalLabels: Record<string, string> = {
-  query_semantic_alignment: "Семантика + покрытие запроса",
-  title_semantic_alignment: "Title + семантика",
-  heading_semantic_alignment: "Заголовки + семантика",
+  query_semantic_alignment: "Смысловое соответствие + покрытие запроса",
+  title_semantic_alignment: "Title + смысловое соответствие",
+  heading_semantic_alignment: "Заголовки + смысловое соответствие",
   query_prominence_score: "Выраженность запроса",
   keyword_balance_score: "Баланс ключевых слов",
-  semantic_content_richness: "Глубина и смысл контента",
-  cta_semantic_score: "CTA + коммерческий интент",
+  semantic_content_richness: "Глубина и смысловая полнота контента",
+  cta_semantic_score: "Призыв к действию + коммерческое намерение",
 };
 
 function ScoreFactorList({
@@ -157,7 +158,7 @@ function ScoreFactorList({
           {items.map((item, index) => (
             <article key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
               <div className="score-factor__top">
-                <strong>{item.label}</strong>
+                <strong>{getHumanReadableLabel(item.label)}</strong>
                 <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
               </div>
               <p className="score-factor__detail">{formatScoreFactorDetail(item)}</p>
@@ -175,10 +176,10 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
   if (!breakdown) {
     return (
       <Card
-        title="Как формируется score"
+        title="Как формируется оценка"
         subtitle="После завершения аудита здесь появится объяснение итоговой оценки, её сильных сторон и просадок."
       >
-        <div className="empty-state">Дождитесь завершения анализа, чтобы увидеть расшифровку score.</div>
+        <div className="empty-state">Дождитесь завершения анализа, чтобы увидеть расшифровку итоговой оценки.</div>
       </Card>
     );
   }
@@ -189,19 +190,19 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
   return (
     <Card
-      title="Как формируется score"
-      subtitle="Итог складывается из объяснимых SEO и semantic сигналов и отдельной ML-калибровки."
+      title="Как формируется оценка"
+      subtitle="Итог складывается из объяснимых SEO- и смысловых сигналов и отдельной ML-калибровки."
     >
       <div className="score-breakdown">
         <p className="score-breakdown__methodology">{methodology}</p>
 
         <div className="metric-strip metric-strip--comparison">
           <div className="metric-box">
-            <span className="metric-box__label">Итоговый score</span>
+            <span className="metric-box__label">Итоговая оценка</span>
             <strong className="metric-box__value">{breakdown.final_score}</strong>
           </div>
           <div className="metric-box">
-            <span className="metric-box__label">Rule-based часть</span>
+            <span className="metric-box__label">Оценка по правилам</span>
             <strong className="metric-box__value">{breakdown.rule_score}</strong>
           </div>
           <div className="metric-box">
@@ -223,7 +224,7 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
         <div className="score-breakdown__grid">
           <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
-          <ScoreFactorList title="Что тянет score вниз" items={negativeFactors} tone="negative" />
+          <ScoreFactorList title="Что тянет оценку вниз" items={negativeFactors} tone="negative" />
         </div>
       </div>
     </Card>
@@ -293,7 +294,7 @@ function AuditProgressBanner({ status }: { status: AuditStatus }) {
   const message =
     status === "queued"
       ? "Подготавливаем этапы анализа. Обычно первый статус меняется через несколько секунд."
-      : "Система загружает страницу, собирает конкурентов и пересчитывает score. Данные обновляются автоматически.";
+      : "Система загружает страницу, собирает конкурентов и пересчитывает итоговую оценку. Данные обновляются автоматически.";
 
   return (
     <div className="feedback-banner feedback-banner--info">
@@ -333,7 +334,7 @@ function OverviewPanel({
               <div className="workspace-meta">
                 <span className="workspace-meta__item">Статус: {getAuditStatusLabel(currentAudit.status as AuditStatus)}</span>
                 <span className="workspace-meta__item">Запущен: {formatDate(currentAudit.created_at)}</span>
-                <span className="workspace-meta__item">Fetch: {currentResults?.target_fetch_method ?? currentAudit.target_fetch_method ?? "—"}</span>
+                <span className="workspace-meta__item">Загрузка: {getFetchMethodLabel(currentResults?.target_fetch_method ?? currentAudit.target_fetch_method)}</span>
               </div>
             ) : null}
           </div>
@@ -344,11 +345,11 @@ function OverviewPanel({
 
       <div className="metric-strip workspace-metric-strip">
         <div className="metric-box">
-          <span className="metric-box__label">Ваш score</span>
+          <span className="metric-box__label">Оценка страницы</span>
           <strong className="metric-box__value">{comparisonSummary?.user_score ?? 0}</strong>
         </div>
         <div className="metric-box">
-          <span className="metric-box__label">Средний score конкурентов</span>
+          <span className="metric-box__label">Средняя оценка конкурентов</span>
           <strong className="metric-box__value">{comparisonSummary?.competitors_average_score ?? 0}</strong>
         </div>
         <div className="metric-box">
@@ -454,7 +455,7 @@ function CompetitorsPanel({
               <article key={competitor.url} className="competitor-list__item">
                 <div>
                   <div className="competitor-list__domain">{competitor.domain}</div>
-                  <div className="competitor-list__title">{competitor.title || "Без title"}</div>
+                  <div className="competitor-list__title">{competitor.title || "Без заголовка"}</div>
                   <div className="competitor-list__url">{competitor.url}</div>
                   {competitor.fetch_status === "failed" ? (
                     <div className="competitor-list__note">
@@ -462,7 +463,7 @@ function CompetitorsPanel({
                     </div>
                   ) : (
                     <div className="competitor-list__note">
-                      Обработано через {competitor.fetch_method ?? "http"}
+                      Способ загрузки: {getFetchMethodLabel(competitor.fetch_method)}
                     </div>
                   )}
                 </div>
@@ -511,7 +512,7 @@ function NewAuditWorkspace({
             <span className="eyebrow-pill">Новый аудит</span>
             <h2 className="hero-card__title">Запустите новую проверку сайта</h2>
             <p className="hero-card__text">
-              Введите поисковый запрос и URL сайта. После запуска откроется рабочее пространство аудита с итоговым score,
+              Введите поисковый запрос и URL сайта. После запуска откроется рабочее пространство аудита с итоговой оценкой,
               сравнением и рекомендациями.
             </p>
           </div>

@@ -169,8 +169,8 @@ function createRecommendations(): RecommendationsBundle {
             priority: "medium",
             impact: "medium",
             title: "Пересобрать H1/H2",
-            message: "Заголовки должны явно покрывать поисковый интент.",
-            expected_outcome: "Усилить семантическое соответствие.",
+            message: "Заголовки должны явно покрывать поисковое намерение.",
+            expected_outcome: "Усилить смысловое соответствие.",
             evidence: [],
             related_metrics: ["heading_semantic_alignment"],
           },
@@ -178,7 +178,7 @@ function createRecommendations(): RecommendationsBundle {
             code: "TECHNICAL_SNIPPET",
             priority: "medium",
             impact: "medium",
-            title: "Усилить meta description",
+            title: "Усилить мета-описание",
             message: "Добавить обещание, УТП и формулировку под запрос.",
             expected_outcome: "Повысить CTR сниппета.",
             evidence: [],
@@ -278,10 +278,10 @@ describe("audit report export", () => {
 
     expect(model.domain).toBe("example.com");
     expect(model.scoreLabel).toBe("72.4");
-    expect(model.seoMetrics.map((metric) => metric.label)).toContain("Heavy analysis");
+    expect(model.seoMetrics.map((metric) => metric.label)).toContain("Углублённый анализ");
     expect(model.recommendationActions.map((item) => item.title)).toContain("Усилить title");
     expect(model.recommendationActions).toHaveLength(6);
-    expect(model.stageRows[0].stage).toBe("Heavy analysis");
+    expect(model.stageRows[0].stage).toBe("Углублённый анализ");
   });
 
   it("builds report recommendations from stored audit payloads when endpoint data is unavailable", () => {
@@ -312,15 +312,15 @@ describe("audit report export", () => {
     const markdown = createAuditReportMarkdown(input);
     const html = createAuditReportHtml(input, { autoPrint: true });
 
-    expect(markdown).toContain("## Distributed Runtime Evidence");
-    expect(markdown).toContain("### Action Backlog");
+    expect(markdown).toContain("## Доказательство распределённого выполнения");
+    expect(markdown).toContain("### Список действий");
     expect(markdown).toContain("TECHNICAL_LOW");
     expect(markdown.split("\n").filter((line) => line.startsWith("- ["))).toHaveLength(6);
     expect(markdown.indexOf("TECHNICAL_INDEXING")).toBeLessThan(markdown.indexOf("TECHNICAL_CANONICAL"));
     expect(markdown.indexOf("TECHNICAL_SNIPPET")).toBeLessThan(markdown.indexOf("TECHNICAL_LOW"));
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("window.print");
-    expect(html).toContain("SEO Evidence");
+    expect(html).toContain("SEO-сигналы");
     expect(html).toContain("TECHNICAL_LOW");
     expect(html.match(/TECHNICAL_/g)).toHaveLength(6);
   });

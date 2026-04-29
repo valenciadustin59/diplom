@@ -24,9 +24,9 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
             (item) =>
               `<tr><td>${escapeHtml(item.priorityLabel)}</td><td>${escapeHtml(item.groupLabel)}</td><td><strong>${escapeHtml(
                 item.title,
-              )}</strong><br><small>${escapeHtml(item.code)}</small></td><td>${escapeHtml(
+              )}</strong><br><small>Код: ${escapeHtml(item.code)}</small></td><td>${escapeHtml(
                 item.message,
-              )}<br><small>${escapeHtml(item.expectedOutcome)}</small></td></tr>`,
+              )}<br><small>Ожидаемый эффект: ${escapeHtml(item.expectedOutcome)}</small></td></tr>`,
           )
           .join("")
       : '<tr><td colspan="4">Рекомендации пока не сформированы.</td></tr>';
@@ -40,7 +40,7 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
               )}</td><td>${escapeHtml(stage.criticalPath)}</td></tr>`,
           )
           .join("")
-      : '<tr><td colspan="5">Timeline diagnostics пока недоступны.</td></tr>';
+      : '<tr><td colspan="5">Диагностика таймлайна пока недоступна.</td></tr>';
   const competitors =
     report.competitors.length > 0
       ? report.competitors
@@ -84,44 +84,44 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
 <body>
   <main>
     <header>
-      <p class="muted">Audit report / generated ${escapeHtml(report.generatedAt)}</p>
+      <p class="muted">SEO-отчёт / сформирован ${escapeHtml(report.generatedAt)}</p>
       <h1>${escapeHtml(report.domain)}</h1>
       <p>${escapeHtml(report.query)} · ${escapeHtml(report.targetUrl)}</p>
       <div class="score">${escapeHtml(report.scoreLabel)}</div>
       <p>${escapeHtml(report.scoreVerdict)}</p>
     </header>
     <section>
-      <h2>Executive Summary</h2>
+      <h2>Краткий вывод</h2>
       <ul>${report.summary.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     </section>
     <section>
-      <h2>Score And ML Explanation</h2>
+      <h2>Объяснение оценки и ML-калибровки</h2>
       <div class="grid">
-        ${renderMetricHtml({ label: "Final score", value: report.scoreBreakdown.finalScore })}
-        ${renderMetricHtml({ label: "Rule-based score", value: report.scoreBreakdown.ruleScore })}
-        ${renderMetricHtml({ label: "ML score", value: report.scoreBreakdown.mlScore })}
-        ${renderMetricHtml({ label: "Status", value: report.statusLabel })}
+        ${renderMetricHtml({ label: "Итоговая оценка", value: report.scoreBreakdown.finalScore })}
+        ${renderMetricHtml({ label: "Оценка по правилам", value: report.scoreBreakdown.ruleScore })}
+        ${renderMetricHtml({ label: "ML-калибровка", value: report.scoreBreakdown.mlScore })}
+        ${renderMetricHtml({ label: "Статус", value: report.statusLabel })}
       </div>
       <p class="muted">${escapeHtml(report.scoreBreakdown.methodology)}</p>
     </section>
     <section>
-      <h2>SEO Evidence</h2>
+      <h2>SEO-сигналы</h2>
       <div class="grid">${report.seoMetrics.map(renderMetricHtml).join("")}</div>
     </section>
     <section>
-      <h2>Competitor Evidence</h2>
+      <h2>Конкурентный контекст</h2>
       <div class="grid">${report.competitorMetrics.map(renderMetricHtml).join("")}</div>
-      <table><thead><tr><th>Domain</th><th>Score</th><th>Status</th><th>URL</th></tr></thead><tbody>${competitors}</tbody></table>
+      <table><thead><tr><th>Домен</th><th>Оценка</th><th>Статус</th><th>URL</th></tr></thead><tbody>${competitors}</tbody></table>
     </section>
     <section>
-      <h2>Recommendation Plan</h2>
+      <h2>План рекомендаций</h2>
       <div class="grid">${report.recommendationMetrics.map(renderMetricHtml).join("")}</div>
-      <table class="recommendations"><thead><tr><th>Priority</th><th>Group</th><th>Recommendation</th><th>Action</th></tr></thead><tbody>${recommendationRows}</tbody></table>
+      <table class="recommendations"><thead><tr><th>Приоритет</th><th>Группа</th><th>Рекомендация</th><th>Что изменить</th></tr></thead><tbody>${recommendationRows}</tbody></table>
     </section>
     <section>
-      <h2>Distributed Runtime Evidence</h2>
+      <h2>Доказательство распределённого выполнения</h2>
       <div class="grid">${report.runtimeMetrics.map(renderMetricHtml).join("")}</div>
-      <table><thead><tr><th>Stage</th><th>Completed</th><th>Failed</th><th>Duration</th><th>Critical path</th></tr></thead><tbody>${stages}</tbody></table>
+      <table><thead><tr><th>Этап</th><th>Завершено</th><th>Ошибок</th><th>Длительность</th><th>Критический путь</th></tr></thead><tbody>${stages}</tbody></table>
     </section>
   </main>
   ${options.autoPrint ? "<script>window.addEventListener('load', () => setTimeout(() => window.print(), 250));</script>" : ""}

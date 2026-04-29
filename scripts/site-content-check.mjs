@@ -34,7 +34,7 @@ export const REQUIRED_BUNDLE_FRAGMENTS = [
   "Очереди Celery",
   "Конкуренты",
   "Рекомендации",
-  "Итоговый score",
+  "Итоговая оценка",
   "ML-калибровка",
 ];
 
