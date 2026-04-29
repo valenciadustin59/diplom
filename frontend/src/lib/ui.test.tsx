@@ -429,4 +429,42 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Distributed runtime evidence");
     expect(markup).toContain("Heavy analysis");
   });
+
+  it("renders report recommendations from the stored audit payload when endpoint data is absent", () => {
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        currentAudit={createAudit({
+          status: "completed",
+          score: 72.4,
+          recommendations: createRecommendationsBundle(),
+          comparison_summary: {
+            user_score: 72.4,
+            competitors_average_score: 78.2,
+            score_difference: -5.8,
+            competitors_count: 2,
+          },
+        })}
+        currentResults={null}
+        recommendations={null}
+        timelineDiagnostics={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={{
+          user_score: 72.4,
+          competitors_average_score: 78.2,
+          score_difference: -5.8,
+          competitors_count: 2,
+        }}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="report"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Recommendation plan");
+    expect(markup).toContain("Есть блокирующая проблема индексации");
+    expect(markup).toContain("1");
+  });
 });
