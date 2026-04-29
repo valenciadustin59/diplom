@@ -6,7 +6,7 @@ export function createHealthcheckConfig(sourceEnv = process.env) {
 
   return {
     baseUrl,
-    url: `${baseUrl}/search?q=test&format=json`,
+    url: `${baseUrl}/healthz`,
     maxAttempts: Number(sourceEnv.SEARXNG_HEALTHCHECK_ATTEMPTS || 15),
     delayMs: Number(sourceEnv.SEARXNG_HEALTHCHECK_DELAY_MS || 2000),
   };
@@ -24,29 +24,20 @@ export async function checkOnce({
 } = {}) {
   const response = await fetchImpl(config.url, {
     headers: {
-      accept: "application/json",
+      accept: "text/plain",
       "user-agent": "diplom-healthcheck/1.0",
     },
   });
 
-  const contentType = response.headers.get("content-type") || "";
   if (!response.ok) {
     const body = await response.text();
     throw new Error(`HTTP ${response.status}: ${body.slice(0, 200)}`);
   }
 
-  if (!contentType.includes("json")) {
-    const body = await response.text();
-    throw new Error(`Expected JSON, got '${contentType}'. Body: ${body.slice(0, 200)}`);
-  }
-
-  const payload = await response.json();
-  const results = Array.isArray(payload.results) ? payload.results : [];
-
   return {
     status: "ok",
     baseUrl: config.baseUrl,
-    resultsCount: results.length,
+    healthEndpoint: config.url,
   };
 }
 
@@ -88,7 +79,7 @@ async function main() {
     const hint =
       config.baseUrl === "http://127.0.0.1:8888"
         ? "Проверьте, что локальный SearxNG поднят через npm run searxng:up."
-        : "Проверьте, что указанный SearxNG instance доступен и возвращает format=json.";
+        : "Проверьте, что указанный SearxNG instance доступен и отвечает на /healthz.";
 
     console.error(
       JSON.stringify(

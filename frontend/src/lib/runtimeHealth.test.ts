@@ -156,6 +156,31 @@ describe("runtime health model", () => {
     expect(model.issues[0].title).toBe("Рабочий стек готов к новым аудитам");
   });
 
+  it("shows the lightweight SearXNG health endpoint in component details", () => {
+    const model = buildRuntimeHealthModel({
+      live: createLiveness(),
+      readiness: createReadiness({
+        checks: {
+          database: { status: "ok", required: true },
+          redis: { status: "ok", required: true },
+          serp: {
+            status: "ok",
+            required: true,
+            provider: "searxng",
+            base_url: "http://127.0.0.1:8888",
+            health_endpoint: "http://127.0.0.1:8888/healthz",
+          },
+          celery_workers: { status: "ok", required: true, worker_count: 2, missing_queues: [] },
+        },
+      }),
+      metrics: createMetrics(),
+    });
+
+    expect(model.components.find((component) => component.id === "serp")?.detail).toBe(
+      "http://127.0.0.1:8888; проверка готовности: http://127.0.0.1:8888/healthz.",
+    );
+  });
+
   it("surfaces missing workers and stuck queues with recovery guidance", () => {
     const model = buildRuntimeHealthModel({
       live: createLiveness(),

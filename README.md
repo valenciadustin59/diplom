@@ -155,10 +155,12 @@ npm start
 Команда:
 
 - поднимает `SearxNG` и `Redis`;
-- проверяет доступность `SearxNG`;
+- проверяет доступность `SearxNG` через лёгкий endpoint `/healthz`, не выполняя поисковый запрос и не расходуя лимиты внешних search engines;
 - запускает backend API;
 - запускает frontend;
 - запускает четыре worker-профиля: `pipeline`, `network`, `heavy_analysis`, `cpu_ml`.
+
+Локальный `infra/searxng/settings.yml` фиксирует для dev-аудитов стабильный search engine `presearch`. Это снижает риск CAPTCHA/403 от движков, которые SearXNG включает по умолчанию, и делает сбор конкурентов устойчивее для демонстрации.
 
 Это рекомендуемый режим для полноценного аудита и для демонстрации распределённой архитектуры.
 
@@ -185,8 +187,10 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 
 - `GET /health/live` показывает, что процесс API жив.
 - `GET /health/ready` возвращает `200`, когда готовы БД, Redis, воркеры и нужные очереди.
+- Проверка SearXNG внутри `GET /health/ready` ходит в `/healthz`, а не в `/search`, чтобы панель состояния не тратила поисковые лимиты и не ломала сбор конкурентов частым polling.
 - `GET /health/ready` может вернуть `503`, если распределённый стек не готов.
 - `GET /health/metrics` показывает накопление задач в очередях, нагрузку очередей, активность воркеров и алерты рабочего стека.
+- Локальный `GET /health/metrics` может показывать `degraded`, если в SQLite остались старые audit rows со статусом `processing`; для фактической готовности нового запуска сначала смотрите `GET /health/ready` и покрытие очередей воркерами.
 
 ## Разница между `npm run dev` и `npm run dev:full`
 
@@ -206,6 +210,8 @@ cd E:\codexPROJ\diplom
 npm run searxng:up
 npm run searxng:check
 ```
+
+`npm run searxng:check` проверяет только `/healthz`. Реальную выдачу конкурентов проверяет сам audit pipeline на этапе `competitors`.
 
 Остановка:
 

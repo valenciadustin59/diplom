@@ -1,4 +1,8 @@
-use_default_settings: true
+# Keep local SERP collection on a stable engine for diploma/dev audits.
+use_default_settings:
+  engines:
+    keep_only:
+      - presearch
 
 general:
   instance_name: "Diplom Local SearxNG"
@@ -20,3 +24,12 @@ server:
 
 redis:
   url: redis://redis:6379/0
+
+engines:
+  - name: presearch
+    engine: presearch
+    search_type: search
+    categories: [general, web]
+    shortcut: ps
+    timeout: 8.0
+    disabled: false

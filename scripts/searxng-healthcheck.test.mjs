@@ -27,11 +27,11 @@ test("checkWithRetry retries until SearxNG becomes ready", async () => {
         ok: true,
         headers: {
           get(name) {
-            return name === "content-type" ? "application/json" : null;
+            return name === "content-type" ? "text/plain" : null;
           },
         },
-        async json() {
-          return { results: [{ url: "https://example.com" }] };
+        async text() {
+          return "OK";
         },
       };
     },
@@ -39,7 +39,7 @@ test("checkWithRetry retries until SearxNG becomes ready", async () => {
 
   assert.equal(result.status, "ok");
   assert.equal(result.baseUrl, "http://127.0.0.1:8888");
-  assert.equal(result.resultsCount, 1);
+  assert.equal(result.healthEndpoint, "http://127.0.0.1:8888/healthz");
   assert.equal(result.attemptsUsed, 3);
   assert.deepEqual(observedSleeps, [5, 5]);
 });

@@ -398,13 +398,14 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 ## Последняя runtime smoke-проверка
 
-Последняя проверка полного локального stack после запуска Docker Desktop выполнялась `2026-04-24`:
+Последняя проверка полного локального stack выполнялась `2026-04-30` после фикса SearXNG readiness:
 
 - `npm start` поднял `Redis`, `SearxNG`, backend, frontend и четыре Celery worker-профиля;
 - frontend отвечал на `http://127.0.0.1:5173/`;
 - `GET /health/live` вернул `200 OK`;
-- `GET /health/ready` вернул `200 OK` и показал workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml`;
-- smoke audit `seo audit` / `https://example.com/` / `top_n=2` завершился со status `completed`, score `48.3578`, `2` competitors и `26` recommendations.
+- `GET /health/ready` вернул `200 OK`, проверил SearXNG через `/healthz` и показал workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml`;
+- локальный `infra/searxng/settings.yml` фиксирует stable engine `presearch`, потому что default SearXNG engines часто дают CAPTCHA/403 при частых dev-проверках;
+- smoke audit `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=3` завершился со status `completed`, score `57.2903`, `3` competitors и без warnings.
 
 Локальный `GET /health/metrics` может показывать `degraded`, если в игнорируемой SQLite БД остались старые audit rows со статусом `processing`. Это не означает, что текущий worker stack не поднялся: для готовности distributed runtime сначала смотреть `GET /health/ready` и queue/worker statuses внутри metrics.
 

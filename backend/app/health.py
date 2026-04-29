@@ -263,27 +263,16 @@ def check_serp_health(settings: Settings) -> ComponentHealth:
     base_url = settings.searxng_base_url.rstrip("/")
     try:
         with httpx.Client(timeout=min(settings.search_timeout, 5.0), follow_redirects=True) as client:
-            response = client.get(
-                f"{base_url}/search",
-                params={
-                    "q": "healthcheck",
-                    "format": "json",
-                    "categories": "general",
-                    "language": settings.searxng_language,
-                },
-            )
+            response = client.get(f"{base_url}/healthz")
             response.raise_for_status()
-            payload = response.json()
 
-        results = payload.get("results", []) if isinstance(payload, dict) else []
-        results_count = len(results) if isinstance(results, list) else 0
         return ComponentHealth(
             status="ok",
             required=True,
             details={
                 "provider": settings.serp_provider,
                 "base_url": base_url,
-                "results_count": results_count,
+                "health_endpoint": f"{base_url}/healthz",
             },
         )
     except Exception as exc:  # pragma: no cover - external network dependency

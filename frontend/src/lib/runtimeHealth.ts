@@ -226,6 +226,13 @@ function getHealthCheckDetail(check: RuntimeHealthCheck | undefined, fallback: s
     return brokerUrl;
   }
   const baseUrl = asString(check.base_url);
+  const healthEndpoint = asString(check.health_endpoint);
+  if (baseUrl && healthEndpoint) {
+    return `${baseUrl}; проверка готовности: ${healthEndpoint}.`;
+  }
+  if (healthEndpoint) {
+    return healthEndpoint;
+  }
   if (baseUrl) {
     return baseUrl;
   }

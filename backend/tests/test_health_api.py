@@ -12,6 +12,7 @@ from app.health import (
     build_queue_pressure_snapshots,
     build_readiness_payload,
     check_database_health,
+    check_serp_health,
     collect_broker_runtime_metrics,
     collect_database_runtime_metrics,
     collect_worker_runtime_metrics,
@@ -368,6 +369,82 @@ def test_build_readiness_payload_fails_when_searxng_is_required_but_not_configur
     assert payload["status"] == "not_ready"
     assert payload["checks"]["serp"]["status"] == "error"
     assert payload["checks"]["serp"]["error"] == "SEARXNG_BASE_URL is not configured."
+
+
+def test_check_serp_health_uses_lightweight_health_endpoint(monkeypatch: pytest.MonkeyPatch):
+    request: dict[str, object] = {}
+
+    class DummyResponse:
+        def raise_for_status(self) -> None:
+            request["raise_for_status_called"] = True
+
+    class DummyClient:
+        def __init__(self, *args, **kwargs):
+            request["timeout"] = kwargs.get("timeout")
+            request["follow_redirects"] = kwargs.get("follow_redirects")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def get(self, url: str, **kwargs):
+            request["url"] = url
+            request["kwargs"] = kwargs
+            return DummyResponse()
+
+    monkeypatch.setattr("app.health.httpx.Client", DummyClient)
+
+    health = check_serp_health(
+        Settings(
+            serp_provider="searxng",
+            searxng_base_url="http://searx.test/",
+            search_timeout=20.0,
+        )
+    )
+
+    assert health.status == "ok"
+    assert health.details["base_url"] == "http://searx.test"
+    assert health.details["health_endpoint"] == "http://searx.test/healthz"
+    assert request["url"] == "http://searx.test/healthz"
+    assert request["kwargs"] == {}
+    assert request["raise_for_status_called"] is True
+
+
+def test_check_serp_health_reports_health_endpoint_error(monkeypatch: pytest.MonkeyPatch):
+    request: dict[str, object] = {}
+
+    class DummyClient:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def get(self, url: str, **kwargs):
+            request["url"] = url
+            request["kwargs"] = kwargs
+            raise RuntimeError("healthz unavailable")
+
+    monkeypatch.setattr("app.health.httpx.Client", DummyClient)
+
+    health = check_serp_health(
+        Settings(
+            serp_provider="searxng",
+            searxng_base_url="http://searx.test/",
+            search_timeout=20.0,
+        )
+    )
+
+    assert health.status == "error"
+    assert health.details["base_url"] == "http://searx.test"
+    assert health.details["error"] == "healthz unavailable"
+    assert request["url"] == "http://searx.test/healthz"
+    assert request["kwargs"] == {}
 
 
 def test_check_database_health_uses_runtime_settings_database_url(tmp_path):
