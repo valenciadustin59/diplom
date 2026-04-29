@@ -59,24 +59,24 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
       </div>
       <div className="timeline-stage-card__heading">
         <h3>{stage.label}</h3>
-        {stage.isCriticalPath ? <span className="timeline-badge">Runtime contributor</span> : null}
+        {stage.isCriticalPath ? <span className="timeline-badge">Вклад в критический путь</span> : null}
       </div>
       <p>{stage.description}</p>
       <dl className="timeline-stage-card__metrics">
         <div>
-          <dt>Queue</dt>
+          <dt>Очередь</dt>
           <dd>{stage.queueLabel}</dd>
         </div>
         <div>
-          <dt>Duration</dt>
+          <dt>Длительность</dt>
           <dd>{stage.durationLabel}</dd>
         </div>
         <div>
-          <dt>Events</dt>
+          <dt>События</dt>
           <dd>{stage.eventCount}</dd>
         </div>
         <div>
-          <dt>Latest</dt>
+          <dt>Последнее</dt>
           <dd>{stage.latestEventLabel}</dd>
         </div>
       </dl>
@@ -87,8 +87,8 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
 function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
   return (
     <Card
-      title="Fan-out stages"
-      subtitle="Показывает все найденные parallel stages; backend diagnostics может выбрать один fan_out, поэтому UI также выводит fan-out из raw events."
+      title="Параллельные ветки (fan-out)"
+      subtitle="Показывает все найденные параллельные stages. Backend diagnostics может выбрать один fan_out, поэтому UI дополнительно выводит fan-out по raw events."
     >
       {fanOutStages.length > 0 ? (
         <div className="timeline-fanout">
@@ -96,32 +96,32 @@ function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
             <article key={fanOut.stage} className="timeline-fanout__stage">
               <div className="timeline-fanout__summary">
                 <span className="eyebrow-pill">{fanOut.stageLabel}</span>
-                <strong>{fanOut.branchCount} branches</strong>
+                <strong>{fanOut.branchCount} веток</strong>
                 <p>{fanOut.note}</p>
               </div>
               <div className="metric-strip timeline-fanout__metrics">
                 <div className="metric-box">
-                  <span className="metric-box__label">Dispatched</span>
+                  <span className="metric-box__label">Отправлено</span>
                   <strong className="metric-box__value">{fanOut.dispatchCount}</strong>
                 </div>
                 <div className="metric-box">
-                  <span className="metric-box__label">Terminal</span>
+                  <span className="metric-box__label">Завершено веток</span>
                   <strong className="metric-box__value">{fanOut.terminalCount}</strong>
                 </div>
                 <div className="metric-box">
-                  <span className="metric-box__label">In flight</span>
+                  <span className="metric-box__label">В работе</span>
                   <strong className="metric-box__value">{fanOut.inFlightCount}</strong>
                 </div>
                 <div className="metric-box">
-                  <span className="metric-box__label">Max branch</span>
+                  <span className="metric-box__label">Самая долгая ветка</span>
                   <strong className="metric-box__value">{fanOut.maxDurationLabel}</strong>
                 </div>
                 <div className="metric-box">
-                  <span className="metric-box__label">Average branch</span>
+                  <span className="metric-box__label">Средняя ветка</span>
                   <strong className="metric-box__value">{fanOut.averageDurationLabel}</strong>
                 </div>
                 <div className="metric-box">
-                  <span className="metric-box__label">Critical contribution</span>
+                  <span className="metric-box__label">Вклад в критический путь</span>
                   <strong className="metric-box__value">{fanOut.criticalPathDurationLabel}</strong>
                 </div>
               </div>
@@ -130,7 +130,7 @@ function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
         </div>
       ) : (
         <div className="empty-state">
-          Fan-out в этом запуске не найден или диагностика ещё не успела получить competitor branch events.
+          Параллельные ветки в этом запуске не найдены или диагностика ещё не успела получить события веток конкурентов.
         </div>
       )}
     </Card>
@@ -140,20 +140,20 @@ function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
 function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
   return (
     <Card
-      title="Stage diagnostics"
+      title="Диагностика этапов"
       subtitle="Агрегированные счётчики по каждому логическому этапу audit pipeline."
     >
       <div className="report-table-shell">
         <table className="report-table timeline-table">
           <thead>
             <tr>
-              <th>Stage</th>
-              <th>Status</th>
-              <th>Queue</th>
-              <th>Started / terminal</th>
-              <th>Completed / failed</th>
-              <th>Duration</th>
-              <th>Runtime contribution</th>
+              <th>Этап</th>
+              <th>Статус</th>
+              <th>Очередь</th>
+              <th>Запущено / завершено</th>
+              <th>Успешно / ошибок</th>
+              <th>Длительность</th>
+              <th>Вклад в runtime</th>
             </tr>
           </thead>
           <tbody>
@@ -171,7 +171,7 @@ function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
                 <td>{stage.completedCount} / {stage.failedCount + stage.abortedCount}</td>
                 <td>
                   <strong>{stage.durationLabel}</strong>
-                  <span className="timeline-table__muted">max {stage.maxDurationLabel}</span>
+                  <span className="timeline-table__muted">макс. {stage.maxDurationLabel}</span>
                 </td>
                 <td>
                   <strong>{stage.criticalPathDurationLabel}</strong>
@@ -189,20 +189,20 @@ function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
 function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
   return (
     <Card
-      title="Event stream"
-      subtitle="Raw events из backend event log. Порядок строк сохраняет backend event-log order; в parallel branches timestamps могут идти не строго по времени."
+      title="Поток событий"
+      subtitle="Сырые события из backend event log. Порядок строк сохраняет порядок записи событий; в параллельных ветках timestamps могут идти не строго по времени."
     >
       {events.length > 0 ? (
         <div className="report-table-shell timeline-event-stream">
           <table className="report-table timeline-table">
             <thead>
               <tr>
-                <th>Time</th>
-                <th>Stage</th>
-                <th>Event</th>
-                <th>Duration</th>
-                <th>Queue</th>
-                <th>Details</th>
+                <th>Время</th>
+                <th>Этап</th>
+                <th>Событие</th>
+                <th>Длительность</th>
+                <th>Очередь</th>
+                <th>Детали</th>
               </tr>
             </thead>
             <tbody>
@@ -226,7 +226,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
         </div>
       ) : (
         <div className="empty-state">
-          Raw event stream пока недоступен. Stage diagnostics выше остаются источником aggregate runtime evidence.
+          Поток сырых событий пока недоступен. Диагностика этапов выше остаётся источником агрегированной runtime evidence.
         </div>
       )}
     </Card>
@@ -264,13 +264,13 @@ export function AuditTimelinePage({
             <span className="eyebrow-pill">Таймлайн выполнения аудита</span>
             <h2 className="timeline-hero__title">{model.title}</h2>
             <p className="timeline-hero__text">
-              Visual trace of the distributed Celery pipeline: queues, worker stages, fan-out branches, warnings,
-              failures and the critical-path contribution estimate reported by diagnostics.
+              Наглядный след распределённого Celery pipeline: очереди, этапы worker'ов, параллельные fan-out ветки,
+              предупреждения, ошибки и оценка вклада в критический путь из диагностики.
             </p>
             <div className="workspace-meta">
-              <span className="workspace-meta__item">Status: {model.statusLabel}</span>
-              <span className="workspace-meta__item">Processing: {model.processingVersionLabel}</span>
-              <span className="workspace-meta__item">Events: {model.rangeLabel}</span>
+              <span className="workspace-meta__item">Статус: {model.statusLabel}</span>
+              <span className="workspace-meta__item">Версия обработки: {model.processingVersionLabel}</span>
+              <span className="workspace-meta__item">События: {model.rangeLabel}</span>
               <span className="workspace-meta__item">{model.targetUrl}</span>
             </div>
           </div>
@@ -279,13 +279,13 @@ export function AuditTimelinePage({
 
       {loading && isInFlight ? (
         <div className="feedback-banner feedback-banner--info">
-          Timeline обновляется автоматически, пока аудит находится в очереди или обработке.
+          Таймлайн обновляется автоматически, пока аудит находится в очереди или обработке.
         </div>
       ) : null}
       {error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
       {model.failure ? (
         <div className="feedback-banner feedback-banner--error">
-          <strong>Pipeline failed at {model.failure.stageLabel}</strong>
+          <strong>Pipeline остановился на этапе: {model.failure.stageLabel}</strong>
           <div>{model.failure.message}</div>
           {model.failure.code ? <div>Code: {model.failure.code}</div> : null}
           {model.failure.details.map((detail) => (
@@ -307,19 +307,19 @@ export function AuditTimelinePage({
 
       {!model.hasData ? (
         <Card
-          title="Timeline diagnostics пока недоступны"
-          subtitle="Для старых аудитов event log может отсутствовать, а для новых queued runs события появятся после первого worker stage."
+          title="Диагностика таймлайна пока недоступна"
+          subtitle="Для старых аудитов event log может отсутствовать, а для новых запусков в очереди события появятся после первого этапа worker'а."
         >
           <div className="empty-state">
-            Откройте аудит после завершения или дождитесь первого события pipeline, чтобы увидеть stage lifecycle,
-            очереди, fan-out и critical-path contribution hints.
+            Откройте аудит после завершения или дождитесь первого события pipeline, чтобы увидеть жизненный цикл этапов,
+            очереди, fan-out и подсказки по вкладу в критический путь.
           </div>
         </Card>
       ) : (
         <>
           <Card
-            title="Stage lifecycle"
-            subtitle="Ordered view of the distributed audit execution stages. Runtime contributor marks stages included in backend critical-path contribution diagnostics, not an exclusive single route."
+            title="Жизненный цикл этапов"
+            subtitle="Упорядоченный вид этапов распределённого аудита. Бейдж показывает stages, включённые в backend diagnostics вклада в критический путь, а не единственный эксклюзивный маршрут."
           >
             <div className="timeline-stage-grid">
               {model.stageRows.map((stage, index) => (

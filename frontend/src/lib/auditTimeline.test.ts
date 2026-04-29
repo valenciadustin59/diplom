@@ -208,8 +208,8 @@ describe("audit timeline model", () => {
 
     const stageNames = model.stageRows.map((stage) => stage.stage);
     expect(stageNames.indexOf("heavy_analysis")).toBeLessThan(stageNames.indexOf("competitor_analysis"));
-    expect(model.summaryMetrics.find((metric) => metric.label === "Critical path")?.value).toBe("7 s");
-    expect(model.summaryMetrics.find((metric) => metric.label === "Critical path")?.note).toContain("Contribution");
+    expect(model.summaryMetrics.find((metric) => metric.label === "Критический путь")?.value).toBe("7 с");
+    expect(model.summaryMetrics.find((metric) => metric.label === "Критический путь")?.note).toContain("Оценка");
 
     const heavyAnalysis = model.stageRows.find((stage) => stage.stage === "heavy_analysis");
     expect(heavyAnalysis?.queueLabel).toBe("audits.heavy_analysis");
@@ -229,8 +229,8 @@ describe("audit timeline model", () => {
     expect(model.fanOut?.stage).toBe("competitor_analysis");
     expect(model.fanOutStages).toHaveLength(1);
     expect(model.fanOut?.branchCount).toBe(2);
-    expect(model.fanOut?.maxDurationLabel).toBe("4 s");
-    expect(model.fanOut?.note).toContain("slowest parallel branch");
+    expect(model.fanOut?.maxDurationLabel).toBe("4 с");
+    expect(model.fanOut?.note).toContain("самую долгую");
   });
 
   it("surfaces every observed fan-out stage when diagnostics names only one", () => {

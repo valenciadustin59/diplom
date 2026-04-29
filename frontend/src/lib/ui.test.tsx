@@ -523,9 +523,9 @@ describe("AuditWorkspace", () => {
     );
 
     expect(markup).toContain("Таймлайн выполнения аудита");
-    expect(markup).toContain("Critical path");
-    expect(markup).toContain("Fan-out");
-    expect(markup).toContain("Heavy analysis");
+    expect(markup).toContain("Критический путь");
+    expect(markup).toContain("Параллельные ветки");
+    expect(markup).toContain("Тяжёлый анализ");
     expect(markup).toContain("audits.heavy_analysis");
   });
 

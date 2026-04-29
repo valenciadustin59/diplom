@@ -137,84 +137,84 @@ const TERMINAL_EVENTS = new Set(["completed", "failed", "aborted"]);
 const FAN_OUT_STAGES = new Set(["competitor_page", "competitor_analysis"]);
 
 const STAGE_LABELS: Record<string, string> = {
-  pipeline: "Pipeline",
-  fetch: "Target fetch",
-  heavy_analysis: "Heavy analysis",
-  features: "Feature extraction",
-  scoring: "Scoring",
-  competitors: "SERP competitors",
-  competitor_page: "Competitor fetch",
-  competitor_analysis: "Competitor analysis",
-  competitor_aggregation: "Competitor aggregation",
-  recommendations: "Recommendations",
-  finalize: "Finalize",
+  pipeline: "Конвейер аудита",
+  fetch: "Загрузка target",
+  heavy_analysis: "Тяжёлый анализ",
+  features: "Извлечение признаков",
+  scoring: "Расчёт score",
+  competitors: "Поиск конкурентов",
+  competitor_page: "Загрузка конкурентов",
+  competitor_analysis: "Анализ конкурентов",
+  competitor_aggregation: "Сводка конкурентов",
+  recommendations: "Рекомендации",
+  finalize: "Финализация",
 };
 
 const STAGE_DESCRIPTIONS: Record<string, string> = {
-  pipeline: "Parent orchestrator that starts and finalizes the distributed audit run.",
-  fetch: "Loads the target landing page and stores fetch diagnostics.",
-  heavy_analysis: "Runs deterministic content analysis and schema-level SEO checks.",
-  features: "Extracts structured ranking, semantic, technical and trust signals.",
-  scoring: "Combines rule-based and ML-calibrated signals into the final score.",
-  competitors: "Collects SERP competitors and plans branch work.",
-  competitor_page: "Fan-out fetch tasks for competitor landing pages.",
-  competitor_analysis: "Fan-out analysis tasks for successfully fetched competitors.",
-  competitor_aggregation: "Aggregates competitor branch outcomes back into one audit context.",
-  recommendations: "Builds the recommendation backlog from target and competitor evidence.",
-  finalize: "Persists terminal audit status, score, warnings and summary counts.",
+  pipeline: "Родительский orchestrator запускает и завершает распределённый аудит.",
+  fetch: "Загружает целевую посадочную страницу и сохраняет fetch-диагностику.",
+  heavy_analysis: "Выполняет тяжёлый анализ контента и SEO-проверки по сохранённому snapshot.",
+  features: "Извлекает структурированные ranking, semantic, technical и trust signals.",
+  scoring: "Собирает rule-based и ML-сигналы в итоговый score.",
+  competitors: "Собирает конкурентов из SERP и планирует параллельные ветки.",
+  competitor_page: "Fan-out задачи загружают посадочные страницы конкурентов.",
+  competitor_analysis: "Fan-out задачи анализируют успешно загруженных конкурентов.",
+  competitor_aggregation: "Собирает результаты конкурентных веток обратно в один аудит.",
+  recommendations: "Формирует backlog рекомендаций из target и competitor evidence.",
+  finalize: "Фиксирует финальный статус, score, warnings и summary counts.",
 };
 
 const EVENT_LABELS: Record<string, string> = {
-  dispatched: "Dispatched",
-  started: "Started",
-  completed: "Completed",
-  failed: "Failed",
-  aborted: "Aborted",
+  dispatched: "Отправлено в очередь",
+  started: "Запущено worker'ом",
+  completed: "Завершено",
+  failed: "Ошибка",
+  aborted: "Прервано",
 };
 
 const STAGE_STATUS_LABELS: Record<TimelineStageStatus, string> = {
-  pending: "Not started",
-  dispatched: "Dispatched",
-  running: "Running",
-  completed: "Completed",
-  failed: "Failed",
-  aborted: "Aborted",
+  pending: "Не запущено",
+  dispatched: "В очереди",
+  running: "Выполняется",
+  completed: "Завершено",
+  failed: "Ошибка",
+  aborted: "Прервано",
 };
 
 const CRITICAL_PATH_MODE_LABELS: Record<string, string> = {
-  serial_sum: "serial sum",
-  fan_out_max: "fan-out max",
+  serial_sum: "сумма последовательных задач",
+  fan_out_max: "самая долгая fan-out ветка",
 };
 
 const DETAIL_LABELS: Record<string, string> = {
-  queue: "Queue",
-  status: "Status",
-  final_status: "Final status",
+  queue: "Очередь",
+  status: "Статус",
+  final_status: "Финальный статус",
   fetch_method: "Fetch",
-  fetch_status: "Fetch status",
-  error_code: "Error",
+  fetch_status: "Статус fetch",
+  error_code: "Ошибка",
   http_status: "HTTP",
-  text_length: "Text length",
-  text_length_chars: "Text chars",
-  schema_version: "Schema",
-  overall_score: "Overall score",
-  risk_level: "Risk",
-  feature_count: "Features",
-  final_score: "Final score",
+  text_length: "Длина текста",
+  text_length_chars: "Символов текста",
+  schema_version: "Схема",
+  overall_score: "Общий score",
+  risk_level: "Риск",
+  feature_count: "Признаков",
+  final_score: "Итоговый score",
   rule_score: "Rule score",
   ml_score: "ML score",
-  model_source: "Model",
-  competitors_found: "Found",
-  competitor_tasks_planned: "Planned branches",
-  competitors_analyzed: "Analyzed",
-  competitors_failed: "Failed competitors",
-  recommendations_count: "Recommendations",
+  model_source: "Модель",
+  competitors_found: "Найдено",
+  competitor_tasks_planned: "Запланировано веток",
+  competitors_analyzed: "Проанализировано",
+  competitors_failed: "Ошибки конкурентов",
+  recommendations_count: "Рекомендаций",
   warnings_count: "Warnings",
-  competitor_id: "Competitor ID",
-  domain: "Domain",
+  competitor_id: "ID конкурента",
+  domain: "Домен",
   score: "Score",
-  semantic_similarity: "Semantic similarity",
-  intent_alignment_score: "Intent alignment",
+  semantic_similarity: "Семантическая близость",
+  intent_alignment_score: "Соответствие intent",
 };
 
 const PRIORITY_DETAIL_KEYS = [
@@ -272,12 +272,12 @@ export function formatTimelineDuration(ms: number | null | undefined): string {
     return "—";
   }
   if (ms < 1000) {
-    return `${Math.round(ms)} ms`;
+    return `${Math.round(ms)} мс`;
   }
   if (ms < 60_000) {
-    return `${Math.round(ms / 100) / 10} s`;
+    return `${Math.round(ms / 100) / 10} с`;
   }
-  return `${Math.round(ms / 6000) / 10} min`;
+  return `${Math.round(ms / 6000) / 10} мин`;
 }
 
 function formatDateTime(value: string | null | undefined): string {
@@ -325,7 +325,7 @@ export function getTimelineStageLabel(stage: string | null | undefined): string 
 }
 
 function getStageDescription(stage: string): string {
-  return STAGE_DESCRIPTIONS[stage] ?? "Additional backend stage captured by the audit event log.";
+  return STAGE_DESCRIPTIONS[stage] ?? "Дополнительный backend stage из event log аудита.";
 }
 
 function getStageOrderIndex(stage: string): number {
@@ -636,24 +636,24 @@ function buildSummaryMetrics(
   const totalDurationMs = diagnostics?.total_duration_ms ?? getEventRangeDurationMs(events);
   return [
     {
-      label: "Timeline events",
+      label: "События таймлайна",
       value: formatCount(getRawEventCount(diagnostics, events)),
-      note: "Raw audit event log entries for the selected processing version.",
+      note: "Записи event log для выбранной версии обработки аудита.",
     },
     {
-      label: "Dispatches",
+      label: "Отправлено в очереди",
       value: formatCount(getRawDispatchCount(diagnostics, events)),
-      note: "Stage tasks sent to Celery queues.",
+      note: "Сколько stage-задач было отправлено в Celery queues.",
     },
     {
-      label: "Total duration",
+      label: "Общая длительность",
       value: formatTimelineDuration(totalDurationMs),
-      note: "Wall-clock distance between first and last audit event.",
+      note: "Wall-clock время между первым и последним событием аудита.",
     },
     {
-      label: "Critical path",
+      label: "Критический путь",
       value: formatTimelineDuration(diagnostics?.critical_path_duration_ms),
-      note: `Contribution estimate from backend diagnostics; terminal event: ${terminalStage} / ${terminalEvent}.`,
+      note: `Оценка вклада из backend diagnostics; финальное событие: ${terminalStage} / ${terminalEvent}.`,
     },
   ];
 }
@@ -673,7 +673,7 @@ function buildFanOutFromDiagnostics(fanOut: AuditTimelineFanOut): TimelineFanOut
     averageDurationLabel: formatTimelineDuration(fanOut.average_duration_ms),
     maxDurationLabel: formatTimelineDuration(fanOut.max_duration_ms),
     criticalPathDurationLabel: formatTimelineDuration(fanOut.critical_path_duration_ms),
-    note: "Critical path uses the slowest parallel branch, not the sum of all fan-out work.",
+    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех fan-out задач.",
   };
 }
 
@@ -690,7 +690,7 @@ function buildFanOutFromStageRow(row: TimelineStageRow): TimelineFanOutModel {
     averageDurationLabel: row.averageDurationLabel,
     maxDurationLabel: row.maxDurationLabel,
     criticalPathDurationLabel: row.criticalPathDurationLabel,
-    note: "Critical path uses the slowest parallel branch, not the sum of all fan-out work.",
+    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех fan-out задач.",
   };
 }
 
