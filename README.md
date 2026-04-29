@@ -25,7 +25,7 @@
 - выдача рекомендаций по улучшению страницы;
 - единый audit report dashboard с экспортом в печатный HTML/PDF-like view, HTML и Markdown;
 - timeline событий аудита и диагностика критического пути;
-- runtime telemetry для очередей, workers, backlog и admission control;
+- диагностика рабочего стека для очередей, воркеров, накопления задач и контроля допуска;
 - benchmark/reporting workflow для демонстрации распределённого исполнения.
 
 ## Архитектура
@@ -78,7 +78,7 @@
 Завершённые волны проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, per-stage queues, fan-out, health/metrics, diagnostics, admission control и benchmark evidence.
-- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI и runtime status/queue health UI.
+- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI и панель состояния рабочего стека/очередей.
 
 Итог: проект уже закрывает ключевые требования дипломной темы — web-приложение машинного обучения с доказуемым распределённым runtime.
 
@@ -86,7 +86,7 @@
 
 - `D21` / `#40` — completed: audit report and export dashboard.
 - `D22` / `#41` — completed: audit execution timeline UI.
-- `D23` / `#42` — completed: runtime status and queue health UI.
+- `D23` / `#42` — completed: панель состояния рабочего стека и здоровья очередей.
 - `D24` / `#43` — audit history management.
 - `D25` / `#44` — recommendation action tracking.
 - `D26` / `#45` — interface copy and terminology polish.
@@ -99,10 +99,10 @@
 
 - `D1-D4` — stage-based pipeline, per-stage queues, distributed fan-out, retry-safe orchestration.
 - `D5-D8` — `health/live`, `health/ready`, `health/metrics`, persistent event log и timeline diagnostics.
-- `D9-D11` — queue pressure detector, admission control под нагрузкой, worker topology profiles.
+- `D9-D11` — детектор нагрузки очередей, контроль допуска под нагрузкой, профили топологии воркеров.
 - `D12` — benchmark/reporting workflow для измеримого подтверждения распределённого runtime.
 
-Итог: backlog `D1-D12` завершён. После `D23` следующий практический фокус — не новый backend-runtime слой, а audit history management (`D24` / `#43`), который развивает продуктовый workflow вокруг уже существующих аудитов.
+Итог: backlog `D1-D12` завершён. После `D23` следующий практический фокус — не новый серверный слой исполнения, а audit history management (`D24` / `#43`), который развивает продуктовый workflow вокруг уже существующих аудитов.
 
 ## Требования
 
@@ -171,7 +171,7 @@ npm run site:check
 
 Команда выполняет `frontend` build и проверяет `frontend/dist/index.html`, подключённые JS/CSS assets и основные тексты интерфейса: запуск аудита, историю аудитов, рабочее пространство, конкурентов, рекомендации, score и ML-калибровку.
 
-### 4. Проверить готовность runtime
+### 4. Проверить готовность рабочего стека
 
 ```powershell
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/live"
@@ -182,9 +182,9 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 Что важно:
 
 - `GET /health/live` показывает, что процесс API жив.
-- `GET /health/ready` возвращает `200`, когда готовы БД, Redis, workers и нужные очереди.
-- `GET /health/ready` может вернуть `503`, если distributed runtime не готов.
-- `GET /health/metrics` показывает backlog очередей, queue pressure, worker activity и runtime alerts.
+- `GET /health/ready` возвращает `200`, когда готовы БД, Redis, воркеры и нужные очереди.
+- `GET /health/ready` может вернуть `503`, если распределённый стек не готов.
+- `GET /health/metrics` показывает накопление задач в очередях, нагрузку очередей, активность воркеров и алерты рабочего стека.
 
 ## Разница между `npm run dev` и `npm run dev:full`
 
@@ -266,8 +266,8 @@ cd E:\codexPROJ\diplom\backend
 
 - `GET /health` — простой legacy healthcheck.
 - `GET /health/live` — liveness API.
-- `GET /health/ready` — readiness distributed stack.
-- `GET /health/metrics` — runtime telemetry по очередям, workers и backlog.
+- `GET /health/ready` — готовность распределённого стека.
+- `GET /health/metrics` — диагностика очередей, воркеров и накопления задач.
 
 ### Audits
 
@@ -279,7 +279,7 @@ cd E:\codexPROJ\diplom\backend
 - `GET /audits/{audit_id}/events` — timeline событий.
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
 
-Важно: начиная с `D10`, `POST /audits` может возвращать `503`, если runtime capacity деградирована и admission control временно отклоняет новые аудиты.
+Важно: начиная с `D10`, `POST /audits` может возвращать `503`, если пропускная способность рабочего стека деградировала и контроль допуска временно отклоняет новые аудиты.
 
 ## Benchmark workflow (`D12`)
 
@@ -305,7 +305,7 @@ Benchmark использует:
 - `POST /audits` — admission и запуск аудитов;
 - `GET /audits/{audit_id}` — отслеживание жизненного цикла;
 - `GET /audits/{audit_id}/events/diagnostics` — latency и critical path;
-- `GET /health/metrics` — backlog, queue pressure, topology profiles, worker utilization и alerts.
+- `GET /health/metrics` — накопление задач, нагрузка очередей, профили топологии, занятость воркеров и алерты.
 
 Артефакты сохраняются в:
 
@@ -381,7 +381,7 @@ npm run test
 - `D20` - dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, queue-pressure metrics and benchmark topology-profile summary.
 - `D21` - audit report/export dashboard: вкладка `Отчёт`, компактная сводка SEO/ML/recommendation/competitor/runtime evidence, printable HTML/PDF-like view, downloadable HTML и Markdown export без повторного анализа страницы.
 - `D22` - audit execution timeline UI: вкладка `Таймлайн`, raw event stream, stage lifecycle, queues, fan-out branch summary, critical path, warnings/failure context поверх существующих events APIs.
-- `D23` - runtime status and queue health UI: компактная панель готовности runtime на экране запуска, вкладка `Runtime` в audit workspace, health/live/ready/metrics consumption, worker profile coverage, queue pressure/backlog/stuck queues и человекочитаемые подсказки восстановления.
+- `D23` - панель состояния рабочего стека и здоровья очередей: компактная панель `Готовность рабочего стека` на экране запуска, вкладка `Стек` в audit workspace, использование `health/live`, `health/ready`, `health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и человекочитаемые подсказки восстановления.
 
 Текущая волна `D13-D23` завершена. Если нет явно выбранного GitHub issue, ближайшие открытые задачи: `D24` / `#43` history management, `D25` / `#44` recommendation action tracking, `D26` / `#45` copy polish.
 

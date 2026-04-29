@@ -95,7 +95,7 @@ const PROFILE_LABELS: Record<string, string> = {
   cpu_ml: "CPU/ML профиль",
 };
 const PROFILE_DESCRIPTIONS: Record<string, string> = {
-  pipeline: "Запускает аудит, координирует этапы и admission control.",
+  pipeline: "Запускает аудит, координирует этапы и контроль допуска.",
   network: "Обслуживает загрузку целевой страницы, поиск и сбор страниц конкурентов.",
   heavy_analysis: "Изолирует тяжёлый анализ страницы, семантику и ML-анализ конкурентов.",
   cpu_ml: "Собирает признаки, считает оценку, рекомендации и финализацию.",
@@ -114,15 +114,15 @@ const PRESSURE_LABELS: Record<string, string> = {
   busy: "занята",
   waiting: "ожидает воркер",
   draining: "разбирается",
-  backlogged: "backlog",
+  backlogged: "накопление задач",
   stuck: "без воркеров",
 };
 const REASON_LABELS: Record<string, string> = {
-  inflight_without_backlog: "есть задачи в работе без backlog",
+  inflight_without_backlog: "есть задачи в работе без накопления в очереди",
   no_workers_serving_queue: "очередь не обслуживается активными воркерами",
   queued_tasks_without_drain_activity: "накопились задачи без признаков разбора",
   queued_tasks_pending_pickup: "задачи ждут подхвата воркером",
-  depth_exceeds_estimated_capacity: "глубина очереди выше оценочной capacity",
+  depth_exceeds_estimated_capacity: "глубина очереди выше оценочной пропускной способности",
   queue_is_draining: "воркеры разбирают накопленные задачи",
 };
 const ALERT_LABELS: Record<string, string> = {
@@ -130,7 +130,7 @@ const ALERT_LABELS: Record<string, string> = {
   queued_audits_waiting_too_long: "Аудиты слишком долго ждут старта",
   dispatched_stages_waiting_too_long: "Этапы слишком долго ждут выполнения",
   queue_without_workers: "Очередь без воркеров",
-  queue_backlog_detected: "Backlog в очереди",
+  queue_backlog_detected: "Накопление задач в очереди",
 };
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -204,11 +204,11 @@ function getProfileLabel(profileName: string): string {
   return PROFILE_LABELS[profileName] ?? profileName;
 }
 function getProfileDescription(profileName: string, fallback: string | null | undefined): string {
-  return PROFILE_DESCRIPTIONS[profileName] ?? fallback ?? "Профиль распределённого runtime.";
+  return PROFILE_DESCRIPTIONS[profileName] ?? fallback ?? "Профиль распределённого рабочего стека.";
 }
 function getHealthCheckDetail(check: RuntimeHealthCheck | undefined, fallback: string): string {
   if (!check) {
-    return "Нет payload диагностики.";
+    return "Нет данных диагностики.";
   }
   const error = asString(check.error);
   if (error) {
@@ -270,7 +270,7 @@ function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
       status: liveStatus ?? "unknown",
       statusLabel: getStatusLabel(liveStatus),
       tone: getStatusTone(liveStatus),
-      detail: input.live ? `FastAPI отвечает, окружение: ${input.live.environment}.` : "Liveness endpoint пока недоступен.",
+      detail: input.live ? `FastAPI отвечает, окружение: ${input.live.environment}.` : "Проверка жизнеспособности пока недоступна.",
     },
     {
       id: "database",
@@ -278,7 +278,7 @@ function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
       status: checks.database?.status ?? input.metrics?.database.status ?? "unknown",
       statusLabel: getStatusLabel(checks.database?.status ?? input.metrics?.database.status),
       tone: getStatusTone(checks.database?.status ?? input.metrics?.database.status),
-      detail: getHealthCheckDetail(checks.database ?? input.metrics?.database, "SQLite/PostgreSQL доступна backend API."),
+      detail: getHealthCheckDetail(checks.database ?? input.metrics?.database, "SQLite/PostgreSQL доступна серверному API."),
     },
     {
       id: "redis",
@@ -286,7 +286,7 @@ function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
       status: brokerStatus ?? "unknown",
       statusLabel: getStatusLabel(brokerStatus),
       tone: getStatusTone(brokerStatus),
-      detail: getHealthCheckDetail(checks.redis ?? input.metrics?.broker, "Redis broker отвечает на runtime telemetry."),
+      detail: getHealthCheckDetail(checks.redis ?? input.metrics?.broker, "Брокер Redis отвечает на диагностику рабочего стека."),
     },
     {
       id: "serp",
@@ -302,7 +302,7 @@ function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
       status: checks.celery_workers?.status ?? input.metrics?.workers.status ?? "unknown",
       statusLabel: getStatusLabel(checks.celery_workers?.status ?? input.metrics?.workers.status),
       tone: getStatusTone(checks.celery_workers?.status ?? input.metrics?.workers.status),
-      detail: getHealthCheckDetail(checks.celery_workers ?? input.metrics?.workers, "Воркеры отвечают на inspect."),
+      detail: getHealthCheckDetail(checks.celery_workers ?? input.metrics?.workers, "Воркеры отвечают на диагностический опрос."),
     },
     {
       id: "queues",
@@ -311,8 +311,8 @@ function buildComponentRows(input: RuntimeHealthInput): RuntimeComponentRow[] {
       statusLabel: getStatusLabel(queuePressureStatus),
       tone: getStatusTone(queuePressureStatus),
       detail: input.metrics?.queue_pressure
-        ? `Backlog: ${(input.metrics.queue_pressure.backlogged_queues ?? []).length}, без воркеров: ${(input.metrics.queue_pressure.stuck_queues ?? []).length}.`
-        : "Queue pressure payload пока недоступен.",
+        ? `Накопление задач: ${(input.metrics.queue_pressure.backlogged_queues ?? []).length}, без воркеров: ${(input.metrics.queue_pressure.stuck_queues ?? []).length}.`
+        : "Данные нагрузки очередей пока недоступны.",
     },
   ];
 }
@@ -398,8 +398,8 @@ function buildAlertIssue(alert: Record<string, unknown>): RuntimeIssue | null {
   if (code === "queue_backlog_detected" && queue) {
     return {
       key: `${code}:${queue}`,
-      title: "Backlog в очереди",
-      detail: `Очередь ${queue} накопила ${formatCount(depth)} задач. Увеличьте воркеры профиля или дождитесь разбора backlog.`,
+      title: "Накопление задач в очереди",
+      detail: `Очередь ${queue} накопила ${formatCount(depth)} задач. Увеличьте число воркеров профиля или дождитесь разбора очереди.`,
       tone: "warning",
     };
   }
@@ -415,7 +415,7 @@ function buildAlertIssue(alert: Record<string, unknown>): RuntimeIssue | null {
     return {
       key: code,
       title: "Этапы ожидают выполнения дольше нормы",
-      detail: `${formatCount(count)} этапов ожидают воркеры. Проверьте очереди из sample в runtime telemetry.`,
+      detail: `${formatCount(count)} этапов ожидают воркеры. Проверьте очереди из примеров в диагностике рабочего стека.`,
       tone: "warning",
     };
   }
@@ -431,7 +431,7 @@ function buildAlertIssue(alert: Record<string, unknown>): RuntimeIssue | null {
   return {
     key: code,
     title: ALERT_LABELS[code] ?? code,
-    detail: `Runtime detector сообщил severity=${severity}.`,
+    detail: `Детектор рабочего стека сообщил важность=${severity}.`,
     tone: severity === "error" ? "error" : "warning",
   };
 }
@@ -483,8 +483,8 @@ function buildIssues(input: RuntimeHealthInput, profileRows: RuntimeWorkerProfil
       return [
         {
           key: `queue:backlogged:${queue.name}`,
-          title: `Backlog в ${queue.name}`,
-          detail: `Глубина ${queue.depth}, активных задач ${queue.activeTasks}. Увеличьте воркеры профиля "${queue.profileLabel}" или дождитесь освобождения capacity.`,
+          title: `Накопление задач в ${queue.name}`,
+          detail: `Глубина ${queue.depth}, активных задач ${queue.activeTasks}. Увеличьте число воркеров профиля "${queue.profileLabel}" или дождитесь освобождения пропускной способности.`,
           tone: "warning" as const,
         },
       ];
@@ -503,7 +503,7 @@ function buildIssues(input: RuntimeHealthInput, profileRows: RuntimeWorkerProfil
     : [
         {
           key: "runtime-ready",
-          title: "Runtime готов к новым аудитам",
+          title: "Рабочий стек готов к новым аудитам",
           detail: "API, Redis, SearXNG, воркеры и очереди отвечают штатно.",
           tone: "ok",
         },
@@ -520,13 +520,13 @@ function buildMetrics(input: RuntimeHealthInput, issues: RuntimeIssue[]): Runtim
     {
       label: "Готовность",
       value: ready ? "готов" : "не готов",
-      note: ready ? "Readiness допускает новые аудиты." : "Есть обязательные runtime-компоненты с ошибкой.",
+      note: ready ? "Проверка готовности допускает новые аудиты." : "Есть обязательные компоненты рабочего стека с ошибкой.",
       tone: ready ? "ok" : "error",
     },
     {
       label: "Воркеры",
       value: formatCount(workerCount),
-      note: "Активные Celery workers, отвечающие на inspect.",
+      note: "Активные Celery-воркеры, отвечающие на диагностический опрос.",
       tone: workerCount > 0 ? "ok" : "error",
     },
     {
@@ -538,7 +538,7 @@ function buildMetrics(input: RuntimeHealthInput, issues: RuntimeIssue[]): Runtim
     {
       label: "Проблемы",
       value: formatCount(issues.filter((issue) => issue.tone !== "ok").length),
-      note: `Backlog: ${backloggedQueueCount}, без воркеров: ${stuckQueueCount}.`,
+      note: `Накопление задач: ${backloggedQueueCount}, без воркеров: ${stuckQueueCount}.`,
       tone: issues.some((issue) => issue.tone === "error")
         ? "error"
         : issues.some((issue) => issue.tone === "warning")
@@ -560,13 +560,13 @@ export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealt
 
   return {
     checkedAtLabel: formatCheckedAt(checkedAt),
-    appLabel: input.live?.app_name ?? input.metrics?.app_name ?? input.readiness?.app_name ?? "backend API",
+    appLabel: input.live?.app_name ?? input.metrics?.app_name ?? input.readiness?.app_name ?? "серверный API",
     environmentLabel: input.live?.environment ?? input.metrics?.environment ?? input.readiness?.environment ?? "unknown",
     ready,
-    statusLabel: ready && statusTone === "ok" ? "Runtime готов" : ready ? "Runtime требует внимания" : "Runtime не готов",
+    statusLabel: ready && statusTone === "ok" ? "Рабочий стек готов" : ready ? "Рабочий стек требует внимания" : "Рабочий стек не готов",
     statusDetail: ready
-      ? "Стек отвечает, но queue pressure может временно ограничивать throughput."
-      : "Новые аудиты могут быть отклонены admission control до восстановления обязательных компонентов.",
+      ? "Стек отвечает, но нагрузка очередей может временно ограничивать пропускную способность."
+      : "Новые аудиты могут быть отклонены контролем допуска до восстановления обязательных компонентов.",
     statusTone,
     metrics,
     components: buildComponentRows(input),

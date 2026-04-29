@@ -59,19 +59,19 @@ function getAdmissionControlMessage(code: string | null, queueName: string | nul
   const queueSuffix = ` Очередь: ${queueName}.`;
 
   if (workerCount === 0) {
-    return `Новый аудит временно не запускается: очередь не обслуживается активными воркерами. Проверьте Runtime и запустите ${profileLabel}.${queueSuffix}`;
+    return `Новый аудит временно не запускается: очередь не обслуживается активными воркерами. Проверьте состояние стека и запустите ${profileLabel}.${queueSuffix}`;
   }
 
   if (code === "pipeline_queue_capacity_exhausted" || code === "pipeline_queue_backlog_detected") {
-    return `Новый аудит временно не запускается: входная очередь аудитов перегружена. Проверьте Runtime, дождитесь снижения backlog или запустите ${profileLabel}.${queueSuffix}`;
+    return `Новый аудит временно не запускается: входная очередь аудитов перегружена. Проверьте состояние стека, дождитесь снижения накопления задач или запустите ${profileLabel}.${queueSuffix}`;
   }
 
   if (code === "heavy_analysis_queue_capacity_exhausted") {
-    return `Новый аудит временно не запускается: очередь тяжёлого анализа перегружена или не обслуживается воркерами. Проверьте Runtime и профиль тяжёлого анализа.${queueSuffix}`;
+    return `Новый аудит временно не запускается: очередь тяжёлого анализа перегружена или не обслуживается воркерами. Проверьте состояние стека и профиль тяжёлого анализа.${queueSuffix}`;
   }
 
   if (code === "broker_runtime_telemetry_unavailable") {
-    return `Новый аудит временно не запускается: backend не смог прочитать telemetry очередей Redis/Celery. Проверьте Runtime, Redis и воркеры.${queueSuffix}`;
+    return `Новый аудит временно не запускается: сервер не смог прочитать диагностику очередей Redis/Celery. Проверьте состояние стека, Redis и воркеры.${queueSuffix}`;
   }
 
   return null;
@@ -135,7 +135,7 @@ async function request<T>(
       ...requestInit,
     });
   } catch (error) {
-    throw new ApiError("Не удалось подключиться к backend API", 0, error);
+    throw new ApiError("Не удалось подключиться к серверному API", 0, error);
   }
 
   const contentType = response.headers.get("content-type") ?? "";

@@ -24,7 +24,7 @@ function RuntimeLoadingState({ error }: { error: string | null }) {
   return (
     <>
       {error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
-      <div className="empty-state">Загружаем runtime diagnostics...</div>
+      <div className="empty-state">Загружаем диагностику рабочего стека...</div>
     </>
   );
 }
@@ -59,8 +59,8 @@ function RuntimeMetricGrid({ model }: { model: RuntimeHealthModel }) {
 export function RuntimeStatusCompactCard({ model, loading, error, onRefresh }: RuntimeStatusProps) {
   return (
     <Card
-      title="Готовность runtime"
-      subtitle="Проверяет API, Redis, SearXNG, Celery workers и очереди до запуска нового аудита."
+      title="Готовность рабочего стека"
+      subtitle="Проверяет API, Redis, SearXNG, Celery-воркеры и очереди до запуска нового аудита."
       action={<RefreshButton loading={loading} onRefresh={onRefresh} />}
       className="runtime-compact-card"
     >
@@ -89,7 +89,7 @@ export function RuntimeStatusCompactCard({ model, loading, error, onRefresh }: R
 
 function RuntimeComponentsCard({ model }: { model: RuntimeHealthModel }) {
   return (
-    <Card title="Компоненты runtime" subtitle="Readiness и telemetry обязательных компонентов distributed stack.">
+    <Card title="Компоненты рабочего стека" subtitle="Готовность и диагностика обязательных компонентов распределённого стека.">
       <div className="runtime-component-grid">
         {model.components.map((component) => (
           <article key={component.id} className={`runtime-component runtime-component--${component.tone}`}>
@@ -107,7 +107,7 @@ function RuntimeComponentsCard({ model }: { model: RuntimeHealthModel }) {
 
 function RuntimeProfilesCard({ model }: { model: RuntimeHealthModel }) {
   return (
-    <Card title="Профили воркеров" subtitle="Каноническая queue-affinity topology: каждый профиль обслуживает свой набор очередей.">
+    <Card title="Профили воркеров" subtitle="Каноническая топология привязки очередей: каждый профиль обслуживает свой набор очередей.">
       <div className="runtime-profile-grid">
         {model.workerProfiles.map((profile) => (
           <article key={profile.name} className={`runtime-profile runtime-profile--${profile.tone}`}>
@@ -125,7 +125,7 @@ function RuntimeProfilesCard({ model }: { model: RuntimeHealthModel }) {
                 <dd>{profile.workerCount}</dd>
               </div>
               <div>
-                <dt>Рекоменд. concurrency</dt>
+                <dt>Рекоменд. параллельность</dt>
                 <dd>{profile.recommendedConcurrencyLabel}</dd>
               </div>
               <div>
@@ -146,7 +146,7 @@ function RuntimeProfilesCard({ model }: { model: RuntimeHealthModel }) {
 
 function RuntimeQueuesCard({ model }: { model: RuntimeHealthModel }) {
   return (
-    <Card title="Очереди Celery" subtitle="Queue pressure, backlog, активные задачи и покрытие воркерами.">
+    <Card title="Очереди Celery" subtitle="Нагрузка очередей, накопление задач, активные задачи и покрытие воркерами.">
       <div className="report-table-shell">
         <table className="report-table runtime-queue-table">
           <thead>
@@ -176,9 +176,9 @@ function RuntimeQueuesCard({ model }: { model: RuntimeHealthModel }) {
                   <span className="timeline-table__muted">{queue.workersLabel}</span>
                 </td>
                 <td>
-                  <span>active {queue.activeTasks}</span>
+                  <span>активные {queue.activeTasks}</span>
                   <span className="timeline-table__muted">
-                    reserved {queue.reservedTasks}, scheduled {queue.scheduledTasks}, capacity {queue.availableCapacity}
+                    зарезервировано {queue.reservedTasks}, запланировано {queue.scheduledTasks}, свободно {queue.availableCapacity}
                   </span>
                 </td>
                 <td>{queue.reasonLabels.length > 0 ? queue.reasonLabels.join("; ") : "—"}</td>
@@ -197,11 +197,11 @@ export function RuntimeStatusPage({ model, loading, error, onRefresh }: RuntimeS
       <Card className="runtime-hero">
         <div className="runtime-hero__content">
           <div>
-            <span className="eyebrow-pill">Runtime status</span>
-            <h2 className="runtime-hero__title">Состояние distributed stack</h2>
+            <span className="eyebrow-pill">Состояние стека</span>
+            <h2 className="runtime-hero__title">Состояние распределённого стека</h2>
             <p className="runtime-hero__text">
-              Панель показывает, готов ли backend к новым аудитам: API, Redis broker, SearXNG, профили воркеров,
-              покрытие очередей, backlog и queue pressure.
+              Панель показывает, готов ли сервер к новым аудитам: API, брокер Redis, SearXNG, профили воркеров,
+              покрытие очередей, накопление задач и нагрузку очередей.
             </p>
             {model ? (
               <div className="workspace-meta">
@@ -221,7 +221,7 @@ export function RuntimeStatusPage({ model, loading, error, onRefresh }: RuntimeS
         <>
           {error ? <div className="feedback-banner feedback-banner--warning">{error}</div> : null}
           <RuntimeMetricGrid model={model} />
-          <Card title="Что восстановить" subtitle="Human-readable вывод по readiness, queue pressure и admission-control рискам.">
+          <Card title="Что восстановить" subtitle="Понятный вывод по готовности, нагрузке очередей и рискам контроля допуска.">
             <RuntimeIssueList issues={model.issues} />
           </Card>
           <RuntimeComponentsCard model={model} />

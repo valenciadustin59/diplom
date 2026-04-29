@@ -149,11 +149,11 @@ describe("runtime health model", () => {
       metrics: createMetrics(),
     });
 
-    expect(model.statusLabel).toBe("Runtime готов");
+    expect(model.statusLabel).toBe("Рабочий стек готов");
     expect(model.metrics.find((metric) => metric.label === "Готовность")?.value).toBe("готов");
     expect(model.workerProfiles).toHaveLength(2);
     expect(model.queues.find((queue) => queue.name === "audits.heavy_analysis")?.pressureLabel).toBe("простаивает");
-    expect(model.issues[0].title).toBe("Runtime готов к новым аудитам");
+    expect(model.issues[0].title).toBe("Рабочий стек готов к новым аудитам");
   });
 
   it("surfaces missing workers and stuck queues with recovery guidance", () => {

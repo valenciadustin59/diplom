@@ -10,7 +10,7 @@ function getErrorMessage(error: unknown): string {
   if (error instanceof Error) {
     return error.message;
   }
-  return "Не удалось загрузить runtime diagnostics";
+  return "Не удалось загрузить диагностику рабочего стека";
 }
 
 function getSettledValue<T>(result: PromiseSettledResult<T>): T | null {
@@ -43,7 +43,7 @@ export function useRuntimeHealth() {
     const metrics = getSettledValue<RuntimeMetricsResponse>(metricsResult);
 
     if (!live && !readiness && !metrics) {
-      setRuntimeError(getRejectedMessages(results).join(" ") || "Backend runtime diagnostics недоступна.");
+      setRuntimeError(getRejectedMessages(results).join(" ") || "Диагностика рабочего стека недоступна.");
       setRuntimeHealth(null);
     } else {
       setRuntimeError(getRejectedMessages(results).join(" ") || null);

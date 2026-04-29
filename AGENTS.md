@@ -69,13 +69,13 @@
 Завершённые волны текущего дипломного проекта:
 
 - `D1-D12` — distributed runtime foundation: stage-based pipeline, queue topology, fan-out, health/metrics, event log, diagnostics, admission control и benchmark evidence.
-- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI и runtime status/queue health UI.
+- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO, commercial/trust, intent-aware и SERP-relative features, dataset/model workflow, grouped recommendations UI, isolated heavy-analysis queue, audit report/export dashboard, audit execution timeline UI и панель состояния рабочего стека/очередей.
 
 Активная frontend/product wave: `D21-D26` — frontend/product layer без изменения ядра анализа:
 
 - `D21` / GitHub `#40` — completed: audit report and export dashboard;
 - `D22` / GitHub `#41` — completed: audit execution timeline UI;
-- `D23` / GitHub `#42` — completed: runtime status and queue health UI;
+- `D23` / GitHub `#42` — completed: панель состояния рабочего стека и здоровья очередей;
 - `D24` / GitHub `#43` — audit history management;
 - `D25` / GitHub `#44` — recommendation action tracking;
 - `D26` / GitHub `#45` — interface copy and terminology polish.
@@ -91,10 +91,10 @@
 - `D3` — distributed fan-out по competitor pages
 - `D4` — retry-safe / version-aware orchestration
 - `D5` — `health/live` и `health/ready`
-- `D6` — `health/metrics` и runtime telemetry
+- `D6` — `health/metrics` и диагностика рабочего стека
 - `D7` — persistent audit event log
 - `D8` — audit timeline diagnostics API
-- `D9` — queue pressure snapshots и stuck/backlogged detector
+- `D9` — снимки нагрузки очередей и детектор очередей с накоплением/без воркеров
 - `D10` — admission control и scheduling guards
 - `D11` — worker topology profiles и queue-affinity validation
 - `D12` — benchmark/reporting workflow для distributed runtime evidence
@@ -142,7 +142,7 @@
 
 - `backend/app/worker_topology_profiles.json`
 
-Эта topology валидируется через readiness и runtime metrics. Старый single all-queues worker допустим только как debugging fallback.
+Эта topology валидируется через проверку готовности и runtime metrics. Старый single all-queues worker допустим только как debugging fallback.
 
 ## Важные runtime contracts
 
@@ -165,7 +165,7 @@
 
 ### Admission semantics
 
-Начиная с `D10`, `POST /audits` может вернуть `503`, если runtime capacity деградирована. Это нормальная часть поведения системы, а не баг по умолчанию.
+Начиная с `D10`, `POST /audits` может вернуть `503`, если пропускная способность рабочего стека деградировала. Это нормальная часть поведения системы, а не баг по умолчанию.
 
 ## D12 benchmark workflow
 
@@ -264,7 +264,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D23`.
 - `D20` - completed: dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, metrics pressure visibility and benchmark topology profile summary.
 - `D21` - completed: audit report tab, client-side export dashboard, printable HTML/PDF-like view, downloadable Markdown/HTML report, compact SEO/ML/recommendation/competitor/runtime evidence summary using existing audit results and timeline diagnostics APIs.
 - `D22` - completed: audit execution timeline tab, raw audit event stream consumption, stage lifecycle model, queue/worker/fan-out/critical-path visualization and warnings/failure context over existing event diagnostics APIs.
-- `D23` - completed: runtime status and queue health UI, compact launch readiness card, `Runtime` audit tab, frontend consumption of `/health/live`, `/health/ready`, `/health/metrics`, worker-profile coverage, queue pressure/backlog/stuck queues and human-readable recovery guidance.
+- `D23` - completed: панель состояния рабочего стека и здоровья очередей, компактная карточка готовности перед запуском, вкладка `Стек`, использование `/health/live`, `/health/ready`, `/health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и понятные подсказки восстановления.
 
 ## Актуальное состояние после D20
 
@@ -338,35 +338,21 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D23`.
 
 Состояние реализации после D23:
 
-- `D22` реализует GitHub issue `#41`.
-- В audit workspace добавлена вкладка `Таймлайн`.
-- Timeline UI использует существующие backend endpoints `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics`; backend orchestration не менялся.
-- Пользователь видит stage lifecycle, очереди dispatch events, raw event stream, fan-out branch summary, critical path, warnings и failure context.
-- Для старых аудитов без event log есть graceful empty state вместо ошибки.
-- `site:check` теперь проверяет наличие timeline UI строк в production bundle.
-- `D23` реализует GitHub issue `#42`.
-- В audit workspace добавлена вкладка `Runtime`, а на экране запуска — компактная панель `Готовность runtime`.
-- Runtime UI использует существующие backend endpoints `GET /health/live`, `GET /health/ready` и `GET /health/metrics`; backend runtime не менялся.
-- Пользователь видит readiness, API/Redis/SearXNG status, worker profile coverage, queue pressure, backlog, stuck queues и подсказки восстановления.
-
-Ключевые места D22:
-
-- `frontend/src/pages/AuditTimelinePage.tsx` — dedicated timeline tab UI;
-- `frontend/src/lib/auditTimeline.ts` — pure timeline view model, stage normalization, queue/fan-out/critical-path aggregation;
-- `frontend/src/hooks/useAuditWorkspace.ts` — загрузка raw timeline events вместе с diagnostics/results/recommendations;
-- `frontend/src/api/api.ts` — `getTimelineEvents(...)`;
-- `frontend/src/types.ts` — frontend contracts для raw audit events;
-- `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `timeline` и routing;
-- `scripts/site-content-check.mjs` — smoke-check ключевых строк timeline UI.
+- `D22` реализовал GitHub issue `#41`: в audit workspace есть вкладка `Таймлайн`, которая использует `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics` без изменения backend orchestration.
+- `D22` показывает lifecycle стадий, dispatch-события очередей, raw event stream, fan-out branches, critical path, warnings/failure context и graceful empty state для старых аудитов без event log.
+- `D23` реализовал GitHub issue `#42`: в audit workspace есть вкладка `Стек`, а на экране запуска — компактная панель `Готовность рабочего стека`.
+- `D23` использует существующие backend endpoints `GET /health/live`, `GET /health/ready` и `GET /health/metrics`; серверная оркестрация не менялась.
+- Пользователь видит готовность API/Redis/SearXNG, покрытие профилей воркеров, нагрузку очередей, накопление задач, очереди без воркеров и подсказки восстановления.
+- `site:check` проверяет ключевые строки timeline UI, report/export UI и панели состояния рабочего стека в production bundle.
 
 Ключевые места D23:
 
-- `frontend/src/lib/runtimeHealth.ts` — pure runtime health view model поверх live/ready/metrics payloads;
-- `frontend/src/hooks/useRuntimeHealth.ts` — periodic frontend polling for runtime diagnostics;
-- `frontend/src/pages/RuntimeStatusPage.tsx` — full runtime dashboard and compact launch readiness card;
+- `frontend/src/lib/runtimeHealth.ts` — pure view model состояния рабочего стека поверх ответов live/ready/metrics;
+- `frontend/src/hooks/useRuntimeHealth.ts` — периодический frontend polling диагностики рабочего стека;
+- `frontend/src/pages/RuntimeStatusPage.tsx` — полная панель состояния стека и компактная карточка готовности перед запуском;
 - `frontend/src/api/api.ts` — `runtimeApi.getLiveness()`, `getReadiness()`, `getMetrics()`;
-- `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `runtime`, route wiring и launch-page compact status;
-- `scripts/site-content-check.mjs` — smoke-check ключевых строк runtime UI.
+- `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `runtime`, route wiring и компактная карточка на экране запуска;
+- `scripts/site-content-check.mjs` — smoke-check ключевых строк панели состояния рабочего стека.
 
 ## Что Делать Дальше
 

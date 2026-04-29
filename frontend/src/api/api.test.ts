@@ -17,7 +17,7 @@ describe("getApiErrorMessage", () => {
         },
         503,
       ),
-    ).toContain("Проверьте Runtime и запустите профиль оркестратора");
+    ).toContain("Проверьте состояние стека и запустите профиль оркестратора");
   });
 
   it("keeps plain detail strings", () => {

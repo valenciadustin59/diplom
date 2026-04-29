@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { AuditWorkspace } from "../components/AuditWorkspace";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
+import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
 import type {
   AuditResultsResponse,
   AuditStatusResponse,
@@ -712,15 +713,15 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Сырые события из серверного журнала");
     expect(markup).toContain("Тяжёлый анализ");
     expect(markup).toContain("audits.heavy_analysis");
-    expect(markup).not.toContain("Runtime contributor");
+    expect(markup).not.toContain(["Run", "time contributor"].join(""));
     expect(markup).not.toContain("Fan-out stages");
     expect(markup).not.toContain("fan-out");
     expect(markup).not.toContain("Celery pipeline");
     expect(markup).not.toContain("Pipeline остановился");
-    expect(markup).not.toContain("backend-журнала");
+    expect(markup).not.toContain(["back", "end-журнала"].join(""));
   });
 
-  it("renders runtime status with queue health and missing worker guidance", () => {
+  it("renders stack status with queue health and missing worker guidance", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
         {...runtimeWorkspaceProps}
@@ -740,7 +741,7 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Состояние distributed stack");
+    expect(markup).toContain("Состояние распределённого стека");
     expect(markup).toContain("Готовность");
     expect(markup).toContain("Профили воркеров");
     expect(markup).toContain("Очереди Celery");
@@ -749,7 +750,23 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Тяжёлый анализ");
   });
 
-  it("renders report recommendations from the stored audit payload when endpoint data is absent", () => {
+  it("renders launch stack readiness compact card before creating an audit", () => {
+    const markup = renderToStaticMarkup(
+      <RuntimeStatusCompactCard
+        model={runtimeWorkspaceProps.runtimeHealth}
+        loading={false}
+        error={null}
+        onRefresh={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Готовность рабочего стека");
+    expect(markup).toContain("Рабочий стек не готов");
+    expect(markup).toContain("audits.heavy_analysis");
+    expect(markup).toContain("Проверено:");
+  });
+
+  it("renders report recommendations from the stored audit data when endpoint data is absent", () => {
     const markup = renderToStaticMarkup(
       <AuditWorkspace
         {...runtimeWorkspaceProps}

@@ -36,7 +36,7 @@ export function ControlRail({ activeView, onOpenNew, onOpenHistory, onOpenRuntim
             className={`control-rail__switcher-button ${activeView === "runtime" ? "control-rail__switcher-button--active" : ""}`}
             onClick={onOpenRuntime}
           >
-            Runtime
+            Стек
           </button>
         </div>
       </div>

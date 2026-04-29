@@ -8,7 +8,7 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - извлечение контентных, семантических, технических, commercial и trust-признаков;
 - ML scoring и формирование score breakdown;
 - генерацию приоритетных рекомендаций;
-- runtime telemetry, readiness и диагностику распределённого исполнения.
+- диагностику рабочего стека, проверку готовности и состояние распределённого исполнения.
 
 Корневой сценарий запуска всего проекта описан в `../README.md`. Этот файл сфокусирован на backend-архитектуре, API и распределённом runtime.
 
@@ -233,12 +233,12 @@ Backend предоставляет четыре основных health/runtime 
 
 - `GET /health` — legacy healthcheck;
 - `GET /health/live` — liveness процесса API;
-- `GET /health/ready` — readiness всего distributed stack;
-- `GET /health/metrics` — runtime telemetry по очередям, workers и backlog.
+- `GET /health/ready` — готовность всего распределённого стека;
+- `GET /health/metrics` — диагностика очередей, воркеров и накопления задач.
 
 Если один из обязательных компонентов не готов, `GET /health/ready` возвращает `503`.
 
-`GET /health/metrics` показывает queue depth, queue pressure, worker activity, queue coverage, topology validation и runtime alerts.
+`GET /health/metrics` показывает глубину очередей, нагрузку очередей, активность воркеров, покрытие очередей, проверку топологии и алерты рабочего стека.
 
 ## Audit API
 
@@ -265,11 +265,11 @@ Backend предоставляет четыре основных health/runtime 
 
 После `D22` frontend использует эти payloads вместе с `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics`, чтобы собрать report/export dashboard и отдельный timeline UI без повторного backend-анализа страницы.
 
-После `D23` frontend также использует `GET /health/live`, `GET /health/ready` и `GET /health/metrics`, чтобы показать готовность runtime, worker-profile coverage, queue pressure, backlog и stuck queues перед запуском аудита и во вкладке `Runtime`.
+После `D23` frontend также использует `GET /health/live`, `GET /health/ready` и `GET /health/metrics`, чтобы показать готовность рабочего стека, покрытие профилей воркеров, нагрузку очередей, накопление задач и очереди без воркеров перед запуском аудита и во вкладке `Стек`.
 
 ## Admission control
 
-Начиная с `D10`, `POST /audits` может вернуть `503`, если runtime capacity деградирована.
+Начиная с `D10`, `POST /audits` может вернуть `503`, если пропускная способность рабочего стека деградировала.
 
 Это нормальная часть архитектуры, а не баг API по умолчанию.
 

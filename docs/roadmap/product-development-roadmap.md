@@ -11,9 +11,9 @@
 Завершённые волны:
 
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
-- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI и runtime status/queue health UI.
+- `D13-D23` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI и панель состояния рабочего стека/очередей.
 
-После `D23` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI и runtime health dashboard для демонстрации distributed runtime. Следующий этап должен в первую очередь углублять product workflow вокруг истории аудитов и действий пользователя, а не переписывать backend runtime или добавлять новый анализ без необходимости.
+После `D23` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI и панель состояния рабочего стека для демонстрации распределённого исполнения. Следующий этап должен в первую очередь углублять product workflow вокруг истории аудитов и действий пользователя, а не переписывать серверную оркестрацию или добавлять новый анализ без необходимости.
 
 ## Активная волна: D21-D26 Frontend/Product Layer
 
@@ -51,22 +51,22 @@
 
 Приёмка выполнена: пользователь может открыть аудит и понять, какие стадии прошли, где была задержка или ошибка, какие очереди/workers участвовали, где был fan-out и как это связано с распределённой архитектурой.
 
-### D23 / #42: Runtime Status And Queue Health UI
+### D23 / #42: Состояние рабочего стека и здоровье очередей
 
 Статус: выполнено.
 
-Цель — сделать состояние локального distributed stack понятным до запуска аудита и во время работы.
+Цель — сделать состояние локального распределённого стека понятным до запуска аудита и во время работы.
 
 Реализованный состав:
 
-- компактная панель `Готовность runtime` на экране нового аудита;
-- вкладка `Runtime` внутри audit workspace для просмотра health во время работы;
-- frontend consumption `GET /health/live`, `GET /health/ready` и `GET /health/metrics`;
-- отображение API, базы данных, Redis broker, SearXNG, worker profiles и очередей;
-- missing workers, queue pressure, backlog, stuck queues, readiness и runtime detector alerts;
-- человекочитаемые подсказки для admission-control ошибок и очередей без активных воркеров.
+- компактная панель `Готовность рабочего стека` на экране нового аудита;
+- вкладка `Стек` внутри audit workspace для просмотра состояния во время работы;
+- frontend использует `GET /health/live`, `GET /health/ready` и `GET /health/metrics`;
+- отображение API, базы данных, брокера Redis, SearXNG, профилей воркеров и очередей;
+- диагностика отсутствующих воркеров, нагрузки очередей, накопления задач, очередей без воркеров, готовности и алертов детектора выполнения;
+- человекочитаемые подсказки для ошибок контроля допуска и очередей без активных воркеров.
 
-Приёмка выполнена: пользователь видит, готов ли runtime к новым аудитам, и понимает, что именно нужно восстановить при проблеме.
+Приёмка выполнена: пользователь видит, готов ли рабочий стек к новым аудитам, и понимает, что именно нужно восстановить при проблеме.
 
 ### D24 / #43: Audit History Management
 
