@@ -108,7 +108,7 @@
 Активный практический backlog после `D31` — внедрение модели в продукт без слепой замены artifact. Новые GitHub issues `#51-#55` продублированы локально в `plans/d32-d36-model-productization.md`:
 
 - `D32` / `#51` - completed locally: `197` expert-rubric labels for `dataset-v2`;
-- `D33` / `#52` — open: refresh `manifest.json` и `split.json` после expert labels;
+- `D33` / `#52` - completed locally: `manifest.json` and `split.json` refreshed after applying expert labels;
 - `D34` / `#53` — open: ranking-aware candidate models;
 - `D35` / `#54` — open: shadow benchmark, explainability guardrails и publish decision;
 - `D36` / `#55` — open: controlled publish/rollback/smoke verification.

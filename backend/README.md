@@ -512,7 +512,7 @@ cd E:\codexPROJ\diplom\backend
 Активный backend/ML backlog после `D31`:
 
 - `D32` / `#51` - completed locally: `197` expert-rubric labels for `dataset-v2`;
-- `D33` / `#52` — open: обновить `manifest.json` и `split.json` после expert labels;
+- `D33` / `#52` - completed locally: `manifest.json` and `split.json` refreshed after applying expert labels;
 - `D34` / `#53` — open: обучить ranking-aware candidate models без замены production artifact;
 - `D35` / `#54` — open: провести shadow benchmark и explainability guardrails;
 - `D36` / `#55` — open: controlled publish/rollback/smoke verification.

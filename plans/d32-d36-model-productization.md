@@ -25,7 +25,7 @@ to publish, or explicitly keep the current production model with evidence.
 ## Active Tasks
 
 - [x] `D32` / GitHub `#51`: add expert labels for `dataset-v2` model productization.
-- [ ] `D33` / GitHub `#52`: refresh `dataset-v2` manifest and group split after expert labels.
+- [x] `D33` / GitHub `#52`: refresh `dataset-v2` manifest and group split after expert labels.
 - [ ] `D34` / GitHub `#53`: train ranking-aware candidate models for product deployment.
 - [ ] `D35` / GitHub `#54`: run shadow benchmark and explainability guardrails before publish.
 - [ ] `D36` / GitHub `#55`: controlled model publish, rollback path and product smoke verification.
@@ -33,6 +33,7 @@ to publish, or explicitly keep the current production model with evidence.
 ## Progress
 
 - [x] (2026-05-01) D32: Filled `backend/data/dataset_versions/dataset-v2/expert_labels.csv` with `197` expert-rubric labels covering `99` queries, `6` categories, `9` city buckets, and all `5` observed page types. Labels use `label_source=expert_rubric_v1`, `labeler=builder_d32_rubric_v1`, and a landing-page quality rubric where the weak SERP-rank prior is capped at `5%` of the score. Score bands: `19` strong (`90-100`), `101` usable (`70-89`), `19` partial (`50-69`), `4` weak (`20-49`), and `54` irrelevant/broken/thin (`0-19`). `dataset.csv` and production artifacts remain unchanged; D33 must refresh dataset rows/manifest/split so these labels affect `target_score` and `hybrid` row counts.
+- [x] (2026-05-01) D33: Applied D32 expert labels to `dataset.csv` through `app.ml.expert_label_refresh`, regenerated `split.json` with `group_by_query`, and regenerated `manifest.json`. Dataset evidence now has `197` `hybrid` rows and `688` `weak_serp` rows, `expert_rows_count=197`, `hybrid_rows_count=197`, `unmatched_expert_labels_count=0`, artifact coverage `1.0`, and `ready_for_training=true`. Split stayed `695` train / `190` validation rows with `79` train queries / `20` validation queries and no query overlap. Production artifact hash remains unchanged.
 
 ## D32: Expert Labels
 
@@ -80,6 +81,13 @@ Work:
 - Verify no query leakage between train and validation.
 - Verify `label_source_distribution`, `expert_rows_count`, `hybrid_rows_count`.
 - Verify artifact coverage.
+
+D33 output:
+
+- `backend/data/dataset_versions/dataset-v2/dataset.csv` now applies expert labels to `target_score` using the existing `0.7 * expert + 0.3 * weak` hybrid formula.
+- `backend/data/dataset_versions/dataset-v2/manifest.json` reports `label_source_distribution={"hybrid": 197, "weak_serp": 688}`, `expert_rows_count=197`, `hybrid_rows_count=197`, `ready_for_training=true`.
+- `backend/data/dataset_versions/dataset-v2/split.json` remains `group_by_query` with no train/validation query leakage.
+- `backend/app/ml/expert_label_refresh.py` records the reusable in-place refresh command used for D33.
 
 Checks:
 

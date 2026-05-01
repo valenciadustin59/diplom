@@ -15,6 +15,7 @@ from app.ml import (
     train_quality_model,
 )
 from app.ml.dataset_builder import DATASET_COLUMNS
+from app.ml.expert_label_refresh import refresh_dataset_expert_labels
 from app.ml.dataset_versions import build_dataset_bundle_paths, freeze_primary_dataset_as_baseline
 
 
@@ -228,6 +229,69 @@ def test_build_dataset_from_seed_csv_writes_dataset_failures_artifacts_and_hybri
         rows_after_resume = list(csv.DictReader(file))
     assert len(rows_after_resume) == 1
 
+
+
+def test_refresh_dataset_expert_labels_applies_hybrid_scores_to_existing_rows(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    expert_labels_path = tmp_path / "expert_labels.csv"
+
+    with dataset_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
+        writer.writeheader()
+        for url, weak_target_score in [
+            ("https://example.com/labeled", 100.0),
+            ("https://example.com/weak-only", 50.0),
+        ]:
+            row = {column: "" for column in DATASET_COLUMNS}
+            row.update(
+                {
+                    "dataset_version": "dataset-v2-test",
+                    "feature_schema_version": "v2",
+                    "extraction_artifact_version": "extraction-v2",
+                    "label_schema_version": "hybrid-v1",
+                    "label_source": "weak_serp",
+                    "weak_target_score": weak_target_score,
+                    "query": "seo audit",
+                    "url": url,
+                    "fetch_status": "ok",
+                    "target_score": weak_target_score,
+                }
+            )
+            writer.writerow(row)
+
+    with expert_labels_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=["query", "url", "expert_target_score", "label_source", "labeler"])
+        writer.writeheader()
+        writer.writerow(
+            {
+                "query": "seo audit",
+                "url": "https://example.com/labeled",
+                "expert_target_score": 80.0,
+                "label_source": "expert_rubric_v1",
+                "labeler": "qa",
+            }
+        )
+
+    result = refresh_dataset_expert_labels(dataset_path=dataset_path, expert_labels_path=expert_labels_path)
+
+    assert result["rows_count"] == 2
+    assert result["expert_labels_loaded"] == 1
+    assert result["updated_rows_count"] == 1
+    assert result["weak_only_rows_count"] == 1
+    assert result["unmatched_expert_labels_count"] == 0
+    assert result["label_source_distribution"] == {"hybrid": 1, "weak_serp": 1}
+
+    with dataset_path.open("r", encoding="utf-8", newline="") as file:
+        rows = list(csv.DictReader(file))
+
+    labeled_row = next(row for row in rows if row["url"] == "https://example.com/labeled")
+    weak_only_row = next(row for row in rows if row["url"] == "https://example.com/weak-only")
+    assert labeled_row["label_source"] == "hybrid"
+    assert labeled_row["expert_target_score"] == "80.0"
+    assert labeled_row["target_score"] == "86.0"
+    assert weak_only_row["label_source"] == "weak_serp"
+    assert weak_only_row["expert_target_score"] == ""
+    assert weak_only_row["target_score"] == "50.0"
 
 def test_build_dataset_deduplicates_search_results_before_parallel_fetch(monkeypatch, tmp_path):
     dataset_path = tmp_path / "dataset.csv"

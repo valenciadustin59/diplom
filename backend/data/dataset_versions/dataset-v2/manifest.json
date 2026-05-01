@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T15:52:28.171664+00:00",
+  "generated_at": "2026-05-01T17:15:49.484954+00:00",
   "dataset_path": "data\\dataset_versions\\dataset-v2\\dataset.csv",
   "failures_path": "data\\dataset_versions\\dataset-v2\\failures.csv",
   "seeds_path": "data\\dataset_versions\\dataset-v2\\seeds.csv",
@@ -279,11 +279,12 @@
   },
   "labeling": {
     "label_source_distribution": {
-      "weak_serp": 885
+      "hybrid": 197,
+      "weak_serp": 688
     },
-    "expert_rows_count": 0,
-    "weak_only_rows_count": 885,
-    "hybrid_rows_count": 0
+    "expert_rows_count": 197,
+    "weak_only_rows_count": 688,
+    "hybrid_rows_count": 197
   },
   "artifacts": {
     "rows_with_artifacts": 885,
@@ -292,7 +293,7 @@
     "artifact_coverage_ratio": 1.0
   },
   "split": {
-    "generated_at": "2026-05-01T15:51:33.611467+00:00",
+    "generated_at": "2026-05-01T17:15:36.268391+00:00",
     "dataset_path": "data\\dataset_versions\\dataset-v2\\dataset.csv",
     "dataset_version": "dataset-v2",
     "split_mode": "group_by_query",
