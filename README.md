@@ -103,6 +103,7 @@
 - `D29` / `#48` — completed: candidate model обучена на `dataset-v2` без замены production artifact;
 - `D30` / `#49` — completed: candidate сравнен с текущей моделью через ranking benchmark, recommendation `keep_reference`;
 - `D31` / `#50` — completed locally: no-publish/keep-reference decision по D30 принят, продукт проверен smoke-аудитом.
+- D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
 ### Distributed foundation `D1-D12`
 

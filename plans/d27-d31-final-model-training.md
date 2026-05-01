@@ -8,7 +8,7 @@ This document must be maintained in accordance with `PLANS.md` in the repository
 
 The project is already a working distributed SEO audit web application. The remaining diploma-critical work is to make the ML evidence stronger: build the versioned `dataset-v2`, validate its quality, train a candidate model, compare it against the current model, publish the final model artifact, and prove through smoke audits that the product still works end to end.
 
-The user-visible result is simple: after this plan is complete, a new audit should show score explanations coming from a freshly published `dataset-v2` model, while the timeline still proves distributed competitor fan-out and the UI remains stable.
+The user-visible result is simple: after this plan is complete, a new audit should show score explanations from the final selected model, while the timeline still proves distributed competitor fan-out and the UI remains stable. For the current D31 evidence, D30 rejected the `dataset-v2` candidate on ranking metrics, so the final selected model remains the unchanged production artifact.
 
 ## Progress
 
@@ -20,6 +20,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - [x] (2026-05-01 20:53 +05:00) D29: Trained `artifacts/page_quality_model.dataset-v2-candidate.pkl` from `dataset-v2` without replacing `artifacts/page_quality_model.pkl`. The candidate is `RandomForestRegressor`, `model_schema_version=v2`, `dataset_version=dataset-v2`, `885` rows, `99` queries, `568` domains, `108` features. Validation metrics: `rmse=15.026923`, `mae=12.478412`, `spearman_mean=0.282468`, `ndcg_at_10=0.939192`, `top_3_hit_rate=0.9`, `split_mode=group_by_query`; production artifact hash/timestamp stayed unchanged. The optional CatBoost benchmark from the same training run reported `rmse=14.870781`, `mae=12.251912`, `spearman_mean=0.268463`, `ndcg_at_10=0.942102`, and `top_3_hit_rate=0.8`.
 - [x] (2026-05-01 21:02 +05:00) D30: Ran ranking benchmark against the current production artifact and wrote `backend/artifacts/ranking-benchmarks/dataset-v2/ranking-benchmark-report.json` plus `.md`. The D29 candidate artifact was evaluated directly via `--candidate-model`; it improved absolute error versus production (`rmse` delta `-11.412967`, `mae` delta `-9.769919`) but underperformed production on ranking metrics (`spearman_mean` delta `-0.05409`, `ndcg_at_10` delta `-0.008862`, `top_3_hit_rate` delta `-0.05`). The report's publish recommendation is `keep_reference`; `artifacts/page_quality_model.pkl` hash/timestamp stayed unchanged.
 - [x] (2026-05-01 21:29 +05:00) D31: Kept the current production artifact because D30 recommended `keep_reference`, verified `artifacts/page_quality_model.pkl` still resolves to `ru_commercial_dataset-20260421-primary` / schema `v1`, and ran full product smoke. Smoke audit `73128723-6a5b-41e6-81a7-d10aaa2570ad` (`ремонт квартир москва`, `https://smartremontmsk.ru/`, `top_n=2`) completed with score `69.5249`, `2` competitors found/analyzed, `0` failed competitors, `13` recommendations across `4` groups, competitor context enabled, and timeline fan-out `competitor_page` dispatch/terminal count `2`. Runtime readiness was `ready` with `4` workers and no missing queues; `/health/metrics` was `degraded` only because the local SQLite DB still has `3` old stuck `processing` rows. Smoke evidence is saved at `output/runtime-smoke/d31-smoke-summary.json`.
+- [x] (2026-05-01 21:41 +05:00) D31 clean rerun: Removed duplicate/orphan repo-scoped workers, restarted the stack from no repo-scoped Celery/Uvicorn/Vite/dev processes, observed clean worker startup with no `DuplicateNodenameWarning`, and regenerated `output/runtime-smoke/d31-smoke-summary.json` via checked-in `scripts/d31-runtime-smoke.mjs`. Clean smoke audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with score `69.5249`, `2` competitors found/analyzed, `0` failed competitors, `13` recommendations across `4` groups, readiness `ready` with exactly `4` workers, missing queues `[]`, metrics queue pressure `ok`, queue depth `0`, and `/health/metrics` degraded only by the existing `3` stale local `processing` rows. Runtime model remained `ru_commercial_dataset-20260421-primary` / schema `v1`; diagnostics showed `fan_out.stage=competitor_page`, dispatch/terminal `2/2`, and `critical_path_modes.competitor_page=fan_out_max`; all checked frontend Vite routes returned the root shell.
 
 ## Surprises & Discoveries
 
@@ -49,6 +50,9 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 - Observation: `publish_best_ranking_model` is intentionally narrower than D30 benchmark comparison.
   Evidence: it only publishes newly trained ranking candidates (`candidate_family=ranking`) and now raises if an in-memory benchmark winner comes from a non-ranking candidate artifact. The D29 pointwise candidate can be evaluated by D30, but it is not publishable through this ranking publish helper.
+
+- Observation: Initial D31 smoke evidence was not acceptable as final evidence because duplicate/orphan repo-scoped Celery workers remained from earlier local runs and the frontend route `has_root` value had been manually corrected in JSON.
+  Evidence: process cleanup found many `E:\codexPROJ\diplom\backend\.venv\Scripts\python.exe -m celery -A app.celery_app:celery_app` processes before rerun. The clean rerun started from no repo-scoped Celery/Uvicorn/Vite/dev processes, generated evidence through `scripts/d31-runtime-smoke.mjs`, and produced audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` with `ready_worker_count=4`, missing queues `[]`, and all frontend route checks passing from full HTML reads.
 
 ## Decision Log
 
@@ -86,7 +90,7 @@ D29 is complete. The candidate model is saved at `backend/artifacts/page_quality
 
 D30 is complete. The benchmark report recommends `keep_reference`, so D31 should not blindly publish the D29 candidate. If D31 still proceeds, it must either keep the current production artifact and document the no-publish decision, or explicitly override based on a stronger product rationale than the current ranking benchmark.
 
-D31 is complete. The final decision is no-publish/keep-reference: `backend/artifacts/page_quality_model.pkl` remains the current production artifact, while the D29 candidate and D30 benchmark report remain versioned evidence. Runtime smoke confirmed the unchanged production model still serves audit scoring, recommendations, competitor analysis and timeline fan-out.
+D31 is complete. The final decision is no-publish/keep-reference: `backend/artifacts/page_quality_model.pkl` remains the current production artifact, while the D29 candidate and D30 benchmark report remain versioned evidence. Clean runtime smoke audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` supersedes the earlier polluted smoke and confirms the unchanged production model still serves audit scoring, recommendations, competitor analysis and timeline fan-out from a clean four-worker stack. The smoke summary is reproducibly generated by `scripts/d31-runtime-smoke.mjs` instead of hand-editing evidence JSON.
 
 ## Context and Orientation
 

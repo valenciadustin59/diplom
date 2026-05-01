@@ -506,5 +506,6 @@ cd E:\codexPROJ\diplom\backend
 - `D29` / `#48` — completed: candidate artifact обучен без замены production model;
 - `D30` / `#49` — completed: ranking benchmark против текущего `artifacts/page_quality_model.pkl` выполнен, recommendation `keep_reference`;
 - `D31` / `#50` — completed locally: no-publish/keep-reference decision по D30 принят, runtime подтверждён smoke-аудитом.
+- D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
 Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d27-d31-final-model-training.md`.

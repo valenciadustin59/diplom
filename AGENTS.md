@@ -1,5 +1,12 @@
 ﻿# AGENTS
 
+## Current Clean D31 Evidence
+
+- D31 clean rerun supersedes the earlier `73128723-6a5b-41e6-81a7-d10aaa2570ad` smoke. Before rerun, all repo-scoped Celery/Uvicorn/Vite/dev processes were stopped; clean `npm start` showed four workers and no `DuplicateNodenameWarning`.
+- Reproducible generator: `node scripts/d31-runtime-smoke.mjs`; evidence: `output/runtime-smoke/d31-smoke-summary.json`.
+- Clean audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb`: status `completed`, score `69.5249`, competitors `2 found / 2 analyzed / 0 failed`, recommendations `13` across `4` groups, readiness `ready` with `4` workers and missing queues `[]`, runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`, fan-out `competitor_page` dispatch/terminal `2/2`, and frontend Vite routes all returned the root shell.
+- D31 decision remains no-publish/keep-reference because D30 ranking benchmark rejected the `dataset-v2` candidate.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:

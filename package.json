@@ -8,7 +8,7 @@
     "dev:full": "npm run searxng:up && npm run searxng:check && npm run dev -- --with-worker",
     "build": "npm --prefix frontend run build",
     "site:check": "npm run build && node scripts/site-content-check.mjs",
-    "test:scripts": "node --test scripts/dev.test.mjs scripts/searxng-healthcheck.test.mjs scripts/site-content-check.test.mjs",
+    "test:scripts": "node --test scripts/dev.test.mjs scripts/searxng-healthcheck.test.mjs scripts/site-content-check.test.mjs scripts/d31-runtime-smoke.test.mjs",
     "preview": "npm --prefix frontend run preview",
     "searxng:up": "node scripts/searxng-manager.mjs up",
     "searxng:down": "node scripts/searxng-manager.mjs down",
