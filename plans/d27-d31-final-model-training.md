@@ -17,7 +17,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - [x] (2026-05-01 20:19 +05:00) D27: Built `dataset-v2` from seed offsets `0-49` and `50-99` after a clean rebuild. Generated `dataset.csv` with `885` successful rows, `failures.csv` with `49` failed fetches, `checkpoint.json`, `dataset.dataset.json`, and `885` snapshot artifacts. A temporary D27 quality probe reported `ready_for_training=true`, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, and `artifact_coverage_ratio=1.0`.
 - [x] (2026-05-01 20:26 +05:00) D27 was committed and pushed to `origin/main` in commit `0a9cd40`; GitHub issue `#46` closure was not verified because `gh` is not installed in this environment.
 - [x] (2026-05-01 20:42 +05:00) D28: Generated canonical `split.json` with `group_by_query` mode (`695` train rows / `190` validation rows, `79` train queries / `20` validation queries, no query overlap) and canonical `manifest.json`. The manifest reports `ready_for_training=true`, `885` rows, `99` unique queries, `568` unique domains, `6` categories, `8` cities, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, `artifact_coverage_ratio=1.0`, `missing_artifacts_count=0`, and no unmet requirements. D28 was pushed to `origin/main`; GitHub issue `#47` closure was not verified because `gh` is not installed in this environment.
-- [x] (2026-05-01 20:53 +05:00) D29: Trained `artifacts/page_quality_model.dataset-v2-candidate.pkl` from `dataset-v2` without replacing `artifacts/page_quality_model.pkl`. The candidate is `RandomForestRegressor`, `model_schema_version=v2`, `dataset_version=dataset-v2`, `885` rows, `99` queries, `568` domains, `108` features. Validation metrics: `rmse=15.026923`, `mae=12.478412`, `spearman_mean=0.282468`, `ndcg_at_10=0.939192`, `top_3_hit_rate=0.9`, `split_mode=group_by_query`; production artifact hash/timestamp stayed unchanged.
+- [x] (2026-05-01 20:53 +05:00) D29: Trained `artifacts/page_quality_model.dataset-v2-candidate.pkl` from `dataset-v2` without replacing `artifacts/page_quality_model.pkl`. The candidate is `RandomForestRegressor`, `model_schema_version=v2`, `dataset_version=dataset-v2`, `885` rows, `99` queries, `568` domains, `108` features. Validation metrics: `rmse=15.026923`, `mae=12.478412`, `spearman_mean=0.282468`, `ndcg_at_10=0.939192`, `top_3_hit_rate=0.9`, `split_mode=group_by_query`; production artifact hash/timestamp stayed unchanged. The optional CatBoost benchmark from the same training run reported `rmse=14.870781`, `mae=12.251912`, `spearman_mean=0.268463`, `ndcg_at_10=0.942102`, and `top_3_hit_rate=0.8`.
 - [ ] D30: Run ranking benchmark and compare the candidate model against the current artifact.
 - [ ] D31: Publish the final model artifact and verify product behavior with smoke audits.
 
@@ -40,6 +40,9 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 - Observation: D29 candidate artifacts are intentionally model evidence, but generic `backend/artifacts/*.pkl` files are ignored by default.
   Evidence: `.gitignore` now has a narrow exception for `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` so the D29 candidate can be committed without opening the ignore rule for arbitrary training artifacts.
+
+- Observation: CatBoost writes local scratch logs when its optional training path runs.
+  Evidence: D29 created `backend/catboost_info/` with training logs; this path is already ignored by `.gitignore` and is not part of the D29 evidence bundle. No candidate-side metadata file was generated outside the committed `.pkl`; metadata is stored inside the model artifact.
 
 ## Decision Log
 
@@ -69,7 +72,7 @@ D27 is complete and pushed. The versioned `dataset-v2` bundle has enough rows, q
 
 D28 is complete. `backend/data/dataset_versions/dataset-v2/manifest.json` and `backend/data/dataset_versions/dataset-v2/split.json` are now the canonical training-readiness evidence for `dataset-v2`. D29 remains next: train a candidate model to `artifacts/page_quality_model.dataset-v2-candidate.pkl` without replacing the production artifact.
 
-D29 is complete. The candidate model is saved at `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl`, and the current production model `backend/artifacts/page_quality_model.pkl` still points to the older `ru_commercial_dataset-20260421-primary` artifact with schema `v1`. D30 remains next: run the ranking benchmark against the current production artifact and decide whether the dataset-v2 candidate path is publishable.
+D29 is complete. The candidate model is saved at `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl`, and the current production model `backend/artifacts/page_quality_model.pkl` still points to the older `ru_commercial_dataset-20260421-primary` artifact with schema `v1`. D29 reused the same deterministic split parameters as D28 (`test_size=0.2`, `random_state=42`); `split.json` and `manifest.json` were refreshed only so the embedded split summary timestamps match the training run, not because dataset rows or query partitions changed. D30 remains next: run the ranking benchmark against the current production artifact and decide whether the dataset-v2 candidate path is publishable.
 
 ## Context and Orientation
 
