@@ -23,7 +23,9 @@ export function AuditTable({ rows }: AuditTableProps) {
           {rows.map((row) => (
             <tr key={row.id}>
               <td className="data-table__url">
-                <div>{row.url}</div>
+                <div className="data-table__url-value" title={row.url}>
+                  {row.url}
+                </div>
                 <div className="data-table__note">{row.fetchNote}</div>
               </td>
               <td>{row.pageType}</td>

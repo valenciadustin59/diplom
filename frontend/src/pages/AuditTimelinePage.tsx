@@ -194,7 +194,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
     >
       {events.length > 0 ? (
         <div className="report-table-shell timeline-event-stream">
-          <table className="report-table timeline-table">
+          <table className="report-table timeline-table timeline-event-table">
             <thead>
               <tr>
                 <th>Время</th>
@@ -208,7 +208,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
             <tbody>
               {events.map((event) => (
                 <tr key={event.id}>
-                  <td>{event.timestampLabel}</td>
+                  <td className="timeline-event-table__time">{event.timestampLabel}</td>
                   <td>
                     <strong>{event.stageLabel}</strong>
                     <span className="timeline-table__muted">{event.stage}</span>

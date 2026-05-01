@@ -220,6 +220,8 @@ Frontend dev server при запуске через root scripts явно пр�
 
 - `http://127.0.0.1:5173/`
 
+Если порт `8000` уже занят, root dev-скрипт автоматически выбирает следующий свободный порт backend API, например `8001`, и прокидывает его во frontend через `VITE_API_URL`. Поэтому сайт может работать корректно на `5173`, даже если raw API для ручной проверки находится не на `8000`; смотрите backend URL в выводе `npm start`.
+
 Перед демонстрацией frontend production bundle можно проверить командой:
 
 ```powershell
@@ -240,11 +242,18 @@ Backend предоставляет четыре основных health/runtime 
 
 Если один из обязательных компонентов не готов, `GET /health/ready` возвращает `503`.
 
-Readiness проверяет SearXNG через лёгкий endpoint `/healthz`, а не через `/search`. Это принципиально для локального UI: вкладка `Стек` и стартовая карточка готовности часто опрашивают runtime, поэтому health-check не должен тратить лимиты внешних поисковых движков и провоцировать CAPTCHA/403 перед сбором конкурентов.
+Readiness проверяет SearXNG через лёгкий endpoint `/healthz`, а не через `/search`. Это принципиально для локального UI: глобальный экран `Стек` и стартовая карточка готовности часто опрашивают runtime, поэтому health-check не должен тратить лимиты внешних поисковых движков и провоцировать CAPTCHA/403 перед сбором конкурентов.
 
 `GET /health/metrics` показывает глубину очередей, нагрузку очередей, активность воркеров, покрытие очередей, проверку топологии и алерты рабочего стека.
 
 В локальной SQLite БД могут оставаться старые audit rows со статусом `processing`; тогда `GET /health/metrics` показывает `degraded` по execution detector, даже если текущий стек готов. Для допуска новых аудитов сначала проверяйте `GET /health/ready`, `missing_queues` и `queue_pressure`.
+
+Для ответа на вопрос "работают ли воркеры параллельно" смотрите две плоскости:
+
+- `GET /health/ready` и `GET /health/metrics`: должны быть видны четыре профиля `pipeline`, `network`, `heavy_analysis`, `cpu_ml`; `network` обслуживает `audits.fetch`, `audits.competitors`, `audits.competitor_pages`, а `heavy_analysis` обслуживает `audits.heavy_analysis`.
+- `GET /audits/{audit_id}/events/diagnostics`: у конкретного аудита fan-out конкурентов должен появляться как `fan_out.stage=competitor_page`, а в `critical_path_stages` стадии `competitor_page` и `competitor_analysis` должны иметь режим `fan_out_max`.
+
+В frontend то же самое видно без raw JSON: глобальный экран `Стек` показывает профили workers и очереди, а вкладка `Таймлайн` внутри аудита показывает fan-out ветки конкурентов и critical path.
 
 ## Audit API
 
@@ -271,7 +280,7 @@ Readiness проверяет SearXNG через лёгкий endpoint `/healthz`
 
 После `D22` frontend использует эти payloads вместе с `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics`, чтобы собрать report/export dashboard и отдельный timeline UI без повторного backend-анализа страницы.
 
-После `D23` frontend также использует `GET /health/live`, `GET /health/ready` и `GET /health/metrics`, чтобы показать готовность рабочего стека, покрытие профилей воркеров, нагрузку очередей, накопление задач и очереди без воркеров перед запуском аудита и во вкладке `Стек`.
+После `D23` frontend также использует `GET /health/live`, `GET /health/ready` и `GET /health/metrics`, чтобы показать готовность рабочего стека, покрытие профилей воркеров, нагрузку очередей, накопление задач и очереди без воркеров перед запуском аудита и на глобальном экране `Стек`.
 
 После `D24` frontend использует существующие `GET /audits` и `POST /audits` для панели истории: фильтры, повторный запуск и локальное скрытие строк выполняются без нового backend delete/hide endpoint.
 

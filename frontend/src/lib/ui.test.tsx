@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
+import { AuditTabs } from "../components/AuditTabs";
 import { AuditWorkspace, EmptyWorkspace } from "../components/AuditWorkspace";
 import { ControlRail } from "../components/ControlRail";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
@@ -543,6 +544,7 @@ describe("AuditWorkspace", () => {
       <EmptyWorkspace
         {...emptyWorkspaceBaseProps}
         mode="history"
+        loadingRecent={true}
         recentAudits={[
           {
             id: "audit-stale",
@@ -569,6 +571,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Скрытые локально");
     expect(markup).toContain("Зависший/устаревший");
     expect(markup).toContain("Открыть стек");
+    expect(markup).not.toContain("Загружаем историю аудитов");
   });
 
   it("renders score breakdowns that use top factor fields", () => {
@@ -790,33 +793,14 @@ describe("AuditWorkspace", () => {
     expect(markup).not.toContain(["back", "end-журнала"].join(""));
   });
 
-  it("renders stack status with queue health and missing worker guidance", () => {
+  it("keeps stack diagnostics out of the audit tabs", () => {
     const markup = renderToStaticMarkup(
-      <AuditWorkspace
-        {...runtimeWorkspaceProps}
-        currentAudit={createAudit({ status: "processing" })}
-        currentResults={createResults({ status: "processing" })}
-        recommendations={null}
-        timelineDiagnostics={null}
-        timelineEvents={null}
-        pageRows={[]}
-        competitorScores={[]}
-        comparisonSummary={null}
-        auditStatus="processing"
-        loading={false}
-        error={null}
-        activeTab="runtime"
-        onTabChange={() => undefined}
-      />,
+      <AuditTabs activeTab="overview" onChange={() => undefined} />,
     );
 
-    expect(markup).toContain("Состояние распределённого стека");
-    expect(markup).toContain("Готовность");
-    expect(markup).toContain("Профили воркеров");
-    expect(markup).toContain("Очереди Celery");
-    expect(markup).toContain("audits.heavy_analysis");
-    expect(markup).toContain("Очередь audits.heavy_analysis без воркеров");
-    expect(markup).toContain("Углублённый анализ");
+    expect(markup).toContain("Обзор");
+    expect(markup).toContain("Таймлайн");
+    expect(markup).not.toContain("Стек");
   });
 
   it("renders launch stack readiness compact card before creating an audit", () => {

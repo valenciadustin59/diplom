@@ -2,7 +2,7 @@ import { AuditPage } from "../pages/AuditPage";
 import { AuditReportPage } from "../pages/AuditReportPage";
 import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
-import { RuntimeStatusCompactCard, RuntimeStatusPage } from "../pages/RuntimeStatusPage";
+import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import type { RuntimeHealthModel } from "../lib/runtimeHealth";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
@@ -41,10 +41,6 @@ type AuditWorkspaceProps = {
   pageRows: PageRow[];
   competitorScores: CompetitorScore[];
   comparisonSummary: ComparisonSummary | null;
-  runtimeHealth: RuntimeHealthModel | null;
-  loadingRuntime: boolean;
-  runtimeError: string | null;
-  onRefreshRuntime: () => void;
   auditStatus: AuditStatus;
   loading: boolean;
   error: string | null;
@@ -553,10 +549,6 @@ export function AuditWorkspace({
   pageRows,
   competitorScores,
   comparisonSummary,
-  runtimeHealth,
-  loadingRuntime,
-  runtimeError,
-  onRefreshRuntime,
   auditStatus,
   loading,
   error,
@@ -631,15 +623,6 @@ export function AuditWorkspace({
             loading={loading}
             error={error}
             failureContext={failureContext}
-          />
-        ) : null}
-
-        {activeTab === "runtime" ? (
-          <RuntimeStatusPage
-            model={runtimeHealth}
-            loading={loadingRuntime}
-            error={runtimeError}
-            onRefresh={onRefreshRuntime}
           />
         ) : null}
 

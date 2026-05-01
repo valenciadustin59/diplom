@@ -32,7 +32,6 @@ describe("audit workspace routing", () => {
     expect(buildAuditWorkspacePath("audit-1", "overview")).toBe("/audits/audit-1");
     expect(buildAuditWorkspacePath("audit-1", "report")).toBe("/audits/audit-1?tab=report");
     expect(buildAuditWorkspacePath("audit-1", "timeline")).toBe("/audits/audit-1?tab=timeline");
-    expect(buildAuditWorkspacePath("audit-1", "runtime")).toBe("/audits/audit-1?tab=runtime");
   });
 
   it("falls back to overview for missing or unknown tab params", () => {
@@ -40,7 +39,7 @@ describe("audit workspace routing", () => {
     expect(getActiveTab("unknown")).toBe("overview");
     expect(getActiveTab("report")).toBe("report");
     expect(getActiveTab("timeline")).toBe("timeline");
-    expect(getActiveTab("runtime")).toBe("runtime");
+    expect(getActiveTab("runtime")).toBe("overview");
   });
 
   it("routes root history and stack views through the app shell", () => {

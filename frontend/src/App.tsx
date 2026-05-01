@@ -17,7 +17,7 @@ import { createRepeatAuditPayload } from "./lib/auditHistory";
 import { RuntimeStatusPage } from "./pages/RuntimeStatusPage";
 import type { AuditCreatePayload, AuditSummary, AuditTab } from "./types";
 
-const validTabs: AuditTab[] = ["overview", "report", "timeline", "runtime", "pages", "competitors", "recommendations"];
+const validTabs: AuditTab[] = ["overview", "report", "timeline", "pages", "competitors", "recommendations"];
 
 type AuditWorkspaceRouteProps = ReturnType<typeof useAuditWorkspace> & ReturnType<typeof useRuntimeHealth>;
 
@@ -69,10 +69,6 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
       pageRows={pageRows}
       competitorScores={competitorScores}
       comparisonSummary={comparisonSummary}
-      runtimeHealth={props.runtimeHealth}
-      loadingRuntime={props.loadingRuntime}
-      runtimeError={props.runtimeError}
-      onRefreshRuntime={() => props.refreshRuntimeHealth()}
       auditStatus={props.auditStatus}
       loading={props.loadingAudit || isAuditRoutePending}
       error={props.workspaceError}

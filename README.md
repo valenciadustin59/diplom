@@ -160,6 +160,8 @@ npm start
 - запускает frontend;
 - запускает четыре worker-профиля: `pipeline`, `network`, `heavy_analysis`, `cpu_ml`.
 
+Если порт `8000` уже занят, root dev-скрипт выбирает следующий свободный порт backend API, например `8001`, и автоматически передаёт его во frontend через `VITE_API_URL`. Сайт при этом остаётся на `http://127.0.0.1:5173/`; для ручных `Invoke-RestMethod` используйте backend URL, который напечатал `npm start`.
+
 Локальный `infra/searxng/settings.yml` фиксирует для dev-аудитов стабильный search engine `presearch`. Это снижает риск CAPTCHA/403 от движков, которые SearXNG включает по умолчанию, и делает сбор конкурентов устойчивее для демонстрации.
 
 Это рекомендуемый режим для полноценного аудита и для демонстрации распределённой архитектуры.
@@ -183,6 +185,8 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/ready"
 Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 ```
 
+Если `npm start` выбрал другой backend port, замените `8000` на фактический порт из консоли запуска.
+
 Что важно:
 
 - `GET /health/live` показывает, что процесс API жив.
@@ -191,6 +195,21 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 - `GET /health/ready` может вернуть `503`, если распределённый стек не готов.
 - `GET /health/metrics` показывает накопление задач в очередях, нагрузку очередей, активность воркеров и алерты рабочего стека.
 - Локальный `GET /health/metrics` может показывать `degraded`, если в SQLite остались старые audit rows со статусом `processing`; для фактической готовности нового запуска сначала смотрите `GET /health/ready` и покрытие очередей воркерами.
+
+### Где смотреть параллельную работу воркеров
+
+В интерфейсе:
+
+- `http://127.0.0.1:5173/?view=runtime` или кнопка `Стек` — профили workers, какие очереди они покрывают, глубина очередей и активные задачи.
+- Внутри аудита вкладка `Таймлайн` — lifecycle стадий, dispatch events, fan-out ветки competitors и critical path. Для конкурентов важны стадии `competitor_page` и `competitor_analysis`.
+
+Через API:
+
+- `GET /health/ready` — главный быстрый ответ, подняты ли `pipeline`, `network`, `heavy_analysis`, `cpu_ml` и покрыты ли все audit queues.
+- `GET /health/metrics` — нагрузка очередей и активность workers; overall status может быть `degraded` из-за старых зависших строк в локальной SQLite, но `workers.status` и `queue_pressure.status` показывают текущее состояние очередей.
+- `GET /audits/{audit_id}/events/diagnostics` — доказательство распределённого исполнения конкретного аудита: `fan_out.stage=competitor_page`, а в `critical_path_stages` competitor stages идут с `mode=fan_out_max`.
+
+Контрольная проверка от `2026-04-30`: smoke-аудит `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=3` завершился со статусом `completed`, нашёл `3` конкурента и проанализировал `3` конкурента. В timeline были отдельные fan-out стадии `competitor_page` и `competitor_analysis`.
 
 ## Разница между `npm run dev` и `npm run dev:full`
 
@@ -389,7 +408,7 @@ npm run test
 - `D20` - dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, queue-pressure metrics and benchmark topology-profile summary.
 - `D21` - audit report/export dashboard: вкладка `Отчёт`, компактная сводка SEO/ML/recommendation/competitor/runtime evidence, printable HTML/PDF-like view, downloadable HTML и Markdown export без повторного анализа страницы.
 - `D22` - audit execution timeline UI: вкладка `Таймлайн`, raw event stream, stage lifecycle, queues, fan-out branch summary, critical path, warnings/failure context поверх существующих events APIs.
-- `D23` - панель состояния рабочего стека и здоровья очередей: компактная панель `Готовность рабочего стека` на экране запуска, вкладка `Стек` в audit workspace, использование `health/live`, `health/ready`, `health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и человекочитаемые подсказки восстановления.
+- `D23` - панель состояния рабочего стека и здоровья очередей: компактная панель `Готовность рабочего стека` на экране запуска, глобальный экран `Стек`, использование `health/live`, `health/ready`, `health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и человекочитаемые подсказки восстановления.
 - `D24` - audit history management: панель истории с метриками, фильтрами по статусу/домену/запросу/фокусу, быстрым открытием последнего успешного аудита, повторным запуском из строки и локальным скрытием/восстановлением записей без удаления backend-данных.
 - `D25` - recommendation action tracking: локальный план действий на странице рекомендаций, статусы `Не начато`, `В работе`, `Исправлено`, `Игнорируется`, summary закрытых действий и прогресс по группам без изменения backend analysis data.
 - `D26` - interface copy and terminology polish: русские primary labels для отчёта, рекомендаций, истории, runtime/timeline и production smoke-фрагментов; технические коды рекомендаций и очередей оставлены вторым уровнем.

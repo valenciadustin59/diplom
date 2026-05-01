@@ -101,6 +101,42 @@ def test_collect_worker_runtime_metrics_reports_valid_topology(monkeypatch: pyte
     assert payload["queue_activity"]["audits.heavy_analysis"]["active_tasks"] == 1
     assert payload["queue_activity"]["audits.scoring"]["reserved_tasks"] == 1
     assert payload["queue_activity"]["audits.finalize"]["scheduled_tasks"] == 1
+
+
+def test_collect_worker_runtime_metrics_uses_profile_hostname_when_active_queues_are_missing(monkeypatch: pytest.MonkeyPatch):
+    class FakeInspect:
+        def stats(self):
+            return {
+                "site-audit.pipeline@test": {"pid": 1001, "pool": {"max-concurrency": 1}},
+                "site-audit.network@test": {"pid": 1002, "pool": {"max-concurrency": 4}},
+                "site-audit.heavy_analysis@test": {"pid": 1003, "pool": {"max-concurrency": 2}},
+                "site-audit.cpu_ml@test": {"pid": 1004, "pool": {"max-concurrency": 2}},
+            }
+        def active(self):
+            return {"site-audit.network@test": [{"name": "app.process_audit_collect_competitor_page"}]}
+        def reserved(self):
+            return {}
+        def scheduled(self):
+            return {}
+        def active_queues(self):
+            return {}
+    class FakeControl:
+        def inspect(self, timeout: float):
+            assert timeout == 0.5
+            return FakeInspect()
+    monkeypatch.setattr("app.health.celery_app.control", FakeControl())
+    payload = collect_worker_runtime_metrics(Settings())
+    assert payload["status"] == "ok"
+    assert payload["topology"]["status"] == "ok"
+    assert payload["missing_queues"] == []
+    assert payload["workers"]["site-audit.network@test"]["queue_source"] == "hostname_fallback"
+    assert payload["workers"]["site-audit.network@test"]["profile_name"] == "network"
+    assert payload["queue_activity"]["audits.competitor_pages"]["worker_count"] == 1
+    assert payload["queue_activity"]["audits.competitor_pages"]["active_tasks"] == 1
+    assert payload["queue_activity"]["audits.fetch"]["worker_count"] == 1
+    assert payload["queue_activity"]["audits.heavy_analysis"]["worker_count"] == 1
+
+
 def test_check_celery_worker_health_fails_when_queue_affinity_is_invalid(monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(
         "app.health.collect_worker_runtime_metrics",

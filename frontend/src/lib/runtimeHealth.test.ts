@@ -181,6 +181,27 @@ describe("runtime health model", () => {
     );
   });
 
+  it("does not treat historical stuck audit rows as a current stack failure", () => {
+    const model = buildRuntimeHealthModel({
+      live: createLiveness(),
+      readiness: createReadiness(),
+      metrics: createMetrics({
+        status: "degraded",
+        execution_detector: {
+          status: "degraded",
+          alerts: [{ code: "stuck_processing_audits", severity: "error", count: 3 }],
+          summary: { alert_count: 1, stuck_processing_count: 3 },
+        },
+      }),
+    });
+
+    expect(model.statusLabel).toBe("Рабочий стек готов");
+    expect(model.statusTone).toBe("ok");
+    expect(model.statusDetail).toContain("можно запускать новый аудит");
+    expect(model.issues.map((issue) => issue.title)).not.toContain("Есть зависшие аудиты");
+    expect(model.issues[0].title).toBe("Рабочий стек готов к новым аудитам");
+  });
+
   it("surfaces missing workers and stuck queues with recovery guidance", () => {
     const model = buildRuntimeHealthModel({
       live: createLiveness(),

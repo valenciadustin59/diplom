@@ -337,12 +337,20 @@ select {
 }
 
 .control-rail__switcher-button {
-  padding: 12px 14px;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 74px;
+  padding: 10px 8px;
   border: 1px solid transparent;
   border-radius: 14px;
+  appearance: none;
   background: rgba(79, 124, 255, 0.06);
   color: var(--muted);
   cursor: pointer;
+  font: inherit;
+  line-height: 1.18;
+  text-align: center;
   transition: 160ms ease;
 }
 
@@ -887,6 +895,23 @@ select {
   overflow-wrap: anywhere;
 }
 
+.timeline-event-table {
+  table-layout: fixed;
+  min-width: 880px;
+}
+
+.timeline-event-table th:first-child,
+.timeline-event-table td:first-child {
+  width: 86px;
+}
+
+.timeline-event-table__time {
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  font-variant-numeric: tabular-nums;
+}
+
 .timeline-table__muted {
   display: block;
   margin-top: 4px;
@@ -1270,13 +1295,18 @@ select {
 }
 
 .comparison-chart__meta {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: baseline;
   gap: 10px;
   font-size: 0.95rem;
 }
 
 .comparison-chart__name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   color: var(--muted);
 }
 
@@ -1286,6 +1316,9 @@ select {
 }
 
 .comparison-chart__value {
+  justify-self: end;
+  min-width: 2ch;
+  text-align: right;
   font-weight: 600;
 }
 
@@ -1634,7 +1667,9 @@ select {
 
 .data-table {
   width: 100%;
+  min-width: 980px;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .data-table th,
@@ -1651,9 +1686,35 @@ select {
   font-weight: 600;
 }
 
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+  width: 42%;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  width: 12%;
+}
+
+.data-table th:nth-child(3),
+.data-table td:nth-child(3),
+.data-table th:nth-child(4),
+.data-table td:nth-child(4),
+.data-table th:nth-child(5),
+.data-table td:nth-child(5) {
+  width: 8%;
+}
+
 .data-table__url {
-  min-width: 260px;
   color: #395ec7;
+}
+
+.data-table__url-value {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .data-table__note {
@@ -2220,14 +2281,18 @@ select {
 
 .competitor-list__item {
   min-width: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 16px;
   padding: 16px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid var(--line);
+}
+
+.competitor-list__item > div:first-child {
+  min-width: 0;
 }
 
 .competitor-list__domain {
@@ -2245,16 +2310,19 @@ select {
 }
 
 .competitor-list__score {
-  min-width: 52px;
+  min-width: 36px;
   text-align: right;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .competitor-list__side {
-  display: grid;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
   gap: 10px;
-  justify-items: end;
+  justify-self: end;
 }
 
 .competitor-list__note {
@@ -2379,8 +2447,7 @@ select {
   .recommendation-deviation__top,
   .runtime-status-hero,
   .runtime-component__top,
-  .runtime-profile__top,
-  .competitor-list__item {
+  .runtime-profile__top {
     flex-direction: column;
     align-items: stretch;
   }
@@ -2391,8 +2458,7 @@ select {
 
   .recommendation-group__status,
   .recommendation-item__badges,
-  .recommendation-group__status-stack,
-  .competitor-list__side {
+  .recommendation-group__status-stack {
     align-self: flex-start;
     justify-content: flex-start;
     justify-items: start;
@@ -2416,9 +2482,6 @@ select {
     align-items: stretch;
   }
 
-  .competitor-list__score {
-    text-align: left;
-  }
 }
 
 @media (max-width: 680px) {

@@ -1,5 +1,5 @@
 export type AuditStatus = "queued" | "processing" | "completed" | "completed_with_warnings" | "failed";
-export type AuditTab = "overview" | "report" | "timeline" | "runtime" | "pages" | "competitors" | "recommendations";
+export type AuditTab = "overview" | "report" | "timeline" | "pages" | "competitors" | "recommendations";
 export type FailureStage = "fetch" | "heavy_analysis" | "features" | "scoring" | "search" | "recommendations" | "pipeline";
 
 export type FailureContext = {

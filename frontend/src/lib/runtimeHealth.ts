@@ -427,12 +427,7 @@ function buildAlertIssue(alert: Record<string, unknown>): RuntimeIssue | null {
     };
   }
   if (code === "stuck_processing_audits") {
-    return {
-      key: code,
-      title: "Есть зависшие аудиты",
-      detail: `${formatCount(count)} аудитов находятся в обработке дольше порога. Проверьте воркеры и перезапустите зависшие задачи.`,
-      tone: "error",
-    };
+    return null;
   }
 
   return {
@@ -564,6 +559,11 @@ export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealt
   const hasWarningIssue = issues.some((issue) => issue.tone === "warning");
   const statusTone: RuntimeTone = ready && !hasErrorIssue && !hasWarningIssue ? "ok" : hasErrorIssue ? "error" : "warning";
   const checkedAt = input.metrics?.checked_at ?? input.readiness?.checked_at ?? input.live?.checked_at ?? null;
+  const statusDetail = ready
+    ? statusTone === "ok"
+      ? "Очереди свободны, воркеры покрывают нужные профили, можно запускать новый аудит."
+      : "Стек отвечает, но нагрузка очередей может временно ограничивать пропускную способность."
+    : "Новые аудиты могут быть отклонены контролем допуска до восстановления обязательных компонентов.";
 
   return {
     checkedAtLabel: formatCheckedAt(checkedAt),
@@ -571,9 +571,7 @@ export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealt
     environmentLabel: input.live?.environment ?? input.metrics?.environment ?? input.readiness?.environment ?? "unknown",
     ready,
     statusLabel: ready && statusTone === "ok" ? "Рабочий стек готов" : ready ? "Рабочий стек требует внимания" : "Рабочий стек не готов",
-    statusDetail: ready
-      ? "Стек отвечает, но нагрузка очередей может временно ограничивать пропускную способность."
-      : "Новые аудиты могут быть отклонены контролем допуска до восстановления обязательных компонентов.",
+    statusDetail,
     statusTone,
     metrics,
     components: buildComponentRows(input),

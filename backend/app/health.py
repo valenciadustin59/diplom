@@ -13,7 +13,7 @@ from app.audit_status import PROCESSING, QUEUED, TERMINAL_STATUSES
 from app.celery_app import AUDIT_QUEUES, celery_app, resolve_task_queue
 from app.config import Settings, get_settings
 from app.models import Audit, AuditCompetitor, AuditEvent
-from app.worker_topology import build_worker_topology_contract, evaluate_worker_topology
+from app.worker_topology import build_worker_topology_contract, evaluate_worker_topology, load_worker_topology_profiles
 
 
 STALE_PROCESSING_THRESHOLD_MINUTES = 15
@@ -498,6 +498,23 @@ def collect_broker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             client.close()
 
 
+def _infer_worker_queues_from_hostname(worker_name: str) -> list[str]:
+    worker_prefix = worker_name.split("@", 1)[0].lower()
+    for profile in load_worker_topology_profiles():
+        profile_name = profile.name.lower()
+        workload_class = profile.workload_class.lower()
+        candidates = {profile_name, workload_class}
+        for candidate in candidates:
+            if (
+                worker_prefix == candidate
+                or worker_prefix.endswith(f".{candidate}")
+                or worker_prefix.endswith(f"-{candidate}")
+                or worker_prefix.endswith(f"_{candidate}")
+            ):
+                return list(profile.queues)
+    return []
+
+
 def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
     del settings
     topology_contract = build_worker_topology_contract()
@@ -564,8 +581,13 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             for queue_info in active_queues_response.get(worker_name, [])
             if isinstance(queue_info, dict) and queue_info.get("name")
         )
+        queue_source = "inspect"
+        if not queue_names:
+            queue_names = _infer_worker_queues_from_hostname(worker_name)
+            queue_source = "hostname_fallback" if queue_names else "inspect_empty"
         worker_payload[worker_name] = {
             "queues": queue_names,
+            "queue_source": queue_source,
             "active_tasks": len(active_response.get(worker_name, [])),
             "reserved_tasks": len(reserved_response.get(worker_name, [])),
             "scheduled_tasks": len(scheduled_response.get(worker_name, [])),

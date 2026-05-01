@@ -115,6 +115,7 @@ export function AuditHistoryPanel({
   const [hiddenAuditIds, setHiddenAuditIds] = useState<string[]>(readHiddenAuditIds);
   const model = buildAuditHistoryModel({ audits: recentAudits, filters, hiddenAuditIds, now: Date.now() });
   const heroScore = model.latestSuccessfulAudit?.score ?? model.rows[0]?.audit.score ?? 0;
+  const hasRows = model.rows.length > 0;
   const latestSuccessfulLabel = model.latestSuccessfulAudit
     ? `Открыть ${model.latestSuccessfulAudit.domain}`
     : "Нет завершённых аудитов для быстрого открытия";
@@ -235,9 +236,9 @@ export function AuditHistoryPanel({
         <div className="feedback-banner feedback-banner--info history-local-note">
           Скрытие локальное: запись остаётся на сервере и вернётся после восстановления или очистки настроек браузера.
         </div>
-        {loadingRecent ? (
+        {loadingRecent && !hasRows ? (
           <div className="empty-state">Загружаем историю аудитов...</div>
-        ) : model.rows.length === 0 ? (
+        ) : !hasRows ? (
           <div className="empty-state">{createEmptyMessage(model, recentAudits.length)}</div>
         ) : (
           <RecentAuditList

@@ -274,7 +274,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `D20` - completed: dedicated `audits.heavy_analysis` queue/profile, target heavy-analysis stage, split competitor network fetch vs heavy semantic/ML analysis, heavy queue admission guard, metrics pressure visibility and benchmark topology profile summary.
 - `D21` - completed: audit report tab, client-side export dashboard, printable HTML/PDF-like view, downloadable Markdown/HTML report, compact SEO/ML/recommendation/competitor/runtime evidence summary using existing audit results and timeline diagnostics APIs.
 - `D22` - completed: audit execution timeline tab, raw audit event stream consumption, stage lifecycle model, queue/worker/fan-out/critical-path visualization and warnings/failure context over existing event diagnostics APIs.
-- `D23` - completed: панель состояния рабочего стека и здоровья очередей, компактная карточка готовности перед запуском, вкладка `Стек`, использование `/health/live`, `/health/ready`, `/health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и понятные подсказки восстановления.
+- `D23` - completed: панель состояния рабочего стека и здоровья очередей, компактная карточка готовности перед запуском, глобальный экран `Стек`, использование `/health/live`, `/health/ready`, `/health/metrics`, покрытие профилей воркеров, нагрузка очередей, накопление задач, очереди без воркеров и понятные подсказки восстановления.
 - `D24` - completed: audit history management panel with metrics, status/domain/query/focus filters, stale/problematic/hidden slices, quick latest-successful open, repeat audit action, and local hide/restore without backend deletion.
 - `D25` - completed: recommendation action tracking with local per-audit action statuses, progress summary, group-level closure counts, and recommendation card status controls without mutating backend recommendation payloads.
 - `D26` - completed: interface copy and terminology polish with Russian primary UI labels, frontend terminology helpers, polished recommendation/report/runtime/timeline copy, production smoke fragments, and backend recommendation display strings without schema/code changes.
@@ -353,7 +353,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - `D22` реализовал GitHub issue `#41`: в audit workspace есть вкладка `Таймлайн`, которая использует `GET /audits/{audit_id}/events` и `GET /audits/{audit_id}/events/diagnostics` без изменения backend orchestration.
 - `D22` показывает lifecycle стадий, dispatch-события очередей, raw event stream, fan-out branches, critical path, warnings/failure context и graceful empty state для старых аудитов без event log.
-- `D23` реализовал GitHub issue `#42`: в audit workspace есть вкладка `Стек`, а на экране запуска — компактная панель `Готовность рабочего стека`.
+- `D23` реализовал GitHub issue `#42`: в приложении есть глобальный экран `Стек`, а на экране запуска — компактная панель `Готовность рабочего стека`.
 - `D23` использует существующие backend endpoints `GET /health/live`, `GET /health/ready` и `GET /health/metrics`; серверная оркестрация не менялась.
 - Пользователь видит готовность API/Redis/SearXNG, покрытие профилей воркеров, нагрузку очередей, накопление задач, очереди без воркеров и подсказки восстановления.
 - `D24` реализовал GitHub issue `#43`: экран истории стал audit management panel поверх существующего `GET /audits`.
@@ -372,7 +372,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `frontend/src/hooks/useRuntimeHealth.ts` — периодический frontend polling диагностики рабочего стека;
 - `frontend/src/pages/RuntimeStatusPage.tsx` — полная панель состояния стека и компактная карточка готовности перед запуском;
 - `frontend/src/api/api.ts` — `runtimeApi.getLiveness()`, `getReadiness()`, `getMetrics()`;
-- `frontend/src/components/AuditTabs.tsx`, `frontend/src/App.tsx`, `frontend/src/components/AuditWorkspace.tsx` — вкладка `runtime`, route wiring и компактная карточка на экране запуска;
+- `frontend/src/App.tsx`, `frontend/src/components/ControlRail.tsx`, `frontend/src/components/AuditWorkspace.tsx` — глобальный route `/?view=runtime` и компактная карточка на экране запуска;
 - `scripts/site-content-check.mjs` — production smoke-check ключевых строк панели состояния рабочего стека, управления историей, плана действий, report/export и D26 copy polish;
 - `frontend/src/lib/auditHistory.ts` — pure model истории, фильтров, stale/problematic/hidden classification и repeat payload;
 - `frontend/src/components/AuditHistoryPanel.tsx` — панель истории, localStorage hide/restore, метрики, фильтры и быстрые действия;
@@ -402,12 +402,17 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - `npm start` поднял `Redis`, `SearxNG`, backend, frontend и четыре Celery worker-профиля;
 - frontend отвечал на `http://127.0.0.1:5173/`;
+- backend в этой проверке выбрал `http://127.0.0.1:8001/`, потому что `8000` уже был занят; root dev-скрипт автоматически передал этот API URL во frontend;
 - `GET /health/live` вернул `200 OK`;
-- `GET /health/ready` вернул `200 OK`, проверил SearXNG через `/healthz` и показал workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml`;
+- `GET /health/ready` вернул `200 OK`, проверил SearXNG через `/healthz` и показал workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml` без `missing_queues`;
+- `GET /health/metrics` показал `workers.status=ok` и `queue_pressure.status=ok`; общий `status=degraded` был только из-за старых SQLite rows со статусом `processing`;
 - локальный `infra/searxng/settings.yml` фиксирует stable engine `presearch`, потому что default SearXNG engines часто дают CAPTCHA/403 при частых dev-проверках;
-- smoke audit `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=3` завершился со status `completed`, score `57.2903`, `3` competitors и без warnings.
+- smoke audit `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=3` (`128aee58-5bf3-480f-9511-bb96af3898fa`) завершился со status `completed`, score `57.2905`, `3` competitors found/analyzed и без failed competitors;
+- timeline diagnostics подтвердил распределённую обработку конкурентов: `fan_out.stage=competitor_page`, `dispatch_count=3`, `terminal_count=3`, а `critical_path_stages` содержит `competitor_page` и `competitor_analysis` с `mode=fan_out_max`.
 
-Локальный `GET /health/metrics` может показывать `degraded`, если в игнорируемой SQLite БД остались старые audit rows со статусом `processing`. Это не означает, что текущий worker stack не поднялся: для готовности distributed runtime сначала смотреть `GET /health/ready` и queue/worker statuses внутри metrics.
+Локальный `GET /health/metrics` может показывать `degraded`, если в игнорируемой SQLite БД остались старые audit rows со статусом `processing`. Это не означает, что текущий worker stack не поднялся: для готовности distributed runtime сначала смотреть `GET /health/ready`, `workers.status`, `queue_pressure.status` и отсутствие `missing_queues`.
+
+Где смотреть параллельную работу в UI: кнопка/экран `Стек` показывает профили workers и очереди, а вкладка `Таймлайн` внутри аудита показывает fan-out ветки конкурентов, dispatch events и critical path.
 
 ## GitHub И Секреты
 

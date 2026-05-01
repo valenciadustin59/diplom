@@ -148,6 +148,7 @@ function getErrorMessage(error: unknown): string {
 
 export function useAuditWorkspace() {
   const loadRequestRef = useRef(0);
+  const recentAuditsLoadedRef = useRef(false);
   const [recentAudits, setRecentAudits] = useState<AuditSummary[]>([]);
   const [selectedAuditId, setSelectedAuditId] = useState<string | null>(null);
   const [currentAudit, setCurrentAudit] = useState<AuditStatusResponse | null>(null);
@@ -163,16 +164,22 @@ export function useAuditWorkspace() {
   const [workspaceError, setWorkspaceError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
-  const refreshAudits = useCallback(async () => {
+  const refreshAudits = useCallback(async (options?: { silent?: boolean }) => {
+    const shouldShowLoading = !options?.silent && !recentAuditsLoadedRef.current;
     try {
-      setLoadingRecent(true);
+      if (shouldShowLoading) {
+        setLoadingRecent(true);
+      }
       const audits = await auditsApi.list();
       setRecentAudits(audits.map(mapSummary));
+      recentAuditsLoadedRef.current = true;
       setRecentError(null);
     } catch (nextError) {
       setRecentError(getErrorMessage(nextError));
     } finally {
-      setLoadingRecent(false);
+      if (shouldShowLoading) {
+        setLoadingRecent(false);
+      }
     }
   }, []);
 
@@ -258,7 +265,7 @@ export function useAuditWorkspace() {
 
     const timerId = window.setInterval(() => {
       void loadAuditBundle(selectedAuditId, { silent: true });
-      void refreshAudits();
+      void refreshAudits({ silent: true });
     }, 3000);
 
     return () => {
