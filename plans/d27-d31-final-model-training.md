@@ -16,7 +16,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - [x] (2026-05-01 16:15 +05:00) Local fallback documentation was added because unauthenticated GitHub access to this private repository can return `404 Not Found`.
 - [x] (2026-05-01 20:19 +05:00) D27: Built `dataset-v2` from seed offsets `0-49` and `50-99` after a clean rebuild. Generated `dataset.csv` with `885` successful rows, `failures.csv` with `49` failed fetches, `checkpoint.json`, `dataset.dataset.json`, and `885` snapshot artifacts. A temporary D27 quality probe reported `ready_for_training=true`, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, and `artifact_coverage_ratio=1.0`.
 - [x] (2026-05-01 20:26 +05:00) D27 was committed and pushed to `origin/main` in commit `0a9cd40`; GitHub issue `#46` closure was not verified because `gh` is not installed in this environment.
-- [ ] D28: Validate `dataset-v2` quality gates, manifest and group split.
+- [x] (2026-05-01 20:42 +05:00) D28: Generated canonical `split.json` with `group_by_query` mode (`695` train rows / `190` validation rows, `79` train queries / `20` validation queries, no query overlap) and canonical `manifest.json`. The manifest reports `ready_for_training=true`, `885` rows, `99` unique queries, `568` unique domains, `6` categories, `8` cities, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, `artifact_coverage_ratio=1.0`, `missing_artifacts_count=0`, and no unmet requirements.
 - [ ] D29: Train a candidate page-quality model from `dataset-v2`.
 - [ ] D30: Run ranking benchmark and compare the candidate model against the current artifact.
 - [ ] D31: Publish the final model artifact and verify product behavior with smoke audits.
@@ -34,6 +34,9 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 - Observation: Some SERP payloads can contain duplicate result URLs for the same query, and the old builder only filtered keys already written before the current page.
   Evidence: an intermediate dataset had `42` duplicate `(query,url)` groups. `backend/app/ml/dataset_builder.py` now deduplicates search results before submitting page fetches to the thread pool, and the clean D27 rebuild has `duplicate_query_url_groups=0`.
+
+- Observation: The pre-D28 docs described creating `split.json` through `app.ml.train --split-output`, whose default behavior also trains and writes a model artifact.
+  Evidence: `app.ml.train` defaulted `--model-output` to `artifacts/page_quality_model.pkl`; using it only to create `split.json` would have risked replacing the production model before D29-D31.
 
 ## Decision Log
 
@@ -53,11 +56,15 @@ The user-visible result is simple: after this plan is complete, a new audit shou
   Rationale: duplicate training rows bias model training and make artifact coverage less clear; fixing the builder before publishing D27 data is safer than post-processing generated CSV files.
   Date/Author: 2026-05-01 / Codex
 
+- Decision: Add `app.ml.train --split-only` for D28 split generation and make requested split files part of manifest readiness checks.
+  Rationale: D28 needs a reproducible `group_by_query` split without training or publishing a model; a manifest that names a split path should fail readiness if that split is missing or leaks queries across train/validation.
+  Date/Author: 2026-05-01 / Codex
+
 ## Outcomes & Retrospective
 
-D27 is complete and pushed. The versioned `dataset-v2` bundle now has enough rows, query coverage, domain coverage, city coverage and artifact coverage for D28's formal manifest step. The main implementation lesson is that live dataset collection needs quality probes between batches: the first attempt revealed duplicate SERP rows and a transient semantic-model loading problem, both of which were resolved before keeping the final generated data.
+D27 is complete and pushed. The versioned `dataset-v2` bundle has enough rows, query coverage, domain coverage, city coverage and artifact coverage for the final ML evidence wave. The main implementation lesson is that live dataset collection needs quality probes between batches: the first attempt revealed duplicate SERP rows and a transient semantic-model loading problem, both of which were resolved before keeping the final generated data.
 
-D28 remains next. It should generate the canonical `manifest.json` and `split.json` from the D27 dataset instead of rebuilding the dataset again.
+D28 is complete. `backend/data/dataset_versions/dataset-v2/manifest.json` and `backend/data/dataset_versions/dataset-v2/split.json` are now the canonical training-readiness evidence for `dataset-v2`. D29 remains next: train a candidate model to `artifacts/page_quality_model.dataset-v2-candidate.pkl` without replacing the production artifact.
 
 ## Context and Orientation
 
@@ -147,6 +154,16 @@ Working directory:
 
     cd E:\codexPROJ\diplom\backend
 
+Create or update the query-grouped split without training a model:
+
+    .venv\Scripts\python.exe -m app.ml.train `
+      --dataset data\dataset_versions\dataset-v2\dataset.csv `
+      --dataset-version dataset-v2 `
+      --split-output data\dataset_versions\dataset-v2\split.json `
+      --test-size 0.2 `
+      --random-state 42 `
+      --split-only
+
 Create or update the manifest:
 
     .venv\Scripts\python.exe -m app.ml.dataset_quality `
@@ -154,6 +171,7 @@ Create or update the manifest:
       --failures data\dataset_versions\dataset-v2\failures.csv `
       --seeds data\dataset_versions\dataset-v2\seeds.csv `
       --dataset-version dataset-v2 `
+      --baseline-version baseline-v1 `
       --artifacts-dir data\dataset_versions\dataset-v2\artifacts `
       --split data\dataset_versions\dataset-v2\split.json `
       --output data\dataset_versions\dataset-v2\manifest.json
@@ -164,7 +182,7 @@ Open `backend/data/dataset_versions/dataset-v2/manifest.json` and check:
 - row, query, domain, category and city coverage are adequate.
 - `artifact_coverage_ratio` is present.
 - `label_source_distribution` is present.
-- `split_path` points to `split.json`.
+- `split_path` points to `split.json` and split checks are satisfied.
 
 Run D28 checks:
 

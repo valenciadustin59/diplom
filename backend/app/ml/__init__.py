@@ -34,6 +34,7 @@ _DATASET_BUILDER_EXPORTS = {
 }
 _TRAIN_EXPORTS = {
     "build_dataset_split_manifest",
+    "create_dataset_split",
     "evaluate_model_rows",
     "load_dataset_rows",
     "prepare_training_data",

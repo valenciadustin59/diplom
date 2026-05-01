@@ -139,6 +139,39 @@ def save_dataset_split_manifest(
     return {**manifest, "split_path": str(resolved_output_path)}
 
 
+def create_dataset_split(
+    dataset_path: str | Path,
+    output_path: str | Path,
+    *,
+    dataset_version: str | None = None,
+    test_size: float = 0.2,
+    random_state: int = 42,
+) -> dict[str, object]:
+    rows = load_dataset_rows(dataset_path)
+    if len(rows) < 2:
+        raise ValueError("At least 2 dataset rows are required to create a train/validation split")
+
+    train_rows, validation_rows, split_metadata = split_dataset_rows(
+        rows,
+        test_size=test_size,
+        random_state=random_state,
+    )
+    if not train_rows or not validation_rows:
+        raise ValueError("Dataset split produced an empty train or validation partition")
+
+    resolved_dataset_version = dataset_version or infer_dataset_version(dataset_path, rows=rows)
+    return save_dataset_split_manifest(
+        train_rows,
+        validation_rows,
+        dataset_path=dataset_path,
+        dataset_version=resolved_dataset_version,
+        test_size=test_size,
+        random_state=random_state,
+        split_metadata=split_metadata,
+        output_path=output_path,
+    )
+
+
 def _rmse(y_true: list[float], y_pred: list[float]) -> float:
     return sqrt(float(mean_squared_error(y_true, y_pred)))
 
@@ -400,7 +433,21 @@ def main() -> None:
     parser.add_argument("--dataset-version", default="")
     parser.add_argument("--split-output", default="")
     parser.add_argument("--model-schema-version", default=DEFAULT_TRAINING_MODEL_SCHEMA_VERSION)
+    parser.add_argument("--split-only", action="store_true")
     args = parser.parse_args()
+    if args.split_only:
+        if not args.split_output:
+            parser.error("--split-output is required when --split-only is used")
+        result = create_dataset_split(
+            dataset_path=args.dataset,
+            output_path=args.split_output,
+            dataset_version=args.dataset_version or None,
+            test_size=args.test_size,
+            random_state=args.random_state,
+        )
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return
+
     result = train_quality_model(
         dataset_path=args.dataset,
         model_path=args.model_output,
@@ -413,4 +460,3 @@ def main() -> None:
     print(result)
 if __name__ == "__main__":
     main()
-

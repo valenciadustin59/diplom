@@ -142,9 +142,22 @@ def _evaluate_quality_gate(
     }
 
 
+def _evaluate_boolean_gate(name: str, passed: bool) -> dict[str, object]:
+    return {
+        "name": name,
+        "passed": bool(passed),
+        "actual": bool(passed),
+        "expected": True,
+        "comparator": "is",
+    }
+
+
 def evaluate_dataset_quality(
     coverage: Mapping[str, object],
     thresholds: DatasetQualityThresholds = PRODUCTION_LIKE_DATASET_THRESHOLDS,
+    *,
+    split_summary: Mapping[str, object] | None = None,
+    require_split: bool = False,
 ) -> dict[str, object]:
     checks = [
         _evaluate_quality_gate("min_rows", _safe_float(coverage.get("rows_count")), thresholds.min_rows, "min"),
@@ -191,6 +204,36 @@ def evaluate_dataset_quality(
             "max",
         ),
     ]
+    if require_split:
+        train_queries = set()
+        validation_queries = set()
+        split_mode = ""
+        expected_query_count = _safe_int(coverage.get("unique_queries"))
+        if split_summary is not None:
+            split_mode = str(split_summary.get("split_mode") or "")
+            train_queries = {
+                str(query).strip()
+                for query in split_summary.get("train_queries") or []
+                if str(query).strip()
+            }
+            validation_queries = {
+                str(query).strip()
+                for query in split_summary.get("validation_queries") or []
+                if str(query).strip()
+            }
+        checks.extend(
+            [
+                _evaluate_boolean_gate("split_present", split_summary is not None),
+                _evaluate_boolean_gate("split_group_by_query", split_mode == "group_by_query"),
+                _evaluate_boolean_gate("split_train_queries_present", bool(train_queries)),
+                _evaluate_boolean_gate("split_validation_queries_present", bool(validation_queries)),
+                _evaluate_boolean_gate("split_query_partitions_disjoint", not (train_queries & validation_queries)),
+                _evaluate_boolean_gate(
+                    "split_covers_dataset_queries",
+                    len(train_queries | validation_queries) == expected_query_count,
+                ),
+            ]
+        )
 
     return {
         "ready_for_training": all(check["passed"] for check in checks),
@@ -211,6 +254,13 @@ def _load_split_summary(split_path: Path | None) -> dict[str, object] | None:
 
 def _non_empty_counter(rows: Sequence[Mapping[str, str]], key: str, default: str) -> Counter[str]:
     return Counter(str(row.get(key) or "").strip() or default for row in rows)
+
+
+def _resolve_artifact_path(dataset_path: Path, artifact_path: str) -> Path:
+    resolved_artifact_path = Path(artifact_path)
+    if resolved_artifact_path.is_absolute():
+        return resolved_artifact_path
+    return dataset_path.parent / resolved_artifact_path
 
 
 def build_dataset_manifest(
@@ -260,7 +310,16 @@ def build_dataset_manifest(
     feature_schema_distribution = _non_empty_counter(success_rows, "feature_schema_version", "unknown")
     extraction_artifact_distribution = _non_empty_counter(success_rows, "extraction_artifact_version", "unknown")
     label_schema_distribution = _non_empty_counter(success_rows, "label_schema_version", "unknown")
-    rows_with_artifacts = sum(1 for row in success_rows if str(row.get("artifact_path") or "").strip())
+    artifact_paths = [
+        str(row.get("artifact_path") or "").strip()
+        for row in success_rows
+        if str(row.get("artifact_path") or "").strip()
+    ]
+    rows_with_artifacts = sum(
+        1
+        for artifact_path in artifact_paths
+        if _resolve_artifact_path(resolved_dataset_path, artifact_path).exists()
+    )
     rows_with_expert_labels = sum(1 for row in success_rows if str(row.get("expert_target_score") or "").strip())
 
     coverage = {
@@ -316,10 +375,17 @@ def build_dataset_manifest(
         },
         "artifacts": {
             "rows_with_artifacts": rows_with_artifacts,
+            "rows_with_artifact_paths": len(artifact_paths),
+            "missing_artifacts_count": len(artifact_paths) - rows_with_artifacts,
             "artifact_coverage_ratio": _round_metric(rows_with_artifacts / rows_count) if rows_count else 0.0,
         },
         "split": split_summary,
-        "quality_gates": evaluate_dataset_quality(coverage, thresholds=thresholds),
+        "quality_gates": evaluate_dataset_quality(
+            coverage,
+            thresholds=thresholds,
+            split_summary=split_summary,
+            require_split=resolved_split_path is not None,
+        ),
     }
 
 

@@ -99,7 +99,7 @@
 
 - `plans/d27-d31-final-model-training.md` — подробный план выполнения;
 - `D27` / `#46` — completed/pushed: `dataset-v2` собран из seed catalog батчами;
-- `D28` / `#47` — проверить quality gates, manifest и group split;
+- `D28` / `#47` — completed: quality gates, `manifest.json` и group split проверены;
 - `D29` / `#48` — обучить candidate model на `dataset-v2`;
 - `D30` / `#49` — сравнить candidate с текущей моделью через ranking benchmark;
 - `D31` / `#50` — опубликовать финальный artifact и проверить продукт smoke-аудитами.
@@ -458,6 +458,14 @@ cd E:\codexPROJ\diplom\backend
 
 ```powershell
 cd E:\codexPROJ\diplom\backend
+.venv\Scripts\python.exe -m app.ml.train `
+  --dataset data\dataset_versions\dataset-v2\dataset.csv `
+  --dataset-version dataset-v2 `
+  --split-output data\dataset_versions\dataset-v2\split.json `
+  --test-size 0.2 `
+  --random-state 42 `
+  --split-only
+
 .venv\Scripts\python.exe -m app.ml.dataset_quality `
   --dataset data\dataset_versions\dataset-v2\dataset.csv `
   --failures data\dataset_versions\dataset-v2\failures.csv `
@@ -467,11 +475,6 @@ cd E:\codexPROJ\diplom\backend
   --artifacts-dir data\dataset_versions\dataset-v2\artifacts `
   --split data\dataset_versions\dataset-v2\split.json `
   --output data\dataset_versions\dataset-v2\manifest.json
-
-.venv\Scripts\python.exe -m app.ml.train `
-  --dataset data\dataset_versions\dataset-v2\dataset.csv `
-  --dataset-version dataset-v2 `
-  --split-output data\dataset_versions\dataset-v2\split.json
 ```
 
 Для текущего финального этапа использовать подробный локальный план `plans/d27-d31-final-model-training.md`. Он описывает порядок `D27-D31`: батчевая сборка `dataset-v2`, quality manifest, candidate training, ranking benchmark, publish и smoke-проверки. Если GitHub Issues недоступны и возвращают `404`, этот план и `AGENTS.md` считать актуальным backlog source of truth.

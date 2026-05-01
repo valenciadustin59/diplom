@@ -193,6 +193,55 @@ def test_build_dataset_manifest_reports_d17_metadata_and_quality_gates(tmp_path)
     assert Path(saved_manifest["manifest_path"]).exists()
 
 
+def test_build_dataset_manifest_requires_requested_split(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    split_path = tmp_path / "missing-split.json"
+
+    _write_csv(
+        dataset_path,
+        SUCCESS_FIELDS,
+        [
+            {
+                "dataset_version": "dataset-v2-test",
+                "feature_schema_version": "v2",
+                "extraction_artifact_version": "extraction-v2",
+                "label_schema_version": "hybrid-v1",
+                "label_source": "weak_serp",
+                "expert_target_score": "",
+                "artifact_path": "",
+                "query": "seo audit moscow",
+                "category": "seo",
+                "city": "moscow",
+                "region_code": 213,
+                "domain": "example-1.com",
+                "rank": 1,
+                "page_type": "content",
+            }
+        ],
+    )
+
+    manifest = build_dataset_manifest(
+        dataset_path=dataset_path,
+        seed_rows=_seed_rows(),
+        thresholds=DatasetQualityThresholds(
+            min_rows=1,
+            min_unique_queries=1,
+            min_unique_domains=1,
+            min_unique_categories=1,
+            min_unique_cities=1,
+            min_query_coverage_ratio=0.3,
+            min_average_rows_per_query=1.0,
+            max_failure_rate=1.0,
+        ),
+        dataset_version="dataset-v2-test",
+        split_path=split_path,
+    )
+
+    assert manifest["split"] is None
+    assert manifest["quality_gates"]["ready_for_training"] is False
+    assert "split_present" in manifest["quality_gates"]["unmet_requirements"]
+
+
 def test_build_dataset_manifest_reports_unmet_requirements(tmp_path):
     dataset_path = tmp_path / "dataset.csv"
     failures_path = tmp_path / "failures.csv"

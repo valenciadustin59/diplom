@@ -86,7 +86,7 @@
 
 - `plans/d27-d31-final-model-training.md` — подробный ExecPlan для финального ML-этапа;
 - `D27` / GitHub `#46` — completed and pushed; GitHub issue closure unverified: `dataset-v2` собран из seed catalog батчами `0-49` и `50-99`;
-- `D28` / GitHub `#47` — open: проверить quality gates, `manifest.json` и `group_by_query` split;
+- `D28` / GitHub `#47` — completed: `manifest.json` и `group_by_query` `split.json` сформированы, `ready_for_training=true`;
 - `D29` / GitHub `#48` — open: обучить candidate page-quality model на `dataset-v2`;
 - `D30` / GitHub `#49` — open: прогнать ranking benchmark и сравнить candidate с текущим artifact;
 - `D31` / GitHub `#50` — open: опубликовать финальную model artifact и проверить продукт smoke-аудитами.
@@ -449,8 +449,8 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
-- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; следующий шаг — `D28`, то есть сформировать `manifest.json` и `split.json`.
+- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; следующий шаг — `D29`, то есть обучить candidate model без замены production artifact.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
-- `app.ml.train` умеет сохранять persisted split manifest.
+- `app.ml.train` умеет сохранять persisted split manifest и имеет `--split-only` режим без обучения модели.
 - `app.ml.publish` использует manifest dataset version и dataset split metadata.

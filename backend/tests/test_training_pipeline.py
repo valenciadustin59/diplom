@@ -5,6 +5,7 @@ from pathlib import Path
 from app.ml import (
     FEATURE_COLUMNS,
     build_dataset,
+    create_dataset_split,
     explain_score,
     load_saved_model,
     predict_score,
@@ -19,6 +20,51 @@ def _feature_row(multiplier: float) -> dict[str, float]:
         feature_name: float((index + 1) * multiplier)
         for index, feature_name in enumerate(FEATURE_COLUMNS)
     }
+
+
+def _write_grouped_training_dataset(dataset_path: Path) -> None:
+    with dataset_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
+        writer.writeheader()
+        queries = ["ремонт квартир москва", "пластиковые окна москва", "seo продвижение москва"]
+        for query_index, query in enumerate(queries, start=1):
+            for rank in range(1, 4):
+                row = {column: "" for column in DATASET_COLUMNS}
+                row.update(
+                    {
+                        "dataset_version": "dataset-v2-test",
+                        "feature_schema_version": "v2",
+                        "extraction_artifact_version": "extraction-v2",
+                        "label_schema_version": "hybrid-v1",
+                        "label_source": "weak_serp",
+                        "weak_target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "expert_target_score": "",
+                        "query": query,
+                        "category": "category",
+                        "intent": "commercial",
+                        "city": "москва",
+                        "region_code": 213,
+                        "url": f"https://example{query_index}.com/page-{rank}",
+                        "domain": f"example{query_index}.com",
+                        "rank": rank,
+                        "serp_page": 0,
+                        "title": f"Title {rank}",
+                        "snippet": f"Snippet {rank}",
+                        "page_type": "content",
+                        "fetch_status": "ok",
+                        "fetch_error": "",
+                        "target_score": round(((3 - rank) / 2) * 100.0, 4),
+                        "phone_present": 1,
+                        "address_present": 1,
+                        "price_present": 1,
+                        "commercial_signals_score": 0.8,
+                        "trust_signals_score": 0.7,
+                        "commercial_trust_score": 0.75,
+                    }
+                )
+                for index, feature_name in enumerate(FEATURE_COLUMNS, start=1):
+                    row[feature_name] = float(index * (query_index * 2 + rank))
+                writer.writerow(row)
 
 
 def test_build_dataset_from_seed_csv_writes_dataset_failures_artifacts_and_hybrid_labels(monkeypatch, tmp_path):
@@ -304,48 +350,7 @@ def test_train_quality_model_saves_model_and_exposes_model_info_with_split_manif
     model_path = tmp_path / "model.pkl"
     split_path = tmp_path / "split.json"
 
-    with dataset_path.open("w", encoding="utf-8", newline="") as file:
-        writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
-        writer.writeheader()
-        queries = ["ремонт квартир москва", "пластиковые окна москва", "seo продвижение москва"]
-        for query_index, query in enumerate(queries, start=1):
-            for rank in range(1, 4):
-                row = {column: "" for column in DATASET_COLUMNS}
-                row.update(
-                    {
-                        "dataset_version": "dataset-v2-test",
-                        "feature_schema_version": "v2",
-                        "extraction_artifact_version": "extraction-v2",
-                        "label_schema_version": "hybrid-v1",
-                        "label_source": "weak_serp",
-                        "weak_target_score": round(((3 - rank) / 2) * 100.0, 4),
-                        "expert_target_score": "",
-                        "query": query,
-                        "category": "category",
-                        "intent": "commercial",
-                        "city": "москва",
-                        "region_code": 213,
-                        "url": f"https://example{query_index}.com/page-{rank}",
-                        "domain": f"example{query_index}.com",
-                        "rank": rank,
-                        "serp_page": 0,
-                        "title": f"Title {rank}",
-                        "snippet": f"Snippet {rank}",
-                        "page_type": "content",
-                        "fetch_status": "ok",
-                        "fetch_error": "",
-                        "target_score": round(((3 - rank) / 2) * 100.0, 4),
-                        "phone_present": 1,
-                        "address_present": 1,
-                        "price_present": 1,
-                        "commercial_signals_score": 0.8,
-                        "trust_signals_score": 0.7,
-                        "commercial_trust_score": 0.75,
-                    }
-                )
-                for index, feature_name in enumerate(FEATURE_COLUMNS, start=1):
-                    row[feature_name] = float(index * (query_index * 2 + rank))
-                writer.writerow(row)
+    _write_grouped_training_dataset(dataset_path)
 
     result = train_quality_model(
         dataset_path=dataset_path,
@@ -383,6 +388,32 @@ def test_train_quality_model_saves_model_and_exposes_model_info_with_split_manif
     assert 0.0 <= score <= 100.0
     assert explanation["model_info"]["source"] == "local_dataset"
     assert explanation["model_info"]["dataset_rows"] == 9
+
+
+def test_create_dataset_split_writes_query_grouped_manifest(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    split_path = tmp_path / "split.json"
+    _write_grouped_training_dataset(dataset_path)
+
+    result = create_dataset_split(
+        dataset_path=dataset_path,
+        output_path=split_path,
+        dataset_version="dataset-v2-test",
+        test_size=0.34,
+        random_state=42,
+    )
+
+    assert split_path.exists()
+    assert result["split_path"] == str(split_path)
+    assert result["dataset_version"] == "dataset-v2-test"
+    assert result["split_mode"] == "group_by_query"
+    assert result["train_rows_count"] + result["validation_rows_count"] == 9
+    assert not (set(result["train_queries"]) & set(result["validation_queries"]))
+    assert all(assignment["partition"] != "both" for assignment in result["query_assignments"])
+
+    saved_split = json.loads(split_path.read_text(encoding="utf-8"))
+    assert saved_split["split_mode"] == "group_by_query"
+    assert saved_split["random_state"] == 42
 
 
 def test_predict_score_falls_back_to_bootstrap_model(tmp_path):
