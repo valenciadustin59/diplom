@@ -93,7 +93,16 @@
 - `D25` / `#44` — completed: recommendation action tracking.
 - `D26` / `#45` — completed: interface copy and terminology polish.
 
-Волна `D21-D26` закрыта. Следующий практический фокус выбирается отдельной пользовательской задачей или новым GitHub issue; demo mode в текущий backlog не входит.
+Волна `D21-D26` закрыта. Demo mode в текущий backlog не входит.
+
+Активный практический backlog после `D26` — финальный ML-этап `D27-D31`. Эти задачи заведены как GitHub issues `#46-#50`, но репозиторий может быть приватным, поэтому другие Codex-диалоги без GitHub-авторизации могут видеть `404 Not Found` на `/issues` и через GitHub API. Локальная копия задач является рабочим источником правды:
+
+- `plans/d27-d31-final-model-training.md` — подробный план выполнения;
+- `D27` / `#46` — собрать `dataset-v2` из seed catalog батчами;
+- `D28` / `#47` — проверить quality gates, manifest и group split;
+- `D29` / `#48` — обучить candidate model на `dataset-v2`;
+- `D30` / `#49` — сравнить candidate с текущей моделью через ranking benchmark;
+- `D31` / `#50` — опубликовать финальный artifact и проверить продукт smoke-аудитами.
 
 ### Distributed foundation `D1-D12`
 
@@ -464,3 +473,5 @@ cd E:\codexPROJ\diplom\backend
   --dataset-version dataset-v2 `
   --split-output data\dataset_versions\dataset-v2\split.json
 ```
+
+Для текущего финального этапа использовать подробный локальный план `plans/d27-d31-final-model-training.md`. Он описывает порядок `D27-D31`: батчевая сборка `dataset-v2`, quality manifest, candidate training, ranking benchmark, publish и smoke-проверки. Если GitHub Issues недоступны и возвращают `404`, этот план и `AGENTS.md` считать актуальным backlog source of truth.

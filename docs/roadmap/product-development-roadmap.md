@@ -13,11 +13,25 @@
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
 - `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
-После `D26` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов, план действий по рекомендациям и стабильную русскую терминологию интерфейса для демонстрации распределённого исполнения. Следующий этап должен выбираться отдельной задачей, а не переписывать серверную оркестрацию или добавлять новый анализ без необходимости.
+После `D26` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов, план действий по рекомендациям и стабильную русскую терминологию интерфейса для демонстрации распределённого исполнения. Следующий этап выбран пользователем как финальное ML-доведение модели: `D27-D31`.
+
+Важно: GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Поэтому активный backlog `D27-D31` продублирован локально в `AGENTS.md`, `README.md`, `backend/README.md` и `plans/d27-d31-final-model-training.md`.
 
 ## Завершённая волна: D21-D26 Frontend/Product Layer
 
 Эта волна была заведена в GitHub как issues `#40-#45` и закрыта после D26. Demo mode намеренно не входил в этот backlog: пользователь выбрал развивать продуктовые и демонстрационные возможности без отдельного демо-режима.
+
+## Активная волна: D27-D31 Final ML Model Evidence
+
+Эта волна заведена как GitHub issues `#46-#50`, но локальные документы должны считаться источником правды, если GitHub Issues недоступны.
+
+- `D27` / `#46`: собрать `dataset-v2` из seed catalog контролируемыми батчами.
+- `D28` / `#47`: проверить quality gates, `manifest.json`, artifact coverage и `group_by_query` split.
+- `D29` / `#48`: обучить candidate page-quality model на `dataset-v2` без замены production artifact.
+- `D30` / `#49`: прогнать ranking benchmark и сравнить candidate с текущей моделью.
+- `D31` / `#50`: опубликовать финальный model artifact и проверить продукт smoke-аудитами.
+
+Подробный план выполнения находится в `plans/d27-d31-final-model-training.md`.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -136,3 +150,26 @@
 5. Если нужен GitHub, использовать локальный credential helper или запросить токен вручную, не печатая секреты в чат, logs или файлы.
 
 Канонический статус сейчас: `D1-D26` завершены; следующий практический backlog должен быть выбран явно пользователем или через новый open GitHub issue.
+
+## Current Active Backlog Override
+
+This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
+
+Canonical current status: `D1-D26` are complete. The active practical backlog is `D27-D31`, focused on final `dataset-v2` model training and publication. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
+
+Local source of truth:
+
+- `AGENTS.md`
+- `README.md`
+- `backend/README.md`
+- `plans/d27-d31-final-model-training.md`
+
+Active tasks:
+
+- `D27` / GitHub `#46`: build `dataset-v2` from seed catalog in controlled batches.
+- `D28` / GitHub `#47`: validate dataset quality gates, manifest, artifact coverage and group split.
+- `D29` / GitHub `#48`: train candidate page-quality model from `dataset-v2`.
+- `D30` / GitHub `#49`: run ranking benchmark and compare the candidate against the current artifact.
+- `D31` / GitHub `#50`: publish the final model artifact and verify product behavior with smoke audits.
+
+Next agent instruction: if no newer explicit user task exists, start with `D27` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.

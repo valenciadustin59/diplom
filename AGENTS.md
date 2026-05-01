@@ -80,7 +80,16 @@
 - `D25` / GitHub `#44` — completed: recommendation action tracking;
 - `D26` / GitHub `#45` — completed: interface copy and terminology polish.
 
-Практический фокус после `D26`: не переписывать backend orchestration и не добавлять demo mode без явного запроса. Новый backlog scope нужно брать из явно выбранной пользователем задачи или нового GitHub issue; предыдущая волна `D21-D26` закрыта.
+Практический фокус после `D26`: не переписывать backend orchestration и не добавлять demo mode без явного запроса. Предыдущая волна `D21-D26` закрыта.
+
+Активный backlog после `D26` теперь зафиксирован локально, потому что GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Если GitHub недоступен, считать локальные документы источником правды:
+
+- `plans/d27-d31-final-model-training.md` — подробный ExecPlan для финального ML-этапа;
+- `D27` / GitHub `#46` — open: собрать `dataset-v2` из seed catalog батчами;
+- `D28` / GitHub `#47` — open: проверить quality gates, `manifest.json` и `group_by_query` split;
+- `D29` / GitHub `#48` — open: обучить candidate page-quality model на `dataset-v2`;
+- `D30` / GitHub `#49` — open: прогнать ranking benchmark и сравнить candidate с текущим artifact;
+- `D31` / GitHub `#50` — open: опубликовать финальную model artifact и проверить продукт smoke-аудитами.
 
 ### D1-D12 Summary
 
@@ -387,13 +396,21 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус нужно брать из явно выбранной пользователем задачи или из актуальных open GitHub issues. Волна GitHub `#40-#45` закрыта после `D26`; demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — финальный ML-этап `D27-D31`, если пользователь не выбрал другую задачу явно. Волна GitHub `#40-#45` закрыта после `D26`; demo mode намеренно не входит в backlog.
+
+Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому задачи `D27-D31` продублированы локально и должны быть видны из рабочей копии:
+
+- `plans/d27-d31-final-model-training.md`;
+- этот раздел `AGENTS.md`;
+- `README.md`;
+- `backend/README.md`;
+- `docs/roadmap/product-development-roadmap.md`.
 
 Перед началом любой новой задачи:
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов;
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальный backlog `D27-D31`;
 - не откатывать уже выполненные `D13-D26` без прямой причины.
 
 ## Последняя runtime smoke-проверка
@@ -432,6 +449,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
+- `dataset-v2/dataset.csv`, `failures.csv`, `manifest.json`, `split.json` и `artifacts/` являются целью активного backlog `D27-D31`; если этих файлов ещё нет, начинать с `D27`.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest.

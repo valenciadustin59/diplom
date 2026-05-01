@@ -404,6 +404,7 @@ cd E:\codexPROJ\diplom\backend
 - `../README.md` — обзор проекта и полный локальный запуск.
 - `../AGENTS.md` — operational notes и актуальный статус после закрытия `D26` (`#45`).
 - `../docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D26`, включая frontend/product wave без изменения ядра backend-анализа.
+- `../plans/d27-d31-final-model-training.md` — локальная копия активного backlog `D27-D31` для финального обучения модели, если GitHub Issues приватного репозитория недоступны и возвращают `404`.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -494,3 +495,13 @@ cd E:\codexPROJ\diplom\backend
   --dataset-version dataset-v2 `
   --split-output data\dataset_versions\dataset-v2\split.json
 ```
+
+Текущий активный backend/ML backlog после `D26`:
+
+- `D27` / `#46` — собрать `dataset-v2` батчами через `app.ml.dataset_builder --versioned-layout`;
+- `D28` / `#47` — сформировать `manifest.json`, проверить quality gates и `split.json`;
+- `D29` / `#48` — обучить candidate artifact без замены production model;
+- `D30` / `#49` — прогнать ranking benchmark против текущего `artifacts/page_quality_model.pkl`;
+- `D31` / `#50` — опубликовать финальную модель и подтвердить runtime smoke-аудитами.
+
+Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d27-d31-final-model-training.md`.
