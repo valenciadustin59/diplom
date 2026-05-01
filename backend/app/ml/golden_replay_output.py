@@ -19,6 +19,7 @@ def render_golden_replay_markdown(report: dict[str, Any]) -> str:
     dataset = model_status.get("dataset") if isinstance(model_status.get("dataset"), dict) else {}
     rollback = report.get("rollback_reference") if isinstance(report.get("rollback_reference"), dict) else {}
     summary = report.get("guardrail_summary") if isinstance(report.get("guardrail_summary"), dict) else {}
+    evidence_summary = report.get("evidence_summary") if isinstance(report.get("evidence_summary"), dict) else {}
 
     lines = [
         "# D41 Golden Query Replay Guardrails",
@@ -35,6 +36,7 @@ def render_golden_replay_markdown(report: dict[str, Any]) -> str:
         f"- Artifact SHA1: `{model_status.get('artifact_sha1')}`",
         f"- Rollback available: `{rollback.get('available')}`",
         f"- Rollback SHA1: `{rollback.get('model_sha1') or rollback.get('artifact_sha1')}`",
+        f"- Evidence kinds: `{json.dumps(evidence_summary.get('kind_counts', {}), ensure_ascii=False, sort_keys=True)}`",
         "",
         "## Guardrail Summary",
         "",
@@ -72,6 +74,9 @@ def render_golden_replay_markdown(report: dict[str, Any]) -> str:
         if not isinstance(item, dict):
             continue
         lines.extend([f"### {item.get('id')}", ""])
+        lines.append(f"- Evidence kind: `{item.get('evidence_kind')}`")
+        if item.get("fixture_note"):
+            lines.append(f"- Fixture note: {item.get('fixture_note')}")
         for guardrail in item.get("guardrails", []):
             if not isinstance(guardrail, dict):
                 continue

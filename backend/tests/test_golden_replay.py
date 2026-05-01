@@ -1,4 +1,5 @@
 import json
+from copy import deepcopy
 
 from app.ml.golden_replay import (
     build_golden_replay_report,
@@ -68,6 +69,8 @@ def test_build_golden_replay_report_passes_with_complete_stored_evidence():
     )
 
     assert report["decision"]["status"] == "passed"
+    assert report["model_status"]["checked_at"] == "2026-05-02T00:00:00+00:00"
+    assert report["evidence_summary"]["kind_counts"] == {"stored_evidence": 1}
     assert report["guardrail_summary"]["passed_items"] == 1
     assert report["guardrail_summary"]["failed_items"] == 0
     item = report["items"][0]
@@ -161,3 +164,30 @@ def test_write_golden_replay_report_creates_json_and_markdown(tmp_path):
     assert saved["report_paths"] == paths
     assert "# D41 Golden Query Replay Guardrails" in markdown_path.read_text(encoding="utf-8")
     assert not (tmp_path / "page_quality_model.pkl").exists()
+
+
+def test_golden_replay_normalizes_volatile_model_status_timestamps_for_deterministic_reports():
+    catalog = default_golden_query_catalog()[:1]
+    evidence = [
+        {
+            "id": "renovation-moscow",
+            "status": "completed",
+            "score": 83.7,
+            "model_info": MODEL_INFO,
+            "competitors_found": 2,
+            "competitors_analyzed": 2,
+            "competitors_failed": 0,
+            "recommendations_count": 11,
+            "warnings": [],
+        }
+    ]
+    first_status = deepcopy(MODEL_STATUS)
+    second_status = deepcopy(MODEL_STATUS)
+    first_status["checked_at"] = "2026-05-02T00:00:01+00:00"
+    second_status["checked_at"] = "2026-05-02T00:10:59+00:00"
+
+    first_report = build_golden_replay_report(catalog, evidence, model_status=first_status)
+    second_report = build_golden_replay_report(catalog, evidence, model_status=second_status)
+
+    assert first_report == second_report
+    assert first_report["model_status"]["checked_at"] == "2026-05-02T00:00:00+00:00"

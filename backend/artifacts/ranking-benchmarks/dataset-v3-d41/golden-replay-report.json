@@ -29,6 +29,17 @@
     "recommendation": "Golden replay guardrails passed for the stored post-publish evidence.",
     "status": "passed"
   },
+  "evidence_summary": {
+    "item_count": 3,
+    "kind_counts": {
+      "stored_smoke_artifact": 1,
+      "synthetic_stored_fixture": 2
+    },
+    "notes": [
+      "Default D41 mode includes explicit synthetic stored fixtures for catalog coverage; pass --evidence-json to evaluate externally captured replay snapshots.",
+      "Stored smoke artifacts are reused as historical post-publish evidence, not rerun live audits."
+    ]
+  },
   "generated_at": "2026-05-02T00:00:00+00:00",
   "guardrail_summary": {
     "failed_items": 0,
@@ -69,8 +80,10 @@
       },
       "description": "D38 post-publish smoke domain for commercial service pages.",
       "domain": "home_services",
+      "evidence_kind": "stored_smoke_artifact",
       "evidence_source": "output/runtime-smoke/d38-smoke-summary.json",
       "failure_context": null,
+      "fixture_note": null,
       "guardrails": [
         {
           "detail": "Audit reached a terminal successful status.",
@@ -196,8 +209,10 @@
       },
       "description": "Commercial local-service query used throughout API and recommendation tests.",
       "domain": "home_services",
-      "evidence_source": "app.ml.golden_replay.default_stored_replay_evidence",
+      "evidence_kind": "synthetic_stored_fixture",
+      "evidence_source": "app.ml.golden_replay_catalog.default_stored_replay_evidence",
       "failure_context": null,
+      "fixture_note": "Synthetic deterministic D41 stored fixture for guardrail coverage; not produced by a live replay audit.",
       "guardrails": [
         {
           "detail": "Audit reached a terminal successful status.",
@@ -323,8 +338,10 @@
       },
       "description": "Generic SEO-audit product query used in backend and frontend regression tests.",
       "domain": "seo_services",
-      "evidence_source": "app.ml.golden_replay.default_stored_replay_evidence",
+      "evidence_kind": "synthetic_stored_fixture",
+      "evidence_source": "app.ml.golden_replay_catalog.default_stored_replay_evidence",
       "failure_context": null,
+      "fixture_note": "Synthetic deterministic D41 stored fixture for guardrail coverage; not produced by a live replay audit.",
       "guardrails": [
         {
           "detail": "Audit reached a terminal successful status.",
@@ -441,7 +458,7 @@
   "model_status": {
     "artifact_path": "artifacts\\page_quality_model.pkl",
     "artifact_sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
-    "checked_at": "2026-05-01T21:58:02.394437+00:00",
+    "checked_at": "2026-05-02T00:00:00+00:00",
     "dataset": {
       "attempted_query_coverage_ratio": null,
       "categories_count": 0,

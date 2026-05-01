@@ -6,11 +6,12 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from app.ml.model import ARTIFACTS_DIR
+from app.ml.golden_replay_catalog import default_golden_query_catalog, default_stored_replay_evidence
 from app.ml.golden_replay_output import (
     render_golden_replay_markdown,
     write_golden_replay_report as _write_golden_replay_report,
 )
+from app.ml.model import ARTIFACTS_DIR
 from app.model_status import build_model_status_payload
 
 DEFAULT_OUTPUT_DIR = ARTIFACTS_DIR / "ranking-benchmarks" / "dataset-v3-d41"
@@ -23,27 +24,6 @@ DEFAULT_GUARDRAIL_THRESHOLDS = {
     "min_competitor_coverage_ratio": 0.5,
     "min_recommendations": 1,
 }
-DEFAULT_RUNTIME_MODEL_INFO = {
-    "source": "local_dataset",
-    "model_type": "CatBoostRegressor",
-    "model_schema_version": "v3",
-    "artifact_version": "dataset-v3-d37-20260501200434",
-    "artifact_family": "page_quality_model",
-    "dataset_version": "dataset-v3-d37",
-    "feature_count": 148,
-}
-DEFAULT_ROLLBACK_REFERENCE = {
-    "label": "D38 rollback reference",
-    "model_schema_version": "v1",
-    "dataset_version": "ru_commercial_dataset-20260421-primary",
-    "artifact_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
-}
-
-
-def _deepcopy_json(value: Any) -> Any:
-    return json.loads(json.dumps(value, ensure_ascii=False))
-
-
 def _safe_float(value: Any) -> float | None:
     if isinstance(value, bool):
         return None
@@ -81,90 +61,6 @@ def _round_metric(value: float | None) -> float | None:
 
 def _read_json(path: str | Path) -> Any:
     return json.loads(Path(path).read_text(encoding="utf-8"))
-
-
-def default_golden_query_catalog() -> list[dict[str, Any]]:
-    return _deepcopy_json(
-        [
-            {
-                "id": "renovation-moscow",
-                "query": "ремонт квартир москва",
-                "target_url": "https://smartremontmsk.ru/",
-                "domain": "home_services",
-                "description": "D38 post-publish smoke domain for commercial service pages.",
-            },
-            {
-                "id": "plastic-windows-ekaterinburg",
-                "query": "пластиковые окна екатеринбург",
-                "target_url": "https://example.com/plastic-windows-ekaterinburg",
-                "domain": "home_services",
-                "description": "Commercial local-service query used throughout API and recommendation tests.",
-            },
-            {
-                "id": "seo-audit",
-                "query": "seo audit",
-                "target_url": "https://example.com/seo-audit",
-                "domain": "seo_services",
-                "description": "Generic SEO-audit product query used in backend and frontend regression tests.",
-            },
-        ]
-    )
-
-
-def default_stored_replay_evidence() -> list[dict[str, Any]]:
-    return _deepcopy_json(
-        [
-            {
-                "id": "renovation-moscow",
-                "evidence_source": "output/runtime-smoke/d38-smoke-summary.json",
-                "audit_id": "690504f2-ca2f-42a6-a012-e622438437a7",
-                "status": "completed",
-                "score": 83.7366,
-                "competitors_found": 2,
-                "competitors_analyzed": 2,
-                "competitors_failed": 0,
-                "recommendations_count": 11,
-                "warnings": [],
-                "failure_context": None,
-                "model_info": DEFAULT_RUNTIME_MODEL_INFO,
-                "reference": {
-                    **DEFAULT_ROLLBACK_REFERENCE,
-                    "score": 69.5249,
-                    "source": "D31 clean runtime smoke",
-                },
-            },
-            {
-                "id": "plastic-windows-ekaterinburg",
-                "evidence_source": "app.ml.golden_replay.default_stored_replay_evidence",
-                "audit_id": "stored-d41-plastic-windows-ekaterinburg",
-                "status": "completed",
-                "score": 78.4,
-                "competitors_found": 3,
-                "competitors_analyzed": 2,
-                "competitors_failed": 1,
-                "recommendations_count": 9,
-                "warnings": [],
-                "failure_context": None,
-                "model_info": DEFAULT_RUNTIME_MODEL_INFO,
-                "reference": {**DEFAULT_ROLLBACK_REFERENCE, "score": 71.0, "source": "stored rollback expectation"},
-            },
-            {
-                "id": "seo-audit",
-                "evidence_source": "app.ml.golden_replay.default_stored_replay_evidence",
-                "audit_id": "stored-d41-seo-audit",
-                "status": "completed",
-                "score": 62.8,
-                "competitors_found": 2,
-                "competitors_analyzed": 1,
-                "competitors_failed": 1,
-                "recommendations_count": 7,
-                "warnings": [],
-                "failure_context": None,
-                "model_info": DEFAULT_RUNTIME_MODEL_INFO,
-                "reference": {**DEFAULT_ROLLBACK_REFERENCE, "score": 58.2, "source": "stored rollback expectation"},
-            },
-        ]
-    )
 
 
 def _extract_model_info(record: dict[str, Any]) -> dict[str, Any] | None:
@@ -424,7 +320,9 @@ def _build_replay_item(
         "target_url": catalog_item.get("target_url"),
         "domain": catalog_item.get("domain"),
         "description": catalog_item.get("description"),
+        "evidence_kind": record.get("evidence_kind") or ("missing" if not evidence else "stored_evidence"),
         "evidence_source": record.get("evidence_source"),
+        "fixture_note": record.get("fixture_note"),
         "audit_id": record.get("audit_id"),
         "audit_status": _safe_str(record.get("audit_status") or record.get("status")),
         "score": score,
@@ -479,12 +377,28 @@ def _report_decision(summary: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _model_status_section(model_status: dict[str, Any] | None) -> dict[str, Any]:
+def _evidence_summary(items: list[dict[str, Any]]) -> dict[str, Any]:
+    kind_counts: dict[str, int] = {}
+    for item in items:
+        kind = str(item.get("evidence_kind") or "unspecified")
+        kind_counts[kind] = kind_counts.get(kind, 0) + 1
+    notes = []
+    if kind_counts.get("synthetic_stored_fixture", 0) > 0:
+        notes.append(
+            "Default D41 mode includes explicit synthetic stored fixtures for catalog coverage; "
+            "pass --evidence-json to evaluate externally captured replay snapshots."
+        )
+    if kind_counts.get("stored_smoke_artifact", 0) > 0:
+        notes.append("Stored smoke artifacts are reused as historical post-publish evidence, not rerun live audits.")
+    return {"item_count": len(items), "kind_counts": kind_counts, "notes": notes}
+
+
+def _model_status_section(model_status: dict[str, Any] | None, *, checked_at: str | None = None) -> dict[str, Any]:
     if not isinstance(model_status, dict):
         return {}
     return {
         "status": model_status.get("status"),
-        "checked_at": model_status.get("checked_at"),
+        "checked_at": checked_at if checked_at is not None else model_status.get("checked_at"),
         "artifact_path": model_status.get("artifact_path"),
         "artifact_sha1": model_status.get("artifact_sha1"),
         "metadata_path": model_status.get("metadata_path"),
@@ -506,6 +420,7 @@ def build_golden_replay_report(
     thresholds: dict[str, Any] | None = None,
     mode: str = "stored_evidence",
 ) -> dict[str, Any]:
+    resolved_generated_at = generated_at or datetime.now(UTC).isoformat()
     resolved_catalog = catalog or default_golden_query_catalog()
     resolved_results = _normalize_evidence_records(results if results is not None else default_stored_replay_evidence())
     resolved_thresholds = {**DEFAULT_GUARDRAIL_THRESHOLDS, **(thresholds or {})}
@@ -521,18 +436,19 @@ def build_golden_replay_report(
         for catalog_item in resolved_catalog
     ]
     summary = _guardrail_summary(items)
-    model_section = _model_status_section(resolved_model_status)
+    model_section = _model_status_section(resolved_model_status, checked_at=resolved_generated_at)
     rollback_section = rollback_reference or model_section.get("rollback") or {"available": False}
     return {
         "task": "D41",
         "mode": mode,
-        "generated_at": generated_at or datetime.now(UTC).isoformat(),
+        "generated_at": resolved_generated_at,
         "catalog": {
             "item_count": len(resolved_catalog),
             "items": resolved_catalog,
         },
         "model_status": model_section,
         "rollback_reference": rollback_section,
+        "evidence_summary": _evidence_summary(items),
         "guardrail_thresholds": resolved_thresholds,
         "items": items,
         "guardrail_summary": summary,

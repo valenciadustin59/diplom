@@ -64,7 +64,7 @@
 - `D41` / GitHub `#60` is implemented locally: deterministic golden query replay guardrails after publish.
 - D41 command: `cd backend && .venv\Scripts\python.exe -m app.ml.golden_replay --output-dir artifacts/ranking-benchmarks/dataset-v3-d41`.
 - D41 evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` and `.md`; current decision `passed`, `3/3` replay items passed, guardrail counts `21 pass / 0 warn / 0 fail`.
-- D41 default mode is offline stored evidence, includes current `/health/model` metadata and rollback SHA1, and does not publish, roll back or mutate `backend/artifacts/page_quality_model.pkl`.
+- D41 default mode is offline stored evidence, normalizes volatile `/health/model.checked_at` to the fixed report timestamp for reproducible output, includes rollback SHA1, and does not publish, roll back or mutate `backend/artifacts/page_quality_model.pkl`. The default catalog uses one real D38 smoke snapshot plus clearly labeled synthetic stored fixtures for the remaining golden items; pass `--evidence-json` to evaluate externally captured snapshots.
 
 ## Current Active Backlog: D40-D44 Post-Publish Model Operations
 

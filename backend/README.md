@@ -536,7 +536,7 @@ D39 / GitHub `#58` реализован локально как model status in 
 
 D40 / GitHub `#59` реализован локально как model usage monitoring. Backend endpoint `GET /health/model/monitoring` построен на `app/model_monitoring.py`, агрегирует recent audit rows по runtime `model_info`, отдельно считает legacy/unknown audits и не меняет scoring/publish behavior.
 
-D41 / GitHub `#60` реализован локально как deterministic golden replay guardrails. Backend module `app/ml/golden_replay.py` генерирует `artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` и `.md`; default mode evaluates stored evidence offline, includes active `/health/model` metadata and rollback SHA1, and does not publish/rollback/mutate `artifacts/page_quality_model.pkl`.
+D41 / GitHub `#60` реализован локально как deterministic golden replay guardrails. Backend module `app/ml/golden_replay.py` генерирует `artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` и `.md`; default mode evaluates stored evidence offline, normalizes volatile `/health/model.checked_at` to the fixed report timestamp, includes rollback SHA1, and does not publish/rollback/mutate `artifacts/page_quality_model.pkl`. Default evidence uses one D38 smoke artifact plus explicit synthetic stored fixtures for the remaining catalog items; pass `--evidence-json` to evaluate externally captured snapshots.
 
 D42-D44 / GitHub `#61-#63` остаются открытой частью post-publish operations wave: score confidence/data-quality UX, model registry/rollback evidence UI, and non-production second-pass competitor-aware score experiment. Локальный backlog: `../plans/d40-d44-post-publish-model-operations.md`.
 

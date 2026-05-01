@@ -12,6 +12,7 @@
 - Artifact SHA1: `29c4b29455f795a535da94b2c6f36ef603d003eb`
 - Rollback available: `True`
 - Rollback SHA1: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
+- Evidence kinds: `{"stored_smoke_artifact": 1, "synthetic_stored_fixture": 2}`
 
 ## Guardrail Summary
 
@@ -33,6 +34,7 @@
 
 ### renovation-moscow
 
+- Evidence kind: `stored_smoke_artifact`
 - `audit_status`: `pass` - Audit reached a terminal successful status.
 - `score_boundedness`: `pass` - Score is inside the expected 0-100 range.
 - `competitor_coverage`: `pass` - Enough competitor pages were analyzed for a competitor-aware audit.
@@ -44,6 +46,8 @@
 
 ### plastic-windows-ekaterinburg
 
+- Evidence kind: `synthetic_stored_fixture`
+- Fixture note: Synthetic deterministic D41 stored fixture for guardrail coverage; not produced by a live replay audit.
 - `audit_status`: `pass` - Audit reached a terminal successful status.
 - `score_boundedness`: `pass` - Score is inside the expected 0-100 range.
 - `competitor_coverage`: `pass` - Enough competitor pages were analyzed for a competitor-aware audit.
@@ -55,6 +59,8 @@
 
 ### seo-audit
 
+- Evidence kind: `synthetic_stored_fixture`
+- Fixture note: Synthetic deterministic D41 stored fixture for guardrail coverage; not produced by a live replay audit.
 - `audit_status`: `pass` - Audit reached a terminal successful status.
 - `score_boundedness`: `pass` - Score is inside the expected 0-100 range.
 - `competitor_coverage`: `pass` - Enough competitor pages were analyzed for a competitor-aware audit.

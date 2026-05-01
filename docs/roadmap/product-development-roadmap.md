@@ -139,6 +139,7 @@ D41 evidence:
 - markdown: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.md`
 - decision: `passed`
 - guardrails: `3/3` replay items passed, `21 pass / 0 warn / 0 fail`
+- default evidence: one D38 smoke artifact plus explicit synthetic stored fixtures for the remaining golden items; `/health/model.checked_at` is normalized to the fixed report timestamp for reproducible output
 - invariant: no publish, no rollback, no mutation of `backend/artifacts/page_quality_model.pkl`
 
 Remaining active tasks:
