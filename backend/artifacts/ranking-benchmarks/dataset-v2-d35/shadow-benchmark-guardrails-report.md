@@ -61,8 +61,19 @@
 
 - Requested queries: `4`
 - Covered queries: `4`
+- Exact query matches: `3`
+- Fallback query matches: `1`
+- Missing queries: `0`
 
 - `ремонт квартир москва` -> `ремонт квартир цена Москва` (contains_all_terms, `covered`)
 - `пластиковые окна казань` -> `пластиковые окна Казань` (exact_casefold, `covered`)
 - `кухни на заказ санкт-петербург` -> `кухни на заказ Санкт-Петербург` (exact_casefold, `covered`)
 - `натяжные потолки новосибирск` -> `натяжные потолки Новосибирск` (exact_casefold, `covered`)
+
+## Explainability Sensibility
+
+- Passed: `True`
+- Heuristic: Top features must be non-empty, finite and include at least one known SEO signal; smoke explanations must be present, bounded and include known explanation factor keys.
+- `pointwise_random_forest`: passed `True`, failed checks `none`
+- `pointwise_catboost`: passed `True`, failed checks `none`
+- `catboost_ranker`: passed `True`, failed checks `none`

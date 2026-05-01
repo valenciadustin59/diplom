@@ -61,6 +61,9 @@ def render_shadow_benchmark_markdown(report: dict[str, Any]) -> str:
             "",
             f"- Requested queries: `{smoke_summary.get('requested_queries_count')}`",
             f"- Covered queries: `{smoke_summary.get('covered_queries_count')}`",
+            f"- Exact query matches: `{smoke_summary.get('exact_match_queries_count')}`",
+            f"- Fallback query matches: `{smoke_summary.get('fallback_match_queries_count')}`",
+            f"- Missing queries: `{smoke_summary.get('missing_queries_count')}`",
             "",
         ]
     )
@@ -70,6 +73,19 @@ def render_shadow_benchmark_markdown(report: dict[str, Any]) -> str:
                 f"- `{query_result.get('requested_query')}` -> `{query_result.get('matched_query')}` "
                 f"({query_result.get('match_strategy')}, `{query_result.get('status')}`)"
             )
+    sensibility = report.get("explainability_sensibility") if isinstance(report.get("explainability_sensibility"), dict) else {}
+    lines.extend(["", "## Explainability Sensibility", "", f"- Passed: `{sensibility.get('passed')}`"])
+    if sensibility.get("heuristic"):
+        lines.append(f"- Heuristic: {sensibility.get('heuristic')}")
+    model_guardrails = sensibility.get("model_guardrails") if isinstance(sensibility.get("model_guardrails"), dict) else {}
+    for model_name, guardrail in model_guardrails.items():
+        if isinstance(guardrail, dict):
+            failed_checks = [
+                check_name
+                for check_name, passed in (guardrail.get("checks") or {}).items()
+                if isinstance(passed, bool) and not passed
+            ]
+            lines.append(f"- `{model_name}`: passed `{guardrail.get('passed')}`, failed checks `{failed_checks or 'none'}`")
     return "\n".join(lines).strip() + "\n"
 
 

@@ -519,6 +519,6 @@ cd E:\codexPROJ\diplom\backend
 
 D34 evidence: `artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, `artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`, and `artifacts/ranking-benchmarks/dataset-v2-d34/candidate-artifact-training-report.json`. Production artifact `artifacts/page_quality_model.pkl` remains unchanged.
 
-D35 evidence: `artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` recommends `keep_reference`; RF/CatBoost fail `top_3_hit_rate`, while CatBoostRanker also fails absolute-error guardrails.
+D35 evidence: `artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` recommends `keep_reference`; RF/CatBoost fail `top_3_hit_rate`, while CatBoostRanker also fails absolute-error guardrails. Smoke explainability has `3/4` exact query matches and `1/4` documented fallback.
 
 Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d32-d36-model-productization.md`; `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённой волне.

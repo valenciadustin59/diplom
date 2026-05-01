@@ -113,7 +113,7 @@
 - `D35` / `#54` - completed locally: shadow benchmark and explainability guardrails recommend `keep_reference`;
 - `D36` / `#55` — open: controlled publish/rollback/smoke verification.
 
-D34 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d34/`. The saved artifacts are `backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`. D35 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d35/` and recommends `keep_reference` because all candidates fail at least one publish gate; `backend/artifacts/page_quality_model.pkl` remains unchanged.
+D34 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d34/`. The saved artifacts are `backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`. D35 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d35/` and recommends `keep_reference` because all candidates fail at least one publish gate; smoke explainability has `3/4` exact query matches and `1/4` documented fallback; `backend/artifacts/page_quality_model.pkl` remains unchanged.
 
 ### Distributed foundation `D1-D12`
 

@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from app.ml.dataset_builder import DATASET_COLUMNS
 from app.ml.model import save_model
 from app.ml.model_schema import get_model_feature_schema
-from app.ml.shadow_benchmark import build_candidate_guardrails, run_shadow_benchmark
+from app.ml.shadow_benchmark import _find_smoke_query_rows, build_candidate_guardrails, run_shadow_benchmark
 from app.ml.train import rows_to_matrix
 
 
@@ -93,6 +93,7 @@ def test_build_candidate_guardrails_rejects_top3_and_ranking_mae_regressions():
         },
         "feature_importance_summary": {"available": True, "top_features": [{"feature": "word_count"}]},
         "runtime_explanation_guardrail": {"passed": True},
+        "explainability_sensibility_guardrail": {"passed": True},
     }
     reference = {
         "metrics": {
@@ -150,9 +151,29 @@ def test_run_shadow_benchmark_writes_guardrail_report(tmp_path):
     assert report["candidates"][0]["candidate_name"] == "pointwise_test_candidate"
     assert report["candidate_comparisons"][0]["guardrails"]["checks"]["candidate_available"] is True
     assert report["smoke_explainability"]["covered_queries_count"] == 1
+    assert report["smoke_explainability"]["exact_match_queries_count"] == 1
+    assert report["smoke_explainability"]["fallback_match_queries_count"] == 0
     assert report["smoke_explainability"]["model_guardrails"]["pointwise_test_candidate"]["passed"] is True
+    assert report["explainability_sensibility"]["model_guardrails"]["pointwise_test_candidate"]["passed"] is True
     assert Path(report["report_paths"]["json_path"]).exists()
     assert Path(report["report_paths"]["markdown_path"]).exists()
 
     saved_report = json.loads(Path(report["report_paths"]["json_path"]).read_text(encoding="utf-8"))
     assert saved_report["decision"]["publish_recommendation"] in {"publish_candidate", "keep_reference"}
+
+
+def test_smoke_query_matching_reports_exact_and_fallback_separately():
+    rows = [
+        {"query": "ремонт квартир цена Москва", "rank": "1", "url": "https://example.com/a"},
+        {"query": "пластиковые окна Казань", "rank": "1", "url": "https://example.com/b"},
+    ]
+
+    exact_query, exact_rows, exact_strategy = _find_smoke_query_rows(rows, "пластиковые окна казань")
+    fallback_query, fallback_rows, fallback_strategy = _find_smoke_query_rows(rows, "ремонт квартир москва")
+
+    assert exact_query == "пластиковые окна Казань"
+    assert exact_rows[0]["url"] == "https://example.com/b"
+    assert exact_strategy == "exact_casefold"
+    assert fallback_query == "ремонт квартир цена Москва"
+    assert fallback_rows[0]["url"] == "https://example.com/a"
+    assert fallback_strategy == "contains_all_terms"

@@ -16,6 +16,7 @@ from app.ml.model import DEFAULT_MODEL_PATH, explain_score, load_model_artifact,
 from app.ml.model_schema import MODEL_SCHEMA_VERSION_V2, get_model_feature_schema
 from app.ml.publish import ARTIFACTS_DIR
 from app.ml.ranking_benchmark import build_feature_importance_summary, build_stability_summary
+from app.ml.shadow_explainability import build_explainability_sensibility_summary
 from app.ml.shadow_report import write_shadow_benchmark_report
 from app.ml.train import candidate_sort_key, evaluate_model_rows, load_dataset_rows, rows_to_matrix, split_dataset_rows
 
@@ -158,6 +159,7 @@ def build_candidate_guardrails(
     mae_threshold = _absolute_error_threshold(reference_mae, absolute_error_tolerance_ratio)
     feature_importance = candidate.get("feature_importance_summary")
     runtime_explanation = candidate.get("runtime_explanation_guardrail")
+    sensibility = candidate.get("explainability_sensibility_guardrail")
     checks = {
         "candidate_available": True,
         "ndcg_at_10_not_worse": float(candidate_metrics.get("ndcg_at_10", 0.0)) >= float(reference_metrics.get("ndcg_at_10", 0.0)),
@@ -167,6 +169,7 @@ def build_candidate_guardrails(
         "mae_comparable_or_better": float(candidate_metrics.get("mae", 0.0)) <= mae_threshold,
         "feature_importance_available": bool(isinstance(feature_importance, dict) and feature_importance.get("available")),
         "runtime_explanations_bounded": bool(isinstance(runtime_explanation, dict) and runtime_explanation.get("passed")),
+        "explainability_sensible": bool(isinstance(sensibility, dict) and sensibility.get("passed")),
     }
     if str(candidate.get("candidate_family") or "") == "ranking":
         checks["ranking_family_absolute_error_viable"] = float(candidate_metrics.get("mae", 0.0)) <= ranking_family_mae_warning_threshold
@@ -180,6 +183,7 @@ def build_candidate_guardrails(
         "mae_comparable_or_better": "mae_not_comparable",
         "feature_importance_available": "feature_importance_unavailable",
         "runtime_explanations_bounded": "runtime_explanations_not_bounded",
+        "explainability_sensible": "explainability_sensibility_failed",
         "ranking_family_absolute_error_viable": "ranking_family_absolute_error_not_viable",
     }
     rejection_reasons = [
@@ -349,6 +353,9 @@ def build_smoke_explainability_summary(
     return {
         "requested_queries_count": len(smoke_query_list),
         "covered_queries_count": sum(1 for item in query_results if item.get("status") == "covered"),
+        "exact_match_queries_count": sum(1 for item in query_results if item.get("match_strategy") == "exact_casefold"),
+        "fallback_match_queries_count": sum(1 for item in query_results if item.get("match_strategy") == "contains_all_terms"),
+        "missing_queries_count": sum(1 for item in query_results if item.get("status") == "missing"),
         "query_results": query_results,
         "model_guardrails": model_guardrails,
     }
@@ -368,6 +375,22 @@ def _apply_runtime_explanation_guardrails(candidates: list[dict[str, Any]], smok
                 "bounded_scores_count": 0,
                 "reason": "candidate_missing_from_smoke_summary",
             }
+
+
+def _apply_explainability_sensibility_guardrails(
+    candidates: list[dict[str, Any]],
+    sensibility_summary: dict[str, Any],
+) -> None:
+    model_guardrails = sensibility_summary.get("model_guardrails")
+    resolved_guardrails = model_guardrails if isinstance(model_guardrails, dict) else {}
+    for candidate in candidates:
+        candidate_name = str(candidate.get("candidate_name") or "")
+        guardrail = resolved_guardrails.get(candidate_name)
+        candidate["explainability_sensibility_guardrail"] = (
+            guardrail
+            if isinstance(guardrail, dict)
+            else {"passed": False, "reason": "candidate_missing_from_sensibility_summary"}
+        )
 
 
 def build_shadow_decision(
@@ -428,6 +451,9 @@ def _serialize_shadow_model(model: dict[str, Any]) -> dict[str, Any]:
         "runtime_explanation_guardrail": model.get("runtime_explanation_guardrail")
         if isinstance(model.get("runtime_explanation_guardrail"), dict)
         else {"passed": False},
+        "explainability_sensibility_guardrail": model.get("explainability_sensibility_guardrail")
+        if isinstance(model.get("explainability_sensibility_guardrail"), dict)
+        else {"passed": False},
         "reason": model.get("reason"),
     }
 
@@ -475,6 +501,11 @@ def run_shadow_benchmark(
         smoke_queries=smoke_query_list,
     )
     _apply_runtime_explanation_guardrails(candidates, smoke_summary)
+    sensibility_summary = build_explainability_sensibility_summary(
+        candidates=candidates,
+        smoke_summary=smoke_summary,
+    )
+    _apply_explainability_sensibility_guardrails(candidates, sensibility_summary)
     comparisons = [
         {
             "candidate_name": str(candidate.get("candidate_name") or "unknown"),
@@ -513,6 +544,7 @@ def run_shadow_benchmark(
         if best_candidate_by_ranking_metrics is not None
         else None,
         "smoke_explainability": smoke_summary,
+        "explainability_sensibility": sensibility_summary,
         "decision": build_shadow_decision(
             reference_model=reference_model,
             candidates=candidates,

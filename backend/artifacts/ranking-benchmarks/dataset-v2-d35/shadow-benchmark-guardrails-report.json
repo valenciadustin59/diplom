@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-01T17:44:09.542823+00:00",
+  "generated_at": "2026-05-01T17:48:12.323184+00:00",
   "dataset_path": "data\\dataset_versions\\dataset-v2\\dataset.csv",
   "dataset_version": "dataset-v2",
   "rows_count": 885,
@@ -353,6 +353,9 @@
       "passed": null,
       "reason": "not_evaluated"
     },
+    "explainability_sensibility_guardrail": {
+      "passed": false
+    },
     "reason": null
   },
   "candidates": [
@@ -699,6 +702,43 @@
         "covered_queries_count": 4,
         "bounded_scores_count": 4
       },
+      "explainability_sensibility_guardrail": {
+        "passed": true,
+        "checks": {
+          "top_features_non_empty": true,
+          "top_feature_importances_finite": true,
+          "known_seo_signal_in_top_features": true,
+          "top_feature_names": [
+            "semantic_similarity",
+            "html_length_chars",
+            "commercial_signals_score",
+            "unique_word_count",
+            "http_status_ok",
+            "commercial_signal_count",
+            "http_status_code",
+            "semantic_content_richness",
+            "avg_word_length",
+            "word_count"
+          ],
+          "smoke_explanations_present": true,
+          "smoke_explanations_bounded": true,
+          "known_factor_key_present": true,
+          "factor_keys_sample": [
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "content_depth_semantic_score",
+            "heading_structure",
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "title_signal",
+            "commercial_completeness",
+            "content_depth",
+            "semantic_relevance"
+          ]
+        }
+      },
       "reason": null
     },
     {
@@ -1043,6 +1083,43 @@
         "passed": true,
         "covered_queries_count": 4,
         "bounded_scores_count": 4
+      },
+      "explainability_sensibility_guardrail": {
+        "passed": true,
+        "checks": {
+          "top_features_non_empty": true,
+          "top_feature_importances_finite": true,
+          "known_seo_signal_in_top_features": true,
+          "top_feature_names": [
+            "content_depth_semantic_score",
+            "avg_word_length",
+            "image_density_per_1000_words",
+            "unique_word_count",
+            "text_length_chars",
+            "link_density_per_1000_words",
+            "sentence_count",
+            "text_to_html_ratio",
+            "query_term_count",
+            "avg_sentence_length"
+          ],
+          "smoke_explanations_present": true,
+          "smoke_explanations_bounded": true,
+          "known_factor_key_present": true,
+          "factor_keys_sample": [
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "content_depth_semantic_score",
+            "heading_structure",
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "title_signal",
+            "commercial_completeness",
+            "content_depth",
+            "semantic_relevance"
+          ]
+        }
       },
       "reason": null
     },
@@ -1389,6 +1466,43 @@
         "covered_queries_count": 4,
         "bounded_scores_count": 4
       },
+      "explainability_sensibility_guardrail": {
+        "passed": true,
+        "checks": {
+          "top_features_non_empty": true,
+          "top_feature_importances_finite": true,
+          "known_seo_signal_in_top_features": true,
+          "top_feature_names": [
+            "unique_word_count",
+            "unique_word_ratio",
+            "avg_word_length",
+            "word_count",
+            "link_count",
+            "query_term_count",
+            "link_density_per_1000_words",
+            "content_depth_semantic_score",
+            "faq_present",
+            "avg_paragraph_length"
+          ],
+          "smoke_explanations_present": true,
+          "smoke_explanations_bounded": true,
+          "known_factor_key_present": true,
+          "factor_keys_sample": [
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "content_depth_semantic_score",
+            "heading_structure",
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "title_signal",
+            "commercial_completeness",
+            "content_depth",
+            "semantic_relevance"
+          ]
+        }
+      },
       "reason": null
     }
   ],
@@ -1430,7 +1544,8 @@
           "rmse_comparable_or_better": true,
           "mae_comparable_or_better": true,
           "feature_importance_available": true,
-          "runtime_explanations_bounded": true
+          "runtime_explanations_bounded": true,
+          "explainability_sensible": true
         },
         "rejection_reasons": [
           "top_3_hit_rate_regressed"
@@ -1480,7 +1595,8 @@
           "rmse_comparable_or_better": true,
           "mae_comparable_or_better": true,
           "feature_importance_available": true,
-          "runtime_explanations_bounded": true
+          "runtime_explanations_bounded": true,
+          "explainability_sensible": true
         },
         "rejection_reasons": [
           "top_3_hit_rate_regressed"
@@ -1531,6 +1647,7 @@
           "mae_comparable_or_better": false,
           "feature_importance_available": true,
           "runtime_explanations_bounded": true,
+          "explainability_sensible": true,
           "ranking_family_absolute_error_viable": false
         },
         "rejection_reasons": [
@@ -1891,11 +2008,51 @@
       "covered_queries_count": 4,
       "bounded_scores_count": 4
     },
+    "explainability_sensibility_guardrail": {
+      "passed": true,
+      "checks": {
+        "top_features_non_empty": true,
+        "top_feature_importances_finite": true,
+        "known_seo_signal_in_top_features": true,
+        "top_feature_names": [
+          "content_depth_semantic_score",
+          "avg_word_length",
+          "image_density_per_1000_words",
+          "unique_word_count",
+          "text_length_chars",
+          "link_density_per_1000_words",
+          "sentence_count",
+          "text_to_html_ratio",
+          "query_term_count",
+          "avg_sentence_length"
+        ],
+        "smoke_explanations_present": true,
+        "smoke_explanations_bounded": true,
+        "known_factor_key_present": true,
+        "factor_keys_sample": [
+          "content_depth",
+          "semantic_relevance",
+          "keyword_coverage",
+          "content_depth_semantic_score",
+          "heading_structure",
+          "content_depth",
+          "semantic_relevance",
+          "keyword_coverage",
+          "title_signal",
+          "commercial_completeness",
+          "content_depth",
+          "semantic_relevance"
+        ]
+      }
+    },
     "reason": null
   },
   "smoke_explainability": {
     "requested_queries_count": 4,
     "covered_queries_count": 4,
+    "exact_match_queries_count": 3,
+    "fallback_match_queries_count": 1,
+    "missing_queries_count": 0,
     "query_results": [
       {
         "requested_query": "ремонт квартир москва",
@@ -2714,6 +2871,123 @@
         "passed": true,
         "covered_queries_count": 4,
         "bounded_scores_count": 4
+      }
+    }
+  },
+  "explainability_sensibility": {
+    "passed": true,
+    "heuristic": "Top features must be non-empty, finite and include at least one known SEO signal; smoke explanations must be present, bounded and include known explanation factor keys.",
+    "model_guardrails": {
+      "pointwise_random_forest": {
+        "passed": true,
+        "checks": {
+          "top_features_non_empty": true,
+          "top_feature_importances_finite": true,
+          "known_seo_signal_in_top_features": true,
+          "top_feature_names": [
+            "semantic_similarity",
+            "html_length_chars",
+            "commercial_signals_score",
+            "unique_word_count",
+            "http_status_ok",
+            "commercial_signal_count",
+            "http_status_code",
+            "semantic_content_richness",
+            "avg_word_length",
+            "word_count"
+          ],
+          "smoke_explanations_present": true,
+          "smoke_explanations_bounded": true,
+          "known_factor_key_present": true,
+          "factor_keys_sample": [
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "content_depth_semantic_score",
+            "heading_structure",
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "title_signal",
+            "commercial_completeness",
+            "content_depth",
+            "semantic_relevance"
+          ]
+        }
+      },
+      "pointwise_catboost": {
+        "passed": true,
+        "checks": {
+          "top_features_non_empty": true,
+          "top_feature_importances_finite": true,
+          "known_seo_signal_in_top_features": true,
+          "top_feature_names": [
+            "content_depth_semantic_score",
+            "avg_word_length",
+            "image_density_per_1000_words",
+            "unique_word_count",
+            "text_length_chars",
+            "link_density_per_1000_words",
+            "sentence_count",
+            "text_to_html_ratio",
+            "query_term_count",
+            "avg_sentence_length"
+          ],
+          "smoke_explanations_present": true,
+          "smoke_explanations_bounded": true,
+          "known_factor_key_present": true,
+          "factor_keys_sample": [
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "content_depth_semantic_score",
+            "heading_structure",
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "title_signal",
+            "commercial_completeness",
+            "content_depth",
+            "semantic_relevance"
+          ]
+        }
+      },
+      "catboost_ranker": {
+        "passed": true,
+        "checks": {
+          "top_features_non_empty": true,
+          "top_feature_importances_finite": true,
+          "known_seo_signal_in_top_features": true,
+          "top_feature_names": [
+            "unique_word_count",
+            "unique_word_ratio",
+            "avg_word_length",
+            "word_count",
+            "link_count",
+            "query_term_count",
+            "link_density_per_1000_words",
+            "content_depth_semantic_score",
+            "faq_present",
+            "avg_paragraph_length"
+          ],
+          "smoke_explanations_present": true,
+          "smoke_explanations_bounded": true,
+          "known_factor_key_present": true,
+          "factor_keys_sample": [
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "content_depth_semantic_score",
+            "heading_structure",
+            "content_depth",
+            "semantic_relevance",
+            "keyword_coverage",
+            "title_signal",
+            "commercial_completeness",
+            "content_depth",
+            "semantic_relevance"
+          ]
+        }
       }
     }
   },
