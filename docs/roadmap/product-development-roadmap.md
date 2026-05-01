@@ -46,6 +46,25 @@
 
 Подробный план выполнения находится в `plans/d32-d36-model-productization.md`.
 
+## Active Backlog: D37 Unified V3 Feature Model
+
+GitHub issue `#56` is open for `D37: Unified v3 feature model with hybrid ensemble and top-3 guardrail`. Local source of truth: `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`.
+
+D37 should not be implemented as only a prediction average of RF, CatBoost and Ranker artifacts. The intended product direction is a real unified feature model that uses a wider feature schema before any publish decision.
+
+Recommended D37 scope:
+
+- add `MODEL_SCHEMA_VERSION_V3`;
+- use `148` pre-competitor features: `59` baseline + `49` technical/commercial + `25` heavy-analysis + `15` intent-alignment;
+- create or refresh dataset evidence so the training CSV actually contains v3 columns;
+- train only non-production D37 candidates;
+- compare every candidate against the current production reference;
+- keep `backend/artifacts/page_quality_model.pkl` unchanged unless all guardrails pass.
+
+The full known runtime feature space is up to `177` features if `29` SERP-relative features are included. D37 intentionally treats `serp_relative` as a follow-up unless the implementation adds an explicit second post-competitor scoring pass, because those features are produced only after competitor aggregation.
+
+Publish guardrails remain strict: `top_3_hit_rate`, `ndcg_at_10`, `spearman_mean` and `mae` must not regress versus the current reference. If they do regress, the correct D37 result is another documented `keep_reference` decision.
+
 ### D21 / #40: Audit Report And Export Dashboard
 
 Статус: выполнено.
@@ -168,7 +187,7 @@
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D31` are complete. The final ML evidence wave kept the current production model because D30 recommended `keep_reference`, while preserving `dataset-v2`, the D29 candidate artifact and the D30 benchmark evidence. GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`.
+Canonical current status: `D1-D36` are complete locally, and `D37` / GitHub `#56` is the active backlog item. The final ML evidence and model productization waves kept the current production model because D30/D35 recommended `keep_reference`, while preserving `dataset-v2`, the D29/D34 candidate artifacts and benchmark evidence. GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification.
 
 Local source of truth:
 
@@ -177,6 +196,7 @@ Local source of truth:
 - `backend/README.md`
 - `plans/d27-d31-final-model-training.md`
 - `plans/d32-d36-model-productization.md`
+- `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`
 
 Completed tasks:
 
@@ -187,7 +207,7 @@ Completed tasks:
 - `D31` / GitHub `#50`: completed locally; final no-publish/keep-reference decision was made and product behavior was verified with smoke audits.
 - D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
-Active tasks:
+Completed recent tasks:
 
 - `D32` / GitHub `#51`: completed locally; `197` expert-rubric labels added for `dataset-v2` model productization.
 - `D33` / GitHub `#52`: completed locally; refreshed `dataset-v2` manifest and group split after expert labels.
@@ -195,4 +215,8 @@ Active tasks:
 - `D35` / GitHub `#54`: completed locally; shadow benchmark and explainability guardrails recommend `keep_reference`.
 - `D36` / GitHub `#55`: completed locally; controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 
-Next agent instruction: `D32-D36` is complete locally. Do not add demo mode or rewrite backend orchestration; keep `backend/artifacts/page_quality_model.pkl` unchanged unless a future publish task explicitly passes the guardrails.
+Active task:
+
+- `D37` / GitHub `#56`: open; add unified `v3` feature schema, build `148`-feature pre-competitor dataset evidence, train non-production candidates, run hybrid/shadow benchmark, and keep production unchanged unless all top-3 guardrails pass.
+
+Next agent instruction: `D32-D36` is complete locally. Continue with D37 if the user asks to implement the next ML task. Do not add demo mode or rewrite backend orchestration; keep `backend/artifacts/page_quality_model.pkl` unchanged unless a future publish task explicitly passes the guardrails.

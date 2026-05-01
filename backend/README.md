@@ -406,6 +406,7 @@ cd E:\codexPROJ\diplom\backend
 - `../docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D26`, включая frontend/product wave без изменения ядра backend-анализа.
 - `../plans/d27-d31-final-model-training.md` — выполненный локальный план `D27-D31` для финального ML evidence, если GitHub Issues приватного репозитория недоступны и возвращают `404`.
 - `../plans/d32-d36-model-productization.md` — активная локальная копия backlog `D32-D36` для безопасного внедрения модели в продукт.
+- `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — активная локальная копия `D37` для unified `v3` feature model, hybrid candidate и top-3 guardrail.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -521,4 +522,6 @@ D34 evidence: `artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`,
 
 D35 evidence: `artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` recommends `keep_reference`; RF/CatBoost fail `top_3_hit_rate`, while CatBoostRanker also fails absolute-error guardrails. Smoke explainability has `3/4` exact query matches and `1/4` documented fallback. D36 evidence: `artifacts/ranking-benchmarks/dataset-v2-d36/no-publish-decision-report.json` and `.md` record the no-publish decision, rollback/reference hashes, product verification and unchanged production SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`; product smoke summary is `../output/runtime-smoke/d36-smoke-summary.json` for audit `a814ad9e-0f35-441e-a7d3-f82a34abaae9`.
 
-Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d32-d36-model-productization.md`; `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённой волне.
+Активный следующий backend/ML backlog: `D37` / GitHub `#56`, unified `v3` feature model with hybrid ensemble and top-3 guardrail. План находится в `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`. D37 должен добавить `MODEL_SCHEMA_VERSION_V3` на `148` pre-competitor features (`v1` baseline + technical/commercial + heavy-analysis + intent-alignment), создать dataset evidence с реальными v3 columns, обучить non-production candidates и сравнить их с текущим reference. `serp_relative` даёт полный known runtime space до `177` features, но появляется только после competitor aggregation; включать его в primary scoring можно только через явный second-pass scoring design. Production artifact `artifacts/page_quality_model.pkl` не заменять до отдельного publish decision с пройденными guardrails.
+
+Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам.

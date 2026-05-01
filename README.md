@@ -115,6 +115,8 @@
 
 D34 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d34/`. The saved artifacts are `backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`. D35 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d35/` and recommends `keep_reference` because all candidates fail at least one publish gate; smoke explainability has `3/4` exact query matches and `1/4` documented fallback. D36 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d36/no-publish-decision-report.json` and `.md`; product smoke evidence is `output/runtime-smoke/d36-smoke-summary.json` for audit `a814ad9e-0f35-441e-a7d3-f82a34abaae9`. `backend/artifacts/page_quality_model.pkl` remains unchanged at SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
 
+Активный следующий backlog — `D37` / GitHub `#56`: unified `v3` feature model with hybrid ensemble and top-3 guardrail. Локальная копия плана: `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`. D37 должен объединить доступные до scoring признаки в `v3` на `148` колонок (`59` baseline + `49` technical/commercial + `25` heavy-analysis + `15` intent-alignment), создать dataset evidence с реальными v3 columns, обучить non-production candidates и сравнить их с текущим reference. `serp_relative` признаки дают полный известный runtime-space до `177` features, но они появляются только после анализа конкурентов; поэтому в D37 они не входят в первичный runtime scoring без явного second-pass design. `backend/artifacts/page_quality_model.pkl` не заменять, если `top_3_hit_rate`, `ndcg_at_10`, `spearman_mean` и `mae` не проходят guardrails против текущего reference.
+
 ### Distributed foundation `D1-D12`
 
 Выполнено:
@@ -488,4 +490,4 @@ cd E:\codexPROJ\diplom\backend
   --output data\dataset_versions\dataset-v2\manifest.json
 ```
 
-Волна `D32-D36` завершена локально: D36 зафиксировал controlled keep-reference/no-publish decision, rollback/reference evidence и product smoke verification без замены production artifact. Подробный локальный план `plans/d32-d36-model-productization.md` и исторический план `plans/d27-d31-final-model-training.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.
+Волна `D32-D36` завершена локально: D36 зафиксировал controlled keep-reference/no-publish decision, rollback/reference evidence и product smoke verification без замены production artifact. Активный следующий план — `D37` в `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`; исторические планы `plans/d32-d36-model-productization.md` и `plans/d27-d31-final-model-training.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.

@@ -23,6 +23,17 @@
 - D35 evidence: `backend/artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` recommends `keep_reference`. RF/CatBoost improve Spearman, NDCG and absolute error but fail `top_3_hit_rate` (`0.8` vs reference `0.95`); `CatBoostRanker` also fails absolute error (`MAE=72.250466` vs reference `23.858757`). Smoke explainability found rows for `4/4` planned queries, but exact query coverage is `3/4`; `ремонт квартир москва` used fallback `ремонт квартир цена Москва`. Bounded explanation checks and the explicit explainability sensibility heuristic passed for all three candidates.
 - D36 evidence: `backend/artifacts/ranking-benchmarks/dataset-v2-d36/no-publish-decision-report.json` and `.md` record the final keep-reference/no-publish decision, D35 rejection reasons, selected runtime artifact metadata, rollback/reference hashes and verification status. Product smoke evidence: `output/runtime-smoke/d36-smoke-summary.json`, audit `a814ad9e-0f35-441e-a7d3-f82a34abaae9`, status `completed`, readiness `ready`, `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`, and all `7` frontend routes valid. Production artifact SHA1 stayed `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`; no D34/D35 candidate was published.
 
+## Current Active Backlog: D37 Unified V3 Model
+
+- `D37` / GitHub `#56` is open: unified `v3` feature model with hybrid ensemble and top-3 guardrail.
+- Local mirror: `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`.
+- D37 must not be implemented as only `RF + CatBoost + Ranker` prediction averaging. The intended direction is a real unified feature model.
+- Recommended D37 scope is a safer pre-competitor `v3` schema with `148` features: `59` baseline + `49` technical/commercial + `25` heavy-analysis + `15` intent-alignment.
+- The full known runtime feature space is `177` features if `29` SERP-relative features are included, but `serp_relative` appears only after competitor analysis. Do not put `serp_relative` into the primary D37 scoring model unless the implementation explicitly adds a second post-competitor scoring pass.
+- `dataset-v2` currently contains the `108` v2 features only. D37 must create or refresh dataset evidence so the CSV actually contains v3 columns before training.
+- D37 may recommend publish only if `top_3_hit_rate`, `ndcg_at_10`, `spearman_mean` and `mae` are not worse than the current reference according to the documented guardrails. If not, the correct outcome is another explicit `keep_reference` decision.
+- Keep `backend/artifacts/page_quality_model.pkl` unchanged during D37 candidate training and benchmarking.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:
@@ -109,12 +120,14 @@ Backlog `D32-D36` после `D31` зафиксирован локально и 
 
 - `plans/d27-d31-final-model-training.md` — выполненный ExecPlan финального ML-evidence этапа;
 - `plans/d32-d36-model-productization.md` — активный план безопасного внедрения модели в продукт;
+- `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — активный план D37 для unified v3 feature model;
 - `D27-D31` / GitHub `#46-#50` — completed/closed: `dataset-v2` собран, manifest/split проверены, candidate обучен, ranking benchmark рекомендовал `keep_reference`, D31 зафиксировал no-publish decision и clean smoke evidence;
 - `D32` / GitHub `#51` - completed locally: `197` expert-rubric labels added for `dataset-v2` and applied during D33.
 - `D33` / GitHub `#52` - completed locally: expert labels applied to `dataset.csv`; `manifest.json` and `split.json` refreshed with `197` hybrid rows, `ready_for_training=true`, and no query leakage.
 - `D34` / GitHub `#53` - completed locally: RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production;
 - `D35` / GitHub `#54` - completed locally: shadow benchmark and explainability guardrails recommend `keep_reference`;
 - `D36` / GitHub `#55` - completed locally: controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
+- `D37` / GitHub `#56` - open: unified `v3` feature model with hybrid ensemble and top-3 guardrail.
 
 ### D1-D12 Summary
 
@@ -421,10 +434,11 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — `D32-D36` model productization, если пользователь не выбрал другую задачу явно. Волны GitHub `#40-#45` и `#46-#50` закрыты; demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — `D37` unified `v3` feature model with hybrid ensemble and top-3 guardrail, если пользователь не выбрал другую задачу явно. Волны GitHub `#40-#45`, `#46-#50` и `#51-#55` закрыты/завершены; demo mode намеренно не входит в backlog.
 
-Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому задачи `D32-D36` продублированы локально и должны быть видны из рабочей копии:
+Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому активная задача `D37` и завершённые волны продублированы локально и должны быть видны из рабочей копии:
 
+- `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`;
 - `plans/d32-d36-model-productization.md`;
 - `plans/d27-d31-final-model-training.md`;
 - этот раздел `AGENTS.md`;
@@ -436,7 +450,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальный backlog `D32-D36`;
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальный backlog `D37`;
 - не откатывать уже выполненные `D13-D26` без прямой причины.
 
 ## Последняя runtime smoke-проверка
@@ -475,8 +489,8 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
-- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke.
-- `D32-D36` завершены локально; production artifact остался `backend/artifacts/page_quality_model.pkl` с SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
+- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 открыт как следующий unified `v3` feature-model experiment.
+- `D32-D36` завершены локально; production artifact остался `backend/artifacts/page_quality_model.pkl` с SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. D37 также должен сохранять этот artifact unchanged до отдельного publish decision.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest и имеет `--split-only` режим без обучения модели.
