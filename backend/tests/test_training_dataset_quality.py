@@ -242,6 +242,107 @@ def test_build_dataset_manifest_requires_requested_split(tmp_path):
     assert "split_present" in manifest["quality_gates"]["unmet_requirements"]
 
 
+def test_build_dataset_manifest_requires_split_to_cover_dataset_queries(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    split_path = tmp_path / "split.json"
+
+    _write_csv(
+        dataset_path,
+        SUCCESS_FIELDS,
+        [
+            {
+                "dataset_version": "dataset-v2-test",
+                "feature_schema_version": "v2",
+                "extraction_artifact_version": "extraction-v2",
+                "label_schema_version": "hybrid-v1",
+                "label_source": "weak_serp",
+                "expert_target_score": "",
+                "artifact_path": "",
+                "query": seed["query"],
+                "category": seed["category"],
+                "city": seed["city"],
+                "region_code": seed["region_code"],
+                "domain": f"example-{index}.com",
+                "rank": 1,
+                "page_type": "content",
+            }
+            for index, seed in enumerate(_seed_rows(), start=1)
+        ],
+    )
+    split_path.write_text(
+        json.dumps(
+            {
+                "split_mode": "group_by_query",
+                "train_queries": ["seo audit moscow"],
+                "validation_queries": ["ppc agency spb"],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    manifest = build_dataset_manifest(
+        dataset_path=dataset_path,
+        seed_rows=_seed_rows(),
+        thresholds=DatasetQualityThresholds(
+            min_rows=3,
+            min_unique_queries=3,
+            min_unique_domains=3,
+            min_unique_categories=3,
+            min_unique_cities=2,
+            min_query_coverage_ratio=1.0,
+            min_average_rows_per_query=1.0,
+            max_failure_rate=1.0,
+        ),
+        dataset_version="dataset-v2-test",
+        split_path=split_path,
+    )
+
+    assert manifest["quality_gates"]["ready_for_training"] is False
+    assert "split_covers_dataset_queries" in manifest["quality_gates"]["unmet_requirements"]
+
+
+def test_build_dataset_manifest_resolves_artifacts_dir_relative_paths(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    artifacts_dir = tmp_path / "row-artifacts"
+    artifacts_dir.mkdir()
+    (artifacts_dir / "row-1.json").write_text("{}", encoding="utf-8")
+
+    _write_csv(
+        dataset_path,
+        SUCCESS_FIELDS,
+        [
+            {
+                "dataset_version": "dataset-v2-test",
+                "feature_schema_version": "v2",
+                "extraction_artifact_version": "extraction-v2",
+                "label_schema_version": "hybrid-v1",
+                "label_source": "weak_serp",
+                "expert_target_score": "",
+                "artifact_path": "row-1.json",
+                "query": "seo audit moscow",
+                "category": "seo",
+                "city": "moscow",
+                "region_code": 213,
+                "domain": "example-1.com",
+                "rank": 1,
+                "page_type": "content",
+            }
+        ],
+    )
+
+    manifest = build_dataset_manifest(
+        dataset_path=dataset_path,
+        seed_rows=[_seed_rows()[0]],
+        dataset_version="dataset-v2-test",
+        artifacts_dir=artifacts_dir,
+    )
+
+    assert manifest["artifacts"]["rows_with_artifact_paths"] == 1
+    assert manifest["artifacts"]["rows_with_artifacts"] == 1
+    assert manifest["artifacts"]["missing_artifacts_count"] == 0
+    assert manifest["artifacts"]["artifact_coverage_ratio"] == 1.0
+
+
 def test_build_dataset_manifest_reports_unmet_requirements(tmp_path):
     dataset_path = tmp_path / "dataset.csv"
     failures_path = tmp_path / "failures.csv"

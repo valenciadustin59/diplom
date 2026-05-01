@@ -99,7 +99,7 @@
 
 - `plans/d27-d31-final-model-training.md` — подробный план выполнения;
 - `D27` / `#46` — completed/pushed: `dataset-v2` собран из seed catalog батчами;
-- `D28` / `#47` — completed: quality gates, `manifest.json` и group split проверены;
+- `D28` / `#47` — completed/pushed: quality gates, `manifest.json` и group split проверены;
 - `D29` / `#48` — обучить candidate model на `dataset-v2`;
 - `D30` / `#49` — сравнить candidate с текущей моделью через ranking benchmark;
 - `D31` / `#50` — опубликовать финальный artifact и проверить продукт smoke-аудитами.

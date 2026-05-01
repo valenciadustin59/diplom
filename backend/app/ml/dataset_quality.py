@@ -256,11 +256,50 @@ def _non_empty_counter(rows: Sequence[Mapping[str, str]], key: str, default: str
     return Counter(str(row.get(key) or "").strip() or default for row in rows)
 
 
-def _resolve_artifact_path(dataset_path: Path, artifact_path: str) -> Path:
+def _resolve_artifacts_dir(dataset_path: Path, artifacts_dir: Path | None) -> Path | None:
+    if artifacts_dir is None:
+        return None
+    if artifacts_dir.is_absolute() or artifacts_dir.exists():
+        return artifacts_dir
+    return dataset_path.parent / artifacts_dir
+
+
+def _artifact_path_candidates(
+    dataset_path: Path,
+    artifacts_dir: Path | None,
+    artifact_path: str,
+) -> list[Path]:
     resolved_artifact_path = Path(artifact_path)
     if resolved_artifact_path.is_absolute():
-        return resolved_artifact_path
-    return dataset_path.parent / resolved_artifact_path
+        return [resolved_artifact_path]
+
+    candidates: list[Path] = []
+
+    def add_candidate(candidate: Path) -> None:
+        if candidate not in candidates:
+            candidates.append(candidate)
+
+    add_candidate(dataset_path.parent / resolved_artifact_path)
+    resolved_artifacts_dir = _resolve_artifacts_dir(dataset_path, artifacts_dir)
+    if resolved_artifacts_dir is not None:
+        artifact_parts = resolved_artifact_path.parts
+        if artifact_parts and artifact_parts[0] == resolved_artifacts_dir.name:
+            add_candidate(resolved_artifacts_dir.joinpath(*artifact_parts[1:]))
+        add_candidate(resolved_artifacts_dir / resolved_artifact_path)
+        if resolved_artifact_path.name:
+            add_candidate(resolved_artifacts_dir / resolved_artifact_path.name)
+    return candidates
+
+
+def _artifact_path_exists(dataset_path: Path, artifacts_dir: Path | None, artifact_path: str) -> bool:
+    return any(
+        candidate.exists()
+        for candidate in _artifact_path_candidates(
+            dataset_path=dataset_path,
+            artifacts_dir=artifacts_dir,
+            artifact_path=artifact_path,
+        )
+    )
 
 
 def build_dataset_manifest(
@@ -318,7 +357,7 @@ def build_dataset_manifest(
     rows_with_artifacts = sum(
         1
         for artifact_path in artifact_paths
-        if _resolve_artifact_path(resolved_dataset_path, artifact_path).exists()
+        if _artifact_path_exists(resolved_dataset_path, resolved_artifacts_dir, artifact_path)
     )
     rows_with_expert_labels = sum(1 for row in success_rows if str(row.get("expert_target_score") or "").strip())
 

@@ -86,7 +86,7 @@
 
 - `plans/d27-d31-final-model-training.md` — подробный ExecPlan для финального ML-этапа;
 - `D27` / GitHub `#46` — completed and pushed; GitHub issue closure unverified: `dataset-v2` собран из seed catalog батчами `0-49` и `50-99`;
-- `D28` / GitHub `#47` — completed: `manifest.json` и `group_by_query` `split.json` сформированы, `ready_for_training=true`;
+- `D28` / GitHub `#47` — completed and pushed; GitHub issue closure unverified: `manifest.json` и `group_by_query` `split.json` сформированы, `ready_for_training=true`;
 - `D29` / GitHub `#48` — open: обучить candidate page-quality model на `dataset-v2`;
 - `D30` / GitHub `#49` — open: прогнать ranking benchmark и сравнить candidate с текущим artifact;
 - `D31` / GitHub `#50` — open: опубликовать финальную model artifact и проверить продукт smoke-аудитами.

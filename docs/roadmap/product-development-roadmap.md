@@ -26,7 +26,7 @@
 Эта волна заведена как GitHub issues `#46-#50`, но локальные документы должны считаться источником правды, если GitHub Issues недоступны.
 
 - `D27` / `#46`: completed/pushed; `dataset-v2` собран из seed catalog контролируемыми батчами.
-- `D28` / `#47`: completed; quality gates, `manifest.json`, artifact coverage и `group_by_query` split проверены.
+- `D28` / `#47`: completed/pushed; quality gates, `manifest.json`, artifact coverage и `group_by_query` split проверены.
 - `D29` / `#48`: обучить candidate page-quality model на `dataset-v2` без замены production artifact.
 - `D30` / `#49`: прогнать ranking benchmark и сравнить candidate с текущей моделью.
 - `D31` / `#50`: опубликовать финальный model artifact и проверить продукт smoke-аудитами.
@@ -167,7 +167,7 @@ Local source of truth:
 Active tasks:
 
 - `D27` / GitHub `#46`: completed/pushed; `dataset-v2` was built from seed catalog in controlled batches.
-- `D28` / GitHub `#47`: completed; dataset quality gates, manifest, artifact coverage and group split were validated.
+- `D28` / GitHub `#47`: completed/pushed; dataset quality gates, manifest, artifact coverage and group split were validated.
 - `D29` / GitHub `#48`: train candidate page-quality model from `dataset-v2`.
 - `D30` / GitHub `#49`: run ranking benchmark and compare the candidate against the current artifact.
 - `D31` / GitHub `#50`: publish the final model artifact and verify product behavior with smoke audits.

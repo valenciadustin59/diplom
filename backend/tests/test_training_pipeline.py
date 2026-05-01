@@ -1,5 +1,8 @@
 ﻿import csv
 import json
+import os
+import subprocess
+import sys
 from pathlib import Path
 
 from app.ml import (
@@ -414,6 +417,46 @@ def test_create_dataset_split_writes_query_grouped_manifest(tmp_path):
     saved_split = json.loads(split_path.read_text(encoding="utf-8"))
     assert saved_split["split_mode"] == "group_by_query"
     assert saved_split["random_state"] == 42
+
+
+def test_train_cli_split_only_writes_split_without_model(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    split_path = tmp_path / "split.json"
+    unexpected_model_path = tmp_path / "unexpected-model.pkl"
+    _write_grouped_training_dataset(dataset_path)
+
+    completed = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "app.ml.train",
+            "--dataset",
+            str(dataset_path),
+            "--dataset-version",
+            "dataset-v2-test",
+            "--split-output",
+            str(split_path),
+            "--model-output",
+            str(unexpected_model_path),
+            "--test-size",
+            "0.34",
+            "--random-state",
+            "42",
+            "--split-only",
+        ],
+        cwd=Path(__file__).resolve().parents[1],
+        check=True,
+        capture_output=True,
+        encoding="utf-8",
+        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
+        text=True,
+    )
+
+    payload = json.loads(completed.stdout)
+    assert split_path.exists()
+    assert payload["split_path"] == str(split_path)
+    assert payload["split_mode"] == "group_by_query"
+    assert not unexpected_model_path.exists()
 
 
 def test_predict_score_falls_back_to_bootstrap_model(tmp_path):
