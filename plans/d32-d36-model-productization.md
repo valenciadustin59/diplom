@@ -27,7 +27,7 @@ to publish, or explicitly keep the current production model with evidence.
 - [x] `D32` / GitHub `#51`: add expert labels for `dataset-v2` model productization.
 - [x] `D33` / GitHub `#52`: refresh `dataset-v2` manifest and group split after expert labels.
 - [x] `D34` / GitHub `#53`: train ranking-aware candidate models for product deployment.
-- [ ] `D35` / GitHub `#54`: run shadow benchmark and explainability guardrails before publish.
+- [x] `D35` / GitHub `#54`: run shadow benchmark and explainability guardrails before publish.
 - [ ] `D36` / GitHub `#55`: controlled model publish, rollback path and product smoke verification.
 
 ## Progress
@@ -35,6 +35,7 @@ to publish, or explicitly keep the current production model with evidence.
 - [x] (2026-05-01) D32: Filled `backend/data/dataset_versions/dataset-v2/expert_labels.csv` with `197` expert-rubric labels covering `99` queries, `6` categories, `9` city buckets, and all `5` observed page types. Labels use `label_source=expert_rubric_v1`, `labeler=builder_d32_rubric_v1`, and a landing-page quality rubric where the weak SERP-rank prior is capped at `5%` of the score. Score bands: `19` strong (`90-100`), `101` usable (`70-89`), `19` partial (`50-69`), `4` weak (`20-49`), and `54` irrelevant/broken/thin (`0-19`). `dataset.csv` and production artifacts remain unchanged; D33 must refresh dataset rows/manifest/split so these labels affect `target_score` and `hybrid` row counts.
 - [x] (2026-05-01) D33: Applied D32 expert labels to `dataset.csv` through `app.ml.expert_label_refresh`, regenerated `split.json` with `group_by_query`, and regenerated `manifest.json`. Dataset evidence now has `197` `hybrid` rows and `688` `weak_serp` rows, `expert_rows_count=197`, `hybrid_rows_count=197`, `unmatched_expert_labels_count=0`, artifact coverage `1.0`, and `ready_for_training=true`. Split stayed `695` train / `190` validation rows with `79` train queries / `20` validation queries and no query overlap. Production artifact hash remains unchanged.
 - [x] (2026-05-01) D34: Added `app.ml.candidate_artifacts` and trained three non-production candidate artifacts from the D33 `dataset-v2` evidence: `page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `page_quality_model.dataset-v2-ranking-candidate.pkl`. Training used schema `v2`, `108` features, `group_by_query` split, `695` train rows / `190` validation rows, and `0` query overlap. D34 validation metrics selected `pointwise_catboost` as best overall (`spearman_mean=0.404524`, `ndcg_at_10=0.947887`, `top_3_hit_rate=0.8`, `MAE=12.003497`); the best ranking-aware available model is `catboost_ranker` (`spearman_mean=0.379091`, `ndcg_at_10=0.938496`, `top_3_hit_rate=0.8`, `MAE=72.250466`). LightGBM and XGBoost rankers are unavailable in the local environment. Production artifact `backend/artifacts/page_quality_model.pkl` remains unchanged at SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
+- [x] (2026-05-01) D35: Added `app.ml.shadow_benchmark` and ran a no-publish shadow benchmark/guardrail report for the three D34 artifacts against the current reference artifact. The report recommends `keep_reference` because no candidate passed all publish gates. RF and CatBoost improve Spearman/NDCG/RMSE/MAE but fail `top_3_hit_rate` (`0.8` vs reference `0.95`). `CatBoostRanker` also fails absolute-error viability (`MAE=72.250466` vs reference `23.858757`). Smoke explainability covered `4/4` D35 smoke queries with bounded score explanations. Production artifact hash remains unchanged at SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
 
 ## D32: Expert Labels
 
@@ -158,11 +159,21 @@ Checks:
 
 ```powershell
 cd E:\codexPROJ\diplom\backend
-.venv\Scripts\python.exe -m pytest tests\test_ranking_benchmark.py tests\test_model_evaluate.py tests\test_model_publish.py
+.venv\Scripts\python.exe -m pytest tests\test_shadow_benchmark.py tests\test_ranking_benchmark.py tests\test_model_evaluate.py tests\test_model_publish.py
 
 cd E:\codexPROJ\diplom
 npm run test:scripts
 ```
+
+D35 output:
+
+- `backend/app/ml/shadow_benchmark.py` evaluates saved candidate artifacts against the current reference without training or publishing.
+- `backend/artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` and `.md` record the D35 shadow benchmark.
+- Reference validation metrics: `spearman_mean=0.153604`, `ndcg_at_10=0.909302`, `top_3_hit_rate=0.95`, `MAE=23.858757`.
+- `pointwise_random_forest`: gate failed on `top_3_hit_rate_regressed`; deltas vs reference are `spearman_mean=+0.24487`, `ndcg_at_10=+0.033374`, `top_3_hit_rate=-0.15`, `MAE=-11.478316`.
+- `pointwise_catboost`: gate failed on `top_3_hit_rate_regressed`; deltas vs reference are `spearman_mean=+0.25092`, `ndcg_at_10=+0.038585`, `top_3_hit_rate=-0.15`, `MAE=-11.85526`.
+- `catboost_ranker`: gate failed on `top_3_hit_rate_regressed`, `rmse_not_comparable`, `mae_not_comparable`, and `ranking_family_absolute_error_not_viable`; deltas vs reference are `spearman_mean=+0.225487`, `ndcg_at_10=+0.029194`, `top_3_hit_rate=-0.15`, `MAE=+48.391709`.
+- D35 decision: `keep_reference`. D36 should use the keep-reference path unless the user explicitly requests additional model work before D36.
 
 ## D36: Controlled Publish Or Keep-Reference
 

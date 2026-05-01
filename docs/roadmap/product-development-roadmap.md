@@ -41,7 +41,7 @@
 - `D32` / `#51`: completed locally; `197` expert-rubric labels for `dataset-v2`.
 - `D33` / `#52`: completed locally; refreshed `manifest.json` and `split.json` after expert labels.
 - `D34` / `#53`: completed locally; RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production.
-- `D35` / `#54`: open; shadow benchmark и explainability guardrails перед publish.
+- `D35` / `#54`: completed locally; shadow benchmark and explainability guardrails recommend `keep_reference`.
 - `D36` / `#55`: open; controlled publish, rollback path и product smoke verification.
 
 Подробный план выполнения находится в `plans/d32-d36-model-productization.md`.
@@ -192,7 +192,7 @@ Active tasks:
 - `D32` / GitHub `#51`: completed locally; `197` expert-rubric labels added for `dataset-v2` model productization.
 - `D33` / GitHub `#52`: completed locally; refreshed `dataset-v2` manifest and group split after expert labels.
 - `D34` / GitHub `#53`: completed locally; RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production.
-- `D35` / GitHub `#54`: open; run shadow benchmark and explainability guardrails before publish.
+- `D35` / GitHub `#54`: completed locally; shadow benchmark and explainability guardrails recommend `keep_reference`.
 - `D36` / GitHub `#55`: open; controlled model publish, rollback path and product smoke verification.
 
-Next agent instruction: start with `D35` unless the user explicitly chooses another task. Do not add demo mode, do not rewrite backend orchestration, and do not replace `backend/artifacts/page_quality_model.pkl` before D36.
+Next agent instruction: start with `D36` unless the user explicitly chooses another task. Do not add demo mode, do not rewrite backend orchestration, and do not replace `backend/artifacts/page_quality_model.pkl` before D36.

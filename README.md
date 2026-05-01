@@ -110,10 +110,10 @@
 - `D32` / `#51` - completed locally: `197` expert-rubric labels for `dataset-v2`;
 - `D33` / `#52` - completed locally: `manifest.json` and `split.json` refreshed after applying expert labels;
 - `D34` / `#53` - completed locally: RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production;
-- `D35` / `#54` — open: shadow benchmark, explainability guardrails и publish decision;
+- `D35` / `#54` - completed locally: shadow benchmark and explainability guardrails recommend `keep_reference`;
 - `D36` / `#55` — open: controlled publish/rollback/smoke verification.
 
-D34 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d34/`. The saved artifacts are `backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`; `backend/artifacts/page_quality_model.pkl` remains unchanged.
+D34 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d34/`. The saved artifacts are `backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`. D35 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v2-d35/` and recommends `keep_reference` because all candidates fail at least one publish gate; `backend/artifacts/page_quality_model.pkl` remains unchanged.
 
 ### Distributed foundation `D1-D12`
 
@@ -488,4 +488,4 @@ cd E:\codexPROJ\diplom\backend
   --output data\dataset_versions\dataset-v2\manifest.json
 ```
 
-Для текущего этапа использовать подробный локальный план `plans/d32-d36-model-productization.md`. После D34 следующий шаг — D35 shadow benchmark и explainability guardrails; production artifact нельзя заменять до D36 publish/no-publish decision. Исторический план `plans/d27-d31-final-model-training.md` оставлен как evidence по завершённой ML-wave. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.
+Для текущего этапа использовать подробный локальный план `plans/d32-d36-model-productization.md`. После D35 следующий шаг — D36 controlled keep-reference/no-publish или publish decision; production artifact нельзя заменять до D36 publish/no-publish decision. Исторический план `plans/d27-d31-final-model-training.md` оставлен как evidence по завершённой ML-wave. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.
