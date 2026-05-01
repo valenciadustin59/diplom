@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from app.ml.dataset_builder import DATASET_COLUMNS
 from app.ml.candidate_artifacts import train_candidate_artifacts
-from app.ml.model import load_saved_model, save_model, train_model
+from app.ml.model import load_model_artifact, load_saved_model, predict_score, save_model, train_model
 from app.ml.model_schema import get_model_feature_schema
 from app.ml.ranking_benchmark import publish_best_ranking_model, run_ranking_benchmark
 from app.ml.train import rows_to_matrix
@@ -214,6 +214,16 @@ def test_train_candidate_artifacts_saves_models_without_rewriting_reference(tmp_
     assert rf_payload["candidate_name"] == "pointwise_random_forest"
     assert ranking_payload["candidate_family"] == "ranking"
     assert ranking_payload["model_schema_version"] == "v2"
+
+    features = {feature_name: float(index + 1) for index, feature_name in enumerate(V2_FEATURE_COLUMNS)}
+    for model_path in (rf_model_path, catboost_model_path, ranking_model_path):
+        artifact = load_model_artifact(model_path)
+        score = predict_score(features, model_path=model_path)
+        assert artifact is not None
+        assert artifact["model_schema_version"] == "v2"
+        assert len(artifact["feature_columns"]) == len(V2_FEATURE_COLUMNS)
+        assert isinstance(score, float)
+        assert 0.0 <= score <= 100.0
 
 
 def test_train_candidate_artifacts_rejects_production_output_path(tmp_path):

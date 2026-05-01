@@ -123,6 +123,7 @@ D34 output:
 - `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`: `CatBoostRegressor`, schema `v2`, `108` features, `spearman_mean=0.404524`, `ndcg_at_10=0.947887`, `top_3_hit_rate=0.8`, `MAE=12.003497`.
 - `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`: best available ranking model, `CatBoostRanker`, schema `v2`, `108` features, `spearman_mean=0.379091`, `ndcg_at_10=0.938496`, `top_3_hit_rate=0.8`, `MAE=72.250466`.
 - D34 evidence report: `backend/artifacts/ranking-benchmarks/dataset-v2-d34/candidate-artifact-training-report.json` and `.md`.
+- Post-training compatibility check: all three D34 artifacts load through the existing `load_model_artifact` path and produce bounded `predict_score` output, including the saved `CatBoostRanker`.
 - D34 is not a publish decision. D35 must compare candidates against the current reference with shadow benchmark and guardrails before D36 can publish or explicitly keep the reference.
 
 Checks:
@@ -142,6 +143,7 @@ Minimum publish gate:
 - `top_3_hit_rate` is not worse than reference.
 - `spearman_mean` is not worse, unless there is a documented product rationale.
 - `RMSE/MAE` improve or stay comparable.
+- D34's saved `CatBoostRanker` must be evaluated explicitly against the reference, not treated as publishable only because it is ranking-aware; its D34 validation `MAE=72.250466` is a viability concern unless D35 evidence and product rationale justify it.
 - Score explanations and top features look sensible.
 - Smoke audits show no recommendation regressions.
 
