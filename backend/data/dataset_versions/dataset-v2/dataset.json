@@ -32,7 +32,12 @@
   "labeling": {
     "weak_label_source": "serp_rank",
     "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score",
-    "expert_subset_status": "template_created"
+    "expert_subset_status": "d32_expert_rubric_labels_added",
+    "expert_labels_count": 197,
+    "expert_label_source": "expert_rubric_v1",
+    "expert_labeler": "builder_d32_rubric_v1",
+    "expert_selection_strategy": "best_and_worst_scored_landing_page_per_query_by_rubric",
+    "expert_score_rubric": "landing_page_quality_v1_content_relevance_commercial_trust_technical_seo_with_serp_rank_capped_at_5_percent"
   },
   "notes": [
     "dataset.csv and failures.csv are produced by app.ml.dataset_builder with --versioned-layout",

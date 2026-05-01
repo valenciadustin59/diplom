@@ -24,11 +24,15 @@ to publish, or explicitly keep the current production model with evidence.
 
 ## Active Tasks
 
-- [ ] `D32` / GitHub `#51`: add expert labels for `dataset-v2` model productization.
+- [x] `D32` / GitHub `#51`: add expert labels for `dataset-v2` model productization.
 - [ ] `D33` / GitHub `#52`: refresh `dataset-v2` manifest and group split after expert labels.
 - [ ] `D34` / GitHub `#53`: train ranking-aware candidate models for product deployment.
 - [ ] `D35` / GitHub `#54`: run shadow benchmark and explainability guardrails before publish.
 - [ ] `D36` / GitHub `#55`: controlled model publish, rollback path and product smoke verification.
+
+## Progress
+
+- [x] (2026-05-01) D32: Filled `backend/data/dataset_versions/dataset-v2/expert_labels.csv` with `197` expert-rubric labels covering `99` queries, `6` categories, `9` city buckets, and all `5` observed page types. Labels use `label_source=expert_rubric_v1`, `labeler=builder_d32_rubric_v1`, and a landing-page quality rubric where the weak SERP-rank prior is capped at `5%` of the score. Score bands: `19` strong (`90-100`), `101` usable (`70-89`), `19` partial (`50-69`), `4` weak (`20-49`), and `54` irrelevant/broken/thin (`0-19`). `dataset.csv` and production artifacts remain unchanged; D33 must refresh dataset rows/manifest/split so these labels affect `target_score` and `hybrid` row counts.
 
 ## D32: Expert Labels
 
@@ -49,6 +53,13 @@ Suggested scoring rubric:
 - `50-69`: partially relevant or weak page.
 - `20-49`: poor, thin or weakly relevant page.
 - `0-19`: irrelevant, empty, broken or not a landing page.
+
+D32 output:
+
+- `backend/data/dataset_versions/dataset-v2/expert_labels.csv` now contains `197` labels.
+- `scripts/generate_d32_expert_labels.py` records the deterministic rubric and selection logic.
+- `backend/data/dataset_versions/dataset-v2/dataset.json` records the D32 label subset metadata.
+- `backend/data/dataset_versions/dataset-v2/dataset.csv` is intentionally not refreshed until D33.
 
 Checks:
 

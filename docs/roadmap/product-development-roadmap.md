@@ -38,7 +38,7 @@
 
 Эта волна заведена как GitHub issues `#51-#55`. Её смысл — не заменить модель любой ценой, а довести candidate до безопасного publish gate: экспертные метки, ranking-aware обучение, shadow benchmark, explainability guardrails, controlled publish или documented keep-reference.
 
-- `D32` / `#51`: open; expert labels для `dataset-v2`.
+- `D32` / `#51`: completed locally; `197` expert-rubric labels for `dataset-v2`.
 - `D33` / `#52`: open; refresh `manifest.json` и `split.json` после expert labels.
 - `D34` / `#53`: open; ranking-aware candidate models для product deployment.
 - `D35` / `#54`: open; shadow benchmark и explainability guardrails перед publish.
@@ -189,7 +189,7 @@ Completed tasks:
 
 Active tasks:
 
-- `D32` / GitHub `#51`: open; add expert labels for `dataset-v2` model productization.
+- `D32` / GitHub `#51`: completed locally; `197` expert-rubric labels added for `dataset-v2` model productization.
 - `D33` / GitHub `#52`: open; refresh `dataset-v2` manifest and group split after expert labels.
 - `D34` / GitHub `#53`: open; train ranking-aware candidate models for product deployment.
 - `D35` / GitHub `#54`: open; run shadow benchmark and explainability guardrails before publish.
