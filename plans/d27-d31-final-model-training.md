@@ -18,7 +18,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - [x] (2026-05-01 20:26 +05:00) D27 was committed and pushed to `origin/main` in commit `0a9cd40`; GitHub issue `#46` closure was not verified because `gh` is not installed in this environment.
 - [x] (2026-05-01 20:42 +05:00) D28: Generated canonical `split.json` with `group_by_query` mode (`695` train rows / `190` validation rows, `79` train queries / `20` validation queries, no query overlap) and canonical `manifest.json`. The manifest reports `ready_for_training=true`, `885` rows, `99` unique queries, `568` unique domains, `6` categories, `8` cities, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, `artifact_coverage_ratio=1.0`, `missing_artifacts_count=0`, and no unmet requirements. D28 was pushed to `origin/main`; GitHub issue `#47` closure was not verified because `gh` is not installed in this environment.
 - [x] (2026-05-01 20:53 +05:00) D29: Trained `artifacts/page_quality_model.dataset-v2-candidate.pkl` from `dataset-v2` without replacing `artifacts/page_quality_model.pkl`. The candidate is `RandomForestRegressor`, `model_schema_version=v2`, `dataset_version=dataset-v2`, `885` rows, `99` queries, `568` domains, `108` features. Validation metrics: `rmse=15.026923`, `mae=12.478412`, `spearman_mean=0.282468`, `ndcg_at_10=0.939192`, `top_3_hit_rate=0.9`, `split_mode=group_by_query`; production artifact hash/timestamp stayed unchanged. The optional CatBoost benchmark from the same training run reported `rmse=14.870781`, `mae=12.251912`, `spearman_mean=0.268463`, `ndcg_at_10=0.942102`, and `top_3_hit_rate=0.8`.
-- [ ] D30: Run ranking benchmark and compare the candidate model against the current artifact.
+- [x] (2026-05-01 21:02 +05:00) D30: Ran ranking benchmark against the current production artifact and wrote `backend/artifacts/ranking-benchmarks/dataset-v2/ranking-benchmark-report.json` plus `.md`. The D29 candidate artifact was evaluated directly via `--candidate-model`; it improved absolute error versus production (`rmse` delta `-11.412967`, `mae` delta `-9.769919`) but underperformed production on ranking metrics (`spearman_mean` delta `-0.05409`, `ndcg_at_10` delta `-0.008862`, `top_3_hit_rate` delta `-0.05`). The report's publish recommendation is `keep_reference`; `artifacts/page_quality_model.pkl` hash/timestamp stayed unchanged.
 - [ ] D31: Publish the final model artifact and verify product behavior with smoke audits.
 
 ## Surprises & Discoveries
@@ -44,6 +44,9 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - Observation: CatBoost writes local scratch logs when its optional training path runs.
   Evidence: D29 created `backend/catboost_info/` with training logs; this path is already ignored by `.gitignore` and is not part of the D29 evidence bundle. No candidate-side metadata file was generated outside the committed `.pkl`; metadata is stored inside the model artifact.
 
+- Observation: The ranking benchmark originally compared only newly trained ranking candidates against production, not the D29 candidate artifact itself.
+  Evidence: `app.ml.ranking_benchmark` now accepts `--candidate-model` and records `candidate_model_comparison_to_reference` so D30 can directly compare `page_quality_model.dataset-v2-candidate.pkl` with `page_quality_model.pkl`.
+
 ## Decision Log
 
 - Decision: Keep GitHub issues `#46-#50`, but duplicate the active backlog locally in `AGENTS.md`, `README.md`, `backend/README.md`, `docs/roadmap/product-development-roadmap.md`, and this ExecPlan.
@@ -66,13 +69,19 @@ The user-visible result is simple: after this plan is complete, a new audit shou
   Rationale: D28 needs a reproducible `group_by_query` split without training or publishing a model; a manifest that names a split path should fail readiness if that split is missing or leaks queries across train/validation.
   Date/Author: 2026-05-01 / Codex
 
+- Decision: Keep the current production artifact after D30.
+  Rationale: the D29 candidate has substantially lower absolute error, but ranking quality is the product-critical signal for SEO recommendations and the benchmark shows worse Spearman, NDCG@10 and top-3 hit rate than the current production artifact.
+  Date/Author: 2026-05-01 / Codex
+
 ## Outcomes & Retrospective
 
 D27 is complete and pushed. The versioned `dataset-v2` bundle has enough rows, query coverage, domain coverage, city coverage and artifact coverage for the final ML evidence wave. The main implementation lesson is that live dataset collection needs quality probes between batches: the first attempt revealed duplicate SERP rows and a transient semantic-model loading problem, both of which were resolved before keeping the final generated data.
 
-D28 is complete. `backend/data/dataset_versions/dataset-v2/manifest.json` and `backend/data/dataset_versions/dataset-v2/split.json` are now the canonical training-readiness evidence for `dataset-v2`. D29 remains next: train a candidate model to `artifacts/page_quality_model.dataset-v2-candidate.pkl` without replacing the production artifact.
+D28 is complete. `backend/data/dataset_versions/dataset-v2/manifest.json` and `backend/data/dataset_versions/dataset-v2/split.json` are now the canonical training-readiness evidence for `dataset-v2`.
 
-D29 is complete. The candidate model is saved at `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl`, and the current production model `backend/artifacts/page_quality_model.pkl` still points to the older `ru_commercial_dataset-20260421-primary` artifact with schema `v1`. D29 reused the same deterministic split parameters as D28 (`test_size=0.2`, `random_state=42`); `split.json` and `manifest.json` were refreshed only so the embedded split summary timestamps match the training run, not because dataset rows or query partitions changed. D30 remains next: run the ranking benchmark against the current production artifact and decide whether the dataset-v2 candidate path is publishable.
+D29 is complete. The candidate model is saved at `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl`, and the current production model `backend/artifacts/page_quality_model.pkl` still points to the older `ru_commercial_dataset-20260421-primary` artifact with schema `v1`. D29 reused the same deterministic split parameters as D28 (`test_size=0.2`, `random_state=42`); `split.json` and `manifest.json` were refreshed only so the embedded split summary timestamps match the training run, not because dataset rows or query partitions changed.
+
+D30 is complete. The benchmark report recommends `keep_reference`, so D31 should not blindly publish the D29 candidate. If D31 still proceeds, it must either keep the current production artifact and document the no-publish decision, or explicitly override based on a stronger product rationale than the current ranking benchmark.
 
 ## Context and Orientation
 
@@ -236,7 +245,7 @@ Run benchmark against the current artifact:
       --dataset data\dataset_versions\dataset-v2\dataset.csv `
       --manifest data\dataset_versions\dataset-v2\manifest.json `
       --reference-model artifacts\page_quality_model.pkl `
-      --model-output artifacts\page_quality_model.dataset-v2-ranking-candidate.pkl `
+      --candidate-model artifacts\page_quality_model.dataset-v2-candidate.pkl `
       --output-dir artifacts\ranking-benchmarks\dataset-v2 `
       --test-size 0.2 `
       --random-state 42 `
@@ -246,7 +255,7 @@ Expected result:
 
 - a benchmark report exists in `backend/artifacts/ranking-benchmarks/dataset-v2/`;
 - report includes best candidate, reference model and comparison;
-- there is a clear publish/no-publish decision.
+- there is a clear publish/no-publish decision (`publish_recommendation`).
 
 Run D30 checks:
 

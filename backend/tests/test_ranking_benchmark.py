@@ -5,6 +5,7 @@ from app.ml.dataset_builder import DATASET_COLUMNS
 from app.ml.model import load_saved_model, save_model, train_model
 from app.ml.model_schema import get_model_feature_schema
 from app.ml.ranking_benchmark import publish_best_ranking_model, run_ranking_benchmark
+from app.ml.train import rows_to_matrix
 V2_FEATURE_COLUMNS = get_model_feature_schema("v2").feature_columns
 def _write_dataset(path: Path) -> None:
     with path.open("w", encoding="utf-8", newline="") as file:
@@ -103,15 +104,42 @@ def _write_reference_model(path: Path) -> None:
             "artifact_version": "baseline-v1-artifact",
         },
     )
+
+
+def _write_v2_candidate_model(dataset_path: Path, model_path: Path) -> None:
+    from sklearn.ensemble import RandomForestRegressor
+
+    with dataset_path.open("r", encoding="utf-8", newline="") as file:
+        rows = list(csv.DictReader(file))
+    x, y = rows_to_matrix(rows, feature_columns=V2_FEATURE_COLUMNS)
+    model = RandomForestRegressor(n_estimators=8, random_state=13)
+    model.fit(x, y)
+    save_model(
+        model=model,
+        metrics={"rmse": 5.0, "ndcg_at_10": 0.9, "top_3_hit_rate": 1.0, "spearman_mean": 0.8},
+        model_path=model_path,
+        metadata={
+            "source": "local_dataset",
+            "dataset_version": "dataset-v2-test",
+            "artifact_version": "dataset-v2-test-candidate",
+            "model_schema_version": "v2",
+            "feature_columns": list(V2_FEATURE_COLUMNS),
+        },
+    )
+
+
 def test_run_ranking_benchmark_builds_report_and_reference_comparison(tmp_path):
     dataset_path = tmp_path / "dataset.csv"
     reference_model_path = tmp_path / "reference.pkl"
+    candidate_model_path = tmp_path / "candidate.pkl"
     report_dir = tmp_path / "reports"
     _write_dataset(dataset_path)
     _write_reference_model(reference_model_path)
+    _write_v2_candidate_model(dataset_path, candidate_model_path)
     report = run_ranking_benchmark(
         dataset_path=dataset_path,
         reference_model_path=reference_model_path,
+        candidate_model_path=candidate_model_path,
         test_size=0.25,
         random_state=7,
         output_dir=report_dir,
@@ -122,12 +150,20 @@ def test_run_ranking_benchmark_builds_report_and_reference_comparison(tmp_path):
     assert report["feature_count"] == len(V2_FEATURE_COLUMNS)
     assert report["reference_model"] is not None
     assert report["reference_model"]["model_info"]["model_schema_version"] == "v1"
+    assert report["candidate_model"]["candidate_name"] == "candidate_artifact"
+    assert report["candidate_model"]["model_path"] == str(candidate_model_path)
+    assert report["candidate_model"]["model_info"]["dataset_version"] == "dataset-v2-test"
+    assert candidate_map["candidate_artifact"]["status"] == "available"
+    assert candidate_map["candidate_artifact"]["model_schema_version"] == "v2"
     assert candidate_map["catboost_ranker"]["status"] == "available"
     assert candidate_map["catboost_ranker"]["feature_importance_summary"]["available"] is True
     assert candidate_map["lightgbm_ranker"]["status"] == "unavailable"
     assert candidate_map["xgboost_rank_pairwise"]["status"] == "unavailable"
-    assert report["best_candidate"]["candidate_name"] == "catboost_ranker"
+    assert report["best_candidate"]["candidate_name"] in candidate_map
     assert report["comparison_to_reference"] is not None
+    assert report["comparison_to_reference"]["publish_recommendation"] in {"publish_candidate", "keep_reference"}
+    assert report["candidate_model_comparison_to_reference"] is not None
+    assert report["candidate_model_comparison_to_reference"]["best_candidate"] == "candidate_artifact"
     assert Path(report["report_paths"]["json_path"]).exists()
     assert Path(report["report_paths"]["markdown_path"]).exists()
 def test_publish_best_ranking_model_writes_artifact_metadata_and_report(monkeypatch, tmp_path):

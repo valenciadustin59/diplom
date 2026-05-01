@@ -184,6 +184,8 @@ def _serialize_candidate(candidate: dict[str, Any]) -> dict[str, Any]:
         "candidate_name": str(candidate["candidate_name"]),
         "candidate_family": str(candidate["candidate_family"]),
         "status": str(candidate["status"]),
+        "model_path": candidate.get("model_path"),
+        "model_info": candidate.get("model_info") if isinstance(candidate.get("model_info"), dict) else None,
         "model_type": candidate.get("model_type"),
         "model_schema_version": candidate.get("model_schema_version"),
         "feature_count": candidate.get("feature_count"),
@@ -234,6 +236,50 @@ def _available_candidate(
         "feature_importance_summary": build_feature_importance_summary(model, feature_columns),
         "reason": None,
         "model": model,
+    }
+
+
+def evaluate_candidate_model_artifact(
+    validation_rows: list[dict[str, str]],
+    candidate_model_path: str | Path | None,
+) -> dict[str, Any] | None:
+    if candidate_model_path is None:
+        return None
+    artifact = load_model_artifact(candidate_model_path)
+    if artifact is None:
+        return _unavailable_candidate(
+            "candidate_artifact",
+            "candidate_artifact_not_found_or_invalid",
+            model_schema_version="unknown",
+            feature_count=0,
+        )
+    feature_columns = artifact.get("feature_columns") if isinstance(artifact.get("feature_columns"), (list, tuple)) else None
+    metrics = evaluate_model_rows(artifact["model"], validation_rows, feature_columns=feature_columns)
+    x_validation, _ = rows_to_matrix(validation_rows, feature_columns=feature_columns)
+    predictions = [float(value) for value in artifact["model"].predict(x_validation)]
+    return {
+        "candidate_name": "candidate_artifact",
+        "candidate_family": "pointwise_candidate",
+        "status": "available",
+        "model_type": artifact.get("model_type", artifact["model"].__class__.__name__),
+        "model_schema_version": artifact.get("model_schema_version"),
+        "feature_count": len(feature_columns or []),
+        "metrics": metrics,
+        "stability": build_stability_summary(validation_rows, predictions),
+        "feature_importance_summary": build_feature_importance_summary(artifact["model"], feature_columns or []),
+        "reason": None,
+        "model": artifact["model"],
+        "model_path": str(Path(candidate_model_path)),
+        "model_info": {
+            "source": artifact.get("source", "unknown"),
+            "model_type": artifact.get("model_type", artifact["model"].__class__.__name__),
+            "trained_at": artifact.get("trained_at"),
+            "published_at": artifact.get("published_at"),
+            "artifact_version": artifact.get("artifact_version"),
+            "dataset_version": artifact.get("dataset_version"),
+            "model_schema_version": artifact.get("model_schema_version"),
+            "feature_count": len(feature_columns or []),
+        },
     }
 def train_catboost_ranker_candidate(
     train_rows: list[dict[str, str]],
@@ -409,10 +455,13 @@ def build_ranking_benchmark_comparison(
         for metric_name in ("spearman_mean", "ndcg_at_10", "top_3_hit_rate", "rmse", "mae")
         if metric_name in best_metrics or metric_name in reference_metrics
     }
+    candidate_wins = candidate_sort_key(best_candidate) > candidate_sort_key(reference_candidate)
     return {
         "best_candidate": str(best_candidate.get("candidate_name") or "unknown"),
         "reference_candidate": str(reference_candidate.get("candidate_name") or "reference_artifact"),
         "metric_deltas": deltas,
+        "publish_recommendation": "publish_candidate" if candidate_wins else "keep_reference",
+        "candidate_outperforms_reference": candidate_wins,
     }
 def build_default_ranking_report_output_dir(dataset_version: str) -> Path:
     timestamp = datetime.now(UTC).strftime("%Y%m%d%H%M%S")
@@ -488,7 +537,19 @@ def render_ranking_benchmark_markdown(report: dict[str, Any]) -> str:
     comparison = report.get("comparison_to_reference") if isinstance(report.get("comparison_to_reference"), dict) else None
     if comparison is not None:
         lines.extend(["## Comparison To Reference", ""])
+        lines.append(f"- Publish recommendation: `{comparison.get('publish_recommendation')}`")
+        lines.append(f"- Candidate outperforms reference: `{comparison.get('candidate_outperforms_reference')}`")
         for metric_name, delta in (comparison.get("metric_deltas") or {}).items():
+            lines.append(f"- `{metric_name}`: `{delta}`")
+        lines.append("")
+    candidate_model_comparison = report.get("candidate_model_comparison_to_reference")
+    if isinstance(candidate_model_comparison, dict):
+        lines.extend(["## Candidate Artifact Comparison To Reference", ""])
+        lines.append(f"- Publish recommendation: `{candidate_model_comparison.get('publish_recommendation')}`")
+        lines.append(
+            f"- Candidate outperforms reference: `{candidate_model_comparison.get('candidate_outperforms_reference')}`"
+        )
+        for metric_name, delta in (candidate_model_comparison.get("metric_deltas") or {}).items():
             lines.append(f"- `{metric_name}`: `{delta}`")
         lines.append("")
     return "\n".join(lines).strip() + "\n"
@@ -498,12 +559,15 @@ def write_ranking_benchmark_report(report: dict[str, Any], output_dir: str | Pat
     resolved_output_dir.mkdir(parents=True, exist_ok=True)
     json_path = resolved_output_dir / "ranking-benchmark-report.json"
     markdown_path = resolved_output_dir / "ranking-benchmark-report.md"
-    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    markdown_path.write_text(render_ranking_benchmark_markdown(report), encoding="utf-8")
-    return {"json_path": str(json_path), "markdown_path": str(markdown_path)}
+    report_paths = {"json_path": str(json_path), "markdown_path": str(markdown_path)}
+    report_with_paths = {**report, "report_paths": report_paths}
+    json_path.write_text(json.dumps(report_with_paths, ensure_ascii=False, indent=2), encoding="utf-8")
+    markdown_path.write_text(render_ranking_benchmark_markdown(report_with_paths), encoding="utf-8")
+    return report_paths
 def _run_ranking_benchmark_internal(
     dataset_path: str | Path = DEFAULT_RANKING_DATASET_PATH,
     reference_model_path: str | Path | None = DEFAULT_MODEL_PATH,
+    candidate_model_path: str | Path | None = None,
     test_size: float = 0.2,
     random_state: int = 42,
     model_schema_version: str = DEFAULT_TRAINING_MODEL_SCHEMA_VERSION,
@@ -542,8 +606,10 @@ def _run_ranking_benchmark_internal(
             random_state=random_state,
         ),
     ]
-    available_ranking_candidates = [candidate for candidate in ranking_candidates if candidate.get("status") == "available"]
-    best_candidate = max(available_ranking_candidates, key=candidate_sort_key) if available_ranking_candidates else None
+    candidate_model = evaluate_candidate_model_artifact(validation_rows, candidate_model_path)
+    candidates = [candidate for candidate in [candidate_model, *ranking_candidates] if candidate is not None]
+    available_candidates = [candidate for candidate in candidates if candidate.get("status") == "available"]
+    best_candidate = max(available_candidates, key=candidate_sort_key) if available_candidates else None
     reference_candidate = evaluate_reference_model(validation_rows, reference_model_path)
     report = {
         "generated_at": datetime.now(UTC).isoformat(),
@@ -557,9 +623,12 @@ def _run_ranking_benchmark_internal(
         "validation_rows": len(validation_rows),
         "split": split_metadata,
         "reference_model": None,
-        "candidates": [_serialize_candidate(candidate) for candidate in ranking_candidates],
+        "candidate_model_path": str(Path(candidate_model_path)) if candidate_model_path is not None else None,
+        "candidate_model": _serialize_candidate(candidate_model) if candidate_model is not None else None,
+        "candidates": [_serialize_candidate(candidate) for candidate in candidates],
         "best_candidate": _serialize_candidate(best_candidate) if best_candidate is not None else None,
         "comparison_to_reference": None,
+        "candidate_model_comparison_to_reference": None,
     }
     if reference_candidate is not None:
         report["reference_model"] = {
@@ -569,6 +638,11 @@ def _run_ranking_benchmark_internal(
             "stability": reference_candidate.get("stability"),
         }
         report["comparison_to_reference"] = build_ranking_benchmark_comparison(best_candidate, reference_candidate)
+        if candidate_model is not None and candidate_model.get("status") == "available":
+            report["candidate_model_comparison_to_reference"] = build_ranking_benchmark_comparison(
+                candidate_model,
+                reference_candidate,
+            )
     report_paths: dict[str, str] | None = None
     if output_dir is not None:
         report_paths = write_ranking_benchmark_report(report, output_dir)
@@ -582,6 +656,7 @@ def _run_ranking_benchmark_internal(
 def run_ranking_benchmark(
     dataset_path: str | Path = DEFAULT_RANKING_DATASET_PATH,
     reference_model_path: str | Path | None = DEFAULT_MODEL_PATH,
+    candidate_model_path: str | Path | None = None,
     test_size: float = 0.2,
     random_state: int = 42,
     model_schema_version: str = DEFAULT_TRAINING_MODEL_SCHEMA_VERSION,
@@ -590,6 +665,7 @@ def run_ranking_benchmark(
     internal_result = _run_ranking_benchmark_internal(
         dataset_path=dataset_path,
         reference_model_path=reference_model_path,
+        candidate_model_path=candidate_model_path,
         test_size=test_size,
         random_state=random_state,
         model_schema_version=model_schema_version,
@@ -696,6 +772,7 @@ def main() -> None:
     parser.add_argument("--dataset", default=str(DEFAULT_RANKING_DATASET_PATH))
     parser.add_argument("--manifest", default=str(DEFAULT_RANKING_MANIFEST_PATH))
     parser.add_argument("--reference-model", default=str(DEFAULT_MODEL_PATH))
+    parser.add_argument("--candidate-model", default="")
     parser.add_argument("--without-reference-model", action="store_true")
     parser.add_argument("--model-output", default=str(DEFAULT_MODEL_PATH))
     parser.add_argument("--output-dir", default="")
@@ -723,6 +800,7 @@ def main() -> None:
         result = run_ranking_benchmark(
             dataset_path=args.dataset,
             reference_model_path=reference_model_path,
+            candidate_model_path=args.candidate_model or None,
             test_size=args.test_size,
             random_state=args.random_state,
             model_schema_version=args.model_schema_version,
