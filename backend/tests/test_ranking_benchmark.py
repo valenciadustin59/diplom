@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import pytest
 from app.ml.dataset_builder import DATASET_COLUMNS
+from app.ml.candidate_artifacts import train_candidate_artifacts
 from app.ml.model import load_saved_model, save_model, train_model
 from app.ml.model_schema import get_model_feature_schema
 from app.ml.ranking_benchmark import publish_best_ranking_model, run_ranking_benchmark
@@ -167,6 +168,67 @@ def test_run_ranking_benchmark_builds_report_and_reference_comparison(tmp_path):
     assert report["candidate_model_comparison_to_reference"]["best_candidate"] == "candidate_artifact"
     assert Path(report["report_paths"]["json_path"]).exists()
     assert Path(report["report_paths"]["markdown_path"]).exists()
+
+
+def test_train_candidate_artifacts_saves_models_without_rewriting_reference(tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    reference_model_path = tmp_path / "reference.pkl"
+    rf_model_path = tmp_path / "rf-candidate.pkl"
+    catboost_model_path = tmp_path / "catboost-candidate.pkl"
+    ranking_model_path = tmp_path / "ranking-candidate.pkl"
+    report_dir = tmp_path / "reports"
+    _write_dataset(dataset_path)
+    _write_reference_model(reference_model_path)
+    reference_bytes = reference_model_path.read_bytes()
+
+    report = train_candidate_artifacts(
+        dataset_path=dataset_path,
+        dataset_version="dataset-v2-test",
+        rf_model_path=rf_model_path,
+        catboost_model_path=catboost_model_path,
+        ranking_model_path=ranking_model_path,
+        reference_model_path=reference_model_path,
+        output_dir=report_dir,
+        test_size=0.25,
+        random_state=7,
+    )
+
+    assert reference_model_path.read_bytes() == reference_bytes
+    assert rf_model_path.exists()
+    assert catboost_model_path.exists()
+    assert ranking_model_path.exists()
+    assert report["reference_model"]["sha1"]
+    assert report["split"]["split_mode"] == "group_by_query"
+    assert report["split"]["query_overlap_count"] == 0
+    assert report["saved_artifacts"]["pointwise_random_forest"] == str(rf_model_path)
+    assert report["saved_artifacts"]["pointwise_catboost"] == str(catboost_model_path)
+    assert report["best_ranking_candidate"]["candidate_family"] == "ranking"
+    assert report["best_ranking_candidate"]["model_path"] == str(ranking_model_path)
+    assert Path(report["report_paths"]["json_path"]).exists()
+    assert Path(report["report_paths"]["markdown_path"]).exists()
+
+    rf_payload = load_saved_model(rf_model_path)
+    ranking_payload = load_saved_model(ranking_model_path)
+    assert rf_payload is not None
+    assert ranking_payload is not None
+    assert rf_payload["candidate_name"] == "pointwise_random_forest"
+    assert ranking_payload["candidate_family"] == "ranking"
+    assert ranking_payload["model_schema_version"] == "v2"
+
+
+def test_train_candidate_artifacts_rejects_production_output_path(tmp_path):
+    reference_model_path = tmp_path / "page_quality_model.pkl"
+    with pytest.raises(ValueError, match="must not overwrite"):
+        train_candidate_artifacts(
+            dataset_path=tmp_path / "dataset.csv",
+            rf_model_path=reference_model_path,
+            catboost_model_path=tmp_path / "catboost-candidate.pkl",
+            ranking_model_path=tmp_path / "ranking-candidate.pkl",
+            reference_model_path=reference_model_path,
+            output_dir=None,
+        )
+
+
 def test_publish_best_ranking_model_writes_artifact_metadata_and_report(monkeypatch, tmp_path):
     dataset_path = tmp_path / "dataset.csv"
     manifest_path = tmp_path / "manifest.json"

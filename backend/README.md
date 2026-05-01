@@ -513,8 +513,10 @@ cd E:\codexPROJ\diplom\backend
 
 - `D32` / `#51` - completed locally: `197` expert-rubric labels for `dataset-v2`;
 - `D33` / `#52` - completed locally: `manifest.json` and `split.json` refreshed after applying expert labels;
-- `D34` / `#53` — open: обучить ranking-aware candidate models без замены production artifact;
+- `D34` / `#53` - completed locally: RF, CatBoost and CatBoostRanker candidate artifacts trained без замены production artifact;
 - `D35` / `#54` — open: провести shadow benchmark и explainability guardrails;
 - `D36` / `#55` — open: controlled publish/rollback/smoke verification.
+
+D34 evidence: `artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, `artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`, and `artifacts/ranking-benchmarks/dataset-v2-d34/candidate-artifact-training-report.json`. Production artifact `artifacts/page_quality_model.pkl` remains unchanged.
 
 Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d32-d36-model-productization.md`; `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённой волне.

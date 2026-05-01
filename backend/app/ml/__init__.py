@@ -91,6 +91,16 @@ _PUBLISH_EXPORTS = {
     "write_artifact_public_metadata",
 }
 _EVALUATE_EXPORTS = {"evaluate_candidate_models"}
+_CANDIDATE_ARTIFACT_EXPORTS = {
+    "DEFAULT_CATBOOST_CANDIDATE_PATH",
+    "DEFAULT_D34_CANDIDATE_REPORTS_DIR",
+    "DEFAULT_RANKING_CANDIDATE_PATH",
+    "DEFAULT_RF_CANDIDATE_PATH",
+    "POINTWISE_CATBOOST_CANDIDATE",
+    "POINTWISE_RANDOM_FOREST_CANDIDATE",
+    "train_candidate_artifacts",
+    "write_candidate_artifact_report",
+}
 _RANKING_BENCHMARK_EXPORTS = {
     "CATBOOST_RANKER_CANDIDATE",
     "DEFAULT_RANKING_DATASET_PATH",
@@ -131,6 +141,9 @@ def __getattr__(name: str):
     if name in _EVALUATE_EXPORTS:
         module = importlib.import_module("app.ml.evaluate")
         return getattr(module, name)
+    if name in _CANDIDATE_ARTIFACT_EXPORTS:
+        module = importlib.import_module("app.ml.candidate_artifacts")
+        return getattr(module, name)
     if name in _RANKING_BENCHMARK_EXPORTS:
         module = importlib.import_module("app.ml.ranking_benchmark")
         return getattr(module, name)
@@ -158,5 +171,6 @@ __all__ = [
     *_DATASET_VERSION_EXPORTS,
     *_PUBLISH_EXPORTS,
     *_EVALUATE_EXPORTS,
+    *_CANDIDATE_ARTIFACT_EXPORTS,
     *_RANKING_BENCHMARK_EXPORTS,
 ]

@@ -305,6 +305,7 @@ def train_candidate_models(
     validation_rows: list[dict[str, str]],
     random_state: int,
     feature_columns: list[str] | tuple[str, ...] | None = None,
+    force_catboost: bool = False,
 ) -> tuple[list[dict[str, Any]], dict[str, object]]:
     candidates: list[dict[str, Any]] = []
     rf_model, rf_metrics = _train_random_forest(
@@ -315,7 +316,7 @@ def train_candidate_models(
     )
     candidates.append({"model": rf_model, "model_type": "RandomForestRegressor", "metrics": rf_metrics})
     benchmark: dict[str, object] = {"enabled": False}
-    if should_benchmark_catboost(rf_metrics):
+    if force_catboost or should_benchmark_catboost(rf_metrics):
         benchmark["enabled"] = True
         catboost_model, catboost_metrics, catboost_error = _train_catboost(
             train_rows,

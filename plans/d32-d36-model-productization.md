@@ -26,7 +26,7 @@ to publish, or explicitly keep the current production model with evidence.
 
 - [x] `D32` / GitHub `#51`: add expert labels for `dataset-v2` model productization.
 - [x] `D33` / GitHub `#52`: refresh `dataset-v2` manifest and group split after expert labels.
-- [ ] `D34` / GitHub `#53`: train ranking-aware candidate models for product deployment.
+- [x] `D34` / GitHub `#53`: train ranking-aware candidate models for product deployment.
 - [ ] `D35` / GitHub `#54`: run shadow benchmark and explainability guardrails before publish.
 - [ ] `D36` / GitHub `#55`: controlled model publish, rollback path and product smoke verification.
 
@@ -34,6 +34,7 @@ to publish, or explicitly keep the current production model with evidence.
 
 - [x] (2026-05-01) D32: Filled `backend/data/dataset_versions/dataset-v2/expert_labels.csv` with `197` expert-rubric labels covering `99` queries, `6` categories, `9` city buckets, and all `5` observed page types. Labels use `label_source=expert_rubric_v1`, `labeler=builder_d32_rubric_v1`, and a landing-page quality rubric where the weak SERP-rank prior is capped at `5%` of the score. Score bands: `19` strong (`90-100`), `101` usable (`70-89`), `19` partial (`50-69`), `4` weak (`20-49`), and `54` irrelevant/broken/thin (`0-19`). `dataset.csv` and production artifacts remain unchanged; D33 must refresh dataset rows/manifest/split so these labels affect `target_score` and `hybrid` row counts.
 - [x] (2026-05-01) D33: Applied D32 expert labels to `dataset.csv` through `app.ml.expert_label_refresh`, regenerated `split.json` with `group_by_query`, and regenerated `manifest.json`. Dataset evidence now has `197` `hybrid` rows and `688` `weak_serp` rows, `expert_rows_count=197`, `hybrid_rows_count=197`, `unmatched_expert_labels_count=0`, artifact coverage `1.0`, and `ready_for_training=true`. Split stayed `695` train / `190` validation rows with `79` train queries / `20` validation queries and no query overlap. Production artifact hash remains unchanged.
+- [x] (2026-05-01) D34: Added `app.ml.candidate_artifacts` and trained three non-production candidate artifacts from the D33 `dataset-v2` evidence: `page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `page_quality_model.dataset-v2-ranking-candidate.pkl`. Training used schema `v2`, `108` features, `group_by_query` split, `695` train rows / `190` validation rows, and `0` query overlap. D34 validation metrics selected `pointwise_catboost` as best overall (`spearman_mean=0.404524`, `ndcg_at_10=0.947887`, `top_3_hit_rate=0.8`, `MAE=12.003497`); the best ranking-aware available model is `catboost_ranker` (`spearman_mean=0.379091`, `ndcg_at_10=0.938496`, `top_3_hit_rate=0.8`, `MAE=72.250466`). LightGBM and XGBoost rankers are unavailable in the local environment. Production artifact `backend/artifacts/page_quality_model.pkl` remains unchanged at SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
 
 ## D32: Expert Labels
 
@@ -114,6 +115,15 @@ backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl
 backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl
 backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl
 ```
+
+D34 output:
+
+- `backend/app/ml/candidate_artifacts.py` adds a reusable train/save path for candidate artifacts without invoking publish.
+- `backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`: `RandomForestRegressor`, schema `v2`, `108` features, `spearman_mean=0.398474`, `ndcg_at_10=0.942676`, `top_3_hit_rate=0.8`, `MAE=12.380441`.
+- `backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`: `CatBoostRegressor`, schema `v2`, `108` features, `spearman_mean=0.404524`, `ndcg_at_10=0.947887`, `top_3_hit_rate=0.8`, `MAE=12.003497`.
+- `backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`: best available ranking model, `CatBoostRanker`, schema `v2`, `108` features, `spearman_mean=0.379091`, `ndcg_at_10=0.938496`, `top_3_hit_rate=0.8`, `MAE=72.250466`.
+- D34 evidence report: `backend/artifacts/ranking-benchmarks/dataset-v2-d34/candidate-artifact-training-report.json` and `.md`.
+- D34 is not a publish decision. D35 must compare candidates against the current reference with shadow benchmark and guardrails before D36 can publish or explicitly keep the reference.
 
 Checks:
 
