@@ -95,7 +95,7 @@
 
 Волна `D21-D26` закрыта. Demo mode в текущий backlog не входит.
 
-Активный практический backlog после `D26` — финальный ML-этап `D27-D31`. Эти задачи заведены как GitHub issues `#46-#50`, но репозиторий может быть приватным, поэтому другие Codex-диалоги без GitHub-авторизации могут видеть `404 Not Found` на `/issues` и через GitHub API. Локальная копия задач является рабочим источником правды:
+Финальный ML-evidence этап `D27-D31` завершён и GitHub issues `#46-#50` закрыты как completed. Эти задачи собрали и провалидировали `dataset-v2`, обучили candidate model и доказали через D30 benchmark, что текущий production artifact пока нужно оставить (`keep_reference`). Репозиторий может быть приватным, поэтому другие Codex-диалоги без GitHub-авторизации могут видеть `404 Not Found` на `/issues` и через GitHub API. Локальная копия задач остаётся рабочим источником правды:
 
 - `plans/d27-d31-final-model-training.md` — подробный план выполнения;
 - `D27` / `#46` — completed/pushed: `dataset-v2` собран из seed catalog батчами;
@@ -104,6 +104,14 @@
 - `D30` / `#49` — completed: candidate сравнен с текущей моделью через ranking benchmark, recommendation `keep_reference`;
 - `D31` / `#50` — completed locally: no-publish/keep-reference decision по D30 принят, продукт проверен smoke-аудитом.
 - D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
+
+Активный практический backlog после `D31` — внедрение модели в продукт без слепой замены artifact. Новые GitHub issues `#51-#55` продублированы локально в `plans/d32-d36-model-productization.md`:
+
+- `D32` / `#51` — open: expert labels для `dataset-v2`;
+- `D33` / `#52` — open: refresh `manifest.json` и `split.json` после expert labels;
+- `D34` / `#53` — open: ranking-aware candidate models;
+- `D35` / `#54` — open: shadow benchmark, explainability guardrails и publish decision;
+- `D36` / `#55` — open: controlled publish/rollback/smoke verification.
 
 ### Distributed foundation `D1-D12`
 
@@ -478,4 +486,4 @@ cd E:\codexPROJ\diplom\backend
   --output data\dataset_versions\dataset-v2\manifest.json
 ```
 
-Для текущего финального этапа использовать подробный локальный план `plans/d27-d31-final-model-training.md`. Он описывает порядок `D27-D31`: батчевая сборка `dataset-v2`, quality manifest, candidate training, ranking benchmark, publish и smoke-проверки. Если GitHub Issues недоступны и возвращают `404`, этот план и `AGENTS.md` считать актуальным backlog source of truth.
+Для текущего этапа использовать подробный локальный план `plans/d32-d36-model-productization.md`. Он описывает порядок `D32-D36`: expert labels, обновление manifest/split, ranking-aware candidates, shadow benchmark, explainability guardrails и controlled publish/rollback. Исторический план `plans/d27-d31-final-model-training.md` оставлен как evidence по завершённой ML-wave. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.

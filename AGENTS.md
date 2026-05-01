@@ -7,6 +7,17 @@
 - Clean audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb`: status `completed`, score `69.5249`, competitors `2 found / 2 analyzed / 0 failed`, recommendations `13` across `4` groups, readiness `ready` with `4` workers and missing queues `[]`, runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`, fan-out `competitor_page` dispatch/terminal `2/2`, and frontend Vite routes all returned the root shell.
 - D31 decision remains no-publish/keep-reference because D30 ranking benchmark rejected the `dataset-v2` candidate.
 
+## Current Active Backlog: D32-D36 Model Productization
+
+- GitHub issues `#46-#50` / `D27-D31` were verified and closed as completed on `2026-05-01`.
+- New active GitHub issues are `#51-#55`; local mirror: `plans/d32-d36-model-productization.md`.
+- `D32` / GitHub `#51` — open: add expert labels for `dataset-v2` model productization.
+- `D33` / GitHub `#52` — open: refresh `dataset-v2` manifest and group split after expert labels.
+- `D34` / GitHub `#53` — open: train ranking-aware candidate models for product deployment.
+- `D35` / GitHub `#54` — open: run shadow benchmark and explainability guardrails before publish.
+- `D36` / GitHub `#55` — open: controlled model publish, rollback path and product smoke verification.
+- Do not replace `backend/artifacts/page_quality_model.pkl` before D36 publish/no-publish decision.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:
@@ -89,14 +100,16 @@
 
 Практический фокус после `D26`: не переписывать backend orchestration и не добавлять demo mode без явного запроса. Предыдущая волна `D21-D26` закрыта.
 
-Активный backlog после `D26` теперь зафиксирован локально, потому что GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Если GitHub недоступен, считать локальные документы источником правды:
+Активный backlog после `D31` теперь зафиксирован локально, потому что GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Если GitHub недоступен, считать локальные документы источником правды:
 
-- `plans/d27-d31-final-model-training.md` — подробный ExecPlan для финального ML-этапа;
-- `D27` / GitHub `#46` — completed and pushed; GitHub issue closure unverified: `dataset-v2` собран из seed catalog батчами `0-49` и `50-99`;
-- `D28` / GitHub `#47` — completed and pushed; GitHub issue closure unverified: `manifest.json` и `group_by_query` `split.json` сформированы, `ready_for_training=true`;
-- `D29` / GitHub `#48` — completed: candidate page-quality model обучена в `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl`, production artifact не заменён;
-- `D30` / GitHub `#49` — completed: ranking benchmark выполнен, report сохранён в `backend/artifacts/ranking-benchmarks/dataset-v2/`, recommendation `keep_reference`;
-- `D31` / GitHub `#50` — completed locally: принято no-publish/keep-reference decision по D30, production artifact сохранён, продукт проверен smoke-аудитом `73128723-6a5b-41e6-81a7-d10aaa2570ad`.
+- `plans/d27-d31-final-model-training.md` — выполненный ExecPlan финального ML-evidence этапа;
+- `plans/d32-d36-model-productization.md` — активный план безопасного внедрения модели в продукт;
+- `D27-D31` / GitHub `#46-#50` — completed/closed: `dataset-v2` собран, manifest/split проверены, candidate обучен, ranking benchmark рекомендовал `keep_reference`, D31 зафиксировал no-publish decision и clean smoke evidence;
+- `D32` / GitHub `#51` — open: expert labels for `dataset-v2`;
+- `D33` / GitHub `#52` — open: refreshed manifest/split after expert labels;
+- `D34` / GitHub `#53` — open: ranking-aware candidate training;
+- `D35` / GitHub `#54` — open: shadow benchmark and explainability guardrails;
+- `D36` / GitHub `#55` — open: controlled publish/rollback/smoke verification.
 
 ### D1-D12 Summary
 
@@ -403,10 +416,11 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — финальный ML-этап `D27-D31`, если пользователь не выбрал другую задачу явно. Волна GitHub `#40-#45` закрыта после `D26`; demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — `D32-D36` model productization, если пользователь не выбрал другую задачу явно. Волны GitHub `#40-#45` и `#46-#50` закрыты; demo mode намеренно не входит в backlog.
 
-Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому задачи `D27-D31` продублированы локально и должны быть видны из рабочей копии:
+Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому задачи `D32-D36` продублированы локально и должны быть видны из рабочей копии:
 
+- `plans/d32-d36-model-productization.md`;
 - `plans/d27-d31-final-model-training.md`;
 - этот раздел `AGENTS.md`;
 - `README.md`;
@@ -417,7 +431,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальный backlog `D27-D31`;
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальный backlog `D32-D36`;
 - не откатывать уже выполненные `D13-D26` без прямой причины.
 
 ## Последняя runtime smoke-проверка
@@ -457,6 +471,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
 - `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта.
+- `D32-D36` должны довести модель до безопасного внедрения: expert labels, refreshed manifest/split, ranking-aware candidates, shadow benchmark, controlled publish или documented keep-reference.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest и имеет `--split-only` режим без обучения модели.

@@ -13,17 +13,17 @@
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
 - `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
-После `D26` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов, план действий по рекомендациям и стабильную русскую терминологию интерфейса для демонстрации распределённого исполнения. Следующий этап выбран пользователем как финальное ML-доведение модели: `D27-D31`.
+После `D26` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов, план действий по рекомендациям и стабильную русскую терминологию интерфейса для демонстрации распределённого исполнения. Этап `D27-D31` завершил финальное ML-evidence доведение: `dataset-v2` собран, candidate обучен, benchmark рекомендовал `keep_reference`, а D31 подтвердил продукт clean smoke-аудитом. Следующий активный этап выбран как безопасное внедрение модели в продукт: `D32-D36`.
 
-Важно: GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Поэтому активный backlog `D27-D31` продублирован локально в `AGENTS.md`, `README.md`, `backend/README.md` и `plans/d27-d31-final-model-training.md`.
+Важно: GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Поэтому активный backlog `D32-D36` продублирован локально в `AGENTS.md`, `README.md`, `backend/README.md` и `plans/d32-d36-model-productization.md`.
 
 ## Завершённая волна: D21-D26 Frontend/Product Layer
 
 Эта волна была заведена в GitHub как issues `#40-#45` и закрыта после D26. Demo mode намеренно не входил в этот backlog: пользователь выбрал развивать продуктовые и демонстрационные возможности без отдельного демо-режима.
 
-## Активная волна: D27-D31 Final ML Model Evidence
+## Завершённая волна: D27-D31 Final ML Model Evidence
 
-Эта волна заведена как GitHub issues `#46-#50`, но локальные документы должны считаться источником правды, если GitHub Issues недоступны.
+Эта волна заведена как GitHub issues `#46-#50` и закрыта как completed после проверки кода, артефактов, коммитов и push.
 
 - `D27` / `#46`: completed/pushed; `dataset-v2` собран из seed catalog контролируемыми батчами.
 - `D28` / `#47`: completed/pushed; quality gates, `manifest.json`, artifact coverage и `group_by_query` split проверены.
@@ -33,6 +33,18 @@
 - D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
 Подробный план выполнения находится в `plans/d27-d31-final-model-training.md`.
+
+## Активная волна: D32-D36 Model Productization
+
+Эта волна заведена как GitHub issues `#51-#55`. Её смысл — не заменить модель любой ценой, а довести candidate до безопасного publish gate: экспертные метки, ranking-aware обучение, shadow benchmark, explainability guardrails, controlled publish или documented keep-reference.
+
+- `D32` / `#51`: open; expert labels для `dataset-v2`.
+- `D33` / `#52`: open; refresh `manifest.json` и `split.json` после expert labels.
+- `D34` / `#53`: open; ranking-aware candidate models для product deployment.
+- `D35` / `#54`: open; shadow benchmark и explainability guardrails перед publish.
+- `D36` / `#55`: open; controlled publish, rollback path и product smoke verification.
+
+Подробный план выполнения находится в `plans/d32-d36-model-productization.md`.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -156,7 +168,7 @@
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D31` are complete. The final ML evidence wave kept the current production model because D30 recommended `keep_reference`, while preserving `dataset-v2`, the D29 candidate artifact and the D30 benchmark evidence. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
+Canonical current status: `D1-D31` are complete. The final ML evidence wave kept the current production model because D30 recommended `keep_reference`, while preserving `dataset-v2`, the D29 candidate artifact and the D30 benchmark evidence. GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`.
 
 Local source of truth:
 
@@ -164,8 +176,9 @@ Local source of truth:
 - `README.md`
 - `backend/README.md`
 - `plans/d27-d31-final-model-training.md`
+- `plans/d32-d36-model-productization.md`
 
-Active tasks:
+Completed tasks:
 
 - `D27` / GitHub `#46`: completed/pushed; `dataset-v2` was built from seed catalog in controlled batches.
 - `D28` / GitHub `#47`: completed/pushed; dataset quality gates, manifest, artifact coverage and group split were validated.
@@ -174,4 +187,12 @@ Active tasks:
 - `D31` / GitHub `#50`: completed locally; final no-publish/keep-reference decision was made and product behavior was verified with smoke audits.
 - D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
-Next agent instruction: `D27-D31` are complete locally. If no newer explicit user task exists, ask the user for the next priority instead of adding demo mode or rewriting backend orchestration.
+Active tasks:
+
+- `D32` / GitHub `#51`: open; add expert labels for `dataset-v2` model productization.
+- `D33` / GitHub `#52`: open; refresh `dataset-v2` manifest and group split after expert labels.
+- `D34` / GitHub `#53`: open; train ranking-aware candidate models for product deployment.
+- `D35` / GitHub `#54`: open; run shadow benchmark and explainability guardrails before publish.
+- `D36` / GitHub `#55`: open; controlled model publish, rollback path and product smoke verification.
+
+Next agent instruction: start with `D32` unless the user explicitly chooses another task. Do not add demo mode, do not rewrite backend orchestration, and do not replace `backend/artifacts/page_quality_model.pkl` before D36 publish/no-publish decision.

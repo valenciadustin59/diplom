@@ -404,7 +404,8 @@ cd E:\codexPROJ\diplom\backend
 - `../README.md` — обзор проекта и полный локальный запуск.
 - `../AGENTS.md` — operational notes и актуальный статус после закрытия `D26` (`#45`).
 - `../docs/roadmap/product-development-roadmap.md` — стратегический roadmap после `D26`, включая frontend/product wave без изменения ядра backend-анализа.
-- `../plans/d27-d31-final-model-training.md` — локальная копия активного backlog `D27-D31` для финального обучения модели, если GitHub Issues приватного репозитория недоступны и возвращают `404`.
+- `../plans/d27-d31-final-model-training.md` — выполненный локальный план `D27-D31` для финального ML evidence, если GitHub Issues приватного репозитория недоступны и возвращают `404`.
+- `../plans/d32-d36-model-productization.md` — активная локальная копия backlog `D32-D36` для безопасного внедрения модели в продукт.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -499,7 +500,7 @@ cd E:\codexPROJ\diplom\backend
   --output data\dataset_versions\dataset-v2\manifest.json
 ```
 
-Текущий активный backend/ML backlog после `D26`:
+Завершённый backend/ML backlog после `D26`:
 
 - `D27` / `#46` — completed/pushed: `dataset-v2` собран батчами через `app.ml.dataset_builder --versioned-layout`;
 - `D28` / `#47` — completed/pushed: `manifest.json`, quality gates и `split.json` сформированы;
@@ -508,4 +509,12 @@ cd E:\codexPROJ\diplom\backend
 - `D31` / `#50` — completed locally: no-publish/keep-reference decision по D30 принят, runtime подтверждён smoke-аудитом.
 - D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
-Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d27-d31-final-model-training.md`.
+Активный backend/ML backlog после `D31`:
+
+- `D32` / `#51` — open: добавить expert labels для `dataset-v2`;
+- `D33` / `#52` — open: обновить `manifest.json` и `split.json` после expert labels;
+- `D34` / `#53` — open: обучить ranking-aware candidate models без замены production artifact;
+- `D35` / `#54` — open: провести shadow benchmark и explainability guardrails;
+- `D36` / `#55` — open: controlled publish/rollback/smoke verification.
+
+Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d32-d36-model-productization.md`; `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённой волне.
