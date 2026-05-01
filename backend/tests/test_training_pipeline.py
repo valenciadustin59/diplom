@@ -167,6 +167,13 @@ def test_build_dataset_from_seed_csv_writes_dataset_failures_artifacts_and_hybri
         query_delay_seconds=0.0,
     )
     assert second_run["processed_seed_pages"] == 0
+    assert second_run["rows_count"] == 1
+    assert second_run["failures_count"] == 1
+    assert second_run["run_rows_count"] == 0
+
+    metadata = json.loads(Path(second_run["metadata_path"]).read_text(encoding="utf-8"))
+    assert metadata["coverage"]["rows_count"] == 1
+    assert metadata["coverage"]["failures_count"] == 1
 
     with dataset_path.open("r", encoding="utf-8", newline="") as file:
         rows_after_resume = list(csv.DictReader(file))

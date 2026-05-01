@@ -293,6 +293,34 @@ def _read_existing_keys(csv_path: Path) -> set[str]:
         }
 
 
+def _summarize_dataset_outputs(dataset_path: Path, failures_path: Path) -> dict[str, object]:
+    success_rows: list[dict[str, str]] = []
+    failure_rows: list[dict[str, str]] = []
+    if dataset_path.exists():
+        with dataset_path.open("r", encoding="utf-8", newline="") as file:
+            success_rows = list(csv.DictReader(file))
+    if failures_path.exists():
+        with failures_path.open("r", encoding="utf-8", newline="") as file:
+            failure_rows = list(csv.DictReader(file))
+
+    rows_count = len(success_rows)
+    failures_count = len(failure_rows)
+    total_attempts = rows_count + failures_count
+    empty_text_count = sum(
+        1
+        for row in success_rows
+        if (_safe_float(row.get("text_length_chars")) or 0.0) <= 0.0
+    )
+    return {
+        "rows_count": rows_count,
+        "failures_count": failures_count,
+        "unique_queries": len({str(row.get("query") or "") for row in success_rows if row.get("query")}),
+        "unique_domains": len({str(row.get("domain") or "") for row in success_rows if row.get("domain")}),
+        "failure_rate": round((failures_count / total_attempts), 6) if total_attempts else 0.0,
+        "empty_text_rate": round((empty_text_count / rows_count), 6) if rows_count else 0.0,
+    }
+
+
 def _load_checkpoint(checkpoint_path: Path) -> dict[str, set[str]]:
     if not checkpoint_path.exists():
         return {"completed_pages": set(), "written_keys": set()}
@@ -654,8 +682,9 @@ def build_dataset(
             )
 
     total_attempts = success_count + failure_count
-    failure_rate = round((failure_count / total_attempts), 6) if total_attempts else 0.0
-    empty_text_rate = round((empty_text_count / success_count), 6) if success_count else 0.0
+    run_failure_rate = round((failure_count / total_attempts), 6) if total_attempts else 0.0
+    run_empty_text_rate = round((empty_text_count / success_count), 6) if success_count else 0.0
+    output_coverage = _summarize_dataset_outputs(dataset_path, failures_csv_path)
     metadata_payload = {
         "version": dataset_version,
         "kind": "dataset",
@@ -676,12 +705,7 @@ def build_dataset(
             "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score",
         },
         "coverage": {
-            "rows_count": success_count,
-            "failures_count": failure_count,
-            "unique_queries": len(unique_queries),
-            "unique_domains": len(unique_domains),
-            "failure_rate": failure_rate,
-            "empty_text_rate": empty_text_rate,
+            **output_coverage,
         },
     }
     metadata_path = write_dataset_metadata(dataset_path.with_name(f"{dataset_path.stem}.dataset.json"), metadata_payload)
@@ -694,12 +718,18 @@ def build_dataset(
         "metadata_path": str(metadata_path),
         "seeds_count": len(seeds),
         "processed_seed_pages": processed_seed_pages,
-        "rows_count": success_count,
-        "failures_count": failure_count,
-        "unique_queries": len(unique_queries),
-        "unique_domains": len(unique_domains),
-        "failure_rate": failure_rate,
-        "empty_text_rate": empty_text_rate,
+        "rows_count": output_coverage["rows_count"],
+        "failures_count": output_coverage["failures_count"],
+        "unique_queries": output_coverage["unique_queries"],
+        "unique_domains": output_coverage["unique_domains"],
+        "failure_rate": output_coverage["failure_rate"],
+        "empty_text_rate": output_coverage["empty_text_rate"],
+        "run_rows_count": success_count,
+        "run_failures_count": failure_count,
+        "run_unique_queries": len(unique_queries),
+        "run_unique_domains": len(unique_domains),
+        "run_failure_rate": run_failure_rate,
+        "run_empty_text_rate": run_empty_text_rate,
     }
 
 

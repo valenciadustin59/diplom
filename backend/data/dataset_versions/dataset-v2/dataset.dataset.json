@@ -18,11 +18,11 @@
     "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score"
   },
   "coverage": {
-    "rows_count": 423,
-    "failures_count": 32,
-    "unique_queries": 49,
-    "unique_domains": 290,
-    "failure_rate": 0.07033,
+    "rows_count": 885,
+    "failures_count": 49,
+    "unique_queries": 99,
+    "unique_domains": 568,
+    "failure_rate": 0.052463,
     "empty_text_rate": 0.0
   }
 }
