@@ -8,8 +8,8 @@ D38 published the D37 `pointwise_catboost` candidate as the active runtime artif
 
 ## Active Issues
 
-- `D40` / GitHub `#59` — open: post-publish model monitoring dashboard.
-- `D41` / GitHub `#60` — open: golden query replay guardrails after publish.
+- `D40` / GitHub `#59` — completed locally: post-publish model monitoring dashboard.
+- `D41` / GitHub `#60` — completed locally: golden query replay guardrails after publish.
 - `D42` / GitHub `#61` — open: score confidence and data-quality warnings in audit UX.
 - `D43` / GitHub `#62` — open: model registry and rollback evidence UI.
 - `D44` / GitHub `#63` — open: second-pass competitor-aware score experiment with SERP-relative features.
@@ -126,8 +126,14 @@ Implement D40 first because monitoring gives the product a baseline after D38/D3
 
 - [x] (2026-05-02) GitHub issues `#59-#63` created for D40-D44.
 - [x] (2026-05-02) Local backlog mirror created in this file.
-- [ ] D40 implementation.
-- [ ] D41 implementation.
+- [x] (2026-05-02) D40 implementation.
+- [x] (2026-05-02) D41 implementation.
 - [ ] D42 implementation.
 - [ ] D43 implementation.
 - [ ] D44 implementation.
+
+## D40-D41 Implementation Notes
+
+- `D40` adds `GET /health/model/monitoring` and `backend/app/model_monitoring.py`. The payload aggregates recent `Audit` rows by `score_breakdown.model_info`, exposes model usage, status/warning/failure counts, active-model score percentiles, competitor coverage, and counts legacy/unknown audits without `model_info` separately. The `Стек` runtime page now shows the monitoring section next to the D39 active model card.
+- `D41` adds deterministic offline golden replay evidence in `backend/app/ml/golden_replay.py`. The default command is `cd backend && .venv\Scripts\python.exe -m app.ml.golden_replay --output-dir artifacts/ranking-benchmarks/dataset-v3-d41`. It evaluates stored evidence for the fixed golden catalog, includes `/health/model` metadata and rollback reference, and does not publish, roll back, or mutate `backend/artifacts/page_quality_model.pkl`.
+- D41 generated evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` and `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.md`; current decision is `passed` for `3/3` golden items and `21/21` guardrails.

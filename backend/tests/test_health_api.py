@@ -92,6 +92,46 @@ def test_model_status_endpoint_returns_runtime_model_payload(client, monkeypatch
     assert response.json() == payload
 
 
+def test_model_monitoring_endpoint_returns_recent_usage_payload(client, monkeypatch: pytest.MonkeyPatch):
+    model_status = {
+        "status": "active",
+        "model": {"artifact_version": "dataset-v3-d37-20260501200434"},
+        "dataset": {"dataset_version": "dataset-v3-d37"},
+    }
+    payload = {
+        "status": "ok",
+        "checked_at": "2026-05-02T00:00:00+00:00",
+        "window_days": 14,
+        "window_start": "2026-04-18T00:00:00+00:00",
+        "window_end": "2026-05-02T00:00:00+00:00",
+        "total_audits": 1,
+        "audits_with_model_info": 1,
+        "legacy_or_unknown_count": 0,
+        "status_counts": {"completed": 1},
+        "warning_count": 0,
+        "warning_message_count": 0,
+        "failure_count": 0,
+        "active_model": {"artifact_version": "dataset-v3-d37-20260501200434"},
+        "score_distribution": {"sample_size": 1, "p50": 72.0},
+        "competitor_coverage": {"sample_size": 1, "total_analyzed": 2},
+        "model_usage": [],
+    }
+
+    def fake_build_model_monitoring_payload(db, *, window_days, active_model_status):
+        assert db is not None
+        assert window_days == 14
+        assert active_model_status == model_status
+        return payload
+
+    monkeypatch.setattr("app.api.routes.health.build_model_status_payload", lambda: model_status)
+    monkeypatch.setattr("app.api.routes.health.build_model_monitoring_payload", fake_build_model_monitoring_payload)
+
+    response = client.get("/health/model/monitoring?window_days=14")
+
+    assert response.status_code == 200
+    assert response.json() == payload
+
+
 def test_build_model_status_payload_reads_artifact_metadata(tmp_path):
     model_path = tmp_path / "page_quality_model.pkl"
     model = DummyRegressor(strategy="mean")

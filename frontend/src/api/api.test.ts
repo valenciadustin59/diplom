@@ -232,4 +232,69 @@ describe("runtimeApi", () => {
       globalThis.fetch = originalFetch;
     }
   });
+
+  it("requests model monitoring from the health model monitoring endpoint", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = ((input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({
+            status: "ok",
+            checked_at: "2026-05-02T00:00:00Z",
+            window_days: 30,
+            window_start: "2026-04-02T00:00:00Z",
+            window_end: "2026-05-02T00:00:00Z",
+            total_audits: 1,
+            audits_with_model_info: 1,
+            legacy_or_unknown_count: 0,
+            status_counts: { completed: 1 },
+            warning_count: 0,
+            warning_message_count: 0,
+            failure_count: 0,
+            active_model: {
+              artifact_version: "dataset-v3-d37-20260501200434",
+              model_schema_version: "v3",
+              dataset_version: "dataset-v3-d37",
+            },
+            score_distribution: {
+              sample_size: 1,
+              average: 72,
+              min: 72,
+              max: 72,
+              p25: 72,
+              p50: 72,
+              p75: 72,
+              low_score_count: 0,
+              high_score_count: 0,
+              low_score_threshold: 50,
+              high_score_threshold: 80,
+            },
+            competitor_coverage: {
+              sample_size: 1,
+              total_found: 2,
+              total_analyzed: 2,
+              total_failed: 0,
+              average_found: 2,
+              average_analyzed: 2,
+              average_failed: 0,
+              coverage_ratio: 1,
+            },
+            model_usage: [],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    }) as typeof fetch;
+
+    try {
+      const { runtimeApi } = await import("./api");
+      const monitoring = await runtimeApi.getModelMonitoring();
+      expect(monitoring.status).toBe("ok");
+      expect(calls[0]).toContain("/health/model/monitoring");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
 });

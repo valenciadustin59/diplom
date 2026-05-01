@@ -1,5 +1,12 @@
 import { Card } from "../components/Card";
-import type { RuntimeHealthModel, RuntimeIssue, RuntimeModelStatusView, RuntimeTone } from "../lib/runtimeHealth";
+import type {
+  RuntimeHealthModel,
+  RuntimeIssue,
+  RuntimeMetric,
+  RuntimeModelMonitoringView,
+  RuntimeModelStatusView,
+  RuntimeTone,
+} from "../lib/runtimeHealth";
 
 type RuntimeStatusProps = {
   model: RuntimeHealthModel | null;
@@ -47,6 +54,20 @@ function RuntimeMetricGrid({ model }: { model: RuntimeHealthModel }) {
   return (
     <div className="report-metric-grid runtime-metric-grid">
       {model.metrics.map((metric) => (
+        <div key={metric.label} className={`report-metric runtime-metric runtime-metric--${metric.tone}`}>
+          <span className="report-metric__label">{metric.label}</span>
+          <strong className="report-metric__value">{metric.value}</strong>
+          <p className="report-metric__note">{metric.note}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function RuntimeMetricTileGrid({ metrics, className = "" }: { metrics: RuntimeMetric[]; className?: string }) {
+  return (
+    <div className={`report-metric-grid ${className}`}>
+      {metrics.map((metric) => (
         <div key={metric.label} className={`report-metric runtime-metric runtime-metric--${metric.tone}`}>
           <span className="report-metric__label">{metric.label}</span>
           <strong className="report-metric__value">{metric.value}</strong>
@@ -108,6 +129,92 @@ function RuntimeModelStatusCard({ modelStatus }: { modelStatus: RuntimeModelStat
         <strong>Решение публикации</strong>
         <span>{modelStatus.publishLabel}</span>
       </div>
+    </Card>
+  );
+}
+
+function RuntimeModelMonitoringCard({ monitoring }: { monitoring: RuntimeModelMonitoringView | null }) {
+  if (!monitoring) {
+    return null;
+  }
+
+  return (
+    <Card
+      title="Мониторинг ML-модели"
+      subtitle="Фактическое использование runtime-модели в recent-аудитах: score, конкуренты, warnings и legacy записи."
+      className="runtime-model-monitoring-card"
+    >
+      <div className={`runtime-model-monitoring runtime-model-monitoring--${monitoring.tone}`}>
+        <div className="runtime-model-monitoring__summary">
+          <span className={getToneClass(monitoring.tone)}>{monitoring.statusLabel}</span>
+          <h3>{monitoring.shortLabel}</h3>
+          <p>{monitoring.detail}</p>
+        </div>
+        <div className="runtime-model-monitoring__facts">
+          <span>Окно: {monitoring.windowLabel}</span>
+          <span>Проверено: {monitoring.checkedAtLabel}</span>
+          <span>Статусы: {monitoring.statusCountsLabel}</span>
+          <span>{monitoring.legacyLabel}</span>
+        </div>
+      </div>
+
+      <RuntimeMetricTileGrid metrics={monitoring.summaryMetrics} className="runtime-model-monitoring__metrics" />
+
+      {monitoring.empty ? (
+        <div className="empty-state">
+          Нет завершённых recent-аудитов с runtime model_info. Новые аудиты CatBoost v3 появятся здесь после расчёта score;
+          старые записи без metadata уже учтены как legacy/unknown.
+        </div>
+      ) : (
+        <>
+          <div className="runtime-model-monitoring__split">
+            <section>
+              <h4>Score активной модели</h4>
+              <RuntimeMetricTileGrid metrics={monitoring.scoreMetrics} className="runtime-model-monitoring__mini-grid" />
+            </section>
+            <section>
+              <h4>Покрытие конкурентов</h4>
+              <RuntimeMetricTileGrid metrics={monitoring.competitorMetrics} className="runtime-model-monitoring__mini-grid" />
+            </section>
+          </div>
+
+          <div className="report-table-shell runtime-model-usage-table">
+            <table className="report-table">
+              <thead>
+                <tr>
+                  <th>Модель</th>
+                  <th>Artifact</th>
+                  <th>Аудиты</th>
+                  <th>Статусы</th>
+                  <th>Score</th>
+                  <th>Конкуренты</th>
+                  <th>Последний аудит</th>
+                </tr>
+              </thead>
+              <tbody>
+                {monitoring.usageRows.map((row) => (
+                  <tr key={row.key}>
+                    <td>
+                      <strong>{row.modelLabel}</strong>
+                      <span className="timeline-table__muted">{row.datasetLabel}</span>
+                      {row.isActiveModel ? <span className={getToneClass("ok")}>active</span> : null}
+                    </td>
+                    <td>{row.artifactLabel}</td>
+                    <td>{row.auditCountLabel}</td>
+                    <td>
+                      <span>{row.statusCountsLabel}</span>
+                      <span className="timeline-table__muted">{row.warningFailureLabel}</span>
+                    </td>
+                    <td>{row.scoreLabel}</td>
+                    <td>{row.competitorCoverageLabel}</td>
+                    <td>{row.lastAuditAtLabel}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
     </Card>
   );
 }
@@ -292,6 +399,7 @@ export function RuntimeStatusPage({ model, loading, error, onRefresh }: RuntimeS
           {error ? <div className="feedback-banner feedback-banner--warning">{error}</div> : null}
           <RuntimeMetricGrid model={model} />
           <RuntimeModelStatusCard modelStatus={model.modelStatus} />
+          <RuntimeModelMonitoringCard monitoring={model.modelMonitoring} />
           <Card title="Что восстановить" subtitle="Понятный вывод по готовности, нагрузке очередей и рискам контроля допуска.">
             <RuntimeIssueList issues={model.issues} />
           </Card>

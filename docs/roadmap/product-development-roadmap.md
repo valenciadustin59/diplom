@@ -113,21 +113,41 @@ D39 evidence:
 - UI surfaces: compact stack card, full `Стек` page, score breakdown, audit report, Markdown export, HTML export
 - verification: `backend/tests/test_health_api.py` -> `24 passed`; `npm --prefix frontend run test` -> `45 passed`
 
-## Current Active Backlog: D40-D44 Post-Publish Model Operations
+## Current D40-D41 Evidence: Post-Publish Model Operations
 
 GitHub issues `#59-#63` were created on `2026-05-02`. Local source of truth: `plans/d40-d44-post-publish-model-operations.md`.
 
 The D40-D44 wave keeps the D38 CatBoost v3 production artifact in place and focuses on operating, validating and explaining it after publish.
 
-Active tasks:
+Completed D40-D41 scope:
 
 - `D40` / GitHub `#59`: post-publish model monitoring dashboard over real audit/model usage.
 - `D41` / GitHub `#60`: golden query replay guardrails after publish.
+
+D40 evidence:
+
+- backend endpoint: `GET /health/model/monitoring`
+- backend helper: `backend/app/model_monitoring.py`
+- aggregation source: `Audit.score_breakdown.model_info`
+- UI surface: full `Стек` runtime page, section `Мониторинг ML-модели`
+- coverage: model artifact/schema/dataset usage, status/warning/failure counts, score distribution, competitor coverage and legacy/unknown audit counts
+
+D41 evidence:
+
+- command: `cd backend && .venv\Scripts\python.exe -m app.ml.golden_replay --output-dir artifacts/ranking-benchmarks/dataset-v3-d41`
+- report: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json`
+- markdown: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.md`
+- decision: `passed`
+- guardrails: `3/3` replay items passed, `21 pass / 0 warn / 0 fail`
+- invariant: no publish, no rollback, no mutation of `backend/artifacts/page_quality_model.pkl`
+
+Remaining active tasks:
+
 - `D42` / GitHub `#61`: score confidence and data-quality warnings in audit UX.
 - `D43` / GitHub `#62`: model registry and rollback evidence UI.
 - `D44` / GitHub `#63`: non-production second-pass competitor-aware score experiment using `serp_relative` features.
 
-Next practical step: implement D40 first unless the user explicitly selects another D40-D44 task.
+Next practical step: implement D42 unless the user explicitly selects another remaining D40-D44 task.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -251,7 +271,7 @@ Next practical step: implement D40 first unless the user explicitly selects anot
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D39` are complete locally, and `D40-D44` are the active open backlog. The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout; D39 made the active model visible in API/UI/report surfaces. Production artifact `backend/artifacts/page_quality_model.pkl` now points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56`, `#57` and `#58` are the D37-D39 model rollout/interface evidence; `#59-#63` are the open D40-D44 post-publish operations tasks.
+Canonical current status: `D1-D41` are complete locally, and `D42-D44` are the active open backlog. The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout; D39 made the active model visible in API/UI/report surfaces; D40 added post-publish model usage monitoring; D41 added deterministic golden replay guardrails. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56`, `#57`, `#58`, `#59` and `#60` are the D37-D41 model rollout/interface/operations evidence; `#61-#63` are the open D42-D44 post-publish operations tasks.
 
 Local source of truth:
 
@@ -287,13 +307,13 @@ Completed model rollout/interface tasks:
 - `D37` / GitHub `#56`: implemented locally; added unified `v3` feature schema, built `148`-feature pre-competitor dataset evidence, trained non-production candidates, ran shadow guardrails, and selected `pointwise_catboost` as publish-recommended.
 - `D38` / GitHub `#57`: implemented locally; controlled publish of `pointwise_catboost` CatBoost v3 to `backend/artifacts/page_quality_model.pkl`, rollback artifact preserved, product smoke passed.
 - `D39` / GitHub `#58`: implemented locally; active model status endpoint and UI visibility in stack, score explanation and audit report/export.
+- `D40` / GitHub `#59`: implemented locally; post-publish model monitoring dashboard with `/health/model/monitoring` and `Стек` UI section.
+- `D41` / GitHub `#60`: implemented locally; deterministic golden query replay guardrails with evidence in `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`.
 
 Active post-publish operations tasks:
 
-- `D40` / GitHub `#59`: open; post-publish model monitoring dashboard.
-- `D41` / GitHub `#60`: open; golden query replay guardrails after publish.
 - `D42` / GitHub `#61`: open; score confidence and data-quality warnings in audit UX.
 - `D43` / GitHub `#62`: open; model registry and rollback evidence UI.
 - `D44` / GitHub `#63`: open; second-pass competitor-aware score experiment with SERP-relative features.
 
-Next agent instruction: `D32-D39` is complete locally and `D40-D44` is active. Start with D40 unless the user explicitly selects another task. Do not repeat the CatBoost v3 rollout unless the user explicitly asks for rollback or republish. Do not add demo mode or rewrite backend orchestration.
+Next agent instruction: `D32-D41` is complete locally and `D42-D44` is active. Start with D42 unless the user explicitly selects another task. Do not repeat the CatBoost v3 rollout unless the user explicitly asks for rollback or republish. Do not add demo mode or rewrite backend orchestration.

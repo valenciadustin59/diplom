@@ -3,6 +3,7 @@ import { buildRuntimeHealthModel } from "./runtimeHealth";
 import type {
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
 } from "../types";
@@ -183,6 +184,94 @@ function createModelStatus(overrides: Partial<RuntimeModelStatusResponse> = {}):
   };
 }
 
+function createModelMonitoring(overrides: Partial<RuntimeModelMonitoringResponse> = {}): RuntimeModelMonitoringResponse {
+  return {
+    status: "warning",
+    checked_at: "2026-05-02T00:00:00Z",
+    window_days: 30,
+    window_start: "2026-04-02T00:00:00Z",
+    window_end: "2026-05-02T00:00:00Z",
+    total_audits: 4,
+    audits_with_model_info: 3,
+    legacy_or_unknown_count: 1,
+    status_counts: { completed: 2, completed_with_warnings: 1, failed: 1 },
+    warning_count: 1,
+    warning_message_count: 1,
+    failure_count: 1,
+    active_model: {
+      artifact_version: "dataset-v3-d37-20260501200434",
+      model_schema_version: "v3",
+      dataset_version: "dataset-v3-d37",
+    },
+    score_distribution: {
+      sample_size: 3,
+      average: 66.6667,
+      min: 40,
+      max: 90,
+      p25: 55,
+      p50: 70,
+      p75: 80,
+      low_score_count: 1,
+      high_score_count: 1,
+      low_score_threshold: 50,
+      high_score_threshold: 80,
+    },
+    competitor_coverage: {
+      sample_size: 3,
+      total_found: 6,
+      total_analyzed: 5,
+      total_failed: 1,
+      average_found: 2,
+      average_analyzed: 1.6667,
+      average_failed: 0.3333,
+      coverage_ratio: 0.8333,
+    },
+    model_usage: [
+      {
+        key: "dataset-v3-d37-20260501200434|v3|dataset-v3-d37|CatBoostRegressor|local_dataset",
+        artifact_version: "dataset-v3-d37-20260501200434",
+        model_schema_version: "v3",
+        dataset_version: "dataset-v3-d37",
+        model_type: "CatBoostRegressor",
+        source: "local_dataset",
+        artifact_family: "page_quality_model",
+        feature_count: 148,
+        is_active_model: true,
+        audit_count: 3,
+        status_counts: { completed: 2, completed_with_warnings: 1 },
+        warning_count: 1,
+        warning_message_count: 1,
+        failure_count: 0,
+        score_distribution: {
+          sample_size: 3,
+          average: 66.6667,
+          min: 40,
+          max: 90,
+          p25: 55,
+          p50: 70,
+          p75: 80,
+          low_score_count: 1,
+          high_score_count: 1,
+          low_score_threshold: 50,
+          high_score_threshold: 80,
+        },
+        competitor_coverage: {
+          sample_size: 3,
+          total_found: 6,
+          total_analyzed: 5,
+          total_failed: 1,
+          average_found: 2,
+          average_analyzed: 1.6667,
+          average_failed: 0.3333,
+          coverage_ratio: 0.8333,
+        },
+        last_audit_at: "2026-05-01T20:00:00Z",
+      },
+    ],
+    ...overrides,
+  };
+}
+
 describe("runtime health model", () => {
   it("summarizes ready runtime and queue coverage", () => {
     const model = buildRuntimeHealthModel({
@@ -330,5 +419,72 @@ describe("runtime health model", () => {
     expect(model.workerProfiles.find((profile) => profile.name === "heavy_analysis")?.statusLabel).toBe("требуется воркер");
     expect(model.queues.find((queue) => queue.name === "audits.heavy_analysis")?.pressureLabel).toBe("без воркеров");
     expect(model.issues.map((issue) => issue.title).join(" ")).toContain("Очередь audits.heavy_analysis без воркеров");
+  });
+
+  it("summarizes active model monitoring usage and legacy audit counts", () => {
+    const model = buildRuntimeHealthModel({
+      live: createLiveness(),
+      readiness: createReadiness(),
+      metrics: createMetrics(),
+      modelStatus: createModelStatus(),
+      modelMonitoring: createModelMonitoring(),
+    });
+
+    expect(model.modelMonitoring?.statusLabel).toBe("Есть предупреждения");
+    expect(model.modelMonitoring?.shortLabel).toBe("model_info в 3 из 4 аудитов");
+    expect(model.modelMonitoring?.legacyLabel).toBe("1 legacy/unknown");
+    expect(model.modelMonitoring?.summaryMetrics.find((metric) => metric.label === "Warnings/failures")?.value).toBe("1/1");
+    expect(model.modelMonitoring?.scoreMetrics.find((metric) => metric.label === "Score p50")?.value).toBe("70");
+    expect(model.modelMonitoring?.competitorMetrics.find((metric) => metric.label === "Coverage")?.value).toBe("83%");
+    expect(model.modelMonitoring?.usageRows[0].modelLabel).toBe("CatBoostRegressor · v3");
+    expect(model.modelMonitoring?.usageRows[0].competitorCoverageLabel).toContain("5/6");
+  });
+
+  it("keeps model monitoring empty state explicit", () => {
+    const model = buildRuntimeHealthModel({
+      live: createLiveness(),
+      readiness: createReadiness(),
+      metrics: createMetrics(),
+      modelStatus: createModelStatus(),
+      modelMonitoring: createModelMonitoring({
+        status: "empty",
+        total_audits: 2,
+        audits_with_model_info: 0,
+        legacy_or_unknown_count: 2,
+        status_counts: { completed: 2 },
+        warning_count: 0,
+        warning_message_count: 0,
+        failure_count: 0,
+        score_distribution: {
+          sample_size: 0,
+          average: null,
+          min: null,
+          max: null,
+          p25: null,
+          p50: null,
+          p75: null,
+          low_score_count: 0,
+          high_score_count: 0,
+          low_score_threshold: 50,
+          high_score_threshold: 80,
+        },
+        competitor_coverage: {
+          sample_size: 0,
+          total_found: 0,
+          total_analyzed: 0,
+          total_failed: 0,
+          average_found: null,
+          average_analyzed: null,
+          average_failed: null,
+          coverage_ratio: null,
+        },
+        model_usage: [],
+      }),
+    });
+
+    expect(model.modelMonitoring?.empty).toBe(true);
+    expect(model.modelMonitoring?.statusLabel).toBe("Нет runtime-данных");
+    expect(model.modelMonitoring?.shortLabel).toBe("Нет аудитов с model_info");
+    expect(model.modelMonitoring?.detail).toContain("legacy/unknown");
   });
 });

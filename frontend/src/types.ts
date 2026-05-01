@@ -392,6 +392,70 @@ export type RuntimeModelStatusResponse = {
   rollback: Record<string, unknown>;
 };
 
+export type RuntimeModelMonitoringScoreDistribution = {
+  sample_size: number;
+  average: number | null;
+  min: number | null;
+  max: number | null;
+  p25: number | null;
+  p50: number | null;
+  p75: number | null;
+  low_score_count: number;
+  high_score_count: number;
+  low_score_threshold: number;
+  high_score_threshold: number;
+};
+
+export type RuntimeModelMonitoringCompetitorCoverage = {
+  sample_size: number;
+  total_found: number;
+  total_analyzed: number;
+  total_failed: number;
+  average_found: number | null;
+  average_analyzed: number | null;
+  average_failed: number | null;
+  coverage_ratio: number | null;
+};
+
+export type RuntimeModelUsageResponse = {
+  key: string;
+  artifact_version: string | null;
+  model_schema_version: string | null;
+  dataset_version: string | null;
+  model_type: string | null;
+  source: string | null;
+  artifact_family: string | null;
+  feature_count: number | null;
+  is_active_model: boolean;
+  audit_count: number;
+  status_counts: Record<string, number>;
+  warning_count: number;
+  warning_message_count: number;
+  failure_count: number;
+  score_distribution: RuntimeModelMonitoringScoreDistribution;
+  competitor_coverage: RuntimeModelMonitoringCompetitorCoverage;
+  last_audit_at: string | null;
+};
+
+export type RuntimeModelMonitoringResponse = {
+  status: RuntimeComponentStatus | "empty";
+  checked_at: string;
+  window_days: number;
+  window_start: string;
+  window_end: string;
+  total_audits: number;
+  audits_with_model_info: number;
+  legacy_or_unknown_count: number;
+  status_counts: Record<string, number>;
+  warning_count: number;
+  warning_message_count: number;
+  failure_count: number;
+  active_model: Record<string, unknown> | null;
+  score_distribution: RuntimeModelMonitoringScoreDistribution;
+  competitor_coverage: RuntimeModelMonitoringCompetitorCoverage;
+  model_usage: RuntimeModelUsageResponse[];
+};
+
 export type AuditSummary = {
   id: string;
   domain: string;

@@ -4,7 +4,7 @@ import { AuditTabs } from "../components/AuditTabs";
 import { AuditWorkspace, EmptyWorkspace } from "../components/AuditWorkspace";
 import { ControlRail } from "../components/ControlRail";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
-import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
+import { RuntimeStatusCompactCard, RuntimeStatusPage } from "../pages/RuntimeStatusPage";
 import type {
   AuditResultsResponse,
   AuditStatusResponse,
@@ -358,6 +358,90 @@ const runtimeWorkspaceProps = {
         available: true,
         model_sha1: "rollback-sha",
       },
+    },
+    modelMonitoring: {
+      status: "ok",
+      checked_at: "2026-05-02T00:00:00Z",
+      window_days: 30,
+      window_start: "2026-04-02T00:00:00Z",
+      window_end: "2026-05-02T00:00:00Z",
+      total_audits: 3,
+      audits_with_model_info: 2,
+      legacy_or_unknown_count: 1,
+      status_counts: { completed: 2, completed_with_warnings: 1 },
+      warning_count: 1,
+      warning_message_count: 1,
+      failure_count: 0,
+      active_model: {
+        artifact_version: "dataset-v3-d37-20260501200434",
+        model_schema_version: "v3",
+        dataset_version: "dataset-v3-d37",
+      },
+      score_distribution: {
+        sample_size: 2,
+        average: 76.2,
+        min: 72.4,
+        max: 80,
+        p25: 74.3,
+        p50: 76.2,
+        p75: 78.1,
+        low_score_count: 0,
+        high_score_count: 1,
+        low_score_threshold: 50,
+        high_score_threshold: 80,
+      },
+      competitor_coverage: {
+        sample_size: 2,
+        total_found: 4,
+        total_analyzed: 3,
+        total_failed: 1,
+        average_found: 2,
+        average_analyzed: 1.5,
+        average_failed: 0.5,
+        coverage_ratio: 0.75,
+      },
+      model_usage: [
+        {
+          key: "dataset-v3-d37-20260501200434|v3|dataset-v3-d37|CatBoostRegressor|local_dataset",
+          artifact_version: "dataset-v3-d37-20260501200434",
+          model_schema_version: "v3",
+          dataset_version: "dataset-v3-d37",
+          model_type: "CatBoostRegressor",
+          source: "local_dataset",
+          artifact_family: "page_quality_model",
+          feature_count: 148,
+          is_active_model: true,
+          audit_count: 2,
+          status_counts: { completed: 1, completed_with_warnings: 1 },
+          warning_count: 1,
+          warning_message_count: 1,
+          failure_count: 0,
+          score_distribution: {
+            sample_size: 2,
+            average: 76.2,
+            min: 72.4,
+            max: 80,
+            p25: 74.3,
+            p50: 76.2,
+            p75: 78.1,
+            low_score_count: 0,
+            high_score_count: 1,
+            low_score_threshold: 50,
+            high_score_threshold: 80,
+          },
+          competitor_coverage: {
+            sample_size: 2,
+            total_found: 4,
+            total_analyzed: 3,
+            total_failed: 1,
+            average_found: 2,
+            average_analyzed: 1.5,
+            average_failed: 0.5,
+            coverage_ratio: 0.75,
+          },
+          last_audit_at: "2026-05-01T20:00:00Z",
+        },
+      ],
     },
   }),
   loadingRuntime: false,
@@ -885,6 +969,57 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("dataset-v3-d37");
     expect(markup).toContain("Проверено:");
     expect(markup).toContain("Открыть стек");
+  });
+
+  it("renders full stack model monitoring usage", () => {
+    const markup = renderToStaticMarkup(
+      <RuntimeStatusPage
+        model={runtimeWorkspaceProps.runtimeHealth}
+        loading={false}
+        error={null}
+        onRefresh={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Мониторинг ML-модели");
+    expect(markup).toContain("Использование штатно");
+    expect(markup).toContain("model_info в 2 из 3 аудитов");
+    expect(markup).toContain("Legacy/unknown");
+    expect(markup).toContain("CatBoostRegressor · v3");
+    expect(markup).toContain("dataset-v3-d37-20260501200434");
+    expect(markup).toContain("3/4 проанализировано");
+    expect(markup).toContain("Score активной модели");
+    expect(markup).toContain("Покрытие конкурентов");
+  });
+
+  it("renders model monitoring empty state", () => {
+    const runtimeHealth = runtimeWorkspaceProps.runtimeHealth;
+    const markup = renderToStaticMarkup(
+      <RuntimeStatusPage
+        model={{
+          ...runtimeHealth,
+          modelMonitoring: runtimeHealth.modelMonitoring
+            ? {
+                ...runtimeHealth.modelMonitoring,
+                status: "empty",
+                statusLabel: "Нет runtime-данных",
+                tone: "muted",
+                empty: true,
+                shortLabel: "Нет аудитов с model_info",
+                detail: "За выбранное окно нет завершённых audit-записей с runtime model_info.",
+                usageRows: [],
+              }
+            : null,
+        }}
+        loading={false}
+        error={null}
+        onRefresh={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Нет аудитов с model_info");
+    expect(markup).toContain("Нет завершённых recent-аудитов с runtime model_info");
+    expect(markup).toContain("legacy/unknown");
   });
 
   it("renders report recommendations from the stored audit data when endpoint data is absent", () => {

@@ -4,6 +4,7 @@ import { buildRuntimeHealthModel, type RuntimeHealthModel } from "../lib/runtime
 import type {
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
 } from "../types";
@@ -42,19 +43,21 @@ export function useRuntimeHealth() {
       runtimeApi.getReadiness(),
       runtimeApi.getMetrics(),
       runtimeApi.getModelStatus(),
+      runtimeApi.getModelMonitoring(),
     ] as const);
-    const [liveResult, readinessResult, metricsResult, modelStatusResult] = results;
+    const [liveResult, readinessResult, metricsResult, modelStatusResult, modelMonitoringResult] = results;
     const live = getSettledValue<RuntimeLivenessResponse>(liveResult);
     const readiness = getSettledValue<RuntimeReadinessResponse>(readinessResult);
     const metrics = getSettledValue<RuntimeMetricsResponse>(metricsResult);
     const modelStatus = getSettledValue<RuntimeModelStatusResponse>(modelStatusResult);
+    const modelMonitoring = getSettledValue<RuntimeModelMonitoringResponse>(modelMonitoringResult);
 
-    if (!live && !readiness && !metrics && !modelStatus) {
+    if (!live && !readiness && !metrics && !modelStatus && !modelMonitoring) {
       setRuntimeError(getRejectedMessages(results).join(" ") || "Диагностика рабочего стека недоступна.");
       setRuntimeHealth(null);
     } else {
       setRuntimeError(getRejectedMessages(results).join(" ") || null);
-      setRuntimeHealth(buildRuntimeHealthModel({ live, readiness, metrics, modelStatus }));
+      setRuntimeHealth(buildRuntimeHealthModel({ live, readiness, metrics, modelStatus, modelMonitoring }));
     }
 
     if (!silent) {

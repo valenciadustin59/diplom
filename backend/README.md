@@ -233,13 +233,14 @@ npm run site:check
 
 ## Health endpoints
 
-Backend предоставляет четыре основных health/runtime endpoint'а:
+Backend предоставляет health/runtime endpoint'ы:
 
 - `GET /health` — legacy healthcheck;
 - `GET /health/live` — liveness процесса API;
 - `GET /health/ready` — готовность всего распределённого стека;
 - `GET /health/metrics` — диагностика очередей, воркеров и накопления задач;
 - `GET /health/model` — активный runtime ML artifact, dataset/schema metadata, guardrail metrics и rollback availability.
+- `GET /health/model/monitoring` — post-publish usage monitoring по `Audit.score_breakdown.model_info`: artifact/schema/dataset usage, score distribution, competitor coverage, warnings/failures и legacy/unknown audit rows.
 
 Если один из обязательных компонентов не готов, `GET /health/ready` возвращает `503`.
 
@@ -533,6 +534,10 @@ D38 / GitHub `#57` реализован локально как controlled publi
 
 D39 / GitHub `#58` реализован локально как model status in interface. Backend endpoint `GET /health/model` отдаёт активный artifact, SHA1, metadata sidecar, model/dataset sections, `metrics_summary`, D38 publish context and rollback reference. UI читает этот endpoint через runtime health flow и показывает active model в stack UI, score breakdown и audit report/export. План: `../plans/d39-model-status-interface.md`.
 
-D40-D44 / GitHub `#59-#63` созданы как активная post-publish operations wave. Backend-relevant задачи: `D40` model usage monitoring, `D41` replay guardrail reports, `D43` model registry/rollback evidence endpoint, `D44` non-production second-pass competitor-aware score experiment. Локальный backlog: `../plans/d40-d44-post-publish-model-operations.md`.
+D40 / GitHub `#59` реализован локально как model usage monitoring. Backend endpoint `GET /health/model/monitoring` построен на `app/model_monitoring.py`, агрегирует recent audit rows по runtime `model_info`, отдельно считает legacy/unknown audits и не меняет scoring/publish behavior.
 
-Если GitHub Issues недоступны из текущего окружения, D40-D44 backlog и D37-D39 evidence находятся в `../plans/d40-d44-post-publish-model-operations.md`, `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — D40 post-publish monitoring, если пользователь не выбрал другую задачу; не повторять rollout.
+D41 / GitHub `#60` реализован локально как deterministic golden replay guardrails. Backend module `app/ml/golden_replay.py` генерирует `artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` и `.md`; default mode evaluates stored evidence offline, includes active `/health/model` metadata and rollback SHA1, and does not publish/rollback/mutate `artifacts/page_quality_model.pkl`.
+
+D42-D44 / GitHub `#61-#63` остаются открытой частью post-publish operations wave: score confidence/data-quality UX, model registry/rollback evidence UI, and non-production second-pass competitor-aware score experiment. Локальный backlog: `../plans/d40-d44-post-publish-model-operations.md`.
+
+Если GitHub Issues недоступны из текущего окружения, D40-D44 backlog и D37-D41 evidence находятся в `../plans/d40-d44-post-publish-model-operations.md`, `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — D42 score confidence/data-quality UX, если пользователь не выбрал другую задачу; не повторять rollout.

@@ -121,7 +121,11 @@ D38 / GitHub `#57` реализован локально как controlled publi
 
 D39 / GitHub `#58` реализован локально как model status в интерфейсе. Локальная копия плана: `plans/d39-model-status-interface.md`. Backend endpoint `GET /health/model` показывает активный runtime artifact, dataset/version metadata, guardrail metrics, D38 publish context и rollback availability. Frontend показывает `Активная ML-модель` в compact/full stack UI, в объяснении score, в audit report UI и в Markdown/HTML export. Текущий статус endpoint: `active`, `CatBoostRegressor`, schema `v3`, dataset `dataset-v3-d37`, rollback available.
 
-D40-D44 / GitHub `#59-#63` созданы как активная post-publish operations wave. Локальная копия backlog: `plans/d40-d44-post-publish-model-operations.md`. Задачи: `D40` model monitoring dashboard, `D41` golden query replay guardrails, `D42` score confidence/data-quality UX, `D43` model registry and rollback evidence UI, `D44` non-production second-pass competitor-aware score experiment with `serp_relative` features. Начинать следующую реализацию лучше с `D40`, если пользователь не выбрал другую задачу.
+D40 / GitHub `#59` реализован локально как post-publish model monitoring dashboard. Backend endpoint `GET /health/model/monitoring` агрегирует recent-аудиты по `score_breakdown.model_info`, показывает usage по artifact/schema/dataset, score distribution, competitor coverage, warnings/failures и legacy/unknown записи без model metadata. Frontend показывает это в существующем экране `Стек` рядом с D39 active model card.
+
+D41 / GitHub `#60` реализован локально как deterministic golden query replay guardrails. Команда `cd backend && .venv\Scripts\python.exe -m app.ml.golden_replay --output-dir artifacts/ranking-benchmarks/dataset-v3-d41` формирует JSON/Markdown evidence без live network, publish или rollback. Evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` и `.md`; текущий decision `passed`, `3/3` golden items passed, `21/21` guardrails passed.
+
+D42-D44 / GitHub `#61-#63` остаются открытой частью post-publish operations wave. Локальная копия backlog: `plans/d40-d44-post-publish-model-operations.md`. Остались: `D42` score confidence/data-quality UX, `D43` model registry and rollback evidence UI, `D44` non-production second-pass competitor-aware score experiment with `serp_relative` features. Начинать следующую реализацию лучше с `D42`, если пользователь не выбрал другую задачу.
 
 ### Distributed foundation `D1-D12`
 
@@ -223,6 +227,7 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 - `GET /health/ready` может вернуть `503`, если распределённый стек не готов.
 - `GET /health/metrics` показывает накопление задач в очередях, нагрузку очередей, активность воркеров и алерты рабочего стека.
 - `GET /health/model` показывает активный runtime ML artifact, dataset/schema metadata, guardrail metrics и rollback availability.
+- `GET /health/model/monitoring` показывает recent usage опубликованной модели: coverage `model_info`, score distribution, competitor coverage, warnings/failures и legacy/unknown audit rows.
 - Локальный `GET /health/metrics` может показывать `degraded`, если в SQLite остались старые audit rows со статусом `processing`; для фактической готовности нового запуска сначала смотрите `GET /health/ready` и покрытие очередей воркерами.
 
 ### Где смотреть параллельную работу воркеров
@@ -325,6 +330,7 @@ cd E:\codexPROJ\diplom\backend
 - `GET /health/ready` — готовность распределённого стека.
 - `GET /health/metrics` — диагностика очередей, воркеров и накопления задач.
 - `GET /health/model` — активная runtime ML-модель и её publish/rollback metadata.
+- `GET /health/model/monitoring` — recent model usage monitoring over audit `score_breakdown.model_info`.
 
 ### Audits
 
@@ -498,4 +504,4 @@ cd E:\codexPROJ\diplom\backend
   --output data\dataset_versions\dataset-v2\manifest.json
 ```
 
-Волна `D32-D36` завершена локально: D36 зафиксировал controlled keep-reference/no-publish decision, rollback/reference evidence и product smoke verification без замены production artifact. D37 реализован локально в `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`: v3 dataset/candidates/shadow guardrails доказали publishable `pointwise_catboost`. D38 реализован локально в `plans/d38-controlled-publish-catboost-v3.md`: CatBoost v3 опубликован в production alias `backend/artifacts/page_quality_model.pkl`, rollback artifact сохранён, product smoke passed. D39 реализован локально в `plans/d39-model-status-interface.md`: active model status выведен в `/health/model`, stack UI, score breakdown и audit report/export. Активный backlog после D39: `plans/d40-d44-post-publish-model-operations.md` / GitHub `#59-#63`. Исторические планы `plans/d32-d36-model-productization.md` и `plans/d27-d31-final-model-training.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.
+Волна `D32-D36` завершена локально: D36 зафиксировал controlled keep-reference/no-publish decision, rollback/reference evidence и product smoke verification без замены production artifact. D37 реализован локально в `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`: v3 dataset/candidates/shadow guardrails доказали publishable `pointwise_catboost`. D38 реализован локально в `plans/d38-controlled-publish-catboost-v3.md`: CatBoost v3 опубликован в production alias `backend/artifacts/page_quality_model.pkl`, rollback artifact сохранён, product smoke passed. D39 реализован локально в `plans/d39-model-status-interface.md`: active model status выведен в `/health/model`, stack UI, score breakdown и audit report/export. D40/D41 реализованы локально в `plans/d40-d44-post-publish-model-operations.md`: model monitoring добавлен в `/health/model/monitoring` и экран `Стек`, golden replay evidence хранится в `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`. Активный backlog после D41: D42-D44 из `plans/d40-d44-post-publish-model-operations.md` / GitHub `#61-#63`. Исторические планы `plans/d32-d36-model-productization.md` и `plans/d27-d31-final-model-training.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.

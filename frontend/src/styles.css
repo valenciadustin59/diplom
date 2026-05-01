@@ -1045,7 +1045,8 @@ select {
   text-align: right;
 }
 
-.runtime-model-status {
+.runtime-model-status,
+.runtime-model-monitoring {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
   gap: 16px;
@@ -1055,21 +1056,25 @@ select {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.runtime-model-status__summary {
+.runtime-model-status__summary,
+.runtime-model-monitoring__summary {
   min-width: 0;
 }
 
-.runtime-model-status__summary h3 {
+.runtime-model-status__summary h3,
+.runtime-model-monitoring__summary h3 {
   margin: 12px 0 8px;
   font-size: 1.35rem;
 }
 
-.runtime-model-status__summary p {
+.runtime-model-status__summary p,
+.runtime-model-monitoring__summary p {
   margin: 0;
   color: var(--muted);
 }
 
-.runtime-model-status__facts {
+.runtime-model-status__facts,
+.runtime-model-monitoring__facts {
   display: grid;
   gap: 8px;
   min-width: 0;
@@ -1078,6 +1083,7 @@ select {
 }
 
 .runtime-model-status__facts span,
+.runtime-model-monitoring__facts span,
 .runtime-model-status__publish span {
   overflow-wrap: anywhere;
 }
@@ -1085,6 +1091,38 @@ select {
 .runtime-model-metrics {
   margin-top: 14px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.runtime-model-monitoring__metrics {
+  margin-top: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.runtime-model-monitoring__split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.runtime-model-monitoring__split section {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(21, 36, 64, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.runtime-model-monitoring__split h4 {
+  margin: 0 0 12px;
+}
+
+.runtime-model-monitoring__mini-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.runtime-model-usage-table {
+  margin-top: 14px;
 }
 
 .runtime-model-status__publish {
@@ -1105,6 +1143,7 @@ select {
 .runtime-component--ok,
 .runtime-profile--ok,
 .runtime-model-status--ok,
+.runtime-model-monitoring--ok,
 .runtime-model-mini--ok {
   border-color: rgba(62, 170, 112, 0.18);
 }
@@ -1115,6 +1154,7 @@ select {
 .runtime-component--warning,
 .runtime-profile--warning,
 .runtime-model-status--warning,
+.runtime-model-monitoring--warning,
 .runtime-model-mini--warning {
   border-color: rgba(255, 181, 71, 0.28);
 }
@@ -1125,8 +1165,13 @@ select {
 .runtime-component--error,
 .runtime-profile--error,
 .runtime-model-status--error,
+.runtime-model-monitoring--error,
 .runtime-model-mini--error {
   border-color: rgba(236, 95, 95, 0.22);
+}
+
+.runtime-model-monitoring--muted {
+  border-color: rgba(21, 36, 64, 0.08);
 }
 
 .runtime-tone {
@@ -2555,6 +2600,10 @@ select {
   .runtime-profile-grid,
   .runtime-model-status,
   .runtime-model-metrics,
+  .runtime-model-monitoring,
+  .runtime-model-monitoring__metrics,
+  .runtime-model-monitoring__split,
+  .runtime-model-monitoring__mini-grid,
   .score-model-info,
   .score-breakdown__grid {
     grid-template-columns: 1fr;
