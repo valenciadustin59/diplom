@@ -498,7 +498,7 @@ cd E:\codexPROJ\diplom\backend
 
 Текущий активный backend/ML backlog после `D26`:
 
-- `D27` / `#46` — собрать `dataset-v2` батчами через `app.ml.dataset_builder --versioned-layout`;
+- `D27` / `#46` — completed/pushed: `dataset-v2` собран батчами через `app.ml.dataset_builder --versioned-layout`;
 - `D28` / `#47` — сформировать `manifest.json`, проверить quality gates и `split.json`;
 - `D29` / `#48` — обучить candidate artifact без замены production model;
 - `D30` / `#49` — прогнать ranking benchmark против текущего `artifacts/page_quality_model.pkl`;

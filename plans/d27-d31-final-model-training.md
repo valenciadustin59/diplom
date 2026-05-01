@@ -15,6 +15,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - [x] (2026-05-01 16:00 +05:00) GitHub issues were created through the Codex GitHub connector: `#46` through `#50`.
 - [x] (2026-05-01 16:15 +05:00) Local fallback documentation was added because unauthenticated GitHub access to this private repository can return `404 Not Found`.
 - [x] (2026-05-01 20:19 +05:00) D27: Built `dataset-v2` from seed offsets `0-49` and `50-99` after a clean rebuild. Generated `dataset.csv` with `885` successful rows, `failures.csv` with `49` failed fetches, `checkpoint.json`, `dataset.dataset.json`, and `885` snapshot artifacts. A temporary D27 quality probe reported `ready_for_training=true`, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, and `artifact_coverage_ratio=1.0`.
+- [x] (2026-05-01 20:26 +05:00) D27 was committed and pushed to `origin/main` in commit `0a9cd40`; GitHub issue `#46` closure was not verified because `gh` is not installed in this environment.
 - [ ] D28: Validate `dataset-v2` quality gates, manifest and group split.
 - [ ] D29: Train a candidate page-quality model from `dataset-v2`.
 - [ ] D30: Run ranking benchmark and compare the candidate model against the current artifact.
@@ -54,7 +55,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 ## Outcomes & Retrospective
 
-D27 is complete locally. The versioned `dataset-v2` bundle now has enough rows, query coverage, domain coverage, city coverage and artifact coverage for D28's formal manifest step. The main implementation lesson is that live dataset collection needs quality probes between batches: the first attempt revealed duplicate SERP rows and a transient semantic-model loading problem, both of which were resolved before keeping the final generated data.
+D27 is complete and pushed. The versioned `dataset-v2` bundle now has enough rows, query coverage, domain coverage, city coverage and artifact coverage for D28's formal manifest step. The main implementation lesson is that live dataset collection needs quality probes between batches: the first attempt revealed duplicate SERP rows and a transient semantic-model loading problem, both of which were resolved before keeping the final generated data.
 
 D28 remains next. It should generate the canonical `manifest.json` and `split.json` from the D27 dataset instead of rebuilding the dataset again.
 

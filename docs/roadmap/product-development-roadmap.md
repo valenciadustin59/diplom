@@ -155,7 +155,7 @@
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D26` are complete. The active practical backlog is `D27-D31`, focused on final `dataset-v2` model training and publication. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
+Canonical current status: `D1-D27` are complete. The remaining practical backlog is `D28-D31`, focused on final `dataset-v2` model validation, training and publication. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
 
 Local source of truth:
 
@@ -166,10 +166,10 @@ Local source of truth:
 
 Active tasks:
 
-- `D27` / GitHub `#46`: build `dataset-v2` from seed catalog in controlled batches.
+- `D27` / GitHub `#46`: completed/pushed; `dataset-v2` was built from seed catalog in controlled batches.
 - `D28` / GitHub `#47`: validate dataset quality gates, manifest, artifact coverage and group split.
 - `D29` / GitHub `#48`: train candidate page-quality model from `dataset-v2`.
 - `D30` / GitHub `#49`: run ranking benchmark and compare the candidate against the current artifact.
 - `D31` / GitHub `#50`: publish the final model artifact and verify product behavior with smoke audits.
 
-Next agent instruction: if no newer explicit user task exists, start with `D27` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.
+Next agent instruction: if no newer explicit user task exists, start with `D28` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.

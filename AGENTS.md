@@ -85,7 +85,7 @@
 Активный backlog после `D26` теперь зафиксирован локально, потому что GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Если GitHub недоступен, считать локальные документы источником правды:
 
 - `plans/d27-d31-final-model-training.md` — подробный ExecPlan для финального ML-этапа;
-- `D27` / GitHub `#46` — implemented locally, pending push/issue closure: `dataset-v2` собран из seed catalog батчами `0-49` и `50-99`;
+- `D27` / GitHub `#46` — completed and pushed; GitHub issue closure unverified: `dataset-v2` собран из seed catalog батчами `0-49` и `50-99`;
 - `D28` / GitHub `#47` — open: проверить quality gates, `manifest.json` и `group_by_query` split;
 - `D29` / GitHub `#48` — open: обучить candidate page-quality model на `dataset-v2`;
 - `D30` / GitHub `#49` — open: прогнать ranking benchmark и сравнить candidate с текущим artifact;
@@ -449,7 +449,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
-- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы локально в рамках `D27`; следующий шаг — `D28`, то есть сформировать `manifest.json` и `split.json`.
+- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; следующий шаг — `D28`, то есть сформировать `manifest.json` и `split.json`.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest.

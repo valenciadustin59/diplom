@@ -98,7 +98,7 @@
 Активный практический backlog после `D26` — финальный ML-этап `D27-D31`. Эти задачи заведены как GitHub issues `#46-#50`, но репозиторий может быть приватным, поэтому другие Codex-диалоги без GitHub-авторизации могут видеть `404 Not Found` на `/issues` и через GitHub API. Локальная копия задач является рабочим источником правды:
 
 - `plans/d27-d31-final-model-training.md` — подробный план выполнения;
-- `D27` / `#46` — собрать `dataset-v2` из seed catalog батчами;
+- `D27` / `#46` — completed/pushed: `dataset-v2` собран из seed catalog батчами;
 - `D28` / `#47` — проверить quality gates, manifest и group split;
 - `D29` / `#48` — обучить candidate model на `dataset-v2`;
 - `D30` / `#49` — сравнить candidate с текущей моделью через ranking benchmark;
