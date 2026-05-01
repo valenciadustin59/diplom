@@ -69,7 +69,7 @@ preliminary score -> competitor analysis -> serp_relative features -> final comp
 - [x] (2026-05-02) Created D37 dataset bundle `backend/data/dataset_versions/dataset-v3-d37/` with actual v3 columns.
 - [x] (2026-05-02) Trained RF v3, CatBoost v3 and CatBoostRanker v3 candidate artifacts without replacing production.
 - [x] (2026-05-02) Ran D37 shadow benchmark against the current production reference.
-- [x] (2026-05-02) Documented D37 decision evidence: `pointwise_catboost` is publish-recommended by guardrails, while production artifact remains unchanged pending a controlled publish step.
+- [x] (2026-05-02) Documented D37 decision evidence: `pointwise_catboost` is publish-recommended by guardrails, while production artifact stayed unchanged during D37.
 
 ## D37 Evidence
 
@@ -110,7 +110,13 @@ Production state:
 
 - `backend/artifacts/page_quality_model.pkl` was not overwritten during D37 candidate training or benchmarking.
 - production SHA1 after D37 benchmark: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
-- D37 therefore proves a publishable candidate, but leaves actual product rollout to a controlled publish/smoke step.
+- D37 therefore proved a publishable candidate, while actual product rollout was handled later by D38.
+
+Post-D37 rollout note:
+
+- D38 / GitHub `#57` later performed that controlled publish step.
+- Current production artifact is CatBoost v3: `backend/artifacts/page_quality_model.pkl`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, schema `v3`, artifact version `dataset-v3-d37-20260501200434`.
+- Rollback artifact for the old v1 model remains `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`.
 
 Checks:
 

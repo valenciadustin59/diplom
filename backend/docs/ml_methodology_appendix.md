@@ -201,24 +201,30 @@ The currently published runtime artifact is:
 
 The system also stores an immutable versioned copy:
 
-- `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`
+- active D38 artifact: `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`
+- rollback v1 artifact: `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`
 
 Public artifact metadata is stored in JSON sidecars:
 
 - `backend/artifacts/page_quality_model.metadata.json`
+- `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.metadata.json`
 - `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json`
 
 ### Current published validation summary
 
-According to the active published artifact metadata, the current model has:
+According to the active D38 published artifact metadata, the current model has:
 
-- `model_type`: `RandomForestRegressor`
-- `rmse`: `32.310547`
-- `mae`: `27.884077`
-- `spearman_mean`: `0.229632`
-- `ndcg_at_10`: `0.844962`
-- `top_3_hit_rate`: `0.9`
-- `validation_queries`: `10`
+- `dataset_version`: `dataset-v3-d37`
+- `artifact_version`: `dataset-v3-d37-20260501200434`
+- `model_schema_version`: `v3`
+- `model_type`: `CatBoostRegressor`
+- `feature_count`: `148`
+- `rmse`: `14.865537`
+- `mae`: `11.774165`
+- `spearman_mean`: `0.421894`
+- `ndcg_at_10`: `0.945929`
+- `top_3_hit_rate`: `0.95`
+- `validation_queries`: `20`
 
 ### Runtime explainability metadata
 
@@ -379,7 +385,34 @@ The D37 shadow benchmark is stored in `backend/artifacts/ranking-benchmarks/data
 - reference: `top_3_hit_rate=0.95`, `ndcg_at_10=0.909302`, `spearman_mean=0.153604`, `MAE=23.858757`;
 - selected candidate: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`.
 
-The existing production artifact `backend/artifacts/page_quality_model.pkl` was not overwritten during D37. Its SHA1 remained `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. A later controlled publish/smoke step can roll out the D37 CatBoost v3 candidate if product rollout is desired.
+The existing production artifact `backend/artifacts/page_quality_model.pkl` was not overwritten during D37. Its SHA1 remained `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. D38 then performed the controlled publish/smoke step and made the D37 CatBoost v3 candidate the selected runtime model.
+
+## D38 controlled publish evidence
+
+D38 publishes the D37 `pointwise_catboost` candidate only after validating the D37 shadow report decision and preserving the previous production artifact as rollback evidence.
+
+Published runtime artifact:
+
+- path: `backend/artifacts/page_quality_model.pkl`
+- SHA1 before publish: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
+- SHA1 after publish: `29c4b29455f795a535da94b2c6f36ef603d003eb`
+- dataset version: `dataset-v3-d37`
+- artifact version: `dataset-v3-d37-20260501200434`
+- model schema version: `v3`
+- model type: `CatBoostRegressor`
+- feature count: `148`
+
+Rollback artifact:
+
+- `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`
+- SHA1: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
+
+D38 report evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.md`
+
+Runtime smoke evidence is stored in `output/runtime-smoke/d38-smoke-summary.json`. The smoke audit `690504f2-ca2f-42a6-a012-e622438437a7` completed with `2/2` competitors analyzed, `11` recommendations, four workers, missing queues `[]`, and runtime model metadata `dataset-v3-d37` / schema `v3` / `CatBoostRegressor`.
 
 ## Files relevant to the ML appendix
 
@@ -390,6 +423,7 @@ The existing production artifact `backend/artifacts/page_quality_model.pkl` was 
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`
 - `backend/app/ml/publish.py`
+- `backend/app/ml/controlled_publish.py`
 - `backend/app/ml/model.py`
 - `backend/app/ml/model_schema.py`
 - `backend/docs/ml_feature_inventory.md`

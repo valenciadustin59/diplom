@@ -109,6 +109,11 @@ _RANKING_BENCHMARK_EXPORTS = {
     "run_ranking_benchmark",
     "write_ranking_benchmark_report",
 }
+_CONTROLLED_PUBLISH_EXPORTS = {
+    "run_controlled_publish",
+    "update_controlled_publish_verification",
+    "validate_publish_shadow_report",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -133,6 +138,9 @@ def __getattr__(name: str):
         return getattr(module, name)
     if name in _RANKING_BENCHMARK_EXPORTS:
         module = importlib.import_module("app.ml.ranking_benchmark")
+        return getattr(module, name)
+    if name in _CONTROLLED_PUBLISH_EXPORTS:
+        module = importlib.import_module("app.ml.controlled_publish")
         return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
@@ -159,4 +167,5 @@ __all__ = [
     *_PUBLISH_EXPORTS,
     *_EVALUATE_EXPORTS,
     *_RANKING_BENCHMARK_EXPORTS,
+    *_CONTROLLED_PUBLISH_EXPORTS,
 ]

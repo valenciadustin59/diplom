@@ -1,15 +1,15 @@
 # ML Feature Inventory
 
-## Current schema status after D37
+## Current schema status after D38
 
-Production runtime artifact `backend/artifacts/page_quality_model.pkl` still uses the original `v1` schema with `59` baseline features. D37 added a non-production `v3` candidate schema with `148` pre-competitor features:
+Production runtime artifact `backend/artifacts/page_quality_model.pkl` now uses the D38-published CatBoost `v3` artifact with `148` pre-competitor features:
 
 - `59` baseline text/HTML/query features;
 - `49` snapshot technical and commercial features;
 - `25` heavy-analysis features;
 - `15` intent-alignment features.
 
-D37 intentionally does not include the `29` SERP-relative features in primary scoring, because they are available only after competitor aggregation. D37 dataset evidence is stored in `backend/data/dataset_versions/dataset-v3-d37/`, and the publish-recommended candidate is `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`. The current production artifact remains unchanged until a controlled publish/smoke step.
+D37 intentionally does not include the `29` SERP-relative features in primary scoring, because they are available only after competitor aggregation. D37 dataset evidence is stored in `backend/data/dataset_versions/dataset-v3-d37/`, and D38 published the selected candidate to the production alias. Current production metadata: dataset `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, schema `v3`, model type `CatBoostRegressor`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`. The previous `v1` RandomForest artifact remains available as rollback at `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`.
 
 Текущий runtime scoring использует `59` признаков страницы. Набор специально смещён не в сторону одиночных SEO-галочек, а в сторону комбинаций сигналов, потому что для дипломного проекта важно показать: модель оценивает не один параметр сам по себе, а то, как несколько параметров работают вместе.
 

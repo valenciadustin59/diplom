@@ -34,7 +34,18 @@
 - D37 shadow evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json` recommends `publish_candidate` and selects `pointwise_catboost`.
 - Selected CatBoost v3 metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`; reference metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.909302`, `spearman_mean=0.153604`, `MAE=23.858757`.
 - RF v3 was rejected for `top_3_hit_rate_regressed`; CatBoostRanker v3 was rejected for top-3 and absolute-error viability.
-- D37 did not overwrite `backend/artifacts/page_quality_model.pkl`; production SHA1 remains `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. Next practical step is a controlled publish/smoke task if the user chooses to roll out the CatBoost v3 candidate.
+- D37 did not overwrite `backend/artifacts/page_quality_model.pkl`; production SHA1 after D37 stayed `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. D38 later performed the controlled publish/smoke task and made CatBoost v3 the active runtime model.
+
+## Current D38 Controlled Publish Evidence
+
+- `D38` / GitHub `#57` is implemented locally: controlled publish of the D37 `pointwise_catboost` candidate.
+- Local mirror: `plans/d38-controlled-publish-catboost-v3.md`.
+- Production runtime artifact is now `backend/artifacts/page_quality_model.pkl` with SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- Runtime model metadata: dataset `dataset-v3-d37`, artifact version `dataset-v3-d37-20260501200434`, schema `v3`, model type `CatBoostRegressor`, `148` features.
+- Previous production rollback artifact is preserved at `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl` with SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
+- D38 evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json` and `.md`.
+- Product smoke evidence: `output/runtime-smoke/d38-smoke-summary.json`, audit `690504f2-ca2f-42a6-a012-e622438437a7`, status `completed`, readiness `ready`, `4` workers, missing queues `[]`, `2/2` competitors analyzed, `11` recommendations, runtime model `dataset-v3-d37` / schema `v3` / `CatBoostRegressor`, and `competitor_page` fan-out `2/2`.
+- Verification status is `passed`: backend D38/ML subset `41 passed`, script tests `13 passed`.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
@@ -123,13 +134,15 @@ Backlog `D32-D36` после `D31` зафиксирован локально и 
 - `plans/d27-d31-final-model-training.md` — выполненный ExecPlan финального ML-evidence этапа;
 - `plans/d32-d36-model-productization.md` — активный план безопасного внедрения модели в продукт;
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — выполненный план D37 для unified v3 feature model;
+- `plans/d38-controlled-publish-catboost-v3.md` — выполненный план D38 controlled publish CatBoost v3;
 - `D27-D31` / GitHub `#46-#50` — completed/closed: `dataset-v2` собран, manifest/split проверены, candidate обучен, ranking benchmark рекомендовал `keep_reference`, D31 зафиксировал no-publish decision и clean smoke evidence;
 - `D32` / GitHub `#51` - completed locally: `197` expert-rubric labels added for `dataset-v2` and applied during D33.
 - `D33` / GitHub `#52` - completed locally: expert labels applied to `dataset.csv`; `manifest.json` and `split.json` refreshed with `197` hybrid rows, `ready_for_training=true`, and no query leakage.
 - `D34` / GitHub `#53` - completed locally: RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production;
 - `D35` / GitHub `#54` - completed locally: shadow benchmark and explainability guardrails recommend `keep_reference`;
 - `D36` / GitHub `#55` - completed locally: controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
-- `D37` / GitHub `#56` - implemented locally: unified `v3` feature model with hybrid/top-3 guardrail evidence; shadow benchmark recommends publishing `pointwise_catboost`, but production artifact remains unchanged pending controlled rollout.
+- `D37` / GitHub `#56` - implemented locally: unified `v3` feature model with hybrid/top-3 guardrail evidence; shadow benchmark recommended publishing `pointwise_catboost`.
+- `D38` / GitHub `#57` - implemented locally: controlled publish of the CatBoost v3 candidate to `backend/artifacts/page_quality_model.pkl`, rollback artifact preserved, product smoke passed.
 
 ### D1-D12 Summary
 
@@ -436,10 +449,11 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — controlled publish/smoke для D37 `pointwise_catboost` v3 candidate, если пользователь выберет rollout. Волны GitHub `#40-#45`, `#46-#50` и `#51-#55` закрыты/завершены; D37 реализован локально; demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — продуктовая видимость активной модели и post-publish мониторинг после D38. Волны GitHub `#40-#45`, `#46-#50`, `#51-#55`, D37 `#56` и D38 `#57` закрыты/завершены; demo mode намеренно не входит в backlog.
 
-Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому D37 evidence и завершённые волны продублированы локально и должны быть видны из рабочей копии:
+Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому D37/D38 evidence и завершённые волны продублированы локально и должны быть видны из рабочей копии:
 
+- `plans/d38-controlled-publish-catboost-v3.md`;
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`;
 - `plans/d32-d36-model-productization.md`;
 - `plans/d27-d31-final-model-training.md`;
@@ -452,22 +466,21 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальный D37 evidence и план controlled publish из этого файла;
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальные D37/D38 evidence из этого файла;
 - не откатывать уже выполненные `D13-D26` без прямой причины.
 
 ## Последняя runtime smoke-проверка
 
-Последняя проверка полного локального stack выполнялась `2026-04-30` после фикса SearXNG readiness:
+Последняя проверка полного локального stack выполнялась `2026-05-02` после D38 controlled publish:
 
 - `npm start` поднял `Redis`, `SearxNG`, backend, frontend и четыре Celery worker-профиля;
-- frontend отвечал на `http://127.0.0.1:5173/`;
-- backend в этой проверке выбрал `http://127.0.0.1:8001/`, потому что `8000` уже был занят; root dev-скрипт автоматически передал этот API URL во frontend;
-- `GET /health/live` вернул `200 OK`;
-- `GET /health/ready` вернул `200 OK`, проверил SearXNG через `/healthz` и показал workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml` без `missing_queues`;
-- `GET /health/metrics` показал `workers.status=ok` и `queue_pressure.status=ok`; общий `status=degraded` был только из-за старых SQLite rows со статусом `processing`;
-- локальный `infra/searxng/settings.yml` фиксирует stable engine `presearch`, потому что default SearXNG engines часто дают CAPTCHA/403 при частых dev-проверках;
-- smoke audit `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=3` (`128aee58-5bf3-480f-9511-bb96af3898fa`) завершился со status `completed`, score `57.2905`, `3` competitors found/analyzed и без failed competitors;
-- timeline diagnostics подтвердил распределённую обработку конкурентов: `fan_out.stage=competitor_page`, `dispatch_count=3`, `terminal_count=3`, а `critical_path_stages` содержит `competitor_page` и `competitor_analysis` с `mode=fan_out_max`.
+- backend в этой проверке выбрал `http://127.0.0.1:8001/`, потому что `8000` был занят;
+- frontend для D38 smoke отвечал на `http://127.0.0.1:5174/`, потому что `5173` был занят другим локальным процессом;
+- `GET /health/ready` вернул готовый стек с workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml` и missing queues `[]`;
+- `GET /health/metrics` показывал рабочие `workers.status=ok` и `queue_pressure.status=ok`; общий `status=degraded` был только из-за старых SQLite rows со статусом `processing`;
+- smoke audit `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=2` (`690504f2-ca2f-42a6-a012-e622438437a7`) завершился со status `completed`, score `83.7366`, `2` competitors found/analyzed и без failed competitors;
+- runtime score explanation подтвердил новую production model: `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, schema `v3`, `CatBoostRegressor`;
+- timeline diagnostics подтвердил распределённую обработку конкурентов: `fan_out.stage=competitor_page`, `dispatch_count=2`, `terminal_count=2`.
 
 Локальный `GET /health/metrics` может показывать `degraded`, если в игнорируемой SQLite БД остались старые audit rows со статусом `processing`. Это не означает, что текущий worker stack не поднялся: для готовности distributed runtime сначала смотреть `GET /health/ready`, `workers.status`, `queue_pressure.status` и отсутствие `missing_queues`.
 
@@ -491,8 +504,8 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
-- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 реализовал unified `v3` feature-model experiment и получил `publish_candidate` для `pointwise_catboost`.
-- `D32-D36` завершены локально; production artifact остался `backend/artifacts/page_quality_model.pkl` с SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. D37 также сохранил этот artifact unchanged; rollout CatBoost v3 должен идти отдельным controlled publish/smoke шагом.
+- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 реализовал unified `v3` feature-model experiment и получил `publish_candidate` для `pointwise_catboost`; D38 опубликовал CatBoost v3 как runtime artifact.
+- `D38` заменил production artifact `backend/artifacts/page_quality_model.pkl` на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, schema `v3`, artifact version `dataset-v3-d37-20260501200434`. Rollback на прежний v1 RandomForest сохранён в `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest и имеет `--split-only` режим без обучения модели.

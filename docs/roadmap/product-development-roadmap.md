@@ -59,7 +59,7 @@ Completed D37 scope:
 - created `backend/data/dataset_versions/dataset-v3-d37/` with actual v3 columns;
 - trained non-production RF v3, CatBoost v3 and CatBoostRanker v3 candidates;
 - compared every candidate against the current production reference;
-- kept `backend/artifacts/page_quality_model.pkl` unchanged.
+- kept `backend/artifacts/page_quality_model.pkl` unchanged during D37 candidate training and benchmark.
 
 D37 evidence:
 
@@ -73,11 +73,32 @@ D37 evidence:
 - selected candidate: `pointwise_catboost`
 - selected candidate metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`
 - reference metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.909302`, `spearman_mean=0.153604`, `MAE=23.858757`
-- unchanged production SHA1: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
+- D37 production SHA1 before rollout: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
 
 The full known runtime feature space is up to `177` features if `29` SERP-relative features are included. D37 intentionally treats `serp_relative` as a follow-up unless the implementation adds an explicit second post-competitor scoring pass, because those features are produced only after competitor aggregation.
 
-Next practical step: controlled publish/smoke for `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`, if the user chooses to roll out the D37 candidate.
+## Current D38 Evidence: Controlled Publish CatBoost V3
+
+GitHub issue `#57` is implemented locally for `D38: Controlled publish CatBoost v3 candidate`. Local source of truth: `plans/d38-controlled-publish-catboost-v3.md`.
+
+D38 published the D37 `pointwise_catboost` candidate to the production runtime alias after validating the D37 shadow report and preserving the previous v1 artifact for rollback.
+
+D38 evidence:
+
+- production artifact: `backend/artifacts/page_quality_model.pkl`
+- production SHA1 before publish: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
+- production SHA1 after publish: `29c4b29455f795a535da94b2c6f36ef603d003eb`
+- dataset: `dataset-v3-d37`
+- artifact version: `dataset-v3-d37-20260501200434`
+- schema: `v3`
+- model type: `CatBoostRegressor`
+- feature count: `148`
+- rollback artifact: `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`
+- report: `backend/artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json`
+- smoke summary: `output/runtime-smoke/d38-smoke-summary.json`
+- smoke audit: `690504f2-ca2f-42a6-a012-e622438437a7`, status `completed`, `2/2` competitors analyzed, `11` recommendations, missing queues `[]`
+
+Next practical step: product visibility and post-publish monitoring for the active model metadata in the UI/report layer.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -201,7 +222,7 @@ Next practical step: controlled publish/smoke for `backend/artifacts/page_qualit
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D36` are complete locally, and `D37` / GitHub `#56` is implemented locally. The final ML evidence and model productization waves kept the current production model because D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommends `publish_candidate` for `pointwise_catboost`. Production artifact is still unchanged pending controlled rollout. GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification.
+Canonical current status: `D1-D38` are complete locally. The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout. Production artifact `backend/artifacts/page_quality_model.pkl` now points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56` and `#57` are the D37/D38 model rollout evidence.
 
 Local source of truth:
 
@@ -211,6 +232,7 @@ Local source of truth:
 - `plans/d27-d31-final-model-training.md`
 - `plans/d32-d36-model-productization.md`
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`
+- `plans/d38-controlled-publish-catboost-v3.md`
 
 Completed tasks:
 
@@ -231,6 +253,7 @@ Completed recent tasks:
 
 Active task:
 
-- `D37` / GitHub `#56`: implemented locally; added unified `v3` feature schema, built `148`-feature pre-competitor dataset evidence, trained non-production candidates, ran shadow guardrails, selected `pointwise_catboost` as publish-recommended, and kept production unchanged pending controlled rollout.
+- `D37` / GitHub `#56`: implemented locally; added unified `v3` feature schema, built `148`-feature pre-competitor dataset evidence, trained non-production candidates, ran shadow guardrails, and selected `pointwise_catboost` as publish-recommended.
+- `D38` / GitHub `#57`: implemented locally; controlled publish of `pointwise_catboost` CatBoost v3 to `backend/artifacts/page_quality_model.pkl`, rollback artifact preserved, product smoke passed.
 
-Next agent instruction: `D32-D36` is complete locally and D37 is implemented locally. If the user asks to roll out the model, perform a controlled publish/smoke for `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`. Do not add demo mode or rewrite backend orchestration.
+Next agent instruction: `D32-D38` is complete locally. Do not repeat the CatBoost v3 rollout unless the user explicitly asks for rollback or republish. The next useful product work is active-model visibility/post-publish monitoring, or a separately planned second-pass competitor-aware score that can use `serp_relative` features. Do not add demo mode or rewrite backend orchestration.
