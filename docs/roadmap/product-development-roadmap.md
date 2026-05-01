@@ -27,7 +27,7 @@
 
 - `D27` / `#46`: completed/pushed; `dataset-v2` собран из seed catalog контролируемыми батчами.
 - `D28` / `#47`: completed/pushed; quality gates, `manifest.json`, artifact coverage и `group_by_query` split проверены.
-- `D29` / `#48`: обучить candidate page-quality model на `dataset-v2` без замены production artifact.
+- `D29` / `#48`: completed; candidate page-quality model обучена на `dataset-v2` без замены production artifact.
 - `D30` / `#49`: прогнать ranking benchmark и сравнить candidate с текущей моделью.
 - `D31` / `#50`: опубликовать финальный model artifact и проверить продукт smoke-аудитами.
 
@@ -155,7 +155,7 @@
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D28` are complete. The remaining practical backlog is `D29-D31`, focused on final `dataset-v2` model training, benchmark and publication. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
+Canonical current status: `D1-D29` are complete. The remaining practical backlog is `D30-D31`, focused on final `dataset-v2` ranking benchmark and publication. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
 
 Local source of truth:
 
@@ -168,8 +168,8 @@ Active tasks:
 
 - `D27` / GitHub `#46`: completed/pushed; `dataset-v2` was built from seed catalog in controlled batches.
 - `D28` / GitHub `#47`: completed/pushed; dataset quality gates, manifest, artifact coverage and group split were validated.
-- `D29` / GitHub `#48`: train candidate page-quality model from `dataset-v2`.
+- `D29` / GitHub `#48`: completed; candidate page-quality model was trained from `dataset-v2` without replacing the production artifact.
 - `D30` / GitHub `#49`: run ranking benchmark and compare the candidate against the current artifact.
 - `D31` / GitHub `#50`: publish the final model artifact and verify product behavior with smoke audits.
 
-Next agent instruction: if no newer explicit user task exists, start with `D29` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.
+Next agent instruction: if no newer explicit user task exists, start with `D30` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.

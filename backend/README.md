@@ -503,7 +503,7 @@ cd E:\codexPROJ\diplom\backend
 
 - `D27` / `#46` — completed/pushed: `dataset-v2` собран батчами через `app.ml.dataset_builder --versioned-layout`;
 - `D28` / `#47` — completed/pushed: `manifest.json`, quality gates и `split.json` сформированы;
-- `D29` / `#48` — обучить candidate artifact без замены production model;
+- `D29` / `#48` — completed: candidate artifact обучен без замены production model;
 - `D30` / `#49` — прогнать ranking benchmark против текущего `artifacts/page_quality_model.pkl`;
 - `D31` / `#50` — опубликовать финальную модель и подтвердить runtime smoke-аудитами.
 
