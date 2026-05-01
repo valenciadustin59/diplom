@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { ApiError, runtimeApi } from "../api/api";
 import { buildRuntimeHealthModel, type RuntimeHealthModel } from "../lib/runtimeHealth";
-import type { RuntimeLivenessResponse, RuntimeMetricsResponse, RuntimeReadinessResponse } from "../types";
+import type {
+  RuntimeLivenessResponse,
+  RuntimeMetricsResponse,
+  RuntimeModelStatusResponse,
+  RuntimeReadinessResponse,
+} from "../types";
 
 function getErrorMessage(error: unknown): string {
   if (error instanceof ApiError) {
@@ -36,18 +41,20 @@ export function useRuntimeHealth() {
       runtimeApi.getLiveness(),
       runtimeApi.getReadiness(),
       runtimeApi.getMetrics(),
+      runtimeApi.getModelStatus(),
     ] as const);
-    const [liveResult, readinessResult, metricsResult] = results;
+    const [liveResult, readinessResult, metricsResult, modelStatusResult] = results;
     const live = getSettledValue<RuntimeLivenessResponse>(liveResult);
     const readiness = getSettledValue<RuntimeReadinessResponse>(readinessResult);
     const metrics = getSettledValue<RuntimeMetricsResponse>(metricsResult);
+    const modelStatus = getSettledValue<RuntimeModelStatusResponse>(modelStatusResult);
 
-    if (!live && !readiness && !metrics) {
+    if (!live && !readiness && !metrics && !modelStatus) {
       setRuntimeError(getRejectedMessages(results).join(" ") || "Диагностика рабочего стека недоступна.");
       setRuntimeHealth(null);
     } else {
       setRuntimeError(getRejectedMessages(results).join(" ") || null);
-      setRuntimeHealth(buildRuntimeHealthModel({ live, readiness, metrics }));
+      setRuntimeHealth(buildRuntimeHealthModel({ live, readiness, metrics, modelStatus }));
     }
 
     if (!silent) {

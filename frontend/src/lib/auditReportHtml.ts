@@ -103,6 +103,11 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
         ${renderMetricHtml({ label: "Статус", value: report.statusLabel })}
       </div>
       <p class="muted">${escapeHtml(report.scoreBreakdown.methodology)}</p>
+      ${
+        report.modelMetrics.length > 0
+          ? `<h3>Статус модели</h3><div class="grid">${report.modelMetrics.map(renderMetricHtml).join("")}</div>`
+          : ""
+      }
     </section>
     <section>
       <h2>SEO-сигналы</h2>

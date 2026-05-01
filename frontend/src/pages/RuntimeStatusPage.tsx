@@ -1,5 +1,5 @@
 import { Card } from "../components/Card";
-import type { RuntimeHealthModel, RuntimeIssue, RuntimeTone } from "../lib/runtimeHealth";
+import type { RuntimeHealthModel, RuntimeIssue, RuntimeModelStatusView, RuntimeTone } from "../lib/runtimeHealth";
 
 type RuntimeStatusProps = {
   model: RuntimeHealthModel | null;
@@ -57,6 +57,61 @@ function RuntimeMetricGrid({ model }: { model: RuntimeHealthModel }) {
   );
 }
 
+function RuntimeModelStatusMini({ modelStatus }: { modelStatus: RuntimeModelStatusView }) {
+  return (
+    <div className={`runtime-model-mini runtime-model-mini--${modelStatus.tone}`}>
+      <div>
+        <span className={getToneClass(modelStatus.tone)}>{modelStatus.statusLabel}</span>
+        <strong>{modelStatus.shortLabel}</strong>
+      </div>
+      <span>{modelStatus.datasetLabel}</span>
+    </div>
+  );
+}
+
+function RuntimeModelStatusCard({ modelStatus }: { modelStatus: RuntimeModelStatusView | null }) {
+  if (!modelStatus) {
+    return null;
+  }
+
+  return (
+    <Card
+      title="Активная ML-модель"
+      subtitle="Какой artifact сейчас считает score, на каком датасете он обучен и есть ли путь отката."
+      className="runtime-model-card"
+    >
+      <div className={`runtime-model-status runtime-model-status--${modelStatus.tone}`}>
+        <div className="runtime-model-status__summary">
+          <span className={getToneClass(modelStatus.tone)}>{modelStatus.statusLabel}</span>
+          <h3>{modelStatus.shortLabel}</h3>
+          <p>{modelStatus.detail}</p>
+        </div>
+        <div className="runtime-model-status__facts">
+          <span>Датасет: {modelStatus.datasetLabel}</span>
+          <span>Признаки: {modelStatus.featureCountLabel}</span>
+          <span>Artifact: {modelStatus.artifactLabel}</span>
+          <span>SHA1: {modelStatus.artifactShaLabel}</span>
+          <span>Опубликована: {modelStatus.publishedAtLabel}</span>
+          <span>{modelStatus.rollbackLabel}</span>
+        </div>
+      </div>
+      <div className="report-metric-grid runtime-model-metrics">
+        {modelStatus.metricRows.map((metric) => (
+          <div key={metric.label} className={`report-metric runtime-metric runtime-metric--${metric.tone}`}>
+            <span className="report-metric__label">{metric.label}</span>
+            <strong className="report-metric__value">{metric.value}</strong>
+            <p className="report-metric__note">{metric.note}</p>
+          </div>
+        ))}
+      </div>
+      <div className="runtime-model-status__publish">
+        <strong>Решение публикации</strong>
+        <span>{modelStatus.publishLabel}</span>
+      </div>
+    </Card>
+  );
+}
+
 function RuntimeCardActions({ loading, onRefresh, onOpenFull }: Pick<RuntimeStatusProps, "loading" | "onRefresh" | "onOpenFull">) {
   return (
     <div className="runtime-card-actions">
@@ -94,6 +149,7 @@ export function RuntimeStatusCompactCard({ model, loading, error, onRefresh, onO
               <span>Проверено: {model.checkedAtLabel}</span>
             </div>
           </div>
+          {model.modelStatus ? <RuntimeModelStatusMini modelStatus={model.modelStatus} /> : null}
           <RuntimeIssueList issues={model.issues.slice(0, 3)} />
         </div>
       )}
@@ -235,6 +291,7 @@ export function RuntimeStatusPage({ model, loading, error, onRefresh }: RuntimeS
         <>
           {error ? <div className="feedback-banner feedback-banner--warning">{error}</div> : null}
           <RuntimeMetricGrid model={model} />
+          <RuntimeModelStatusCard modelStatus={model.modelStatus} />
           <Card title="Что восстановить" subtitle="Понятный вывод по готовности, нагрузке очередей и рискам контроля допуска.">
             <RuntimeIssueList issues={model.issues} />
           </Card>

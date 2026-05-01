@@ -178,4 +178,58 @@ describe("runtimeApi", () => {
       globalThis.fetch = originalFetch;
     }
   });
+
+  it("requests active model status from the health model endpoint", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = ((input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({
+            status: "active",
+            checked_at: "2026-05-01T20:05:00Z",
+            artifact_path: "artifacts/page_quality_model.pkl",
+            artifact_sha1: "abc123",
+            metadata_path: "artifacts/page_quality_model.metadata.json",
+            metadata_sha1: "def456",
+            model: {
+              model_type: "CatBoostRegressor",
+              model_schema_version: "v3",
+              feature_count: 148,
+              artifact_version: "dataset-v3-d37-20260501200434",
+            },
+            dataset: {
+              dataset_version: "dataset-v3-d37",
+              rows_count: 885,
+              queries_count: 99,
+            },
+            metrics_summary: {
+              top_3_hit_rate: 0.95,
+              ndcg_at_10: 0.945929,
+              mae: 11.774165,
+            },
+            publish: {
+              selected_candidate: "pointwise_catboost",
+              publish_recommendation: "publish_candidate",
+            },
+            rollback: {
+              available: true,
+              model_sha1: "rollback-sha",
+            },
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    }) as typeof fetch;
+
+    try {
+      const { runtimeApi } = await import("./api");
+      const modelStatus = await runtimeApi.getModelStatus();
+      expect(modelStatus.status).toBe("active");
+      expect(calls[0]).toContain("/health/model");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
 });

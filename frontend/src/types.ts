@@ -375,6 +375,23 @@ export type RuntimeMetricsResponse = {
   };
 };
 
+export type RuntimeModelStatusSection = Record<string, unknown> | null;
+
+export type RuntimeModelStatusResponse = {
+  status: RuntimeComponentStatus;
+  checked_at: string;
+  artifact_path?: string | null;
+  artifact_sha1?: string | null;
+  metadata_path?: string | null;
+  metadata_sha1?: string | null;
+  error?: string | null;
+  model: RuntimeModelStatusSection;
+  dataset: RuntimeModelStatusSection;
+  metrics_summary: Record<string, unknown>;
+  publish: Record<string, unknown>;
+  rollback: Record<string, unknown>;
+};
+
 export type AuditSummary = {
   id: string;
   domain: string;

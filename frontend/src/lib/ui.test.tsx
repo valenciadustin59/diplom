@@ -326,6 +326,39 @@ const runtimeWorkspaceProps = {
         summary: { alert_count: 1 },
       },
     },
+    modelStatus: {
+      status: "active",
+      checked_at: "2026-05-01T20:05:00Z",
+      artifact_path: "artifacts/page_quality_model.pkl",
+      artifact_sha1: "29c4b29455f795a535da94b2c6f36ef603d003eb",
+      metadata_path: "artifacts/page_quality_model.metadata.json",
+      metadata_sha1: "metadata-sha",
+      model: {
+        model_type: "CatBoostRegressor",
+        model_schema_version: "v3",
+        feature_count: 148,
+        artifact_version: "dataset-v3-d37-20260501200434",
+        published_at: "2026-05-01T20:04:34Z",
+      },
+      dataset: {
+        dataset_version: "dataset-v3-d37",
+        rows_count: 885,
+        queries_count: 99,
+      },
+      metrics_summary: {
+        top_3_hit_rate: 0.95,
+        ndcg_at_10: 0.945929,
+        mae: 11.774165,
+      },
+      publish: {
+        selected_candidate: "pointwise_catboost",
+        publish_recommendation: "publish_candidate",
+      },
+      rollback: {
+        available: true,
+        model_sha1: "rollback-sha",
+      },
+    },
   }),
   loadingRuntime: false,
   runtimeError: null,
@@ -595,6 +628,19 @@ describe("AuditWorkspace", () => {
             final_score: 48.3,
             rule_score: 23.8,
             ml_score: 68.4,
+            model_info: {
+              model_type: "CatBoostRegressor",
+              model_schema_version: "v3",
+              dataset_version: "dataset-v3-d37",
+              artifact_version: "dataset-v3-d37-20260501200434",
+              feature_count: 148,
+              dataset_rows: 885,
+              metrics_summary: {
+                top_3_hit_rate: 0.95,
+                ndcg_at_10: 0.945929,
+                mae: 11.774165,
+              },
+            },
             top_positive_factors: [
               {
                 key: "semantic_relevance",
@@ -634,6 +680,8 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Смысловое соответствие");
     expect(markup).toContain("Коммерческая полнота");
+    expect(markup).toContain("Активная модель score");
+    expect(markup).toContain("dataset-v3-d37");
   });
 
   it("renders audit report dashboard with export actions and runtime evidence", () => {
@@ -673,6 +721,19 @@ describe("AuditWorkspace", () => {
             final_score: 72.4,
             rule_score: 70,
             ml_score: 74,
+            model_info: {
+              model_type: "CatBoostRegressor",
+              model_schema_version: "v3",
+              dataset_version: "dataset-v3-d37",
+              artifact_version: "dataset-v3-d37-20260501200434",
+              feature_count: 148,
+              dataset_rows: 885,
+              metrics_summary: {
+                top_3_hit_rate: 0.95,
+                ndcg_at_10: 0.945929,
+                mae: 11.774165,
+              },
+            },
           },
           comparison_summary: {
             user_score: 72.4,
@@ -719,6 +780,8 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Отчёт аудита");
     expect(markup).toContain("Скачать Markdown");
     expect(markup).toContain("SEO-сигналы");
+    expect(markup).toContain("Статус модели");
+    expect(markup).toContain("CatBoostRegressor");
     expect(markup).toContain("report-table--recommendations");
     expect(markup).toContain("Доказательство распределённого выполнения");
     expect(markup).toContain("Углублённый анализ");
@@ -817,6 +880,9 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Готовность рабочего стека");
     expect(markup).toContain("Рабочий стек не готов");
     expect(markup).toContain("audits.heavy_analysis");
+    expect(markup).toContain("Активная модель");
+    expect(markup).toContain("CatBoostRegressor");
+    expect(markup).toContain("dataset-v3-d37");
     expect(markup).toContain("Проверено:");
     expect(markup).toContain("Открыть стек");
   });

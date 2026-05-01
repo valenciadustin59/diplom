@@ -47,6 +47,15 @@
 - Product smoke evidence: `output/runtime-smoke/d38-smoke-summary.json`, audit `690504f2-ca2f-42a6-a012-e622438437a7`, status `completed`, readiness `ready`, `4` workers, missing queues `[]`, `2/2` competitors analyzed, `11` recommendations, runtime model `dataset-v3-d37` / schema `v3` / `CatBoostRegressor`, and `competitor_page` fan-out `2/2`.
 - Verification status is `passed`: backend D38/ML subset `41 passed`, script tests `13 passed`.
 
+## Current D39 Model Status Interface Evidence
+
+- `D39` / GitHub `#58` is implemented locally: active runtime model visibility in the product interface.
+- Local mirror: `plans/d39-model-status-interface.md`.
+- Backend endpoint: `GET /health/model` exposes the selected production artifact, public metadata, dataset/version coverage, key guardrail metrics, publish decision context and rollback availability.
+- Frontend visibility: compact launch stack card, full `Стек` page, score breakdown card, audit report UI, Markdown export and HTML export now show model status where the data is available.
+- Current payload detects status `active`, model `CatBoostRegressor`, schema `v3`, dataset `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, rollback available.
+- Verification status so far: `backend/tests/test_health_api.py` passed with `24 passed`; `npm --prefix frontend run test` passed with `45 passed`.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:
@@ -135,6 +144,7 @@ Backlog `D32-D36` после `D31` зафиксирован локально и 
 - `plans/d32-d36-model-productization.md` — активный план безопасного внедрения модели в продукт;
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — выполненный план D37 для unified v3 feature model;
 - `plans/d38-controlled-publish-catboost-v3.md` — выполненный план D38 controlled publish CatBoost v3;
+- `plans/d39-model-status-interface.md` — выполненный план D39 model status in interface;
 - `D27-D31` / GitHub `#46-#50` — completed/closed: `dataset-v2` собран, manifest/split проверены, candidate обучен, ranking benchmark рекомендовал `keep_reference`, D31 зафиксировал no-publish decision и clean smoke evidence;
 - `D32` / GitHub `#51` - completed locally: `197` expert-rubric labels added for `dataset-v2` and applied during D33.
 - `D33` / GitHub `#52` - completed locally: expert labels applied to `dataset.csv`; `manifest.json` and `split.json` refreshed with `197` hybrid rows, `ready_for_training=true`, and no query leakage.
@@ -143,6 +153,7 @@ Backlog `D32-D36` после `D31` зафиксирован локально и 
 - `D36` / GitHub `#55` - completed locally: controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 - `D37` / GitHub `#56` - implemented locally: unified `v3` feature model with hybrid/top-3 guardrail evidence; shadow benchmark recommended publishing `pointwise_catboost`.
 - `D38` / GitHub `#57` - implemented locally: controlled publish of the CatBoost v3 candidate to `backend/artifacts/page_quality_model.pkl`, rollback artifact preserved, product smoke passed.
+- `D39` / GitHub `#58` - implemented locally: active model status endpoint and UI visibility in stack, score explanation and audit report/export.
 
 ### D1-D12 Summary
 
@@ -214,6 +225,7 @@ Backlog `D32-D36` после `D31` зафиксирован локально и 
 - `GET /health/live`
 - `GET /health/ready`
 - `GET /health/metrics`
+- `GET /health/model`
 
 ### Audit endpoints
 
@@ -449,10 +461,11 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 ## Что Делать Дальше
 
-Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — продуктовая видимость активной модели и post-publish мониторинг после D38. Волны GitHub `#40-#45`, `#46-#50`, `#51-#55`, D37 `#56` и D38 `#57` закрыты/завершены; demo mode намеренно не входит в backlog.
+Если следующий чат продолжает развитие проекта, ближайший логичный фокус сейчас — post-publish monitoring после D39 или отдельно спланированный second-pass competitor-aware score с `serp_relative` features. Волны GitHub `#40-#45`, `#46-#50`, `#51-#55`, D37 `#56`, D38 `#57` и D39 `#58` закрыты/завершены локально; demo mode намеренно не входит в backlog.
 
-Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому D37/D38 evidence и завершённые волны продублированы локально и должны быть видны из рабочей копии:
+Важно для новых Codex-диалогов: GitHub Issues этого репозитория могут быть не видны через публичный API и обычный браузер (`404 Not Found`) без авторизованного GitHub-доступа. Поэтому D37-D39 evidence и завершённые волны продублированы локально и должны быть видны из рабочей копии:
 
+- `plans/d39-model-status-interface.md`;
 - `plans/d38-controlled-publish-catboost-v3.md`;
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`;
 - `plans/d32-d36-model-productization.md`;
@@ -466,7 +479,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальные D37/D38 evidence из этого файла;
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальные D37-D39 evidence из этого файла;
 - не откатывать уже выполненные `D13-D26` без прямой причины.
 
 ## Последняя runtime smoke-проверка
@@ -504,8 +517,8 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
-- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 реализовал unified `v3` feature-model experiment и получил `publish_candidate` для `pointwise_catboost`; D38 опубликовал CatBoost v3 как runtime artifact.
-- `D38` заменил production artifact `backend/artifacts/page_quality_model.pkl` на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, schema `v3`, artifact version `dataset-v3-d37-20260501200434`. Rollback на прежний v1 RandomForest сохранён в `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`.
+- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 реализовал unified `v3` feature-model experiment и получил `publish_candidate` для `pointwise_catboost`; D38 опубликовал CatBoost v3 как runtime artifact; D39 вывел активную модель в API/UI/report.
+- `D38` заменил production artifact `backend/artifacts/page_quality_model.pkl` на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, schema `v3`, artifact version `dataset-v3-d37-20260501200434`. Rollback на прежний v1 RandomForest сохранён в `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`. `D39` добавил `GET /health/model`, карточку `Активная ML-модель` в интерфейсе и model-status блоки в score/report.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest и имеет `--split-only` режим без обучения модели.

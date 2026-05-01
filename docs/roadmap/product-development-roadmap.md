@@ -98,7 +98,22 @@ D38 evidence:
 - smoke summary: `output/runtime-smoke/d38-smoke-summary.json`
 - smoke audit: `690504f2-ca2f-42a6-a012-e622438437a7`, status `completed`, `2/2` competitors analyzed, `11` recommendations, missing queues `[]`
 
-Next practical step: product visibility and post-publish monitoring for the active model metadata in the UI/report layer.
+## Current D39 Evidence: Model Status In Interface
+
+GitHub issue `#58` is implemented locally for `D39: Model status in interface`. Local source of truth: `plans/d39-model-status-interface.md`.
+
+D39 exposes the active production model in product-visible surfaces without changing scoring behavior.
+
+D39 evidence:
+
+- backend endpoint: `GET /health/model`
+- endpoint status for current artifact: `active`
+- model: `CatBoostRegressor`, schema `v3`, dataset `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`
+- rollback availability: `true`
+- UI surfaces: compact stack card, full `Стек` page, score breakdown, audit report, Markdown export, HTML export
+- verification: `backend/tests/test_health_api.py` -> `24 passed`; `npm --prefix frontend run test` -> `45 passed`
+
+Next practical step: post-publish monitoring for active model quality/drift, or a separately scoped second-pass competitor-aware score using `serp_relative` features.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -222,7 +237,7 @@ Next practical step: product visibility and post-publish monitoring for the acti
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D38` are complete locally. The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout. Production artifact `backend/artifacts/page_quality_model.pkl` now points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56` and `#57` are the D37/D38 model rollout evidence.
+Canonical current status: `D1-D39` are complete locally. The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout; D39 made the active model visible in API/UI/report surfaces. Production artifact `backend/artifacts/page_quality_model.pkl` now points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56`, `#57` and `#58` are the D37-D39 model rollout/interface evidence.
 
 Local source of truth:
 
@@ -233,6 +248,7 @@ Local source of truth:
 - `plans/d32-d36-model-productization.md`
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`
 - `plans/d38-controlled-publish-catboost-v3.md`
+- `plans/d39-model-status-interface.md`
 
 Completed tasks:
 
@@ -251,9 +267,10 @@ Completed recent tasks:
 - `D35` / GitHub `#54`: completed locally; shadow benchmark and explainability guardrails recommend `keep_reference`.
 - `D36` / GitHub `#55`: completed locally; controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 
-Active task:
+Completed model rollout/interface tasks:
 
 - `D37` / GitHub `#56`: implemented locally; added unified `v3` feature schema, built `148`-feature pre-competitor dataset evidence, trained non-production candidates, ran shadow guardrails, and selected `pointwise_catboost` as publish-recommended.
 - `D38` / GitHub `#57`: implemented locally; controlled publish of `pointwise_catboost` CatBoost v3 to `backend/artifacts/page_quality_model.pkl`, rollback artifact preserved, product smoke passed.
+- `D39` / GitHub `#58`: implemented locally; active model status endpoint and UI visibility in stack, score explanation and audit report/export.
 
-Next agent instruction: `D32-D38` is complete locally. Do not repeat the CatBoost v3 rollout unless the user explicitly asks for rollback or republish. The next useful product work is active-model visibility/post-publish monitoring, or a separately planned second-pass competitor-aware score that can use `serp_relative` features. Do not add demo mode or rewrite backend orchestration.
+Next agent instruction: `D32-D39` is complete locally. Do not repeat the CatBoost v3 rollout unless the user explicitly asks for rollback or republish. The next useful product work is post-publish monitoring, or a separately planned second-pass competitor-aware score that can use `serp_relative` features. Do not add demo mode or rewrite backend orchestration.

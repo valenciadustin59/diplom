@@ -178,6 +178,12 @@ export function AuditReportPage({
           ]}
         />
         <p className="report-section-note">{report.scoreBreakdown.methodology}</p>
+        {report.modelMetrics.length > 0 ? (
+          <>
+            <h3 className="report-subtitle">Статус модели</h3>
+            <MetricGrid items={report.modelMetrics} />
+          </>
+        ) : null}
       </Card>
 
       <Card title="SEO-сигналы" subtitle="Сигналы из версии признаков v2, снимка целевой страницы и изолированного этапа углублённого анализа.">

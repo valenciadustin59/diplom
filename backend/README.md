@@ -238,7 +238,8 @@ Backend предоставляет четыре основных health/runtime 
 - `GET /health` — legacy healthcheck;
 - `GET /health/live` — liveness процесса API;
 - `GET /health/ready` — готовность всего распределённого стека;
-- `GET /health/metrics` — диагностика очередей, воркеров и накопления задач.
+- `GET /health/metrics` — диагностика очередей, воркеров и накопления задач;
+- `GET /health/model` — активный runtime ML artifact, dataset/schema metadata, guardrail metrics и rollback availability.
 
 Если один из обязательных компонентов не готов, `GET /health/ready` возвращает `503`.
 
@@ -351,6 +352,7 @@ Benchmark работает поверх production API surface:
 - `GET /audits/{audit_id}`
 - `GET /audits/{audit_id}/events/diagnostics`
 - `GET /health/metrics`
+- `GET /health/model`
 
 После `D20` markdown/JSON report дополнительно содержит section `Topology Profiles`: configured worker profiles, queue-to-profile map, per-profile queue pressure counts и флаг изоляции heavy analyzers.
 
@@ -408,6 +410,7 @@ cd E:\codexPROJ\diplom\backend
 - `../plans/d32-d36-model-productization.md` — активная локальная копия backlog `D32-D36` для безопасного внедрения модели в продукт.
 - `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — активная локальная копия `D37` для unified `v3` feature model, hybrid candidate и top-3 guardrail.
 - `../plans/d38-controlled-publish-catboost-v3.md` — выполненный план D38 controlled publish CatBoost v3.
+- `../plans/d39-model-status-interface.md` — выполненный план D39 model status in interface.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -527,4 +530,6 @@ D37 / GitHub `#56` реализован локально как backend/ML unifi
 
 D38 / GitHub `#57` реализован локально как controlled publish CatBoost v3. Production artifact `artifacts/page_quality_model.pkl` теперь указывает на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, artifact version `dataset-v3-d37-20260501200434`, schema `v3`, `148` features. Прежний v1 RandomForest сохранён для rollback в `artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl` с SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. D38 evidence: `artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json` и `.md`; smoke summary: `../output/runtime-smoke/d38-smoke-summary.json`.
 
-Если GitHub Issues недоступны из текущего окружения, D37/D38 evidence и команды находятся в `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` и `../plans/d38-controlled-publish-catboost-v3.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — product visibility/post-publish monitoring для активной модели, а не повторный rollout.
+D39 / GitHub `#58` реализован локально как model status in interface. Backend endpoint `GET /health/model` отдаёт активный artifact, SHA1, metadata sidecar, model/dataset sections, `metrics_summary`, D38 publish context and rollback reference. UI читает этот endpoint через runtime health flow и показывает active model в stack UI, score breakdown и audit report/export. План: `../plans/d39-model-status-interface.md`.
+
+Если GitHub Issues недоступны из текущего окружения, D37-D39 evidence и команды находятся в `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — post-publish monitoring для активной модели или second-pass competitor-aware scoring, а не повторный rollout.

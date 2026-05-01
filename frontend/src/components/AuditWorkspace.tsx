@@ -168,6 +168,69 @@ function ScoreFactorList({
   );
 }
 
+function getModelInfoString(modelInfo: Record<string, unknown>, key: string): string | null {
+  const value = modelInfo[key];
+  return typeof value === "string" && value.trim() ? value : null;
+}
+
+function getModelInfoNumber(modelInfo: Record<string, unknown>, key: string): number | null {
+  const value = modelInfo[key];
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function getScoreModelMetric(modelInfo: Record<string, unknown>, key: string): number | null {
+  const metrics = modelInfo.metrics_summary;
+  if (!metrics || typeof metrics !== "object" || Array.isArray(metrics)) {
+    return null;
+  }
+  const value = (metrics as Record<string, unknown>)[key];
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function formatCompactNumber(value: number | null, digits = 3): string {
+  return value === null ? "—" : value.toFixed(digits).replace(/\.?0+$/, "");
+}
+
+function formatCompactPercent(value: number | null): string {
+  return value === null ? "—" : `${Math.round(value * 100)}%`;
+}
+
+function ScoreModelInfo({ modelInfo }: { modelInfo: Record<string, unknown> | undefined }) {
+  if (!modelInfo) {
+    return null;
+  }
+
+  const modelType = getModelInfoString(modelInfo, "model_type") ?? "модель не указана";
+  const schemaVersion = getModelInfoString(modelInfo, "model_schema_version") ?? "схема не указана";
+  const datasetVersion = getModelInfoString(modelInfo, "dataset_version") ?? "датасет не указан";
+  const artifactVersion = getModelInfoString(modelInfo, "artifact_version") ?? "artifact не указан";
+  const featureCount = getModelInfoNumber(modelInfo, "feature_count");
+  const datasetRows = getModelInfoNumber(modelInfo, "dataset_rows");
+  const top3 = getScoreModelMetric(modelInfo, "top_3_hit_rate");
+  const ndcg = getScoreModelMetric(modelInfo, "ndcg_at_10");
+  const mae = getScoreModelMetric(modelInfo, "mae");
+
+  return (
+    <div className="score-model-info">
+      <div className="score-model-info__summary">
+        <span className="eyebrow-pill">Активная модель score</span>
+        <strong>
+          {modelType} · {schemaVersion}
+        </strong>
+        <p>
+          {datasetVersion} · {datasetRows ?? "—"} строк · {featureCount ?? "—"} признаков
+        </p>
+      </div>
+      <div className="score-model-info__facts">
+        <span>Artifact: {artifactVersion}</span>
+        <span>Top-3: {formatCompactPercent(top3)}</span>
+        <span>NDCG@10: {formatCompactNumber(ndcg)}</span>
+        <span>MAE: {formatCompactNumber(mae)}</span>
+      </div>
+    </div>
+  );
+}
+
 function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | undefined }) {
   if (!breakdown) {
     return (
@@ -191,6 +254,7 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
     >
       <div className="score-breakdown">
         <p className="score-breakdown__methodology">{methodology}</p>
+        <ScoreModelInfo modelInfo={breakdown.model_info} />
 
         <div className="metric-strip metric-strip--comparison">
           <div className="metric-box">

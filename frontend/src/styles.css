@@ -555,6 +555,11 @@ select {
   color: var(--muted);
 }
 
+.report-subtitle {
+  margin: 18px 0 12px;
+  font-size: 1rem;
+}
+
 .report-score {
   display: grid;
   place-items: center;
@@ -1009,11 +1014,98 @@ select {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.runtime-model-mini {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 0;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(21, 36, 64, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.runtime-model-mini div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.runtime-model-mini strong,
+.runtime-model-mini span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.runtime-model-mini > span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  text-align: right;
+}
+
+.runtime-model-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.runtime-model-status__summary {
+  min-width: 0;
+}
+
+.runtime-model-status__summary h3 {
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+}
+
+.runtime-model-status__summary p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.runtime-model-status__facts {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.runtime-model-status__facts span,
+.runtime-model-status__publish span {
+  overflow-wrap: anywhere;
+}
+
+.runtime-model-metrics {
+  margin-top: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.runtime-model-status__publish {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(79, 124, 255, 0.14);
+  background: rgba(79, 124, 255, 0.07);
+}
+
 .runtime-metric--ok,
 .runtime-status-hero--ok,
 .runtime-issue--ok,
 .runtime-component--ok,
-.runtime-profile--ok {
+.runtime-profile--ok,
+.runtime-model-status--ok,
+.runtime-model-mini--ok {
   border-color: rgba(62, 170, 112, 0.18);
 }
 
@@ -1021,7 +1113,9 @@ select {
 .runtime-status-hero--warning,
 .runtime-issue--warning,
 .runtime-component--warning,
-.runtime-profile--warning {
+.runtime-profile--warning,
+.runtime-model-status--warning,
+.runtime-model-mini--warning {
   border-color: rgba(255, 181, 71, 0.28);
 }
 
@@ -1029,7 +1123,9 @@ select {
 .runtime-status-hero--error,
 .runtime-issue--error,
 .runtime-component--error,
-.runtime-profile--error {
+.runtime-profile--error,
+.runtime-model-status--error,
+.runtime-model-mini--error {
   border-color: rgba(236, 95, 95, 0.22);
 }
 
@@ -1142,6 +1238,44 @@ select {
 .score-breakdown__methodology {
   margin: 0;
   color: var(--muted);
+}
+
+.score-model-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: 14px;
+  padding: 15px;
+  border: 1px solid rgba(79, 124, 255, 0.14);
+  border-radius: 18px;
+  background: rgba(79, 124, 255, 0.06);
+}
+
+.score-model-info__summary,
+.score-model-info__facts {
+  min-width: 0;
+}
+
+.score-model-info__summary strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.05rem;
+}
+
+.score-model-info__summary p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.score-model-info__facts {
+  display: grid;
+  gap: 7px;
+  align-content: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.score-model-info__facts span {
+  overflow-wrap: anywhere;
 }
 
 .score-breakdown__grid {
@@ -2419,6 +2553,9 @@ select {
   .runtime-metric-grid,
   .runtime-component-grid,
   .runtime-profile-grid,
+  .runtime-model-status,
+  .runtime-model-metrics,
+  .score-model-info,
   .score-breakdown__grid {
     grid-template-columns: 1fr;
   }
@@ -2446,13 +2583,16 @@ select {
   .recommendation-item__top,
   .recommendation-deviation__top,
   .runtime-status-hero,
+  .runtime-model-mini,
+  .runtime-model-status__publish,
   .runtime-component__top,
   .runtime-profile__top {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .runtime-status-hero__meta {
+  .runtime-status-hero__meta,
+  .runtime-model-mini > span {
     text-align: left;
   }
 

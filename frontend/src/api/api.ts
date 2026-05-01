@@ -7,6 +7,7 @@ import type {
   AuditTimelineEventsResponse,
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
 } from "../types";
 
@@ -195,5 +196,9 @@ export const runtimeApi = {
 
   getMetrics(): Promise<RuntimeMetricsResponse> {
     return request<RuntimeMetricsResponse>("/health/metrics");
+  },
+
+  getModelStatus(): Promise<RuntimeModelStatusResponse> {
+    return request<RuntimeModelStatusResponse>("/health/model");
   },
 };

@@ -17,8 +17,12 @@ from app.health import (
     collect_database_runtime_metrics,
     collect_worker_runtime_metrics,
 )
+from app.ml.model import FEATURE_COLUMNS, save_model
+from app.ml.publish import build_artifact_metadata_path
+from app.model_status import build_model_status_payload
 from app.models import Audit, AuditCompetitor, AuditEvent
 from app.runtime_capacity import evaluate_new_audit_admission
+from sklearn.dummy import DummyRegressor
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 
@@ -58,6 +62,91 @@ def test_metrics_endpoint_returns_runtime_payload(client, monkeypatch: pytest.Mo
 
     assert response.status_code == 200
     assert response.json() == payload
+
+
+def test_model_status_endpoint_returns_runtime_model_payload(client, monkeypatch: pytest.MonkeyPatch):
+    payload = {
+        "status": "active",
+        "checked_at": "2026-05-01T20:05:00+00:00",
+        "artifact_path": "artifacts/page_quality_model.pkl",
+        "artifact_sha1": "abc123",
+        "metadata_path": "artifacts/page_quality_model.metadata.json",
+        "metadata_sha1": "def456",
+        "model": {
+            "model_type": "CatBoostRegressor",
+            "model_schema_version": "v3",
+            "feature_count": 148,
+            "artifact_version": "dataset-v3-d37-20260501200434",
+            "dataset_version": "dataset-v3-d37",
+        },
+        "dataset": {"dataset_version": "dataset-v3-d37", "rows_count": 885, "queries_count": 99},
+        "metrics_summary": {"top_3_hit_rate": 0.95, "ndcg_at_10": 0.945929, "mae": 11.774165},
+        "publish": {"publish_recommendation": "publish_candidate", "selected_candidate": "pointwise_catboost"},
+        "rollback": {"available": True, "model_sha1": "rollback-sha"},
+    }
+    monkeypatch.setattr("app.api.routes.health.build_model_status_payload", lambda: payload)
+
+    response = client.get("/health/model")
+
+    assert response.status_code == 200
+    assert response.json() == payload
+
+
+def test_build_model_status_payload_reads_artifact_metadata(tmp_path):
+    model_path = tmp_path / "page_quality_model.pkl"
+    model = DummyRegressor(strategy="mean")
+    model.fit([[0.0] * len(FEATURE_COLUMNS)], [72.0])
+    save_model(
+        model,
+        {
+            "mae": 10.5,
+            "ndcg_at_10": 0.93,
+            "top_3_hit_rate": 0.95,
+            "rows_count": 1,
+        },
+        model_path=model_path,
+        metadata={
+            "model_schema_version": "v1",
+            "artifact_version": "test-artifact",
+            "artifact_family": "page_quality_model",
+            "published_at": "2026-05-01T20:00:00+00:00",
+            "dataset_metadata": {
+                "dataset_version": "test-dataset",
+                "rows_count": 1,
+                "queries_count": 1,
+                "domains_count": 1,
+            },
+        },
+    )
+    build_artifact_metadata_path(model_path).write_text(
+        """{
+  "candidate_name": "pointwise_catboost",
+  "candidate_family": "pointwise",
+  "shadow_report_path": "artifacts/ranking-benchmarks/report.json",
+  "shadow_decision": {
+    "publish_recommendation": "publish_candidate",
+    "selected_candidate": "pointwise_catboost",
+    "reason": "passed"
+  },
+  "rollback_reference": {
+    "rollback_model_path": "artifacts/versions/previous.pkl",
+    "rollback_model_sha1": "previous-sha"
+  }
+}""",
+        encoding="utf-8",
+    )
+
+    payload = build_model_status_payload(model_path)
+
+    assert payload["status"] == "active"
+    assert payload["model"]["artifact_version"] == "test-artifact"
+    assert payload["model"]["model_schema_version"] == "v1"
+    assert payload["dataset"]["dataset_version"] == "test-dataset"
+    assert payload["dataset"]["rows_count"] == 1
+    assert payload["metrics_summary"]["top_3_hit_rate"] == 0.95
+    assert payload["publish"]["selected_candidate"] == "pointwise_catboost"
+    assert payload["rollback"]["available"] is True
+    assert payload["rollback"]["model_sha1"] == "previous-sha"
 
 
 def test_metrics_endpoint_includes_queue_pressure_and_execution_detector(client, monkeypatch: pytest.MonkeyPatch):

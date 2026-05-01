@@ -2,6 +2,7 @@ import type {
   RuntimeHealthCheck,
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelStatusResponse,
   RuntimeQueueSnapshot,
   RuntimeReadinessResponse,
   RuntimeWorkerTopologyContract,
@@ -65,6 +66,25 @@ export type RuntimeIssue = {
   tone: RuntimeTone;
 };
 
+export type RuntimeModelStatusView = {
+  status: string;
+  statusLabel: string;
+  tone: RuntimeTone;
+  shortLabel: string;
+  detail: string;
+  checkedAtLabel: string;
+  modelTypeLabel: string;
+  schemaLabel: string;
+  featureCountLabel: string;
+  datasetLabel: string;
+  artifactLabel: string;
+  publishedAtLabel: string;
+  publishLabel: string;
+  rollbackLabel: string;
+  artifactShaLabel: string;
+  metricRows: RuntimeMetric[];
+};
+
 export type RuntimeHealthModel = {
   checkedAtLabel: string;
   appLabel: string;
@@ -74,6 +94,7 @@ export type RuntimeHealthModel = {
   statusDetail: string;
   statusTone: RuntimeTone;
   metrics: RuntimeMetric[];
+  modelStatus: RuntimeModelStatusView | null;
   components: RuntimeComponentRow[];
   workerProfiles: RuntimeWorkerProfileRow[];
   queues: RuntimeQueueRow[];
@@ -87,6 +108,7 @@ type RuntimeHealthInput = {
   live: RuntimeLivenessResponse | null;
   readiness: RuntimeReadinessResponse | null;
   metrics: RuntimeMetricsResponse | null;
+  modelStatus?: RuntimeModelStatusResponse | null;
 };
 const PROFILE_LABELS: Record<string, string> = {
   pipeline: "Оркестратор",
@@ -146,6 +168,14 @@ function asStringArray(value: unknown): string[] {
 }
 function formatCount(value: number | null | undefined): string {
   return typeof value === "number" && Number.isFinite(value) ? String(value) : "—";
+}
+function formatMetricNumber(value: unknown, digits = 3): string {
+  const numberValue = asNumber(value);
+  return numberValue === null ? "—" : numberValue.toFixed(digits).replace(/\.?0+$/, "");
+}
+function formatPercent(value: unknown): string {
+  const numberValue = asNumber(value);
+  return numberValue === null ? "—" : `${Math.round(numberValue * 100)}%`;
 }
 function formatCheckedAt(value: string | null | undefined): string {
   if (!value) {
@@ -549,11 +579,98 @@ function buildMetrics(input: RuntimeHealthInput, issues: RuntimeIssue[]): Runtim
     },
   ];
 }
+
+function getModelStatusLabel(status: string | null | undefined): string {
+  if (status === "active") {
+    return "Активная модель";
+  }
+  if (status === "fallback") {
+    return "Fallback-модель";
+  }
+  if (status === "error") {
+    return "Ошибка модели";
+  }
+  return status ? getStatusLabel(status) : "Нет данных";
+}
+
+function buildModelMetricRows(metrics: Record<string, unknown>): RuntimeMetric[] {
+  const top3 = asNumber(metrics.top_3_hit_rate);
+  return [
+    {
+      label: "Top-3",
+      value: formatPercent(metrics.top_3_hit_rate),
+      note: "Попадание сильных страниц в верх SERP.",
+      tone: top3 !== null && top3 >= 0.95 ? "ok" : "warning",
+    },
+    {
+      label: "NDCG@10",
+      value: formatMetricNumber(metrics.ndcg_at_10),
+      note: "Качество порядка страниц в первой десятке.",
+      tone: "ok",
+    },
+    {
+      label: "MAE",
+      value: formatMetricNumber(metrics.mae),
+      note: "Средняя абсолютная ошибка score.",
+      tone: "ok",
+    },
+  ];
+}
+
+function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefined): RuntimeModelStatusView | null {
+  if (!status) {
+    return null;
+  }
+  const model = isRecord(status.model) ? status.model : {};
+  const dataset = isRecord(status.dataset) ? status.dataset : {};
+  const metrics = isRecord(status.metrics_summary) ? status.metrics_summary : {};
+  const publish = isRecord(status.publish) ? status.publish : {};
+  const rollback = isRecord(status.rollback) ? status.rollback : {};
+  const statusValue = asString(status.status) ?? "unknown";
+  const modelType = asString(model.model_type) ?? "модель не определена";
+  const schemaVersion = asString(model.model_schema_version) ?? "схема не указана";
+  const featureCount = asNumber(model.feature_count);
+  const artifactVersion = asString(model.artifact_version) ?? asString(status.artifact_path) ?? "артефакт не указан";
+  const artifactSha = asString(status.artifact_sha1);
+  const datasetVersion = asString(dataset.dataset_version) ?? "датасет не указан";
+  const datasetRows = asNumber(dataset.rows_count);
+  const datasetQueries = asNumber(dataset.queries_count);
+  const selectedCandidate = asString(publish.selected_candidate) ?? asString(publish.candidate_name);
+  const publishRecommendation = asString(publish.publish_recommendation);
+  const rollbackAvailable = rollback.available === true;
+  const tone = statusValue === "active" ? "ok" : statusValue === "error" ? "error" : "warning";
+  const error = asString(status.error);
+
+  return {
+    status: statusValue,
+    statusLabel: getModelStatusLabel(statusValue),
+    tone,
+    shortLabel: `${modelType} · ${schemaVersion}`,
+    detail: error
+      ? error
+      : `Сейчас score считает ${modelType}; признаки берутся из схемы ${schemaVersion}, artifact ${artifactVersion}.`,
+    checkedAtLabel: formatCheckedAt(status.checked_at),
+    modelTypeLabel: modelType,
+    schemaLabel: schemaVersion,
+    featureCountLabel: featureCount === null ? "—" : `${featureCount}`,
+    datasetLabel: `${datasetVersion} · ${formatCount(datasetRows)} строк · ${formatCount(datasetQueries)} запросов`,
+    artifactLabel: artifactVersion,
+    publishedAtLabel: formatCheckedAt(asString(model.published_at)),
+    publishLabel: selectedCandidate
+      ? `${selectedCandidate}${publishRecommendation ? ` · ${publishRecommendation}` : ""}`
+      : publishRecommendation || "решение публикации не указано",
+    rollbackLabel: rollbackAvailable ? "Rollback доступен" : "Rollback не найден",
+    artifactShaLabel: artifactSha ? artifactSha.slice(0, 12) : "—",
+    metricRows: buildModelMetricRows(metrics),
+  };
+}
+
 export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealthModel {
   const workerProfiles = buildProfileRows(input);
   const queues = buildQueueRows(input);
   const issues = buildIssues(input, workerProfiles, queues);
   const metrics = buildMetrics(input, issues);
+  const modelStatus = buildModelStatusView(input.modelStatus ?? null);
   const ready = input.readiness?.status === "ready";
   const hasErrorIssue = issues.some((issue) => issue.tone === "error");
   const hasWarningIssue = issues.some((issue) => issue.tone === "warning");
@@ -574,6 +691,7 @@ export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealt
     statusDetail,
     statusTone,
     metrics,
+    modelStatus,
     components: buildComponentRows(input),
     workerProfiles,
     queues,

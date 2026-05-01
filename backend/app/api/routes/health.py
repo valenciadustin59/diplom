@@ -4,6 +4,7 @@ from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 
 from app.health import build_liveness_payload, build_metrics_payload, build_readiness_payload
+from app.model_status import build_model_status_payload
 
 router = APIRouter(tags=["health"])
 
@@ -27,3 +28,8 @@ def readiness_endpoint() -> JSONResponse:
 @router.get("/health/metrics")
 def metrics_endpoint() -> dict[str, Any]:
     return build_metrics_payload()
+
+
+@router.get("/health/model")
+def model_status_endpoint() -> dict[str, Any]:
+    return build_model_status_payload()
