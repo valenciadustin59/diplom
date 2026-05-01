@@ -411,6 +411,7 @@ cd E:\codexPROJ\diplom\backend
 - `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — активная локальная копия `D37` для unified `v3` feature model, hybrid candidate и top-3 guardrail.
 - `../plans/d38-controlled-publish-catboost-v3.md` — выполненный план D38 controlled publish CatBoost v3.
 - `../plans/d39-model-status-interface.md` — выполненный план D39 model status in interface.
+- `../plans/d40-d44-post-publish-model-operations.md` — активный backlog D40-D44 после публикации модели.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -532,4 +533,6 @@ D38 / GitHub `#57` реализован локально как controlled publi
 
 D39 / GitHub `#58` реализован локально как model status in interface. Backend endpoint `GET /health/model` отдаёт активный artifact, SHA1, metadata sidecar, model/dataset sections, `metrics_summary`, D38 publish context and rollback reference. UI читает этот endpoint через runtime health flow и показывает active model в stack UI, score breakdown и audit report/export. План: `../plans/d39-model-status-interface.md`.
 
-Если GitHub Issues недоступны из текущего окружения, D37-D39 evidence и команды находятся в `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — post-publish monitoring для активной модели или second-pass competitor-aware scoring, а не повторный rollout.
+D40-D44 / GitHub `#59-#63` созданы как активная post-publish operations wave. Backend-relevant задачи: `D40` model usage monitoring, `D41` replay guardrail reports, `D43` model registry/rollback evidence endpoint, `D44` non-production second-pass competitor-aware score experiment. Локальный backlog: `../plans/d40-d44-post-publish-model-operations.md`.
+
+Если GitHub Issues недоступны из текущего окружения, D40-D44 backlog и D37-D39 evidence находятся в `../plans/d40-d44-post-publish-model-operations.md`, `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — D40 post-publish monitoring, если пользователь не выбрал другую задачу; не повторять rollout.
