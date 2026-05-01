@@ -1,0 +1,1041 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://vitakuhni.ru/",
+  "final_url": "https://vitakuhni.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "connection": "keep-alive",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 14:48:32 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx/1.12.2",
+    "service-worker-allowed": "/",
+    "set-cookie": "session_id=d10fff7b57b1611f4de0752092cf02268371c3921a18; expires=Wed, 06-May-2026 14:48:32 GMT; Max-Age=432000; path=/\nPHPSESSID=b1333095250f4c7c131fdbe11b8a160f; path=/\nutm-get=%2F%3Futm_source%3DNo_source%26utm_campaign%3DNo_campaign%26utm_term%3DNo_term%26; expires=Thu, 30-Jul-2026 14:48:32 GMT; Max-Age=7776000",
+    "transfer-encoding": "chunked",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/7.2.34"
+  },
+  "response_time_ms": 11686.5753,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:48:43.176342+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><script src=\"https://mc.yandex.ru/metrika-tags/_/tag_ec.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n<title>Индивидуальные кухни на заказ от производителя в Москве | Вита Кухни</title>\n<meta name=\"keywords\" content=\"индивидуальные кухни, кухни по индивидуальным размерам, заказать кухню\"> <meta name=\"description\" content=\"Кухни от производителя по индивидуальным размерам на заказ в Москве. Низкие цены, изготовление от 10 дней, сборка, бесплатная доставка, 5 лет гарантии!\">\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"robots\" content=\"index, follow\">\t<meta name=\"geo.placename\" content=\"Москва, Россия\">\n\t<meta name=\"geo.position\" content=\"55.710129, 37.654610\">\n\t<meta name=\"geo.region\" content=\"RU-город Москва\">\n\t<meta name=\"ICBM\" content=\"55.710129, 37.654610\">\n\t\n\n<meta name=\"apple-mobile-web-app-title\" content=\"vitakuhni.ru\"><meta name=\"application-name\" content=\"vitakuhni.ru\"><meta name=\"msapplication-TileColor\" content=\"#1eb81e\"><meta name=\"theme-color\" content=\"#ffffff\"><meta http-equiv=\"x-dns-prefetch-control\" content=\"on\">\n\n<link rel=\"dns-prefetch\" href=\"//stats.g.doubleclick.net\">\n<link rel=\"preconnect\" href=\"//stats.g.doubleclick.net\">\n<link rel=\"dns-prefetch\" href=\"//mc.yandex.ru\">\n<link rel=\"preconnect\" href=\"//mc.yandex.ru\">\n<link rel=\"preload\" href=\"/fonts/lato-regular-webfont.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/fonts/lato-regular-webfont.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/fonts/lato-regular-webfont.woff\" as=\"font\" type=\"font/woff\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/fonts/lato-bold-webfont.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/fonts/lato-bold-webfont.woff\" as=\"font\" type=\"font/woff\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/fonts/lato-black-webfont.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/fonts/lato-black-webfont.woff\" as=\"font\" type=\"font/woff\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/js/slick/fonts/slick.woff\" as=\"font\" type=\"font/woff\" crossorigin=\"anonymous\">\n<link rel=\"preload\" href=\"/css/lightbox.min.css?v=1777620706\" as=\"style\">\n<link rel=\"preload\" href=\"/css/jcarousel.basic.css?v=1777620706\" as=\"style\">\n<link rel=\"preload\" href=\"/js/slick/slick.css?v1777620706\" as=\"style\">\n<link rel=\"preload\" href=\"/js/slick/slick-theme.css?v1777620706\" as=\"style\">\n<link rel=\"preload\" href=\"/js/jquery-3.2.0.min.js\" as=\"script\">\n<link rel=\"preload\" href=\"/js/jquery.cookie.js\" as=\"script\">\n<link rel=\"preload\" href=\"/js/main.js?v1777620706\" as=\"script\">\n<link rel=\"preload\" href=\"/js/cart.js?v1777620706\" as=\"script\">\n<link rel=\"preload\" href=\"/js/jquery.lazy.js\" as=\"script\">\n<link rel=\"preload\" href=\"/js/60_sec.js?v1777620706\" as=\"script\">\n<link rel=\"preload\" href=\"/js/jquery-site.activity.js?v1777620706\" as=\"script\">\n<style>\n.wr {\n    width: 100%;\n    box-sizing: border-box;\n    position: relative;\n}\n\t@font-face {\n\tfont-family: 'latoregular';font-display: swap;src: url('/fonts/lato-regular-webfont.woff2') format('woff2'),url('/fonts/lato-regular-webfont.woff') format('woff');font-weight: normal;font-style: normal; font-display: auto;\n    }\n    @font-face {\n    font-family: 'latobold';font-display: swap; src: url('/fonts/lato-bold-webfont.woff2') format('woff2'), url('/fonts/lato-bold-webfont.woff') format('woff');\tfont-weight: normal;font-style: normal;font-display: auto; }\nhtml,body{ width:100%;height:100%;padding:0;margin:0;font-size:15px;font-family: 'latoregular', roboto, arial; position: relative; }\n</style>\n<meta name=\"viewport\" content=\"width=device-width, viewport-fit=cover\">\n<link href=\"/css/main_css.css?v=1777620706\" rel=\"stylesheet\" type=\"text/css\">\t\n<link href=\"/css/narrow.css?v=1777620706\" rel=\"stylesheet\" type=\"text/css\"><link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/favicon.svg?v1\">\n<script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script rel=\"preload\" src=\"/js/jquery-3.2.0.min.js\"></script>\n<script rel=\"preload\" src=\"/js/jquery.cookie.js\"></script>\n<script async=\"\" src=\"/js/main.js?v1777620706\"></script>\n<script async=\"\" src=\"/js/cart.js?v1777620706\"></script>\n<script type=\"text/javascript\" src=\"/js/jquery.lazy.js\"></script>\n<meta property=\"og:site_name\" content=\"Вита Кухни - фабрика мебели\">\n<meta property=\"og:title\" content=\"Индивидуальные кухни на заказ от производителя в Москве | Вита Кухни\">\n<meta property=\"og:description\" content=\"Кухни от производителя по индивидуальным размерам на заказ в Москве. Низкие цены, изготовление от 10 дней, сборка, бесплатная доставка, 5 лет гарантии!\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:image\" content=\"https://vitakuhni.ru/i/og_image.jpg?v2\"><meta property=\"og:type\" content=\"website\">\n<meta property=\"og:url\" content=\"https://vitakuhni.ru/\">\n<link rel=\"canonical\" href=\"https://vitakuhni.ru\"><link rel=\"manifest\" href=\"/manifest.json\" crossorigin=\"use-credentials\"><!-- Yandex.Metrika counter --> <script type=\"text/javascript\"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\"); ym(90694384, \"init\", { clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true }); </script> <noscript><div><img src=\"https://mc.yandex.ru/watch/90694384\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript> <!-- /Yandex.Metrika counter -->\n<meta name=\"p:domain_verify\" content=\"27e0fda8e225ba36b234680486dadc8e\">\n</head>\n<body>\n<script async=\"\" src=\"/js/filters.js?v1777620706\"></script><script async=\"\" src=\"/js/calc.js?v1777620706\"></script><script async=\"\" src=\"/js/inputmask_mini.js?v1777620706\"></script><link href=\"/css/lightbox.min.css?v=1777620706\" rel=\"stylesheet\" type=\"text/css\"><link href=\"/css/jcarousel.basic.css?v=1777620706\" rel=\"stylesheet\" type=\"text/css\"><script async=\"\" src=\"/js/lightbox.min.js\"></script><script async=\"\" src=\"/js/jquery.jcarousel.min.js\"></script><script async=\"\" src=\"https://kuhnibx24.ru/upload/crm/tag/call.tracker.js\"></script>\n<script>\n$(window).on(\"load\", function(){\nversion= $(\".version\").html();\nvar bxtracker; setTimeout(function(){ bxtracker=b24Tracker.guest.getTrace(); $.cookie('bxtracker', bxtracker);  },1000);\n\tif ($(\"[name=nofound_filter]\").length){\n\t  yaCounter90694384.reachGoal('not_found_by_filter');\n\t}\n});\n</script><script type=\"text/javascript\" src=\"/js/60_sec.js?v1777620706\"></script><script type=\"text/javascript\" src=\"/js/slick/slick.min.js?v1777620706\"></script><link rel=\"stylesheet\" type=\"text/css\" href=\"/js/slick/slick.css?v1777620706\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/js/slick/slick-theme.css?v1777620706\">\n<div class=\"wr\">\n<header>\n<div class=\"top\">\n\t<div class=\"top_wrapper\">\n\t<div class=\"logmin\"></div>\n\t\n    \n\n<a class=\"cart_head_button notempty_cart  topcartanimate\" href=\"/cart\" title=\"Корзина\"><div class=\"nums\">0</div></a>\n\t\t<a class=\"phone\" id=\"modal1\" href=\"tel:8 (499) 229-28-08\">8 (499) 229-28-08</a>\n\t\t<div class=\"region open_modal_region\">Москва</div>\n\t\t<a class=\"wtsp  openwhatsappmodal\" target=\"_blank\" href=\"//api.whatsapp.com/send?phone=79056140350\">WhatsApp<br>+7 (905) 614-03-50</a>\n\t\t<a class=\"mail\" href=\"mailto:mail@vitakuhni.ru\">mail@vitakuhni.ru</a>\n\t\t\n\t\t<!--<a  class=\"calc_price all_click_calc all_micro\" href=\"/calculate\">Рассчитать цену</a>-->\n\t\t \t<!--<a href=\"#\" rel=\"nofollow\" class=\"button openmodal_search\"></a> >-->\n            <div class=\"search_bl\"><form action=\"/search/\">\n\t<input type=\"text\" name=\"search\" placeholder=\"Поиск по сайту\" value=\"\">\n\t\t<input type=\"submit\" value=\"\">\n\t</form></div>\n    \t\t<div class=\"cl\"></div>\n\t</div>\n</div>\n\n<div class=\"chat_phone_button openmodal_callback \"></div>\n<div class=\"head\">\n\t<div class=\"head_wrapper\">\n\t<div class=\"menubutt\"></div>\t\n\t<div class=\"logo clickable\" onclick=\"window.location.href='https://vitakuhni.ru' \"></div><nav class=\"top_menu\" itemscope=\"\" itemtype=\"http://schema.org/SiteNavigationElement\">\n\t<ul>\n\t\t\t\t\t\t\t\t\t<li><div class=\"drop_menu cat_menu\">\n<span>Каталог</span>\n<ul class=\"catalogbl\">\n\t\t\t\t\t<li><a itemprop=\"url\" class=\"scrollto drop_element\" href=\"https://vitakuhni.ru/catalog/kuhni\"><b itemprop=\"name\">Кухни</b></a></li><li><a itemprop=\"url\" class=\"scrollto drop_element\" href=\"https://vitakuhni.ru/catalog/shkafy-kupe\"><b itemprop=\"name\">Шкафы-купе</b></a></li><li><a itemprop=\"url\" class=\"scrollto drop_element\" href=\"https://vitakuhni.ru/catalog/shkafy-raspashnye\"><b itemprop=\"name\">Шкафы распашные</b></a></li><li><a itemprop=\"url\" class=\"scrollto drop_element\" href=\"https://vitakuhni.ru/catalog/stenki-dlya-gostinoy\"><b itemprop=\"name\">Стенки для гостиной</b></a></li><li><a itemprop=\"url\" class=\"scrollto drop_element\" href=\"https://vitakuhni.ru/catalog/prikhozhie\"><b itemprop=\"name\">Прихожие</b></a></li><li><a itemprop=\"url\" class=\"scrollto drop_element\" href=\"https://vitakuhni.ru/mebel-na-zakaz\"><b itemprop=\"name\">Мебель на заказ</b></a></li>\t\t\t\t</ul>\n\t\t\t\t</div></li>\n<li><a rel=\"nofollow\" itemprop=\"url\" href=\"https://vitakuhni.ru/calculate\"><b itemprop=\"name\">Рассчитать цену</b></a></li>\n\n<li><a itemprop=\"url\" class=\"scrollto all_micro in_showroom_click\" href=\"https://vitakuhni.ru/zapis-v-showroom\"><b itemprop=\"name\">В шоурум</b></a></li>\n\n\n<li><a itemprop=\"url\" class=\"scrollto all_micro get_zamer_click\" href=\"https://vitakuhni.ru/zakazat-zamer-kuhni\"><b itemprop=\"name\">Заказать замер</b></a></li>\n<li><a itemprop=\"url\" class=\"button all_micro get_project_click\" href=\"https://vitakuhni.ru/zakazat-dizain-proekt\"><b itemprop=\"name\">Заказать проект</b></a></li>\n<li><a itemprop=\"url\" class=\"button all_micro send_project_click\" href=\"https://vitakuhni.ru/prislat-design-project\"><b itemprop=\"name\">Прислать проект</b></a></li>\n\n<li><div class=\"drop_menu\">\n<span>Клиентам</span>\n<ul>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://vitakuhni.ru/rassrochka\"><b itemprop=\"name\">Рассрочка</b></a></li>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://vitakuhni.ru/o-kompanii\"><b itemprop=\"name\">О компании</b></a></li>\n<li><a class=\"scrollto\" href=\"https://vitakuhni.ru/poryadok-raboty\">Порядок работы</a></li>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://vitakuhni.ru/garancy\"><b itemprop=\"name\">Гарантия</b></a></li>\n<li><a class=\"scrollto\" href=\"https://vitakuhni.ru/faq\">Вопрос-ответ</a></li>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://blog.vitakuhni.ru\"><b itemprop=\"name\">Блог</b></a></li>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://vitakuhni.ru/konstruktor_kuhni\"><b itemprop=\"name\">3d конструктор кухни</b></a></li>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://vitakuhni.ru/konstruktor_shkafa_kupe\"><b itemprop=\"name\">3d конструктор шкафа-купе</b></a></li>\n\t\t</ul>\n\t\t</div>\n\t\t</li>\n<li><a itemprop=\"url\" class=\"scrollto\" href=\"https://vitakuhni.ru/contacts\"><b itemprop=\"name\">Контакты</b></a></li>\n\n</ul>\n</nav>\n <a class=\"cart_head_button  notempty_cart \" href=\"/cart\" title=\"Корзина\"><div class=\"nums\">0</div></a>\n\n<a rel=\"nofollow\" href=\"#\" title=\"Телефон отдела продаж\" class=\"mob_call_button openmodal_callback\"></a>\n<div class=\"search_head_ico menu_mob_searchbutt_wrap\"></div>\n<b class=\"mob_searchbutt \"></b>\n<div class=\"cl\"></div>\n</div>\n</div>\n</header>\n<div class=\"wrapper wr100\">\n\t<div class=\"slider_block\">\n\t<div class=\"slide slide1\">\n\t<div class=\"left_banner_side\">\n\t\t\t\t<h1 class=\"str1\">Индивидуальные кухни</h1><span class=\"h1span\">от&nbsp;10&nbsp;дней напрямую от&nbsp;производителя</span>\n\t\t<div class=\"str2\">\n\t\t\n\t\t<span style=\"color:#8d8d8d;\">👍</span>&nbsp;Духовой шкаф <b>в подарок до 13 мая</b><br>\n\t\t<span style=\"color:#8d8d8d;\">🎉</span>&nbsp;<b>Скидки 35-55% до 16 мая</b>\n\t\t</div>\n\t\t  <a rel=\"nofollow\" class=\"calculate_button open_calc_modal\" href=\"#\">Рассчитать цену кухни</a>\t\t\n\t</div>\n\t<!--noindex-->\n\t<div class=\"right_banner_side\">\n\t<div class=\"in_slide_image_wrapper\">\n\t\t\t<div class=\"slider_mp aclass duhx2\">\n\t\t\t<img alt=\"Техника по себестоимости\" src=\"/cked/uploads/main/banners_id_13.webp\">\n\t\t\t</div>\n\t\t\t\t\t\t<div class=\"slider_mp aclass duhx2\" onclick=\"window.location.href='events/duhovoy-shkaf-v-podarok'\">\n\t\t\t<img alt=\"Духовой шкаф в подарок\" loading=\"lazy\" src=\"/cked/uploads/main/banners_id_11.webp\">\n\t\t\t</div>\n\t\t\t\t\t\t<div class=\"slider_mp\">\n\t\t\t<img alt=\"Яндекс Пэй + Сплит\" loading=\"lazy\" src=\"/cked/uploads/main/banners_id_10.webp\">\n\t\t\t</div>\n\t\t\t\t\t\t<div class=\"slider_mp\" onclick=\"window.location.href='events/skidki-na-bytovuyu-tehniku-korting-do-100-pri-pokupke-kuhni'\">\n\t\t\t<img alt=\"Скидки при покупке кухни с техникой Körting\" loading=\"lazy\" src=\"/cked/uploads/main/banners_id_7.webp\">\n\t\t\t</div>\n\t\t\t\t\t\t<div class=\"slider_mp\" onclick=\"window.location.href='events/skidki-na-komplekt-kuhnya-tehnika-zigmund-shtain'\">\n\t\t\t<img alt=\"Скидки на бытовую технику Zigmund &amp; Shtain при покупке кухни\" loading=\"lazy\" src=\"/cked/uploads/main/banners_id_9.webp\">\n\t\t\t</div>\n\t\t\t\t\t\t<div class=\"slider_mp\" onclick=\"window.location.href='rassrochka'\">\n\t\t\t<img alt=\"Рассрочка\" loading=\"lazy\" src=\"/cked/uploads/main/banners_id_4.webp\">\n\t\t\t</div>\n\t\t\t\t\t\t\n\t\t</div>\n\t\t<script>\n\t\n\t\t\t$(window).on(\"load\",function() {\n\t\t\tif ($(\".right_banner_side\").length > 0){\n\t\t\t\n\t\t\t\n\t\t\t\t$('.in_slide_image_wrapper').slick({\t\n\t\t\tuseTransform: false,useCSS: false,ladyload: 'progressive', dots: true,arrows: true,autoplay: true,autoplaySpeed: 3000,fade: true\t\t\t});\n\t\t}\n\t});\n\t</script>\n\t</div>\n\t<!--/noindex-->\n\t<div class=\"cl\"></div>\n\t</div>\n\t</div>\n</div>\n\n\n\n<div class=\"wrapper\">\n\t<div class=\"categories_block\">\n\t\t<div class=\"lblock\">\n\t\t\t<a class=\"cat cat_classic\" href=\"/catalog/kuhni/klassicheskie-kuhni\"><span>Классические кухни</span></a>\n\t\t\t<a class=\"cat cat_sovremen\" href=\"/catalog/kuhni/sovremennye-kuhni\"><span>Современные кухни</span></a>\n\t\t<div class=\"cl\"></div>\n\t\t</div>\n\t\t<div class=\"rblock\">\n\t\t\t<a rel=\"nofollow\" class=\"action slide_to_calc\" href=\"#calc\"><span>Рассчитать цену кухни</span></a>\n\t\t\t<a rel=\"nofollow\" class=\"action zakdiz\" href=\"/zakazat-dizain-proekt\"><span>Заказать дизайн-проект</span></a>\n\n\t\t\t\t\t<a rel=\"nofollow\" class=\"action zapshow\" href=\"/zapis-v-showroom\"><span>Записаться в шоурум</span></a>\t\t\n\n\t\t\t<a rel=\"nofollow\" class=\"action zakdiz_zamer\" href=\"/zakazat-zamer-kuhni\"><span>Вызвать замерщика</span></a>\n\t\t</div>\n\t\t<div class=\"cl\"></div>\n\t\t<div class=\"all_kitchens\"><a rel=\"nofollow\" href=\"/catalog/kuhni\">Показать все кухни  →</a></div>\n\t</div>\n</div>\n\n\n\n\t<div class=\"wrapper wr100 boxshadow calc_wrapper\">\n\t<div class=\"wrapper\">\n\t<div class=\"mp_calculate\">\n\t<div id=\"calc_scrollto\"></div>\n<h2 id=\"calc_name\">Рассчитайте цену вашей кухни прямо сейчас</h2>\n\n\n<form name=\"calculate\">\n<div class=\"calc_block\" id=\"calc_block\">\n\n<div class=\"step step1\" style=\"display:block;\">\n<span class=\"step_name\">Какой формы будет кухня?</span>\n\t<div class=\"flexible\">\n\t<input type=\"radio\" name=\"form\" id=\"f1\" value=\"Прямая\"><label for=\"f1\" class=\"form1\"><span>Прямая</span></label>\n\t<input type=\"radio\" name=\"form\" id=\"f2\" value=\"Угловая\"><label for=\"f2\" class=\"form2\"><span>Угловая</span></label>\n\t<input type=\"radio\" name=\"form\" id=\"f3\" value=\"Полуостров\"><label for=\"f3\" class=\"form3\"><span>Полуостров</span></label>\n\t<!-- <input type=\"radio\" name=\"form\" id=\"f4\" value=\"П-образная\"/><label for=\"f4\" class=\"form4\"><span>П-образная</span></label> -->\n\t<input type=\"radio\" name=\"form\" id=\"f5\" value=\"Двухрядная\"><label for=\"f5\" class=\"form5\"><span>Двухрядная</span></label>\n\t<div class=\"cl\"></div>\n</div>\n\t\n<div class=\"next_step\">Следующий шаг</div>\n</div>\n<div class=\"step step2\">\n<span class=\"step_name\"><span class=\"prev_arr\">←</span>Выберите материал фасадов</span>\n\t<div class=\"flexible\">\n\t<input type=\"radio\" name=\"fasady\" id=\"fas1\" value=\"Egger\"><label for=\"fas1\" class=\"fasady1\"><span>Egger</span></label>\n\t<input type=\"radio\" name=\"fasady\" id=\"fas2\" value=\"Экопластик\"><label for=\"fas2\" class=\"fasady2\"><span>Экопластик</span></label>\n\t<input type=\"radio\" name=\"fasady\" id=\"fas3\" value=\"Пластик\"><label for=\"fas3\" class=\"fasady3\"><span>Пластик</span></label>\n\t<input type=\"radio\" name=\"fasady\" id=\"fas4\" value=\"Эмаль\"><label for=\"fas4\" class=\"fasady4\"><span>Эмаль</span></label>\n\t<input type=\"radio\" name=\"fasady\" id=\"fas7\" value=\"Шпон - Массив\"><label for=\"fas7\" class=\"fasady7\"><span>Шпон / Массив</span></label>\n</div>\n\t<div class=\"cl\"></div>\n\n\t\n<div class=\"next_step\">Следующий шаг</div>\n</div>\n<div class=\"step step3\">\n<span class=\"step_name\"><span class=\"prev_arr\">←</span>Выберите столешницу</span>\n\t<div class=\"flexible\">\n\t<input type=\"radio\" name=\"stoleshnica\" id=\"stol1\" value=\"Стандарт\"><label for=\"stol1\" class=\"stoleshnica1\"><span>Стандарт</span></label>\n\t<input type=\"radio\" name=\"stoleshnica\" id=\"stol2\" value=\"Стандарт 38мм\"><label for=\"stol2\" class=\"stoleshnica2\"><span>Стандарт 38мм</span></label>\n\t<input type=\"radio\" name=\"stoleshnica\" id=\"stol3\" value=\"Egger 38мм\"><label for=\"stol3\" class=\"stoleshnica3\"><span>Egger 38мм</span></label>\n\t<input type=\"radio\" name=\"stoleshnica\" id=\"stol4\" value=\"Искусственный камень\"><label for=\"stol4\" class=\"stoleshnica4\"><span>Искусственный камень</span></label>\n</div>\n\t\t<div class=\"cl\"></div>\n<div class=\"next_step\">Следующий шаг</div>\n</div>\n\n<div class=\"step step4\">\n<span class=\"step_name\"><span class=\"prev_arr\">←</span>Выберите класс фурнитуры</span>\n\t<div class=\"flexible\">\n\t<input type=\"radio\" name=\"furnitura\" id=\"furn1\" value=\"Оптимально\"><label for=\"furn1\" class=\"furnitura1\"><span>Оптимально</span></label>\n\t<input type=\"radio\" name=\"furnitura\" id=\"furn2\" value=\"Стандарт\"><label for=\"furn2\" class=\"furnitura2\"><span>Стандарт</span></label>\n\t<input type=\"radio\" name=\"furnitura\" id=\"furn3\" value=\"Комфорт\"><label for=\"furn3\" class=\"furnitura3\"><span>Комфорт</span></label>\n\t<input type=\"radio\" name=\"furnitura\" id=\"furn4\" value=\"Премиум\"><label for=\"furn4\" class=\"furnitura4\"><span>Премиум</span></label>\n</div>\n\t\t<div class=\"cl\"></div>\n<div class=\"next_step\">Следующий шаг</div>\n</div>\n\n\n<div class=\"step step5\">\n<span class=\"step_name\"><span class=\"prev_arr\">←</span>Укажите размеры кухни по стенам</span>\n<div class=\"cl\"></div>\n<div class=\"left_sizes_block\">\n</div>\n\n<div class=\"right_sizes_block\">\n\t\t<label for=\"sizes1\" class=\"label_sizes\"><span>Сторона А</span></label><input type=\"number\" name=\"size-a\" id=\"sizes1\" placeholder=\"\" value=\"3000\" class=\"sizes1\"><label class=\"label_sm\" for=\"sizes1\">мм.</label>\n\t\t<div class=\"range_div\"><span>0</span> <input name=\"a_side\" type=\"range\" step=\"50\" min=\"0\" max=\"6000\" data-gtm-form-interact-field-id=\"0\" value=\"3000\">\n\t\t<span>6000</span></div>\n\n<div class=\"cl\"></div>\n<div class=\"s_size_bl\">\n\t\t\t<label for=\"sizes2\" class=\"label_sizes\"><span>Сторона В</span></label><input type=\"number\" name=\"size-b\" id=\"sizes2\" placeholder=\"\" value=\"2000\" class=\"sizes2\"><label class=\"label_sm\" for=\"sizes2\">мм.</label>\n\t\t<div class=\"range_div2\"><span>0</span> <input name=\"b_side\" type=\"range\" step=\"50\" min=\"0\" max=\"6000\" data-gtm-form-interact-field-id=\"0\" value=\"2000\">\n\t\t<span>6000</span></div></div>\n\t\t<div class=\"cl\"></div>\n<b class=\"nosizes\">Если размеры не известны, нажмите «Следующий шаг»</b>\n\n</div><div class=\"cl\"></div>\n<div class=\"next_step nx2\">Следующий шаг</div>\n\n\n<div class=\"cl\"></div>\n\n\n\n</div>\n\n<div class=\"step step6\">\n\n<span class=\"step_name\"><span class=\"prev_arr\">←</span>Укажите контактные данные</span>\n<div class=\"cl\"></div>\n<div class=\"left_end_block\">\n</div>\n<div class=\"right_end_block\">\n<div class=\"antiscrew\">\n<b>Расчет стоимости кухни</b><i><strong>Отправьте заявку на расчёт и получите скидку от 35% + духовой шкаф в подарок!</strong></i>\n\t\t<input type=\"tel\" name=\"calc_phone\" placeholder=\"Телефон или WhatsApp\" value=\"\" im-insert=\"true\">\n\t\n<input type=\"submit\" class=\"send_calc\" value=\"Получить расчёт кухни\">\n\n\n<input type=\"hidden\" name=\"calc_type\" value=\"Заявка с калькулятора\">\n<span class=\"soglasie_mini\">Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями <a href=\"/obrabotka_dannyh.pdf\" rel=\"nofollow\">Обработки персональных данных</a> и <a href=\"/policy\" rel=\"nofollow\">политикой конфиденциальности</a></span>\n\n</div>\n</div>\n\n<div class=\"cl\"></div>\n\n</div>\n\n\n</div></form>\n</div>\n</div>\n</div>\n\n<div class=\"wrapper wr100 utpwr\">\n\t<div class=\"wrapper\">\n\t\t<div class=\"toputp\">\n\t\t\t<h2 class=\"top_name\">Ваша кухня со сборкой от 10 дней</h2>\n\t\t\t\t<div class=\"utp_block\">\n\t\t\t\t\t<div class=\"utp\"><span></span>Быстрое изготовление</div>\n\t\t\t\t\t<div class=\"utp\"><span></span>Доставка бесплатно</div>\n\t\t\t\t\t<div class=\"utp\"><span></span>Сборка день в день</div>\n\t\t\t\t\t<div class=\"utp\"><span></span>Гарантия 5&nbsp;лет</div>\n\t\t\t\t\t<div class=\"utp\"><span></span>Техника со скидками до 20%</div>\n\t\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n\n\n\t\n\n<div class=\"catalog\">\n\t<div class=\"wrapper\" id=\"slide_cat\">\n\t<h3 class=\"cath3\">Топ 30 кухонь по рейтингу клиентов</h3> \n\t<div class=\"textcenter\">Любая модель кухни может быть изготовлена под ваши размеры!</div>\n\t\n<div class=\"category\"><div id=\"k_160\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_alisa\"><img alt=\"Кухня Алиса\" src=\"/i/products/cache/376x290_16720271371.jpg\" srcset=\"/i/products/cache/782x650_16720271371.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_alisa\">Кухня Алиса</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Современный</span><br><b>179000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">286400 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-38%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_34\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_larnaka\"><img alt=\"Кухня Ларнака\" src=\"/i/products/cache/376x290_16720279451.jpg\" srcset=\"/i/products/cache/782x650_16720279451.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_larnaka\">Кухня Ларнака</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>109900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">164850 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_275\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-madison-light\"><img alt=\"Кухня Мэдисон Лайт\" src=\"/i/products/cache/376x290_16669344781.jpg\" srcset=\"/i/products/cache/782x650_16669344781.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-madison-light\">Кухня Мэдисон Лайт</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Современный</span><br><b>139900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">207052 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-32%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_20\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_bremen\"><img alt=\"Кухня Бремен\" src=\"/i/products/cache/376x290_20.jpg\" srcset=\"/i/products/cache/782x650_20.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_bremen\">Кухня Бремен</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>154500 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">231750 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_671\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_fran\"><img alt=\"Кухня Фран\" loading=\"lazy\" src=\"/i/products/cache/376x290_novbr22_79_nvk.jpg\" srcset=\"/i/products/cache/782x650_novbr22_79_nvk.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_fran\">Кухня Фран</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>118000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">180540 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_221\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-vaston\"><img alt=\"Кухня Вастон\" loading=\"lazy\" src=\"/i/products/cache/376x290_vitk_37_1.jpg\" srcset=\"/i/products/cache/782x650_vitk_37_1.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-vaston\">Кухня Вастон</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>177000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">283200 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-38%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_127\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_grant\"><img alt=\"Кухня Грант\" loading=\"lazy\" src=\"/i/products/cache/376x290_kitchen_vt45.jpg\" srcset=\"/i/products/cache/782x650_kitchen_vt45.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_grant\">Кухня Грант</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>137000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">202760 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-32%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_15\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_lubimaya\"><img alt=\"Кухня Любимая\" loading=\"lazy\" src=\"/i/products/cache/376x290_16730750311.jpg\" srcset=\"/i/products/cache/782x650_16730750311.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_lubimaya\">Кухня Любимая</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>139500 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">206460 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-32%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_224\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-askol-zhemchug\"><img alt=\"Кухня Асколь жемчуг\" loading=\"lazy\" src=\"/i/products/cache/376x290_vitk_40_1.jpg\" srcset=\"/i/products/cache/782x650_vitk_40_1.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-askol-zhemchug\">Кухня Асколь жемчуг</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Классика</span><br><b>279900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">400257 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-30%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_206\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-alfina\"><img alt=\"Кухня Альфина\" loading=\"lazy\" src=\"/i/products/cache/376x290_vitk_2_1.jpg\" srcset=\"/i/products/cache/782x650_vitk_2_1.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-alfina\">Кухня Альфина</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>219000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">326310 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_284\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-merelin\"><img alt=\"Кухня Мерелин\" loading=\"lazy\" src=\"/i/products/cache/376x290_16694862061.jpg\" srcset=\"/i/products/cache/782x650_16694862061.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-merelin\">Кухня Мерелин</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Современный</span><br><b>119500 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">182835 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_219\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-aleksa\"><img alt=\"Кухня Алекса\" loading=\"lazy\" src=\"/i/products/cache/376x290_vitk_36_1.jpg\" srcset=\"/i/products/cache/782x650_vitk_36_1.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-aleksa\">Кухня Алекса</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Современный</span><br><b>209500 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">303775 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-31%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_632\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_rimi\"><img alt=\"Кухня Рими\" loading=\"lazy\" src=\"/i/products/cache/376x290_novbr22_145_nvk.jpg\" srcset=\"/i/products/cache/782x650_novbr22_145_nvk.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_rimi\">Кухня Рими</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>240400 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">360600 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_132\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_briz\"><img alt=\"Кухня Бриз\" loading=\"lazy\" src=\"/i/products/cache/376x290_kitchen_vt50.jpg\" srcset=\"/i/products/cache/782x650_kitchen_vt50.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_briz\">Кухня Бриз</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Egger&nbsp;·&nbsp;Современный</span><br><b>83000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">128650 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_280\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-andrea\"><img alt=\"Кухня Андрэ\" loading=\"lazy\" src=\"/i/products/cache/376x290_16690412541.jpg\" srcset=\"/i/products/cache/782x650_16690412541.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-andrea\">Кухня Андрэ</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>179900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">287840 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-38%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_657\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_antares\"><img alt=\"Кухня Антарес\" loading=\"lazy\" src=\"/i/products/cache/376x290_novbr22_62_nvk.jpg\" srcset=\"/i/products/cache/782x650_novbr22_62_nvk.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_antares\">Кухня Антарес</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Современный</span><br><b>141300 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">211950 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_277\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-vuddy\"><img alt=\"Кухня Вудди\" loading=\"lazy\" src=\"/i/products/cache/376x290_16669392151.jpg\" srcset=\"/i/products/cache/782x650_16669392151.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-vuddy\">Кухня Вудди</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Egger&nbsp;·&nbsp;Современный</span><br><b>105900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">158850 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_99\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_miya\"><img alt=\"Кухня Мия\" loading=\"lazy\" src=\"/i/products/cache/376x290_kitchen_vt17.jpg\" srcset=\"/i/products/cache/782x650_kitchen_vt17.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_miya\">Кухня Мия</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>194000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">281300 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-31%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_171\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_lebed\"><img alt=\"Кухня Лебедь\" loading=\"lazy\" src=\"/i/products/cache/376x290_16730742831.jpg\" srcset=\"/i/products/cache/782x650_16730742831.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_lebed\">Кухня Лебедь</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>149900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">224850 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_276\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-nevada\"><img alt=\"Кухня Невада\" loading=\"lazy\" src=\"/i/products/cache/376x290_16669388611.jpg\" srcset=\"/i/products/cache/782x650_16669388611.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-nevada\">Кухня Невада</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>123900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">190806 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_32\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_veronika\"><img alt=\"Кухня Вероника\" loading=\"lazy\" src=\"/i/products/cache/376x290_32.jpg\" srcset=\"/i/products/cache/782x650_32.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_veronika\">Кухня Вероника</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Шпон&nbsp;·&nbsp;Классика</span><br><b>140300 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">210450 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_152\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_mona\"><img alt=\"Кухня Мона\" loading=\"lazy\" src=\"/i/products/cache/376x290_kitchen_vt70.jpg\" srcset=\"/i/products/cache/782x650_kitchen_vt70.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_mona\">Кухня Мона</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>176000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">281600 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-38%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_208\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-marlen\"><img alt=\"Кухня Марлен\" loading=\"lazy\" src=\"/i/products/cache/376x290_vitk_25_1.jpg\" srcset=\"/i/products/cache/782x650_vitk_25_1.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-marlen\">Кухня Марлен</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Эмаль&nbsp;·&nbsp;Современный</span><br><b>112000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">171360 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_144\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_nicca\"><img alt=\"Кухня Ницца\" loading=\"lazy\" src=\"/i/products/cache/376x290_kitchen_vt62.jpg\" srcset=\"/i/products/cache/782x650_kitchen_vt62.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_nicca\">Кухня Ницца</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>159000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">238500 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_605\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_estetika\"><img alt=\"Кухня Эстетика\" loading=\"lazy\" src=\"/i/products/cache/376x290_novbr22_12_nvk.jpg\" srcset=\"/i/products/cache/782x650_novbr22_12_nvk.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_estetika\">Кухня Эстетика</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;ЛДСП&nbsp;·&nbsp;Современный</span><br><b>189700 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">311108 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-39%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_620\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_mini_2\"><img alt=\"Кухня Мини 2\" loading=\"lazy\" src=\"/i/products/cache/376x290_novbr22_133_nvk.jpg\" srcset=\"/i/products/cache/782x650_novbr22_133_nvk.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_mini_2\">Кухня Мини 2</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;ЛДСП&nbsp;·&nbsp;Современный</span><br><b>67600 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">108160 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-38%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_191\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya-ampero\"><img alt=\"Кухня Ампэро\" loading=\"lazy\" src=\"/i/products/cache/376x290_vitk_19_1.jpg\" srcset=\"/i/products/cache/782x650_vitk_19_1.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya-ampero\">Кухня Ампэро</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;Egger&nbsp;·&nbsp;Современный</span><br><b>112500 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">172125 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_112\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_byanko\"><img alt=\"Кухня Бьянко\" loading=\"lazy\" src=\"/i/products/cache/376x290_kitchen_vt30.jpg\" srcset=\"/i/products/cache/782x650_kitchen_vt30.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_byanko\">Кухня Бьянко</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Современный</span><br><b>151000 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">226500 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-33%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_663\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_elit\"><img alt=\"Кухня Элит\" loading=\"lazy\" src=\"/i/products/cache/376x290_novbr22_71_nvk.jpg\" srcset=\"/i/products/cache/782x650_novbr22_71_nvk.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_elit\">Кухня Элит</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>327900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">468897 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-30%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div><div id=\"k_24\" class=\"one_modelk one modal10_c\">\n\t\t\t\t\t<a class=\"prod_img\" href=\"/catalog/kuhni/kuhnya_palermo\"><img alt=\"Кухня Палермо\" loading=\"lazy\" src=\"/i/products/cache/376x290_24.jpg\" srcset=\"/i/products/cache/782x650_24.jpg 2x\"></a>\n\t\t\t\t\t<span class=\"price_name\"><a class=\"prodname\" href=\"/catalog/kuhni/kuhnya_palermo\">Кухня Палермо</a> \n\t\t\t\t\t<span class=\"fasady_card\">·&nbsp;МДФ&nbsp;·&nbsp;Классика</span><br><b>124900 рублей</b>\n\t\t\t\t\t<strike class=\"old_price_cat\">192346 рублей</strike>\n\t\t\t\t\t<span class=\"pricetag\">-35%</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t<div class=\"buttons_kitchen\">\n\t\t\t\t\t<a class=\"calc_price_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Рассчитать по размерам</a>\n\t\t\t\t\t<a class=\"project_order_kitchen\" rel=\"nofollow\" href=\"javascript:void(0);\">Заказать проект</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t</div></div><script data-test=\"Y\" type=\"application/ld+json\">\n\n\t\t\t{\"@context\": \"http://schema.org\",\n\t\t\t\t\"@type\": \"Product\",\n\t\t\t\t\"name\": \"Кухни на заказ по индивидуальным размерам\",\n\t\t\t\t\"brand\":\"Вита Кухни\",\n\t\t\t\t\"description\":\"Купите кухню на заказ в Москве от производителя по индивидуальным размерам. Каталог с ценами. Более 350 моделей! Скидки до 55%! Доставка бесплатно!\",\n\t\t\t\t\t\n\t\t\t\t\"image\": \"https://vitakuhni.ru/i/og_image\",\t\t\t \t\t\n\t\t\t\t\"offers\": {\"@type\": \"AggregateOffer\",\n\t\t\t\t\"lowPrice\": \"40000.00\",\n\t\t\t\t\"priceCurrency\": \"RUB\",\n\t\t\t\t\"image\": \"24.jpg\",\n\t\t\t\t\t\t\t\t\t\t\"shippingDetails\": {\n\t\t\t\t\t\"@type\": \"OfferShippingDetails\",\n\t\t\t\t\t\"shippingRate\": {\n\t\t\t\t\t\t\"@type\": \"MonetaryAmount\",\n\t\t\t\t\t\t\"value\": \"0\",\n\t\t\t\t\t\t\"currency\": \"RUB\"\n\t\t\t\t\t},\n\t\t\t\t\t\"shippingDestination\": [{\n\t\t\t\t\t\t\"@type\": \"DefinedRegion\",\n\t\t\t\t\t\t\"addressCountry\": \"RU\",\n\t\t\t\t\t\t\"addressRegion\": [\"Москва\"]\n\t\t\t\t\t}]\n\t\t\t\t},\t\t\t\n\t\t\t\"offers\":[{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_alisa\",\"price\": \"179000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_larnaka\",\"price\": \"109900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-madison-light\",\"price\": \"139900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_bremen\",\"price\": \"154500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_fran\",\"price\": \"118000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-vaston\",\"price\": \"177000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_grant\",\"price\": \"137000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_lubimaya\",\"price\": \"139500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-askol-zhemchug\",\"price\": \"279900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-alfina\",\"price\": \"219000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-merelin\",\"price\": \"119500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-aleksa\",\"price\": \"209500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_rimi\",\"price\": \"240400\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_briz\",\"price\": \"83000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-andrea\",\"price\": \"179900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_antares\",\"price\": \"141300\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-vuddy\",\"price\": \"105900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_miya\",\"price\": \"194000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_lebed\",\"price\": \"149900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-nevada\",\"price\": \"123900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_veronika\",\"price\": \"140300\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_mona\",\"price\": \"176000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-marlen\",\"price\": \"112000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_nicca\",\"price\": \"159000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_estetika\",\"price\": \"189700\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_mini_2\",\"price\": \"67600\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-ampero\",\"price\": \"112500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_byanko\",\"price\": \"151000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_elit\",\"price\": \"327900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_palermo\",\"price\": \"124900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"}]\n\t\t}}\n\t\t\t</script><div class=\"cl\"></div><div class=\"next_kitchens\"><a rel=\"nofollow\" href=\"/catalog/kuhni#k_32\">Показать еще →</a></div><div class=\"cl\"></div>\t</div>\n</div>\n\n\n\n\n<div class=\"zamer\">\n\t<div class=\"wrapper\" id=\"slide_zamer\">\n\t\t<div class=\"left\"><div>Запишитесь</div>в наш шоурум<br>прямо сейчас</div>\n\t\t<div class=\"center\">Приглашаем посетить шоурум для составления дизайн-проекта кухни, выбора материалов, и точного расчета стоимости мебели.</div>\n\t\t<div class=\"right\"><div class=\"button mod_showr\">Записаться в шоурум</div></div>\n\t<div class=\"cl\"></div>\n\t</div>\n</div>\n\n\n<div class=\"questions\">\n\t<div class=\"wrapper\">\n\t<h3>Возникли вопросы?</h3>\n\t<div class=\"form\">\n\t<b>С радостью ответим на них!</b>\n\tПросто оставьте заявку на бесплатный обратный <br>\n\tзвонок нашего менеджера-консультанта.\n\t<form name=\"form_zvon_mp\">\n\t<input type=\"tel\" name=\"phone\" placeholder=\"+7 (___) ___-__-__\" im-insert=\"true\">\n\t<input name=\"type\" value=\"Заявка на звонок по кухне с  сайта Вита Кухни\" type=\"hidden\">\n\t<input type=\"submit\" value=\"Заказать обратный звонок\">\n\t</form>\n\t</div>\n\t</div>\n</div>\n<div class=\"about\">\n<div class=\"rightdum\"></div>\n\t<div class=\"wrapper\" id=\"slide_about\">\n\t<h3>Закажите кухню быстро и удобно</h3>\n\t<div class=\"left\">\n\t\t<div class=\"one ic1\"></div>\n\t\t<div class=\"one ic2\"></div>\n\t\t<div class=\"one ic3\"></div>\n\t\t<div class=\"one ic4\"></div>\n\t\t<div class=\"one ic5\"></div>\n\t</div>\n\t<div class=\"right\">\n\t\t<div class=\"one\"><h4>Для вас работают 23 дизайнера-замерщика в Москве и Области</h4>Приедут в удобное время, составят удобный и красивый проект мебели, который вам точно понравится!</div>\n\t\t\t<div class=\"one\"><h4>Изготовление от 10 дней</h4>В среднем, мы изготавливаем кухню на заказ за 10 рабочих дней по индивидуальному проекту!</div>\n\t\t<div class=\"one\"><h4>Более 3700 материалов на выбор</h4>Основные материалы привозят с собой наши замерщики, когда выезжают для составления проекта кухни.</div>\n\t\t<div class=\"one\"><h4>Менеджеры и конструкторы с опытом работы от 5 лет!</h4>С вами буду работать профессионалы, которые годами создают стильные и эргономичные кухни!</div>\n\t\t<div class=\"one\"><h4>Фабричные цены ниже на 40-55%</h4>Когда вы заказываете мебель не в магазине, а напрямую у производителя — выходит дешевле!</div>\n\t</div>\n\t\t<div class=\"cl\"></div>\n\t\n\t</div>\n</div>\n\n\n\n<div class=\"wrapper wr100 mptxt_wrap\">\n\t<div class=\"wrapper mptxt_wrap\">\n\t\t<div class=\"mp_text\">\n\t\t<h3>Закажите кухню напрямую на фабрике</h3>\n\t\t<p>Добро пожаловать на официальный сайт фабрики мебели Вита Кухни!</p>\n\t\t<p>Мы - производители мебели, специализирующиеся на индивидуальном изготовление. Мы делаем кухни без лишних торговых наценок. Часто бывает так, что наши клиенты экономят сотни тысяч рублей!</p><p>Предлагаем Вам высокое качество кухонной мебели, быстрые сроки изготовление и лучший сервис! В нашем каталоге собраны самые популярные модели кухонных гарнитуров. Вы можете внести любые изменения в каждую кухню, по вашему желанию. Абсолютно каждая кухня или шкаф изготавливается на заказ индивидуально.</p><p>Если у вас уже есть дизайн-проект или план кухни - пришлите его нам на почту, или просто оставьте заявку на сайте.</p>\n\t\t<p></p>\n\t\t</div>\n\t</div>\n</div>\n\n<div class=\"contacts_header\">Контакты</div>\n<div class=\"contacts_map\" id=\"slide_contacts\">\n\n<iframe src=\"https://yandex.ru/map-widget/v1/?lang=ru_RU&amp;scroll=true&amp;source=constructor-api&amp;um=constructor%3Aa83316994d4359fd90446a4821e6db55fc8284bf69d8c78ecc08fe682d68bfaa\" frameborder=\"0\" allowfullscreen=\"true\" width=\"100%\" height=\"450px\" style=\"display: block;\"></iframe><div class=\"cont_block\"><div class=\"top\">\n\t\t\t<b>Москва</b>\n\t\tул. Ленинская Слобода, д. 26, БЦ Омега 2, Корпус С, 4 этаж, офис 417\n\t\t<hr>\n\t\t8 (499) 229-28-08<br>\n\t\t<a rel=\"nofollow\" href=\"mailto:mail@vitakuhni.ru\">mail@vitakuhni.ru</a>\n\t\t\t\n\t\n\t\t</div>\n\t\t\t</div>\n</div>\n\n</div>\n\t<div class=\"cl\"></div>\n\t<!--noindex-->\n\n<div class=\"calc_project_block_modal\">\n<span class=\"prodimg_card\"></span>\n\t<div class=\"vbox_close\"></div>\n<div class=\"left_npb\">\n\t\t<div class=\"name\">Расчет стоимости</div>\n\t\t<p class=\"rasch_txt\"></p>\n</div>\n\t<div class=\"right_npb\">\n\t<form name=\"form_calc_project_modal\">\n\t\t\t<input type=\"tel\" name=\"phone\" placeholder=\"Телефон или WhatsApp\" im-insert=\"true\">\n\t\t\t<textarea name=\"comments\" placeholder=\"Укажите примерные размеры по стенам,\nнапример: угловая кухня 2.5 х 3 м\" im-insert=\"true\"></textarea>\n\t\t\t<input name=\"type\" class=\"leadtypecalc\" value=\"Заявка на расчёт с главной: \" type=\"hidden\">\n\t\t\t<input type=\"submit\" value=\"Рассчитать стоимость\">\n\t\t</form>\n\t\t<span class=\"policy_agree\">Нажимая кнопку «Рассчитать стоимость», я соглашаюсь с условиями <a rel=\"nofollow\" target=\"_blank\" href=\"/policy\">Политики конфиденциальности</a></span>\n\t</div>\n</div>\n\n<div class=\"new_project_block_modal nobg\">\n<span class=\"prodimg_card\"></span>\n\t<div class=\"vbox_close\"></div>\n<div class=\"left_npb\">\n\t\t<div class=\"name txtprojname\"></div>\n\t\t<p>Составим <nobr>дизайн-проект</nobr> по вашим размерам и рассчитаем цену сегодня.<br><b>Оставьте заявку и получите подарок!</b>\n\t\t</p>\n</div>\n\t<div class=\"right_npb\">\n\t<form name=\"form_design_project_modal\">\n\t\t\t<input type=\"tel\" name=\"phone\" placeholder=\"Телефон или WhatsApp\" im-insert=\"true\">\n\t\t\t<input name=\"type\" class=\"leadtypeproj\" value=\"Заявка на дизайн-проект с главной: \" type=\"hidden\">\n\t\t\t<input type=\"submit\" value=\"Заказать проект\">\n\t\t</form>\n\t</div>\n</div>\n\n\t\t<!--/noindex--><div class=\"black_bg\"></div>\n<div class=\"white_bg\"></div>\n<!--noindex-->\n\n<div class=\"modal modal_thanx\">\n\t<div class=\"close\"></div>\n\t<strong>Спасибо за вашу заявку</strong>\n\t<div class=\"text\">Наши менеджеры уже увидели ваше обращение.<br>Скоро один из них вам позвонит!</div>\n\t\t<input type=\"submit\" class=\"close_thanx\" value=\"Хорошо, жду звонка\">\n</div>\n\n\n<!--/noindex-->\n<footer class=\"footer\">\n<div class=\"wrapper\">\n\t<div class=\"logo_bottom\"></div>\n\t<div class=\"left_bottom\">\n\tВита Кухни © 2010-2026<br>Фабрика мебели на заказ<br>\n\t<a rel=\"nofollow\" class=\"footer_tel\" href=\"tel:+74992292808\">\n\t\t8 (499) 229-28-08</a><br>\n\t\t<a rel=\"nofollow\" class=\"footer_mail\" href=\"mailto:mail@vitakuhni.ru\">mail@vitakuhni.ru</a><br>\n\t\t<div>\n\t\t\t<a class=\"soc_icons\" target=\"_blank\" href=\"https://vk.com/vitakuhni\" title=\"Группа Вита Кухни Вконтакте\"><img src=\"/i/vk_ic1.jpg\" alt=\"Группа ВК Вита Кухни\"></a>\n\t\t\t<a class=\"soc_icons\" target=\"_blank\" href=\"https://t.me/vita_kuhni_shkafy_na_zakaz\" title=\"Канал Вита Кухни в Телеграм\"><img src=\"/i/telegram_ic1.jpg\" alt=\"Телеграм канал Вита Кухни\"></a>\n\t\t\t<a class=\"soc_icons\" target=\"_blank\" href=\"https://www.youtube.com/@vitakuhni\" title=\"Youtube канал Вита Кухни\"><img src=\"/i/youtubic1.jpg\" alt=\"Youtube видео канал Вита Кухни\"></a>\n\t\t\n\t\t</div>\n\t\t\t</div><div class=\"left_bottom lb2\">\n\t\t\t<div class=\"bot_menu\">\n\t\t\t<a ref=\"nofollow\" href=\"/o-kompanii\">О компании</a>\n\t\t\t<a ref=\"nofollow\" href=\"/contacts\">Контакты</a>\n\t\t\t<a ref=\"nofollow\" href=\"/garancy\">Гарантии и возврат</a>\n\t\t\t<a ref=\"nofollow\" href=\"/rassrochka\">Рассрочка</a>\n\t\t\t<a ref=\"nofollow\" href=\"/konstruktor_kuhni\"><nobr>3d конструктор кухни</nobr></a>\n\t\t\t<a ref=\"nofollow\" href=\"/konstruktor_shkafa_kupe\"><nobr>3d конструктор шкафа</nobr></a>\n\t\t\t<a ref=\"nofollow\" href=\"https://blog.vitakuhni.ru/\">Блог</a>\n\t\t</div>\n\t\t\t\t<a target=\"_blank\" href=\"/cookies\" class=\"small_text\" rel=\"nofollow\">Используем cookies</a> | \n\t\t<a target=\"_blank\" href=\"/policy\" class=\"small_text\" rel=\"nofollow\">Политика конфиденциальности</a> | \n\t\t<a target=\"_blank\" href=\"/agreement\" class=\"small_text\" rel=\"nofollow\">Пользовательское соглашение</a> | \n\t\t<a target=\"_blank\" href=\"/oferta\" class=\"small_text\" rel=\"nofollow\">Оферта</a><br>\n\t\t<span class=\"copy\">При использовании любых материалов сайта, ссылка на vitakuhni.ru обязательна.</span>\n\t\t<span class=\"copy\">ИНН: 3317026934 / ОГРН: 1173328011230</span>\n\t\t\n\n\t\t\n\t</div>\n\t\t<div class=\"right_bottom\">\n\t\t\t<input type=\"submit\" class=\"cb_button_bottom\" value=\"Заказать обратный звонок\">\n\t\t\t<div class=\"payment\">\n\t\t\t\t<div>Принимаем к оплате</div>\n\t\t\t\t<div class=\"mir_pay\"></div>\n\t\t\t\t<div class=\"visa_pay\"></div>\n\t\t\t\t<div class=\"yandex_pay2\"></div>\n\t\t\t</div>\n\t\t</div>\t\t\n\t<div class=\"cl\"></div>\n\n\n\n</div>\n</footer>\n\n\n\t\n<!--noindex-->\n<div class=\"modal modal1\">\n\t<div class=\"close\"></div>\n\t<div class=\"modal_name_order\">Заказать обратный звонок</div>\n\t<form name=\"form_zvon\">\n\t\t<div class=\"text\">Оставьте заявку на обратный звонок, наши менеджеры свяжутся с вами в ближайшее время, рассчитают стоимость, ответят на все вопросы.</div>\n\t\t<input type=\"tel\" name=\"phone\" placeholder=\"+7 (___) ___-__-__\" im-insert=\"true\">\n\t\t<input name=\"type\" value=\"Заявка на звонок по кухне с сайта Вита Кухни\" type=\"hidden\">\n\t\t<input type=\"submit\" value=\"Заказать звонок\">\n\t\t<span class=\"soglasie_mini\">Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями <a href=\"/obrabotka_dannyh.pdf\" rel=\"nofollow\">Обработки персональных данных</a> и <a href=\"/policy\" rel=\"nofollow\">политикой конфиденциальности</a></span>\n\t</form>\n\t\n\t\n\t\n\t<div class=\"messengers_text\">\n\tмы онлайн в мессенджерах\n\t<div class=\"messengers_icons\"><a rel=\"nofollow\" class=\"ok_icon ok_cl\" target=\"_blank\" href=\"https://ok.ru/group/70000001036272/messages\">ОК</a>\n\t<a rel=\"nofollow\" class=\"viber_icon viber_cl\" target=\"_blank\" href=\"viber://pa?chatURI=vitakuhni\">Viber</a>\n\t<a rel=\"nofollow\" class=\"telegram_icon telegram_cl\" target=\"_blank\" href=\"https://t.me/vitakuhni\">Телеграм</a>\n\t<a rel=\"nofollow\" class=\"vk_icon vl_click\" target=\"_blank\" href=\"https://vk.com/im?media=&amp;sel=-215771419\">ВК</a><a rel=\"nofollow\" class=\"whatsapp_icon whatsapp_cl openwhatsappmodal\" target=\"_blank\" href=\"//api.whatsapp.com/send?phone=79056140350\">WhatsApp</a></div> \n\n<div class=\"messengers_text modalmailtext\">\n<div class=\"nomob\">почта отдела продаж<br></div>\n<a rel=\"nofollow\" class=\"mail\" href=\"mailto:mail@vitakuhni.ru\" title=\"Почта отдела продаж\">mail@vitakuhni.ru</a>\n</div>\n\n<div class=\"zvontext\">\n\t<p class=\"displpc\">для заказа и консультации звоните</p>\n\t <a rel=\"nofollow\" href=\"tel:+74992292808\">8 (499) 229-28-08</a></div>\n\n</div>\n</div>\n<div class=\"modal modal2\">\n\t<div class=\"close\"></div>\n\t<div class=\"modal_name_order\">Оставьте заявку</div>\n\t<div class=\"text2\">Мы перезвоним в ближайшее время, рассчитаем цену, составим дизайн-проект и обсудим все детали.</div>\n\t<form name=\"form_design_project_modal\">\n\t\t<input type=\"tel\" name=\"phone\" placeholder=\"+7 (___) ___-__-__\" im-insert=\"true\">\n\t\t<input name=\"type\" value=\"Заявка на дизайн-проект с сайта Вита Кухни\" type=\"hidden\">\n\t\t<input type=\"submit\" value=\"Отправить заявку\"><span class=\"soglasie_mini\">Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями <a href=\"/obrabotka_dannyh.pdf\" rel=\"nofollow\">Обработки персональных данных</a> и <a href=\"/policy\" rel=\"nofollow\">политикой конфиденциальности</a></span>\n\t</form>\n</div>\n<div class=\"modal modal110\">\n<div class=\"search_close\"></div>\n\t<form action=\"/search/\">\n\t<input type=\"text\" name=\"search\" placeholder=\"Введите строку для поиска\" value=\"\">\n\t\t<input type=\"submit\" value=\"Найти\">\n\t</form>\n</div>\n<div class=\"modal modal8 zamer_modal\">\n\t<div class=\"close\"></div>\n\t<div class=\"modal_name_order\">Закажите выезд замерщика с образцами</div>\n\t<div class=\"text\">Замерщик приедет с образцами материалов и&nbsp;составит проект кухни по вашим размерам.<br>Оставьте заявку и&nbsp;мы перезвоним для согласования даты и&nbsp;времени замера.</div>\n\t<form name=\"form_zamer2\">\n\t\t<input type=\"tel\" name=\"phone\" placeholder=\"+7 (___) ___-__-__\" im-insert=\"true\">\n\t\t<input type=\"submit\" value=\"Заказать замер\">\n\t\t<input name=\"type\" value=\"Заявка на замер кухни с сайта Вита Кухни\" type=\"hidden\">\n\t\t<span class=\"soglasie_mini\">Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями <a href=\"/obrabotka_dannyh.pdf\" rel=\"nofollow\">Обработки персональных данных</a> и <a href=\"/policy\" rel=\"nofollow\">политикой конфиденциальности</a></span>\n\t\t<input type=\"hidden\" name=\"type\" value=\"\">\n\t</form>\n</div>\n\n\n\n\n<div class=\"modaltg modal\">\n\t<div class=\"close\"></div>\n\t<div class=\"modaltg_left\">\n\t<div class=\"modal_name_order\">Уже уходите?</div>\n\t<div class=\"text\">Всё самое интересное в телеграм!<br>Акции, скидки, калькулятор стоимости,  и&nbsp;сотни выполненных работ с ценами!</div>\n\t<a class=\"totg_button\" href=\"https://t.me/+DKT-viH0wNhmNGY6\" target=\"_blank\">Перейти</a>\n\t</div>\n\t<div class=\"modaltg_right\"></div>\n\t<div class=\"cl\"></div>\n</div>\n\n\n\n<div class=\"showroom_form showroom_modal\">\t\n\t<div class=\"vbox_close\"></div>\n\t\t\t\t\t<div class=\"form\">\n\t\t\t\t\t<b>Запишитесь в шоурум</b>\n\t\t\t\t\tВыберите подходящий для вас день и&nbsp;время, и&nbsp;мы перезвоним для подтвердения записи.\n\t\t\t\t\t<form name=\"showroom_page_card\">\n\t\t\t\t\t<input type=\"tel\" name=\"phone\" placeholder=\"+7 (___) ___-__-__\" im-insert=\"true\">\n\t\t\t\t\t<input name=\"datetime-local\" type=\"datetime-local\" class=\"datetimelocal\" value=\"2026-05-02T10:00\">\n\t\t\t\t\t<input name=\"type\" value=\"Запись в шоурум из карточки Вита Кухни\" type=\"hidden\">\n\t\t\t\t\t<input type=\"submit\" value=\"Записаться в шоурум\"><span class=\"soglasie_mini\">Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями <a href=\"/obrabotka_dannyh.pdf\" rel=\"nofollow\">Обработки персональных данных</a> и <a href=\"/policy\" rel=\"nofollow\">политикой конфиденциальности</a></span>\n\t\n\t\t\t\t\t</form>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n<div class=\"modal modal_calculate\">\n\n</div>\n\n<div class=\"modal modal_popup\">\n<div class=\"vbox_close\"></div>\n\n</div>\n\n\n\n\n<div class=\"modal modal_whatsapp\">\n\t<div class=\"close\"></div>\n\n\t<div class=\"modal_watsapp_text\">\n\t<div class=\"modal_watsapp_header\">Выберите удобный вариант:</div>\n\t<div class=\"buttons_wp\">\n\t\t<div class=\"wpb\">\n\t\t\t<a rel=\"nofollow\" class=\"button_browz whatsapp_cl\" target=\"_blank\" href=\"https://web.whatsapp.com/send?phone=79056140350\">WhatApp Web в браузере</a>\n\t\t\t<a rel=\"nofollow\" class=\"button_app whatsapp_cl\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=79056140350\">WhatApp в приложении</a>\n\t\t</div>\n\t\t<div class=\"name_scan\">Или отсканируйте QR-код в телефоне</div>\n\t\t<div class=\"botwpb\">\n\t\t<div class=\"wp_qr\"></div>\n\t\t<ul class=\"wp_qr_text\">\n\t\t<li>1. Откройте камеру на своём телефоне, или приложение для&nbsp;сканировани QR кодов</li>\n\t\t<li>2. Когда ссылка будет найдена - перейдите по ней</li>\n\t\t<li>3. Отправьте первое сообщение для начала диалога</li>\n\t\t</ul>\n\t\t</div>\n\t</div>\n\t</div>\n</div>\n\n<!--/noindex-->\n\n\n\t\t<input type=\"hidden\" name=\"utm-get\" value=\"/?utm_source=No_source&amp;utm_campaign=No_campaign&amp;utm_term=No_term&amp;\">\n\t\t\n\t\t<script>$('.lazy').lazy({threshold: 500});  $('.lazyload').lazy({threshold: 500}); </script>\n\n\n<script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-95LCS5R26W\"></script>\t\n<script>\n\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-95LCS5R26W');\n</script>\t\n\n<script>\nversion=45093;\n\n</script>\t\t\n<script type=\"text/javascript\" src=\"/js/jquery-site.activity.js?v1777620706\"></script>\n<script>\n\t\n\t$(document).ready(function(){\n\t        $('body').activity({\n          'achieveTime':10\n          ,'testPeriod':5\n          ,useMultiMode: 1\n          ,callBack: function (e) {\n\n            $.cookie('25sec', \"yes\", { expires: 90, path: '/' });\n          }\n        });\n        });\n    \n</script>\n\n<div class=\"lbox_wrapper\">\n\t\t<div class=\"lbox_close\"></div>\n\t<div class=\"lbox_inner\">\n\t</div>\n\t\n</div>\n<div style=\"display:none\" class=\"version\">45093</div>\n\n\n<script src=\"//code.jivo.ru/widget/2Om7lqoXpt\" async=\"\"></script>\n<!--<script type=\"text/javascript\" async src=\"https://app.uiscom.ru/static/cs.min.js?k=66t8BKfGAKWcuTBt253l57HTPGddd9Gv\"></script>-->\n\n\n<!-- Cookie Consent Banner: vitakuhni.ru -->\n<div id=\"cookie-consent\" role=\"dialog\" aria-live=\"polite\" aria-label=\"Согласие на использование cookie\" style=\"position: fixed; top: ; right: ; left: ; bottom: 0px; z-index: 2147483647; display: block;\">\n  <div style=\"\n    box-sizing:border-box; max-width:560px; margin:0 auto; padding:12px 16px;\n    background:rgba(72,70,70,1); color:#fff; font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;\n    box-shadow:0 -8px 24px rgba(0,0,0,.2); border-radius:12px 12px 0 0;\">\n    <p style=\"margin:0 0 8px 0;\">\n      Мы используем <b>cookie</b>, чтобы сайт работал корректно и удобнее для вас.\n      Продолжая пользоваться сайтом, вы соглашаетесь с использованием cookie. Подробнее —\n      <a href=\"https://vitakuhni.ru/cookies\" target=\"_blank\" rel=\"noopener\" style=\"color:#8ecaff; text-underline-offset:2px;\">политика cookie</a>.\n    </p>\n    <div style=\"display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap;\">\n      <button id=\"cookie-consent-accept\" type=\"button\" style=\"\n        -webkit-appearance:none; appearance:none; cursor:pointer;\n        padding:8px 14px; border:0; border-radius:8px;\n        background:#83bc33; color:#fff; font-weight:600;\">\n        Согласен\n      </button>\n      <button id=\"cookie-consent-close\" type=\"button\" aria-label=\"Скрыть уведомление\" style=\"\n        -webkit-appearance:none; appearance:none; cursor:pointer;\n        padding:8px 10px; border:1px solid rgba(255,255,255,.25); border-radius:8px;\n        background:transparent; color:#fff;\">\n        Закрыть\n      </button>\n    </div>\n  </div>\n</div>\n\n\n\n\n<div id=\"lightboxOverlay\" tabindex=\"-1\" class=\"lightboxOverlay\" style=\"display: none;\"></div><div id=\"lightbox\" tabindex=\"-1\" class=\"lightbox\" style=\"display: none;\"><div class=\"lb-outerContainer\"><div class=\"lb-container\"><img class=\"lb-image\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"><div class=\"lb-nav\"><a class=\"lb-prev\" aria-label=\"Previous image\" href=\"\"></a><a class=\"lb-next\" aria-label=\"Next image\" href=\"\"></a></div><div class=\"lb-loader\"><a class=\"lb-cancel\"></a></div></div></div><div class=\"lb-dataContainer\"><div class=\"lb-data\"><div class=\"lb-details\"><span class=\"lb-caption\"></span><span class=\"lb-number\"></span></div><div class=\"lb-closeContainer\"><a class=\"lb-close\"></a></div></div></div></div></body></html>",
+  "text": "Индивидуальные кухни на заказ от производителя в Москве | Вита Кухни 0 8 (499) 229-28-08 Москва WhatsApp +7 (905) 614-03-50 mail@vitakuhni.ru Каталог Кухни Шкафы-купе Шкафы распашные Стенки для гостиной Прихожие Мебель на заказ Рассчитать цену В шоурум Заказать замер Заказать проект Прислать проект Клиентам Рассрочка О компании Порядок работы Гарантия Вопрос-ответ Блог 3d конструктор кухни 3d конструктор шкафа-купе Контакты 0 Индивидуальные кухни от 10 дней напрямую от производителя 👍 Духовой шкаф в подарок до 13 мая 🎉 Скидки 35-55% до 16 мая Рассчитать цену кухни Классические кухни Современные кухни Рассчитать цену кухни Заказать дизайн-проект Записаться в шоурум Вызвать замерщика Показать все кухни → Рассчитайте цену вашей кухни прямо сейчас Какой формы будет кухня? Прямая Угловая Полуостров Двухрядная Следующий шаг ← Выберите материал фасадов Egger Экопластик Пластик Эмаль Шпон / Массив Следующий шаг ← Выберите столешницу Стандарт Стандарт 38мм Egger 38мм Искусственный камень Следующий шаг ← Выберите класс фурнитуры Оптимально Стандарт Комфорт Премиум Следующий шаг ← Укажите размеры кухни по стенам Сторона А мм. 0 6000 Сторона В мм. 0 6000 Если размеры не известны, нажмите «Следующий шаг» Следующий шаг ← Укажите контактные данные Расчет стоимости кухни Отправьте заявку на расчёт и получите скидку от 35% + духовой шкаф в подарок! Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями Обработки персональных данных и политикой конфиденциальности Ваша кухня со сборкой от 10 дней Быстрое изготовление Доставка бесплатно Сборка день в день Гарантия 5 лет Техника со скидками до 20% Топ 30 кухонь по рейтингу клиентов Любая модель кухни может быть изготовлена под ваши размеры! Кухня Алиса · МДФ · Современный 179000 рублей 286400 рублей -38% Рассчитать по размерам Заказать проект Кухня Ларнака · МДФ · Классика 109900 рублей 164850 рублей -33% Рассчитать по размерам Заказать проект Кухня Мэдисон Лайт · МДФ · Современный 139900 рублей 207052 рублей -32% Рассчитать по размерам Заказать проект Кухня Бремен · МДФ · Классика 154500 рублей 231750 рублей -33% Рассчитать по размерам Заказать проект Кухня Фран · МДФ · Классика 118000 рублей 180540 рублей -35% Рассчитать по размерам Заказать проект Кухня Вастон · Эмаль · Современный 177000 рублей 283200 рублей -38% Рассчитать по размерам Заказать проект Кухня Грант · МДФ · Классика 137000 рублей 202760 рублей -32% Рассчитать по размерам Заказать проект Кухня Любимая · МДФ · Классика 139500 рублей 206460 рублей -32% Рассчитать по размерам Заказать проект Кухня Асколь жемчуг · Эмаль · Классика 279900 рублей 400257 рублей -30% Рассчитать по размерам Заказать проект Кухня Альфина · Эмаль · Современный 219000 рублей 326310 рублей -33% Рассчитать по размерам Заказать проект Кухня Мерелин · МДФ · Современный 119500 рублей 182835 рублей -35% Рассчитать по размерам Заказать проект Кухня Алекса · МДФ · Современный 209500 рублей 303775 рублей -31% Рассчитать по размерам Заказать проект Кухня Рими · Эмаль · Современный 240400 рублей 360600 рублей -33% Рассчитать по размерам Заказать проект Кухня Бриз · Egger · Современный 83000 рублей 128650 рублей -35% Рассчитать по размерам Заказать проект Кухня Андрэ · Эмаль · Современный 179900 рублей 287840 рублей -38% Рассчитать по размерам Заказать проект Кухня Антарес · МДФ · Современный 141300 рублей 211950 рублей -33% Рассчитать по размерам Заказать проект Кухня Вудди · Egger · Современный 105900 рублей 158850 рублей -33% Рассчитать по размерам Заказать проект Кухня Мия · Эмаль · Современный 194000 рублей 281300 рублей -31% Рассчитать по размерам Заказать проект Кухня Лебедь · МДФ · Классика 149900 рублей 224850 рублей -33% Рассчитать по размерам Заказать проект Кухня Невада · Эмаль · Современный 123900 рублей 190806 рублей -35% Рассчитать по размерам Заказать проект Кухня Вероника · Шпон · Классика 140300 рублей 210450 рублей -33% Рассчитать по размерам Заказать проект Кухня Мона · МДФ · Классика 176000 рублей 281600 рублей -38% Рассчитать по размерам Заказать проект Кухня Марлен · Эмаль · Современный 112000 рублей 171360 рублей -35% Рассчитать по размерам Заказать проект Кухня Ницца · МДФ · Классика 159000 рублей 238500 рублей -33% Рассчитать по размерам Заказать проект Кухня Эстетика · ЛДСП · Современный 189700 рублей 311108 рублей -39% Рассчитать по размерам Заказать проект Кухня Мини 2 · ЛДСП · Современный 67600 рублей 108160 рублей -38% Рассчитать по размерам Заказать проект Кухня Ампэро · Egger · Современный 112500 рублей 172125 рублей -35% Рассчитать по размерам Заказать проект Кухня Бьянко · МДФ · Современный 151000 рублей 226500 рублей -33% Рассчитать по размерам Заказать проект Кухня Элит · МДФ · Классика 327900 рублей 468897 рублей -30% Рассчитать по размерам Заказать проект Кухня Палермо · МДФ · Классика 124900 рублей 192346 рублей -35% Рассчитать по размерам Заказать проект Показать еще → Запишитесь в наш шоурум прямо сейчас Приглашаем посетить шоурум для составления дизайн-проекта кухни, выбора материалов, и точного расчета стоимости мебели. Записаться в шоурум Возникли вопросы? С радостью ответим на них! Просто оставьте заявку на бесплатный обратный звонок нашего менеджера-консультанта. Закажите кухню быстро и удобно Для вас работают 23 дизайнера-замерщика в Москве и Области Приедут в удобное время, составят удобный и красивый проект мебели, который вам точно понравится! Изготовление от 10 дней В среднем, мы изготавливаем кухню на заказ за 10 рабочих дней по индивидуальному проекту! Более 3700 материалов на выбор Основные материалы привозят с собой наши замерщики, когда выезжают для составления проекта кухни. Менеджеры и конструкторы с опытом работы от 5 лет! С вами буду работать профессионалы, которые годами создают стильные и эргономичные кухни! Фабричные цены ниже на 40-55% Когда вы заказываете мебель не в магазине, а напрямую у производителя — выходит дешевле! Закажите кухню напрямую на фабрике Добро пожаловать на официальный сайт фабрики мебели Вита Кухни! Мы - производители мебели, специализирующиеся на индивидуальном изготовление. Мы делаем кухни без лишних торговых наценок. Часто бывает так, что наши клиенты экономят сотни тысяч рублей! Предлагаем Вам высокое качество кухонной мебели, быстрые сроки изготовление и лучший сервис! В нашем каталоге собраны самые популярные модели кухонных гарнитуров. Вы можете внести любые изменения в каждую кухню, по вашему желанию. Абсолютно каждая кухня или шкаф изготавливается на заказ индивидуально. Если у вас уже есть дизайн-проект или план кухни - пришлите его нам на почту, или просто оставьте заявку на сайте. Контакты Москва ул. Ленинская Слобода, д. 26, БЦ Омега 2, Корпус С, 4 этаж, офис 417 8 (499) 229-28-08 mail@vitakuhni.ru Расчет стоимости Нажимая кнопку «Рассчитать стоимость», я соглашаюсь с условиями Политики конфиденциальности Составим дизайн-проект по вашим размерам и рассчитаем цену сегодня. Оставьте заявку и получите подарок! Спасибо за вашу заявку Наши менеджеры уже увидели ваше обращение. Скоро один из них вам позвонит! Вита Кухни © 2010-2026 Фабрика мебели на заказ 8 (499) 229-28-08 mail@vitakuhni.ru О компании Контакты Гарантии и возврат Рассрочка 3d конструктор кухни 3d конструктор шкафа Блог Используем cookies | Политика конфиденциальности | Пользовательское соглашение | Оферта При использовании любых материалов сайта, ссылка на vitakuhni.ru обязательна. ИНН: 3317026934 / ОГРН: 1173328011230 Принимаем к оплате Заказать обратный звонок Оставьте заявку на обратный звонок, наши менеджеры свяжутся с вами в ближайшее время, рассчитают стоимость, ответят на все вопросы. Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями Обработки персональных данных и политикой конфиденциальности мы онлайн в мессенджерах ОК Viber Телеграм ВК WhatsApp почта отдела продаж mail@vitakuhni.ru для заказа и консультации звоните 8 (499) 229-28-08 Оставьте заявку Мы перезвоним в ближайшее время, рассчитаем цену, составим дизайн-проект и обсудим все детали. Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями Обработки персональных данных и политикой конфиденциальности Закажите выезд замерщика с образцами Замерщик приедет с образцами материалов и составит проект кухни по вашим размерам. Оставьте заявку и мы перезвоним для согласования даты и времени замера. Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями Обработки персональных данных и политикой конфиденциальности Уже уходите? Всё самое интересное в телеграм! Акции, скидки, калькулятор стоимости, и сотни выполненных работ с ценами! Перейти Запишитесь в шоурум Выберите подходящий для вас день и время, и мы перезвоним для подтвердения записи. Нажимая на кнопку «Оставить заявку», вы соглашаетесь с условиями Обработки персональных данных и политикой конфиденциальности Выберите удобный вариант: WhatApp Web в браузере WhatApp в приложении Или отсканируйте QR-код в телефоне 1. Откройте камеру на своём телефоне, или приложение для сканировани QR кодов 2. Когда ссылка будет найдена - перейдите по ней 3. Отправьте первое сообщение для начала диалога 45093 Мы используем cookie , чтобы сайт работал корректно и удобнее для вас. Продолжая пользоваться сайтом, вы соглашаетесь с использованием cookie. Подробнее — политика cookie . Согласен Закрыть",
+  "json_ld": [
+    "{\"@context\": \"http://schema.org\", \"@type\": \"Product\", \"name\": \"Кухни на заказ по индивидуальным размерам\", \"brand\":\"Вита Кухни\", \"description\":\"Купите кухню на заказ в Москве от производителя по индивидуальным размерам. Каталог с ценами. Более 350 моделей! Скидки до 55%! Доставка бесплатно!\", \"image\": \"https://vitakuhni.ru/i/og_image\", \"offers\": {\"@type\": \"AggregateOffer\", \"lowPrice\": \"40000.00\", \"priceCurrency\": \"RUB\", \"image\": \"24.jpg\", \"shippingDetails\": { \"@type\": \"OfferShippingDetails\", \"shippingRate\": { \"@type\": \"MonetaryAmount\", \"value\": \"0\", \"currency\": \"RUB\" }, \"shippingDestination\": [{ \"@type\": \"DefinedRegion\", \"addressCountry\": \"RU\", \"addressRegion\": [\"Москва\"] }] }, \"offers\":[{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_alisa\",\"price\": \"179000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_larnaka\",\"price\": \"109900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-madison-light\",\"price\": \"139900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_bremen\",\"price\": \"154500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_fran\",\"price\": \"118000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-vaston\",\"price\": \"177000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_grant\",\"price\": \"137000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_lubimaya\",\"price\": \"139500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-askol-zhemchug\",\"price\": \"279900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-alfina\",\"price\": \"219000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-merelin\",\"price\": \"119500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-aleksa\",\"price\": \"209500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_rimi\",\"price\": \"240400\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_briz\",\"price\": \"83000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-andrea\",\"price\": \"179900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_antares\",\"price\": \"141300\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-vuddy\",\"price\": \"105900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_miya\",\"price\": \"194000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_lebed\",\"price\": \"149900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-nevada\",\"price\": \"123900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_veronika\",\"price\": \"140300\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_mona\",\"price\": \"176000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-marlen\",\"price\": \"112000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_nicca\",\"price\": \"159000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_estetika\",\"price\": \"189700\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_mini_2\",\"price\": \"67600\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya-ampero\",\"price\": \"112500\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_byanko\",\"price\": \"151000\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_elit\",\"price\": \"327900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"},{\"@type\": \"Offer\", \"url\": \"/catalog/kuhni/kuhnya_palermo\",\"price\": \"124900\",\"priceCurrency\": \"RUB\",\"availability\":\"InStock\"}] }}"
+  ],
+  "document": {
+    "title": "Индивидуальные кухни на заказ от производителя в Москве | Вита Кухни",
+    "meta_description": "Кухни от производителя по индивидуальным размерам на заказ в Москве. Низкие цены, изготовление от 10 дней, сборка, бесплатная доставка, 5 лет гарантии!",
+    "meta_robots": "index, follow",
+    "viewport": "width=device-width, viewport-fit=cover",
+    "canonical": "https://vitakuhni.ru",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/cart",
+        "text": "0",
+        "rel": ""
+      },
+      {
+        "href": "tel:8 (499) 229-28-08",
+        "text": "8 (499) 229-28-08",
+        "rel": ""
+      },
+      {
+        "href": "//api.whatsapp.com/send?phone=79056140350",
+        "text": "WhatsApp +7 (905) 614-03-50",
+        "rel": ""
+      },
+      {
+        "href": "mailto:mail@vitakuhni.ru",
+        "text": "mail@vitakuhni.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/catalog/kuhni",
+        "text": "Кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/catalog/shkafy-kupe",
+        "text": "Шкафы-купе",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/catalog/shkafy-raspashnye",
+        "text": "Шкафы распашные",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/catalog/stenki-dlya-gostinoy",
+        "text": "Стенки для гостиной",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/catalog/prikhozhie",
+        "text": "Прихожие",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/mebel-na-zakaz",
+        "text": "Мебель на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/calculate",
+        "text": "Рассчитать цену",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://vitakuhni.ru/zapis-v-showroom",
+        "text": "В шоурум",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/zakazat-zamer-kuhni",
+        "text": "Заказать замер",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/zakazat-dizain-proekt",
+        "text": "Заказать проект",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/prislat-design-project",
+        "text": "Прислать проект",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/rassrochka",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/o-kompanii",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/poryadok-raboty",
+        "text": "Порядок работы",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/garancy",
+        "text": "Гарантия",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/faq",
+        "text": "Вопрос-ответ",
+        "rel": ""
+      },
+      {
+        "href": "https://blog.vitakuhni.ru",
+        "text": "Блог",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/konstruktor_kuhni",
+        "text": "3d конструктор кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/konstruktor_shkafa_kupe",
+        "text": "3d конструктор шкафа-купе",
+        "rel": ""
+      },
+      {
+        "href": "https://vitakuhni.ru/contacts",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/cart",
+        "text": "0",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "Рассчитать цену кухни",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/klassicheskie-kuhni",
+        "text": "Классические кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/sovremennye-kuhni",
+        "text": "Современные кухни",
+        "rel": ""
+      },
+      {
+        "href": "#calc",
+        "text": "Рассчитать цену кухни",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/zakazat-dizain-proekt",
+        "text": "Заказать дизайн-проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/zapis-v-showroom",
+        "text": "Записаться в шоурум",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/zakazat-zamer-kuhni",
+        "text": "Вызвать замерщика",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni",
+        "text": "Показать все кухни →",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/obrabotka_dannyh.pdf",
+        "text": "Обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "политикой конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_alisa",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_alisa",
+        "text": "Кухня Алиса",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_larnaka",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_larnaka",
+        "text": "Кухня Ларнака",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-madison-light",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-madison-light",
+        "text": "Кухня Мэдисон Лайт",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_bremen",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_bremen",
+        "text": "Кухня Бремен",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_fran",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_fran",
+        "text": "Кухня Фран",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-vaston",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-vaston",
+        "text": "Кухня Вастон",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_grant",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_grant",
+        "text": "Кухня Грант",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_lubimaya",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_lubimaya",
+        "text": "Кухня Любимая",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-askol-zhemchug",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-askol-zhemchug",
+        "text": "Кухня Асколь жемчуг",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-alfina",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-alfina",
+        "text": "Кухня Альфина",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-merelin",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-merelin",
+        "text": "Кухня Мерелин",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-aleksa",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-aleksa",
+        "text": "Кухня Алекса",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_rimi",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_rimi",
+        "text": "Кухня Рими",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_briz",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_briz",
+        "text": "Кухня Бриз",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-andrea",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-andrea",
+        "text": "Кухня Андрэ",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_antares",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_antares",
+        "text": "Кухня Антарес",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-vuddy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-vuddy",
+        "text": "Кухня Вудди",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_miya",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_miya",
+        "text": "Кухня Мия",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_lebed",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_lebed",
+        "text": "Кухня Лебедь",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-nevada",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-nevada",
+        "text": "Кухня Невада",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_veronika",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_veronika",
+        "text": "Кухня Вероника",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_mona",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_mona",
+        "text": "Кухня Мона",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-marlen",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-marlen",
+        "text": "Кухня Марлен",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_nicca",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_nicca",
+        "text": "Кухня Ницца",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_estetika",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_estetika",
+        "text": "Кухня Эстетика",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_mini_2",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_mini_2",
+        "text": "Кухня Мини 2",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-ampero",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya-ampero",
+        "text": "Кухня Ампэро",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_byanko",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_byanko",
+        "text": "Кухня Бьянко",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_elit",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_elit",
+        "text": "Кухня Элит",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_palermo",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/kuhnya_palermo",
+        "text": "Кухня Палермо",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Рассчитать по размерам",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Заказать проект",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhni#k_32",
+        "text": "Показать еще →",
+        "rel": "nofollow"
+      },
+      {
+        "href": "mailto:mail@vitakuhni.ru",
+        "text": "mail@vitakuhni.ru",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "Политики конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tel:+74992292808",
+        "text": "8 (499) 229-28-08",
+        "rel": "nofollow"
+      },
+      {
+        "href": "mailto:mail@vitakuhni.ru",
+        "text": "mail@vitakuhni.ru",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://vk.com/vitakuhni",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/vita_kuhni_shkafy_na_zakaz",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/@vitakuhni",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/o-kompanii",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/contacts",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/garancy",
+        "text": "Гарантии и возврат",
+        "rel": ""
+      },
+      {
+        "href": "/rassrochka",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "/konstruktor_kuhni",
+        "text": "3d конструктор кухни",
+        "rel": ""
+      },
+      {
+        "href": "/konstruktor_shkafa_kupe",
+        "text": "3d конструктор шкафа",
+        "rel": ""
+      },
+      {
+        "href": "https://blog.vitakuhni.ru/",
+        "text": "Блог",
+        "rel": ""
+      },
+      {
+        "href": "/cookies",
+        "text": "Используем cookies",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/agreement",
+        "text": "Пользовательское соглашение",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/oferta",
+        "text": "Оферта",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/obrabotka_dannyh.pdf",
+        "text": "Обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "политикой конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://ok.ru/group/70000001036272/messages",
+        "text": "ОК",
+        "rel": "nofollow"
+      },
+      {
+        "href": "viber://pa?chatURI=vitakuhni",
+        "text": "Viber",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://t.me/vitakuhni",
+        "text": "Телеграм",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://vk.com/im?media=&sel=-215771419",
+        "text": "ВК",
+        "rel": "nofollow"
+      },
+      {
+        "href": "//api.whatsapp.com/send?phone=79056140350",
+        "text": "WhatsApp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "mailto:mail@vitakuhni.ru",
+        "text": "mail@vitakuhni.ru",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tel:+74992292808",
+        "text": "8 (499) 229-28-08",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/obrabotka_dannyh.pdf",
+        "text": "Обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "политикой конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/obrabotka_dannyh.pdf",
+        "text": "Обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "политикой конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://t.me/+DKT-viH0wNhmNGY6",
+        "text": "Перейти",
+        "rel": ""
+      },
+      {
+        "href": "/obrabotka_dannyh.pdf",
+        "text": "Обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/policy",
+        "text": "политикой конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://web.whatsapp.com/send?phone=79056140350",
+        "text": "WhatApp Web в браузере",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://api.whatsapp.com/send?phone=79056140350",
+        "text": "WhatApp в приложении",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://vitakuhni.ru/cookies",
+        "text": "политика cookie",
+        "rel": "noopener"
+      }
+    ],
+    "button_texts": [
+      "Согласен",
+      "Закрыть"
+    ],
+    "h1_texts": [
+      "Индивидуальные кухни"
+    ],
+    "h2_texts": [
+      "Рассчитайте цену вашей кухни прямо сейчас",
+      "Ваша кухня со сборкой от 10 дней"
+    ],
+    "h3_texts": [
+      "Топ 30 кухонь по рейтингу клиентов",
+      "Возникли вопросы?",
+      "Закажите кухню быстро и удобно",
+      "Закажите кухню напрямую на фабрике"
+    ],
+    "counts": {
+      "paragraph": 9,
+      "h1": 1,
+      "h2": 2,
+      "h3": 4,
+      "link": 198,
+      "image": 41,
+      "list_item": 25,
+      "strong": 60,
+      "form": 10,
+      "input": 54
+    }
+  }
+}

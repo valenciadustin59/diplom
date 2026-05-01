@@ -1,0 +1,1282 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://nedorogo-kuhni.ru/otzyvy/shkafy-kupe",
+  "final_url": "https://nedorogo-kuhni.ru/otzyvy/shkafy-kupe",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "connection": "keep-alive",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 15:10:40 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx/1.16.1",
+    "set-cookie": "kitchen=b4903c5e951d615bfee720259ed20e54; expires=Fri, 08-May-2026 15:10:40 GMT; Max-Age=604800; path=/; domain=.nedorogo-kuhni.ru; HttpOnly",
+    "strict-transport-security": "max-age=31536000;",
+    "transfer-encoding": "chunked",
+    "x-powered-by": "PHP/7.1.22"
+  },
+  "response_time_ms": 4769.1372,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:10:44.612053+00:00",
+  "html": "<!DOCTYPE html><html><head>\n    <meta charset=\"UTF-8\">\n\t<title>Отзывы о шкафах-купе от реальных покупателей</title>\n\t<base href=\"https://nedorogo-kuhni.ru/\">\n\t<meta name=\"description\" content=\"Не знаете где заказать и какие выбрать шкафы-купе, тогда прочитайте отзывы наших клиентов об товарах компании «Кухни Недорого». Мы подберем вам шкаф-купе по приемлемой цене, звоните.\">\n\t<meta name=\"keywords\" content=\"отзывы о шкафах-купе от реальных покупателей\">\n\t    \n    \n    \n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"theme-color\" content=\"#fff\">\n    <meta name=\"format-detection\" content=\"telephone=no\">\n    <meta property=\"og:type\" content=\"website\">\n\t<meta property=\"og:url\" content=\"otzyvy/shkafy-kupe\">\n\t<meta property=\"og:image\" content=\"assets/template/img/logo.png\">\n\t<meta property=\"og:site_name\" content=\"Кухни недорого\">\n\t<meta property=\"og:title\" content=\"Отзывы о шкафах-купе от реальных покупателей\">\n\t<meta property=\"og:description\" content=\"Не знаете где заказать и какие выбрать шкафы-купе, тогда прочитайте отзывы наших клиентов об товарах компании «Кухни Недорого». Мы подберем вам шкаф-купе по приемлемой цене, звоните.\">\n    <link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\">\n    <link rel=\"stylesheet\" media=\"all\" href=\"assets/template/css/app.css?v=7\">\n    <link rel=\"stylesheet\" media=\"print\" href=\"assets/template/css/print.css\">\n<link rel=\"stylesheet\" href=\"/assets/components/ajaxform/css/default.css\" type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/assets/components/msearch2/css/web/default.css\" type=\"text/css\">\n<script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script type=\"text/javascript\">TicketsConfig={\"ctx\":\"web\",\"jsUrl\":\"\\/assets\\/components\\/tickets\\/js\\/web\\/\",\"cssUrl\":\"\\/assets\\/components\\/tickets\\/css\\/web\\/\",\"actionUrl\":\"\\/assets\\/components\\/tickets\\/action.php\",\"close_all_message\":\"\\u0437\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c \\u0432\\u0441\\u0435\",\"tpanel\":0,\"enable_editor\":0};</script>\n<link rel=\"canonical\" href=\"https://nedorogo-kuhni.ru/otzyvy/shkafy-kupe\">\n<link rel=\"next\" href=\"https://nedorogo-kuhni.ru/otzyvy/shkafy-kupe?page=2\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/components/tickets/js/web/lib/prettify/prettify.css\"></head>\n\n<body>\n    <!-- begin header -->\n<header class=\"header\">\n    <!-- begin top-menu -->\n    <div class=\"top-menu\">\n        <div class=\"container\">\n            <div class=\"menu-button\">\n                <span class=\"line\"></span>\n                <span class=\"line\"></span>\n                <span class=\"line\"></span>\n            </div>\n            <nav>\n                <ul class=\"top-menu-list\"><li class=\"first\"><i class=\"icon-top-menu9\"></i><a href=\"o-kompanii\">О нас</a></li><li class=\"dropdown\"><i class=\"icon-top-menu1\"></i><a>Информация</a><ul><div><a href=\"proizvodstvo\">Производство</a></div><div><a href=\"foto-realizovannyh-obektov\">Фото готовых дизайн-проектов</a></div><div><a href=\"poleznoe-video\">Видео установленных кухонь</a></div><div><a href=\"proektirovanie\">Дизайн проект</a></div><div><a href=\"zamer\">Замер</a></div><div><a href=\"dogovor\">Договор и акт</a></div><div><a href=\"pravila-ekspluatacii\">Правила эксплуатации</a></div><div><a href=\"otdelki\">Отделки</a></div><div><a href=\"rassrochka-i-kredit\">Рассрочка и кредит</a></div><div><a href=\"napolnenie-shkafov-kupe\">Наполнение шкафов-купе</a></div><div><a href=\"vopros-otvet\">Вопрос-ответ</a></div><div><a href=\"sertifikaty\">Сертификаты</a></div><div><a href=\"stati\">Статьи</a></div></ul></li><li><i class=\"icon-top-menu3\"></i><a href=\"dostavka-i-oplata\">Доставка и оплата</a></li><li><i class=\"icon-top-menu4\"></i><a href=\"garantiya\">Гарантия</a></li><li><i class=\"icon-top-menu10\"></i><a href=\"akcii\">Акции</a></li><li class=\"dropdown\"><i class=\"icon-top-menu11\"></i><a>Цены и сроки</a><ul><div><a href=\"ceny-i-sroki-izgotovleniya\">Мебель</a></div><div><a href=\"sborka\">Сборка</a></div><div><a href=\"komplektuyushhie\">Комплектующие</a></div></ul></li><li><i class=\"icon-top-menu6\"></i><a href=\"otzyvy\">Отзывы</a></li><li><i class=\"icon-top-menu7\"></i><a href=\"kak-kupit\">Как купить?</a></li><li class=\"last\"><i class=\"icon-top-menu8\"></i><a href=\"kontakty\">Контакты</a></li></ul>\n                \n            <form action=\"rezultaty-poiska\" method=\"get\" class=\"form-search-2\">\n    <div class=\"search-inner\">\n        <input type=\"text\" placeholder=\"поиск\" name=\"query\" value=\"\">\n        <button type=\"submit\"><i class=\"icon-search\"></i></button>\n    </div>\n</form></nav>\n        </div>\n    </div>\n    <!-- end top-menu -->\n    <!-- begin middle-header -->\n    <div class=\"middle-header\">\n        <div class=\"container\">\n            <div class=\"middle-header-inner\">\n                <div class=\"logo\">\n                    <a href=\"/\"><img src=\"https://nedorogo-kuhni.ru/assets/template/img/logo.png\" alt=\"Кухни недорого\"></a>\n                </div>\n                <div class=\"phones-wrap\">\n                <div class=\"header-phones\">\n                    <div class=\"phone-item\">\n                        <i class=\"icon-header-phone\"></i>\n                        <div class=\"phone-item-info\">\n                            <a href=\"tel:+74991301209\" class=\"phone\">+7 499 130-12-09</a>\n                            \n                            <div class=\"timework\">\n                                <i class=\"icon-time\"></i> <span>Пн — Вс: с 10<sup>00</sup> до 20<sup>00</sup></span>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"phone-item\">\n                        <i class=\"icon-header-phone\"></i>\n                        <div class=\"phone-item-info\">\n                            <a href=\"tel:+79035084795\" class=\"phone\">+7 903 508-47-95</a>\n                            <div class=\"timework\"><a href=\"mailto:info@nedorogo-kuhni.ru\" style=\"color: #000; text-decoration: none;\">info@nedorogo-kuhni.ru</a></div>\n                        </div>\n                    </div>\n                    \n                    <div class=\"phone-item header-zamer-wrap\">\n                        <i class=\"icon-zamer\"></i>\n                        <a href=\"#\" class=\"header-zamer\" rel=\"nofollow\">Вызов замерщика<br> БЕСПЛАТНО</a>\n                    </div>\n                     <div class=\"phone-item header-rating\"><iframe src=\"https://yandex.ru/sprav/widget/rating-badge/60709095870?type=rating\" width=\"150\" height=\"50\" frameborder=\"0\"></iframe></div>\n                </div>\n                <div class=\"header-label\">Создадим дизайн-проект и изготовим мебель на заказ по вашим размерам</div>\n                </div>\n                <form method=\"post\" class=\"ajax-form header-form ajax_form\">\n    \n    <input type=\"text\" name=\"surname\" class=\"form-input\" placeholder=\"Фамилия\">\n    <input type=\"tel\" name=\"ph0ne\" placeholder=\"номер тeлeфoна\" autocomplete=\"false\">\n    <button type=\"submit\" class=\"btn\">перезвоните мне</button>\n\n\t<input type=\"hidden\" name=\"af_action\" value=\"4f2f7f1f3981046c6f1e7159b7d2e611\">\n</form>\n            </div>\n        </div>\n    </div>\n    <!-- end middle-header -->\n    <!-- begin bottom-menu -->\n    <div class=\"bottom-header\">\n        <div class=\"container\">\n            <div class=\"bottom-header-row\">\n                <ul class=\"bottom-menu\">\n                    <li><a href=\"kuhni\" data-menu=\"#big_menu_1\"><i class=\"icon-menu1\"></i> <span>Кухни</span> <i class=\"icon-caret\"></i></a></li>\n                    <li><a href=\"shkafy-kupe\" data-menu=\"#big_menu_2\"><i class=\"icon-menu2\"></i> <span>Шкафы-купе</span> <i class=\"icon-caret\"></i></a></li>\n                    <li><a href=\"garderobnye-komnaty\" data-menu=\"#big_menu_3\"><i class=\"icon-menu3\"></i> <span>Гардеробные</span> <i class=\"icon-caret\"></i></a></li>\n                </ul>\n                <div class=\"extra-menu\" id=\"big_menu_1\">\n                    <div class=\"row\">\n                        <div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic2.png\" alt=\"По цене\"> По цене </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/deshevye\">Дешевые</a></li><li><a href=\"kuhni/premium\">Премиум</a></li><li><a href=\"kuhni/elitnye\">Элитные</a></li><li><a href=\"kuhni/100000-rubley\">до 100000</a></li><li><a href=\"kuhni/150000-rubley\">за 150000</a></li><li class=\"last\"><a href=\"kuhni/250000-rubley\">за 250000</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic3.png\" alt=\"По стилю\"> По стилю </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/angliyskie\">Английские</a></li><li><a href=\"kuhni/v-stile-art-deko\">Арт Деко</a></li><li><a href=\"kuhni/barokko\">Барокко</a></li><li><a href=\"kuhni/v-yaponskom-stile\">Японский</a></li><li><a href=\"kuhni/kantri\">Кантри</a></li><li><a href=\"kuhni/v-stile-klassika\">Классика</a></li><li><a href=\"kuhni/v-stile-loft\">Лофт</a></li><li><a href=\"kuhni/v-stile-minimalizm\">Минимализм</a></li><li><a href=\"kuhni/v-stile-modern\">Модерн</a></li><li><a href=\"kuhni/v-stile-neoklassika\">Неоклассика</a></li><li><a href=\"kuhni/v-stile-provans\">Прованс</a></li><li><a href=\"kuhni/v-skandinavskom-stile\">Скандинавские</a></li><li><a href=\"kuhni/v-sovremennom-stile\">Современные</a></li><li class=\"last\"><a href=\"kuhni/hay-tek\">Хай-тек</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic4.png\" alt=\"По площади\"> По площади </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/malenkie\">Маленькие</a></li><li><a href=\"kuhni/srednego-razmera\">Средние</a></li><li class=\"last\"><a href=\"kuhni/bolshie\">Большие</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic5.png\" alt=\"По форме\"> По форме </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/kvadratnye\">Квадратные</a></li><li><a href=\"kuhni/ovalnye\">Овальные</a></li><li><a href=\"kuhni/p-obraznye\">П-образные</a></li><li><a href=\"kuhni/pryamye\">Прямые</a></li><li><a href=\"kuhni/uglovye\">Угловые</a></li><li><a href=\"kuhni/uzkie\">Узкие</a></li><li><a href=\"kuhni/so-skoshennym-uglom\">Скошенный угол</a></li><li><a href=\"kuhni/krivolineynye\">Криволинейные</a></li><li><a href=\"kuhni/s-radiusnymi-fasadami\">Радиусные фасады</a></li><li class=\"last\"><a href=\"kuhni/g-obraznye\">Г-образные</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic8.png\" alt=\"По отделке\"> По отделке </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/matovye\">Матовые</a></li><li><a href=\"kuhni/glyancevye\">Глянцевые</a></li><li><a href=\"kuhni/s-patinoy\">С патиной</a></li><li><a href=\"kuhni/kuhni-pvh\">ПВХ</a></li><li><a href=\"kuhni/iz-mdf\">МДФ</a></li><li><a href=\"kuhni/iz-plastika\">Из пластика</a></li><li><a href=\"kuhni/s-fotopechatyu\">Фотопечать</a></li><li><a href=\"kuhni/emal\">Эмаль</a></li><li><a href=\"kuhni/akrilovye\">Акриловые</a></li><li><a href=\"kuhni/pod-mramor\">Под мрамор</a></li><li><a href=\"kuhni/pod-derevo\">Под дерево</a></li><li class=\"last\"><a href=\"kuhni/s-fasadami-pod-beton\">Под бетон</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic9.png\" alt=\"Особенности\"> Особенности </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/bez-shkafov\">Без верхних шкафов</a></li><li><a href=\"kuhni/vstroennye\">Встроенные</a></li><li><a href=\"kuhni/pod-potolok\">Под потолок</a></li><li><a href=\"kuhni/s-barnoy-stoykoy\">С барной стойкой</a></li><li><a href=\"kuhni/s-ostrovom\">С островом</a></li><li><a href=\"kuhni/s-erkerom\">С эркером</a></li><li><a href=\"kuhni/bez-ruchek\">Без ручек</a></li><li class=\"last\"><a href=\"kuhni/studii\">Для студии</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic1.png\" alt=\"По цвету\"> По цвету </div><ul class=\"\"><li class=\"first\"><a href=\"kuhni/belye\">Белые</a></li><li><a href=\"kuhni/bordovye\">Бордовые</a></li><li><a href=\"kuhni/golubye\">Голубые</a></li><li><a href=\"kuhni/zheltye\">Желтые</a></li><li><a href=\"kuhni/zelenye\">Зеленые</a></li><li><a href=\"kuhni/korichnevye\">Коричневые</a></li><li><a href=\"kuhni/krasnye\">Красные</a></li><li><a href=\"kuhni/oranzhevye\">Оранжевые</a></li><li><a href=\"kuhni/rozovye\">Розовые</a></li><li><a href=\"kuhni/serye\">Серые</a></li><li><a href=\"kuhni/sinie\">Синие</a></li><li><a href=\"kuhni/chernye\">Черные</a></li><li><a href=\"kuhni/cherno-belye\">Черно-белые</a></li><li><a href=\"kuhni/dvuh-cvetov\">В двух цветах</a></li><li class=\"last\"><a href=\"kuhni/v-metallicheskim-cvete\">Под металл</a></li></ul></div>\n                    </div>\n                </div>\n                <div class=\"extra-menu\" id=\"big_menu_2\">\n                    <div class=\"row\">\n                        <div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic1.png\" alt=\"По цвету\"> По цвету </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/belye\">Белые</a></li><li><a href=\"shkafy-kupe/venge\">Венге</a></li><li><a href=\"shkafy-kupe/zheltye\">Желтые</a></li><li><a href=\"shkafy-kupe/zelenye\">Зеленые</a></li><li><a href=\"shkafy-kupe/korichnevye\">Коричневые</a></li><li><a href=\"shkafy-kupe/krasnye\">Красные</a></li><li><a href=\"shkafy-kupe/rozovye\">Розовые</a></li><li><a href=\"shkafy-kupe/serye\">Серые</a></li><li><a href=\"shkafy-kupe/sinie\">Синие</a></li><li><a href=\"shkafy-kupe/sirenevye\">Сиреневые</a></li><li><a href=\"shkafy-kupe/temnye\">Темные</a></li><li><a href=\"shkafy-kupe/cvetnye\">Цветные</a></li><li class=\"last\"><a href=\"shkafy-kupe/cherno-belye\">Черно-белые</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic4.png\" alt=\"По размерам\"> По размерам </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/malenkie\">Маленькие</a></li><li><a href=\"shkafy-kupe/srednie\">Средние</a></li><li class=\"last\"><a href=\"shkafy-kupe/bolshih-razmerov\">Большие</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic6.png\" alt=\"Назначение\"> Назначение </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/v-gostinuyu\">В гостиную</a></li><li><a href=\"shkafy-kupe/v-detskuyu-komnatu\">В детскую</a></li><li><a href=\"shkafy-kupe/v-koridor\">В коридор</a></li><li><a href=\"shkafy-kupe/v-ofis\">В офис</a></li><li><a href=\"shkafy-kupe/v-prihozhuyu\">В прихожую</a></li><li><a href=\"shkafy-kupe/v-spalnyu\">В спальню</a></li><li><a href=\"shkafy-kupe/dlya-devochki\">Для девочки</a></li><li><a href=\"shkafy-kupe/dlya-knig\">Для книг</a></li><li><a href=\"shkafy-kupe/dlya-malchika\">Для мальчика</a></li><li><a href=\"shkafy-kupe/dlya-odezhdy\">Для одежды</a></li><li><a href=\"shkafy-kupe/na-balkon\">На балкон</a></li><li><a href=\"shkafy-kupe/pod-tv\">Под ТВ</a></li><li class=\"last\"><a href=\"shkafy-kupe/v-vannuyu-komnatu\">В ванную</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic5.png\" alt=\"По форме\"> По форме </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/vysokie\">Высокие</a></li><li><a href=\"shkafy-kupe/g-obraznye\">Г-образные</a></li><li><a href=\"shkafy-kupe/dlinnye\">Длинные</a></li><li><a href=\"shkafy-kupe/p-obraznye\">П-образные</a></li><li><a href=\"shkafy-kupe/uglovye\">Угловые</a></li><li><a href=\"shkafy-kupe/shirokie\">Широкие</a></li><li class=\"last\"><a href=\"shkafy-kupe/radiusnye\">Радиусные</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic8.png\" alt=\"По отделке\"> По отделке </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/bez-zerkal\">Без зеркал</a></li><li><a href=\"shkafy-kupe/glyancevye\">Глянцевые</a></li><li><a href=\"shkafy-kupe/matovye\">Матовые</a></li><li><a href=\"shkafy-kupe/s-vitrazhami\">С&nbsp;витражами</a></li><li><a href=\"shkafy-kupe/s-zerkalom\">С зеркалом</a></li><li><a href=\"shkafy-kupe/s-kozhey\">С кожей</a></li><li><a href=\"shkafy-kupe/s-peskostruynym-risunkom\">Пескоструйный рисунок</a></li><li><a href=\"shkafy-kupe/s-fotopechatyu\">С&nbsp;фотопечатью</a></li><li class=\"last\"><a href=\"shkafy-kupe/s-frezerovkoy-fasadov\">Фрезированные фасады</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic14.png\" alt=\"По количеству дверей\"> По количеству дверей </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/dvuhdvernye\">2‑х&nbsp;дверные</a></li><li class=\"last\"><a href=\"shkafy-kupe/4-dvernye\">4‑х&nbsp;дверные</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic9.png\" alt=\"Особенности\"> Особенности </div><ul class=\"\"><li class=\"first\"><a href=\"shkafy-kupe/vo-vsyu-stenu\">Во всю стену</a></li><li><a href=\"shkafy-kupe/vstroennye\">Встроенные</a></li><li><a href=\"shkafy-kupe/zerkalnye\">Зеркальные</a></li><li><a href=\"shkafy-kupe/komplanarnye\">Компланарные</a></li><li><a href=\"shkafy-kupe/pod-potolok\">Под потолок</a></li><li><a href=\"shkafy-kupe/razdvizhnye\">Раздвижные</a></li><li><a href=\"shkafy-kupe/so-skoshennym-uglom\">Скошенный угол</a></li><li class=\"last\"><a href=\"shkafy-kupe/raspashnye-shkafy-kupe\">Распашные</a></li></ul></div>\n                    </div>\n                </div>\n                <div class=\"extra-menu\" id=\"big_menu_3\">\n                    <div class=\"row\">\n                        <div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic2.png\" alt=\"По цене\"> По цене </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/deshevye\">Дешевые</a></li><li class=\"last\"><a href=\"garderobnye-komnaty/elitnye\">Элитные</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic4.png\" alt=\"По размерам\"> По размерам </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/bolshie\">Большие</a></li><li class=\"last\"><a href=\"garderobnye-komnaty/malenkie\">Маленькие</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic3.png\" alt=\"По стилю\"> По стилю </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/v-stile-loft\">Лофт</a></li><li><a href=\"garderobnye-komnaty/v-stile-minimalizm\">Минимализм</a></li><li><a href=\"garderobnye-komnaty/v-klassicheskom-stile\">Классический</a></li><li><a href=\"garderobnye-komnaty/v-skandinavskom-stile\">Скандинавские</a></li><li><a href=\"garderobnye-komnaty/v-stile-provans\">Прованс</a></li><li class=\"last\"><a href=\"garderobnye-komnaty/sovremennye\">Современные</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic5.png\" alt=\"По форме\"> По форме </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/vysokie\">Высокие</a></li><li><a href=\"garderobnye-komnaty/bukvoy-g\">Буквой Г</a></li><li><a href=\"garderobnye-komnaty/bukvoy-p\">Буквой П</a></li><li><a href=\"garderobnye-komnaty/kvadratnye\">Квадратные</a></li><li><a href=\"garderobnye-komnaty/pryamye\">Прямые</a></li><li><a href=\"garderobnye-komnaty/pryamougolnye\">Прямоугольные</a></li><li><a href=\"garderobnye-komnaty/uglovye\">Угловые</a></li><li><a href=\"garderobnye-komnaty/nizkie\">Низкие</a></li><li class=\"last\"><a href=\"garderobnye-komnaty/uzkie\">Узкие</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic6.png\" alt=\"Назначение\"> Назначение </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/v-zale\">В зале</a></li><li><a href=\"garderobnye-komnaty/v-komnate\">В комнату</a></li><li><a href=\"garderobnye-komnaty/v-mansarde\">На мансарде</a></li><li><a href=\"garderobnye-komnaty/v-nishe\">В нишу</a></li><li><a href=\"garderobnye-komnaty/v-prihozhey\">В прихожей</a></li><li><a href=\"garderobnye-komnaty/v-spalne\">В спальню</a></li><li><a href=\"garderobnye-komnaty/v-hrushhevke\">В хрущевке</a></li><li><a href=\"garderobnye-komnaty/v-chastnom-dome\">В частный дом</a></li><li><a href=\"garderobnye-komnaty/dlya-odezhdy\">Для одежды</a></li><li class=\"last\"><a href=\"garderobnye-komnaty/dlya-ofisa\">Для офиса</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic1.png\" alt=\"По цвету\"> По цвету </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/belye\">Белые</a></li><li><a href=\"garderobnye-komnaty/zelenye\">Зеленые</a></li><li><a href=\"garderobnye-komnaty/krasnye\">Красные</a></li><li><a href=\"garderobnye-komnaty/sinie\">Синие</a></li><li><a href=\"garderobnye-komnaty/temnye\">Темные</a></li><li><a href=\"garderobnye-komnaty/chernye\">Черные</a></li><li><a href=\"garderobnye-komnaty/cherno-belye\">Черно-белые</a></li><li class=\"last\"><a href=\"garderobnye-komnaty/serye\">Серые</a></li></ul></div><div class=\"extra-menu-item\"><div class=\"title\"><img src=\"https://nedorogo-kuhni.ru/assets/extranav/ic9.png\" alt=\"Особенности\"> Особенности </div><ul class=\"\"><li class=\"first\"><a href=\"garderobnye-komnaty/vstroennye\">Встроенные</a></li><li><a href=\"garderobnye-komnaty/s-oknom\">С окном</a></li><li><a href=\"garderobnye-komnaty/zakrytye\">Закрытые</a></li><li><a href=\"garderobnye-komnaty/otkrytye\">Открытые</a></li><li><a href=\"garderobnye-komnaty/razdvizhnye\">Раздвижные</a></li><li class=\"last\"><a href=\"garderobnye-shkafy\">Гардеробные шкафы</a></li></ul></div>\n                    </div>\n                </div>\n                <form action=\"rezultaty-poiska\" method=\"get\" class=\"form-search\">\n    <div class=\"search-inner\">\n        <input type=\"text\" placeholder=\"поиск\" name=\"query\" value=\"\">\n        <button type=\"submit\"><i class=\"icon-search\"></i></button>\n    </div>\n</form>\n                <a href=\"izbrannoe\" class=\"favorites\" data-count=\"0\" rel=\"nofollow\">\n                    <i class=\"icon-health\"></i>\n                    <span>0</span>\n                </a>\n            </div>\n        </div>\n    </div>\n    <!-- end bottom-menu -->\n</header>\n<!-- end header -->\n    <!-- begin sec-breadcrumbs -->\n<section class=\"sec-breadcrumbs\">\n    <div class=\"container\">\n        <div class=\"crumbs-wrap\">\n            <ul class=\"crumbs-list\"><li><a href=\"\">Главная</a><span class=\"separator\">&gt;</span></li>\n<li><a href=\"otzyvy\">Отзывы</a><span class=\"separator\">&gt;</span></li>\n<li>Шкафы-купе</li></ul>\n            <div class=\"print\" onclick=\"javascript:window.print();\"></div>\n        </div>\n    </div>\n</section>\n<!-- end sec-breadcrumbs -->\n    \n    <!-- begin main-reviews -->\n    <main class=\"main-reviews\">\n        <div class=\"container\">\n            <h1 class=\"heading\">Отзывы о шкафах-купе от покупателей</h1>\n            <section class=\"sec-last-reviews\">\n                <div id=\"pdopage\">\n                    <div class=\"last-reviews rows\">\n                        \n                        <div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/radiusniy-shkaf-kupe-buzhival\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/8544/shkaf-kupe-buzhival_360x360_2ef.jpg\" alt=\"Радиусный шкаф купе Буживаль\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/radiusniy-shkaf-kupe-buzhival\" class=\"title\">Радиусный шкаф купе Буживаль</a>\n        <p>Хотим выразить Вам нашу благодарность за изготовление нашего заказа (шкафа-купе). Нас приятно удивило отношение всех сотрудников Вашей студии, с которыми мы общались в процессе изготовления и проектировки нашего заказа.<br>\nДизайнер — Елена очень профессионально смогла убедить нас, внести некоторые изменения, касающиеся фасада шкафа.<br>\nБригада монтажников, во главе с Виктором очень профессионально, быстро и аккуратно произвели установку.<br>\nОтдельное спасибо Владимиру, за высокий уровень профессионализма в общении с клиентами. <br>\nОбращение к собственникам:<br>\nМы не разу Вас не видели в офисе, а общались только с Вашим персоналом. Вы смогли организовать процесс так, что в Ваше отсутствие люди, которые работают по найму на Вас, относятся к делу, как к своему собственному.<br>\nСпасибо Вам за предоставленный сервис, и сам шкаф. Дай Вам Бог процветания, финансового роста и лидирующих позиций на рынке.</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Карина </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-bollen\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/8533/shkaf-kupe-bollen_360x360_2ef.jpg\" alt=\"Шкаф купе Боллен\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-bollen\" class=\"title\">Шкаф купе Боллен</a>\n        <p>Нам необходимо было изготовить шкафы для наших подрядчиков. Конечно же, мы искали, где можно изготовить качественную мебель по демократичным ценам. Нам посоветовали обратиться на фабрику «Кухни Недорого», т.к. это один из наиболее надежных производителей мебели. Мы вызвали дизайнера и поставили перед ним задачу мебель должна быть стильной, прочной и недорогой. Нам предложили несколько вариантов дизайна и размещения мебели, с учетом планировки наших помещений и функций. И по ценам вышло намного ниже, чем мы считали в других фирмах.</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Кира </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-bonne\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/3159/shkaf-kupe-bonne_360x360_2ef.jpg\" alt=\"Шкаф-купе Бонне\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-bonne\" class=\"title\">Шкаф-купе Бонне</a>\n        <p>Для нас главным критерием при выборе любого товара или услуги является соотношение цены и качества. И очень часто встречается ситуация, когда одно не соответствует другому. Мебель в компании «Кухни Недорого» мы заказали по совету знакомого, который там же заказывал себе шкаф 3 года назад. И мы получили отличный и стильный шкаф-купе с хорошей скидкой, и целый комплекс бесплатных услуг консультации по выбору материалов и фурнитуры, разработку проекта, доставку и сборку. Никакой головной боли, дополнительных расходов и проблем! От нас рекомендации всем нашим друзьям и восторженный отзыв на ваш сайт</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Елисей </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-midlberg\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/3385/shkaf-kupe-midlberg_360x360_2ef.jpg\" alt=\"Шкаф-купе Мидлберг\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-midlberg\" class=\"title\">Шкаф-купе Мидлберг</a>\n        <p>Я бы хотел поблагодарить компанию «Кухни Недорого» за честное выполнение своих обязательств по договору. С установленным ими шкафом-купе через 4 месяца случилась неприятность механизм двери заедал. Я позвонил в фирму и рассказал об этой технической проблеме. На следующий же день приехал специалист компании, осмотрел шкаф, подтвердил дефект завода и заменил фурнитуру. Я, честно говоря, был приятно удивлен никто не начал «переводить стрелки», а честно и быстро устранили дефект. Теперь только у вас буду заказывать мебель ценю честность и порядочность!</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Гавриил </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-pereyra\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/6523/shkaf-kupe-pereyra-1_360x360_2ef.jpg\" alt=\"Шкаф-купе Перейра\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-pereyra\" class=\"title\">Шкаф-купе Перейра</a>\n        <p>Хотим с семьей отметить ваш профессионализм и поблагодарить за проделанную работу. У нас узкий коридор гостиной и нам хотелось вместить туда небольшой шкаф для верхней одежды. Мы искали простой, но влезающий в наши параметры, шкаф, но не только для названия, но и, чтобы был функциональный. После переговоров со специалистами компании «Кухни Недорого» мы остановились на одном из запроектированных вариантов шкафа, который четко вписался в общий интерьер. Учли и материал, и цвет, и модель. Вообщем, мы благодарны, что нас услышали и сделали все быстро.</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Леонид </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-berni\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/5783/shkaf-kupe-berni_360x360_2ef.jpg\" alt=\"Шкаф-купе Берни\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-berni\" class=\"title\">Шкаф-купе Берни</a>\n        <p>Вот мне надо было загородить нишу, а заодно разместить много накопившихся вещей. И здесь я, как говорится «убил двух зайцев»! Мне сделали шкаф в точности по размерам ниши, встроили его туда, то есть мне не пришлось переплачивать за корпус. Вещи лежат на местах, место пустующее занято. А я хочу поблагодарить руководство этой компании за то, что сумели так грамотно наладить работу всех своих подразделений. Все службы сработали безукоризненно ( от операторов на телефоне, до сборщиков). Спасибо всем большое!</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Дмитрий Анатольевич </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-veska\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/6220/shkaf-kupe-veska-1_360x360_2ef.jpg\" alt=\"Шкаф-купе Вьеска\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-veska\" class=\"title\">Шкаф-купе Вьеска</a>\n        <p>Мне нужен был шкаф – купе в коридор. Но учитывая то, что стены и потолки у нас в квартирах ужасные, неровные, было понятно, что в магазине я того, что мне надо не куплю! Помыкавшись все-таки по магазинам, я пришла к выводу, что нужно делать шкаф только на заказ, причем встраивать в стены квартиры. Через интернет я нашла эту фирму «Кухни Недорого»! И замерщик – профессионал, и в офисе у них мне помогли определиться с цветом, выбрать нужный профиль, и сборщик все сделал аккуратно и быстро! Шкаф получился уникальный! И еще я знаю точно, что такого нет ни у кого! И внутри все так, как мне надо, по моим размерам!</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Оксана </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-kars\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/5479/shkaf-kupe-kars_360x360_2ef.jpg\" alt=\"Шкаф-купе Карс\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-kars\" class=\"title\">Шкаф-купе Карс</a>\n        <p>Очень давно искала подходящую компанию, для установки шкафа–купе в — холл, таким образом, чтобы занять пространство за дверью. Размеры нестандартные, поэтому в разных местах, куда я звонила, получалось очень дорого. И вот наконец я нашла фирму, где мне при примерном просчете (по телефону), назвали очень заманчивую цену! Я решила проверить – вызвала мастера для замера. Фактическая стоимость тоже приятно порадовала! Я сразу внесла предоплату и заключила договор. Мне все в срок доставили, на следующий день произвели сборку. Мебель качественная ни где не скрепит. Никогда не подумаешь, что практически в треть дешевле, чем у фирм, куда я обращалась в начале!</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Юлия </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-kovina\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/6105/shkaf-kupe-kovina-1_360x360_2ef.jpg\" alt=\"Шкаф-купе Ковина\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-kovina\" class=\"title\">Шкаф-купе Ковина</a>\n        <p>У меня была проблема – зрительно укоротить комнату, тем более, что после ремонта так и так нужен был шкаф. Я решил установить шкаф – купе от стены до стены. Мне повезло, что я обратился в эту фирму! Во первых, замерщик все замерил с максимальной точностью, с учетом моих потолков! На производстве не подвели, напилили все по размерам, а ребята – сборщики так аккуратно и технически грамотно собрали. Смотрится изделия хорошо и очень нас радует.<br></p>\n        <div class=\"user\"><i class=\"icon-user\"></i> Дмитрий Александрович </div>\n    </div>\n</div>\n<div class=\"last-reviews-item\">\n    <div class=\"img-wrap\">\n        <a href=\"shkafy-kupe/shkaf-kupe-van\">\n        <img src=\"https://nedorogo-kuhni.ru/assets/cache_image/resources/6261/shkaf-kupe-van-1_360x360_2ef.jpg\" alt=\"Шкаф-купе Ван\">\n        </a>\n    </div>\n    <div class=\"caption\">\n        <a href=\"shkafy-kupe/shkaf-kupe-van\" class=\"title\">Шкаф-купе Ван</a>\n        <p>Нашли в интернете сайт вашей компании. Нам нужен был встроенный шкаф в нишу по нашим размерам. Замерщик Сергей очень грамотно сделал свою работу. Померил все очень профессионально. Учитывая внутри шкафа мало места и неровность стены. Когда привезли и собрали – шкаф встал, как влитой. За это спасибо замерщику и сборщику.</p>\n        <div class=\"user\"><i class=\"icon-user\"></i> С Уважением, Альфия </div>\n    </div>\n</div>\n                    </div>\n                    <div class=\"pagination-wrap\"><div class=\"pagination\"><ul class=\"pagination\"><li class=\"active\"><a href=\"otzyvy/shkafy-kupe\">1</a></li><li><a href=\"otzyvy/shkafy-kupe?page=2\">2</a></li><li><a href=\"otzyvy/shkafy-kupe?page=3\">3</a></li><li><a href=\"otzyvy/shkafy-kupe?page=4\">4</a></li><li><a href=\"otzyvy/shkafy-kupe?page=5\">5</a></li></ul></div></div>\n                </div>\n            </section>\n            <!-- end sec-last-reviews -->\n        </div>\n    </main>\n    <!-- end main-reviews -->\n    \n    <!-- begin sec-callback -->\n<section class=\"sec-callback\">\n    <div class=\"container\">\n        <form method=\"post\" class=\"ajax-form callback-form ajax_form\">\n    \n    <div class=\"callback-form-inner\">\n        <div class=\"callback-form-title\">Нужна мебель на заказ?</div>\n        <div class=\"callback-form-title\">Получить консультацию менеджера бесплатно</div>\n        <div class=\"fields-wrap\">\n            <input type=\"text\" name=\"surname\" class=\"form-input\" placeholder=\"Фамилия\">\n            <input type=\"text\" class=\"input\" name=\"n4me\" placeholder=\"Ваше имя\">\n            <input type=\"tel\" class=\"input\" name=\"ph0ne\" placeholder=\"Номер телефoна\">\n            <button class=\"btn\">Получить консультацию</button>\n        </div>\n    </div>\n\n\t<input type=\"hidden\" name=\"af_action\" value=\"57fb8329abce0e7eb1ffdcd8c49f7f1c\">\n</form>\n    </div>\n</section>\n<!-- end sec-callback -->\n    \n<!-- begin footer -->\n<footer class=\"footer\">\n    <!-- begin top-menu -->\n    <div class=\"top-menu\">\n        <div class=\"container\">\n            <ul class=\"top-menu-list\"><li class=\"first\"><i class=\"icon-top-menu9w\"></i><a href=\"o-kompanii\">О нас</a></li><li><i class=\"icon-top-menu3w\"></i><a href=\"dostavka-i-oplata\">Доставка и оплата</a></li><li><i class=\"icon-top-menu4w\"></i><a href=\"garantiya\">Гарантия</a></li><li><i class=\"icon-top-menu10w\"></i><a href=\"akcii\">Акции</a></li><li><i class=\"icon-top-menu6w\"></i><a href=\"otzyvy\">Отзывы</a></li><li><i class=\"icon-top-menu7w\"></i><a href=\"kak-kupit\">Как купить?</a></li><li><i class=\"icon-top-menu6w\"></i><a href=\"stati\">Статьи</a></li><li class=\"last\"><i class=\"icon-top-menu8w\"></i><a href=\"kontakty\">Контакты</a></li></ul>\n        </div>\n    </div>\n    <!-- end top-menu -->\n    <!-- begin footer-main -->\n    <div class=\"container\">\n        <div class=\"footer-main\">\n            <div class=\"footer-logo\">\n                <a href=\"/\"><img src=\"https://nedorogo-kuhni.ru/assets/template/img/logo-footer.png\" alt=\"\"></a>\n                <div class=\"footer-rating\"><iframe src=\"https://yandex.ru/sprav/widget/rating-badge/60709095870?type=rating\" width=\"150\" height=\"50\" frameborder=\"0\"></iframe></div>\n            </div>\n            <ul class=\"footer-menu\">\n                <li><a href=\"kuhonnye-garnitury\"><i class=\"icon-menu1\"></i> <span>Кухонные гарнитуры</span></a></li>\n                <li><a href=\"shkafy-kupe\"><i class=\"icon-menu2\"></i> <span>Шкафы-купе</span></a></li>\n                <li><a href=\"garderobnye-komnaty\"><i class=\"icon-menu3\"></i> <span>Гардеробные</span></a></li>\n            </ul>\n            <div class=\"footer-contacts\">\n                <div class=\"phones\">\n                    <a href=\"tel:+74991301209\">+7 499 130-12-09</a>\n                    <br><a href=\"tel:+79035084795\">+7 903 508-47-95</a>\n                </div>\n                <p><i class=\"icon-placeholder-white\"></i> Москва, ул. Генерала Кузнецова, д.11 корп 1</p>\n                <p><i class=\"icon-time-white\"></i> Пн — Вс: с 10<sup>00</sup> до 20<sup>00</sup></p>\n                <div class=\"pay-cards\">\n                    <i class=\"icon-cards\"></i><br>\n                    <a href=\"/politika-konfidencialnosti\">Политика конфиденциальности</a>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- end footer-main -->\n    <!-- begin copyright -->\n    <div class=\"copyright-wrap\">\n    <div class=\"container\">\n    <div class=\"copyright\">\n    <div class=\"copyright-text\">2026 © Интернет магазин «Кухни Недорого»  - мебель на заказ от производителя. Все права защищены<br> <!--noindex-->Сайт носит рекламно-информационный характер и не является офертой.<!--/noindex--></div>\n    </div>\n    </div>\n    </div>\n    <!-- end copyright -->\n</footer>\n<!-- end footer -->\n<a href=\"#\" class=\"btn-app\"><i class=\"icon-app\"></i> <span>Оставить заявку</span></a>\n<div class=\"updown icon-updown_btn\"></div>\n\t<script type=\"application/ld+json\">\n\t{  \"@context\" : \"http://schema.org\",\n\t\"@type\" : \"WebSite\",\n\t\"name\" : \"Кухни недорого\",\n\t\"url\" : \"/\"\n\t}\n\t</script>\n\t<script type=\"application/ld+json\">\n    {\n      \"@context\": \"http://schema.org\",\n      \"@type\": \"Organization\",\n      \"address\": {\n        \"@type\": \"PostalAddress\",\n        \"addressLocality\": \"Москва\",\n        \"addressRegion\" : \"Московская область\",\n        \"postalCode\": \"115280\",\n        \"streetAddress\": \"ул. Генерала Кузнецова, д.11 корп 1\"\n      },\n      \"email\": \"info@nedorogo-kuhni.ru\",\n      \"name\": \"Кухни недорого\",\n     \"telephone\": \"+7 499 130-12-09\"\n    }\n</script>\n<style>\n    @media only screen and (max-width:960px){\n        .print {\n            display: none;\n        }\n    }\n    @media only screen and (max-width:1060px){\n        .sec-main-slider {\n            display: none;\n        }\n    }\n    .tiptop {\n    \tposition: absolute;\n    \tz-index: 9999;\n    \tmax-width: 400px;\n    \tpadding: 20px;\n    \tmargin: 10px;\n        font-size: 16px;\n    \tcolor: #000;\n    \tbackground: #fff;\n    \tborder: 3px solid #deecf4;\n    \tborder-radius: 3px;\n    }\n    .product-advantages-item i.info {\n        width: 16px;\n        height: 16px;\n        background-image: url(/assets/template/img/sprite.png);\n        background-position: -936px -733px;\n        display: inline-block;\n        margin-bottom: -2px;\n        \n    }\n    .product-advantages-item span {\n      display: inline-block;\n    }\n    @media only screen and (max-width:480px){\n        .tiptop {\n            padding: 8x;\n            max-width: 320px;\n        }\n    }\n</style>\n    <!--<div id=\"modal_cities\" class=\"white-popup-block mfp-hide\">\n    <div class=\"heading\">Выбор города</div>\n    <div class=\"cities-wrap\">\n        \n    </div>\n    <div class=\"icon-modal-close-white modal-close\" onclick=\"close_modals()\"></div>\n</div>-->\n\n<div id=\"thank_you\" class=\"white-popup-block mfp-hide\">\n      <div class=\"heading\">Спасибо за заказ!</div>\n      <p>Наш менеджер перезвонит Вам<br> в ближайшее время</p>\n      <div class=\"icon-modal-close-white modal-close\" onclick=\"close_modals()\"></div>\n</div>\n\n<div id=\"call_zamer\" class=\"white-popup-block mfp-hide\">\n    <div class=\"heading\">Вызов замерщика</div>\n    <p>Заполните форму и наш менеджер<br> перезвонит Вам в ближайшее время</p>\n    <form method=\"post\" class=\"ajax-form call-zamer ajax_form\">\n    <input type=\"text\" name=\"surname\" class=\"form-input\" placeholder=\"Фамилия\">\n    <input type=\"text\" name=\"n4me\" placeholder=\"Ваше имя\">\n    <input type=\"tel\" name=\"ph0ne\" placeholder=\"Номер телефoна\">\n    <button type=\"submit\" class=\"btn btn-inline\">Вызвать замерщика</button>\n\n\t<input type=\"hidden\" name=\"af_action\" value=\"2697e99b79a70cbf10ad6faaa6ef2c66\">\n</form>\n    <div class=\"icon-modal-close-white modal-close\" onclick=\"close_modals()\"></div>\n</div>\n\n\n<div id=\"calc_shkaf\" class=\"white-popup-block mfp-hide\">\n    <div class=\"heading\">Расчет цены</div>\n    <form method=\"post\" class=\"ajax-form calc-shkaf ajax_form\" enctype=\"multipart/form-data\">\n    <input type=\"text\" name=\"surname\" class=\"form-input\" placeholder=\"Фамилия\">\n    <input type=\"hidden\" name=\"id\">\n    <textarea name=\"message\" placeholder=\"Размеры и пожелания\"></textarea>\n\t<div class=\"row\">\n\t\t<div class=\"col-full-center\">\n\t\t\t<div class=\"files\"></div>\n\t\t\t<label>\n\t\t\t\t<span class=\"imp-wrap\"><input type=\"file\" name=\"file\" accept=\"image/*\"></span>\n\t\t\t\t<div class=\"fileupload\"><i class=\"icon-attach\"></i> <span>Прикрепить файл к сообщению</span></div>\n\t\t\t</label>\n\t\t</div>\n\t</div>\n    <div class=\"row\">\n        <div class=\"input-required\"><input type=\"text\" name=\"n4me\" placeholder=\"Ваше имя\"></div>\n        <div class=\"input-required\"><input type=\"tel\" name=\"ph0ne\" placeholder=\"Номер телефoна\"></div>\n        <button type=\"submit\" class=\"btn btn-inline\">Вызвать замерщика</button>\n    </div>\n\n\t<input type=\"hidden\" name=\"af_action\" value=\"2e74bbf45887c3437cdefaea2e7ad10f\">\n</form>\n    <div class=\"icon-modal-close-grey modal-close\" onclick=\"close_modals()\"></div>\n</div>\n\n<div id=\"zayavka\" class=\"white-popup-block mfp-hide\">\n\t<div class=\"heading\">Заявка</div>\n    <form method=\"post\" class=\"ajax-form calc-shkaf ajax_form\" enctype=\"multipart/form-data\">\n    <input type=\"text\" name=\"surname\" class=\"form-input\" placeholder=\"Фамилия\">\n\t<textarea name=\"comment\" placeholder=\"Ваш комментарий\"></textarea>\n\t<div class=\"row\">\n\t\t<div class=\"input-required\"><input type=\"text\" name=\"n4me\" placeholder=\"Ваше имя\"></div>\n\t\t<div class=\"input-required\"><input type=\"tel\" name=\"ph0ne\" placeholder=\"Номер телефoна\"></div>\n\t\t<div class=\"input-required\"><input type=\"email\" name=\"mail\" placeholder=\"E-mail\"></div>\n\t</div>\n\t<br><br>\n\t<div class=\"row\">\n\t\t<div class=\"col-full-center\">\n\t\t\t<div class=\"files\"></div>\n\t\t\t<label>\n\t\t\t\t<span class=\"imp-wrap\"><input type=\"file\" name=\"file\" accept=\"image/*\"></span>\n\t\t\t\t<div class=\"fileupload\"><i class=\"icon-attach\"></i> <span>Прикрепить файл к сообщению</span></div>\n\t\t\t</label>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<button type=\"submit\" class=\"btn btn-inline\">Оставить заявку</button>\n\t</div>\n\n\t<input type=\"hidden\" name=\"af_action\" value=\"89fa2072adb5157eb35db3eb1296eb3f\">\n</form>\n\t<div class=\"icon-modal-close-grey modal-close\" onclick=\"close_modals()\"></div>\n</div>\n\n<div id=\"get_raschet\" class=\"white-popup-block mfp-hide\">\n    <form method=\"post\" class=\"ajax-form get-raschet-form ajax_form\" enctype=\"multipart/form-data\">\n    <input type=\"text\" name=\"surname\" class=\"form-input\" placeholder=\"Фамилия\">\n    <input type=\"hidden\" name=\"id\">\n\t<div class=\"title\">Расчет цены</div>\n    <div class=\"row row-top\">\n        <div class=\"col\">\n            <div class=\"label\">Выберите конфигурацию</div>\n            <div class=\"jq-selectbox jqselect custom-select material-select\"><select name=\"config\" class=\"custom-select material-select\">\n                <option value=\"Прямая\" data-lengths=\"b\">Прямая</option>\n                <option value=\"Г-образная левая\" data-lengths=\"a,b\">Г-образная</option>\n                \n                <option value=\"П-образная\" data-lengths=\"a,b,c\">П-образная</option>\n                <option value=\"С островом\" data-lengths=\"b,d\">С островом</option>\n            </select><div class=\"jq-selectbox__select\"><div class=\"jq-selectbox__select-text\">Прямая</div><div class=\"jq-selectbox__trigger\"><div class=\"jq-selectbox__trigger-arrow\"></div></div></div><div class=\"jq-selectbox__dropdown\" style=\"left: 0px; top: 20px; display: none;\"><ul><li data-lengths=\"b\" class=\"selected sel\" style=\"\">Прямая</li><li data-lengths=\"a,b\" style=\"\">Г-образная</li><li data-lengths=\"a,b,c\" style=\"\">П-образная</li><li data-lengths=\"b,d\" style=\"\">С островом</li></ul></div></div>\n        </div>\n        <div class=\"col\">\n            <div class=\"label\">Выберите материал</div>\n            <div class=\"jq-selectbox jqselect custom-select material-select\"><select name=\"material\" class=\"custom-select material-select\">\n                <option value=\"ЛДСП\">ЛДСП</option>\n                <option value=\"МДФ\">МДФ</option>\n                <option value=\"Пластик\">Пластик</option>\n                <option value=\"ПВХ\">ПВХ</option>\n                <option value=\"Эмаль\">Эмаль</option>\n                <option value=\"Массив дуба\">Массив дуба</option>\n            </select><div class=\"jq-selectbox__select\"><div class=\"jq-selectbox__select-text\">ЛДСП</div><div class=\"jq-selectbox__trigger\"><div class=\"jq-selectbox__trigger-arrow\"></div></div></div><div class=\"jq-selectbox__dropdown\" style=\"left: 0px; top: 20px; display: none;\"><ul><li class=\"selected sel\" style=\"\">ЛДСП</li><li style=\"\">МДФ</li><li style=\"\">Пластик</li><li style=\"\">ПВХ</li><li style=\"\">Эмаль</li><li style=\"\">Массив дуба</li></ul></div></div>\n        </div>\n        <div class=\"col col-top-sh\">\n            <div class=\"label\">Верхние шкафы</div>\n            <div class=\"awesome-checkbox-wrap\">\n                <input type=\"hidden\" name=\"top_locker\" value=\"да\">\n                <div class=\"awesome-checkbox active\">\n                    <span class=\"no\">Нет</span>\n                    <div class=\"checker\"></div>\n                    <span class=\"yes\">Да</span>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col\">\n            <div class=\"label\">Укажите размер</div>\n            <input type=\"text\" class=\"input-number hidden\" name=\"length_a\" data-length=\"a\" placeholder=\"Длина стороны A, м\">\n            <input type=\"text\" class=\"input-number\" name=\"length_b\" data-length=\"b\" placeholder=\"Длина стороны B, м\">\n        </div>\n        <div class=\"col\">\n            <div class=\"label label-hidden\">Укажите размер</div>\n            <input type=\"text\" class=\"input-number hidden\" name=\"length_c\" data-length=\"c\" placeholder=\"Длина стороны C, м\">\n            <input type=\"text\" class=\"input-number hidden\" name=\"length_d\" data-length=\"d\" placeholder=\"Длина стороны D, м\">\n        </div>\n        <div class=\"col col-cont-data\">\n            <div class=\"label\">Укажите личные данные</div>\n            <input type=\"text\" class=\"tacttu\" name=\"n4me\" placeholder=\"Ваше имя\">\n            <input type=\"tel\" class=\"tacttu\" name=\"ph0ne\" placeholder=\"Номер телефoна\">\n        </div>\n    </div>\n\t<div class=\"row\">\n\t\t<div class=\"col-full\">\n\t\t\t<div class=\"label\">Напишите комментарий</div>\n\t\t\t<textarea name=\"comment\"></textarea>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-full-center\">\n\t\t\t<div class=\"files\"></div>\n\t\t\t<label>\n\t\t\t\t<span class=\"imp-wrap\"><input type=\"file\" name=\"file\" accept=\"image/*\"></span>\n\t\t\t\t<div class=\"fileupload\"><i class=\"icon-attach\"></i> <span>Прикрепить файл к сообщению</span></div>\n\t\t\t</label>\n\t\t</div>\n\t</div>\n    <button type=\"submit\" class=\"btn\">Получить расчет</button>\n\n\t<input type=\"hidden\" name=\"af_action\" value=\"85602a73b67bb38253dd316b49e5c576\">\n</form>\n    <div class=\"icon-modal-close-grey modal-close\" onclick=\"close_modals()\"></div>\n</div>\n\n\n<div id=\"quick_view\" class=\"white-popup-block mfp-hide\">\n\t<div class=\"product-card\"></div>\n\t<div class=\"icon-modal-close-grey modal-close\" onclick=\"close_modals()\"></div>\n</div>\n\n\n\n\n    <!-- BEGIN scripts -->\n<script type=\"text/javascript\" src=\"assets/template/js/lazysizes.min.js\"></script>\n<script type=\"text/javascript\" src=\"assets/template/js/scripts.js?v=3\"></script>\n<script type=\"text/javascript\" src=\"assets/template/js/common.js?v=3\"></script>\n<!-- Yandex.Metrika counter --> <script type=\"text/javascript\"> (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\"); ym(52517101, \"init\", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src=\"https://mc.yandex.ru/watch/52517101\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript> <!-- /Yandex.Metrika counter -->\n<!-- END scripts -->\n<script type=\"text/javascript\" src=\"/assets/components/ajaxform/js/default.js\"></script>\n<script type=\"text/javascript\">AjaxForm.initialize({\"assetsUrl\":\"\\/assets\\/components\\/ajaxform\\/\",\"actionUrl\":\"\\/assets\\/components\\/ajaxform\\/action.php\",\"closeMessage\":\"\\u0437\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c \\u0432\\u0441\\u0435\",\"formSelector\":\"form.ajax_form\",\"pageId\":54});</script><script src=\"/assets/components/ajaxform/js/lib/jquery.form.min.js\"></script><script src=\"/assets/components/ajaxform/js/lib/jquery.jgrowl.min.js\"></script>\n<script type=\"text/javascript\" src=\"/assets/components/msearch2/js/web/default_custom.js\"></script>\n<script type=\"text/javascript\" src=\"/assets/components/tickets/js/web/default_custom.js\"></script><script src=\"/assets/components/tickets/js/web/lib/jquery.sisyphus.min.js\"></script>\n\n\n</body></html>",
+  "text": "Отзывы о шкафах-купе от реальных покупателей О нас Информация Производство Фото готовых дизайн-проектов Видео установленных кухонь Дизайн проект Замер Договор и акт Правила эксплуатации Отделки Рассрочка и кредит Наполнение шкафов-купе Вопрос-ответ Сертификаты Статьи Доставка и оплата Гарантия Акции Цены и сроки Мебель Сборка Комплектующие Отзывы Как купить? Контакты +7 499 130-12-09 Пн — Вс: с 10 00 до 20 00 +7 903 508-47-95 info@nedorogo-kuhni.ru Вызов замерщика БЕСПЛАТНО Создадим дизайн-проект и изготовим мебель на заказ по вашим размерам перезвоните мне Кухни Шкафы-купе Гардеробные По цене Дешевые Премиум Элитные до 100000 за 150000 за 250000 По стилю Английские Арт Деко Барокко Японский Кантри Классика Лофт Минимализм Модерн Неоклассика Прованс Скандинавские Современные Хай-тек По площади Маленькие Средние Большие По форме Квадратные Овальные П-образные Прямые Угловые Узкие Скошенный угол Криволинейные Радиусные фасады Г-образные По отделке Матовые Глянцевые С патиной ПВХ МДФ Из пластика Фотопечать Эмаль Акриловые Под мрамор Под дерево Под бетон Особенности Без верхних шкафов Встроенные Под потолок С барной стойкой С островом С эркером Без ручек Для студии По цвету Белые Бордовые Голубые Желтые Зеленые Коричневые Красные Оранжевые Розовые Серые Синие Черные Черно-белые В двух цветах Под металл По цвету Белые Венге Желтые Зеленые Коричневые Красные Розовые Серые Синие Сиреневые Темные Цветные Черно-белые По размерам Маленькие Средние Большие Назначение В гостиную В детскую В коридор В офис В прихожую В спальню Для девочки Для книг Для мальчика Для одежды На балкон Под ТВ В ванную По форме Высокие Г-образные Длинные П-образные Угловые Широкие Радиусные По отделке Без зеркал Глянцевые Матовые С витражами С зеркалом С кожей Пескоструйный рисунок С фотопечатью Фрезированные фасады По количеству дверей 2‑х дверные 4‑х дверные Особенности Во всю стену Встроенные Зеркальные Компланарные Под потолок Раздвижные Скошенный угол Распашные По цене Дешевые Элитные По размерам Большие Маленькие По стилю Лофт Минимализм Классический Скандинавские Прованс Современные По форме Высокие Буквой Г Буквой П Квадратные Прямые Прямоугольные Угловые Низкие Узкие Назначение В зале В комнату На мансарде В нишу В прихожей В спальню В хрущевке В частный дом Для одежды Для офиса По цвету Белые Зеленые Красные Синие Темные Черные Черно-белые Серые Особенности Встроенные С окном Закрытые Открытые Раздвижные Гардеробные шкафы 0 Главная > Отзывы > Шкафы-купе Отзывы о шкафах-купе от покупателей Радиусный шкаф купе Буживаль Хотим выразить Вам нашу благодарность за изготовление нашего заказа (шкафа-купе). Нас приятно удивило отношение всех сотрудников Вашей студии, с которыми мы общались в процессе изготовления и проектировки нашего заказа. Дизайнер — Елена очень профессионально смогла убедить нас, внести некоторые изменения, касающиеся фасада шкафа. Бригада монтажников, во главе с Виктором очень профессионально, быстро и аккуратно произвели установку. Отдельное спасибо Владимиру, за высокий уровень профессионализма в общении с клиентами. Обращение к собственникам: Мы не разу Вас не видели в офисе, а общались только с Вашим персоналом. Вы смогли организовать процесс так, что в Ваше отсутствие люди, которые работают по найму на Вас, относятся к делу, как к своему собственному. Спасибо Вам за предоставленный сервис, и сам шкаф. Дай Вам Бог процветания, финансового роста и лидирующих позиций на рынке. Карина Шкаф купе Боллен Нам необходимо было изготовить шкафы для наших подрядчиков. Конечно же, мы искали, где можно изготовить качественную мебель по демократичным ценам. Нам посоветовали обратиться на фабрику «Кухни Недорого», т.к. это один из наиболее надежных производителей мебели. Мы вызвали дизайнера и поставили перед ним задачу мебель должна быть стильной, прочной и недорогой. Нам предложили несколько вариантов дизайна и размещения мебели, с учетом планировки наших помещений и функций. И по ценам вышло намного ниже, чем мы считали в других фирмах. Кира Шкаф-купе Бонне Для нас главным критерием при выборе любого товара или услуги является соотношение цены и качества. И очень часто встречается ситуация, когда одно не соответствует другому. Мебель в компании «Кухни Недорого» мы заказали по совету знакомого, который там же заказывал себе шкаф 3 года назад. И мы получили отличный и стильный шкаф-купе с хорошей скидкой, и целый комплекс бесплатных услуг консультации по выбору материалов и фурнитуры, разработку проекта, доставку и сборку. Никакой головной боли, дополнительных расходов и проблем! От нас рекомендации всем нашим друзьям и восторженный отзыв на ваш сайт Елисей Шкаф-купе Мидлберг Я бы хотел поблагодарить компанию «Кухни Недорого» за честное выполнение своих обязательств по договору. С установленным ими шкафом-купе через 4 месяца случилась неприятность механизм двери заедал. Я позвонил в фирму и рассказал об этой технической проблеме. На следующий же день приехал специалист компании, осмотрел шкаф, подтвердил дефект завода и заменил фурнитуру. Я, честно говоря, был приятно удивлен никто не начал «переводить стрелки», а честно и быстро устранили дефект. Теперь только у вас буду заказывать мебель ценю честность и порядочность! Гавриил Шкаф-купе Перейра Хотим с семьей отметить ваш профессионализм и поблагодарить за проделанную работу. У нас узкий коридор гостиной и нам хотелось вместить туда небольшой шкаф для верхней одежды. Мы искали простой, но влезающий в наши параметры, шкаф, но не только для названия, но и, чтобы был функциональный. После переговоров со специалистами компании «Кухни Недорого» мы остановились на одном из запроектированных вариантов шкафа, который четко вписался в общий интерьер. Учли и материал, и цвет, и модель. Вообщем, мы благодарны, что нас услышали и сделали все быстро. Леонид Шкаф-купе Берни Вот мне надо было загородить нишу, а заодно разместить много накопившихся вещей. И здесь я, как говорится «убил двух зайцев»! Мне сделали шкаф в точности по размерам ниши, встроили его туда, то есть мне не пришлось переплачивать за корпус. Вещи лежат на местах, место пустующее занято. А я хочу поблагодарить руководство этой компании за то, что сумели так грамотно наладить работу всех своих подразделений. Все службы сработали безукоризненно ( от операторов на телефоне, до сборщиков). Спасибо всем большое! Дмитрий Анатольевич Шкаф-купе Вьеска Мне нужен был шкаф – купе в коридор. Но учитывая то, что стены и потолки у нас в квартирах ужасные, неровные, было понятно, что в магазине я того, что мне надо не куплю! Помыкавшись все-таки по магазинам, я пришла к выводу, что нужно делать шкаф только на заказ, причем встраивать в стены квартиры. Через интернет я нашла эту фирму «Кухни Недорого»! И замерщик – профессионал, и в офисе у них мне помогли определиться с цветом, выбрать нужный профиль, и сборщик все сделал аккуратно и быстро! Шкаф получился уникальный! И еще я знаю точно, что такого нет ни у кого! И внутри все так, как мне надо, по моим размерам! Оксана Шкаф-купе Карс Очень давно искала подходящую компанию, для установки шкафа–купе в — холл, таким образом, чтобы занять пространство за дверью. Размеры нестандартные, поэтому в разных местах, куда я звонила, получалось очень дорого. И вот наконец я нашла фирму, где мне при примерном просчете (по телефону), назвали очень заманчивую цену! Я решила проверить – вызвала мастера для замера. Фактическая стоимость тоже приятно порадовала! Я сразу внесла предоплату и заключила договор. Мне все в срок доставили, на следующий день произвели сборку. Мебель качественная ни где не скрепит. Никогда не подумаешь, что практически в треть дешевле, чем у фирм, куда я обращалась в начале! Юлия Шкаф-купе Ковина У меня была проблема – зрительно укоротить комнату, тем более, что после ремонта так и так нужен был шкаф. Я решил установить шкаф – купе от стены до стены. Мне повезло, что я обратился в эту фирму! Во первых, замерщик все замерил с максимальной точностью, с учетом моих потолков! На производстве не подвели, напилили все по размерам, а ребята – сборщики так аккуратно и технически грамотно собрали. Смотрится изделия хорошо и очень нас радует. Дмитрий Александрович Шкаф-купе Ван Нашли в интернете сайт вашей компании. Нам нужен был встроенный шкаф в нишу по нашим размерам. Замерщик Сергей очень грамотно сделал свою работу. Померил все очень профессионально. Учитывая внутри шкафа мало места и неровность стены. Когда привезли и собрали – шкаф встал, как влитой. За это спасибо замерщику и сборщику. С Уважением, Альфия 1 2 3 4 5 Нужна мебель на заказ? Получить консультацию менеджера бесплатно Получить консультацию О нас Доставка и оплата Гарантия Акции Отзывы Как купить? Статьи Контакты Кухонные гарнитуры Шкафы-купе Гардеробные +7 499 130-12-09 +7 903 508-47-95 Москва, ул. Генерала Кузнецова, д.11 корп 1 Пн — Вс: с 10 00 до 20 00 Политика конфиденциальности 2026 © Интернет магазин «Кухни Недорого» - мебель на заказ от производителя. Все права защищены Сайт носит рекламно-информационный характер и не является офертой. Оставить заявку Спасибо за заказ! Наш менеджер перезвонит Вам в ближайшее время Вызов замерщика Заполните форму и наш менеджер перезвонит Вам в ближайшее время Вызвать замерщика Расчет цены Прикрепить файл к сообщению Вызвать замерщика Заявка Прикрепить файл к сообщению Оставить заявку Расчет цены Выберите конфигурацию Прямая Г-образная П-образная С островом Прямая Прямая Г-образная П-образная С островом Выберите материал ЛДСП МДФ Пластик ПВХ Эмаль Массив дуба ЛДСП ЛДСП МДФ Пластик ПВХ Эмаль Массив дуба Верхние шкафы Нет Да Укажите размер Укажите размер Укажите личные данные Напишите комментарий Прикрепить файл к сообщению Получить расчет",
+  "json_ld": [
+    "{ \"@context\" : \"http://schema.org\", \"@type\" : \"WebSite\", \"name\" : \"Кухни недорого\", \"url\" : \"/\" }",
+    "{ \"@context\": \"http://schema.org\", \"@type\": \"Organization\", \"address\": { \"@type\": \"PostalAddress\", \"addressLocality\": \"Москва\", \"addressRegion\" : \"Московская область\", \"postalCode\": \"115280\", \"streetAddress\": \"ул. Генерала Кузнецова, д.11 корп 1\" }, \"email\": \"info@nedorogo-kuhni.ru\", \"name\": \"Кухни недорого\", \"telephone\": \"+7 499 130-12-09\" }"
+  ],
+  "document": {
+    "title": "Отзывы о шкафах-купе от реальных покупателей",
+    "meta_description": "Не знаете где заказать и какие выбрать шкафы-купе, тогда прочитайте отзывы наших клиентов об товарах компании «Кухни Недорого». Мы подберем вам шкаф-купе по приемлемой цене, звоните.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1",
+    "canonical": "https://nedorogo-kuhni.ru/otzyvy/shkafy-kupe",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "o-kompanii",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Информация",
+        "rel": ""
+      },
+      {
+        "href": "proizvodstvo",
+        "text": "Производство",
+        "rel": ""
+      },
+      {
+        "href": "foto-realizovannyh-obektov",
+        "text": "Фото готовых дизайн-проектов",
+        "rel": ""
+      },
+      {
+        "href": "poleznoe-video",
+        "text": "Видео установленных кухонь",
+        "rel": ""
+      },
+      {
+        "href": "proektirovanie",
+        "text": "Дизайн проект",
+        "rel": ""
+      },
+      {
+        "href": "zamer",
+        "text": "Замер",
+        "rel": ""
+      },
+      {
+        "href": "dogovor",
+        "text": "Договор и акт",
+        "rel": ""
+      },
+      {
+        "href": "pravila-ekspluatacii",
+        "text": "Правила эксплуатации",
+        "rel": ""
+      },
+      {
+        "href": "otdelki",
+        "text": "Отделки",
+        "rel": ""
+      },
+      {
+        "href": "rassrochka-i-kredit",
+        "text": "Рассрочка и кредит",
+        "rel": ""
+      },
+      {
+        "href": "napolnenie-shkafov-kupe",
+        "text": "Наполнение шкафов-купе",
+        "rel": ""
+      },
+      {
+        "href": "vopros-otvet",
+        "text": "Вопрос-ответ",
+        "rel": ""
+      },
+      {
+        "href": "sertifikaty",
+        "text": "Сертификаты",
+        "rel": ""
+      },
+      {
+        "href": "stati",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "dostavka-i-oplata",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "garantiya",
+        "text": "Гарантия",
+        "rel": ""
+      },
+      {
+        "href": "akcii",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Цены и сроки",
+        "rel": ""
+      },
+      {
+        "href": "ceny-i-sroki-izgotovleniya",
+        "text": "Мебель",
+        "rel": ""
+      },
+      {
+        "href": "sborka",
+        "text": "Сборка",
+        "rel": ""
+      },
+      {
+        "href": "komplektuyushhie",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "kak-kupit",
+        "text": "Как купить?",
+        "rel": ""
+      },
+      {
+        "href": "kontakty",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+74991301209",
+        "text": "+7 499 130-12-09",
+        "rel": ""
+      },
+      {
+        "href": "tel:+79035084795",
+        "text": "+7 903 508-47-95",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@nedorogo-kuhni.ru",
+        "text": "info@nedorogo-kuhni.ru",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Вызов замерщика БЕСПЛАТНО",
+        "rel": "nofollow"
+      },
+      {
+        "href": "kuhni",
+        "text": "Кухни",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe",
+        "text": "Шкафы-купе",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty",
+        "text": "Гардеробные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/deshevye",
+        "text": "Дешевые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/premium",
+        "text": "Премиум",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/elitnye",
+        "text": "Элитные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/100000-rubley",
+        "text": "до 100000",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/150000-rubley",
+        "text": "за 150000",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/250000-rubley",
+        "text": "за 250000",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/angliyskie",
+        "text": "Английские",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-art-deko",
+        "text": "Арт Деко",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/barokko",
+        "text": "Барокко",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-yaponskom-stile",
+        "text": "Японский",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/kantri",
+        "text": "Кантри",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-klassika",
+        "text": "Классика",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-loft",
+        "text": "Лофт",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-minimalizm",
+        "text": "Минимализм",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-modern",
+        "text": "Модерн",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-neoklassika",
+        "text": "Неоклассика",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-stile-provans",
+        "text": "Прованс",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-skandinavskom-stile",
+        "text": "Скандинавские",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-sovremennom-stile",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/hay-tek",
+        "text": "Хай-тек",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/malenkie",
+        "text": "Маленькие",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/srednego-razmera",
+        "text": "Средние",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/bolshie",
+        "text": "Большие",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/kvadratnye",
+        "text": "Квадратные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/ovalnye",
+        "text": "Овальные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/p-obraznye",
+        "text": "П-образные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/pryamye",
+        "text": "Прямые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/uglovye",
+        "text": "Угловые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/uzkie",
+        "text": "Узкие",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/so-skoshennym-uglom",
+        "text": "Скошенный угол",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/krivolineynye",
+        "text": "Криволинейные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-radiusnymi-fasadami",
+        "text": "Радиусные фасады",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/g-obraznye",
+        "text": "Г-образные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/matovye",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/glyancevye",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-patinoy",
+        "text": "С патиной",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/kuhni-pvh",
+        "text": "ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/iz-mdf",
+        "text": "МДФ",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/iz-plastika",
+        "text": "Из пластика",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-fotopechatyu",
+        "text": "Фотопечать",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/emal",
+        "text": "Эмаль",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/akrilovye",
+        "text": "Акриловые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/pod-mramor",
+        "text": "Под мрамор",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/pod-derevo",
+        "text": "Под дерево",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-fasadami-pod-beton",
+        "text": "Под бетон",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/bez-shkafov",
+        "text": "Без верхних шкафов",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/vstroennye",
+        "text": "Встроенные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/pod-potolok",
+        "text": "Под потолок",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-barnoy-stoykoy",
+        "text": "С барной стойкой",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-ostrovom",
+        "text": "С островом",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/s-erkerom",
+        "text": "С эркером",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/bez-ruchek",
+        "text": "Без ручек",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/studii",
+        "text": "Для студии",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/belye",
+        "text": "Белые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/bordovye",
+        "text": "Бордовые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/golubye",
+        "text": "Голубые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/zheltye",
+        "text": "Желтые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/zelenye",
+        "text": "Зеленые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/korichnevye",
+        "text": "Коричневые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/krasnye",
+        "text": "Красные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/oranzhevye",
+        "text": "Оранжевые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/rozovye",
+        "text": "Розовые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/serye",
+        "text": "Серые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/sinie",
+        "text": "Синие",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/chernye",
+        "text": "Черные",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/cherno-belye",
+        "text": "Черно-белые",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/dvuh-cvetov",
+        "text": "В двух цветах",
+        "rel": ""
+      },
+      {
+        "href": "kuhni/v-metallicheskim-cvete",
+        "text": "Под металл",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/belye",
+        "text": "Белые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/venge",
+        "text": "Венге",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/zheltye",
+        "text": "Желтые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/zelenye",
+        "text": "Зеленые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/korichnevye",
+        "text": "Коричневые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/krasnye",
+        "text": "Красные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/rozovye",
+        "text": "Розовые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/serye",
+        "text": "Серые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/sinie",
+        "text": "Синие",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/sirenevye",
+        "text": "Сиреневые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/temnye",
+        "text": "Темные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/cvetnye",
+        "text": "Цветные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/cherno-belye",
+        "text": "Черно-белые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/malenkie",
+        "text": "Маленькие",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/srednie",
+        "text": "Средние",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/bolshih-razmerov",
+        "text": "Большие",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-gostinuyu",
+        "text": "В гостиную",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-detskuyu-komnatu",
+        "text": "В детскую",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-koridor",
+        "text": "В коридор",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-ofis",
+        "text": "В офис",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-prihozhuyu",
+        "text": "В прихожую",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-spalnyu",
+        "text": "В спальню",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/dlya-devochki",
+        "text": "Для девочки",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/dlya-knig",
+        "text": "Для книг",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/dlya-malchika",
+        "text": "Для мальчика",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/dlya-odezhdy",
+        "text": "Для одежды",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/na-balkon",
+        "text": "На балкон",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/pod-tv",
+        "text": "Под ТВ",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/v-vannuyu-komnatu",
+        "text": "В ванную",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/vysokie",
+        "text": "Высокие",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/g-obraznye",
+        "text": "Г-образные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/dlinnye",
+        "text": "Длинные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/p-obraznye",
+        "text": "П-образные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/uglovye",
+        "text": "Угловые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shirokie",
+        "text": "Широкие",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/radiusnye",
+        "text": "Радиусные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/bez-zerkal",
+        "text": "Без зеркал",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/glyancevye",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/matovye",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/s-vitrazhami",
+        "text": "С витражами",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/s-zerkalom",
+        "text": "С зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/s-kozhey",
+        "text": "С кожей",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/s-peskostruynym-risunkom",
+        "text": "Пескоструйный рисунок",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/s-fotopechatyu",
+        "text": "С фотопечатью",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/s-frezerovkoy-fasadov",
+        "text": "Фрезированные фасады",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/dvuhdvernye",
+        "text": "2‑х дверные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/4-dvernye",
+        "text": "4‑х дверные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/vo-vsyu-stenu",
+        "text": "Во всю стену",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/vstroennye",
+        "text": "Встроенные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/zerkalnye",
+        "text": "Зеркальные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/komplanarnye",
+        "text": "Компланарные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/pod-potolok",
+        "text": "Под потолок",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/razdvizhnye",
+        "text": "Раздвижные",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/so-skoshennym-uglom",
+        "text": "Скошенный угол",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/raspashnye-shkafy-kupe",
+        "text": "Распашные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/deshevye",
+        "text": "Дешевые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/elitnye",
+        "text": "Элитные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/bolshie",
+        "text": "Большие",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/malenkie",
+        "text": "Маленькие",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-stile-loft",
+        "text": "Лофт",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-stile-minimalizm",
+        "text": "Минимализм",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-klassicheskom-stile",
+        "text": "Классический",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-skandinavskom-stile",
+        "text": "Скандинавские",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-stile-provans",
+        "text": "Прованс",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/sovremennye",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/vysokie",
+        "text": "Высокие",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/bukvoy-g",
+        "text": "Буквой Г",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/bukvoy-p",
+        "text": "Буквой П",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/kvadratnye",
+        "text": "Квадратные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/pryamye",
+        "text": "Прямые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/pryamougolnye",
+        "text": "Прямоугольные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/uglovye",
+        "text": "Угловые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/nizkie",
+        "text": "Низкие",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/uzkie",
+        "text": "Узкие",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-zale",
+        "text": "В зале",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-komnate",
+        "text": "В комнату",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-mansarde",
+        "text": "На мансарде",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-nishe",
+        "text": "В нишу",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-prihozhey",
+        "text": "В прихожей",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-spalne",
+        "text": "В спальню",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-hrushhevke",
+        "text": "В хрущевке",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/v-chastnom-dome",
+        "text": "В частный дом",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/dlya-odezhdy",
+        "text": "Для одежды",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/dlya-ofisa",
+        "text": "Для офиса",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/belye",
+        "text": "Белые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/zelenye",
+        "text": "Зеленые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/krasnye",
+        "text": "Красные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/sinie",
+        "text": "Синие",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/temnye",
+        "text": "Темные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/chernye",
+        "text": "Черные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/cherno-belye",
+        "text": "Черно-белые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/serye",
+        "text": "Серые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/vstroennye",
+        "text": "Встроенные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/s-oknom",
+        "text": "С окном",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/zakrytye",
+        "text": "Закрытые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/otkrytye",
+        "text": "Открытые",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty/razdvizhnye",
+        "text": "Раздвижные",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-shkafy",
+        "text": "Гардеробные шкафы",
+        "rel": ""
+      },
+      {
+        "href": "izbrannoe",
+        "text": "0",
+        "rel": "nofollow"
+      },
+      {
+        "href": "",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/radiusniy-shkaf-kupe-buzhival",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/radiusniy-shkaf-kupe-buzhival",
+        "text": "Радиусный шкаф купе Буживаль",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-bollen",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-bollen",
+        "text": "Шкаф купе Боллен",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-bonne",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-bonne",
+        "text": "Шкаф-купе Бонне",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-midlberg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-midlberg",
+        "text": "Шкаф-купе Мидлберг",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-pereyra",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-pereyra",
+        "text": "Шкаф-купе Перейра",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-berni",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-berni",
+        "text": "Шкаф-купе Берни",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-veska",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-veska",
+        "text": "Шкаф-купе Вьеска",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-kars",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-kars",
+        "text": "Шкаф-купе Карс",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-kovina",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-kovina",
+        "text": "Шкаф-купе Ковина",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-van",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe/shkaf-kupe-van",
+        "text": "Шкаф-купе Ван",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy/shkafy-kupe",
+        "text": "1",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy/shkafy-kupe?page=2",
+        "text": "2",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy/shkafy-kupe?page=3",
+        "text": "3",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy/shkafy-kupe?page=4",
+        "text": "4",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy/shkafy-kupe?page=5",
+        "text": "5",
+        "rel": ""
+      },
+      {
+        "href": "o-kompanii",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "dostavka-i-oplata",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "garantiya",
+        "text": "Гарантия",
+        "rel": ""
+      },
+      {
+        "href": "akcii",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "otzyvy",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "kak-kupit",
+        "text": "Как купить?",
+        "rel": ""
+      },
+      {
+        "href": "stati",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "kontakty",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "kuhonnye-garnitury",
+        "text": "Кухонные гарнитуры",
+        "rel": ""
+      },
+      {
+        "href": "shkafy-kupe",
+        "text": "Шкафы-купе",
+        "rel": ""
+      },
+      {
+        "href": "garderobnye-komnaty",
+        "text": "Гардеробные",
+        "rel": ""
+      },
+      {
+        "href": "tel:+74991301209",
+        "text": "+7 499 130-12-09",
+        "rel": ""
+      },
+      {
+        "href": "tel:+79035084795",
+        "text": "+7 903 508-47-95",
+        "rel": ""
+      },
+      {
+        "href": "/politika-konfidencialnosti",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Оставить заявку",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "перезвоните мне",
+      "Получить консультацию",
+      "Вызвать замерщика",
+      "Вызвать замерщика",
+      "Оставить заявку",
+      "Получить расчет"
+    ],
+    "h1_texts": [
+      "Отзывы о шкафах-купе от покупателей"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 14,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 243,
+      "image": 34,
+      "list_item": 207,
+      "strong": 0,
+      "form": 8,
+      "input": 36
+    }
+  }
+}

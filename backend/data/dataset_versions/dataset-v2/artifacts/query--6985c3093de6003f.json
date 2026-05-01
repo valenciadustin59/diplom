@@ -1,0 +1,514 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://oknavnizhnemnovgorode.ru/",
+  "final_url": "https://oknavnizhnemnovgorode.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "connection": "keep-alive",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:35:40 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "p3p": "policyref=\"/bitrix/p3p.xml\", CP=\"NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA\"",
+    "pragma": "no-cache",
+    "server": "nginx/1.16.1",
+    "set-cookie": "PHPSESSID=H3s8scEyLSCP4bfxj3fzLdxnvzW3j9YJ; path=/; HttpOnly",
+    "transfer-encoding": "chunked",
+    "x-powered-by": "PHP/8.1.24",
+    "x-powered-cms": "Bitrix Site Manager (30da7b541b4a667b6bc9e2177ecf3e68)"
+  },
+  "response_time_ms": 6778.6094,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:35:47.150021+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><meta http-equiv=\"origin-trial\" content=\"A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">\n    <title>Пластиковые окна в Нижнем Новгороде от производителя - купить, заказать</title>\n        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n<meta name=\"description\" content=\"Закажите пластиковые окна в Нижнем Новгороде от производителя по выгодной цене! Предлагаем качественный сервис, надежные немецкие профили, сезонные скидки и акции.\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    \n    \n    <!--[if lte IE 8]><link href= \"/bitrix/templates/2017/css/ie.css\" rel= \"stylesheet\" media= \"all\" /><![endif]-->\n    <!--[if lt IE 9]>\n\t\t\t\t\t<![endif]-->\n                                            <link rel=\"icon\" type=\"image/vnd.microsoft.icon\" href=\"/bitrix/templates/2017/favicon.ico\">\n    <link rel=\"shortcut icon\" href=\"favicon.ico\">\n\t\n</head>\n<body>\n\t    <!-- wrap -->\n    <div class=\"wrap  \">\n        <!-- header -->\n        <header class=\"header\">\n            <div class=\"inner-wrap\">\n                <div class=\"logo-block\">\n                    <a href=\"/\" class=\"logo\">\n                        <img src=\"/bitrix/templates/2017/img/main/logo.png\" alt=\"\">\n                    </a>\n                </div>\n                <a href=\"\" class=\"btn-header btn-header-phone btn-popup-callback\">\n                    <span class=\"ico\"><span class=\"i i-phone\"></span></span>\n                    позвонить\n                </a>\n                <div class=\"header-phone-block\">\n                    <div class=\"title\">Сегодня с 9:00 до 20:00</div>\n                    <div class=\"phone\">\n                        <div class=\"ico\"><span class=\"i i-phone\"></span>\n                        </div><a href=\"tel:88312352808\">8 (831) 235-28-08</a>\n                    </div>\n                    <div class=\"city\"><a href=\"/goroda/\" class=\"btn-header-city\">Нижний Новгород</a>\n                    </div>\n                </div>\n                <div class=\"header-actions-block\">\n                    <a href=\"/kalkuliator-plastikovih-okon/\" class=\"btn-header-action\">\n                        <span class=\"ico\"><span class=\"i i-calc\"></span></span>\n                        <span class=\"title\">Онлайн калькулятор цен</span>\n                    </a>\n                    <a href=\"\" class=\"btn-header-action btn-popup-callback\">\n                        <span class=\"ico\"><span class=\"i i-callback\"></span></span>\n                        <span class=\"title\">Вам перезвонить?</span>\n                    </a>\n                </div>\n            </div>\n        </header>\n        <!-- /header -->\n        <!-- nav -->\n        <nav class=\"nav\">\n            <div class=\"inner-wrap\">\n                <div class=\"main-menu-wrap popup-wrap\">\n                    <a href=\"\" class=\"btn-header btn-header-menu btn-toggle\">\n                        <span class=\"ico\"><img src=\"/bitrix/templates/2017/img/icons/menu.svg\" alt=\"\"></span>\nменю\n                    </a>\n                    <div class=\"menu-block popup-block\">\n                        <a href=\"\" class=\"btn-header btn-header-main\">\n                            <span class=\"ico\"><img src=\"/bitrix/templates/2017/img/icons/home.svg\" alt=\"\"></span>\nглавная\n                        </a>\n                        <a href=\"\" class=\"btn-header btn-popup-close\">\n                            <span class=\"ico\"><img src=\"/bitrix/templates/2017/img/icons/delete.svg\" alt=\"\"></span>\nменю\n                        </a>\n                        <ul class=\"menu\">\n                            <li class=\"submenu\">\n                                <a class=\"active\" href=\"/productsiya/\">Продукция <span class=\"btn-submenu\"></span></a>\n                                <ul>\n                                    <li><a href=\"/\">Пластиковые окна</a>\n                                    </li>\n                                    <li><a href=\"/pvh-okna/\">ПВХ-окна EnWin</a>\n                                    </li>\n                                    <li><a href=\"/gotovie-okna-dlya-dachi/\">Готовые окна на дачу</a>\n                                    </li>\n                                    <li><a href=\"/plastikovie-dveri/\">Пластиковые двери</a>\n                                    </li>\n                                    <li><a href=\"/tsvetnie-plastikovie-okna/\">Цветные окна</a>\n                                    </li>\n\t\t\t\t\t\t\t\t\t<li><a href=\"/okna-dlya-bani/\">Окна для бани</a>\n                                    </li>\n                                </ul>\n                            </li>\n                            <li class=\"submenu\">\n                                <a class=\"\" href=\"/uslugi/\">Услуги <span class=\"btn-submenu\"></span></a>\n                                <ul>\n                                    <li><a href=\"/osteklenie-balkonov/\">Остекление балконов</a>\n                                    </li>\n                                    <li><a href=\"/osteklenie-kottedzhei/\">Остекление коттеджей</a>\n                                    </li>\n                                    <li><a href=\"/osteklenie-verand/\">Остекление веранд</a>\n                                    </li>\n\t\t\t\t\t\t\t\t\t<li><a href=\"/osteklenie-terras/\">Остекление террас</a>\n                                    </li>\n                                    <li><a href=\"/osteklenie-besedok/\">Остекление беседок</a>\n                                    </li>\n                                    <li><a href=\"/razdvizhnoe-osteklenie/\">Раздвижное остекление</a>\n                                    </li>\n                                    <li><a href=\"/teploe-osteklenie-balkonov/\">Теплое остекление</a>\n                                    </li>\n                                    <li><a href=\"/holodnoe-osteklenie-balkonov/\">Холодное остекление</a>\n                                    </li>\n                                    <li><a href=\"/ustanovka-plastikovih-okon/\">Установка пластиковых окон</a>\n                                    </li>\n                                    <li><a href=\"/zamena-plastikovih-okon/\">Замена пластиковых окон</a>\n                                    </li>\n                                </ul>\n                            </li>\n                            <li class=\"submenu\">\n                                <a class=\"\" href=\"/plastikovie-okna-tseni/\">Цены <span class=\"btn-submenu\"></span></a>\n                                <ul>\n                                    <li><a href=\"/kalkuliator-plastikovih-okon/\">Калькулятор окон онлайн</a>\n                                    </li>\n                                    <li><a href=\"/kalkuliator-balkonov/\">Калькулятор балконов онлайн</a>\n                                    </li>\n                                    <li><a href=\"/plastikovie-okna-stoimost/\">Стоимость пластиковых окон</a>\n                                    </li>\n                                    <li><a href=\"/kupit-plastikovie-okna/\">Купить пластиковые окна</a>\n                                    </li>\n                                    <li><a href=\"/zakazat-plastikovie-okna/\">Заказать пластиковые окна</a>\n                                    </li>\n                                </ul>\n                            </li>\n                            <li>\n                                <a class=\"\" href=\"/plastikovie-okna-otzivi/\">Отзывы</a>\n                            </li>\n                            <li class=\"submenu\">\n                                <a class=\"\" href=\"/proizvoditel/\">О производителе <span class=\"btn-submenu\"></span></a>\n                                <ul>\n                                    <li><a href=\"/blog/\">Блог</a>\n                                    </li>\n                                    <li><a href=\"/foto/\">Фото работ</a>\n                                    </li>\n                                </ul>\n                            </li>\n                            <li>\n                                <a class=\"\" href=\"/kontakti/\">Контакты</a>\n                            </li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <!-- /nav -->\n\t\t\n\t\t        <!-- main baner box -->\n        <div class=\"main-baner-box cnt-section img-bg-box\" style=\"background-image: url(&quot;/bitrix/templates/2017/img/baner01.jpg&quot;);\">\n            <div class=\"inner-wrap\">\n                <div class=\"inner-block\">\n                    <div class=\"baner-title\">\n                        <h1>Пластиковые окна в Нижнем Новгороде</h1>\n                        <p>по разумным <span class=\"att-text\">недорогим</span> ценам</p>\n                    </div>\n                    <div class=\"discount-wrap\">\n                        <div class=\"item-wrap\">\n                            <div class=\"item-sale\">\n                                <div class=\"sale-text\">Скидки от <span class=\"att-text\">5%</span> до <span class=\"att-text\">50%</span> на остекление квартир и домов под ключ</div>\n                            </div>\n                        </div>\n                        <div class=\"item-wrap\">\n                            <div class=\"item-timer\">\n                                <div class=\"timer-title\">Скидки действуют:</div>\n                                <div class=\"timer is-countdown\" id=\"timer01\"><span class=\"countdown-row countdown-show4\"><span class=\"countdown-section\"><span class=\"countdown-amount\">2</span><span class=\"countdown-period\">Дня</span></span><span class=\"countdown-section\"><span class=\"countdown-amount\">9</span><span class=\"countdown-period\">Часов</span></span><span class=\"countdown-section\"><span class=\"countdown-amount\">24</span><span class=\"countdown-period\">Минуты</span></span><span class=\"countdown-section\"><span class=\"countdown-amount\">14</span><span class=\"countdown-period\">Секунд</span></span></span></div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"baner-button\"><a href=\"/kalkuliator-plastikovih-okon/\" class=\"btn\">Рассчитать цену со скидкой</a>\n                    </div>\n                </div>\n            </div>\n            <img src=\"/bitrix/templates/2017/img/baner01.jpg\" alt=\"\" class=\"bg-photo\" style=\"display: none;\">\n        </div>\n        <!-- /main baner box -->\n\t\t\t\t\n\t\t\n\t\t\t\t\n\t\t\n\t\t\n        <!-- page -->\n        <div class=\"page\">\n\t\t\t\t\t\t<div class=\"breadcrumbs-box\"></div>\n\t\t\t<!-- tizers box -->\n<div class=\"tizers-box top-box\">\n\t<div class=\"items-wrap\">\n\t\t <!-- item -->\n\t\t<div class=\"item-wrap\">\n\t\t\t<div class=\"item-tizer\">\n <a href=\"/pvh-okna/\" class=\"tizer-photo\"> <img alt=\"ПВХ окна\" src=\"/bitrix/templates/2017/img/01.jpg\"> </a>\n\t\t\t\t<div class=\"tizer-title\">\n <a href=\"/pvh-okna/\" class=\"btn-link\">Профили EnWin</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"tizer-price\">\n\t\t\t\t\t от <b>5 355</b> рублей\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap\">\n\t\t\t<div class=\"item-tizer\">\n <a href=\"/osteklenie-balkonov/\" class=\"tizer-photo\"> <img alt=\"Остекление балконов\" src=\"/bitrix/templates/2017/img/02.jpg\"> </a>\n\t\t\t\t<div class=\"tizer-title\">\n <a href=\"/osteklenie-balkonov/\" class=\"btn-link\">Остекление балконов</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"tizer-price\">\n\t\t\t\t\t от <b>9 800</b> рублей\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap\">\n\t\t\t<div class=\"item-tizer\">\n <a href=\"/osteklenie-kottedzhei/\" class=\"tizer-photo\"> <img alt=\"Остекление коттеджей\" src=\"/bitrix/templates/2017/img/03.jpg\"> </a>\n\t\t\t\t<div class=\"tizer-title\">\n <a href=\"/osteklenie-kottedzhei/\" class=\"btn-link\">Остекление коттеджей</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"tizer-price\">\n\t\t\t\t\t от <b>4 250</b> рублей / м2\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap\">\n\t\t\t<div class=\"item-tizer\">\n <a href=\"/gotovie-okna-dlya-dachi/\" class=\"tizer-photo\"> <img alt=\"Готовые окна\" src=\"/bitrix/templates/2017/img/04.jpg\"> </a>\n\t\t\t\t<div class=\"tizer-title\">\n <a href=\"/gotovie-okna-dlya-dachi/\" class=\"btn-link\">Готовые окна</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"tizer-price\">\n\t\t\t\t\t от <b>2 120</b> рублей / м2\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item -->\n\t</div>\n</div>\n <!-- /tizers box --> <!-- bg box -->\n<div class=\"bg-box bg-gray\">\n\t <!-- selections box -->\n\t<div class=\"selections-box\">\n\t\t<h2>Работаем качественно и системно</h2>\n\t\t<div class=\"items-wrap\">\n\t\t\t <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-selection\">\n\t\t\t\t\t<div class=\"sel-photo\">\n <img alt=\"не одинаковы\" src=\"/bitrix/templates/2017/img/sel01.png\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"sel-text\">\n\t\t\t\t\t\t Оконные конструкции не одинаковы. Разница — в <b>материалах и качестве.</b>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-selection\">\n\t\t\t\t\t<div class=\"sel-photo\">\n <img alt=\"Недорогое окно\" src=\"/bitrix/templates/2017/img/sel02.png\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"sel-text\">\n\t\t\t\t\t\t Используем надежные немецкие профили.\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-selection\">\n\t\t\t\t\t<div class=\"sel-photo\">\n <img src=\"/bitrix/templates/2017/img/sel03.png\" alt=\"заказать\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"sel-text\">\n\t\t\t\t\t\t Предлагаем опытные бригады и отменное качество.\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-selection\">\n\t\t\t\t\t<div class=\"sel-photo\">\n <img alt=\"доступные окна\" src=\"/bitrix/templates/2017/img/sel04.png\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"sel-text\">\n <b>Назовите нам цену,</b> в которую хотите уложиться, — предложим разные варианты.\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item -->\n\t\t</div>\n\t</div>\n\t <!-- /selections box --> <!-- bg inner box -->\n\t<div class=\"bg-inner-box\">\n\t\t <!-- prices box -->\n\t\t<div class=\"prices-box\">\n\t\t\t<h3>Наши цены</h3>\n\t\t\t<div class=\"items-wrap\">\n\t\t\t\t <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-price\">\n\t\t\t\t\t\t<div class=\"price-title\">\n\t\t\t\t\t\t\t Одностворчатое окно\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-photo\">\n <img alt=\"Одностворчатое окно\" src=\"/bitrix/templates/2017/img/price01.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-text\">\n\t\t\t\t\t\t\t 2 стекла — от <b>5 355</b> рублей <br>\n\t\t\t\t\t\t\t 3 стекла — от <b>5 800</b> рублей\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-price\">\n\t\t\t\t\t\t<div class=\"price-title\">\n\t\t\t\t\t\t\t Двустворчатое окно\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-photo\">\n <img alt=\"Двустворчатое окно\" src=\"/bitrix/templates/2017/img/price02.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-text\">\n\t\t\t\t\t\t\t 2 стекла — от <b>8 300</b> рублей <br>\n\t\t\t\t\t\t\t 3 стекла — от <b>9 270</b> рублей\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-price\">\n\t\t\t\t\t\t<div class=\"price-title\">\n\t\t\t\t\t\t\t Трехстворчатое окно\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-photo\">\n <img alt=\"Трехстворчатое окно\" src=\"/bitrix/templates/2017/img/price03.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-text\">\n\t\t\t\t\t\t\t 2 стекла — от <b>12 100</b> рублей <br>\n\t\t\t\t\t\t\t 3 стекла — от <b>12 930</b> рублей\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-price\">\n\t\t\t\t\t\t<div class=\"price-title\">\n\t\t\t\t\t\t\t Балконный блок\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-photo\">\n <img alt=\"Балконный блок\" src=\"/bitrix/templates/2017/img/price04.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"price-text\">\n\t\t\t\t\t\t\t 2 стекла — от <b>14 000</b> рублей <br>\n\t\t\t\t\t\t\t 3 стекла — от <b>14 770</b> рублей\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item -->\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /prices box --> <!-- btn box -->\n\t\t<div class=\"btn-box\">\n <a href=\"\" class=\"btn btn-medium btn-popup-callback\">Обсудить с менеджером</a>\n\t\t</div>\n\t\t <!-- /btn box -->\n\t</div>\n\t <!-- /bg inner box -->\n</div>\n <!-- /bg box --> <!-- expert box -->\n<div class=\"expert-box\">\n\t<h2>Почему важно вызвать эксперта по замерам?</h2>\n\t<div class=\"inner-wrap-block\">\n\t\t <!-- expert box -->\n\t\t<div class=\"list-box\">\n\t\t\t <!-- item -->\n\t\t\t<div class=\"item-list\">\n\t\t\t\t<div class=\"list-photo\">\n <img alt=\"Эксперт по замерам\" src=\"/bitrix/templates/2017/img/list01.png\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"list-text\">\n\t\t\t\t\t Мастер по замерам является инженером с узким образованием. Он проведет точное измерение проёмов и составит план монтажа. От типа материала стен и от их состояния зависит финальная стоимость заказа.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-list\">\n\t\t\t\t<div class=\"list-photo\">\n <img alt=\"Материалы для окон\" src=\"/bitrix/templates/2017/img/list02.png\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"list-text\">\n\t\t\t\t\t На замер эксперт привезёт образцы материалов, чтобы Вы могли выбрать понравившийся вариант и сравнить, чем они отличаются. Выбирайте то, что Вам подходит и по-настоящему нравится - иначе, в чем смысл?\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-list\">\n\t\t\t\t<div class=\"list-photo\">\n <img src=\"/bitrix/templates/2017/img/list03.png\" alt=\"Скидки\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"list-text\">\n\t\t\t\t\t Прямо на замере мастер свяжется с отделом лояльности, сообщит нам объем заказа (количество конструкций), и мы сможем предложить приятные денежные скидки на Ваш заказ.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-list\">\n\t\t\t\t<div class=\"list-photo\">\n <img alt=\"Специальное предложение\" src=\"/bitrix/templates/2017/img/list04.png\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"list-text\">\n\t\t\t\t\t Наше предложение фиксируется на 48 часов. Если уже на замере Вы поняли, что готовы заключать договор, сообщите эксперту по замерам - он применит дополнительную скидку “за скорость”.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item -->\n\t\t</div>\n\t\t <!-- /expert box --> <!-- call box -->\n\t\t<div class=\"call-box\">\n\t\t\t<form action=\"/\" class=\"frm-call img-bg-box\" style=\"background-image: url(&quot;/bitrix/templates/2017/img/form01.jpg&quot;);\">\n\t\t\t\t<div class=\"frm-stiker\">\n\t\t\t\t\t БЕСПЛАТНО\n\t\t\t\t</div>\n\t\t\t\t<div class=\"inner-block\">\n\t\t\t\t\t<div class=\"frm-title\">\n\t\t\t\t\t\t<div class=\"title\">\n\t\t\t\t\t\t\t Вызов менеджера на замер\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t Мастер выезжает бесплатно!\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"frm-block\">\n\t\t\t\t\t\t<div class=\"frm-row\">\n <input type=\"text\" required=\"\" placeholder=\"Ваше имя\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"frm-row\">\n <input type=\"tel\" required=\"\" placeholder=\"+7 (____) ____ -___-___\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"frm-row frm-row-message\">\n <textarea placeholder=\"Комментарий\"></textarea>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"frm-row-submit\">\n <input type=\"submit\" value=\"Отправить заявку\" class=\"btn-medium btn-submit\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"frm-row agreement\">\n <i>&nbsp;</i>\n\t\t\t\t\t\tПринимаю <a href=\"/personal-info/\">Соглашение о конфиденциальности</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n <img alt=\"Выезд замерщика в Нижнем Новгороде\" src=\"/bitrix/templates/2017/img/form01.jpg\" class=\"bg-photo\" style=\"display: none;\">\n\t\t\t</form>\n\t\t</div>\n\t\t <!-- /call box -->\n\t</div>\n</div>\n <!-- /expert box --> <!-- form callback -->\n<form action=\"/\" class=\"frm-callback\">\n\t<div class=\"inner-block\">\n\t\t<div class=\"frm-title\">\n\t\t\t Узнайте цену со всеми скидками и акциями\n\t\t</div>\n\t\t<div class=\"frm-block\">\n\t\t\t<div class=\"frm-field\">\n <input type=\"text\" placeholder=\"Ваше имя\" required=\"\">\n\t\t\t</div>\n\t\t\t<div class=\"frm-field\">\n <input type=\"tel\" placeholder=\"+7 (____) ____ -___-___\" required=\"\">\n\t\t\t</div>\n\t\t\t<div class=\"frm-field\">\n <input type=\"submit\" value=\"ПОЗВОНИТЕ МНЕ\" class=\"btn-border btn-submit\">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"frm-field agreement\">\n <i>&nbsp;</i>\n\t\t\tПринимаю <a href=\"/personal-info/\">Соглашение о конфиденциальности</a>\n\t\t</div>\n\t</div>\n</form>\n <!-- /form callback --> <!-- diagramm box -->\n<div class=\"diagramm-box\">\n\t<h2>Доступные окна</h2>\n\t<div class=\"pic-block\">\n <img alt=\"сравните стоимость\" src=\"/bitrix/templates/2017/img/diagramm.jpg\">\n\t</div>\n</div>\n <!-- /diagramm box --> <!-- difference box -->\n<div class=\"bg-box bg-gray\">\n\t<div class=\"difference-box\">\n\t\t<h2 class=\"second-title\">Наши отличия</h2>\n\t\t<div class=\"items-wrap\">\n\t\t\t <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-diff\">\n\t\t\t\t\t<div class=\"diff-photo\">\n <img src=\"/bitrix/templates/2017/img/diff01.png\" alt=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"diff-text\">\n\t\t\t\t\t\t По телефону наши эксперты посоветуют, какой из вариантов остекления в большей степени подойдёт в вашем случае.\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-diff\">\n\t\t\t\t\t<div class=\"diff-photo\">\n <img src=\"/bitrix/templates/2017/img/diff02.png\" alt=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"diff-text\">\n\t\t\t\t\t\t Для наших любимых клиентов мы проводим регулярные сезонные акции. Стоимость скидки можно узнать во время замера у эксперта.\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-diff\">\n\t\t\t\t\t<div class=\"diff-photo\">\n <img src=\"/bitrix/templates/2017/img/diff03.png\" alt=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"diff-text\">\n\t\t\t\t\t\t Мы не просто предложим 1 вариант комплектаций, а рассчитаем сразу несколько. Выбор - это приятно!\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item --> <!-- item -->\n\t\t\t<div class=\"item-wrap\">\n\t\t\t\t<div class=\"item-diff\">\n\t\t\t\t\t<div class=\"diff-photo\">\n <img src=\"/bitrix/templates/2017/img/diff04.png\" alt=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"diff-text\">\n\t\t\t\t\t\t У нас работают только славянские бригады и опытные мастера. Монтаж проводится по ГОСТу с соблюдением технологических требований.\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t <!-- /item -->\n\t\t</div>\n\t</div>\n</div>\n <!-- /difference box --> <!-- opins box -->\n<div class=\"opins-box\">\n\t<h2>Отзывы клиентов</h2>\n\t<div class=\"slider-wrap\">\n\t\t<div class=\"slider owl-carousel owl-theme owl-loaded\">\n\n\t\n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n\t\t\n\t\t\n\t\n\t\t\n\t\n\t \n<div class=\"owl-stage-outer owl-height\" style=\"height: 118px;\"><div class=\"owl-stage\" style=\"transform: translate3d(-1592px, 0px, 0px); transition: all; width: 11144px;\"><div class=\"owl-item cloned\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_199\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Максим, г. Нижний Новгород</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Покупал здесь готовые окна на дачу. Удивило, что можно прямо за пару часов купить окна стандартных размеров и договориться о доставке. Устанавливать буду сам, но услугами и скоростью работы Просто Окон остался доволен. Буду рекомендовать друзьям-дачникам!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item cloned\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_198\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Элеонора, г. Нижний Новгород</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Заказывали в этой фирме остекление коттеджа на Ванеева. Брали полную премиум-помплектацию с ламинацией. Общая сумма на 23 окна получилась на 354 600 рублей, но нам сделали скидку на 20500 рублей (в сравнении с общей суммой мелочь, а все же было приятно). Ламинацию заказывали двухстороннюю под дуб. Заказ делали порядка 2 недель, но нас заранее предупредили, что размеры нестандартные и будет дольше стандартных сроков. Установили на прошлой неделе - смотрится шикарно, спасибо!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item active\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_207\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Евгений, 12.09.2020 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Искал себе окна на дачу. Нашел эту фирму, и не пожалел - за 2 дня мне доставили прямо до участка 8 окон. Заказазывал стандартные размеры (4 двухстворчатых и 4 одностворчатых). Удобно, дешево и качественно. </div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_206\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Азамат, 13.03.2021 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Моя строительная бригада уже в третий раз работает с этой фирмой. Очень адекватный сервис, качественно и удобно, что можно заказать любой формы. Забираем сами у них с завода, сотрудничеством доволен.</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_205\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Дмитрий, 05.06.2021 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Построил себе деревянный дом за городом, и встал вопрос, какие окна устанавливать. Вроде как читал, что пластиковые окна не подойдут. Но специалисты этой фирмы развеяли миф и объяснили, что есть простая технология, которая позволяет установить их в деревянный дом. В итоге, за 2 недели мне сделали все 12 окон. И установили еще за 3 дня. Доволен как боров - следующим летом заселяемся!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_204\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Игнатий Петрович, г. Нижний Новгород</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Я тут брал окна для бани. Заказал стандартные - они у них уже готовы были в самой простой комплектации. Попросил только монтаж сделать, откосы сам буду неспеша доделывать. Ровно 2 дня заняло, то есть реально быстро по сравнению с тем, что предлагали другие. Доволен! </div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_203\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Анастасия, 10.10.2022 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Воспользовались осенней скидкой Просто Окна и заказали остекление и отделку балкона под ключ. Выбрали самый простой вариант - раздвижное остекление алюминием и отделку вагонкой. Все хорошо, ставлю пять баллов. Спасибо мастерам Андрею и Сергею, работают слаженно и быстро.</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_202\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Алла, 18.01.2022 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Мы с мужем решили остеклить балкон сразу после новогодних праздников. Потому что цены дешевле зимой. Выбирали из 3 фирм - остановились на компании Просто Окна. Примерно полторы недели делали окна, потом за день установили. Все прошло быстро и без проблем - мастера использовали какую-то пленку, так что в самой квартире температура вообще не изменилась, а они там на балконе работали в утепленной спецодежде. Заказывали теплое остекление. Летом еще хотим заказать отделку, чтобы на балконе сделать мини-офис для мужа. Опять обратимся сюда. Спасибо руководству и фирме за качество сервиса!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_201\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Ильнур, 12.03.2022 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Заказывал окна для новой двушки (родные окна в новостройках сейчас жуть какие плохие делают). Остановился на профиле EnWin Eco, двухкамерном стеклопакете, под ключ. Очень доволен, так как все работы мне сделали за день - увез семью утром к родным, а вечером приез их обратно уже в квартиру с новыми окнами. Новшества пришлись особенно по душе дочке! Спасибо!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_200\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Лидия Ивановна, г. Нижний Новгород</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"e\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Старое окно на кухне стало сильно поддувать прошлой зимой, поэтому мы с мужем решили заменить на новое. Выбирали долго и остановились на компании Просто Окна. Они предложили лучшую цену. Для нас, пенсионеров, цена является важным критерием отбора. Установленным пластиковым окном довольны, хоть в фирме и задержали установку на день от обговоренного срока. Я уже писала отзыв руководству, и здесь посоветую: если сроки переносятся, предупреждайте клиентов хотя бы за 2 дня. У всех же свои планы. А так спасибо, окно хорошее, больше не продувает!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_199\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Максим, г. Нижний Новгород</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Покупал здесь готовые окна на дачу. Удивило, что можно прямо за пару часов купить окна стандартных размеров и договориться о доставке. Устанавливать буду сам, но услугами и скоростью работы Просто Окон остался доволен. Буду рекомендовать друзьям-дачникам!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_198\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Элеонора, г. Нижний Новгород</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Заказывали в этой фирме остекление коттеджа на Ванеева. Брали полную премиум-помплектацию с ламинацией. Общая сумма на 23 окна получилась на 354 600 рублей, но нам сделали скидку на 20500 рублей (в сравнении с общей суммой мелочь, а все же было приятно). Ламинацию заказывали двухстороннюю под дуб. Заказ делали порядка 2 недель, но нас заранее предупредили, что размеры нестандартные и будет дольше стандартных сроков. Установили на прошлой неделе - смотрится шикарно, спасибо!</div>\n\t\t</div>\n\t</div></div><div class=\"owl-item cloned\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_207\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Евгений, 12.09.2020 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Искал себе окна на дачу. Нашел эту фирму, и не пожалел - за 2 дня мне доставили прямо до участка 8 окон. Заказазывал стандартные размеры (4 двухстворчатых и 4 одностворчатых). Удобно, дешево и качественно. </div>\n\t\t</div>\n\t</div></div><div class=\"owl-item cloned\" style=\"width: 796px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_3218110189_206\">\n\t\t<div class=\"item-opin\">\n\t\t\t<div class=\"opin-title\">\n\t\t\t\t<div class=\"title\">Азамат, 13.03.2021 г.</div>\n\t\t\t\t\t\t\t\t<div class=\"item-rate\">\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t\t<span class=\"f\"></span>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"opin-text\">Моя строительная бригада уже в третий раз работает с этой фирмой. Очень адекватный сервис, качественно и удобно, что можно заказать любой формы. Забираем сами у них с завода, сотрудничеством доволен.</div>\n\t\t</div>\n\t</div></div></div></div><div class=\"owl-controls\"><div class=\"owl-nav\"><div class=\"owl-prev\" style=\"\">prev</div><div class=\"owl-next\" style=\"\">next</div></div><div class=\"owl-dots\" style=\"display: none;\"></div></div></div>\n</div>\n<div class=\"center-box\"><a href=\"/plastikovie-okna-otzivi/\" class=\"btn-link\">Все отзывы о пластиковых окнах</a>\n</div>\n\n</div>\n <!-- call box -->\n<div class=\"call-box\">\n\t<form action=\"/\" class=\"frm-callback-phone\">\n\t\t<div class=\"inner-block\">\n\t\t\t<div class=\"text-wrap\">\n\t\t\t\t<div class=\"text-block\">\n\t\t\t\t\t<div class=\"second-title left\">\n\t\t\t\t\t\t Перезвоним <br>\n\t\t\t\t\t\t за 5 минут!\n\t\t\t\t\t</div>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t Наши специалисты заслуженно считаются одними из самых внимательных к клиентам. Мы быстро перезвоним, ответим на вопросы, просчитаем несколько комплектаций!\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"frm-wrap\">\n\t\t\t\t<div class=\"frm-block\">\n\t\t\t\t\t<div class=\"frm-row\">\n <input type=\"text\" placeholder=\"Имя\" required=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"frm-row\">\n <input type=\"tel\" placeholder=\"+7 (___) ___-__-__\" required=\"\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"frm-row\">\n <input type=\"submit\" value=\"Отправить заявку\" class=\"btn-medium btn-submit\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"frm-row agreement\">\n <i>&nbsp;</i>\n\t\t\t\t\t\tПринимаю <a href=\"/personal-info/\">Соглашение о конфиденциальности</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</form>\n</div>\n <!-- /call box --> <!-- works box --> <div class=\"works-box\">\n\t<h2>Наши работы</h2>\n\t <!-- gallery box -->\n <div class=\"slider-wrap\">\n     <div class=\"slider owl-carousel owl-theme owl-loaded\">\n\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t<div class=\"owl-stage-outer\"><div class=\"owl-stage\" style=\"transform: translate3d(-870px, 0px, 0px); transition: all; width: 7395px;\"><div class=\"owl-item cloned\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_217\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/581/581fb4a51338b8013c2b57ac2136a01c.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item cloned\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_216\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/8aa/8aa4996fd0ff6aef7fe7ac6d19e287c5.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item active\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_228\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/d4f/d4fab544d1294cb5d9249b081e5c591f.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item active\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_227\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/49b/49b0a0391f905e1a23386124488523b8.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_226\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/bb8/bb803951172b1988716c1527c43f0f98.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_225\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/1c7/1c733eb9ce4937915b5daeabb51dac61.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_224\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/c1f/c1f902c053d5ede8af4c74569364f38d.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_223\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/679/6793402ab1afa81d2bc1fe37e1057e8c.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_222\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/90d/90dc463a6e3b27cdc924512cb5143bda.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_221\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/090/0904fb9559bcf27273ad917299f3d463.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_220\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/6d9/6d9a7828721dcc433d42d90f423e0a7a.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_219\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/f7b/f7b06bd9c4888bd7ecf5caacbb78f5ba.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_218\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/ae2/ae2ee4d2e2734f8a54b18957c2363d09.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_217\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/581/581fb4a51338b8013c2b57ac2136a01c.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_216\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/8aa/8aa4996fd0ff6aef7fe7ac6d19e287c5.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item cloned\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_228\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/d4f/d4fab544d1294cb5d9249b081e5c591f.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div><div class=\"owl-item cloned\" style=\"width: 435px; margin-right: 0px;\"><div class=\"sl-item\" id=\"bx_651765591_227\">\n\t\t\t<div class=\"item-work\">\n\t\t\t\t<div class=\"work-photo\">\n\t\t\t\t\t<img src=\"/upload/iblock/49b/49b0a0391f905e1a23386124488523b8.jpg\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t</div>\n       </div></div></div></div><div class=\"owl-controls\"><div class=\"owl-nav\"><div class=\"owl-prev\" style=\"\">prev</div><div class=\"owl-next\" style=\"\">next</div></div><div class=\"owl-dots\" style=\"display: none;\"></div></div></div>\n</div></div>\n <!-- /works box --> <!-- tips box -->\n<div class=\"bg-box bg-gray\">\n\t<div class=\"tips-box\">\n\t\t<h2>Часто задаваемые вопросы</h2>\n\t\t<div class=\"items-wrap merge\">\n\t\t\t<div class=\"column\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li class=\"item-tips\">\n\t\t\t\t\t<div class=\"decor\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<h4>Сколько времени изготавливается заказ?</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t Готовность белых окон стандартных комплектаций - 5 дней с момента подписания договора и внесения оплаты. Далее Вы согласуете удобный день и время для доставки и монтажа. Для <a href=\"/tsvetnie-plastikovie-okna/\">ламинированных</a> конструкций срок будет чуть дольше.\n\t\t\t\t\t</p>\n </li>\n\t\t\t\t\t<li class=\"item-tips\">\n\t\t\t\t\t<div class=\"decor\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<h4>Зачем делать замер? Я сам знаю размеры...</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t Замер должен быть точным, потому что только в этом случае конструкции встанут \"как влитые\" и прослужат десятки лет. Если Вы ошибетесь хотя бы на 2 см, результат будет совсем другим. Мы искренне заботимся о клиентах, и поэтому советуем не отказываться от выезда замерщика. К тому же, это полностью бесплатно!\n\t\t\t\t\t</p>\n </li>\n\t\t\t\t\t<li class=\"item-tips\">\n\t\t\t\t\t<div class=\"decor\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<h4>Сможете ли утеплить балкон?</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t Да, конечно, мы оказываем полный перечень услуг по производству, монтажу и отделке. Детальнее - в <a href=\"/osteklenie-balkonov/\">разделе</a> по балконам.\n\t\t\t\t\t</p>\n </li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"column\">\n\t\t\t\t<ul>\n\t\t\t\t\t<li class=\"item-tips\">\n\t\t\t\t\t<div class=\"decor\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<h4>Почему у вас дешевле чем у конкурентов?</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t Мы - производитель, то есть работаем с клиентами напрямую, без дополнительной наценки. Используем современное оборудование и автоматизацию. Закупаем профили оптом со скидками, в отличие от мелких оконных фирм.\n\t\t\t\t\t</p>\n </li>\n\t\t\t\t\t<li class=\"item-tips\">\n\t\t\t\t\t<div class=\"decor\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<h4>Что предложите для дачи?</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t У нас есть качественные и недорогие варианты конструкций для дачных домов. Вы можете узнать больше информации на <a href=\"/gotovie-okna-dlya-dachi/\">отдельной странице</a>.\n\t\t\t\t\t</p>\n </li>\n\t\t\t\t\t<li class=\"item-tips\">\n\t\t\t\t\t<div class=\"decor\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<h4>У вас всех дешевле?</h4>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t Полагаем, нет. г. Нижний Новгород - большой город, и на рынке (особенно в последнее время) появилось много оконных фирм, занимающихся продукцией из <a href=\"/pvh-okna/\">ПВХ</a>. Но не рекомендуем гнаться за дешевизной - во всём нужен баланс цены и качества.\n\t\t\t\t\t</p>\n </li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n <!-- /tips box --> <!-- steps box -->\n<div class=\"steps-box\">\n\t<h2>Этапы установки новых окон ПВХ</h2>\n\t<div class=\"items-wrap\">\n\t\t <!-- item -->\n\t\t<div class=\"item-wrap item01\">\n\t\t\t<div class=\"item-step\">\n\t\t\t\t<div class=\"step-num\">\n\t\t\t\t\t 1\n\t\t\t\t</div>\n\t\t\t\t<div class=\"step-text\">\n\t\t\t\t\t Свяжитесь с нами, <br>\n\t\t\t\t\t позвонив или оставив <br>\n\t\t\t\t\t заявку на остекление\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap item02\">\n\t\t\t<div class=\"item-step\">\n\t\t\t\t<div class=\"step-num\">\n\t\t\t\t\t 2\n\t\t\t\t</div>\n\t\t\t\t<div class=\"step-text\">\n\t\t\t\t\t Мы сориентируем по заказу <br>\n\t\t\t\t\t и ответим на вопросы. <br>\n\t\t\t\t\t К Вам выезжает замерщик и готовит <br>\n\t\t\t\t\t вместе с Вами рисунок-схему <br>\n\t\t\t\t\t утверждаете смету со скидками.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap item03\">\n\t\t\t<div class=\"item-step\">\n\t\t\t\t<div class=\"step-num\">\n\t\t\t\t\t 3\n\t\t\t\t</div>\n\t\t\t\t<div class=\"step-text\">\n\t\t\t\t\t Подготавливаем <br>\n\t\t\t\t\t и заключаем договор. <br>\n\t\t\t\t\t Вносится предоплата.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap item04\">\n\t\t\t<div class=\"item-step\">\n\t\t\t\t<div class=\"step-num\">\n\t\t\t\t\t 4\n\t\t\t\t</div>\n\t\t\t\t<div class=\"step-text\">\n\t\t\t\t\t Отправляем заказ в работу <br>\n\t\t\t\t\t и изготавливаем <br>\n\t\t\t\t\t по точным размерам,<br>\n\t\t\t\t\t с контролем качества.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item --> <!-- item -->\n\t\t<div class=\"item-wrap item05\">\n\t\t\t<div class=\"item-step\">\n\t\t\t\t<div class=\"step-num\">\n\t\t\t\t\t 5\n\t\t\t\t</div>\n\t\t\t\t<div class=\"step-text\">\n\t\t\t\t\t Осуществляем монтаж <br>\n\t\t\t\t\t конструкций из ПВХ и алюминия<br>\n\t\t\t\t\t за 1 день. Выдаем гарантийные <br>\n\t\t\t\t\t документы. Получаем оплату <br>\n\t\t\t\t\t остатка по договору.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /item -->\n\t</div>\n</div>\n <!-- /steps box -->\n<div class=\"bg-box bg-gray last\">\n\t<h2>Полезности</h2>\n\t<div class=\"cnt-box cnt-inner-box top-box article-box\">\n\t\t<p>\n\t\t\tЕсть 3 основных правила. которые помогут купить пластиковые окна в Нижнем Новгороде по доступной <a href=\"/plastikovie-okna-tseni/\">цене</a> и при этом хорошего качества. Они указаны ниже.\n\t\t</p>\n\t\t <!-- article icons box -->\n\t\t<div class=\"article-icons-box\">\n\t\t\t<div class=\"items-wrap\">\n\t\t\t\t <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-article-icon\">\n\t\t\t\t\t\t<div class=\"article-ico\">\n <img alt=\"Иконка бренда профиля\" src=\"/bitrix/templates/2017/img/brand.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"article-text\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tПри покупке не обращайте особого внимания на бренд профиля. Rehau, Veka, KBE, Deceuninck — всего лишь слова. <b>Бренд профиля реально не играет разницы.</b> Важен состав — его комплектация и цена за эту комплектацию.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-article-icon\">\n\t\t\t\t\t\t<div class=\"article-ico\">\n <img alt=\"Иконка недорогой цены\" src=\"/bitrix/templates/2017/img/discount.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"article-text\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tНе рекомендуем \"попадаться\" на самые дешевые предложения. <b>За самой дешевой ценой</b> стоят некачественные материалы, отсутствие сертификации на производстве и ненадежные конструкции.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-article-icon\">\n\t\t\t\t\t\t<div class=\"article-ico\">\n <img alt=\"Иконка фирмы\" src=\"/bitrix/templates/2017/img/trust.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"article-text\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tСлушайте <b>свой внутренний голос</b>. Насколько профессионально вам проконсультировал менеджер? Насколько сайт фирмы вызывает доверие? Есть ли отзывы от клиентов? Является ли фирма производителем или перекупщиком? Все это важно учитывать.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item -->\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /article icons box -->\n\t\t<h2>Где сделать заказ?</h2>\n\t\t<p>\n\t\t\tЧерез дилеров и частных мастеров вы получите окна по более дорогой стоимости, чем напрямую от производителя. Поэтому мы рекомендуем заказывать окна ПВХ напрямую с завода.\n\t\t</p>\n\t\t <!-- article icons box -->\n\t\t<div class=\"article-icons-box\">\n\t\t\t<div class=\"items-wrap\">\n\t\t\t\t <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-article-icon\">\n\t\t\t\t\t\t<div class=\"article-ico\">\n <img alt=\"Иконка завода\" src=\"/bitrix/templates/2017/img/line.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"article-text\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tЗаводы имеют автоматизированное производство. Поэтому брак сведен к минимуму.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-article-icon\">\n\t\t\t\t\t\t<div class=\"article-ico\">\n <img alt=\"Иконка репутация\" src=\"/bitrix/templates/2017/img/respect.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"article-text\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tЗаводы дорожат репутацией, поэтому с клиентами ведут себя вежливо и ценят каждого обратившегося.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item --> <!-- item -->\n\t\t\t\t<div class=\"item-wrap\">\n\t\t\t\t\t<div class=\"item-article-icon\">\n\t\t\t\t\t\t<div class=\"article-ico\">\n <img alt=\"Иконка конвейер\" src=\"/bitrix/templates/2017/img/mass.png\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"article-text\">\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tЗаводы изготавливают свою продукцию конвейерным методом. Стоимость получается дешевле, чем на мелком производстве.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t <!-- /item -->\n\t\t\t</div>\n\t\t</div>\n\t\t <!-- /article icons box -->\n\t\t<p>\n\t\t\tМы желаем вам не ошибаться с выбором оконной фирмы. Если понравился наш подход к клиенту и открытость, ставьте лайк и обращайтесь!\n\t\t</p>\n\t\t<p>\n <a href=\"\" class=\"btn btn-popup-callback btn-long\">Оформить заказ</a>\n\t\t</p>\n <br>\n\t</div>\n</div>\n            <!-- /article box -->\n        <!-- /page -->\n\t\n\n<!-- /page -->\n        <div class=\"empty\"></div>\n    </div>\n    <!-- /wrap -->\n    <!-- footer -->\n    <footer class=\"footer\">\n        <div class=\"inner-wrap\">\n            <div class=\"main-panel\">\n                <div class=\"footer-menu-wrap\">\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"submenu\">\n\t\t\t\t\t\t<a href=\"/productsiya/\">Продукция <span class=\"btn-submenu\"></span></a>\n\t\t\t\t\t\t \t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a class=\"active\" href=\"/\">Пластиковые окна</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/pvh-okna/\">ПВХ-окна EnWin</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/gotovie-okna-dlya-dachi/\">Готовые окна для дачи</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/plastikovie-dveri/\">Пластиковые двери</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/tsvetnie-plastikovie-okna/\">Цветные окна</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/okna-dlya-bani/\">Окна для бани</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"submenu\">\n\t\t\t\t\t\t<a href=\"/plastikovie-okna-tseni/\">Цены <span class=\"btn-submenu\"></span></a>\n\t\t\t\t\t\t \t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/kalkuliator-plastikovih-okon/\">Калькулятор окон онлайн</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/plastikovie-okna-stoimost/\">Стоимость пластиковых окон</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/kupit-plastikovie-okna/\">Купить пластиковые окна</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/zakazat-plastikovie-okna/\">Заказать пластиковые окна</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"submenu\">\n\t\t\t\t\t\t<a href=\"/uslugi/\">Услуги <span class=\"btn-submenu\"></span></a>\n\t\t\t\t\t\t \t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/osteklenie-balkonov/\">Остекление балконов</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/osteklenie-kottedzhei/\">Остекление коттеджей</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/razdvizhnoe-osteklenie/\">Раздвижное остекление</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/ustanovka-plastikovih-okon/\">Установка пластиковых окон</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/zamena-plastikovih-okon/\">Замена пластиковых окон</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"submenu\">\n\t\t\t\t\t\t<a href=\"/proizvoditel/\">О производителе <span class=\"btn-submenu\"></span></a>\n\t\t\t\t\t\t \t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/blog/\">Блог</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"/foto/\">Фото работ</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"submenu\">\n\t\t\t\t\t\t<a href=\"/kontakti/\">Контакты </a>\n\t\t\t\t\t\t \t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"submenu\">\n\t\t\t\t\t\t<a href=\"/plastikovie-okna-otzivi/\">Отзывы </a>\n\t\t\t\t\t\t \t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t</ul>\n                </div>\n                <div class=\"contacts-block\">\n                    <div class=\"phone\"><a href=\"tel:88312352808\">+7 (831) 235-28-08</a>\n                    </div>\n                    <div class=\"callback\"><a href=\"\" class=\"btn-popup-callback\">Вам перезвонить?</a>\n                    </div>\n                    <div class=\"soc-block\">\n\t\t\t\t\t\t \n<a href=\"\" class=\"btn-footer-soc\"><span class=\"i i-soc01\"></span></a>\n<a href=\"\" class=\"btn-footer-soc\"><span class=\"i i-soc02\"></span></a>\n<a href=\"\" class=\"btn-footer-soc\"><span class=\"i i-soc03\"></span></a>\t\t\t\t\t\t\n                    </div>\n                </div>\n            </div>\n            <div class=\"bottom-panel\">\n                <div class=\"copy-block\">\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<script type=\"text/javascript\" async=\"\" charset=\"utf-8\" src=\"https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__ru.js\" crossorigin=\"anonymous\" integrity=\"sha384-vWGPerp3azmuzWDyi82ckaYtdMYBt+f7dUndDVasuVwj6oF81JmZ5G11/+g0TEHs\"></script><script type=\"text/javascript\" async=\"\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script async=\"\" src=\"https://mod.calltouch.ru/d_client.js?param;ref;urlhttps%3A//oknavnizhnemnovgorode.ru/;cook;attrs%7B%22attrh%22%3A1%2C%22ver%22%3A171110%7D;\"></script><script type=\"application/ld+json\">\n {\n  \"@context\": \"http://www.schema.org\",\n  \"@type\": \"LocalBusiness\",\n  \"name\": \"Просто Окна\",\n  \"url\": \"https://oknavnizhnemnovgorode.ru\",\n  \"logo\": \"https://oknavnizhnemnovgorode.ru/bitrix/templates/2017img/main/logo.png\",\n  \"description\": \"Пластиковые окна в Нижнем Новгороде и по всей Нижегородской области. Недорого, от завода-производителя. Выезд эксперта бесплатный.\",\n  \"address\": {\n   \"@type\": \"PostalAddress\",\n   \"streetAddress\": \"ул. Батумская, д. 2А\",\n   \"addressLocality\": \"Нижний Новгород\",\n   \"addressCountry\": \"Россия\"\n  },\n  \"openingHours\": \"Mo, Tu, We, Th, Fr 09:00-18:00 Sa 09:00-15:00\",\n  \"contactPoint\": {\n   \"@type\": \"ContactPoint\",\n   \"telephone\": \"+7 (831) 238-94-14\"\n  }\n }\n</script>\t\t\t\t\t\n                </div>\n                <div class=\"info-block\">Информация, опубликованная на этом сайте, не является публичной офертой. Актуальные условия уточняйте у менеджеров.\n                    <br> <a href=\"/sitemap/\">Карта сайта</a> | <a href=\"/personal-info/\">Соглашение о конфиденциальности</a>\n                </div>\n                <div class=\"links-block\">\n                    <a href=\"/reiting-okonnih-kompaniy/\" class=\"btn-footer-link\">\n                        <span class=\"pic\"><img src=\"/bitrix/templates/2017/img/main/footer01.png\" alt=\"\"></span>\n                        <br>\n                        <span class=\"text\">В рейтинге</span>\n                    </a>\n                    <a href=\"/okonniy-sait/\" class=\"btn-footer-link\">\n                        <span class=\"pic\"><img src=\"/bitrix/templates/2017/img/main/footer02.png\" alt=\"\"></span>\n                        <br>\n                        <span class=\"text\">Умные сайты</span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </footer>\n    <!-- /footer -->\n    <div id=\"btn-up\"></div>\n    \n\n<link href=\"//fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400&amp;subset=latin,cyrillic\" rel=\"stylesheet\" type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/bitrix/templates/2017/css/reset.css\">\n<link rel=\"stylesheet\" href=\"/bitrix/templates/2017/css/style.css\">\n<link rel=\"stylesheet\" href=\"/bitrix/templates/2017/css/jquery-ui.min.css\">\n<link rel=\"stylesheet\" href=\"/bitrix/templates/2017/css/jquery-ui.structure.min.css\">\n<link rel=\"stylesheet\" href=\"/bitrix/templates/2017/css/owl.carousel.min.css\">\n\n<!-- calltouch code -->\n<!-- /calltouch code -->\n\n<!-- Yandex.Metrika counter -->\n<noscript><div><img src=\"https://mc.yandex.ru/watch/31948326\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n<input class=\"token\" name=\"token\" type=\"hidden\" value=\"0cAFcWeA6L0BqWZcmDAkyTFbrfAkwszc5w_Wamm3d__u6AxVoF8zqEulDlkYKqqMXUaGZ3XSlxAWYhfLN64iN2drATuCmvnmL-svpM_uyFA8B29qN1vpGTOwhG_F6_pGoU_voq1xhhE_TRvtENeY-eY9MBWdEfIIiy2gregkOA94uISk01ApDm-pM3bWqIqN6NhFzq0DlAkcE4v2hUq8P25_C8aAUT-f_ONJ5MfveVSgvisOEVxK41zui94ul_66xO_oxvX92II-UEWQjqXuB_rOB0pltecpCrFElFpxWBxJoo6Yg_PDJrUb_qRRYuOkMPRuX0NGVX44VEdrR06u9IfHMF2aAMAtvk72weFxk0EnQajMT9VF_Fq4upNGKLMwnu56L56XG7qc3zpXxH-UfRzM7UqCuysAJUDOjQ6SgWZWTEkXVeaxPulrCinFztM8pWh5TN9c3qD8HrQ2nXK6cX4WUkO12FlJ6wRjH0GcHzTxNjFxp6U1s_jD44vLI4-8MDXnoJDRQUo_3xQBV2Dv6StgVk4UeJhbK8FLbTNK26Nv2awa45-Gax1yQyHs4_p66DM7l_uzts2SMmAVSCFxHq_R311rgWT_I2aPqA25N-HulzwOog8IUPvJCu9TkiCm0eoDgUco5wPg7-11FhKh5ljAQQSng15-cPBCMehKVgFffYIIa1SGccZw3XMtMpswO5oOa9jVecT9fNsIVeYvBYb2oBGfu9Edp0zligzKlsCkOqpuYLEZKfJVava8Fk46KQoZfjCejmpxLGuLvrJFwNJaDMiprjCfKQiJGK8-SUTPHxxYhOQ4enqPudIuoQ_iFdtcGbwUH7A_S8zfeFnKJzXqjqBF_1iWs-twVEUU2IGzczJXEdkQLBeM91ajW3G7WvqTcmMo9lwaYXXoMCvgLpKFneqxrAkhXQe4F_O2oGtaWSzgcMJIRTJihtVWPrvda0F5ox6UJmCK7Z1XZS7iW0JPb5mcYf0JtUx1CDStymv6M0dUm5jIiSSooVjGGymhcqseHeQ6Igaybhzu3hpO31U1c-COr8Ei3oy-Sf5JCPpg3CvF72aTtasMOGzjZ6cDcvEJScoV2u7EBEFIkgLjW7f_7Xi9rn37iIXS2LLRa4yQdc3bV_DeajaaYbG18QUuDTsLmE1k_4oDtaPqhAXBNIMVQKYNRNIYwYlt4F7c1gX6Jt3oHRBZv-stNXqUHCT6Dvy4DWjfr-weUtnFDGkAxZ_0EUjbYzPNnKSS_19ZxFH4hIyA0L5ibCeutYaPIR7N1_jw3NRdwelSZwhw27gEiPwTvTFLsXi76kCl8aF9pR7sVfnRYgsnMxKv0S2qt1qEqLkaA1aKLPelu3Oqd9rr659pTv-YsurML_2yATlu8LFmgJilK9MvaYP9kcnb8hJ_RK4YI9QNgWbSIYB9e_LDFtPH3dykBsosVW8guJU1M0MQL5ptkkgCbx0X_TKv1uDs1MbMSV4vekcpnJcx4KqYv8DlrXo4clN_c3uTJKSIPZf7EK33sBMgwfBzz1Hs-u0-d0OxlVrr-7qlFp2ojRl_vojQ3WlJu8H687FG2CDhQkmdXEsNLKQXf8Ad_uwJLRNizsyFnwjeCbcrWxM5Lb9PlSDtz3knlT-pOad2aa1VVEyBcS6NTa54t98tMTChbmr5kaIM4AAPv3gEWCGT-YyAcqIZy4YLVk6JyNm78McZDDQqPbVeoJWYacxkgxHxmgxLgGbYiIU9j3GZd6bLnUP5qnrzepBXcFJeUwtYL5m6zxubaAPrrXJ-scIamMCjxewSYTNrRPsqN_O9GEXyMPD1sH4ziFLjIlB8wN2vlJvpeF4NQjBMa6ZsYTH3bweeGQhf-7N--K9DH70JWkjaJeuXI18nZkvlQbarAr4lj9cU7VjWvE7HU4E4mGJH0NQyld0J3Wcoi9WyRBis6jcfUUWDyvu4e3ZxE8ux-vcTqTn_Hd699FMrLLS5b26uWv_Gpteje7f1mdeXFHhnRryLFe66wMUc6Z0SbT6fMoEZz77EobtEn-1RLc7A8qurY\">\n<script src=\"/bitrix/templates/2017/js/html5shiv.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/respond.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery-ui.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.maskedinput.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/owl.carousel.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.placeholder.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.plugin.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.countdown.min.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.form.js\"></script>\n<script src=\"/bitrix/templates/2017/js/jquery.countdown-ru.js\"></script>\n<script src=\"/bitrix/templates/2017/js/scripts.js\"></script>\n<script type=\"text/javascript\">\n(function (w, d, nv, ls) {\nvar lwait = function (w, on, trf, dly, ma, orf, osf) {var pfx = \"ct_await_\", sfx = \"_completed\";if (!w[pfx + on + sfx]) {var ci = clearInterval, si = setInterval, st = setTimeout, cmld = function() {if (!w[pfx + on + sfx]) { w[pfx + on + sfx] = true;if ((w[pfx + on] && (w[pfx + on].timer))) { ci(w[pfx + on].timer);w[pfx + on] = null;}orf(w[on]);}};if (!w[on] || !osf) {if (trf(w[on])){cmld();} else {if (!w[pfx + on]) {w[pfx + on] = {timer: si(function () {if (trf(w[on]) || ma < ++w[pfx + on].attempt) {cmld();}}, dly), attempt: 0};}}} else {if (trf(w[on])) {cmld();} else {osf(cmld);st(function(){lwait(w, on, trf, dly, ma, orf);}, 0);}}} else {orf(w[on]);}};\nvar ct = function (w, d, e, c, n) { var a = 'all', b = 'tou', src = b + 'c' + 'h'; src = 'm' + 'o' + 'd.c' + a + src; var jsHost = \"https://\" + src, s = d.createElement(e); var jsf = function (w, d, s, h, c, n) { s.async = 1; s.src = jsHost + \".\" + \"r\" + \"u/d_client.js?param;\" + (c ? \"client_id\" + c + \";\" : \"\") + \"ref\" + escape(d.referrer) + \";url\" + escape(d.URL) + \";cook\" + escape(d.cookie) + \";attrs\" + escape(\"{\\\"attrh\\\":\" + n + \",\\\"ver\\\":171110}\") + \";\"; var p = d.getElementsByTagName(e)[0]; p.parentNode.insertBefore(s, p); }; if (!w.jQuery) { var jq = d.createElement(e);jq.src = jsHost + \".\" + \"r\" + 'u/js/jquery-1.7.min.js'; jq.onload = function () {lwait(w, 'jQuery', function (obj) {return (obj ? true : false);}, 30, 100, function () {jsf(w, d, s, jsHost, c, n);});}; var p = d.getElementsByTagName(e)[0]; p.parentNode.insertBefore(jq, p); } else { jsf(w, d, s, jsHost, c, n);}};\nvar gaid = function (w, d, o, ct, n) {if (!!o) {lwait(w, o, function (obj) {return (obj && obj.getAll ? true : false);}, 200, (nv.userAgent.match(/Opera|OPR\\//) ? 10 : 20), function (gaCounter) {var clId = null;try {var cnt = gaCounter && gaCounter.getAll ? gaCounter.getAll() : null;clId = cnt && cnt.length > 0 && !!cnt[0] && cnt[0].get ? cnt[0].get('clientId') : null;} catch (e) {console.warn(\"Unable to get clientId, Error: \" + e.message);}ct(w, d, 'script', clId, n);}, function (f) {w[o](function () {f(w[o]);})});} else {ct(w, d, 'script', null, n);}};\nvar cid = function () {try {var m1 = d.cookie.match('(?:^|;)\\\\s*_ga=([^;]*)');if (!(m1 && m1.length > 1)) return null;var m2 = decodeURIComponent(m1[1]).match(/(\\d+\\.\\d+)$/);if (!(m2 && m2.length > 1)) return null;return m2[1]} catch (err) {}}();\nif (cid === null && !!w.GoogleAnalyticsObject) {\n    if (w.GoogleAnalyticsObject == 'ga_ckpr') w.ct_ga = 'ga'; else w.ct_ga = w.GoogleAnalyticsObject;\n    if (typeof Promise !== \"undefined\" && Promise.toString().indexOf(\"[native code]\") !== -1) { new Promise(function (resolve) {var db, on = function () {resolve(true)}, off = function () {resolve(false)}, tryls = function tryls() {try {ls && ls.length ? off() : (ls.x = 1, ls.removeItem(\"x\"), off());} catch (e) {nv.cookieEnabled ? on() : off();}}; w.webkitRequestFileSystem ? webkitRequestFileSystem(0, 0, off, on) : \"MozAppearance\" in d.documentElement.style ? (db = indexedDB.open(\"test\"), db.onerror = on, db.onsuccess = off) : /constructor/i.test(w.HTMLElement) ? tryls() : !w.indexedDB && (w.PointerEvent || w.MSPointerEvent) ? on() : off();}).then(function (pm) {\n        if (pm) {gaid(w, d, w.ct_ga, ct, 2);} else {gaid(w, d, w.ct_ga, ct, 3);}})} else {gaid(w, d, w.ct_ga, ct, 4);}\n} else {ct(w, d, 'script', cid, 1);}})\n(window, document, navigator, localStorage);\n</script>\n<script type=\"text/javascript\">\n    var metric = false;\n(function (d, w, c) {\n\t(w[c] = w[c] || []).push(function() {\n\t\ttry {\n            metric = w.yaCounter31948326 = new Ya.Metrika({\n\t\t\t\tid:31948326,\n\t\t\t\tclickmap:true,\n\t\t\t\ttrackLinks:true,\n\t\t\t\taccurateTrackBounce:true,\n\t\t\t\twebvisor:true\n\t\t\t});\n\t\t} catch(e) { }\n\t});\n\n\tvar n = d.getElementsByTagName(\"script\")[0],\n\t\ts = d.createElement(\"script\"),\n\t\tf = function () { n.parentNode.insertBefore(s, n); };\n\ts.type = \"text/javascript\";\n\ts.async = true;\n\ts.src = \"https://mc.yandex.ru/metrika/watch.js\";\n\n\tif (w.opera == \"[object Opera]\") {\n\t\td.addEventListener(\"DOMContentLoaded\", f, false);\n\t} else { f(); }\n})(document, window, \"yandex_metrika_callbacks\");\n</script>\n<script>\n    $(document).ready(function () {\n        $('form').on('submit', function (e) {\n            e.preventDefault();\n            if(metric) {\n                metric.reachGoal('orderform');\n            }\n            return false;\n        })\n    })\n</script>\n\n<script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?render=6Ld53xIqAAAAAIzKkiSM8xZkWLxKZqlKw6pUU6Y5\"></script>\n<script>\n    const reCaptchaSiteKey = '6Ld53xIqAAAAAIzKkiSM8xZkWLxKZqlKw6pUU6Y5';\n    const grecaptcha = window.grecaptcha || {};\n    function initRecaptcha()\n    {\n        grecaptcha.ready(() => {\n            grecaptcha\n                .execute(reCaptchaSiteKey, {action: 'submit'})\n                .then((token = '') => {\n                    if (token.length) {\n                        $('.token').val(token);\n                    }\n                })\n                .catch(e => {\n                    console.warn(e);\n                });\n        });\n    }\n    initRecaptcha();\n</script>\n\n\n</div><div tabindex=\"-1\" role=\"dialog\" class=\"ui-dialog ui-corner-all ui-widget ui-widget-content ui-front popup-callback\" aria-describedby=\"popup-callback\" aria-labelledby=\"ui-id-1\" style=\"display: none;\"><div class=\"ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix\"><span id=\"ui-id-1\" class=\"ui-dialog-title\">&nbsp;</span><button type=\"button\" class=\"ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close\" title=\"Close\"><span class=\"ui-button-icon ui-icon ui-icon-closethick\"></span><span class=\"ui-button-icon-space\"> </span>Close</button></div><div id=\"popup-callback\" class=\"ui-dialog-content ui-widget-content\">\n        <form action=\"/\" class=\"frm-popup\">\n            <div class=\"frm-block\">\n                <span class=\"ui-helper-hidden-accessible\"><input type=\"text\"></span>\n                <div class=\"frm-row\">\n                    <label>Ваше имя: *</label>\n                    <input type=\"text\" required=\"\">\n                </div>\n                <div class=\"frm-row\">\n                    <label>Ваш номер для связи: *</label>\n                    <input type=\"tel\" required=\"\">\n                </div>\n                <div class=\"frm-row frm-row-message\">\n                    <label>Сообщение:</label>\n                    <textarea></textarea>\n                </div>\n\t\t\t\t\n                <div class=\"frm-row\">\n                    <input type=\"submit\" value=\"Отправить\" class=\"btn-medium btn-submit\">\n                </div>\n\t\t\t\t<div class=\"frm-row frm-row-message agreement\">\n                    <label></label>\n                    <i></i>Принимаю <a href=\"/personal-info/\">Соглашение о конфиденциальности</a>\n                </div>\n            </div>\n        </form>\n    </div></div><div><div class=\"grecaptcha-badge\" data-style=\"bottomright\" style=\"width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;\"><div class=\"grecaptcha-logo\"><iframe title=\"reCAPTCHA\" width=\"256\" height=\"60\" role=\"presentation\" name=\"a-p10usibwm47x\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld53xIqAAAAAIzKkiSM8xZkWLxKZqlKw6pUU6Y5&amp;co=aHR0cHM6Ly9va25hdm5pemhuZW1ub3Znb3JvZGUucnU6NDQz&amp;hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=invisible&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=2yheabiyob0k\"></iframe></div><div class=\"grecaptcha-error\"></div><textarea id=\"g-recaptcha-response-100000\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div><iframe style=\"display: none;\"></iframe></div></body></html>",
+  "text": "Пластиковые окна в Нижнем Новгороде от производителя - купить, заказать позвонить Сегодня с 9:00 до 20:00 8 (831) 235-28-08 Нижний Новгород Онлайн калькулятор цен Вам перезвонить? меню главная меню Продукция Пластиковые окна ПВХ-окна EnWin Готовые окна на дачу Пластиковые двери Цветные окна Окна для бани Услуги Остекление балконов Остекление коттеджей Остекление веранд Остекление террас Остекление беседок Раздвижное остекление Теплое остекление Холодное остекление Установка пластиковых окон Замена пластиковых окон Цены Калькулятор окон онлайн Калькулятор балконов онлайн Стоимость пластиковых окон Купить пластиковые окна Заказать пластиковые окна Отзывы О производителе Блог Фото работ Контакты Пластиковые окна в Нижнем Новгороде по разумным недорогим ценам Скидки от 5% до 50% на остекление квартир и домов под ключ Скидки действуют: 2 Дня 9 Часов 24 Минуты 14 Секунд Рассчитать цену со скидкой Профили EnWin от 5 355 рублей Остекление балконов от 9 800 рублей Остекление коттеджей от 4 250 рублей / м2 Готовые окна от 2 120 рублей / м2 Работаем качественно и системно Оконные конструкции не одинаковы. Разница — в материалах и качестве. Используем надежные немецкие профили. Предлагаем опытные бригады и отменное качество. Назовите нам цену, в которую хотите уложиться, — предложим разные варианты. Наши цены Одностворчатое окно 2 стекла — от 5 355 рублей 3 стекла — от 5 800 рублей Двустворчатое окно 2 стекла — от 8 300 рублей 3 стекла — от 9 270 рублей Трехстворчатое окно 2 стекла — от 12 100 рублей 3 стекла — от 12 930 рублей Балконный блок 2 стекла — от 14 000 рублей 3 стекла — от 14 770 рублей Обсудить с менеджером Почему важно вызвать эксперта по замерам? Мастер по замерам является инженером с узким образованием. Он проведет точное измерение проёмов и составит план монтажа. От типа материала стен и от их состояния зависит финальная стоимость заказа. На замер эксперт привезёт образцы материалов, чтобы Вы могли выбрать понравившийся вариант и сравнить, чем они отличаются. Выбирайте то, что Вам подходит и по-настоящему нравится - иначе, в чем смысл? Прямо на замере мастер свяжется с отделом лояльности, сообщит нам объем заказа (количество конструкций), и мы сможем предложить приятные денежные скидки на Ваш заказ. Наше предложение фиксируется на 48 часов. Если уже на замере Вы поняли, что готовы заключать договор, сообщите эксперту по замерам - он применит дополнительную скидку “за скорость”. БЕСПЛАТНО Вызов менеджера на замер Мастер выезжает бесплатно! Принимаю Соглашение о конфиденциальности Узнайте цену со всеми скидками и акциями Принимаю Соглашение о конфиденциальности Доступные окна Наши отличия По телефону наши эксперты посоветуют, какой из вариантов остекления в большей степени подойдёт в вашем случае. Для наших любимых клиентов мы проводим регулярные сезонные акции. Стоимость скидки можно узнать во время замера у эксперта. Мы не просто предложим 1 вариант комплектаций, а рассчитаем сразу несколько. Выбор - это приятно! У нас работают только славянские бригады и опытные мастера. Монтаж проводится по ГОСТу с соблюдением технологических требований. Отзывы клиентов Максим, г. Нижний Новгород Покупал здесь готовые окна на дачу. Удивило, что можно прямо за пару часов купить окна стандартных размеров и договориться о доставке. Устанавливать буду сам, но услугами и скоростью работы Просто Окон остался доволен. Буду рекомендовать друзьям-дачникам! Элеонора, г. Нижний Новгород Заказывали в этой фирме остекление коттеджа на Ванеева. Брали полную премиум-помплектацию с ламинацией. Общая сумма на 23 окна получилась на 354 600 рублей, но нам сделали скидку на 20500 рублей (в сравнении с общей суммой мелочь, а все же было приятно). Ламинацию заказывали двухстороннюю под дуб. Заказ делали порядка 2 недель, но нас заранее предупредили, что размеры нестандартные и будет дольше стандартных сроков. Установили на прошлой неделе - смотрится шикарно, спасибо! Евгений, 12.09.2020 г. Искал себе окна на дачу. Нашел эту фирму, и не пожалел - за 2 дня мне доставили прямо до участка 8 окон. Заказазывал стандартные размеры (4 двухстворчатых и 4 одностворчатых). Удобно, дешево и качественно. Азамат, 13.03.2021 г. Моя строительная бригада уже в третий раз работает с этой фирмой. Очень адекватный сервис, качественно и удобно, что можно заказать любой формы. Забираем сами у них с завода, сотрудничеством доволен. Дмитрий, 05.06.2021 г. Построил себе деревянный дом за городом, и встал вопрос, какие окна устанавливать. Вроде как читал, что пластиковые окна не подойдут. Но специалисты этой фирмы развеяли миф и объяснили, что есть простая технология, которая позволяет установить их в деревянный дом. В итоге, за 2 недели мне сделали все 12 окон. И установили еще за 3 дня. Доволен как боров - следующим летом заселяемся! Игнатий Петрович, г. Нижний Новгород Я тут брал окна для бани. Заказал стандартные - они у них уже готовы были в самой простой комплектации. Попросил только монтаж сделать, откосы сам буду неспеша доделывать. Ровно 2 дня заняло, то есть реально быстро по сравнению с тем, что предлагали другие. Доволен! Анастасия, 10.10.2022 г. Воспользовались осенней скидкой Просто Окна и заказали остекление и отделку балкона под ключ. Выбрали самый простой вариант - раздвижное остекление алюминием и отделку вагонкой. Все хорошо, ставлю пять баллов. Спасибо мастерам Андрею и Сергею, работают слаженно и быстро. Алла, 18.01.2022 г. Мы с мужем решили остеклить балкон сразу после новогодних праздников. Потому что цены дешевле зимой. Выбирали из 3 фирм - остановились на компании Просто Окна. Примерно полторы недели делали окна, потом за день установили. Все прошло быстро и без проблем - мастера использовали какую-то пленку, так что в самой квартире температура вообще не изменилась, а они там на балконе работали в утепленной спецодежде. Заказывали теплое остекление. Летом еще хотим заказать отделку, чтобы на балконе сделать мини-офис для мужа. Опять обратимся сюда. Спасибо руководству и фирме за качество сервиса! Ильнур, 12.03.2022 г. Заказывал окна для новой двушки (родные окна в новостройках сейчас жуть какие плохие делают). Остановился на профиле EnWin Eco, двухкамерном стеклопакете, под ключ. Очень доволен, так как все работы мне сделали за день - увез семью утром к родным, а вечером приез их обратно уже в квартиру с новыми окнами. Новшества пришлись особенно по душе дочке! Спасибо! Лидия Ивановна, г. Нижний Новгород Старое окно на кухне стало сильно поддувать прошлой зимой, поэтому мы с мужем решили заменить на новое. Выбирали долго и остановились на компании Просто Окна. Они предложили лучшую цену. Для нас, пенсионеров, цена является важным критерием отбора. Установленным пластиковым окном довольны, хоть в фирме и задержали установку на день от обговоренного срока. Я уже писала отзыв руководству, и здесь посоветую: если сроки переносятся, предупреждайте клиентов хотя бы за 2 дня. У всех же свои планы. А так спасибо, окно хорошее, больше не продувает! Максим, г. Нижний Новгород Покупал здесь готовые окна на дачу. Удивило, что можно прямо за пару часов купить окна стандартных размеров и договориться о доставке. Устанавливать буду сам, но услугами и скоростью работы Просто Окон остался доволен. Буду рекомендовать друзьям-дачникам! Элеонора, г. Нижний Новгород Заказывали в этой фирме остекление коттеджа на Ванеева. Брали полную премиум-помплектацию с ламинацией. Общая сумма на 23 окна получилась на 354 600 рублей, но нам сделали скидку на 20500 рублей (в сравнении с общей суммой мелочь, а все же было приятно). Ламинацию заказывали двухстороннюю под дуб. Заказ делали порядка 2 недель, но нас заранее предупредили, что размеры нестандартные и будет дольше стандартных сроков. Установили на прошлой неделе - смотрится шикарно, спасибо! Евгений, 12.09.2020 г. Искал себе окна на дачу. Нашел эту фирму, и не пожалел - за 2 дня мне доставили прямо до участка 8 окон. Заказазывал стандартные размеры (4 двухстворчатых и 4 одностворчатых). Удобно, дешево и качественно. Азамат, 13.03.2021 г. Моя строительная бригада уже в третий раз работает с этой фирмой. Очень адекватный сервис, качественно и удобно, что можно заказать любой формы. Забираем сами у них с завода, сотрудничеством доволен. prev next Все отзывы о пластиковых окнах Перезвоним за 5 минут! Наши специалисты заслуженно считаются одними из самых внимательных к клиентам. Мы быстро перезвоним, ответим на вопросы, просчитаем несколько комплектаций! Принимаю Соглашение о конфиденциальности Наши работы prev next Часто задаваемые вопросы Сколько времени изготавливается заказ? Готовность белых окон стандартных комплектаций - 5 дней с момента подписания договора и внесения оплаты. Далее Вы согласуете удобный день и время для доставки и монтажа. Для ламинированных конструкций срок будет чуть дольше. Зачем делать замер? Я сам знаю размеры... Замер должен быть точным, потому что только в этом случае конструкции встанут \"как влитые\" и прослужат десятки лет. Если Вы ошибетесь хотя бы на 2 см, результат будет совсем другим. Мы искренне заботимся о клиентах, и поэтому советуем не отказываться от выезда замерщика. К тому же, это полностью бесплатно! Сможете ли утеплить балкон? Да, конечно, мы оказываем полный перечень услуг по производству, монтажу и отделке. Детальнее - в разделе по балконам. Почему у вас дешевле чем у конкурентов? Мы - производитель, то есть работаем с клиентами напрямую, без дополнительной наценки. Используем современное оборудование и автоматизацию. Закупаем профили оптом со скидками, в отличие от мелких оконных фирм. Что предложите для дачи? У нас есть качественные и недорогие варианты конструкций для дачных домов. Вы можете узнать больше информации на отдельной странице . У вас всех дешевле? Полагаем, нет. г. Нижний Новгород - большой город, и на рынке (особенно в последнее время) появилось много оконных фирм, занимающихся продукцией из ПВХ . Но не рекомендуем гнаться за дешевизной - во всём нужен баланс цены и качества. Этапы установки новых окон ПВХ 1 Свяжитесь с нами, позвонив или оставив заявку на остекление 2 Мы сориентируем по заказу и ответим на вопросы. К Вам выезжает замерщик и готовит вместе с Вами рисунок-схему утверждаете смету со скидками. 3 Подготавливаем и заключаем договор. Вносится предоплата. 4 Отправляем заказ в работу и изготавливаем по точным размерам, с контролем качества. 5 Осуществляем монтаж конструкций из ПВХ и алюминия за 1 день. Выдаем гарантийные документы. Получаем оплату остатка по договору. Полезности Есть 3 основных правила. которые помогут купить пластиковые окна в Нижнем Новгороде по доступной цене и при этом хорошего качества. Они указаны ниже. При покупке не обращайте особого внимания на бренд профиля. Rehau, Veka, KBE, Deceuninck — всего лишь слова. Бренд профиля реально не играет разницы. Важен состав — его комплектация и цена за эту комплектацию. Не рекомендуем \"попадаться\" на самые дешевые предложения. За самой дешевой ценой стоят некачественные материалы, отсутствие сертификации на производстве и ненадежные конструкции. Слушайте свой внутренний голос . Насколько профессионально вам проконсультировал менеджер? Насколько сайт фирмы вызывает доверие? Есть ли отзывы от клиентов? Является ли фирма производителем или перекупщиком? Все это важно учитывать. Где сделать заказ? Через дилеров и частных мастеров вы получите окна по более дорогой стоимости, чем напрямую от производителя. Поэтому мы рекомендуем заказывать окна ПВХ напрямую с завода. Заводы имеют автоматизированное производство. Поэтому брак сведен к минимуму. Заводы дорожат репутацией, поэтому с клиентами ведут себя вежливо и ценят каждого обратившегося. Заводы изготавливают свою продукцию конвейерным методом. Стоимость получается дешевле, чем на мелком производстве. Мы желаем вам не ошибаться с выбором оконной фирмы. Если понравился наш подход к клиенту и открытость, ставьте лайк и обращайтесь! Оформить заказ Продукция Пластиковые окна ПВХ-окна EnWin Готовые окна для дачи Пластиковые двери Цветные окна Окна для бани Цены Калькулятор окон онлайн Стоимость пластиковых окон Купить пластиковые окна Заказать пластиковые окна Услуги Остекление балконов Остекление коттеджей Раздвижное остекление Установка пластиковых окон Замена пластиковых окон О производителе Блог Фото работ Контакты Отзывы +7 (831) 235-28-08 Вам перезвонить? Информация, опубликованная на этом сайте, не является публичной офертой. Актуальные условия уточняйте у менеджеров. Карта сайта | Соглашение о конфиденциальности В рейтинге Умные сайты Close Ваше имя: * Ваш номер для связи: * Сообщение: Принимаю Соглашение о конфиденциальности",
+  "json_ld": [
+    "{ \"@context\": \"http://www.schema.org\", \"@type\": \"LocalBusiness\", \"name\": \"Просто Окна\", \"url\": \"https://oknavnizhnemnovgorode.ru\", \"logo\": \"https://oknavnizhnemnovgorode.ru/bitrix/templates/2017img/main/logo.png\", \"description\": \"Пластиковые окна в Нижнем Новгороде и по всей Нижегородской области. Недорого, от завода-производителя. Выезд эксперта бесплатный.\", \"address\": { \"@type\": \"PostalAddress\", \"streetAddress\": \"ул. Батумская, д. 2А\", \"addressLocality\": \"Нижний Новгород\", \"addressCountry\": \"Россия\" }, \"openingHours\": \"Mo, Tu, We, Th, Fr 09:00-18:00 Sa 09:00-15:00\", \"contactPoint\": { \"@type\": \"ContactPoint\", \"telephone\": \"+7 (831) 238-94-14\" } }"
+  ],
+  "document": {
+    "title": "Пластиковые окна в Нижнем Новгороде от производителя - купить, заказать",
+    "meta_description": "Закажите пластиковые окна в Нижнем Новгороде от производителя по выгодной цене! Предлагаем качественный сервис, надежные немецкие профили, сезонные скидки и акции.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "позвонить",
+        "rel": ""
+      },
+      {
+        "href": "tel:88312352808",
+        "text": "8 (831) 235-28-08",
+        "rel": ""
+      },
+      {
+        "href": "/goroda/",
+        "text": "Нижний Новгород",
+        "rel": ""
+      },
+      {
+        "href": "/kalkuliator-plastikovih-okon/",
+        "text": "Онлайн калькулятор цен",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вам перезвонить?",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "меню",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "главная",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "меню",
+        "rel": ""
+      },
+      {
+        "href": "/productsiya/",
+        "text": "Продукция",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/pvh-okna/",
+        "text": "ПВХ-окна EnWin",
+        "rel": ""
+      },
+      {
+        "href": "/gotovie-okna-dlya-dachi/",
+        "text": "Готовые окна на дачу",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-dveri/",
+        "text": "Пластиковые двери",
+        "rel": ""
+      },
+      {
+        "href": "/tsvetnie-plastikovie-okna/",
+        "text": "Цветные окна",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-bani/",
+        "text": "Окна для бани",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/",
+        "text": "Услуги",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkonov/",
+        "text": "Остекление балконов",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kottedzhei/",
+        "text": "Остекление коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-verand/",
+        "text": "Остекление веранд",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-terras/",
+        "text": "Остекление террас",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-besedok/",
+        "text": "Остекление беседок",
+        "rel": ""
+      },
+      {
+        "href": "/razdvizhnoe-osteklenie/",
+        "text": "Раздвижное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/teploe-osteklenie-balkonov/",
+        "text": "Теплое остекление",
+        "rel": ""
+      },
+      {
+        "href": "/holodnoe-osteklenie-balkonov/",
+        "text": "Холодное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/ustanovka-plastikovih-okon/",
+        "text": "Установка пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/zamena-plastikovih-okon/",
+        "text": "Замена пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-tseni/",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/kalkuliator-plastikovih-okon/",
+        "text": "Калькулятор окон онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/kalkuliator-balkonov/",
+        "text": "Калькулятор балконов онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-stoimost/",
+        "text": "Стоимость пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/kupit-plastikovie-okna/",
+        "text": "Купить пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/zakazat-plastikovie-okna/",
+        "text": "Заказать пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-otzivi/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/proizvoditel/",
+        "text": "О производителе",
+        "rel": ""
+      },
+      {
+        "href": "/blog/",
+        "text": "Блог",
+        "rel": ""
+      },
+      {
+        "href": "/foto/",
+        "text": "Фото работ",
+        "rel": ""
+      },
+      {
+        "href": "/kontakti/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/kalkuliator-plastikovih-okon/",
+        "text": "Рассчитать цену со скидкой",
+        "rel": ""
+      },
+      {
+        "href": "/pvh-okna/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pvh-okna/",
+        "text": "Профили EnWin",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkonov/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkonov/",
+        "text": "Остекление балконов",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kottedzhei/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kottedzhei/",
+        "text": "Остекление коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/gotovie-okna-dlya-dachi/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/gotovie-okna-dlya-dachi/",
+        "text": "Готовые окна",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Обсудить с менеджером",
+        "rel": ""
+      },
+      {
+        "href": "/personal-info/",
+        "text": "Соглашение о конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/personal-info/",
+        "text": "Соглашение о конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-otzivi/",
+        "text": "Все отзывы о пластиковых окнах",
+        "rel": ""
+      },
+      {
+        "href": "/personal-info/",
+        "text": "Соглашение о конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/tsvetnie-plastikovie-okna/",
+        "text": "ламинированных",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkonov/",
+        "text": "разделе",
+        "rel": ""
+      },
+      {
+        "href": "/gotovie-okna-dlya-dachi/",
+        "text": "отдельной странице",
+        "rel": ""
+      },
+      {
+        "href": "/pvh-okna/",
+        "text": "ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-tseni/",
+        "text": "цене",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Оформить заказ",
+        "rel": ""
+      },
+      {
+        "href": "/productsiya/",
+        "text": "Продукция",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/pvh-okna/",
+        "text": "ПВХ-окна EnWin",
+        "rel": ""
+      },
+      {
+        "href": "/gotovie-okna-dlya-dachi/",
+        "text": "Готовые окна для дачи",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-dveri/",
+        "text": "Пластиковые двери",
+        "rel": ""
+      },
+      {
+        "href": "/tsvetnie-plastikovie-okna/",
+        "text": "Цветные окна",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-bani/",
+        "text": "Окна для бани",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-tseni/",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/kalkuliator-plastikovih-okon/",
+        "text": "Калькулятор окон онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-stoimost/",
+        "text": "Стоимость пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/kupit-plastikovie-okna/",
+        "text": "Купить пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/zakazat-plastikovie-okna/",
+        "text": "Заказать пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/",
+        "text": "Услуги",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkonov/",
+        "text": "Остекление балконов",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kottedzhei/",
+        "text": "Остекление коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/razdvizhnoe-osteklenie/",
+        "text": "Раздвижное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/ustanovka-plastikovih-okon/",
+        "text": "Установка пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/zamena-plastikovih-okon/",
+        "text": "Замена пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/proizvoditel/",
+        "text": "О производителе",
+        "rel": ""
+      },
+      {
+        "href": "/blog/",
+        "text": "Блог",
+        "rel": ""
+      },
+      {
+        "href": "/foto/",
+        "text": "Фото работ",
+        "rel": ""
+      },
+      {
+        "href": "/kontakti/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna-otzivi/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "tel:88312352808",
+        "text": "+7 (831) 235-28-08",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вам перезвонить?",
+        "rel": ""
+      },
+      {
+        "href": "/sitemap/",
+        "text": "Карта сайта",
+        "rel": ""
+      },
+      {
+        "href": "/personal-info/",
+        "text": "Соглашение о конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/reiting-okonnih-kompaniy/",
+        "text": "В рейтинге",
+        "rel": ""
+      },
+      {
+        "href": "/okonniy-sait/",
+        "text": "Умные сайты",
+        "rel": ""
+      },
+      {
+        "href": "/personal-info/",
+        "text": "Соглашение о конфиденциальности",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Close"
+    ],
+    "h1_texts": [
+      "Пластиковые окна в Нижнем Новгороде"
+    ],
+    "h2_texts": [
+      "Работаем качественно и системно",
+      "Почему важно вызвать эксперта по замерам?",
+      "Доступные окна",
+      "Наши отличия",
+      "Отзывы клиентов",
+      "Наши работы",
+      "Часто задаваемые вопросы",
+      "Этапы установки новых окон ПВХ",
+      "Полезности",
+      "Где сделать заказ?"
+    ],
+    "h3_texts": [
+      "Наши цены"
+    ],
+    "counts": {
+      "paragraph": 19,
+      "h1": 1,
+      "h2": 10,
+      "h3": 1,
+      "link": 91,
+      "image": 53,
+      "list_item": 58,
+      "strong": 17,
+      "form": 4,
+      "input": 14
+    }
+  }
+}

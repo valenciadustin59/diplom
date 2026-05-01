@@ -1,0 +1,907 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://remo63.ru/",
+  "final_url": "https://remo63.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-encoding": "gzip",
+    "content-language": "ru",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 15:15:34 GMT",
+    "server": "ddos-guard",
+    "set-cookie": "__ddg8_=pzgCdKrjTL0SRsT0; Domain=.remo63.ru; Path=/; Expires=Fri, 01-May-2026 15:35:34 GMT\n__ddg10_=1777648534; Domain=.remo63.ru; Path=/; Expires=Fri, 01-May-2026 15:35:34 GMT\n__ddg9_=217.217.246.8; Domain=.remo63.ru; Path=/; Expires=Fri, 01-May-2026 15:35:34 GMT\n__ddg1_=CrjY3fXQ2g13XH3CTZHV; Domain=.remo63.ru; HttpOnly; Path=/; Expires=Sat, 01-May-2027 15:15:34 GMT",
+    "vary": "Accept-Encoding"
+  },
+  "response_time_ms": 3766.6725,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:15:36.716027+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" class=\" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths\"><head>\n    <title>Ремонт квартир, коттеджей, офисов в Самаре. Отделочные работы | Рэмо63</title>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <meta name=\"description\" content=\"Качественно и точно в срок сделаем ремонт квартиры, коттеджа, офиса, кафе, гостиницы, ресторана и других помещений в Самаре. Косметический, капитальный или  дизхайнерский ремонт. Антикризисная цена, высокое качество! +7(906)127-94-88\">\n    <meta name=\"keywords\" content=\"ремонт квартир Самара, ремонтная компания, ремонтная служба, служба быта, бытовая служба, служба сервиса, сервисная служба Самара, компания по ремонту квартир, отделочники, отделочные работы\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"canonical\" href=\"https://remo63.ru/\">\n    <link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"/i/apple-icon-57x57.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"/i/apple-icon-60x60.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"/i/apple-icon-72x72.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"/i/apple-icon-76x76.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"/i/apple-icon-114x114.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"/i/apple-icon-120x120.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"/i/apple-icon-144x144.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"/i/apple-icon-152x152.png\">\n    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/i/apple-icon-180x180.png\">\n    <link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/i/android-icon-192x192.png\">\n    <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/i/favicon-32x32.png\">\n    <link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/i/favicon-96x96.png\">\n    <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/i/favicon-16x16.png\">\n    <meta name=\"msapplication-TileColor\" content=\"#009F5D\">\n    <meta name=\"msapplication-TileImage\" content=\"/i/ms-icon-144x144.png\">\n    <meta name=\"theme-color\" content=\"#009F5D\">\n    <link rel=\"shortcut icon\" href=\"/i/favicon.ico\" type=\"image/x-icon\">\n    <link rel=\"icon\" href=\"/i/favicon.ico\" type=\"image/x-icon\">\n    <link rel=\"preload\" href=\"/images/background-head.png\" as=\"image\">\n    \n<meta name=\"yandex-verification\" content=\"6a06dbaaa62ccd7c\">\n    <link rel=\"preload\" href=\"/fonts/roboto-condensed-v16-latin_cyrillic-700.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"/fonts/roboto-v18-latin_cyrillic-regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"/fonts/fontawesome-webfont.woff2?v=4.7.0\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">\n    <style>\n        @font-face {font-family: \"Roboto Condensed-fallback\";size-adjust: 88.94%;ascent-override: 110%;src: local(\"Arial\");}.cls {width: 100%;aspect-ratio: 1263 / 400; height: 400px}\n        html,body,div,span,h1,h2,h4,p,a,img,i,ul,li,fieldset,form,label,article,header,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,header,section,main{display:block}body{line-height:1}ul{list-style:none}\n        #container{margin:0 auto;max-width:960px;width:100%}.cont{width:100%;max-width:100%;margin:0 auto;padding:0}.hg{margin-bottom:0.7em}.grdt_12{display:inline;float:left;margin:0 0 0.8em;width:100%;max-width:960px}.grdt_12{width:100%}.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}#container:before,#container:after{content:'.';display:block;overflow:hidden;visibility:hidden;font-size:0;line-height:0;width:0;height:0}#container:after{clear:both}@media only screen and (max-width:960px){.grdt_12{padding:0 0.8em}}.contact .lnk{font-family:'Roboto Condensed','Roboto Condensed-fallback';font-weight:700;display:inline-block;text-decoration:none;padding-bottom:1px;color:#DF2A00;border-bottom:1px dashed #DF2A00;}.head-wrp{overflow:hidden;background-color:#fcfdfd;min-height:165px;height:auto;padding-bottom:5px}.head-wrp .logo-wrp{z-index:2;height:61px}.head-wrp .logo-wrp a{display:block;position:relative;background-color:transparent;z-index:3;height:61px;width:220px}.head-wrp .logo-wrp a.logo-top{margin-top:50px}.head-wrp .logo-wrp a.logo-mob{display:none}.head-wrp .logo-wrp a img{background-color:transparent}.head-wrp .head-cont{position:relative;z-index:1;color:#2e3233}.head-wrp .head-cont .head-info{font-family:'Roboto Condensed','Roboto Condensed-fallback';text-align:right;padding-top:20px;vertical-align:bottom;font-size:18px}.head-wrp .head-cont .head-info span{position:relative;display:inline-block;vertical-align:top;margin-left:20px}.head-wrp .head-cont .head-company .offer{line-height:1.9;font-size:20px;margin-left:55px;position:relative;margin-top:20px}.head-wrp .head-cont .head-company .offer span{display:block;font-family:'Roboto Condensed','Roboto Condensed-fallback';font-weight:700}.tr3{font-family:'Roboto Condensed','Roboto Condensed-fallback';font-size:1.15em;text-transform:uppercase;color:white;text-align:center;display:inline}.tr2{font-family:'Roboto Condensed','Roboto Condensed-fallback';color:#009F5D;line-height:1.2;text-transform:uppercase;max-width:400px}.tr1{font:700 25px 'Roboto Condensed','Roboto Condensed-fallback';text-transform:uppercase}.tr1 .c{color:#DF2A00;display:inline}.head-wrp .head-cont .head-company .contact{text-align:right;position:relative;padding-left:68px;margin-top:30px}.head-wrp .head-cont .head-company .contact a.phone1{display:block;font:700 35px 'Roboto Condensed','Roboto Condensed-fallback';color:#2e3233}.head-wrp .head-cont .head-company .contact a.call-me{font-size:25px}.head-wrp .head-cont .head-company .contact:before{content:\"\\f098\";font-family:FontAwesome;font-size:4.8em;font-style:normal;font-weight:normal;color:#DF2A00;position:absolute;right:275px;top:0px}@media screen and (max-width:1200px){.head-wrp{height:135px}.head-wrp .logo-wrp{height:135px}.head-wrp .logo-wrp:before{height:135px}.head-wrp .logo-wrp a img{width:220px}.head-wrp .head-cont .head-info{font-size:14px}.head-wrp .head-cont .head-info span{margin-left:10px}.head-wrp .head-cont .head-company .offer{margin-top:10px;margin-left:40px;font-size:20px}.head-wrp .head-cont .head-company .contact{margin-top:25px}.head-wrp .head-cont .head-company .contact a.phone1{font-size:27px}.head-wrp .head-cont .head-company .contact a.call-me{font-size:18px}.head-wrp .head-cont .head-company .contact:before{font-size:3.7em;right:215px}}@media screen and (max-width:991px){.head-wrp{height:auto}.head-wrp .logo-wrp{height:auto;text-align:center}.head-wrp .logo-wrp:before{content:'';position:absolute;background-color:#009F5D;height:100%;width:200vw;left:-300px;right:auto}.head-wrp .logo-wrp a{width:100%}.head-wrp .logo-wrp a{display:inline-block}.head-wrp .logo-wrp a.logo-top{display:none}.head-wrp .head-cont .head-company .offer .tr1{display:none}.head-wrp .logo-wrp a.logo-mob{display:inline-block;padding:15px;height:auto;z-index:1;font-family:'Roboto Condensed';font-weight:700}.head-wrp .head-cont .head-info{font-size:14px}.head-wrp .head-cont .head-info span{text-align:right;margin-left:0px}.head-wrp .head-cont .head-info span:first-child{text-align:left;float:left}.head-wrp .head-cont .head-company .offer{margin-top:20px;margin-left:0px;font-size:20px}.head-wrp .head-cont .head-company .contact{margin-top:15px;margin-bottom:15px}.head-wrp .head-cont .head-company .contact a.phone1{font-size:26px}.head-wrp .head-cont .head-company .contact a.call-me{font-size:16px}.head-wrp .head-cont .head-company .contact:before{font-size:3em;right:210px}}@media screen and (max-width:767px){.tr2{max-width:700px}.head-wrp{padding-bottom:0}.head-wrp .head-cont .head-info{display:none}.head-wrp .logo-wrp{height:auto;text-align:center}.head-wrp .head-cont .head-company .offer{margin-top:20px;margin-left:0px;font-size:20px}.head-wrp .head-cont .head-company .contact{text-align:left;margin-top:10px;margin-bottom:15px;margin-left:0px}.head-wrp .head-cont .head-company .contact a.phone1{font-size:35px;width:270px}.head-wrp .head-cont .head-company .contact a.call-me{font-size:22px}.head-wrp .head-cont .head-company .contact:before{left:10px;top:7px;width:55px;font-size:3.3em}}@media screen and (max-width:350px){.head-wrp .head-cont .head-info span{text-align:left}.head-wrp .head-cont .head-company .contact a.phone1{font-size:20px}}.contain{margin-right:auto;margin-left:auto;padding-right:15px;padding-left:15px;width:100%}@media (min-width:576px){.contain{max-width:540px}}@media (min-width:768px){.contain{max-width:720px}}@media (min-width:992px){.contain{max-width:1200px}}@media (min-width:1200px){.contain{max-width:1240px}}.roww{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-7,.col-5,.col-12,.col-9,.col-3{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media (min-width:992px){.col-3{-webkit-box-flex:0;-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-9{-webkit-box-flex:0;-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}}@media (min-width:768px){.col-12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.col-5{-webkit-box-flex:0;-ms-flex:0 0 41.6666666667%;flex:0 0 41.6666666667%;max-width:41.6666666667%}.col-7{-webkit-box-flex:0;-ms-flex:0 0 58.3333333333%;flex:0 0 58.3333333333%;max-width:58.3333333333%}}.gr25{background-image:url('../images/background-head.png');position:relative;overflow:hidden}*,*::after,*::before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:62.5%}body{font-size:1.6rem;font-family:'Roboto',sans-serif;color:#2e3233;background-color:#ffffff}.nav-phone{display:none}a{text-decoration:none}img{max-width:100%}input{font-family:'Roboto',sans-serif;font-size:1.6rem}\n        .cd-main-content,.cd-main-header{-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);will-change:transform}.cd-main-content,.cd-main-header{position:relative}\n        .cd-main-content{z-index:2}\n        .cd-main-header{height:50px;color:white;background:url('../images/background.png') #009F5D 0 0 no-repeat;z-index:3;font-size:1.4em;font-family:'Roboto Condensed',sans-serif}@media only screen and (min-width:1170px){.cd-main-header{height:80px;box-sizing:content-box}.cd-main-header:after{content:\"\";display:table;clear:both}}.cd-logo{position:absolute;top:14px;left:2%;font-family:'Roboto Condensed';font-weight:700}@media only screen and (max-width:480px){.cd-logo{font-size:16px;top:18px}}@media only screen and (min-width:1170px){.cd-logo{top:26px;left:4em}}.cd-header-buttons{position:absolute;display:inline-block;top:3px;right:2%}.cd-header-buttons li{display:inline-block}@media only screen and (min-width:1170px){.cd-header-buttons{top:18px;right:4em}}.cd-nav-trigger{position:relative;display:block;width:44px;height:44px;overflow:hidden;white-space:nowrap;color:transparent;z-index:3}.cd-nav-trigger span,.cd-nav-trigger span::before,.cd-nav-trigger span::after{position:absolute;display:inline-block;height:3px;width:24px;background:white}.cd-nav-trigger span{position:absolute;top:50%;right:10px;margin-top:-2px}.cd-nav-trigger span::before,.cd-nav-trigger span::after{content:'';right:0;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform-origin:0% 50%;-moz-transform-origin:0% 50%;-ms-transform-origin:0% 50%;-o-transform-origin:0% 50%;transform-origin:0% 50%}.cd-nav-trigger span::before{top:-6px}.cd-nav-trigger span::after{top:6px}@media only screen and (min-width:1170px){.cd-nav-trigger{display:none}.nav-phone{display:none}}.cd-primary-nav a,.cd-primary-nav ul a{display:block;height:50px;line-height:50px;padding:0 20px;color:#ffffff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-bottom:1px solid #3a3f40;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);will-change:transform,opacity}.cd-primary-nav .see-all a{color:#DF2A00;}@media only screen and (min-width:1170px){.cd-primary-nav .go-back,.cd-primary-nav .see-all{display:none}.cd-primary-nav .cd-secondary-nav>li{height:390px;width:23.8%;float:left;margin-right:1.2%;border-right:1px solid #e2e3df;overflow:hidden;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.cd-primary-nav .cd-secondary-nav>li>a{color:#DF2A00;font-weight:bold;font-size:1.6rem;margin-bottom:0.2em;text-transform:uppercase}.cd-primary-nav .cd-secondary-nav a{height:27px;line-height:30px;padding:0 18% 0 0;color:#2e3233;border-bottom:none;font-size:1.4rem}.cd-primary-nav .cd-secondary-nav>li>ul>li>a:before{content:\"\\f054\";color:#009F5D;font-family:FontAwesome;font-size:1.4rem;margin-right:5px}.cd-primary-nav .cd-nav-icons li{width:33%;float:left;margin:0 0.5% 20px 0}}.go-back a{position:relative}.go-back a::before,.go-back a::after{content:'';position:absolute;top:50%;margin-top:-1px;display:inline-block;height:2px;width:10px;background:#464c4e;-webkit-backface-visibility:hidden;backface-visibility:hidden}.go-back a::before{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.go-back a::after{-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}@media only screen and (min-width:1170px){.go-back a::before,.go-back a::after{background:#009F5D;}}.cd-primary-nav .go-back a{padding-left:40px}.cd-primary-nav .go-back a::before,.cd-primary-nav .go-back a::after{left:20px;-webkit-transform-origin:1px 50%;-moz-transform-origin:1px 50%;-ms-transform-origin:1px 50%;-o-transform-origin:1px 50%;transform-origin:1px 50%}@media only screen and (min-width:1170px){.cd-primary-nav .go-back a{padding-left:20px}.cd-primary-nav .go-back a::before,.cd-primary-nav .go-back a::after{left:1px}}.cd-overlay{position:fixed;z-index:2;height:100%;width:100%;top:0;left:0;background-color:rgba(153,153,153,.3);visibility:hidden;opacity:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}body a,html a{text-decoration:none}p{line-height:1.5;font-family:'Roboto'}h1{font-family:'Roboto Condensed','Roboto Condensed-fallback'}h2{font-family:'Roboto Condensed','Roboto Condensed-fallback';font-weight:700}h1{text-transform:uppercase}h1{font-size:2em;line-height:1.3;color:black}.block-title{font-family:'Roboto Condensed','Roboto Condensed-fallback';font-weight:700;width:100%;margin:0 0 0.5em 0!important;padding:10px 10px;box-sizing:border-box;background:#009F5D;position:relative;clear:both;text-align:center;color:#fff}.block-title:after{content:\"\";position:absolute;top:0;left:-4px;height:100%;width:8px;background:#DF2A00;}h2{display:block;font-size:1.4375em;margin:1.125em 0 1.575em 0;color:black}h4{font-family:'Roboto Condensed','Roboto Condensed-fallback';font-weight:normal;font-size:1.5em;line-height:1.3;color:#2E3233;text-transform:uppercase}h4:before{display:inline-block;content:\"\";width:8px;height:17px;background-color:#009F5D;margin-right:5px}img{max-width:100%;height:auto}@media \\0screen{img{width:auto}}#container a{color:#DF2A00;text-decoration:none}.calc_grd{max-width:940px;margin:auto;position:relative;*zoom:1}.bg{position:relative;overflow:hidden}#back-to-top{position:fixed;z-index:999;display:none;bottom:70px;right:15px}#back-to-top i{width:50px;height:50px;display:block;color:#fff;background:#009F5D;text-align:center;font-size:16px;line-height:50px;border-radius:5px}#footer .br_m{display:none}@media screen and (max-width:486px) and (max-width:400px){#footer .br_m{display:block}}.spoiler h2 span{font-size:1.2em;color:#fff;float:right}.spoiler h6 span{font-size:0.7em;color:#fff;float:left;margin-right:1em}.hide{display:block}.close .hide{display:none}.slides{margin:0;padding:0;list-style:none}\n        .flexslider{margin:0;padding:0}.flexslider .slides>li{display:none;-webkit-backface-visibility:hidden}.slides:after{content:\"\\0020\";display:block;clear:both;visibility:hidden;line-height:0;height:0}html[xmlns] .slides{display:block}.flexslider{max-width:100%;background:#fff;border:4px solid #fff;position:relative;-webkit-border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;border-radius:4px;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.2);-moz-box-shadow:0 1px 4px rgba(0,0,0,.2);-o-box-shadow:0 1px 4px rgba(0,0,0,.2);box-shadow:0 1px 4px rgba(0,0,0,.2);zoom:1}.flexslider .slides{zoom:1}.top-slider.flexslider{position:relative;overflow:hidden;border:0;border-radius:0;box-shadow:none}.top-slider.flexslider .slides>li{font-size:16px;line-height:20px;color:white}.top-slider.flexslider .slides .s1{background:url('../images/slide/design.jpg') top no-repeat;-moz-background-size:cover;-webkit-background-size:cover;background-size:cover}.top-slider.flexslider .slides .s2{background:url('../images/slide/kottadg.jpg') top no-repeat;-moz-background-size:cover;-webkit-background-size:cover;background-size:cover}.top-slider.flexslider .slides .s3{background:url('../images/slide/kvartira.jpg') top no-repeat;-moz-background-size:cover;-webkit-background-size:cover;background-size:cover}.top-slider.flexslider .slides .s4{background:url('../images/slide/office.jpg') top no-repeat;-moz-background-size:cover;-webkit-background-size:cover;background-size:cover}.top-slider.flexslider .slides .s5{background:url('../images/slide/vanna.jpg') top no-repeat;-moz-background-size:cover;-webkit-background-size:cover;background-size:cover}.top-slider.flexslider .slides a.btn{color:white}.top-slider .text{height:400px;line-height:475px}.top-slider .text .inner{padding-top:82px;line-height:20px}.top-slider div.title{font-size:36px;line-height:52px;padding:10px;background:#009F5D;opacity:0.7}.top-slider div.text-block{line-height:26px;padding:10px;background:#009F5D;opacity:0.7;margin-bottom:15px}@media (max-width:678px){.cls {aspect-ratio: 400 / 210;height: 240px;}.top-slider .text .inner{padding-top:30px}.top-slider div.title{font-size:15px;line-height:12px;padding:10px}.top-slider.flexslider .slides>li{height:240px}.top-slider div.text-block{font-size:11px;line-height:18px}}.btn-primary{color:#ffffff;background-color:#009F5D;border-color:#bfbfbf}.btn{display:inline-block;margin-bottom:0;font-weight:normal;text-align:center;vertical-align:middle;background-image:none;border:1px solid transparent;white-space:nowrap;padding:6px 12px;font-size:14px;line-height:1.428571429;border-radius:4px}.btn-transparent{background:rgba(255,255,255,0);border:1px solid #fff;box-shadow:0 2px 0 0 rgba(230,230,230,0)}.col-md-6{position:relative;min-height:1px;padding-left:15px;padding-right:15px}@media (min-width:992px){.col-md-6{float:left;width:50%}}.grdt ul{list-style:none;text-indent:-1.5em}.grdt ul li:before{content:\"\\f00c \";color:#009F5D;font-family:FontAwesome;font-style:normal;font-weight:normal;padding-right:0.5em}#page_content ul{list-style-position:outside;padding-left:1.25em;line-height:1.5;margin:1.25em 0 0.9375em 0.625em;font-family:'Roboto','Roboto Condensed-fallback'}#page_content ul li{padding-left:0.5em;margin-bottom:0.3125em}.bg2{position:relative;overflow:hidden;background-color:#EEEEEE}.gr{background-image:url('../images/fon.jpg');background-position:center center;background-repeat:no-repeat;background-size:cover;border-bottom:3px solid #009F5D;}@media only screen and (max-width:767px){.gr{background-image:url('../images/fon-mobile.jpg')}}@media only screen and (max-width:767px){.gr{background-image:url('../images/design-mobile.jpg')}}section.block-top{background-color:#fff;opacity:0.9;padding:35px;-webkit-box-shadow:0px 12px 90px -10px rgba(139,139,139,.5)!important;box-shadow:0px 12px 90px -10px rgba(139,139,139,.5)!important}section.block-top article{position:relative;height:300px}section.block-top .image{position:absolute;width:100%;left:0;top:0;text-align:left}section.block-top .image .left_t{position:relative;display:inline-block}section.block-top .image img{height:300px}section.block-top .text{display:table;position:absolute;right:0;max-width:340px;height:300px;text-align:left;z-index:1}section.block-top .text .middle{display:table-cell;vertical-align:middle}section.block-top .text .title{padding:0;margin:0;background:transparent;color:#009F5D;text-transform:uppercase;font:700 30px 'Roboto Condensed';line-height:30px;text-align:left}section.block-top .text .button{max-width:300px;position:relative}#container .grdt_12 section.block-top .text .button .button_order{display:inline-block;text-decoration:none;text-transform:uppercase;margin:0.5em auto 0;text-align:center;vertical-align:middle;line-height:1em;padding:0.5em 0;font:700 1.75em 'Roboto Condensed';width:100%;background:#DF2A00;color:white;border-radius:4px;border:2px solid #DF2A00;-webkit-animation:shadow 1s ease 0s infinite normal;animation:shadow 1s ease 0s infinite normal}section.block-top .text .button span{font:700 0.7em 'Roboto Condensed'}section.block-top .adv li{display:block;font-family:'Roboto Condensed','Roboto Condensed-fallback'}.top-price-wrapper{position:absolute;left:0;bottom:3em;opacity:0.9}.top-price{font-size:0em;padding:0.5em;color:white;background-color:#009F5D;z-index:2}.top-price>p{display:block;line-height:60px;font-size:40px;font-weight:bold;margin:0 0.5em;padding-left:1em;color:white;z-index:2}@media only screen and (max-width:960px){section.block-top .image img{opacity:0.5}section.block-top .text{max-width:500px;width:auto}section.block-top .text .title{text-align:center}section.block-top .text .button{margin:20px auto 0 auto}}@media only screen and (max-width:768px){section.block-top .image img{-webkit-filter:blur(3px);-moz-filter:blur(3px);filter:blur(3px)}section.block-top .text .title{text-align:right;padding-right:5%}section.block-top .text .button{margin-right:5%}}@media only screen and (max-width:700px){section.block-top{background-color:transparent;opacity:1;padding:0;box-shadow:none;-webkit-box-shadow:none}}@media only screen and (max-width:600px){section.block-top .adv{display:none}section.block-top .top-price-wrapper{top:0;left:0}section.block-top .top-price-wrapper{top:0;left:0}.top-price>p{line-height:50px}section.block-top .text .middle{padding-top:3em}}@media only screen and (max-width:520px){section.block-top .image{width:100%;text-align:center}section.block-top .image img{width:100%;height:auto}}@media only screen and (max-width:440px){section.block-top article{height:250px}section.block-top .image img{-webkit-filter:blur(2px);-moz-filter:blur(2px);filter:blur(2px)}section.block-top .text{top:10px}section.block-top .text .middle{padding-top:0}section.block-top .text .title{font-size:25px;line-height:25px}.top-price>p{font-size:30px}.block-title{font-size:22px;text-align:left}.block-title:before{height:16px}}.tooltip_templates{display:none}.topik{font:700 2em 'Roboto Condensed','Roboto Condensed-fallback';color:white;text-align:center;padding:0.5em 0.5em;background:#009F5D;margin:0}@media only screen and (max-width:480px){.topik{font-size:1.5em}}@media only screen and (max-width:41.250em){#container{width:100%}}.fix_rm{display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;position:fixed;top:60%;right:0;width:60px;padding:7px;background-color:#ffffff;box-shadow:0 20px 35px rgba(0,0,0,0.07);-moz-transform:translate(0px,-50%);-ms-transform:translate(0px,-50%);-webkit-transform:translate(0px,-50%);-o-transform:translate(0px,-50%);transform:translate(0px,-50%);z-index:30000}.fix_rm .line{display:block;margin:5px auto;border-bottom:1px dotted #009F5D;}.fix_rm .btn{display:block;position:relative;margin-bottom:10px}.fix_rm .btn:after{display:block;content:'';padding-top:100%}.fix_rm .btn .description{display:block;visibility:hidden;position:absolute;top:50%;-moz-transform:translate(0px,-50%);-ms-transform:translate(0px,-50%);-webkit-transform:translate(0px,-50%);-o-transform:translate(0px,-50%);transform:translate(0px,-50%);right:calc(100% + 15px);background:rgba(0,0,0,0.5);padding:11px 15px;color:#ffffff;font-size:16px;font-weight:400;white-space:nowrap;opacity:0}.fix_rm .btn i{font-size:2.5em;font-style:normal;font-weight:900;color:#009F5D;position:absolute;right:2px;top:2px;left:2px}@media screen and (max-width:1070px){.fix_rm{display:none}}.breadcrumb {font-family: \"Roboto Condensed\",'Roboto Condensed-fallback';font-weight: 700;font-size: 1em;padding: 8px 15px 8px; list-style: none;background-color: #EEEEEE;border-top: 2px solid #009F5D;border-bottom: 2px solid #009F5D;}.breadcrumb > li + li:before {padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 5px; color:#009F5D; content: \"/ \"}.breadcrumb > li {display: inline-block;}.breadcrumb .active {color:#DF2A00;}.breadcrumb a {color:#2e3233;}.breadcrumb a:hover {color:#DF2A00;}@media (max-width: 480px) {.breadcrumb {font-size: 0.8em;}.breadcrumb > li + li:before {padding-left: 1px;}}\n        @media only screen and (max-width: 1169px) {\n            .cd-primary-nav {visibility: hidden;-webkit-transition: visibility 0s 0.3s;-moz-transition: visibility 0s 0.3s;transition: visibility 0s 0.3s;}\n            .cd-primary-nav.nav-is-visible {visibility: visible;-webkit-transition: visibility 0s 0s;-moz-transition: visibility 0s 0s;transition: visibility 0s 0s;}}\n        .pre-header{position:relative;background-color:#DF2A00;color:white;padding:20px 0;font-family:'Roboto','Roboto-fallback';font-weight:500}.pre-header a{border-bottom:1px dashed white}.pre-header a:hover{border-bottom:0}.pre-header--is-hidden{display:none}.pre-header__inner{display:flex;justify-content:space-between;align-items:center}.pre-header-msg{font-size:1em}.pre-header-msg a{color:inherit}.pre-header__close-btn{flex-shrink:0;margin-left:5px}.pre-header__close-btn .icon{display:block;color:inherit}.pre-header--text-center .pre-header__inner{position:relative}.pre-header--text-center .pre-header-msg{width:100%;text-align:center;padding:0 1em}.pre-header--text-center .pre-header__close-btn{position:absolute;right:0;top:50%;transform:translateY(-50%);right:6px;width:26px;height:26px;font-size:16px;font-weight:bold;text-align:center;line-height:26px;color:#fff;background:#009F5D;cursor:pointer;font-family:'Roboto'}.pre-header__close-btn:hover{background:#DF2A00}\n        .pre-header{position:relative;background-color:#DF2A00;color:white;padding:20px 0;font-family:'Roboto','Roboto-fallback';font-weight:500}.pre-header a{border-bottom:1px dashed white}.pre-header a:hover{border-bottom:0}.pre-header--is-hidden{display:none}.pre-header__inner{display:flex;justify-content:space-between;align-items:center}.pre-header-msg{font-size:1em}.pre-header-msg a{color:inherit}.pre-header__close-btn{flex-shrink:0;margin-left:5px}.pre-header__close-btn .icon{display:block;color:inherit}.pre-header--text-center .pre-header__inner{position:relative}.pre-header--text-center .pre-header-msg{width:100%;text-align:center;padding:0 1em}.pre-header--text-center .pre-header__close-btn{position:absolute;right:0;top:50%;transform:translateY(-50%);right:6px;width:26px;height:26px;font-size:16px;font-weight:bold;text-align:center;line-height:26px;color:#fff;background:#009F5D;cursor:pointer;font-family:'Roboto'}.pre-header__close-btn:hover{background:#DF2A00}\n    </style>\n</head>\n<body>\n<div class=\"fix_rm\">\n    <div class=\"btn knop\">\n        <i class=\"fa fa-phone-square\" aria-hidden=\"true\"></i>\n        <div class=\"description\">Перезвоните мне</div>\n    </div>\n    <div class=\"line\"></div>\n    <div class=\"btn zakaz\">\n        <i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i>\n        <div class=\"description\">Сделать заказ</div>\n    </div>\n    <div class=\"line\"></div>\n    <div class=\"btn qw\">\n        <i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i>\n        <div class=\"description\">Задать вопрос</div>\n    </div>\n    <div class=\"line\"></div>\n    <div class=\"btn diz\">\n        <i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i>\n        <div class=\"description\">Заказать дизайн проект</div>\n    </div>\n    <div class=\"line\"></div>\n    <div class=\"btn\" onclick=\"location.href='../calc_remont.php';\">\n        <i class=\"fa fa-calculator\" aria-hidden=\"true\"></i>\n        <div class=\"description\">Калькулятор ремонта квартиры</div>\n    </div>\n</div>\n<div class=\"head-wrp\">\n    <div class=\"contain\">\n        <div class=\"roww\">\n            <div class=\"col-3\">\n                <div class=\"logo-wrp\">\n                    <a class=\"logo-top\" href=\"/\"> <img width=\"220\" height=\"61\" alt=\"Рэмо63\" src=\"/images/logo_black.png\" loading=\"lazy\"></a>\n                    <a class=\"logo-mob\" href=\"/\"><div class=\"tr3\">Компания \"Рэмо63\"</div></a>\n                </div>\n            </div>\n            <div class=\"col-9\">\n                <div class=\"head-cont\">\n                    <div class=\"roww\">\n                        <div class=\"col-12\">\n                            <div class=\"roww head-info\">\n                                <div class=\"col-12\">\n                                    <span><i class=\"fa fa-map-marker\"></i> г. Самара, ул. Кирова, 90</span>\n                                    <span><i class=\"fa fa-clock-o\"></i> Работаем ежедневно с 9:00 до 21:00</span>\n                                </div>\n                            </div>\n                            <div class=\"roww head-company\">\n                                <div class=\"col-7\">\n                                    <div class=\"offer\">\n                                        <div class=\"tr1\">Компания <div class=\"c\">\"Рэмо63\"</div></div>\n                                        <span class=\"tr2\">Ремонт квартир, коттеджей, офисов в Самаре</span>\n                                    </div>\n                                </div>\n                                <div class=\"col-5\">\n                                    <div class=\"contact\">\n                                        <a class=\"phone1\" href=\"tel:+7(906)127-94-88\">+7(906)127-94-88</a>\n                                        <a class=\"phone1\" href=\"tel:\"></a>\n                                        <a href=\"#\" class=\"lnk call-me knop\">Перезвоните мне</a>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"clear\"></div>\n<header class=\"cd-main-header\">\n    <span class=\"cd-logo\">REMO63.ru</span>\n    <a class=\"nav-phone\" href=\"tel:+7(906)127-94-88\">+7(906)127-94-88</a>\n    <nav class=\"cd-nav\">\n    <ul id=\"cd-primary-nav\" class=\"cd-primary-nav is-fixed\">\n        <li><a href=\"/index.php\">Главная</a></li>\n        <li class=\"has-children\">\n            <a href=\"#\">О нас</a>\n            <ul class=\"cd-nav-icons is-hidden\">\n                <li class=\"go-back\"><a href=\"#0\">Главное меню</a></li>\n                <li class=\"see-all\">\n                </li>\n                <li><a class=\"cd-nav-item item-8\" href=\"/rew.php\">\n                        <h3>Отзывы</h3>\n                        <p>Отзывы наших клиентов</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-9\" href=\"/qw_m.php\">\n                        <h3>Вопрос-ответ</h3>\n                        <p>Популярные вопросы наших клиентов</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-10\" href=\"/smeta.php\">\n                        <h3>Сметы</h3>\n                        <p>Примеры реальных смет на ремонт</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-11\" href=\"/special.php\">\n                        <h3>Акции и скидки</h3>\n                        <p>Акции и скидки для наших клиентов</p>\n                    </a>\n                </li>\n            </ul>\n        </li>\n        <li class=\"has-children\">\n            <a href=\"#\">Услуги</a>\n            <ul class=\"cd-secondary-nav is-hidden\">\n                <li class=\"go-back\"><a href=\"#0\">Главное меню</a></li>\n                <li class=\"see-all\"><a href=\"/uslugi.php\">Все услуги</a></li>\n                <li class=\"has-children\">\n                    <a href=\"/komplekswork.php\">Комплексный ремонт</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/komplekswork.php\">Комплексный ремонт</a></li>\n                        <li><a href=\"/uslugi/kompleks_kvartir.php\">Ремонт квартиры</a></li>\n                        <li><a href=\"/uslugi/kompleks_novostroyka.php\">Ремонт новостройки</a></li>\n                        <li><a href=\"/uslugi/kompleks_kottedg.php\">Ремонт коттеджа</a></li>\n                        <li><a href=\"/uslugi/kompleks_office.php\">Ремонт офиса</a></li>\n                        <li><a href=\"/uslugi/kompleks_kosmetik.php\">Косметический ремонт</a></li>\n                        <li><a href=\"/uslugi/kompleks_kapital.php\">Капитальный ремонт</a></li>\n                        <li><a href=\"/zamershik.php\">Вызвать замерщика</a></li>\n                    </ul>\n                    <a href=\"/stenawork.php\">Ремонт и отделка стен</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/stenawork.php\">Ремонт и отделка стен</a></li>\n                        <li><a href=\"/uslugi/stena_viravnivanie.php\">Выравнивание стен</a></li>\n                        <li><a href=\"/uslugi/stena_pokraska.php\">Покраска стен</a></li>\n                        <li><a href=\"/uslugi/stena_oboi.php\">Поклейка обоев</a></li>\n                    </ul>\n                </li>\n                <li class=\"has-children\">\n                    <a href=\"/pomeshwork.php\">Ремонт комнат</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/pomeshwork.php\">Ремонт комнат</a></li>\n                        <li><a href=\"/uslugi/remont_vanna.php\">Ванная комната</a></li>\n                        <li><a href=\"/uslugi/remont_tualet.php\">Туалет</a></li>\n                        <li><a href=\"/uslugi/remont_kitchen.php\">Кухня</a></li>\n                        <li><a href=\"/uslugi/remont_sleep.php\">Спальня</a></li>\n                        <li><a href=\"/uslugi/remont_gostin.php\">Гостиная</a></li>\n                        <li><a href=\"/uslugi/remont_prihog.php\">Прихожая</a></li>\n                    </ul>\n                    <a href=\"/polwork.php\">Ремонт и отделка пола</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/polwork.php\">Ремонт и отделка пола</a></li>\n                        <li><a href=\"../uslugi/pol_demontaj.php\">Стяжка пола</a></li>\n                        <li><a href=\"/uslugi/pol_plitka.php\">Укладка плитки</a></li>\n                        <li><a href=\"/uslugi/pol_laminat.php\">Укладка ламината</a></li>\n                        <li><a href=\"/uslugi/pol_parket.php\">Укладка паркета</a></li>\n                    </ul>\n                </li>\n                <li class=\"has-children\">\n                    <a href=\"/santehwork.php\">Сантехнические работы</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/santehwork.php\">Сантехработы</a></li>\n                        <li><a href=\"/uslugi/santeh_zamenatrub.php\">Монтаж водоснабжения</a></li>\n                        <li><a href=\"/uslugi/santeh_kanal.php\">Монтаж канализации</a></li>\n                        <li><a href=\"/uslugi/santeh_radiator.php\">Монтаж отопления</a></li>\n                        <li><a href=\"/uslugi/santeh_vanna.php\">Установка ванны</a></li>\n                        <li><a href=\"/uslugi/santeh_unitaz.php\">Установка унитаза</a></li>\n                        <li><a href=\"/uslugi/santeh_rakovina.php\">Установка раковины</a></li>\n                        <li><a href=\"/uslugi/santeh_smes.php\">Установка смесителя</a></li>\n                        <li><a href=\"/uslugi/santeh_dush.php\">Установка душевой кабины</a></li>\n                        <li><a href=\"/uslugi/santeh_santehnik.php\">Услуги сантехника</a></li>\n                    </ul>\n                    <a href=\"/potolokwork.php\">Ремонт и отделка потолка</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/potolokwork.php\">Ремонт и отделка потолка</a>\n                        </li>\n                        <li><a href=\"/uslugi/potolok_viravnivanie.php\">Выравнивание потолка</a>\n                        </li>\n                        <li><a href=\"/uslugi/potolok_podvesnoy.php\">Подвесной потолок</a></li>\n                        <li><a href=\"/uslugi/potolok_natagnoy.php\">Натяжной потолок</a></li>\n                    </ul>\n                </li>\n                <li class=\"has-children\">\n                    <a href=\"/electrowork.php\">Электромонтажные работы</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/electrowork.php\">Электромонтаж</a></li>\n                        <li><a href=\"/uslugi/electro_provodka.php\">Замена электропроводки</a></li>\n                        <li><a href=\"/uslugi/electro_elektroshchit.php\">Монтаж электрощита</a></li>\n                        <li><a href=\"/uslugi/electro_rozetka.php\">Установка розеток</a></li>\n                        <li><a href=\"/uslugi/electro_vikl.php\">Установка выключателей</a></li>\n                        <li><a href=\"/uslugi/electro_electrik.php\">Услуги электрика</a></li>\n                    </ul>\n                    <a href=\"/bitwork.php\">Установка бытовой техники</a>\n                    <ul class=\"is-hidden\">\n                        <li class=\"go-back\"><a href=\"#0\">Меню услуг</a></li>\n                        <li class=\"see-all\"><a href=\"/bitwork.php\">Бытовая техника</a></li>\n                        <li><a href=\"/uslugi/bit_varpanel.php\">Установка варочной панели</a></li>\n                        <li><a href=\"/uslugi/bit_elplita.php\">Подключение электроплиты</a></li>\n                        <li><a href=\"/uslugi/bit_stir.php\">Установка стиральной машины</a></li>\n                        <li><a href=\"/uslugi/bit_posud.php\">Установка посудомоечной машины</a></li>\n                        <li><a href=\"/uslugi/bit_vodonagrev.php\">Установка водонагревателя</a></li>\n                    </ul>\n                </li>\n            </ul>\n        </li>\n        <li class=\"has-children\">\n            <a href=\"#\">Цены</a>\n            <ul class=\"cd-nav-icons is-hidden\">\n                <li class=\"go-back\"><a href=\"#0\">Главное меню</a></li>\n                <li class=\"see-all\"><a href=\"/price_all.php\">Все цены</a></li>\n                <li><a class=\"cd-nav-item item-1\" href=\"/price_otdelka.php\">\n                        <h3>Отделочные работы</h3>\n                        <p>Цены на отделочные работы 2026 год</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-2\" href=\"/price_san.php\">\n                        <h3>Сантехнические работы</h3>\n                        <p>Цены на сантехнические работы 2026 год</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-3\" href=\"/price_electro.php\">\n                        <h3>Электромонтажные работы</h3>\n                        <p>Цены на электромонтажные работы 2026 год</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-4\" href=\"/price_bit.php\">\n                        <h3>Установка бытовой техники</h3>\n                        <p>Цена установки бытовой техники 2026 год</p>\n                    </a>\n                </li>\n                <li><a class=\"cd-nav-item item-5\" href=\"/calc_remont.php\">\n                        <h3>Калькулятор ремонта</h3>\n                        <p>Расчитайте стоимость Вашего ремонта!</p>\n                    </a>\n                </li>\n            </ul>\n        </li>\n        <li><a href=\"/design.php\">Дизайн</a></li>\n        <li><a href=\"/portfolio.php\">Галерея</a></li>\n        <li><a href=\"/kontakt.php\">Контакты</a></li>\n    </ul> <!-- primary-nav -->\n</nav><ul class=\"cd-header-buttons\">\n        <li><a class=\"cd-nav-trigger\" href=\"#cd-primary-nav\">Меню<span></span></a></li>\n    </ul>\n</header>\n<div class=\"clear\"></div>\n<main class=\"cd-main-content\">\n    <!-- banner -->\n    <div class=\"cont cls\">\n        <div class=\"top-slider flexslider\">\n            \n        <div class=\"flex-viewport\" style=\"overflow: hidden; position: relative;\"><ul class=\"slides\" style=\"width: 1400%; transition-duration: 0s; transform: translate3d(-1280px, 0px, 0px);\"><li class=\"s5 clone\" aria-hidden=\"true\" style=\"width: 1280px; float: left; display: block;\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Ремонт ванной комнаты</div>\n                                    <div class=\"text-block\">Ремонт ванной комнаты под ключ от 30000 <i class=\"fa fa-rouble\"></i></div>\n                                    <a href=\"/zamershik.php\" class=\"btn btn-primary\">Вызвать специалиста</a>\n                                    <a href=\"/uslugi/remont_vanna.php\" class=\"btn btn-transparent\">Подробнее</a>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n                <li class=\"s1 flex-active-slide\" style=\"width: 1280px; float: left; display: block;\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Дизайн интерьеров</div>\n                                    <div class=\"text-block\">Эксклюзивный дизайн-проект интерьера по доступной цене</div>\n                                    <a href=\"#\" class=\"btn btn-primary diz\">Сделать заказ</a>\n                                    <a href=\"/design.php\" class=\"btn btn-transparent\">Подробнее</a></div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n                <li class=\"s2\" style=\"width: 1280px; float: left; display: block;\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Ремонт коттеджей</div>\n                                    <div class=\"text-block\">Ремонт коттеджа под ключ по индивидуальному дизайн-проекту</div>\n                                    <a href=\"/zamershik.php\" class=\"btn btn-primary\">Вызвать специалиста</a>\n                                    <a href=\"/uslugi/kompleks_kottedg.php\" class=\"btn btn-transparent\">Подробнее</a></div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n                <li class=\"s3\" style=\"width: 1280px; float: left; display: block;\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Ремонт квартир</div>\n                                    <div class=\"text-block\">Косметический, капитальный или евроремонт квартиры от 1500 <i class=\"fa fa-rouble\"></i> кв.м</div>\n                                    <a href=\"/zamershik.php\" class=\"btn btn-primary\">Вызвать специалиста</a>\n                                    <a href=\"/uslugi/kompleks_kvartir.php\" class=\"btn btn-transparent\">Подробнее</a>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n                <li class=\"s4\" style=\"width: 1280px; float: left; display: block;\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Ремонт офисов</div>\n                                    <div class=\"text-block\">Комплексный ремонт коммерческого помещения от 2000 <i class=\"fa fa-rouble\"></i> кв.м</div>\n                                    <a href=\"/zamershik.php\" class=\"btn btn-primary\">Вызвать специалиста</a>\n                                    <a href=\"/uslugi/kompleks_office.php\" class=\"btn btn-transparent\">Подробнее</a></div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n                <li class=\"s5\" style=\"width: 1280px; float: left; display: block;\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Ремонт ванной комнаты</div>\n                                    <div class=\"text-block\">Ремонт ванной комнаты под ключ от 30000 <i class=\"fa fa-rouble\"></i></div>\n                                    <a href=\"/zamershik.php\" class=\"btn btn-primary\">Вызвать специалиста</a>\n                                    <a href=\"/uslugi/remont_vanna.php\" class=\"btn btn-transparent\">Подробнее</a>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n            <li class=\"s1 clone\" style=\"width: 1280px; float: left; display: block;\" aria-hidden=\"true\">\n                    <div class=\"calc_grd\">\n                        <div class=\"row light\">\n                            <div class=\"col-md-6 text\">\n                                <div class=\"inner\">\n                                    <div class=\"title\">Дизайн интерьеров</div>\n                                    <div class=\"text-block\">Эксклюзивный дизайн-проект интерьера по доступной цене</div>\n                                    <a href=\"#\" class=\"btn btn-primary diz\">Сделать заказ</a>\n                                    <a href=\"/design.php\" class=\"btn btn-transparent\">Подробнее</a></div>\n                            </div>\n                        </div>\n                    </div>\n                </li></ul></div><ol class=\"flex-control-nav flex-control-paging\"><li><a href=\"#\" rel=\"nofollow\" class=\"flex-active\">1</a></li><li><a href=\"#\" rel=\"nofollow\">2</a></li><li><a href=\"#\" rel=\"nofollow\">3</a></li><li><a href=\"#\" rel=\"nofollow\">4</a></li><li><a href=\"#\" rel=\"nofollow\">5</a></li></ol><ul class=\"flex-direction-nav\"><li><a class=\"flex-prev\" href=\"#\" rel=\"nofollow\">Previous</a></li><li><a class=\"flex-next\" href=\"#\" rel=\"nofollow\">Next</a></li></ul></div>\n    </div>\n    <!-- /banner -->\n    <div><!-- #background --><div class=\"cont\">\n    <div class=\"gr25\">\n        <h1 class=\"block-title\" align=\"center\">Ремонт квартир, коттеджей, офисов в Самаре</h1>\n        <div id=\"container\">\n            <div id=\"page_content\">\n<div class=\"grdt grdt_12\">\n    <section class=\"block-top\">\n        <article>\n            <div class=\"image\">\n                <div class=\"left_t\">\n                    <img src=\"/images/main/top-kvartira.jpg\" alt=\"Ремонт квартир, коттеджей, офисов в Самаре\" title=\"Нужно отремонтировать квартиру, дом, офис? Мы поможем!\" loading=\"lazy\">\n                    <div class=\"top-price-wrapper\">\n                        <div class=\"top-price\"><p>от 2000 <i class=\"fa fa-rouble\"></i> кв.м</p></div>\n                    </div>\n                </div>\n            </div>\n            <div class=\"text\">\n                <div class=\"middle\">\n                    <h2 class=\"title\">Нужно отремонтировать квартиру, коттедж, офис?</h2>\n                    <div class=\"adv\">\n    <ul>\n        <li>Оперативный выезд прораба</li>\n        <li>Гарантия на работы от 1 года</li>\n    </ul>\n</div>\n<div class=\"clear\"></div>\n<div class=\"button\">\n    <a class=\"button_order zakaz_zamer\" href=\"#\">Вызвать мастера<br>\n        <span>для выполнения замеров</span></a>\n</div>                </div>\n            </div>\n            <div class=\"clear\"></div>\n        </article>\n    </section>\n    <div class=\"clear\"></div>\n</div>\n</div>\n</div> <!-- #grtd12 -->\n</div> <!-- #container -->\n</div> <!-- #page_content -->\n<div class=\"cont hg\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-bullhorn\" aria-hidden=\"true\"></i> Добро пожаловать на сайт компании Рэмо63!</h2>\n    </div>\n</div>\n<div id=\"container\">\n    <div id=\"page_content\">\n        <div class=\"grdt grdt_12\">\n                  <p align=\"justify\">Компания <strong>“Рэмо63”</strong> – это больше, чем просто подрядчик по \n      комплексному ремонту недвижимости в Самаре и области. Мы стремимся к кардинальному изменению рынка отделочных услуг, \n      внедряя принципы честности и клиентоориентированности на всех этапах сотрудничества. Наш подход подразумевает \n      весь цикл работ, начиная с замера, разработки уникального дизайн-проекта, до предчистовой, декоративной отделки \n      и авторского сопровождения проекта. Имеем опыт работы с объектами различного назначения, от маленьких санузлов, \n      квартир-студий, до крупных частных домов и коммерческой недвижимости. Наши специалисты подскажут оптимальные \n      решения, учитывающие ваши требования и финансовые возможности перед началом ремонта квартир, коттеджей или офисов.</p>\n              <p align=\"justify\">Заказать профессиональный ремонт квартиры под ключ в Самаре теперь стало невероятно \n              удобно. Связаться с нами можно по телефону <strong>+7(906)127-94-88</strong> – наши опытные менеджеры всегда \n              готовы ответить на вопросы, связанным с ценами, сроками выполнения работ, а также используемыми материалами. \n              Или же воспользуйтесь удобной онлайн-формой заявки на сайте, где вы сможете \n              указать все необходимые детали. Наша деятельность не ограничивается только чертой города - мы активно \n              работаем и за его пределами, имея успешный опыт сотрудничества с клиентами из различных районов Самарской \n              области. Стоимость работ рассчитывается индивидуально, в зависимости от объема, сложности и используемых \n              материалов, и всегда согласовывается с заказчиком до начала работ.</p></div> <!-- #page_content -->\n</div> <!-- #container -->\n</div> <!-- #grtd12 -->\n<div class=\"cont\">\n    <h2 class=\"topik\"><i class=\"fa fa-tags\" aria-hidden=\"true\"></i> Стоимость отделки под ключ</h2>\n    <div class=\"bg2 gr\">\n        <div class=\"calc_grd\">\n            <section id=\"pricePlans\">\n                <ul id=\"plans\">\n                    <li class=\"plan\">\n                        <ul class=\"planContainer\">\n                            <li class=\"title\"><h2 class=\"bestPlanTitle\">Ремонт квартиры</h2></li>\n                            <li class=\"price\"><p class=\"bestPlanPrice\">от 1500 <i class=\"fa fa-rouble\"></i> кв.м<br>\n                                    <span>2250<i class=\"fa fa-rouble\"></i> кв.м</span></p></li>\n                            <li>\n                                <p><strong><u>Базовый пакет:</u></strong></p>\n                                <ul class=\"options\">\n                                    <li>Демонтажные работы</li>\n                                    <li>Грунтовка поверхностей</li>\n                                    <li>Шпатлевка стен и потолка</li>\n                                    <li>Покраска потолка</li>\n                                    <li>Оклейка стен обоями</li>\n                                    <li>Выравнивание пола</li>\n                                    <li>Настил ламината</li>\n                                    <li>Монтаж панелей в ванной</li>\n                                    <li>Установка сантехники</li>\n                                    <li>Замена розеток</li>\n                                    <li>Монтаж выключателей</li>\n                                </ul>\n                            </li>\n                            <li class=\"button\"><a href=\"#\" class=\"knop11 zakaz\">Заказать</a></li>\n                        </ul>\n                    </li>\n                    <li class=\"plan\">\n                        <ul class=\"planContainer\">\n                            <li class=\"title\"><h2 class=\"bestPlanTitle\">Ремонт коттеджа</h2></li>\n                            <li class=\"price\"><p class=\"bestPlanPrice\">от 4000 <i class=\"fa fa-rouble\"></i> кв.м<br>\n                                    <span>6000<i class=\"fa fa-rouble\"></i> кв.м</span></p></li>\n                            <li>\n                                <p><strong><u>Базовый пакет:</u></strong></p>\n                                <ul class=\"options\">\n                                    <li>Демонтажные работы</li>\n                                    <li>Внутренняя/наружняя отделка</li>\n                                    <li>Шпатлевка стен и потолка</li>\n                                    <li>Покраска потолка</li>\n                                    <li>Оклейка стен обоями</li>\n                                    <li>Выравнивание пола</li>\n                                    <li>Настил ламината</li>\n                                    <li>Монтаж панелей в ванной</li>\n                                    <li>Установка сантехники</li>\n                                    <li>Замена розеток</li>\n                                    <li>Монтаж выключателей</li>\n                                </ul>\n                            </li>\n                            <li class=\"button\"><a href=\"#\" class=\"knop2 zakaz\">Заказать</a></li>\n                        </ul>\n                    </li>\n                    <li class=\"plan\">\n                        <ul class=\"planContainer\">\n                            <li class=\"title\"><h2 class=\"bestPlanTitle\">Ремонт офиса</h2></li>\n                            <li class=\"price\"><p class=\"bestPlanPrice\">от 2000 <i class=\"fa fa-rouble\"></i> кв.м<br>\n                                    <span>3000<i class=\"fa fa-rouble\"></i> кв.м</span></p></li>\n                            <li>\n                                <p><strong><u>Базовый пакет:</u></strong></p>\n                                <ul class=\"options\">\n                                    <li>Демонтажные работы</li>\n                                    <li>Внутренняя/наружняя отделка</li>\n                                    <li>Шпатлевка стен и потолка</li>\n                                    <li>Подвесные потолки</li>\n                                    <li>Покраска стен</li>\n                                    <li>Выравнивание пола</li>\n                                    <li>Настил ламината</li>\n                                    <li>Монтаж панелей в санузле</li>\n                                    <li>Установка сантехники</li>\n                                    <li>Замена розеток</li>\n                                    <li>Монтаж выключателей</li>\n                                </ul>\n                            </li>\n                            <li class=\"button\"><a href=\"#\" class=\"knop2 zakaz\">Заказать</a></li>\n                        </ul>\n                    </li>\n                </ul> <!-- End ul#plans -->\n                <div class=\"clear\"></div>\n                <div class=\"but_price\">\n                    <a class=\"button\" href=\"/calc_remont.php\"><i class=\"fa fa-calculator\" aria-hidden=\"true\"></i> Калькулятор ремонта</a>\n                    <a class=\"button\" href=\"/design.php\"><i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i> Дизайн интерьера</a>\n                </div>\n            </section>\n        </div>\n    </div>\n</div>\n<div class=\"cont\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-rub\" aria-hidden=\"true\"></i> Цены по отдельным видам ремонта</h2>\n        <div id=\"container\">\n            <div id=\"page_content\">\n                <div class=\"grdt grdt_12\">\n                    <div class=\"prices_t\">\n                        <div class=\"std block-prices_t-wrp\">\n                            <div class=\"block-prices_t\">\n                                <h4 class=\"block-prices_t-title\">Ремонт под ключ</h4>\n                                <ul>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Ремонт квартиры</div>\n                                        <div class=\"item-prices_t-value\"><span>от 1500 <i class=\"fa fa-rouble\"></i> кв.м</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Ремонт коттеджа</div>\n                                        <div class=\"item-prices_t-value\"><span>от 4000 <i class=\"fa fa-rouble\"></i> кв.м</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Ремонт офиса</div>\n                                        <div class=\"item-prices_t-value\"><span>от 2000 <i class=\"fa fa-rouble\"></i> кв.м</span></div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\"std block-prices_t-wrp\">\n                            <div class=\"block-prices_t\">\n                                <h4 class=\"block-prices_t-title\">Другие работы</h4>\n                                <ul>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Сантехнические работы</div>\n                                        <div class=\"item-prices_t-value\"><span>от 1000 <i class=\"fa fa-rouble\"></i></span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Электромонтажные работы</div>\n                                        <div class=\"item-prices_t-value\"><span>от 1000 <i class=\"fa fa-rouble\"></i></span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Установка бытовой техники</div>\n                                        <div class=\"item-prices_t-value\"><span>от 1000 <i class=\"fa fa-rouble\"></i></span></div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div><div id=\"container\">\n    <div id=\"page_content\">\n        <div class=\"grdt grdt_12\">\n\n            <div class=\"a_table\">\n                <ul>\n                    <li>Выезд на замеры бесплатный в случае состоявшегося ремонта</li>\n                    <li>Цены являются ориентировочными и могут измениться как в меньшую, так и в большую сторону</li>\n                    <li><strong>Стоимость отделочных работ</strong> указана без учета стоимости материалов</li>\n                </ul>\n            </div>\n            <h2 align=\"center\" class=\"price3\">Заказать смету на ремонт можно по телефону: <br><span><a href=\"tel:+7(906)127-94-88\"> +7(906)127-94-88</a></span></h2>            </div>\n</div> <!-- #page_content -->\n</div> <!-- #container -->\n<div class=\"clear\"></div>\n<div class=\"cont\">\n    <div class=\"bg y\">\n        <h2 class=\"topik\"><i class=\"fa fa-map-marker\" aria-hidden=\"true\"></i> Обслуживаем все районы Самары!</h2>\n        <div class=\"calc_grd\">\n            <section class=\"region\">\n                \n                <ul>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_1\">Промышленный</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_2\">Кировский</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_3\">Советский</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_4\">Октябрьский</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_5\">Железнодорожный</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_6\">Красноглинский</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_7\">Куйбышевский</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_8\">Ленинский</span></li>\n                    <li><span class=\"tooltip tooltip-link tooltipstered\" data-tooltip-content=\"#tooltip_content_9\">Самарский</span></li>\n                </ul>\n            </section>\n        </div>\n    </div>\n</div>            <div class=\"clear\"></div>\n<!-- uberzakaz -->\n<div id=\"uberzakaz\">\n    <div class=\"container\">\n        <div class=\"content\">\n            <h5 class=\"title\">Как оформить заказ на отделочные работы?</h5>\n            <div class=\"list\">\n                <div class=\"circle-block\">\n                    <div class=\"circle\"></div>\n                </div>\n                <ul>\n                    <li><span class=\"number\">1</span>Позвоните нам по телефону <strong><a href=\"callto:+7(906)127-94-88\">+7(906)127-94-88</a></strong> или отправьте <strong> <a class=\"zakaz\" href=\"#\">заявку</a></strong> с сайта</li>\n                    <li><span class=\"number\">2</span>Наш специалист проконсультирует Вас по вопросу ремонта, материалам, технологиям</li>\n                    <li><span class=\"number\">3</span>Мастер выезжает на объект для осмотра и выполнения замеров</li>\n                    <li><span class=\"number\">4</span>Составляем итоговую смету</li>\n                    <li><span class=\"number\">5</span>Если все устраивает, подписываем договор и приступаем к работе</li>\n                </ul>\n            </div>\n        </div>\n        <img class=\"man\" src=\"/images/man.png\" alt=\"Замерщик Самара\" loading=\"lazy\">\n    </div>\n</div>\n<!-- uberzakaz END -->        </div> <!-- #page_content -->\n\n<div class=\"cont hg\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> Наши услуги</h2>\n    </div>\n</div>\n<div id=\"container\">\n    <div id=\"page_content\">\n        <div class=\"grdt grdt_12\">\n                       \n         <div class=\"company kant\">\n                <h3 align=\"center\">Ремонт квартир под ключ в Самаре</h3>\n                <p align=\"justify\">Это весьма ответственное мероприятие,\n                    требующее серьёзного подхода. Поэтому следует доверять подобные операции исключительно профессионалам. В\n                    нашей компании работают мастера-универсалы и узкопрофильные специалисты знающие свое дело. Выполняем\n                    любые виды работ, в том числе перепланировку, предчистовую и декоративную отделки, монтаж инженерных \n                    сетей. Отделка от косметического, до дизайнерского уровня.</p>\n            </div>\n            <div class=\"company kant\">\n                <h3 align=\"center\">Ремонт частных домов под ключ в Самаре</h3>\n                <p align=\"justify\">Задача, требующая грамотного подхода и оперативного принятия решений на каждом этапе. \n                Мы знаем все нюансы и тонкости ремонта загородной недвижимости, начиная от черновой отделки, работы с \n                инженерными коммуникациями (отопление, водоснабжение, электроснабжение) и заканчивая декоративной отделкой \n                интерьеров. Вам не нужно будет координировать действия разных \n                бригад и контролировать каждый этап самостоятельно. Наши специалисты имеют опыт работы с домами различной \n                площади и \n                планировки. Стоимость ремонта рассчитывается индивидуально для каждого проекта, с учетом площади коттеджа, \n                сложности работ и выбранных материалов. Гарантируем выгодные цены, поскольку работаем напрямую с \n                поставщиками, минимизируя посреднические расходы.</p>\n            </div>\n            <div class=\"company kant\">\n                <h3 align=\"center\">Ремонт офисных помещений в Самаре</h3>\n                <p align=\"justify\">Мы понимаем, что офис – это не просто место работы, а лицо вашей компании, отражение \n                ее имиджа и статуса. Поэтому к ремонту мы подходим с максимальной ответственностью, предлагая широкий \n                спектр услуг, начиная от разработки дизайн-проекта и заканчивая сдачей объекта \"под ключ\". Наши специалисты \n                помогут вам выбрать оптимальные материалы, учитывая стиль вашего бизнеса и эргономику рабочего пространства. \n                В дизайн-проекте мы учтем все тонкости, от расстановки мебели и освещения до системы вентиляции и \n                кондиционирования, обеспечивая комфортную и продуктивную рабочую атмосферу. Мы работаем с различными типами \n                офисных помещений: от небольших кабинетов до крупных open-space.</p>\n            </div>\n            <div class=\"company kant\">\n                <h3 align=\"center\">Дизайн проект интерьеров в Самаре</h3>\n                <p align=\"justify\">Это комплексное решение, которое минимизирует риски, связанные со строительством и \n                отделкой, и гарантирует достижение желаемого результата, экономя при этом время и средства. Вместо \n                хаотичного выбора материалов, бесконечных походов по магазинам и сомнительных советов непрофессионалов, \n                вы получаете четкий план действий, разработанный опытными специалистами. Это страховка от непредвиденных \n                расходов, вызванных ошибками в планировке, неправильным выбором отделочных материалов или несоответствием \n                стилистики элементов интерьера. Наши дизайнеры работают в широком спектре стилей, от классической элегантности \n                до ультрасовременных направлений.</p>\n            </div>\n            <div class=\"company kant\">\n                <h3 align=\"center\">Сантехнические работы в Самаре</h3>\n                <p align=\"justify\">Если возникла потребность в услугах сантехника - звоните! Мы\n                    готовы предложить широкий спектр сантехнических работ от замены сифона в квартире до монтажа систем \n                    автономного отопления, водоснабжения и канализации загородного дома. Работает только с качественными \n                    материалами, с применением современного инструмента и технологий.</p>\n            </div>\n            <div class=\"company kant\">\n                <h3 align=\"center\">Электромонтажные работы в Самаре</h3>\n                <p align=\"justify\">Наша команда профессионалов выполнит любые электромонтажные работы. Услуги по полной \n                замене электропроводки в квартирах, домах, коттеджах и офисах,\n                    полная или частичная электрификация торговых и промышленных объектов с использованием современного\n                    оборудования и технологий, с соблюдением норм пожарной и электробезопасности.</p>\n            </div>\n        </div>\n    </div>\n</div> <!-- #page_content -->\n        \n<div class=\"cont\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i> Средние сроки выполнения ремонта</h2>\n        <div id=\"container\">\n            <div id=\"page_content\">\n                <div class=\"grdt grdt_12\">\n                    <div class=\"prices_t\">\n                        <div class=\"block-prices_t-wrp\">\n                            <div class=\"block-prices_t\">\n                                <h4 class=\"block-prices_t-title\">Косметический ремонт</h4>\n                                <ul>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">1-комнатная квартира (30-65 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>25-45 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">2-комнатная квартира (45-110 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>35-50 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">3-комнатная квартира (65-130 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>45-70 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">4-комнатная квартира (100-180 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>50-80 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Таунхаус (120-180 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>60-90 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Коттедж (200-500 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>60-90 дней</span></div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\" block-prices_t-wrp\">\n                            <div class=\"block-prices_t\">\n                                <h4 class=\"block-prices_t-title\">Капитальный ремонт</h4>\n                                <ul>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">1-комнатная квартира (30-65 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>55-70 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">2-комнатная квартира (45-110 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>60-80 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">3-комнатная квартира (65-130 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>75-100 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">4-комнатная квартира (100-180 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>80-120 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Таунхаус (120-180 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>80-120 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Коттедж (200-500 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>80-120 дней</span></div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div class=\" block-prices_t-wrp\">\n                            <div class=\"block-prices_t\">\n                                <h4 class=\"block-prices_t-title\">Элитный ремонт</h4>\n                                <ul>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">1-комнатная квартира (30-65 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>65-90 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">2-комнатная квартира (45-110 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>70-100 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">3-комнатная квартира (65-130 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>85-120 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">4-комнатная квартира (100-180 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>90-130 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Таунхаус (120-180 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>100-130 дней</span></div>\n                                    </li>\n                                    <li class=\"item-prices_t\">\n                                        <div class=\"item-prices_t-name\">Коттедж (200-500 кв.м.)</div>\n                                        <div class=\"item-prices_t-value\"><span>100-140 дней</span></div>\n                                    </li>\n                                </ul>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"cont\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-bars\" aria-hidden=\"true\"></i> Основные направления деятельности</h2>\n        <div class=\"gal_menu\">\n            <a href=\"/uslugi/kompleks_kvartir.php\" class=\"item\">\n                <img src=\"/images/uslugi/kompleks/top-kvartira.jpg\" alt=\"Ремонт квартиры в Самаре\" loading=\"lazy\">\n                <span>Ремонт квартир</span>\n            </a>\n            <a href=\"/uslugi/kompleks_novostroyka.php\" class=\"item\">\n                <img src=\"/images/uslugi/kompleks/top-novostroyka.jpg\" alt=\"Ремонт новостройки в Самаре\" loading=\"lazy\">\n                <span>Ремонт новостроек</span>\n            </a>\n            <a href=\"/uslugi/kompleks_kottedg.php\" class=\"item\">\n                <img src=\"/images/uslugi/kompleks/top-kottadg.jpg\" alt=\"Ремонт коттеджа в Самаре\" loading=\"lazy\">\n                <span>Ремонт коттеджей</span>\n            </a>\n            <a href=\"/uslugi/kompleks_office.php\" class=\"item\">\n                <img src=\"/images/uslugi/kompleks/top-office.jpg\" alt=\"Ремонт офиса в Самаре\" loading=\"lazy\">\n                <span>Ремонт офисов</span>\n            </a>\n            <a href=\"/pomeshwork.php\" class=\"item\">\n                <img src=\"/images/uslugi/pomesh/top-vanna.jpg\" alt=\"Ремонт комнаты в Самаре\" loading=\"lazy\">\n                <span>Ремонт комнат</span>\n            </a>\n            <a href=\"/santehwork.php\" class=\"item\">\n                <img src=\"/images/uslugi/santeh/top-santehnik.jpg\" alt=\"Установка сантехники в Самаре\" loading=\"lazy\">\n                <span>Установка сантехники</span>\n            </a>\n            <a href=\"/electrowork.php\" class=\"item\">\n                <img src=\"/images/uslugi/electro/top-electrik.jpg\" alt=\"Установка электрики в Самаре\" loading=\"lazy\">\n                <span>Установка электрики</span>\n            </a>\n            <a href=\"/bitwork.php\" class=\"item\">\n                <img src=\"/images/uslugi/bit/top-vodonagrev.jpg\" alt=\"Установка бытовой техники в Самаре\" loading=\"lazy\">\n                <span>Бытовая техника</span>\n            </a>\n        </div>\n    </div>\n</div><div class=\"cont\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i> Примеры наших объектов</h2>\n        <div class=\"gal_srub\">\n            \n <img src=\"/images/portfolio/obj4/6m.jpg\" alt=\"Ремонт под ключ в Самаре\" loading=\"lazy\">\n <img src=\"/images/portfolio/obj10/13m.jpg\" alt=\"Ремонт под ключ в Самаре \" loading=\"lazy\">\n <img src=\"/images/portfolio/obj5/11m.jpg\" alt=\"Ремонт под ключ в Самаре \" loading=\"lazy\">\n        </div>\n        <div class=\"f\">\n            <div class=\"lw\">Понравилась работа?</div>\n            <div class=\"lwn\">Давайте рассчитаем стоимость ремонта вашего помещения!</div>\n            <div class=\"cont\">\n                <div class=\"but_price\">\n                    <a class=\"button zakaz_zamer\" href=\"#\"><i class=\"fa fa-cog\" aria-hidden=\"true\"></i> Заявка на замер</a>\n                    <a class=\"button\" href=\"/portfolio.php\"><i class=\"fa fa-picture-o\" aria-hidden=\"true\"></i> Посмотреть все наши работы</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"cont\">\n    <div class=\"bg3\">\n        <h2 class=\"topik\"><i class=\"fa fa-microphone\" aria-hidden=\"true\"></i> Отзывы наших клиентов в Самаре</h2>\n        <div class=\"rew\">\n            <section id=\"reviews\" class=\"block-rew\">\n                <article>\n                    <div>\n                        <div class=\"review\">\n                            <div class=\"header\">\n                                <div class=\"title\">Капитальный ремонт двухкомнатной квартиры на ул. Свободы</div>\n                            </div>\n                            <div>\n                                <div class=\"text\">\n                                    <cite>Приводили в порядок двушку, доставшуюся от бабушки. По отзывам друзей выбрал\n                                        эту компанию. Нормальные русские мужики работают. Без лишней болтовни организовали\n                                        процесс и начали ремонт. Справились быстро, несмотря на сложность. Ценник адекватный.\n                                        Вообщем я доволен.</cite>\n                                </div>\n                            </div>\n                            <div class=\"clear\"></div>\n                            <div class=\"contacts\">\n                                <span>Павел</span>\n                            </div>\n                        </div>\n                        <div class=\"review\">\n                            <div class=\"header\">\n                                <div class=\"title\">Ремонт однокомнатной квартиры на ул. Стара Загора</div>\n                            </div>\n                            <div>\n                                <div class=\"text\">\n                                    <cite>В фирму обращались уже второй раз. Первый раз делали кухню у родителей.\n                                        Вызвали замерщика, получили смету, получили скидку за повторный заказ. Ремонт\n                                        квартиры закончили с опережением графика. Качество ожидаемо высокое. Спасибо еще\n                                        раз!</cite>\n                                </div>\n                            </div>\n                            <div class=\"clear\"></div>\n                            <div class=\"contacts\">\n                                <span>Анатолий и Вера</span>\n                            </div>\n                        </div>\n                        <div class=\"review\">\n                            <div class=\"header\">\n                                <div class=\"title\">Капитальный ремонт ванной комнаты на ул. Гагарина</div>\n                            </div>\n                            <div>\n                                <div class=\"text\">\n                                    <cite>Заказали ремонт ванной комнаты с дизайн-проектом. Замеры и смету сделали бесплатно.\n                                        Цена устроила. Из нескольких предложенных дизайнером проектов мы выбрали наиболее\n                                        сложный. Сделали очень качественно и в срок. Весь персонал очень вежливый.\n                                        Спасибо вам большое!</cite>\n                                </div>\n                            </div>\n                            <div class=\"clear\"></div>\n                            <div class=\"contacts\">\n                                <span>Ирина</span>\n                            </div>\n                        </div>\n                        <div class=\"review\">\n                            <div class=\"header\">\n                                <div class=\"title\">Косметический ремонт квартиры на ул. Аэродромная</div>\n                            </div>\n                            <div>\n                                <div class=\"text\">\n                                    <cite>Благодарны за проделанный ремонт. По смете уложились полностью, материалы закупали\n                                        они сами. Мы приезжали иногда проверяли. Ремонт получился хороший, квартира\n                                        намного свежее стала выглядеть.</cite>\n                                </div>\n                            </div>\n                            <div class=\"clear\"></div>\n                            <div class=\"contacts\">\n                                <span>Александра</span> \n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"clear\"></div>\n                    <div class=\"but_rew\">\n                        <a href=\"#\" class=\"button rews\"><i class=\"fa fa-comments-o\"></i> Оставить отзыв</a>\n                        <a class=\"button idea\" href=\"#\"><i class=\"fa fa-rocket\"></i> Предложить идею</a>\n                        <a class=\"button hate\" href=\"#\"><i class=\"fa fa-bug\"></i> Пожаловаться</a>\n                    </div>\n                    <p align=\"center\"><i class=\"fa fa-cog\"></i> Отзывы публикуются на добровольной основе и только по\n                        состоявшимся заказам! <a href=\"/rew.php\" class=\"sl\">Посмотреть все отзывы <i class=\"fa fa-long-arrow-right\" aria-hidden=\"true\"></i></a></p>\n                </article>\n            </section>\n        </div>\n    </div>\n</div>\n<div class=\"clear\"></div>\n<div id=\"container\">\n<div id=\"page_content\">\n</div> <!-- #page_content -->\n</div> <!-- #container -->\n<div class=\"cont\">\n    <div class=\"bg z\">\n        <h2 class=\"topik\"><i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i> Часто задаваемые вопросы</h2>\n        <div class=\"calc_grd\">\n            <div class=\"spoiler close\">\n    <h6><span class=\"show\"><i class=\"fa fa-chevron-up\"></i></span>\n        <span class=\"hide\"><i class=\"fa fa-chevron-down\"></i></span> Работаете ли вы по безналу?\n    </h6>\n    <div class=\"block\">\n        <p align=\"justify\"> Да, мы работаем по безналичному расчету. Все реквизиты указываются в договоре подряда.</p>\n    </div>\n</div>            <div class=\"spoiler close\">\n    <h6><span class=\"show\"><i class=\"fa fa-chevron-up\"></i></span>\n        <span class=\"hide\"><i class=\"fa fa-chevron-down\"></i></span> Кто производит закупку материалов для ремонта?\n    </h6>\n    <div class=\"block\">\n        <p align=\"justify\"> Заказчик может самостоятельно производить закупку, либо поручить это дело нам.\n            Все необходимые материалы мы закупаем с хорошими скидками в магазинах наших партнеров.\n            При отделке мы используем только качественные и проверенные материалы ведущих производителей.</p>\n    </div>\n</div>            <div class=\"spoiler close\">\n    <h6><span class=\"show\"><i class=\"fa fa-chevron-up\"></i></span>\n        <span class=\"hide\"><i class=\"fa fa-chevron-down\"></i></span> В какое время года лучше делать ремонт?\n    </h6>\n    <div class=\"block\">\n        <p align=\"justify\"> Очень популярный вопрос. Ремонт помещений можно проводить в любое время года, но при условии,\n        что помещение должно быть отапливаемым с температурой воздуха не ниже 15 градусов.</p>\n    </div>\n</div>            <div class=\"cont\">\n                <div class=\"but_price\">\n                    <a class=\"button qw\" href=\"#\"><i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i> Задать вопрос</a>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div class=\"cont\">\n    <div class=\"bg a\">\n        <h2 class=\"topik\"><i class=\"fa fa-paper-plane\" aria-hidden=\"true\"></i> Отправить заявку с сайта</h2>\n        <div class=\"calc_grd\">\n            <div id=\"note\"></div>\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc1\">\n                    <form action=\"\" method=\"get\" name=\"form-2\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\" aria-labelledby=\"n2\">\n                                <label id=\"n2\" class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\" aria-labelledby=\"110\">\n                                <label id=\"110\" class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Опишите фронт работ\" name=\"text\" aria-labelledby=\"txt2\"></textarea>\n                                <label id=\"txt2\" class=\"mdn-label\">Детали заказа</label>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить заявку\n                            </button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n\n        </div>\n    </div>\n</div><div id=\"container\">\n    <div id=\"page_content\">\n        </div> <!-- #page_content -->\n</div> <!-- #container -->\n<div class=\"cont\">\n    <div class=\"bg\">\n        <h2 class=\"topik\"><i class=\"fa fa-trophy\" aria-hidden=\"true\"></i> Наши преимущества</h2>\n    </div>\n</div>\n<div id=\"container\">\n    <div id=\"page_content\">\n        <div class=\"grdt grdt_12\">\n            <section class=\"block-bottom\">\n                <article>\n                    <div class=\"image\">\n                        <div class=\"left_t\">\n                            <img src=\"/images/girl.jpg\" alt=\"Отделочные работы в Самаре\" title=\"Отделочные работы в Самаре\" loading=\"lazy\">\n                            <div class=\"bottom-price-wrapper\">\n                                <div class=\"bottom-price\"><p>Гарантия до 5 лет!</p></div>\n                                <div class=\"bottom-price\"><p>Выезд в день обращения</p></div>\n                                <div class=\"bottom-price\"><p>Демократичные цены!</p></div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"text\">\n                        <div class=\"middle\">\n                            <div class=\"adv\">\n                                <ul>\n                                    <li>Разработка комплексных решений для клиента</li>\n                                    <li>Проектирование интерьеров в современных стилях</li>\n                                    <li>Понятные и прозрачные цены на услуги</li>\n                                    <li>Система контроля качества работ</li>\n                                    <li>Точная смета и официальный договор</li>\n                                    <li>Гарантийное и сервисное обслуживание</li>\n                                    <li>Закупка, доставка и подъем материалов</li>\n                                    <li>Дизайнеры, прорабы и мастера с опытом</li>\n                                </ul>\n                            </div>\n                        </div>\n                    </div>\n                </article>\n            </section>    </div> <!-- #page_content -->\n</div> <!-- #container -->\n</div> <!-- #background -->\n<!--#page_home -->\n</main>\n<div class=\"cd-overlay\"></div>\n <!-- cd-nav -->\n<div class=\"menu_foot\">\n    <ul>\n        <li><a href=\"/portfolio.php\">Портфолио</a></li>\n        <li><a href=\"/zamershik.php\">Вызвать замерщика</a></li>\n        <li><a href=\"/uslugi/kompleks_kvartir.php\">Ремонт квартиры под ключ</a></li>\n        <li><a href=\"/uslugi/kompleks_novostroyka.php\">Ремонт новостройки</a></li>\n        <li><a href=\"/uslugi/kompleks_kottedg.php\">Ремонт дома</a></li>\n        <li><a href=\"/uslugi/kompleks_office.php\">Ремонт офиса</a></li>\n        <li><a href=\"/kontakt.php\">Кoнтакты</a></li>\n    </ul>\n</div>\n<div class=\"clear\"></div>\n<footer id=\"footer\">\n    <div class=\"base\">\n        <div itemscope=\"\" itemtype=\"http://schema.org/Organization\">\n            <p><span itemprop=\"name\">Рэмо63</span></p>\n            <div itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n            <p>г. <span itemprop=\"addressLocality\">Самара</span>,<br class=\"br_m\">\n                <span itemprop=\"streetAddress\">ул. Кирова, 90</span></p>\n            </div>\n            <p>Телефон: <span itemprop=\"telephone\"><a href=\"tel:+7(906)127-94-88\">+7(906)127-94-88</a></span>\n        <br>E-mail: <a href=\"mailto:info@remo63.ru\"><span itemprop=\"email\">info@remo63.ru</span></a> <i></i> <a href=\"/zamershik.php\">Вызов замерщика</a></p>\n        <div class=\"2bse\">\n            <div class=\"fcnt\">\n                <span>Работаем ежедневно с 9:00 до 21:00</span>\n                <div><a href=\"tel:+7(906)127-94-88\">+7(906)127-94-88</a>\n                    <br>\n                    <a href=\"tel:\"></a>\n                </div>\n                <p><a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">Политика конфиденциальности</a></p>\n            </div>\n        </div>\n        </div>\n        <p class=\"copy\">© «Remo63» - Дизайн интерьера, ремонт квартир, коттеджей и нежилых помещений в Самаре, 2014 - 2026. <br>Цены, указанные на сайте, носят\nинформационный характер и ни при каких условиях не являются публичной офертой.</p>     </div>\n</footer>\n<div id=\"back-to-top\">\n    <i class=\"fa fa-chevron-up\"></i>\n</div>\n<div id=\"cookie_note\" class=\"show\">\n    <p>Мы используем cookie-файлы на сайте. Вы можете запретить их в настройках своего браузера.\n        Продолжая пользоваться сайтом, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">Политикой конфиденциальности</a></p><p></p>\n    <button class=\"button cookie_accept btn btn-primary btn-sm\">Я согласен</button>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"feedback-modal-box\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Заказ звонка</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-1\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                                <label class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить запрос</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"middle-modal\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Оформить заказ</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-2\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                                <label class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Опишите фронт работ\" name=\"text\"></textarea>\n                                <label class=\"mdn-label\">Детали заказа</label>\n                                <span class=\"mdn-msg right\">400 символов максимум </span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить заявку</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"zakaz_zamer\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Заявка на замер</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-5\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                                <label class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"date\" id=\"date1\" class=\"mdn-input\" placeholder=\"Предполагаемая дата замера\">\n                                <label class=\"mdn-label\">Дата замера</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Сведения об объекте\" name=\"text\"></textarea>\n                                <label class=\"mdn-label\">Объект</label>\n                                <span class=\"mdn-msg right\">400 символов максимум </span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить заявку</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"qw-modal\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Задать вопрос</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n            <form action=\"\" method=\"get\" name=\"form-4\">\n                <fieldset>\n                    <div class=\"field-group prepend-icon\">\n                        <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                        <label class=\"mdn-label\">Ваше имя</label>\n                        <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                        <span class=\"mdn-bar\"></span>\n                    </div>\n                    <div class=\"field-group prepend-icon\">\n                        <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                        <label class=\"mdn-label\">Ваш номер телефона</label>\n                        <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                        <span class=\"mdn-bar\"></span>\n                    </div>\n                    <div class=\"field-group\">\n                        <textarea class=\"mdn-textarea\" placeholder=\"Задайте ваш вопрос\" name=\"text\"></textarea>\n                        <label class=\"mdn-label\">Ваш вопрос</label>\n                        <span class=\"mdn-msg right\">400 символов максимум </span>\n                        <span class=\"mdn-bar\"></span>\n                    </div>\n                    <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                </fieldset>\n                <div class=\"mdn-footer\" align=\"center\">\n                    <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить вопрос</button>\n                </div>\n            <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                    </div>\n                </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"rews\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Оставить отзыв</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-6\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                                <label class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"date\" id=\"date1\" class=\"mdn-input\" placeholder=\"Укажите дату заказа\">\n                                <label class=\"mdn-label\">Дата заказа</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Напишите ваш отзыв\" name=\"text\"></textarea>\n                                <label class=\"mdn-label\">Ваш отзыв</label>\n                                <span class=\"mdn-msg right\">400 символов максимум </span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить отзыв</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"hate\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Пожаловаться</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-7\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                                <label class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Укажите, что вам не понравилось при работе с нами\" name=\"text\"></textarea>\n                                <label class=\"mdn-label\">Текст жалобы</label>\n                                <span class=\"mdn-msg right\">400 символов максимум </span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить жалобу</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"diz\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Заказ на дизайн</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-9\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" name=\"tell\" class=\"mdn-input phone119\" placeholder=\"Укажите номер для связи\">\n                                <label class=\"mdn-label\">Ваш номер телефона</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-mobile-phone\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Ваш комментарий к заказу\" name=\"text\"></textarea>\n                                <label class=\"mdn-label\">Детали заказа</label>\n                                <span class=\"mdn-msg right\">400 символов максимум </span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить заявку</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<div style=\"display:none;\">\n    <div class=\"box-modal\" id=\"idea\">\n        <div class=\"modal-header\">\n            <div class=\"modal-close arcticmodal-close\">x</div>\n            <h4 align=\"center\">Предложения и пожелания</h4>\n        </div>\n        <div class=\"modal-body\">\n            <div id=\"fields\" class=\"modern-forms\">\n                <div class=\"modern-container mc2\">\n                    <form action=\"\" method=\"get\" name=\"form-8\">\n                        <fieldset>\n                            <div class=\"field-group prepend-icon\">\n                                <input type=\"text\" class=\"mdn-input\" placeholder=\"Представьтесь, пожалуйста\" name=\"name\">\n                                <label class=\"mdn-label\">Ваше имя</label>\n                                <span class=\"mdn-icon\"><i class=\"fa fa-male\"></i></span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"field-group\">\n                                <textarea class=\"mdn-textarea\" placeholder=\"Помогите нам сделать сервис лучше!\" name=\"text\"></textarea>\n                                <label class=\"mdn-label\">Текст сообщения</label>\n                                <span class=\"mdn-msg right\">400 символов максимум </span>\n                                <span class=\"mdn-bar\"></span>\n                            </div>\n                            <div class=\"priv\">Отправляя сообщение, вы соглашаетесь с <a href=\"/politika-privatnosti.php\" rel=\"nofollow\" target=\"_blank\">правилами обработки персональных данных</a></div>\n                        </fieldset>\n                        <div class=\"mdn-footer\" align=\"center\">\n                            <button type=\"submit\" name=\"send\" class=\"mdn-button btn-primary feedback\">Отправить</button>\n                        </div>\n                    <input type=\"hidden\" name=\"g-recaptcha-response\" value=\"\"></form>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n<link rel=\"stylesheet\" href=\"/cs/new.css\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n<noscript><link rel=\"stylesheet\" href=\"/cs/new.css\"></noscript>\n<script defer=\"\" src=\"/js/modernizr.js\"></script>\n<script src=\"/js/jquery-3.5.1.min.js\"></script>\n<script defer=\"\" src=\"/js/jquery-migrate-3.0.0.js\"></script>\n<script defer=\"\" src=\"/js/tooltipster.bundle.min.js\"></script>\n<script defer=\"\" src=\"/js/jquery.mobile.custom.min.js\"></script>\n<script defer=\"\" src=\"/js/nmain.js\"></script>\n\n<script type=\"text/javascript\">\nvar fired = false;\nwindow.addEventListener('scroll', () => {\n    if (fired === false) {\n        fired = true;\n        \n        setTimeout(() => {\n(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\"); ym(35578855, \"init\", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); \n\ns = document.createElement(\"script\");\ns.src = \"//code.jivosite.com/widget/nRyqwcJINn\";\ns.async = true;\ndocument.body.appendChild(s);\n        }, 1000)\n    }\n});\n</script><script>\n    // Установка cookie с возможностью указания срока\n    function setCookie(name, value, days) {\n        let expires = \"\";\n        if (days) {\n            let date = new Date();\n            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));\n            expires = \"; expires=\" + date.toUTCString();\n        }\n        document.cookie = name + \"=\" + (value || \"\") + expires + \"; path=/\";\n    }\n    // Получение значения cookie по имени\n    function getCookie(name) {\n        let matches = document.cookie.match(new RegExp(\n            \"(?:^|; )\" + name.replace(/([\\.$?*|{}\\(\\)\\[\\]\\\\\\/\\+^])/g, '\\\\$1') + \"=([^;]*)\"\n        ));\n        return matches ? decodeURIComponent(matches[1]) : undefined;\n    }\n    // Основная функция проверки наличия cookie\n    function checkCookies() {\n        const cookieNote = document.getElementById('cookie_note');\n        const cookieBtnAccept = cookieNote?.querySelector('.cookie_accept');\n        // Проверка наличия cookie\n        if (!getCookie('cookies_policy') && cookieNote && cookieBtnAccept) {\n            cookieNote.classList.add('show');\n\n            // Обработчик клика на кнопку согласия\n            cookieBtnAccept.addEventListener('click', function () {\n                setCookie('cookies_policy', 'true', 90); // Срок хранения 3 месяца (90 дней)\n                cookieNote.classList.remove('show');\n            });\n        }\n    }\n    // Инициализация\n    document.addEventListener('DOMContentLoaded', checkCookies);\n</script>\n<script src=\"/js/js.cookie.min.js\"></script></body></html>",
+  "text": "Ремонт квартир, коттеджей, офисов в Самаре. Отделочные работы | Рэмо63 Перезвоните мне Сделать заказ Задать вопрос Заказать дизайн проект Калькулятор ремонта квартиры Компания \"Рэмо63\" г. Самара, ул. Кирова, 90 Работаем ежедневно с 9:00 до 21:00 Компания \"Рэмо63\" Ремонт квартир, коттеджей, офисов в Самаре +7(906)127-94-88 Перезвоните мне REMO63.ru +7(906)127-94-88 Главная О нас Главное меню Отзывы Отзывы наших клиентов Вопрос-ответ Популярные вопросы наших клиентов Сметы Примеры реальных смет на ремонт Акции и скидки Акции и скидки для наших клиентов Услуги Главное меню Все услуги Комплексный ремонт Меню услуг Комплексный ремонт Ремонт квартиры Ремонт новостройки Ремонт коттеджа Ремонт офиса Косметический ремонт Капитальный ремонт Вызвать замерщика Ремонт и отделка стен Меню услуг Ремонт и отделка стен Выравнивание стен Покраска стен Поклейка обоев Ремонт комнат Меню услуг Ремонт комнат Ванная комната Туалет Кухня Спальня Гостиная Прихожая Ремонт и отделка пола Меню услуг Ремонт и отделка пола Стяжка пола Укладка плитки Укладка ламината Укладка паркета Сантехнические работы Меню услуг Сантехработы Монтаж водоснабжения Монтаж канализации Монтаж отопления Установка ванны Установка унитаза Установка раковины Установка смесителя Установка душевой кабины Услуги сантехника Ремонт и отделка потолка Меню услуг Ремонт и отделка потолка Выравнивание потолка Подвесной потолок Натяжной потолок Электромонтажные работы Меню услуг Электромонтаж Замена электропроводки Монтаж электрощита Установка розеток Установка выключателей Услуги электрика Установка бытовой техники Меню услуг Бытовая техника Установка варочной панели Подключение электроплиты Установка стиральной машины Установка посудомоечной машины Установка водонагревателя Цены Главное меню Все цены Отделочные работы Цены на отделочные работы 2026 год Сантехнические работы Цены на сантехнические работы 2026 год Электромонтажные работы Цены на электромонтажные работы 2026 год Установка бытовой техники Цена установки бытовой техники 2026 год Калькулятор ремонта Расчитайте стоимость Вашего ремонта! Дизайн Галерея Контакты Меню Ремонт ванной комнаты Ремонт ванной комнаты под ключ от 30000 Вызвать специалиста Подробнее Дизайн интерьеров Эксклюзивный дизайн-проект интерьера по доступной цене Сделать заказ Подробнее Ремонт коттеджей Ремонт коттеджа под ключ по индивидуальному дизайн-проекту Вызвать специалиста Подробнее Ремонт квартир Косметический, капитальный или евроремонт квартиры от 1500 кв.м Вызвать специалиста Подробнее Ремонт офисов Комплексный ремонт коммерческого помещения от 2000 кв.м Вызвать специалиста Подробнее Ремонт ванной комнаты Ремонт ванной комнаты под ключ от 30000 Вызвать специалиста Подробнее Дизайн интерьеров Эксклюзивный дизайн-проект интерьера по доступной цене Сделать заказ Подробнее 1 2 3 4 5 Previous Next Ремонт квартир, коттеджей, офисов в Самаре от 2000 кв.м Нужно отремонтировать квартиру, коттедж, офис? Оперативный выезд прораба Гарантия на работы от 1 года Вызвать мастера для выполнения замеров Добро пожаловать на сайт компании Рэмо63! Компания “Рэмо63” – это больше, чем просто подрядчик по комплексному ремонту недвижимости в Самаре и области. Мы стремимся к кардинальному изменению рынка отделочных услуг, внедряя принципы честности и клиентоориентированности на всех этапах сотрудничества. Наш подход подразумевает весь цикл работ, начиная с замера, разработки уникального дизайн-проекта, до предчистовой, декоративной отделки и авторского сопровождения проекта. Имеем опыт работы с объектами различного назначения, от маленьких санузлов, квартир-студий, до крупных частных домов и коммерческой недвижимости. Наши специалисты подскажут оптимальные решения, учитывающие ваши требования и финансовые возможности перед началом ремонта квартир, коттеджей или офисов. Заказать профессиональный ремонт квартиры под ключ в Самаре теперь стало невероятно удобно. Связаться с нами можно по телефону +7(906)127-94-88 – наши опытные менеджеры всегда готовы ответить на вопросы, связанным с ценами, сроками выполнения работ, а также используемыми материалами. Или же воспользуйтесь удобной онлайн-формой заявки на сайте, где вы сможете указать все необходимые детали. Наша деятельность не ограничивается только чертой города - мы активно работаем и за его пределами, имея успешный опыт сотрудничества с клиентами из различных районов Самарской области. Стоимость работ рассчитывается индивидуально, в зависимости от объема, сложности и используемых материалов, и всегда согласовывается с заказчиком до начала работ. Стоимость отделки под ключ Ремонт квартиры от 1500 кв.м 2250 кв.м Базовый пакет: Демонтажные работы Грунтовка поверхностей Шпатлевка стен и потолка Покраска потолка Оклейка стен обоями Выравнивание пола Настил ламината Монтаж панелей в ванной Установка сантехники Замена розеток Монтаж выключателей Заказать Ремонт коттеджа от 4000 кв.м 6000 кв.м Базовый пакет: Демонтажные работы Внутренняя/наружняя отделка Шпатлевка стен и потолка Покраска потолка Оклейка стен обоями Выравнивание пола Настил ламината Монтаж панелей в ванной Установка сантехники Замена розеток Монтаж выключателей Заказать Ремонт офиса от 2000 кв.м 3000 кв.м Базовый пакет: Демонтажные работы Внутренняя/наружняя отделка Шпатлевка стен и потолка Подвесные потолки Покраска стен Выравнивание пола Настил ламината Монтаж панелей в санузле Установка сантехники Замена розеток Монтаж выключателей Заказать Калькулятор ремонта Дизайн интерьера Цены по отдельным видам ремонта Ремонт под ключ Ремонт квартиры от 1500 кв.м Ремонт коттеджа от 4000 кв.м Ремонт офиса от 2000 кв.м Другие работы Сантехнические работы от 1000 Электромонтажные работы от 1000 Установка бытовой техники от 1000 Выезд на замеры бесплатный в случае состоявшегося ремонта Цены являются ориентировочными и могут измениться как в меньшую, так и в большую сторону Стоимость отделочных работ указана без учета стоимости материалов Заказать смету на ремонт можно по телефону: +7(906)127-94-88 Обслуживаем все районы Самары! Промышленный Кировский Советский Октябрьский Железнодорожный Красноглинский Куйбышевский Ленинский Самарский Как оформить заказ на отделочные работы? 1 Позвоните нам по телефону +7(906)127-94-88 или отправьте заявку с сайта 2 Наш специалист проконсультирует Вас по вопросу ремонта, материалам, технологиям 3 Мастер выезжает на объект для осмотра и выполнения замеров 4 Составляем итоговую смету 5 Если все устраивает, подписываем договор и приступаем к работе Наши услуги Ремонт квартир под ключ в Самаре Это весьма ответственное мероприятие, требующее серьёзного подхода. Поэтому следует доверять подобные операции исключительно профессионалам. В нашей компании работают мастера-универсалы и узкопрофильные специалисты знающие свое дело. Выполняем любые виды работ, в том числе перепланировку, предчистовую и декоративную отделки, монтаж инженерных сетей. Отделка от косметического, до дизайнерского уровня. Ремонт частных домов под ключ в Самаре Задача, требующая грамотного подхода и оперативного принятия решений на каждом этапе. Мы знаем все нюансы и тонкости ремонта загородной недвижимости, начиная от черновой отделки, работы с инженерными коммуникациями (отопление, водоснабжение, электроснабжение) и заканчивая декоративной отделкой интерьеров. Вам не нужно будет координировать действия разных бригад и контролировать каждый этап самостоятельно. Наши специалисты имеют опыт работы с домами различной площади и планировки. Стоимость ремонта рассчитывается индивидуально для каждого проекта, с учетом площади коттеджа, сложности работ и выбранных материалов. Гарантируем выгодные цены, поскольку работаем напрямую с поставщиками, минимизируя посреднические расходы. Ремонт офисных помещений в Самаре Мы понимаем, что офис – это не просто место работы, а лицо вашей компании, отражение ее имиджа и статуса. Поэтому к ремонту мы подходим с максимальной ответственностью, предлагая широкий спектр услуг, начиная от разработки дизайн-проекта и заканчивая сдачей объекта \"под ключ\". Наши специалисты помогут вам выбрать оптимальные материалы, учитывая стиль вашего бизнеса и эргономику рабочего пространства. В дизайн-проекте мы учтем все тонкости, от расстановки мебели и освещения до системы вентиляции и кондиционирования, обеспечивая комфортную и продуктивную рабочую атмосферу. Мы работаем с различными типами офисных помещений: от небольших кабинетов до крупных open-space. Дизайн проект интерьеров в Самаре Это комплексное решение, которое минимизирует риски, связанные со строительством и отделкой, и гарантирует достижение желаемого результата, экономя при этом время и средства. Вместо хаотичного выбора материалов, бесконечных походов по магазинам и сомнительных советов непрофессионалов, вы получаете четкий план действий, разработанный опытными специалистами. Это страховка от непредвиденных расходов, вызванных ошибками в планировке, неправильным выбором отделочных материалов или несоответствием стилистики элементов интерьера. Наши дизайнеры работают в широком спектре стилей, от классической элегантности до ультрасовременных направлений. Сантехнические работы в Самаре Если возникла потребность в услугах сантехника - звоните! Мы готовы предложить широкий спектр сантехнических работ от замены сифона в квартире до монтажа систем автономного отопления, водоснабжения и канализации загородного дома. Работает только с качественными материалами, с применением современного инструмента и технологий. Электромонтажные работы в Самаре Наша команда профессионалов выполнит любые электромонтажные работы. Услуги по полной замене электропроводки в квартирах, домах, коттеджах и офисах, полная или частичная электрификация торговых и промышленных объектов с использованием современного оборудования и технологий, с соблюдением норм пожарной и электробезопасности. Средние сроки выполнения ремонта Косметический ремонт 1-комнатная квартира (30-65 кв.м.) 25-45 дней 2-комнатная квартира (45-110 кв.м.) 35-50 дней 3-комнатная квартира (65-130 кв.м.) 45-70 дней 4-комнатная квартира (100-180 кв.м.) 50-80 дней Таунхаус (120-180 кв.м.) 60-90 дней Коттедж (200-500 кв.м.) 60-90 дней Капитальный ремонт 1-комнатная квартира (30-65 кв.м.) 55-70 дней 2-комнатная квартира (45-110 кв.м.) 60-80 дней 3-комнатная квартира (65-130 кв.м.) 75-100 дней 4-комнатная квартира (100-180 кв.м.) 80-120 дней Таунхаус (120-180 кв.м.) 80-120 дней Коттедж (200-500 кв.м.) 80-120 дней Элитный ремонт 1-комнатная квартира (30-65 кв.м.) 65-90 дней 2-комнатная квартира (45-110 кв.м.) 70-100 дней 3-комнатная квартира (65-130 кв.м.) 85-120 дней 4-комнатная квартира (100-180 кв.м.) 90-130 дней Таунхаус (120-180 кв.м.) 100-130 дней Коттедж (200-500 кв.м.) 100-140 дней Основные направления деятельности Ремонт квартир Ремонт новостроек Ремонт коттеджей Ремонт офисов Ремонт комнат Установка сантехники Установка электрики Бытовая техника Примеры наших объектов Понравилась работа? Давайте рассчитаем стоимость ремонта вашего помещения! Заявка на замер Посмотреть все наши работы Отзывы наших клиентов в Самаре Капитальный ремонт двухкомнатной квартиры на ул. Свободы Приводили в порядок двушку, доставшуюся от бабушки. По отзывам друзей выбрал эту компанию. Нормальные русские мужики работают. Без лишней болтовни организовали процесс и начали ремонт. Справились быстро, несмотря на сложность. Ценник адекватный. Вообщем я доволен. Павел Ремонт однокомнатной квартиры на ул. Стара Загора В фирму обращались уже второй раз. Первый раз делали кухню у родителей. Вызвали замерщика, получили смету, получили скидку за повторный заказ. Ремонт квартиры закончили с опережением графика. Качество ожидаемо высокое. Спасибо еще раз! Анатолий и Вера Капитальный ремонт ванной комнаты на ул. Гагарина Заказали ремонт ванной комнаты с дизайн-проектом. Замеры и смету сделали бесплатно. Цена устроила. Из нескольких предложенных дизайнером проектов мы выбрали наиболее сложный. Сделали очень качественно и в срок. Весь персонал очень вежливый. Спасибо вам большое! Ирина Косметический ремонт квартиры на ул. Аэродромная Благодарны за проделанный ремонт. По смете уложились полностью, материалы закупали они сами. Мы приезжали иногда проверяли. Ремонт получился хороший, квартира намного свежее стала выглядеть. Александра Оставить отзыв Предложить идею Пожаловаться Отзывы публикуются на добровольной основе и только по состоявшимся заказам! Посмотреть все отзывы Часто задаваемые вопросы Работаете ли вы по безналу? Да, мы работаем по безналичному расчету. Все реквизиты указываются в договоре подряда. Кто производит закупку материалов для ремонта? Заказчик может самостоятельно производить закупку, либо поручить это дело нам. Все необходимые материалы мы закупаем с хорошими скидками в магазинах наших партнеров. При отделке мы используем только качественные и проверенные материалы ведущих производителей. В какое время года лучше делать ремонт? Очень популярный вопрос. Ремонт помещений можно проводить в любое время года, но при условии, что помещение должно быть отапливаемым с температурой воздуха не ниже 15 градусов. Задать вопрос Отправить заявку с сайта Ваше имя Ваш номер телефона Детали заказа Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить заявку Наши преимущества Гарантия до 5 лет! Выезд в день обращения Демократичные цены! Разработка комплексных решений для клиента Проектирование интерьеров в современных стилях Понятные и прозрачные цены на услуги Система контроля качества работ Точная смета и официальный договор Гарантийное и сервисное обслуживание Закупка, доставка и подъем материалов Дизайнеры, прорабы и мастера с опытом Портфолио Вызвать замерщика Ремонт квартиры под ключ Ремонт новостройки Ремонт дома Ремонт офиса Кoнтакты Рэмо63 г. Самара , ул. Кирова, 90 Телефон: +7(906)127-94-88 E-mail: info@remo63.ru Вызов замерщика Работаем ежедневно с 9:00 до 21:00 +7(906)127-94-88 Политика конфиденциальности © «Remo63» - Дизайн интерьера, ремонт квартир, коттеджей и нежилых помещений в Самаре, 2014 - 2026. Цены, указанные на сайте, носят информационный характер и ни при каких условиях не являются публичной офертой. Мы используем cookie-файлы на сайте. Вы можете запретить их в настройках своего браузера. Продолжая пользоваться сайтом, вы соглашаетесь с Политикой конфиденциальности Я согласен x Заказ звонка Ваше имя Ваш номер телефона Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить запрос x Оформить заказ Ваше имя Ваш номер телефона Детали заказа 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить заявку x Заявка на замер Ваше имя Ваш номер телефона Дата замера Объект 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить заявку x Задать вопрос Ваше имя Ваш номер телефона Ваш вопрос 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить вопрос x Оставить отзыв Ваше имя Ваш номер телефона Дата заказа Ваш отзыв 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить отзыв x Пожаловаться Ваше имя Ваш номер телефона Текст жалобы 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить жалобу x Заказ на дизайн Ваше имя Ваш номер телефона Детали заказа 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить заявку x Предложения и пожелания Ваше имя Текст сообщения 400 символов максимум Отправляя сообщение, вы соглашаетесь с правилами обработки персональных данных Отправить",
+  "json_ld": [],
+  "document": {
+    "title": "Ремонт квартир, коттеджей, офисов в Самаре. Отделочные работы | Рэмо63",
+    "meta_description": "Качественно и точно в срок сделаем ремонт квартиры, коттеджа, офиса, кафе, гостиницы, ресторана и других помещений в Самаре. Косметический, капитальный или дизхайнерский ремонт. Антикризисная цена, высокое качество! +7(906)127-94-88",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "https://remo63.ru/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Компания \"Рэмо63\"",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7(906)127-94-88",
+        "text": "+7(906)127-94-88",
+        "rel": ""
+      },
+      {
+        "href": "tel:",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Перезвоните мне",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7(906)127-94-88",
+        "text": "+7(906)127-94-88",
+        "rel": ""
+      },
+      {
+        "href": "/index.php",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Главное меню",
+        "rel": ""
+      },
+      {
+        "href": "/rew.php",
+        "text": "Отзывы Отзывы наших клиентов",
+        "rel": ""
+      },
+      {
+        "href": "/qw_m.php",
+        "text": "Вопрос-ответ Популярные вопросы наших клиентов",
+        "rel": ""
+      },
+      {
+        "href": "/smeta.php",
+        "text": "Сметы Примеры реальных смет на ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/special.php",
+        "text": "Акции и скидки Акции и скидки для наших клиентов",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Услуги",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Главное меню",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi.php",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "/komplekswork.php",
+        "text": "Комплексный ремонт",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/komplekswork.php",
+        "text": "Комплексный ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kvartir.php",
+        "text": "Ремонт квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_novostroyka.php",
+        "text": "Ремонт новостройки",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kottedg.php",
+        "text": "Ремонт коттеджа",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_office.php",
+        "text": "Ремонт офиса",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kosmetik.php",
+        "text": "Косметический ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kapital.php",
+        "text": "Капитальный ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "/stenawork.php",
+        "text": "Ремонт и отделка стен",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/stenawork.php",
+        "text": "Ремонт и отделка стен",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/stena_viravnivanie.php",
+        "text": "Выравнивание стен",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/stena_pokraska.php",
+        "text": "Покраска стен",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/stena_oboi.php",
+        "text": "Поклейка обоев",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshwork.php",
+        "text": "Ремонт комнат",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshwork.php",
+        "text": "Ремонт комнат",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_vanna.php",
+        "text": "Ванная комната",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_tualet.php",
+        "text": "Туалет",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_kitchen.php",
+        "text": "Кухня",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_sleep.php",
+        "text": "Спальня",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_gostin.php",
+        "text": "Гостиная",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_prihog.php",
+        "text": "Прихожая",
+        "rel": ""
+      },
+      {
+        "href": "/polwork.php",
+        "text": "Ремонт и отделка пола",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/polwork.php",
+        "text": "Ремонт и отделка пола",
+        "rel": ""
+      },
+      {
+        "href": "../uslugi/pol_demontaj.php",
+        "text": "Стяжка пола",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/pol_plitka.php",
+        "text": "Укладка плитки",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/pol_laminat.php",
+        "text": "Укладка ламината",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/pol_parket.php",
+        "text": "Укладка паркета",
+        "rel": ""
+      },
+      {
+        "href": "/santehwork.php",
+        "text": "Сантехнические работы",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/santehwork.php",
+        "text": "Сантехработы",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_zamenatrub.php",
+        "text": "Монтаж водоснабжения",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_kanal.php",
+        "text": "Монтаж канализации",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_radiator.php",
+        "text": "Монтаж отопления",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_vanna.php",
+        "text": "Установка ванны",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_unitaz.php",
+        "text": "Установка унитаза",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_rakovina.php",
+        "text": "Установка раковины",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_smes.php",
+        "text": "Установка смесителя",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_dush.php",
+        "text": "Установка душевой кабины",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/santeh_santehnik.php",
+        "text": "Услуги сантехника",
+        "rel": ""
+      },
+      {
+        "href": "/potolokwork.php",
+        "text": "Ремонт и отделка потолка",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/potolokwork.php",
+        "text": "Ремонт и отделка потолка",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/potolok_viravnivanie.php",
+        "text": "Выравнивание потолка",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/potolok_podvesnoy.php",
+        "text": "Подвесной потолок",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/potolok_natagnoy.php",
+        "text": "Натяжной потолок",
+        "rel": ""
+      },
+      {
+        "href": "/electrowork.php",
+        "text": "Электромонтажные работы",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/electrowork.php",
+        "text": "Электромонтаж",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/electro_provodka.php",
+        "text": "Замена электропроводки",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/electro_elektroshchit.php",
+        "text": "Монтаж электрощита",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/electro_rozetka.php",
+        "text": "Установка розеток",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/electro_vikl.php",
+        "text": "Установка выключателей",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/electro_electrik.php",
+        "text": "Услуги электрика",
+        "rel": ""
+      },
+      {
+        "href": "/bitwork.php",
+        "text": "Установка бытовой техники",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Меню услуг",
+        "rel": ""
+      },
+      {
+        "href": "/bitwork.php",
+        "text": "Бытовая техника",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/bit_varpanel.php",
+        "text": "Установка варочной панели",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/bit_elplita.php",
+        "text": "Подключение электроплиты",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/bit_stir.php",
+        "text": "Установка стиральной машины",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/bit_posud.php",
+        "text": "Установка посудомоечной машины",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/bit_vodonagrev.php",
+        "text": "Установка водонагревателя",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "#0",
+        "text": "Главное меню",
+        "rel": ""
+      },
+      {
+        "href": "/price_all.php",
+        "text": "Все цены",
+        "rel": ""
+      },
+      {
+        "href": "/price_otdelka.php",
+        "text": "Отделочные работы Цены на отделочные работы 2026 год",
+        "rel": ""
+      },
+      {
+        "href": "/price_san.php",
+        "text": "Сантехнические работы Цены на сантехнические работы 2026 год",
+        "rel": ""
+      },
+      {
+        "href": "/price_electro.php",
+        "text": "Электромонтажные работы Цены на электромонтажные работы 2026 год",
+        "rel": ""
+      },
+      {
+        "href": "/price_bit.php",
+        "text": "Установка бытовой техники Цена установки бытовой техники 2026 год",
+        "rel": ""
+      },
+      {
+        "href": "/calc_remont.php",
+        "text": "Калькулятор ремонта Расчитайте стоимость Вашего ремонта!",
+        "rel": ""
+      },
+      {
+        "href": "/design.php",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "/portfolio.php",
+        "text": "Галерея",
+        "rel": ""
+      },
+      {
+        "href": "/kontakt.php",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "#cd-primary-nav",
+        "text": "Меню",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать специалиста",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_vanna.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Сделать заказ",
+        "rel": ""
+      },
+      {
+        "href": "/design.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать специалиста",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kottedg.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать специалиста",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kvartir.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать специалиста",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_office.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать специалиста",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/remont_vanna.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Сделать заказ",
+        "rel": ""
+      },
+      {
+        "href": "/design.php",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "1",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "2",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "3",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "4",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "5",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "Previous",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "Next",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "Вызвать мастера для выполнения замеров",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заказать",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заказать",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заказать",
+        "rel": ""
+      },
+      {
+        "href": "/calc_remont.php",
+        "text": "Калькулятор ремонта",
+        "rel": ""
+      },
+      {
+        "href": "/design.php",
+        "text": "Дизайн интерьера",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7(906)127-94-88",
+        "text": "+7(906)127-94-88",
+        "rel": ""
+      },
+      {
+        "href": "callto:+7(906)127-94-88",
+        "text": "+7(906)127-94-88",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "заявку",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kvartir.php",
+        "text": "Ремонт квартир",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_novostroyka.php",
+        "text": "Ремонт новостроек",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kottedg.php",
+        "text": "Ремонт коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_office.php",
+        "text": "Ремонт офисов",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshwork.php",
+        "text": "Ремонт комнат",
+        "rel": ""
+      },
+      {
+        "href": "/santehwork.php",
+        "text": "Установка сантехники",
+        "rel": ""
+      },
+      {
+        "href": "/electrowork.php",
+        "text": "Установка электрики",
+        "rel": ""
+      },
+      {
+        "href": "/bitwork.php",
+        "text": "Бытовая техника",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заявка на замер",
+        "rel": ""
+      },
+      {
+        "href": "/portfolio.php",
+        "text": "Посмотреть все наши работы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Оставить отзыв",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Предложить идею",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Пожаловаться",
+        "rel": ""
+      },
+      {
+        "href": "/rew.php",
+        "text": "Посмотреть все отзывы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Задать вопрос",
+        "rel": ""
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/portfolio.php",
+        "text": "Портфолио",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kvartir.php",
+        "text": "Ремонт квартиры под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_novostroyka.php",
+        "text": "Ремонт новостройки",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_kottedg.php",
+        "text": "Ремонт дома",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/kompleks_office.php",
+        "text": "Ремонт офиса",
+        "rel": ""
+      },
+      {
+        "href": "/kontakt.php",
+        "text": "Кoнтакты",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7(906)127-94-88",
+        "text": "+7(906)127-94-88",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@remo63.ru",
+        "text": "info@remo63.ru",
+        "rel": ""
+      },
+      {
+        "href": "/zamershik.php",
+        "text": "Вызов замерщика",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7(906)127-94-88",
+        "text": "+7(906)127-94-88",
+        "rel": ""
+      },
+      {
+        "href": "tel:",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "Политика конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "Политикой конфиденциальности",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-privatnosti.php",
+        "text": "правилами обработки персональных данных",
+        "rel": "nofollow"
+      }
+    ],
+    "button_texts": [
+      "Отправить заявку",
+      "Я согласен",
+      "Отправить запрос",
+      "Отправить заявку",
+      "Отправить заявку",
+      "Отправить вопрос",
+      "Отправить отзыв",
+      "Отправить жалобу",
+      "Отправить заявку",
+      "Отправить"
+    ],
+    "h1_texts": [
+      "Ремонт квартир, коттеджей, офисов в Самаре"
+    ],
+    "h2_texts": [
+      "Нужно отремонтировать квартиру, коттедж, офис?",
+      "Добро пожаловать на сайт компании Рэмо63!",
+      "Стоимость отделки под ключ",
+      "Ремонт квартиры",
+      "Ремонт коттеджа",
+      "Ремонт офиса",
+      "Цены по отдельным видам ремонта",
+      "Заказать смету на ремонт можно по телефону: +7(906)127-94-88",
+      "Обслуживаем все районы Самары!",
+      "Наши услуги",
+      "Средние сроки выполнения ремонта",
+      "Основные направления деятельности",
+      "Примеры наших объектов",
+      "Отзывы наших клиентов в Самаре",
+      "Часто задаваемые вопросы",
+      "Отправить заявку с сайта",
+      "Наши преимущества"
+    ],
+    "h3_texts": [
+      "Отзывы",
+      "Вопрос-ответ",
+      "Сметы",
+      "Акции и скидки",
+      "Отделочные работы",
+      "Сантехнические работы",
+      "Электромонтажные работы",
+      "Установка бытовой техники",
+      "Калькулятор ремонта",
+      "Ремонт квартир под ключ в Самаре",
+      "Ремонт частных домов под ключ в Самаре",
+      "Ремонт офисных помещений в Самаре",
+      "Дизайн проект интерьеров в Самаре",
+      "Сантехнические работы в Самаре",
+      "Электромонтажные работы в Самаре"
+    ],
+    "counts": {
+      "paragraph": 38,
+      "h1": 1,
+      "h2": 17,
+      "h3": 15,
+      "link": 162,
+      "image": 15,
+      "list_item": 205,
+      "strong": 8,
+      "form": 9,
+      "input": 28
+    }
+  }
+}

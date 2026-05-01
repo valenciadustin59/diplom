@@ -1,0 +1,866 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kazan-ihlas.ru/",
+  "final_url": "https://kazan-ihlas.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "max-age=315360000",
+    "content-encoding": "gzip",
+    "content-length": "14989",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:34:24 GMT",
+    "expires": "Mon, 28 Apr 2036 14:34:24 GMT",
+    "link": "<https://kazan-ihlas.ru/wp-json/>; rel=\"https://api.w.org/\", <https://kazan-ihlas.ru/wp-json/wp/v2/pages/2>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://kazan-ihlas.ru/>; rel=shortlink",
+    "server": "nginx-reuseport/1.21.1",
+    "vary": "Accept-Encoding",
+    "x-hyper-cache": "continue - no file",
+    "x-pingback": "https://kazan-ihlas.ru/xmlrpc.php",
+    "x-powered-by": "PHP/8.0.30"
+  },
+  "response_time_ms": 3558.6463,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:34:27.691951+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru-RU\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t\t<meta charset=\"utf-8\">\n\n\t\t<title>Пластиковые окна Казань ✔️ Цены | Заказать окна пластиковые в Казани</title>\n\t\t<meta name=\"description\" content=\"Рейтинг 5⭐️. Заказать пластиковые окна в Казани по низким ценам. ✔️ Дешевая стоимость установки и заказа. ☎️ +7 (843) 250-44-07. ✔️ «Ихлас» - пластиковые конструкции от Эконом до Премиум класса! Звоните! ☎ +7 (843) 250-44-07, +7 (987) 205-43-33\">\n\t\t<meta name=\"keywords\" content=\"\">\n\t\t\n\t\t<link rel=\"canonical\" href=\"https://kazan-ihlas.ru/\">\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<meta name=\"robots\" content=\"index,follow\">\n\t\t\t\t\t\n\t\t<meta property=\"og:title\" content=\"Пластиковые окна Казань ✔️ Цены | Заказать окна пластиковые в Казани\">\n\t\t<meta property=\"og:description\" content=\"Рейтинг 5⭐️. Заказать пластиковые окна в Казани по низким ценам. ✔️ Дешевая стоимость установки и заказа. ☎️ +7 (843) 250-44-07. ✔️ «Ихлас» - пластиковые конструкции от Эконом до Премиум класса! Звоните! ☎ +7 (843) 250-44-07, +7 (987) 205-43-33\">\t\t\n\t\t<meta property=\"twitter:card\" content=\"summary_large_image\">\n\t\t<meta property=\"twitter:site\" content=\"https://kazan-ihlas.ru\">\n\t\t<meta property=\"twitter:title\" content=\"Пластиковые окна Казань ✔️ Цены | Заказать окна пластиковые в Казани\">\n\t\t<meta property=\"twitter:description\" content=\"Рейтинг 5⭐️. Заказать пластиковые окна в Казани по низким ценам. ✔️ Дешевая стоимость установки и заказа. ☎️ +7 (843) 250-44-07. ✔️ «Ихлас» - пластиковые конструкции от Эконом до Премиум класса! Звоните! ☎ +7 (843) 250-44-07, +7 (987) 205-43-33\">\n\t\t\n\t\t\t\t\t\t\t\t\t<meta property=\"og:image\" content=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1-720x512.jpg\">\n\t\t\t\t<meta property=\"twitter:image\" content=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1-720x512.jpg\">\n\t\t\t\t\t\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t\t\n\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/header/h1.css\" media=\"all\">\n\t\t\t\t\n\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/style.css?ver=1\" media=\"all\">\n\t\t\n\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/fonts/accidental-roboto.css\" media=\"all\">\n\t\t\t\t\n\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/fonts/roboto.css\" media=\"all\">\n\t\t\t\t\n\t\t\t\t<link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-57x57.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-60x60.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-72x72.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-76x76.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-114x114.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-120x120.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-144x144.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-152x152.png\">\n\t\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-180x180.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-192x192.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-32x32.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-96x96.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"https://kazan-ihlas.ru/wp-content/uploads/favikon-16x16.png\">\n\t\t\t<link type=\"text/css\" rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/callme/templates/form/form.css\"></head>\n\t\n\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t<body class=\"greensea volumetric\">\t\n\t\t<div class=\"wrapper\" itemscope=\"\" itemtype=\"http://schema.org/LocalBusiness\">\n\t\t\t<div class=\"main landing fontsize_42px fontweight600\">\n\n\t\t\t<div class=\"hero grey left ll13 padding400\">\n\t\t\t\n\t\t\t\t\t\t\t\t\t\n<div class=\"header light above height70px menu-v3 mobile-header-normal accent-menu-color\">\n\t<div class=\"container clear\">\n\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t<a class=\"logotype img img_70px\" href=\"https://kazan-ihlas.ru/\" title=\"Казань-Ихлас\">\n\t\t\t\t<img height=\"70\" src=\"https://kazan-ihlas.ru/wp-content/uploads/kazan-okna-211x70.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/kazan-okna-211x70.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/kazan-okna.png 2x\" alt=\"Казань-Ихлас\" class=\" lazyloaded\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/kazan-okna.png 2x\">\n\t\t\t</a>\n\t\t\t\t\n\t\t\t\t\t<div class=\"description\">Компания «Казань-Ихлас». Пластиковые окна и двери. Казань, Родины, 7/15, оф. 7</div>\n\t\t\t\t\n\t\t<div class=\"menu\">\n\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t<ul class=\"navigation row\" itemscope=\"\" itemtype=\"http://schema.org/SiteNavigationElement\">\n\t\t\t\t\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/\">Главная</a></li>\n<li class=\"dropdown\"><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/\">Наши услуги</a>\n<ul class=\"sub-menu\">\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/okna-na-balkon/\">Окна на балкон</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/\">Алюминиевые окна и двери</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/vhodnyie-gruppy/\">Входные группы</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/\">Панорамное остекление</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/\">Раздвижные окна и двери</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/\">Остекление</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/zimnij-sad/\">Зимний сад</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/zenitnye-fonari/\">Зенитные фонари</a></li>\n\t<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/vitrazhnoe-osteklenie/\">Витражное остекление</a></li>\n</ul>\n</li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/prise/\">Цены</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/reviews/\">Отзывы о нас</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/kontaktnaya-informacziya/\">Контактная информация</a></li>\n\t\t\t\t</ul>\n\t\t\t\t\n\t\t\t\n\t\t\t<ul class=\"contact\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"working-mode row\">\n\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t\t<span class=\"work\"></span>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"schedule\">Режим работы: Пн.-Вс. 08:00-20:00</span>\n\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"tel:+7 (843) 250-44-07\" class=\"phone\"><span itemprop=\"telephone\">+7 (843) 250-44-07</span></a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"tel:+7 (987) 205-43-33\" class=\"phone\"><span itemprop=\"telephone\">+7 (987) 205-43-33</span></a>\n\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<li class=\"messengers\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"whatsapp\" rel=\"nofollow\" href=\"https://api.whatsapp.com/send?phone=79872054333\" title=\"Whatsapp\">Whatsapp</a>\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"telegram\" rel=\"nofollow\" href=\"tg://resolve?domain=abu_muslim17\" title=\"Telegram\">Telegram</a>\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\n\t\t\t</ul>\n\t\t</div>\n\t\t\n\t\t\t\t\t<button class=\"menu-toggle\">\n\t\t\t\t<span class=\"menu-toggle-inner\">Меню</span>\n\t\t\t</button>\n\t\t\t</div>\t\t\t\t\n</div>\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\n<div class=\"hero-section section\">\n\t<div class=\"container\">\n\t\t<div class=\"hero-wrap\">\n\t\t\t<div class=\"flex row\">\n\t\t\t\t<div class=\"left\">\n\t\t\t\t\t<h1 itemprop=\"name\">Пластиковые окна в Казани по самым доступным ценам</h1>\t\t\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Пластиковые окна в Казани от Эконом до VIP класса</li>\t\t\t\t\t\t\t<li>Официальный договор и гарантия до 5 лет</li>\t\t\t\t\t\t\t<li>Инвалидам, многодетным, пожилым - СКИДКА до 15%</li>\t\t\t\t\t\t\t<li>Москитная сетка Premium - в ПОДАРОК</li>\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t<div class=\"hero-description\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"buttons\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Узнать наши цены\" class=\"button order\">Узнать наши цены</button>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"button additional-button white\" href=\"https://vk.com/kznbalkoniokna\">Наша группа ВКонтакте</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"right\">\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t</div>\n</div>\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<style>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t@media screen and (min-width: 980px) {\n\t\t\t\t\t\t\t\t\t.hero .background {\n\t\t\t\t\t\t\t\t\t\tbackground-image: url(https://kazan-ihlas.ru/wp-content/uploads/plastikovye-okna-kazan-1.jpg);\n\t\t\t\t\t\t\t\t\t}\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t@media screen and (max-width: 979px) {\n\t\t\t\t\t\t\t\t\t.hero .background {\n\t\t\t\t\t\t\t\t\t\tbackground-image: url(https://kazan-ihlas.ru/wp-content/uploads/plastikovye-okna-kazan-3.jpg);\n\t\t\t\t\t\t\t\t\t}\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t\t\t</style>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"background-wrap\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"background desktop-cover mobile-cover\"></div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\t\t\t\n\n<div class=\"gallery section\">\t\n\t<h2>«Казань-Ихлас» - пластиковые окна и двери любой сложности в Казани и пригороде</h2>\t<p class=\"description\">Мы работаем с пластиковыми окнами и дверьми любой сложности и дизайна. В наших соц.сетях Вы найдете большое количество фотографий наших работ и отзывы клиентов о нас.</p>\t<div class=\"outer\">\n\t\t<div class=\"row popup-toggle\">\n\t\t\t<div class=\"col\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item big\" href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1.jpg\" title=\"Монтажник\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\" lazyloaded\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1-632x420.jpg\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1-632x420.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1.jpg 2x\" alt=\"Монтажник\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1.jpg 2x\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-16.jpg\" title=\"\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-16-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-16-615x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-24.jpg\" title=\"\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-24-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-24-615x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/dwkjpjulmtm-817x613-1.jpg\" title=\"\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/dwkjpjulmtm-817x613-1-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/dwkjpjulmtm-817x613-1-620x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-29.jpg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-29-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-29-615x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"col\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/1221-1.jpg\" title=\"Окна пластиковые\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\" lazyloaded\" src=\"https://kazan-ihlas.ru/wp-content/uploads/1221-1-310x205.jpg\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/1221-1-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/1221-1-620x410.jpg 2x\" alt=\"Окна пластиковые\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/1221-1-620x410.jpg 2x\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/ihlas-rabotniki.jpg\" title=\"\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\" lazyloaded\" src=\"https://kazan-ihlas.ru/wp-content/uploads/ihlas-rabotniki-310x205.jpg\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/ihlas-rabotniki-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/ihlas-rabotniki-620x410.jpg 2x\" alt=\"\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/ihlas-rabotniki-620x410.jpg 2x\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/stvorki.jpg\" title=\"\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\" lazyloaded\" src=\"https://kazan-ihlas.ru/wp-content/uploads/stvorki-310x205.jpg\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/stvorki-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/stvorki-620x410.jpg 2x\" alt=\"\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/stvorki-620x410.jpg 2x\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-53.jpg\" title=\"\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\" lazyloaded\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-53-310x205.jpg\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-53-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-53-615x410.jpg 2x\" alt=\"\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-53-615x410.jpg 2x\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item big\" href=\"https://kazan-ihlas.ru/wp-content/uploads/vxiix2owk08-817x459-1.jpg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/vxiix2owk08-817x459-1-632x420.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/vxiix2owk08-817x459-1.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"col\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item big\" href=\"https://kazan-ihlas.ru/wp-content/uploads/1-817x1089-1.jpeg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\" lazyloaded\" src=\"https://kazan-ihlas.ru/wp-content/uploads/1-817x1089-1-632x420.jpeg\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/1-817x1089-1-632x420.jpeg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/1-817x1089-1-817x840.jpeg 2x\" alt=\"\" srcset=\"https://kazan-ihlas.ru/wp-content/uploads/1-817x1089-1-817x840.jpeg 2x\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/mj-xgkg82m0-1.jpg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/mj-xgkg82m0-1-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/mj-xgkg82m0-1-620x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/davasuzgqci-1.jpg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/davasuzgqci-1-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/davasuzgqci-1-620x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-kazan.jpeg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-kazan-310x205.jpeg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-kazan-620x410.jpeg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://kazan-ihlas.ru/wp-content/uploads/ptg7mwrw4_w-1.jpg\">\n\t\t\t\t\t\t<img itemprop=\"image\" class=\"lazyload\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/ptg7mwrw4_w-1-310x205.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/ptg7mwrw4_w-1-620x410.jpg 2x\" alt=\"\">\n\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\t\t\t<a class=\"more\" target=\"_blank\" href=\"https://vk.com/kznbalkoniokna\" rel=\"nofollow\">Смотреть больше фото ВКонтакте</a>\n\t</div>\n\n\t\t\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n\n<div class=\"cases section top cases-images-slider no-section-padding\">\n\t<div class=\"container\">\n\t\t<h2>Посмотрите на некоторые наши работы</h2>\t\t<p class=\"description\">Больше наших работ и отзывы клиентов о нас Вы можете посмотреть в наших соцсетях.</p>\n\t\t<div class=\"row\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t<div class=\"left\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div class=\"case-picture row popup-toggle\">\n\t\t\t\t\t\t\t\t\t<div class=\"carousel owl-carousel owl-loaded owl-drag\">\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"owl-stage-outer owl-height\" style=\"height: 601px;\"><div class=\"owl-stage\" style=\"transform: translate3d(0px, 0px, 0px); transition: all; width: 2344px;\"><div class=\"owl-item active\" style=\"width: 586px;\"><div data-hash=\"img1-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-586x601.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img2-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-2.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-2-586x700.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-2.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img3-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-3.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-3-586x693.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-3.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img4-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-4.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-4-586x440.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-4.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div><div class=\"owl-nav disabled\"><div class=\"owl-prev\">prev</div><div class=\"owl-next\">next</div></div><div class=\"owl-dots disabled\"></div></div>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"additional\">\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img1-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img2-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-2-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-2-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img3-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-3-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-3-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img4-1\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-4-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-4-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"right\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Замена фасадного остекления на тёплое пластиковыми окнами, Казань, ЖК «Времена Года», ул. Г. Ерина, 13.</h3>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"text\">\n\t\t\t\t\t\t\t\t\t<p>На данном объекте остекление выполнено по технологии первого контура, но с сохранением общего фасада здания.</p>\n<p><strong>Какие работы выполнены:</strong></p>\n<ol>\n<li>Выезд специалиста и качественный замер.</li>\n<li>Изготовление оконных рам по точным размерам.</li>\n<li>Доставка на объект и монтаж пластиковых окон.</li>\n<li>Гидроизоляция всех примыканий и монтаж системы водоотведения.</li>\n<li>Изготовления и монтаж термокоробов. Короба предназначены для закрытия вертикальных стоек внутри помещения.</li>\n</ol>\n<p><strong>Срок изготовления окон: 10 дней.</strong><br>\n<strong>Монтажные работы: 3 дня.</strong></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button small accent order\">Проконсультироваться по стоимости окна</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t<div class=\"left\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div class=\"case-picture row popup-toggle\">\n\t\t\t\t\t\t\t\t\t<div class=\"carousel owl-carousel owl-loaded owl-drag\">\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"owl-stage-outer owl-height\" style=\"height: 578px;\"><div class=\"owl-stage\" style=\"transform: translate3d(0px, 0px, 0px); transition: all; width: 2344px;\"><div class=\"owl-item active\" style=\"width: 586px;\"><div data-hash=\"img1-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-586x578.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img2-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-4.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-4-586x640.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-4.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img3-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-3.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-3-586x539.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-3.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img4-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-2.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-2-586x578.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-2.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div><div class=\"owl-nav disabled\"><div class=\"owl-prev\">prev</div><div class=\"owl-next\">next</div></div><div class=\"owl-dots disabled\"></div></div>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"additional\">\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img1-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img2-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-4-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-4-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img3-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-3-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-3-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img4-2\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-2-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-2-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"right\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Пластиковое окно и балконный выход в квартире, Казань, Проспект Победы, 200</h3>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"text\">\n\t\t\t\t\t\t\t\t\t<p><strong>Выполненные работы:</strong></p>\n<ol>\n<li>Выезд специалиста и правильный замер.</li>\n<li>Доставка, демонтаж и монтаж по ГОСТУ.</li>\n<li>Применили полностью бутиловые ленты, подставочный профиль тёплый ( блаугель б).</li>\n<li>Установка пластиковых окон, отлива и подоконников.</li>\n<li>Использовали профильную систему Rehau 60 и 70 серии. Стеклопакеты в три стекла MULTI (защита от жары и холода).</li>\n</ol>\n<p><strong>Срок изготовления: 7 дней.</strong></p>\n<p><strong>Монтаж оконных конструкций: 1 день.</strong></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button small accent order\">Вызвать на бесплатный замер</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t<div class=\"left\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div class=\"case-picture row popup-toggle\">\n\t\t\t\t\t\t\t\t\t<div class=\"carousel owl-carousel owl-loaded owl-drag\">\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"owl-stage-outer owl-height\" style=\"height: 781px;\"><div class=\"owl-stage\" style=\"transform: translate3d(0px, 0px, 0px); transition: all; width: 2344px;\"><div class=\"owl-item active\" style=\"width: 586px;\"><div data-hash=\"img1-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-14.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-14.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-14.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img2-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-18.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-18.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-18.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img3-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-26.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-26.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-26.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img4-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-34.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-34.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-34.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div><div class=\"owl-nav disabled\"><div class=\"owl-prev\">prev</div><div class=\"owl-next\">next</div></div><div class=\"owl-dots disabled\"></div></div>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"additional\">\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img1-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-14-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-14-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img2-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-18-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-18-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img3-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-26-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-26-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img4-3\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-34-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-34-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"right\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Замена холодного остекления на тёплое без изменения общего фасада дома, Казань, ул. Чистопольская, 86, ЖК «Столичный»</h3>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"text\">\n\t\t\t\t\t\t\t\t\t<p><strong>Выполненные работы:</strong></p>\n<ol>\n<li>Выезд специалиста и правильный замер.</li>\n<li>Запуск окон в производство и изготовление изделий.</li>\n<li>Внешняя покраска изделий в цвет фасада по раллу.</li>\n<li>Доставка, подъем и монтаж оконных изделий.</li>\n<li>Замена холодного остекления на тёплое без изменения общего фасада дома.</li>\n<li>Использовали профиль Rehau Grazio 70мм.</li>\n<li>Стеклопакеты мультифунциональные в 3 стекла.</li>\n<li>Нижний отсек: стеклопакеты ударопрочные 6 мм триплекс, т.к ограждения в будущем не будут использоваться.</li>\n<li>Монтаж выполнен с сохранением вертикальных стоек от застройщика.</li>\n<li>Внутри эти стойки закрыли декоративными наличниками, предварительно утеплив.</li>\n<li>Также установлены москитные сетки которые выкрасили в цвет окон.</li>\n</ol>\n<p><strong>Срок изготовления конструкций: 15 дней.</strong></p>\n<p><strong>Срок монтажных работ: 3 дня</strong></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button small accent order\">Узнать цены на пластиковые окна</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t<div class=\"left\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div class=\"case-picture row popup-toggle\">\n\t\t\t\t\t\t\t\t\t<div class=\"carousel owl-carousel owl-loaded owl-drag\">\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"owl-stage-outer owl-height\" style=\"height: 781px;\"><div class=\"owl-stage\" style=\"transform: translate3d(0px, 0px, 0px); transition: all; width: 2344px;\"><div class=\"owl-item active\" style=\"width: 586px;\"><div data-hash=\"img1-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-03-44.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-03-44.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-03-44.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img2-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-08.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-08.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-08.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img3-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-11.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-11.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-11.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 586px;\"><div data-hash=\"img4-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-13.jpg\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-13.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-13.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div><div class=\"owl-nav disabled\"><div class=\"owl-prev\">prev</div><div class=\"owl-next\">next</div></div><div class=\"owl-dots disabled\"></div></div>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"additional\">\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img1-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-03-44-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-03-44-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img2-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-08-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-08-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img3-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-11-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-11-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"#img4-4\">\n\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-13-135x89.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-13-270x178.jpg 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"right\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Монтаж панорамного балконного остекления с крышей в Сталинке, Казань, ул. Восстания, 41.</h3>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"text\">\n\t\t\t\t\t\t\t\t\t<p><strong>Выполненные работы:</strong></p>\n<ol>\n<li>Выезд специалиста и правильный замер.</li>\n<li>Запуск в производство и изготовление ПВХ изделий из профиля Rehau 60 мм.</li>\n<li>Доставка, подъем и монтаж окон.</li>\n<li>Сварочные работы по изготовлению каркаса.</li>\n<li>Изготовление и монтаж кровли профлист 21 мм.</li>\n<li>Изготовление и монтаж металлических отливов и наличников на монтажные швы.</li>\n</ol>\n<p><strong>Срок изготовления конструкций: 10 дней.</strong></p>\n<p><strong>Срок монтажных работ: 4 дня</strong></p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button small accent order\">Заказать пластиковые окна</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t</div>\n</div>\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n<div class=\"about section grey\">\t\n\t<div class=\"container\">\n\t\t<h2>5 причин заказать пластиковые окна и двери в компании «Казань-Ихлас»</h2>\t\t<div class=\"post\">\n\t\t\t\t\t\t\t<div class=\"text\">\n\t\t\t\t\t<div class=\"catalog__item_bottel\">\n<p>&nbsp;</p>\n<p><strong>1. Опыт и компетенции</strong><br>\nМы занимаемся продажей и&nbsp;<a href=\"https://www.kazan-ihlas.ru/#\">установкой окон</a>&nbsp;более 6 лет и заслужили репутацию надежной компании. Доверьте остекление команде настоящих профессионалов своего дела.</p>\n<p><strong>2. Широкий ассортимент</strong><br>\nБольшой выбор пластиковых окон из надежных профилей — Rehau, KBE, VEKA, Gutwerk, Trocal. Все виды&nbsp;<a href=\"https://www.kazan-ihlas.ru/#\">стеклопакетов</a>, качественная фурнитура и аксессуары.<br>\nКроме того, мы предлагаем широкую цветовую гамму для&nbsp;ламинации&nbsp;и готовы реализовать любое нестандартное решение.</p>\n<p><strong>3. Самые низкие цены</strong><br>\n<a href=\"https://www.kazan-ihlas.ru/prise/\">Наши&nbsp;цены</a>&nbsp;действительно доступны каждому. Не верите? Вы можете&nbsp;<a href=\"https://www.kazan-ihlas.ru/#\">заказать</a>&nbsp;замер и убедиться в этом сами!</p>\n<p><strong>4. Выгодные предложения</strong><br>\nМы постоянно проводим&nbsp;акции и спецпредложения. Вы можете&nbsp;<a href=\"https://www.kazan-ihlas.ru/#\">купить пластиковые окна недорого</a>&nbsp;от производителя в&nbsp;<a href=\"https://www.kazan-ihlas.ru/#\">Казани</a>&nbsp;и дополнительно получить приятный бонус.</p>\n<p><strong>5. Отличный сервис</strong><br>\nВыезд замерщика в любое удобное для вас время, заключение договора не выходя из дома, и наше эксклюзивное предложение − вынос строительного мусора&nbsp;<strong>абсолютно бесплатно!</strong></p>\n</div>\n<p>Фото наших работ Вы можете посмотреть в нашей группе<br>\n<strong>ВКонтакте:</strong>&nbsp;<a href=\"https://vk.com/kznbalkoniokna\" target=\"_blank\" rel=\"noopener\">https://vk.com/kznbalkoniokna</a>.<br>\nТам же Вы найдете отзывы наших клиентов.</p>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t</div>\n</div>\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n\n<div class=\"section left normal-position\">\n\t<div class=\"container\">\n\t\t<div class=\"offer\">\n\t\t\t<div class=\"row flex\">\n\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/aktsiya-skidka-400x229-1.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/aktsiya-skidka-400x229-1.png 2x\" alt=\"Участвуйте в акции месяца! Получите скидку 10% на любые наши услуги!\" class=\"lazyload img img_900px\">\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t<div class=\"col big\">\n\t\t\t\t\t\t\t\t\t\t\t<h2>Участвуйте в акции месяца! Получите скидку 10% на любые наши услуги!</h2>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"text\">\n\t\t\t\t\t\t\t<p>В настоящее время мы предоставляем скидку 10% на все свои услуги. Помимо данной акции, мы делаем скидки инвалидам, пожилым людям и многодетным семьям в размере до 15%. Однако акции и скидки у нас не суммируются.</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button order small\">Получить скидку 10%</a>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"tg://resolve?domain=abu_muslim17\" class=\"button telegram small\" rel=\"nofollow\">\n\t\t\t\t\t\t\t\t\t<span>Telegram</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://wa.me/79872054333\" class=\"button whatsapp small\" rel=\"nofollow\">\n\t\t\t\t\t\t\t\t\t<span>WhatsApp</span>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n\n<div class=\"benefits section wrap-margin col3 numeral accent b4  dark\" style=\"background-image: url(https://kazan-ihlas.ru/wp-content/uploads/plastikovye-okna-kazan.jpg)\">\n\t<div class=\"container\">\n\t\t<h2>Преимущества нашей компании:</h2>\t\t\t\t<div class=\"benefits-wrap\">\n\t\t\t<div class=\"section-layer\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"icon\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"benefits-content\">\n\t\t\t\t\t\t\t\t\t<h3>Опытные специалисты - граждане РФ!</h3>\t\t\t\t\t\t\t\t\t<p>Мы формируем свои бригады только из опытных мастеров без вредных привычек. Все специалисты являются гражданами РФ.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"icon\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"benefits-content\">\n\t\t\t\t\t\t\t\t\t<h3>Все услуги - «под ключ»!</h3>\t\t\t\t\t\t\t\t\t<p>Мы специализируемся не только на каком-либо отдельном этапе производства или монтажа, однако можем взять все циклы его отделки - от начала до самого конца!</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"icon\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"benefits-content\">\n\t\t\t\t\t\t\t\t\t<h3>Работаем по договору!</h3>\t\t\t\t\t\t\t\t\t<p>Прежде, чем приступить к работам, мы расписываем все этапы оказания услуг в письменном договоре. Цены указываются там же.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"icon\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"benefits-content\">\n\t\t\t\t\t\t\t\t\t<h3>Наличный и безналичный расчет!</h3>\t\t\t\t\t\t\t\t\t<p>Мы работаем как с частным сектором, так и с организациями. Рассчитываться с нами можно как наличными, так и безналичными платежами.</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"icon\"></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"benefits-content\">\n\t\t\t\t\t\t\t\t\t<h3>Гарантия до 5 лет!</h3>\t\t\t\t\t\t\t\t\t<p>Мы выполняем свою работу максимально качественно и уверены в своей продукции и услугах на 100%. Именно поэтому мы без опаски даем письменную гарантию на свою продукцию и услуги до 5 лет!</p>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n\n\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\n<div id=\"showcase\" class=\"showcase section wrap-margin light\">\n\t<div class=\"container\">\t\n\t\t<h2>Мы выполняем все виды работ, связанные с окнами и дверьми:</h2>\t\t\t\t\n\t\t\t\t\n\t\t<div class=\"showcase-wrap\">\n\t\t\t\t\t\n\t\t\t<div class=\"listing row\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-kottedzhej-kazan-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-kottedzhej-kazan-582x582.jpg 2x\" alt=\"Остекление коттеджей, беседок и веранд\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/\">Остекление коттеджей, беседок и веранд</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Остекление коттеджей, беседок и веранд\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/acsessuary/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/aksesuar-1-291x291.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/aksesuar-1-582x400.png 2x\" alt=\"Аксессуары для пластиковых окон и дверей\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/acsessuary/\">Аксессуары для пластиковых окон и дверей</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/acsessuary/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Аксессуары для пластиковых окон и дверей\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/jaluzi/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/zhalyuzi-kazan-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/zhalyuzi-kazan-582x582.jpg 2x\" alt=\"Производство и монтаж жалюзи\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/jaluzi/\">Производство и монтаж жалюзи</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/jaluzi/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Производство и монтаж жалюзи\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/razdvizhnye-okna-i-dveri-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/razdvizhnye-okna-i-dveri-582x582.jpg 2x\" alt=\"Раздвижные окна из пластика и алюминия\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/\">Раздвижные окна из пластика и алюминия</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Раздвижные окна из пластика и алюминия\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/panoramnoe-osteklenie-kazan-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/panoramnoe-osteklenie-kazan-582x582.jpg 2x\" alt=\"Панорамное остекление «под ключ»\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/\">Панорамное остекление «под ключ»</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Панорамное остекление «под ключ»\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/vhodnyie-gruppy/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/vhodnyie-gruppyi-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/vhodnyie-gruppyi-582x582.jpg 2x\" alt=\"Входные группы любой сложности\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/vhodnyie-gruppy/\">Входные группы любой сложности</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/vhodnyie-gruppy/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Входные группы любой сложности\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/okna-na-balkon/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-na-balkon-kazan-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-na-balkon-kazan-582x582.jpg 2x\" alt=\"Пластиковые окна и двери на балкон\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/okna-na-balkon/\">Пластиковые окна и двери на балкон</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/okna-na-balkon/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Пластиковые окна и двери на балкон\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"card quarter square\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"thumb\" href=\"https://www.kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img itemprop=\"image\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/alyuminievye-okna-i-dveri-kazan-291x291.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/alyuminievye-okna-i-dveri-kazan-582x582.jpg 2x\" alt=\"Алюминиевые окна и двери в Казани и по РТ\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3><a href=\"https://www.kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/\">Алюминиевые окна и двери в Казани и по РТ</a></h3>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/\" class=\"card-button accent\">Подробнее</a>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button data-cme=\"Алюминиевые окна и двери в Казани и по РТ\" class=\"card-button order accent\">Заказать услугу</button>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\n\t\t\t\t</div>\n\t\n\t\t\t</div>\n</div>\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n\n<div class=\"brands section background dark col5 img-70px\" style=\"background-image: url(https://kazan-ihlas.ru/wp-content/uploads/plastikovye-okna-kazan-nedorogo-1.jpg)\">\n\t<div class=\"container\">\n\t\t<h2>Быстрая навигация по разделам сайта</h2>\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/deshevyie-plastikovyie-okna/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/deshevyie-plastikovyie-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/deshevyie-plastikovyie-okna-144x144-1-140x140.jpg 2x\" alt=\"Дешевые окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Дешевые окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#rassrochka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-v-rassrochku-144x144-1-70x70.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-v-rassrochku-144x144-1-140x140.png 2x\" alt=\"Пластиковое окно в рассрочку\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Пластиковое окно в рассрочку</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/ustanovka-montazh-plastikovyih-okon/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/montazh-okon-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/montazh-okon-144x144-1-140x140.jpg 2x\" alt=\"Установка и монтаж окон\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Установка и монтаж окон</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/evrookna-evro-okna/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/evrookna-144x144-1-70x70.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/evrookna-144x144-1-140x140.png 2x\" alt=\"Евроокна ( евро окна )\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Евроокна ( евро окна )</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/myagkie-okna-iz-pvh/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/myagkie-okna-144x144-1-70x70.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/myagkie-okna-144x144-1-140x140.png 2x\" alt=\"Мягкие окна из ПВХ\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Мягкие окна из ПВХ</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#proizvoditel\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/ot-proizvoditelya-144x144-1-70x70.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/ot-proizvoditelya-144x144-1-140x140.png 2x\" alt=\"Окна от производителя\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна от производителя</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#zakaz\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/na-zakaz-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/na-zakaz-144x144-1-140x140.jpg 2x\" alt=\"Окна на заказ\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна на заказ</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/okna-pvh/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/pvh-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/pvh-okna-144x144-1-140x140.jpg 2x\" alt=\"Окна ПВХ\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна ПВХ</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#kluch\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-balkonov-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/osteklenie-balkonov-144x144-1-140x140.jpg 2x\" alt=\"Остекление под ключ\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Остекление под ключ</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#veka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/veka-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/veka-okna-144x144-1-140x140.jpg 2x\" alt=\"Окна VEKA\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна VEKA</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#rehau\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/rehau-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/rehau-okna-144x144-1-140x140.jpg 2x\" alt=\"Окно REHAU\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окно REHAU</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#kbe\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kbe-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-kbe-144x144-1-140x140.jpg 2x\" alt=\"Окна KBE\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна KBE</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#fortochkoi\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/s-fortochkoy-okno-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/s-fortochkoy-okno-144x144-1-140x140.jpg 2x\" alt=\"Окна с форточкой\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна с форточкой</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#treh\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/trehstvorchatyie-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/trehstvorchatyie-okna-144x144-1-140x140.jpg 2x\" alt=\"Трехстворчатые окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Трехстворчатые окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#dvuhstvorchatye\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/dvuhstvorchatyie-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/dvuhstvorchatyie-okna-144x144-1-140x140.jpg 2x\" alt=\"Двухстворчатые окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Двухстворчатые окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#dvuhkamernye\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/dvuhkamernyie-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/dvuhkamernyie-okna-144x144-1-140x140.jpg 2x\" alt=\"Двухкамерные окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Двухкамерные окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#povorotno\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/povorotno-otkidnyie-okna-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/povorotno-otkidnyie-okna-144x144-1-140x140.jpg 2x\" alt=\"Поворотно - откидные окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Поворотно - откидные окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#mansardnyie\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/mansardnyie-okna-kazan-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/mansardnyie-okna-kazan-144x144-1-140x140.jpg 2x\" alt=\"Мансардные окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Мансардные окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#gluhie\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/gluhoe-okno-kazan-144x144-1-70x70.jpg\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/gluhoe-okno-kazan-144x144-1-140x140.jpg 2x\" alt=\"Глухие окна\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Глухие окна</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<a class=\"item\" href=\"https://www.kazan-ihlas.ru/#dom\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/okna-v-dom-144x144-1-70x70.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/okna-v-dom-144x144-1-140x140.png 2x\" alt=\"Окна в дом\" class=\"lazyload\">\n\t\t\t\t</div>\n\t\t\t\t<span>Окна в дом</span>\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t</div>\n</div>\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\n<div class=\"qa section light q2\">\t\n\t<div class=\"container\">\t\n\t\t<h2>Мы работаем со всеми видами пластиковых окон</h2>\t\t<p class=\"description\">Профессионально занимаемся пластиковыми окнами, дверьми и отделкой балконов. Смотрите фото наших работ и отзывы в соцсетях.\n\nВыполним любой запрос заказчика, связанный с окнами:</p> \n\t\t\t\n\t\t<div class=\"qa-wrap\">\n\t\t\t<div class=\"section-layer\">\n\t\t\t\t<div class=\"row\" itemscope=\"\" itemtype=\"https://schema.org/FAQPage\">\n\t\t\t\t\t<div class=\"left\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По назначению</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ul>\n<li>Пластиковые окна в квартиру;</li>\n<li>в подъезд;</li>\n<li>в хрущевку;</li>\n<li>в сталинку;</li>\n<li>в баню;</li>\n<li>в дом;</li>\n<li>в коттедж;</li>\n<li>в деревянный дом;</li>\n<li>на балкон;</li>\n<li>Балконные пластиковые окна;</li>\n<li>на лоджию;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/#dachnye\">Дачные пластиковые окна</a>;</li>\n<li>заказать для дачи;</li>\n<li>Мансардные;</li>\n<li>для мансарды;</li>\n<li>Террасные;</li>\n<li>на террасу;</li>\n<li>на кухню;</li>\n<li>Кухонные;</li>\n<li>на крышу;</li>\n<li>Кровельные;</li>\n<li>Фасадные;</li>\n<li>Зенитные пластиковые окна;</li>\n<li>Чердачные;</li>\n</ul>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По конструкции</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ul>\n<li>аркой;</li>\n<li>Арочные;</li>\n<li>в пол;</li>\n<li>Глухие;</li>\n<li>с фрамугой;</li>\n<li>Двухкамерные;</li>\n<li>Двухстворчатое;</li>\n<li>без створок;</li>\n<li>Нестандартные;</li>\n<li>Однокамерные;</li>\n<li>Одностворчатые;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/#panoramnye\">Панорамные пластиковые окна — заказать</a>;</li>\n<li>Поворотно — откидные;</li>\n<li>Портальные;</li>\n<li>Раздвижные;</li>\n<li>Сдвижные;</li>\n<li>с двойным остеклением;</li>\n<li>с одинарным остеклением;</li>\n<li>пластиковые окна;</li>\n<li>пластиковое окно;</li>\n<li>Угловые пластиковые окна цена;</li>\n<li>Фрамужные;</li>\n<li>рамугой;</li>\n<li>Четырехкамерное;</li>\n<li>Пятикамерные;</li>\n<li>Шестикамерные;</li>\n<li>Эркерные;</li>\n<li>с раскладкой;</li>\n<li>со шпросами;</li>\n<li>Штульповые;</li>\n<li>Безрамные;</li>\n<li>с форточкой;</li>\n<li>без форточки;</li>\n</ul>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По форме</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ol>\n<li>Круглые;</li>\n<li>Овальные;</li>\n<li>Стрельчатые;</li>\n<li>Трапециевидное;</li>\n<li>Треугольные;</li>\n<li>Полукруглые;</li>\n<li>Скошенные;</li>\n<li>Прямоугольные;</li>\n</ol>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По качествам</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ul>\n<li>Высокие;</li>\n<li>Качественные;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/#legkie\">Легкие пластиковые окна заказать</a>;</li>\n<li>Отказные купить;</li>\n<li>Простые (любая профильная система);</li>\n<li>Теплые — заказать замер;</li>\n<li>Шумоизоляционные;</li>\n<li>Кашированные;</li>\n<li>Ламинированные;</li>\n<li>Зеркальные;</li>\n<li>Энергосберегающие;</li>\n<li>Солнцезащитные;</li>\n<li>Тонированные стекло;</li>\n<li>Витринные;</li>\n<li>Современные;</li>\n<li>светопрозрачные;</li>\n<li>триплекс;</li>\n<li>Теплосберегающие;</li>\n<li>Противовзломные;</li>\n<li>Дышащие;</li>\n<li>Греющие;</li>\n</ul>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По типу заказа</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ol>\n<li>заказать под ключ;</li>\n<li>Монтаж пластиковых окон цена (руб./м2);</li>\n<li>на заказ от 4 м2. Срок — от 2 дней.;</li>\n<li>оптом от 20 м2;</li>\n<li>отливы, подоконники и откосы;</li>\n<li>перегородки;</li>\n<li>открывание оконных створок: стандартное;</li>\n<li>срочно;</li>\n<li>доставка;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/#kzn\">Установка пластиковых окон Казань</a>;</li>\n<li>от производителя (см. калькулятор);</li>\n<li>без предоплаты;</li>\n<li>в рассрочку (отправить заявку);</li>\n</ol>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"right\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По размерам</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ol>\n<li>Большие;</li>\n<li>Маленькое;</li>\n<li>Небольшие;</li>\n<li>Стандартные;</li>\n<li>Широкие;</li>\n<li>Пластиковые окна 100Х100;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/#1000\">Заказать 1000Х1000</a>;</li>\n</ol>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По производителям</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ul>\n<li>Пластиковые окна Veka;</li>\n<li>Veka Softline;</li>\n<li>Veka Softline 82;</li>\n<li>Veka WHS;</li>\n<li>Veka Euroline;</li>\n<li>Veka Evolution;</li>\n<li>Veka Artline;</li>\n<li>Veka Swingline;</li>\n<li>Veka Proline;</li>\n<li>Veka Sunline;</li>\n<li>VEKASLIDE;</li>\n<li>Пластиковые окна Rehau;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/#rehau\">Заказать Rehau Brilliant</a>;</li>\n<li>Rehau Delight;</li>\n<li>hau Intelio;</li>\n<li>Rehau Geneo;</li>\n<li>Rehau Grazio;</li>\n<li>Rehau Blitz;</li>\n<li>Пластиковые окна KBE;</li>\n<li>на Grain;</li>\n<li>Окна Schuco;</li>\n<li>Окна Brusbox;</li>\n<li>Окна Deceuninck;</li>\n<li>Окна Salamander;</li>\n<li>maco;</li>\n</ul>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По цене</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ol>\n<li><a href=\"https://www.kazan-ihlas.ru/#dorogie\">Дорогие пластиковые окна</a>;</li>\n<li>Недорогие;</li>\n<li>по низким ценам;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/deshevyie-plastikovyie-okna/\">Дешевые пластиковые окна</a>;</li>\n</ol>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">По цвету</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ul>\n<li>Красные;</li>\n<li>Серые;</li>\n<li>Темные;</li>\n<li>Черные;</li>\n<li><a href=\"https://www.kazan-ihlas.ru/prise/\">Коричневые пластиковые окна цены</a>;</li>\n<li>Цветные;</li>\n<li>разных цветов;</li>\n<li>венге;</li>\n<li>Голубые;</li>\n<li>Желтые;</li>\n<li>Зеленые;</li>\n<li>заказать золотой дуб;</li>\n<li>темный дуб;</li>\n<li>Розовые;</li>\n<li>Светлые;</li>\n<li>Синие;</li>\n<li>шоколадного цвета;</li>\n<li>Бежевые;</li>\n</ul>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"item disabled\" itemscope=\"\" itemprop=\"mainEntity\" itemtype=\"https://schema.org/Question\">\n\t\t\t\t\t\t\t\t<div itemprop=\"name\" class=\"question\">Другие</div>\n\t\t\t\t\t\t\t\t<div itemscope=\"\" itemprop=\"acceptedAnswer\" itemtype=\"https://schema.org/Answer\" class=\"answer text\">\n\t\t\t\t\t\t\t\t\t<div itemprop=\"text\"><ol>\n<li><strong>По стране:</strong><br>\nНемецкие;<br>\nв скандинавском стиле;<br>\nпроизводства Германия;<br>\nАнглийские;<br>\nФранцузские;</li>\n<li><strong>Окна ПВХ заменить.</strong></li>\n<li><strong>Мягкие из ПВХ цена.</strong></li>\n<li><strong>Окна для беседки из ПВХ.</strong></li>\n<li><strong>Окна ПВХ для террасы.</strong></li>\n<li><strong><a href=\"https://www.kazan-ihlas.ru/evrookna-evro-okna/\">Евроокна заказать</a>.</strong></li>\n<li>Зенитные фонари.</li>\n</ol>\n</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t</div>\n\t</div>\n</div>\n\n\t\t\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\t\t\t\t\n<div class=\"map section\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"left\">\t\n\t\t\t\t<h2>Мы на карте</h2>\n\t\t\t\t\n\t\t\t\t<ul class=\"contacts\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span itemprop=\"postalCode\">420087</span>, г. <span itemprop=\"addressLocality\">Казань</span>, ул. <span itemprop=\"streetAddress\">Родины, 7/15, офис 7</span>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"tel:+7 (843) 250-44-07\" class=\"phone\"><span itemprop=\"telephone\">+7 (843) 250-44-07</span></a></li>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"tel:+7 (987) 205-43-33\" class=\"phone\"><span itemprop=\"telephone\">+7 (987) 205-43-33</span></a></li>\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\t<li><a itemprop=\"email\" href=\"mailto:kazan-balkon@yandex.ru\">kazan-balkon@yandex.ru</a></li>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li>Пн.-Вс. 08:00-20:00</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"buttons\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"button whatsapp small\" href=\"https://wa.me/79872054333\" rel=\"nofollow\">\n\t\t\t\t\t\t\t\t<span>WhatsApp</span>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"button telegram small\" href=\"tg://resolve?domain=abu_muslim17\" rel=\"nofollow\">\n\t\t\t\t\t\t\t\t<span>Telegram</span>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"right\">\n\t\t\t\t<div class=\"map-wrap\">\n\t\t\t\t\t<div class=\"loader\"></div>\n\t\t\t\t\t<div class=\"ymap\" id=\"map\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\t\n</div>\t\t\t\t\n\t\t\t</div>\n\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<div itemprop=\"geo\" itemscope=\"\" itemtype=\"http://schema.org/GeoCoordinates\">\n\t\t<meta itemprop=\"latitude\" content=\"55.769509\">\n\t\t<meta itemprop=\"longitude\" content=\"49.197889\">\n\t</div>\n\n<div itemscope=\"\" itemtype=\"http://schema.org/WPFooter\" class=\"footer dark\">\t\t\t\t\n\t<div class=\"footer-top\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n\t\t<div class=\"container\">\t\n\t\t\t<div class=\"col\">\n\t\t\t\t<ul><li class=\"name\">Дополнительно</li><li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/\">Пластиковые окна в Казани</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/sitemap/\">Услуги недорого</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/ustanovka-montazh-plastikovyih-okon/\">Стоимость установки окон ПВХ</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/\">Панорамное остекление</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/reviews/\">Отзывы о нас</a></li>\n<li><a itemprop=\"url\" href=\"https://kazan-ihlas.ru/kontaktnaya-informacziya/\">Контактная информация</a></li>\n</ul>\t\t\t\t\n\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t<div class=\"col\">\n\t\t\t\t<ul itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n\t\t\t\t\t<li class=\"name\">Контакты</li>\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t<span itemprop=\"postalCode\">420087</span>, г. <span itemprop=\"addressLocality\">Казань</span>, ул. <span itemprop=\"streetAddress\">Родины, 7/15, офис 7</span>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"tel:+7 (843) 250-44-07\" class=\"phone\"><span itemprop=\"telephone\">+7 (843) 250-44-07</span></a></li>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li><a href=\"tel:+7 (987) 205-43-33\" class=\"phone\"><span itemprop=\"telephone\">+7 (987) 205-43-33</span></a></li>\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\t<li><a itemprop=\"email\" href=\"mailto:kazan-balkon@yandex.ru\">kazan-balkon@yandex.ru</a></li>\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<li>Пн.-Вс. 08:00-20:00</li>\n\t\t\t\t\t\t\n\t\t\t\t</ul>\t\n\t\t\t</div>\n\n\t\t\t<div class=\"col\">\n\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li class=\"name\">Реквизиты</li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t<li>Юридический адрес:&nbsp;Казань, ул.Родины, 7/15, офис 7</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>ИНН:&nbsp;160801569537</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>ОГРН:&nbsp;319169000011204</li>\n\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>\t\n\t\t\t\n\t\t\t<div class=\"col\">\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"social-groups color\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<a itemprop=\"sameAs\" class=\"vk\" target=\"_blank\" href=\"https://vk.com/kznbalkoniokna\" title=\"Группа в ВК\" rel=\"nofollow\">ВК</a>\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t<!--noindex-->\n\t\t\t\t\t<small>Сайт не является публичной офертой и носит информационный характер.</small>\n\t\t\t\t<!--/noindex-->\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\t<div class=\"footer-bottom\">\n\t\t<div class=\"container\">\n\t\t\t<div class=\"col\">\n\t\t\t\t© <span itemprop=\"copyrightYear\">2026</span> Казань-Ихлас — Компания «Казань-Ихлас». Пластиковые окна и двери. Казань, Родины, 7/15, оф. 7\t\t\t</div>\n\t\t\t\n\t\t\t<div class=\"col\">\n\t\t\t\t\t\n\t\t\t</div>\n\t\t\t\n\t\t\t\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"creator img\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<img src=\"https://kazan-ihlas.ru/wp-content/themes/template/images/placeholder.png\" data-src=\"https://kazan-ihlas.ru/wp-content/uploads/creator-146x30.png\" data-srcset=\"https://kazan-ihlas.ru/wp-content/uploads/creator-292x60.png 2x\" alt=\"\" class=\"lazyload\">\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t<span>Создание и продвижение сайта - www.sites-profi.ru</span>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t</div>\n</div>\t\t\t\t\t\t\n\t\t</div>\n\n\t\t<button class=\"scrolltop\"></button>\n\t\t\n\t\t\n\t\t\t\t\t<div class=\"contact-bar row both light\">\n\t\t\t\t\t\t\t\t\t<a href=\"tel:+7 (843) 250-44-07\" class=\"contact-bar-col\">+7 (843) 250-44-07</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"contact-bar-col\">\n\t\t\t\t\t\t<div class=\"messengers\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"whatsapp\" rel=\"nofollow\" href=\"https://wa.me/79872054333\">Whatsapp</a>\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"telegram\" rel=\"nofollow\" href=\"tg://resolve?domain=abu_muslim17\">Telegram</a>\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/header/h1.css\" media=\"all\">\n\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/map/m2.css\" media=\"all\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/gallery/g3.css\" media=\"all\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/footer/f6.css\" media=\"all\">\n\t\t\t\t\n\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/style.css?ver=2\" media=\"all\">\n\t\t<link rel=\"stylesheet\" href=\"https://kazan-ihlas.ru/wp-content/themes/template/css/popup.css\">\n\t\t\n\t\t<script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-0CHXXZTV9T&amp;cx=c&amp;gtm=4e64t1\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/jquery.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/lazysizes.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/carousel.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/validate.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/maskedinput.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/popup.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/readmore.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/common.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/js/social.js\"></script>\n\t\t<script defer=\"\" src=\"https://kazan-ihlas.ru/wp-content/themes/template/callme/_js/callme.js?ver=3\"></script>\n\t\t\t\t\t\t\n\t\t\t\t\t<script>jQuery(document).ready(function(t){var r=t(\".map-wrap\").children(\".loader\"),o=0;function i(){var e=new ymaps.Map(\"map\",{center:[55.769509,49.197889],zoom:14,controls:[\"zoomControl\",\"fullscreenControl\"]});e.behaviors.disable(\"scrollZoom\");var n=new ymaps.Placemark([55.769509,49.197889],{},{iconLayout:\"default#imageWithContent\",iconImageHref:\"/wp-content/themes/template/images/icons/map-marker.png\",iconImageSize:[80,80],iconImageOffset:[-40,-80]});e.geoObjects.add(n);var o,a=e.layers.get(0).get(0);(o=a,new ymaps.vow.Promise(function(e,n){var a=function(e){for(var n in e)if(e.hasOwnProperty(n)&&(e[n]instanceof ymaps.layer.tileContainer.CanvasContainer||e[n]instanceof ymaps.layer.tileContainer.DomContainer))return e[n];return null}(o),t=!0;a.tiles.each(function(e,n){e.isReady()||(t=!1)}),t?e():a.events.once(\"ready\",function(){e()})})).then(function(){r.removeClass(\"active\")})}function e(){t(window).scroll(function(){var e,n,a;t(window).scrollTop()+t(window).height()>t(document).height()-700&&0==o&&(o=1,r.addClass(\"active\"),e=\"https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;loadByRequire=1\",n=function(){ymaps.load(i)},(a=document.createElement(\"script\")).readyState?a.onreadystatechange=function(){\"loaded\"!=a.readyState&&\"complete\"!=a.readyState||(a.onreadystatechange=null,n())}:a.onload=function(){n()},a.src=e,document.getElementsByTagName(\"head\")[0].appendChild(a))})}t(function(){e()})});</script>\n\t\t\t\t\n\t\t\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();\n   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\n   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(53974513, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/53974513\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\t\t<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=UA-149820936-1\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\ngtag('set', {'user_id': 'USER_ID'}); // Задание идентификатора пользователя с помощью параметра user_id (текущий пользователь).\n  gtag('config', 'UA-149820936-1');\n</script>\n\n\t\n<div class=\"cme-form\" id=\"cme-form-main\">\n\t<form class=\"cme\">\n\t\t<span class=\"cme-cls\">×</span>\n\t\t<div class=\"cme-title\">Онлайн заявка</div>\n\t\t\n\t\t<p>Оставьте заявку, и мы свяжемся с Вами в течение нескольких минут.</p>\n\t\t\n\t\t<div class=\"cme-fields\">\n\t\t\t\t<span class=\"cme-name\">Имя </span>\n\t\t\t\t<input placeholder=\"Ваше имя\" name=\"Имя \" =\"\"=\"\" class=\"cme-txt\" type=\"text\" maxlength=\"150\">\n\t\t\t\n\t\t\t\t<span class=\"cme-name\">Номер телефона </span>\n\t\t\t\t<input placeholder=\"Ваш телефон\" name=\"Номер телефона \" required=\"\" class=\"cme-txt\" type=\"text\" maxlength=\"150\">\n\t\t\t</div>\n\t\t\n\t\t<p class=\"pp-note\">Гарантия конфиденциальности согласно ФЗ №152 от 27.07.2006.</p>\n\n\t\t<div class=\"cme-btn button\">Отправить</div>\n\t\t<div class=\"callme-result\"></div>\n\t</form>\n</div>\n\n<div id=\"cme-back\"></div></body></html>",
+  "text": "Пластиковые окна Казань ✔️ Цены | Заказать окна пластиковые в Казани Компания «Казань-Ихлас». Пластиковые окна и двери. Казань, Родины, 7/15, оф. 7 Главная Наши услуги Окна на балкон Алюминиевые окна и двери Входные группы Панорамное остекление Раздвижные окна и двери Остекление Зимний сад Зенитные фонари Витражное остекление Цены Отзывы о нас Контактная информация Режим работы: Пн.-Вс. 08:00-20:00 +7 (843) 250-44-07 +7 (987) 205-43-33 Whatsapp Telegram Меню Пластиковые окна в Казани по самым доступным ценам Пластиковые окна в Казани от Эконом до VIP класса Официальный договор и гарантия до 5 лет Инвалидам, многодетным, пожилым - СКИДКА до 15% Москитная сетка Premium - в ПОДАРОК Узнать наши цены Наша группа ВКонтакте «Казань-Ихлас» - пластиковые окна и двери любой сложности в Казани и пригороде Мы работаем с пластиковыми окнами и дверьми любой сложности и дизайна. В наших соц.сетях Вы найдете большое количество фотографий наших работ и отзывы клиентов о нас. Смотреть больше фото ВКонтакте Посмотрите на некоторые наши работы Больше наших работ и отзывы клиентов о нас Вы можете посмотреть в наших соцсетях. prev next Замена фасадного остекления на тёплое пластиковыми окнами, Казань, ЖК «Времена Года», ул. Г. Ерина, 13. На данном объекте остекление выполнено по технологии первого контура, но с сохранением общего фасада здания. Какие работы выполнены: Выезд специалиста и качественный замер. Изготовление оконных рам по точным размерам. Доставка на объект и монтаж пластиковых окон. Гидроизоляция всех примыканий и монтаж системы водоотведения. Изготовления и монтаж термокоробов. Короба предназначены для закрытия вертикальных стоек внутри помещения. Срок изготовления окон: 10 дней. Монтажные работы: 3 дня. Проконсультироваться по стоимости окна prev next Пластиковое окно и балконный выход в квартире, Казань, Проспект Победы, 200 Выполненные работы: Выезд специалиста и правильный замер. Доставка, демонтаж и монтаж по ГОСТУ. Применили полностью бутиловые ленты, подставочный профиль тёплый ( блаугель б). Установка пластиковых окон, отлива и подоконников. Использовали профильную систему Rehau 60 и 70 серии. Стеклопакеты в три стекла MULTI (защита от жары и холода). Срок изготовления: 7 дней. Монтаж оконных конструкций: 1 день. Вызвать на бесплатный замер prev next Замена холодного остекления на тёплое без изменения общего фасада дома, Казань, ул. Чистопольская, 86, ЖК «Столичный» Выполненные работы: Выезд специалиста и правильный замер. Запуск окон в производство и изготовление изделий. Внешняя покраска изделий в цвет фасада по раллу. Доставка, подъем и монтаж оконных изделий. Замена холодного остекления на тёплое без изменения общего фасада дома. Использовали профиль Rehau Grazio 70мм. Стеклопакеты мультифунциональные в 3 стекла. Нижний отсек: стеклопакеты ударопрочные 6 мм триплекс, т.к ограждения в будущем не будут использоваться. Монтаж выполнен с сохранением вертикальных стоек от застройщика. Внутри эти стойки закрыли декоративными наличниками, предварительно утеплив. Также установлены москитные сетки которые выкрасили в цвет окон. Срок изготовления конструкций: 15 дней. Срок монтажных работ: 3 дня Узнать цены на пластиковые окна prev next Монтаж панорамного балконного остекления с крышей в Сталинке, Казань, ул. Восстания, 41. Выполненные работы: Выезд специалиста и правильный замер. Запуск в производство и изготовление ПВХ изделий из профиля Rehau 60 мм. Доставка, подъем и монтаж окон. Сварочные работы по изготовлению каркаса. Изготовление и монтаж кровли профлист 21 мм. Изготовление и монтаж металлических отливов и наличников на монтажные швы. Срок изготовления конструкций: 10 дней. Срок монтажных работ: 4 дня Заказать пластиковые окна 5 причин заказать пластиковые окна и двери в компании «Казань-Ихлас» 1. Опыт и компетенции Мы занимаемся продажей и установкой окон более 6 лет и заслужили репутацию надежной компании. Доверьте остекление команде настоящих профессионалов своего дела. 2. Широкий ассортимент Большой выбор пластиковых окон из надежных профилей — Rehau, KBE, VEKA, Gutwerk, Trocal. Все виды стеклопакетов , качественная фурнитура и аксессуары. Кроме того, мы предлагаем широкую цветовую гамму для ламинации и готовы реализовать любое нестандартное решение. 3. Самые низкие цены Наши цены действительно доступны каждому. Не верите? Вы можете заказать замер и убедиться в этом сами! 4. Выгодные предложения Мы постоянно проводим акции и спецпредложения. Вы можете купить пластиковые окна недорого от производителя в Казани и дополнительно получить приятный бонус. 5. Отличный сервис Выезд замерщика в любое удобное для вас время, заключение договора не выходя из дома, и наше эксклюзивное предложение − вынос строительного мусора абсолютно бесплатно! Фото наших работ Вы можете посмотреть в нашей группе ВКонтакте: https://vk.com/kznbalkoniokna . Там же Вы найдете отзывы наших клиентов. Участвуйте в акции месяца! Получите скидку 10% на любые наши услуги! В настоящее время мы предоставляем скидку 10% на все свои услуги. Помимо данной акции, мы делаем скидки инвалидам, пожилым людям и многодетным семьям в размере до 15%. Однако акции и скидки у нас не суммируются. Получить скидку 10% Telegram WhatsApp Преимущества нашей компании: Опытные специалисты - граждане РФ! Мы формируем свои бригады только из опытных мастеров без вредных привычек. Все специалисты являются гражданами РФ. Все услуги - «под ключ»! Мы специализируемся не только на каком-либо отдельном этапе производства или монтажа, однако можем взять все циклы его отделки - от начала до самого конца! Работаем по договору! Прежде, чем приступить к работам, мы расписываем все этапы оказания услуг в письменном договоре. Цены указываются там же. Наличный и безналичный расчет! Мы работаем как с частным сектором, так и с организациями. Рассчитываться с нами можно как наличными, так и безналичными платежами. Гарантия до 5 лет! Мы выполняем свою работу максимально качественно и уверены в своей продукции и услугах на 100%. Именно поэтому мы без опаски даем письменную гарантию на свою продукцию и услуги до 5 лет! Мы выполняем все виды работ, связанные с окнами и дверьми: Остекление коттеджей, беседок и веранд Подробнее Заказать услугу Аксессуары для пластиковых окон и дверей Подробнее Заказать услугу Производство и монтаж жалюзи Подробнее Заказать услугу Раздвижные окна из пластика и алюминия Подробнее Заказать услугу Панорамное остекление «под ключ» Подробнее Заказать услугу Входные группы любой сложности Подробнее Заказать услугу Пластиковые окна и двери на балкон Подробнее Заказать услугу Алюминиевые окна и двери в Казани и по РТ Подробнее Заказать услугу Быстрая навигация по разделам сайта Дешевые окна Пластиковое окно в рассрочку Установка и монтаж окон Евроокна ( евро окна ) Мягкие окна из ПВХ Окна от производителя Окна на заказ Окна ПВХ Остекление под ключ Окна VEKA Окно REHAU Окна KBE Окна с форточкой Трехстворчатые окна Двухстворчатые окна Двухкамерные окна Поворотно - откидные окна Мансардные окна Глухие окна Окна в дом Мы работаем со всеми видами пластиковых окон Профессионально занимаемся пластиковыми окнами, дверьми и отделкой балконов. Смотрите фото наших работ и отзывы в соцсетях. Выполним любой запрос заказчика, связанный с окнами: По назначению Пластиковые окна в квартиру; в подъезд; в хрущевку; в сталинку; в баню; в дом; в коттедж; в деревянный дом; на балкон; Балконные пластиковые окна; на лоджию; Дачные пластиковые окна ; заказать для дачи; Мансардные; для мансарды; Террасные; на террасу; на кухню; Кухонные; на крышу; Кровельные; Фасадные; Зенитные пластиковые окна; Чердачные; По конструкции аркой; Арочные; в пол; Глухие; с фрамугой; Двухкамерные; Двухстворчатое; без створок; Нестандартные; Однокамерные; Одностворчатые; Панорамные пластиковые окна — заказать ; Поворотно — откидные; Портальные; Раздвижные; Сдвижные; с двойным остеклением; с одинарным остеклением; пластиковые окна; пластиковое окно; Угловые пластиковые окна цена; Фрамужные; рамугой; Четырехкамерное; Пятикамерные; Шестикамерные; Эркерные; с раскладкой; со шпросами; Штульповые; Безрамные; с форточкой; без форточки; По форме Круглые; Овальные; Стрельчатые; Трапециевидное; Треугольные; Полукруглые; Скошенные; Прямоугольные; По качествам Высокие; Качественные; Легкие пластиковые окна заказать ; Отказные купить; Простые (любая профильная система); Теплые — заказать замер; Шумоизоляционные; Кашированные; Ламинированные; Зеркальные; Энергосберегающие; Солнцезащитные; Тонированные стекло; Витринные; Современные; светопрозрачные; триплекс; Теплосберегающие; Противовзломные; Дышащие; Греющие; По типу заказа заказать под ключ; Монтаж пластиковых окон цена (руб./м2); на заказ от 4 м2. Срок — от 2 дней.; оптом от 20 м2; отливы, подоконники и откосы; перегородки; открывание оконных створок: стандартное; срочно; доставка; Установка пластиковых окон Казань ; от производителя (см. калькулятор); без предоплаты; в рассрочку (отправить заявку); По размерам Большие; Маленькое; Небольшие; Стандартные; Широкие; Пластиковые окна 100Х100; Заказать 1000Х1000 ; По производителям Пластиковые окна Veka; Veka Softline; Veka Softline 82; Veka WHS; Veka Euroline; Veka Evolution; Veka Artline; Veka Swingline; Veka Proline; Veka Sunline; VEKASLIDE; Пластиковые окна Rehau; Заказать Rehau Brilliant ; Rehau Delight; hau Intelio; Rehau Geneo; Rehau Grazio; Rehau Blitz; Пластиковые окна KBE; на Grain; Окна Schuco; Окна Brusbox; Окна Deceuninck; Окна Salamander; maco; По цене Дорогие пластиковые окна ; Недорогие; по низким ценам; Дешевые пластиковые окна ; По цвету Красные; Серые; Темные; Черные; Коричневые пластиковые окна цены ; Цветные; разных цветов; венге; Голубые; Желтые; Зеленые; заказать золотой дуб; темный дуб; Розовые; Светлые; Синие; шоколадного цвета; Бежевые; Другие По стране: Немецкие; в скандинавском стиле; производства Германия; Английские; Французские; Окна ПВХ заменить. Мягкие из ПВХ цена. Окна для беседки из ПВХ. Окна ПВХ для террасы. Евроокна заказать . Зенитные фонари. Мы на карте 420087 , г. Казань , ул. Родины, 7/15, офис 7 +7 (843) 250-44-07 +7 (987) 205-43-33 kazan-balkon@yandex.ru Пн.-Вс. 08:00-20:00 WhatsApp Telegram Дополнительно Пластиковые окна в Казани Услуги недорого Стоимость установки окон ПВХ Панорамное остекление Отзывы о нас Контактная информация Контакты 420087 , г. Казань , ул. Родины, 7/15, офис 7 +7 (843) 250-44-07 +7 (987) 205-43-33 kazan-balkon@yandex.ru Пн.-Вс. 08:00-20:00 Реквизиты Юридический адрес: Казань, ул.Родины, 7/15, офис 7 ИНН: 160801569537 ОГРН: 319169000011204 ВК Сайт не является публичной офертой и носит информационный характер. © 2026 Казань-Ихлас — Компания «Казань-Ихлас». Пластиковые окна и двери. Казань, Родины, 7/15, оф. 7 Создание и продвижение сайта - www.sites-profi.ru +7 (843) 250-44-07 Whatsapp Telegram × Онлайн заявка Оставьте заявку, и мы свяжемся с Вами в течение нескольких минут. Имя Номер телефона Гарантия конфиденциальности согласно ФЗ №152 от 27.07.2006. Отправить",
+  "json_ld": [],
+  "document": {
+    "title": "Пластиковые окна Казань ✔️ Цены | Заказать окна пластиковые в Казани",
+    "meta_description": "Рейтинг 5⭐️. Заказать пластиковые окна в Казани по низким ценам. ✔️ Дешевая стоимость установки и заказа. ☎️ +7 (843) 250-44-07. ✔️ «Ихлас» - пластиковые конструкции от Эконом до Премиум класса! Звоните! ☎ +7 (843) 250-44-07, +7 (987) 205-43-33",
+    "meta_robots": "index,follow",
+    "viewport": "width=device-width, initial-scale=1",
+    "canonical": "https://kazan-ihlas.ru/",
+    "lang": "ru-RU",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "https://kazan-ihlas.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/",
+        "text": "Наши услуги",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/okna-na-balkon/",
+        "text": "Окна на балкон",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/",
+        "text": "Алюминиевые окна и двери",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/vhodnyie-gruppy/",
+        "text": "Входные группы",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/",
+        "text": "Панорамное остекление",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/",
+        "text": "Раздвижные окна и двери",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/",
+        "text": "Остекление",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/zimnij-sad/",
+        "text": "Зимний сад",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/zenitnye-fonari/",
+        "text": "Зенитные фонари",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/vitrazhnoe-osteklenie/",
+        "text": "Витражное остекление",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/prise/",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/reviews/",
+        "text": "Отзывы о нас",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/kontaktnaya-informacziya/",
+        "text": "Контактная информация",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7 (843) 250-44-07",
+        "text": "+7 (843) 250-44-07",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7 (987) 205-43-33",
+        "text": "+7 (987) 205-43-33",
+        "rel": ""
+      },
+      {
+        "href": "https://api.whatsapp.com/send?phone=79872054333",
+        "text": "Whatsapp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tg://resolve?domain=abu_muslim17",
+        "text": "Telegram",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://vk.com/kznbalkoniokna",
+        "text": "Наша группа ВКонтакте",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-ihlas-kazan-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-16.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-24.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/dwkjpjulmtm-817x613-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-29.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/1221-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/ihlas-rabotniki.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/stvorki.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-05-04_18-13-53.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/vxiix2owk08-817x459-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/1-817x1089-1.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/mj-xgkg82m0-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/davasuzgqci-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/osteklenie-kazan.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/ptg7mwrw4_w-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kznbalkoniokna",
+        "text": "Смотреть больше фото ВКонтакте",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-vremena-goda-4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img1-1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img2-1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img3-1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img4-1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Проконсультироваться по стоимости окна",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/okna-kazan-prospekt-2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img1-2",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img2-2",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img3-2",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img4-2",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Вызвать на бесплатный замер",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-14.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-18.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-26.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_13-53-34.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img1-3",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img2-3",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img3-3",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img4-3",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Узнать цены на пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-03-44.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-08.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-11.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/wp-content/uploads/photo_2022-06-19_14-04-13.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img1-4",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img2-4",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img3-4",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#img4-4",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заказать пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#",
+        "text": "установкой окон",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#",
+        "text": "стеклопакетов",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/prise/",
+        "text": "Наши цены",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#",
+        "text": "заказать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#",
+        "text": "купить пластиковые окна недорого",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#",
+        "text": "Казани",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kznbalkoniokna",
+        "text": "https://vk.com/kznbalkoniokna",
+        "rel": "noopener"
+      },
+      {
+        "href": "#",
+        "text": "Получить скидку 10%",
+        "rel": ""
+      },
+      {
+        "href": "tg://resolve?domain=abu_muslim17",
+        "text": "Telegram",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://wa.me/79872054333",
+        "text": "WhatsApp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/",
+        "text": "Остекление коттеджей, беседок и веранд",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/osteklenie-kottedgei-besedok-verand/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/acsessuary/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/acsessuary/",
+        "text": "Аксессуары для пластиковых окон и дверей",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/acsessuary/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/jaluzi/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/jaluzi/",
+        "text": "Производство и монтаж жалюзи",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/jaluzi/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/",
+        "text": "Раздвижные окна из пластика и алюминия",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/razdvizhnyie-okonnyie-sistemy/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/",
+        "text": "Панорамное остекление «под ключ»",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/vhodnyie-gruppy/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/vhodnyie-gruppy/",
+        "text": "Входные группы любой сложности",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/vhodnyie-gruppy/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/okna-na-balkon/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/okna-na-balkon/",
+        "text": "Пластиковые окна и двери на балкон",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/okna-na-balkon/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/",
+        "text": "Алюминиевые окна и двери в Казани и по РТ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/uslugi/aluminievye-okna-dveri/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/deshevyie-plastikovyie-okna/",
+        "text": "Дешевые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#rassrochka",
+        "text": "Пластиковое окно в рассрочку",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/ustanovka-montazh-plastikovyih-okon/",
+        "text": "Установка и монтаж окон",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/evrookna-evro-okna/",
+        "text": "Евроокна ( евро окна )",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/myagkie-okna-iz-pvh/",
+        "text": "Мягкие окна из ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#proizvoditel",
+        "text": "Окна от производителя",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#zakaz",
+        "text": "Окна на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/okna-pvh/",
+        "text": "Окна ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#kluch",
+        "text": "Остекление под ключ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#veka",
+        "text": "Окна VEKA",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#rehau",
+        "text": "Окно REHAU",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#kbe",
+        "text": "Окна KBE",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#fortochkoi",
+        "text": "Окна с форточкой",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#treh",
+        "text": "Трехстворчатые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#dvuhstvorchatye",
+        "text": "Двухстворчатые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#dvuhkamernye",
+        "text": "Двухкамерные окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#povorotno",
+        "text": "Поворотно - откидные окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#mansardnyie",
+        "text": "Мансардные окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#gluhie",
+        "text": "Глухие окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#dom",
+        "text": "Окна в дом",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#dachnye",
+        "text": "Дачные пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#panoramnye",
+        "text": "Панорамные пластиковые окна — заказать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#legkie",
+        "text": "Легкие пластиковые окна заказать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#kzn",
+        "text": "Установка пластиковых окон Казань",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#1000",
+        "text": "Заказать 1000Х1000",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#rehau",
+        "text": "Заказать Rehau Brilliant",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/#dorogie",
+        "text": "Дорогие пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/deshevyie-plastikovyie-okna/",
+        "text": "Дешевые пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/prise/",
+        "text": "Коричневые пластиковые окна цены",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kazan-ihlas.ru/evrookna-evro-okna/",
+        "text": "Евроокна заказать",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7 (843) 250-44-07",
+        "text": "+7 (843) 250-44-07",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7 (987) 205-43-33",
+        "text": "+7 (987) 205-43-33",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kazan-balkon@yandex.ru",
+        "text": "kazan-balkon@yandex.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://wa.me/79872054333",
+        "text": "WhatsApp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tg://resolve?domain=abu_muslim17",
+        "text": "Telegram",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://kazan-ihlas.ru/",
+        "text": "Пластиковые окна в Казани",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/sitemap/",
+        "text": "Услуги недорого",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/ustanovka-montazh-plastikovyih-okon/",
+        "text": "Стоимость установки окон ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/uslugi/panoramnoye-ostekleniye/",
+        "text": "Панорамное остекление",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/reviews/",
+        "text": "Отзывы о нас",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan-ihlas.ru/kontaktnaya-informacziya/",
+        "text": "Контактная информация",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7 (843) 250-44-07",
+        "text": "+7 (843) 250-44-07",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7 (987) 205-43-33",
+        "text": "+7 (987) 205-43-33",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kazan-balkon@yandex.ru",
+        "text": "kazan-balkon@yandex.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kznbalkoniokna",
+        "text": "ВК",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tel:+7 (843) 250-44-07",
+        "text": "+7 (843) 250-44-07",
+        "rel": ""
+      },
+      {
+        "href": "https://wa.me/79872054333",
+        "text": "Whatsapp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tg://resolve?domain=abu_muslim17",
+        "text": "Telegram",
+        "rel": "nofollow"
+      }
+    ],
+    "button_texts": [
+      "Меню",
+      "Узнать наши цены",
+      "Заказать услугу",
+      "Заказать услугу",
+      "Заказать услугу",
+      "Заказать услугу",
+      "Заказать услугу",
+      "Заказать услугу",
+      "Заказать услугу",
+      "Заказать услугу"
+    ],
+    "h1_texts": [
+      "Пластиковые окна в Казани по самым доступным ценам"
+    ],
+    "h2_texts": [
+      "«Казань-Ихлас» - пластиковые окна и двери любой сложности в Казани и пригороде",
+      "Посмотрите на некоторые наши работы",
+      "5 причин заказать пластиковые окна и двери в компании «Казань-Ихлас»",
+      "Участвуйте в акции месяца! Получите скидку 10% на любые наши услуги!",
+      "Преимущества нашей компании:",
+      "Мы выполняем все виды работ, связанные с окнами и дверьми:",
+      "Быстрая навигация по разделам сайта",
+      "Мы работаем со всеми видами пластиковых окон",
+      "Мы на карте"
+    ],
+    "h3_texts": [
+      "Замена фасадного остекления на тёплое пластиковыми окнами, Казань, ЖК «Времена Года», ул. Г. Ерина, 13.",
+      "Пластиковое окно и балконный выход в квартире, Казань, Проспект Победы, 200",
+      "Замена холодного остекления на тёплое без изменения общего фасада дома, Казань, ул. Чистопольская, 86, ЖК «Столичный»",
+      "Монтаж панорамного балконного остекления с крышей в Сталинке, Казань, ул. Восстания, 41.",
+      "Опытные специалисты - граждане РФ!",
+      "Все услуги - «под ключ»!",
+      "Работаем по договору!",
+      "Наличный и безналичный расчет!",
+      "Гарантия до 5 лет!",
+      "Остекление коттеджей, беседок и веранд",
+      "Аксессуары для пластиковых окон и дверей",
+      "Производство и монтаж жалюзи",
+      "Раздвижные окна из пластика и алюминия",
+      "Панорамное остекление «под ключ»",
+      "Входные группы любой сложности",
+      "Пластиковые окна и двери на балкон",
+      "Алюминиевые окна и двери в Казани и по РТ"
+    ],
+    "counts": {
+      "paragraph": 30,
+      "h1": 1,
+      "h2": 9,
+      "h3": 17,
+      "link": 154,
+      "image": 79,
+      "list_item": 230,
+      "strong": 25,
+      "form": 1,
+      "input": 2
+    }
+  }
+}

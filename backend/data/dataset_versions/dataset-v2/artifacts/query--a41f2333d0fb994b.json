@@ -1,0 +1,955 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kazan-remonts.ru/",
+  "final_url": "https://kazan-remonts.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-length": "65200",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 15:13:43 GMT",
+    "server": "Apache"
+  },
+  "response_time_ms": 4626.9177,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:13:47.969143+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru-RU\" itemscope=\"\" itemtype=\"http://schema.org/Blog\" prefix=\"og: http://ogp.me/ns#\" class=\" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths\" style=\"\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n  <script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script async=\"\" src=\"//script.marquiz.ru/v2.js\"></script><title>Ремонт квартир в Казани - Kazan-Remonts.ru</title>\n  <meta name=\"keywords\" content=\"ремонт, квартира, Казань, ремонт квартир, ремонтные работы в квартирах казани\">\n  <meta name=\"description\" content=\"Ремонт квартир в Казани.Ремонтные работы в квартирах г.Казань.Ремонт квартир под ключ; комплексный ремонт квартир\">\n  <!--<script src=\"Scripts/header.js\" type=\"text/javascript\"></script>\n  <link href=\"design/style.css\" rel=\"stylesheet\" type=\"text/css\" />-->\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <link rel=\"stylesheet\" id=\"wp-block-library-css\" href=\"/blog/wp-includes/css/dist/block-library/style.min.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"bwpt-sc-genericons-style-css\" href=\"/blog/wp-content/plugins/bwp-shortcodes/genericons/genericons.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"bwpt-sc-main-style-css\" href=\"/blog/wp-content/plugins/bwp-shortcodes/css/bwp-shortcodes-style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"cptch_stylesheet-css\" href=\"/blog/wp-content/plugins/captcha/css/front_end_style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"dashicons-css\" href=\"/blog/wp-includes/css/dashicons.min.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"cptch_desktop_style-css\" href=\"/blog/wp-content/plugins/captcha/css/desktop_style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"wordpress-popular-posts-css-css\" href=\"/blog/wp-content/plugins/wordpress-popular-posts/public/css/wpp.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"wp-postratings-css\" href=\"/blog/wp-content/plugins/wp-postratings/css/postratings-css.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"wp-pagenavi-css\" href=\"/blog/wp-content/plugins/wp-pagenavi/pagenavi-css.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"parent-style-css\" href=\"/blog/wp-content/themes/newsmaker/style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"source-sans-css\" href=\"/blog//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=latin,cyrillic\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"theme-style-css\" href=\"/blog/wp-content/themes/newsmaker-child-theme/style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"lightboxStyle-css\" href=\"/blog/wp-content/plugins/lightbox-plus/css/elegant/colorbox.min.css\" type=\"text/css\" media=\"screen\">\n  <style>\n  .banner--clone.menunav{margin:0 auto} .cat-box-1{ background:url('/wp-content/uploads/2015/06/moldingi-nastennye-v-interiere3.jpg') }.cat-box-2{background:url('/wp-content/uploads/2019/06/dekorativnaya-shtukaturka-v-otdelke-sten-26.jpg') }.cat-box-3{background:url('/wp-content/uploads/2015/06/moldingi-nastennye-v-interiere8.jpg') } .cat-box-4{background:url('/wp-content/uploads/2016/01/raznovidnosti-mebelnih-petel-1.jpeg') }.cat-box-1, .cat-box-2, .cat-box-3, .cat-box-4, .cat-box-5,  .cat-box-6,  .cat-box-7, .cat-box-8 {background-position: center center;background-size: cover; background-repeat: no-repeat}  .social-bar ul li a:hover{background:#4f6274}  .logo h1.site-title a,  .logo span.site-title a{background-image: url('/wp-content/uploads/2015/04/logo.png'); background-repeat: no-repeat;  width: 300px; height:100px}  .form-submit{margin-bottom:30px; display: none} a, .side-blok a{color:#333}a:hover, ol.commentlist li div.reply:hover,.entry-date a:hover, .side-blok a:hover, .post-col a:hover, .credits a:hover, a#cancel-comment-reply-link, .comments-box .navigation a:hover, h2.post-title a:hover, .tech-info a:hover, h2.carousel-title a:hover{color:#8095a9}     body{ color:#333}    .logo h1 a,  .logo span a{color:#8095a9}    .menunav, #mob,  .cat-box-inner:hover .cat-box-text,  .owl-prev, .owl-next  { background:#536570} .menunav li:hover,.menunav ul li ul li, .menunav ul li ul li ul li, .current-menu-item, .flex-control-paging li a:hover,.flex-control-paging li a.flex-active {background:#4f6274} .menunav li a,  .sf-sub-indicator:after,.menunav ul li a:hover,  .menunav ul li ul li a,  .toggle-search, .menunav ul li ul li ul li a{   color:#fff}     .menunav ul li ul li:hover, .menunav ul li ul li ul li:hover {background:#8095a9} .search-block {background:#4f6274}  .main-col{  width:70.5%; float:left; margin-right: 3%}   .single  .main-col, .page .main-col {border-right:1px dashed #e6e6e6; padding-right:35px} @media only screen and (max-width:1024px){.main-col, .right-col,  .single  .main-col, .page .main-col {float:left !important; width: 100% !important; margin:0 0 30px 0; border:none; padding:0}}h1, h2, h3, h4, h5, h6, h2.post-title a, h3#reply-title, .comment-title,  h2.blog-post-title a,  h2.entry-title a, h2.carousel-title a {  color:#333} .tech-info, .tech-info a, .entry-date, .entry-date a, .archive-desc, .tech-info-single-left,.tech-info-single-right,.tech-info-single-left a,.tech-info-single-right a{color:#999} .single .post-excerpt {color:#999} p.site-desc{color:#999}.footer{ background:#f9f9f9}.credits p, .credits a{ color:#7c7c7c}.side-title span{  border-bottom: 2px solid #999; color: #999}.about-author, .gp-about-me-widget { background: #f9f9f9; color:#444 } .gp-about-me-name, .about-author span, .gp-about-me-url a {color:#444}.about-author a  { color:#444 }a.more-link, .wpcf7 input[type=\"submit\"], .comment-form input[type=\"submit\"],  .side-blok #searchsubmit,  .es_button input{background:#f56991; color:#ffffff}  a.more-link:hover,  .wpcf7 input[type=\"submit\"]:hover, .comment-form input[type=\"submit\"]:hover,  .side-blok #searchsubmit:hover,  .es_button input:hover{background:#4f6274} .wp-pagenavi span.current, .wp-pagenavi a:hover  { background:#f56991 } @media only screen and (max-width:1000px){ .wp-pagenavi a.nextpostslink,  .wp-pagenavi a.previouspostslink{font-weight:bold; color:#fff; background:#f56991} }  #preloader .spinner{color:#8095a9} .custom-archive-main-date {color:#536570}.nice-cats li.cat-item, .nice-cats li.cat-item:hover .post_count, .custom-archive-tags a,.side-blok .tagcloud a { background:#f9f9f9 } .nice-cats li.cat-item .post_count, .nice-cats li.cat-item:hover, .custom-archive-tags a:hover,  .side-blok .tagcloud a:hover { background:#eaeaea} .nice-cats li.cat-item a, .nice-cats li.cat-item .post_count, .custom-archive-tags a, .side-blok .tagcloud a, .side-blok .tagcloud a:hover {color:#444} .nice-cats li:before, .custom-archive-tags a:before {color:#ddd}.nice-cats li:hover:before, .custom-archive-tags a:hover:before{color:#444}.archive-desc {border-left:10px solid #536570}blockquote{background:#f9f9f9} blockquote, blockquote:before, blockquote:after{color:#555}\n  </style>\n  \n  <link rel=\"stylesheet\" id=\"dashicons-css\" href=\"/wp-includes/css/dashicons.min.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"editor-buttons-css\" href=\"/wp-includes/css/editor.min.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"wp_coming_soon-style-css\" href=\"/wp-content/plugins/wp-coming-soon/css/countdown-style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"gllr_stylesheet-css\" href=\"/wp-content/plugins/gallery-plugin/css/frontend_style.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"gllr_fancybox_stylesheet-css\" href=\"/wp-content/plugins/gallery-plugin/fancybox/jquery.fancybox-1.3.4.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"twentythirteen-fonts-css\" href=\"//fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&amp;subset=latin%2Clatin-ext\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"genericons-css\" href=\"/wp-content/themes/remont/genericons/genericons.css\" type=\"text/css\" media=\"all\">\n  <link rel=\"stylesheet\" id=\"twentythirteen-style-css\" href=\"/wp-content/themes/remont/style.css\" type=\"text/css\" media=\"all\">\n  <script type=\"text/javascript\">\n  /* <![CDATA[ */\n  var ajaxurl = \"http:\\/\\/kazan-remonts.ru\\/wp-admin\\/admin-ajax.php\";\n  /* ]]> */\n  </script>\n  <script type=\"text/javascript\" src=\"/wp-includes/js/jquery/jquery.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-includes/js/jquery/jquery-migrate.min.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/plugins/wp-coming-soon/js/jquery.countdown.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/plugins/wp-coming-soon/js/jquery.countdown-ru.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/plugins/gallery-plugin/fancybox/jquery.mousewheel-3.0.4.pack.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/plugins/gallery-plugin/fancybox/jquery.fancybox-1.3.4.pack.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/plugins/gallery-plugin/js/frontend_script.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/jquery-ui.min.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/jquery.browser.min.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/jquery.bxslider.min.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/lytebox.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/vendor/modernizr-2.8.3.min.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/main.js\"></script>\n  <script type=\"text/javascript\" src=\"/wp-content/themes/remont/js/ajax-form.js\"></script>\n  <script type=\"text/javascript\" src=\"http://yastatic.net/share/share.js\"></script>\n  <style type=\"text/css\">\n\t\t\t\t\t\t\t\t.gllr_image_row {\n\t\t\t\t\t\t\t\t\t\tclear: both;\n\t\t\t\t\t\t\t\t}\n  </style>\n  <script type=\"text/javascript\">\n\t\t\t\t\t\t(function($){\n\t\t\t\t\t\t\t\t$(document).ready( function() {\n\t\t\t\t\t\t\t\t\t\t$( '#fancybox-overlay' ).css({\n\t\t\t\t\t\t\t\t\t\t\t\t'width' : $(document).width()\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t})(jQuery);\n  </script>\n  <style type=\"text/css\">\n  .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}\n  </style>\n  <style type=\"text/css\">\n  .broken_link, a.broken_link {\n\t\ttext-decoration: line-through;\n  }\n  </style>\n  <style type=\"text/css\" id=\"twentythirteen-header-css\">\n\t\t\t\t\t\t.site-header {\n\t\t\t\t\t\tbackground: url(/wp-content/themes/remont/images/headers/circle.png) no-repeat scroll top;\n\t\t\t\t\t\tbackground-size: 1600px auto;\n\t\t\t\t}\n\t\t\t\t@media (max-width: 767px) {\n\t\t\t\t\t\t.site-header {\n\t\t\t\t\t\t\t\tbackground-size: 768px auto;\n\t\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t@media (max-width: 359px) {\n\t\t\t\t\t\t.site-header {\n\t\t\t\t\t\t\t\tbackground-size: 360px auto;\n\t\t\t\t\t\t}\n\t\t\t\t}\n  </style>\n  <style>\n\t\t\t.pluses {\n\t\t\t\ttext-align: center;\n\t\t\t}\n\n\t\t\t.pluses b {\n\t\t\t\ttext-transform: none;\n\t\t\t\tfont-size: 26px;\n\t\t\t\tmargin-bottom: 20px;\n\t\t\t\tfont-weight: 600;\n\t\t\t}\n\n\t\t\t.pluses-item {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\twidth: 240px;\n\t\t\t\tvertical-align: top;\n\t\t\t\tmargin: 10px 20px;\n\t\t\t}\n\n\t\t\t.pluses-item__image {\n\t\t\t\tdisplay: inline-block;\n\t\t\t\tbackground-image: url('/wp-content/uploads/2016/08/sprites-1.png');\n\t\t\t\tbackground-repeat: no-repeat;\n\t\t\t\twidth: 100px;\n\t\t\t\theight: 100px;\n\t\t\t}\n  </style>\n\n  <!-- Marquiz script start -->\n  <script>\n  (function(w, d, s, o){\n    var j = d.createElement(s); j.async = true; j.src = '//script.marquiz.ru/v2.js';j.onload = function() {\n      if (document.readyState !== 'loading') Marquiz.init(o);\n      else document.addEventListener(\"DOMContentLoaded\", function() {\n        Marquiz.init(o);\n      });\n    };\n    d.head.insertBefore(j, d.head.firstElementChild);\n  })(window, document, 'script', {\n      host: '//quiz.marquiz.ru',\n      region: 'eu',\n      id: '629926f9e44ea6003fd5f87f',\n      autoOpen: false,\n      autoOpenFreq: 'once',\n      openOnExit: false,\n      disableOnMobile: false\n    }\n  );\n  </script>\n  <!-- Marquiz script end -->\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(86597394, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/86597394\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter --><style>.marquiz__button{display:inline-block;font-weight:500;text-align:center;vertical-align:middle;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;transition:all .2s ease-out;color:var(--marquiz-button-text-color,#fff) !important;border:1px solid var(--marquiz-button-color,#d34085);background-color:var(--marquiz-button-color,#d34085);padding:18px 21px;font-size:22px;line-height:1;cursor:pointer;text-decoration:none !important;overflow:hidden;position:relative}.marquiz__button:hover,.marquiz__button:focus{color:var(--marquiz-button-text-color,#fff) !important;filter:brightness(105%);text-decoration:none !important}.marquiz__button_shadow{box-shadow:1.7px 5.8px 21px 0 var(--marquiz-button-alpha-color,var(--marquiz-button-color))}.marquiz__button_blicked:after{content:'';position:absolute;top:-50%;bottom:-50%;background:linear-gradient(90deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6) 100%);width:45px;transform:skewX(-22deg);left:-65%;animation-name:blick;animation-duration:3s;animation-iteration-count:infinite}@keyframes blick{60%{left:100%}to{left:130%}}.marquiz__button_rounded{border-radius:50px}.marquiz__button_fixed{transition:none;height:48px;line-height:1.5;box-sizing:border-box;white-space:nowrap;display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;padding:7px 20px 7px 7px;font-size:19px}.marquiz__button_fixed span{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center}@media (max-width:768px){.marquiz__button_fixed{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;transform:none !important;width:55px;height:55px;line-height:55px;border-radius:50px !important;bottom:20px;top:auto !important}.marquiz__button_fixed-left{left:15px !important;padding:0 !important}.marquiz__button_fixed-right{right:15px !important;left:auto !important;padding:0 !important}.marquiz__button_fixed .marquiz__text,.marquiz__button_fixed .script__buttonText{display:none}}.marquiz__button_fixed.marquiz__button_rounded{border-radius:0 0 10px 10px}.marquiz__button_fixed.marquiz__button_shadow{box-shadow:1.7px 5.8px 21px 0 var(--marquiz-button-alpha-color,var(--marquiz-button-color))}.marquiz__button_fixed-left{position:fixed;left:0;transform:rotate(-90deg) translate(-40.2%,0%);transform-origin:calc(0% - 1px) 0%;top:50%;z-index:99999;border-radius:4px}.marquiz__button_fixed-left.marquiz__button_rounded{border-radius:0 0 4px 4px}.marquiz__button_fixed-right{position:fixed;left:calc(100% - 48px);-ms-flex-direction:row-reverse;flex-direction:row-reverse;transform:rotate(-90deg) translate(-40.2%,0%);transform-origin:calc(0% - 1px) 0%;top:50%;padding:7px 20px 7px 7px;z-index:99999}.marquiz__button_fixed-right.marquiz__button_rounded{border-radius:4px 4px 0 0}.marquiz__button_fixed .icon-quiz{height:32px;width:32px;padding:7px 5px 7px 7px;border-radius:4px;background:var(--color-text,#fff);box-sizing:border-box;transform:rotate(90deg);margin-right:12px}.marquiz__button_fixed .icon-quiz path{fill:var(--color,var(--marquiz-button-color,#d34085))}@media (max-width:768px){.marquiz__button_fixed .icon-quiz{height:30px;width:30px;margin-right:0 !important;transform:rotate(0) !important}}.marquiz__button_fixed .marquiz__material-symbol{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-item-align:center;align-self:center;height:32px;width:32px;padding:7px 5px 7px 7px;border-radius:4px;background:var(--color-text,#fff);box-sizing:border-box;transform:rotate(90deg);transform-origin:center center;margin-right:12px;color:var(--color,var(--marquiz-button-color,#d34085));font-size:18px;line-height:1;font-family:'Material Symbols Outlined';white-space:nowrap;direction:ltr;overflow:hidden;text-transform:none;letter-spacing:normal;font-style:normal;font-weight:normal;font-variation-settings:'opsz' 24,'wght' 400,'FILL' 0,'GRAD' 0;text-align:center;vertical-align:middle}@media (max-width:768px){.marquiz__button_fixed .marquiz__material-symbol{height:30px;width:30px;margin-right:0 !important;transform:rotate(0) !important}}.marquiz__button_fixed .marquiz__emoji-symbol{display:block;height:32px;width:32px;transform:rotate(90deg);transform-origin:center center;margin-right:12px;object-fit:contain}@media (max-width:768px){.marquiz__button_fixed .marquiz__emoji-symbol{height:30px;width:30px;margin-right:0 !important;transform:rotate(0) !important}}.marquiz__button_red{background-color:#f86c6b;border-color:#f86c6b}.marquiz__button_yellow{background-color:#f8cb00;border-color:#f8cb00;color:#000}.marquiz__button_yellow:hover,.marquiz__button_yellow:focus{color:#000}.marquiz__button_blue{background-color:#20a8d8;border-color:#20a8d8}.marquiz__button_green{background-color:#4dbd74;border-color:#4dbd74}</style><style>.marquiz__container_inline{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;width:100%;max-width:1024px;margin:0 auto;height:auto;background:rgba(255,255,255,0.2) url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAwIDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgogIDxjaXJjbGUgZmlsbD0iI0IxQjFCMSIgc3Ryb2tlPSJub25lIiBjeD0iNiIgY3k9IjUwIiByPSI2Ij4KICAgIDxhbmltYXRlCiAgICAgIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiCiAgICAgIGR1cj0iMXMiCiAgICAgIHZhbHVlcz0iMDsxOzAiCiAgICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIgogICAgICBiZWdpbj0iMC4xIi8+CiAgPC9jaXJjbGU+CiAgPGNpcmNsZSBmaWxsPSIjQjFCMUIxIiBzdHJva2U9Im5vbmUiIGN4PSIyNiIgY3k9IjUwIiByPSI2Ij4KICAgIDxhbmltYXRlCiAgICAgIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiCiAgICAgIGR1cj0iMXMiCiAgICAgIHZhbHVlcz0iMDsxOzAiCiAgICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIgogICAgICBiZWdpbj0iMC4yIi8+CiAgPC9jaXJjbGU+CiAgPGNpcmNsZSBmaWxsPSIjQjFCMUIxIiBzdHJva2U9Im5vbmUiIGN4PSI0NiIgY3k9IjUwIiByPSI2Ij4KICAgIDxhbmltYXRlCiAgICAgIGF0dHJpYnV0ZU5hbWU9Im9wYWNpdHkiCiAgICAgIGR1cj0iMXMiCiAgICAgIHZhbHVlcz0iMDsxOzAiCiAgICAgIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIgogICAgICBiZWdpbj0iMC4zIi8+CiAgPC9jaXJjbGU+Cjwvc3ZnPgo=) no-repeat calc(50% + 40px) center;background-size:160px}.marquiz__container_inline .marquiz__button{display:none}.marquiz__container_full-width{max-width:inherit}@media (max-width:767px){.marquiz__container_full-width{min-height:0;height:auto;background:none}}@media (max-width:767px){.marquiz__container_has_button .marquiz__button{display:inline-block}.marquiz__container_has_button .marquiz__inline-frame{display:none}}</style><style>.marquiz-pops__bonus-count{width:14px;height:14px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;border-radius:50%;position:absolute;top:-5px;right:-5px;box-shadow:0 3px 6px 0 rgba(0,0,0,0.33);background-color:#ed0000;color:#fff;font-size:9px;overflow:hidden}.marquiz-pops__bonus-icon{margin-right:15px;position:relative}.marquiz-pops__bonus-icon path{fill:var(--marquiz-pop-svg-color,#fff)}.marquiz-pops{animation-name:marquiz__pop-fade-in_down;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;text-rendering:optimizelegibility;position:fixed;top:0;z-index:99990;width:100%;display:none;box-sizing:border-box;height:60px;background-color:var(--marquiz-pop-background-color,#d34085)}@keyframes marquiz__pop-fade-in_down{0%{transform:translate3d(0,-70px,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz__icon-quiz{width:30px;margin:0 auto}.marquiz__icon-quiz path{fill:var(--marquiz-pop-svg-color,#fff)}.marquiz__material-symbol{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-item-align:center;align-self:center;width:100%;height:-webkit-min-content;height:-moz-min-content;height:min-content;margin:0 auto;color:var(--marquiz-pop-svg-color,#fff);font-size:20px;line-height:1;font-family:'Material Symbols Outlined';white-space:nowrap;direction:ltr;overflow:hidden;text-transform:none;letter-spacing:normal;font-style:normal;font-weight:normal;font-variation-settings:'opsz' 24,'wght' 400,'FILL' 0,'GRAD' 0;text-align:center;vertical-align:middle}.marquiz__emoji-symbol{display:block;width:22px;height:22px;margin:0 auto;object-fit:contain}.marquiz-pops{text-indent:0 !important}@media (max-width:767px){.marquiz-pops_hide-on-mobile{display:none !important}}.marquiz-pops_position .marquiz-pops__bonus{display:none}.marquiz-pops_position_bottom{animation-name:marquiz__pop-fade-in_up;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;bottom:0;top:auto}@keyframes marquiz__pop-fade-in_up{0%{transform:translate3d(0,70px,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz-pops_position_bottom-left{animation-name:marquiz__pop-fade-in_up;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;bottom:0;top:auto}@keyframes marquiz__pop-fade-in_up{0%{transform:translate3d(0,70px,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz-pops_position_bottom-right{animation-name:marquiz__pop-fade-in_up;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;bottom:0;top:auto}@keyframes marquiz__pop-fade-in_up{0%{transform:translate3d(0,70px,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz-pops_blicked:after{content:'';will-change:left;position:absolute;transform:skewX(-22deg);width:45px;height:100%;opacity:0;left:0%;animation-delay:2s;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6) 100%);animation-name:marquiz__pop-blick;animation-duration:5s;animation-timing-function:ease-in-out;animation-iteration-count:infinite}@keyframes marquiz__pop-blick{0%{opacity:0}20%{opacity:1}27%{opacity:0}40%{opacity:0;left:100%}100%{opacity:0}}.marquiz-pops_shadowed{box-shadow:0 0 12px 0 var(--marquiz-pop-background-color,#d34085)}.marquiz-pops_pulse:before{box-shadow:0 0 0 var(--marquiz-pop-color-pulse);animation:marquiz__pop-pulse 6s infinite linear;will-change:box-shadow;pointer-events:none;border-radius:4px;content:'';position:absolute;width:100%;height:100%}@keyframes marquiz__pop-pulse{0%{box-shadow:0 0 0 0 var(--marquiz-pop-color-pulse)}30%{box-shadow:0 0 0 15px var(--marquiz-pop-color-pulse-alpha)}100%{box-shadow:0 0 0 0 var(--marquiz-pop-color-pulse-alpha)}}.marquiz-pops__body{display:-ms-inline-flexbox;display:inline-flex;width:calc(100% - 60px);min-width:calc(100% - 60px);box-sizing:border-box;text-decoration:none !important;color:var(--marquiz-pop-text-color,#fff) !important}.marquiz-pops__content{display:-ms-inline-flexbox;display:inline-flex;width:calc(100% - 60px);-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;box-sizing:border-box;padding-left:10px;-ms-flex-negative:1;flex-shrink:1}.marquiz-pops__content-text{text-decoration:none;font-size:14px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;line-height:16px;font-weight:bold}.marquiz-pops__content-title{overflow:hidden;font-weight:bold;white-space:nowrap;font-size:10px;line-height:12px;text-overflow:ellipsis;text-transform:uppercase;opacity:.7;padding-bottom:2px;letter-spacing:1px}.marquiz-pops__icon{display:-ms-flexbox;display:flex;width:44px;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;overflow:hidden;border-radius:4px;-ms-flex-negative:0;flex-shrink:0;margin:8px 0 8px 10px}.marquiz-pops__close-wrapper{width:60px;height:60px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;-ms-flex-negative:0;flex-shrink:0;background-image:linear-gradient(to left,rgba(0,0,0,0.1),rgba(0,0,0,0));cursor:pointer}.marquiz-pops__close{width:60px;height:60px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;text-align:center;font-size:28px}.marquiz-pops__close svg{fill:var(--marquiz-pop-close-color,#fff);width:12px;height:12px}.marquiz-pops__bonus{display:none;background:rgba(0,0,0,0.1);border-radius:35px 0 0 35px;-ms-flex-negative:0;flex-shrink:0;-ms-flex-positive:1;flex-grow:1;box-sizing:border-box;-ms-flex-align:center;align-items:center;padding-left:20px;padding-right:10px;margin-left:30px;font-size:14px;font-weight:600}@media (min-width:800px){.marquiz-pops{height:70px}.marquiz-pops__content{width:100%;width:auto;overflow:hidden}.marquiz-pops__icon{width:54px}.marquiz-pops__bonus{display:-ms-flexbox;display:flex;-ms-flex-positive:2;flex-grow:2;box-sizing:border-box}.marquiz-pops__close-wrapper{width:70px;height:70px;background-color:rgba(0,0,0,0.2)}.marquiz-pops__close{background-image:none;width:70px;height:70px}.marquiz-pops__close svg{width:12px;height:12px}.marquiz-pops__body{width:calc(100% - 70px);min-width:calc(100% - 70px)}.marquiz-pops_position{max-width:450px;margin:15px;border-radius:4px;height:54px;width:auto}.marquiz-pops_position.marquiz-pops_rounded{border-radius:60px !important}.marquiz-pops_position.marquiz-pops_pulse:before{border-radius:60px !important}.marquiz-pops_position .marquiz-pops__body{width:auto;padding-right:22px}.marquiz-pops_position .marquiz-pops__content{padding-left:0}.marquiz-pops_position .marquiz-pops__close-wrapper{position:absolute;width:22px;height:22px;top:-3px;right:-3px;background:unset}.marquiz-pops_position .marquiz-pops__close{width:21px;height:21px;background:#f7f7f7;font-size:14px;font-weight:600;border-radius:50%;position:fixed;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}.marquiz-pops_position .marquiz-pops__close svg{fill:#000;width:7px;height:7px}.marquiz-pops_position .marquiz-pops__icon{width:54px;border-radius:4px 0 0 4px;margin:0}.marquiz-pops_position .marquiz__icon-quiz{width:18px}.marquiz-pops_position_bottom-left{animation-name:marquiz__pop-fade-in_right;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;left:0}@keyframes marquiz__pop-fade-in_right{0%{transform:translate3d(-200px,0,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz-pops_position_bottom-right{animation-name:marquiz__pop-fade-in_left;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;right:0}@keyframes marquiz__pop-fade-in_left{0%{transform:translate3d(200px,0,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz-pops_position_top-left{animation-name:marquiz__pop-fade-in_right;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;left:0}@keyframes marquiz__pop-fade-in_right{0%{transform:translate3d(-200px,0,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}.marquiz-pops_position_top-right{animation-name:marquiz__pop-fade-in_left;animation-duration:.5s;animation-timing-function:ease-in;opacity:0;animation-fill-mode:both;right:0}@keyframes marquiz__pop-fade-in_left{0%{transform:translate3d(200px,0,0);opacity:0;pointer-events:none}100%{transform:translate3d(0,0,0);opacity:1;pointer-events:auto}}}</style><style>.marquiz-widget iframe{width:100%;height:100%;border-radius:10px}.marquiz-widget__container{display:none;-ms-flex-direction:column;flex-direction:column;position:fixed;bottom:16px;border-radius:10px;width:350px;height:var(--widget-height,50px);box-shadow:0 15px 10px -15px rgba(0,0,0,0.1),1px 2px 20px rgba(0,0,0,0.1);z-index:2147483647}.marquiz-widget__container-small{width:120px;height:120px;border-radius:20px}.marquiz-widget__container-small iframe{border-radius:20px}.marquiz-widget__container_after-modal .marquiz-widget__close{display:-ms-flexbox;display:flex}.marquiz-widget__container_left{left:16px}.marquiz-widget__container_left.marquiz-widget__container_fade{animation:.3s ease-in forwards fade-in_right;opacity:0}.marquiz-widget__container_right{right:16px}.marquiz-widget__container_right.marquiz-widget__container_fade{animation:.3s ease-in forwards fade-in_left;opacity:0}.marquiz-widget__container_closing{animation:.3s ease-in forwards hide-down}.marquiz-widget__close{display:none;position:absolute;top:-12px;right:-12px;width:32px;height:32px;-ms-flex-pack:center;justify-content:center;-ms-flex-align:center;align-items:center;background-color:#f1f4f6;border-radius:50%;cursor:pointer}.marquiz-widget__close svg{width:12px;height:12px;fill:rgba(105,116,140,0.6)}.marquiz-widget_open .marquiz-widget__container{height:580px;max-height:85%}.marquiz-widget_open .marquiz-widget__container_mobile .marquiz-widget__close{right:16px;top:-48px}.marquiz-widget_open .marquiz-widget__close{display:-ms-flexbox;display:flex}@media (max-width:767px){.marquiz-widget_hide-on-mobile{display:none}}@media (max-width:480px){.marquiz-widget__container{width:calc(100% - 24px);bottom:12px;right:12px}.marquiz-widget__container-small{width:120px}.marquiz-widget__container_fade.marquiz-widget__container_mobile{animation:.3s ease-in forwards fade-in_up}.marquiz-widget__container_closing{animation:0 ease-in forwards hide-down}.marquiz-widget iframe{border-radius:10px 10px 0 0}.marquiz-widget .marquiz-widget__container-small iframe{border-radius:20px}.marquiz-widget_open{background-color:rgba(0,0,0,0.7);transition:.15s;position:fixed;top:0;left:0;width:100%;height:100%;z-index:2147483647}.marquiz-widget_open .marquiz-widget__container{width:100%;bottom:0;right:0;left:0;border-radius:10px 10px 0 0}.marquiz-widget_open .marquiz-widget__container_open-fade{animation:.15s cubic-bezier(.71,.09,.74,.91) forwards fade-in_up}}@keyframes fade-in_up{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}@keyframes fade-in_left{from{transform:translateX(300px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes fade-in_right{from{transform:translateX(-300px);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes hide-down{from{transform:translateY(0);opacity:1}to{transform:translateY(200px);opacity:0}}</style><style>.marquiz__scroll-fix{overflow:hidden}.marquiz__bg{top:0;bottom:0;left:0;right:0;background:rgba(25,25,25,0.89);visibility:hidden;position:fixed;opacity:0;z-index:-10000;overflow-x:hidden;overflow-y:auto;overflow-scrolling:touch;-webkit-overflow-scrolling:touch;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}.marquiz__modal{visibility:hidden;z-index:100010;position:relative;max-width:1200px;width:80%;padding:30px 0}#marquiz__close{position:absolute;right:-40px;top:-10px;height:45px;width:45px;cursor:pointer;background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiCiAgdmlld0JveD0iMCAwIDIxMi45ODIgMjEyLjk4MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjEyLjk4MiAyMTIuOTgyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgZmlsbD0iI2ZmZiI+CjxnIGlkPSJDbG9zZSI+CiAgPHBhdGggc3R5bGU9ImZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkOyIgZD0iTTEzMS44MDQsMTA2LjQ5MWw3NS45MzYtNzUuOTM2YzYuOTktNi45OSw2Ljk5LTE4LjMyMywwLTI1LjMxMgogICAgYy02Ljk5LTYuOTktMTguMzIyLTYuOTktMjUuMzEyLDBsLTc1LjkzNyw3NS45MzdMMzAuNTU0LDUuMjQyYy02Ljk5LTYuOTktMTguMzIyLTYuOTktMjUuMzEyLDBjLTYuOTg5LDYuOTktNi45ODksMTguMzIzLDAsMjUuMzEyCiAgICBsNzUuOTM3LDc1LjkzNkw1LjI0MiwxODIuNDI3Yy02Ljk4OSw2Ljk5LTYuOTg5LDE4LjMyMywwLDI1LjMxMmM2Ljk5LDYuOTksMTguMzIyLDYuOTksMjUuMzEyLDBsNzUuOTM3LTc1LjkzN2w3NS45MzcsNzUuOTM3CiAgICBjNi45ODksNi45OSwxOC4zMjIsNi45OSwyNS4zMTIsMGM2Ljk5LTYuOTksNi45OS0xOC4zMjIsMC0yNS4zMTJMMTMxLjgwNCwxMDYuNDkxeiIvPgo8L2c+Cjwvc3ZnPgo=) no-repeat 100% 0;background-size:16px;background-position:center;border:none;z-index:100020;box-sizing:border-box;padding:0;opacity:.6}#marquiz__close:hover{opacity:1}@media (max-width:1023px){#marquiz__close{background:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMzcgMzciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuMjc3OCAxMC4yNzc4QzkuNDI2MzQgMTEuMTI5MiA5LjQyNjM0IDEyLjUwOTcgMTAuMjc3OCAxMy4zNjExTDE1LjQxNjcgMTguNUwxMC4yNzc4IDIzLjYzODlDOS40MjYzNCAyNC40OTAzIDkuNDI2MzQgMjUuODcwOCAxMC4yNzc4IDI2LjcyMjJDMTEuMTI5MiAyNy41NzM3IDEyLjUwOTcgMjcuNTczNyAxMy4zNjExIDI2LjcyMjJMMTguNSAyMS41ODMzTDIzLjYzODkgMjYuNzIyMkMyNC40OTAzIDI3LjU3MzcgMjUuODcwOCAyNy41NzM3IDI2LjcyMjIgMjYuNzIyMkMyNy41NzM3IDI1Ljg3MDggMjcuNTczNyAyNC40OTAzIDI2LjcyMjIgMjMuNjM4OUwyMS41ODMzIDE4LjVMMjYuNzIyMiAxMy4zNjExQzI3LjU3MzcgMTIuNTA5NyAyNy41NzM3IDExLjEyOTIgMjYuNzIyMiAxMC4yNzc4QzI1Ljg3MDggOS40MjYzNCAyNC40OTAzIDkuNDI2MzQgMjMuNjM4OSAxMC4yNzc4TDE4LjUgMTUuNDE2N0wxMy4zNjExIDEwLjI3NzhDMTIuNTA5NyA5LjQyNjM0IDExLjEyOTIgOS40MjYzNCAxMC4yNzc4IDEwLjI3NzhaIiBmaWxsPSIjMzMzMzMzIi8+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNOS4yNSAxNC4zODg5QzcuODMwOTQgMTIuOTY5OCA3LjgzMDkzIDEwLjY2OTEgOS4yNSA5LjI1QzEwLjY2OTEgNy44MzA5MyAxMi45Njk4IDcuODMwOTQgMTQuMzg4OSA5LjI1TDE4LjUgMTMuMzYxMUwyMi42MTExIDkuMjVDMjQuMDMwMiA3LjgzMDkzIDI2LjMzMDkgNy44MzA5MyAyNy43NSA5LjI1QzI5LjE2OTEgMTAuNjY5MSAyOS4xNjkxIDEyLjk2OTggMjcuNzUgMTQuMzg4OUwyMy42Mzg5IDE4LjVMMjcuNzUgMjIuNjExMUMyOS4xNjkxIDI0LjAzMDIgMjkuMTY5MSAyNi4zMzA5IDI3Ljc1IDI3Ljc1QzI2LjMzMDkgMjkuMTY5MSAyNC4wMzAyIDI5LjE2OTEgMjIuNjExMSAyNy43NUwxOC41IDIzLjYzODlMMTQuMzg4OSAyNy43NUMxMi45Njk4IDI5LjE2OTEgMTAuNjY5MSAyOS4xNjkxIDkuMjUgMjcuNzVDNy44MzA5MyAyNi4zMzA5IDcuODMwOTMgMjQuMDMwMiA5LjI1IDIyLjYxMTFMMTMuMzYxMSAxOC41TDkuMjUgMTQuMzg4OVpNMTAuMjc3OCAxMy4zNjExQzkuNDI2MzQgMTIuNTA5NyA5LjQyNjM0IDExLjEyOTIgMTAuMjc3OCAxMC4yNzc4QzExLjEyOTIgOS40MjYzNCAxMi41MDk3IDkuNDI2MzQgMTMuMzYxMSAxMC4yNzc4TDE4LjUgMTUuNDE2N0wyMy42Mzg5IDEwLjI3NzhDMjQuNDkwMyA5LjQyNjM0IDI1Ljg3MDggOS40MjYzNCAyNi43MjIyIDEwLjI3NzhDMjcuNTczNyAxMS4xMjkyIDI3LjU3MzcgMTIuNTA5NyAyNi43MjIyIDEzLjM2MTFMMjEuNTgzMyAxOC41TDI2LjcyMjIgMjMuNjM4OUMyNy41NzM3IDI0LjQ5MDMgMjcuNTczNyAyNS44NzA4IDI2LjcyMjIgMjYuNzIyMkMyNS44NzA4IDI3LjU3MzcgMjQuNDkwMyAyNy41NzM3IDIzLjYzODkgMjYuNzIyMkwxOC41IDIxLjU4MzNMMTMuMzYxMSAyNi43MjIyQzEyLjUwOTcgMjcuNTczNyAxMS4xMjkyIDI3LjU3MzcgMTAuMjc3OCAyNi43MjIyQzkuNDI2MzQgMjUuODcwOCA5LjQyNjM0IDI0LjQ5MDMgMTAuMjc3OCAyMy42Mzg5TDE1LjQxNjcgMTguNUwxMC4yNzc4IDEzLjM2MTFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K) no-repeat;background-size:28px;background-position:center;height:28px;width:28px}}@media (max-width:1023px){.marquiz__modal{top:0;left:0;right:0;bottom:0;margin:0;position:absolute;width:100%;padding:0}#marquiz__close{right:0;top:0}}.icon-quiz{vertical-align:baseline}.marquiz__container{width:100%;text-align:center}@media (max-width:767px){.marquiz__container_hide-on-mobile{display:none}}.marquiz__frame{display:none;height:100%;width:100%;background:#fff;transition:height .2s ease-in}.marquiz__frame::-webkit-scrollbar{width:0}@media (min-width:1200px) and (max-width:1439px){.marquiz__frame{height:590px}}@media (min-width:1024px) and (max-width:1199px){.marquiz__frame{height:560px}}@media (min-width:1200px) and (max-width:1439px){.marquiz__modal{width:75%}}@media (min-width:1440px){.marquiz__frame{height:650px}}.marquiz__bg_open{visibility:visible;z-index:2147483647;opacity:1}.marquiz__bg_open .marquiz__modal{visibility:visible;margin:auto}.marquiz__frame_open{display:block;width:100%}</style></head>\n<body class=\"home page page-id-9 page-template-default gllr_\"><div id=\"mobilemenu\" class=\"mobilemenu mm-menu mm-vertical mm-theme-white mm-offcanvas\"><div class=\"mm-panels mm-vertical\"><div class=\"mm-panel mm-vertical mm-opened mm-current\" id=\"menu-levoe-1\"><ul class=\"top-menu mm-listview mm-vertical sf-js-enabled sf-shadow\">\n\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-410 mm-vertical\">\n\t\t<a class=\"mm-next sf-with-ul\" href=\"#mm-1\" data-target=\"#mm-1\"><span class=\"sf-sub-indicator\"></span></a><a href=\"/blog/interior\">Дизайн</a>\n\t\t<div class=\"mm-panel mm-vertical\" id=\"mm-1\"><ul class=\"sub-menu mm-listview mm-vertical\">\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-624\">\n\t\t\t<a href=\"/blog/dlya-vannoj\">Для ванной</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-764\">\n\t\t\t<a href=\"/blog/detskaya\">Детская</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-947\">\n\t\t\t<a href=\"/blog/gostinaya\">Гостиная</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-411\">\n\t\t\t<a href=\"/blog/arcstyle\">Стили</a>\n\t\t  </li>\n\t\t</ul></div>\n\t  </li>\n\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-413 mm-vertical\">\n\t\t<a class=\"mm-next sf-with-ul\" href=\"#mm-2\" data-target=\"#mm-2\"><span class=\"sf-sub-indicator\"></span></a><a href=\"/blog/otdelka\">Отделка</a>\n\t\t<div class=\"mm-panel mm-vertical\" id=\"mm-2\"><ul class=\"sub-menu mm-listview mm-vertical\">\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-414\">\n\t\t\t<a href=\"/blog/floor\">Пол</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-415\">\n\t\t\t<a href=\"/blog/ceiling\">Потолок</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-416\">\n\t\t\t<a href=\"/blog/santehnik\">Сантехника</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417\">\n\t\t\t<a href=\"/blog/walls\">Стены</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-438\">\n\t\t\t<a href=\"/blog/windows-and-doors\">Окна</a>\n\t\t  </li>\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-412 mm-vertical\">\n\t\t\t<a class=\"mm-next sf-with-ul\" href=\"#mm-3\" data-target=\"#mm-3\"><span class=\"sf-sub-indicator\"></span></a><a href=\"/blog/materials\">Материалы</a>\n\t\t\t<div class=\"mm-panel mm-vertical\" id=\"mm-3\"><ul class=\"sub-menu mm-listview mm-vertical\">\n\t\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420\">\n\t\t\t\t<a href=\"/blog/keramogranit\">Керамогранит</a>\n\t\t\t  </li>\n\t\t\t</ul></div>\n\t\t  </li>\n\t\t</ul></div>\n\t  </li>\n\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-439\">\n\t\t<a href=\"/blog/electric\">Электрика и освещение</a>\n\t  </li>\n\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-441\">\n\t\t<a href=\"/blog/build\">Ремонт</a>\n\t  </li>\n\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2587 mm-vertical\">\n\t\t<a class=\"mm-next sf-with-ul\" href=\"#mm-4\" data-target=\"#mm-4\"><span class=\"sf-sub-indicator\"></span></a><a href=\"/blog/mebel\">Мебель</a>\n\t\t<div class=\"mm-panel mm-vertical\" id=\"mm-4\"><ul class=\"sub-menu mm-listview mm-vertical\">\n\t\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2588\">\n\t\t\t<a href=\"/blog/furnitura\">Фурнитура</a>\n\t\t  </li>\n\t\t</ul></div>\n\t  </li>\n\t  <li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2602\">\n\t\t<a href=\"/blog/kuhnya\">Кухня</a>\n\t  </li>\n\t</ul></div></div></div><div id=\"mm-0\" class=\"mm-page mm-slideout\"><div id=\"menu\" class=\"menunav banner--clone\">\n\t\t  <ul id=\"menu-levoe\" class=\"top-menu sf-js-enabled sf-shadow\">\n\t\t\t<li id=\"menu-item-410\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-410\">\n\t\t\t  <a href=\"/blog/interior\" class=\"sf-with-ul\">Дизайн<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t<li id=\"menu-item-624\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-624\">\n\t\t\t\t  <a href=\"/blog/dlya-vannoj\">Для ванной</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-764\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-764\">\n\t\t\t\t  <a href=\"/blog/detskaya\">Детская</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-947\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-947\">\n\t\t\t\t  <a href=\"/blog/gostinaya\">Гостиная</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-411\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-411\">\n\t\t\t\t  <a href=\"/blog/arcstyle\">Стили</a>\n\t\t\t\t</li>\n\t\t\t  </ul>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-413\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-413\">\n\t\t\t  <a href=\"/blog/otdelka\" class=\"sf-with-ul\">Отделка<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t<li id=\"menu-item-414\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-414\">\n\t\t\t\t  <a href=\"/blog/floor\">Пол</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-415\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-415\">\n\t\t\t\t  <a href=\"/blog/ceiling\">Потолок</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-416\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-416\">\n\t\t\t\t  <a href=\"/blog/santehnik\">Сантехника</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-417\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417\">\n\t\t\t\t  <a href=\"/blog/walls\">Стены</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-438\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-438\">\n\t\t\t\t  <a href=\"/blog/windows-and-doors\">Окна</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-412\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-412\">\n\t\t\t\t  <a href=\"/blog/materials\" class=\"sf-with-ul\">Материалы<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t\t<li id=\"menu-item-420\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420\">\n\t\t\t\t\t  <a href=\"/blog/keramogranit\">Керамогранит</a>\n\t\t\t\t\t</li>\n\t\t\t\t  </ul>\n\t\t\t\t</li>\n\t\t\t  </ul>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-439\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-439\">\n\t\t\t  <a href=\"/blog/electric\">Электрика и освещение</a>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-441\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-441\">\n\t\t\t  <a href=\"/blog/build\">Ремонт</a>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-2587\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2587\">\n\t\t\t  <a href=\"/blog/mebel\" class=\"sf-with-ul\">Мебель<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t<li id=\"menu-item-2588\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2588\">\n\t\t\t\t  <a href=\"/blog/furnitura\">Фурнитура</a>\n\t\t\t\t</li>\n\t\t\t  </ul>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-2602\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2602\">\n\t\t\t  <a href=\"/blog/kuhnya\">Кухня</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t  <div class=\"toggle-search active\">\n\t\t\t<i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n\t\t  </div>\n\t\t</div><div class=\"page-wrapper\">\n\t<div class=\"up-header\">\n\t  <div class=\"container\" id=\"navbar-holder\">\n\t\t<button class=\"navbar-toggle collapsed\" type=\"button\" onclick=\"ToggleNavbar(this);return false;\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>\n\t  </div>\n\t  <div class=\"menu-dopolnitelnoe-menyu-container\">\n\t\t<ul id=\"menu-dopolnitelnoe-menyu\" class=\"menu\">\n\t\t  <li id=\"menu-item-23\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-23 menu-item-o-kompanii first-menu-item\">\n\t\t\t<a href=\"/o-kompanii/\">О компании</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-686\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-686 menu-item-nashi-raboty\">\n\t\t\t<a href=\"/nashi-raboty/\">Наши работы</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-943\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-943 menu-item-prajs-list\">\n\t\t\t<a href=\"/prajs-list/\">Прайс-лист</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-62\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-62 menu-item-o-kompanii\">\n\t\t\t<a href=\"/blog/\">Статьи</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-21\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-21 menu-item-kontakty last-menu-item\">\n\t\t\t<a href=\"/kontakty/\">Контакты</a>\n\t\t  </li>\n\t\t</ul>\n\t  </div>\n\t</div>\n\t<header itemscope=\"\" itemtype=\"http://schema.org/Organization\">\n\t  <div class=\"header-left\">\n\t\t<div class=\"logo\">\n\t\t  <a href=\"/\" title=\"Remont 24\"><img src=\"/wp-content/themes/remont/images/logo.png\" alt=\"\"></a>\n\t\t</div>\n\t\t<p class=\"slogan\">Выезд замерщика бесплатно!<br>\n\t\t<span>Уборка и вывоз мусора за наш счет</span> <span class=\"btn-calc-rem\"><a href=\"/kalkulyator-stoimosti-remonta/\">Калькулятор ремонта</a></span></p>\n\t  </div>\n\t  <!--<div class=\"header-center\">\n\t\t<div class=\"textwidget\">\n\t\t  <span itemprop=\"name\">ООО \"ПРОФСТРОЙ\"</span><br>\n\t\t  <span itemprop=\"address\" itemscope itemtype=\"http://schema.org/PostalAddress\"></span>\n\t\t  <div style=\"display:none\">\n\t\t\t<span itemprop=\"address\" itemscope itemtype=\"http://schema.org/PostalAddress\"><span itemprop=\"postalCode\">11591</span>, <span itemprop=\"addressLocality\">г. Москва</span></span>\n\t\t  </div><span itemprop=\"streetAddress\">Ул. Первомайская д.85</span><br>\n\t\t</div>\n\t  </div>\n\t  <div class=\"header-right\">\n\t\t<div class=\"textwidget\">\n\t\t  <span itemprop=\"telephone\"><span class=\"code\">+7 499</span> 391-78-63</span><br>\n\t\t  <span itemprop=\"telephone\"><span class=\"code\">+7 950</span> 323-27-61<br></span> <a class=\"order-btn\" onclick=\"yaCounter29686580.reachGoal('ZAKAZAT'); return true;\">Заказать звонок</a>\n\t\t</div>\n\t  </div>-->\n\t</header>\n\t<nav>\n      <div id=\"main_menu\" class=\"menu-osnovnoe-menyu-container\">\n        <ul id=\"menu-osnovnoe-menyu\" class=\"menu\">\n          <li id=\"menu-item-435\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-435 menu-item-kapitalnyj first-menu-item\">\n            <a href=\"/kapitalnyj/\">Ремонт квартиры</a><span class=\"exp-submenu\"></span>\n            <ul class=\"sub-menu\">\n              <li id=\"menu-item-184\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-184 menu-item-remont-kvartir-pod-klyuch\">\n                <a href=\"/kapitalnyj/remont-kvartir-pod-klyuch/\">Ремонт квартир под ключ</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-179\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-179 menu-item-kosmeticheskij-remont\">\n                <a href=\"/kapitalnyj/kosmeticheskij-remont/\">Косметический ремонт квартиры</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-6121\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-6121 menu-item-kapitalnyj\">\n                <a href=\"/kapitalnyj/\">Капитальный ремонт квартиры в Москве</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-474\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-474 menu-item-evroremont-kvartir\">\n                <a href=\"/kapitalnyj/evroremont-kvartir/\">Евроремонт квартир в Москве</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-3647\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3647 menu-item-remont-odnokomnatnoj-kvartiry\">\n                <a href=\"/kapitalnyj/remont-odnokomnatnoj-kvartiry/\">Ремонт однокомнатной квартиры</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-3648\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3648 menu-item-remont-dvuxkomnatnoj-kvartiry\">\n                <a href=\"/kapitalnyj/remont-dvuxkomnatnoj-kvartiry/\">Ремонт двухкомнатной квартиры</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-3650\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3650 menu-item-remont-trexkomnatnoj-kvartiry\">\n                <a href=\"/kapitalnyj/remont-trexkomnatnoj-kvartiry/\">Ремонт трехкомнатной квартиры</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-5654\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-5654 menu-item-remont-chetyrexkomnatnoj-kvartiry\">\n                <a href=\"/kapitalnyj/remont-chetyrexkomnatnoj-kvartiry/\">Ремонт четырехкомнатной квартиры</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4058\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4058 menu-item-remont-studii\">\n                <a href=\"/kapitalnyj/remont-studii/\">Ремонт студии</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-3653\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3653 menu-item-dizajnerskij-remont-kvartir\">\n                <a href=\"/kapitalnyj/dizajnerskij-remont-kvartir/\">Дизайнерский ремонт квартир</a><span class=\"exp-submenu\"></span>\n              </li>\n            </ul>\n          </li>\n          <li id=\"menu-item-6474\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6474 menu-item-remont-komnaty\">\n            <a href=\"/remont-komnaty/\">Ремонт комнаты</a><span class=\"exp-submenu\"></span>\n            <ul class=\"sub-menu\">\n              <li id=\"menu-item-460\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-460 menu-item-remont-spalni\">\n                <a href=\"/remont-komnaty/remont-spalni/\">Ремонт спальни</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-6627\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-6627 menu-item-remont-v-detskoj\">\n                <a href=\"/remont-komnaty/remont-v-detskoj/\">Ремонт в детской</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-5687\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-5687 menu-item-remont-gostinoj\">\n                <a href=\"/remont-komnaty/remont-gostinoj/\">Ремонт гостиной</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-466\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-466 menu-item-remont-prixozhej\">\n                <a href=\"/remont-komnaty/remont-prixozhej/\">Ремонт прихожей</a><span class=\"exp-submenu\"></span>\n              </li>\n            </ul>\n          </li>\n          <li id=\"menu-item-37\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-37 menu-item-remont-kuxni\">\n            <a href=\"/remont-kuxni/\">Ремонт кухни</a><span class=\"exp-submenu\"></span>\n            <ul class=\"sub-menu\">\n              <li id=\"menu-item-4400\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4400 menu-item-remont-kuxni-v-xrushhevke\">\n                <a href=\"/remont-kuxni-v-xrushhevke/\">Ремонт кухни в хрущевке</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-247\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-247 menu-item-remont-kuxni-pod-klyuch\">\n                <a href=\"/remont-kuxni-pod-klyuch/\">Ремонт кухни под ключ</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4466\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4466 menu-item-kapitalnyj-remont-kuxni\">\n                <a href=\"/remont-kuxni/kapitalnyj-remont-kuxni/\">Капитальный ремонт кухни</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4486\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4486 menu-item-remont-malenkoj-kuxni\">\n                <a href=\"/remont-kuxni/remont-malenkoj-kuxni/\">Ремонт маленькой кухни</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4525\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4525 menu-item-kosmeticheskij-remont-kuxni\">\n                <a href=\"/remont-kuxni/kosmeticheskij-remont-kuxni/\">Косметический ремонт кухни</a><span class=\"exp-submenu\"></span>\n              </li>\n            </ul>\n          </li>\n          <li id=\"menu-item-36\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-36 menu-item-remont-vannoj\">\n            <a href=\"/remont-vannoj/\">Ремонт санузла</a><span class=\"exp-submenu\"></span>\n            <ul class=\"sub-menu\">\n              <li id=\"menu-item-4998\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4998 menu-item-kosmeticheskij-remont-vannoj-komnaty\">\n                <a href=\"/kosmeticheskij-remont-vannoj-komnaty/\">Косметический ремонт ванной комнаты</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-224\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-224 menu-item-vannaya-pod-klyuch\">\n                <a href=\"/vannaya-pod-klyuch/\">Ремонт ванной под ключ</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-229\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-229 menu-item-sanuzel-pod-klyuch\">\n                <a href=\"/sanuzel-pod-klyuch/\">Санузел под ключ</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4556\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4556 menu-item-nedorogoj-remont-vannyx\">\n                <a href=\"/remont-vannoj/nedorogoj-remont-vannyx/\">Недорогой ремонт ванных</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4586\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4586 menu-item-remont-malenkix-vannyx\">\n                <a href=\"/remont-vannoj/remont-malenkix-vannyx/\">Ремонт маленьких ванных</a><span class=\"exp-submenu\"></span>\n              </li>\n            </ul>\n          </li>\n          <li id=\"menu-item-232\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-232 menu-item-remont-balkonov\">\n            <a href=\"/remont-balkonov/\">Ремонт балкона</a><span class=\"exp-submenu\"></span>\n            <ul class=\"sub-menu\">\n              <li id=\"menu-item-240\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-240 menu-item-uteplenie-balkonov\">\n                <a href=\"/uteplenie-balkonov/\">Утепление балконов</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-6836\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-6836 menu-item-uteplenie-lodzhii\">\n                <a href=\"/remont-balkonov/uteplenie-lodzhii/\">Утепление лоджии</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-241\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-241 menu-item-otdelka-balkona\">\n                <a href=\"/otdelka-balkona/\">Отделка балкона</a><span class=\"exp-submenu\"></span>\n              </li>\n            </ul>\n          </li>\n          <li id=\"menu-item-431\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-431 menu-item-dopolnitelnye-uslugi-po-remontu\">\n            <a href=\"/dopolnitelnye-uslugi-po-remontu/\">Дополнительно</a><span class=\"exp-submenu\"></span>\n            <ul class=\"sub-menu\">\n              <li id=\"menu-item-3655\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3655 menu-item-remont-taunxausov\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/remont-taunxausov/\">Ремонт таунхаусов</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-3656\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3656 menu-item-remont-kottedzhej\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/remont-kottedzhej/\">Ремонт коттеджей</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-2178\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2178 menu-item-remont-ofisov\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/remont-ofisov/\">Ремонт офисов</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-2172\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2172 menu-item-remont-skladskix-pomeshhenij\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/remont-skladskix-pomeshhenij/\">Ремонт складских помещений</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4083\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4083 menu-item-remont-v-byudzhetnom-uchrezhdenii\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/remont-v-byudzhetnom-uchrezhdenii/\">Ремонт в бюджетном учреждении</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-2176\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2176 menu-item-remont-pomeshhenij\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/remont-pomeshhenij/\">Ремонт помещений</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-182\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-182 menu-item-natyazhnye-potolki\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/natyazhnye-potolki/\">Установка натяжных потолков</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-178\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-178 menu-item-nastil-pola\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/nastil-pola/\">Настил пола</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4380\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4380 menu-item-styazhka-polov\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/styazhka-polov/\">Стяжка полов</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-4379\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4379 menu-item-shumoizolyaciya-pola\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/shumoizolyaciya-pola/\">Шумоизоляция пола</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-220\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-220 menu-item-zamena-santexniki\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/zamena-santexniki/\">Замена сантехники</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-177\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-177 menu-item-ciklevka-parketa\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/ciklevka-parketa/\">Циклевка паркета</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-183\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-183 menu-item-mezhkomnatnye-dveri\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/mezhkomnatnye-dveri/\">Установка межкомнатных дверей</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-181\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-181 menu-item-stalnye-dveri\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/stalnye-dveri/\">Установка стальных дверей</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-204\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-204 menu-item-kuxonnaya-mebel\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/kuxonnaya-mebel/\">Ремонт кухонной мебели</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-1647\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1647 menu-item-montazh-metallocherepicy\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/montazh-metallocherepicy/\">Монтаж металлочерепицы</a><span class=\"exp-submenu\"></span>\n              </li>\n              <li id=\"menu-item-1644\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-1644 menu-item-montazh-sajdinga last-menu-item\">\n                <a href=\"/dopolnitelnye-uslugi-po-remontu/montazh-sajdinga/\">Монтаж сайдинга</a><span class=\"exp-submenu\"></span>\n              </li>\n            </ul>\n          </li>\n        </ul>\n      </div>\n    </nav>\n    \n    \n    <div class=\"wrap\">\n\t<div class=\"wrap-inner\">\n\t  <div class=\"header\">\n\t\t<div id=\"menu\" class=\"menunav\">\n\t\t  <ul id=\"menu-levoe\" class=\"top-menu sf-js-enabled sf-shadow\">\n\t\t\t<li id=\"menu-item-410\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-410\">\n\t\t\t  <a href=\"/blog/interior\" class=\"sf-with-ul\">Дизайн<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t<li id=\"menu-item-624\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-624\">\n\t\t\t\t  <a href=\"/blog/dlya-vannoj\">Для ванной</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-764\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-764\">\n\t\t\t\t  <a href=\"/blog/detskaya\">Детская</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-947\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-947\">\n\t\t\t\t  <a href=\"/blog/gostinaya\">Гостиная</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-411\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-411\">\n\t\t\t\t  <a href=\"/blog/arcstyle\">Стили</a>\n\t\t\t\t</li>\n\t\t\t  </ul>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-413\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-413\">\n\t\t\t  <a href=\"/blog/otdelka\" class=\"sf-with-ul\">Отделка<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t<li id=\"menu-item-414\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-414\">\n\t\t\t\t  <a href=\"/blog/floor\">Пол</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-415\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-415\">\n\t\t\t\t  <a href=\"/blog/ceiling\">Потолок</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-416\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-416\">\n\t\t\t\t  <a href=\"/blog/santehnik\">Сантехника</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-417\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-417\">\n\t\t\t\t  <a href=\"/blog/walls\">Стены</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-438\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-438\">\n\t\t\t\t  <a href=\"/blog/windows-and-doors\">Окна</a>\n\t\t\t\t</li>\n\t\t\t\t<li id=\"menu-item-412\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-412\">\n\t\t\t\t  <a href=\"/blog/materials\" class=\"sf-with-ul\">Материалы<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t\t<li id=\"menu-item-420\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-420\">\n\t\t\t\t\t  <a href=\"/blog/keramogranit\">Керамогранит</a>\n\t\t\t\t\t</li>\n\t\t\t\t  </ul>\n\t\t\t\t</li>\n\t\t\t  </ul>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-439\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-439\">\n\t\t\t  <a href=\"/blog/electric\">Электрика и освещение</a>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-441\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-441\">\n\t\t\t  <a href=\"/blog/build\">Ремонт</a>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-2587\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-2587\">\n\t\t\t  <a href=\"/blog/mebel\" class=\"sf-with-ul\">Мебель<span class=\"sf-sub-indicator\"></span></a>\n\t\t\t  <ul class=\"sub-menu\" style=\"display: none; visibility: hidden;\">\n\t\t\t\t<li id=\"menu-item-2588\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2588\">\n\t\t\t\t  <a href=\"/blog/furnitura\">Фурнитура</a>\n\t\t\t\t</li>\n\t\t\t  </ul>\n\t\t\t</li>\n\t\t\t<li id=\"menu-item-2602\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2602\">\n\t\t\t  <a href=\"/blog/kuhnya\">Кухня</a>\n\t\t\t</li>\n\t\t  </ul>\n\t\t  <div class=\"toggle-search active\">\n\t\t\t<i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n\t\t  </div>\n\t\t</div>\n\t\t<div id=\"mob\">\n\t\t  <span class=\"mob-left\"><a href=\"#mobilemenu\"><i class=\"fa fa-bars\"></i> &nbsp;Статьи о ремонте</a></span>\n\t\t  <div class=\"toggle-search active\">\n\t\t\t<i class=\"fa fa-search\" aria-hidden=\"true\"></i>\n\t\t  </div>\n\t\t</div>\n\t\t<div class=\"search-block\">\n\t\t  <div class=\"search-container\">\n\t\t\t<a class=\"search-close\" href=\"#\" rel=\"nofollow\"><i class=\"fa fa-close\" aria-hidden=\"true\"></i></a>\n\t\t\t<form method=\"get\" class=\"searchform\" action=\"https://kazan-remonts.ru/\">\n\t\t\t  <input type=\"text\" class=\"s\" name=\"s\" onblur=\"if(this.value=='')this.value='Впишите запрос и нажмите enter';\" onfocus=\"if(this.value=='Впишите запрос и нажмите enter')this.value='';\" value=\"Впишите запрос и нажмите enter\">\n\t\t\t</form>\n\t\t  </div>\n\t\t</div>\n\t\t<div id=\"showHere\"></div>\n\t  </div>\n\t  <div class=\"clear\"></div>\n  <section class=\"content content-inner\">\n      <div class=\"container\">\n        <h1 class=\"zagol\">Ремонт квартир в Казани.</h1>\n        <p>Мы осуществляем ремонт квартир и коттеджей в г. Казань с 2003 года. Мы берем на себя Ваши проблемы, которые могут возникнуть при отделке квартиры, учитываем все Ваши пожелания. Выполняем ремонт квартир с учётом материальных возможностей наших клиентов, а также в удобные для них сроки.</p>\n        <p><a href=\"/price-list.htm\" class=\"btn1\">Прайс-лист на отделочные работы</a></p>\n        \n        <!--<div data-marquiz-id=\"629926f9e44ea6003fd5f87f\"></div>\n<script>(function(t, p) {window.Marquiz ? Marquiz.add([t, p]) : document.addEventListener('marquizLoaded', function() {Marquiz.add([t, p])})})('Button', {id: '629926f9e44ea6003fd5f87f', buttonText: 'Рассчитать стоимость', bgColor: '#d34085', textColor: '#ffffff', rounded: true, shadow: 'rgba(211, 64, 133, 0.5)', blicked: true})</script>-->\n        \n        <p>На каждом этапе отделки квартиры у наших клиентов есть возможность контролировать как качество выполнения отделочных работ, так и статьи <img border=\"0\" src=\"51-s.jpg\" alt=\"Ремонт квартир в Казани\" align=\"right\" hspace=\"20\" vspace=\"10\" id=\"img1\" onmouseover=\"FP_swapImg(1,0,/*id*/'img1',/*url*/'/51.jpg');\" onmouseout=\"FP_swapImg(1,0,/*id*/'img1',/*url*/'/51-s.jpg')\" name=\"img1\">расходов. Стоимость наших услуг оптимальна в отделочной сфере по Казани. Мы делаем акцент на соблюдение строительно-ремонтных норм. Ниже представлены факторы, которые влияют на увеличение стоимости ремонта квартиры и коттеджа:<br>\n        - неровность поверхностей (стены, полы, потолки).<br>\n        - сложность и количество уровней при монтаже ГКЛ потолков.<br>\n        - объём (чем больше - тем дешевле).<br>\n        - высота потолков.<br></p>\n        <p>Нужен <a href=\"/moskva\">ремонт квартир в Москве</a>? Перейдите по ссылке</p>\n        <p>Заказав у нас <i>ремонт квартиры</i>, Вы получите высокое качество произведенных нами ремонтных работ. В процессе выполнения ремонта мы обеспечиваем экономию средств наших клиентов, т.к. за нами не будет необходимости что-либо переделывать. Просмотрев <a href=\"galeri.htm\" title=\"Портфолио ремонта квартир\">портфолио</a> выполненного нами ремонта в Казани, Вы воочию представите весь комплекс отделочных работ, которые мы можем предложить по приемлемым ценам.<img border=\"0\" src=\"52-s.jpg\" alt=\"Отделка квартир в Казани\" align=\"left\" hspace=\"20\" vspace=\"10\" id=\"img2\" onmouseover=\"FP_swapImg(1,0,/*id*/'img2',/*url*/'/52.jpg');\" onmouseout=\"FP_swapImg(1,0,/*id*/'img2',/*url*/'/52-s.jpg')\" name=\"img2\"></p>\n        <h2>Виды ремонта</h2>\n        <p>Выбор вида ремонта большей частью зависит от состояния квартиры, имеющегося времени, а также материальных возможностей клиента для осуществления данного вида ремонта. Таким образом клиент может заказать <a href=\"part.htm\">частичный</a>, <a href=\"complex.htm\">комплексный</a>, или <a href=\"kosmeticheskiy_remont.html\" title=\"косметический ремонт\">косметический ремонт квартиры</a>.</p>\n        <p>Производство отдельных отделочных работ разными бригадами или фирмами в сумме обойдется Вам гораздо дороже. Комплексный ремонт квартиры - ремонт квартиры под ключ, обойдется значительно дешевле, если его сделает 1 подрядчик. Мы предлагаем отделку квартиры или коттеджа под ключ, (с отделкой стен, пола, потолка) выполняя его даже по самым сложным дизайнерским проектам. Также поможем подобрать наиболее подходящие материалы. Ремонт, выполненный нами - это высокотехнологичная отделка вашего жилища. Мы используем новейшие строительно- ремонтные технологии и отделочные материалы.<br>\n        <i><img border=\"0\" src=\"50-s.jpg\" alt=\"Отделочные работы в квартирах\" align=\"right\" hspace=\"20\" vspace=\"10\" id=\"img3\" onmouseover=\"FP_swapImg(1,0,/*id*/'img3',/*url*/'/50.jpg');\" onmouseout=\"FP_swapImg(1,0,/*id*/'img3',/*url*/'/50-s.jpg')\" name=\"img3\"></i><br>\n        Мы работаем без предоплаты. Расчет с нами осуществляется по факту произведенных нами работ. <i>Отделка квартир под ключ</i> - это не всегда большие деньги. В ценовой политике мы стремимся индивидуально подходить к каждому клиенту, принимая во внимание его интересы. Ремонт, это как правило, изменение интерьера, которое в свою очередь вносит в нашу жизнь новизну и благотворно влияет на эмоциональное состояние. Качественная отделка может придать даже самым запущенным интерьерам неповторимый облик, которым Вы будете наслаждаться ещё долгое время. Мы очень дорожим репутацией, и поэтому качественный ремонт - это основная реклама нашей деятельности.</p>\n        <p>Мы приедем на объект в любое удобное для клиента время, сделаем все необходимые замеры, ответим на имеющиеся у Вас вопросы, поможем определиться какой именно ремонт Вам необходим, с количеством необходимого для отделки материала, а также составим смету и всё это бесплатно! До осмотра нами объекта можно говорить лишь о примерной стоимости ремонтных работ. Окончательная цена отделки квартиры складывается из сложности работ, а также объёма производимых работ.<br>\n        <br>\n        С помощью изложенной ниже таблички Вы можете сами прикинуть <a name=\"pr\" class=\"none\" id=\"pr\">примерную стоимость</a> отделочных работ, исходя из Ваших требований . (Также смотрите <a href=\"price-list.htm\">прайс-лист</a>,или воспользуйтесь <a href=\"calc2.htm\">сметным калькулятором</a>)</p>\n        <div class=\"mob-scrollable\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" bgcolor=\"#CCCCFF\">\n          <tbody>\n            <tr>\n              <td valign=\"top\">\n                <div>\n                  <div class=\"mob-scrollable\"><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" align=\"center\">\n                    <tbody>\n                      <tr>\n                        <td bgcolor=\"#CCCCFF\">\n                          <div>\n                            <div align=\"center\">\n                              <div class=\"mob-scrollable\"><table border=\"1\" bgcolor=\"#CCCCFF\">\n                                <tbody>\n                                  <tr>\n                                    <td width=\"50%\">\n                                      <p dir=\"ltr\" align=\"center\">Косметический ремонт квартиры<br>\n                                      от 2500 руб/кв.м.(по полу)<br>\n                                      Состав работ (предположительно):</p>\n                                    </td>\n                                    <td>\n                                      <p align=\"center\">Комплексный, капитальный ремонт квартиры<br>\n                                      от 3300 руб/кв.м. (по полу)<br>\n                                      Состав работ (предположительно):</p>\n                                    </td>\n                                  </tr>\n                                  <tr>\n                                    <td width=\"383\">\n                                      <p><em>Выравнивание стен</em> по плоскости<br>\n                                      Шпаклевание потолка 2-3 раза и его окраска в 2 слоя;<br>\n                                      Шпаклевание стен и оклейка обоями;<br>\n                                      Стяжка пола;<br>\n                                      Укладка ламината или настил линолеума;<br>\n                                      Монтаж плинтусов;<br>\n                                      Покраска труб отопления;<br>\n                                      Покраска откосов;<br>\n                                      Покраска окон;<br>\n                                      Замена электроточек на новые;<br>\n                                      Вынос строительного мусора.</p>\n                                    </td>\n                                    <td>\n                                      <p>Электро- монтажные работы (полная замена электропроводки, если требуется);<br>\n                                      <em>Ремонт полов,стен и потолков</em> (штукатурка стен по маякам, стяжка полов, выравнивание потолков);<br>\n                                      Монтаж гипсокартонных многоуровневых потолков;<br>\n                                      Укладка ламината или паркетной доски;<br>\n                                      Монтаж плинтусов;<br>\n                                      Санузел, ванная комната, туалет \"под ключ\";<br>\n                                      Поклейка стеклохолста на окрашиваемые поверхности<br>\n                                      Покраска потолков и откосов;<br>\n                                      Окраска стен или оклейка их обоями;<br>\n                                      Вынос строительного мусора...</p>\n                                    </td>\n                                  </tr>\n                                </tbody>\n                              </table></div>\n                            </div>\n                          </div>\n                        </td>\n                      </tr>\n                    </tbody>\n                  </table></div>\n                </div>\n              </td>\n            </tr>\n          </tbody>\n        </table></div><br>\n        <p>Советуем прочитать еще и <a href=\"klienty.html\" title=\"Что нужно знать про ремонт в квартирах клиентам\" target=\"_blank\">памятку по ремонту в квартире</a>.</p>\n        <div class=\"mob-scrollable\"><table border=\"0\" width=\"100%\">\n          <tbody><tr>\n            <td align=\"center\"></td>\n          </tr>\n        </tbody></table></div><br>\n        <p align=\"center\">\n        <script src=\"/Scripts/zaklad.gz\" type=\"text/javascript\"></script></p>\n        <p>&nbsp;</p><iframe src=\"/design/4.html\" width=\"70%\" height=\"35\" scrolling=\"no\" frameborder=\"0\"></iframe>\n        <address>\n          Контакты: г. Казань | Тел: +7 (950)-323-27-61 <a href=\"mailto:info@kazan-remonts.ru\">info@kazan-remonts.ru</a>\n        </address>\n  \n        <hr class=\"style1\">\n        <p class=\"style2\">теги: ремонт квартир в Казани; ремонтные работы в квартире; ремонт квартир под ключ в г. Казань; ремонт хрущевки, ленинградки; капитальный ремонт в новостройках</p>\n  \n        <p>&nbsp;</p>\n        <div class=\"mob-scrollable\"><table class=\"navi\">\n          <tbody><tr>\n            <td>\n              <p align=\"center\"><img src=\"navi.jpg\" alt=\"navigation\" width=\"172\" height=\"20\"></p>\n              <ul id=\"MenuBar1\" class=\"MenuBarVertical\">\n                <li><a href=\"/\">Главная</a></li>\n                <li>\n                  <a class=\"MenuBarItemSubmenu\" href=\"#\">Наши услуги</a>\n                  <ul>\n                    <li><a href=\"services.htm\">•&nbsp;Отделка квартир</a></li>\n                    <li><a href=\"complex.htm\">•&nbsp;Комплексный ремонт</a></li>\n                    <li><a href=\"kosmeticheskiy_remont.html\">•&nbsp;Косметический ремонт</a></li>\n                    <li><a href=\"part.htm\">•&nbsp;Частичный ремонт</a></li>\n                    <li><a href=\"lepnina.htm\">•&nbsp;Изготовление лепнины (гипс)</a></li>\n                  </ul>\n                </li>\n                <li>\n                  <a class=\"MenuBarItemSubmenu\" href=\"#\">Прайс листы</a>\n                  <ul>\n                    <li><a href=\"price-list.htm\">•&nbsp;Подробный список цен на отделочные работы</a></li>\n                    <li><a href=\"price-list2.htm\">•&nbsp;Прайс-лист на основные отделочные работы</a></li>\n                    <li><a href=\"lepprice.htm\">•&nbsp;На изготовление и монтаж лепнины</a></li>\n                  </ul>\n                </li>\n                <li>\n                  <a href=\"#\" class=\"MenuBarItemSubmenu\">Калькуляторы для подсчета сметы</a>\n                  <ul>\n                    <li><a href=\"calc2.htm\">Калькулятор для подсчета сметы комплексного ремонта</a></li>\n                    <li><a href=\"calculate.htm\">Калькулятор для подсчета сметы частичного ремонта</a></li>\n                  </ul>\n                </li>\n                <li>\n                  <a href=\"#\" class=\"MenuBarItemSubmenu\">Ремонт и дизайн комнат</a>\n                  <ul>\n                    <li><a href=\"gostinaya.htm\">•&nbsp;Ремонт гостиной</a></li>\n                    <li><a href=\"kuhnya.htm\">•&nbsp;Отделка кухни</a></li>\n                    <li><a href=\"spalnya.htm\">•&nbsp;Дизайн спальни</a></li>\n                    <li><a href=\"detskaya.htm\">•&nbsp;Ремонт детской комнаты</a></li>\n                    <li><a href=\"remont_vannoj_komnaty.html\">•&nbsp;Ремонт ванной комнаты</a></li>\n                    <li><a href=\"balkon.htm\">•&nbsp;Утепление балкона</a></li>\n                  </ul>\n                </li>\n                <li><a href=\"galeri.htm\">Портфолио</a></li>\n                <li><a href=\"statyi.htm\">Отделочные работы</a></li>\n                <li><a href=\"kontakt.html\">Контакты</a></li>\n                <li><a href=\"sitemap.html\">Карта сайта</a></li>\n                <li><a href=\"reklama.html\">Реклама на сайте</a></li>\n              </ul>\n            </td>\n          </tr>\n          <tr>\n            <td>\n              <p>&nbsp;</p>\n            </td>\n          </tr>\n        </tbody></table></div>\n        </div>\n  </section>\n    </div>\n  <div class=\"page-buffer\"></div>\n  <footer itemscope=\"\" itemtype=\"http://schema.org/Organization\">\n\t<div class=\"container\">\n\t  <div class=\"menu-menyu-v-futere-container\">\n\t\t<ul id=\"menu-menyu-v-futere\" class=\"footer-menu clearfix\">\n\t\t  <li id=\"menu-item-17\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-17 menu-item-o-kompanii first-menu-item\">\n\t\t\t<a href=\"/o-kompanii/\">О компании</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-16\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-16 menu-item-preimushhestva\">\n\t\t\t<a href=\"/preimushhestva/\">Преимущества</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-18\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18 menu-item-\">\n\t\t\t<a href=\"/nashi\">Наши работы</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-63\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-63 menu-item-o-kompanii\">\n\t\t\t<a href=\"/blog/\">Статьи</a>\n\t\t  </li>\n\t\t  <li id=\"menu-item-20\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-20 menu-item-kontakty last-menu-item\">\n\t\t\t<a href=\"/kontakty/\">Контакты</a>\n\t\t  </li>\n\t\t</ul>\n\t  </div>\n\t  <div class=\"sub-footer\">\n\t\t<div class=\"footer-left\">\n\t\t  <a href=\"/\" title=\"\" class=\"footer-logo clearfix\"><img src=\"/wp-content/themes/remont/images/footer-logo.png\" alt=\"\"></a>\n\t\t  <p class=\"seohelp\"></p>\n\t\t</div>\n\t\t<!--<div class=\"footer-center\">\n\t\t  <div class=\"textwidget\">\n\t\t\t<span itemprop=\"telephone\"><span class=\"code\">+7 499</span> 391-78-63</span><br>\n\t\t\t<span itemprop=\"telephone\"><span class=\"code\">+7 950</span> 323-27-61<br></span> <a class=\"order-btn\" onclick=\"yaCounter29686580.reachGoal('ZAKAZAT'); return true;\">Заказать звонок</a>\n\t\t  </div>\n\t\t</div>-->\n\t\t<div class=\"footer-right\">\n\t\t  <div class=\"textwidget\">\n\t\t\t<!--<span itemprop=\"name\">ООО \"ПРОФСТРОЙ\"</span><br>\n\t\t\t<span itemprop=\"address\" itemscope itemtype=\"http://schema.org/PostalAddress\"></span>\n\t\t\t<div style=\"display:none\">\n\t\t\t  <span itemprop=\"address\" itemscope itemtype=\"http://schema.org/PostalAddress\"><span itemprop=\"postalCode\">11591</span>, <span itemprop=\"addressLocality\">г. Москва</span></span>\n\t\t\t</div><span itemprop=\"streetAddress\">Ул. Первомайская д.85</span><br>\n\t\t\t<br>-->\n\t\t\t<a href=\"/sitemap\">Карта сайта</a><br>\n\t\t\t<a href=\"/politika-konfidencialnosti/\">Политика конфиденциальности</a><br>\n            <a href=\"https://emdigital.ru/\" target=\"_blank\">Интернет-маркетинг</a> от EyeMedia Digital Marketing\n\t\t  </div>\n\t\t  <div class=\"textwidget\">\n\t\t\t<noscript>\n\t\t\t<div></div></noscript>\n\t\t  </div>\n\t\t</div>\n\t  </div>\n\t</div>\n  </footer>\n  <div class=\"popup\">\n\t<form>\n\t  <div class=\"h2\">\n\t\tОставьте заявку\n\t  </div><input type=\"text\" name=\"name\" placeholder=\"Ваше имя\" class=\"required empty_filed\"> <input type=\"text\" name=\"phone\" placeholder=\"Ваш телефон\" class=\"required empty_filed\">\n\t  <p class=\"form_agreement\" style=\"margin-right: 0;\">Нажимая кнопку «Отправить», вы соглашаетесь<br>\n\t  с <a href=\"/politika-konfidencialnosti/\" target=\"_blank\">Политикой конфиденциальности</a></p><button class=\"send-btn disable-button\">Отправить</button>\n\t</form>\n\t<div class=\"sucess\">\n\t  <div class=\"h2\">\n\t\tСпасибо!\n\t  </div>\n\t  <p>Мы скоро с вами свяжемся</p><button class=\"close-btn\">Закрыть</button>\n\t</div>\n\t<div class=\"close-popup close-btn\"></div>\n  </div>\n  <div class=\"layout\"></div>\n  <script type=\"text/javascript\">\n\t\t\t\t\t\t\t\tvar Countdown_Settings = {\n\t\t\t\t\t\tlaunchDate_year:  2017,\n\t\t\t\t\t\tlaunchDate_month: 7,\n\t\t\t\t\t\tlaunchDate_day:   25,\n\t\t\t\t\t\tclang: 'ru',\n\t\t\t\t\t\tgmt_offset: 3     \n\t\t\t\t};\n\t\t\t\t\n\t\t\t\t(function($) {\n\t\t\t\t  Countdown = {\n\t\t\t\t\t\tinit: function() {\n\t\t\t\t\n\t\t\t\t\t\t  $('.countdown').countdown({\n\t\t\t\t\t\t\t\tuntil: new Date( Countdown_Settings.launchDate_year, Countdown_Settings.launchDate_month - 1, Countdown_Settings.launchDate_day ),\n\t\t\t\t\t\t\t\ttimezone: Countdown_Settings.gmt_offset,\n\t\t\t\t\t\t\t\tlayout: '<div class=\"digit\"><div id=\"days\"><span></span>{dn}</div> <div class=\"digit_label\">{dl}</div></div>' +\n\t\t\t\t\t\t\t\t\t\t\t\t'<div class=\"digit\"><div id=\"hours\"><span></span>{hn}</div> <div class=\"digit_label\">{hl}</div></div>' +\n\t\t\t\t\t\t\t\t\t\t\t\t'<div class=\"digit\"><div id=\"minutes\"><span></span>{mn}</div> <div class=\"digit_label\">{ml}</div></div>' +\n\t\t\t\t\t\t\t\t\t\t\t\t'<div class=\"digit\"><div id=\"seconds\"><span></span>{sn}</div> <div class=\"digit_label\">{sl}</div></div>'\n\t\t\t\t\t\t  });\n\t\t\t\t\t\t  \n\t\t\t\t\t\t  if( Countdown_Settings.clang != '' || Countdown_Settings.clang != '0' ){\n\t\t\t\t\t\t\t\t$.countdown.regional[Countdown_Settings.clang]\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t}\n\t\t\t\t  }\n\t\t\t\t})(jQuery);\n\t\t\t\t\n\t\t\t\tjQuery(document).ready(function() { \n\t\t\t\t\t\tCountdown.init();\n\t\t\t\t});\n  </script> \n  <script type=\"text/javascript\" src=\"/wp-includes/js/comment-reply.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/wp-includes/js/masonry.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/wp-includes/js/jquery/jquery.masonry.min.js\"></script> \n  \n  \n  \n  <script type=\"text/javascript\">\n  function gotoal(link){window.open(link.replace(\"_\",\"http://\"));}\n  </script> \n  <script type=\"text/javascript\">\n\n\n  jQuery(document).ready(function($){\n  $(\"a[rel*=lightbox]\").colorbox({speed:0,width:false,height:false,innerWidth:false,innerHeight:false,initialWidth:false,initialHeight:false,maxWidth:false,maxHeight:false,scalePhotos:false,opacity:0,preloading:false,current:\" {current}  {total}\",previous:\"\",next:\"\",close:\"\",overlayClose:false,loop:false,scrolling:false,escKey:false,arrowKey:false,top:false,right:false,bottom:false,left:false});\n  });\n  </script> \n  <script type=\"text/javascript\" src=\"/blog/wp-includes/js/jquery/ui/core.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-includes/js/jquery/ui/widget.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-includes/js/jquery/ui/accordion.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-includes/js/jquery/ui/tabs.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-content/plugins/bwp-shortcodes/js/bwp-shortcodes-js.js\"></script> \n  <script type=\"text/javascript\">\n\n\n  /* <![CDATA[ */\n  var ratingsL10n = {\"plugin_url\":\"https:\\/\\/kazan-remonts.ru\\/wp-content\\/plugins\\/wp-postratings\",\"ajax_url\":\"https:\\/\\/kazan-remonts.ru\\/wp-admin\\/admin-ajax.php\",\"text_wait\":\"\\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430, \\u043d\\u0435 \\u0433\\u043e\\u043b\\u043e\\u0441\\u0443\\u0439\\u0442\\u0435 \\u0437\\u0430 \\u043d\\u0435\\u0441\\u043a\\u043e\\u043b\\u044c\\u043a\\u043e \\u0437\\u0430\\u043f\\u0438\\u0441\\u0435\\u0439 \\u043e\\u0434\\u043d\\u043e\\u0432\\u0440\\u0435\\u043c\\u0435\\u043d\\u043d\\u043e.\",\"image\":\"stars_crystal\",\"image_ext\":\"gif\",\"max\":\"5\",\"show_loading\":\"1\",\"show_fading\":\"1\",\"custom\":\"0\"};\n  var ratings_mouseover_image=new Image();ratings_mouseover_image.src=\"/blog/wp-content/plugins/wp-postratings/images/stars_crystal/rating_over.gif\";;\n  /* ]]> */\n  </script> \n  <script type=\"text/javascript\" src=\"/blog/wp-content/plugins/wp-postratings/js/postratings-js.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-content/themes/newsmaker/scripts/preloader.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-content/themes/newsmaker/scripts/custom.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-content/plugins/lightbox-plus/js/jquery.colorbox.1.5.9-min.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-includes/js/wp-embed.min.js\"></script> \n  <script type=\"text/javascript\" src=\"/blog/wp-includes/js/comment-reply.min.js\"></script>\n  \n\n\n</div></div><div id=\"fancybox-tmp\"></div><div id=\"fancybox-loading\"><div></div></div><div id=\"fancybox-overlay\" style=\"width: 1280px;\"></div><div id=\"fancybox-wrap\"><div id=\"fancybox-outer\"><div class=\"fancybox-bg\" id=\"fancybox-bg-n\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-ne\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-e\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-se\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-s\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-sw\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-w\"></div><div class=\"fancybox-bg\" id=\"fancybox-bg-nw\"></div><div id=\"fancybox-content\"></div><a id=\"fancybox-close\"></a><div id=\"fancybox-title\"></div><a href=\"javascript:;\" id=\"fancybox-left\"><span class=\"fancy-ico\" id=\"fancybox-left-ico\"></span></a><a href=\"javascript:;\" id=\"fancybox-right\"><span class=\"fancy-ico\" id=\"fancybox-right-ico\"></span></a></div></div></div>\n    <div id=\"mm-blocker\" class=\"mm-slideout\"></div><div id=\"cboxOverlay\" style=\"display: none;\"></div><div id=\"colorbox\" class=\"\" role=\"dialog\" tabindex=\"-1\" style=\"display: none;\"><div id=\"cboxWrapper\"><div><div id=\"cboxTopLeft\" style=\"float: left;\"></div><div id=\"cboxTopCenter\" style=\"float: left;\"></div><div id=\"cboxTopRight\" style=\"float: left;\"></div></div><div style=\"clear: left;\"><div id=\"cboxMiddleLeft\" style=\"float: left;\"></div><div id=\"cboxContent\" style=\"float: left;\"><div id=\"cboxTitle\" style=\"float: left;\"></div><div id=\"cboxCurrent\" style=\"float: left;\"></div><button type=\"button\" id=\"cboxPrevious\"></button><button type=\"button\" id=\"cboxNext\"></button><button id=\"cboxSlideshow\"></button><div id=\"cboxLoadingOverlay\" style=\"float: left;\"></div><div id=\"cboxLoadingGraphic\" style=\"float: left;\"></div></div><div id=\"cboxMiddleRight\" style=\"float: left;\"></div></div><div style=\"clear: left;\"><div id=\"cboxBottomLeft\" style=\"float: left;\"></div><div id=\"cboxBottomCenter\" style=\"float: left;\"></div><div id=\"cboxBottomRight\" style=\"float: left;\"></div></div></div><div style=\"position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;\"></div></div><a id=\"lbLauncher\" class=\"lytebox\" style=\"display: none;\"></a><div id=\"lbOverlay\" class=\"black\" style=\"display: none;\"></div><div id=\"lbMain\" style=\"display: none;\"><div id=\"lbOuterContainer\" class=\"black\" style=\"border-radius: 8px;\"><div id=\"lbTopContainer\" class=\"black\" style=\"border-radius: 8px;\"><div id=\"lbTopData\" class=\"black\"><span id=\"lbTitleTop\"></span><span id=\"lbNumTop\"></span></div><div id=\"lbTopNav\"><a id=\"lbCloseTop\" title=\"Закрыть (Esc)\" class=\"black\" href=\"javascript:void(0)\"></a><a id=\"lbPrintTop\" title=\"Печать\" class=\"black\" href=\"javascript:void(0)\"></a><a id=\"lbNextTop\" title=\"Следующая (→)\" class=\"black\" href=\"javascript:void(0)\"></a><a id=\"lbPauseTop\" title=\"Пауза (spacebar)\" class=\"black\" href=\"javascript:void(0)\" style=\"display: none;\"></a><a id=\"lbPlayTop\" title=\"Презентация (spacebar)\" class=\"black\" href=\"javascript:void(0)\" style=\"display: none;\"></a><a id=\"lbPrevTop\" title=\"Предыдущая (←)\" class=\"black\" href=\"javascript:void(0)\"></a></div></div><div id=\"lbIframeContainer\" style=\"display: none;\"><iframe id=\"lbIframe\" name=\"lbIframe\" frameborder=\"0\" class=\"black\" style=\"display: none;\"></iframe></div><div id=\"lbImageContainer\"><img id=\"lbImage\" class=\"black\"><div id=\"lbHoverNav\"><a id=\"lbPrevHov\" title=\"Предыдущая (←)\" class=\"black\" href=\"javascript:void(0)\"></a><a id=\"lbNextHov\" title=\"Следующая (→)\" class=\"black\" href=\"javascript:void(0)\"></a></div></div><div id=\"lbLoading\" class=\"black\"></div><div id=\"lbBottomContainer\" class=\"black\" style=\"border-radius: 8px;\"><div id=\"lbBottomData\" class=\"black\"><span id=\"lbTitleBottom\"></span><span id=\"lbNumBottom\"></span><span id=\"lbDescBottom\"></span></div><div id=\"lbBottomNav\"><a id=\"lbClose\" title=\"Закрыть (Esc)\" class=\"black\" href=\"javascript:void(0)\"></a><a id=\"lbPrint\" title=\"Печать\" class=\"black\" href=\"javascript:void(0)\" style=\"display: none;\"></a><a id=\"lbNext\" title=\"Следующая (→)\" class=\"black\" href=\"javascript:void(0)\"></a><a id=\"lbPause\" title=\"Пауза (spacebar)\" class=\"black\" href=\"javascript:void(0)\" style=\"display: none;\"></a><a id=\"lbPlay\" title=\"Презентация (spacebar)\" class=\"black\" href=\"javascript:void(0)\" style=\"display: none;\"></a><a id=\"lbPrev\" title=\"Предыдущая (←)\" class=\"black\" href=\"javascript:void(0)\"></a></div></div></div></div></body></html>",
+  "text": "Ремонт квартир в Казани - Kazan-Remonts.ru Дизайн Для ванной Детская Гостиная Стили Отделка Пол Потолок Сантехника Стены Окна Материалы Керамогранит Электрика и освещение Ремонт Мебель Фурнитура Кухня Дизайн Для ванной Детская Гостиная Стили Отделка Пол Потолок Сантехника Стены Окна Материалы Керамогранит Электрика и освещение Ремонт Мебель Фурнитура Кухня Toggle navigation О компании Наши работы Прайс-лист Статьи Контакты Выезд замерщика бесплатно! Уборка и вывоз мусора за наш счет Калькулятор ремонта Ремонт квартиры Ремонт квартир под ключ Косметический ремонт квартиры Капитальный ремонт квартиры в Москве Евроремонт квартир в Москве Ремонт однокомнатной квартиры Ремонт двухкомнатной квартиры Ремонт трехкомнатной квартиры Ремонт четырехкомнатной квартиры Ремонт студии Дизайнерский ремонт квартир Ремонт комнаты Ремонт спальни Ремонт в детской Ремонт гостиной Ремонт прихожей Ремонт кухни Ремонт кухни в хрущевке Ремонт кухни под ключ Капитальный ремонт кухни Ремонт маленькой кухни Косметический ремонт кухни Ремонт санузла Косметический ремонт ванной комнаты Ремонт ванной под ключ Санузел под ключ Недорогой ремонт ванных Ремонт маленьких ванных Ремонт балкона Утепление балконов Утепление лоджии Отделка балкона Дополнительно Ремонт таунхаусов Ремонт коттеджей Ремонт офисов Ремонт складских помещений Ремонт в бюджетном учреждении Ремонт помещений Установка натяжных потолков Настил пола Стяжка полов Шумоизоляция пола Замена сантехники Циклевка паркета Установка межкомнатных дверей Установка стальных дверей Ремонт кухонной мебели Монтаж металлочерепицы Монтаж сайдинга Дизайн Для ванной Детская Гостиная Стили Отделка Пол Потолок Сантехника Стены Окна Материалы Керамогранит Электрика и освещение Ремонт Мебель Фурнитура Кухня Статьи о ремонте Ремонт квартир в Казани. Мы осуществляем ремонт квартир и коттеджей в г. Казань с 2003 года. Мы берем на себя Ваши проблемы, которые могут возникнуть при отделке квартиры, учитываем все Ваши пожелания. Выполняем ремонт квартир с учётом материальных возможностей наших клиентов, а также в удобные для них сроки. Прайс-лист на отделочные работы На каждом этапе отделки квартиры у наших клиентов есть возможность контролировать как качество выполнения отделочных работ, так и статьи расходов. Стоимость наших услуг оптимальна в отделочной сфере по Казани. Мы делаем акцент на соблюдение строительно-ремонтных норм. Ниже представлены факторы, которые влияют на увеличение стоимости ремонта квартиры и коттеджа: - неровность поверхностей (стены, полы, потолки). - сложность и количество уровней при монтаже ГКЛ потолков. - объём (чем больше - тем дешевле). - высота потолков. Нужен ремонт квартир в Москве ? Перейдите по ссылке Заказав у нас ремонт квартиры , Вы получите высокое качество произведенных нами ремонтных работ. В процессе выполнения ремонта мы обеспечиваем экономию средств наших клиентов, т.к. за нами не будет необходимости что-либо переделывать. Просмотрев портфолио выполненного нами ремонта в Казани, Вы воочию представите весь комплекс отделочных работ, которые мы можем предложить по приемлемым ценам. Виды ремонта Выбор вида ремонта большей частью зависит от состояния квартиры, имеющегося времени, а также материальных возможностей клиента для осуществления данного вида ремонта. Таким образом клиент может заказать частичный , комплексный , или косметический ремонт квартиры . Производство отдельных отделочных работ разными бригадами или фирмами в сумме обойдется Вам гораздо дороже. Комплексный ремонт квартиры - ремонт квартиры под ключ, обойдется значительно дешевле, если его сделает 1 подрядчик. Мы предлагаем отделку квартиры или коттеджа под ключ, (с отделкой стен, пола, потолка) выполняя его даже по самым сложным дизайнерским проектам. Также поможем подобрать наиболее подходящие материалы. Ремонт, выполненный нами - это высокотехнологичная отделка вашего жилища. Мы используем новейшие строительно- ремонтные технологии и отделочные материалы. Мы работаем без предоплаты. Расчет с нами осуществляется по факту произведенных нами работ. Отделка квартир под ключ - это не всегда большие деньги. В ценовой политике мы стремимся индивидуально подходить к каждому клиенту, принимая во внимание его интересы. Ремонт, это как правило, изменение интерьера, которое в свою очередь вносит в нашу жизнь новизну и благотворно влияет на эмоциональное состояние. Качественная отделка может придать даже самым запущенным интерьерам неповторимый облик, которым Вы будете наслаждаться ещё долгое время. Мы очень дорожим репутацией, и поэтому качественный ремонт - это основная реклама нашей деятельности. Мы приедем на объект в любое удобное для клиента время, сделаем все необходимые замеры, ответим на имеющиеся у Вас вопросы, поможем определиться какой именно ремонт Вам необходим, с количеством необходимого для отделки материала, а также составим смету и всё это бесплатно! До осмотра нами объекта можно говорить лишь о примерной стоимости ремонтных работ. Окончательная цена отделки квартиры складывается из сложности работ, а также объёма производимых работ. С помощью изложенной ниже таблички Вы можете сами прикинуть примерную стоимость отделочных работ, исходя из Ваших требований . (Также смотрите прайс-лист ,или воспользуйтесь сметным калькулятором ) Косметический ремонт квартиры от 2500 руб/кв.м.(по полу) Состав работ (предположительно): Комплексный, капитальный ремонт квартиры от 3300 руб/кв.м. (по полу) Состав работ (предположительно): Выравнивание стен по плоскости Шпаклевание потолка 2-3 раза и его окраска в 2 слоя; Шпаклевание стен и оклейка обоями; Стяжка пола; Укладка ламината или настил линолеума; Монтаж плинтусов; Покраска труб отопления; Покраска откосов; Покраска окон; Замена электроточек на новые; Вынос строительного мусора. Электро- монтажные работы (полная замена электропроводки, если требуется); Ремонт полов,стен и потолков (штукатурка стен по маякам, стяжка полов, выравнивание потолков); Монтаж гипсокартонных многоуровневых потолков; Укладка ламината или паркетной доски; Монтаж плинтусов; Санузел, ванная комната, туалет \"под ключ\"; Поклейка стеклохолста на окрашиваемые поверхности Покраска потолков и откосов; Окраска стен или оклейка их обоями; Вынос строительного мусора... Советуем прочитать еще и памятку по ремонту в квартире . Контакты: г. Казань | Тел: +7 (950)-323-27-61 info@kazan-remonts.ru теги: ремонт квартир в Казани; ремонтные работы в квартире; ремонт квартир под ключ в г. Казань; ремонт хрущевки, ленинградки; капитальный ремонт в новостройках Главная Наши услуги • Отделка квартир • Комплексный ремонт • Косметический ремонт • Частичный ремонт • Изготовление лепнины (гипс) Прайс листы • Подробный список цен на отделочные работы • Прайс-лист на основные отделочные работы • На изготовление и монтаж лепнины Калькуляторы для подсчета сметы Калькулятор для подсчета сметы комплексного ремонта Калькулятор для подсчета сметы частичного ремонта Ремонт и дизайн комнат • Ремонт гостиной • Отделка кухни • Дизайн спальни • Ремонт детской комнаты • Ремонт ванной комнаты • Утепление балкона Портфолио Отделочные работы Контакты Карта сайта Реклама на сайте О компании Преимущества Наши работы Статьи Контакты Карта сайта Политика конфиденциальности Интернет-маркетинг от EyeMedia Digital Marketing Оставьте заявку Нажимая кнопку «Отправить», вы соглашаетесь с Политикой конфиденциальности Отправить Спасибо! Мы скоро с вами свяжемся Закрыть",
+  "json_ld": [],
+  "document": {
+    "title": "Ремонт квартир в Казани - Kazan-Remonts.ru",
+    "meta_description": "Ремонт квартир в Казани.Ремонтные работы в квартирах г.Казань.Ремонт квартир под ключ; комплексный ремонт квартир",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "",
+    "lang": "ru-RU",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "#mm-1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/blog/interior",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "/blog/dlya-vannoj",
+        "text": "Для ванной",
+        "rel": ""
+      },
+      {
+        "href": "/blog/detskaya",
+        "text": "Детская",
+        "rel": ""
+      },
+      {
+        "href": "/blog/gostinaya",
+        "text": "Гостиная",
+        "rel": ""
+      },
+      {
+        "href": "/blog/arcstyle",
+        "text": "Стили",
+        "rel": ""
+      },
+      {
+        "href": "#mm-2",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/blog/otdelka",
+        "text": "Отделка",
+        "rel": ""
+      },
+      {
+        "href": "/blog/floor",
+        "text": "Пол",
+        "rel": ""
+      },
+      {
+        "href": "/blog/ceiling",
+        "text": "Потолок",
+        "rel": ""
+      },
+      {
+        "href": "/blog/santehnik",
+        "text": "Сантехника",
+        "rel": ""
+      },
+      {
+        "href": "/blog/walls",
+        "text": "Стены",
+        "rel": ""
+      },
+      {
+        "href": "/blog/windows-and-doors",
+        "text": "Окна",
+        "rel": ""
+      },
+      {
+        "href": "#mm-3",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/blog/materials",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "/blog/keramogranit",
+        "text": "Керамогранит",
+        "rel": ""
+      },
+      {
+        "href": "/blog/electric",
+        "text": "Электрика и освещение",
+        "rel": ""
+      },
+      {
+        "href": "/blog/build",
+        "text": "Ремонт",
+        "rel": ""
+      },
+      {
+        "href": "#mm-4",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/blog/mebel",
+        "text": "Мебель",
+        "rel": ""
+      },
+      {
+        "href": "/blog/furnitura",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "/blog/kuhnya",
+        "text": "Кухня",
+        "rel": ""
+      },
+      {
+        "href": "/blog/interior",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "/blog/dlya-vannoj",
+        "text": "Для ванной",
+        "rel": ""
+      },
+      {
+        "href": "/blog/detskaya",
+        "text": "Детская",
+        "rel": ""
+      },
+      {
+        "href": "/blog/gostinaya",
+        "text": "Гостиная",
+        "rel": ""
+      },
+      {
+        "href": "/blog/arcstyle",
+        "text": "Стили",
+        "rel": ""
+      },
+      {
+        "href": "/blog/otdelka",
+        "text": "Отделка",
+        "rel": ""
+      },
+      {
+        "href": "/blog/floor",
+        "text": "Пол",
+        "rel": ""
+      },
+      {
+        "href": "/blog/ceiling",
+        "text": "Потолок",
+        "rel": ""
+      },
+      {
+        "href": "/blog/santehnik",
+        "text": "Сантехника",
+        "rel": ""
+      },
+      {
+        "href": "/blog/walls",
+        "text": "Стены",
+        "rel": ""
+      },
+      {
+        "href": "/blog/windows-and-doors",
+        "text": "Окна",
+        "rel": ""
+      },
+      {
+        "href": "/blog/materials",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "/blog/keramogranit",
+        "text": "Керамогранит",
+        "rel": ""
+      },
+      {
+        "href": "/blog/electric",
+        "text": "Электрика и освещение",
+        "rel": ""
+      },
+      {
+        "href": "/blog/build",
+        "text": "Ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/blog/mebel",
+        "text": "Мебель",
+        "rel": ""
+      },
+      {
+        "href": "/blog/furnitura",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "/blog/kuhnya",
+        "text": "Кухня",
+        "rel": ""
+      },
+      {
+        "href": "/o-kompanii/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/nashi-raboty/",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/prajs-list/",
+        "text": "Прайс-лист",
+        "rel": ""
+      },
+      {
+        "href": "/blog/",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator-stoimosti-remonta/",
+        "text": "Калькулятор ремонта",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/",
+        "text": "Ремонт квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/remont-kvartir-pod-klyuch/",
+        "text": "Ремонт квартир под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/kosmeticheskij-remont/",
+        "text": "Косметический ремонт квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/",
+        "text": "Капитальный ремонт квартиры в Москве",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/evroremont-kvartir/",
+        "text": "Евроремонт квартир в Москве",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/remont-odnokomnatnoj-kvartiry/",
+        "text": "Ремонт однокомнатной квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/remont-dvuxkomnatnoj-kvartiry/",
+        "text": "Ремонт двухкомнатной квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/remont-trexkomnatnoj-kvartiry/",
+        "text": "Ремонт трехкомнатной квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/remont-chetyrexkomnatnoj-kvartiry/",
+        "text": "Ремонт четырехкомнатной квартиры",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/remont-studii/",
+        "text": "Ремонт студии",
+        "rel": ""
+      },
+      {
+        "href": "/kapitalnyj/dizajnerskij-remont-kvartir/",
+        "text": "Дизайнерский ремонт квартир",
+        "rel": ""
+      },
+      {
+        "href": "/remont-komnaty/",
+        "text": "Ремонт комнаты",
+        "rel": ""
+      },
+      {
+        "href": "/remont-komnaty/remont-spalni/",
+        "text": "Ремонт спальни",
+        "rel": ""
+      },
+      {
+        "href": "/remont-komnaty/remont-v-detskoj/",
+        "text": "Ремонт в детской",
+        "rel": ""
+      },
+      {
+        "href": "/remont-komnaty/remont-gostinoj/",
+        "text": "Ремонт гостиной",
+        "rel": ""
+      },
+      {
+        "href": "/remont-komnaty/remont-prixozhej/",
+        "text": "Ремонт прихожей",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kuxni/",
+        "text": "Ремонт кухни",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kuxni-v-xrushhevke/",
+        "text": "Ремонт кухни в хрущевке",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kuxni-pod-klyuch/",
+        "text": "Ремонт кухни под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kuxni/kapitalnyj-remont-kuxni/",
+        "text": "Капитальный ремонт кухни",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kuxni/remont-malenkoj-kuxni/",
+        "text": "Ремонт маленькой кухни",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kuxni/kosmeticheskij-remont-kuxni/",
+        "text": "Косметический ремонт кухни",
+        "rel": ""
+      },
+      {
+        "href": "/remont-vannoj/",
+        "text": "Ремонт санузла",
+        "rel": ""
+      },
+      {
+        "href": "/kosmeticheskij-remont-vannoj-komnaty/",
+        "text": "Косметический ремонт ванной комнаты",
+        "rel": ""
+      },
+      {
+        "href": "/vannaya-pod-klyuch/",
+        "text": "Ремонт ванной под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/sanuzel-pod-klyuch/",
+        "text": "Санузел под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/remont-vannoj/nedorogoj-remont-vannyx/",
+        "text": "Недорогой ремонт ванных",
+        "rel": ""
+      },
+      {
+        "href": "/remont-vannoj/remont-malenkix-vannyx/",
+        "text": "Ремонт маленьких ванных",
+        "rel": ""
+      },
+      {
+        "href": "/remont-balkonov/",
+        "text": "Ремонт балкона",
+        "rel": ""
+      },
+      {
+        "href": "/uteplenie-balkonov/",
+        "text": "Утепление балконов",
+        "rel": ""
+      },
+      {
+        "href": "/remont-balkonov/uteplenie-lodzhii/",
+        "text": "Утепление лоджии",
+        "rel": ""
+      },
+      {
+        "href": "/otdelka-balkona/",
+        "text": "Отделка балкона",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/",
+        "text": "Дополнительно",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/remont-taunxausov/",
+        "text": "Ремонт таунхаусов",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/remont-kottedzhej/",
+        "text": "Ремонт коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/remont-ofisov/",
+        "text": "Ремонт офисов",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/remont-skladskix-pomeshhenij/",
+        "text": "Ремонт складских помещений",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/remont-v-byudzhetnom-uchrezhdenii/",
+        "text": "Ремонт в бюджетном учреждении",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/remont-pomeshhenij/",
+        "text": "Ремонт помещений",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/natyazhnye-potolki/",
+        "text": "Установка натяжных потолков",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/nastil-pola/",
+        "text": "Настил пола",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/styazhka-polov/",
+        "text": "Стяжка полов",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/shumoizolyaciya-pola/",
+        "text": "Шумоизоляция пола",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/zamena-santexniki/",
+        "text": "Замена сантехники",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/ciklevka-parketa/",
+        "text": "Циклевка паркета",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/mezhkomnatnye-dveri/",
+        "text": "Установка межкомнатных дверей",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/stalnye-dveri/",
+        "text": "Установка стальных дверей",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/kuxonnaya-mebel/",
+        "text": "Ремонт кухонной мебели",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/montazh-metallocherepicy/",
+        "text": "Монтаж металлочерепицы",
+        "rel": ""
+      },
+      {
+        "href": "/dopolnitelnye-uslugi-po-remontu/montazh-sajdinga/",
+        "text": "Монтаж сайдинга",
+        "rel": ""
+      },
+      {
+        "href": "/blog/interior",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "/blog/dlya-vannoj",
+        "text": "Для ванной",
+        "rel": ""
+      },
+      {
+        "href": "/blog/detskaya",
+        "text": "Детская",
+        "rel": ""
+      },
+      {
+        "href": "/blog/gostinaya",
+        "text": "Гостиная",
+        "rel": ""
+      },
+      {
+        "href": "/blog/arcstyle",
+        "text": "Стили",
+        "rel": ""
+      },
+      {
+        "href": "/blog/otdelka",
+        "text": "Отделка",
+        "rel": ""
+      },
+      {
+        "href": "/blog/floor",
+        "text": "Пол",
+        "rel": ""
+      },
+      {
+        "href": "/blog/ceiling",
+        "text": "Потолок",
+        "rel": ""
+      },
+      {
+        "href": "/blog/santehnik",
+        "text": "Сантехника",
+        "rel": ""
+      },
+      {
+        "href": "/blog/walls",
+        "text": "Стены",
+        "rel": ""
+      },
+      {
+        "href": "/blog/windows-and-doors",
+        "text": "Окна",
+        "rel": ""
+      },
+      {
+        "href": "/blog/materials",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "/blog/keramogranit",
+        "text": "Керамогранит",
+        "rel": ""
+      },
+      {
+        "href": "/blog/electric",
+        "text": "Электрика и освещение",
+        "rel": ""
+      },
+      {
+        "href": "/blog/build",
+        "text": "Ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/blog/mebel",
+        "text": "Мебель",
+        "rel": ""
+      },
+      {
+        "href": "/blog/furnitura",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "/blog/kuhnya",
+        "text": "Кухня",
+        "rel": ""
+      },
+      {
+        "href": "#mobilemenu",
+        "text": "Статьи о ремонте",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/price-list.htm",
+        "text": "Прайс-лист на отделочные работы",
+        "rel": ""
+      },
+      {
+        "href": "/moskva",
+        "text": "ремонт квартир в Москве",
+        "rel": ""
+      },
+      {
+        "href": "galeri.htm",
+        "text": "портфолио",
+        "rel": ""
+      },
+      {
+        "href": "part.htm",
+        "text": "частичный",
+        "rel": ""
+      },
+      {
+        "href": "complex.htm",
+        "text": "комплексный",
+        "rel": ""
+      },
+      {
+        "href": "kosmeticheskiy_remont.html",
+        "text": "косметический ремонт квартиры",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "примерную стоимость",
+        "rel": ""
+      },
+      {
+        "href": "price-list.htm",
+        "text": "прайс-лист",
+        "rel": ""
+      },
+      {
+        "href": "calc2.htm",
+        "text": "сметным калькулятором",
+        "rel": ""
+      },
+      {
+        "href": "klienty.html",
+        "text": "памятку по ремонту в квартире",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@kazan-remonts.ru",
+        "text": "info@kazan-remonts.ru",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Наши услуги",
+        "rel": ""
+      },
+      {
+        "href": "services.htm",
+        "text": "• Отделка квартир",
+        "rel": ""
+      },
+      {
+        "href": "complex.htm",
+        "text": "• Комплексный ремонт",
+        "rel": ""
+      },
+      {
+        "href": "kosmeticheskiy_remont.html",
+        "text": "• Косметический ремонт",
+        "rel": ""
+      },
+      {
+        "href": "part.htm",
+        "text": "• Частичный ремонт",
+        "rel": ""
+      },
+      {
+        "href": "lepnina.htm",
+        "text": "• Изготовление лепнины (гипс)",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Прайс листы",
+        "rel": ""
+      },
+      {
+        "href": "price-list.htm",
+        "text": "• Подробный список цен на отделочные работы",
+        "rel": ""
+      },
+      {
+        "href": "price-list2.htm",
+        "text": "• Прайс-лист на основные отделочные работы",
+        "rel": ""
+      },
+      {
+        "href": "lepprice.htm",
+        "text": "• На изготовление и монтаж лепнины",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Калькуляторы для подсчета сметы",
+        "rel": ""
+      },
+      {
+        "href": "calc2.htm",
+        "text": "Калькулятор для подсчета сметы комплексного ремонта",
+        "rel": ""
+      },
+      {
+        "href": "calculate.htm",
+        "text": "Калькулятор для подсчета сметы частичного ремонта",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Ремонт и дизайн комнат",
+        "rel": ""
+      },
+      {
+        "href": "gostinaya.htm",
+        "text": "• Ремонт гостиной",
+        "rel": ""
+      },
+      {
+        "href": "kuhnya.htm",
+        "text": "• Отделка кухни",
+        "rel": ""
+      },
+      {
+        "href": "spalnya.htm",
+        "text": "• Дизайн спальни",
+        "rel": ""
+      },
+      {
+        "href": "detskaya.htm",
+        "text": "• Ремонт детской комнаты",
+        "rel": ""
+      },
+      {
+        "href": "remont_vannoj_komnaty.html",
+        "text": "• Ремонт ванной комнаты",
+        "rel": ""
+      },
+      {
+        "href": "balkon.htm",
+        "text": "• Утепление балкона",
+        "rel": ""
+      },
+      {
+        "href": "galeri.htm",
+        "text": "Портфолио",
+        "rel": ""
+      },
+      {
+        "href": "statyi.htm",
+        "text": "Отделочные работы",
+        "rel": ""
+      },
+      {
+        "href": "kontakt.html",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "sitemap.html",
+        "text": "Карта сайта",
+        "rel": ""
+      },
+      {
+        "href": "reklama.html",
+        "text": "Реклама на сайте",
+        "rel": ""
+      },
+      {
+        "href": "/o-kompanii/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/preimushhestva/",
+        "text": "Преимущества",
+        "rel": ""
+      },
+      {
+        "href": "/nashi",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/blog/",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/sitemap",
+        "text": "Карта сайта",
+        "rel": ""
+      },
+      {
+        "href": "/politika-konfidencialnosti/",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://emdigital.ru/",
+        "text": "Интернет-маркетинг",
+        "rel": ""
+      },
+      {
+        "href": "/politika-konfidencialnosti/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "javascript:;",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:;",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Toggle navigation",
+      "Отправить",
+      "Закрыть"
+    ],
+    "h1_texts": [
+      "Ремонт квартир в Казани."
+    ],
+    "h2_texts": [
+      "Виды ремонта"
+    ],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 23,
+      "h1": 1,
+      "h2": 1,
+      "h3": 0,
+      "link": 182,
+      "image": 8,
+      "list_item": 140,
+      "strong": 0,
+      "form": 2,
+      "input": 3
+    }
+  }
+}

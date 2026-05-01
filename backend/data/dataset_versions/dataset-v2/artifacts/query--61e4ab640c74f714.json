@@ -1,0 +1,994 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://nn.fabrichnie-dveri.ru/",
+  "final_url": "https://nn.fabrichnie-dveri.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-encoding": "gzip",
+    "content-length": "20233",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:46:52 GMT",
+    "last-modified": "Wed, 29 Apr 2026 12:29:15 GMT",
+    "server": "nginx-reuseport/1.21.1",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/7.4.33"
+  },
+  "response_time_ms": 6670.8512,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:46:58.839084+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" class=\" yes-js js_active js\" style=\"--vh: 7.2px;\"><head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<meta name=\"format-detection\" content=\"telephone=no\">\n\t<meta name=\"format-detection\" content=\"date=no\">\t\n\t<meta name=\"format-detection\" content=\"address=no\">\n\t<meta name=\"format-detection\" content=\"email=no\">\n\t<link rel=\"icon\" href=\"https://nn.fabrichnie-dveri.ru/favicon.svg\" type=\"image/png\">\t\n\t\t\t\t\t<script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>\n\t\t\t\t<title>Купить двери в Нижнем Новгороде с доставкой и установкой</title>\n<meta name=\"robots\" content=\"max-image-preview:large\">\n\n<!-- The SEO Framework Создано Сибрэ Вайэр -->\n<meta name=\"robots\" content=\"max-snippet:-1,max-image-preview:standard,max-video-preview:-1\">\n<meta name=\"description\" content=\"Входные и межкомнатные двери в Нижнем Новгороде по ценам от производителя без наценок и переплат. Бесплатно замерим и установим двери на совесть, обучаем монтажников по ГОСТ.\">\n<meta property=\"og:image\" content=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\">\n<meta property=\"og:image:width\" content=\"120\">\n<meta property=\"og:image:height\" content=\"120\">\n<meta property=\"og:locale\" content=\"ru_RU\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:title\" content=\"Купить двери в Нижнем Новгороде с доставкой и установкой\">\n<meta property=\"og:description\" content=\"Входные и межкомнатные двери в Нижнем Новгороде по ценам от производителя без наценок и переплат. Бесплатно замерим и установим двери на совесть, обучаем монтажников по ГОСТ.\">\n<meta property=\"og:url\" content=\"https://nn.fabrichnie-dveri.ru/\">\n<meta property=\"og:site_name\" content=\"Двери – Нижний Новгород\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Купить двери в Нижнем Новгороде с доставкой и установкой\">\n<meta name=\"twitter:description\" content=\"Входные и межкомнатные двери в Нижнем Новгороде по ценам от производителя без наценок и переплат. Бесплатно замерим и установим двери на совесть, обучаем монтажников по ГОСТ.\">\n<meta name=\"twitter:image\" content=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\">\n<meta name=\"twitter:image:width\" content=\"120\">\n<meta name=\"twitter:image:height\" content=\"120\">\n<link rel=\"canonical\" href=\"https://nn.fabrichnie-dveri.ru/\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"url\":\"https://nn.fabrichnie-dveri.ru/\",\"name\":\"\\u0414\\u0432\\u0435\\u0440\\u0438 &#8211; \\u041d\\u0438\\u0436\\u043d\\u0438\\u0439 \\u041d\\u043e\\u0432\\u0433\\u043e\\u0440\\u043e\\u0434\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://nn.fabrichnie-dveri.ru/search/{search_term_string}/\",\"query-input\":\"required name=search_term_string\"}}</script>\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"url\":\"https://nn.fabrichnie-dveri.ru/\",\"name\":\"\\u0414\\u0432\\u0435\\u0440\\u0438 &#8211; \\u041d\\u0438\\u0436\\u043d\\u0438\\u0439 \\u041d\\u043e\\u0432\\u0433\\u043e\\u0440\\u043e\\u0434\",\"logo\":\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\"}</script>\n<!-- / The SEO Framework Создано Сибрэ Вайэр | 3.88ms meta | 1.49ms boot -->\n\n<link rel=\"dns-prefetch\" href=\"//ajax.googleapis.com\">\n<link rel=\"stylesheet\" id=\"wc-blocks-vendors-style-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css\" media=\"all\">\n<link rel=\"stylesheet\" id=\"wc-blocks-style-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css\" media=\"all\">\n<link rel=\"stylesheet\" id=\"style-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/style.css\" media=\"all\">\n<link rel=\"stylesheet\" id=\"nunito-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/fonts/nunito/stylesheet.css\" media=\"screen\">\n<link rel=\"stylesheet\" id=\"fancybox-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/libs/fancybox/jquery.fancybox.min.css\" media=\"screen\">\n<link rel=\"stylesheet\" id=\"swiper-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/libs/swiper/swiper-bundle.min.css\" media=\"screen\">\n<link rel=\"stylesheet\" id=\"custom-css\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/css/custom.css\" media=\"screen\">\n<script type=\"text/template\" id=\"tmpl-variation-template\">\n\t<div class=\"woocommerce-variation-description\">{{{ data.variation.variation_description }}}</div>\n\t<div class=\"woocommerce-variation-price\">{{{ data.variation.price_html }}}</div>\n\t<div class=\"woocommerce-variation-availability\">{{{ data.variation.availability_html }}}</div>\n</script>\n<script type=\"text/template\" id=\"tmpl-unavailable-variation-template\">\n\t<p>Этот товар недоступен. Пожалуйста, выберите другую комбинацию.</p>\n</script>\n\n<script type=\"text/template\" id=\"tmpl-rtwpvs-variation-template\">\n    {{{ data.price_html }}}\n    <div class=\"woocommerce-variation-availability\">{{{ data.variation.availability_html }}}</div>\n</script>\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\" id=\"jquery-js\"></script>\n<style></style><style></style><style>\n                .lmp_load_more_button.br_lmp_button_settings .lmp_button:hover {\n                    background-color: #f26422!important;\n                    color: #ffffff!important;\n                }\n                .lmp_load_more_button.br_lmp_prev_settings .lmp_button:hover {\n                    background-color: #9999ff!important;\n                    color: #111111!important;\n                }div.product.lazy, .berocket_lgv_additional_data.lazy{opacity:0;}</style><!-- Novofon -->\n    <script type=\"text/javascript\" async=\"\" src=\"https://widget.novofon.ru/novofon.js?k=6NbX7D5rrr08VxIm_QuZgx80mIysAG9s\"></script>\n<!-- Novofon --><meta name=\"yandex-verification\" content=\"b545098133bcbb8f\"><meta name=\"google-site-verification\" content=\"rx1hoOn8WRH0f_2dlZjb6XpBt8y6p-219cXMHe5G69o\">\n\t\t\t<script>\n\t\t\t\tfunction analytics(){\n\t\t\t\t\tym('87355588', 'reachGoal', 'zayavka');\n\t\t\t\t}\n\t\t\t</script>\t<script>\n\t\tvar sum_min = '5000',\n\t\tsum_max = '500000',\t\t\n\t\tperiod_min = '2',\n\t\tperiod_max = '12';\t\t\t\n\t</script>\t\n\t\t<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>\n\t<link rel=\"icon\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon-51x51.jpg\" sizes=\"32x32\">\n<link rel=\"icon\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\" sizes=\"192x192\">\n<link rel=\"apple-touch-icon\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\">\n<meta name=\"msapplication-TileImage\" content=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\">\n<style id=\"theia-sticky-sidebar-stylesheet-TSS\">.theiaStickySidebar:after {content: \"\"; display: table; clear: both;}</style><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" src=\"https://widget.novofon.ru/widget/js/comagic.widgets.min.js\"></script><script src=\"https://widget.novofon.ru/widget/js/lead/desktop/personal_form.min.js\" async=\"\" id=\"comagic-vc-personal_form\"></script><script src=\"https://widget.novofon.ru/widget/js/compiled-templates.js?v=5b45fcff\" async=\"\"></script><script src=\"https://widget.novofon.ru/widget/js/lead/desktop/call_generator3.min.js\" async=\"\" id=\"comagic-vc-call_generator3\"></script><script src=\"https://widget.novofon.ru/widget/js/lead/desktop/offline_message_generator2.min.js\" async=\"\" id=\"comagic-vc-offline_message_generator2\"></script></head>\n<body data-rsssl=\"1\" class=\"home page-template page-template-templates page-template-page-home page-template-templatespage-home-php page page-id-60 theme-DoorShopLite woocommerce-js rtwpvs rtwpvs-rounded rtwpvs-attribute-behavior-blur rtwpvs-archive-align-left rtwpvs-tooltip ywcas-door-shop-lite nn unknown\">\n    <header class=\"header\">\n        <div class=\"header__top\">\n            <div class=\"container\">\n\t\t\t\t<div class=\"header__top-container\">\n\t\t\t\t\t<ul class=\"header__top-menu\">\n\t\t\t\t\t\t<li id=\"menu__item-62\" class=\"menu__item\"><a id=\"menu__link-62\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/o-nas/\">О нас</a></li>\n<li id=\"menu__item-63\" class=\"menu__item\"><a id=\"menu__link-63\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/rassrochka/\">Рассрочка</a></li>\n<li id=\"menu__item-66\" class=\"menu__item\"><a id=\"menu__link-66\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/uslugi/\">Установка от 4 000 ₽</a></li>\n<li id=\"menu__item-67\" class=\"menu__item\"><a id=\"menu__link-67\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/garantii/\">Гарантия</a></li>\n<li id=\"menu__item-26668\" class=\"menu__item\"><a id=\"menu__link-26668\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/akczii/\">Акции</a></li>\n<li id=\"menu__item-65\" class=\"menu__item\"><a id=\"menu__link-65\" class=\"menu__link\" data-popup-btn=\"popup-letter\" href=\"#\">Написать директору</a></li>\n\t\n\t\t\t\t\t</ul>\n\t\t\t\t\t<div class=\"header__top-poisk\"></div>\n\t\t\t\t\t<div class=\"header__top-menu-poisk\">\n\t\t\t\t\t\t<div class=\"yith-ajaxsearchform-container \">\n\t<form role=\"search\" method=\"get\" id=\"yith-ajaxsearchform\" action=\"https://nn.fabrichnie-dveri.ru/\">\n\t\t<div class=\"yith-ajaxsearchform-container\">\n\t\t\t<div class=\"yith-ajaxsearchform-select\">\n\t\t\t\t<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"2207e0b080\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/?yclid=7710547526903176844\">\t\t\t\t\t<input type=\"hidden\" name=\"post_type\" class=\"yit_wcas_post_type\" id=\"yit_wcas_post_type\" value=\"any\">\n\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t<div class=\"search-navigation\">\n\t\t\t\t<label class=\"screen-reader-text\" for=\"yith-s\">Search for:</label>\n\t\t\t\t<input type=\"search\" value=\"\" name=\"s\" id=\"yith-s\" class=\"yith-s\" placeholder=\"Поиск по сайту\" data-append-to=\".search-navigation\" data-loader-icon=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/yith-woocommerce-ajax-search-premium/assets/images/preloader.gif\" data-min-chars=\"2\" autocomplete=\"off\">\n\t\t\t<div class=\"autocomplete-suggestions\" style=\"position: absolute; display: none; z-index: 9999;\"></div></div>\n\t\t\t\t\t\t\t<input type=\"submit\" id=\"yith-searchsubmit\" value=\"Search\">\n\t\t\t\t\t\t\t\t</div>\n\t<input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>\n</div>\n\t\t\t\t\t</div>\n                </div>\n\t\t\t</div>\n        </div>\n\t\t<div class=\"header__main\">\n\t\t\t\t<div class=\"container\">\n\t\t<div class=\"header__content\">\n\t\t\t<img class=\"logo\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/logo-new-1.svg\" alt=\"логотип\">\t\t\t<div class=\"header__free-measuring\">\n\t\t\t\t<button data-popup-btn=\"popup-measuring\" class=\"header__free-measuring-btn header__free-measuring-btn-new\">Бесплатный замер <br>в день обращения</button>\n\t\t\t\t\n\t\t\t</div>\n\t\t\t<ul class=\"header__tabs none\">\n\t\t\t\t<li data-tab=\"goods\" class=\"active\">Товары</li>\n\t\t\t\t<li data-tab=\"about-us\">О нас</li>\n\t\t\t</ul>\n\t\t\t<div class=\"header__popup-inner-icons--menu\">\n\t\t\t\t<ul class=\"header__items mgl\">\n\n\t\t\t\t\t<li class=\"header__items-heart item-location none\">\n\t\t\t\t\t\t<a class=\"items-heart__link\" href=\"https://nn.fabrichnie-dveri.ru/kontakty/\">\n\t\t\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/location-icon-new.svg\" alt=\"Контакты\">\n\t\t\t\t\t\t\t<span class=\"header__items-heart-text\">Контакты</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\t\t\t\t\t<li class=\"header__items-heart item-wishlist none\">\n\t\t\t\t\t\t\t<a class=\"items-heart__link\" href=\"https://nn.fabrichnie-dveri.ru/wishlist/\">\n\t\t\t\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/heart-icon-new.svg\" alt=\"Избранное\">\n\t\t\t\t\t\t\t\t<span class=\"items-favourites\">0</span>\n\t\t\t\t\t\t\t\t<span class=\"header__items-heart-text\">Избранное</span>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\n\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t</ul>\n\t\t\t</div>\t\t\t\n\t\t\t<ul class=\"header__items mgl\">\n\t\t\t\t\t\t\t<li class=\"header__items-heart item-location none\">\n\t\t\t\t<a class=\"items-heart__link\" href=\"https://nn.fabrichnie-dveri.ru/kontakty/\">\n\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/location-icon-new.svg\" alt=\"Контакты\">\n\t\t\t\t\t<span class=\"header__items-heart-text\">Контакты</span>\n\t\t\t\t</a>\n\t\t\t</li>\t\n\t\t\t\t\t<li class=\"header__items-heart item-wishlist none\">\n\t\t\t\t\t<a class=\"items-heart__link\" href=\"https://nn.fabrichnie-dveri.ru/wishlist/\">\n\t\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/heart-icon-new.svg\" alt=\"Избранное\">\n\t\t\t\t\t\t<span class=\"items-favourites\">0</span>\n\t\t\t\t\t\t<span class=\"header__items-heart-text\">Избранное</span>\n\t\t\t\t\t</a>\n\t\t\t</li>\n\n\t\t\t\t\t</ul>\n\t\t\t<div class=\"header__contacts no-icon\">\n\t\t\t\t<a class=\"header__contacts-phone zphone\" href=\"tel:+78312199246\">+7 (831) 219-92-46</a>\n\t\t\t\t<a class=\"header__contacts-whatsapp orange\" data-popup-btn=\"popup-free-call\" href=\"#\">Вам перезвонить?</a>\t\t\t\t\n\t\t\t</div>\n            <a class=\"popup-call__btn-head\" href=\"tel:+78312350946\">Позвонить</a>\n\t\t\t<div class=\"header__burger\">\n\t\t\t\t<div class=\"header__burger-lines\">\n\t\t\t\t\t<span></span>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"header__burger-text orange\">меню</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\t\t</div>\n        <div class=\"header__popup header__popup--mobile\">\n\t\t\t<div class=\"header__popup-inner-icons-t\">\n    <div class=\"header__top-menu-poisk mobile\">\n\t\t<div class=\"yith-ajaxsearchform-container \">\n\t<form role=\"search\" method=\"get\" id=\"yith-ajaxsearchform\" action=\"https://nn.fabrichnie-dveri.ru/\">\n\t\t<div class=\"yith-ajaxsearchform-container\">\n\t\t\t<div class=\"yith-ajaxsearchform-select\">\n\t\t\t\t<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"2207e0b080\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/?yclid=7710547526903176844\">\t\t\t\t\t<input type=\"hidden\" name=\"post_type\" class=\"yit_wcas_post_type\" id=\"yit_wcas_post_type\" value=\"any\">\n\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t<div class=\"search-navigation\">\n\t\t\t\t<label class=\"screen-reader-text\" for=\"yith-s\">Search for:</label>\n\t\t\t\t<input type=\"search\" value=\"\" name=\"s\" id=\"yith-s\" class=\"yith-s\" placeholder=\"Поиск по сайту\" data-append-to=\".search-navigation\" data-loader-icon=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/yith-woocommerce-ajax-search-premium/assets/images/preloader.gif\" data-min-chars=\"2\" autocomplete=\"off\">\n\t\t\t<div class=\"autocomplete-suggestions\" style=\"position: absolute; display: none; z-index: 9999;\"></div></div>\n\t\t\t\t\t\t\t<input type=\"submit\" id=\"yith-searchsubmit\" value=\"Search\">\n\t\t\t\t\t\t\t\t</div>\n\t<input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>\n</div>\n\t\t<span class=\"search-close\"></span>\n\t</div>\n</div>\n\n<nav data-tab=\"goods\" class=\"header__popup-inner active\">    \n\t<ul class=\"header__popup-menu reset\">\n\t<li id=\"menu__item-32013\" class=\"menu__item menu__item--has-children\"><span class=\"menu__button-toggle\"><span class=\"menu__icon-plus\"></span><a id=\"menu__link-32013\" class=\"menu__link\" href=\"#\">Двери по производителям</a></span>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"menu__sub-menu  sub-menu--level-1\">\n\t<li id=\"menu__item-32014\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32014\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4964%5D\">Airon</a></li>\n\t<li id=\"menu__item-32015\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32015\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4812%5D\">Eldorf</a></li>\n\t<li id=\"menu__item-32016\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32016\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4867%5D\">Loyard</a></li>\n\t<li id=\"menu__item-32017\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32017\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B5531%5D\">PVDOORS</a></li>\n\t<li id=\"menu__item-32018\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32018\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4959%5D\">Азбука дверей</a></li>\n\t<li id=\"menu__item-32019\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32019\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B5227%5D\">Дверум</a></li>\n\t<li id=\"menu__item-32020\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32020\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4307%5D\">Поволжская дверная компания</a></li>\n\t<li id=\"menu__item-32021\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32021\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4620%5D\">ТЕХНО-СТРОЙ</a></li>\n\t<li id=\"menu__item-32022\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32022\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel%5B4992%5D\">Ferroni</a></li>\n\t<li id=\"menu__item-32023\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32023\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel%5B5260%5D\">Мастино</a></li>\n\t<li id=\"menu__item-32024\" class=\"menu__item menu__item--child\"><a id=\"menu__link-32024\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel%5B4502%5D\">Россия (Йошкар-Ола)</a></li>\n</ul></div>\n</li>\n<li id=\"menu__item-114\" class=\"menu__item menu__item--has-children\"><span class=\"menu__button-toggle\"><span class=\"menu__icon-plus\"></span><a id=\"menu__link-114\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/\">Межкомнатные двери</a></span>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"menu__sub-menu  sub-menu--level-1\">\n\t<li id=\"menu__item-115\" class=\"menu__item menu__item--child\"><a id=\"menu__link-115\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/\">Двери ПВХ</a></li>\n\t<li id=\"menu__item-122\" class=\"menu__item menu__item--child\"><a id=\"menu__link-122\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/\">Двери экошпон</a></li>\n\t<li id=\"menu__item-119\" class=\"menu__item menu__item--child\"><a id=\"menu__link-119\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/\">Ламинированные двери</a></li>\n\t<li id=\"menu__item-116\" class=\"menu__item menu__item--child\"><a id=\"menu__link-116\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/massiv/\">Двери из массива</a></li>\n\t<li id=\"menu__item-121\" class=\"menu__item menu__item--child\"><a id=\"menu__link-121\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/\">Шпонированные двери</a></li>\n\t<li id=\"menu__item-117\" class=\"menu__item menu__item--child\"><a id=\"menu__link-117\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/plastik-cpl/\">Двери пластик CPL</a></li>\n\t<li id=\"menu__item-124\" class=\"menu__item menu__item--child\"><a id=\"menu__link-124\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/\">Эмалевые двери</a></li>\n</ul></div>\n</li>\n<li id=\"menu__item-127\" class=\"menu__item menu__item--has-children\"><span class=\"menu__button-toggle\"><span class=\"menu__icon-plus\"></span><a id=\"menu__link-127\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/\">Входные двери</a></span>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"menu__sub-menu  sub-menu--level-1\">\n\t<li id=\"menu__item-130\" class=\"menu__item menu__item--child\"><a id=\"menu__link-130\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/\">Российские входные двери</a></li>\n\t<li id=\"menu__item-129\" class=\"menu__item menu__item--child\"><a id=\"menu__link-129\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/protivopozharnye/\">Противопожарные двери</a></li>\n</ul></div>\n</li>\n<li id=\"menu__item-132\" class=\"menu__item\"><a id=\"menu__link-132\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/arki/\">Арки</a></li>\n<li id=\"menu__item-133\" class=\"menu__item menu__item--has-children\"><span class=\"menu__button-toggle\"><span class=\"menu__icon-plus\"></span><a id=\"menu__link-133\" class=\"menu__link\" href=\"#\">Другая продукция</a></span>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"menu__sub-menu  sub-menu--level-1\">\n\t<li id=\"menu__item-136\" class=\"menu__item menu__item--child\"><a id=\"menu__link-136\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/\">Фурнитура</a></li>\n</ul></div>\n</li>\n<li id=\"menu__item-26677\" class=\"menu__item\"><a id=\"menu__link-26677\" class=\"menu__link menu__link-raspr\" href=\"https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/\">Распродажа</a></li>\n<li id=\"menu__item-137\" class=\"menu__item\"><a id=\"menu__link-137\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/uslugi/\">Установка от 2 975 ₽</a></li>\n<li id=\"menu__item-138\" class=\"menu__item\"><a id=\"menu__link-138\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/akczii/\">Акции</a></li>\n\t\n\t</ul>\t\n</nav>\n<nav data-tab=\"about-us\" class=\"header__popup-inner header-popup-inner-about-us\">\n\t<ul class=\"header__popup-menu reset\">\n\t<li id=\"menu__item-32012\" class=\"menu__item\"><a id=\"menu__link-32012\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/kontakty/\">Контакты</a></li>\n<li id=\"menu__item-82\" class=\"menu__item\"><a id=\"menu__link-82\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/o-nas/\">О нас</a></li>\n<li id=\"menu__item-83\" class=\"menu__item\"><a id=\"menu__link-83\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/garantii/\">Гарантии</a></li>\n<li id=\"menu__item-81\" class=\"menu__item\"><a id=\"menu__link-81\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/otzyvy/\">Отзывы</a></li>\n<li id=\"menu__item-84\" class=\"menu__item\"><a id=\"menu__link-84\" class=\"menu__link\" data-popup-btn=\"popup-letter\" href=\"#\">Написать письмо директору</a></li>\n<li id=\"menu__item-80\" class=\"menu__item\"><a id=\"menu__link-80\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/rassrochka/\">Рассрочка</a></li>\n\t\n\t</ul> \n</nav>\n<div class=\"header__popup-contacts\">\n\t<button class=\"btn\" data-popup-btn=\"popup-free-call\">Бесплатный замер</button>\n</div>        </div>\n        <div class=\"header__popup-desktop\">\n\t\t\t<div class=\"container\">\n\t<nav class=\"header__popup-nav\">\n\t\t<ul class=\"header__popup-list\">\n\t\t<li id=\"menu__item-2768\" class=\"menu__item\"><a id=\"menu__link-2768\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/\">Межкомнатные двери</a></li>\n<li id=\"menu__item-2776\" class=\"menu__item\"><a id=\"menu__link-2776\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/\">Двери экошпон</a></li>\n<li id=\"menu__item-2769\" class=\"menu__item\"><a id=\"menu__link-2769\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/\">Двери ПВХ</a></li>\n<li id=\"menu__item-2773\" class=\"menu__item\"><a id=\"menu__link-2773\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/\">Ламинированные двери</a></li>\n<li id=\"menu__item-2770\" class=\"menu__item\"><a id=\"menu__link-2770\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/massiv/\">Двери из массива</a></li>\n<li id=\"menu__item-2775\" class=\"menu__item\"><a id=\"menu__link-2775\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/\">Шпонированные двери</a></li>\n<li id=\"menu__item-2778\" class=\"menu__item\"><a id=\"menu__link-2778\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/\">Эмалевые двери</a></li>\n<li id=\"menu__item-2771\" class=\"menu__item\"><a id=\"menu__link-2771\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/plastik-cpl/\">Двери пластик CPL</a></li>\n                        \n\t\t</ul>\n\t\t<ul class=\"header__popup-list\">\n\t\t<li id=\"menu__item-2779\" class=\"menu__item\"><a id=\"menu__link-2779\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/\">Входные двери</a></li>\n<li id=\"menu__item-2782\" class=\"menu__item\"><a id=\"menu__link-2782\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/\">Российские входные двери</a></li>\n<li id=\"menu__item-2781\" class=\"menu__item\"><a id=\"menu__link-2781\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/protivopozharnye/\">Противопожарные двери</a></li>\n<li id=\"menu__item-2783\" class=\"menu__item header__item-mg\"><a id=\"menu__link-2783\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/product-category/arki/\">Арки</a></li>\n<li id=\"menu__item-2784\" class=\"menu__item\"><a id=\"menu__link-2784\" class=\"menu__link header__link-bold\" href=\"#\">Другая продукция</a></li>\n<li id=\"menu__item-2787\" class=\"menu__item\"><a id=\"menu__link-2787\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/\">Фурнитура</a></li>\n                    \n\t\t</ul>\n\n\t\t<ul class=\"header__popup-list\">\n\t\t<li id=\"menu__item-26671\" class=\"menu__item\"><a id=\"menu__link-26671\" class=\"menu__link header__link-bold menu__link-raspr\" href=\"https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/\">Распродажа</a></li>\n<li id=\"menu__item-2788\" class=\"menu__item header__item-mgb\"><a id=\"menu__link-2788\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/akczii/\">Акции</a></li>\n<li id=\"menu__item-2794\" class=\"menu__item header__item-mgb\"><a id=\"menu__link-2794\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/uslugi/\">Установка от 4 000 ₽</a></li>\n<li id=\"menu__item-2793\" class=\"menu__item header__item-mgb\"><a id=\"menu__link-2793\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/rassrochka/\">Рассрочка</a></li>\n<li id=\"menu__item-2791\" class=\"menu__item header__item-mgb\"><a id=\"menu__link-2791\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/o-nas/\">О нас</a></li>\n<li id=\"menu__item-2789\" class=\"menu__item\"><a id=\"menu__link-2789\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/garantii/\">Гарантии</a></li>\n<li id=\"menu__item-2792\" class=\"menu__item\"><a id=\"menu__link-2792\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/otzyvy/\">Отзывы</a></li>\n<li id=\"menu__item-2915\" class=\"menu__item\"><a id=\"menu__link-2915\" class=\"menu__link\" data-popup-btn=\"popup-letter\" href=\"#\">Написать директору</a></li>\n<li id=\"menu__item-2790\" class=\"menu__item header__item-mgb\"><a id=\"menu__link-2790\" class=\"menu__link header__link-bold\" href=\"https://nn.fabrichnie-dveri.ru/kontakty/\">Контакты</a></li>\n\t\t\t\t\t\t\n\t\t</ul>\n\t</nav>\n</div>        </div>\n        <a class=\"header__measuring\" href=\"#\">\n            <span class=\"header__measuring-text orange\" data-popup-btn=\"popup-measuring\">Бесплатный замер.</span><span class=\"header__measuring-text\">Выезжаем в день обращения</span>\n        </a>\n        <div class=\"header__bottom\">\n            <div class=\"container\">\n                <nav class=\"header__bottom-nav\">\n                    <ul class=\"header__bottom-menu\">\n\t\t\t\t\t\t<li id=\"menu__item-140\" class=\"menu__item menu__item--has-children\"><a id=\"menu__link-140\" class=\"menu__link header__link header__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/\">Межкомнатные</a>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"smart-filter-links\"><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4964]\" title=\"Airon\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-1.png\" alt=\"Airon\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4812]\" title=\"Eldorf\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-13.png\" alt=\"Eldorf\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4867]\" title=\"Loyard\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-10.png\" alt=\"Loyard\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5531]\" title=\"PVDOORS\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-3.png\" alt=\"PVDOORS\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4959]\" title=\"Азбука дверей\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-7.png\" alt=\"Азбука дверей\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5227]\" title=\"Дверум\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-6.png\" alt=\"Дверум\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4307]\" title=\"Поволжская дверная компания (Россия)\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-12.png\" alt=\"Поволжская дверная компания (Россия)\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4620]\" title=\"ТЕХНО-СТРОЙ\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-8.png\" alt=\"ТЕХНО-СТРОЙ\" class=\"filter-image\"></span></a></li></ul>\n\n<ul class=\"menu__sub-menu header__dropdown sub-menu--level-1\">\n\t<li id=\"menu__item-141\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/vinil.jpg\" alt=\"Двери ПВХ\"><p class=\"menu__link-title\">Двери ПВХ</p><p class=\"menu__link-count\">86 товаров</p></a></li>\n\t<li id=\"menu__item-148\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/ekoshpon.jpg\" alt=\"Двери экошпон\"><p class=\"menu__link-title\">Двери экошпон</p><p class=\"menu__link-count\">129 товаров</p></a></li>\n\t<li id=\"menu__item-145\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/finishfleks.jpg\" alt=\"Ламинированные двери\"><p class=\"menu__link-title\">Ламинированные двери</p><p class=\"menu__link-count\">17 товаров</p></a></li>\n\t<li id=\"menu__item-142\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/massiv/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/massiv.jpg\" alt=\"Двери из массива\"><p class=\"menu__link-title\">Двери из массива</p><p class=\"menu__link-count\">7 товаров</p></a></li>\n\t<li id=\"menu__item-147\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/shpon.jpg\" alt=\"Шпонированные двери\"><p class=\"menu__link-title\">Шпонированные двери</p><p class=\"menu__link-count\">8 товаров</p></a></li>\n\t<li id=\"menu__item-150\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/emal.jpg\" alt=\"Эмалевые двери\"><p class=\"menu__link-title\">Эмалевые двери</p><p class=\"menu__link-count\">31 товар</p></a></li>\n\t<li id=\"menu__item-143\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/plastik-cpl/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/cpl.jpg\" alt=\"Двери пластик CPL\"><p class=\"menu__link-title\">Двери пластик CPL</p><p class=\"menu__link-count\">21 товар</p></a></li>\n</ul></div>\n</li>\n<li id=\"menu__item-153\" class=\"menu__item menu__item--has-children\"><a id=\"menu__link-153\" class=\"menu__link header__link header__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/\">Входные</a>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"smart-filter-links\"><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4992]\" title=\"Ferroni\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-2.png\" alt=\"Ferroni\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[5531]\" title=\"PVDOORS\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-3.png\" alt=\"PVDOORS\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4959]\" title=\"Азбука дверей\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-7.png\" alt=\"Азбука дверей\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[5227]\" title=\"Дверум\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-6.png\" alt=\"Дверум\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[5260]\" title=\"Мастино\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-11.png\" alt=\"Мастино\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4502]\" title=\"Россия (Йошкар-Ола)\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-14.png\" alt=\"Россия (Йошкар-Ола)\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4620]\" title=\"ТЕХНО-СТРОЙ\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-8.png\" alt=\"ТЕХНО-СТРОЙ\" class=\"filter-image\"></span></a></li></ul>\n\n<ul class=\"menu__sub-menu header__dropdown sub-menu--level-1\">\n\t<li id=\"menu__item-156\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/ros-vhod.jpg\" alt=\"Российские входные двери\"><p class=\"menu__link-title\">Российские входные двери</p><p class=\"menu__link-count\">302 товара</p></a></li>\n\t<li id=\"menu__item-155\" class=\"menu__item menu__item--child\"><a class=\"menu__link header__icon-door\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/protivopozharnye/\"><img class=\"menu__link-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/protivopozh.jpg\" alt=\"Противопожарные двери\"><p class=\"menu__link-title\">Противопожарные двери</p><p class=\"menu__link-count\">5 товаров</p></a></li>\n</ul></div>\n</li>\n<li id=\"menu__item-157\" class=\"menu__item\"><a class=\"menu__link header__link header__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/arki/\">Арки</a></li>\n<li id=\"menu__item-160\" class=\"menu__item\"><a class=\"menu__link header__link header__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/\">Фурнитура</a></li>\n<li id=\"menu__item-26670\" class=\"menu__item\"><a class=\"menu__link header__link menu__link-raspr\" href=\"https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/\">Распродажа</a></li>\n\t\t\t\t\t</ul>\n                </nav>\n            </div>\n        </div>\t\t\n    </header>\n\t<div class=\"warning container\"></div>\n\n<div class=\"warning-overpay-section\">\n\t<div class=\"warning-overpay container\">\n\t\t<img class=\"warning-overpay-icon\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/warning-installment-icon.svg\" alt=\"Внимание\">\n\t\t<p class=\"warning-overpay__text\"><span class=\"green\">Не переплачивайте за лишнее! </span><span>Цены от производителя, без лишних переплат.  </span><br>С нами вы экономите до 25% от заказа.</p>\n\t</div>\n</div>    <section class=\"banner-section\">\n        <div class=\"banner banner--main container\" style=\"opacity: 1;\">\n            <div class=\"banner__content\">\n                <h1 class=\"banner__title\">Входные и межкомнатные двери <span>в Нижнем Новгороде</span></h1>\n                <ul class=\"banner__list\">\n                    <li>Цены от производителя без наценок и переплат</li>\n                    <li>Установка дверей на совесть. Свой учебный центр, работаем по ГОСТ</li>\n                    <li>Бесплатный замер и расчёт стоимости прямо у вас дома</li>\n                </ul>\n                <button class=\"banner__btn btn\" data-popup-btn=\"popup-free-call\">Бесплатная консультация</button>\n                <img class=\"banner__icon\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/sberbank.png\" alt=\"Платежные карты\">\n            </div>\n        </div>\n    </section>\t<div class=\"offer__main\">\n\t\t<div class=\"offer__container container\">\n\t\t\t<div class=\"offer__content-wrap\">\n\t\t\t\t<div class=\"offer__content left\">\n\t\t\t\t\t<div class=\"offer__box\">\n\t\t\t\t\t\t<a target=\"_blank\" href=\"/rassrochka/\" class=\"offer__box-title\">\n\t\t\t\t\t\t\t<span>Рассрочка на 6 месяцев</span>\n\t\t\t\t\t\t\t<div class=\"offer__box-title--img\"></div>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<p class=\"offer__box-text\">без переплат, без первоначального взноса!</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/offer-main-percent.png\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"offer__content right\">\n\t\t\t\t\t<div class=\"offer__box\">\n\t\t\t\t\t\t<a target=\"_blank\" href=\"/uslugi/\" class=\"offer__box-title quiz-btn\">\n\t\t\t\t\t\t\t<span>Скидка до 50%</span>\n\t\t\t\t\t\t\t<div class=\"offer__box-title--img\"></div>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<p class=\"offer__box-text\">на установку дверей! <br>Только до конца месяца</p>\n\t\t\t\t\t</div>\n\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/offer-main-calc.svg\" alt=\"\">\t\t\n\t\t\t\t</div>\t\t\t\t\t\n\t\t\t</div>\t\t\t\n\t\t</div>\t\t\n\t</div>    <section class=\"popular-category\">\n        <div class=\"container\">\n            <div class=\"headline-title\">\n                <h2 class=\"title\">Каталог дверей в Нижнем Новгороде</h2>\n            </div>\n\t\t\t<ul class=\"smart-filter-links\"><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4964]\" title=\"Airon\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-1.png\" alt=\"Airon\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4992]\" title=\"Ferroni\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-2.png\" alt=\"Ferroni\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5531]\" title=\"PVDOORS\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-3.png\" alt=\"PVDOORS\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4959]\" title=\"Азбука дверей\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-7.png\" alt=\"Азбука дверей\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5227]\" title=\"Дверум\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-6.png\" alt=\"Дверум\" class=\"filter-image\"></span></a></li><li><a href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4620]\" title=\"ТЕХНО-СТРОЙ\"><span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/brand-8.png\" alt=\"ТЕХНО-СТРОЙ\" class=\"filter-image\"></span></a></li></ul><ul class=\"categories\"><li class=\"categories__item categories__item-22 eko-shpon\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/ekoshpon.jpg\" alt=\"Двери экошпон\"><h3 class=\"categories__title\">Двери экошпон</h3><p class=\"categories__count\">129 товаров</p></a></li><li class=\"categories__item categories__item-29 finish-fleks\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/finishfleks.jpg\" alt=\"Ламинированные двери\"><h3 class=\"categories__title\">Ламинированные двери</h3><p class=\"categories__count\">17 товаров</p></a></li><li class=\"categories__item categories__item-26 vinil\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/vinil.jpg\" alt=\"Двери ПВХ\"><h3 class=\"categories__title\">Двери ПВХ</h3><p class=\"categories__count\">86 товаров</p></a></li><li class=\"categories__item categories__item-23 shpon\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/shpon.jpg\" alt=\"Шпонированные двери\"><h3 class=\"categories__title\">Шпонированные двери</h3><p class=\"categories__count\">8 товаров</p></a></li><li class=\"categories__item categories__item-25 emal\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/emal.jpg\" alt=\"Эмалевые двери\"><h3 class=\"categories__title\">Эмалевые двери</h3><p class=\"categories__count\">31 товар</p></a></li><li class=\"categories__item categories__item-32 rossijskie-vhodnye-dveri\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2021/12/ros-vhod.jpg\" alt=\"Российские входные двери\"><h3 class=\"categories__title\">Российские входные двери</h3><p class=\"categories__count\">302 товара</p></a></li><li class=\"categories__item categories__item-21 furnitura\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/08/image-2691.png\" alt=\"Фурнитура\"><h3 class=\"categories__title\">Фурнитура</h3><p class=\"categories__count\">207 товаров</p></a></li><li class=\"categories__item categories__item-35 ruchki\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/ruchki/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/08/handle_png30.png\" alt=\"Ручки\"><h3 class=\"categories__title\">Ручки</h3><p class=\"categories__count\">73 товара</p></a></li><li class=\"categories__item categories__item-36 zamki\"><a class=\"categories__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/zamki/\"><img class=\"categories__img\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/08/b6765d97ef2e9505200d9ce2d5605f85.png\" alt=\"Замки\"><h3 class=\"categories__title\">Замки</h3><p class=\"categories__count\">18 товаров</p></a></li></ul>\t\t\t<a target=\"_blank\" class=\"btn\" href=\"https://nn.fabrichnie-dveri.ru/katalog/\">Весь каталог</a>\t\t\t\n        </div>\n    </section>    <section class=\"about-us\">\n        <div class=\"container\">\n            <div class=\"about\">\n                <div class=\"about__big\">\n                    <h2 class=\"about__title\">Работаем с&nbsp;2005&nbsp;года</h2>\n                    <p class=\"about__title\">И знаем о дверях все! <a class=\"about__title-link orange\" href=\"\" data-popup-btn=\"popup-free-call\">Проверьте!</a></p>\n                    <p class=\"about__text\">Наши менеджеры помогут вам подобрать именно ту дверь, которая устроит вас по цене и качеству.</p>\n                </div>\n                <ul class=\"about__items\">\n                    <li class=\"about__item\">\n                        <p class=\"about__title white\">7 000 +</p>\n                        <p class=\"about__text\">установленных нами дверей в Нижнем Новгороде</p>\n                    </li>\n                    <li class=\"about__item\">\n                        <p class=\"about__title orange\">Удобное расположение магазина</p>\n                        <p class=\"about__text\">Вам всегда будет удобно добраться до нас</p>\n                    </li>\n                    <li class=\"about__item\">\n                        <p class=\"about__title green\">Большой ассортимент</p>\n                        <p class=\"about__text\">Входные и мекомнатные двери в наличии</p>\n                    </li>\n                    <li class=\"about__item\">\n                        <p class=\"about__title yellow\">Установка на&nbsp;совесть</p>\n                        <p class=\"about__text\">Установка дверей опытными мастерами</p>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </section>    <section class=\"discounts-section\">\n        <div class=\"discounts container\">\n            <h2 class=\"discounts__title title\">Скидки и акции на&nbsp;двери</h2>\n            <div id=\"discountsSlider\" class=\"discounts-slider swiper-initialized swiper-horizontal swiper-pointer-events\">\n                <div class=\"discounts-slider__wrap\" id=\"swiper-wrapper-01ad573016323476\" aria-live=\"polite\">\n\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"discounts-slider__slide swiper-slide-visible swiper-slide-active\" role=\"group\" aria-label=\"1 / 6\" style=\"margin-right: 1px;\">\n\t\t\t\t\t\t\t<div class=\"discounts-slider__content\">\n\t\t\t\t\t\t\t\t<div class=\"discounts-slider__img-box\">\n\t\t\t\t\t\t\t\t\t<img class=\"discounts-slider__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/discounts-img-3.jpg\" alt=\"петли в подарок\">\n\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__small\">Только в <span class=\"current-month\">мае</span></p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__bold\">При покупке от 4х дверей</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__title orange\">петли в подарок</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__text\">В акции участвуют все модели</p><button class=\"discounts-slider__btn\" data-popup-btn=\"popup-free-call\">Воспользоваться акцией</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"discounts-slider__slide swiper-slide-visible swiper-slide-next\" role=\"group\" aria-label=\"2 / 6\" style=\"margin-right: 1px;\">\n\t\t\t\t\t\t\t<div class=\"discounts-slider__content\">\n\t\t\t\t\t\t\t\t<div class=\"discounts-slider__img-box\">\n\t\t\t\t\t\t\t\t\t<img class=\"discounts-slider__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/02/1234-1-237x173.png\" alt=\"на 12 месяцев\">\n\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__small\">Выгодное предложение</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__bold\">Рассрочка 0%</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__title orange\">на 12 месяцев</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__text\">без первоночального взноса и переплат</p><button class=\"discounts-slider__btn\" data-popup-btn=\"popup-free-call\">Воспользоваться акцией</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"discounts-slider__slide swiper-slide-visible\" role=\"group\" aria-label=\"3 / 6\" style=\"margin-right: 1px;\">\n\t\t\t\t\t\t\t<div class=\"discounts-slider__content\">\n\t\t\t\t\t\t\t\t<div class=\"discounts-slider__img-box\">\n\t\t\t\t\t\t\t\t\t<img class=\"discounts-slider__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/discounts-img-5.jpg\" alt=\"без лишних переплат\">\n\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__small\">Только у нас</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__bold\">Цены от производителя</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__title orange\">без лишних переплат</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__text\">Мы продаем двери по ценам производителя</p><button class=\"discounts-slider__btn\" data-popup-btn=\"popup-free-call\">Воспользоваться акцией</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"discounts-slider__slide\" role=\"group\" aria-label=\"4 / 6\" style=\"margin-right: 1px;\">\n\t\t\t\t\t\t\t<div class=\"discounts-slider__content\">\n\t\t\t\t\t\t\t\t<div class=\"discounts-slider__img-box\">\n\t\t\t\t\t\t\t\t\t<img class=\"discounts-slider__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/discounts-img-6.jpg\" alt=\"со скидкой до 50%\">\n\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__small\">Только у нас</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__bold\">Установка дверей </p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__title orange\">со скидкой до 50%</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__text\">Только при оформлении заказа до конца месяца</p><button class=\"discounts-slider__btn\" data-popup-btn=\"popup-free-call\">Воспользоваться акцией</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"discounts-slider__slide\" role=\"group\" aria-label=\"5 / 6\" style=\"margin-right: 1px;\">\n\t\t\t\t\t\t\t<div class=\"discounts-slider__content\">\n\t\t\t\t\t\t\t\t<div class=\"discounts-slider__img-box\">\n\t\t\t\t\t\t\t\t\t<img class=\"discounts-slider__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/discounts-img-7.jpg\" alt=\"Снизим цену!\">\n\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__small\">Только в <span class=\"current-month\">мае</span></p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__bold\">Нашли двери дешевле?</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__title orange\">Снизим цену!</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__text\">если вы нашли аналогичные двери дешевле</p><button class=\"discounts-slider__btn\" data-popup-btn=\"popup-free-call\">Воспользоваться акцией</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"discounts-slider__slide\" role=\"group\" aria-label=\"6 / 6\" style=\"margin-right: 1px;\">\n\t\t\t\t\t\t\t<div class=\"discounts-slider__content\">\n\t\t\t\t\t\t\t\t<div class=\"discounts-slider__img-box\">\n\t\t\t\t\t\t\t\t\t<img class=\"discounts-slider__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2026/03/discounts-img-8.jpg\" alt=\"на двери и все работы\">\n\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__small\">Только в <span class=\"current-month\">мае</span></p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__bold\">Повышенная гарантия</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__title orange\">на двери и все работы</p>\n\t\t\t\t\t\t\t\t<p class=\"discounts-slider__text\">гарантия на двери и работы - 3 года, на замки - 7 лет</p><button class=\"discounts-slider__btn\" data-popup-btn=\"popup-free-call\">Воспользоваться акцией</button></div>\n\t\t\t\t\t\t</div>                </div>\n            <span class=\"swiper-notification\" aria-live=\"assertive\" aria-atomic=\"true\"></span></div>\n            <div class=\"slider-controls\">\n                <button class=\"slider-controls__prev discounts-slider__prev swiper-button-disabled\" disabled=\"\" tabindex=\"-1\" aria-label=\"Previous slide\" aria-controls=\"swiper-wrapper-01ad573016323476\" aria-disabled=\"true\"></button>\n                <div class=\"slider-controls__pagination discounts-slider__pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal\"><span class=\"swiper-pagination-bullet swiper-pagination-bullet-active\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 1\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 2\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 3\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 4\"></span></div>\n                <button class=\"slider-controls__next discounts-slider__next\" tabindex=\"0\" aria-label=\"Next slide\" aria-controls=\"swiper-wrapper-01ad573016323476\" aria-disabled=\"false\"></button>\n            </div>\n            <a target=\"_blank\" class=\"discounts__btn btn\" href=\"https://nn.fabrichnie-dveri.ru/akczii/\">Посмотреть все акции</a>\n        </div>\n    </section>    <div class=\"long-service-section\">\n        <div class=\"long-service long-service-balc container\">\n            <h2 class=\"title\">Монтаж на совесть</h2>\n\t\t\t<p class=\"long-service-text first-text\">Правильный и качественный монтаж — залог того, что двери прослужат вам долго и безотказно. Поэтому мы уделяем монтажу особое внимание.</p>\n\t\t\t<p class=\"long-service-text\">Все работы проводится по стандартам разработанными компанией “Фабричные двери” за 21 лет работы с соблюдением ГОСТ 43.32.10.</p>\n\t\t\t<div class=\"warning-long-service\">\n\t\t\t\t<img class=\"warnin-icon\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/warning-icon.svg\" alt=\"Внимание!\">\n\t\t\t\t<p class=\"warning-long-service__text\">Для всех монтажных работ используем только сертифицированные материалы и профессиональный рабочий инструмент.</p>\n\t\t\t</div>        \n\t\t\t<div class=\"option-glazing-box active\">\n\t\t\t\t<div class=\"glazing-options-slider swiper-initialized swiper-horizontal swiper-pointer-events\">\n\t\t\t\t\t<div class=\"glazing-options-slider__wrap \" id=\"swiper-wrapper-8c229aee31d9fb3b\" aria-live=\"polite\" style=\"transition-duration: 0ms; transform: translate3d(-880px, 0px, 0px);\"><div class=\"glazing-options-slider__slide swiper-slide-duplicate swiper-slide-prev\" data-swiper-slide-index=\"4\" role=\"group\" aria-label=\"5 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5-mobile.jpg\">\n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"glazing-options-slider__slide swiper-slide-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4-mobile.jpg\">                                \n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"glazing-options-slider__slide swiper-slide-next\" data-swiper-slide-index=\"1\" role=\"group\" aria-label=\"2 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-2.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t <picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-2-mobile.jpg\">  \n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-2.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t  <div class=\"glazing-options-slider__slide\" data-swiper-slide-index=\"2\" role=\"group\" aria-label=\"3 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-3.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-3-mobile.jpg\">     \n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-3.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t  <div class=\"glazing-options-slider__slide\" data-swiper-slide-index=\"3\" role=\"group\" aria-label=\"4 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-1.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-1-mobile.jpg\">\n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-1.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t  <div class=\"glazing-options-slider__slide swiper-slide-duplicate-prev\" data-swiper-slide-index=\"4\" role=\"group\" aria-label=\"5 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5-mobile.jpg\">\n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>                \n\t\t\t\t\t<div class=\"glazing-options-slider__slide swiper-slide-duplicate swiper-slide-duplicate-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 5\" style=\"width: 880px;\">\n\t\t\t\t\t\t\t<div class=\"card-slider__thumbnail\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"glazing-options-img\" href=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4.jpg\"><img class=\"choose-plus\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/plus-mg.png\" alt=\"Монтаж на совесть!\"></a>\n\t\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t\t<source type=\"image/jpeg\" media=\"(max-width: 767px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4-mobile.jpg\">                                \n\t\t\t\t\t\t\t\t\t<img class=\"glazing-options-img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4.jpg\" alt=\"Балконы!\">\n\t\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div>\n\t\t\t\t\t<button class=\"windows-house-prev orange glazing-options-slider__prev\" tabindex=\"0\" aria-label=\"Previous slide\" aria-controls=\"swiper-wrapper-8c229aee31d9fb3b\">\n\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/examples-arrow-orange-left.svg\" alt=\"Стрелка влево\">\n\t\t\t\t\t</button>\n\t\t\t\t\t<button class=\"windows-house-next orange glazing-options-slider__next\" tabindex=\"0\" aria-label=\"Next slide\" aria-controls=\"swiper-wrapper-8c229aee31d9fb3b\">\n\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/examples-arrow-orange-right.svg\" alt=\"Стрелка влево\">\n\t\t\t\t\t</button>\n\t\t\t\t\t<div class=\"windows-house-pagination glazing-options-slider__pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal\"><span class=\"swiper-pagination-bullet swiper-pagination-bullet-active\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 1\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 2\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 3\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 4\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 5\"></span></div>\n\t\t\t\t<span class=\"swiper-notification\" aria-live=\"assertive\" aria-atomic=\"true\"></span></div>      \n\t\t\t\t<div class=\"uslugi__btns\">\n\t\t\t\t\t<a target=\"_blank\" href=\"/uslugi/\" class=\"uslugi__btn orange\"><span class=\"uslugi__btn-span\"><span class=\"uslugi__btn-span2\">Установка дверей</span> <span class=\"uslugi__btn-span1\">со скидкой до 50%</span><img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/uslugi__btn-span-img.svg\" alt=\"стрелка\"></span></a>\n\t\t\t\t</div> \n\t\t\t</div>\n\t\t\t <button class=\"long-service-btn btn\">Подробнее о монтаже</button>\n\t\t\t<div class=\"director-section block__second\">\n\t\t\t\t<div class=\"director-long-service director--dmitriev \">\n\t\t\t\t\t<div class=\"director__left\">\n\t\t\t\t\t\t<div class=\"director__wrap\">\n\t\t\t\t\t\t\t<p class=\"director__text\">После монтажа мы бесплатно убираем за собой - собираем весь мусор в мешки и выносим их на лестничную площадку. Мы так же можем вывезти старые двери. Если этот вопрос актуален, обсудите его с менеджером заказа при заключении договора.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"director__right\">\n\t\t\t\t\t\t<div class=\"director__content\">\n\t\t\t\t\t\t\t<p class=\"director__name\">Дмитриев Артем</p>\n\t\t\t\t\t\t\t<p class=\"director__position\">Руководитель <span class=\"block\">монтажного отдела</span></p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<img class=\"director__img \" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/dmitriev-artem.jpg\" alt=\"Дмитриев Артем\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>  \n\t\t</div>\n\t</div>\n\n\n\n\n       <section class=\"about-doors\">\n        <div class=\"container\">\n            <div class=\"about-doors__content\">\n                <h2 class=\"about-doors__title title\">Двери, установленные в&nbsp;2026&nbsp;году</h2>\n                <div class=\"about-doors-slider swiper-initialized swiper-horizontal swiper-pointer-events\">\n                    <div class=\"about-doors-slider__wrap\" id=\"swiper-wrapper-95d2a89ae82bebed\" aria-live=\"polite\" style=\"transform: translate3d(-890px, 0px, 0px); transition-duration: 0ms;\"><div class=\"about-doors-slider__slide swiper-slide-duplicate swiper-slide-prev\" data-swiper-slide-index=\"8\" role=\"group\" aria-label=\"9 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-4.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-4-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-4-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Входная дверь. Толщина металла 1,5 мм. Размер - <span class=\"bold\">960 х 2050 мм</span> <span class=\"block\">Цена <span class=\"orange\">22 140 ₽</span></span></p>\n                        </div>\n\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide swiper-slide-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/about-doors-big-1.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/about-doors-big-1-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/about-doors-big-1-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Межкомнатные двери из экошпона. Размер - <span class=\"bold\">2000 х 600/700 мм</span> <span class=\"block\">Цена <span class=\"orange\">14 230 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide swiper-slide-next\" data-swiper-slide-index=\"1\" role=\"group\" aria-label=\"2 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-6.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-6-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-6-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Межкомнатные двери из экошпона. Размер - <span class=\"bold\">2000 х 700/800 мм</span> <span class=\"block\">Цена <span class=\"orange\">11 450 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide\" data-swiper-slide-index=\"2\" role=\"group\" aria-label=\"3 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-3.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-3-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-3-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Ламинированные межкомнатные двери. Размер - <span class=\"bold\">2000 х 800 мм</span> <span class=\"block\">Цена <span class=\"orange\">4 880 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide\" data-swiper-slide-index=\"3\" role=\"group\" aria-label=\"4 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-4.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-4-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-4-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Шпонированные межкомнатные двери. Размер - <span class=\"bold\">2000 х 600/700 мм</span> <span class=\"block\">Цена <span class=\"orange\">23 100 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide\" data-swiper-slide-index=\"4\" role=\"group\" aria-label=\"5 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-7.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-7-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/mzh-7-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Межкомнатные двери из массива дерева. Размер - <span class=\"bold\">2000 х 700 мм</span> <span class=\"block\">Цена <span class=\"orange\">19 600 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide\" data-swiper-slide-index=\"5\" role=\"group\" aria-label=\"6 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-5.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-5-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-5-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Входная дверь. Толщина металла 1 мм. Размер - <span class=\"bold\">960 х 2050 мм</span> <span class=\"block\">Цена <span class=\"orange\">11 580 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide\" data-swiper-slide-index=\"6\" role=\"group\" aria-label=\"7 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-1.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-1-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-1-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Входная дверь. Толщина металла 1,2 мм. Размер - <span class=\"bold\">860 х 2050 мм</span> <span class=\"block\">Цена <span class=\"orange\">15 350 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide\" data-swiper-slide-index=\"7\" role=\"group\" aria-label=\"8 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-3.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-3-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-3-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Входная дверь. Толщина металла 1,5 мм. Размер - <span class=\"bold\">960 х 2050 мм</span> <span class=\"block\">Цена <span class=\"orange\">18 300 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t\n                        <div class=\"about-doors-slider__slide swiper-slide-duplicate-prev\" data-swiper-slide-index=\"8\" role=\"group\" aria-label=\"9 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-4.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-4-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/07/vh-4-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Входная дверь. Толщина металла 1,5 мм. Размер - <span class=\"bold\">960 х 2050 мм</span> <span class=\"block\">Цена <span class=\"orange\">22 140 ₽</span></span></p>\n                        </div>\t\t\t\t\n\t\t\t\t\t\t                    <div class=\"about-doors-slider__slide swiper-slide-duplicate swiper-slide-duplicate-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 9\" style=\"width: 880px; margin-right: 10px;\">\n                            <picture>\n                                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/about-doors-big-1.jpg\">\n                                <source media=\"(min-width: 768px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/about-doors-big-1-648x370.jpg\">\n                                <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/about-doors-big-1-315x180.jpg\" loading=\"lazy\" alt=\"Двери\">\n                            </picture>                            \n                            <p class=\"about-doors-slider__text\">Межкомнатные двери из экошпона. Размер - <span class=\"bold\">2000 х 600/700 мм</span> <span class=\"block\">Цена <span class=\"orange\">14 230 ₽</span></span></p>\n                        </div></div>\n\t\t\t\t\t<button class=\"about-doors-slider__btn about-doors-slider__btn--left\"></button>\n\t\t\t\t\t<button class=\"about-doors-slider__btn about-doors-slider__btn--right\"></button>\t\t\t\t\t\n                <span class=\"swiper-notification\" aria-live=\"assertive\" aria-atomic=\"true\"></span></div>\n                <div class=\"slider-controls\">\n                    <button class=\"slider-controls__prev about-doors-slider__prev\" tabindex=\"0\" aria-label=\"Previous slide\" aria-controls=\"swiper-wrapper-95d2a89ae82bebed\"></button>\n                    <div class=\"slider-controls__pagination about-doors-slider__pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal\"><span class=\"swiper-pagination-bullet swiper-pagination-bullet-active\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 1\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 2\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 3\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 4\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 5\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 6\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 7\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 8\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 9\"></span></div>\n                    <button class=\"slider-controls__next about-doors-slider__next\" tabindex=\"0\" aria-label=\"Next slide\" aria-controls=\"swiper-wrapper-95d2a89ae82bebed\"></button>\n                </div>\n                <button class=\"about-doors__btn btn\" data-popup-btn=\"popup-free-call\">Рассчитать стоимость</button>\n            </div>\n        </div>\n    </section>    <section class=\"best-price-section\">\n        <div class=\"best-price container\">\n            <h2 class=\"best-price__title-1 title\">Гарантия <span class=\"orange\">лучшей цены!</span></h2>\n            <picture>\n                <source media=\"(min-width: 1024px)\" srcset=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/best-price-big.png\">\n                <img class=\"best-price__img\" loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/best-price-small.png\" alt=\"Гарантия лучшей цены!\">\n            </picture>\n            <div class=\"best-price__content\">\n                <p class=\"best-price__title-2 title\">Нашли двери <span class=\"orange\">дешевле?</span></p>\n                <p class=\"best-price__subtitle\">Вернем разницу*</p>\n                <p class=\"best-price__text\">Акция распространяется на товар идентичной модели, бренда и конфигугурации. Предложение не является договором  оферты</p>\n            </div>\n        </div>\n    </section>    <section class=\"reviews-section\">\n        <div class=\"reviews container\">\n            <h2 class=\"reviews__title title\">Качественная работа - <span class=\"orange\">высокая репутация</span></h2>\n            <p class=\"reviews__text reviews__text1\">Основа любой компании — люди, поэтому нашими коллегами становятся только те, кто готов и любит помогать, учиться и оставлять после себя не только хорошее впечатление, но и безукоризненно выполненную работу.</p>\n            <p class=\"reviews__text\">Отлаженный за 21 лет процесс работы даже со сложными и нестандартными заказами позволяет нам с уверенностью заявлять — мы будем рядом с вами на каждом этапе и ответим на любые ваши вопросы.</p>\n            <div class=\"reviews__content\">\n                <div class=\"reviews__rating\">\n                    <a class=\"reviews__rating-text\" href=\"https://nn.fabrichnie-dveri.ru/otzyvy/\">Отзывы о нас</a>\n                    <ul class=\"reviews__stars\">\n                        <li>\n                            <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/star-icon.svg\" alt=\"Звезда\">\n                        </li>\n                        <li>\n                            <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/star-icon.svg\" alt=\"Звезда\">\n                        </li>\n                        <li>\n                            <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/star-icon.svg\" alt=\"Звезда\">\n                        </li>\n                        <li>\n                            <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/star-icon.svg\" alt=\"Звезда\">\n                        </li>\n                        <li>\n                            <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/star-icon.svg\" alt=\"Звезда\">\n                        </li>\n                    </ul>\n                </div>\n                <p class=\"reviews__content-text\">Более 1000 клиентов довольны нашей работой </p>\n            </div>\n            <div class=\"reviews-slider swiper-initialized swiper-horizontal swiper-pointer-events\">\n                <div class=\"reviews-slider__wrap\" id=\"swiper-wrapper-ce0359d8101f18a10d\" aria-live=\"polite\" style=\"transition-duration: 0ms; transform: translate3d(-900px, 0px, 0px);\"><div class=\"reviews-slider__slide swiper-slide-duplicate\" data-swiper-slide-index=\"5\" role=\"group\" aria-label=\"6 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/OVXu-76g6ck\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe4.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">12 июня 2025</p>\n\t\t\t\t\t\t</div><div class=\"reviews-slider__slide swiper-slide-duplicate\" data-swiper-slide-index=\"6\" role=\"group\" aria-label=\"7 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/w66zPLQ21tA\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe7.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">11 января 2025</p>\n\t\t\t\t\t\t</div><div class=\"reviews-slider__slide swiper-slide-duplicate swiper-slide-prev\" data-swiper-slide-index=\"7\" role=\"group\" aria-label=\"8 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/kx3sNSSFGZs\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe5.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">19 марта 2025</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide swiper-slide-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/VCVtW3G91HQ\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe3.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">12 августа 2025</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide swiper-slide-next\" data-swiper-slide-index=\"1\" role=\"group\" aria-label=\"2 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/YzNjUpVY3_k\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe8.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">21 марта 2026</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide\" data-swiper-slide-index=\"2\" role=\"group\" aria-label=\"3 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/NKJr5tjD_UA\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe1.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">12 июня 2025</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide\" data-swiper-slide-index=\"3\" role=\"group\" aria-label=\"4 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/TngQB3QZUcc\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe6.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">15 марта 2026</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide\" data-swiper-slide-index=\"4\" role=\"group\" aria-label=\"5 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/32hDrjxDu60\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe2.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">02 июля 2025</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide\" data-swiper-slide-index=\"5\" role=\"group\" aria-label=\"6 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/OVXu-76g6ck\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe4.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">12 июня 2025</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide\" data-swiper-slide-index=\"6\" role=\"group\" aria-label=\"7 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/w66zPLQ21tA\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe7.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">11 января 2025</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"reviews-slider__slide swiper-slide-duplicate-prev\" data-swiper-slide-index=\"7\" role=\"group\" aria-label=\"8 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/kx3sNSSFGZs\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe5.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">19 марта 2025</p>\n\t\t\t\t\t\t</div>\t\t\t\n\t\t\t\t\t\t                <div class=\"reviews-slider__slide swiper-slide-duplicate swiper-slide-duplicate-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/VCVtW3G91HQ\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe3.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">12 августа 2025</p>\n\t\t\t\t\t\t</div><div class=\"reviews-slider__slide swiper-slide-duplicate swiper-slide-duplicate-next\" data-swiper-slide-index=\"1\" role=\"group\" aria-label=\"2 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/YzNjUpVY3_k\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe8.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку межкомнатных дверей</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">21 марта 2026</p>\n\t\t\t\t\t\t</div><div class=\"reviews-slider__slide swiper-slide-duplicate\" data-swiper-slide-index=\"2\" role=\"group\" aria-label=\"3 / 8\" style=\"width: 280px; margin-right: 20px;\">\n\t\t\t\t\t\t\t<div class=\"reviews-slider__video\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"reviews-gallery\" href=\"https://www.youtube.com/embed/NKJr5tjD_UA\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/01/gotovoe1.jpg\" alt=\"Фабричные двери\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">Видео - отзыв</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text\">Видео отзыв на установку входной двери</p>\n\t\t\t\t\t\t\t<p class=\"reviews-slider__text gray\">12 июня 2025</p>\n\t\t\t\t\t\t</div></div>\n            <span class=\"swiper-notification\" aria-live=\"assertive\" aria-atomic=\"true\"></span></div>\n            <div class=\"slider-controls\">\n                <button class=\"slider-controls__prev reviews-slider__prev\" tabindex=\"0\" aria-label=\"Previous slide\" aria-controls=\"swiper-wrapper-ce0359d8101f18a10d\"></button>\n                <div class=\"slider-controls__pagination reviews-slider__pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal\"><span class=\"swiper-pagination-bullet swiper-pagination-bullet-active\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 1\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 2\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 3\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 4\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 5\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 6\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 7\"></span><span class=\"swiper-pagination-bullet\" tabindex=\"0\" role=\"button\" aria-label=\"Go to slide 8\"></span></div>\n                <button class=\"slider-controls__next reviews-slider__next\" tabindex=\"0\" aria-label=\"Next slide\" aria-controls=\"swiper-wrapper-ce0359d8101f18a10d\"></button>\n            </div>\n        </div>\n    </section>    <section class=\"accordion-section\">\n        <div class=\"accordion-box container\">\n            <h2 class=\"accordion-box__title title\">Ответы на вопросы</h2>\n            <p class=\"accordion-box__info\">Вы всегда можете <a class=\"orange\" href=\"#\" data-popup-btn=\"popup-free-call\">позвонить</a> нам и получить ответы на все интересующие вас вопросы. Собрали самые частые вопросы и отвечаем на них здесь:</p>\n            <ul class=\"accordion accordion--main\">\n                <li class=\"accordion__item\">\n                    <button class=\"accordion__toggle active\">\n                        Сколько будет изготавливаться дверь?\n                        <span class=\"accordion__plus\"></span>\n                    </button>\n                    <div class=\"accordion__content active\">\n                        <p class=\"accordion__text\">Как правило, уже готовые дверные полотна хранят на складе в достаточном количестве, поэтому, выбрав подходящую модель из каталога, вы получите ее в течение 1-3-х дней - \n\t\t\t\t\t\t\tименно столько составляет доставка.\n\t\t\t\t\t\t</p>\n                        <p class=\"accordion__text\">Если дверь нестандартная или готовится по вашему индивидуальному заказу, то здесь существует такая схема:</p>\n                        <ul class=\"accordion__list\">  \n                            <li class=\"mgb\">\n                                <p class=\"accordion__text\"><a target=\"_blank\" class=\"accordion_text-a\" href=\"#\">Двери из ПВХ</a> и <a target=\"_blank\" class=\"accordion_text-a\" href=\"#\">экошпона</a> - изготавливают 2 недели.</p>\n                            </li>\n                            <li class=\"mgb\">\n                                <p class=\"accordion__text\">Эмалированная дверь - изготавливают не менее 25 дней.</p>\n                            </li>\n                            <li class=\"mgb\">\n                                <p class=\"accordion__text\"><a target=\"_blank\" class=\"accordion_text-a\" href=\"#\">Дверь из массива дерева</a> - изготавливают примерно месяц. Причем двери из дуба \n\t\t\t\t\t\t\t\t\tпроизводят - 1,5 месяца, а двери из ольхи 3 недели. Срок изготовления дверей из массива разнится, так как на это влияет финальная обработка полотна: в некоторых моделях необходимо \n\t\t\t\t\t\t\t\t\tнесколько слоев лака, а каждый слой высыхает за разное время.\n\t\t\t\t\t\t\t\t</p>\n                            </li>\n                        </ul>\n                    </div>\n                </li>\n                <li class=\"accordion__item\">\n                    <button class=\"accordion__toggle\">\n                        Какой материал для межкомнатных дверей лучше: ламинат, шпон, или цельный массив дерева?\n                        <span class=\"accordion__plus\"></span>\n                    </button>\n                    <div class=\"accordion__content\">\n                        <p class=\"accordion__text\">Однозначного ответа на этот вопрос нет. У каждого из перечисленных материалов есть свои сильные и слабые стороны. Например, ламинированные двери имеют доступную цену, \n\t\t\t\t\t\t\tболее устойчивы к влажной среде, имеют легкий вес и не нуждаются в особом уходе. Шпонированные двери обладают большей прочностью, визуально выглядят солиднее и богаче, а структура шпона придает \n\t\t\t\t\t\t\tдверям вид натурального дерева, так что почти не видно отличий.\n\t\t\t\t\t\t</p>\n                        <p class=\"accordion__text\">Двери из массива цельного дерева, в отличие от двух предыдущих — прочнее, имеют более красивый рисунок и оттенок, но и более\tвысокую цену.</p>\n                    </div>\n                </li>\n                <li class=\"accordion__item\">\n                    <button class=\"accordion__toggle\">\n                        Можно ли заказать двери нестандартных размеров?\n                        <span class=\"accordion__plus\"></span>\n                    </button>\n                    <div class=\"accordion__content\">\n                        <p class=\"accordion__text\">Конечно. Мы можем изготовить двери абсолютно любых, нестандартных размеров, а также по вашим индивидуальным эскизам. А еще у нас в наличии имеются распашные двери и двери-купе.</p>\n                    </div>\n                </li>\n                <li class=\"accordion__item\">\n                    <button class=\"accordion__toggle\">\n                        Когда рекомендуется установка дверей во время ремонта?\n                        <span class=\"accordion__plus\"></span>\n                    </button>\n                    <div class=\"accordion__content\">\n                        <p class=\"accordion__text\">В самую последнюю очередь. Обычно после чистового монтажа полов. Установка современных дверей сильно схожа с установкой мебели. Помещение должно полностью просохнуть после \n\t\t\t\t\t\t\tремонтных работ. Также это избавит от необходимости подгонки напольного покрытия под дверную коробку, что сведет на нет образование зазоров. Выбирать и заказывать двери лучше всего за 1,5-2 месяца, \n\t\t\t\t\t\t\tпотому что в процессе изготовления может появиться потребность выполнить двери или специальные элементы по индивидуальному заказу.\n\t\t\t\t\t\t</p>\n                    </div>\n                </li>\n                <li class=\"accordion__item\">\n                    <button class=\"accordion__toggle\">\n                        Что включает в себя полный комплект двери?\n                        <span class=\"accordion__plus\"></span>\n                    </button>\n                    <div class=\"accordion__content\">\n                        <ul class=\"accordion__list accordion__text\">     \n                            <li class=\"mgb1\">Дверное полотно (сама дверь)</li>\n                            <li class=\"mgb1\">Дверная коробка (лутка)</li>\n                            <li class=\"mgb1\">Стекло</li>  \n                            <li class=\"mgb1\">Фурнитура (замок, ручка, петли)</li>  \n                            <li class=\"mgb1\">Доборы (расширители коробки двери)</li>\n                            <li class=\"mgb1\">Наличники на обе стороны (5 реек), на одну сторону (2,5 рейки)</li>  \n                        </ul>\n                    </div>\n                </li>                \n            </ul>            \n        </div>\n    </section>    <section class=\"order-measuring-section\">\n        <div class=\"order-measuring container\">\n            <h2 class=\"order-measuring__title\">Бесплатная <span>консультация</span></h2>\n\n            <p class=\"order-measuring__text\">Рассчитаем стоимость дверей с учетом <br>монтажа</p>\n\n            <p class=\"order-measuring__phone\">\n                <a class=\"order-measuring__phone-link zphone\" href=\"tel:+78312199246\">+7 (831) 219-92-46</a>\n            </p>\n\t\t\t            <p class=\"order-measuring__work-schedule\">Работаем с 9:00 до 21:00</p>\n\n            <div class=\"order-measuring__about\">\n                <div class=\"order-measuring__about-text\">\n                    <p>При обращении <span>до 14:00</span> можем приехать на замер сегодня!</p>\n                </div>\n\n                <div class=\"order-measuring__about-box\">\n                    <div class=\"order-measuring__about-content\">\n                        <p class=\"order-measuring__about-name\">Власов Алексей</p>\n                        <p class=\"order-measuring__about-position\">Руководитель отдела заказов</p>\n                    </div>\n\n                    <img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/consultation.jpg\" alt=\"Руководитель отдела заказов\">\n                </div>\n            </div>\n\n            <button class=\"order-measuring__btn btn\" data-popup-btn=\"popup-free-call\">Заказать звонок</button>\n        </div>\n    </section>\n<div class=\"footer__popup-inner-icons-t product__added-to-carts-null\">\n    <ul class=\"footer__popup-inner-icons-t-ul\">\n    \n\t\t<li class=\"header__items-heart header__popup-inner-icons-t-p\">\n\t\t\t<span class=\"items-heart__link header__burger1\">\n\t\t\t\t\n\t\t\t\t<span class=\"header__items-heart-text\">Каталог</span>\n\t\t\t</span>\n\t\t</li>\n\t\t\n        \t\t\t<li class=\"header__items-heart item-location none\">\n\t\t\t\t<a class=\"items-heart__link\" href=\"https://nn.fabrichnie-dveri.ru/kontakty/\">\n\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/location-icon-new.svg\" alt=\"Контакты\">\n\t\t\t\t\t<span class=\"header__items-heart-text\">Контакты</span>\n\t\t\t\t</a>\n\t\t\t</li>\t\n\t\t\t\t\t<li class=\"header__items-heart item-wishlist none\">\n\t\t\t\t\t<a class=\"items-heart__link\" href=\"https://nn.fabrichnie-dveri.ru/wishlist/\">\n\t\t\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/heart-icon-new.svg\" alt=\"Избранное\">\n\t\t\t\t\t\t<span class=\"items-favourites\">0</span>\n\t\t\t\t\t\t<span class=\"header__items-heart-text\">Избранное</span>\n\t\t\t\t\t</a>\n\t\t\t</li>\n\n\t\t\n\t\t<li class=\"header__items-heart header__popup-inner-icons-t-p\">\n\t\t\t<a class=\"items-heart__link\" href=\"tel:+78312350946\">\n\t\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/call-footer-1.svg\" alt=\"Позвонить\">\n\t\t\t\t<span class=\"header__items-heart-text\">Позвонить</span>\n\t\t\t</a>\n\t\t</li>\n    \n    </ul>\n</div>\n    <footer class=\"footer product__added-to-carts-null\">\n        <div class=\"container\">\n            <div class=\"footer__top\">\n\t\t\t\t<ul class=\"footer__top-menu\">\n\t<li id=\"menu__item-3048\" class=\"menu__item\"><a id=\"menu__link-3048\" class=\"menu__link orange\" href=\"https://nn.fabrichnie-dveri.ru/akczii/\">Акции</a></li>\n<li id=\"menu__item-3050\" class=\"menu__item\"><a id=\"menu__link-3050\" class=\"menu__link orange\" href=\"https://nn.fabrichnie-dveri.ru/uslugi/\">Установка от 4 000 ₽</a></li>\n<li id=\"menu__item-3049\" class=\"menu__item\"><a id=\"menu__link-3049\" class=\"menu__link orange\" href=\"https://nn.fabrichnie-dveri.ru/rassrochka/\">Рассрочка</a></li>\n\t\t\t\t\t\n</ul>\n<button data-popup-btn=\"popup-free-call\" class=\"footer__form-btn footer__form-btn1 send\">Получить скидку</button>            </div>\n            <div class=\"footer__main\">\n\t\t\t\t<div class=\"footer__main-address\">\n\t<p class=\"footer__main-text\">г. Нижний Новгород, ул. Корейская, д. 24, оф. 10</p>\n\t<iframe class=\"footer__main-map lazyload\" data-src=\"https://yandex.ru/map-widget/v1/-/CCU5V6hF1D\"></iframe></div>\n<div class=\"footer__main-contacts\">\n\t<div class=\"footer__main-phone\">\n\t\t<a class=\"zphone\" href=\"tel:+78312199246\">+7 (831) 219-92-46</a>\n\t</div>\n\t<div class=\"footer__main-email\">\n\t\t<a class=\"orange\" href=\"mailto:nn@fabrichnie-dveri.ru\">nn@fabrichnie-dveri.ru</a>\n\t</div>\n</div>\n<nav class=\"footer__main-nav\">\n\t<ul class=\"footer__main-menu\">\n\t\t<li id=\"menu__item-72\" class=\"menu__item menu__item--has-children\"><span class=\"menu__title\">Двери</span>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"menu__sub-menu  sub-menu--level-1\">\n\t<li id=\"menu__item-75\" class=\"menu__item menu__item--child\"><a id=\"menu__link-75\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/\">Межкомнатные двери</a></li>\n\t<li id=\"menu__item-74\" class=\"menu__item menu__item--child\"><a id=\"menu__link-74\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/\">Входные двери</a></li>\n\t<li id=\"menu__item-77\" class=\"menu__item menu__item--child\"><a id=\"menu__link-77\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/arki/\">Арки межкомнатные</a></li>\n\t<li id=\"menu__item-79\" class=\"menu__item menu__item--child\"><a id=\"menu__link-79\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/product-category/furnitura/\">Фурнитура</a></li>\n\t<li id=\"menu__item-26676\" class=\"menu__item menu__item--child\"><a id=\"menu__link-26676\" class=\"menu__link orange\" href=\"https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/\">Распродажа</a></li>\n</ul></div>\n</li>\n\t</ul>\n</nav>\n<ul class=\"footer__main-nav-second\">\n\t<li id=\"menu__item-68\" class=\"menu__item menu__item--has-children\"><span class=\"menu__title\">Информация</span>\n<div class=\"menu__sub-menu1 reset\">\n\n<ul class=\"menu__sub-menu  sub-menu--level-1\">\n\t<li id=\"menu__item-26672\" class=\"menu__item menu__item--child\"><a id=\"menu__link-26672\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/o-nas/\">О нас</a></li>\n\t<li id=\"menu__item-71\" class=\"menu__item menu__item--child\"><a id=\"menu__link-71\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/garantii/\">Гарантия</a></li>\n\t<li id=\"menu__item-26673\" class=\"menu__item menu__item--child\"><a id=\"menu__link-26673\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/otzyvy/\">Отзывы</a></li>\n\t<li id=\"menu__item-69\" class=\"menu__item menu__item--child\"><a id=\"menu__link-69\" class=\"menu__link\" data-popup-btn=\"popup-letter\" href=\"#\">Написать директору</a></li>\n\t<li id=\"menu__item-26674\" class=\"menu__item menu__item--child\"><a id=\"menu__link-26674\" class=\"menu__link\" href=\"https://nn.fabrichnie-dveri.ru/kontakty/\">Контакты</a></li>\n</ul></div>\n</li>\n\t\t\t\t\t\n</ul>\n<div class=\"footer__main-payment\">\n\t<p class=\"footer__main-payment-text\">Принимаем к оплате</p>\n\t<ul class=\"footer__main-payments\">\n\t\t<li>\n\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/visa-icon.png\" alt=\"Виза\">\n\t\t</li>\n\t\t<li>\n\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/mastercard-icon.png\" alt=\"Мастеркард\">\n\t\t</li>\n\t\t<li>\n\t\t\t<img src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/mir-icon.png\" alt=\"Мир\">\n\t\t</li>\n\t</ul>\n</div>            </div>\n            <div class=\"footer__bottom\">\n\t\t\t\t<div class=\"footer__bottom-links\">\n\t<p class=\"footer__bottom-text\">Не является публичной офертой  <br>Официальный сайт компании “Фабричные двери”</p>\n\t<ul class=\"footer__bottom-list\">\n\t\t<li>\n\t\t\t<a class=\"orange\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политика конфиденциальности</a>\n\t\t</li>\n\t\t<li>\n\t\t\t<a class=\"orange\" href=\"#\">Пользовательское соглашение</a>\n\t\t</li>\n\t</ul>\n</div>\n\n<div class=\"footer__bottom-copyright\">\n\t<p class=\"footer__bottom-text\">2005 - 2026 Фабричные двери</p>\n\t<a class=\"footer__bottom-link\" href=\"#\" data-popup-btn=\"popup-feedback\">Связаться с разработчиками сайта</a>\n</div>            </div>\n        </div>\n    </footer>\n\t\n\t    <div class=\"popups\">\n        <div data-popup=\"popup-order\" class=\"popup popup-order\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <form class=\"form-popup request\" action=\"#\" method=\"post\" autocomplete=\"off\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Оформить заказ</p>\n\t\t\t\t\t\t\t\t\t<p class=\"form-popup__text\">После отправки формы вам перезвонит наш сотрудник для оформления заказа с уточнением всех необходимых деталей</p>\t\t\t\t\t\t\t\t\t\n                                    <div class=\"form-elements\">\n                                        <input class=\"form-elements__phone mask-applied\" name=\"tel\" type=\"tel\" placeholder=\"ваш телефон\" autocomplete=\"off\" pattern=\"(\\+7|8)\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}\" required=\"\" maxlength=\"18\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"form\" value=\"купить в 1 клик\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"url\" value=\"https://nn.fabrichnie-dveri.ru\">\n                                        <button class=\"form-elements__btn send-order\" type=\"submit\">Перезвонить</button>\n                                    </div>\n                                </div>\n                                <label class=\"privacy-policy\">\n                                    <input class=\"privacy-policy__checkbox-real\" type=\"checkbox\" checked=\"\">\n                                    <span class=\"privacy-policy__checkbox-fake\"></span>\n                                    <span class=\"privacy-policy__text\">\n                                        Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с <a class=\"privacy-policy__link\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой конфиденциальности</a> данного сайта\n                                    </span>\n                                </label>\n                            <input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\t\n        <div data-popup=\"popup-measuring\" class=\"popup popup-measuring\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <form class=\"form-popup request\" action=\"#\" method=\"post\" autocomplete=\"off\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Записаться на бесплатный замер</p>\n                                    <div class=\"form-elements\">\n                                        <input class=\"form-elements__phone mask-applied\" name=\"tel\" type=\"tel\" placeholder=\"ваш телефон\" autocomplete=\"off\" pattern=\"(\\+7|8)\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}\" required=\"\" maxlength=\"18\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"form\" value=\"записаться на бесплатный замер\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"url\" value=\"https://nn.fabrichnie-dveri.ru\">\n                                        <button class=\"form-elements__btn send\" type=\"submit\">Перезвонить</button>\n                                    </div>\n                                </div>\n                                <label class=\"privacy-policy\">\n                                    <input class=\"privacy-policy__checkbox-real\" type=\"checkbox\" checked=\"\">\n                                    <span class=\"privacy-policy__checkbox-fake\"></span>\n                                    <span class=\"privacy-policy__text\">\n                                        Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с <a class=\"privacy-policy__link\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой конфиденциальности</a> данного сайта\n                                    </span>\n                                </label>\n                            <input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div data-popup=\"popup-free-call\" class=\"popup popup-free-call\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <form class=\"form-popup request\" action=\"#\" method=\"post\" autocomplete=\"off\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Закажите бесплатный звонок</p>\n                                    <div class=\"form-elements\">\n                                        <input class=\"form-elements__phone mask-applied\" name=\"tel\" type=\"tel\" placeholder=\"ваш телефон\" autocomplete=\"off\" pattern=\"(\\+7|8)\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}\" required=\"\" maxlength=\"18\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"form\" value=\"закажите бесплатный звонок\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"url\" value=\"https://nn.fabrichnie-dveri.ru\">\n                                        <button class=\"form-elements__btn send\" type=\"submit\">Перезвонить</button>\n                                    </div>\n                                </div>\n                                <label class=\"privacy-policy\">\n                                    <input class=\"privacy-policy__checkbox-real\" type=\"checkbox\" checked=\"\">\n                                    <span class=\"privacy-policy__checkbox-fake\"></span>\n                                    <span class=\"privacy-policy__text\">\n                                        Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с <a class=\"privacy-policy__link\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой конфиденциальности</a> данного сайта\n                                    </span>\n                                </label>\n                            <input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div data-popup=\"popup-discount\" class=\"popup popup-discount\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <form class=\"form-popup request\" action=\"#\" method=\"post\" autocomplete=\"off\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title orange\">Скидка 10%</p>\n                                    <p class=\"form-popup__text\">Только сегодня при заявке с сайта</p>\n                                    <div class=\"form-elements\">\n                                        <input class=\"form-elements__phone mask-applied\" name=\"tel\" type=\"tel\" placeholder=\"ваш телефон\" autocomplete=\"off\" pattern=\"(\\+7|8)\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}\" required=\"\" maxlength=\"18\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"form\" value=\"скидка 10%\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"url\" value=\"https://nn.fabrichnie-dveri.ru\">\n                                        <button class=\"form-elements__btn send\" type=\"submit\">Перезвонить</button>\n                                    </div>\n                                </div>\n                                <label class=\"privacy-policy\">\n                                    <input class=\"privacy-policy__checkbox-real\" type=\"checkbox\" checked=\"\">\n                                    <span class=\"privacy-policy__checkbox-fake\"></span>\n                                    <span class=\"privacy-policy__text\">\n                                        Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с <a class=\"privacy-policy__link\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой конфиденциальности</a> данного сайта\n                                    </span>\n                                </label>\n                            <input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div data-popup=\"popup-thanks\" class=\"popup popup-thanks\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <div class=\"form-popup\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Спасибо</p>\n                                    <p class=\"form-popup__text\">Мы приняли вашу заявку, наш менеджер скоро с вами свяжется!</p>\n                                    <div class=\"form-elements\">\n                                        <button class=\"form-elements__btn btn-close\" type=\"button\">Закрыть</button>\n                                    </div>\n                                </div>\n                            </div>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div data-popup=\"popup-send\" class=\"popup popup-send\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <div class=\"form-popup\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Ваша заявка уже была отправлена</p>\n                                    <p class=\"form-popup__text\">Наш менеджер скоро с вами свяжется</p>\n                                    <div class=\"form-elements\">\n                                        <button class=\"form-elements__btn btn-close\" type=\"button\">Закрыть</button>\n                                    </div>\n                                </div>\n                            </div>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div data-popup=\"popup-letter\" class=\"popup popup-letter\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <form class=\"form-popup request\" action=\"#\" method=\"post\" enctype=\"multipart/form-data\" autocomplete=\"off\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Письмо генеральному директору</p>\n\t\t\t\t\t\t\t\t\t<p class=\"discount-popup__desc\">Если до, во время или после обращения в нашу компанию, вы остались чем-то недовольны, пожалуйста, заполните данную форму. Даже если вы уже ранее общались по \n\t\t\t\t\t\t\t\t\t\tэтому вопросу с кем-то из наших сотрудников.\n\t\t\t\t\t\t\t\t\t</p>\t\t\t\t\t\t\t\t\t\n                                    <div class=\"form-contacts\">\n                                        <div class=\"form-contacts__inputs\">\n                                            <input class=\"form-contacts__input\" name=\"name\" type=\"text\" placeholder=\"Ваше имя\" autocomplete=\"username\" pattern=\"[А-Яа-я_.-]{3,20}\" title=\"Имя должно быть на русском языке, без пробелов\" required=\"\">\n                                            <input class=\"form-contacts__input mask-applied\" name=\"tel\" type=\"tel\" placeholder=\"Ваш телефон\" autocomplete=\"off\" pattern=\"(\\+7|8)\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}\" required=\"\" maxlength=\"18\">\n                                        </div>\n                                        <textarea class=\"form-contacts__input message\" name=\"messages\" placeholder=\"Текст письма\" required=\"\"></textarea>\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"form\" value=\"письмо генеральному директору\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"url\" value=\"https://nn.fabrichnie-dveri.ru\">\n                                        <button class=\"form-contacts__btn btn btn--orange send\" type=\"submit\">Отправить сообщение</button>\n                                    </div>\n                                </div>\n                                <label class=\"privacy-policy\">\n                                    <input class=\"privacy-policy__checkbox-real\" type=\"checkbox\" checked=\"\">\n                                    <span class=\"privacy-policy__checkbox-fake\"></span>\n                                    <span class=\"privacy-policy__text\">\n                                        Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с <a class=\"privacy-policy__link\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой конфиденциальности</a> данного сайта\n                                    </span>\n                                </label>\n                            <input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div data-popup=\"popup-feedback\" class=\"popup popup-feedback\">\n            <div class=\"popup__wrapper\">\n                <div class=\"popup__inner\">\n                    <div class=\"popup__content\">\n                        <button class=\"popup__close popup__btn-close\"></button>\n                        <div class=\"form-wrapper\">\n                            <form class=\"form-popup request\" action=\"#\" method=\"post\" enctype=\"multipart/form-data\" autocomplete=\"off\">                            \n                                <div class=\"form-popup__content\">\n                                    <p class=\"form-popup__title\">Обратная связь</p>\n                                    <p class=\"form-popup__text\">Оставьте свои контакты и мы с вами свяжемся.</p>\n                                    <p class=\"form-popup__text\">Осуществляем комплексную маркетинговую поддержку дверного и строительного бизнеса.</p>\n                                    <div class=\"form-contacts\">\n                                        <div class=\"form-contacts__inputs\">\n                                            <input class=\"form-contacts__input\" name=\"name\" type=\"text\" placeholder=\"Ваше имя\" maxlength=\"20\" pattern=\"[А-Яа-яЁё]{3,20}\" required=\"\">\n                                            <input class=\"form-contacts__input mask-applied\" name=\"tel\" type=\"tel\" placeholder=\"Ваш телефон\" autocomplete=\"off\" pattern=\"(\\+7|8)\\s\\(\\d{3}\\)\\s\\d{3}-\\d{2}-\\d{2}\" required=\"\" maxlength=\"18\">\n                                        </div>\n                                        <div class=\"form-contacts__inputs\">\n                                            <input class=\"form-contacts__input\" name=\"email\" type=\"email\" placeholder=\"E-mail\" maxlength=\"30\" pattern=\"([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})\" required=\"\">\n                                            <input class=\"form-contacts__input\" name=\"city\" type=\"text\" placeholder=\"Ваш город\" minlength=\"3\" maxlength=\"20\" required=\"\">\n                                        </div>\n                                        <textarea class=\"form-contacts__input message\" name=\"messages\" placeholder=\"Текст письма\" minlength=\"10\" required=\"\"></textarea>\n                                        <div class=\"form-contacts__upload-box\">\n                                            <span class=\"form-contacts__upload-text\"></span>\n                                            <label class=\"form-contacts__upload-label\">\n                                                <input class=\"form-contacts__upload\" name=\"upload[]\" type=\"file\" multiple=\"\" accept=\"image/*\">\n                                                <span>Прикрепить файл</span>\n                                            </label>\n                                        </div>\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"form\" value=\"обратная связь\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"url\" value=\"https://nn.fabrichnie-dveri.ru\">\n                                        <button class=\"form-contacts__btn btn btn--orange send\" type=\"submit\">Отправить сообщение</button>\n                                    </div>\n                                </div>\n                                <label class=\"privacy-policy\">\n                                    <input class=\"privacy-policy__checkbox-real\" type=\"checkbox\" checked=\"\">\n                                    <span class=\"privacy-policy__checkbox-fake\"></span>\n                                    <span class=\"privacy-policy__text\">\n                                        Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с <a class=\"privacy-policy__link\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой конфиденциальности</a> данного сайта\n                                    </span>\n                                </label>\n                            <input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\"></form>                            \n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\t\n\n\t\n    <div class=\"scroll-top\">\n        <svg viewBox=\"0 0 12 27\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n            <path d=\"M6.53033 0.469669C6.23744 0.176777 5.76256 0.176777 5.46967 0.469669L0.696699 5.24264C0.403806 5.53553 0.403806 6.01041 0.696699 6.3033C0.989593 6.59619 1.46447 6.59619 1.75736 6.3033L6 2.06066L10.2426 6.3033C10.5355 6.59619 11.0104 6.59619 11.3033 6.3033C11.5962 6.01041 11.5962 5.53553 11.3033 5.24264L6.53033 0.469669ZM6.75 27L6.75 1H5.25L5.25 27H6.75Z\" fill=\"#7D8290\"></path>\n        </svg>\n    </div>\n\t\n<div id=\"yith-quick-view-modal\">\n\t<div class=\"yith-quick-view-overlay\"></div>\n\t<div class=\"yith-wcqv-wrapper\">\n\t\t<div class=\"yith-wcqv-main\">\n\t\t\t<div class=\"yith-wcqv-head\">\n\t\t\t\t<a href=\"#\" id=\"yith-quick-view-close\" class=\"yith-wcqv-close\">X</a>\n\t\t\t</div>\n\t\t\t<div id=\"yith-quick-view-content\" class=\"woocommerce single-product\"></div>\n\t\t</div>\n\t</div>\n</div>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/87355588\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\t\t<script>\n\t\t\t( function () {\n\t\t\t\t'use strict';\t\t\n\t\t\n\t\t\t\tvar zadarmaTrackingId = 'b4702485ad4b46f5a8b7fcaa542724cc10865',\n\t\t\t\t\tzadarmaTrackingMetrics = '87355588',\n\t\t\t\t\tyandexCounter = '87355588';\n\t\t\t\t\n\t\t\t\tif( zadarmaTrackingId != '' && zadarmaTrackingMetrics != '' || yandexCounter != '' ){\n\t\t\t\t\n\t\t\t\t\tvar loadedAnalytics = false,\n\t\t\t\t\t\ttimerId;\n\n\t\t\t\t\tif ( navigator.userAgent.indexOf( 'YandexMetrika' ) > -1 ) {\n\t\t\t\t\t\tloadAnalytics();\n\t\t\t\t\t} else {\n\t\t\t\t\t\twindow.addEventListener( 'scroll', loadAnalytics, {passive: true} );\n\t\t\t\t\t\twindow.addEventListener( 'touchstart', loadAnalytics );\n\t\t\t\t\t\tdocument.addEventListener( 'mouseenter', loadAnalytics );\n\t\t\t\t\t\tdocument.addEventListener( 'click', loadAnalytics );\n\t\t\t\t\t\tdocument.addEventListener( 'DOMContentLoaded', loadFallback );\n\t\t\t\t\t}\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\tfunction loadFallback() {\n\t\t\t\t\t\ttimerId = setTimeout( loadAnalytics, 6000 );\n\t\t\t\t\t}\n\n\t\t\t\t\tfunction loadAnalytics( e ) {\n\n\t\t\t\t\t\tif ( e && e.type ) {\n\t\t\t\t\t\t\t//console.log( e.type );\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t//console.log( 'DOMContentLoaded' );\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\tif ( loadedAnalytics ) {\n\t\t\t\t\t\t\treturn;\n\t\t\t\t\t\t}\n\n\t\t\t\t\t\tif( yandexCounter != '' ){\n\t\t\t\t\t\t\t(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\t\t\t\t\t\t\tym( yandexCounter, \"init\", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });\n\n\t\t\t\t\t\t\t// console.log(yandexCounter);\t\t\t\t\t\t\t\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif( zadarmaTrackingId != '' && zadarmaTrackingMetrics != '' ){\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tsetTimeout(() => {\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t(function(w, c){(w[c]=w[c]||[]).push(function(){new zTracker({\"id\":zadarmaTrackingId,\"metrics\":{\"metrika\":zadarmaTrackingMetrics}});});})(window, \"zTrackerCallbacks\");\n\n\t\t\t\t\t\t\t\tvar el = document.createElement('script');\n\t\t\t\t\t\t\t\t// el.async = true;\n\t\t\t\t\t\t\t\tel.id = 'zd_ct_phone_script';\n\t\t\t\t\t\t\t\tel.src = 'https://my.novofon.com/js/ct_phone.min.js';\n\t\t\t\t\t\t\t\t// document.body.appendChild(el);\n\t\t\t\t\t\t\t\tvar sc = document.getElementsByTagName('script')[0];\n\t\t\t\t\t\t\t\tif (sc) sc.parentNode.insertBefore(el, sc);\n\t\t\t\t\t\t\t\telse document.documentElement.firstChild.appendChild(el);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t// console.log(zadarmaTrackingId+' - '+zadarmaTrackingMetrics);\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t}, 500)\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t}\t\t\t\t\t\t\n\n\t\t\t\t\t\tloadedAnalytics = true;\n\n\t\t\t\t\t\tclearTimeout( timerId );\n\n\t\t\t\t\t\twindow.removeEventListener( 'scroll', loadAnalytics );\n\t\t\t\t\t\twindow.removeEventListener( 'touchstart', loadAnalytics );\n\t\t\t\t\t\tdocument.removeEventListener( 'mouseenter', loadAnalytics );\n\t\t\t\t\t\tdocument.removeEventListener( 'click', loadAnalytics );\n\t\t\t\t\t\tdocument.removeEventListener( 'DOMContentLoaded', loadFallback );\n\t\t\t\t\t}\n\t\t\t\t}\t\n\t\t\t\n\t\t\t})();\t\t\t\n\t\t</script>\n\t\t\t\t<script>\n\t\t\tdocument.addEventListener('DOMContentLoaded', () => {\n\t\t\t\tvar inp = '<input class=\"last-name\" type=\"text\" name=\"last-name\" placeholder=\"имя\" value=\"\" style=\"display: none;\">';\n\t\t\t\tdocument.querySelectorAll('form').forEach((form) => {\n\t\t\t\t\tform.insertAdjacentHTML('beforeend', inp);\n\t\t\t\t});\n\t\t\t});\n\t\t</script>\t\t\n\t\t\t<script>\n\t\t(function () {\n\t\t\tvar c = document.body.className;\n\t\t\tc = c.replace(/woocommerce-no-js/, 'woocommerce-js');\n\t\t\tdocument.body.className = c;\n\t\t})();\n\t</script>\n\t<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce-bitrix24-integration/resources/compiled/theme/js/app.js?id=45bde89eb819d2ae7bc3caa6594f77a4&amp;ver=6.4.8\" id=\"wc-bitrix24-theme-js-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js\" id=\"jquery-blockui-js\"></script>\n<script id=\"wc-add-to-cart-js-extra\">\nvar wc_add_to_cart_params = {\"ajax_url\":\"\\/wp-admin\\/admin-ajax.php\",\"wc_ajax_url\":\"\\/?wc-ajax=%%endpoint%%\",\"i18n_view_cart\":\"\\u041f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u044b\",\"cart_url\":\"https:\\/\\/nn.fabrichnie-dveri.ru\\/cart\\/\",\"is_cart\":\"\",\"cart_redirect_after_add\":\"no\"};\n</script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js\" id=\"wc-add-to-cart-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/yith-woocommerce-ajax-search-premium/assets/js/yith-autocomplete.min.js\" id=\"yith_autocomplete-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-includes/js/underscore.min.js\" id=\"underscore-js\"></script>\n<script id=\"wp-util-js-extra\">\nvar _wpUtilSettings = {\"ajax\":{\"url\":\"\\/wp-admin\\/admin-ajax.php\"}};\n</script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-includes/js/wp-util.min.js\" id=\"wp-util-js\"></script>\n<script id=\"wc-add-to-cart-variation-js-extra\">\nvar wc_add_to_cart_variation_params = {\"wc_ajax_url\":\"\\/?wc-ajax=%%endpoint%%\",\"i18n_no_matching_variations_text\":\"\\u0416\\u0430\\u043b\\u044c, \\u043d\\u043e \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432, \\u0441\\u043e\\u043e\\u0442\\u0432\\u0435\\u0442\\u0441\\u0442\\u0432\\u0443\\u044e\\u0449\\u0438\\u0445 \\u0432\\u0430\\u0448\\u0435\\u043c\\u0443 \\u0432\\u044b\\u0431\\u043e\\u0440\\u0443, \\u043d\\u0435 \\u043e\\u0431\\u043d\\u0430\\u0440\\u0443\\u0436\\u0435\\u043d\\u043e. \\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430, \\u0432\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u0434\\u0440\\u0443\\u0433\\u0443\\u044e \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u044e.\",\"i18n_make_a_selection_text\":\"\\u0412\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u043e\\u043f\\u0446\\u0438\\u0438 \\u0442\\u043e\\u0432\\u0430\\u0440\\u0430 \\u043f\\u0435\\u0440\\u0435\\u0434 \\u0435\\u0433\\u043e \\u0434\\u043e\\u0431\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u0435\\u043c \\u0432 \\u0432\\u0430\\u0448\\u0443 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443.\",\"i18n_unavailable_text\":\"\\u042d\\u0442\\u043e\\u0442 \\u0442\\u043e\\u0432\\u0430\\u0440 \\u043d\\u0435\\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0435\\u043d. \\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430, \\u0432\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 \\u0434\\u0440\\u0443\\u0433\\u0443\\u044e \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u044e.\",\"ajax_url\":\"\\/wp-admin\\/admin-ajax.php\",\"i18n_view_cart\":\"\\u041f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u044b\",\"i18n_add_to_cart\":\"\\u0412 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0443\",\"i18n_select_options\":\"\\u0412\\u044b\\u0431\\u0440\\u0430\\u0442\\u044c ...\",\"cart_url\":\"https:\\/\\/nn.fabrichnie-dveri.ru\\/cart\\/\",\"is_cart\":\"\",\"cart_redirect_after_add\":\"no\",\"enable_ajax_add_to_cart\":\"yes\"};\n</script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js\" id=\"wc-add-to-cart-variation-js\"></script>\n<script id=\"yith_wcas_frontend-js-extra\">\nvar yith_wcas_params = {\"loading\":\"https:\\/\\/nn.fabrichnie-dveri.ru\\/wp-content\\/plugins\\/yith-woocommerce-ajax-search-premium\\/assets\\/images\\/ajax-loader.gif\",\"show_all\":\"true\",\"price_label\":\"\",\"show_all_text\":\"\\u043f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c \\u0432\\u0441\\u0435\",\"ajax_url\":\"\\/?wc-ajax=%%endpoint%%\"};\n</script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/yith-woocommerce-ajax-search-premium/assets/js/frontend.min.js\" id=\"yith_wcas_frontend-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/libs/jquery/jquery.mask.min.js\" id=\"maskedinput-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/libs/fancybox/jquery.fancybox.min.js\" id=\"fancybox-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/js/ResizeSensor.min.js\" id=\"ResizeSensor-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/js/theia-sticky-sidebar.min.js\" id=\"sticky-sidebar-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/libs/swiper/swiper-bundle.min.js\" id=\"swiper-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/libs/slick/slick.min.js\" id=\"slick.min-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/js/script.js\" id=\"script-js\"></script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/js/complete.js\" id=\"complete-js\"></script>\n<script id=\"feedback-js-extra\">\nvar feedback_object = {\"url\":\"https:\\/\\/nn.fabrichnie-dveri.ru\\/wp-admin\\/admin-ajax.php\",\"action\":\"feedback_action\",\"nonce\":\"6ab30607cf\"};\n</script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/js/feedback.js\" id=\"feedback-js\"></script>\n<script id=\"wc-single-product-js-extra\">\nvar wc_single_product_params = {\"i18n_required_rating_text\":\"\\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430, \\u043f\\u043e\\u0441\\u0442\\u0430\\u0432\\u044c\\u0442\\u0435 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0443\",\"review_rating_required\":\"yes\",\"flexslider\":{\"rtl\":false,\"animation\":\"slide\",\"smoothHeight\":true,\"directionNav\":false,\"controlNav\":\"thumbnails\",\"slideshow\":false,\"animationSpeed\":500,\"animationLoop\":false,\"allowOneSlide\":false},\"zoom_enabled\":\"\",\"zoom_options\":[],\"photoswipe_enabled\":\"\",\"photoswipe_options\":{\"shareEl\":false,\"closeOnScroll\":false,\"history\":false,\"hideAnimationDuration\":0,\"showAnimationDuration\":0},\"flexslider_enabled\":\"\"};\n</script>\n<script src=\"https://nn.fabrichnie-dveri.ru/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js\" id=\"wc-single-product-js\"></script>\n\t\n\t\n\t<div class=\"cookies__info\" style=\"display: block;\">\n\t\t<div class=\"cookies__container\">\n\t\t\t<p class=\"cookies__content\">\n\t\t\t\tПользуясь сайтом, вы соглашаетесь с использованием cookies и <a target=\"_blank\" class=\"cookies__link-info\" href=\"https://nn.fabrichnie-dveri.ru/privacy-policy/\">Политикой обработки персональных данных</a>\n\t\t\t</p>\n\t\t\t<button class=\"btn cookies__closed\">ок</button>\n\t\t</div>\t\t\t\t\n\t</div>\n\n\n</body></html>",
+  "text": "Купить двери в Нижнем Новгороде с доставкой и установкой О нас Рассрочка Установка от 4 000 ₽ Гарантия Акции Написать директору Search for: Бесплатный замер в день обращения Товары О нас Контакты 0 Избранное Контакты 0 Избранное +7 (831) 219-92-46 Вам перезвонить? Позвонить меню Search for: Двери по производителям Airon Eldorf Loyard PVDOORS Азбука дверей Дверум Поволжская дверная компания ТЕХНО-СТРОЙ Ferroni Мастино Россия (Йошкар-Ола) Межкомнатные двери Двери ПВХ Двери экошпон Ламинированные двери Двери из массива Шпонированные двери Двери пластик CPL Эмалевые двери Входные двери Российские входные двери Противопожарные двери Арки Другая продукция Фурнитура Распродажа Установка от 2 975 ₽ Акции Контакты О нас Гарантии Отзывы Написать письмо директору Рассрочка Бесплатный замер Межкомнатные двери Двери экошпон Двери ПВХ Ламинированные двери Двери из массива Шпонированные двери Эмалевые двери Двери пластик CPL Входные двери Российские входные двери Противопожарные двери Арки Другая продукция Фурнитура Распродажа Акции Установка от 4 000 ₽ Рассрочка О нас Гарантии Отзывы Написать директору Контакты Бесплатный замер. Выезжаем в день обращения Межкомнатные Двери ПВХ 86 товаров Двери экошпон 129 товаров Ламинированные двери 17 товаров Двери из массива 7 товаров Шпонированные двери 8 товаров Эмалевые двери 31 товар Двери пластик CPL 21 товар Входные Российские входные двери 302 товара Противопожарные двери 5 товаров Арки Фурнитура Распродажа Не переплачивайте за лишнее! Цены от производителя, без лишних переплат. С нами вы экономите до 25% от заказа. Входные и межкомнатные двери в Нижнем Новгороде Цены от производителя без наценок и переплат Установка дверей на совесть. Свой учебный центр, работаем по ГОСТ Бесплатный замер и расчёт стоимости прямо у вас дома Бесплатная консультация Рассрочка на 6 месяцев без переплат, без первоначального взноса! Скидка до 50% на установку дверей! Только до конца месяца Каталог дверей в Нижнем Новгороде Двери экошпон 129 товаров Ламинированные двери 17 товаров Двери ПВХ 86 товаров Шпонированные двери 8 товаров Эмалевые двери 31 товар Российские входные двери 302 товара Фурнитура 207 товаров Ручки 73 товара Замки 18 товаров Весь каталог Работаем с 2005 года И знаем о дверях все! Проверьте! Наши менеджеры помогут вам подобрать именно ту дверь, которая устроит вас по цене и качеству. 7 000 + установленных нами дверей в Нижнем Новгороде Удобное расположение магазина Вам всегда будет удобно добраться до нас Большой ассортимент Входные и мекомнатные двери в наличии Установка на совесть Установка дверей опытными мастерами Скидки и акции на двери Только в мае При покупке от 4х дверей петли в подарок В акции участвуют все модели Воспользоваться акцией Выгодное предложение Рассрочка 0% на 12 месяцев без первоночального взноса и переплат Воспользоваться акцией Только у нас Цены от производителя без лишних переплат Мы продаем двери по ценам производителя Воспользоваться акцией Только у нас Установка дверей со скидкой до 50% Только при оформлении заказа до конца месяца Воспользоваться акцией Только в мае Нашли двери дешевле? Снизим цену! если вы нашли аналогичные двери дешевле Воспользоваться акцией Только в мае Повышенная гарантия на двери и все работы гарантия на двери и работы - 3 года, на замки - 7 лет Воспользоваться акцией Посмотреть все акции Монтаж на совесть Правильный и качественный монтаж — залог того, что двери прослужат вам долго и безотказно. Поэтому мы уделяем монтажу особое внимание. Все работы проводится по стандартам разработанными компанией “Фабричные двери” за 21 лет работы с соблюдением ГОСТ 43.32.10. Для всех монтажных работ используем только сертифицированные материалы и профессиональный рабочий инструмент. Установка дверей со скидкой до 50% Подробнее о монтаже После монтажа мы бесплатно убираем за собой - собираем весь мусор в мешки и выносим их на лестничную площадку. Мы так же можем вывезти старые двери. Если этот вопрос актуален, обсудите его с менеджером заказа при заключении договора. Дмитриев Артем Руководитель монтажного отдела Двери, установленные в 2026 году Входная дверь. Толщина металла 1,5 мм. Размер - 960 х 2050 мм Цена 22 140 ₽ Межкомнатные двери из экошпона. Размер - 2000 х 600/700 мм Цена 14 230 ₽ Межкомнатные двери из экошпона. Размер - 2000 х 700/800 мм Цена 11 450 ₽ Ламинированные межкомнатные двери. Размер - 2000 х 800 мм Цена 4 880 ₽ Шпонированные межкомнатные двери. Размер - 2000 х 600/700 мм Цена 23 100 ₽ Межкомнатные двери из массива дерева. Размер - 2000 х 700 мм Цена 19 600 ₽ Входная дверь. Толщина металла 1 мм. Размер - 960 х 2050 мм Цена 11 580 ₽ Входная дверь. Толщина металла 1,2 мм. Размер - 860 х 2050 мм Цена 15 350 ₽ Входная дверь. Толщина металла 1,5 мм. Размер - 960 х 2050 мм Цена 18 300 ₽ Входная дверь. Толщина металла 1,5 мм. Размер - 960 х 2050 мм Цена 22 140 ₽ Межкомнатные двери из экошпона. Размер - 2000 х 600/700 мм Цена 14 230 ₽ Рассчитать стоимость Гарантия лучшей цены! Нашли двери дешевле? Вернем разницу* Акция распространяется на товар идентичной модели, бренда и конфигугурации. Предложение не является договором оферты Качественная работа - высокая репутация Основа любой компании — люди, поэтому нашими коллегами становятся только те, кто готов и любит помогать, учиться и оставлять после себя не только хорошее впечатление, но и безукоризненно выполненную работу. Отлаженный за 21 лет процесс работы даже со сложными и нестандартными заказами позволяет нам с уверенностью заявлять — мы будем рядом с вами на каждом этапе и ответим на любые ваши вопросы. Отзывы о нас Более 1000 клиентов довольны нашей работой Видео - отзыв Видео отзыв на установку межкомнатных дверей 12 июня 2025 Видео - отзыв Видео отзыв на установку межкомнатных дверей 11 января 2025 Видео - отзыв Видео отзыв на установку входной двери 19 марта 2025 Видео - отзыв Видео отзыв на установку входной двери 12 августа 2025 Видео - отзыв Видео отзыв на установку межкомнатных дверей 21 марта 2026 Видео - отзыв Видео отзыв на установку входной двери 12 июня 2025 Видео - отзыв Видео отзыв на установку межкомнатных дверей 15 марта 2026 Видео - отзыв Видео отзыв на установку входной двери 02 июля 2025 Видео - отзыв Видео отзыв на установку межкомнатных дверей 12 июня 2025 Видео - отзыв Видео отзыв на установку межкомнатных дверей 11 января 2025 Видео - отзыв Видео отзыв на установку входной двери 19 марта 2025 Видео - отзыв Видео отзыв на установку входной двери 12 августа 2025 Видео - отзыв Видео отзыв на установку межкомнатных дверей 21 марта 2026 Видео - отзыв Видео отзыв на установку входной двери 12 июня 2025 Ответы на вопросы Вы всегда можете позвонить нам и получить ответы на все интересующие вас вопросы. Собрали самые частые вопросы и отвечаем на них здесь: Сколько будет изготавливаться дверь? Как правило, уже готовые дверные полотна хранят на складе в достаточном количестве, поэтому, выбрав подходящую модель из каталога, вы получите ее в течение 1-3-х дней - именно столько составляет доставка. Если дверь нестандартная или готовится по вашему индивидуальному заказу, то здесь существует такая схема: Двери из ПВХ и экошпона - изготавливают 2 недели. Эмалированная дверь - изготавливают не менее 25 дней. Дверь из массива дерева - изготавливают примерно месяц. Причем двери из дуба производят - 1,5 месяца, а двери из ольхи 3 недели. Срок изготовления дверей из массива разнится, так как на это влияет финальная обработка полотна: в некоторых моделях необходимо несколько слоев лака, а каждый слой высыхает за разное время. Какой материал для межкомнатных дверей лучше: ламинат, шпон, или цельный массив дерева? Однозначного ответа на этот вопрос нет. У каждого из перечисленных материалов есть свои сильные и слабые стороны. Например, ламинированные двери имеют доступную цену, более устойчивы к влажной среде, имеют легкий вес и не нуждаются в особом уходе. Шпонированные двери обладают большей прочностью, визуально выглядят солиднее и богаче, а структура шпона придает дверям вид натурального дерева, так что почти не видно отличий. Двери из массива цельного дерева, в отличие от двух предыдущих — прочнее, имеют более красивый рисунок и оттенок, но и более высокую цену. Можно ли заказать двери нестандартных размеров? Конечно. Мы можем изготовить двери абсолютно любых, нестандартных размеров, а также по вашим индивидуальным эскизам. А еще у нас в наличии имеются распашные двери и двери-купе. Когда рекомендуется установка дверей во время ремонта? В самую последнюю очередь. Обычно после чистового монтажа полов. Установка современных дверей сильно схожа с установкой мебели. Помещение должно полностью просохнуть после ремонтных работ. Также это избавит от необходимости подгонки напольного покрытия под дверную коробку, что сведет на нет образование зазоров. Выбирать и заказывать двери лучше всего за 1,5-2 месяца, потому что в процессе изготовления может появиться потребность выполнить двери или специальные элементы по индивидуальному заказу. Что включает в себя полный комплект двери? Дверное полотно (сама дверь) Дверная коробка (лутка) Стекло Фурнитура (замок, ручка, петли) Доборы (расширители коробки двери) Наличники на обе стороны (5 реек), на одну сторону (2,5 рейки) Бесплатная консультация Рассчитаем стоимость дверей с учетом монтажа +7 (831) 219-92-46 Работаем с 9:00 до 21:00 При обращении до 14:00 можем приехать на замер сегодня! Власов Алексей Руководитель отдела заказов Заказать звонок Каталог Контакты 0 Избранное Позвонить Акции Установка от 4 000 ₽ Рассрочка Получить скидку г. Нижний Новгород, ул. Корейская, д. 24, оф. 10 +7 (831) 219-92-46 nn@fabrichnie-dveri.ru Двери Межкомнатные двери Входные двери Арки межкомнатные Фурнитура Распродажа Информация О нас Гарантия Отзывы Написать директору Контакты Принимаем к оплате Не является публичной офертой Официальный сайт компании “Фабричные двери” Политика конфиденциальности Пользовательское соглашение 2005 - 2026 Фабричные двери Связаться с разработчиками сайта Оформить заказ После отправки формы вам перезвонит наш сотрудник для оформления заказа с уточнением всех необходимых деталей Перезвонить Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с Политикой конфиденциальности данного сайта Записаться на бесплатный замер Перезвонить Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с Политикой конфиденциальности данного сайта Закажите бесплатный звонок Перезвонить Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с Политикой конфиденциальности данного сайта Скидка 10% Только сегодня при заявке с сайта Перезвонить Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с Политикой конфиденциальности данного сайта Спасибо Мы приняли вашу заявку, наш менеджер скоро с вами свяжется! Закрыть Ваша заявка уже была отправлена Наш менеджер скоро с вами свяжется Закрыть Письмо генеральному директору Если до, во время или после обращения в нашу компанию, вы остались чем-то недовольны, пожалуйста, заполните данную форму. Даже если вы уже ранее общались по этому вопросу с кем-то из наших сотрудников. Отправить сообщение Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с Политикой конфиденциальности данного сайта Обратная связь Оставьте свои контакты и мы с вами свяжемся. Осуществляем комплексную маркетинговую поддержку дверного и строительного бизнеса. Прикрепить файл Отправить сообщение Оставляя свои контактные данные, я подтверждаю свое совершеннолетие, согласие на обработку персональных данных в соответствии с Политикой конфиденциальности данного сайта X Пользуясь сайтом, вы соглашаетесь с использованием cookies и Политикой обработки персональных данных ок",
+  "json_ld": [
+    "{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"url\":\"https://nn.fabrichnie-dveri.ru/\",\"name\":\"\\u0414\\u0432\\u0435\\u0440\\u0438 – \\u041d\\u0438\\u0436\\u043d\\u0438\\u0439 \\u041d\\u043e\\u0432\\u0433\\u043e\\u0440\\u043e\\u0434\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://nn.fabrichnie-dveri.ru/search/{search_term_string}/\",\"query-input\":\"required name=search_term_string\"}}",
+    "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"url\":\"https://nn.fabrichnie-dveri.ru/\",\"name\":\"\\u0414\\u0432\\u0435\\u0440\\u0438 – \\u041d\\u0438\\u0436\\u043d\\u0438\\u0439 \\u041d\\u043e\\u0432\\u0433\\u043e\\u0440\\u043e\\u0434\",\"logo\":\"https://nn.fabrichnie-dveri.ru/wp-content/uploads/sites/3/2022/09/favicon.jpg\"}"
+  ],
+  "document": {
+    "title": "Купить двери в Нижнем Новгороде с доставкой и установкой",
+    "meta_description": "Входные и межкомнатные двери в Нижнем Новгороде по ценам от производителя без наценок и переплат. Бесплатно замерим и установим двери на совесть, обучаем монтажников по ГОСТ.",
+    "meta_robots": "max-image-preview:large",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "https://nn.fabrichnie-dveri.ru/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/o-nas/",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/rassrochka/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/uslugi/",
+        "text": "Установка от 4 000 ₽",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/garantii/",
+        "text": "Гарантия",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/akczii/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Написать директору",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wishlist/",
+        "text": "0 Избранное",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wishlist/",
+        "text": "0 Избранное",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78312199246",
+        "text": "+7 (831) 219-92-46",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Вам перезвонить?",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78312350946",
+        "text": "Позвонить",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Двери по производителям",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4964%5D",
+        "text": "Airon",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4812%5D",
+        "text": "Eldorf",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4867%5D",
+        "text": "Loyard",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B5531%5D",
+        "text": "PVDOORS",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4959%5D",
+        "text": "Азбука дверей",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B5227%5D",
+        "text": "Дверум",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4307%5D",
+        "text": "Поволжская дверная компания",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel%5B4620%5D",
+        "text": "ТЕХНО-СТРОЙ",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel%5B4992%5D",
+        "text": "Ferroni",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel%5B5260%5D",
+        "text": "Мастино",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel%5B4502%5D",
+        "text": "Россия (Йошкар-Ола)",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/",
+        "text": "Межкомнатные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/",
+        "text": "Двери ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/",
+        "text": "Двери экошпон",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/",
+        "text": "Ламинированные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/massiv/",
+        "text": "Двери из массива",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/",
+        "text": "Шпонированные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/plastik-cpl/",
+        "text": "Двери пластик CPL",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/",
+        "text": "Эмалевые двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/",
+        "text": "Входные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/",
+        "text": "Российские входные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/protivopozharnye/",
+        "text": "Противопожарные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/arki/",
+        "text": "Арки",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Другая продукция",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/",
+        "text": "Распродажа",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/uslugi/",
+        "text": "Установка от 2 975 ₽",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/akczii/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/o-nas/",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/garantii/",
+        "text": "Гарантии",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/otzyvy/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Написать письмо директору",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/rassrochka/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/",
+        "text": "Межкомнатные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/",
+        "text": "Двери экошпон",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/",
+        "text": "Двери ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/",
+        "text": "Ламинированные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/massiv/",
+        "text": "Двери из массива",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/",
+        "text": "Шпонированные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/",
+        "text": "Эмалевые двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/plastik-cpl/",
+        "text": "Двери пластик CPL",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/",
+        "text": "Входные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/",
+        "text": "Российские входные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/protivopozharnye/",
+        "text": "Противопожарные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/arki/",
+        "text": "Арки",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Другая продукция",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/",
+        "text": "Распродажа",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/akczii/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/uslugi/",
+        "text": "Установка от 4 000 ₽",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/rassrochka/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/o-nas/",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/garantii/",
+        "text": "Гарантии",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/otzyvy/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Написать директору",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Бесплатный замер. Выезжаем в день обращения",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/",
+        "text": "Межкомнатные",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4964]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4812]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4867]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5531]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4959]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5227]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4307]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4620]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/",
+        "text": "Двери ПВХ 86 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/",
+        "text": "Двери экошпон 129 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/",
+        "text": "Ламинированные двери 17 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/massiv/",
+        "text": "Двери из массива 7 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/",
+        "text": "Шпонированные двери 8 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/",
+        "text": "Эмалевые двери 31 товар",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/plastik-cpl/",
+        "text": "Двери пластик CPL 21 товар",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/",
+        "text": "Входные",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4992]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[5531]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4959]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[5227]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[5260]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4502]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4620]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/",
+        "text": "Российские входные двери 302 товара",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/protivopozharnye/",
+        "text": "Противопожарные двери 5 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/arki/",
+        "text": "Арки",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/",
+        "text": "Распродажа",
+        "rel": ""
+      },
+      {
+        "href": "/rassrochka/",
+        "text": "Рассрочка на 6 месяцев",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/",
+        "text": "Скидка до 50%",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4964]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4992]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5531]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[4959]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/?filters=proizvoditel[5227]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/?filters=proizvoditel[4620]",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/eko-shpon/",
+        "text": "Двери экошпон 129 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/finish-fleks/",
+        "text": "Ламинированные двери 17 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/vinil/",
+        "text": "Двери ПВХ 86 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/shpon/",
+        "text": "Шпонированные двери 8 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/emal/",
+        "text": "Эмалевые двери 31 товар",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/rossijskie-vhodnye-dveri/",
+        "text": "Российские входные двери 302 товара",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/",
+        "text": "Фурнитура 207 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/ruchki/",
+        "text": "Ручки 73 товара",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/zamki/",
+        "text": "Замки 18 товаров",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/katalog/",
+        "text": "Весь каталог",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Проверьте!",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/akczii/",
+        "text": "Посмотреть все акции",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-5.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wp-content/themes/DoorShopLite/img/long-srvice-4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi/",
+        "text": "Установка дверей со скидкой до 50%",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/otzyvy/",
+        "text": "Отзывы о нас",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/OVXu-76g6ck",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/w66zPLQ21tA",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/kx3sNSSFGZs",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/VCVtW3G91HQ",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/YzNjUpVY3_k",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/NKJr5tjD_UA",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/TngQB3QZUcc",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/32hDrjxDu60",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/OVXu-76g6ck",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/w66zPLQ21tA",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/kx3sNSSFGZs",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/VCVtW3G91HQ",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/YzNjUpVY3_k",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/embed/NKJr5tjD_UA",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "позвонить",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Двери из ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "экошпона",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Дверь из массива дерева",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78312199246",
+        "text": "+7 (831) 219-92-46",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/wishlist/",
+        "text": "0 Избранное",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78312350946",
+        "text": "Позвонить",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/akczii/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/uslugi/",
+        "text": "Установка от 4 000 ₽",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/rassrochka/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78312199246",
+        "text": "+7 (831) 219-92-46",
+        "rel": ""
+      },
+      {
+        "href": "mailto:nn@fabrichnie-dveri.ru",
+        "text": "nn@fabrichnie-dveri.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/mezhkomnatnye-dveri/",
+        "text": "Межкомнатные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/vhodnye-dveri/",
+        "text": "Входные двери",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/arki/",
+        "text": "Арки межкомнатные",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/furnitura/",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/product-category/rasprodazha/",
+        "text": "Распродажа",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/o-nas/",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/garantii/",
+        "text": "Гарантия",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/otzyvy/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Написать директору",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Пользовательское соглашение",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Связаться с разработчиками сайта",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "X",
+        "rel": ""
+      },
+      {
+        "href": "https://nn.fabrichnie-dveri.ru/privacy-policy/",
+        "text": "Политикой обработки персональных данных",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Бесплатный замер в день обращения",
+      "Бесплатный замер",
+      "Бесплатная консультация",
+      "Воспользоваться акцией",
+      "Воспользоваться акцией",
+      "Воспользоваться акцией",
+      "Воспользоваться акцией",
+      "Воспользоваться акцией",
+      "Воспользоваться акцией",
+      "Подробнее о монтаже",
+      "Рассчитать стоимость",
+      "Сколько будет изготавливаться дверь?",
+      "Какой материал для межкомнатных дверей лучше: ламинат, шпон, или цельный массив дерева?",
+      "Можно ли заказать двери нестандартных размеров?",
+      "Когда рекомендуется установка дверей во время ремонта?",
+      "Что включает в себя полный комплект двери?",
+      "Заказать звонок",
+      "Получить скидку",
+      "Перезвонить",
+      "Перезвонить",
+      "Перезвонить",
+      "Перезвонить",
+      "Закрыть",
+      "Закрыть",
+      "Отправить сообщение",
+      "Отправить сообщение",
+      "ок"
+    ],
+    "h1_texts": [
+      "Входные и межкомнатные двери в Нижнем Новгороде"
+    ],
+    "h2_texts": [
+      "Каталог дверей в Нижнем Новгороде",
+      "Работаем с 2005 года",
+      "Скидки и акции на двери",
+      "Монтаж на совесть",
+      "Двери, установленные в 2026 году",
+      "Гарантия лучшей цены!",
+      "Качественная работа - высокая репутация",
+      "Ответы на вопросы",
+      "Бесплатная консультация"
+    ],
+    "h3_texts": [
+      "Двери экошпон",
+      "Ламинированные двери",
+      "Двери ПВХ",
+      "Шпонированные двери",
+      "Эмалевые двери",
+      "Российские входные двери",
+      "Фурнитура",
+      "Ручки",
+      "Замки"
+    ],
+    "counts": {
+      "paragraph": 165,
+      "h1": 1,
+      "h2": 9,
+      "h3": 9,
+      "link": 178,
+      "image": 112,
+      "list_item": 164,
+      "strong": 0,
+      "form": 8,
+      "input": 47
+    }
+  }
+}

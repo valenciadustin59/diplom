@@ -1,0 +1,480 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://potolki-sam.ru/ceny.html",
+  "final_url": "https://potolki-sam.ru/ceny.html",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "content-encoding": "gzip",
+    "content-length": "8200",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 14:24:48 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "last-modified": "Mon, 04 Mar 2024 12:28:37 GMT",
+    "pragma": "no-cache",
+    "server": "nginx/1.22.1",
+    "set-cookie": "PHPSESSID=1300f94b3d0931933f07190cc80449f7; path=/; domain=.potolki-sam.ru; HttpOnly\nicms[device_type]=desktop; expires=Sat, 01-May-2027 14:24:48 GMT; Max-Age=31536000; path=/; domain=potolki-sam.ru; httponly\nicms[guest_date_log]=1777645488; expires=Sat, 01-May-2027 14:24:48 GMT; Max-Age=31536000; path=/; domain=potolki-sam.ru; httponly",
+    "strict-transport-security": "max-age=31536000",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/5.6.40"
+  },
+  "response_time_ms": 6239.8848,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:24:53.875235+00:00",
+  "html": "<!DOCTYPE html><html><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n    <title>Стоимость натяжных потолков в Самаре с установкой за 1 м2 - Цены на натяжные полотна</title>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/favicons/apple-touch-icon.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicons/favicon-32x32.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"194x194\" href=\"/favicons/favicon-194x194.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/favicons/android-chrome-192x192.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicons/favicon-16x16.png\">\n\t<link rel=\"manifest\" href=\"/favicons/site.webmanifest\">\n\t<link rel=\"mask-icon\" href=\"/favicons/safari-pinned-tab.svg\" color=\"#062f61\">\n\t<link rel=\"shortcut icon\" href=\"/favicons/favicon.ico\">\n\t<meta name=\"msapplication-TileColor\" content=\"#062f61\">\n\t<meta name=\"msapplication-TileImage\" content=\"/favicons/mstile-144x144.png\">\n\t<meta name=\"msapplication-config\" content=\"/favicons/browserconfig.xml\">\n\t<meta name=\"theme-color\" content=\"#062f61\">\n                                                                \n                            \t<meta name=\"description\" content=\"Закажите точный расчёт стоимости натяжных потолков в городе Самара от компании &quot;Про-Потолки&quot;. Цены на натяжные полотна от 199 руб/м2. На сайте можете ознакомиться с примерными расчётами дешевых и дизайнерских потолков в Самаре.\">\n\t<link rel=\"canonical\" href=\"https://potolki-sam.ru/ceny.html\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/theme-layout.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/theme-gui.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/theme-widgets.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/theme-modal.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/style.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/slick.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/jquery.fancybox.min.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/html/banner__ceny.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/controllers/content/widgets/list/list_polotna.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/controllers/content/widgets/list/list_price-remont.css?323\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/controllers/content/widgets/list/list_reviewmobile.css?323\">\n\t<script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script src=\"/templates/potolki/js/jquery.js?323\"></script>\n\t<script src=\"/templates/potolki/js/bootstrap.min.js?323\"></script>\n\t<script src=\"/templates/potolki/js/slick.js?323\"></script>\n\t<script src=\"/templates/potolki/js/parallax.js?323\"></script>\n\t<script src=\"/templates/potolki/js/jquery-modal.js?323\"></script>\n\t<script src=\"/templates/potolki/js/core.js?323\"></script>\n\t<script src=\"/templates/potolki/js/modal.js?323\"></script>\n\t<script src=\"/templates/potolki/js/jquery.fancybox.min.js?323\"></script>\n\t<script src=\"/templates/potolki/js/jquery.maskedinput.js?323\"></script>\n\t<script src=\"/templates/potolki/js/form.js?323\"></script>\n\t<script src=\"/templates/potolki/js/jquery.readall.min.js?323\"></script>\n\t<script src=\"/templates/potolki/controllers/content/widgets/list/list_price-remont.js?323\"></script>\n    <meta name=\"csrf-token\" content=\"f66122f2f623feb240bdcc3e67de2f7b743be651cdf0081f4732a8aa4a698360\">\n    <script src=\"https://kit.fontawesome.com/bfde58a07f.js\" crossorigin=\"anonymous\"></script>\n\t\n\t        <script>\n                                    var calc_Action = '199';\n                                    var calc_AlProfile = '100';\n                                    var calc_ustanovka = '150';\n                                    var calc_EcoPrice = '550';\n                                    var calc_lightPrice = '550';\n                                    var calc_ustanovkalight = '300';\n                                    var calc_ugolPrice = '0';\n                                    var calc_linesPrice = '250';\n                                    var calc_urovenPrice = '1500';\n                                    var calc_podsvetkaPrice = '350';\n                                    var calc_photoprintPrice = '1000';\n                                    var calc_lightinsertPrice = '1500';\n                                    var calc_karnizPrice = '350';\n                                    var calc_elektrikaPrice = '50';\n                                    var calc_priceRoof_mat_white = '100';\n                                    var calc_priceRoof_mat_color = '150';\n                                    var calc_priceRoof_satin_white = '100';\n                                    var calc_priceRoof_satin_color = '150';\n                                    var calc_priceRoof_glan_white = '100';\n                                    var calc_priceRoof_glan_color = '150';\n                                    var calc_priceRoof_tkan_white = '800';\n                                    var calc_priceRoof_tkan_color = '900';\n                                    var calc_rassrochka_month = '0';\n                </script>\n        \t<script type=\"text/javascript\">\nvar fbID = '';\nvar googleID = '';\n</script>\n\n\n\n<script charset=\"utf-8\" type=\"text/javascript\" src=\"//cdn.callibri.ru/widget_v2.min.js\" name=\"callibriWidget\"></script></head>\n<body id=\"desktop_device_type\"><div id=\"popup-manager\"></div>\n\t    <div class=\"wrapper\">\n\t\t<div class=\"wrapper__header\">\n\t\t\t<div class=\"wrapper__top-line\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<div class=\"row justify-content-between align-items-center\">\n\t\t\t\t\t\t<div class=\"col-lg-5 col-md-6 col-sm-8 col-6 d-flex align-items-center justify-content-sm-start justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-lg-7 col-md-6 col-sm-4 col-6\">\n\t\t\t\t\t\t\t <ul class=\"top-line__links d-flex justify-content-end\">\n   <li><a href=\"javascript:void(0)\" class=\"write-me popUpForm\" data-title=\"Оставьте заявку и комментарий\" data-fields=\"name,phone,comment\" data-button=\"Заказать звонок\"><img src=\"/templates/potolki/images/svg/letter.svg\" class=\"img-fluid\"><span>Написать нам</span></a></li>\n   <!-- li class=\"d-md-block d-none\"><img src=\"/templates/potolki/images/svg/online.svg\" class=\"img-fluid\" /><span>Оплата online</span></li -->\n  \t<li class=\"d-lg-block d-none\"><img src=\"/templates/potolki/images/svg/clock.svg\" class=\"img-fluid\"><span>Работаем ежедневно с 09.00 до 20.00</span></li>\n</ul>\n\n\n \t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<header>\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<div class=\"row align-items-center\">\n\t\t\t\t\t\t<div class=\"col-lg-6 col-sm-4 col-12 header__logo d-flex align-items-center text-sm-left text-center\">\n\t\t\t\t\t\t\t<a href=\"/\"><img src=\"/templates/potolki/images/logo.png\" class=\"img-fluid\"></a>\n\t\t\t\t\t\t\t<div class=\"header__losung d-lg-block d-none\"> ПРЕМИАЛЬНЫЕ натяжные потолки<br> в Самаре по доступным ценам </div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-lg-3 col-sm-4 header__phone\">\n\t\t\t\t\t\t\t <a class=\"header__phone-num pr_phone\" href=\"tel:+78463796823\">8 (846) 379-68-23</a>\n<a class=\"header__phone-btn popUpForm\" href=\"javascript:\" data-title=\"Заказать звонок\" data-fields=\"name,phone\" data-button=\"Заказать звонок\" data-callibri_search_form=\"false\"><span>Заказать звонок</span></a>\n\n\n \t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-lg-3 col-sm-4 col-12 header__link d-sm-flex align-self-start justify-content-end\">\n\t\t\t\t\t\t\t<ul class=\"header__list d-md-flex align-items-start justify-content-sm-start justify-content-between\">\n\t\t\t\t\t\t\t\t<li class=\"header__list-call\">\n\t\t\t\t\t\t\t\t\t <a href=\"javascript:\" class=\"zamer popUpForm\" data-title=\"Вызов замерщика\" data-fields=\"name,phone\">\n\t<img src=\"/templates/potolki/images/svg/rule.svg\" class=\"img-fluid\">\n\t<span>Вызвать<br> замерщика</span>\n</a>\n \t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li class=\"header__list-calc\">\n\t\t\t\t\t\t\t\t\t <a href=\"/kalkulyator.html\" target=\"_blank\">\n    <img src=\"/templates/potolki/images/svg/calc.svg\" class=\"img-fluid\">\n\t<span>Калькулятор<br> стоимости</span>\n</a> \t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</header>\n\t\t\t<div class=\"header__scroll\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<div class=\"row align-items-center\">\n\t\t\t\t\t\t<div class=\"col-md-3 col-6 header__logo\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a class=\"p-0\" href=\"/\">\n\t\t\t\t\t\t\t\t\t<img alt=\"Про-Потолки\" class=\"img-fluid\" src=\"/templates/potolki/images/logo.png\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-xl-5 col-lg-4 col-md-3 col-6 px-lg-3 px-md-0 d-flex justify-content-xl-between justify-content-md-center justify-content-end align-items-center header__phone-scroll\">\n\t\t\t\t\t\t\t <a href=\"/kalkulyator.html\" class=\"btn-head btn-order d-xl-block d-none\" target=\"_blank\">КАЛЬКУЛЯТОР СТОИМОСТИ</a><a href=\"tel:+78463796823\" class=\"scroll__phone\">8 (846) 379-68-23</a> \t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-xl-4 col-lg-5 d-md-block d-none col-6 pl-lg-0\">\n\t\t\t\t\t\t\t <form class=\"clearfix mb-0 normalForm\" data-title=\"Заказать звонок\">\n\t\t\t\t\t\t\t\t<div class=\"d-sm-flex banner-promo__form-wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"phone\" id=\"top-phone\" placeholder=\"+7 (999)999-99-99\">\n\t\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<button type=\"submit\"><span>Заказать звонок</span></button>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</form> \t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"wrapper__topmenu\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-12\"> <nav class=\"navbar navbar-expand-md p-0 justify-content-start\">\n\t<button class=\"navbar-toggler d-md-none d-flex justify-content-between p-md-0 py-0 px-3 w-100 align-items-center collapsed\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n\t\t<span class=\"navbar-title d-md-none\">Меню</span>\n\t\t<span class=\"navbar-button d-md-none\">\n\t\t\t<span></span>\n\t\t\t<span></span>\n\t\t\t<span></span>\n\t\t</span>\n\t</button>\n\t<div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n\t\t <ul class=\"navbar-nav\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Акции\" class=\"nav-link\" href=\"/promotions\" target=\"_self\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tАкции\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill active\">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Цены\" class=\"nav-link\" href=\"/ceny.html\" target=\"_self\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tЦены\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Каталог\" class=\"nav-link\" href=\"/katalog\" target=\"_self\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tКаталог\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Наши работы\" class=\"nav-link\" href=\"/gallery\" target=\"_self\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tНаши работы\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Видео\" class=\"nav-link\" href=\"/video.html\" target=\"_self\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tВидео\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"О компании\" class=\"nav-link\" href=\"/company\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tО компании\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Отзывы\" class=\"nav-link\" href=\"/reviews.html\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tОтзывы\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"nav-item flex-fill \">\n\t\t\t\t\t\t\t\t\t\t\t<a title=\"Контакты\" class=\"nav-link\" href=\"/contact\">\n\t\t\t\t\t\t\t<span class=\"wrap\">\n\t\t\t\t\t\t\t\tКонтакты\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li></ul>\n\t\t\t\t</div>\n<select class=\"mobile_menu_select\"><option value=\"/\"></option></select></nav> </div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"wrapper__center\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"container\">\n\t\t\t\t\t\t\t\t\t\t<div id=\"breadcrumbs\">\n\t\t\t\t\t\t\t\t\t\t\t<ul class=\"d-flex wrapper__breadcrumbs\">\n    <li class=\"home\">\n        <a href=\"/\" title=\"Главная\">Главная</a>\n    </li>\n            <li class=\"sep\"> / </li>\n                                <li>\n                                    <span>Цены на натяжные потолки</span>\n                            </li>\n\n            \n            \n        \n    </ul>\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"wrapper__gradient\">\n\t\t\t\t <div class=\"wrapper__banner-promo\">\n\t<div class=\"container\">\n\t\t<div class=\"row align-items-center\">\n\t\t\t<div class=\"col-lg-6 col-12 banner-promo__left pb-lg-0 pb-3\">\n\t\t\t\t<div class=\"banner-promo__title\">\n    <h1 class=\"mb-0\"><span>Цены на натяжные потолки</span> с установкой за 1 м2</h1>\n  \t<span>в Самаре</span>\n</div>\n<div class=\"banner-promo__text\">\n  <ol>\n\t<li>Цена складывается из стоимости полотна, профиля и монтажных работ.</li>\n\t<li>Стоимость полотна зависит от ширины, фактуры, производителя и характеристик.</li>\n\t<li>Стоимость монтажных работ зависит от сложности и объёма.</li>\n\t</ol>\n  </div>\t\t\t\t\t<div class=\"banner-promo__rupor\">Для рассчёта стоимости <strong>запишитесь на замер</strong> или предоставьте данные для расчёта <strong>по телефону</strong></div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-6 col-12\">\n\t\t\t\t<div class=\"banner-promo__form\">\n\t\t\t\t\t<div class=\"banner-promo__form-out\">\n\t\t\t\t\t\t<div class=\"banner-promo__form-in\">\n\t\t\t\t\t\t\t<div class=\"banner-promo__form-title\"> \n\t\t\t\t\t\t\t\tЗакажите <span>расчет cтоимости</span><br> по дизайн-проекту\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"banner-promo__form-text\"> \n\t\t\t\t\t\t\t\tМы составим полную смету на реализацию Вашего дизайн-проекта или Бесплатно подготовим для Вас дизайн-проект\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<form id=\"mypres_form\" class=\"clearfix normalForm\" data-title=\"Заказать РАСЧЕТ+СМЕТУ\">\n\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"phone\" id=\"top-phone\" placeholder=\"+7 (999)999-99-99\">\n\t\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<button type=\"submit\"><span>Заказать РАСЧЕТ+СМЕТУ</span></button>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<label class=\"form-agreement-yes checkbox-week-label\">\n\t\t\t\t\t\t\t\t\t<input class=\"checkbox-week\" name=\"is_allowed_personal\" checked=\"checked\" value=\"1\" type=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<span class=\"checkbox-week-custom\"></span>\n\t\t\t\t\t\t\t\t\t<span class=\"checkbox-week-label-in\">Согласен с <a href=\"/privacy.html\" target=\"_blank\">политикой конфиденциальности</a></span>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<img src=\"/templates/potolki/images/gerl2form.png\" class=\"img-fluid d-xl-block d-none\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n \t\t\t</div>\n        \t\t<div class=\"wrapper__module \">\n\t\t<div class=\"container text-md-left text-center\">\n\t\t<div class=\"module__heading d-md-block d-inline-block\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<h2 class=\"heading__title\">Цены на полотна в Самаре</h2>\n\t\t\t\t\t<div class=\"heading__text\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\t<div class=\"module__body\">\n\t\t<div class=\"container\">\n\t\t\t\n\t<div class=\"row polotno-block__row\">\n\t\t\t\t\t<div class=\"col-xl-3 col-lg-4 col-sm-6 col-12 py-lg-0 py-sm-3 py-2\">\n\t\t\t<div class=\"polotno-block\">\n\t\t\t\t<div class=\"polotno-block__heading\">\n\t\t\t\t\t<div class=\"polotno-block__title\">LUMFER</div>\n\t\t\t\t\t(пожаробезопасность - КМ3)\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__image\">\n\t\t\t\t\t<img src=\"/upload/000/u1/0/5/lumfer-photo-polotno.png\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__price d-flex align-items-center justify-content-between\">\n\t\t\t\t\t<div class=\"polotno-block__price-block\">\n\t\t\t\t\t\t<p>\n\tот <strong>1 100</strong> руб./м<sup>2</sup>\n<br>\n\t(белый, черный)</p>\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"polotno-block__country\">\n\t\t\t\t\t\t<img src=\"/upload/000/u1/8/a/lumfer-icon-small.png\">\n\t\t\t\t\t\t<div>Германия</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__sizes\"><ul><li>Ширина: до <strong>305 </strong>см</li><li>Плотность:  <strong>320 </strong>мк</li></ul></div>\n\t\t\t\t<div class=\"polotno-block__type d-flex align-items-center\">мат., сатин, глянец, фотопечать, фактурный, ромбовидный,</div>\n\t\t\t\t<a href=\"javascript:void(0)\" class=\"polotno-block__btn popUpForm\" data-title=\"Получить консультацию по LUMFER\" data-fields=\"name,phone\"><span>КОНСУЛЬТАЦИЯ</span></a>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-3 col-lg-4 col-sm-6 col-12 py-lg-0 py-sm-3 py-2\">\n\t\t\t<div class=\"polotno-block\">\n\t\t\t\t<div class=\"polotno-block__heading\">\n\t\t\t\t\t<div class=\"polotno-block__title\">DESCOR</div>\n\t\t\t\t\t(пожаробезопасность - КМ3)\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__image\">\n\t\t\t\t\t<img src=\"/upload/000/u1/d/1/pongs-descor-photo-polotno.png\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__price d-flex align-items-center justify-content-between\">\n\t\t\t\t\t<div class=\"polotno-block__price-block\">\n\t\t\t\t\t\t<p>\n\tот <strong>1 300&nbsp;</strong>руб./м<sup>2</sup>\n<br>\n\t(белый, цветной)</p>\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"polotno-block__country\">\n\t\t\t\t\t\t<img src=\"/upload/000/u1/1/0/pongs-descor-icon-small.png\">\n\t\t\t\t\t\t<div>Германия</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__sizes\"><ul>\n<li>Ширина: до <strong>505 </strong>см</li><li>Плотность:  <strong>210 </strong>мк</li></ul></div>\n\t\t\t\t<div class=\"polotno-block__type d-flex align-items-center\">матовый тканевый</div>\n\t\t\t\t<a href=\"javascript:void(0)\" class=\"polotno-block__btn popUpForm\" data-title=\"Получить консультацию по DESCOR\" data-fields=\"name,phone\"><span>КОНСУЛЬТАЦИЯ</span></a>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-3 col-lg-4 col-sm-6 col-12 py-lg-0 py-sm-3 py-2\">\n\t\t\t<div class=\"polotno-block\">\n\t\t\t\t<div class=\"polotno-block__heading\">\n\t\t\t\t\t<div class=\"polotno-block__title\">MSD CLASSIC</div>\n\t\t\t\t\t(пожаробезопасность - КМ4)\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__image\">\n\t\t\t\t\t<img src=\"/upload/000/u1/a/1/msd-classic-photo-polotno.png\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__price d-flex align-items-center justify-content-between\">\n\t\t\t\t\t<div class=\"polotno-block__price-block\">\n\t\t\t\t\t\t<p>\n\tот <strong>350</strong> руб./м<sup>2</sup><br>\n\t(белый, цветной)</p>\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"polotno-block__country\">\n\t\t\t\t\t\t<img src=\"/upload/000/u1/6/6/msd-classic-icon-small.png\">\n\t\t\t\t\t\t<div>Китай</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__sizes\"><ul><li>Ширина: до <strong>505 </strong>см</li><li>Плотность: <strong>180 </strong>мк</li></ul></div>\n\t\t\t\t<div class=\"polotno-block__type d-flex align-items-center\">матовый, сатиновый, глянцевый</div>\n\t\t\t\t<a href=\"javascript:void(0)\" class=\"polotno-block__btn popUpForm\" data-title=\"Получить консультацию по MSD CLASSIC\" data-fields=\"name,phone\"><span>КОНСУЛЬТАЦИЯ</span></a>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-3 col-lg-4 col-sm-6 col-12 py-lg-0 py-sm-3 py-2\">\n\t\t\t<div class=\"polotno-block\">\n\t\t\t\t<div class=\"polotno-block__heading\">\n\t\t\t\t\t<div class=\"polotno-block__title\">MSD PREMIUM</div>\n\t\t\t\t\t(пожаробезопасность - КМ4)\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__image\">\n\t\t\t\t\t<img src=\"/upload/000/u1/a/b/msd-premium-photo-polotno.jpg\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__price d-flex align-items-center justify-content-between\">\n\t\t\t\t\t<div class=\"polotno-block__price-block\">\n\t\t\t\t\t\t<p>\n\tот <strong>400</strong> руб./м<sup>2</sup><br>\n\t(белый, цветной)</p>\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"polotno-block__country\">\n\t\t\t\t\t\t<img src=\"/upload/000/u1/9/d/msd-premium-icon-small.png\">\n\t\t\t\t\t\t<div>Тайвань</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"polotno-block__sizes\"><ul><li>Ширина: до <strong>505 </strong>см</li><li>Плотность: <strong>180-200</strong> мк</li></ul></div>\n\t\t\t\t<div class=\"polotno-block__type d-flex align-items-center\">матовый, сатин, глянец</div>\n\t\t\t\t<a href=\"javascript:void(0)\" class=\"polotno-block__btn popUpForm\" data-title=\"Получить консультацию по MSD PREMIUM\" data-fields=\"name,phone\"><span>КОНСУЛЬТАЦИЯ</span></a>\n\t\t\t</div>\n\t\t</div>\n\t\t</div>\n\t\t</div>\n\t</div>\n</div><div class=\"wrapper__module gradient-block\">\n\t\t<div class=\"container text-md-left text-center\">\n\t\t<div class=\"module__heading d-md-block d-inline-block\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<h2 class=\"heading__title\">ПРАЙС-ЛИСТ НА МОНТАЖ ПОТОЛКОВ</h2>\n\t\t\t\t\t<div class=\"heading__text\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\t<div class=\"module__body\">\n\t\t<div class=\"container\">\n\t\t\t<div class=\"d-flex align-items-center flex-wrap\">\n\t<div class=\"tabs-remont-price__prices\">\n\t\t<div class=\"wrapper__tabs-remont-price\">\n\t\t\t<ul class=\"tabs-remont-price__caption d-flex flex-wrap justify-content-lg-start justify-content-center\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"active\"><span>Потолочные профили и брус</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><span>Дополнительные работы</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li><span>Монтаж и установка</span></li>\n\t\t\t\t\t\t</ul>\n\t\t\t<div class=\"tabs-remont-price__wrap\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tabs-remont-price__content active\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"remont-price__title\">Потолочные профили и брус</div>\n\t\t\t\t\t\t\t<div class=\"readall-wrapper\"><div class=\"remont-price__block readall\" style=\"overflow: hidden;\">\n\t\t\t\t\t\t\t\t<table>\n\t<tbody><tr>\n\t\t<th colspan=\"2\">Наименование</th>\n\t</tr>\n\t<tr>\n\t\t<td>Профиль стеновой алюминиевый</td>\n\t\t<td>от <strong>260</strong> руб/пог.м</td>\n\t</tr>\n\t<tr>\n\t\t<td>Профиль стеновой пластиковый</td>\n\t\t<td>от <strong>180</strong> руб/пог.м</td>\n\t</tr>\n\t<tr>\n\t\t<td>Профиль стеновой DESCOR</td>\n\t\t<td>от <strong>260</strong> руб/<sup></sup>пог.м</td>\n\t</tr>\n\t<tr>\n\t\t<td>Профиль стеновой белый Clipso CW - 2.0м.п.</td>\n\t\t<td>от <strong>260</strong> руб/пог.м</td>\n\t</tr>\n\t<tr>\n\t\t<td>Брус 100*50</td>\n\t\t<td><strong>550</strong> руб/пог.м</td>\n\t</tr>\n\t<tr>\n\t\t<td>Брус 20*40</td>\n\t\t<td><strong>300</strong> руб/пог.м</td>\n\t</tr>\n\t<tr>\n\t\t<td>Брус 50*50</td>\n\t\t<td><strong>400</strong> руб/<sup></sup>пог.м</td>\n\t</tr>\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n</tbody></table>\t\t\t\t\t\t\t</div><button class=\"readall-button\" style=\"display: none;\">Показать еще</button></div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tabs-remont-price__content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"remont-price__title\">Дополнительные работы</div>\n\t\t\t\t\t\t\t<div class=\"remont-price__block\">\n\t\t\t\t\t\t\t\t<table>\n<tbody>\n<tr>\n\t<th colspan=\"2\">\n\t\tНаименование\n\t</th>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка ПВХ полотна\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>100</strong> руб/м<sup>2</sup>\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка тканевого полотна\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>100</strong> руб/м2\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tОбвод трубы\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>200</strong> руб/шт\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tОбработка угла свыше четырех\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>300</strong> руб/шт\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tДемонтаж радиатора\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>350</strong> руб/м<sup>2</sup>\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tКриволинейный участок полотна\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>330</strong> руб/пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tВнутренний вырез\n\t</td>\n\t<td>\n\t\t<p>\n\t\t\tот \n\t\t\t<strong>330</strong> руб/пог.м\n\t\t</p>\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tПрименение строительного пылесоса\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>330</strong> руб/пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tКриволинейная спайка полотен\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>1150</strong> руб/пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tКрепление профиля на металл\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>410</strong> руб/пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tСверление керамогранита\n\t</td>\n\t<td>\n\t\t<p>\n\t\t\tот \n\t\t\t<strong>600</strong> руб/пог.м\n\t\t</p>\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tСверление керамической плитки\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>50</strong> руб/пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка профиля на высоте от 310 см\n\t</td>\n\t<td>\n\t\tот \n\t\t<strong>50</strong> руб/<sup></sup>пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка бруса в уровень (работа)\n\t</td>\n\t<td>\n\t\t<strong>0</strong> руб.\n\t</td>\n</tr>\n</tbody>\n</table>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"tabs-remont-price__content\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"remont-price__title\">Монтаж и установка</div>\n\t\t\t\t\t\t\t<div class=\"remont-price__block\">\n\t\t\t\t\t\t\t\t<table>\n<tbody>\n<tr>\n\t<th colspan=\"2\">\n\t\tНаименование\n\t</th>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка люстры без сборки (платформа 20х20см)\n\t</td>\n\t<td>\n\t\tот <strong>300</strong> руб/шт.\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка люстры без сборки диаметром от 90 см (платформа 50х50см)\n\t</td>\n\t<td>\n\t\tот <strong>1150</strong> руб/шт.\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка круглых светильников (до 110мм)\n\t</td>\n\t<td>\n\t\t<p>\n\t\t\tот <strong>300</strong> руб/шт.\n\t\t</p>\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка квадратных светильников (до 180х180)\n\t</td>\n\t<td>\n\t\tот <strong>500</strong> руб/шт.\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tЭлектропроводка по потолку\n\t</td>\n\t<td>\n\t\t<p>\n\t\t\tот <strong>150</strong> руб/шт.\n\t\t</p>\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка потолочного карниза для штор\n\t</td>\n\t<td>\n\t\tот <strong>350</strong> руб/пог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tУстановка светодиодной ленты\n\t</td>\n\t<td>\n\t\tот <strong>50</strong> руб/мог.м\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tФотопечать на потолке глянцевая\n\t</td>\n\t<td>\n\t\tот <strong>2000</strong> руб/м2\n\t</td>\n</tr>\n<tr>\n\t<td>\n\t\tФотопечать UV Матовая\n\t</td>\n\t<td>\n\t\tот <strong>2500</strong> руб/м<sup>2</sup>\n\t</td>\n</tr>\n</tbody>\n</table>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"tabs-remont-price__form\">\n\t\t<div class=\"banner-promo__form-out\">\n\t\t\t\t\t\t<div class=\"banner-promo__form-in\">\n\t\t\t\t\t\t\t<div class=\"banner-promo__form-title\"> \n\t\t\t\t\t\t\t\tПОЛУЧИТЕ <span>БЕСПЛАТНУЮ&nbsp;СМЕТУ</span>\n\t\t\t\t\t\t\t\t<img src=\"/templates/potolki/images/iconcalc.png\">\n\t\t\t\t\t\t\t</div> \n\t\t\t\t\t\t\t<div class=\"banner-promo__form-text text-center mb-2\"> \n\t\t\t\t\t\t\t\tОставьте заявку<br> и получите стоимость установки потолка\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<form id=\"mypres_form\" class=\"clearfix normalForm\" data-title=\"УЗНАТЬ СТОИМОСТЬ ПОТОЛКА\">\n\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-wrapper\">\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"name\" placeholder=\"Ваше имя\">\n\t\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"text\" name=\"phone\" placeholder=\"+7 (999)999-99-99\">\n\t\t\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t\t\t<div class=\"banner-promo__form-field\">\n\t\t\t\t\t\t\t\t\t\t<button type=\"submit\"><span>УЗНАТЬ СТОИМОСТЬ УСТАНОВКИ</span></button>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<label class=\"form-agreement-yes checkbox-week-label\">\n\t\t\t\t\t\t\t\t\t<input class=\"checkbox-week\" name=\"is_allowed_personal\" checked=\"checked\" value=\"1\" type=\"checkbox\">\n\t\t\t\t\t\t\t\t\t<span class=\"checkbox-week-custom\"></span>\n\t\t\t\t\t\t\t\t\t<span class=\"checkbox-week-label-in\">Согласен с <a href=\"/pages/privacy.html\" target=\"_blank\"> политикой конфиденциальности</a></span>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t</div>\n</div>\n\n\n\n\n\n\n\t\t</div>\n\t</div>\n</div><div class=\"wrapper__module revtext-wrapper gradient-block pb-0\">\n\t\t<div class=\"container text-md-left text-center\">\n\t\t<div class=\"module__heading d-md-block d-inline-block\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<h2 class=\"heading__title\">ОТЗЫВЫ КЛИЕНТОВ</h2>\n\t\t\t\t\t<div class=\"heading__text\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\t<div class=\"module__body\">\n\t\t<div class=\"container\">\n\t\t\t\t\t\t<div class=\"mobrev__slider slick-slider slick-initialized slick-dotted\" data-slick=\"{\n\t\t\t\t&quot;dots&quot;: true,\n\t\t\t\t&quot;infinite&quot;: true,\n\t\t\t\t&quot;speed&quot;: 300,\n\t\t\t\t&quot;slidesToShow&quot;: 3,\n\t\t\t\t&quot;slidesToScroll&quot;:1,\n\t\t\t\t  &quot;responsive&quot;: [\n\t\t\t\t\t{\n\t\t\t\t\t  &quot;breakpoint&quot;: 1260,\n\t\t\t\t\t  &quot;settings&quot;: {\n\t\t\t\t\t\t&quot;slidesToShow&quot;: 2,\n\t\t\t\t\t\t&quot;slidesToScroll&quot;:1\n\t\t\t\t\t  }\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t &quot;breakpoint&quot;: 768,\n\t\t\t\t\t  &quot;settings&quot;: {\n\t\t\t\t\t\t&quot;slidesToShow&quot;: 1,\n\t\t\t\t\t\t&quot;slidesToScroll&quot;:1\n\t\t\t\t\t  }\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t  &quot;breakpoint&quot;: 575,\n\t\t\t\t\t  &quot;settings&quot;: {\n\t\t\t\t\t\t&quot;slidesToShow&quot;: 1,\n\t\t\t\t\t\t&quot;slidesToScroll&quot;:1,\n\t\t\t\t\t\t&quot;dots&quot;: false\n\t\t\t\t\t  }\n\t\t\t\t\t}\n\t\t\t\t  ]\n\t\t\t\t}\"><button class=\"slick-prev slick-arrow\" aria-label=\"Previous\" type=\"button\" style=\"display: block;\">Previous</button><div class=\"slick-list draggable\"><div class=\"slick-track\" style=\"opacity: 1; width: 7130px; transform: translate3d(-930px, 0px, 0px);\"><div class=\"slick-slide slick-cloned\" data-slick-index=\"-3\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/9/5/aeccc85b.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/9/5/aeccc85b.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"-2\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/9/5/95ab1d5d.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/9/5/95ab1d5d.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"-1\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/6/7/6af2cbcf.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/6/7/6af2cbcf.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-current slick-active\" data-slick-index=\"0\" aria-hidden=\"false\" role=\"tabpanel\" id=\"slick-slide00\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/f/2/efbe2e36.jpg\" tabindex=\"0\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/f/2/efbe2e36.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-active\" data-slick-index=\"1\" aria-hidden=\"false\" role=\"tabpanel\" id=\"slick-slide01\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/1/5/15f87b37.jpg\" tabindex=\"0\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/1/5/15f87b37.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-active\" data-slick-index=\"2\" aria-hidden=\"false\" role=\"tabpanel\" id=\"slick-slide02\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/a/7/a735d7c7.jpg\" tabindex=\"0\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/a/7/a735d7c7.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"3\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide03\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/4/2/a7738fec.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/4/2/a7738fec.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"4\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide04\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/7/0/3ced9b2b.png\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/7/0/3ced9b2b.png\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"5\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide05\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/6/3/6f959c2a.png\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/6/3/6f959c2a.png\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"6\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide06\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/7/5/5a333f5d.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/7/5/5a333f5d.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"7\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide07\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/9/5/aeccc85b.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/9/5/aeccc85b.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"8\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide08\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/9/5/95ab1d5d.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/9/5/95ab1d5d.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide\" data-slick-index=\"9\" aria-hidden=\"true\" tabindex=\"-1\" role=\"tabpanel\" id=\"slick-slide09\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/6/7/6af2cbcf.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/6/7/6af2cbcf.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"10\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/f/2/efbe2e36.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/f/2/efbe2e36.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"11\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/1/5/15f87b37.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/1/5/15f87b37.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"12\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/a/7/a735d7c7.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/a/7/a735d7c7.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"13\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/4/2/a7738fec.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/4/2/a7738fec.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"14\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/7/0/3ced9b2b.png\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/7/0/3ced9b2b.png\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"15\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/6/3/6f959c2a.png\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/6/3/6f959c2a.png\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"16\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/7/5/5a333f5d.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/7/5/5a333f5d.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"17\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/9/5/aeccc85b.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/9/5/aeccc85b.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"18\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/9/5/95ab1d5d.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/9/5/95ab1d5d.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div><div class=\"slick-slide slick-cloned\" data-slick-index=\"19\" aria-hidden=\"true\" tabindex=\"-1\" style=\"width: 310px;\"><div><div class=\"mobrev__block\" style=\"width: 100%; display: inline-block;\">\n\t\t\t\t\t\t\t<div class=\"mobrev__block-in\">\n\t\t\t\t\t\t\t\t<a data-fancybox=\"gal-sert\" class=\"d-block\" href=\"/upload/000/u1/6/7/6af2cbcf.jpg\" tabindex=\"-1\">\n\t\t\t\t\t\t\t\t\t<img src=\"/upload/000/u1/6/7/6af2cbcf.jpg\" class=\"img-fluid\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div></div></div></div></div><button class=\"slick-next slick-arrow\" aria-label=\"Next\" type=\"button\" style=\"display: block;\">Next</button><ul class=\"slick-dots\" style=\"display: flex;\" role=\"tablist\"><li class=\"slick-active\" role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control00\" aria-controls=\"slick-slide00\" aria-label=\"1 of 4\" tabindex=\"0\" aria-selected=\"true\">1</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control01\" aria-controls=\"slick-slide01\" aria-label=\"2 of 4\" tabindex=\"-1\">2</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control02\" aria-controls=\"slick-slide02\" aria-label=\"3 of 4\" tabindex=\"-1\">3</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control03\" aria-controls=\"slick-slide03\" aria-label=\"4 of 4\" tabindex=\"-1\">4</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control04\" aria-controls=\"slick-slide04\" aria-label=\"5 of 4\" tabindex=\"-1\">5</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control05\" aria-controls=\"slick-slide05\" aria-label=\"6 of 4\" tabindex=\"-1\">6</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control06\" aria-controls=\"slick-slide06\" aria-label=\"7 of 4\" tabindex=\"-1\">7</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control07\" aria-controls=\"slick-slide07\" aria-label=\"8 of 4\" tabindex=\"-1\">8</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control08\" aria-controls=\"slick-slide08\" aria-label=\"9 of 4\" tabindex=\"-1\">9</button></li><li role=\"presentation\"><button type=\"button\" role=\"tab\" id=\"slick-slide-control09\" aria-controls=\"slick-slide09\" aria-label=\"10 of 4\" tabindex=\"-1\">10</button></li></ul></div>\n\t\t</div>\n\t</div>\n</div>\t\t\t\t        <div class=\"wrapper__content\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t</div>\n        </div>\n\t\t\t\t \n\t\t</div>\n\t\t<footer class=\"wrapper__footer\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-xl-2 col-lg-2 col footer__menu-fst\">\n\t\t\t\t\t\t <p>\n\t<a href=\"/\" class=\"footer__title\">Натяжные потолки</a>\n</p>\n<ul>\n\t<li><a href=\"/katalog\">Каталог</a></li>\n\t<li><a href=\"/ceny.html\">Цены</a></li>\n\t<li><a href=\"/kalkulyator.html\">Калькулятор</a></li>\n\t<li><a href=\"/gallery\">Фото</a></li>\n\t<li><a href=\"/reviews.html\">Отзывы</a></li>\n\t<li><a href=\"/promotions\">Акции и скидки</a></li>\n\t<li><a href=\"/contact\">Контакты</a></li>\n</ul> \t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-2 col-lg-2 col footer__menu-sec\">\n\t\t\t\t\t\t <p>\n\t<a class=\"footer__title\">Материалы</a>\n</p>\n<ul>\n\t<li><a href=\"/katalog/matovye.html\">Матовые</a></li>\n\t<li><a href=\"/katalog/gljancevye.html\">Глянцевые</a></li>\n\t<li><a href=\"/katalog/tkanevye.html\">Тканевые</a></li>\n\t<li><a href=\"/katalog/satinovye.html\">Сатиновые</a></li>\n</ul> \t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-2 col-lg-2 col footer__menu-frd\">\n\t\t\t\t\t\t <p>\n\t<a class=\"footer__title\">Назначение</a>\n</p>\n<ul>\n\t<li><a href=\"/katalog/v-vannuyu.html\">В ванной</a></li>\n\t<li><a href=\"/katalog/v-detskuyu-komnatu.html\">В детской</a></li>\n\t<li><a href=\"/katalog/na-kuhnyu.html\">На кухне</a></li>\n\t<li><a href=\"/katalog/v-zal.html\">В зал</a></li>\n\t<li><a href=\"/katalog/v-spalnyu.html\">В спальне</a></li>\n</ul> \t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-2 col-3 d-lg-block d-none\">\n\t\t\t\t\t\t <p>\n\t<a class=\"footer__title\">Типы потолков</a>\n</p>\n<ul>\n\t<li><a href=\"/katalog/so-svetovymi-linijami.html\">Световые линии</a></li>\n\t<li><a href=\"/katalog/mnogourovnevye.html\">Многоуровневые</a></li>\n\t<li><a href=\"/katalog/treki-v-potolke.html\">С трековыми светильниками</a></li>\n\t<li><a href=\"/katalog/parjaschie.html\">Парящие</a></li>\n\t<li><a href=\"/katalog/s-fotopechatyu.html\">С фотопечатью</a></li>\n\t<li><a href=\"/katalog/s-podsvetkoi.html\">С подсветкой</a></li>\n\t<li><a href=\"/katalog/tenevye.html\">Теневые</a></li>\n</ul> \t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-2 d-xl-block d-none\">\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-xl-2 col-lg-3 col-4 text-center pl-lg-2 pl-0 footer__menu-last\">\n\t\t\t\t\t\t <div class=\"footer__phone\"><a href=\"tel:+78463796823\" class=\"pr_phone\">8 (846) 379-68-23</a></div>\n<a href=\"javascript:void(0)\" class=\"footer__btn popUpForm\" data-title=\"Закажите бесплатный звонок\" data-fields=\"name,phone\" data-button=\"Заказать звонок\" data-callibri_search_form=\"false\">Заказать звонок</a>\n<a href=\"javascript:void(0)\" class=\"footer__btn green-button-gradient popUpForm\" data-title=\"Закажите бесплатный выезд замерщика\" data-fields=\"name,phone\" data-button=\"Вызвать замерщика\"><span>Вызов замерщика</span></a>\n<!-- a href=\"/payments\" class=\"footer__btn\"><span>Оплата онлайн</span></a -->\n \t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"container row-line\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-lg-2 col-12 footer__info pb-lg-0 pb-3 text-lg-left text-justify d-lg-block d-none\">\n\t\t\t\t\t\t<a href=\"/\" class=\"mb-2 d-block\">\n\t\t\t\t\t\t\t<img src=\"/templates/potolki/images/logo.png\" class=\"img-fluid\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-8 col-9 footer__info-link\">\n\t\t\t\t\t\t Внимание! Данный сайт носит информационный характер для жителей города Самара и ни при каких условиях не является публичной офертой, которая определяется положениями Статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг, пожалуйста, обращайтесь к нашим менеджерам.\n\n<a href=\"/privacy.html\" target=\"_blank\">Политика конфиденциальности</a> \t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-2 col-3 footer__social\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"company-logo\">\n\t\t\t\t\t\t\t<a href=\"https://osa-digital.ru\" target=\"_blank\">\n\t\t\t\t\t\t\t\t<img loading=\"lazy\" src=\"https://osa-digital.ru/templates/osa/images/logo.svg\" alt=\"Логотип OSA Digital\">\n\t\t\t\t\t\t\t\tРазработка и продвижение\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</footer>\n\t\t    </div>\n\t    \t<script src=\"/templates/potolki/js/init.js\"></script>\n\t<script src=\"//cdn.callibri.ru/callibri.js\" type=\"text/javascript\" charset=\"utf-8\"></script>\n\t<script type=\"text/javascript\">\nvar mailID = '';\nvar vkID = '';\nvar yandexID = '95369750';\n</script>\n\n\n\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(95369750, \"init\", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/95369750\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\t\n</body></html>",
+  "text": "Стоимость натяжных потолков в Самаре с установкой за 1 м2 - Цены на натяжные полотна Написать нам Работаем ежедневно с 09.00 до 20.00 ПРЕМИАЛЬНЫЕ натяжные потолки в Самаре по доступным ценам 8 (846) 379-68-23 Заказать звонок Вызвать замерщика Калькулятор стоимости КАЛЬКУЛЯТОР СТОИМОСТИ 8 (846) 379-68-23 Заказать звонок Меню Акции Цены Каталог Наши работы Видео О компании Отзывы Контакты Главная / Цены на натяжные потолки Цены на натяжные потолки с установкой за 1 м2 в Самаре Цена складывается из стоимости полотна, профиля и монтажных работ. Стоимость полотна зависит от ширины, фактуры, производителя и характеристик. Стоимость монтажных работ зависит от сложности и объёма. Для рассчёта стоимости запишитесь на замер или предоставьте данные для расчёта по телефону Закажите расчет cтоимости по дизайн-проекту Мы составим полную смету на реализацию Вашего дизайн-проекта или Бесплатно подготовим для Вас дизайн-проект Заказать РАСЧЕТ+СМЕТУ Согласен с политикой конфиденциальности Цены на полотна в Самаре LUMFER (пожаробезопасность - КМ3) от 1 100 руб./м 2 (белый, черный) Германия Ширина: до 305 см Плотность: 320 мк мат., сатин, глянец, фотопечать, фактурный, ромбовидный, КОНСУЛЬТАЦИЯ DESCOR (пожаробезопасность - КМ3) от 1 300 руб./м 2 (белый, цветной) Германия Ширина: до 505 см Плотность: 210 мк матовый тканевый КОНСУЛЬТАЦИЯ MSD CLASSIC (пожаробезопасность - КМ4) от 350 руб./м 2 (белый, цветной) Китай Ширина: до 505 см Плотность: 180 мк матовый, сатиновый, глянцевый КОНСУЛЬТАЦИЯ MSD PREMIUM (пожаробезопасность - КМ4) от 400 руб./м 2 (белый, цветной) Тайвань Ширина: до 505 см Плотность: 180-200 мк матовый, сатин, глянец КОНСУЛЬТАЦИЯ ПРАЙС-ЛИСТ НА МОНТАЖ ПОТОЛКОВ Потолочные профили и брус Дополнительные работы Монтаж и установка Потолочные профили и брус Наименование Профиль стеновой алюминиевый от 260 руб/пог.м Профиль стеновой пластиковый от 180 руб/пог.м Профиль стеновой DESCOR от 260 руб/ пог.м Профиль стеновой белый Clipso CW - 2.0м.п. от 260 руб/пог.м Брус 100*50 550 руб/пог.м Брус 20*40 300 руб/пог.м Брус 50*50 400 руб/ пог.м Показать еще Дополнительные работы Наименование Установка ПВХ полотна от 100 руб/м 2 Установка тканевого полотна от 100 руб/м2 Обвод трубы от 200 руб/шт Обработка угла свыше четырех от 300 руб/шт Демонтаж радиатора от 350 руб/м 2 Криволинейный участок полотна от 330 руб/пог.м Внутренний вырез от 330 руб/пог.м Применение строительного пылесоса от 330 руб/пог.м Криволинейная спайка полотен от 1150 руб/пог.м Крепление профиля на металл от 410 руб/пог.м Сверление керамогранита от 600 руб/пог.м Сверление керамической плитки от 50 руб/пог.м Установка профиля на высоте от 310 см от 50 руб/ пог.м Установка бруса в уровень (работа) 0 руб. Монтаж и установка Наименование Установка люстры без сборки (платформа 20х20см) от 300 руб/шт. Установка люстры без сборки диаметром от 90 см (платформа 50х50см) от 1150 руб/шт. Установка круглых светильников (до 110мм) от 300 руб/шт. Установка квадратных светильников (до 180х180) от 500 руб/шт. Электропроводка по потолку от 150 руб/шт. Установка потолочного карниза для штор от 350 руб/пог.м Установка светодиодной ленты от 50 руб/мог.м Фотопечать на потолке глянцевая от 2000 руб/м2 Фотопечать UV Матовая от 2500 руб/м 2 ПОЛУЧИТЕ БЕСПЛАТНУЮ СМЕТУ Оставьте заявку и получите стоимость установки потолка УЗНАТЬ СТОИМОСТЬ УСТАНОВКИ Согласен с политикой конфиденциальности ОТЗЫВЫ КЛИЕНТОВ Previous Next 1 2 3 4 5 6 7 8 9 10 Натяжные потолки Каталог Цены Калькулятор Фото Отзывы Акции и скидки Контакты Материалы Матовые Глянцевые Тканевые Сатиновые Назначение В ванной В детской На кухне В зал В спальне Типы потолков Световые линии Многоуровневые С трековыми светильниками Парящие С фотопечатью С подсветкой Теневые 8 (846) 379-68-23 Заказать звонок Вызов замерщика Внимание! Данный сайт носит информационный характер для жителей города Самара и ни при каких условиях не является публичной офертой, которая определяется положениями Статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг, пожалуйста, обращайтесь к нашим менеджерам. Политика конфиденциальности Разработка и продвижение",
+  "json_ld": [],
+  "document": {
+    "title": "Стоимость натяжных потолков в Самаре с установкой за 1 м2 - Цены на натяжные полотна",
+    "meta_description": "Закажите точный расчёт стоимости натяжных потолков в городе Самара от компании \"Про-Потолки\". Цены на натяжные полотна от 199 руб/м2. На сайте можете ознакомиться с примерными расчётами дешевых и дизайнерских потолков в Самаре.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "https://potolki-sam.ru/ceny.html",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "javascript:void(0)",
+        "text": "Написать нам",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78463796823",
+        "text": "8 (846) 379-68-23",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Заказать звонок",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator.html",
+        "text": "Калькулятор стоимости",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator.html",
+        "text": "КАЛЬКУЛЯТОР СТОИМОСТИ",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78463796823",
+        "text": "8 (846) 379-68-23",
+        "rel": ""
+      },
+      {
+        "href": "/promotions",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "/ceny.html",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/katalog",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/video.html",
+        "text": "Видео",
+        "rel": ""
+      },
+      {
+        "href": "/company",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/reviews.html",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/contact",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/privacy.html",
+        "text": "политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "КОНСУЛЬТАЦИЯ",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "КОНСУЛЬТАЦИЯ",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "КОНСУЛЬТАЦИЯ",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "КОНСУЛЬТАЦИЯ",
+        "rel": ""
+      },
+      {
+        "href": "/pages/privacy.html",
+        "text": "политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/9/5/aeccc85b.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/9/5/95ab1d5d.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/6/7/6af2cbcf.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/f/2/efbe2e36.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/1/5/15f87b37.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/a/7/a735d7c7.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/4/2/a7738fec.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/7/0/3ced9b2b.png",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/6/3/6f959c2a.png",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/7/5/5a333f5d.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/9/5/aeccc85b.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/9/5/95ab1d5d.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/6/7/6af2cbcf.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/f/2/efbe2e36.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/1/5/15f87b37.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/a/7/a735d7c7.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/4/2/a7738fec.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/7/0/3ced9b2b.png",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/6/3/6f959c2a.png",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/7/5/5a333f5d.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/9/5/aeccc85b.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/9/5/95ab1d5d.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/6/7/6af2cbcf.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/katalog",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/ceny.html",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator.html",
+        "text": "Калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "Фото",
+        "rel": ""
+      },
+      {
+        "href": "/reviews.html",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/promotions",
+        "text": "Акции и скидки",
+        "rel": ""
+      },
+      {
+        "href": "/contact",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/matovye.html",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/gljancevye.html",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/tkanevye.html",
+        "text": "Тканевые",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/satinovye.html",
+        "text": "Сатиновые",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Назначение",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/v-vannuyu.html",
+        "text": "В ванной",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/v-detskuyu-komnatu.html",
+        "text": "В детской",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/na-kuhnyu.html",
+        "text": "На кухне",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/v-zal.html",
+        "text": "В зал",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/v-spalnyu.html",
+        "text": "В спальне",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Типы потолков",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/so-svetovymi-linijami.html",
+        "text": "Световые линии",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/mnogourovnevye.html",
+        "text": "Многоуровневые",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/treki-v-potolke.html",
+        "text": "С трековыми светильниками",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/parjaschie.html",
+        "text": "Парящие",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/s-fotopechatyu.html",
+        "text": "С фотопечатью",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/s-podsvetkoi.html",
+        "text": "С подсветкой",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/tenevye.html",
+        "text": "Теневые",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78463796823",
+        "text": "8 (846) 379-68-23",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "Заказать звонок",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "Вызов замерщика",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/privacy.html",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://osa-digital.ru",
+        "text": "Разработка и продвижение",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Заказать звонок",
+      "Меню",
+      "Заказать РАСЧЕТ+СМЕТУ",
+      "Показать еще",
+      "УЗНАТЬ СТОИМОСТЬ УСТАНОВКИ",
+      "Previous",
+      "Next",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "h1_texts": [
+      "Цены на натяжные потолки с установкой за 1 м2"
+    ],
+    "h2_texts": [
+      "Цены на полотна в Самаре",
+      "ПРАЙС-ЛИСТ НА МОНТАЖ ПОТОЛКОВ",
+      "ОТЗЫВЫ КЛИЕНТОВ"
+    ],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 12,
+      "h1": 1,
+      "h2": 3,
+      "h3": 0,
+      "link": 80,
+      "image": 42,
+      "list_item": 62,
+      "strong": 44,
+      "form": 3,
+      "input": 6
+    }
+  }
+}

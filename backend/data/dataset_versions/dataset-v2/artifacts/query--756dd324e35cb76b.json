@@ -1,0 +1,821 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://www.vkuskuhni.ru/",
+  "final_url": "https://www.vkuskuhni.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:50:11 GMT",
+    "server": "nginx/1.28.3",
+    "vary": "Accept-Encoding"
+  },
+  "response_time_ms": 6436.2742,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:50:17.159998+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru-RU\" prefix=\"og: https://ogp.me/ns# article: https://ogp.me/ns/article# profile: https://ogp.me/ns/profile# fb: https://ogp.me/ns/fb#\" class=\"no-js\"><!--<![endif]--><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t<meta name=\"google-site-verification\" content=\"2yw7lRHldO3ssgr1OMFjV4CgiT6_YjSmyC28xpxeeXM\">\n\t<meta name=\"yandex-verification\" content=\"084b5b985c4f65a0\">\n<meta name=\"yandex-verification\" content=\"eb35703aa7f0b959\">\n\t<meta charset=\"utf-8\">\n\t<meta name=\"robots\" content=\"noyaca\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n\n\t<link rel=\"shortcut icon\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/favicon.ico\" type=\"image/x-icon\">\n\n\t<!-- Chrome, Firefox OS and Opera -->\n\t<meta name=\"theme-color\" content=\"#000\">\n\t<!-- Windows Phone -->\n\t<meta name=\"msapplication-navbutton-color\" content=\"#000\">\n\t<!-- iOS Safari -->\n\t<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#000\">\n\n\t<meta name=\"robots\" content=\"index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1\">\n\n\t<!-- This site is optimized with the Yoast SEO plugin v27.3 - https://yoast.com/product/yoast-seo-wordpress/ -->\n\t<title>Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя</title>\n\t<meta name=\"description\" content=\"Заказать кухню по индивидуальным размерам. Купить кухню недорого по ценам производителя. Кухонные гарнитуры европейского качества с встроенной техникой. Дизайн проект бесплатно!\">\n\t<link rel=\"canonical\" href=\"https://www.vkuskuhni.ru/\">\n\t<link rel=\"next\" href=\"https://www.vkuskuhni.ru/page/2/\">\n\t<meta property=\"og:locale\" content=\"ru_RU\">\n\t<meta property=\"og:type\" content=\"website\">\n\t<meta property=\"og:title\" content=\"Кухни на заказ - мебельный салон Вкусные Кухни\">\n\t<meta property=\"og:description\" content=\"Изготовление кухонь на заказ по индивидуальным размерам в Екатеринбурге\">\n\t<meta property=\"og:url\" content=\"https://www.vkuskuhni.ru/\">\n\t<meta property=\"og:site_name\" content=\"Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя\">\n\t<meta name=\"twitter:card\" content=\"summary_large_image\">\n\t<meta name=\"twitter:site\" content=\"@vkuskuhni\">\n\t<script type=\"text/javascript\" async=\"\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"name\":\"Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#website\"},\"about\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#organization\"},\"description\":\"Заказать кухню по индивидуальным размерам. Купить кухню недорого по ценам производителя. Кухонные гарнитуры европейского качества с встроенной техникой. Дизайн проект бесплатно!\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#breadcrumb\"},\"inLanguage\":\"ru-RU\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная страница\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#website\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"name\":\"Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя\",\"description\":\"Заказать кухню по индивидуальным размерам. Купить кухню недорого по ценам производителя. Кухонные гарнитуры европейского качества с встроенной техникой. Дизайн проект бесплатно!\",\"publisher\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.vkuskuhni.ru\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"ru-RU\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#organization\",\"name\":\"ООО \\\"Вкусные Кухни\\\"\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/wp-content\\/uploads\\/2017\\/08\\/logo2.jpg\",\"contentUrl\":\"https:\\/\\/www.vkuskuhni.ru\\/wp-content\\/uploads\\/2017\\/08\\/logo2.jpg\",\"width\":207,\"height\":79,\"caption\":\"ООО \\\"Вкусные Кухни\\\"\"},\"image\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/vkuskuhni\\/\",\"https:\\/\\/x.com\\/vkuskuhni\",\"https:\\/\\/www.instagram.com\\/vkus_kuhni\\/\"]}]}</script>\n\t<meta name=\"google-site-verification\" content=\"UZH3yb-owMd31rrnqsIxYQN9KGB9ifZ5yoXveKyk33Y\">\n\t<meta name=\"yandex-verification\" content=\"6046afd2999d774d\">\n\t<!-- / Yoast SEO plugin. -->\n\n\n<link rel=\"dns-prefetch\" href=\"//ajax.googleapis.com\">\n<link rel=\"dns-prefetch\" href=\"//fonts.googleapis.com\">\n<style id=\"wp-img-auto-sizes-contain-inline-css\" type=\"text/css\">\nimg:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px}\n/*# sourceURL=wp-img-auto-sizes-contain-inline-css */\n</style>\n<link rel=\"stylesheet\" id=\"ht_ctc_main_css-css\" href=\"https://www.vkuskuhni.ru/wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/css/main.css?ver=4.39\" media=\"all\">\n<style id=\"classic-theme-styles-inline-css\" type=\"text/css\">\n/*! This file is auto-generated */\n.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}\n/*# sourceURL=/wp-includes/css/classic-themes.min.css */\n</style>\n<style id=\"global-styles-inline-css\" type=\"text/css\">\n:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}\n:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}\n:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}\n:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}\n:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}\n/*# sourceURL=global-styles-inline-css */\n</style>\n<link rel=\"stylesheet\" id=\"my_googlefonts-css\" href=\"https://fonts.googleapis.com/css?family=PT+Sans%3A400%2C400i%2C700%2C700i&amp;ver=6.9.4\" media=\"all\">\n<link rel=\"stylesheet\" id=\"my_bootstrap-css\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/bootstrap/bootstrap.min-2.css?ver=6.9.4\" media=\"all\">\n<link rel=\"stylesheet\" id=\"my_magnific-css\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/magnific-popup/magnific-popup.css?ver=6.9.4\" media=\"all\">\n<link rel=\"stylesheet\" id=\"my_owl_carousel-css\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/owl-carousel2/owl.carousel.min.css?ver=6.9.4\" media=\"all\">\n<link rel=\"stylesheet\" id=\"my_owl_carousel_theme-css\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/owl-carousel2/owl.theme.default.min.css?ver=6.9.4\" media=\"all\">\n<link rel=\"stylesheet\" id=\"my_animate-css\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/animate/animate.min.css?ver=6.9.4\" media=\"all\">\n<link rel=\"stylesheet\" id=\"style-css-css\" href=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/style.css?ver=6.9.4\" media=\"all\">\n<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js?ver=6.9.4\" id=\"jquery-js\"></script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/magnific-popup/jquery.magnific-popup.min.js?ver=6.9.4\" id=\"my_magnific_js-js\"></script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/libs/owl-carousel2/owl.carousel.min.js?ver=6.9.4\" id=\"my_owl_carousel_js-js\"></script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/js/jquery.mask.min.js?ver=6.9.4\" id=\"my_mask_js-js\"></script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/js/jquery.cookie.min.js?ver=6.9.4\" id=\"my_cookie_js-js\"></script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/js/loadmore.js?ver=6.9.4\" id=\"true_loadmore-js\"></script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/js/common.js?ver=6.9.4\" id=\"my_common-js\"></script>\n<link rel=\"https://api.w.org/\" href=\"https://www.vkuskuhni.ru/wp-json/\"><link rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"https://www.vkuskuhni.ru/xmlrpc.php?rsd\">\n<meta name=\"generator\" content=\"WordPress 6.9.4\">\n<meta name=\"generator\" content=\"Elementor 4.0.0; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto\">\n\t\t\t<style>\n\t\t\t\t.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),\n\t\t\t\t.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {\n\t\t\t\t\tbackground-image: none !important;\n\t\t\t\t}\n\t\t\t\t@media screen and (max-height: 1024px) {\n\t\t\t\t\t.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),\n\t\t\t\t\t.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {\n\t\t\t\t\t\tbackground-image: none !important;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t@media screen and (max-height: 640px) {\n\t\t\t\t\t.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),\n\t\t\t\t\t.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {\n\t\t\t\t\t\tbackground-image: none !important;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t</style>\n\t\t\t<link rel=\"icon\" href=\"https://www.vkuskuhni.ru/wp-content/uploads/2025/01/cropped-logo-6-e1728581531821-32x32.png\" sizes=\"32x32\">\n<link rel=\"icon\" href=\"https://www.vkuskuhni.ru/wp-content/uploads/2025/01/cropped-logo-6-e1728581531821-192x192.png\" sizes=\"192x192\">\n<link rel=\"apple-touch-icon\" href=\"https://www.vkuskuhni.ru/wp-content/uploads/2025/01/cropped-logo-6-e1728581531821-180x180.png\">\n<meta name=\"msapplication-TileImage\" content=\"https://www.vkuskuhni.ru/wp-content/uploads/2025/01/cropped-logo-6-e1728581531821-270x270.png\">\n<script src=\"//code-ya.jivosite.com/widget/E9tkIq8yi9\" async=\"\"></script>\n<link rel=\"stylesheet\" href=\"https://code.jivo.ru/css/cdddffe/widget.css\" class=\"jv-css\"></head>\n\n<body>\n\t\n\t<header>\n\t\t<div class=\"header-top\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t\t<div class=\"logo\">\n\t\t\t\t\t\t<a href=\"/\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/logo.png\" alt=\"Логотип Вкусные кухни\"></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t\t<div class=\"slogan\">\n\t\t\t\t\t\t\t<p style=\"text-align: center\"><span style=\"font-size: 14pt;color: #000000\"><span style=\"font-family: 'times new roman', times, serif\"><strong>100% ИНДИВИДУАЛЬНЫЕ КУХНИ</strong></span></span></p>\n<p style=\"text-align: center\"><span style=\"font-size: 14pt;font-family: 'times new roman', times, serif\">делаем по Вашим размерам с 2005 года </span></p>\n<p style=\"text-align: center\"><span style=\"font-family: 'times new roman', times, serif;color: #333333\"><span style=\"font-size: 18pt\"><span style=\"font-size: 14pt;font-family: 'times new roman', times, serif\">на заказ </span></span><strong><span style=\"font-size: 18pt\">в Екатеринбурге</span></strong></span></p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t\t<div class=\"top-phone\">\n\t\t\t\t\t\t\t<ul class=\"mag-popup\">\n\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<ul <li=\"\">Мебельный Центр «ГУЛЛИВЕР» <br> <a href=\"tel:+79126152535\">+7 (912) 615-25-35</a>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<li><a class=\"btn btn-all\" data-effect=\"mfp-zoom-in\" href=\"#test-popup\">При посещении салона <br>Дизайн-проект бесплатно </a></li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t\t\t<nav class=\"header-menu\">\n\t\t\t\t\t\t\t<ul id=\"menu-glavnoe-menju\" class=\"menu\"><li id=\"menu-item-38\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38\"><a href=\"https://www.vkuskuhni.ru/catalog/\">Каталог</a>\n<ul class=\"sub-menu\">\n\t<li id=\"menu-item-1162\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1162\"><a href=\"https://www.vkuskuhni.ru/catalog/kuhni-klassika/\">Классические</a></li>\n\t<li id=\"menu-item-1164\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1164\"><a href=\"https://www.vkuskuhni.ru/catalog/modern/\">Современные</a></li>\n\t<li id=\"menu-item-1163\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1163\"><a href=\"https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/\">Глянцевые</a></li>\n\t<li id=\"menu-item-3010\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3010\"><a href=\"https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/\">Матовые</a></li>\n</ul>\n</li>\n<li id=\"menu-item-1131\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-1131\"><a href=\"/stock/\">Акции</a></li>\n<li id=\"menu-item-2192\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2192\"><a>Наши работы</a>\n<ul class=\"sub-menu\">\n\t<li id=\"menu-item-2563\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2563\"><a href=\"https://www.vkuskuhni.ru/nashi_raboty/\">Готовые</a></li>\n\t<li id=\"menu-item-2564\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2564\"><a href=\"https://www.vkuskuhni.ru/project/\">Проекты</a></li>\n</ul>\n</li>\n<li id=\"menu-item-2565\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2565\"><a href=\"https://www.vkuskuhni.ru/dizain-proekt-kuhni/\">Дизайн проект</a></li>\n<li id=\"menu-item-114\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-114\"><a href=\"https://www.vkuskuhni.ru/otzyvy/\">Отзывы</a></li>\n<li id=\"menu-item-2566\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2566\"><a href=\"https://www.vkuskuhni.ru/kontakty/\">Контакты</a></li>\n<li id=\"menu-item-4389\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4389\"><a>Комплектующие</a>\n<ul class=\"sub-menu\">\n\t<li id=\"menu-item-4392\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4392\"><a href=\"https://www.vkuskuhni.ru/fasady-dlja-kuhni/\">Фасады</a></li>\n\t<li id=\"menu-item-4391\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4391\"><a href=\"https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/\">Начинка для кухонных шкафов</a></li>\n\t<li id=\"menu-item-4390\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4390\"><a href=\"https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/\">Столешницы</a></li>\n</ul>\n</li>\n<li id=\"menu-item-4040\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4040\"><a href=\"#\">Покупателю</a>\n<ul class=\"sub-menu\">\n\t<li id=\"menu-item-4171\" class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4171\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/zakazat-kuhnyu/\">Как заказать</a></li>\n\t<li id=\"menu-item-4041\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4041\"><a href=\"https://www.vkuskuhni.ru/dostavka-i-oplata/\">Доставка и оплата</a></li>\n\t<li id=\"menu-item-4057\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4057\"><a href=\"https://www.vkuskuhni.ru/montazh-kuhni/\">Монтаж</a></li>\n\t<li id=\"menu-item-4114\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4114\"><a href=\"https://www.vkuskuhni.ru/garantiya/\">Гарантии</a></li>\n\t<li id=\"menu-item-4468\" class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4468\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/kuhonnyj-garnitur/\">Правила эксплуатации кухни</a></li>\n\t<li id=\"menu-item-4469\" class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4469\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/mojka-iskustvennyj-kamen/\">Правила использования мойки из искусственного камня</a></li>\n</ul>\n</li>\n<li id=\"menu-item-139\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-139\"><a href=\"https://www.vkuskuhni.ru/o-kompanii/\" title=\"О компании\">О салоне</a>\n<ul class=\"sub-menu\">\n\t<li id=\"menu-item-7759\" class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-7759\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/sdelat-kuhnyu-na-zakaz/\">Как мы делаем кухню — от заказа до монтажа</a></li>\n</ul>\n</li>\n<li id=\"menu-item-4073\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4073\"><a>Вопрос-Ответ</a>\n<ul class=\"sub-menu\">\n\t<li id=\"menu-item-4016\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4016\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/pomoshh-v-vybore/\">Как выбрать</a></li>\n\t<li id=\"menu-item-4011\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4011\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-dizajne/\">Дизайн</a></li>\n\t<li id=\"menu-item-6269\" class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-6269\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/uhod-za-kuhnej/\">Уход за кухней</a></li>\n\t<li id=\"menu-item-4015\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4015\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-fasadah/\">Фасады</a></li>\n\t<li id=\"menu-item-4012\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4012\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-komplektujushhih/\">Комплектующие</a></li>\n\t<li id=\"menu-item-4014\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4014\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-tehnike-dlja-kuhni/\">Техника</a></li>\n\t<li id=\"menu-item-4013\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4013\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-materialah/\">Материалы</a></li>\n</ul>\n</li>\n</ul>\t\t\t\t\t\t\t</nav>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</header>\n\t<div class=\"slider\">\n\t\t<div class=\"container-fluid\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"owl-carousel owl-theme owl-carousel-1 owl-loaded owl-drag\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n<div class=\"owl-stage-outer\"><div class=\"owl-stage\" style=\"transition: all; width: 14080px; transform: translate3d(-3840px, 0px, 0px);\"><div class=\"owl-item cloned\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/4-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ВЫ БУДЕТЕ ЗНАТЬ</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>как будет выглядеть кухня</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">Дизайн-проект</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">бесплатно</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">при заказе у нас</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item cloned\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/5-1024x279-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ТЕПЕРЬ МЫ В МЦ \"ГУЛЛИВЕР\"</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>.</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">ПЕРСОНАЛЬНЫЕ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">скидки</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">КАЖДОМУ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item cloned\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/3-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ПУСТЬ ВАША КУХНЯ</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">БУДЕТ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">вкусной</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item active center\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ЗА МЕСЯЦ!</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Изготовим для вас кухню <br> В рассрочку от салона</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">без переплат и участия банков</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">30%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">на три месяца</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/2-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ВЫ УНИКАЛЬНЫ!</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>За 19 лет мы не сделали</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">ни одной одинаковой</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">КУХНИ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/4-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ВЫ БУДЕТЕ ЗНАТЬ</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>как будет выглядеть кухня</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">Дизайн-проект</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">бесплатно</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">при заказе у нас</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/5-1024x279-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ТЕПЕРЬ МЫ В МЦ \"ГУЛЛИВЕР\"</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>.</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">ПЕРСОНАЛЬНЫЕ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">скидки</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">КАЖДОМУ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/3-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ПУСТЬ ВАША КУХНЯ</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span></span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">БУДЕТ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">вкусной</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item cloned\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ЗА МЕСЯЦ!</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Изготовим для вас кухню <br> В рассрочку от салона</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">без переплат и участия банков</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">30%</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">на три месяца</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item cloned\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/2-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ВЫ УНИКАЛЬНЫ!</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>За 19 лет мы не сделали</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">ни одной одинаковой</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">КУХНИ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div><div class=\"owl-item cloned\" style=\"width: 1280px;\"><div>\n\t\t\t\t\t\t\t\t<div class=\"slider-cont\">\n\t\t\t\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/06/4-1024x277-1.jpg\" alt=\"\">\n\t\t\t\t\t\t\t\t\t<div class=\"slider-cont2\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"container lr\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-cont3\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-novinka\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-zag\">ВЫ БУДЕТЕ ЗНАТЬ</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-desc\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>как будет выглядеть кухня</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"slider-akcia\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"akc\">Дизайн-проект</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"proc\">бесплатно</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"uslovie\">при заказе у нас</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div></div></div></div><div class=\"owl-nav disabled\"><div class=\"owl-prev\"></div><div class=\"owl-next\"></div></div><div class=\"owl-dots\"><div class=\"owl-dot active\"><span></span></div><div class=\"owl-dot\"><span></span></div><div class=\"owl-dot\"><span></span></div><div class=\"owl-dot\"><span></span></div><div class=\"owl-dot\"><span></span></div></div></div>\n</div>\n</div>\n</div>\n<div class=\"vkus-katalog\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n<!-- \t\t\t<div class=\"col-lg-12\">\n\t\t\t\t<div class=\"second-menu\">\n\t\t\t\t\t<nav class=\"header-menu\">\n\t\t\t\t\t\t<ul id=\"menu-menyu-pod-slajderom\" class=\"menu\"><li id=\"menu-item-805\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-805\"><a href=\"/category/catalog/modern/\">Современные кухни</a></li>\n<li id=\"menu-item-806\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-806\"><a href=\"/category/catalog/kuhni-klassika/\">Классические кухни</a></li>\n</ul>\t\t\t\t\t</nav>\n\t\t\t\t</div>\n\t\t\t</div> -->\n\t\t\t<div class=\"row column-5\">\n\t<div class=\"col-xs-1\"></div>\n\t<div class=\"col-xs-2\">\n\t\t<span class=\"number-item table-cell\">1</span>\n\t\t<span class=\"table-cell\">день на <br>монтаж</span>\n\t</div>\n\t<div class=\"col-xs-2\">\n\t\t<span class=\"number-item table-cell\">2</span>\n\t\t<span class=\"table-cell\">года <br>гарантии</span>\n\t</div>\n\t<div class=\"col-xs-2\">\n\t\t<span class=\"number-item table-cell\">3</span>\n\t\t<span class=\"table-cell\">месяца <br>рассрочки</span>\n\t</div>\n\t<div class=\"col-xs-2\">\n\t\t<span class=\"number-item table-cell\">18</span>\n\t\t<span class=\"table-cell\">лет <br>опыта</span>\n\t</div>\n\t<div class=\"col-xs-2\">\n\t\t<span class=\"number-item table-cell\">3060</span>\n\t\t<span class=\"table-cell\">кухонь <br>сделано</span>\n\t</div>\n\t<div class=\"col-xs-1\"></div>\n</div>\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t<div class=\"zag\">\n\t\t\t\t\t«Вкусный» каталог\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-3\">\n\t\t\t\t<div class=\"tags-menu\">\n\t\t\t\t\t<div class=\"show_hide_title_tags\">\n\t\t\t\t\t\t<span>КАТЕГОРИИ</span>\n\t\t\t\t\t\t<div class=\"arrow\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<ul class=\"crop_list toggle_list\">\n\t\t\t\t\t\t<li><a href=\"https://www.vkuskuhni.ru/catalog/modern/\">Современные</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhni-klassika/\">Классические</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/\">Глянцевые</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/korpusnaya-mebel/\">Корпусная мебель</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/\">Матовые</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/uglovaya-kuhnya/\">Угловые</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/malenjkaya-kuhnya/\">Маленькие</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-pod-potolok/\">Под потолок</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-s-barnoj-stojkoi/\">С барной стойкой</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-s-antresolyami/\">С антресолями</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-plastik/\">Пластик</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/akrilovaya-kuhnya/\">Акриловые</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kyhnya-s-ostrovom/\">С островом</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhni-pvh/\">ПВХ</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/pryamaya-kuhnya/\">Прямые</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/p-obraznaya-kuhnya/\">П-образные</a></li><li><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-salone-vkusnye-kukhni/\"></a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/neoklassika/\">Кухни неоклассика</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/ldsp-kuhnya/\">Из ЛДСП</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/city/\">Сити</a></li><li><a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-iz-massiva/\">Из массива</a></li>\t\t\t\t\t</ul>\n\t\t\t\t\t<div class=\"show_hide_crop_list\">Остальное</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-md-9 no-padding\">\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t\t<figure>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/\"><img class=\"img-cover\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2017/07/1.jpg\" alt=\"Фото категории Глянцевые\"></a>\n\t\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/\" title=\"Глянцевые\">\n\t\t\t\t\t\t<span class=\"center-fig\">Глянцевые</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t</div><div class=\"col-sm-4\">\n\t\t\t\t\t\t<figure>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/kuhni-klassika/\"><img class=\"img-cover\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/07/DSC05111000.jpg\" alt=\"Фото категории Классика\"></a>\n\t\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/kuhni-klassika/\" title=\"Классика\">\n\t\t\t\t\t\t<span class=\"center-fig\">Классические</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t</div><div class=\"col-sm-4\">\n\t\t\t\t\t\t<figure>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/korpusnaya-mebel/\"><img class=\"img-cover\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2022/02/IMG_0548-scaled-e1643697340777.jpg\" alt=\"Фото категории Корпусная мебель\"></a>\n\t\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/korpusnaya-mebel/\" title=\"Корпусная мебель\">\n\t\t\t\t\t\t<span class=\"center-fig\">Корпусная мебель</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t</div><div class=\"col-sm-4\">\n\t\t\t\t\t\t<figure>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/\"><img class=\"img-cover\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/08/matovye.jpeg\" alt=\"Фото категории Матовые\"></a>\n\t\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/\" title=\"Матовые\">\n\t\t\t\t\t\t<span class=\"center-fig\">Матовые</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t</div><div class=\"col-sm-4\">\n\t\t\t\t\t\t<figure>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-pod-potolok/\"><img class=\"img-cover\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/08/podpoolok.jpeg\" alt=\"Фото категории Под потолок\"></a>\n\t\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/kuhnya-pod-potolok/\" title=\"Под потолок\">\n\t\t\t\t\t\t<span class=\"center-fig\">Под потолок</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t</div><div class=\"col-sm-4\">\n\t\t\t\t\t\t<figure>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/modern/\"><img class=\"img-cover\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/08/sovremen.jpeg\" alt=\"Фото категории Современные\"></a>\n\t\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/catalog/modern/\" title=\"Современные\">\n\t\t\t\t\t\t<span class=\"center-fig\">Современные</span>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t</div>\t\t\t</div>\n\t\t\t<div id=\"fur\" class=\"col-xs-12\">\n\t\t\t\t<a class=\"katalog-btn all-btn btn-all center-block\" href=\"/category/catalog/\">ПОЛНЫЙ КАТАЛОГ</a>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<div class=\"furnitura\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t<div class=\"furnitura-zag\">КОМПЛЕКТУЮЩИЕ</div>\n\t\t\t\t<div class=\"furnitura-zag-text\">- качество от европейских производителей</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/fasady-dlja-kuhni/\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/4.jpg\" alt=\"\"></a>\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Фасады</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Именно фасады являют лицо вашей кухни, задают стиль и определяют восприятие всего интерьера. Представляем большой выбор фасадов из долговечных и качественных материалов.</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/vkusnosti/kachestvennaya-furnitura-blum-dlya-kuhni/\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/1.jpg\" alt=\"\"></a>\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Фурнитура BLUM</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Вся фурнитура, которую мы используем при изготовлении: петли, подъёмники, ящики – BLUM (Австрия).</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/2.jpg\" alt=\"\"></a>\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Начинка</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Выкатные сетки, карусели, сушки – безусловно сделают Вашу кухню более удобной.</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<a href=\"https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/3.jpg\" alt=\"\"></a>\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Столешницы</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Только качественные влагостойкие пластиковые, из натурального или искуственного камня столешницы производства – Германии, Италии, России. Большой выбор декоров.</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/5.jpg\" alt=\"\">\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Стеновые панели</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Любые дизайнерские решения из закаленного стекла с фотопечатью. Кухонные фартуки из МДФ с фотопечатью, глянцевые или матовые.</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/6.jpg\" alt=\"\">\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Изюминка</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Украшением Вашего кухонного гарнитура станут современная подсветка, стильные ручки, рейлинговые ситсемы…</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/7.jpg\" alt=\"\">\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Мойки и смесители</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Разнообразные формы и стили моек из искусственного камня, смесители в цвет. Мойки из нержавеющей стали.</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-3 col-sm-4 col-xs-12\">\n\t\t\t\t<figure>\n\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/komplekt/8.jpg\" alt=\"\">\n\t\t\t\t\t<figcaption>\n\t\t\t\t\t\t<div class=\"furnitura-zag-block\">Встраиваемая техника</div>\n\t\t\t\t\t\t<div class=\"furnitura-opisanie\">Подберём к Вашему кухонному гарнитуру любую встраиваемую технику от надёжных производителей.</div>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<div class=\"zakaz-block\">\n\t<div class=\"col-lg-12\">\n\t\t<div class=\"form-block\">\n\t\t\t<form id=\"callback2\">\n\t\t\t\t<!-- Hidden Required Fields -->\n\n\t\t\t\t<input type=\"hidden\" name=\"project_name\" value=\"Вкусные кухни\">\n\n\t\t\t\t<input type=\"hidden\" name=\"admin_email\" value=\"zakaz@vkuskuhni.ru\">\n\n\t\t\t\t<input type=\"hidden\" name=\"form_subject\" value=\"Сообщение с формы на главной\">\n\n\t\t\t\t<!-- END Hidden Required Fields -->\n\t\t\t\t<input type=\"text\" name=\"Имя\" placeholder=\"ВАШЕ ИМЯ\" required=\"\">\n\t\t\t\t<input type=\"text\" name=\"Телефон\" placeholder=\"НОМЕР ТЕЛЕФОНА\" required=\"\">\n\t\t\t\t<button class=\"button-zakaz btn-all\" type=\"submit\">отправить заявку</button>\n\t\t\t</form>\n\t\t</div>\n\t</div>\n</div>\n<div class=\"promo\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t<div class=\"promo-zag\">покупатели нас ценят</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-sm-6\">\n\t\t\t\t<div class=\"promo-box\">\n\t\t\t\t\t<div class=\"promo-img\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/individ.png\" alt=\"\"></div>\n\t\t\t\t\t<div class=\"promo-text\">Индивидуальный подход к каждому покупателю</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-sm-6\">\n\t\t\t\t<div class=\"promo-box\">\n\t\t\t\t\t<div class=\"promo-img\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/kachestvo.png\" alt=\"\"></div>\n\t\t\t\t\t<div class=\"promo-text\">При производстве кухонных гарнитуров используем только качественные материалы и фурнитуру</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-sm-6\">\n\t\t\t\t<div class=\"promo-box\">\n\t\t\t\t\t<div class=\"promo-img\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/montazh.png\" alt=\"\"></div>\n\t\t\t\t\t<div class=\"promo-text\">Профессиональный, быстрый и качественный монтаж</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-sm-6\">\n\t\t\t\t<div class=\"promo-box\">\n\t\t\t\t\t<div class=\"promo-img\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/dostavka.png\" alt=\"\"></div>\n\t\t\t\t\t<div class=\"promo-text\">Бесплатный замер и доставка по городу Екатеринбургу</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-sm-6\">\n\t\t\t\t<div class=\"promo-box\">\n\t\t\t\t\t<div class=\"promo-img\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/doverie.png\" alt=\"\"></div>\n\t\t\t\t\t<div class=\"promo-text\">С нами надежно и спокойно. Вы сделали заказ, а дальше работают профессионалы</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4 col-sm-6\">\n\t\t\t\t<div class=\"promo-box\">\n\t\t\t\t\t<div class=\"promo-img\"><img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/kredit.png\" alt=\"\"></div>\n\t\t\t\t\t<div class=\"promo-text\">Предоставляем рассрочки и кредиты</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<div class=\"vkusnosti\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t<div class=\"vkusnosti-zag-fon\">\n\t\t\t\t\t<div class=\"vkusnosti-zag\">Полезные советы\n\t\t\t\t\t\t<div class=\"vkusnosti-desc\">вкусные советы и полезные новости об акциях компании</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\tЗаписей нет.<div class=\"col-xs-12\">\n\t<a class=\"vkusnosti-btn all-btn btn-all center-block\" href=\"/category/vopros-otvet/\">ВСЕ СОВЕТЫ</a>\n</div>\n</div>\n</div>\n</div>\n\n<main id=\"okompanii\" class=\"seo-text\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<h1>Кухни на заказ от производителя в Екатеринбурге</h1>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-3\">\n\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/povar-na-kuhne.jpg\" alt=\"\">\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-9\">\n\t\t\t\tКогда решили, что пора обставить кухню, то сразу возникает горячее желание охватить все. Чтобы было красиво и уютно, в то же время оригинально и функционально, и при всем этом еще легко убиралось. Делать это постепенно, компонуя разную готовую мебель, довольно трудно. Зачастую, то, что понравилось, с уже купленным не сочетается или просто по размеру не подходит. Чтобы не нервничать и не тратить лишние деньги и время, оптимальным и экономным решением станет заказать кухню у надежного производителя. Салон <a href=\"https://www.vkuskuhni.ru/\">«Вкусные кухни»</a>&nbsp;- это стильные кухни на заказ в Екатеринбурге, на совесть сделанные из качественных и современных материалов, отвечающие желаниям и использующие особенность планировки по максимуму.\n<h2>Преимущества кухни по индивидуальным размерам</h2>\n<ul>\n \t<li>Кухня создается именно под конкретное помещение и составляет единый комплекс, занимающий всю необходимую площадь, не сверкая ненужными «зазорами» и не выделяясь «выступами».</li>\n \t<li>Вы имеете возможность&nbsp;выбора цветовой гаммы, которая будет в полной мере соответствовать вашим вкусам и желаниям.</li>\n \t<li>В момент изготовлении кухни под заказ учитываются все нюансы помещения: расположение труб, вентиляционных решеток, источников электричества. Поэтому уже не нужно будет вырезать в задних стенках шкафов отверстия для розеток или пользоваться удлинителями для подключения электроприборов.</li>\n</ul>\nТолько один есть недостаток у кухни по индивидуальным размерам – это необходимость ждать, пока изготовят кухонную мебель. Но ведь подумайте, проявить терпение на месяц-полтора, чтобы получить кухонный гарнитур, о которой мечтали – не такое уж большое потрясение!\n<h2>Первые шаги при заказе кухонного гарнитура<img class=\"alignright wp-image-1149\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/02/pervye-shagi.jpeg\" alt=\"заказать кухонную мебель в Екатеринбурге по своим размерам - фото первые шаги\" width=\"200\" height=\"108\"></h2>\nЕсли решение купить кухонный гарнитур в салоне «Вкусные кухни» принято, то необходимо:\n<ol>\n \t<li>Достать план БТИ, а если не нашли, то нужно произвести замеры самостоятельно для предварительного создания дизайна</li>\n \t<li>Позвоните нам, чтобы договориться о времени выезда на замер нашего специалиста</li>\n \t<li>Или отправить заказ в форме на сайте и мы сами перезвоним Вам.</li>\n</ol>\n<h2>Дизайн-проект кухни на заказ в Екатеринбурге</h2>\nДовольно часто не вполне четко удается представить свою идеальную кухню в деталях. Наши дизайнеры существуют как раз для того, чтобы понимать и воплощать Ваши идеи в реальность\n<ul>\n \t<li>Для начала Вы сможете ознакомиться с образцами разных моделей кухонных гарнитуров по каталогам.</li>\n \t<li>Затем мы подробно расскажем о функциональных особенностях каждого изделия.</li>\n \t<li>Предложим конструктивные решения, в зависимости от планировки кухни.</li>\n \t<li>Поможем осуществить выбор материалов и цветовой гаммой.</li>\n \t<li>Порекомендуем качественное и поможем определиться со встраиваемой техникой, мойкой, смесителями, необходимой фурнитурой и аксессуарами. Это сделаем возможным органичное сочетание всего перечисленного в дизайн-проекте и освободит Вас от необходимости делать эти закупки самому.</li>\n \t<li>Когда вся необходимая информация собрана, осуществляется совместная работа над дизайном кухни. Вы озвучиваете пожелания, а дизайнер составляет по ним предварительные наброски и проект.<img class=\"size-full wp-image-1678 alignleft\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/03/dizain.jpg\" alt=\"дизайн на заказ в Екатеринбурге\" width=\"262\" height=\"175\"></li>\n</ul>\nПосле согласования всех моментов и одобрения проекта с Вашей стороны, дизайнер сам выезжает к Вам, чтобы проверить все расчеты и особенности помещения. Это самый важный момент! Даже небольшое упущение в замерах длин и углов приведет к тому, что сделанный кухонный гарнитур придется доделывать, подгонять под нужные размеры, что приведет к дополнительным затратам. Это особенно актуально когда изготавливаются <a href=\"https://www.vkuskuhni.ru/vkusnosti/uglovye-kuhni/\">угловые кухни</a> на заказ. Чтобы позаботиться о нервах и деньгах заказчиков, дизайнеры салона «Вкусные кухни» действуют по правилу «доверяй, но проверяй».\n<h2>Заключение договора при изготовлении кухни на заказ</h2>\nПосле полного утверждения проекта подписывается договор на изготовление и установку кухонного гарнитура. В момент подписания договора Вами вносится 50% предоплата. Это осуществляется любым удобным для вас способом: по карте, наличными или на наш счет по банковским реквизитам. Возможна беспроцентная рассрочка или кредиты от трех банков. Также наш салон предоставляет отсрочку части платежа без участия банка.<img class=\"alignright wp-image-1675\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/03/zakljuchenie-dogovora-e1583778584117.jpg\" alt=\"фото заключения договора на заказ мебели от производителя в Екатеринбурге\" width=\"200\" height=\"133\">\n\nС момента внесения оплаты стартует отсчет времени на изготовление:\n<ul>\n \t<li>Кухонные гарнитуры из ПВХ, пластика, акрила – до 30 рабочих дней.</li>\n \t<li>Кухонные гарнитуры из массива или шпонированные – до 45 рабочих дней.</li>\n</ul>\nВ течение всего этого времени дизайнер, работающий с Вами, находится на связи, информируя вас о ходе выполнения работы.\n\nЗа три дня до того, как кухня будет доставлена, необходимо оплатить оставшиеся 50% стоимости заказа.\n<h2>Монтаж кухни</h2>\nВ согласованные день и время бригада наших монтажников осуществляет доставку к вам домой и сборку готовой кухни.<img loading=\"lazy\" class=\"wp-image-1684 alignleft\" src=\"https://www.vkuskuhni.ru/wp-content/uploads/2020/03/montazhnik.jpg\" alt=\"фото монтажа мебели в Екатеринбурге на заказ\" width=\"200\" height=\"136\">\n\nОбычно монтаж кухни занимает 8-10 часов, поэтому рекомендуем освободить весь день с утра , а к вечеру кухня уже будет готова. Исключением являются кухни, имеющие столешницы из искусственного камня. Для их сборки, как правило, требуется два дня.\n\nУ Вас должен быть на руках весь набор документов, выданный работниками салона при оформлении кухни на заказ в Екатеринбурге. &nbsp;Когда монтаж кухни закончился проведите внимательный осмотр и поставьте роспись в акте сдачи-приемки. Наши мастера отвечают за качество работы, что подтверждается гарантиями, описанными в договоре.\n\nВот и все – дело сделано!\n\nСтавьте чайник на плиту, доставайте торт из холодильника, располагайтесь поудобнее и начинайте обживать Кухню Вашей Мечты!\t\t\t</div>\n\t\t</div>\n\t</div>\n</main>\n<div id=\"kont\" class=\"kontakty\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-lg-4\">\n\t\t\t\t<div class=\"kontakty-zag\">Контакты</div>\n\t\t\t\t<div class=\"kontakty-desc\">\n\t\t\t\t\tВозникли вопросы? С удовольствием ответим \n\t\t\t\t\tи поможем Вам оформить заказ на кухню по индивидуальным размерам в Екатеринбурге.\n\t\t\t\t\tНапишите, заполнив форму обратной связи. Или звоните - договоримся!\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4\">\n\t\t\t\t<div class=\"form-block\">\n\t\t\t\t\t<form id=\"callback3\">\n\t\t\t\t\t\t<!-- Hidden Required Fields -->\n\n             \t\t \t<input type=\"hidden\" name=\"project_name\" value=\"Вкусные кухни\">\n\n             \t\t \t<input type=\"hidden\" name=\"admin_email\" value=\"zakaz@vkuskuhni.ru\">\n\n            \t\t \t<input type=\"hidden\" name=\"form_subject\" value=\"Сообщение с подвала на главной\">\n\n             \t\t \t<!-- END Hidden Required Fields -->\n\t\t\t\t\t\t<input type=\"text\" name=\"Имя\" placeholder=\"ВАШЕ ИМЯ\" required=\"\">\n\t\t\t\t\t\t<input class=\"green-input phone_us\" type=\"text\" name=\"Телефон\" placeholder=\"+7 (___) ___-____\" required=\"\" maxlength=\"17\">\n\t\t\t\t\t\t<textarea name=\"Сообщение\" placeholder=\"ВАШЕ СООБЩЕНИЕ\" cols=\"30\" rows=\"6\"></textarea>\n\t\t\t\t\t\t<div class=\"card-type\" style=\"display: block;\"> \n\t\t\t\t\t\t<span class=\"budget\">Бюджет (тысяч рублей)</span>\n          \t<input id=\"100\" name=\"Бюджет\" type=\"radio\" value=\"&gt;100000₽\"> \n          \t\t<label for=\"100\"><span>&gt;150</span></label> \n          \t<input id=\"200\" name=\"Бюджет\" type=\"radio\" value=\"&gt;200000₽\">\n          \t\t<label for=\"200\"><span>&gt;300</span></label> \n          \t<input id=\"300\" name=\"Бюджет\" type=\"radio\" value=\"&gt;300000₽\"> \n          \t\t<label for=\"300\"><span>&gt;500</span></label>\n     \t\t\t</div>\n\t\t\t\t\t\t<button class=\"button-zakaz btn-all\" type=\"submit\">отправить заявку</button>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"col-lg-4\">\n\t\t\t\t<div itemscope=\"\" itemtype=\"https://schema.org/Organization\">\n\t\t\t\t\t<span itemprop=\"name\" style=\"display: block; text-align: right;\"><strong>Салон мебели «Вкусные кухни»</strong></span>\n\t\t\t\t\t<div itemprop=\"address\" itemscope=\"\" itemtype=\"https://schema.org/PostalAddress\">\n\t\t\t\t\t<ul>\n  \t\t\t\t<li></li>\n\t\t\t\t\t<li><span class=\"light-text\">Адрес:</span><span itemprop=\"addressLocality\"> г. Екатеринбург</span></li>\n\t\t\t\t\t<li><span itemprop=\"streetAddress\"> ул. 40-летия Комсомола 38 Н</span></li>\n\t\t\t\t\t<li>МЦ «ГУЛЛИВЕР», корпус Б, 1 этаж, правое крыло</li>\n\t\t\t\t\t<li><span class=\"light-text\">Cотовый:</span> +7 (912) 615-25-35</li>\n\t\t\t\t\t<li><span class=\"light-text\">E-mail:</span><span itemprop=\"email\"> vkuskuhni@mail.ru</span></li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n<footer>\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-lg-12\">\n\t\t\t\t\t\t<nav class=\"header-menu\">\n\t\t\t\t\t\t\t<ul id=\"menu-glavnoe-menju-1\" class=\"menu footer-menu\"><li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38\"><a href=\"https://www.vkuskuhni.ru/catalog/\">Каталог</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1162\"><a href=\"https://www.vkuskuhni.ru/catalog/kuhni-klassika/\">Классические</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1164\"><a href=\"https://www.vkuskuhni.ru/catalog/modern/\">Современные</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1163\"><a href=\"https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/\">Глянцевые</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3010\"><a href=\"https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/\">Матовые</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-1131\"><a href=\"/stock/\">Акции</a></li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2192\"><a>Наши работы</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2563\"><a href=\"https://www.vkuskuhni.ru/nashi_raboty/\">Готовые</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2564\"><a href=\"https://www.vkuskuhni.ru/project/\">Проекты</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2565\"><a href=\"https://www.vkuskuhni.ru/dizain-proekt-kuhni/\">Дизайн проект</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-114\"><a href=\"https://www.vkuskuhni.ru/otzyvy/\">Отзывы</a></li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2566\"><a href=\"https://www.vkuskuhni.ru/kontakty/\">Контакты</a></li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4389\"><a>Комплектующие</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4392\"><a href=\"https://www.vkuskuhni.ru/fasady-dlja-kuhni/\">Фасады</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4391\"><a href=\"https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/\">Начинка для кухонных шкафов</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4390\"><a href=\"https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/\">Столешницы</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4040\"><a href=\"#\">Покупателю</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4171\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/zakazat-kuhnyu/\">Как заказать</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4041\"><a href=\"https://www.vkuskuhni.ru/dostavka-i-oplata/\">Доставка и оплата</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4057\"><a href=\"https://www.vkuskuhni.ru/montazh-kuhni/\">Монтаж</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4114\"><a href=\"https://www.vkuskuhni.ru/garantiya/\">Гарантии</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4468\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/kuhonnyj-garnitur/\">Правила эксплуатации кухни</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4469\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/mojka-iskustvennyj-kamen/\">Правила использования мойки из искусственного камня</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-139\"><a href=\"https://www.vkuskuhni.ru/o-kompanii/\" title=\"О компании\">О салоне</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-7759\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/sdelat-kuhnyu-na-zakaz/\">Как мы делаем кухню — от заказа до монтажа</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4073\"><a>Вопрос-Ответ</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4016\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/pomoshh-v-vybore/\">Как выбрать</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4011\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-dizajne/\">Дизайн</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-6269\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/uhod-za-kuhnej/\">Уход за кухней</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4015\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-fasadah/\">Фасады</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4012\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-komplektujushhih/\">Комплектующие</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4014\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-tehnike-dlja-kuhni/\">Техника</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4013\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-materialah/\">Материалы</a></li>\n</ul>\n</li>\n</ul>\t\t\t\t\t\t\t</nav>\n\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"col-md-12\">\n\t\t\t\t\t<div class=\"search-form\"><form role=\"search\" method=\"get\" id=\"searchform\" action=\"https://www.vkuskuhni.ru/\">\n\t<label class=\"screen-reader-text\" for=\"s\">Поиск по сайту: </label>\n\t<input type=\"text\" value=\"\" name=\"s\" id=\"s\">\n\t<button class=\"button-search\" type=\"submit\" id=\"searchsubmit\" value=\"найти\">найти</button>\n</form></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<div class=\"registr\">© 2005-2024 Официальный сайт мебельного салона «Вкусные Кухни» Екатеринбург</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div class=\"social-zag\">Присоединяйся:</div>\n\t\t\t\t<ul class=\"social\">\n\t\t\t\t\t<li><a href=\"https://ok.ru/group/58395385790510\" target=\"_blank\" rel=\"nofollow\"><img loading=\"lazy\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/social/ok.png\" width=\"34\" height=\"34\" alt=\"Группа в Одноклассниках\"></a></li>\n\t\t\t\t\t<li><a href=\"https://www.youtube.com/channel/UC7UL5-DV04TsD18L0ZtjGhQ\" target=\"_blank\" rel=\"nofollow\"><img loading=\"lazy\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/social/youtube.png\" width=\"34\" height=\"34\" alt=\"Канал Ютуб\"></a></li>\n\t\t\t\t\t<li><a href=\"https://vk.com/vkus_kuhni\" target=\"_blank\" rel=\"nofollow\"><img loading=\"lazy\" src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/social/vk.png\" width=\"34\" height=\"34\" alt=\"Группа в Вконтакте\"></a></li>\n\t\t\t\t\t\n\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t\t<div style=\"text-align: right;\">\n\t\t\t\t\t\t<!--LiveInternet counter-->\n\t\t\t\t\t\t<script type=\"text/javascript\">\n\t\t\t\t\t\t\tdocument.write(\"<a href='//www.liveinternet.ru/click' \"+\n\t\t\t\t\t\t\t\"target=_blank><img src='//counter.yadro.ru/hit?t14.4;r\"+\n\t\t\t\t\t\t\tescape(document.referrer)+((typeof(screen)==\"undefined\")?\"\":\n\t\t\t\t\t\t\t\";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?\n\t\t\t\t\t\t\tscreen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\n\t\t\t\t\t\t\t\";h\"+escape(document.title.substring(0,150))+\";\"+Math.random()+\n\t\t\t\t\t\t\t\"' alt='' title='LiveInternet: показано число просмотров за 24\"+\n\t\t\t\t\t\t\t\" часа, посетителей за 24 часа и за сегодня' \"+\n\t\t\t\t\t\t\t\"border='0' width='88' height='31'><\\/a>\")\n\t\t\t\t\t\t</script><a href=\"//www.liveinternet.ru/click\" target=\"_blank\"><img src=\"//counter.yadro.ru/hit?t14.4;r;s1280*720*24;uhttps%3A//www.vkuskuhni.ru/;h%u041A%u0443%u0445%u043D%u0438%20%u043D%u0430%20%u0437%u0430%u043A%u0430%u0437%20%u0432%20%u0415%u043A%u0430%u0442%u0435%u0440%u0438%u043D%u0431%u0443%u0440%u0433%u0435%20%u043F%u043E%20%u0438%u043D%u0434%u0438%u0432%u0438%u0434%u0443%u0430%u043B%u044C%u043D%u044B%u043C%20%u0440%u0430%u0437%u043C%u0435%u0440%u0430%u043C%20%u043D%u0430%u043F%u0440%u044F%u043C%u0443%u044E%20%u043E%u0442%20%u043F%u0440%u043E%u0438%u0437%u0432%u043E%u0434%u0438%u0442%u0435%u043B%u044F;0.22904227278058054\" alt=\"\" title=\"LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня\" border=\"0\" width=\"88\" height=\"31\"></a>\n\t\t\t\t\t\t<!--/LiveInternet-->\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</footer>\n\t<div class=\"stock-btn\">\n\t\t<a href=\"/stock/\">АКЦИИ И НОВИНКИ</a>\n\t</div>\n\t<div id=\"back-top\" class=\"active-menu\">\n\t\t<div class=\"container-fluid\">\n\t\t\t<div class=\"row vertical-align\">\n\t\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t\t<div class=\"logo\">\n\t\t\t\t\t<a href=\"/\">\n\t\t\t\t\t\t<img src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/img/logo.png\" alt=\"Логотип Вкусные кухни\">\n\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-sm-8\">\n\t\t\t\t\t<nav class=\"header-menu\">\n\t\t\t\t\t\t<ul id=\"menu-glavnoe-menju-2\" class=\"menu\"><li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-38\"><a href=\"https://www.vkuskuhni.ru/catalog/\">Каталог</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1162\"><a href=\"https://www.vkuskuhni.ru/catalog/kuhni-klassika/\">Классические</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1164\"><a href=\"https://www.vkuskuhni.ru/catalog/modern/\">Современные</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1163\"><a href=\"https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/\">Глянцевые</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3010\"><a href=\"https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/\">Матовые</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-1131\"><a href=\"/stock/\">Акции</a></li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2192\"><a>Наши работы</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2563\"><a href=\"https://www.vkuskuhni.ru/nashi_raboty/\">Готовые</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2564\"><a href=\"https://www.vkuskuhni.ru/project/\">Проекты</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2565\"><a href=\"https://www.vkuskuhni.ru/dizain-proekt-kuhni/\">Дизайн проект</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-114\"><a href=\"https://www.vkuskuhni.ru/otzyvy/\">Отзывы</a></li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-2566\"><a href=\"https://www.vkuskuhni.ru/kontakty/\">Контакты</a></li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4389\"><a>Комплектующие</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4392\"><a href=\"https://www.vkuskuhni.ru/fasady-dlja-kuhni/\">Фасады</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4391\"><a href=\"https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/\">Начинка для кухонных шкафов</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4390\"><a href=\"https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/\">Столешницы</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4040\"><a href=\"#\">Покупателю</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4171\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/zakazat-kuhnyu/\">Как заказать</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4041\"><a href=\"https://www.vkuskuhni.ru/dostavka-i-oplata/\">Доставка и оплата</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4057\"><a href=\"https://www.vkuskuhni.ru/montazh-kuhni/\">Монтаж</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-4114\"><a href=\"https://www.vkuskuhni.ru/garantiya/\">Гарантии</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4468\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/kuhonnyj-garnitur/\">Правила эксплуатации кухни</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-4469\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/mojka-iskustvennyj-kamen/\">Правила использования мойки из искусственного камня</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-139\"><a href=\"https://www.vkuskuhni.ru/o-kompanii/\" title=\"О компании\">О салоне</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-7759\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/sdelat-kuhnyu-na-zakaz/\">Как мы делаем кухню — от заказа до монтажа</a></li>\n</ul>\n</li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4073\"><a>Вопрос-Ответ</a>\n<ul class=\"sub-menu\">\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4016\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/pomoshh-v-vybore/\">Как выбрать</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4011\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-dizajne/\">Дизайн</a></li>\n\t<li class=\"menu-item menu-item-type-post_type menu-item-object-post menu-item-6269\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/uhod-za-kuhnej/\">Уход за кухней</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4015\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-fasadah/\">Фасады</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4012\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-komplektujushhih/\">Комплектующие</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4014\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-tehnike-dlja-kuhni/\">Техника</a></li>\n\t<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4013\"><a href=\"https://www.vkuskuhni.ru/vopros-otvet/o-materialah/\">Материалы</a></li>\n</ul>\n</li>\n</ul>\t\t\t\t\t\t</nav>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t\t\t<div class=\"top-phone\">\n\t\t\t\t\t\t\t<ul class=\"mag-popup\">\n\t\t\t\t\t\t\t\t<li><a href=\"tel:+79126152535\">+7 (912) 615-25-35</a></li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"test-popup\" class=\"white-popup mfp-with-anim mfp-hide\">\n\t\t\t<div class=\"form-block pop-forma\">\n\t\t\t\t<form id=\"callback\">\n\t\t\t\t\t<!-- Hidden Required Fields -->\n\n             \t\t <input type=\"hidden\" name=\"project_name\" value=\"Вкусные кухни\">\n\n             \t\t <input type=\"hidden\" name=\"admin_email\" value=\"zakaz@vkuskuhni.ru\">\n\n            \t\t <input type=\"hidden\" name=\"form_subject\" value=\"Обратный звонок\">\n\n             \t\t <!-- END Hidden Required Fields -->\n\t\t\t\t\t<input type=\"text\" name=\"Имя\" placeholder=\"ВАШЕ ИМЯ\" required=\"\">\n\t\t\t\t\t<input class=\"green-input phone_us\" type=\"text\" name=\"Телефон\" placeholder=\"+7 (___) ___-____\" required=\"\" maxlength=\"17\">\n\t\t\t\t\t<button class=\"button-zakaz btn-all\" type=\"submit\">отправить заявку</button>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"test-popup2\" class=\"white-popup mfp-with-anim mfp-hide\">\n\t\t\t<div class=\"form-block pop-forma\">\n\t\t\t\t<form id=\"callback4\">\n\t\t\t\t\t<!-- Hidden Required Fields -->\n\n             \t\t <input type=\"hidden\" name=\"project_name\" value=\"Вкусные кухни\">\n\n             \t\t <input type=\"hidden\" name=\"admin_email\" value=\"zakaz@vkuskuhni.ru\">\n\n            \t\t <input type=\"hidden\" name=\"form_subject\" value=\"Со страницы Фасады коллекции «ИНТЕРМАТ» — Новинка 2025\">\n\n             \t\t <!-- END Hidden Required Fields -->\n\t\t\t\t\t<input type=\"text\" name=\"Имя\" placeholder=\"ВАШЕ ИМЯ\" required=\"\">\n\t\t\t\t\t<input class=\"green-input phone_us\" type=\"text\" name=\"Телефон\" placeholder=\"+7 (___) ___-____\" required=\"\" maxlength=\"17\">\n\t\t\t\t\t<textarea name=\"Сообщение\" placeholder=\"ВАШЕ СООБЩЕНИЕ\" cols=\"30\" rows=\"6\"></textarea>\n\t\t\t\t\t<button class=\"button-zakaz btn-all\" type=\"submit\">отправить заявку</button>\n\t\t\t\t</form>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"success white-popup mfp-hide\">\n    \t\t<span>Спасибо за заявку!</span>\n    \t\t<p>В ближайшее время с Вами свяжется наш менеджер</p>\n \t\t</div>\n \t\t<div id=\"popup-akcii\" class=\"animated fadeInDownBig white-popup mfp-hide\">\n    \t\t<div class=\"zag-akcii\">Бесплатный замер</div>\n    \t\t<p>C 01.05 по 30.05.2018 замер помещения под Вашу кухню <strong>БЕСПЛАТНО!</strong> Воспользоваться данным предложением Вы можете прямо сейчас, отправив заявку на замер с помощью данной формы.</p>\n    \t\t<p style=\"font-size: 14px;\">* бесплатный замер производится только в пределах г. Екатеринбурга</p>\n    \t\t<div class=\"form-block pop-forma\">\n\t\t\t\t<form id=\"callback6\">\n\t\t\t\t\t<!-- Hidden Required Fields -->\n\n             \t\t <input type=\"hidden\" name=\"project_name\" value=\"Вкусные кухни\">\n\n             \t\t <input type=\"hidden\" name=\"admin_email\" value=\"zakaz@vkuskuhni.ru\">\n\n            \t\t <input type=\"hidden\" name=\"form_subject\" value=\"Заявка на бесплатный замер\">\n\n             \t\t <!-- END Hidden Required Fields -->\n\t\t\t\t\t<input type=\"text\" name=\"Имя\" placeholder=\"ВАШЕ ИМЯ\" required=\"\">\n\t\t\t\t\t<input class=\"green-input phone_us\" type=\"text\" name=\"Телефон\" placeholder=\"+7 (___) ___-____\" required=\"\" maxlength=\"17\">\n\t\t\t\t\t<input type=\"text\" name=\"Адрес\" placeholder=\"ВАШ АДРЕС\" required=\"\">\n\t\t\t\t\t<button class=\"button-zakaz btn-all\" type=\"submit\">отправить заявку</button>\n\t\t\t\t</form>\n\t\t\t</div>\n \t\t</div>\n\t\t<script type=\"speculationrules\">\n{\"prefetch\":[{\"source\":\"document\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"not\":{\"href_matches\":[\"/wp-*.php\",\"/wp-admin/*\",\"/wp-content/uploads/*\",\"/wp-content/*\",\"/wp-content/plugins/*\",\"/wp-content/themes/vkuskuhni/*\",\"/*\\\\?(.+)\"]}},{\"not\":{\"selector_matches\":\"a[rel~=\\\"nofollow\\\"]\"}},{\"not\":{\"selector_matches\":\".no-prefetch, .no-prefetch a\"}}]},\"eagerness\":\"conservative\"}]}\n</script>\n\t\t<!-- Click to Chat - https://holithemes.com/plugins/click-to-chat/  v4.39 -->\n\t\t\t<style id=\"ht-ctc-entry-animations\">.ht_ctc_entry_animation{animation-duration:0.4s;animation-fill-mode:both;animation-delay:0s;animation-iteration-count:1;}\t\t\t@keyframes ht_ctc_anim_corner {0% {opacity: 0;transform: scale(0);}100% {opacity: 1;transform: scale(1);}}.ht_ctc_an_entry_corner {animation-name: ht_ctc_anim_corner;animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);transform-origin: bottom var(--side, right);}\n\t\t\t</style>\t\t\t\t\t\t<div class=\"ht-ctc ht-ctc-chat ctc-analytics ctc_wp_desktop style-2 ht_ctc_entry_animation ht_ctc_an_entry_corner ht_ctc_animation no-animation\" id=\"ht-ctc-chat\" style=\"position: fixed; bottom: 15px; right: 15px; cursor: pointer; z-index: 99999999; --side: right;\">\n\t\t\t\t\t\t\t\t<div class=\"ht_ctc_style ht_ctc_chat_style\">\n\t\t\t\t<div style=\"display: flex; justify-content: center; align-items: center;  \" class=\"ctc-analytics ctc_s_2\">\n\t<p class=\"ctc-analytics ctc_cta ctc_cta_stick ht-ctc-cta  ht-ctc-cta-hover \" style=\"padding: 0px 16px; line-height: 1.6; font-size: 15px; background-color: #25D366; color: #ffffff; border-radius:10px; margin:0 10px;  display: none; order: 0; \">Срочная связь в WhatsApp</p>\n\t<svg style=\"pointer-events:none; display:block; height:50px; width:50px;\" width=\"50px\" height=\"50px\" viewBox=\"0 0 1024 1024\">\n        <defs>\n        <path id=\"htwasqicona-chat\" d=\"M1023.941 765.153c0 5.606-.171 17.766-.508 27.159-.824 22.982-2.646 52.639-5.401 66.151-4.141 20.306-10.392 39.472-18.542 55.425-9.643 18.871-21.943 35.775-36.559 50.364-14.584 14.56-31.472 26.812-50.315 36.416-16.036 8.172-35.322 14.426-55.744 18.549-13.378 2.701-42.812 4.488-65.648 5.3-9.402.336-21.564.505-27.15.505l-504.226-.081c-5.607 0-17.765-.172-27.158-.509-22.983-.824-52.639-2.646-66.152-5.4-20.306-4.142-39.473-10.392-55.425-18.542-18.872-9.644-35.775-21.944-50.364-36.56-14.56-14.584-26.812-31.471-36.415-50.314-8.174-16.037-14.428-35.323-18.551-55.744-2.7-13.378-4.487-42.812-5.3-65.649-.334-9.401-.503-21.563-.503-27.148l.08-504.228c0-5.607.171-17.766.508-27.159.825-22.983 2.646-52.639 5.401-66.151 4.141-20.306 10.391-39.473 18.542-55.426C34.154 93.24 46.455 76.336 61.07 61.747c14.584-14.559 31.472-26.812 50.315-36.416 16.037-8.172 35.324-14.426 55.745-18.549 13.377-2.701 42.812-4.488 65.648-5.3 9.402-.335 21.565-.504 27.149-.504l504.227.081c5.608 0 17.766.171 27.159.508 22.983.825 52.638 2.646 66.152 5.401 20.305 4.141 39.472 10.391 55.425 18.542 18.871 9.643 35.774 21.944 50.363 36.559 14.559 14.584 26.812 31.471 36.415 50.315 8.174 16.037 14.428 35.323 18.551 55.744 2.7 13.378 4.486 42.812 5.3 65.649.335 9.402.504 21.564.504 27.15l-.082 504.226z\"></path>\n        </defs>\n        <linearGradient id=\"htwasqiconb-chat\" gradientUnits=\"userSpaceOnUse\" x1=\"512.001\" y1=\".978\" x2=\"512.001\" y2=\"1025.023\">\n            <stop offset=\"0\" stop-color=\"#61fd7d\"></stop>\n            <stop offset=\"1\" stop-color=\"#2bb826\"></stop>\n        </linearGradient>\n        <use xlink:href=\"#htwasqicona-chat\" overflow=\"visible\" style=\"fill: url(#htwasqiconb-chat)\" fill=\"url(#htwasqiconb-chat)\"></use>\n        <g>\n            <path style=\"fill: #FFFFFF;\" fill=\"#FFF\" d=\"M783.302 243.246c-69.329-69.387-161.529-107.619-259.763-107.658-202.402 0-367.133 164.668-367.214 367.072-.026 64.699 16.883 127.854 49.017 183.522l-52.096 190.229 194.665-51.047c53.636 29.244 114.022 44.656 175.482 44.682h.151c202.382 0 367.128-164.688 367.21-367.094.039-98.087-38.121-190.319-107.452-259.706zM523.544 808.047h-.125c-54.767-.021-108.483-14.729-155.344-42.529l-11.146-6.612-115.517 30.293 30.834-112.592-7.259-11.544c-30.552-48.579-46.688-104.729-46.664-162.379.066-168.229 136.985-305.096 305.339-305.096 81.521.031 158.154 31.811 215.779 89.482s89.342 134.332 89.312 215.859c-.066 168.243-136.984 305.118-305.209 305.118zm167.415-228.515c-9.177-4.591-54.286-26.782-62.697-29.843-8.41-3.062-14.526-4.592-20.645 4.592-6.115 9.182-23.699 29.843-29.053 35.964-5.352 6.122-10.704 6.888-19.879 2.296-9.176-4.591-38.74-14.277-73.786-45.526-27.275-24.319-45.691-54.359-51.043-63.543-5.352-9.183-.569-14.146 4.024-18.72 4.127-4.109 9.175-10.713 13.763-16.069 4.587-5.355 6.117-9.183 9.175-15.304 3.059-6.122 1.529-11.479-.765-16.07-2.293-4.591-20.644-49.739-28.29-68.104-7.447-17.886-15.013-15.466-20.645-15.747-5.346-.266-11.469-.322-17.585-.322s-16.057 2.295-24.467 11.478-32.113 31.374-32.113 76.521c0 45.147 32.877 88.764 37.465 94.885 4.588 6.122 64.699 98.771 156.741 138.502 21.892 9.45 38.982 15.094 52.308 19.322 21.98 6.979 41.982 5.995 57.793 3.634 17.628-2.633 54.284-22.189 61.932-43.615 7.646-21.427 7.646-39.791 5.352-43.617-2.294-3.826-8.41-6.122-17.585-10.714z\"></path>\n        </g>\n        </svg></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<script>\n\t\t\t\tconst lazyloadRunObserver = () => {\n\t\t\t\t\tconst lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );\n\t\t\t\t\tconst lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {\n\t\t\t\t\t\tentries.forEach( ( entry ) => {\n\t\t\t\t\t\t\tif ( entry.isIntersecting ) {\n\t\t\t\t\t\t\t\tlet lazyloadBackground = entry.target;\n\t\t\t\t\t\t\t\tif( lazyloadBackground ) {\n\t\t\t\t\t\t\t\t\tlazyloadBackground.classList.add( 'e-lazyloaded' );\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\tlazyloadBackgroundObserver.unobserve( entry.target );\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t});\n\t\t\t\t\t}, { rootMargin: '200px 0px 200px 0px' } );\n\t\t\t\t\tlazyloadBackgrounds.forEach( ( lazyloadBackground ) => {\n\t\t\t\t\t\tlazyloadBackgroundObserver.observe( lazyloadBackground );\n\t\t\t\t\t} );\n\t\t\t\t};\n\t\t\t\tconst events = [\n\t\t\t\t\t'DOMContentLoaded',\n\t\t\t\t\t'elementor/lazyload/observe',\n\t\t\t\t];\n\t\t\t\tevents.forEach( ( event ) => {\n\t\t\t\t\tdocument.addEventListener( event, lazyloadRunObserver );\n\t\t\t\t} );\n\t\t\t</script>\n\t\t\t<script type=\"text/javascript\" id=\"ht_ctc_app_js-js-extra\">\n/* <![CDATA[ */\nvar ht_ctc_chat_var = {\"number\":\"79126152535\",\"pre_filled\":\"\",\"dis_m\":\"show\",\"dis_d\":\"show\",\"css\":\"cursor: pointer; z-index: 99999999;\",\"pos_d\":\"position: fixed; bottom: 15px; right: 15px;\",\"pos_m\":\"position: fixed; bottom: 15px; right: 15px;\",\"side_d\":\"right\",\"side_m\":\"right\",\"schedule\":\"no\",\"se\":\"150\",\"ani\":\"no-animation\",\"page_id\":\"7766\",\"url_target_d\":\"_blank\",\"ga\":\"yes\",\"gtm\":\"1\",\"fb\":\"yes\",\"webhook_format\":\"json\",\"g_init\":\"default\",\"g_an_event_name\":\"chat: {number}\",\"gtm_event_name\":\"Click to Chat\",\"pixel_event_name\":\"Click to Chat by HoliThemes\"};\nvar ht_ctc_variables = {\"g_an_event_name\":\"chat: {number}\",\"gtm_event_name\":\"Click to Chat\",\"pixel_event_type\":\"trackCustom\",\"pixel_event_name\":\"Click to Chat by HoliThemes\",\"g_an_params\":[\"g_an_param_1\",\"g_an_param_2\"],\"g_an_param_1\":{\"key\":\"event_category\",\"value\":\"Click to Chat for WhatsApp\"},\"g_an_param_2\":{\"key\":\"event_label\",\"value\":\"{title}, {url}\"},\"pixel_params\":[\"pixel_param_1\",\"pixel_param_2\",\"pixel_param_3\",\"pixel_param_4\"],\"pixel_param_1\":{\"key\":\"Category\",\"value\":\"Click to Chat for WhatsApp\"},\"pixel_param_2\":{\"key\":\"ID\",\"value\":\"{number}\"},\"pixel_param_3\":{\"key\":\"Title\",\"value\":\"{title}\"},\"pixel_param_4\":{\"key\":\"URL\",\"value\":\"{url}\"},\"gtm_params\":[\"gtm_param_1\",\"gtm_param_2\",\"gtm_param_3\",\"gtm_param_4\",\"gtm_param_5\"],\"gtm_param_1\":{\"key\":\"type\",\"value\":\"chat\"},\"gtm_param_2\":{\"key\":\"number\",\"value\":\"{number}\"},\"gtm_param_3\":{\"key\":\"title\",\"value\":\"{title}\"},\"gtm_param_4\":{\"key\":\"url\",\"value\":\"{url}\"},\"gtm_param_5\":{\"key\":\"ref\",\"value\":\"dataLayer push\"}};\n//# sourceURL=ht_ctc_app_js-js-extra\n/* ]]> */\n</script>\n<script type=\"text/javascript\" src=\"https://www.vkuskuhni.ru/wp-content/plugins/click-to-chat-for-whatsapp/new/inc/assets/js/app.js?ver=4.39\" id=\"ht_ctc_app_js-js\" defer=\"defer\" data-wp-strategy=\"defer\"></script>\n\t\t<script>\n\t\t\tif(window.screen.width > 1200) {\n\t\t\t\tdocument.write('<script src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/js/scrolling.js\"><\\/script>');\n\t\t\t}\n\t\t</script><script src=\"https://www.vkuskuhni.ru/wp-content/themes/vkuskuhni/js/scrolling.js\"></script>\n\t\t<!-- Social -->\n\t\t<script type=\"application/ld+json\">\n{\n  \"@context\" : \"https://schema.org\",\n  \"@type\" : \"Organization\",\n  \"name\" : \"Вкусные кухни\",\n  \"url\" : \"https://www.vkuskuhni.ru\",\n  \"sameAs\" : [\n    \"https://vk.com/vkus_kuhni\"\n  ]\n}\n</script>\n\t\t<!-- /Social -->\n\n\n\t\t<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function (d, w, c) {\n        (w[c] = w[c] || []).push(function() {\n            try {\n                w.yaCounter45157938 = new Ya.Metrika({\n                    id:45157938,\n                    clickmap:true,\n                    trackLinks:true,\n                    accurateTrackBounce:true,\n                    webvisor:true\n                });\n            } catch(e) { }\n        });\n\n        var n = d.getElementsByTagName(\"script\")[0],\n            s = d.createElement(\"script\"),\n            f = function () { n.parentNode.insertBefore(s, n); };\n        s.type = \"text/javascript\";\n        s.async = true;\n        s.src = \"https://mc.yandex.ru/metrika/watch.js\";\n\n        if (w.opera == \"[object Opera]\") {\n            d.addEventListener(\"DOMContentLoaded\", f, false);\n        } else { f(); }\n    })(document, window, \"yandex_metrika_callbacks\");\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/45157938\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n\n\t\n\t\t<div id=\"jivo-iframe-container\" style=\"opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;\"><iframe src=\"\" role=\"presentation\" allow=\"autoplay\" title=\"Jivochat\" name=\"jivo_container\" id=\"jivo_container\" frameborder=\"no\"></iframe></div><jdiv><jdiv class=\"globalClass__glXV3 global__bmC69 __light__T1MHS __green__Sr1G_ jv-copyright jv-windows jv-chrome jv-desktop\" style=\"--jv-font-family: 'Arial', system-ui, -apple-system, 'Arial', sans-serif;\"><jdiv translate=\"no\" class=\"notranslate\" style=\"animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: Label_CLOSE_WIDGET__jzm8j; display: block; z-index: 2147483646; position: fixed;\"><jdiv id=\"jvLabelWrap\" translate=\"no\" class=\"container__17Wxg __bottom__Udpfw __isShow__UDgTx notranslate\" style=\"--jv-label-font-size: 15px; --jv-label-font-style: normal; --jv-label-text-color: #ffffff; --jv-label-background: linear-gradient(95deg, #2f324a 20%, #424867 80%); --jv-label-background-corner: #424867; max-width: calc(-80px + 100vw); bottom: 0px; left: 40px;\"><jdiv class=\"icon__QmncK\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200h20v20H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20d%3D%22M3%203h14a2%202%200%200%201%202%202v10a2%202%200%200%201-2%202H3a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20d%3D%22M16.074%207.064l-6.01%204.01-6.01-4.01%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv><jdiv class=\"hoverArea__uCpXp\"><jdiv class=\"menu__ASVkP __bottom__JZv0P\"></jdiv></jdiv><jdiv class=\"text__akV3R contentTransitionWrap__U7_Nd __bottom__LkT2Q __isOffline__Mr9sN\">Отправьте нам сообщение</jdiv><jdiv class=\"container__jP0yZ\"><jdiv class=\"logo__XTiQA\"><jdiv class=\"icon__pcGv2 __isBillRu__NnBkd\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225.688%22%20height%3D%2218%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M7.155%205.93H6.134a.4.4%200%2000-.287.128.378.378%200%2000-.123.268v7.448a.377.377%200%2000.123.28.389.389%200%2000.287.12h1.021a.382.382%200%2000.274-.12.353.353%200%2000.131-.28V6.33a.375.375%200%2000-.131-.268.353.353%200%2000-.274-.132zm9.313.02h-.824a.557.557%200%2000-.57.228l-2.353%205.04h-.041l-2.242-5.04a.379.379%200%2000-.369-.228H8.958a.356.356%200%2000-.328.14.289.289%200%2000.021.32l3.648%207.748a.376.376%200%2000.369.208h.111a.373.373%200%2000.348-.208l3.648-7.748a.288.288%200%2000.021-.32.368.368%200%2000-.328-.14zm4.935-.188a4.312%204.312%200%2000-4.3%204.276%204.212%204.212%200%20001.254%203.044%204.11%204.11%200%20003.038%201.284%204.069%204.069%200%20003.025-1.284%204.181%204.181%200%20001.262-3.044%204.313%204.313%200%2000-4.279-4.276zm1.783%206.156a2.379%202.379%200%2001-1.783.756%202.4%202.4%200%2001-1.8-.744%202.623%202.623%200%2001-.725-1.888%202.529%202.529%200%2001.725-1.84%202.427%202.427%200%20011.8-.736%202.368%202.368%200%20011.783.736%202.525%202.525%200%2001.725%201.84%202.669%202.669%200%2001-.725%201.876zM3.322%205.93H.416a.392.392%200%2000-.275.128.373.373%200%2000-.131.272v1a.386.386%200%2000.131.28.4.4%200%2000.275.12h1.475v7.17a1.331%201.331%200%2001-1.18%201.312H.416a.4.4%200%2000-.287.12.371.371%200%2000-.123.28v1a.415.415%200%2000.111.28.394.394%200%2000.295.12h.143a3.13%203.13%200%20003.152-2.9.848.848%200%2000.017-.188V6.33a.377.377%200%2000-.123-.28.365.365%200%2000-.279-.12z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%2362666c%22%20d%3D%22M.03-.006c-.254%204.676%203.681%205.34%203.681%205.34C3.515.214.03-.006.03-.006z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E&quot;);\"></jdiv></jdiv><jdiv class=\"tooltipWrapper__CcpSc\"><jdiv class=\"tooltip__Q7Rdh\"><a href=\"https://www.jivo.ru/i_sa/?utm_source=www.vkuskuhni.ru&amp;utm_medium=link&amp;utm_content=label_tooltip&amp;utm_campaign=from_widget\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" class=\"link__Hv8Ic\">Бизнес-мессенджер <jdiv class=\"icon__pcGv2 __isBillRu__NnBkd\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225.688%22%20height%3D%2218%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M7.155%205.93H6.134a.4.4%200%2000-.287.128.378.378%200%2000-.123.268v7.448a.377.377%200%2000.123.28.389.389%200%2000.287.12h1.021a.382.382%200%2000.274-.12.353.353%200%2000.131-.28V6.33a.375.375%200%2000-.131-.268.353.353%200%2000-.274-.132zm9.313.02h-.824a.557.557%200%2000-.57.228l-2.353%205.04h-.041l-2.242-5.04a.379.379%200%2000-.369-.228H8.958a.356.356%200%2000-.328.14.289.289%200%2000.021.32l3.648%207.748a.376.376%200%2000.369.208h.111a.373.373%200%2000.348-.208l3.648-7.748a.288.288%200%2000.021-.32.368.368%200%2000-.328-.14zm4.935-.188a4.312%204.312%200%2000-4.3%204.276%204.212%204.212%200%20001.254%203.044%204.11%204.11%200%20003.038%201.284%204.069%204.069%200%20003.025-1.284%204.181%204.181%200%20001.262-3.044%204.313%204.313%200%2000-4.279-4.276zm1.783%206.156a2.379%202.379%200%2001-1.783.756%202.4%202.4%200%2001-1.8-.744%202.623%202.623%200%2001-.725-1.888%202.529%202.529%200%2001.725-1.84%202.427%202.427%200%20011.8-.736%202.368%202.368%200%20011.783.736%202.525%202.525%200%2001.725%201.84%202.669%202.669%200%2001-.725%201.876zM3.322%205.93H.416a.392.392%200%2000-.275.128.373.373%200%2000-.131.272v1a.386.386%200%2000.131.28.4.4%200%2000.275.12h1.475v7.17a1.331%201.331%200%2001-1.18%201.312H.416a.4.4%200%2000-.287.12.371.371%200%2000-.123.28v1a.415.415%200%2000.111.28.394.394%200%2000.295.12h.143a3.13%203.13%200%20003.152-2.9.848.848%200%2000.017-.188V6.33a.377.377%200%2000-.123-.28.365.365%200%2000-.279-.12z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%2362666c%22%20d%3D%22M.03-.006c-.254%204.676%203.681%205.34%203.681%205.34C3.515.214.03-.006.03-.006z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E&quot;);\"></jdiv></a></jdiv></jdiv></jdiv><jdiv class=\"leaf__NmXJj\"><jdiv class=\"leaf__CFft7 _bottom__kDPM_\"><jdiv class=\"cssLeaf__BBk_b\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2240%22%20viewBox%3D%220%200%2032%2040%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23424867%22%20d%3D%22M0%200h9.02L32%2033.196V40H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23424867%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%235e5f61%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%220.7%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv></jdiv></jdiv></jdiv></jdiv><jdiv id=\"jivo-player\" class=\"player__DCKE5\"><audio preload=\"auto\" id=\"jivo-sound-agent_message\"><source src=\"https://code.jivo.ru/sounds/agent_message.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivo.ru/sounds/agent_message.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivo.ru/sounds/agent_message.wav\" type=\"audio/wav\"></audio><audio preload=\"auto\" id=\"jivo-sound-notification\"><source src=\"https://code.jivo.ru/sounds/notification.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivo.ru/sounds/notification.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivo.ru/sounds/notification.wav\" type=\"audio/wav\"></audio><audio preload=\"auto\" id=\"jivo-sound-outgoing_message\"><source src=\"https://code.jivo.ru/sounds/outgoing_message.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivo.ru/sounds/outgoing_message.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivo.ru/sounds/outgoing_message.wav\" type=\"audio/wav\"></audio></jdiv><jdiv id=\"jcont\" translate=\"no\" class=\"notranslate\" style=\"animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: WidgetContainer_CLOSE_WIDGET__t_36V; --jleft: 40px; --jheight: 496px; display: block; position: fixed; --jlabelwidth: 302px; --jlabelleft: 40px;\"><jdiv dir=\"ltr\" id=\"jivo_action\" class=\"wrap__mirQH\"><jdiv id=\"jivo_close_button\" class=\"closeButton__EYmnW\"><jdiv class=\"closeIcon__ImyKe\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(2%202)%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%23FFF%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212.75%22%20stroke%3D%22%23222D38%22%20stroke-width%3D%221.5%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22%23222D38%22%20opacity%3D%221%22%20transform%3D%22translate(6%206)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22rotate(45%206.24%206.01)%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22scale(-1%201)%20rotate(45%200%20-9.058)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv></jdiv></jdiv></jdiv><jdiv class=\"jv-pseudo-height\"></jdiv><jdiv class=\"jv-mouse-track\"></jdiv></jdiv></jdiv></body></html>",
+  "text": "Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя 100% ИНДИВИДУАЛЬНЫЕ КУХНИ делаем по Вашим размерам с 2005 года на заказ в Екатеринбурге Мебельный Центр «ГУЛЛИВЕР» +7 (912) 615-25-35 При посещении салона Дизайн-проект бесплатно Каталог Классические Современные Глянцевые Матовые Акции Наши работы Готовые Проекты Дизайн проект Отзывы Контакты Комплектующие Фасады Начинка для кухонных шкафов Столешницы Покупателю Как заказать Доставка и оплата Монтаж Гарантии Правила эксплуатации кухни Правила использования мойки из искусственного камня О салоне Как мы делаем кухню — от заказа до монтажа Вопрос-Ответ Как выбрать Дизайн Уход за кухней Фасады Комплектующие Техника Материалы ВЫ БУДЕТЕ ЗНАТЬ как будет выглядеть кухня Дизайн-проект бесплатно при заказе у нас ТЕПЕРЬ МЫ В МЦ \"ГУЛЛИВЕР\" . ПЕРСОНАЛЬНЫЕ скидки КАЖДОМУ ПУСТЬ ВАША КУХНЯ БУДЕТ вкусной ЗА МЕСЯЦ! Изготовим для вас кухню В рассрочку от салона без переплат и участия банков 30% на три месяца ВЫ УНИКАЛЬНЫ! За 19 лет мы не сделали ни одной одинаковой КУХНИ ВЫ БУДЕТЕ ЗНАТЬ как будет выглядеть кухня Дизайн-проект бесплатно при заказе у нас ТЕПЕРЬ МЫ В МЦ \"ГУЛЛИВЕР\" . ПЕРСОНАЛЬНЫЕ скидки КАЖДОМУ ПУСТЬ ВАША КУХНЯ БУДЕТ вкусной ЗА МЕСЯЦ! Изготовим для вас кухню В рассрочку от салона без переплат и участия банков 30% на три месяца ВЫ УНИКАЛЬНЫ! За 19 лет мы не сделали ни одной одинаковой КУХНИ ВЫ БУДЕТЕ ЗНАТЬ как будет выглядеть кухня Дизайн-проект бесплатно при заказе у нас 1 день на монтаж 2 года гарантии 3 месяца рассрочки 18 лет опыта 3060 кухонь сделано «Вкусный» каталог КАТЕГОРИИ Современные Классические Глянцевые Корпусная мебель Матовые Угловые Маленькие Под потолок С барной стойкой С антресолями Пластик Акриловые С островом ПВХ Прямые П-образные Кухни неоклассика Из ЛДСП Сити Из массива Остальное Глянцевые Классические Корпусная мебель Матовые Под потолок Современные ПОЛНЫЙ КАТАЛОГ КОМПЛЕКТУЮЩИЕ - качество от европейских производителей Фасады Именно фасады являют лицо вашей кухни, задают стиль и определяют восприятие всего интерьера. Представляем большой выбор фасадов из долговечных и качественных материалов. Фурнитура BLUM Вся фурнитура, которую мы используем при изготовлении: петли, подъёмники, ящики – BLUM (Австрия). Начинка Выкатные сетки, карусели, сушки – безусловно сделают Вашу кухню более удобной. Столешницы Только качественные влагостойкие пластиковые, из натурального или искуственного камня столешницы производства – Германии, Италии, России. Большой выбор декоров. Стеновые панели Любые дизайнерские решения из закаленного стекла с фотопечатью. Кухонные фартуки из МДФ с фотопечатью, глянцевые или матовые. Изюминка Украшением Вашего кухонного гарнитура станут современная подсветка, стильные ручки, рейлинговые ситсемы… Мойки и смесители Разнообразные формы и стили моек из искусственного камня, смесители в цвет. Мойки из нержавеющей стали. Встраиваемая техника Подберём к Вашему кухонному гарнитуру любую встраиваемую технику от надёжных производителей. отправить заявку покупатели нас ценят Индивидуальный подход к каждому покупателю При производстве кухонных гарнитуров используем только качественные материалы и фурнитуру Профессиональный, быстрый и качественный монтаж Бесплатный замер и доставка по городу Екатеринбургу С нами надежно и спокойно. Вы сделали заказ, а дальше работают профессионалы Предоставляем рассрочки и кредиты Полезные советы вкусные советы и полезные новости об акциях компании Записей нет. ВСЕ СОВЕТЫ Кухни на заказ от производителя в Екатеринбурге Когда решили, что пора обставить кухню, то сразу возникает горячее желание охватить все. Чтобы было красиво и уютно, в то же время оригинально и функционально, и при всем этом еще легко убиралось. Делать это постепенно, компонуя разную готовую мебель, довольно трудно. Зачастую, то, что понравилось, с уже купленным не сочетается или просто по размеру не подходит. Чтобы не нервничать и не тратить лишние деньги и время, оптимальным и экономным решением станет заказать кухню у надежного производителя. Салон «Вкусные кухни» - это стильные кухни на заказ в Екатеринбурге, на совесть сделанные из качественных и современных материалов, отвечающие желаниям и использующие особенность планировки по максимуму. Преимущества кухни по индивидуальным размерам Кухня создается именно под конкретное помещение и составляет единый комплекс, занимающий всю необходимую площадь, не сверкая ненужными «зазорами» и не выделяясь «выступами». Вы имеете возможность выбора цветовой гаммы, которая будет в полной мере соответствовать вашим вкусам и желаниям. В момент изготовлении кухни под заказ учитываются все нюансы помещения: расположение труб, вентиляционных решеток, источников электричества. Поэтому уже не нужно будет вырезать в задних стенках шкафов отверстия для розеток или пользоваться удлинителями для подключения электроприборов. Только один есть недостаток у кухни по индивидуальным размерам – это необходимость ждать, пока изготовят кухонную мебель. Но ведь подумайте, проявить терпение на месяц-полтора, чтобы получить кухонный гарнитур, о которой мечтали – не такое уж большое потрясение! Первые шаги при заказе кухонного гарнитура Если решение купить кухонный гарнитур в салоне «Вкусные кухни» принято, то необходимо: Достать план БТИ, а если не нашли, то нужно произвести замеры самостоятельно для предварительного создания дизайна Позвоните нам, чтобы договориться о времени выезда на замер нашего специалиста Или отправить заказ в форме на сайте и мы сами перезвоним Вам. Дизайн-проект кухни на заказ в Екатеринбурге Довольно часто не вполне четко удается представить свою идеальную кухню в деталях. Наши дизайнеры существуют как раз для того, чтобы понимать и воплощать Ваши идеи в реальность Для начала Вы сможете ознакомиться с образцами разных моделей кухонных гарнитуров по каталогам. Затем мы подробно расскажем о функциональных особенностях каждого изделия. Предложим конструктивные решения, в зависимости от планировки кухни. Поможем осуществить выбор материалов и цветовой гаммой. Порекомендуем качественное и поможем определиться со встраиваемой техникой, мойкой, смесителями, необходимой фурнитурой и аксессуарами. Это сделаем возможным органичное сочетание всего перечисленного в дизайн-проекте и освободит Вас от необходимости делать эти закупки самому. Когда вся необходимая информация собрана, осуществляется совместная работа над дизайном кухни. Вы озвучиваете пожелания, а дизайнер составляет по ним предварительные наброски и проект. После согласования всех моментов и одобрения проекта с Вашей стороны, дизайнер сам выезжает к Вам, чтобы проверить все расчеты и особенности помещения. Это самый важный момент! Даже небольшое упущение в замерах длин и углов приведет к тому, что сделанный кухонный гарнитур придется доделывать, подгонять под нужные размеры, что приведет к дополнительным затратам. Это особенно актуально когда изготавливаются угловые кухни на заказ. Чтобы позаботиться о нервах и деньгах заказчиков, дизайнеры салона «Вкусные кухни» действуют по правилу «доверяй, но проверяй». Заключение договора при изготовлении кухни на заказ После полного утверждения проекта подписывается договор на изготовление и установку кухонного гарнитура. В момент подписания договора Вами вносится 50% предоплата. Это осуществляется любым удобным для вас способом: по карте, наличными или на наш счет по банковским реквизитам. Возможна беспроцентная рассрочка или кредиты от трех банков. Также наш салон предоставляет отсрочку части платежа без участия банка. С момента внесения оплаты стартует отсчет времени на изготовление: Кухонные гарнитуры из ПВХ, пластика, акрила – до 30 рабочих дней. Кухонные гарнитуры из массива или шпонированные – до 45 рабочих дней. В течение всего этого времени дизайнер, работающий с Вами, находится на связи, информируя вас о ходе выполнения работы. За три дня до того, как кухня будет доставлена, необходимо оплатить оставшиеся 50% стоимости заказа. Монтаж кухни В согласованные день и время бригада наших монтажников осуществляет доставку к вам домой и сборку готовой кухни. Обычно монтаж кухни занимает 8-10 часов, поэтому рекомендуем освободить весь день с утра , а к вечеру кухня уже будет готова. Исключением являются кухни, имеющие столешницы из искусственного камня. Для их сборки, как правило, требуется два дня. У Вас должен быть на руках весь набор документов, выданный работниками салона при оформлении кухни на заказ в Екатеринбурге. Когда монтаж кухни закончился проведите внимательный осмотр и поставьте роспись в акте сдачи-приемки. Наши мастера отвечают за качество работы, что подтверждается гарантиями, описанными в договоре. Вот и все – дело сделано! Ставьте чайник на плиту, доставайте торт из холодильника, располагайтесь поудобнее и начинайте обживать Кухню Вашей Мечты! Контакты Возникли вопросы? С удовольствием ответим и поможем Вам оформить заказ на кухню по индивидуальным размерам в Екатеринбурге. Напишите, заполнив форму обратной связи. Или звоните - договоримся! Бюджет (тысяч рублей) >150 >300 >500 отправить заявку Салон мебели «Вкусные кухни» Адрес: г. Екатеринбург ул. 40-летия Комсомола 38 Н МЦ «ГУЛЛИВЕР», корпус Б, 1 этаж, правое крыло Cотовый: +7 (912) 615-25-35 E-mail: vkuskuhni@mail.ru Каталог Классические Современные Глянцевые Матовые Акции Наши работы Готовые Проекты Дизайн проект Отзывы Контакты Комплектующие Фасады Начинка для кухонных шкафов Столешницы Покупателю Как заказать Доставка и оплата Монтаж Гарантии Правила эксплуатации кухни Правила использования мойки из искусственного камня О салоне Как мы делаем кухню — от заказа до монтажа Вопрос-Ответ Как выбрать Дизайн Уход за кухней Фасады Комплектующие Техника Материалы Поиск по сайту: найти © 2005-2024 Официальный сайт мебельного салона «Вкусные Кухни» Екатеринбург Присоединяйся: АКЦИИ И НОВИНКИ Каталог Классические Современные Глянцевые Матовые Акции Наши работы Готовые Проекты Дизайн проект Отзывы Контакты Комплектующие Фасады Начинка для кухонных шкафов Столешницы Покупателю Как заказать Доставка и оплата Монтаж Гарантии Правила эксплуатации кухни Правила использования мойки из искусственного камня О салоне Как мы делаем кухню — от заказа до монтажа Вопрос-Ответ Как выбрать Дизайн Уход за кухней Фасады Комплектующие Техника Материалы +7 (912) 615-25-35 отправить заявку отправить заявку Спасибо за заявку! В ближайшее время с Вами свяжется наш менеджер Бесплатный замер C 01.05 по 30.05.2018 замер помещения под Вашу кухню БЕСПЛАТНО! Воспользоваться данным предложением Вы можете прямо сейчас, отправив заявку на замер с помощью данной формы. * бесплатный замер производится только в пределах г. Екатеринбурга отправить заявку Срочная связь в WhatsApp Отправьте нам сообщение Бизнес-мессенджер",
+  "json_ld": [
+    "{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"name\":\"Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#website\"},\"about\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#organization\"},\"description\":\"Заказать кухню по индивидуальным размерам. Купить кухню недорого по ценам производителя. Кухонные гарнитуры европейского качества с встроенной техникой. Дизайн проект бесплатно!\",\"breadcrumb\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#breadcrumb\"},\"inLanguage\":\"ru-RU\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Главная страница\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#website\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"name\":\"Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя\",\"description\":\"Заказать кухню по индивидуальным размерам. Купить кухню недорого по ценам производителя. Кухонные гарнитуры европейского качества с встроенной техникой. Дизайн проект бесплатно!\",\"publisher\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/www.vkuskuhni.ru\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"ru-RU\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#organization\",\"name\":\"ООО \\\"Вкусные Кухни\\\"\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"ru-RU\",\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/www.vkuskuhni.ru\\/wp-content\\/uploads\\/2017\\/08\\/logo2.jpg\",\"contentUrl\":\"https:\\/\\/www.vkuskuhni.ru\\/wp-content\\/uploads\\/2017\\/08\\/logo2.jpg\",\"width\":207,\"height\":79,\"caption\":\"ООО \\\"Вкусные Кухни\\\"\"},\"image\":{\"@id\":\"https:\\/\\/www.vkuskuhni.ru\\/#\\/schema\\/logo\\/image\\/\"},\"sameAs\":[\"https:\\/\\/www.facebook.com\\/vkuskuhni\\/\",\"https:\\/\\/x.com\\/vkuskuhni\",\"https:\\/\\/www.instagram.com\\/vkus_kuhni\\/\"]}]}",
+    "{ \"@context\" : \"https://schema.org\", \"@type\" : \"Organization\", \"name\" : \"Вкусные кухни\", \"url\" : \"https://www.vkuskuhni.ru\", \"sameAs\" : [ \"https://vk.com/vkus_kuhni\" ] }"
+  ],
+  "document": {
+    "title": "Кухни на заказ в Екатеринбурге по индивидуальным размерам напрямую от производителя",
+    "meta_description": "Заказать кухню по индивидуальным размерам. Купить кухню недорого по ценам производителя. Кухонные гарнитуры европейского качества с встроенной техникой. Дизайн проект бесплатно!",
+    "meta_robots": "noyaca",
+    "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+    "canonical": "https://www.vkuskuhni.ru/",
+    "lang": "ru-RU",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+79126152535",
+        "text": "+7 (912) 615-25-35",
+        "rel": ""
+      },
+      {
+        "href": "#test-popup",
+        "text": "При посещении салона Дизайн-проект бесплатно",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-klassika/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "/stock/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nashi_raboty/",
+        "text": "Готовые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/project/",
+        "text": "Проекты",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/dizain-proekt-kuhni/",
+        "text": "Дизайн проект",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/otzyvy/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/fasady-dlja-kuhni/",
+        "text": "Фасады",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/",
+        "text": "Начинка для кухонных шкафов",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/",
+        "text": "Столешницы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Покупателю",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/zakazat-kuhnyu/",
+        "text": "Как заказать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/dostavka-i-oplata/",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/montazh-kuhni/",
+        "text": "Монтаж",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/garantiya/",
+        "text": "Гарантии",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/kuhonnyj-garnitur/",
+        "text": "Правила эксплуатации кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/mojka-iskustvennyj-kamen/",
+        "text": "Правила использования мойки из искусственного камня",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/o-kompanii/",
+        "text": "О салоне",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/sdelat-kuhnyu-na-zakaz/",
+        "text": "Как мы делаем кухню — от заказа до монтажа",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вопрос-Ответ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/pomoshh-v-vybore/",
+        "text": "Как выбрать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-dizajne/",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/uhod-za-kuhnej/",
+        "text": "Уход за кухней",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-fasadah/",
+        "text": "Фасады",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-komplektujushhih/",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-tehnike-dlja-kuhni/",
+        "text": "Техника",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-materialah/",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-klassika/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/korpusnaya-mebel/",
+        "text": "Корпусная мебель",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/uglovaya-kuhnya/",
+        "text": "Угловые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/malenjkaya-kuhnya/",
+        "text": "Маленькие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-pod-potolok/",
+        "text": "Под потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-s-barnoj-stojkoi/",
+        "text": "С барной стойкой",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-s-antresolyami/",
+        "text": "С антресолями",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-plastik/",
+        "text": "Пластик",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/akrilovaya-kuhnya/",
+        "text": "Акриловые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kyhnya-s-ostrovom/",
+        "text": "С островом",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-pvh/",
+        "text": "ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/pryamaya-kuhnya/",
+        "text": "Прямые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/p-obraznaya-kuhnya/",
+        "text": "П-образные",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-salone-vkusnye-kukhni/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/neoklassika/",
+        "text": "Кухни неоклассика",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/ldsp-kuhnya/",
+        "text": "Из ЛДСП",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/city/",
+        "text": "Сити",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-iz-massiva/",
+        "text": "Из массива",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-klassika/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-klassika/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/korpusnaya-mebel/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/korpusnaya-mebel/",
+        "text": "Корпусная мебель",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-pod-potolok/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhnya-pod-potolok/",
+        "text": "Под потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/modern/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "/category/catalog/",
+        "text": "ПОЛНЫЙ КАТАЛОГ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/fasady-dlja-kuhni/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vkusnosti/kachestvennaya-furnitura-blum-dlya-kuhni/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/category/vopros-otvet/",
+        "text": "ВСЕ СОВЕТЫ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/",
+        "text": "«Вкусные кухни»",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vkusnosti/uglovye-kuhni/",
+        "text": "угловые кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-klassika/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "/stock/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nashi_raboty/",
+        "text": "Готовые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/project/",
+        "text": "Проекты",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/dizain-proekt-kuhni/",
+        "text": "Дизайн проект",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/otzyvy/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/fasady-dlja-kuhni/",
+        "text": "Фасады",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/",
+        "text": "Начинка для кухонных шкафов",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/",
+        "text": "Столешницы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Покупателю",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/zakazat-kuhnyu/",
+        "text": "Как заказать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/dostavka-i-oplata/",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/montazh-kuhni/",
+        "text": "Монтаж",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/garantiya/",
+        "text": "Гарантии",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/kuhonnyj-garnitur/",
+        "text": "Правила эксплуатации кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/mojka-iskustvennyj-kamen/",
+        "text": "Правила использования мойки из искусственного камня",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/o-kompanii/",
+        "text": "О салоне",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/sdelat-kuhnyu-na-zakaz/",
+        "text": "Как мы делаем кухню — от заказа до монтажа",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вопрос-Ответ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/pomoshh-v-vybore/",
+        "text": "Как выбрать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-dizajne/",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/uhod-za-kuhnej/",
+        "text": "Уход за кухней",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-fasadah/",
+        "text": "Фасады",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-komplektujushhih/",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-tehnike-dlja-kuhni/",
+        "text": "Техника",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-materialah/",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "https://ok.ru/group/58395385790510",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://www.youtube.com/channel/UC7UL5-DV04TsD18L0ZtjGhQ",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://vk.com/vkus_kuhni",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "//www.liveinternet.ru/click",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/stock/",
+        "text": "АКЦИИ И НОВИНКИ",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/kuhni-klassika/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/gljancevaya-kuhnya/",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/catalog/matovaya-kuhnya/",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "/stock/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nashi_raboty/",
+        "text": "Готовые",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/project/",
+        "text": "Проекты",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/dizain-proekt-kuhni/",
+        "text": "Дизайн проект",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/otzyvy/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/kontakty/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/fasady-dlja-kuhni/",
+        "text": "Фасады",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/nachinka-dlja-kuhonnyh-shkafov/",
+        "text": "Начинка для кухонных шкафов",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/stoleshnicy-dlja-kuhni/",
+        "text": "Столешницы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Покупателю",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/zakazat-kuhnyu/",
+        "text": "Как заказать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/dostavka-i-oplata/",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/montazh-kuhni/",
+        "text": "Монтаж",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/garantiya/",
+        "text": "Гарантии",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/kuhonnyj-garnitur/",
+        "text": "Правила эксплуатации кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/mojka-iskustvennyj-kamen/",
+        "text": "Правила использования мойки из искусственного камня",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/o-kompanii/",
+        "text": "О салоне",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/sdelat-kuhnyu-na-zakaz/",
+        "text": "Как мы делаем кухню — от заказа до монтажа",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вопрос-Ответ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/pomoshh-v-vybore/",
+        "text": "Как выбрать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-dizajne/",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/uhod-za-kuhnej/",
+        "text": "Уход за кухней",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-fasadah/",
+        "text": "Фасады",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-komplektujushhih/",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-tehnike-dlja-kuhni/",
+        "text": "Техника",
+        "rel": ""
+      },
+      {
+        "href": "https://www.vkuskuhni.ru/vopros-otvet/o-materialah/",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "tel:+79126152535",
+        "text": "+7 (912) 615-25-35",
+        "rel": ""
+      },
+      {
+        "href": "https://www.jivo.ru/i_sa/?utm_source=www.vkuskuhni.ru&utm_medium=link&utm_content=label_tooltip&utm_campaign=from_widget",
+        "text": "Бизнес-мессенджер",
+        "rel": "nofollow noopener noreferrer"
+      }
+    ],
+    "button_texts": [
+      "отправить заявку",
+      "отправить заявку",
+      "найти",
+      "отправить заявку",
+      "отправить заявку",
+      "отправить заявку"
+    ],
+    "h1_texts": [
+      "Кухни на заказ от производителя в Екатеринбурге"
+    ],
+    "h2_texts": [
+      "Преимущества кухни по индивидуальным размерам",
+      "Первые шаги при заказе кухонного гарнитура",
+      "Дизайн-проект кухни на заказ в Екатеринбурге",
+      "Заключение договора при изготовлении кухни на заказ",
+      "Монтаж кухни"
+    ],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 7,
+      "h1": 1,
+      "h2": 5,
+      "h3": 0,
+      "link": 151,
+      "image": 43,
+      "list_item": 145,
+      "strong": 4,
+      "form": 6,
+      "input": 30
+    }
+  }
+}

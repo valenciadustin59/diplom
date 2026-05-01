@@ -1,0 +1,698 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kazan.natpotolok.ru/",
+  "final_url": "https://kazan.natpotolok.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:18:53 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx",
+    "set-cookie": "PHPSESSID=fb2ea03046d55d4d2ff69298178d63c7; path=/",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/8.4.15"
+  },
+  "response_time_ms": 4170.9365,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:18:55.736745+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" prefix=\"og: https://ogp.me/ns# website: https://ogp.me/ns/website#\"><head>\n\t<!-- natpotolok.ru -->\n\t<meta charset=\"utf-8\">\n\t<base href=\"https://kazan.natpotolok.ru/\">\n\t<title>Натяжные потолки Казань, цена от 2118 руб.</title>\n\t<meta name=\"description\" content=\"Установка натяжных потолков в квартирах, домах, коммерческих помещениях в Казани от компании RR GROUP. Полный комплекс услуг под ключ. Закажите установку натяжных потолков любой сложности по выгодной цене от 2118 руб. по тел. +7 931 521-51-78\">\n\t<meta name=\"keywords\" content=\"Натяжные потолки в Казани, цена натяжных потолков от 2118 рублей, установка натяжных потолков Казань\">\n\t<meta name=\"generator\" content=\"x94web Engine That Runs Super-fast\">\n\t<meta name=\"application-name\" content=\"RR GROUP\">\n\t<meta name=\"author\" content=\"RR GROUP\">\n\t<meta name=\"apple-mobile-web-app-title\" content=\"RR GROUP\">\n\t<meta name=\"image\" content=\"https://kazan.natpotolok.ru/img/1023/co_main.jpg\">\n\t<meta name=\"yandex-verification\" content=\"e8b5c04fdcbed80f\">\n\t\t\t\t\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<meta name=\"format-detection\" content=\"telephone=no\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"counters\" content=\"counters\" id=\"counters\" data-visited=\"0\" data-map=\"55.793996,49.125800\" data-ymetrika=\"70513270\" data-gog_anal=\"\" data-capcha_key=\"6LdvidYZAAAAAAKMsG2NDjOyRre3S6kHP4CL0LW1\">\n\n\t<meta name=\"twitter:card\" content=\"summary_large_image\">\n\t<meta name=\"twitter:description\" content=\"Установка натяжных потолков в квартирах, домах, коммерческих помещениях в Казани от компании RR GROUP. Полный комплекс услуг под ключ. Закажите установку натяжных потолков любой сложности по выгодной цене от 2118 руб. по тел. +7 931 521-51-78\">\n\t<meta name=\"twitter:title\" content=\"Натяжные потолки Казань, цена от 2118 руб.\">\n\n\t<meta property=\"og:type\" content=\"website\">\n\t<meta property=\"og:site_name\" content=\"RR GROUP\">\n\t<meta property=\"og:title\" content=\"Натяжные потолки Казань, цена от 2118 руб.\">\n\t<meta property=\"og:description\" content=\"Установка натяжных потолков в квартирах, домах, коммерческих помещениях в Казани от компании RR GROUP. Полный комплекс услуг под ключ. Закажите установку натяжных потолков любой сложности по выгодной цене от 2118 руб. по тел. +7 931 521-51-78\">\n\t<meta property=\"og:url\" content=\"https://kazan.natpotolok.ru/\">\n\t<meta property=\"og:locale\" content=\"ru_RU\">\n\t<meta property=\"og:image\" content=\"https://kazan.natpotolok.ru/img/1023/co_main.jpg\">\n\t<meta property=\"og:image:type\" content=\"image/jpeg\">\n\t<meta property=\"og:image:secure_url\" content=\"https://kazan.natpotolok.ru/img/1023/co_main.jpg\">\n\t<meta property=\"og:image:width\" content=\"1200\">\n\t<meta property=\"og:image:height\" content=\"630\">\n\t\t\n\t<link rel=\"shortcut icon\" href=\"/img/fav/23008/favicon.ico\" type=\"image/x-icon\">\n\t<link rel=\"shortcut icon\" href=\"/img/fav/23008/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n\t<link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"/img/fav/23008/apple-icon-57x57.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"/img/fav/23008/apple-icon-60x60.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"/img/fav/23008/apple-icon-72x72.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"/img/fav/23008/apple-icon-76x76.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"/img/fav/23008/apple-icon-114x114.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"/img/fav/23008/apple-icon-120x120.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"/img/fav/23008/apple-icon-144x144.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"/img/fav/23008/apple-icon-152x152.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/img/fav/23008/apple-icon-180x180.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/img/fav/23008/android-icon-192x192.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/img/fav/23008/favicon-32x32.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/img/fav/23008/favicon-96x96.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/img/fav/23008/favicon-16x16.png\">\n\t<link rel=\"manifest\" href=\"/img/fav/23008/manifest.json\">\n\t<meta name=\"msapplication-TileColor\" content=\"#ffffff\">\n\t<meta name=\"msapplication-TileImage\" content=\"/img/fav/23008/ms-icon-144x144.png\">\n\t<meta name=\"theme-color\" content=\"#ffffff\">\n\t<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#ffffff\">\n\t<meta name=\"msapplication-navbutton-color\" content=\"#000\">\n\n\t<!--link rel=\"amphtml\" href=\"https://kazan.natpotolok.ru/amp/main\"-->\n\t<link rel=\"canonical\" href=\"https://kazan.natpotolok.ru/\">\n\t<!--link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://kazan.natpotolok.ru/feed/main\" title=\"Натяжные потолки Казань, цена от 2118 руб.\" /-->\n\t\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"Organization\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Казань, Россия\",\"postalCode\":\"420095\",\"streetAddress\":\"улица Пушкина, 52\"},\"email\":\"kazan@natpotolok.ru\",\"name\":\"RR GROUP\",\"telephone\":\"+7 931 521-51-78\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"RR GROUP\", \"alternateName\": \"RR GROUP. Казань\", \"url\": \"https://kazan.natpotolok.ru/\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"LocalBusiness\", \"name\": \"RR GROUP\", \"url\": \"https://kazan.natpotolok.ru/\", \"logo\": \"/img/1023/logo.png\", \"image\": \"https://kazan.natpotolok.ru/img/1023/co_main.jpg\", \"description\": \"Продажа и установка натяжных потолков с гарантией качества по ценам от 1589 руб.\", \"address\":{\"@type\": \"PostalAddress\", \"streetAddress\": \"улица Пушкина, 52\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"postalCode\": \"420095\", \"addressCountry\": \"Россия\"}, \"geo\":{\"@type\": \"GeoCoordinates\", \"latitude\": \"55.793996\", \"longitude\": \"49.125800\"}, \"openingHours\": \"Mo, Tu, We, Th, Fr 09:00-19:00 Sa 10:00-15:00\", \"telephone\": \"+79315215178\", \"priceRange\": \"$$\", \"contactPoint\":{\"@type\": \"ContactPoint\", \"telephone\": \"+79315215178\", \"contactType\": \"sales\"}}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"ImageObject\",\"contentLocation\": \"Натяжные потолки Казань, цена от 2118 руб., Россия\",\"contentUrl\": \"https://kazan.natpotolok.ru/img/1023/co_main.jpg\",\"description\": \"Установка натяжных потолков в квартирах, домах, коммерческих помещениях в Казани от компании RR GROUP. Полный комплекс услуг под ключ. Закажите установку натяжных потолков любой сложности по выгодной цене от 2118 руб. по тел. +7 931 521-51-78\",\"name\": \"Натяжные потолки Казань\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"serviceType\": \"Профессиональная установка натяжных потолков под ключ в Казани от 1589 руб.\", \"provider\":{\"@type\": \"LocalBusiness\", \"image\": \"/img/1023/logo.png\", \"priceRange\": \"$$\", \"address\":{\"@type\": \"PostalAddress\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"streetAddress\": \"улица Пушкина, 52\"}, \"description\": \"Профессиональная установка натяжных потолков в квартирах, домах и офисах в Казани по выгодным ценам от 1589 руб. в мае 2026 г. Гарантия 1 год. Делаем за 51 часов. Выезд и замер и расчет 0 руб. Все виды натяжных потолков. Быстро, качественно, под ключ.\", \"name\": \"RR GROUP\", \"telephone\": \"+79315215178\"}, \"areaServed\":{\"@type\": \"State\", \"name\": \"Казань\"}}</script>\n\t<link href=\"/t/z0/css/h-bootstrap.css\" rel=\"stylesheet\">\n\t<link href=\"/t/z0/css/h-main.min.css\" rel=\"stylesheet\">\n<style>:root {--main-color: #7D52A9;\n--footer: #10181B;\n--bg17: url(#gradient2);\n}</style>\n</head>\n<body>\n\t<header class=\"header\">\n\n\t\t<div class=\"header-top bg-secondary d-none d-sm-block\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row align-items-center\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_order\">\n\t\t\t\t\t\t\t<a title=\"Вызвать замерщика Казань\" class=\"text-dark\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=estimator\" data-yevent=\"click_estimator\" data-param=\"estimator|Вызвать замерщика\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/pencil-ruler.svg\" height=\"15\" alt=\"Вызвать замерщика Казань\">\n\t\t\t\t\t\t\t\t<small>Вызвать замерщика</small>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_email\">\n\t\t\t\t\t\t\t<a data-yevent=\"click_email\" title=\"Написать на kazan@natpotolok.ru\" href=\"mailto:kazan@natpotolok.ru\" class=\"text-dark text-decoration-none\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/envelope-open.svg\" height=\"15\" alt=\"Написать на kazan@natpotolok.ru\">\n\t\t\t\t\t\t\t\t<small>kazan@natpotolok.ru</small>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_callback  text-center\">\n\t\t\t\t\t\t\t<a title=\"Обратный звонок Казань\" class=\"text-dark\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=call_back\" data-yevent=\"click_call_back\" data-param=\"call_back|Заказать обратный звонок\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/phone-office.svg\" height=\"15\" alt=\"Обратный звонок Казань\">\n\t\t\t\t\t\t\t\t<small>Обратный звонок</small>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_time d-flex\tw-100 align-items-center justify-content-end\">\n\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/clock.svg\" height=\"15\" alt=\"Режим работы\" class=\"mr-1\">\n\t\t\t\t\t\t\t<small class=\"text-nowrap\">Ежедневно 08:00 - 18:00</small>\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"header-conacts pt-1\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n\t\t\t\t<div class=\"row align-items-end justify-content-between\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t<div class=\"top_logo\">\n\t\t\t\t\t\t\t<a title=\"Профессиональная установка натяжных потолков под ключ в Казани от 1589 руб.\" href=\"/\"><img src=\"/img/1023/logo.png\" class=\"img-responsive\" alt=\"Профессиональная установка натяжных потолков под ключ в Казани от 1589 руб.\"></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"d-none d-lg-block col-lg-3 my-2\">\n\t\t\t\t\t\t<b class=\"mb-0\">Лучшая цена на натяжные потолки в Казани</b>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"d-none d-lg-block col-lg-3 my-2\">\n\t\t\t\t\t\t<address class=\"mb-0\">420095, Россия, г. <a data-toggle=\"modal\" data-target=\"#domain_linking\">Казань</a>, улица Пушкина, 52</address>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-3 text-right\">\n\t\t\t\t\t\t<div class=\"phone text-nowrap font-weight-bold\">\n\t\t\t\t\t\t\t<a title=\"Позвоните нам в Казани\" data-yevent=\"click_phone\" href=\"tel:+7931521-51-78\" class=\"d-block\"><small>+7 (931)</small> 521-51-78</a>\n\t\t\t\t\t\t\t<!--a target='_blank' rel='nofollow' data-yevent='click_whatsapp' href='/wa_go'  class='btn btn-sm my-2 text-white bg-whatsapp py-0 px-1'><img src='/t/z0/i/cons/whatsapp.svg' height='18' alt='Напшите WhatsApp' />WhatsApp</a-->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"header-menu bg-accent\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<nav class=\"navbar sticky-top navbar-expand-lg navbar-light bg-accent p-0\" itemscope=\"itemscope\" itemtype=\"http://www.schema.org/SiteNavigationElement\">\n\t\t\t\t\t<button class=\"navbar-toggler  py-1 my-1 border-white text-white\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar-catalog\" aria-controls=\"navbar-catalog\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span>Услуги</span></button>\n\t\t\t\t\t<button class=\"navbar-toggler py-1 my-1 border-white text-white\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span>Меню</span></button>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n\t\t\t\t\t\t<ul class=\"navbar-nav nav-fill justify-content-around w-100 small\">\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"КАЛЬКУЛЯТОР\" href=\"/quizz\" itemprop=\"url\">КАЛЬКУЛЯТОР</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_quizz.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ЦЕНЫ\" href=\"/tseny\" itemprop=\"url\">ЦЕНЫ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_tseny.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"УСЛУГИ\" href=\"/uslugi\" itemprop=\"url\">УСЛУГИ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_uslugi.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ПОРТФОЛИО\" href=\"/gallery\" itemprop=\"url\">ПОРТФОЛИО</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_gallery.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"АКЦИИ\" href=\"/akcii\" itemprop=\"url\">АКЦИИ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_akcii.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ОТЗЫВЫ\" href=\"/otzivy\" itemprop=\"url\">ОТЗЫВЫ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_otzivy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"КОНТАКТЫ\" href=\"/kontakty\" itemprop=\"url\">КОНТАКТЫ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_kontakty.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"О КОМПАНИИ\" href=\"/o-kompanii\" itemprop=\"url\">О КОМПАНИИ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_o-kompanii.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"СЕРТИФИКАТЫ\" href=\"/sertifikaty\" itemprop=\"url\">СЕРТИФИКАТЫ</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_sertifikaty.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 \" title=\"ОПЛАТА\" href=\"/oplata\" itemprop=\"url\">ОПЛАТА</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_oplata.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t</div>\n\t\t</div>\n\n\t</header>\n\t<div class=\"collapse navbar-collapse mt-2\" id=\"navbar-catalog\">\n\t\t<div class=\"catalog w-100\" itemscope=\"itemscope\" itemtype=\"http://www.schema.org/SiteNavigationElement\">\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-\" aria-expanded=\"false\">Виды потолков</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/besshovnyj-potolok\" title=\"Бесшовный потолок\">Бесшовный потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_besshovnyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/glyancevyj-potolok\" title=\"Глянцевый потолок\">Глянцевый потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_glyancevyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/kombinirovannyj-potolok\" title=\"Комбинированный потолок\">Комбинированный потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_kombinirovannyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/matovyj-potolok\" title=\"Матовый потолок\">Матовый потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_matovyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/paryashchij-potolok\" title=\"Парящий потолок\">Парящий потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_paryashchij-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/pvh-potolok\" title=\"ПВХ потолок\">ПВХ потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_pvh-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/shovnyj-potolok\" title=\"Шовный потолок\">Шовный потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_shovnyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-8\" aria-expanded=\"false\">Помещения</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-8\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-v-vannuyu\" title=\"Потолок в ванную\">Потолок в ванную</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-v-vannuyu.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-v-gostinuyu\" title=\"Потолок в гостиную\">Потолок в гостиную</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-v-gostinuyu.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-v-detskuyu\" title=\"Потолок в детскую\">Потолок в детскую</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-v-detskuyu.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-v-zal\" title=\"Потолок в зал\">Потолок в зал</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-v-zal.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-v-prihozhuyu\" title=\"Потолок в прихожую\">Потолок в прихожую</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-v-prihozhuyu.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-v-sanuzel\" title=\"Потолок в санузел\">Потолок в санузел</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-v-sanuzel.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-na-balkon\" title=\"Потолок на балкон\">Потолок на балкон</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-na-balkon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-na-kuhnyu\" title=\"Потолок на кухню\">Потолок на кухню</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-na-kuhnyu.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-17\" aria-expanded=\"false\">Все потолки</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-17\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-zvezdnoe-nebo\" title=\"Потолок звездное небо\">Потолок звездное небо</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-zvezdnoe-nebo.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-s-podsvetkoj\" title=\"Потолок с подсветкой\">Потолок с подсветкой</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-s-podsvetkoj.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/potolok-s-fotopechatyu\" title=\"Потолок с фотопечатью\">Потолок с фотопечатью</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-s-fotopechatyu.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/reznoj-potolok-apply\" title=\"Резной потолок Apply\">Резной потолок Apply</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_reznoj-potolok-apply.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/satinovyj-potolok\" title=\"Сатиновый потолок\">Сатиновый потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_satinovyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/tkanevyj-potolok\" title=\"Тканевый потолок\">Тканевый потолок</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_tkanevyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/ehksklyuzivnyj-potolok\" title=\"Эксклюзивные потолоки\">Эксклюзивные потолоки</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_ehksklyuzivnyj-potolok.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/svetodiodnye-natyazhnye-potolki\" title=\"Светодиодные натяжные потолки\">Светодиодные натяжные потолки</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_svetodiodnye-natyazhnye-potolki.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/svetodiodnoe-osveshchenie\" title=\"Светодиодное освещение\">Светодиодное освещение</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_svetodiodnoe-osveshchenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/svetovye-linii-na-potolke\" title=\"Световые линии на натяжном поолке\">Световые линии на натяжном поолке</a><meta content=\"https://kazan.natpotolok.ru/img/1023/co_svetovye-linii-na-potolke.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>    \n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<main class=\"py-2\">\n\t\t<div class=\"container\">\n\t\t\t\n\t\t\t<!-- АКЦИЯ БАННЕР -->\n\t\t\t<section class=\"border-bottom mb-3\">\n\t\t\t\t\n\t\t\t\t<div class=\"row mb-2\">\n\t\t\t\t\t<div class=\"col px-0 main_cahnge\">\n\n\n\t\t\t\t\t\t<img src=\"/img/1023/main-top-lq.jpg\" class=\"w-100 main-top img-responsive\" data-ar=\"img/1023/o1686650706.jpg,img/1023/o1678847318.jpg,img/1023/o1671082058.jpg\" alt=\"Натяжные потолки Казань\" title=\"Натяжные потолки Казань\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text-center position-absolute text-white w-100 main_top\">\n\t\t\t\t\t\t\t<h1 class=\"m-0 py-1 px-2\">Натяжные потолки Казань<!--tmp--></h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t<div class=\"row mb-2\">\n\t\t\t\t\t<div class=\"col-md-9 text-center\">\n\t\t\t\t\t\t<h3 class=\"mb-3\">Получить вашу цену на натяжные потолки в мае 2026 года в Казани после нескольких вопросов</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-md-3 text-center\">\t\n\t\t\t\t\t\t<a data-yevent=\"click_calc\" title=\"Узнать цену на Натяжные потолки Казань\" href=\"/quiz\" class=\"text-white btn rounded bg-accent\">ПОЛУЧИТЬ ЦЕНУ</a>\n\t\t\t\t\t\t<p class=\"mt-3 small\">* расчёт является предварительным</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t</section>\n\t\t\t<!-- АКЦИЯ БАННЕР -->\n\t\t\t\n\t\t\t<!-- BLOCK 1 START -->\n\t\t\t<nav class=\"py-2\" itemscope=\"itemscope\" itemtype=\"http://www.schema.org/SiteNavigationElement\">\n\t\t\t\t\n\t\t\t\t<h2 class=\"text-center text-secondary my-3\">Все натяжные потолки</h2>\n\t\t\t\t<div class=\"row gallery\">\n\t\t\t\t\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/matovyj-potolok\" title=\"Матовый потолок Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_matovyj-potolok.jpg\" alt=\"Матовый потолок Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Матовый потолок Казань\" href=\"/matovyj-potolok\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Матовый потолок</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Матовый потолок Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/matovyj-potolok\">от 353 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_matovyj-potolok.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Матовый потолок\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/tkanevyj-potolok\" title=\"Тканевый потолок Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_tkanevyj-potolok.jpg\" alt=\"Тканевый потолок Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Тканевый потолок Казань\" href=\"/tkanevyj-potolok\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Тканевый потолок</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Тканевый потолок Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/tkanevyj-potolok\">от 422 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_tkanevyj-potolok.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Тканевый потолок\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/glyancevyj-potolok\" title=\"Глянцевый потолок Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_glyancevyj-potolok.jpg\" alt=\"Глянцевый потолок Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Глянцевый потолок Казань\" href=\"/glyancevyj-potolok\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Глянцевый потолок</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Глянцевый потолок Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/glyancevyj-potolok\">от 375 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_glyancevyj-potolok.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Глянцевый потолок\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/satinovyj-potolok\" title=\"Сатиновый потолок Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_satinovyj-potolok.jpg\" alt=\"Сатиновый потолок Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Сатиновый потолок Казань\" href=\"/satinovyj-potolok\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Сатиновый потолок</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Сатиновый потолок Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/satinovyj-potolok\">от 364 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_satinovyj-potolok.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Сатиновый потолок\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/potolok-zvezdnoe-nebo\" title=\"Звездное небо Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_potolok-zvezdnoe-nebo.jpg\" alt=\"Звездное небо Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Звездное небо Казань\" href=\"/potolok-zvezdnoe-nebo\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Звездное небо</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Звездное небо Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/potolok-zvezdnoe-nebo\">от 2350 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-zvezdnoe-nebo.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Звездное небо\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/potolok-s-fotopechatyu\" title=\"Потолок с фотопечатью Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_potolok-s-fotopechatyu.jpg\" alt=\"Потолок с фотопечатью Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Потолок с фотопечатью Казань\" href=\"/potolok-s-fotopechatyu\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Потолок с фотопечатью</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Потолок с фотопечатью Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/potolok-s-fotopechatyu\">от 1900 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-s-fotopechatyu.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Потолок с фотопечатью\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/paryashchij-potolok\" title=\"Парящий потолок Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_paryashchij-potolok.jpg\" alt=\"Парящий потолок Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Парящий потолок Казань\" href=\"/paryashchij-potolok\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Парящий потолок</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Парящий потолок Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/paryashchij-potolok\">от 2392 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_paryashchij-potolok.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Парящий потолок\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/potolok-s-podsvetkoj\" title=\"Потолок с подсветкой Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/s_potolok-s-podsvetkoj.jpg\" alt=\"Потолок с подсветкой Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Потолок с подсветкой Казань\" href=\"/potolok-s-podsvetkoj\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Потолок с подсветкой</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Потолок с подсветкой Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.natpotolok.ru/potolok-s-podsvetkoj\">от 1669 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.natpotolok.ru/img/1023/co_potolok-s-podsvetkoj.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Потолок с подсветкой\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t</nav>\n\t\t\t<!-- BLOCK 1 END -->\n\n\t\t\t<!-- BLOCK 2 START -->\n\t\t\t<section class=\"py-2 s__adv\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\n\t\t\t\t\t\t<h2 class=\"col text-center text-secondary mb-4\">Потолки в квартиру</h2>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<nav class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/potolok-v-vannuyu\" title=\"потолок в ванную в Казани\">\n\t\t\t\t\t\t\t<h3>потолок в ванную</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1023/t_potolok-v-vannuyu.jpg\" alt=\"потолок в ванную в Казани\" title=\"потолок в ванную в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Профессиональный монтаж потолка в ванную за 1 день</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/potolok-v-detskuyu\" title=\"потолок в детскую в Казани\">\n\t\t\t\t\t\t\t<h3>потолок в детскую</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1023/t_potolok-v-detskuyu.jpg\" alt=\"потолок в детскую в Казани\" title=\"потолок в детскую в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Безопасные натяжные потолки для детской комнаты под ключ</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/potolok-v-zal\" title=\"потолок в зал в Казани\">\n\t\t\t\t\t\t\t<h3>потолок в зал</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1023/t_potolok-v-zal.jpg\" alt=\"потолок в зал в Казани\" title=\"потолок в зал в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Качественная и быстрая установка потолка с гарантией</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/potolok-v-prihozhuyu\" title=\"потолок в прихожую в Казани\">\n\t\t\t\t\t\t\t<h3>потолок в прихожую</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1023/t_potolok-v-prihozhuyu.jpg\" alt=\"потолок в прихожую в Казани\" title=\"потолок в прихожую в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Большой ассортимент натяжных потолков на любой вкус</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/potolok-na-kuhnyu\" title=\"потолок на кухню в Казани\">\n\t\t\t\t\t\t\t<h3>потолок на кухню</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1023/t_potolok-na-kuhnyu.jpg\" alt=\"потолок на кухню в Казани\" title=\"потолок на кухню в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Натяжной потолок на кухню - практичное решение по выгодной цене</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/potolok-na-balkon\" title=\"потолок на балкон в Казани\">\n\t\t\t\t\t\t\t<h3>потолок на балкон</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1023/t_potolok-na-balkon.jpg\" alt=\"потолок на балкон в Казани\" title=\"потолок на балкон в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Установка натяжного потолка на балкон любого типа и размера</span>\n\t\t\t\t\t</div>\n\n\t\t\t\n\t\t\t\t</nav>\n\t\t\t</section>\n\n<!-- БЛОК. Текст главной -->\t\t\t\n\t\t\t<section class=\"auto-text clearfix mb-4 mt-3 text-justify\">\n\t\t\t\t<h2>Профессиональный монтаж натяжных потолков в домах, квартирах и офисах</h2>\n<p>Компания RR GROUP занимается установкой натяжных потолков в городе Казани более 11 лет. Если вы хотите красиво и современно оформить потолочную поверхность, воспользуйтесь этим предложением, позвоните по телефону: +7 (931) 521-51-78.</p>\n<h3>Долговечные натяжные потолки</h3>\n<p>Среди главных преимуществ монтируемых нами натяжных потолков можно выделить:</p>\n<ul>\n<li>Разнообразные фактурные решения.</li>\n<li>Широкую цветовую палитру.</li>\n<li>Долгий срок службы.</li>\n</ul>\n<p>Установка натяжных потолочных конструкций выполняется по немецкой технологии. Подобное оформление потолка подходит для помещений различного назначения: жилых и офисных.</p>\n<p>Если хочется разнообразить интерьер и сделать его более современным, однозначно стоит выбрать натяжные полотна. У специалистов нашей компании имеется большой опыт их монтажа, материалы применяются только сертифицированные с предоставлением гарантии.</p>\n<h3>Тканевые и пленочные натяжные потолки</h3>\n<p>Владельцам недвижимости предоставляется возможность заказать тканевые и пленочные натяжные потолки, отличающиеся высоким качеством и стильным дизайном.</p>\n<p>На выбор предлагается несколько видов потолочных полотен. Среди них есть как матовые, так и глянцевые под различные интерьерные направления. Экологичные полотна из ткани имитируют облака, звездное небо. По желанию заказчика выполняется персонализированная фотопечать.</p>\n<p>У нас заказывают многоуровневые и объемные 3-Д полотна, парящие конструкции, оснащенные подсветкой, стоимость которых доступная. Монтажные работы выполняются за один день.</p>\n<p>Нашим клиентам нет необходимости терпеть неудобства и переселяться к родственникам на время установки. Купить можно потолки в малогабаритную спальню и просторную гостиную. Замеры и монтаж занимают всего несколько часов. После окончания работ, связанных с установкой, в помещениях не остается пыли и мусора.</p>\n<p>Не упускайте возможность обновить интерьер за разумную цену с помощью натяжных потолков, приезжайте в наш офис, расположенный по адресу Казань, улица Пушкина, 52, чтобы выбрать фактуру и цвет.</p><a class=\"small\" data-toggle=\"collapse\" href=\"#collapseExample\">Читать ещё</a>\n\t\t\t\t\n\t\t\t\t<div class=\"collapse\" id=\"collapseExample\">\n\t\t\t\t<h3>Доступные по цене натяжные потолки</h3>\n<p>За счет натяжных потолков легко создать оригинальный интерьер и избежать при этом больших финансовых расходов. Нами предлагаются варианты на любой вкус и кошелек. Выберите подходящее решение по материалу изготовления, типу помещения и изготовителю.</p>\n<p>Со стороны процесс установки натяжных потолков кажется простым, ведь он заключается в установке профиля и натяжке полотна. По этой причине, желая сэкономить, некоторые обращаются к малоопытным мастерам или знакомым, пытаются установить потолок своими силами и совершают ошибку.</p>\n<p>Для качественного монтажа натяжных потолочных полотен требуются профессиональные навыки. Во внимание следует принимать множество мелочей, даже мелкие неточности способны испортить всю работу.</p>\n<p>Профессиональная установка является залогом долговечности потолочных конструкций. Мы работаем с тканевыми и пленочными полотнами, которые изготовлены по новейшим стандартам. В ходе установки применяется современное оборудование и бесшовные технологии.</p>\n<p>Закажите качественные натяжные потолки вместе с услугой установки в RR GROUP по самым выгодным ценам в 2026 году.</p>\t\t\t\t</div>\n\t\t\t\t\n\t\t\t</section>\n\t\t\n<!-- БЛОК. ГАЛЕРЕЯ -->\n\t\t\t<section class=\"s__shop element-id\">\n\t\t\t\t<div class=\"border-bottom pb-2\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<h2 class=\"col text-center my-3\">Фотографии Потолков</h2>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"row gallery\">\n\n\n<!--DEBUG\n-2119 days \nDEBUG-->\n\n<!--DEBUG\n-2222 days \nDEBUG-->\n\n<!--DEBUG\n-2333 days \nDEBUG-->\n\n<!--DEBUG\n-2429 days \nDEBUG-->\n<!--++-->\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан 2020.06.27 14:18:53\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1023/gb_1.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/gs_1-lq.jpg\" class=\"img-responsive\" alt=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1023/gb_1.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2020.06.27 14:18:53\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан 2020.03.14 14:18:53\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1023/gb_2.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/gs_2-lq.jpg\" class=\"img-responsive\" alt=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1023/gb_2.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2020.03.14 14:18:53\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан 2019.12.08 14:18:53\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1023/gb_3.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/gs_3-lq.jpg\" class=\"img-responsive\" alt=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1023/gb_3.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2019.12.08 14:18:53\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан 2019.09.08 14:18:53\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1023/gb_4.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1023/gs_4-lq.jpg\" class=\"img-responsive\" alt=\"Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1023/gb_4.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2019.09.08 14:18:53\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text-center py-3\"><a href=\"/gallery\" class=\"btn bg-accent text-white\">Смотреть больше</a></div>\n\t\t\t\t</div>\n\t\t\t</section>\n\t\t\t\n<!-- БЛОК: Товары -->\n\t\t\t<!--section class=\"s__shop element-id mb-4\">\n\t\t\t\t<div class=\"border-bottom pb-2\">\n\t\t\t\t\t<div class=\"row gallery\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t<h2 class=\"col-12 text-center text-secondary my-3\">Каталог заборов</h2>\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t<div class='col-6 col-lg-3 p-1'>\n\t\t\t\t\t\t\t<div class='shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom'>\n\t\t\t\t\t\t\t\t<div class='shop-main__card-img position-relative'>\n\t\t\t\t\t\t\t\t\t<a href='/product/otkatnye-vorota-s-kalitkoj-i-ehlementami-kovki'>\n\t\t\t\t\t\t\t\t\t\t<img src='https://svaya72.ru/img/products/zab/small/2519.jpg' class='img-responsive' alt='Откатные ворота с калиткой и элементами ковки' />\n\t\t\t\t\t\t\t\t\t\t<span class='shop-main__card-price d-block p-1 text-dark text-left position-absolute font-weight-bolder small'>Цена 138000 руб.</span>\n\t\t\t\t\t\t\t\t\t\t<span class='btn btn-sm bg-accent position-absolute shadow-sm text-white small'>подробно</span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class='shop-main__card-description border px-2 py-1'>\n\t\t\t\t\t\t\t\t\t<p class='shop-main__card-text text-center mb-0'>Глухие ворота с элементами ковки и встроенной калиткой. Верхняя часть перфорирована ковкой. Калитка устроена в воротах</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</section-->\n\t\t\t\n<!-- БЛОК. Преимущества -->\n\t\t\t<section class=\"py-4 s__adv\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t\t<h2 class=\"text-center text-secondary my-3\">Преимущества RR GROUP</h2>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/phone-call.svg\" class=\"icon\" alt=\"phone-call_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Всегда на связи\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Наши поТолковые мастера, всегда готовы проконсультировать вас и ответить на любые вопросы о потолках в Казани</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/pencil-ruler.svg\" class=\"icon\" alt=\"pencil-ruler_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Надежность и качество\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Мы в RR GROUP в качестве всех материалов для вашего потолка и строим долгосрочные отношения со своими клиентами</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/factory.svg\" class=\"icon\" alt=\"factory_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Опытные установщики\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Все наши установщики и замерщики потолков имеют опыт работы от 3 лет в сфере натяжных потолков. Мы гарантируем безопасность и качество</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/delivery.svg\" class=\"icon\" alt=\"delivery_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Оперативная работа\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Все работы выполняются с точным соблюдением оговоренных по договору сроков. У нас можно заказать натяжные потолки + монтаж за 24 часа</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/instrument.svg\" class=\"icon\" alt=\"instrument_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Высокое качество\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Мы используем только сертифицированные материалы лучших производителей для всех потолков. Позвоните и убедитесь в этом качестве сами.</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/umbrella.svg\" class=\"icon\" alt=\"umbrella_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Долговечность работы\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Выполненные нами потолочные конструкции прослужат вам более 22 лет. Потому что мы знаем толк в потолках, этой работе и людях</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</section>\n\n<!-- БЛОК. Отзывы -->\t\t\t\n\t\t\t<section class=\"row py-4\">\n\t\t\t\t<h2 class=\"col-12 text-center mb-4\">Отзывы клиентов</h2>\n\t\t\t\t\n\t\n\t\t\t\t<div class=\"col-sm-12 col-md-6\">\n\t\t\t\t\t<b>Анатолий</b><br>\n\t\t\t\t\t<img src=\"/img//1023/f1702916676.jpg\" class=\"img-thumbnail float-left mr-3 mt-2\" alt=\"Отзыв Анатолий о RR GROUP\">\n\t\t\t\t\t<p class=\"pl-3 text-secondary mb-2 text-justify\">Обратился в RR GROUP за монтажом потолка. Привлекла приятная цена, и отзывы на сайте были положительные. Опасался за качество, но мастер при замере все показал и рассказал из каких материалов делаются потолки, заверил, что качество у них хорошее. В итоге заказал натяжной потолок в кухню и гостиную, все установили за один день. Результат отличный! Мои рекомендации.</p>\n\t\t\t\t\tКазань <small class=\"text-dark\">[ 18.12.2023 16:24 ]</small>\n\t\t\t\t</div>\n\t\n\t\t\t\t<div class=\"col-sm-12 col-md-6\">\n\t\t\t\t\t<b>Алиса</b><br>\n\t\t\t\t\t<img src=\"/img//1023/f1700900676.jpg\" class=\"img-thumbnail float-left mr-3 mt-2\" alt=\"Отзыв Алиса о RR GROUP\">\n\t\t\t\t\t<p class=\"pl-3 text-secondary mb-2 text-justify\">Заказала в новую квартиру натяжной потолок в RR GROUP. Выбрала потолок с подсветкой по приятной цене. Менеджер вежливый, проконсултировал меня, ответил на все вопросы, назначили замер. Мастер приехал, все посчитал, приступил к установке потолка. Очень быстро и красиво получилось, очень довольна работой!</p>\n\t\t\t\t\tКазань <small class=\"text-dark\">[ 25.11.2023 08:24 ]</small>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-12 text-center pt-4\"><a href=\"/otzivy\" class=\"btn bg-accent text-white\">Читать больше</a><hr></div>\n\t\t\t</section>\n\t\t\t\n<!-- БЛОК. Таблица цен -->\n\t\t\t<section class=\"row mt-3\">\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<h2 class=\"col-12 text-center mb-4\">Цены на натяжные потолки Казань в мае</h2>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<table class=\"price_table table table-hover table-responsive-sm table-bordered mb-4 shadow-sm small\">\n\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td>Наименование</td>\n\t\t\t\t\t\t\t\t<td>Цена руб. от</td>\n\t\t\t\t\t\t\t\t<td>Ед. Изм.</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tbody><tr>\n\t\t\t\t\t\t\t<td>Матовый белый</td>\n\t\t\t\t\t\t\t<td>371 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Матовый цветной</td>\n\t\t\t\t\t\t\t<td>530 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Сатин белый</td>\n\t\t\t\t\t\t\t<td>371 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Сатин цветной</td>\n\t\t\t\t\t\t\t<td>530 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Глянец белый</td>\n\t\t\t\t\t\t\t<td>371 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Глянец цветной</td>\n\t\t\t\t\t\t\t<td>530 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Фотопечать</td>\n\t\t\t\t\t\t\t<td>2200 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t</tbody></table>\n\t\t\t\t</div>\n\t\t\t</section>\n\n<!-- БЛОК. Почему мы -->\n\t\t\t<section class=\"py-4 s__adv\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t<h3 class=\"text-center text-secondary mb-3\">Почему мы</h3>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row small\">\n<div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Четкое</b> соблюдение сроков выполнения работ.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Лояльная</b> ценовая политика, монтаж без переплат.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Европейсокое</b> качество используемых материалов.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Огромный</b> спектр потолочных и сопровождаемых услуг.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Стабильное</b> развитие и безупречная репутация.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Большой</b> ассортимент цветов и фактур.</div>\t\t\t\t</div>\n\t\t\t</section>\n\t\t\t\n<!-- БЛОК. Способы оплаты2 -->\n\t\t\t<section class=\"row my-4 py-4\">\n\t\t\t\t<div class=\"col-12\"><h3 class=\"text-center mb-4\">Способы оплаты</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Принимаем к оплате наличные денежные средства\">💰<br>НАЛИЧНЫЕ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"По счёту от юр. лица. Реквизиты в контактах\">📄<br>ПО СЧЁТУ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Банковской картой по терминалу оплаты\">💳<br>КАРТОЙ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Перевод на банковскую карту Сбербанка\">💸<br>ПЕРЕВОД</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Работаем в кредит с банками партнёрами\">📈<br>КРЕДИТ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Уточняйте о наличии рассрочки на продукцию и услуги\">💹<br>РАССРОЧКА</h3></div>\n\t\t\t</section>\n\t\t\n\t\t</div>\n\t</main>\n\t<!-- footer -->\n\t<footer class=\"main-footer py-4 text-white small mt-4\" title=\"Лучшая цена на натяжные потолки в Казани\">\n\t\t<div class=\"container\">\n\t\t\t<nav class=\"navbar navbar-expand-lg navbar-light bg-trasparent p-0\">\n\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"text-white\">Меню</span></button>\n\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbar\">\n\t\t\t\t\t<ul class=\"navbar-nav nav-fill justify-content-around w-100\">\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"КАЛЬКУЛЯТОР\" href=\"/quizz\">КАЛЬКУЛЯТОР</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ЦЕНЫ\" href=\"/tseny\">ЦЕНЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"УСЛУГИ\" href=\"/uslugi\">УСЛУГИ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ПОРТФОЛИО\" href=\"/gallery\">ПОРТФОЛИО</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"АКЦИИ\" href=\"/akcii\">АКЦИИ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ОТЗЫВЫ\" href=\"/otzivy\">ОТЗЫВЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"КОНТАКТЫ\" href=\"/kontakty\">КОНТАКТЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"О КОМПАНИИ\" href=\"/o-kompanii\">О КОМПАНИИ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"СЕРТИФИКАТЫ\" href=\"/sertifikaty\">СЕРТИФИКАТЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ОПЛАТА\" href=\"/oplata\">ОПЛАТА</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</nav>\n\t\t\t<hr class=\"bg-light\">\n\t\t</div>\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-address\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\"><img src=\"/t/z0/i/cons/map-marker.svg\" class=\"icon\" alt=\"Адрес RR GROUP в Казани\"></div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Наш адрес:</div>\n\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t<span>420095</span>,<span>Россия</span>, <span>Республика Татарстан</span>, <span>Казань</span>, <span>улица Пушкина, 52</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"mt-2\"><b>Режим работы:</b><br>Ежедневно 08:00 - 18:00</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-phones\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/phone-mobile.svg\" class=\"icon\" alt=\"Телефон\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Телефоны:</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\t<a title=\"Телефон городской Казань\" href=\"tel:9315215178\" class=\"text-white\">+7 (931) 521-51-78</a><br>\n\t\t\t\t\t\t\t\t\t<a data-yevent=\"click_phone\" title=\"Телефон сотовый\" href=\"tel:+79315215178\" class=\"text-white\">+7 9315215178</a><br>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold my-2\">Поделиться:</div>\n\t\t\t\t\t\t\t\t<!--div class=\"ya-share2\" data-curtain data-shape=\"round\" data-services=\"collections,vkontakte,odnoklassniki,telegram\"></div-->\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-meil\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/envelope.svg\" class=\"icon\" alt=\"Письмо\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\"> E-mail:</div>\n\t\t\t\t\t\t\t\t<a data-yevent=\"click_email\" title=\"Написать нам!\" href=\"mailto:kazan@natpotolok.ru\" class=\"text-white\">kazan@natpotolok.ru</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"row mt-2\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/vk.svg\" class=\"icon\" alt=\"Вконтакте: Потолки Казани вконтакте\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/max.svg\" class=\"icon\" alt=\"Потолки Казани в MAXe\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!--div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div-->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!--div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/yt.svg\" class=\"icon\" alt=\"YouTube: Потолки Казани в youtube\" />\n\t\t\t\t\t\t\t</div-->\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-pay\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/card.svg\" class=\"icon\" alt=\"Принимаем к оплате\"></span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Принимаем к оплате:</div>\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/card-visa.svg\" class=\"icon\" alt=\"Карта виза\"></span>\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/card-maestro.svg\" class=\"icon\" alt=\"Карта маэстро\"></span>\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t<div class=\"col-3 mt-3 text-center\">\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/umbrella.svg\" class=\"icon\" alt=\"Наши партнёры в Казани\"></span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 mt-3 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Наши партнёры:</div>\n\t\t\t\t\t\t\t\t<!--a href='https://domain.to.partner'>domain.to.partner</a><br /-->\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col\"><hr class=\"bg-light\">\n\t\t\t\t\t<div class=\"copyright mt-1 text-white-50\">\n\t\t\t\t\t\t© 2026<a href=\"https://natpotolok.ru\" class=\"text-white-50\"> Компания \"<span>RR GROUP</span>\"</a>. <span title=\"Ltu Tid.Template.Sid.Pid.Ses-Counter.fpath.OrCo\">28.10.2022 1023.z0.23008.100.0.main.0</span> <br>\n\t\t\t\t\t\tВНИМАНИЕ: Цены на сайте не являются публичной офёртой и могут отличаться, уточняйте у наших менеджеров!<br>\n\t\t\t\t\t\t<a title=\"Политика конфиденциальности\" href=\"/policy\">Политика конфиденциальности</a> / <a title=\"Разработка сайтов Казань\" rel=\"nofollow\" class=\"text-white\" href=\"https://lid.am/?utm_place=z0_footer&amp;utm_from=kazan.natpotolok.ru\">Разработка и продвижение сайтов Казань</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"container get_us\">Нашли ошибку в работе сайта? <a rel=\"nofollow, noindex, noreferrer\" href=\"/send_abuse\">напишите нам</a></div>\t</footer>\n\n\t<!--Боковые кнопки!-->\n\t<div class=\"fixed-btn__block\">\n\t\t\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-whatsapp p-2 border\">\n\t\t\t<a rel=\"nofollow\" data-yevent=\"click_whatsapp\" title=\"whatsapp kazan.natpotolok.ru\" href=\"/wa_go\" target=\"_blank\" class=\"text-decoration-none\"><img src=\"/t/z0/i/cons/whatsapp.svg\" class=\"icon\" alt=\"icon\"></a><a rel=\"nofollow\" data-yevent=\"click_whatsapp\" title=\"whatsapp kazan.natpotolok.ru\" href=\"/wa_go\" target=\"_blank\" class=\"text-white text-right text-uppercase small\">Наш whatsapp</a>\n\t\t</div>\n\t\t\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-accent p-2 border\">\n\t\t\t<a href=\"/quiz\" data-yevent=\"click_calc\"><img src=\"/t/z0/i/cons/calculator.svg\" class=\"icon\" alt=\"quiz\"></a><a target=\"_blank\" href=\"/quiz\" data-yevent=\"click_calc\" class=\"text-white text-right text-uppercase small\">Калькулятор</a>\n\t\t</div>\n\t\t\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-accent p-2 border\">\n\t\t\t<a data-yevent=\"click_\" title=\"Вызвать замерщика\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_estimator|Вызвать замерщика\"><img src=\"/t/z0/i/cons/estimator.svg\" class=\"icon\" alt=\"icon\"></a><a data-yevent=\"click_estimator\" title=\"Вызвать замерщика\" class=\"text-white text-right text-uppercase small\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_estimator|Вызвать замерщика\">Вызвать замерщика</a>\n\t\t</div>\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-accent p-2 border\">\n\t\t\t<a data-yevent=\"click_\" title=\"Обратный звонок\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_call_back|Обратный звонок\"><img src=\"/t/z0/i/cons/call_back.svg\" class=\"icon\" alt=\"icon\"></a><a data-yevent=\"click_call_back\" title=\"Обратный звонок\" class=\"text-white text-right text-uppercase small\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_call_back|Обратный звонок\">Обратный звонок</a>\n\t\t</div>\n\t\t\n\t</div>\n\n\t<!-- Кнопка вверх -->\n\t<div class=\"to-top\"><img src=\"/t/z0/i/cons/arrow-up.svg\" class=\"icon\" alt=\"Icon Arrow Up\"></div>\n\n\t<!-- Модальные окна -->\n\t<div class=\"modal fade\" id=\"ItemModal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n\t\t<div class=\"modal-dialog\" role=\"document\">\n\t\t\t<div class=\"modal-content\" id=\"dynamic_body\">\n\t\t\t\t<!--Динамическая загрузка формы-->\n\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t<h5 class=\"modal-title\">ВЫЗОВ ЗАМЕРЩИКА</h5>\n\t\t\t\t\t\t<a data-dismiss=\"modal\" aria-label=\"Close\" class=\"btn close\"><span aria-hidden=\"true\">×</span></a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<form id=\"fm_XX\">\n\t\t\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t\t\t<div class=\"d-none\"><input type=\"hidden\" name=\"g-recaptcha-response\"><input name=\"form_id\" value=\"estimator\"></div>\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col\"><label for=\"nme\" class=\"col-form-label\">Ваше имя:</label><input type=\"text\" class=\"form-control\" id=\"nme\" name=\"nme\" placeholder=\"Ваше имя\" required=\"\"></div>\n\t\t\t\t\t\t\t\t<div class=\"col\"><label for=\"phn_1\" class=\"col-form-label\">Ваш телефон:</label><input type=\"tel\" class=\"form-control\" id=\"phn_1\" name=\"phn\" placeholder=\"Номер телефона\" required=\"\"></div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<label for=\"txt\" class=\"col-form-label\">Сообщение:</label>\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" id=\"txt\" rows=\"3\" name=\"txt\" placeholder=\"Текст обращения при необходимости\"></textarea>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"modal-footer\">\n\t\t\t\t\t\t\t<div class=\"col d-none d-sm-block\"><small><a href=\"/policy\" title=\"Политика конфиденцальности\" target=\"_blank\">Политика конфиденцальности</a></small></div>\n\t\t\t\t\t\t\t<div class=\"col text-right\"><button type=\"button\" class=\"btn bg-accent text-white\">ОТПРАВИТЬ</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t<!--Динамическая загрузка формы-->\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\t<!-- Модальные окна -->\n\t<!--div class=\"modal fade\" class=\"vcard\">\n\t\t<div>\n\t\t\t<span class=\"category\">Кафе</span>-<span class=\"category\">кулинария</span>\n\t\t\t<span class=\"fn org\">Ромашка</span>\n\t\t</div>\n\t\t<div class=\"adr\">\n\t\t\t<span class=\"locality\">г. Солнечный</span>,\n\t\t\t<span class=\"street-address\">просп. Романтиков, д. 21</span>\n\t\t</div>\n\t\t<div class=\"tel\">Телефон: \n\t\t\t<abbr class=\"value\" title=\"+ 7 (890) 123-45-67\">123-45-67</abbr>\n\t\t</div>\n\t</div-->\n\t\n\t<div class=\"modal fade\" id=\"domain_linking\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n\t\t<div class=\"modal-dialog\" role=\"document\">\n\t\t\t<div class=\"modal-content\">\n\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t<h5 class=\"modal-title\">Контакты в городах</h5>\n\t\t\t\t\t<a data-dismiss=\"modal\" aria-label=\"Close\" class=\"btn close\"><span aria-hidden=\"true\">×</span></a>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t<input type=\"text\" class=\"sq form-control\" data-target=\"city\" placeholder=\"Поиск по городам\">\n\t\t\t\t\t<p class=\"domain_linking mt-3 pl-3 sr\">\n<a href=\"https://chelyabinsk.natpotolok.ru?utm_source=neighbour\">Челябинск</a>\n<a href=\"https://rnd.natpotolok.ru?utm_source=neighbour\">Ростов-на-Дону</a>\n<a href=\"https://ufa.natpotolok.ru?utm_source=neighbour\">Уфа</a>\n<a href=\"https://volgograd.natpotolok.ru?utm_source=neighbour\">Волгоград</a>\n<a href=\"https://perm.natpotolok.ru?utm_source=neighbour\">Пермь</a>\n<a href=\"https://krasnoyarsk.natpotolok.ru?utm_source=neighbour\">Красноярск</a>\n<a href=\"https://voronezh.natpotolok.ru?utm_source=neighbour\">Воронеж</a>\n<a href=\"https://saratov.natpotolok.ru?utm_source=neighbour\">Саратов</a>\n<a href=\"https://krasnodar.natpotolok.ru?utm_source=neighbour\">Краснодар</a>\n<a href=\"https://tolyatti.natpotolok.ru?utm_source=neighbour\">Тольятти</a>\n<a href=\"https://natpotolok.ru?utm_source=neighbour\">Москва</a>\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"modal-footer\">\n\t\t\t\t\t<div class=\"col d-none d-sm-block\"><small><a href=\"/policy\" title=\"Политика конфиденцальности\" target=\"_blank\">Политика конфиденцальности</a></small></div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\t<div id=\"thx_replace\" class=\"modal\">\n\t\t<!--Подмена в модальнике-->\n\t\t<div class=\"modal-body\">\n\t\t\t<h5>СПАСИБО ЗА ЗАЯВКУ</h5>\n\t\t\t<p>Мы свяжемся с вами удобным способом, максимально быстро. Обычно это не более 15 минут</p>\n\t\t</div>\n\t</div>\n\t\n\t<link href=\"/t/z0/css/f-jquery.fancybox.min.css\" rel=\"stylesheet\">\n\t<script src=\"/t/z0/js/f-01_jquery-3.2.1.min.js\"></script>\n\t<script src=\"/t/z0/js/f-jquery.fancybox.min.js\"></script>\n\t<script src=\"/t/z0/js/f-main.js\"></script>\n\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js\" integrity=\"sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js\"></script>\n\n<svg aria-hidden=\"true\" style=\"position: absolute; width: 0; height: 0; overflow: hidden;\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><defs>\n<linearGradient id=\"gradient\"><stop offset=\"0%\" stop-color=\"#eea448\"></stop><stop offset=\"100%\" stop-color=\"#f37145\"></stop></linearGradient><linearGradient id=\"gradient2\"><stop offset=\"0%\" stop-color=\"#ee5948\"></stop><stop offset=\"100%\" stop-color=\"#f34564\"></stop></linearGradient>\n<symbol id=\"icon-check-circle\" viewBox=\"0 0 32 32\"><path d=\"M16 0.5c-8.56 0-15.5 6.94-15.5 15.5s6.94 15.5 15.5 15.5 15.5-6.94 15.5-15.5-6.94-15.5-15.5-15.5zM16 3.5c6.908 0 12.5 5.591 12.5 12.5 0 6.908-5.591 12.5-12.5 12.5-6.908 0-12.5-5.591-12.5-12.5 0-6.908 5.591-12.5 12.5-12.5zM24.763 11.642l-1.409-1.42c-0.292-0.294-0.767-0.296-1.061-0.004l-8.835 8.764-3.737-3.767c-0.292-0.294-0.767-0.296-1.061-0.004l-1.42 1.409c-0.294 0.292-0.296 0.767-0.004 1.061l5.674 5.72c0.292 0.294 0.767 0.296 1.061 0.004l10.787-10.7c0.294-0.292 0.296-0.767 0.004-1.061z\"></path></symbol>\n<symbol id=\"icon-times\" viewBox=\"0 0 22 32\"><path d=\"M15.17 16l6.254-6.254c0.767-0.768 0.767-2.012 0-2.78l-1.39-1.39c-0.767-0.768-2.012-0.768-2.78 0l-6.254 6.254-6.254-6.254c-0.768-0.768-2.012-0.768-2.78 0l-1.39 1.39c-0.767 0.768-0.767 2.012 0 2.78l6.254 6.254-6.254 6.254c-0.767 0.767-0.767 2.012 0 2.78l1.39 1.39c0.767 0.767 2.013 0.767 2.78 0l6.254-6.254 6.254 6.254c0.767 0.767 2.012 0.767 2.78 0l1.39-1.39c0.767-0.767 0.767-2.012 0-2.78l-6.254-6.254z\"></path></symbol>\n<symbol id=\"icon-clock\" viewBox=\"0 0 32 32\"><path d=\"M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5 15.5-6.938 15.5-15.5-6.938-15.5-15.5-15.5zM16 28.5c-6.906 0-12.5-5.594-12.5-12.5s5.594-12.5 12.5-12.5 12.5 5.594 12.5 12.5-5.594 12.5-12.5 12.5zM19.863 21.975l-5.306-3.856c-0.194-0.144-0.306-0.369-0.306-0.606v-10.262c0-0.412 0.338-0.75 0.75-0.75h2c0.413 0 0.75 0.338 0.75 0.75v8.856l4.175 3.038c0.337 0.244 0.406 0.712 0.163 1.050l-1.175 1.619c-0.244 0.331-0.712 0.406-1.050 0.163z\"></path></symbol>\n<symbol id=\"icon-close\" viewBox=\"0 0 22 32\"><path d=\"M15.17 16l6.254-6.254c0.767-0.768 0.767-2.012 0-2.78l-1.39-1.39c-0.767-0.768-2.012-0.768-2.78 0l-6.254 6.254-6.254-6.254c-0.768-0.768-2.012-0.768-2.78 0l-1.39 1.39c-0.767 0.768-0.767 2.012 0 2.78l6.254 6.254-6.254 6.254c-0.767 0.767-0.767 2.012 0 2.78l1.39 1.39c0.767 0.767 2.013 0.767 2.78 0l6.254-6.254 6.254 6.254c0.767 0.767 2.012 0.767 2.78 0l1.39-1.39c0.767-0.767 0.767-2.012 0-2.78l-6.254-6.254z\"></path></symbol>\n<symbol id=\"icon-phone\" viewBox=\"0 0 32 32\"><path d=\"M31.087 22.613l-7-3c-0.173-0.076-0.376-0.12-0.588-0.12-0.467 0-0.885 0.214-1.16 0.549l-0.002 0.003-3.1 3.788c-4.885-2.34-8.734-6.189-11.014-10.935l-0.060-0.139 3.787-3.1c0.338-0.277 0.552-0.694 0.552-1.161 0-0.213-0.044-0.415-0.125-0.599l0.004 0.010-3-7c-0.239-0.538-0.768-0.906-1.384-0.906-0.119 0-0.234 0.014-0.345 0.040l0.010-0.002-6.5 1.5c-0.671 0.159-1.163 0.753-1.163 1.462 0 0 0 0 0 0v-0c0 16.031 12.994 29 29 29 0 0 0.001 0 0.001 0 0.709 0 1.303-0.492 1.459-1.152l0.002-0.010 1.5-6.5c0.023-0.1 0.037-0.215 0.037-0.333 0-0.619-0.371-1.152-0.903-1.388l-0.010-0.004z\"></path></symbol>\n<symbol id=\"icon-star-regular\" viewBox=\"0 0 36 32\"><path d=\"M33.006 10.719l-9.131-1.331-4.081-8.275c-0.731-1.475-2.85-1.494-3.587 0l-4.081 8.275-9.131 1.331c-1.637 0.238-2.294 2.256-1.106 3.412l6.606 6.438-1.563 9.094c-0.281 1.644 1.45 2.875 2.9 2.106l8.169-4.294 8.169 4.294c1.45 0.762 3.181-0.462 2.9-2.106l-1.563-9.094 6.606-6.438c1.188-1.156 0.531-3.175-1.106-3.412zM24.288 19.519l1.481 8.65-7.769-4.081-7.769 4.081 1.481-8.65-6.287-6.125 8.688-1.262 3.888-7.875 3.887 7.875 8.688 1.262-6.287 6.125z\"></path></symbol>\n<symbol id=\"icon-star-half\" viewBox=\"0 0 34 32\"><path d=\"M31.784 10.719l-9.148-1.332-4.088-8.274c-0.367-0.739-1.084-1.113-1.801-1.113-0.712 0-1.424 0.369-1.793 1.113l-4.089 8.274-9.149 1.331c-1.641 0.238-2.298 2.256-1.109 3.412l6.618 6.438-1.566 9.092c-0.223 1.299 0.814 2.341 1.976 2.341 0.308 0 0.625-0.073 0.929-0.234l8.184-4.293 8.184 4.294c0.304 0.159 0.62 0.232 0.927 0.232 1.163 0 2.201-1.038 1.979-2.337l-1.564-9.093 6.619-6.436c1.19-1.156 0.532-3.175-1.108-3.412zM24.176 18.419l-1.133 1.101 1.488 8.646-7.782-4.083 0.002-19.824 3.888 7.87 8.703 1.267-5.166 5.024z\"></path></symbol>\n<symbol id=\"icon-star-solid\" viewBox=\"0 0 36 32\"><path d=\"M16.206 1.113l-4.081 8.275-9.131 1.331c-1.637 0.238-2.294 2.256-1.106 3.412l6.606 6.438-1.563 9.094c-0.281 1.644 1.45 2.875 2.9 2.106l8.169-4.294 8.169 4.294c1.45 0.762 3.181-0.462 2.9-2.106l-1.563-9.094 6.606-6.438c1.188-1.156 0.531-3.175-1.106-3.412l-9.131-1.331-4.081-8.275c-0.731-1.475-2.85-1.494-3.587 0z\"></path></symbol>\n<symbol id=\"icon-arrow\" viewBox=\"0 0 32 32\"><path d=\"M31.5 16c0-8.563-6.938-15.5-15.5-15.5s-15.5 6.938-15.5 15.5 6.938 15.5 15.5 15.5 15.5-6.938 15.5-15.5zM3.5 16c0-6.906 5.594-12.5 12.5-12.5s12.5 5.594 12.5 12.5-5.594 12.5-12.5 12.5-12.5-5.594-12.5-12.5zM8 17.25v-2.5c0-0.412 0.338-0.75 0.75-0.75h7.25v-4.188c0-0.669 0.806-1 1.281-0.531l6.188 6.188c0.294 0.294 0.294 0.769 0 1.063l-6.188 6.188c-0.475 0.475-1.281 0.137-1.281-0.531v-4.188h-7.25c-0.412 0-0.75-0.337-0.75-0.75z\"></path></symbol>\n<symbol id=\"icon-car\" viewBox=\"0 0 32 32\"><path d=\"M31.249 11h-3.742l-1.040-2.6c-1.069-2.673-3.619-4.4-6.499-4.4h-7.938c-2.879 0-5.43 1.727-6.499 4.4l-1.040 2.6h-3.741c-0.488 0-0.846 0.459-0.728 0.932l0.375 1.5c0.083 0.334 0.383 0.568 0.728 0.568h1.254c-0.839 0.733-1.38 1.799-1.38 3v3c0 1.008 0.385 1.917 1 2.621v3.379c0 1.104 0.896 2 2 2h2c1.104 0 2-0.896 2-2v-2h16v2c0 1.104 0.896 2 2 2h2c1.104 0 2-0.896 2-2v-3.379c0.615-0.703 1-1.613 1-2.621v-3c0-1.201-0.541-2.267-1.379-3h1.254c0.344 0 0.644-0.234 0.727-0.568l0.375-1.5c0.118-0.473-0.24-0.932-0.728-0.932zM9.246 9.886c0.456-1.139 1.559-1.886 2.786-1.886h7.938c1.227 0 2.33 0.747 2.786 1.886l1.246 3.114h-16l1.246-3.114zM6 19.988c-1.2 0-2-0.797-2-1.994s0.8-1.994 2-1.994 3 1.794 3 2.991-1.8 0.997-3 0.997zM26 19.988c-1.2 0-3 0.199-3-0.997s1.8-2.991 3-2.991 2 0.797 2 1.994-0.8 1.994-2 1.994z\"></path></symbol>\n<symbol id=\"icon-check\" viewBox=\"0 0 32 32\"><path d=\"M10.869 27.463l-10.4-10.4c-0.625-0.625-0.625-1.638 0-2.263l2.263-2.263c0.625-0.625 1.638-0.625 2.263 0l7.006 7.006 15.006-15.006c0.625-0.625 1.638-0.625 2.263 0l2.263 2.263c0.625 0.625 0.625 1.638 0 2.263l-18.4 18.4c-0.625 0.625-1.638 0.625-2.263-0z\"></path></symbol>\n<symbol id=\"icon-money\" viewBox=\"0 0 40 32\"><path d=\"M20 9c-3.314 0-6 3.134-6 7s2.686 7 6 7c3.313 0 6-3.133 6-7s-2.686-7-6-7zM22.5 19.5c0 0.276-0.224 0.5-0.5 0.5h-4c-0.276 0-0.5-0.224-0.5-0.5v-1c0-0.276 0.224-0.5 0.5-0.5h1v-3.465l-0.029 0.019c-0.078 0.053-0.174 0.084-0.277 0.084-0.173 0-0.325-0.088-0.415-0.221l-0.001-0.002-0.555-0.832c-0.053-0.078-0.084-0.174-0.084-0.277 0-0.173 0.088-0.325 0.221-0.415l0.002-0.001 0.958-0.639c0.234-0.158 0.522-0.252 0.832-0.252 0 0 0 0 0 0h0.849c0.276 0 0.5 0.224 0.5 0.5v5.5h1c0.276 0 0.5 0.224 0.5 0.5v1zM38 4h-36c-1.104 0-2 0.896-2 2v20c0 1.104 0.896 2 2 2h36c1.104 0 2-0.896 2-2v-20c0-1.104-0.896-2-2-2zM37 21c-2.209 0-4 1.791-4 4h-26c0-2.209-1.791-4-4-4v-10c2.209 0 4-1.791 4-4h26c0 2.209 1.791 4 4 4v10z\"></path></symbol>\n<symbol id=\"icon-calendar\" viewBox=\"0 0 32 32\"><path d=\"M27.875 2.5h-2.875v-1.5c0-0.552-0.448-1-1-1s-1 0.448-1 1v1.5h-14v-1.5c0-0.552-0.448-1-1-1s-1 0.448-1 1v1.5h-2.875c-2.275 0-4.125 1.85-4.125 4.125v21.25c0 2.275 1.85 4.125 4.125 4.125h23.75c2.275 0 4.125-1.85 4.125-4.125v-21.25c0-2.275-1.85-4.125-4.125-4.125zM30 27.875c0 1.174-0.951 2.125-2.125 2.125h-23.75c-1.174 0-2.125-0.951-2.125-2.125v-16.563c0-0.173 0.14-0.313 0.313-0.313h27.375c0.173 0 0.313 0.14 0.313 0.313z\"></path></symbol>\n<symbol id=\"icon-email\" viewBox=\"0 0 32 32\"><path d=\"M30.857 4.571h-29.714l14.857 12.238 15.025-12.203c-0.055-0.016-0.111-0.028-0.168-0.034z\"></path><path d=\"M16.721 19.173c-0.421 0.345-1.027 0.345-1.448 0l-15.273-12.583v19.696c0 0.631 0.512 1.143 1.143 1.143h29.714c0.631 0 1.143-0.512 1.143-1.143v-19.527l-15.279 12.414z\"></path></symbol><symbol id=\"icon-pin\" viewBox=\"0 0 32 32\"><path d=\"M16 0c-5.881 0-10.667 4.785-10.667 10.667 0 1.766 0.441 3.516 1.281 5.069l8.803 15.921c0.117 0.212 0.341 0.344 0.583 0.344s0.466-0.131 0.583-0.344l8.806-15.926c0.836-1.547 1.277-3.298 1.277-5.064 0-5.881-4.785-10.667-10.667-10.667zM16 16c-2.941 0-5.333-2.393-5.333-5.333s2.393-5.333 5.333-5.333 5.333 2.393 5.333 5.333c0 2.941-2.393 5.333-5.333 5.333z\"></path></symbol>\n<symbol id=\"icon-search\" viewBox=\"0 0 32 32\"><path d=\"M31.563 27.669l-6.231-6.231c-0.281-0.281-0.663-0.438-1.063-0.438h-1.019c1.725-2.206 2.75-4.981 2.75-8 0-7.181-5.819-13-13-13s-13 5.819-13 13 5.819 13 13 13c3.019 0 5.794-1.025 8-2.75v1.019c0 0.4 0.156 0.781 0.438 1.063l6.231 6.231c0.587 0.587 1.538 0.587 2.119 0l1.769-1.769c0.587-0.587 0.587-1.538 0.006-2.125zM13 21c-4.419 0-8-3.575-8-8 0-4.419 3.575-8 8-8 4.419 0 8 3.575 8 8 0 4.419-3.575 8-8 8z\"></path></symbol>\n<symbol id=\"icon-moneybill\" viewBox=\"0 0 32 32\"><path d=\"M608 64H32C14.3 64 0 78.3 0 96v320c0 17.7 14.3 32 32 32h576c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zM32 96h64c0 35.3-28.7 64-64 64zm0 320v-64c35.3 0 64 28.7 64 64zm576 0h-64c0-35.3 28.7-64 64-64zm0-96c-52.9 0-96 43.1-96 96H128c0-52.9-43.1-96-96-96V192c52.9 0 96-43.1 96-96h384c0 52.9 43.1 96 96 96zm0-160c-35.3 0-64-28.7-64-64h64zm-288-32c-61.9 0-112 57.3-112 128s50.1 128 112 128c61.8 0 112-57.3 112-128s-50.1-128-112-128zm0 224c-44.1 0-80-43.1-80-96s35.9-96 80-96 80 43.1 80 96-35.9 96-80 96zm32-63.9h-16v-88c0-4.4-3.6-8-8-8h-13.7c-4.7 0-9.4 1.4-13.3 4l-15.3 10.2c-3.7 2.5-4.6 7.4-2.2 11.1l8.9 13.3c2.5 3.7 7.4 4.6 11.1 2.2l.5-.3V288h-16c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-7.9z\"></path></symbol>\n</defs></svg>\n\n</body></html>",
+  "text": "Натяжные потолки Казань, цена от 2118 руб. Вызвать замерщика kazan@natpotolok.ru Обратный звонок Ежедневно 08:00 - 18:00 Лучшая цена на натяжные потолки в Казани 420095, Россия, г. Казань , улица Пушкина, 52 +7 (931) 521-51-78 Услуги Меню КАЛЬКУЛЯТОР ЦЕНЫ УСЛУГИ ПОРТФОЛИО АКЦИИ ОТЗЫВЫ КОНТАКТЫ О КОМПАНИИ СЕРТИФИКАТЫ ОПЛАТА Виды потолков Бесшовный потолок Глянцевый потолок Комбинированный потолок Матовый потолок Парящий потолок ПВХ потолок Шовный потолок Помещения Потолок в ванную Потолок в гостиную Потолок в детскую Потолок в зал Потолок в прихожую Потолок в санузел Потолок на балкон Потолок на кухню Все потолки Потолок звездное небо Потолок с подсветкой Потолок с фотопечатью Резной потолок Apply Сатиновый потолок Тканевый потолок Эксклюзивные потолоки Светодиодные натяжные потолки Светодиодное освещение Световые линии на натяжном поолке Натяжные потолки Казань Получить вашу цену на натяжные потолки в мае 2026 года в Казани после нескольких вопросов ПОЛУЧИТЬ ЦЕНУ * расчёт является предварительным Все натяжные потолки Матовый потолок от 353 руб. ЗАКАЗАТЬ Тканевый потолок от 422 руб. ЗАКАЗАТЬ Глянцевый потолок от 375 руб. ЗАКАЗАТЬ Сатиновый потолок от 364 руб. ЗАКАЗАТЬ Звездное небо от 2350 руб. ЗАКАЗАТЬ Потолок с фотопечатью от 1900 руб. ЗАКАЗАТЬ Парящий потолок от 2392 руб. ЗАКАЗАТЬ Потолок с подсветкой от 1669 руб. ЗАКАЗАТЬ Потолки в квартиру потолок в ванную Профессиональный монтаж потолка в ванную за 1 день потолок в детскую Безопасные натяжные потолки для детской комнаты под ключ потолок в зал Качественная и быстрая установка потолка с гарантией потолок в прихожую Большой ассортимент натяжных потолков на любой вкус потолок на кухню Натяжной потолок на кухню - практичное решение по выгодной цене потолок на балкон Установка натяжного потолка на балкон любого типа и размера Профессиональный монтаж натяжных потолков в домах, квартирах и офисах Компания RR GROUP занимается установкой натяжных потолков в городе Казани более 11 лет. Если вы хотите красиво и современно оформить потолочную поверхность, воспользуйтесь этим предложением, позвоните по телефону: +7 (931) 521-51-78. Долговечные натяжные потолки Среди главных преимуществ монтируемых нами натяжных потолков можно выделить: Разнообразные фактурные решения. Широкую цветовую палитру. Долгий срок службы. Установка натяжных потолочных конструкций выполняется по немецкой технологии. Подобное оформление потолка подходит для помещений различного назначения: жилых и офисных. Если хочется разнообразить интерьер и сделать его более современным, однозначно стоит выбрать натяжные полотна. У специалистов нашей компании имеется большой опыт их монтажа, материалы применяются только сертифицированные с предоставлением гарантии. Тканевые и пленочные натяжные потолки Владельцам недвижимости предоставляется возможность заказать тканевые и пленочные натяжные потолки, отличающиеся высоким качеством и стильным дизайном. На выбор предлагается несколько видов потолочных полотен. Среди них есть как матовые, так и глянцевые под различные интерьерные направления. Экологичные полотна из ткани имитируют облака, звездное небо. По желанию заказчика выполняется персонализированная фотопечать. У нас заказывают многоуровневые и объемные 3-Д полотна, парящие конструкции, оснащенные подсветкой, стоимость которых доступная. Монтажные работы выполняются за один день. Нашим клиентам нет необходимости терпеть неудобства и переселяться к родственникам на время установки. Купить можно потолки в малогабаритную спальню и просторную гостиную. Замеры и монтаж занимают всего несколько часов. После окончания работ, связанных с установкой, в помещениях не остается пыли и мусора. Не упускайте возможность обновить интерьер за разумную цену с помощью натяжных потолков, приезжайте в наш офис, расположенный по адресу Казань, улица Пушкина, 52, чтобы выбрать фактуру и цвет. Читать ещё Доступные по цене натяжные потолки За счет натяжных потолков легко создать оригинальный интерьер и избежать при этом больших финансовых расходов. Нами предлагаются варианты на любой вкус и кошелек. Выберите подходящее решение по материалу изготовления, типу помещения и изготовителю. Со стороны процесс установки натяжных потолков кажется простым, ведь он заключается в установке профиля и натяжке полотна. По этой причине, желая сэкономить, некоторые обращаются к малоопытным мастерам или знакомым, пытаются установить потолок своими силами и совершают ошибку. Для качественного монтажа натяжных потолочных полотен требуются профессиональные навыки. Во внимание следует принимать множество мелочей, даже мелкие неточности способны испортить всю работу. Профессиональная установка является залогом долговечности потолочных конструкций. Мы работаем с тканевыми и пленочными полотнами, которые изготовлены по новейшим стандартам. В ходе установки применяется современное оборудование и бесшовные технологии. Закажите качественные натяжные потолки вместе с услугой установки в RR GROUP по самым выгодным ценам в 2026 году. Фотографии Потолков Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Натяжные потолки Казань, цена от 2118 руб. 2026 г. Республике Татарстан Смотреть больше Преимущества RR GROUP Всегда на связи Наши поТолковые мастера, всегда готовы проконсультировать вас и ответить на любые вопросы о потолках в Казани Надежность и качество Мы в RR GROUP в качестве всех материалов для вашего потолка и строим долгосрочные отношения со своими клиентами Опытные установщики Все наши установщики и замерщики потолков имеют опыт работы от 3 лет в сфере натяжных потолков. Мы гарантируем безопасность и качество Оперативная работа Все работы выполняются с точным соблюдением оговоренных по договору сроков. У нас можно заказать натяжные потолки + монтаж за 24 часа Высокое качество Мы используем только сертифицированные материалы лучших производителей для всех потолков. Позвоните и убедитесь в этом качестве сами. Долговечность работы Выполненные нами потолочные конструкции прослужат вам более 22 лет. Потому что мы знаем толк в потолках, этой работе и людях Отзывы клиентов Анатолий Обратился в RR GROUP за монтажом потолка. Привлекла приятная цена, и отзывы на сайте были положительные. Опасался за качество, но мастер при замере все показал и рассказал из каких материалов делаются потолки, заверил, что качество у них хорошее. В итоге заказал натяжной потолок в кухню и гостиную, все установили за один день. Результат отличный! Мои рекомендации. Казань [ 18.12.2023 16:24 ] Алиса Заказала в новую квартиру натяжной потолок в RR GROUP. Выбрала потолок с подсветкой по приятной цене. Менеджер вежливый, проконсултировал меня, ответил на все вопросы, назначили замер. Мастер приехал, все посчитал, приступил к установке потолка. Очень быстро и красиво получилось, очень довольна работой! Казань [ 25.11.2023 08:24 ] Читать больше Цены на натяжные потолки Казань в мае Наименование Цена руб. от Ед. Изм. Матовый белый 371 руб. м2 Матовый цветной 530 руб. м2 Сатин белый 371 руб. м2 Сатин цветной 530 руб. м2 Глянец белый 371 руб. м2 Глянец цветной 530 руб. м2 Фотопечать 2200 руб. м2 Почему мы Четкое соблюдение сроков выполнения работ. Лояльная ценовая политика, монтаж без переплат. Европейсокое качество используемых материалов. Огромный спектр потолочных и сопровождаемых услуг. Стабильное развитие и безупречная репутация. Большой ассортимент цветов и фактур. Способы оплаты 💰 НАЛИЧНЫЕ 📄 ПО СЧЁТУ 💳 КАРТОЙ 💸 ПЕРЕВОД 📈 КРЕДИТ 💹 РАССРОЧКА Меню КАЛЬКУЛЯТОР ЦЕНЫ УСЛУГИ ПОРТФОЛИО АКЦИИ ОТЗЫВЫ КОНТАКТЫ О КОМПАНИИ СЕРТИФИКАТЫ ОПЛАТА Наш адрес: 420095 , Россия , Республика Татарстан , Казань , улица Пушкина, 52 Режим работы: Ежедневно 08:00 - 18:00 Телефоны: +7 (931) 521-51-78 +7 9315215178 Поделиться: E-mail: kazan@natpotolok.ru Принимаем к оплате: Наши партнёры: © 2026 Компания \" RR GROUP \" . 28.10.2022 1023.z0.23008.100.0.main.0 ВНИМАНИЕ: Цены на сайте не являются публичной офёртой и могут отличаться, уточняйте у наших менеджеров! Политика конфиденциальности / Разработка и продвижение сайтов Казань Нашли ошибку в работе сайта? напишите нам Наш whatsapp Калькулятор Вызвать замерщика Обратный звонок ВЫЗОВ ЗАМЕРЩИКА × Ваше имя: Ваш телефон: Сообщение: Политика конфиденцальности ОТПРАВИТЬ Контакты в городах × Челябинск Ростов-на-Дону Уфа Волгоград Пермь Красноярск Воронеж Саратов Краснодар Тольятти Москва Политика конфиденцальности СПАСИБО ЗА ЗАЯВКУ Мы свяжемся с вами удобным способом, максимально быстро. Обычно это не более 15 минут",
+  "json_ld": [
+    "{\"@context\": \"https://schema.org\", \"@type\": \"Organization\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Казань, Россия\",\"postalCode\":\"420095\",\"streetAddress\":\"улица Пушкина, 52\"},\"email\":\"kazan@natpotolok.ru\",\"name\":\"RR GROUP\",\"telephone\":\"+7 931 521-51-78\"}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"RR GROUP\", \"alternateName\": \"RR GROUP. Казань\", \"url\": \"https://kazan.natpotolok.ru/\"}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"LocalBusiness\", \"name\": \"RR GROUP\", \"url\": \"https://kazan.natpotolok.ru/\", \"logo\": \"/img/1023/logo.png\", \"image\": \"https://kazan.natpotolok.ru/img/1023/co_main.jpg\", \"description\": \"Продажа и установка натяжных потолков с гарантией качества по ценам от 1589 руб.\", \"address\":{\"@type\": \"PostalAddress\", \"streetAddress\": \"улица Пушкина, 52\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"postalCode\": \"420095\", \"addressCountry\": \"Россия\"}, \"geo\":{\"@type\": \"GeoCoordinates\", \"latitude\": \"55.793996\", \"longitude\": \"49.125800\"}, \"openingHours\": \"Mo, Tu, We, Th, Fr 09:00-19:00 Sa 10:00-15:00\", \"telephone\": \"+79315215178\", \"priceRange\": \"$$\", \"contactPoint\":{\"@type\": \"ContactPoint\", \"telephone\": \"+79315215178\", \"contactType\": \"sales\"}}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"ImageObject\",\"contentLocation\": \"Натяжные потолки Казань, цена от 2118 руб., Россия\",\"contentUrl\": \"https://kazan.natpotolok.ru/img/1023/co_main.jpg\",\"description\": \"Установка натяжных потолков в квартирах, домах, коммерческих помещениях в Казани от компании RR GROUP. Полный комплекс услуг под ключ. Закажите установку натяжных потолков любой сложности по выгодной цене от 2118 руб. по тел. +7 931 521-51-78\",\"name\": \"Натяжные потолки Казань\"}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"serviceType\": \"Профессиональная установка натяжных потолков под ключ в Казани от 1589 руб.\", \"provider\":{\"@type\": \"LocalBusiness\", \"image\": \"/img/1023/logo.png\", \"priceRange\": \"$$\", \"address\":{\"@type\": \"PostalAddress\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"streetAddress\": \"улица Пушкина, 52\"}, \"description\": \"Профессиональная установка натяжных потолков в квартирах, домах и офисах в Казани по выгодным ценам от 1589 руб. в мае 2026 г. Гарантия 1 год. Делаем за 51 часов. Выезд и замер и расчет 0 руб. Все виды натяжных потолков. Быстро, качественно, под ключ.\", \"name\": \"RR GROUP\", \"telephone\": \"+79315215178\"}, \"areaServed\":{\"@type\": \"State\", \"name\": \"Казань\"}}"
+  ],
+  "document": {
+    "title": "Натяжные потолки Казань, цена от 2118 руб.",
+    "meta_description": "Установка натяжных потолков в квартирах, домах, коммерческих помещениях в Казани от компании RR GROUP. Полный комплекс услуг под ключ. Закажите установку натяжных потолков любой сложности по выгодной цене от 2118 руб. по тел. +7 931 521-51-78",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "https://kazan.natpotolok.ru/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kazan@natpotolok.ru",
+        "text": "kazan@natpotolok.ru",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Казань",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7931521-51-78",
+        "text": "+7 (931) 521-51-78",
+        "rel": ""
+      },
+      {
+        "href": "/quizz",
+        "text": "КАЛЬКУЛЯТОР",
+        "rel": ""
+      },
+      {
+        "href": "/tseny",
+        "text": "ЦЕНЫ",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "УСЛУГИ",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "ПОРТФОЛИО",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "АКЦИИ",
+        "rel": ""
+      },
+      {
+        "href": "/otzivy",
+        "text": "ОТЗЫВЫ",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty",
+        "text": "КОНТАКТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/o-kompanii",
+        "text": "О КОМПАНИИ",
+        "rel": ""
+      },
+      {
+        "href": "/sertifikaty",
+        "text": "СЕРТИФИКАТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/oplata",
+        "text": "ОПЛАТА",
+        "rel": ""
+      },
+      {
+        "href": "/besshovnyj-potolok",
+        "text": "Бесшовный потолок",
+        "rel": ""
+      },
+      {
+        "href": "/glyancevyj-potolok",
+        "text": "Глянцевый потолок",
+        "rel": ""
+      },
+      {
+        "href": "/kombinirovannyj-potolok",
+        "text": "Комбинированный потолок",
+        "rel": ""
+      },
+      {
+        "href": "/matovyj-potolok",
+        "text": "Матовый потолок",
+        "rel": ""
+      },
+      {
+        "href": "/paryashchij-potolok",
+        "text": "Парящий потолок",
+        "rel": ""
+      },
+      {
+        "href": "/pvh-potolok",
+        "text": "ПВХ потолок",
+        "rel": ""
+      },
+      {
+        "href": "/shovnyj-potolok",
+        "text": "Шовный потолок",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-vannuyu",
+        "text": "Потолок в ванную",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-gostinuyu",
+        "text": "Потолок в гостиную",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-detskuyu",
+        "text": "Потолок в детскую",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-zal",
+        "text": "Потолок в зал",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-prihozhuyu",
+        "text": "Потолок в прихожую",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-sanuzel",
+        "text": "Потолок в санузел",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-na-balkon",
+        "text": "Потолок на балкон",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-na-kuhnyu",
+        "text": "Потолок на кухню",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-zvezdnoe-nebo",
+        "text": "Потолок звездное небо",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-s-podsvetkoj",
+        "text": "Потолок с подсветкой",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-s-fotopechatyu",
+        "text": "Потолок с фотопечатью",
+        "rel": ""
+      },
+      {
+        "href": "/reznoj-potolok-apply",
+        "text": "Резной потолок Apply",
+        "rel": ""
+      },
+      {
+        "href": "/satinovyj-potolok",
+        "text": "Сатиновый потолок",
+        "rel": ""
+      },
+      {
+        "href": "/tkanevyj-potolok",
+        "text": "Тканевый потолок",
+        "rel": ""
+      },
+      {
+        "href": "/ehksklyuzivnyj-potolok",
+        "text": "Эксклюзивные потолоки",
+        "rel": ""
+      },
+      {
+        "href": "/svetodiodnye-natyazhnye-potolki",
+        "text": "Светодиодные натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/svetodiodnoe-osveshchenie",
+        "text": "Светодиодное освещение",
+        "rel": ""
+      },
+      {
+        "href": "/svetovye-linii-na-potolke",
+        "text": "Световые линии на натяжном поолке",
+        "rel": ""
+      },
+      {
+        "href": "/quiz",
+        "text": "ПОЛУЧИТЬ ЦЕНУ",
+        "rel": ""
+      },
+      {
+        "href": "/matovyj-potolok",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/matovyj-potolok",
+        "text": "Матовый потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/matovyj-potolok",
+        "text": "от 353 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/tkanevyj-potolok",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/tkanevyj-potolok",
+        "text": "Тканевый потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/tkanevyj-potolok",
+        "text": "от 422 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/glyancevyj-potolok",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/glyancevyj-potolok",
+        "text": "Глянцевый потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/glyancevyj-potolok",
+        "text": "от 375 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/satinovyj-potolok",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/satinovyj-potolok",
+        "text": "Сатиновый потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/satinovyj-potolok",
+        "text": "от 364 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-zvezdnoe-nebo",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-zvezdnoe-nebo",
+        "text": "Звездное небо",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/potolok-zvezdnoe-nebo",
+        "text": "от 2350 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-s-fotopechatyu",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-s-fotopechatyu",
+        "text": "Потолок с фотопечатью",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/potolok-s-fotopechatyu",
+        "text": "от 1900 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/paryashchij-potolok",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/paryashchij-potolok",
+        "text": "Парящий потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/paryashchij-potolok",
+        "text": "от 2392 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-s-podsvetkoj",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-s-podsvetkoj",
+        "text": "Потолок с подсветкой",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.natpotolok.ru/potolok-s-podsvetkoj",
+        "text": "от 1669 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-vannuyu",
+        "text": "потолок в ванную",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-detskuyu",
+        "text": "потолок в детскую",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-zal",
+        "text": "потолок в зал",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-v-prihozhuyu",
+        "text": "потолок в прихожую",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-na-kuhnyu",
+        "text": "потолок на кухню",
+        "rel": ""
+      },
+      {
+        "href": "/potolok-na-balkon",
+        "text": "потолок на балкон",
+        "rel": ""
+      },
+      {
+        "href": "#collapseExample",
+        "text": "Читать ещё",
+        "rel": ""
+      },
+      {
+        "href": "/img/1023/gb_1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/img/1023/gb_2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/img/1023/gb_3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/img/1023/gb_4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "Смотреть больше",
+        "rel": ""
+      },
+      {
+        "href": "/otzivy",
+        "text": "Читать больше",
+        "rel": ""
+      },
+      {
+        "href": "/quizz",
+        "text": "КАЛЬКУЛЯТОР",
+        "rel": ""
+      },
+      {
+        "href": "/tseny",
+        "text": "ЦЕНЫ",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "УСЛУГИ",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "ПОРТФОЛИО",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "АКЦИИ",
+        "rel": ""
+      },
+      {
+        "href": "/otzivy",
+        "text": "ОТЗЫВЫ",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty",
+        "text": "КОНТАКТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/o-kompanii",
+        "text": "О КОМПАНИИ",
+        "rel": ""
+      },
+      {
+        "href": "/sertifikaty",
+        "text": "СЕРТИФИКАТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/oplata",
+        "text": "ОПЛАТА",
+        "rel": ""
+      },
+      {
+        "href": "tel:9315215178",
+        "text": "+7 (931) 521-51-78",
+        "rel": ""
+      },
+      {
+        "href": "tel:+79315215178",
+        "text": "+7 9315215178",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kazan@natpotolok.ru",
+        "text": "kazan@natpotolok.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://natpotolok.ru",
+        "text": "Компания \" RR GROUP \"",
+        "rel": ""
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://lid.am/?utm_place=z0_footer&utm_from=kazan.natpotolok.ru",
+        "text": "Разработка и продвижение сайтов Казань",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/send_abuse",
+        "text": "напишите нам",
+        "rel": "nofollow, noindex, noreferrer"
+      },
+      {
+        "href": "/wa_go",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/wa_go",
+        "text": "Наш whatsapp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/quiz",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/quiz",
+        "text": "Калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденцальности",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "https://chelyabinsk.natpotolok.ru?utm_source=neighbour",
+        "text": "Челябинск",
+        "rel": ""
+      },
+      {
+        "href": "https://rnd.natpotolok.ru?utm_source=neighbour",
+        "text": "Ростов-на-Дону",
+        "rel": ""
+      },
+      {
+        "href": "https://ufa.natpotolok.ru?utm_source=neighbour",
+        "text": "Уфа",
+        "rel": ""
+      },
+      {
+        "href": "https://volgograd.natpotolok.ru?utm_source=neighbour",
+        "text": "Волгоград",
+        "rel": ""
+      },
+      {
+        "href": "https://perm.natpotolok.ru?utm_source=neighbour",
+        "text": "Пермь",
+        "rel": ""
+      },
+      {
+        "href": "https://krasnoyarsk.natpotolok.ru?utm_source=neighbour",
+        "text": "Красноярск",
+        "rel": ""
+      },
+      {
+        "href": "https://voronezh.natpotolok.ru?utm_source=neighbour",
+        "text": "Воронеж",
+        "rel": ""
+      },
+      {
+        "href": "https://saratov.natpotolok.ru?utm_source=neighbour",
+        "text": "Саратов",
+        "rel": ""
+      },
+      {
+        "href": "https://krasnodar.natpotolok.ru?utm_source=neighbour",
+        "text": "Краснодар",
+        "rel": ""
+      },
+      {
+        "href": "https://tolyatti.natpotolok.ru?utm_source=neighbour",
+        "text": "Тольятти",
+        "rel": ""
+      },
+      {
+        "href": "https://natpotolok.ru?utm_source=neighbour",
+        "text": "Москва",
+        "rel": ""
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденцальности",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Услуги",
+      "Меню",
+      "Виды потолков",
+      "Помещения",
+      "Все потолки",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "Меню",
+      "ОТПРАВИТЬ"
+    ],
+    "h1_texts": [
+      "Натяжные потолки Казань"
+    ],
+    "h2_texts": [
+      "Все натяжные потолки",
+      "Потолки в квартиру",
+      "Профессиональный монтаж натяжных потолков в домах, квартирах и офисах",
+      "Фотографии Потолков",
+      "Преимущества RR GROUP",
+      "Отзывы клиентов",
+      "Цены на натяжные потолки Казань в мае"
+    ],
+    "h3_texts": [
+      "Получить вашу цену на натяжные потолки в мае 2026 года в Казани после нескольких вопросов",
+      "Матовый потолок",
+      "Тканевый потолок",
+      "Глянцевый потолок",
+      "Сатиновый потолок",
+      "Звездное небо",
+      "Потолок с фотопечатью",
+      "Парящий потолок",
+      "Потолок с подсветкой",
+      "потолок в ванную",
+      "потолок в детскую",
+      "потолок в зал",
+      "потолок в прихожую",
+      "потолок на кухню",
+      "потолок на балкон",
+      "Долговечные натяжные потолки",
+      "Тканевые и пленочные натяжные потолки",
+      "Доступные по цене натяжные потолки",
+      "Почему мы",
+      "Способы оплаты",
+      "💰 НАЛИЧНЫЕ",
+      "📄 ПО СЧЁТУ",
+      "💳 КАРТОЙ",
+      "💸 ПЕРЕВОД",
+      "📈 КРЕДИТ",
+      "💹 РАССРОЧКА"
+    ],
+    "counts": {
+      "paragraph": 23,
+      "h1": 1,
+      "h2": 7,
+      "h3": 26,
+      "link": 119,
+      "image": 50,
+      "list_item": 48,
+      "strong": 10,
+      "form": 1,
+      "input": 5
+    }
+  }
+}

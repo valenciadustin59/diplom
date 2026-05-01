@@ -1,0 +1,431 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://petrookna.ru/price",
+  "final_url": "https://petrookna.ru/price",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:32:23 GMT",
+    "server": "nginx-reuseport/1.21.1",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/5.6.40"
+  },
+  "response_time_ms": 5519.833,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:32:28.295689+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><meta http-equiv=\"origin-trial\" content=\"A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">\n<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\n<link rel=\"shortlink\" href=\"https://petrookna.ru/\">\n<meta name=\"robots\" content=\"INDEX, FOLLOW\"><link rel=\"icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n<link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n<link href=\"https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic\" rel=\"stylesheet\"> \n<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/forms.css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/mobile.css\">\n<script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-P566XPPVHH&amp;cx=c&amp;_slc=1\"></script><script type=\"text/javascript\" async=\"\" src=\"https://mod.calltouch.ru/d_client_new.js?param;;ref;urlhttps%3A%2F%2Fpetrookna.ru%2Fprice;cook&amp;mod_id=3nrbilyj&amp;script_session_id=19de3f482a6.09&amp;ctObject=ct&amp;uniq_req_id=177764594551075548&amp;ctClientGlobalId=\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script type=\"text/javascript\" async=\"\" charset=\"utf-8\" src=\"https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__ru.js\" crossorigin=\"anonymous\" integrity=\"sha384-vWGPerp3azmuzWDyi82ckaYtdMYBt+f7dUndDVasuVwj6oF81JmZ5G11/+g0TEHs\"></script><script async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n<script src=\"/js/main.js\" type=\"text/javascript\"></script>\n<script type=\"text/javascript\" src=\"/js/jmask.js\"></script>\n<script src=\"https://www.google.com/recaptcha/api.js\" async=\"\" defer=\"\"></script>\n<!-- pinnet.ru -->\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/cb_pinnet2.css\">\n<!-- pinnet.ru eof -->\n<script type=\"text/javascript\" src=\"/js/script_forms.js\"></script>\n<!--<script type=\"text/javascript\" src=\"jquery.tinycarousel.min.js\"></script>-->\n<script>\n$(document).ready(function(){\n\njQuery(function($){\n    $(\".input_mask\").mask(\"+7 (999) 999-99-99\");\n});\n\n});\n</script>\n<meta name=\"yandex-verification\" content=\"2878db0db4e56fda\">\n<base href=\"https://petrookna.ru/\">\n\n<title>Цены на пластиковые окна в Санкт-Петербурге - стоимость окон ПВХ от компании «Петроокна»</title>\n<meta name=\"keywords\" content=\"\">\n<meta name=\"description\" content=\"Завод-изготовитель «Петроокна» представляет одни из самых низких цен на пластиковые окна в Санкт-Петербурге. Цены на ПВХ окна представлены как с учетом стоимости монтажа для различных серий домов, так и стандартные типы окон.\">\n<script type=\"text/javascript\" async=\"\" src=\"https://googleads.g.doubleclick.net/pagead/viewthroughconversion/859915262/?random=1777645945496&amp;cv=9&amp;fst=1777645945496&amp;num=1&amp;guid=ON&amp;resp=GooglemKTybQhCsO&amp;eid=375603261%2C466465925%2C512247839%2C658953495&amp;u_h=720&amp;u_w=1280&amp;ig=1&amp;frm=0&amp;url=https%3A%2F%2Fpetrookna.ru%2Fprice&amp;tiba=%D0%A6%D0%B5%D0%BD%D1%8B%20%D0%BD%D0%B0%20%D0%BF%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%BA%D0%BE%D0%B2%D1%8B%D0%B5%20%D0%BE%D0%BA%D0%BD%D0%B0%20%D0%B2%20%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%D0%B5%20-%20%D1%81&amp;hn=www.googleadservices.com&amp;rfmt=3&amp;fmt=4\"></script></head>\n<body>\n\n\n<style>\n.g-recaptcha \n{\n\ttext-align:center;\n}\n\n.g-recaptcha > div\n{\n\tdisplay:inline;\n}\n</style>\n<div id=\"phoneform\" class=\"show_forms\">\n\t<a href=\"#\" class=\"close_link\"></a>\n\t<div class=\"send_msg_p\" style=\"display:none;\"><p>Спасибо, что обратились к нам.<br>Мы перезвоним Вам в ближайшее время! <br><a href=\"#\" onclick=\"closeform('phoneform'); return false;\">закрыть</a></p></div>\n\t<div class=\"send_msg_att_p\" style=\"display:none;\"><p>Ошибка при отправке запроса!<br>Пожалуйста, повторите отправку.<br><a href=\"#\" onclick=\"closeform('phoneform'); return false;\">закрыть</a></p></div>\n\n\t<form action=\"?\" method=\"post\" name=\"phoneform\" onsubmit=\"document.getElementById('ct').value=window.call_value_1; showform_submit('phoneform'); ga('send', 'event', 'desktop_forms', 'send'); ym(43525694,'reachGoal','desktop_forms'); return false;var _tmr = window._tmr || (window._tmr = []); _tmr.push({'type':'reachGoal','id':3247106,'goal':'mytarget_application'});\">\n\t\t<div class=\"h1\">ПОЗВОНИТЕ МНЕ</div>\n\t\t<p>Оставьте Ваш номер телефона и менеджер компании «Петроокна» позвонит Вам в ближайшее время.</p>\n\t\t<div>\n\t\t\t<p><span>Ваше имя</span><input type=\"text\" name=\"name\" size=\"23\" required=\"\"></p>\n\t\t\t<p><span>Телефон</span><input type=\"text\" class=\"input_mask\" placeholder=\"+7 (___) ___-__-__\" name=\"phone\" size=\"23\" required=\"\" value=\"+7\"></p>\n\t\t\t<p id=\"form_select_office\"><span style=\"margin-right:0px; text-align:left; margin-top:0px; width:390px\">Выберите 1 из 4 офиса продаж</span><select name=\"office\"><option value=\"1\">Гражданский проспект (пр. Просвещения, д. 104)</option><option value=\"4\" selected=\"\">Беговая (ул. Савушкина, д. 139)</option><option value=\"6\">Международная (ул. Бухарестская, д. 78)</option><option value=\"8\">Проспект Ветеранов (пр. Ветеранов, д. 89)</option></select></p>\n\t\t\t<input type=\"text\" name=\"email2\" class=\"nd\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"formID\" value=\"1\">\n\t\t\t<input type=\"hidden\" id=\"ct\" name=\"call_value\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"formPage\" id=\"formPage\" value=\"0\"></div>\n\t\t\t<div class=\"g-recaptcha\" data-sitekey=\"6LeV4_oUAAAAAKlSqMz9qhHO3B0KzDNi6pzG1Npe\"><div style=\"width: 304px; height: 78px;\"><div><iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-d5dctzuo0zan\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeV4_oUAAAAAKlSqMz9qhHO3B0KzDNi6pzG1Npe&amp;co=aHR0cHM6Ly9wZXRyb29rbmEucnU6NDQz&amp;hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=x5frrd9gjr5g\"></iframe></div><textarea id=\"g-recaptcha-response\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div></div>\n\t\t\t<p align=\"right\"><input type=\"submit\" name=\"go_send\" value=\"Отправить заявку\"></p>\n\t\t\t<label><input type=\"checkbox\" checked=\"\" onchange=\"change_privacy(this, 'phoneform')\">Я согласен на обработку персональных данных</label>\n\t\t</form></div>\n\t\n\n\n<div id=\"zamerform\" class=\"show_forms\">\n<a href=\"#\" class=\"close_link\"></a>\n<div class=\"send_msg_p\" style=\"display:none;\"><p>Спасибо, что обратились к нам.<br>Мы перезвоним Вам в ближайшее время! <br><a href=\"#\" onclick=\"closeform('zamerform'); return false;\">закрыть</a></p></div>\n<div class=\"send_msg_att_p\" style=\"display:none;\"><p>Ошибка при отправке запроса!<br>Пожалуйста, повторите отправку.<br><a href=\"#\" onclick=\"closeform('zamerform'); return false;\">закрыть</a></p></div>\n<form action=\"?\" method=\"post\" name=\"zamerform\" onsubmit=\"document.getElementById('ct1').value=window.call_value_1; showform_submit('zamerform'); ga('send', 'event', 'desktop_forms', 'send'); ym(43525694,'reachGoal','desktop_forms'); return false; var _tmr = window._tmr || (window._tmr = []); _tmr.push({'type':'reachGoal','id':3247106,'goal':'mytarget_application'});\">\n<div class=\"h1\">ВЫЗВАТЬ ЗАМЕРЩИКА</div>\n<p>Услуга бесплатная и в удобное для Вас время.</p>\n<div>\n<p><span>Ваше имя</span><input type=\"text\" name=\"name\" size=\"23\" required=\"\"></p>\n<p><span>Телефон</span><input type=\"text\" class=\"input_mask\" placeholder=\"+7 (___) ___-__-__\" name=\"phone\" size=\"23\" required=\"\" value=\"+7\"></p>\n<p><span>Дополнительная информация</span><textarea name=\"msg\"></textarea></p>\n<p id=\"form_select_office\"><span style=\"margin-right:0px; text-align:left; margin-top:0px; width:390px\">Выберите 1 из 4 офисов продаж</span><select name=\"office\"><option value=\"1\">Гражданский проспект (пр. Просвещения, д. 104)</option><option value=\"4\" selected=\"\">Беговая (ул. Савушкина, д. 139)</option><option value=\"6\">Международная (ул. Бухарестская, д. 78)</option><option value=\"8\">Проспект Ветеранов (пр. Ветеранов, д. 89)</option></select></p>\n<input type=\"text\" name=\"email2\" class=\"nd\" value=\"\">\n<input type=\"hidden\" name=\"formID\" value=\"2\"><input type=\"hidden\" id=\"ct1\" name=\"call_value\" value=\"\"></div>\n<div class=\"g-recaptcha\" data-sitekey=\"6LeV4_oUAAAAAKlSqMz9qhHO3B0KzDNi6pzG1Npe\"><div style=\"width: 304px; height: 78px;\"><div><iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-js8r26plgxz\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeV4_oUAAAAAKlSqMz9qhHO3B0KzDNi6pzG1Npe&amp;co=aHR0cHM6Ly9wZXRyb29rbmEucnU6NDQz&amp;hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=o6p4qty2qfrk\"></iframe></div><textarea id=\"g-recaptcha-response-1\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div><iframe style=\"display: none;\"></iframe></div>\n<p align=\"right\"><input type=\"submit\" name=\"go_send\" value=\"Отправить заявку\"></p>\n<label><input type=\"checkbox\" checked=\"\" onchange=\"change_privacy(this, 'zamerform')\">Я согласен на обработку персональных данных</label>\n</form></div>\n\n\n\n<!-- NY -->\n<!-- //NY -->\n\n<div class=\"main\">\n<div class=\"white_block\">\n<div id=\"header\">\n\t<div class=\"menu-toggle_block\">\n        <span class=\"menu-open\"></span>\n    </div>\n<div id=\"logo_div\"><a href=\"/\"><img src=\"/images/petrookna.png\" alt=\"\"></a>Крупнейший завод по производству окон VEKA в Санкт-Петербурге. Работаем для Вас с 1998 года.</div>\n<div id=\"top_contacts\">\n<ul class=\"top_header_menu\"><li><a href=\"/zavod\">О заводе</a></li><li><a href=\"/uslugi\">Услуги</a></li><li><a href=\"/otzivi-klientov-petrookna\">Отзывы</a></li><li><a href=\"/dostavka\">Доставка</a></li></ul>\n<ul class=\"top_header_menu\" style=\"margin-left:18px\">\n<li><a href=\"/news\">Новости</a>\n</li><li><a href=\"/oknavekaspb\">Окна Veka</a>\n</li><li><a href=\"/proizvoditeli-okon\">Производство окон</a>\n</li><li><a href=\"/montazh-plastikovykh-okon\">Монтаж окон</a>\n</li></ul>\n\n<a href=\"#\" class=\"top_links top_call\" title=\"Мы Вам перезвоним бесплатно!\">ПОЗВОНИТЕ МНЕ</a>\n<a href=\"#\" class=\"top_links top_zamer\" title=\"Это бесплатно и в удобное для Вас время!\">ВЫЗВАТЬ ЗАМЕРЩИКА</a>\n\n<div id=\"top_phone\" class=\"main_top\"><span class=\"call_phone_0800\"><a href=\"tel:+78125000800\">(812) 500-08-00</a></span><span class=\"m\">многоканальный<br>\nежедневно: 10:00-21:00<br>\n<a href=\"/contacts\">Прямые телефоны 4 офисов</a></span></div>\n</div>\n\n<div class=\"clr\"></div>\n\n<div id=\"top_menu\">\n\t<div class=\"scroll\">\n\t\t<a href=\"/calculator\" id=\"calculator_button\">Оконный калькулятор</a>\n\t\t<ul><li><a href=\"/plastikovie-okna\">Пластиковые окна</a></li><li><a href=\"/osteklenie-lodzhij\">Балконы и лоджии</a></li><li><a href=\"/ostieklieniie-kottiedzhiei\">Остекление коттеджей</a></li><li><a href=\"/potolki\">Натяжные потолки</a></li><li><a href=\"/nashi-raboti\">Наши работы</a></li><li class=\"sel\"><a href=\"/price\">Цены</a></li><li><a href=\"/akcii\">Акции</a></li><li><a href=\"/contacts\">Контакты и офисы</a></li></ul>\n\t</div>\n</div>\n\n<div class=\"clr\"></div>\n</div>\n<div class=\"clr\"></div>\n</div>\n\n<div class=\"white_block\">\n<div class=\"left_menu\">\n<ul></ul>\n\n<div style=\"margin-left:-30px; width:230px\">\n<a href=\"/akcii/skidki_40_procentov_na_vse\"><img src=\"/images/banner_autumn_spring.png\" border=\"0\"></a>\n<img src=\"/images/banner_left.jpg\">\n\n</div>\n</div><div class=\"content\">\n<div id=\"breadcrumb\"><a href=\"/\">Главная</a><span></span>Цены</div><style type=\"text/css\">\n\n\n.windows_price_list div p img\n{\nmargin-right:15px;\n}\n\n.windows_price_list .clr\n{\nheight:35px;\n}\n\n.houses_windows\n{\nbackground-color:white;\nbackground-image:none;\npadding:0px !important;\nmargin-bottom:15px;\nmargin-top:5px;\ntext-align:left;\n\nborder-bottom:1px #BBB dotted;\n}\n\n.houses_windows > div\n{\nheight:140px;\nmargin:0px 3px;\ntext-align:center;\n}\n\n.houses_windows  > p\n{\nmargin-top:12px;\nmargin-bottom:5px;\ntext-align:left;\n}\n\n.houses_windows .blue_button\n{\nmargin-top:7px;\nmargin-bottom:7px;\n}\n\n.houses_windows .clr\n{\nheight:5px !important;\nline-height:0px;\n}\n\n.right_info\n{\nfloat:left; margin-left:20px; margin-top:-10px; width:460px;\n}\n\n.right_info ul li\n{\ncolor:#333;\n}\n\n.windows_price_list\n{\nmargin-top:23px;\n}\n\n.windows_price_list .dleft\n{\nfloat:left;\nwidth:400px;\n}\n\n\n.windows_price_list .dright\n{\nfloat:right;\nwidth:400px;\n}\n\n.content h1,\n.content .h1\n{\nfont-weight:bold;\n}\n\nspan.price\n{\nmargin-top:0px !important;\nbackground-image:url('/images/rub.png');\nbackground-repeat:no-repeat;\ncolor:#366986;\n}\n\nspan.price1\n{\nmargin-top:0px !important; \nbackground-repeat:no-repeat;\ncolor:#366986;\nfont-weight:bold;\nfont-size:14pt;\n}\n\n.windows_price_list p span\n{\ncolor:#366986;\nfont-weight:bold;\ntext-transform:uppercase;\nfont-size:11pt;\ndisplay:inline-block;\ntext-align:left;\n}\n\n</style>\n<h1>Цены на пластиковые окна</h1>\n<p>У нас одни из самых низких цен на окна ПВХ в Санкт-Петербурге. Такие условия возможны за счет прямых поставок материалов, собственного производства, выверенных технологических и бизнес-процессов. Вся продукция изготавливается из высококачественного профиля ВЕКА (VEKA) с использованием немецкой фурнитуры Siegenia и ROTO. Надежность наших окон подтверждена не только положительными отзывами заказчиков, но и соответствующими сертификатами.</p>\n<h2 class=\"h1\">Стоимость стандартных пластиковых окон без монтажа</h2>\n<div class=\"windows_price_list\">\n<div class=\"dleft\">\n<p><img src=\"/files/image/137 two.png\" alt=\"цена на пластиковые окна\" width=\"170\" align=\"left\"><span>1150х1420</span><br>\nПрофиль: VEKA<br>\nНемецкая фурнитура Siegenia<br>\nЭнергосберегающий стеклопакет<br>\nS = 1,63 м<sup>2</sup></p>\n<span class=\"price1\">7 494 рублей<br>\n</span></div>\n<div class=\"dright\">\n<p><img src=\"/files/image/window_1540_1510.png\" alt=\"цены на окна\" width=\"170\" align=\"left\"><span>1510х1540</span><br>\nПрофиль: VEKA<br>\nНемецкая фурнитура Siegenia<br>\nЭнергосберегающий стеклопакет<br>\nS = 2,33 м<sup>2</sup></p>\n<span class=\"price1\">5 688 рублей<br>\n</span></div>\n<div class=\"clr\">&nbsp;</div>\n<div class=\"dleft\">\n<p><img src=\"/files/image/door_2150_730.png\" alt=\"цены на окна\" style=\"margin:0px 43px\" width=\"100\" align=\"left\"><span>Балконная дверь: 730х2150</span><br>\nПрофиль: VEKA<br>\nНемецкая фурнитура Siegenia<br>\nЭнергосберегающий стеклопакет<br>\nS = 1,6 м<sup>2</sup></p>\n<span class=\"price1\">8 333 рублей<br>\n</span></div>\n<div class=\"dright\">\n<p><img src=\"/files/image/123456789.jpg\" alt=\"Цены на пластиковые окна \" width=\"170\" align=\"left\"><span>1200х1200</span><br>\nПрофиль: VEKA<br>\nНемецкая фурнитура Siegenia<br>\nЭнергосберегающий стеклопакет<br>\nS = 1,44 м<sup>2</sup></p>\n<span class=\"price1\">8 055 рублей<br>\n</span></div>\n<div class=\"clr\" style=\"height:25px\">&nbsp;</div>\n</div>\n<p style=\"text-align:center; margin-top:5px; margin-bottom:23px; color:#366986\">Рассчитать цену на окна других размеров Вы можете в одном из 4 наших офисов продаж,<br>\nили через страницу <a style=\"color:#ed1b2f; font-weight:bold\" href=\"/calculator\">оконный калькулятор</a>. Телефоны и адреса офисов на странице <a style=\"color:#ed1b2f; font-weight:bold\" href=\"/contacts\">контакты</a>.</p>\n<a name=\"h-price\"></a>\n<h2 class=\"h1\">Цены с монтажом по сериям домов</h2>\n<p>Санкт-Петербург - город с необычайно красивой архитектурой. Но и его не обошло стороной массовое строительство. Удобство такой застройки заключается в том, что для остекления используются типовые конструкции. Стандартные размеры окон имеют диапазон высот, которые увеличиваются в эквиваленте двух рядов кирпича (с шагом 150 мм). Мы имеем опыт работы с различными типовыми сериями домов и можем рассчитать стоимость ПВХ конструкции, основываясь на виде вашего дома. При установке будут учтены конструктивные нюансы здания и особенности строительных технологий тех времен.</p>\n<p style=\" text-align:center;\"><strong style=\"color:#ed1b2f;\">В ЦЕНУ ВХОДЯТ ВСЕ РАБОТЫ С МАТЕРИАЛАМИ</strong></p>\n<h3>137 серия</h3>\n<p>Советская застройка панельного типа, распространена во всех районах Санкт-Петербурга, кроме Адмиралтейского, Кировского, Пушкинского и Курортного. Представлена зданиями в 9, 12, 16 и 24 этажа.</p>\n<div style=\"float:left\"><img src=\"/images/137/137.jpg\" alt=\"\" width=\"300\" border=\"0\" align=\"left/\"></div>\n<div class=\"right_info\">\n<ul>\n    <li>профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением;</li>\n    <li>монтаж;</li>\n    <li>подоконник 200 мм;</li>\n    <li>водоотлив 200 мм.</li>\n</ul>\n</div>\n<div class=\"clr\">&nbsp;</div>\n<div class=\"houses_windows\">\n<div><img src=\"/images/137/137two.png\" alt=\"двухстворчатое окно 1420 х 1150 мм (одна створка - глухая; вторая - поворотно-откидная)\"><br>\n<span>16 237</span></div>\n<div><img src=\"/images/137/137three.png\" alt=\"трехстворчатое окно 1420 х 1700 мм (одна створка - поворотно-откидная)\"><br>\n<span>21 953</span></div>\n<div><img src=\"/images/137/137one.png\" alt=\"глухое окно 1420 х 1150 мм\"><br>\n<span>17 455</span></div>\n<div><img src=\"/images/137/137balktip1.png\" alt=\"балконный блок (окно: 1420 х 500 мм; дверь: 2140 х 680 мм)\"><br>\n<span>21 346</span></div>\n<div><img src=\"/images/137/137balktip2.png\" alt=\"балконный блок (окно: 1420 х 1200 мм; дверь: 2140 х 680 мм)\"><br>\n<span>24 939</span></div>\n<p><a href=\"#\" class=\"blue_button top_call\">ПОДРОБНЕЕ</a></p>\n</div>\n<h3>504 серия</h3>\n<p>Типовая советская застройка, которая возводилась в Ленинграде в 1969—1972 годах. Относится к «брежневской» и встречается преимущественно в северных районах города.</p>\n<div style=\"float:left\"><img src=\"/images/504/504.jpg\" alt=\"\" width=\"300\" border=\"0\"></div>\n<div class=\"right_info\">\n<ul>\n    <li>профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением;</li>\n    <li>монтаж;</li>\n    <li>подоконник 200 мм;</li>\n    <li>водоотлив 200 мм.</li>\n</ul>\n</div>\n<div class=\"clr\">&nbsp;</div>\n<div class=\"houses_windows\">\n<div><img src=\"/images/504/504two.png\" alt=\"двухстворчатое окно 1410 х 1450 мм (одна створка - глухая; вторая - поворотно-откидная)\"><br>\n<span>19 000</span></div>\n<div><img src=\"/images/504/504dtwo.png\" alt=\"двухстворчатое окно 1540 х 1480 мм (одна створка - глухая; вторая - поворотно-откидная)\"><br>\n<span>20 420</span></div>\n<div><img src=\"/images/504/504three.png\" alt=\"трехстворчатое окно 1410 х 1700 мм (одна створка - поворотно-откидная)\"><br>\n<span>21 850</span></div>\n<div><img src=\"/images/504/504door.png\" alt=\"балконная дверь 2150 х 730 мм\"><br>\n<span>15 720</span></div>\n<div><img src=\"/images/504/504dbalk.png\" alt=\"балконный блок (окно: 1540 х 1510 мм; дверь: 2150 х 730 мм)\"><br>\n<span>33 990</span></div>\n<p><a href=\"#\" class=\"blue_button top_call\">ПОДРОБНЕЕ</a></p>\n</div>\n<h3>606 серия</h3>\n<p>Серия включает в себя 7 типовых проектов панельных домов из керамзитобетонных панелей. Представлена зданиями в 9 этажей с лифтом и мусоропроводом. Застройка велась в период с 1966 по 1974 года.</p>\n<div style=\"float:left\"><img src=\"/images/606/606.jpg\" alt=\"\" width=\"300\" border=\"0\"></div>\n<div class=\"right_info\">\n<ul>\n    <li>профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением;</li>\n    <li>монтаж;</li>\n    <li>подоконник 200 мм;</li>\n    <li>водоотлив 200 мм.</li>\n</ul>\n</div>\n<div class=\"clr\">&nbsp;</div>\n<div class=\"houses_windows\">\n<div><img src=\"/images/606/606two.png\" alt=\"двухстворчатое окно 1410 х 1450 мм (одна створка - глухая; вторая - поворотно-откидная)\"><br>\n<span>19 008</span></div>\n<div><img src=\"/images/606/606balkvmal.png\" alt=\"балконный блок (окно: 1410 х 500 мм; дверь: 2140 х 680 мм)\"><br>\n<span>21 317</span></div>\n<div><img src=\"/images/606/606balkvkom.png\" alt=\"балконный блок (окно: 1410 х 1700 мм; дверь: 2140 х 680 мм)\"><br>\n<span>33 675</span></div>\n<p><a href=\"#\" class=\"blue_button top_call\">ПОДРОБНЕЕ</a></p>\n</div>\n<h3>\"Брежневка\"</h3>\n<p>Сомой массовой застройкой периода с 1965 по 1991 год были «брежневки». Это дома эконом-класса с высотой потолка порядка 2,6 м и толщиной стен 51 см. В квартирах был предусмотрен раздельный санузел и балкон.</p>\n<div style=\"float:left\"><img src=\"/files/image/Брежневка, Гражданский 108,1.jpg\" alt=\"\" width=\"300\" height=\"200\"></div>\n<div class=\"right_info\">\n<ul>\n    <li>профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением;</li>\n    <li>монтаж;</li>\n    <li>подоконник 200 мм;</li>\n    <li>водоотлив 200 мм.</li>\n</ul>\n</div>\n<div class=\"clr\">&nbsp;</div>\n<p><a href=\"#\" class=\"blue_button top_call\">ПОДРОБНЕЕ</a></p>\n<h3>Кирпичный дом</h3>\n<p>Самым надежным и безопасным является кирпичный дом. В Санкт-Петербурге построено много таких зданий по индивидуальным и серийным проектам. Стандартные размеры окон имеют диапазон высот, которые увеличиваются в эквиваленте двух рядов кирпича (с шагом 150 мм).</p>\n<div style=\"float:left\"><img src=\"/files/image/Кирпичная точка.jpg\" alt=\"\" width=\"300\" height=\"199\"></div>\n<div class=\"right_info\">\n<ul>\n    <li>профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением;</li>\n    <li>монтаж;</li>\n    <li>подоконник 200 мм;</li>\n    <li>водоотлив 200 мм.</li>\n</ul>\n</div>\n<div class=\"clr\">&nbsp;</div>\n<p><a href=\"#\" class=\"blue_button top_call\">ПОДРОБНЕЕ</a></p>\n<h3>Панельный дом</h3>\n<p>Благодаря скорости возведения панельное домостроение в Петербурге и Ленобласти получило широкое распространение.  Из-за стандартных размеров панелей подобрать оконную конструкцию не составит проблем.</p>\n<div style=\"float:left\"><img src=\"/files/image/Панельный Турку 32,1.jpg\" alt=\"\" width=\"300\" height=\"216\"></div>\n<div class=\"right_info\">\n<ul>\n    <li>профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением;</li>\n    <li>монтаж;</li>\n    <li>подоконник 200 мм;</li>\n    <li>водоотлив 200 мм.</li>\n</ul>\n</div>\n<div class=\"clr\">&nbsp;</div>\n<div class=\"houses_windows\">\n<div><img src=\"/images/137/137three.png\" title=\"ОКНО: 2230Х1530\" alt=\"\"><br>\n<span>28 590</span></div>\n<div><img src=\"/images/137/137balktip1.png\" title=\"БАЛКОННАЯ ДВЕРЬ: 680Х2140\" alt=\"\"><br>\n<span>29 640</span></div>\n<p><a href=\"#\" class=\"blue_button top_call\">ПОДРОБНЕЕ</a></p>\n</div>\n<p style=\"text-align:center; margin-top:15px; color:#069dd7\">Рассчитать цену на окна других размеров Вы можете в одном из 4 наших офисов продаж.<br>\nТелефоны и адреса офисов на странице <a style=\"color:#069dd7; font-weight:bold\" href=\"/contacts\">контакты</a>. Либо закажите <a href=\"#\" class=\"top_call\" style=\"color:#069dd7; font-weight:bold\">обратный звонок</a> и мы Вам перезвоним.<br>\n<a href=\"#\" class=\"red_button top_call\" style=\"margin-top:15px\">ХОЧУ КОНСУЛЬТАЦИЮ</a></p></div>\n<div class=\"clr\"></div>\n</div>\n\n\n\n<div class=\"white_block\" id=\"bottom_menu\">\n\n<ul><li><a href=\"/calculator\" style=\"color:#ed1b2f; font-weight:bold\">Калькулятор окон</a></li><li><a href=\"/osobiennosti-zimniei-ustanovki-okon\">Зимний монтаж пластиковых окон</a></li><li><a href=\"/zvukoizoliatsiia\">Звукоизоляция пластиковых окон</a></li><li><a href=\"/pvkh-okna\">Окна ПВХ - что это?</a></li><li><a href=\"/vekawhs\">Окна WHS</a></li><li><a href=\"/mosksetki\">Москитные сетки</a></li><li><a href=\"/furnitura\">Фурнитура для пластиковых окон</a></li></ul><ul><li><a href=\"/vnieshniaia-obshivka-vnutrienniaia-otdielka-i-utieplieniie-balkona-ili-lodzhii\">Отделка балконов и лоджий</a></li><li><a href=\"/tieploizoliatsiia\">Теплоизоляция</a></li><li><a href=\"/oknavekaspb\">Окна VEKA</a></li><li><a href=\"/montazh-plastikovykh-okon\">Монтаж пластиковых окон</a></li><li><a href=\"/proizvoditeli-okon\">Производство окон</a></li><li><a href=\"/matierialy-ispol-zuiemyie-pri-izghotovlienii-okon\">Устройство пластикового окна</a></li><li><a href=\"/child-page\">Окна в детскую</a></li></ul><ul><li><a href=\"/tsieny-na-ostieklieniie-balkonov-i-lodzhii\">Цены на остекление балконов и лоджий</a></li><li><a href=\"/nashchiel-niki-dlia-pvkh-okon\">Нащельники для ПВХ окон</a></li><li><a href=\"/bud-tie-bditiel-ny-ostierieghaities-poddielok\">Остерегайтесь подделок</a></li><li><a href=\"/okna-okrashennye-vmasse\">Профиль окрашенный в массе</a></li><li><a href=\"/kak-oformit-lodzhiu\">Советы дизайнеров</a></li><li><a href=\"/tolko-okna-veka\">Избегайте перекупщиков</a></li><li><a href=\"/tipovie_okna\">Типовые конструкции окон</a></li></ul><ul><li><a href=\"/kondensat-na-oknah\">Конденсат на окнах</a></li><li><a href=\"/katalog\">Каталог материалов</a></li><li><a href=\"/roof\">Балконные крыши</a></li><li><a href=\"/zona-dostavki\">Зона доставки</a></li><li><a href=\"/tehnology\">Сертификаты и сводная ведомость</a></li><li><a href=\"/blog\">Блог</a></li></ul></div>\n<div id=\"soc_net\">«Петроокна» в социальных сетях<br>\n<a href=\"https://vk.com/zavodpetrookna\" class=\"vk\">&nbsp;</a></div>\n<div id=\"copyright\"><p>© Оконный завод «Петроокна», Санкт-Петербург, <span class=\"call_phone_0800\"><a href=\"tel:+78125000800\">+7 (812) 500-08-00</a></span>, <a href=\"mailto:web@petrookna.ru\">web@petrookna.ru</a>.</p>\n<p>ОГРН:&nbsp;1047855032653, ИНН:&nbsp;7816352345, ОКВЭД:&nbsp;47.52.73</p>\n<p>С 1998 года на рынке пластиковых окон.</p>\n<p>Информация, представленная на сайте, не является публичной офертой.</p><p><a href=\"/map\">Карта сайта</a></p>\n<p><a href=\"/politika-konfidentsialnosti\">Политика конфиденциальности</a></p>\n</div>\n</div>\n\n<script>\n  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');\n\n  ga('create', 'UA-96137124-1', 'auto');\n  ga('send', 'pageview');\n\n</script>\n<!-- calltouch code старый -->\n<!--<script type=\"text/javascript\">\n(function (w, d, nv, ls, ua, ym){\nvar lwait = function (w, on, trf, dly, ma, orf, osf) { var y = \"yaCounter\", pfx = \"ct_await_\", sfx = \"_completed\", yac = function () { for (var v in w) if (v.indexOf(y)==0&&w[v].getClientID&&w[v].getClientID()) return w[v]; return false; }; if (!w[pfx + on + sfx]) { var ci = clearInterval, si = setInterval, st = setTimeout, cmld = function () { if (!w[pfx + on + sfx]) { w[pfx + on + sfx] = true; if ((w[pfx + on] && (w[pfx + on].timer))) { ci(w[pfx + on].timer); w[pfx + on] = null; } orf((on==y?yac():w[on])); } }; if (!(on==y?yac():w[on])|| !osf) { if (trf(on==y?yac():w[on])) { cmld(); } else { if (!w[pfx + on]) { w[pfx + on] = { timer: si(function () { if (trf(on==y?yac():w[on]) || ma < ++w[pfx + on].attempt) { cmld(); } }, dly), attempt: 0 }; } } } else { if (trf(on==y?yac():w[on])) { cmld(); } else { osf(cmld); st(function () { lwait(w, on, trf, dly, ma, orf); }, 0); } } } else { orf(on==y?yac():w[on]); } };\nvar ct = function (w, d, e, c, n, ym) { var a = 'all', b = 'tou', src = b + 'c' + 'h'; src = 'm' + 'o' + 'd.c' + a + src; var jsHost = \"https://\" + src, s = [{\"sp\":\"1\",\"sc\":d.createElement(e)}, {\"sp\":\"2\",\"sc\":d.createElement(e)}, {\"sp\":\"3\",\"sc\":d.createElement(e)}, {\"sp\":\"4\",\"sc\":d.createElement(e)}, {\"sp\":\"5\",\"sc\":d.createElement(e)}, {\"sp\":\"6\",\"sc\":d.createElement(e)}, {\"sp\":\"7\",\"sc\":d.createElement(e)}, {\"sp\":\"8\",\"sc\":d.createElement(e)}, {\"sp\":\"9\",\"sc\":d.createElement(e)}, {\"sp\":\"10\",\"sc\":d.createElement(e)}]; var jsf = function (w, d, s, h, c, n) { var rep = function (ycntr) { s.forEach(function(el) { el.sc.async = 1; el.sc.src = jsHost + \".\" + \"r\" + \"u/d_client.js?param;specific_id\"+el.sp+\";\" + (ycntr && ycntr.getClientID ? \"ya_client_id\" + ycntr.getClientID() + \";\" : \"\") + (c ? \"client_id\" + c + \";\" : \"\") + \"ref\" + escape(d.referrer) + \";url\" + escape(d.URL) + \";cook\" + escape(d.cookie) + \";attrs\" + escape(\"{\\\"attrh\\\":\" + n + \",\\\"ver\\\":181008}\") + \";\"; p = d.getElementsByTagName(e)[0]; p.parentNode.insertBefore(el.sc, p); }); }; if (ym) { lwait(w, 'yaCounter', function(obj) { return (obj && obj.getClientID ? true : false); }, 50, 100, function (yaCounter) {rep(yaCounter);}, function (f) { if(w.jQuery) {  w.jQuery(d).on('yacounter' + yc + 'inited', f ); }});} else {rep(null);} }; if (!w.jQuery) { var jq = d.createElement(e); jq.src = jsHost + \".\" + \"r\" + 'u/js/jquery-1.7.min.js'; jq.onload = function () { lwait(w, 'jQuery', function(obj) { return (obj ? true : false); }, 30, 100, function () { jsf(w, d, s, jsHost, c, n); } ); }; p = d.getElementsByTagName(e)[0]; p.parentNode.insertBefore(jq, p); } else { jsf(w, d, s, jsHost, c, n); }};\nvar gaid = function (w, d, o, ct, n) { if (!!o) { lwait(w, o, function (obj) {  return (obj && obj.getAll ? true : false); }, 200, (nv.userAgent.match(/Opera|OPR\\//) ? 10 : 20), function (gaCounter) { var clId = null; try {  var cnt = gaCounter && gaCounter.getAll ? gaCounter.getAll() : null; clId = cnt && cnt.length > 0 && !!cnt[0] && cnt[0].get ? cnt[0].get('clientId') : null; } catch (e) { console.warn(\"Unable to get clientId, Error: \" + e.message); } ct(w, d, 'script', clId, n, ym); }, function (f) { w[o](function () {  f(w[o]); })});} else{ ct(w, d, 'script', null, n, ym); }};\nvar cid = function () { try { var m1 = d.cookie.match('(?:^|;)\\\\s*_ga=([^;]*)'); if (!(m1 && m1.length > 1)) return null; var m2 = decodeURIComponent(m1[1]).match(/(\\d+\\.\\d+)$/); if (!(m2 && m2.length > 1)) return null; return m2[1]; } catch (err) {}}();\nif(cid === null && ua){ lwait(w, 'GoogleAnalyticsObject', function (obj) {return (obj ? true : false);}, 100, 10, function (gaObjectName) { if (gaObjectName == 'ga_ckpr') w.ct_ga = 'ga'; else w.ct_ga = gaObjectName; if (typeof Promise !== \"undefined\" && Promise.toString().indexOf(\"[native code]\") !== -1) { new Promise(function (resolve) {var db, on = function () {resolve(true)}, off = function () {resolve(false)}, tryls = function tryls() {try {ls && ls.length ? off() : (ls.x = 1, ls.removeItem(\"x\"), off());} catch (e) {nv.cookieEnabled ? on() : off();}}; w.webkitRequestFileSystem ? webkitRequestFileSystem(0, 0, off, on) : \"MozAppearance\" in d.documentElement.style ? (db = indexedDB.open(\"test\"), db.onerror = on, db.onsuccess = off) : /constructor/i.test(w.HTMLElement) ? tryls() : !w.indexedDB && (w.PointerEvent || w.MSPointerEvent) ? on() : off();}).then(function (pm) {if (pm) {gaid(w, d, w.ct_ga, ct, 2);} else {gaid(w, d, w.ct_ga, ct, 3);}})} else {gaid(w, d, w.ct_ga, ct, 4);}}, function (f) {w[o](function () {f(w[o]);})}); }else{ ct(w, d, 'script', (ua?cid:null), 1, ym); }})\n(window, document, navigator, localStorage, true, true);\n</script> -->\n<!-- /calltouch code старый-->\n<!-- calltouch -->\n<script src=\"https://mod.calltouch.ru/init.js?id=3nrbilyj\"></script>\n<!-- /calltouch -->\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(43525694, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true,\n        trackHash:true,\n        ecommerce:\"dataLayer\"\n   });\n</script>\n<!-- /Yandex.Metrika counter -->\n\n<center>\n<!--LiveInternet counter--><script type=\"text/javascript\">\ndocument.write(\"<a href='//www.liveinternet.ru/click' \"+\n\"target=_blank><img src='//counter.yadro.ru/hit?t38.6;r\"+\nescape(document.referrer)+((typeof(screen)==\"undefined\")?\"\":\n\";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?\nscreen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\n\";\"+Math.random()+\n\"' alt='' title='LiveInternet' \"+\n\"border='0' width='31' height='31'><\\/a>\")\n</script><a href=\"//www.liveinternet.ru/click\" target=\"_blank\"><img src=\"//counter.yadro.ru/hit?t38.6;r;s1280*720*24;uhttps%3A//petrookna.ru/price;0.8809692629441721\" alt=\"\" title=\"LiveInternet\" border=\"0\" width=\"31\" height=\"31\"></a><!--/LiveInternet-->\n</center>\n\n<!-- Код тега ремаркетинга Google -->\n<script type=\"text/javascript\">\n/* <![CDATA[ */\nvar google_conversion_id = 859915262;\nvar google_custom_params = window.google_tag_params;\nvar google_remarketing_only = true;\n/* ]]> */\n</script>\n<script type=\"text/javascript\" src=\"//www.googleadservices.com/pagead/conversion.js\">\n</script>\n<noscript>\n<div style=\"display:inline;\">\n<img height=\"1\" width=\"1\" style=\"border-style:none;\" alt=\"\" src=\"//googleads.g.doubleclick.net/pagead/viewthroughconversion/859915262/?guid=ON&amp;script=0\"/>\n</div>\n</noscript>\n<!-- pinnet.ru -->\n<div id=\"78680e8a-ee95-11ea-8e27-000423dc7a9e\" class=\"cb_pinnet_ru_m\" data-loop=\"1\" data-inactive=\"20\" data-text-ht=\"ЗАКАЗАТЬ ЗВОНОК!\" data-text-htt=\"Успейте получить скидку 40%!\" data-image-prefix=\"pet-\" data-bovercolor=\"2px solid #FF9B3D\" data-boutcolor=\"2px solid #E8E3E2\"><img class=\"cb_pinnet_ru_h\" src=\"https://pinnet.ru/img/pet-cbh.svg\" onerror=\"this.onerror=null; this.src='https://pinnet.ru/img/pet-cbh.png'\" alt=\"Заказать бесплатный звонок\"><img class=\"cb_pinnet_ru_b\" src=\"https://pinnet.ru/img/pet-cba.svg\" onerror=\"this.onerror=null; this.src='https://pinnet.ru/img/pet-cba.png'\" alt=\"Заказать бесплатный звонок\"></div><div class=\"cb_pinnet_ru_d\"><div class=\"cb_pinnet_ru_r\"><span class=\"cb_pinnet_ru_ht\" type=\"text\" autocomplete=\"off\">ЗАКАЗАТЬ ЗВОНОК!</span><span class=\"cb_pinnet_ru_hht\" type=\"text\" autocomplete=\"off\">Успейте получить скидку 40%!</span><span class=\"cb_pinnet_ru_t\" type=\"text\" maxlength=\"20\" autocomplete=\"off\">Укажите номер телефона.</span><input class=\"cb_pinnet_ru_i\"><span class=\"cb_pinnet_ru_s\">Перезвоните мне</span></div><div class=\"cb_pinnet_ru_f\">✕</div></div>\n<script src=\"/js/cb_pinnet2.min.js\"></script>\n<!-- pinnet.ru eof -->\n\n\n\n\n\n<div style=\"background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;\"><div style=\"width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;\"></div><div style=\"z-index: 2000000000; position: relative;\"><iframe title=\"текущую проверку reCAPTCHA можно пройти в течение ещё двух минут\" name=\"c-js8r26plgxz\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/bframe?hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;k=6LeV4_oUAAAAAKlSqMz9qhHO3B0KzDNi6pzG1Npe&amp;bft=0dAFcWeA4EjZdAj2IeSI91L9ZMyrZF1Dslx8od6XbSYc67KaMVQtNjMBB2C72NvkdShFE6pmnSB-RH6xMIbuaw4JSQfSX8d2YC5A\" style=\"width: 100%; height: 100%;\"></iframe></div></div><div style=\"background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;\"><div style=\"width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;\"></div><div style=\"z-index: 2000000000; position: relative;\"><iframe title=\"текущую проверку reCAPTCHA можно пройти в течение ещё двух минут\" name=\"c-d5dctzuo0zan\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/bframe?hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;k=6LeV4_oUAAAAAKlSqMz9qhHO3B0KzDNi6pzG1Npe&amp;bft=0dAFcWeA77vZ3b7BDRInDfLpSw9j8NsygZt65xLQ-zejbjJG9rGTAPz8t_Z4G-K2DFlSF34KRjzp5xikIhCwVYDoNHmA94jY3Iuw\" style=\"width: 100%; height: 100%;\"></iframe></div></div></body></html>",
+  "text": "Цены на пластиковые окна в Санкт-Петербурге - стоимость окон ПВХ от компании «Петроокна» Спасибо, что обратились к нам. Мы перезвоним Вам в ближайшее время! закрыть Ошибка при отправке запроса! Пожалуйста, повторите отправку. закрыть ПОЗВОНИТЕ МНЕ Оставьте Ваш номер телефона и менеджер компании «Петроокна» позвонит Вам в ближайшее время. Ваше имя Телефон Выберите 1 из 4 офиса продаж Гражданский проспект (пр. Просвещения, д. 104) Беговая (ул. Савушкина, д. 139) Международная (ул. Бухарестская, д. 78) Проспект Ветеранов (пр. Ветеранов, д. 89) Я согласен на обработку персональных данных Спасибо, что обратились к нам. Мы перезвоним Вам в ближайшее время! закрыть Ошибка при отправке запроса! Пожалуйста, повторите отправку. закрыть ВЫЗВАТЬ ЗАМЕРЩИКА Услуга бесплатная и в удобное для Вас время. Ваше имя Телефон Дополнительная информация Выберите 1 из 4 офисов продаж Гражданский проспект (пр. Просвещения, д. 104) Беговая (ул. Савушкина, д. 139) Международная (ул. Бухарестская, д. 78) Проспект Ветеранов (пр. Ветеранов, д. 89) Я согласен на обработку персональных данных Крупнейший завод по производству окон VEKA в Санкт-Петербурге. Работаем для Вас с 1998 года. О заводе Услуги Отзывы Доставка Новости Окна Veka Производство окон Монтаж окон ПОЗВОНИТЕ МНЕ ВЫЗВАТЬ ЗАМЕРЩИКА (812) 500-08-00 многоканальный ежедневно: 10:00-21:00 Прямые телефоны 4 офисов Оконный калькулятор Пластиковые окна Балконы и лоджии Остекление коттеджей Натяжные потолки Наши работы Цены Акции Контакты и офисы Главная Цены Цены на пластиковые окна У нас одни из самых низких цен на окна ПВХ в Санкт-Петербурге. Такие условия возможны за счет прямых поставок материалов, собственного производства, выверенных технологических и бизнес-процессов. Вся продукция изготавливается из высококачественного профиля ВЕКА (VEKA) с использованием немецкой фурнитуры Siegenia и ROTO. Надежность наших окон подтверждена не только положительными отзывами заказчиков, но и соответствующими сертификатами. Стоимость стандартных пластиковых окон без монтажа 1150х1420 Профиль: VEKA Немецкая фурнитура Siegenia Энергосберегающий стеклопакет S = 1,63 м 2 7 494 рублей 1510х1540 Профиль: VEKA Немецкая фурнитура Siegenia Энергосберегающий стеклопакет S = 2,33 м 2 5 688 рублей Балконная дверь: 730х2150 Профиль: VEKA Немецкая фурнитура Siegenia Энергосберегающий стеклопакет S = 1,6 м 2 8 333 рублей 1200х1200 Профиль: VEKA Немецкая фурнитура Siegenia Энергосберегающий стеклопакет S = 1,44 м 2 8 055 рублей Рассчитать цену на окна других размеров Вы можете в одном из 4 наших офисов продаж, или через страницу оконный калькулятор . Телефоны и адреса офисов на странице контакты . Цены с монтажом по сериям домов Санкт-Петербург - город с необычайно красивой архитектурой. Но и его не обошло стороной массовое строительство. Удобство такой застройки заключается в том, что для остекления используются типовые конструкции. Стандартные размеры окон имеют диапазон высот, которые увеличиваются в эквиваленте двух рядов кирпича (с шагом 150 мм). Мы имеем опыт работы с различными типовыми сериями домов и можем рассчитать стоимость ПВХ конструкции, основываясь на виде вашего дома. При установке будут учтены конструктивные нюансы здания и особенности строительных технологий тех времен. В ЦЕНУ ВХОДЯТ ВСЕ РАБОТЫ С МАТЕРИАЛАМИ 137 серия Советская застройка панельного типа, распространена во всех районах Санкт-Петербурга, кроме Адмиралтейского, Кировского, Пушкинского и Курортного. Представлена зданиями в 9, 12, 16 и 24 этажа. профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением; монтаж; подоконник 200 мм; водоотлив 200 мм. 16 237 21 953 17 455 21 346 24 939 ПОДРОБНЕЕ 504 серия Типовая советская застройка, которая возводилась в Ленинграде в 1969—1972 годах. Относится к «брежневской» и встречается преимущественно в северных районах города. профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением; монтаж; подоконник 200 мм; водоотлив 200 мм. 19 000 20 420 21 850 15 720 33 990 ПОДРОБНЕЕ 606 серия Серия включает в себя 7 типовых проектов панельных домов из керамзитобетонных панелей. Представлена зданиями в 9 этажей с лифтом и мусоропроводом. Застройка велась в период с 1966 по 1974 года. профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением; монтаж; подоконник 200 мм; водоотлив 200 мм. 19 008 21 317 33 675 ПОДРОБНЕЕ \"Брежневка\" Сомой массовой застройкой периода с 1965 по 1991 год были «брежневки». Это дома эконом-класса с высотой потолка порядка 2,6 м и толщиной стен 51 см. В квартирах был предусмотрен раздельный санузел и балкон. профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением; монтаж; подоконник 200 мм; водоотлив 200 мм. ПОДРОБНЕЕ Кирпичный дом Самым надежным и безопасным является кирпичный дом. В Санкт-Петербурге построено много таких зданий по индивидуальным и серийным проектам. Стандартные размеры окон имеют диапазон высот, которые увеличиваются в эквиваленте двух рядов кирпича (с шагом 150 мм). профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением; монтаж; подоконник 200 мм; водоотлив 200 мм. ПОДРОБНЕЕ Панельный дом Благодаря скорости возведения панельное домостроение в Петербурге и Ленобласти получило широкое распространение. Из-за стандартных размеров панелей подобрать оконную конструкцию не составит проблем. профиль Veka с фурнитурой Siegenia (Германия), стеклопакет с энергосбережением; монтаж; подоконник 200 мм; водоотлив 200 мм. 28 590 29 640 ПОДРОБНЕЕ Рассчитать цену на окна других размеров Вы можете в одном из 4 наших офисов продаж. Телефоны и адреса офисов на странице контакты . Либо закажите обратный звонок и мы Вам перезвоним. ХОЧУ КОНСУЛЬТАЦИЮ Калькулятор окон Зимний монтаж пластиковых окон Звукоизоляция пластиковых окон Окна ПВХ - что это? Окна WHS Москитные сетки Фурнитура для пластиковых окон Отделка балконов и лоджий Теплоизоляция Окна VEKA Монтаж пластиковых окон Производство окон Устройство пластикового окна Окна в детскую Цены на остекление балконов и лоджий Нащельники для ПВХ окон Остерегайтесь подделок Профиль окрашенный в массе Советы дизайнеров Избегайте перекупщиков Типовые конструкции окон Конденсат на окнах Каталог материалов Балконные крыши Зона доставки Сертификаты и сводная ведомость Блог «Петроокна» в социальных сетях © Оконный завод «Петроокна», Санкт-Петербург, +7 (812) 500-08-00 , web@petrookna.ru . ОГРН: 1047855032653, ИНН: 7816352345, ОКВЭД: 47.52.73 С 1998 года на рынке пластиковых окон. Информация, представленная на сайте, не является публичной офертой. Карта сайта Политика конфиденциальности ЗАКАЗАТЬ ЗВОНОК! Успейте получить скидку 40%! Укажите номер телефона. Перезвоните мне ✕",
+  "json_ld": [],
+  "document": {
+    "title": "Цены на пластиковые окна в Санкт-Петербурге - стоимость окон ПВХ от компании «Петроокна»",
+    "meta_description": "Завод-изготовитель «Петроокна» представляет одни из самых низких цен на пластиковые окна в Санкт-Петербурге. Цены на ПВХ окна представлены как с учетом стоимости монтажа для различных серий домов, так и стандартные типы окон.",
+    "meta_robots": "INDEX, FOLLOW",
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "закрыть",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "закрыть",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "закрыть",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "закрыть",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/zavod",
+        "text": "О заводе",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "Услуги",
+        "rel": ""
+      },
+      {
+        "href": "/otzivi-klientov-petrookna",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka",
+        "text": "Доставка",
+        "rel": ""
+      },
+      {
+        "href": "/news",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "/oknavekaspb",
+        "text": "Окна Veka",
+        "rel": ""
+      },
+      {
+        "href": "/proizvoditeli-okon",
+        "text": "Производство окон",
+        "rel": ""
+      },
+      {
+        "href": "/montazh-plastikovykh-okon",
+        "text": "Монтаж окон",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОЗВОНИТЕ МНЕ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ВЫЗВАТЬ ЗАМЕРЩИКА",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78125000800",
+        "text": "(812) 500-08-00",
+        "rel": ""
+      },
+      {
+        "href": "/contacts",
+        "text": "Прямые телефоны 4 офисов",
+        "rel": ""
+      },
+      {
+        "href": "/calculator",
+        "text": "Оконный калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovie-okna",
+        "text": "Пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-lodzhij",
+        "text": "Балконы и лоджии",
+        "rel": ""
+      },
+      {
+        "href": "/ostieklieniie-kottiedzhiei",
+        "text": "Остекление коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/potolki",
+        "text": "Натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/nashi-raboti",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/price",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "/contacts",
+        "text": "Контакты и офисы",
+        "rel": ""
+      },
+      {
+        "href": "/akcii/skidki_40_procentov_na_vse",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/calculator",
+        "text": "оконный калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "/contacts",
+        "text": "контакты",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОДРОБНЕЕ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОДРОБНЕЕ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОДРОБНЕЕ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОДРОБНЕЕ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОДРОБНЕЕ",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ПОДРОБНЕЕ",
+        "rel": ""
+      },
+      {
+        "href": "/contacts",
+        "text": "контакты",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ХОЧУ КОНСУЛЬТАЦИЮ",
+        "rel": ""
+      },
+      {
+        "href": "/calculator",
+        "text": "Калькулятор окон",
+        "rel": ""
+      },
+      {
+        "href": "/osobiennosti-zimniei-ustanovki-okon",
+        "text": "Зимний монтаж пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/zvukoizoliatsiia",
+        "text": "Звукоизоляция пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/pvkh-okna",
+        "text": "Окна ПВХ - что это?",
+        "rel": ""
+      },
+      {
+        "href": "/vekawhs",
+        "text": "Окна WHS",
+        "rel": ""
+      },
+      {
+        "href": "/mosksetki",
+        "text": "Москитные сетки",
+        "rel": ""
+      },
+      {
+        "href": "/furnitura",
+        "text": "Фурнитура для пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/vnieshniaia-obshivka-vnutrienniaia-otdielka-i-utieplieniie-balkona-ili-lodzhii",
+        "text": "Отделка балконов и лоджий",
+        "rel": ""
+      },
+      {
+        "href": "/tieploizoliatsiia",
+        "text": "Теплоизоляция",
+        "rel": ""
+      },
+      {
+        "href": "/oknavekaspb",
+        "text": "Окна VEKA",
+        "rel": ""
+      },
+      {
+        "href": "/montazh-plastikovykh-okon",
+        "text": "Монтаж пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/proizvoditeli-okon",
+        "text": "Производство окон",
+        "rel": ""
+      },
+      {
+        "href": "/matierialy-ispol-zuiemyie-pri-izghotovlienii-okon",
+        "text": "Устройство пластикового окна",
+        "rel": ""
+      },
+      {
+        "href": "/child-page",
+        "text": "Окна в детскую",
+        "rel": ""
+      },
+      {
+        "href": "/tsieny-na-ostieklieniie-balkonov-i-lodzhii",
+        "text": "Цены на остекление балконов и лоджий",
+        "rel": ""
+      },
+      {
+        "href": "/nashchiel-niki-dlia-pvkh-okon",
+        "text": "Нащельники для ПВХ окон",
+        "rel": ""
+      },
+      {
+        "href": "/bud-tie-bditiel-ny-ostierieghaities-poddielok",
+        "text": "Остерегайтесь подделок",
+        "rel": ""
+      },
+      {
+        "href": "/okna-okrashennye-vmasse",
+        "text": "Профиль окрашенный в массе",
+        "rel": ""
+      },
+      {
+        "href": "/kak-oformit-lodzhiu",
+        "text": "Советы дизайнеров",
+        "rel": ""
+      },
+      {
+        "href": "/tolko-okna-veka",
+        "text": "Избегайте перекупщиков",
+        "rel": ""
+      },
+      {
+        "href": "/tipovie_okna",
+        "text": "Типовые конструкции окон",
+        "rel": ""
+      },
+      {
+        "href": "/kondensat-na-oknah",
+        "text": "Конденсат на окнах",
+        "rel": ""
+      },
+      {
+        "href": "/katalog",
+        "text": "Каталог материалов",
+        "rel": ""
+      },
+      {
+        "href": "/roof",
+        "text": "Балконные крыши",
+        "rel": ""
+      },
+      {
+        "href": "/zona-dostavki",
+        "text": "Зона доставки",
+        "rel": ""
+      },
+      {
+        "href": "/tehnology",
+        "text": "Сертификаты и сводная ведомость",
+        "rel": ""
+      },
+      {
+        "href": "/blog",
+        "text": "Блог",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/zavodpetrookna",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78125000800",
+        "text": "+7 (812) 500-08-00",
+        "rel": ""
+      },
+      {
+        "href": "mailto:web@petrookna.ru",
+        "text": "web@petrookna.ru",
+        "rel": ""
+      },
+      {
+        "href": "/map",
+        "text": "Карта сайта",
+        "rel": ""
+      },
+      {
+        "href": "/politika-konfidentsialnosti",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "//www.liveinternet.ru/click",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [
+      "Цены на пластиковые окна"
+    ],
+    "h2_texts": [
+      "Стоимость стандартных пластиковых окон без монтажа",
+      "Цены с монтажом по сериям домов"
+    ],
+    "h3_texts": [
+      "137 серия",
+      "504 серия",
+      "606 серия",
+      "\"Брежневка\"",
+      "Кирпичный дом",
+      "Панельный дом"
+    ],
+    "counts": {
+      "paragraph": 42,
+      "h1": 1,
+      "h2": 2,
+      "h3": 6,
+      "link": 75,
+      "image": 32,
+      "list_item": 67,
+      "strong": 1,
+      "form": 2,
+      "input": 16
+    }
+  }
+}

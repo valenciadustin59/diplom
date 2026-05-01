@@ -1,0 +1,50 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kazan.megastroy.com/catalog/dveri-vhodnye",
+  "final_url": "https://kazan.megastroy.com/catalog/dveri-vhodnye",
+  "status_code": 403,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "content-length": "898",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:44:55 GMT",
+    "server": "ddos-guard",
+    "set-cookie": "__ddg8_=bXzZx6o7zbw7o76l; Domain=.megastroy.com; Path=/; Expires=Fri, 01-May-2026 15:04:55 GMT\n__ddg10_=1777646695; Domain=.megastroy.com; Path=/; Expires=Fri, 01-May-2026 15:04:55 GMT\n__ddg9_=217.217.246.8; Domain=.megastroy.com; Path=/; Expires=Fri, 01-May-2026 15:04:55 GMT\n__ddgid_=XWeLajkYY3tNj6j6; Domain=.kazan.megastroy.com; HttpOnly; Path=/; Expires=Sat, 01-May-2027 14:44:55 GMT\n__ddgmark_=89f2BNizPwMznXM9; Domain=.kazan.megastroy.com; HttpOnly; Path=/; Expires=Sat, 02-May-2026 14:44:55 GMT\n__ddg5_=WYY7wvwd7WZfPpaN; Domain=.megastroy.com; Path=/; HttpOnly; Expires=Fri, 01-May-2026 17:44:55 GMT"
+  },
+  "response_time_ms": 3875.5499,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:44:58.848284+00:00",
+  "html": "<!DOCTYPE html><html><head><title>DDoS-Guard</title><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"stylesheet\" href=\"/.well-known/ddos-guard/js-challenge/index.css\"><script defer=\"defer\" src=\"/.well-known/ddos-guard/js-challenge/view.js\"></script><script defer=\"defer\" src=\"/.well-known/ddos-guard/js-challenge/index.js\"></script><script src=\"https://check.ddos-guard.net/check.js\"></script></head><body data-ddg-origin=\"true\" data-ddg-l10n=\"true\"><div class=\"container\"><div class=\"top\"><h1 id=\"ddg-l10n-title\">Проверка браузера перед переходом на <span class=\"ddg-origin\">kazan.megastroy.com</span></h1><p id=\"ddg-l10n-description\">Подождите несколько секунд — после проверки сайт откроется автоматически</p><img id=\"ddg-img-loading\" src=\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjEiIGhlaWdodD0iNjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMwLjUgNTdjMCAxLjY1NyAxLjM0NiAzLjAxNiAyLjk5NSAyLjg1YTMwIDMwIDAgMCAwIDAtNTkuN0MzMS44NDYtLjAxNiAzMC41IDEuMzQzIDMwLjUgM3MxLjM0OCAyLjk4IDIuOTkyIDMuMTg3YTI0IDI0IDAgMCAxIDAgNDcuNjI2Yy0xLjY0NC4yMDYtMi45OTIgMS41My0yLjk5MiAzLjE4N1oiIGZpbGw9IiMwN0YiLz48L3N2Zz4=\" alt=\"loading\"></div><div class=\"bottom\"><span id=\"request-info\">Request ID: bXzZx6o7zbw7o76l | Time: 2026-05-01 14:44:55 UTC</span></div></div></body></html>",
+  "text": "DDoS-Guard Проверка браузера перед переходом на kazan.megastroy.com Подождите несколько секунд — после проверки сайт откроется автоматически Request ID: bXzZx6o7zbw7o76l | Time: 2026-05-01 14:44:55 UTC",
+  "json_ld": [],
+  "document": {
+    "title": "DDoS-Guard",
+    "meta_description": "",
+    "meta_robots": "",
+    "viewport": "width=device-width,initial-scale=1",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [],
+    "button_texts": [],
+    "h1_texts": [
+      "Проверка браузера перед переходом на kazan.megastroy.com"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 1,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 0,
+      "image": 1,
+      "list_item": 0,
+      "strong": 0,
+      "form": 0,
+      "input": 0
+    }
+  }
+}

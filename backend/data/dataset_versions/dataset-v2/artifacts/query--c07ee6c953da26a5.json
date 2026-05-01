@@ -1,0 +1,650 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://remonty-ekb.ru/",
+  "final_url": "https://remonty-ekb.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 15:12:16 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx-reuseport/1.21.1",
+    "set-cookie": "PHPSESSID=4da4a8fc7907bca85b51c7a808f0e304; path=/",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/7.2.34"
+  },
+  "response_time_ms": 5914.0569,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:12:21.185874+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><meta http-equiv=\"origin-trial\" content=\"A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">\n  <meta charset=\"utf-8\">\n  <base href=\"https://remonty-ekb.ru/\">\n  <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n  <meta name=\"description\" content=\"Профессиональный ремонт квартир в Екатеринбурге. Честные цены и скидки. Многолетний опыт. Гарантия на все виды работ.\">\n<meta name=\"keywords\" content=\"\">\n<title>Ремонт квартир в Екатеринбурге | Без предоплаты, недорого, цены</title>\n  <meta name=\"title\" content=\"Ремонт квартир в Екатеринбурге | Без предоплаты, недорого, цены\" lang=\"ru\">\n  <meta name=\"yandex-verification\" content=\"ec59653f8033f5aa\">  <meta name=\"HandheldFriendly\" content=\"true\">\n  <meta name=\"viewport\" content=\"width=1200, target-densitydpi=device-dpi\">\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta http-equiv=\"Content-Language\" content=\"ru\">\n\n  <link rel=\"canonical\" href=\"https://remonty-ekb.ru/\">\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"//fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700&amp;subset=cyrillic\">\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/fd5bef8e90ff5c171e4a5c1762e5d457/css/st.css\">\n  <script type=\"text/javascript\" async=\"\" charset=\"utf-8\" src=\"https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__ru.js\" crossorigin=\"anonymous\" integrity=\"sha384-vWGPerp3azmuzWDyi82ckaYtdMYBt+f7dUndDVasuVwj6oF81JmZ5G11/+g0TEHs\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script>\n    (function() { \"use strict\";\n      window.IS_MOBILE = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) != null;\n    })();\n  </script>\n</head>\n<body>\n\n  \n<div class=\"header\">\n  <div class=\"wrapper hfull\">\n          <div class=\"header-discounts-rotator\">\n        <div class=\"cycle-slideshow\" data-cycle-log=\"false\" data-cycle-auto-height=\"false\" data-cycle-pause-on-hover=\"true\" data-cycle-fx=\"carousel\" data-cycle-carousel-vertical=\"true\" data-cycle-slides=\"&gt; .slide\" data-cycle-allow-wrap=\"true\" data-cycle-speed=\"500\" data-cycle-timeout=\"5000\" data-cycle-update-view=\"1\" style=\"position: relative; overflow: hidden;\"><div class=\"cycle-carousel-wrap\" style=\"margin: 0px; padding: 0px; top: -21px; left: 0px; position: absolute;\"><div class=\"slide cycle-slide\" style=\"position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;\">Скидка % на ремонт при заказе с сайта </div><div class=\"slide cycle-slide\" style=\"position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;\">Скидка % на ремонт при заказе с сайта </div><div class=\"slide cycle-slide cycle-slide-active\" style=\"position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;\">Скидка % на ремонт при заказе с сайта </div><div class=\"slide cycle-slide\" style=\"position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;\">Скидка % на ремонт при заказе с сайта </div><div class=\"slide cycle-slide\" style=\"position: static; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;\">Скидка % на ремонт при заказе с сайта </div></div>\n                      \n                  </div>\n      </div>\n    \n    <div class=\"header-info-menu-container\">\n      <div class=\"header-info-menu\">\n        <ul id=\"yw0\">\n<li class=\"icn-menu-custom1 active\"><a href=\"/\"><span>Главная</span></a></li>\n<li class=\"icn-menu-custom2\"><a href=\"/price/\"><span>Цены</span></a></li>\n<li class=\"icn-menu-info38\"><a href=\"/info/skidki/\"><span>Скидки</span></a></li>\n<li class=\"icn-menu-info3\"><a href=\"/info/portfolio/\"><span>Портфолио</span></a></li>\n<li class=\"icn-menu-info2\"><a href=\"/info/company/\"><span>О компании</span></a></li>\n<li class=\"icn-menu-custom23\"><a href=\"/response/\"><span>Отзывы</span></a></li>\n<li class=\"icn-menu-custom4\"><a href=\"/contact/\"><span>Контакты</span></a></li>\n<li class=\"icn-menu-custom3\"><a href=\"/discounts/\"><span>Акции</span></a></li>\n</ul>      </div>\n    </div>\n    <div class=\"header-content\">\n      <div class=\"header-logo-container\">\n        <div class=\"dib\">\n<div class=\"dt\">\n<div class=\"dtc vam pr7\">&nbsp;</div>\n\n<div class=\"dtc vam\"><a class=\"dib fz34 curp tdn_a_i\" href=\"/\"><span class=\"bold clblue fz34 caps vam\">Ремонты</span> <span class=\"clblue fz34 caps vam\">квартир</span></a></div>\n</div>\n</div>\n        <div class=\"bold cw mb7 fz15 tac\">Компания \"Рем Строй Монтаж\"<br>\nРаботаем с 2008 года</div>\n      </div>\n\n              <div class=\"header-phones\">\n                      <div class=\"header-phone-wrapper\">\n              <div class=\"header-phone\"><a href=\"tel:+73432894241\">+7 (343) 289-42-41</a></div>\n              <div class=\"header-phone-description\">с 9:00 до 20:00 /без выходных/</div>\n            </div>\n                  </div>\n\n        <div class=\"header-callback-button\">\n          <a class=\"fancybox\" data-fancybox-type=\"inline\" data-fancybox-src=\"#callback-btn-content\"><div>Заказать<br>\nзвонок</div>\n</a>\n        </div>\n\n                  <div class=\"header-socials\">\n                                          <div><div><a href=\"https://wa.me/79920064044\" target=\"_blank\" class=\"icon-whatsapp\"></a></div></div>\n                                                        <div><div><a href=\"https://t.me/%2B79920064044\" target=\"_blank\" class=\"icon-telegram\"></a></div></div>\n                                    </div>\n              \n    </div>\n\n    <div class=\"header-section-menu-container\">\n      <div class=\"header-section-menu\">\n        <ul class=\"js-menu\" id=\"yw1\">\n<li class=\"with-dropdown\"><a href=\"/remont-kvartir/\"><span>Ремонт квартир</span></a>\n<ul>\n<li><span>По типу</span>\n<ul>\n<li><a href=\"/remont-kvartir/nedorogoj/\"><span>Недорогой</span></a></li>\n<li><a href=\"/remont-kvartir/kosmeticheskij/\"><span>Косметический</span></a></li>\n<li><a href=\"/remont-kvartir/novostrojki/\"><span>Новостройки</span></a></li>\n<li><a href=\"/remont-kvartir/pod_kljuch/\"><span>Ремонт под ключ</span></a></li>\n<li><a href=\"/remont-kvartir/evroremont/\"><span>Евроремонт</span></a></li>\n<li><a href=\"/remont-kvartir/hruthevki/\"><span>Хрущевки</span></a></li>\n<li><a href=\"/remont-kvartir/kvartira_pod_sdachu/\"><span>Квартира под сдачу</span></a></li>\n</ul>\n</li>\n<li><span>По комнате</span>\n<ul>\n<li><a href=\"/remont-kvartir/vannaya_komnata/\"><span>Ванная</span></a></li>\n<li><a href=\"/remont-kvartir/sanuzel/\"><span>Санузел</span></a></li>\n<li><a href=\"/remont-kvartir/koridor/\"><span>Коридор</span></a></li>\n<li><a href=\"/remont-kvartir/kuhnya/\"><span>Кухня</span></a></li>\n<li><a href=\"/remont-kvartir/komnaty/\"><span>Комнаты</span></a></li>\n<li><a href=\"/remont-kvartir/balkon_lodjia/\"><span>Балкон (лоджия)</span></a></li>\n</ul>\n</li>\n</ul>\n</li>\n<li class=\"with-dropdown\"><a href=\"/raboty/\"><span>Виды работ</span></a>\n<ul>\n<li><span>По типу</span>\n<ul>\n<li><a href=\"/raboty/poly/\"><span>Полы</span></a></li>\n<li><a href=\"/raboty/steny/\"><span>Стены</span></a></li>\n<li><a href=\"/raboty/potolki/\"><span>Потолки</span></a></li>\n<li><a href=\"/raboty/plitka/\"><span>Плитка</span></a></li>\n<li><a href=\"/raboty/gipsokarton/\"><span>Гипсокартон</span></a></li>\n<li><a href=\"/raboty/elektrika/\"><span>Электрика</span></a></li>\n<li><a href=\"/raboty/demontazh/\"><span>Демонтаж</span></a></li>\n<li><a href=\"/raboty/santehnika/\"><span>Сантехника</span></a></li>\n</ul>\n</li>\n</ul>\n</li>\n<li class=\"with-dropdown\"><a href=\"/pomeshenija/\"><span>Ремонт помещений</span></a>\n<ul>\n<li><span>По типу</span>\n<ul>\n<li><a href=\"/pomeshenija/remont_ofisov/\"><span>Ремонт офисов</span></a></li>\n<li><a href=\"/pomeshenija/negilye/\"><span>Нежилые помещения</span></a></li>\n<li><a href=\"/pomeshenija/magaziny/\"><span>Магазины</span></a></li>\n<li><a href=\"/pomeshenija/kafe/\"><span>Кафе и рестораны</span></a></li>\n<li><a href=\"/pomeshenija/kommercheskij_remont/\"><span>Коммерческий ремонт</span></a></li>\n</ul>\n</li>\n</ul>\n</li>\n<li><a href=\"/remont-kottedzhej/\"><span>Ремонт коттеджей</span></a></li>\n<li class=\"with-dropdown\"><a href=\"/otdelka-kvartir/\"><span>Отделка квартир</span></a>\n<ul>\n<li>\n<ul>\n<li><a href=\"/otdelka-kvartir/chernovaja/\"><span>Черновая отделка</span></a></li>\n<li><a href=\"/otdelka-kvartir/chistovaja/\"><span>Чистовая отделка</span></a></li>\n</ul>\n</li>\n</ul>\n</li>\n<li class=\"with-dropdown\"><a href=\"/dizajn/\"><span>Дизайн</span></a>\n<ul>\n<li>\n<ul>\n<li><a href=\"/dizajn/proekty/\"><span>Дизайн-проекты</span></a></li>\n<li><a href=\"/dizajn/remont/\"><span>Дизайнерский ремонт</span></a></li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>      </div>\n    </div>\n  </div>\n</div>\n  <div class=\"content\">\n    <div class=\"wrapper\">\n  <div class=\"top-slideshow-container\">\n    <div class=\"top-slideshow-rotator with_top_inset_shadow\">\n        <div class=\"cycle-slideshow-container posr\">\n    <div class=\"cycle-slideshow posr ofh\" data-cycle-log=\"false\" data-cycle-auto-height=\"740:300\" data-cycle-pause-on-hover=\"true\" data-cycle-fx=\"fade\" data-cycle-slides=\"&gt; .slide\" data-cycle-speed=\"500\" data-cycle-timeout=\"5000\" data-cycle-update-view=\"1\" style=\"height: 300px;\">\n        <div class=\"slide dib posr cycle-slide cycle-slide-active\" style=\"background-image: url(&quot;/f/images/rotator_remont_ekb.jpg&quot;); position: absolute; top: 0px; left: 0px; z-index: 99; opacity: 1; display: block; visibility: visible;\"><div class=\"wfull hfull posr\"><div class=\"posa b0 l0 p20\"><a class=\"tdu_a_ tdn_a_h_\"><span class=\"dib fz24 semibold bgcw pt2 pl15 pr15 pb3 posr mb-7\">Внимание:</span><br><span class=\"dib fz24 semibold bgcw pt2 pl15 pr15 pb3 posr z4\" style=\"margin-left: 160px;\">Скидки при обращении с сайта</span></a></div></div></div></div>\n  </div>\n    </div>\n    <div class=\"top-slideshow-mini\">\n      <div class=\"hfull\">\n<div class=\"pb5\" style=\"height: 50%;\">\n<div class=\"hfull bgcf6 with_top_inset_shadow brs4 posr ofh\" style=\"background-image: url('/f/upload/main_spec_01.jpg'); background-repeat: no-repeat; background-position: top center;\">\n<div class=\"posa b0 l0 wfull h0 pt3 pb3 bgcbody2 z0\">&nbsp;</div>\n\n<div class=\"posa b0 l0 p20\"><a class=\"tdu_a tdn_a_h\" href=\"/info/portfolio/\"><span class=\"dib fz22 lh130 cw bgc0_75p pl7 pr7 pb2 mb2 posr z4\" style=\"margin-left: 20px;\">Примеры</span><br>\n<span class=\"dib fz22 lh130 cw bgc0_75p pl7 pr7 pb2 posr\">работ</span></a></div>\n</div>\n</div>\n\n<div class=\"pt5\" style=\"height: 50%;\">\n<div class=\"hfull bgcf6 with_top_inset_shadow brs4 posr\" style=\"background-image: url('/f/upload/main_spec_02.jpg'); background-repeat: no-repeat; background-position: bottom right;\">\n<div class=\"posa t0 l0 p15\"><a class=\"tdu_a tdn_a_h\" href=\"/price/\"><span class=\"dib fz22 lh130 cw bgc0_75p pl7 pr7 pb2 mb2 posr z4\">Наши</span><br>\n<span class=\"dib fz24 caps lh130 posr\" style=\"margin-left: 15px;\">расценки</span><br>\n<span class=\"dib fz0 posr ml20 mt7\"><span class=\"arrow rarrow\">&nbsp;</span></span></a></div>\n</div>\n</div>\n</div>\n    </div>\n  </div>\n\n  <div class=\"textblock-container pb20 clearfix\">\n    <div class=\"fll fz0\">\n      <div class=\"posr pt20 mr20 mb7\" style=\"width: 300px; height: 153px; background: transparent url('/f/upload/main_zamer_besplatno.jpg') no-repeat scroll right bottom;\"><a class=\"fancybox curp_a\" data-fancybox-src=\"#callback2-btn-content\" data-fancybox-type=\"inline\"><span class=\"dib fz18 lh130 cw bgc0_50p pl7 pr7 pb2 mb2 vabl\">Выезд мастера</span> <span class=\"dib fz18 lh130 pb2 mb2 vabl\">и</span><br>\n<span class=\"dib fz18 lh130 pb2 ml7 mb2\">составление сметы</span><br>\n<span class=\"dib fz24 lh130 cw caps bgcblue pt3 pl7 pr3 pb2 ml7 mb2\">БЕСПЛАТНО<span class=\"dib fz0 posr p7 ml20 bgc0_75p\"><span class=\"arrow rarrow cblue\">&nbsp;</span></span></span></a></div>\n    </div>\n\n    <h1 class=\"subheader\">Ремонт квартир Екатеринбург</h1>\n\n    <p>Компания \"Рем Строй Монтаж\" профессионально выполнит ремонт квартир в Екатеринбурге, проведет отделку офисов и помещений. Работаем на рынке с 2008 года и гарантируем высочайшее качество услуг. Все работы оказываются в рамках договора, предоставляется гарантия. У нас можно заказать не только комплексные ремонты под ключ, но и небольшие работы, в том числе демонтажные и сантехнические. Все сотрудники граждане РФ. В штате не только универсалы-отделочники, но и специалисты узкого профиля: плиточники, электрики, сантехники. Средний стаж работы в компании более 3 лет.</p>\n  </div>\n\n  <div class=\"textblock-container\">\n    <div class=\"pt10 pb20 ml-10\">\n<div class=\"dt wfull\">\n<div class=\"dtc w25p pl10 tac vat\"><img src=\"/f/upload/main_advantage_01_quality-60-lblue.png\"><br>\n<span class=\"dib pt7 pb5 fz18 semibold \">Качество</span>\n<div class=\"tac\">Идеальный результат ремонта, совпадающий на 100% с вашими ожиданиями.</div>\n</div>\n\n<div class=\"dtc w25p pl10 tac vat\"><img src=\"/f/upload/main_advantage_04_shield-60-lblue.png\"><br>\n<span class=\"dib pt7 pb5 fz18 semibold \">Договор</span>\n\n<div class=\"tac\">Ремонт без риска! Работаем с заказчиками строго по договору.</div>\n</div>\n\n<div class=\"dtc w25p pl10 tac vat\"><img src=\"/f/upload/main_advantage_03_wallet-60-lblue.png\"><br>\n<span class=\"dib pt7 pb5 fz18 semibold \">Доступные цены</span>\n\n<div class=\"tac\">Наши цены разумны и адекватны. Никаких скрытых наценок.</div>\n</div>\n\n<div class=\"dtc w25p pl10 tac vat\"><img src=\"/f/upload/main_advantage_02_worker-60-lblue.png\"><br>\n<span class=\"dib pt7 pb5 fz18 semibold \">Опыт</span>\n\n<div class=\"tac\">В штате только опытные и \"безпроблемные\" мастера.</div>\n</div>\n</div>\n</div>\n  </div>\n\n  <div class=\"textblock-container\">\n    <div class=\"pt10\">\n<div class=\"subheader\">Наши работы</div>\n\n<div><div class=\"image-gallery\">\n  <div class=\"image-gallery-items\">\n                  <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_3.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_3.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_6.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_6.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_4.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_4.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_11.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_11.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_8.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_8.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_7.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_7.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_5.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_5.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_1.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_1.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remonty_ekaterinburg_10.jpg\" data-fancybox=\"gallery_18\">\n              <img src=\"/f/gallery/pre3_remonty_ekaterinburg_10.jpg\">\n            </a>\n          \n                  </div>\n            </div>\n\n  </div></div>\n</div>\n\n<div class=\"pt10\">\n<div class=\"subheader\">Наши цены</div>\n\n<p>Стоимость самых распространенных ремонтных работ в Екатеринбурге. Ознакомиться со всеми расценками можно на странице <a class=\"link\" href=\"/price/\">прайс-листа</a></p>\n\n<div class=\"pt10\"><table class=\"price-table\" id=\"yw2\">\n<tbody><tr class=\"price-subheader\"><th>Наименование работ</th><th class=\"price-unit\">Ед. изм.</th><th class=\"price-cost\">Цена, руб.</th></tr><tr class=\"price-subheader\">\n  <td colspan=\"3\">Предпродажная подготовка</td>\n</tr>\n<tr>\n  <td>Предпродажная подготовка квартиры (Хоум-стейджинг)</td>\n  <td></td>\n  <td>от 10000</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Устройство стяжки пола</td>\n</tr>\n<tr>\n  <td>Устройство бетонной стяжки пола (до 5 см)</td>\n  <td>м²</td>\n  <td>700</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Устройство деревянного пола</td>\n</tr>\n<tr>\n  <td>Устройство лаг</td>\n  <td>м²</td>\n  <td>500</td>\n</tr>\n<tr>\n  <td>Укладка ламината на пол</td>\n  <td>м²</td>\n  <td>600</td>\n</tr>\n<tr>\n  <td>Укладка ковролина</td>\n  <td>м²</td>\n  <td>400</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Штукатурные работы</td>\n</tr>\n<tr>\n  <td>Штукатурка стен под правило (выравнивание стен)</td>\n  <td>м²</td>\n  <td>600</td>\n</tr>\n<tr>\n  <td>Штукатурка стен по маякам</td>\n  <td>м²</td>\n  <td>850</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Работы по гипсокартону</td>\n</tr>\n<tr>\n  <td>Монтаж металлического каркаса</td>\n  <td>м²</td>\n  <td>500</td>\n</tr>\n<tr>\n  <td>Монтаж гипсокартона на каркас в 1 слой</td>\n  <td>м²</td>\n  <td>750</td>\n</tr>\n<tr>\n  <td>Монтаж перегородок из гипсокартона</td>\n  <td>м²</td>\n  <td>от 1800</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Работы с обоями</td>\n</tr>\n<tr>\n  <td>Поклейка обоев на стены (бумажные, флизелиновые, виниловые)</td>\n  <td>м²</td>\n  <td>500</td>\n</tr>\n<tr>\n  <td>Поклейка обоев под окраску</td>\n  <td>м²</td>\n  <td>450</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Устройство подвесного потолка</td>\n</tr>\n<tr>\n  <td>Монтаж потолка из гипсокартона (в один слой)</td>\n  <td>м²</td>\n  <td>от 800</td>\n</tr>\n<tr>\n  <td>Монтаж двухуровнего потолка из ГКЛ</td>\n  <td>м²</td>\n  <td>от 1400</td>\n</tr>\n<tr>\n  <td>Установка матовых натяжных потолков</td>\n  <td>м²</td>\n  <td>от 700</td>\n</tr>\n<tr>\n  <td>Установка глянцевых натяжных потолков</td>\n  <td>м²</td>\n  <td>от 700</td>\n</tr>\n<tr class=\"price-subheader\">\n  <td colspan=\"3\">Плиточные работы</td>\n</tr>\n<tr>\n  <td>Укладка керамической плитки на пол</td>\n  <td>м²</td>\n  <td>от 3000</td>\n</tr>\n<tr>\n  <td>Укладка плитки на стены</td>\n  <td>м²</td>\n  <td>от 3000</td>\n</tr>\n<tr>\n  <td>Укладка плитки нестандартного размера на стены</td>\n  <td>м²</td>\n  <td>от 3600</td>\n</tr>\n</tbody></table></div>\n</div>\n\n<div class=\"subheader\">Преимущества и особенности работы</div>\n\n<div><div class=\"image-gallery\">\n  <div class=\"image-gallery-items\">\n                  <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remont_ekb_1.jpg\" data-fancybox=\"gallery_81\">\n              <img src=\"/f/gallery/pre3_remont_ekb_1.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remont_ekb_3.jpg\" data-fancybox=\"gallery_81\">\n              <img src=\"/f/gallery/pre3_remont_ekb_3.jpg\">\n            </a>\n          \n                  </div>\n                        <div class=\"image-gallery-item\">\n                      <a class=\"fancybox fancybox-img posr dib fz0\" href=\"/f/gallery/remont_ekb_2.jpg\" data-fancybox=\"gallery_81\">\n              <img src=\"/f/gallery/pre3_remont_ekb_2.jpg\">\n            </a>\n          \n                  </div>\n            </div>\n\n  </div></div>\n\n<ul class=\"ul\">\n\t<li>\n\t<p><span class=\"pt7 pb5 fz14 semibold\">Поэтапная оплата</span>. Заказывая ремонт квартиры у нас, вы получите безупречное качество за разумные деньги. При никаких предоплат не требуется, оплата по факту выполненной работы.</p>\n\t</li>\n\t<li>\n\t<p><span class=\"pt7 pb5 fz14 semibold\">Частичный ремонт</span>. Работаем с любыми разумными объемами. У нас можно заказать отдельные виды работ, в том числе и частичный ремонт.</p>\n\t</li>\n\t<li>\n\t<p><span class=\"pt7 pb5 fz14 semibold\">Ремонт под ключ</span>. У нас можно заказать комплексный ремонт под ключ, начиная от разработки дизайн-проекта и заканчивая финишной отделкой под ключ. Вы въезжаете в уже готовую квартиру.</p>\n\t</li>\n</ul>\n  </div>\n\n</div>\n    <div class=\"wrapper\">\n      <div class=\"textblock-container\">\n                          <noindex><div class=\"pt10 ml-20\" style=\"display: flex; flex-direction: row; justify-content: space-between; align-items: stretch;\">\n<div class=\"w50p ml20\">\n<div class=\"hfull bgcf6 with_top_inset_shadow brs4 posr p20\">\n<div class=\"brbw2 brsts brcblue\" style=\"display: flex; flex-direction: row; justify-content: flex-start; align-items: center;\">\n<div><img src=\"/f/upload//dmitrij.jpg\"></div>\n\n<div class=\"wfull pl20\">\n<div class=\"fz18 bold\">Дмитрий</div>\n\n<div>Мастер-бригадир</div>\n\n<div class=\"pt7\"><a class=\"fz24 semibold cblue\" href=\"tel:+73432894241\">+7 (343) 289-42-41</a></div>\n</div>\n</div>\n\n<div class=\"pt15\">Опыт работы - более 15 лет.<br>\nСпециализация - выезд на объект, составление смет, контроль за бригадой и мастерами.</div>\n</div>\n</div>\n\n<div class=\"w50p ml20\">\n<div class=\"hfull bgcf6 with_top_inset_shadow brs4 posr p20\">\n<div class=\"brbw2 brsts brcblue\" style=\"display: flex; flex-direction: row; justify-content: flex-start; align-items: center;\">\n<div><img src=\"/f/upload//aleksej.jpg\"></div>\n\n<div class=\"wfull pl20\">\n<div class=\"fz18 bold\">Алексей</div>\n\n<div>Прием заявок</div>\n\n<div class=\"pt7\"><a class=\"fz24 semibold cblue\" href=\"tel:+73432894241\">+7 (343) 289-42-41</a></div>\n</div>\n</div>\n\n<div class=\"pt15\">Опыт работы - более 5 лет.<br>\nВсегда вежлив и хорошо представляет особенности работы.</div>\n</div>\n</div>\n</div>\n</noindex>                  <div class=\"pt10\">\n<div class=\"tac pt20\">\n<div class=\"dib hfull bgcf6 with_top_inset_shadow brs4 posr p15\">\n<div class=\"dt\">\n<div class=\"dtc vat\"><a class=\"fancybox dib curp_a\" data-fancybox-src=\"#callback2-btn-content\" data-fancybox-type=\"inline\"><span class=\"dib fz22 lh130 posr mb2\">Получи консультацию</span><br>\n<span class=\"dib fz24 caps posr\" style=\"margin-left: 35px;\">ПРЯМО СЕЙЧАС</span><br>\n<span class=\"db tar mt5 mr20 pr10\"><span class=\"dib fz0 posr ml15 mt7 fll\"><span class=\"arrow rarrow cblue\">&nbsp;</span></span><span class=\"dib fz22 caps lh130 cw bgc0_75p pl7 pr7 pb2 mb2 posr z4\">Бесплатно</span></span></a></div>\n\n<div class=\"dtc vam pl20\"><a class=\"fancybox dib cw bgcblue pt7 pl13 pr13 pb7 brs4 mt5 curp fz20 semibold\" data-fancybox-src=\"#callback2-btn-content\" data-fancybox-type=\"inline\">Оставить заявку</a></div>\n</div>\n</div>\n</div>\n</div>\n              </div>\n    </div>\n  </div>\n\n  \n<div class=\"footer\">\n  <div class=\"footer-content wrapper\">\n          <div class=\"footer-contact-container\">\n        <div class=\"footer-phones\">\n          <div class=\"dt\">\n            <div class=\"dtc vam pt7 pr10\"><img src=\"/i/contact-phone.png\"></div>\n            <div class=\"dtc vam tac\">\n                              <div class=\"pb2\">\n                  <a href=\"tel:+73432894241\" class=\"footer-phone\">\n                    +7 (343) 289-42-41                  </a>\n                </div>\n                            <div class=\"dib\"><a class=\"fancybox\" data-fancybox-type=\"inline\" data-fancybox-src=\"#callback-btn-content\"><div class=\"fz14 dib curp cw tdn brbw1 brstd brcw brct_h fsi semibold lh130\">Заказать звонок</div></a></div>\n            </div>\n          </div>\n        </div>\n        <div class=\"footer-address\">\n          <div class=\"dt\">\n            <div class=\"dtc vam pt3 pr10\"><img src=\"/i/contact-address.png\"></div>\n            <div class=\"dtc vam tac\">\n              <div class=\"fz16 cw semibold\">г. Екатеринбург<br>\nул. Добролюбова, 16/2</div>\n            </div>\n          </div>\n        </div>\n        <div class=\"footer-emails\">\n          <div class=\"dt\">\n            <div class=\"dtc vam pt7 pr10\"><img src=\"/i/contact-email.png\"></div>\n            <div class=\"dtc vam tac\">\n                              <div class=\"pb2\">\n                  <a href=\"mailto:info@remonty-ekb.ru\" class=\"footer-email\">\n                    info@remonty-ekb.ru                  </a>\n                </div>\n                          </div>\n          </div>\n        </div>\n      </div>\n    \n    <div class=\"footer-menu-container\">\n      <div class=\"footer-menu\">\n        <div class=\"dib\">\n          <div class=\"footer-menu-title\"><div><a class=\"cw semibold caps curp tdu tdn_h\" href=\"/remont-kvartir/\">Ремонт квартир</a></div>\n</div>\n          <ul id=\"yw3\">\n<li class=\"icn-menu-custom5\"><a href=\"/remont-kvartir/nedorogoj/\"><span>Недорогой</span></a></li>\n<li class=\"icn-menu-custom6\"><a href=\"/remont-kvartir/kosmeticheskij/\"><span>Косметический</span></a></li>\n<li class=\"icn-menu-custom7\"><a href=\"/remont-kvartir/novostrojki/\"><span>Новостройки</span></a></li>\n<li class=\"icn-menu-custom8\"><a href=\"/remont-kvartir/pod_kljuch/\"><span>Под ключ</span></a></li>\n<li class=\"icn-menu-custom9\"><a href=\"/remont-kvartir/evroremont/\"><span>Евроремонт</span></a></li>\n<li class=\"icn-menu-custom10\"><a href=\"/remont-kvartir/vannaya_komnata/\"><span>Ванная</span></a></li>\n</ul>        </div>\n      </div>\n      <div class=\"footer-menu\">\n        <div class=\"dib\">\n          <div class=\"footer-menu-title\"><div><a class=\"cw semibold caps curp tdu tdn_h\" href=\"/raboty/\">Виды работ</a></div>\n</div>\n          <ul id=\"yw4\">\n<li class=\"icn-menu-custom11\"><a href=\"/raboty/poly/\"><span>Полы</span></a></li>\n<li class=\"icn-menu-custom12\"><a href=\"/raboty/steny/\"><span>Стены</span></a></li>\n<li class=\"icn-menu-custom13\"><a href=\"/raboty/potolki/\"><span>Потолки</span></a></li>\n<li class=\"icn-menu-custom14\"><a href=\"/raboty/santehnika/\"><span>Сантехника</span></a></li>\n<li class=\"icn-menu-custom15\"><a href=\"/raboty/elektrika/\"><span>Электрика</span></a></li>\n<li class=\"icn-menu-custom16\"><a href=\"/raboty/demontazh/\"><span>Демонтаж</span></a></li>\n<li class=\"icn-menu-custom17\"><a href=\"/raboty/plitka/\"><span>Плитка</span></a></li>\n<li class=\"icn-menu-custom18\"><a href=\"/raboty/gipsokarton/\"><span>Гипсокартон</span></a></li>\n</ul>        </div>\n      </div>\n      <div class=\"footer-menu\">\n        <div class=\"dib\">\n          <div class=\"footer-menu-title\"><div><a class=\"cw semibold caps curp tdu tdn_h\" href=\"/pomeshenija/\">Ремонт помещений</a></div>\n</div>\n          <ul id=\"yw5\">\n<li class=\"icn-menu-custom19\"><a href=\"/pomeshenija/remont_ofisov/\"><span>Ремонт офисов</span></a></li>\n<li class=\"icn-menu-custom20\"><a href=\"/pomeshenija/negilye/\"><span>Нежилые помещения</span></a></li>\n<li class=\"icn-menu-custom21\"><a href=\"/pomeshenija/magaziny/\"><span>Магазины</span></a></li>\n<li class=\"icn-menu-custom22\"><a href=\"/pomeshenija/kafe/\"><span>Кафе и рестораны</span></a></li>\n</ul>        </div>\n      </div>\n      <div class=\"footer-menu\">\n        <div class=\"dib\">\n          <div class=\"footer-menu-title\">Информация</div>\n          <ul id=\"yw6\">\n<li class=\"icn-menu-custom1 active\"><a href=\"/\"><span>Главная</span></a></li>\n<li class=\"icn-menu-custom2\"><a href=\"/price/\"><span>Цены</span></a></li>\n<li class=\"icn-menu-info38\"><a href=\"/info/skidki/\"><span>Скидки</span></a></li>\n<li class=\"icn-menu-info3\"><a href=\"/info/portfolio/\"><span>Портфолио</span></a></li>\n<li class=\"icn-menu-info2\"><a href=\"/info/company/\"><span>О компании</span></a></li>\n<li class=\"icn-menu-custom23\"><a href=\"/response/\"><span>Отзывы</span></a></li>\n<li class=\"icn-menu-custom4\"><a href=\"/contact/\"><span>Контакты</span></a></li>\n</ul>        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"footer-copyrights wrapper\">\n          <div>\n  <div class=\"cw\">© «Рем Строй Монтаж». Все права защищены. 2008 - 2026</div>\n  <!--noindex--><div class=\"cw fz12 mt7\">Сайт не является публичной офертой <br>и носит информационный характер</div><!--/noindex-->\n</div>          <div><a href=\"/info/disclaimer/\" class=\"cw tdu tdn_h\">Ограничение ответственности</a></div>          <div><a href=\"/info/partnery/\" class=\"cw tdu tdn_h\">Партнеры</a></div>          <div class=\"tar\"><a class=\"cw tdu tdn_h vat\" href=\"https://www.d-fresh.ru/\" target=\"_blank\">Создание сайта<img src=\"https://www.d-fresh.ru/img/footer_logo_04_small_hz_white_.png\" class=\"vat mt-5 ml7\"></a></div>      </div>\n</div>\n\n<!-- popups -->\n\n<div id=\"callback-btn-content\" class=\"w480 bgcf6 brs4\" style=\"display: none;\">\n  <div class=\"caps fz22 semibold p13 tac bgcw brbw2 brsts with_top_inset_shadow brst4\">Заказать звонок</div>\n  <div class=\"p15\">\n    <form autocomplete=\"off\" class=\"form callback-form\" id=\"yw7\" action=\"/callback/\" method=\"post\"><div style=\"display:none\"><input type=\"hidden\" value=\"1\" name=\"yform_397e10c8\" id=\"yform_397e10c8\"></div>\n\n<div class=\"form-row mb13\"><div class=\"form-label mb7\"><label for=\"Callback_phone\" class=\"required\">Номер телефона <span class=\"required\">*</span></label></div><div class=\"form-field\"><div class=\"bgcea brcc brsts brw1 pt7 pl10 pr10 pb7 z4 posr brs3\"><input class=\"js-autofocus-inp wfull\" name=\"Callback[phone]\" id=\"Callback_phone\" type=\"tel\" inputmode=\"text\"></div><div class=\"form-error bgcred brsb2 posr\"><div class=\"errorMessage\" id=\"Callback_phone_em_\" style=\"display:none\"></div></div></div></div>\n<div class=\"form-row mb13\"><div class=\"form-label mb7\"><label for=\"Callback_name\">Ваше имя</label></div><div class=\"form-field\"><div class=\"bgcea brcc brsts brw1 pt7 pl10 pr10 pb7 z4 posr brs3\"><input class=\"wfull\" name=\"Callback[name]\" id=\"Callback_name\" type=\"text\" maxlength=\"255\"></div><div class=\"form-error bgcred brsb2 posr\"><div class=\"errorMessage\" id=\"Callback_name_em_\" style=\"display:none\"></div></div></div></div>\n\n\n<div class=\"form-submit\"><input class=\"dib bgcblue fz14 cw bold pt7 pl10 pb7 pr10 caps curp brs3\" value=\"Заказать звонок\" id=\"yw7_submit\" name=\"submit\" type=\"button\">\n</div>\n</form>  </div>\n</div>\n<div id=\"callback2-btn-content\" class=\"w480 bgcf6 brs4\" style=\"display: none;\">\n  <div class=\"caps fz22 semibold p13 tac bgcw brbw2 brsts with_top_inset_shadow brst4\">Заказать звонок</div>\n  <div class=\"p15\">\n    <form autocomplete=\"off\" class=\"form callback-form\" id=\"yw8\" action=\"/callback/\" method=\"post\"><div style=\"display:none\"><input type=\"hidden\" value=\"1\" name=\"yform_7692e5b1\" id=\"yform_7692e5b1\"></div>\n\n<div class=\"form-row mb13\"><div class=\"form-label mb7\"><label for=\"Callback_phone\" class=\"required\">Номер телефона <span class=\"required\">*</span></label></div><div class=\"form-field\"><div class=\"bgcea brcc brsts brw1 pt7 pl10 pr10 pb7 z4 posr brs3\"><input class=\"js-autofocus-inp wfull\" name=\"Callback[phone]\" id=\"Callback_phone\" type=\"tel\" inputmode=\"text\"></div><div class=\"form-error bgcred brsb2 posr\"><div class=\"errorMessage\" id=\"Callback_phone_em_\" style=\"display:none\"></div></div></div></div>\n<div class=\"form-row mb13\"><div class=\"form-label mb7\"><label for=\"Callback_name\">Ваше имя</label></div><div class=\"form-field\"><div class=\"bgcea brcc brsts brw1 pt7 pl10 pr10 pb7 z4 posr brs3\"><input class=\"wfull\" name=\"Callback[name]\" id=\"Callback_name\" type=\"text\" maxlength=\"255\"></div><div class=\"form-error bgcred brsb2 posr\"><div class=\"errorMessage\" id=\"Callback_name_em_\" style=\"display:none\"></div></div></div></div>\n<div class=\"form-row mb13\"><div class=\"form-label mb7\"><label for=\"Callback_content\">Комментарий</label></div><div class=\"form-field\"><div class=\"bgcea brcc brsts brw1 pt7 pl10 pr10 pb7 z4 posr brs3\"><textarea class=\"wfull\" name=\"Callback[content]\" id=\"Callback_content\"></textarea></div><div class=\"form-error bgcred brsb2 posr\"><div class=\"errorMessage\" id=\"Callback_content_em_\" style=\"display:none\"></div></div></div></div>\n\n\n<div class=\"form-submit\"><input class=\"dib bgcblue fz14 cw bold pt7 pl10 pb7 pr10 caps curp brs3\" value=\"Оставить заявку\" id=\"yw8_submit\" name=\"submit\" type=\"button\">\n</div>\n</form>  </div>\n</div>\n\n\n\n\n  <div class=\"discount-button-container\">\n    <a class=\"fancybox discount-button\" data-fancybox-type=\"inline\" data-fancybox-src=\"#discount-btn-content\">Акции</a>\n  </div>\n\n  <div id=\"discount-btn-content\" class=\"w750 bgcf6 brs4\" style=\"display: none;\">\n    <div class=\"caps fz22 semibold p13 tac bgcw brbw2 brsts with_top_inset_shadow brst4\">Действующие акции</div>\n    <div class=\"p15\">\n      <div class=\"discount-list-view posr mt-13\" data-scroll-offset=\"-13\" id=\"discount_related_list\">\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/skidka_na_remont_pri_zakaze_s_sajta_do_31/\" class=\"curp_a\"><img src=\"/f/discount/pre_skidka_procent.png\" alt=\"Скидка 10% на ремонт при заказе с сайта до конца мая\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">Скидка 10% на ремонт при заказе с сайта до конца мая</p>\n        <div>\n      <a href=\"/discounts/skidka_na_remont_pri_zakaze_s_sajta_do_31/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/izgotavlivaem_shkafy_kupe_i_kuhonnye_garnitury/\" class=\"curp_a\"><img src=\"/f/discount/pre_kuxnya1.jpg\" alt=\"Изготавливаем шкафы купе и кухонные гарнитуры\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">Изготавливаем шкафы купе и кухонные гарнитуры</p>\n        <div>\n      <a href=\"/discounts/izgotavlivaem_shkafy_kupe_i_kuhonnye_garnitury/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/uspejte_zakazat_po_starym_cenam_zvonite/\" class=\"curp_a\"><img src=\"/f/discount/pre_uspej.png\" alt=\"Успейте заказать по старым ценам! Звоните!\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">Успейте заказать по старым ценам! Звоните!</p>\n        <div>\n      <a href=\"/discounts/uspejte_zakazat_po_starym_cenam_zvonite/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/pri_zakaze_odnogo_natyazhnogo_potolka__vtoroj_v_podarok/\" class=\"curp_a\"><img src=\"/f/discount/pre_podarok.png\" alt=\"При заказе одного натяжного потолка - второй в подарок!\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">При заказе одного натяжного потолка - второй в подарок!</p>\n        <div>\n      <a href=\"/discounts/pri_zakaze_odnogo_natyazhnogo_potolka__vtoroj_v_podarok/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/poetapnaya_oplata_za_kazhdyj_blok_rabot/\" class=\"curp_a\"><img src=\"/f/discount/pre_oplata.png\" alt=\"Поэтапная оплата за каждый блок работ!\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">Поэтапная оплата за каждый блок работ!</p>\n        <div>\n      <a href=\"/discounts/poetapnaya_oplata_za_kazhdyj_blok_rabot/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/uborka_pomethenia/\" class=\"curp_a\"><img src=\"/f/discount/pre_uborka.png\" alt=\"Уборка помещения!\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">Уборка помещения!</p>\n        <div>\n      <a href=\"/discounts/uborka_pomethenia/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n<div class=\"dt wfull pb13 mt13 brbw1 brstd brc80\">\n  <div class=\"dtc vat pr20 posr\">\n    <a href=\"/discounts/pri_zakaze_kapitalnogo_remonta__natyazhnoj_potolok_v_podarok/\" class=\"curp_a\"><img src=\"/f/discount/pre_remont.jpg\" alt=\"При заказе капитального ремонта - натяжной потолок в подарок!\"></a>\n      </div>\n  <div class=\"dtc vat wfull\">\n    <p class=\"fz18 semibold\">При заказе капитального ремонта - натяжной потолок в подарок!</p>\n        <div>\n      <a href=\"/discounts/pri_zakaze_kapitalnogo_remonta__natyazhnoj_potolok_v_podarok/\" class=\"link fz16\">Подробнее</a>\n    </div>\n  </div>\n</div>\n</div>    </div>\n  </div>\n\n<div id=\"grecaptcha-token\"></div>\n<!-- counters -->\n  <!-- Yandex.Metrika counter --> <script type=\"text/javascript\">let ymCounter = 45102267; (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\"); ym(ymCounter, \"init\", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src=\"https://mc.yandex.ru/watch/45102267\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript> <!-- /Yandex.Metrika counter -->\n\n  <div class=\"go-top-button-container\">\n    <div class=\"wrapper h0 tar\">\n      <div id=\"go-top-button\"><div></div></div>\n    </div>\n  </div>\n<script type=\"text/javascript\" src=\"/assets/7f559c51ca35375c904ee95a938bd0f8/compiled.js\"></script>\n<script type=\"text/javascript\" src=\"https://www.google.com/recaptcha/api.js?render=6LcKFa0pAAAAAJ8QZqzgMCGrP7tLetb2forXMt55\"></script>\n<script type=\"text/javascript\">\n/*<![CDATA[*/\njQuery(function($) {\ngrecaptcha.ready(()=>{let grecaptchaTokenUpdater=setTimeout(function request(){grecaptcha.execute(\"6LcKFa0pAAAAAJ8QZqzgMCGrP7tLetb2forXMt55\",{action:\"contact\"}).then((token)=>{$(\"#grecaptcha-token\").data(\"value\",token);grecaptchaTokenUpdater=setTimeout(request, 110000);});})});\njQuery('body').on('click','#yw7_submit',function(){jQuery.ajax({'type':'POST','dataType':'json','beforeSend':function(){$(\"#yw7_submit\").prop(\"disabled\", true);$.mouseLoader(true);},'url':'\\x2Fcallback\\x2F','success':function(resp){checkResponse(resp, $(\"#yw7\"));},'error':function(resp){alert(resp.responseText);$.mouseLoader(false);},'complete':function(){$(\"#yw7_submit\").prop(\"disabled\", false);},'data':$(\"#yw7\").serialize().concat(\"&grecaptcha=\", $(\"#grecaptcha-token\").data(\"value\")),'cache':false});return false;});\njQuery('#yw7').yiiactiveform({'validateOnSubmit':true,'validateOnChange':true,'attributes':[{'id':'Callback_phone','inputID':'Callback_phone','errorID':'Callback_phone_em_','model':'Callback','name':'phone','enableAjaxValidation':true,'summary':true},{'id':'Callback_name','inputID':'Callback_name','errorID':'Callback_name_em_','model':'Callback','name':'name','enableAjaxValidation':true,'summary':true},{'summary':true},{'summary':true}],'summaryID':'yw7_es_','errorCss':'error'});\njQuery('body').on('click','#yw8_submit',function(){jQuery.ajax({'type':'POST','dataType':'json','beforeSend':function(){$(\"#yw8_submit\").prop(\"disabled\", true);$.mouseLoader(true);},'url':'\\x2Fcallback\\x2F','success':function(resp){checkResponse(resp, $(\"#yw8\"));},'error':function(resp){alert(resp.responseText);$.mouseLoader(false);},'complete':function(){$(\"#yw8_submit\").prop(\"disabled\", false);},'data':$(\"#yw8\").serialize().concat(\"&grecaptcha=\", $(\"#grecaptcha-token\").data(\"value\")),'cache':false});return false;});\njQuery('#yw8').yiiactiveform({'validateOnSubmit':true,'validateOnChange':true,'attributes':[{'id':'Callback_phone','inputID':'Callback_phone','errorID':'Callback_phone_em_','model':'Callback','name':'phone','enableAjaxValidation':true,'summary':true},{'id':'Callback_name','inputID':'Callback_name','errorID':'Callback_name_em_','model':'Callback','name':'name','enableAjaxValidation':true,'summary':true},{'id':'Callback_content','inputID':'Callback_content','errorID':'Callback_content_em_','model':'Callback','name':'content','enableAjaxValidation':true,'summary':true},{'summary':true}],'summaryID':'yw8_es_','errorCss':'error'});\n});\n/*]]>*/\n</script>\n\n<div><div class=\"grecaptcha-badge\" data-style=\"bottomright\" style=\"width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;\"><div class=\"grecaptcha-logo\"><iframe title=\"reCAPTCHA\" width=\"256\" height=\"60\" role=\"presentation\" name=\"a-2vfboi3j2dp0\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcKFa0pAAAAAJ8QZqzgMCGrP7tLetb2forXMt55&amp;co=aHR0cHM6Ly9yZW1vbnR5LWVrYi5ydTo0NDM.&amp;hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=invisible&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=rb7zoioqls4\"></iframe></div><div class=\"grecaptcha-error\"></div><textarea id=\"g-recaptcha-response-100000\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div><iframe style=\"display: none;\"></iframe></div></body></html>",
+  "text": "Ремонт квартир в Екатеринбурге | Без предоплаты, недорого, цены Скидка % на ремонт при заказе с сайта Скидка % на ремонт при заказе с сайта Скидка % на ремонт при заказе с сайта Скидка % на ремонт при заказе с сайта Скидка % на ремонт при заказе с сайта Главная Цены Скидки Портфолио О компании Отзывы Контакты Акции Ремонты квартир Компания \"Рем Строй Монтаж\" Работаем с 2008 года +7 (343) 289-42-41 с 9:00 до 20:00 /без выходных/ Заказать звонок Ремонт квартир По типу Недорогой Косметический Новостройки Ремонт под ключ Евроремонт Хрущевки Квартира под сдачу По комнате Ванная Санузел Коридор Кухня Комнаты Балкон (лоджия) Виды работ По типу Полы Стены Потолки Плитка Гипсокартон Электрика Демонтаж Сантехника Ремонт помещений По типу Ремонт офисов Нежилые помещения Магазины Кафе и рестораны Коммерческий ремонт Ремонт коттеджей Отделка квартир Черновая отделка Чистовая отделка Дизайн Дизайн-проекты Дизайнерский ремонт Внимание: Скидки при обращении с сайта Примеры работ Наши расценки Выезд мастера и составление сметы БЕСПЛАТНО Ремонт квартир Екатеринбург Компания \"Рем Строй Монтаж\" профессионально выполнит ремонт квартир в Екатеринбурге, проведет отделку офисов и помещений. Работаем на рынке с 2008 года и гарантируем высочайшее качество услуг. Все работы оказываются в рамках договора, предоставляется гарантия. У нас можно заказать не только комплексные ремонты под ключ, но и небольшие работы, в том числе демонтажные и сантехнические. Все сотрудники граждане РФ. В штате не только универсалы-отделочники, но и специалисты узкого профиля: плиточники, электрики, сантехники. Средний стаж работы в компании более 3 лет. Качество Идеальный результат ремонта, совпадающий на 100% с вашими ожиданиями. Договор Ремонт без риска! Работаем с заказчиками строго по договору. Доступные цены Наши цены разумны и адекватны. Никаких скрытых наценок. Опыт В штате только опытные и \"безпроблемные\" мастера. Наши работы Наши цены Стоимость самых распространенных ремонтных работ в Екатеринбурге. Ознакомиться со всеми расценками можно на странице прайс-листа Наименование работ Ед. изм. Цена, руб. Предпродажная подготовка Предпродажная подготовка квартиры (Хоум-стейджинг) от 10000 Устройство стяжки пола Устройство бетонной стяжки пола (до 5 см) м² 700 Устройство деревянного пола Устройство лаг м² 500 Укладка ламината на пол м² 600 Укладка ковролина м² 400 Штукатурные работы Штукатурка стен под правило (выравнивание стен) м² 600 Штукатурка стен по маякам м² 850 Работы по гипсокартону Монтаж металлического каркаса м² 500 Монтаж гипсокартона на каркас в 1 слой м² 750 Монтаж перегородок из гипсокартона м² от 1800 Работы с обоями Поклейка обоев на стены (бумажные, флизелиновые, виниловые) м² 500 Поклейка обоев под окраску м² 450 Устройство подвесного потолка Монтаж потолка из гипсокартона (в один слой) м² от 800 Монтаж двухуровнего потолка из ГКЛ м² от 1400 Установка матовых натяжных потолков м² от 700 Установка глянцевых натяжных потолков м² от 700 Плиточные работы Укладка керамической плитки на пол м² от 3000 Укладка плитки на стены м² от 3000 Укладка плитки нестандартного размера на стены м² от 3600 Преимущества и особенности работы Поэтапная оплата . Заказывая ремонт квартиры у нас, вы получите безупречное качество за разумные деньги. При никаких предоплат не требуется, оплата по факту выполненной работы. Частичный ремонт . Работаем с любыми разумными объемами. У нас можно заказать отдельные виды работ, в том числе и частичный ремонт. Ремонт под ключ . У нас можно заказать комплексный ремонт под ключ, начиная от разработки дизайн-проекта и заканчивая финишной отделкой под ключ. Вы въезжаете в уже готовую квартиру. Дмитрий Мастер-бригадир +7 (343) 289-42-41 Опыт работы - более 15 лет. Специализация - выезд на объект, составление смет, контроль за бригадой и мастерами. Алексей Прием заявок +7 (343) 289-42-41 Опыт работы - более 5 лет. Всегда вежлив и хорошо представляет особенности работы. Получи консультацию ПРЯМО СЕЙЧАС Бесплатно Оставить заявку +7 (343) 289-42-41 Заказать звонок г. Екатеринбург ул. Добролюбова, 16/2 info@remonty-ekb.ru Ремонт квартир Недорогой Косметический Новостройки Под ключ Евроремонт Ванная Виды работ Полы Стены Потолки Сантехника Электрика Демонтаж Плитка Гипсокартон Ремонт помещений Ремонт офисов Нежилые помещения Магазины Кафе и рестораны Информация Главная Цены Скидки Портфолио О компании Отзывы Контакты © «Рем Строй Монтаж». Все права защищены. 2008 - 2026 Сайт не является публичной офертой и носит информационный характер Ограничение ответственности Партнеры Создание сайта Заказать звонок Номер телефона * Ваше имя Заказать звонок Номер телефона * Ваше имя Комментарий Акции Действующие акции Скидка 10% на ремонт при заказе с сайта до конца мая Подробнее Изготавливаем шкафы купе и кухонные гарнитуры Подробнее Успейте заказать по старым ценам! Звоните! Подробнее При заказе одного натяжного потолка - второй в подарок! Подробнее Поэтапная оплата за каждый блок работ! Подробнее Уборка помещения! Подробнее При заказе капитального ремонта - натяжной потолок в подарок! Подробнее",
+  "json_ld": [],
+  "document": {
+    "title": "Ремонт квартир в Екатеринбурге | Без предоплаты, недорого, цены",
+    "meta_description": "Профессиональный ремонт квартир в Екатеринбурге. Честные цены и скидки. Многолетний опыт. Гарантия на все виды работ.",
+    "meta_robots": "",
+    "viewport": "width=1200, target-densitydpi=device-dpi",
+    "canonical": "https://remonty-ekb.ru/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/price/",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/info/skidki/",
+        "text": "Скидки",
+        "rel": ""
+      },
+      {
+        "href": "/info/portfolio/",
+        "text": "Портфолио",
+        "rel": ""
+      },
+      {
+        "href": "/info/company/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/response/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/contact/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Ремонты квартир",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73432894241",
+        "text": "+7 (343) 289-42-41",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Заказать звонок",
+        "rel": ""
+      },
+      {
+        "href": "https://wa.me/79920064044",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/%2B79920064044",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/",
+        "text": "Ремонт квартир",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/nedorogoj/",
+        "text": "Недорогой",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/kosmeticheskij/",
+        "text": "Косметический",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/novostrojki/",
+        "text": "Новостройки",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/pod_kljuch/",
+        "text": "Ремонт под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/evroremont/",
+        "text": "Евроремонт",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/hruthevki/",
+        "text": "Хрущевки",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/kvartira_pod_sdachu/",
+        "text": "Квартира под сдачу",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/vannaya_komnata/",
+        "text": "Ванная",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/sanuzel/",
+        "text": "Санузел",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/koridor/",
+        "text": "Коридор",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/kuhnya/",
+        "text": "Кухня",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/komnaty/",
+        "text": "Комнаты",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/balkon_lodjia/",
+        "text": "Балкон (лоджия)",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/",
+        "text": "Виды работ",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/poly/",
+        "text": "Полы",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/steny/",
+        "text": "Стены",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/potolki/",
+        "text": "Потолки",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/plitka/",
+        "text": "Плитка",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/gipsokarton/",
+        "text": "Гипсокартон",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/elektrika/",
+        "text": "Электрика",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/demontazh/",
+        "text": "Демонтаж",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/santehnika/",
+        "text": "Сантехника",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/",
+        "text": "Ремонт помещений",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/remont_ofisov/",
+        "text": "Ремонт офисов",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/negilye/",
+        "text": "Нежилые помещения",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/magaziny/",
+        "text": "Магазины",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/kafe/",
+        "text": "Кафе и рестораны",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/kommercheskij_remont/",
+        "text": "Коммерческий ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kottedzhej/",
+        "text": "Ремонт коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/otdelka-kvartir/",
+        "text": "Отделка квартир",
+        "rel": ""
+      },
+      {
+        "href": "/otdelka-kvartir/chernovaja/",
+        "text": "Черновая отделка",
+        "rel": ""
+      },
+      {
+        "href": "/otdelka-kvartir/chistovaja/",
+        "text": "Чистовая отделка",
+        "rel": ""
+      },
+      {
+        "href": "/dizajn/",
+        "text": "Дизайн",
+        "rel": ""
+      },
+      {
+        "href": "/dizajn/proekty/",
+        "text": "Дизайн-проекты",
+        "rel": ""
+      },
+      {
+        "href": "/dizajn/remont/",
+        "text": "Дизайнерский ремонт",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Внимание: Скидки при обращении с сайта",
+        "rel": ""
+      },
+      {
+        "href": "/info/portfolio/",
+        "text": "Примеры работ",
+        "rel": ""
+      },
+      {
+        "href": "/price/",
+        "text": "Наши расценки",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Выезд мастера и составление сметы БЕСПЛАТНО",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_6.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_11.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_8.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_7.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_5.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remonty_ekaterinburg_10.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/price/",
+        "text": "прайс-листа",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remont_ekb_1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remont_ekb_3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/f/gallery/remont_ekb_2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73432894241",
+        "text": "+7 (343) 289-42-41",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73432894241",
+        "text": "+7 (343) 289-42-41",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Получи консультацию ПРЯМО СЕЙЧАС Бесплатно",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Оставить заявку",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73432894241",
+        "text": "+7 (343) 289-42-41",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Заказать звонок",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@remonty-ekb.ru",
+        "text": "info@remonty-ekb.ru",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/",
+        "text": "Ремонт квартир",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/nedorogoj/",
+        "text": "Недорогой",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/kosmeticheskij/",
+        "text": "Косметический",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/novostrojki/",
+        "text": "Новостройки",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/pod_kljuch/",
+        "text": "Под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/evroremont/",
+        "text": "Евроремонт",
+        "rel": ""
+      },
+      {
+        "href": "/remont-kvartir/vannaya_komnata/",
+        "text": "Ванная",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/",
+        "text": "Виды работ",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/poly/",
+        "text": "Полы",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/steny/",
+        "text": "Стены",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/potolki/",
+        "text": "Потолки",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/santehnika/",
+        "text": "Сантехника",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/elektrika/",
+        "text": "Электрика",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/demontazh/",
+        "text": "Демонтаж",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/plitka/",
+        "text": "Плитка",
+        "rel": ""
+      },
+      {
+        "href": "/raboty/gipsokarton/",
+        "text": "Гипсокартон",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/",
+        "text": "Ремонт помещений",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/remont_ofisov/",
+        "text": "Ремонт офисов",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/negilye/",
+        "text": "Нежилые помещения",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/magaziny/",
+        "text": "Магазины",
+        "rel": ""
+      },
+      {
+        "href": "/pomeshenija/kafe/",
+        "text": "Кафе и рестораны",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/price/",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/info/skidki/",
+        "text": "Скидки",
+        "rel": ""
+      },
+      {
+        "href": "/info/portfolio/",
+        "text": "Портфолио",
+        "rel": ""
+      },
+      {
+        "href": "/info/company/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/response/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/contact/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/info/disclaimer/",
+        "text": "Ограничение ответственности",
+        "rel": ""
+      },
+      {
+        "href": "/info/partnery/",
+        "text": "Партнеры",
+        "rel": ""
+      },
+      {
+        "href": "https://www.d-fresh.ru/",
+        "text": "Создание сайта",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/skidka_na_remont_pri_zakaze_s_sajta_do_31/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/skidka_na_remont_pri_zakaze_s_sajta_do_31/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/izgotavlivaem_shkafy_kupe_i_kuhonnye_garnitury/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/izgotavlivaem_shkafy_kupe_i_kuhonnye_garnitury/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/uspejte_zakazat_po_starym_cenam_zvonite/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/uspejte_zakazat_po_starym_cenam_zvonite/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/pri_zakaze_odnogo_natyazhnogo_potolka__vtoroj_v_podarok/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/pri_zakaze_odnogo_natyazhnogo_potolka__vtoroj_v_podarok/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/poetapnaya_oplata_za_kazhdyj_blok_rabot/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/poetapnaya_oplata_za_kazhdyj_blok_rabot/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/uborka_pomethenia/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/uborka_pomethenia/",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/pri_zakaze_kapitalnogo_remonta__natyazhnoj_potolok_v_podarok/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/discounts/pri_zakaze_kapitalnogo_remonta__natyazhnoj_potolok_v_podarok/",
+        "text": "Подробнее",
+        "rel": ""
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [
+      "Ремонт квартир Екатеринбург"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 12,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 119,
+      "image": 30,
+      "list_item": 78,
+      "strong": 0,
+      "form": 2,
+      "input": 8
+    }
+  }
+}

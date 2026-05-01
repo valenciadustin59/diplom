@@ -262,6 +262,25 @@ def _row_key(query: str, url: str) -> str:
     return f"{query}|{url}"
 
 
+def _deduplicate_search_results(
+    seed: TrainingSeed,
+    raw_results: list[dict[str, object]],
+    written_keys: set[str],
+) -> list[dict[str, object]]:
+    deduplicated: list[dict[str, object]] = []
+    seen_keys: set[str] = set()
+    for result in raw_results:
+        url = str(result.get("url") or "").strip()
+        if not url:
+            continue
+        key = _row_key(seed.query, url)
+        if key in written_keys or key in seen_keys:
+            continue
+        seen_keys.add(key)
+        deduplicated.append(result)
+    return deduplicated
+
+
 def _read_existing_keys(csv_path: Path) -> set[str]:
     if not csv_path.exists():
         return set()
@@ -590,11 +609,7 @@ def build_dataset(
                 continue
 
             raw_results = _fetch_seed_page(seed, serp_page=serp_page)
-            raw_results = [
-                result
-                for result in raw_results
-                if _row_key(seed.query, str(result.get("url") or "")) not in written_keys
-            ]
+            raw_results = _deduplicate_search_results(seed, raw_results, written_keys)
 
             success_rows: list[dict[str, object]] = []
             failure_rows: list[dict[str, object]] = []

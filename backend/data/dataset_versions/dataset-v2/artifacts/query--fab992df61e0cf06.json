@@ -1,0 +1,663 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kbyro.ru/",
+  "final_url": "https://kbyro.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "max-age=604800, private, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html",
+    "date": "Fri, 01 May 2026 15:00:26 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx/1.27.4",
+    "set-cookie": "PHPSESSID=apbfrk47njbu9d1d6vak1qcfs7; path=/",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/5.2.17-pl0-gentoo"
+  },
+  "response_time_ms": 7113.3534,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:00:32.702953+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t<meta charset=\"UTF-8\">\n\t<title>Изготовление шкафов-купе на заказ в Санкт-Петербурге</title>\n\t<meta name=\"Description\" content=\"Производство шкафов купе в СПб. Осуществляем изготовление мебели на заказ по индивидуальным размерам и проектам. Приглашаем купить недорого продукцию эконом у производителя.\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"//kbyro.ru/theme/kbyro/style.css?v=1480\">\n\t<link rel=\"shortcut icon\" href=\"/favicon.ico\">\n\t\n\t<script type=\"text/javascript\" async=\"\" src=\"//code.jivosite.com/script/widget/YTPSagf9p9\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script src=\"//kbyro.ru/jquery/jquery.js\"></script>\n\t<meta name=\"viewport\" content=\"width=980\">\n\t<meta name=\"yandex-verification\" content=\"9b3bc0cb18f5623f\">\n<link rel=\"stylesheet\" href=\"https://code.jivosite.com/css/cdddffe/widget.css\" class=\"jv-css\"></head>\n<body>\n\t<!-- Определение браузера ИЕ 8 -->\n\t<!--[if lte IE 8]> \n\t\t<div style='width: 100%; background: #e5e5e5; text-align: center'>Браузер, который вы используете, не может корректно отобразить эту страницу. <a href='//www.google.com/chrome/'>Пожалуйста, обновите его</a></div>\n\t<![endif]-->\n\t<div id=\"black\">\n\t</div>\n\t<div id=\"mod\">\n\t\t<div id=\"mod_close\"></div>\n\t\t<div id=\"modbox\"></div>\n\t</div>\n\t<div class=\"v_cont\" data-p=\"3\" data-f=\"0\">\n\t\t<div class=\"v0 v0a\">\n\t\t\t<div class=\"v1 v1a\">\n\t\t\t\t<a href=\"https://vk.com/public171334254\" rel=\"external\" class=\"v138\" target=\"_blank\">Мы в контакте</a>\n\t\t\t\t<a href=\"mailto:kbyro@yandex.ru\" class=\"v2\" rel=\"external\" target=\"_blank\">kbyro@yandex.ru</a>\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"v0 v0b\">\n\t\t\t<div class=\"v1 v1b\">\n\t\t\t\t<div class=\"vt14\">\n\t\t\t\t\t<div class=\"v_menu_close\"></div>\n\t\t\t\t\t<a href=\"/o_kompanii\" class=\"v122  \">О компании</a>\n\t\t<div class=\"clear\"></div><a href=\"/uslugi\" class=\"v122  \">Услуги</a>\n\t\t<div class=\"clear\"></div><a href=\"/dostavka\" class=\"v122a \">Доставка</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/vizov_zamerschika\" class=\"v122a \">Вызов замерщика</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/podem_na_etazh\" class=\"v122a \">Подъём на этаж</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/sborka_mebeli\" class=\"v122a \">Сборка мебели</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/garantiya_na_mebel\" class=\"v122a \">Гарантия на мебель</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/rassrochka\" class=\"v122a \">Беспроцентная рассрочка на 6 мес.</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/kredit_na_336_mes\" class=\"v122a \">Кредит на 3-36 мес.</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/ceni\" class=\"v122  \">Цены</a>\n\t\t<div class=\"clear\"></div><a href=\"/catalog/kalkulyator_dverey_kupe\" class=\"v122a \">Калькулятор дверей-купе</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kalkulyator_shkafov_kupe\" class=\"v122a \">Калькулятор шкафов-купе</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/otpravit_eskiz_na_raschet\" class=\"v122a \">Отправить эскиз на расчёт</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/oplata\" class=\"v122a \">Оплата онлайн</a>\n\t\t\t\t<div class=\"clear\"></div><a href=\"/kak_zakazat\" class=\"v122  \">Как заказать</a>\n\t\t<div class=\"clear\"></div><a href=\"/kontakti\" class=\"v122  \">Контакты</a>\n\t\t<div class=\"clear\"></div><a href=\"/akcii_i_skidki\" class=\"v122 topmv \">Акции и скидки</a>\n\t\t<div class=\"clear\"></div>\n\t\t\t\t\t<div class=\"v31\"></div>\n\t\t\t\t\t<div class=\"v26\">\n\t\t\t\t\t\tКаталог\n\t\t\t\t\t</div>\n\t\t\t\t\t<a href=\"/catalog/dveri_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tДвери купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tШкафы купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kalkulyator_shkafov_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКалькулятор шкафов купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kalkulyator_dverey_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКалькулятор дверей купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kuhni_do_30_000_rub\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКухни до 30 000 руб\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kuhni_do_60_000_rub\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКухни до 60 000 руб\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t<div class=\"v31\"></div>\n\t\t\t\t\t<div class=\"v26\">\n\t\t\t\t\t\tИнформация\n\t\t\t\t\t</div>\n\t\t\t\t\t<a href=\"/galereya_mebeli\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tГАЛЕРЕЯ НАШЕЙ МЕБЕЛИ\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/kuhni_na_zakaz\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tКухни на заказ\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/materiali_dlya_sistem_kupe\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tМатериалы для систем купе.\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/sposobi_oplati\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tСпособы оплаты\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/voprosotvet\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tВопрос-Ответ.\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div>\n\t\t\t\t\t<div class=\"v31\"></div>\n\t\t<div class=\"v26\">\n\t\t\tШкафы-купе\n\t\t</div><a href=\"/catalog/shkafi_kupe_s_zerkalom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tС зеркалом\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/dvuhdvernie_shkafi_kupe_s_zerkalom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tДвухдверные с зеркалом\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/trehdvernie_shkafi_kupe_s_zerkalom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tТрехдверные с зеркалом\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/zerkalnie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tЗеркальные\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe_bez_zerkal\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tБез зеркал\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/belie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tБелые\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe_s_peskostruynim_risunkom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tПескоструй\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe_v_prihozhuu\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tВ прихожую\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/vstraivaemie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tВстроенные\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/uglovie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tУгловые\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t<div class=\"v123\">\n\t\t\t\t\t\tСанкт-Петербург, ул. Есенина д. 30\n\t\t\t\t\t\t<div class=\"v8\">\n\t\t\t\t\t\t\t<a href=\"tel:8125950992\">(812) 595-09-92</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v9\">\n\t\t\t\t\t\t\t<a href=\"tel:8129602485\">(812) 960-24-85</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v_menu\"></div>\n\t\t\t\t<a href=\"/\" class=\"v3\"></a>\n\t\t\t\t<div class=\"v4\">\n\t\t\t\t\t<div class=\"v5 v5a\"></div>\n\t\t\t\t\t<div class=\"v6\">\n\t\t\t\t\t\t<div class=\"v7\">\n\t\t\t\t\t\t\tРежим работы\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v8\">\n\t\t\t\t\t\t\t<div class=\"v10\">Пн-Сб:</div>\n\t\t\t\t\t\t\t<div class=\"v11\">10:00 - 20:00</div>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v9\">\n\t\t\t\t\t\t\t<div class=\"v10\">Вс:</div>\n\t\t\t\t\t\t\t<div class=\"v11\">12:00 - 18:00</div>\n\t\t\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v4\">\n\t\t\t\t\t<div class=\"v5 v5b\"></div>\n\t\t\t\t\t<div class=\"v6\">\n\t\t\t\t\t\t<div class=\"v7\">\n\t\t\t\t\t\t\tАдрес\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v8 v8a\">\n\t\t\t\t\t\t\tСанкт-Петербург\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v9\">\n\t\t\t\t\t\t\tул. Есенина д. 30\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v4 v4a\">\n\t\t\t\t\t<div class=\"v5 v5c\"></div>\n\t\t\t\t\t<div class=\"v6\">\n\t\t\t\t\t\t<div class=\"v7\">\n\t\t\t\t\t\t\tТелефон\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v8\">\n\t\t\t\t\t\t\t<a href=\"tel:8125950992\">(812) 595-09-92</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v9\">\n\t\t\t\t\t\t\t<a href=\"tel:8129602485\">(812) 960-24-85</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v12 dialog\" id=\"zakaz_zvonka\" data-id=\"zakaz_zvonka\">Заказать звонок</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"clear\"></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"v0 v0b\">\n\t\t\t<div class=\"v1 v1c\">\n\t\t\t\t<a href=\"/o_kompanii\" class=\"topm topm0   \">О компании</a><div class=\"topm topmm    \">\n\t\t\t\t<a href=\"/uslugi\">Услуги</a>\n\t\t\t\t<span class=\"topmb\"><a href=\"/dostavka\" class=\"topmbl\">Доставка</a><a href=\"/vizov_zamerschika\" class=\"topmbl\">Вызов замерщика</a><a href=\"/podem_na_etazh\" class=\"topmbl\">Подъём на этаж</a><a href=\"/sborka_mebeli\" class=\"topmbl\">Сборка мебели</a><a href=\"/garantiya_na_mebel\" class=\"topmbl\">Гарантия на мебель</a><a href=\"/rassrochka\" class=\"topmbl\">Беспроцентная рассрочка на 6 мес.</a><a href=\"/kredit_na_336_mes\" class=\"topmbl\">Кредит на 3-36 мес.</a></span>\n\t\t\t</div><div class=\"topm topmm    \">\n\t\t\t\t<a href=\"/ceni\">Цены</a>\n\t\t\t\t<span class=\"topmb\"><a href=\"/catalog/kalkulyator_dverey_kupe\" class=\"topmbl\">Калькулятор дверей-купе</a><a href=\"/catalog/kalkulyator_shkafov_kupe\" class=\"topmbl\">Калькулятор шкафов-купе</a><a href=\"/otpravit_eskiz_na_raschet\" class=\"topmbl\">Отправить эскиз на расчёт</a><a href=\"/oplata\" class=\"topmbl\">Оплата онлайн</a></span>\n\t\t\t</div><a href=\"/kak_zakazat\" class=\"topm    \">Как заказать</a><a href=\"/kontakti\" class=\"topm    \">Контакты</a><a href=\"/akcii_i_skidki\" class=\"topm  topmv  \">Акции и скидки</a><div class=\"clear\"></div><div class=\"v119\">\n\t\t<div class=\"v120\">\n\t\t\t<a href=\"tel:8125950992\" class=\"v121\">(812) 595-09-92</a>\n\t\t\t<a href=\"tel:8129602485\" class=\"v121 v121a\">(812) 960-24-85</a>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div>\n\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"v0\">\n\t\t\t<div class=\"v1 v_content\">\n\t\t\n</div><a href=\"/akcii_i_skidki\" class=\"v20\" style=\"background: url(/images/banner/1518074241.jpg) top center no-repeat; background-size: cover;\">\n\t\t\t<span class=\"v21\">\n\t\t\t\t<span class=\"v22\">\n\t\t\t\t\t<span class=\"v22a\">Работаем с понедельника по субботу</span>\n\t\t\t\t\t<span class=\"v23\"></span>\n\t\t\t\t\t<span class=\"v23a\"></span>\n\t\t\t\t</span>\n\t\t\t</span>\n\t\t\t\n\t\t</a><div><div class=\"v1 v27\">\n\t<div class=\"v24\">\n\t\t<div class=\"v26\">\n\t\t\tКаталог\n\t\t</div>\n\t\t<a href=\"/catalog/dveri_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tДвери купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tШкафы купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kalkulyator_shkafov_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКалькулятор шкафов купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kalkulyator_dverey_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКалькулятор дверей купе\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kuhni_do_30_000_rub\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКухни до 30 000 руб\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/kuhni_do_60_000_rub\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tКухни до 60 000 руб\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div>\n\t\t<div class=\"v31\"></div>\n\t\t<div class=\"v26\">\n\t\t\tИнформация\n\t\t</div>\n\t\t<a href=\"/galereya_mebeli\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tГАЛЕРЕЯ НАШЕЙ МЕБЕЛИ\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/kuhni_na_zakaz\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tКухни на заказ\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/materiali_dlya_sistem_kupe\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tМатериалы для систем купе.\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/sposobi_oplati\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tСпособы оплаты\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div><a href=\"/voprosotvet\" class=\"v28 \">\n\t\t\t<span class=\"v29\">»</span>\n\t\t\t<span class=\"v30\">\n\t\t\t\tВопрос-Ответ.\n\t\t\t</span>\n\t\t\t<span class=\"clear\"></span>\n\t\t</a>\n\t\t<div class=\"clear\"></div>\n\t\t<div class=\"v31\"></div>\n\t\t<div class=\"v26\">\n\t\t\tШкафы-купе\n\t\t</div><a href=\"/catalog/shkafi_kupe_s_zerkalom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tС зеркалом\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/dvuhdvernie_shkafi_kupe_s_zerkalom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tДвухдверные с зеркалом\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/trehdvernie_shkafi_kupe_s_zerkalom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tТрехдверные с зеркалом\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/zerkalnie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tЗеркальные\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe_bez_zerkal\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tБез зеркал\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/belie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tБелые\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe_s_peskostruynim_risunkom\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tПескоструй\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/shkafi_kupe_v_prihozhuu\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tВ прихожую\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/vstraivaemie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tВстроенные\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div><a href=\"/catalog/uglovie_shkafi_kupe\" class=\"v28 \">\n\t\t\t\t<span class=\"v29\">»</span>\n\t\t\t\t<span class=\"v30\">\n\t\t\t\t\tУгловые\n\t\t\t\t</span>\n\t\t\t\t<span class=\"clear\"></span>\n\t\t\t</a>\n\t\t\t<div class=\"clear\"></div>\n\t</div>\n\t<div class=\"v25\"><div class=\"v34\">\n\t\t\t<div class=\"v32\"></div>\n\t\t\t<div class=\"v33\">\n\t\t\t\tПочему мы\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"v35\">\n\t\t\t<div class=\"v36\">\n\t\t\t\t<div class=\"v37\">\n\t\t\t\t\t19\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v38\">\n\t\t\t\t\tлет работы\n\t\t\t\t\t<br>\n\t\t\t\t\tна рынке\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"v36\">\n\t\t\t\t<div class=\"v37\">\n\t\t\t\t\t<img src=\"//kbyro.ru/theme/kbyro/images/pic4.png\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v38\">\n\t\t\t\t\tкороткие сроки\n\t\t\t\t\t<br>\n\t\t\t\t\tизготовления\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"v36\">\n\t\t\t\t<div class=\"v37\">\n\t\t\t\t\t12162\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v38\">\n\t\t\t\t\tвыполненных\n\t\t\t\t\t<br>\n\t\t\t\t\tзаказов\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"v36\">\n\t\t\t\t<div class=\"v37\">\n\t\t\t\t\t<img src=\"//kbyro.ru/theme/kbyro/images/pic3.png\" alt=\"\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"v38\">\n\t\t\t\t\tлучшая цена от\n\t\t\t\t\t<br>\n\t\t\t\t\tпроизводителя\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"clear\"></div>\n\t\t</div><a href=\"/catalog/kalkulyator_shkafov_kupe\" class=\"v39 \" style=\"background: url(/images/link/1517910238.jpg) center no-repeat;\">\n\t\t\t\t\t<div class=\"v40\">\n\t\t\t\t\t\tШкафы-купе по размерам\n\t\t\t\t\t</div>\n\t\t\t\t</a><a href=\"/catalog/kalkulyator_dverey_kupe\" class=\"v39 v39a\" style=\"background: url(/images/link/1517910307.jpg) center no-repeat;\">\n\t\t\t\t\t<div class=\"v40\">\n\t\t\t\t\t\tДвери-купе\n\t\t\t\t\t</div>\n\t\t\t\t</a><div class=\"clear v128\"></div><a href=\"https://kbyro.ru/catalog/shkafi_kupe\" class=\"v39 \" style=\"background: url(/images/link/1517910330.jpg) center no-repeat;\">\n\t\t\t\t\t<div class=\"v40\">\n\t\t\t\t\t\tШкафы купе\n\t\t\t\t\t</div>\n\t\t\t\t</a><div class=\"v39 v39a\" style=\"background: url(/images/link/1517910344.jpg) center no-repeat;\">\n\t\t\t\t\t<div class=\"v40\">\n\t\t\t\t\t\tГардеробные\n\t\t\t\t\t</div>\n\t\t\t\t</div><div class=\"clear v128\"></div><div class=\"v39 \" style=\"background: url(/images/link/1517910353.jpg) center no-repeat;\">\n\t\t\t\t\t<div class=\"v40\">\n\t\t\t\t\t\tКухни\n\t\t\t\t\t</div>\n\t\t\t\t</div><div class=\"v39 v39a\" style=\"background: url(/images/link/1517910368.jpg) center no-repeat;\">\n\t\t\t\t\t<div class=\"v40\">\n\t\t\t\t\t\tЛюбая корпусная мебель на заказ\n\t\t\t\t\t</div>\n\t\t\t\t</div><div class=\"clear\"></div></div>\n\t<div class=\"clear\"></div>\n</div>\n<div class=\"v41\">\n\t<div class=\"v1 v42\">\n\t\t<div class=\"v43\">\n\t\t\tПроизводство мебели\n\t\t</div>\n\t\t<div class=\"v44\"></div>\n\t\t<div class=\"v45\">\n\t\t\tКомпания KBYRO осуществляет производство корпусной мебели более 14 лет. Изготавливаем классические шкафы купе на заказ в СПб по индивидуальным размерам и проектам. Наличие собственной фабрики позволяет поддерживать уровень цен на 10-30% ниже рыночных, а также сочетать доступную стоимость и высокое качество продукции. Мы активно внедряем и применяем современные технологии, а также следим за развитием отрасли.\n\t\t</div>\n\t</div>\n</div>\n<div class=\"v1 v27\">\n\t<div class=\"v46\">\n\t\tСхема работы\n\t</div>\n\t<div class=\"v47\"></div>\n\t<div class=\"v48\">\n\t\tПредлагаем заказать и купить шкаф купе в СПб недорого от производителя по своим размерам.\n\t\t<br>\n\t\tНа все изделия предоставляется гарантия 3 года.\n\t</div>\n\t<div class=\"v49\">\n\t\t<div class=\"v50\">\n\t\t\t1\n\t\t</div>\n\t\t<div class=\"v51\">\n\t\t\t<div class=\"v52\">\n\t\t\t\tВызов замерщика\n\t\t\t</div>\n\t\t\t<div class=\"v53\">\n\t\t\t\tПозвоните нам или оставьте заявку на сайте.\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n\t<div class=\"v49 v49a\">\n\t\t<div class=\"v50\">\n\t\t\t2\n\t\t</div>\n\t\t<div class=\"v51\">\n\t\t\t<div class=\"v52\">\n\t\t\t\tЗаключение договора\n\t\t\t</div>\n\t\t\t<div class=\"v53\">\n\t\t\t\tРазработка эскиза, подбор материалов, согласование сроков и цен. Стоимость шкафа купе на заказ определяется после согласования всех деталей.\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n\t<div class=\"clear v54\"></div>\n\t<div class=\"v49\">\n\t\t<div class=\"v50\">\n\t\t\t3\n\t\t</div>\n\t\t<div class=\"v51\">\n\t\t\t<div class=\"v52\">\n\t\t\t\tИзготовление изделий\n\t\t\t</div>\n\t\t\t<div class=\"v53\">\n\t\t\t\tПроизводство мебели. Шкафы купе по индивидуальным размерам и проектам в Санкт-Петербурге изготавливаются в строго определенные сроки, указанные в договоре.\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n\t<div class=\"v49 v49a\">\n\t\t<div class=\"v50\">\n\t\t\t4\n\t\t</div>\n\t\t<div class=\"v51\">\n\t\t\t<div class=\"v52\">\n\t\t\t\tДоставка и установка\n\t\t\t</div>\n\t\t\t<div class=\"v53\">\n\t\t\t\tСобственная служба доставки и сервиса привезёт и установит мебель.\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n\t<div class=\"clear\"></div>\n</div>\n<div class=\"v55\"></div>\n\n<!--noindex-->\n<div class=\"v56\">\n\t<div class=\"v1\">\n\t\t<div class=\"v57\">\n\t\t\tЛучшие цены на шкафы-купе и встроенную мебель\n\t\t</div>\n\t\t<img src=\"//kbyro.ru/theme/kbyro/images/img4.jpg\" alt=\"\" class=\"v58\" style=\"margin-top: 10px;\">\n\t\t<div class=\"v59\">\n\t\t\t<div class=\"v60\">\n\t\t\t\tКомпания <span style=\"font-weight: bold;\">KBYRO</span> занимается производством корпусной мебели с 2004 года. У нас можно купить классические шкафы купе недорого эконом в Санкт-Петербурге на заказ: <a href=\"/catalog/zerkalnie_shkafi_kupe\">зеркальные</a>, <a href=\"/catalog/belie_shkafi_kupe\">белые</a>, <a href=\"/catalog/shkafi_kupe_s_peskostruynim_risunkom\">с пескоструйным рисунком</a> и любые другие. Ключевое направление нашей работы – проектирование и разработка мебели по индивидуальным параметрам клиента. Вся продукция изготавливается на основе современных, надежных и безопасных материалов. Особое внимание уделяется фурнитуре, так как традиционно именно эти элементы подвергаются наибольшей нагрузке.\n\t\t\t\t<br><br>\n\t\t\t\tВ 2013 году открылся интернет-магазин нашей компании. Теперь каждый клиент имеет возможность, не выходя из дома, купить <a href=\"/catalog/vstraivaemie_shkafi_kupe\">шкаф купе встроенный</a> в СПб на заказ по индивидуальным размерам недорого - <a href=\"/catalog/shkafi_kupe_v_prihozhuu\">в прихожую</a>, на кухню, в спальню, <a href=\"/catalog/shkafi_kupe_s_zerkalom\">с зеркалом</a> и <a href=\"/catalog/shkafi_kupe_bez_zerkal\">без зеркал</a>, <a href=\"/catalog/dvuhdvernie_shkafi_kupe_s_zerkalom\">двухдверные</a>, <a href=\"/catalog/trehdvernie_shkafi_kupe_s_zerkalom\">трехдверные</a> и т.д. Все изделия реализуются по цене производства - без торговой наценки. С учетом невысокой стоимости доставки и сборки, а также регулярных акций и скидок, предложение является уникальным на рынке.\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"clear\"></div>\n\t</div>\n</div>\n<!--/noindex-->\n\n<div class=\"v1\">\n\t<div class=\"v129\">\n\t\t<div class=\"v130\" id=\"cl_prev\"></div><div class=\"v131\">\n\t\t\t<div class=\"v132\" style=\"width: 900px;\"><div class=\"v133 \" title=\"\">\n\t\t\t\t\t\t\t<img src=\"/images/client/1517911036.png\" alt=\"\">\n\t\t\t\t\t\t</div><div class=\"v133 \" title=\"\">\n\t\t\t\t\t\t\t<img src=\"/images/client/1517911123.png\" alt=\"\">\n\t\t\t\t\t\t</div><div class=\"v133 \" title=\"\">\n\t\t\t\t\t\t\t<img src=\"/images/client/1517911126.png\" alt=\"\">\n\t\t\t\t\t\t</div><div class=\"v133 v133v\" title=\"\">\n\t\t\t\t\t\t\t<img src=\"/images/client/1517911129.png\" alt=\"\">\n\t\t\t\t\t\t</div><div class=\"clear\"></div></div>\n\t\t</div>\n\t\t<div class=\"v130 v130a\" id=\"cl_next\"></div>\n\t\t<div class=\"clear\"></div>\n\t\t<input type=\"hidden\" name=\"cl_i\" id=\"cl_i\" value=\"0\">\n\t\t<input type=\"hidden\" name=\"cl_num\" id=\"cl_num\" value=\"4\">\n\t\t<input type=\"hidden\" name=\"cl_tmp\" id=\"cl_tmp\" value=\"0\">\n\t\t<input type=\"hidden\" name=\"cl_w0\" id=\"cl_w0\" value=\"230\">\n\t\t<input type=\"hidden\" name=\"cl_n\" id=\"cl_n\" value=\"4\">\n\t</div><!--noindex--><div id=\"catalog_block\" class=\"v137\">\n\t\t<div class=\"v46\">\n\t\t\tПопулярные шкафы-купе\n\t\t</div>\n\t\t<div class=\"v47\"></div><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H21200_beliy\" class=\"vt106a\"><img src=\"/images/catalog/1522335371.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r1 rr1\" style=\"height: 90px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H21200_beliy\" class=\"vt109\">Белый шкаф купе для прихожей KBYRO H-2-1200</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">26 300 р.</div>\n\t\t\t\t<div class=\"vt101\">24 700 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy118' class='vt111 button' data-id='118'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy118').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '2739'\n\t\t\t\t\t\t\t, 'id' : '118'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '118'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '26 300'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '2739'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy118').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '118'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '26 300'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '2739'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '118'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '26 300'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '2739'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200_dverirazdelitelirazdeliteli\" class=\"vt106a\"><img src=\"/images/catalog/1518154706.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r1 rr1\" style=\"height: 90px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200_dverirazdelitelirazdeliteli\" class=\"vt109\">Шкаф купе без зеркал KBYRO H-2-1200</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">25 650 р.</div>\n\t\t\t\t<div class=\"vt101\">24 800 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy28' class='vt111 button' data-id='28'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy28').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '379'\n\t\t\t\t\t\t\t, 'id' : '28'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '28'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '25 650'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '379'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy28').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '28'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '25 650'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '379'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '28'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '25 650'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '379'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt_cl2\"></div>\n\t\t\t\t<script>\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr1').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr1').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t\t$(window).resize(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr1').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr1').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t</script><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_3h_dv_vitrazhpeskostruy_24002400600\" class=\"vt106a\"><img src=\"/images/catalog/1494869713.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r1 rr2\" style=\"height: 90px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_3h_dv_vitrazhpeskostruy_24002400600\" class=\"vt109\">Шкаф купе с пескоструйным рисунком 3-х дв. (2400-2400-600)</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">99 000 р.</div>\n\t\t\t\t<div class=\"vt101\">96 500 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy88' class='vt111 button' data-id='88'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy88').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '1685'\n\t\t\t\t\t\t\t, 'id' : '88'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '88'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '99 000'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '1685'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy88').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '88'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '99 000'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '1685'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '88'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '99 000'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '1685'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_s_dvumya_zerkalami_KBYRO_H21200\" class=\"vt106a\"><img src=\"/images/catalog/1517767211.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r1 rr2\" style=\"height: 90px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_s_dvumya_zerkalami_KBYRO_H21200\" class=\"vt109\">Шкаф купе зеркальный в прихожую KBYRO H-2-1200</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">29 515 р.</div>\n\t\t\t\t<div class=\"vt101\">28 900 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy29' class='vt111 button' data-id='29'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy29').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '393'\n\t\t\t\t\t\t\t, 'id' : '29'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '29'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '29 515'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '393'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy29').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '29'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '29 515'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '393'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '29'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '29 515'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '393'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt_cl2\"></div>\n\t\t\t\t<script>\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr2').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr2').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t\t$(window).resize(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr2').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr2').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t</script><div class=\"vt_cl3\"></div>\n\t\t\t\t<script>\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t\tif($(window).width() >= 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.r1').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.r1').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t\t$(window).resize(function(){\n\t\t\t\t\t\tif($(window).width() >= 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.r1').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.r1').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t</script><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200\" class=\"vt106a\"><img src=\"/images/catalog/1517664747.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r2 rr3\" style=\"height: 67px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200\" class=\"vt109\">Шкаф купе без зеркал KBYRO H-2-1200</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">24 970 р.</div>\n\t\t\t\t<div class=\"vt101\">24 300 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy27' class='vt111 button' data-id='27'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy27').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '365'\n\t\t\t\t\t\t\t, 'id' : '27'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '27'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '24 970'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '365'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy27').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '27'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '24 970'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '365'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '27'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '24 970'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '365'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_s_3_zerkalami_KBYRO_H31800\" class=\"vt106a\"><img src=\"/images/catalog/1518632472.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r2 rr3\" style=\"height: 67px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_s_3_zerkalami_KBYRO_H31800\" class=\"vt109\">Шкаф купе с 3 зеркалами KBYRO H-3-1800</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">39 900 р.</div>\n\t\t\t\t<div class=\"vt101\">36 900 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy32' class='vt111 button' data-id='32'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy32').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '435'\n\t\t\t\t\t\t\t, 'id' : '32'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '32'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '39 900'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '435'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy32').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '32'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '39 900'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '435'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '32'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '39 900'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '435'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt_cl2\"></div>\n\t\t\t\t<script>\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr3').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr3').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t\t$(window).resize(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr3').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr3').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t</script><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_c_zerkalom_i_dveru_s_delitelyami_KBYRO_H21200\" class=\"vt106a\"><img src=\"/images/catalog/1517768017.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r2 rr4\" style=\"height: 67px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_c_zerkalom_i_dveru_s_delitelyami_KBYRO_H21200\" class=\"vt109\">Двухдверный шкаф купе с зеркалом KBYRO H-2-1200</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">26 900 р.</div>\n\t\t\t\t<div class=\"vt101\">24 900 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy24' class='vt111 button' data-id='24'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy24').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '323'\n\t\t\t\t\t\t\t, 'id' : '24'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '24'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '26 900'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '323'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy24').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '24'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '26 900'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '323'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '24'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '26 900'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '323'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt106\">\n\t\t\n\t\t<div class=\"vt107\">\n\t\t\t<div>\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H42400_zerkalniy\" class=\"vt106a\"><img src=\"/images/catalog/1386264247.jpg\" alt=\"\"></a>\n\t\t\t</div>\n\t\t\t<div class=\"vt108 r2 rr4\" style=\"height: 67px;\">\n\t\t\t\t<a href=\"/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H42400_zerkalniy\" class=\"vt109\">Шкаф купе KBYRO H-4-2400 зеркальный</a>\n\t\t\t</div>\n\t\t\t<div class=\"vt110\">\n\t\t\t\t<div class=\"vt102\">58 000 р.</div>\n\t\t\t\t<div class=\"vt101\">56 550 р.</div>\n\t\t\t</div>\n\t\t\t\n\t\t<!--\t<div id='buy67' class='vt111 button' data-id='67'>Заказать</div>\t//-->\n\t\t\t<script>\n\t\t\t\t$('#buy67').click(function(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t'change_color' : '969'\n\t\t\t\t\t\t\t, 'id' : '67'\n\t\t\t\t\t\t},\n\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\tif(html == 0)\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'add_cart' : '67'\n\t\t\t\t\t\t\t\t\t\t, 'count' : 1\n\t\t\t\t\t\t\t\t\t\t, 'price' : '58 000'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '969'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#top_cart').html(html);\n\t\t\t\t\t\t\t\t\t\t$('#buy67').html('Уже в корзине!');\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t\t\t'mod_box' : '67'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'price' : '58 000'\n\t\t\t\t\t\t\t\t\t\t\t\t, 'color' : '969'\n\t\t\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\t\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t$.ajax({\n\t\t\t\t\t\t\t\t\turl: '/ajax.php',\n\t\t\t\t\t\t\t\t\ttype: 'POST',\n\t\t\t\t\t\t\t\t\tdata: {\n\t\t\t\t\t\t\t\t\t\t'mod_box1' : '67'\n\t\t\t\t\t\t\t\t\t\t, 'price' : '58 000'\n\t\t\t\t\t\t\t\t\t\t, 'color' : '969'\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsuccess: function(html){\n\t\t\t\t\t\t\t\t\t\t$('#black').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\t\t$('#mod').css({'display' : 'block'});\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t$('#modbox').html(html);\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\twin_auto();\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t});\t\n\t\t\t\t});\n\t\t\t</script>\n\t\t</div>\n\t</div><div class=\"vt_cl2\"></div>\n\t\t\t\t<script>\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr4').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr4').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t\t$(window).resize(function(){\n\t\t\t\t\t\tif($(window).width() < 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.rr4').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.rr4').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t</script><div class=\"vt_cl3\"></div>\n\t\t\t\t<script>\n\t\t\t\t\t$(document).ready(function(){\n\t\t\t\t\t\tif($(window).width() >= 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.r2').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.r2').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t\t$(window).resize(function(){\n\t\t\t\t\t\tif($(window).width() >= 960)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\th = 0;\n\t\t\t\t\t\t\t$('.r2').each(function(){\n\t\t\t\t\t\t\t\tif($(this).height() > h) h = $(this).height();\n\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t$('.r2').height(h);\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t</script><div class=\"clear\"></div>\n\t</div></div><!--/noindex-->\n\t\t\t</div>\n\t\n\t\t\t<div class=\"v0 v0c\">\n\t\t\t\t<div class=\"v1 v_center\">\n\t\t\t\t\t<div class=\"v18\">\n\t\t\t\t\t\t<div class=\"v14\">\n\t\t\t\t\t\t\t<a href=\"tel:8125950992\" class=\"v19\">(812) 595-09-92</a>, <a href=\"tel:8129602485\" class=\"v19\">(812) 960-24-85</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v15\">\n\t\t\t\t\t\t\t<a href=\"mailto:kbyro@yandex.ru\" class=\"v19\" rel=\"external\" target=\"_blank\">kbyro@yandex.ru</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v139\"><a href=\"https://vk.com/public171334254\" rel=\"external\" class=\"v138a\" target=\"_blank\">Мы в контакте</a></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"v16\">\n\t\t\t\t\t\t<a href=\"/poleznaya_informaciya\" class=\"v17\">Полезная информация</a>\n\t\t\t\t\t\t<a href=\"/politika_konfidencialnosti\" class=\"v17 v17a\">Политика конфиденциальности</a>\n\t\t\t\t\t\t<a href=\"/vozvrat_i_obmen_tovara\" class=\"v17\">Возврат и обмен товара</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"v13\">\n\t\t\t\t\t\t<div class=\"v14\">\n\t\t\t\t\t\t\t© Мебель на заказ\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"v15a\">\n\t\t\t\t\t\t\t«Kbyro.ru» 2007-2026г.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"clear\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<script src=\"//kbyro.ru/jquery/main.js?v=1659\"></script>\n\t<!-- BEGIN JIVOSITE CODE {literal} -->\n\t<script>\n\t(function(){ var widget_id = 'YTPSagf9p9';var d=document;var w=window;function l(){\n\tvar s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>\n\t<!-- {/literal} END JIVOSITE CODE -->\n\t<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');\n \n   ym(59797684, 'init', {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src='https://mc.yandex.ru/watch/59797684' style='position:absolute; left:-9999px;' alt='' /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n<div id=\"jivo-iframe-container\" style=\"opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;\"><iframe src=\"\" role=\"presentation\" allow=\"autoplay\" title=\"Jivochat\" name=\"jivo_container\" id=\"jivo_container\" frameborder=\"no\"></iframe></div><jdiv><jdiv class=\"globalClass__glXV3 global__bmC69 __light__T1MHS __green__Sr1G_ jv-copyright jv-windows jv-chrome jv-desktop\" style=\"--jv-font-family: 'Arial', system-ui, -apple-system, 'Arial', sans-serif;\"><jdiv translate=\"no\" class=\"notranslate\" style=\"animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: Label_CLOSE_WIDGET__jzm8j; display: block; z-index: 2147483646; position: fixed;\"><jdiv id=\"jvLabelWrap\" translate=\"no\" class=\"container__17Wxg __bottom__Udpfw __isShow__UDgTx notranslate\" style=\"--jv-label-font-size: 16px; --jv-label-font-style: normal; --jv-label-text-color: #ffffff; --jv-label-background: linear-gradient(95deg, #3a3d55 20%, #231d3b 80%); --jv-label-background-corner: #231d3b; max-width: calc(-80px + 100vw); bottom: 0px; right: 40px;\"><jdiv class=\"icon__QmncK\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200h20v20H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20d%3D%22M3%203h14a2%202%200%200%201%202%202v10a2%202%200%200%201-2%202H3a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20d%3D%22M16.074%207.064l-6.01%204.01-6.01-4.01%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv><jdiv class=\"hoverArea__uCpXp\"><jdiv class=\"menu__ASVkP __bottom__JZv0P\"></jdiv></jdiv><jdiv class=\"text__akV3R contentTransitionWrap__U7_Nd __bottom__LkT2Q __isOffline__Mr9sN\">Напишите нам сообщение!</jdiv><jdiv class=\"container__jP0yZ\"><jdiv class=\"logo__XTiQA\"><jdiv class=\"icon__pcGv2 __isBillRu__NnBkd\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225.688%22%20height%3D%2218%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M7.155%205.93H6.134a.4.4%200%2000-.287.128.378.378%200%2000-.123.268v7.448a.377.377%200%2000.123.28.389.389%200%2000.287.12h1.021a.382.382%200%2000.274-.12.353.353%200%2000.131-.28V6.33a.375.375%200%2000-.131-.268.353.353%200%2000-.274-.132zm9.313.02h-.824a.557.557%200%2000-.57.228l-2.353%205.04h-.041l-2.242-5.04a.379.379%200%2000-.369-.228H8.958a.356.356%200%2000-.328.14.289.289%200%2000.021.32l3.648%207.748a.376.376%200%2000.369.208h.111a.373.373%200%2000.348-.208l3.648-7.748a.288.288%200%2000.021-.32.368.368%200%2000-.328-.14zm4.935-.188a4.312%204.312%200%2000-4.3%204.276%204.212%204.212%200%20001.254%203.044%204.11%204.11%200%20003.038%201.284%204.069%204.069%200%20003.025-1.284%204.181%204.181%200%20001.262-3.044%204.313%204.313%200%2000-4.279-4.276zm1.783%206.156a2.379%202.379%200%2001-1.783.756%202.4%202.4%200%2001-1.8-.744%202.623%202.623%200%2001-.725-1.888%202.529%202.529%200%2001.725-1.84%202.427%202.427%200%20011.8-.736%202.368%202.368%200%20011.783.736%202.525%202.525%200%2001.725%201.84%202.669%202.669%200%2001-.725%201.876zM3.322%205.93H.416a.392.392%200%2000-.275.128.373.373%200%2000-.131.272v1a.386.386%200%2000.131.28.4.4%200%2000.275.12h1.475v7.17a1.331%201.331%200%2001-1.18%201.312H.416a.4.4%200%2000-.287.12.371.371%200%2000-.123.28v1a.415.415%200%2000.111.28.394.394%200%2000.295.12h.143a3.13%203.13%200%20003.152-2.9.848.848%200%2000.017-.188V6.33a.377.377%200%2000-.123-.28.365.365%200%2000-.279-.12z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%2362666c%22%20d%3D%22M.03-.006c-.254%204.676%203.681%205.34%203.681%205.34C3.515.214.03-.006.03-.006z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E&quot;);\"></jdiv></jdiv><jdiv class=\"tooltipWrapper__CcpSc\"><jdiv class=\"tooltip__Q7Rdh\"><a href=\"https://www.jivo.ru/i_sa/?utm_source=kbyro.ru&amp;utm_medium=link&amp;utm_content=label_tooltip&amp;utm_campaign=from_widget\" rel=\"nofollow noopener noreferrer\" target=\"_blank\" class=\"link__Hv8Ic\">Бизнес-мессенджер <jdiv class=\"icon__pcGv2 __isBillRu__NnBkd\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2225.688%22%20height%3D%2218%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M7.155%205.93H6.134a.4.4%200%2000-.287.128.378.378%200%2000-.123.268v7.448a.377.377%200%2000.123.28.389.389%200%2000.287.12h1.021a.382.382%200%2000.274-.12.353.353%200%2000.131-.28V6.33a.375.375%200%2000-.131-.268.353.353%200%2000-.274-.132zm9.313.02h-.824a.557.557%200%2000-.57.228l-2.353%205.04h-.041l-2.242-5.04a.379.379%200%2000-.369-.228H8.958a.356.356%200%2000-.328.14.289.289%200%2000.021.32l3.648%207.748a.376.376%200%2000.369.208h.111a.373.373%200%2000.348-.208l3.648-7.748a.288.288%200%2000.021-.32.368.368%200%2000-.328-.14zm4.935-.188a4.312%204.312%200%2000-4.3%204.276%204.212%204.212%200%20001.254%203.044%204.11%204.11%200%20003.038%201.284%204.069%204.069%200%20003.025-1.284%204.181%204.181%200%20001.262-3.044%204.313%204.313%200%2000-4.279-4.276zm1.783%206.156a2.379%202.379%200%2001-1.783.756%202.4%202.4%200%2001-1.8-.744%202.623%202.623%200%2001-.725-1.888%202.529%202.529%200%2001.725-1.84%202.427%202.427%200%20011.8-.736%202.368%202.368%200%20011.783.736%202.525%202.525%200%2001.725%201.84%202.669%202.669%200%2001-.725%201.876zM3.322%205.93H.416a.392.392%200%2000-.275.128.373.373%200%2000-.131.272v1a.386.386%200%2000.131.28.4.4%200%2000.275.12h1.475v7.17a1.331%201.331%200%2001-1.18%201.312H.416a.4.4%200%2000-.287.12.371.371%200%2000-.123.28v1a.415.415%200%2000.111.28.394.394%200%2000.295.12h.143a3.13%203.13%200%20003.152-2.9.848.848%200%2000.017-.188V6.33a.377.377%200%2000-.123-.28.365.365%200%2000-.279-.12z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%2362666c%22%20d%3D%22M.03-.006c-.254%204.676%203.681%205.34%203.681%205.34C3.515.214.03-.006.03-.006z%22%20fill-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E&quot;);\"></jdiv></a></jdiv></jdiv></jdiv><jdiv class=\"leaf__NmXJj\"><jdiv class=\"leaf__CFft7 _bottom__kDPM_\"><jdiv class=\"cssLeaf__BBk_b\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2240%22%20viewBox%3D%220%200%2032%2040%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23231d3b%22%20d%3D%22M0%200h9.02L32%2033.196V40H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23231d3b%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%235e5f61%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%220.7%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv></jdiv></jdiv></jdiv></jdiv><jdiv id=\"jivo-player\" class=\"player__DCKE5\"><audio preload=\"auto\" id=\"jivo-sound-agent_message\"><source src=\"https://code.jivosite.com/sounds/agent_message.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivosite.com/sounds/agent_message.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivosite.com/sounds/agent_message.wav\" type=\"audio/wav\"></audio><audio preload=\"auto\" id=\"jivo-sound-notification\"><source src=\"https://code.jivosite.com/sounds/notification.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivosite.com/sounds/notification.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivosite.com/sounds/notification.wav\" type=\"audio/wav\"></audio><audio preload=\"auto\" id=\"jivo-sound-outgoing_message\"><source src=\"https://code.jivosite.com/sounds/outgoing_message.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivosite.com/sounds/outgoing_message.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivosite.com/sounds/outgoing_message.wav\" type=\"audio/wav\"></audio></jdiv><jdiv id=\"jcont\" translate=\"no\" class=\"notranslate\" style=\"animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: WidgetContainer_CLOSE_WIDGET__sbXVl; --jright: 30px; --jheight: 496px; display: block; position: fixed; --jlabelwidth: 317px; --jlabelright: 40px;\"><jdiv dir=\"ltr\" id=\"jivo_action\" class=\"wrap__mirQH\"><jdiv id=\"jivo_close_button\" class=\"closeButton__EYmnW\"><jdiv class=\"closeIcon__ImyKe\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(2%202)%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%23FFF%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212.75%22%20stroke%3D%22%23222D38%22%20stroke-width%3D%221.5%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22%23222D38%22%20opacity%3D%221%22%20transform%3D%22translate(6%206)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22rotate(45%206.24%206.01)%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22scale(-1%201)%20rotate(45%200%20-9.058)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv></jdiv></jdiv></jdiv><jdiv class=\"jv-pseudo-height\"></jdiv><jdiv class=\"jv-mouse-track\"></jdiv></jdiv></jdiv></body></html>",
+  "text": "Изготовление шкафов-купе на заказ в Санкт-Петербурге Мы в контакте kbyro@yandex.ru О компании Услуги Доставка Вызов замерщика Подъём на этаж Сборка мебели Гарантия на мебель Беспроцентная рассрочка на 6 мес. Кредит на 3-36 мес. Цены Калькулятор дверей-купе Калькулятор шкафов-купе Отправить эскиз на расчёт Оплата онлайн Как заказать Контакты Акции и скидки Каталог » Двери купе » Шкафы купе » Калькулятор шкафов купе » Калькулятор дверей купе » Кухни до 30 000 руб » Кухни до 60 000 руб Информация » ГАЛЕРЕЯ НАШЕЙ МЕБЕЛИ » Кухни на заказ » Материалы для систем купе. » Способы оплаты » Вопрос-Ответ. Шкафы-купе » С зеркалом » Двухдверные с зеркалом » Трехдверные с зеркалом » Зеркальные » Без зеркал » Белые » Пескоструй » В прихожую » Встроенные » Угловые Санкт-Петербург, ул. Есенина д. 30 (812) 595-09-92 (812) 960-24-85 Режим работы Пн-Сб: 10:00 - 20:00 Вс: 12:00 - 18:00 Адрес Санкт-Петербург ул. Есенина д. 30 Телефон (812) 595-09-92 (812) 960-24-85 Заказать звонок О компании Услуги Доставка Вызов замерщика Подъём на этаж Сборка мебели Гарантия на мебель Беспроцентная рассрочка на 6 мес. Кредит на 3-36 мес. Цены Калькулятор дверей-купе Калькулятор шкафов-купе Отправить эскиз на расчёт Оплата онлайн Как заказать Контакты Акции и скидки (812) 595-09-92 (812) 960-24-85 Работаем с понедельника по субботу Каталог » Двери купе » Шкафы купе » Калькулятор шкафов купе » Калькулятор дверей купе » Кухни до 30 000 руб » Кухни до 60 000 руб Информация » ГАЛЕРЕЯ НАШЕЙ МЕБЕЛИ » Кухни на заказ » Материалы для систем купе. » Способы оплаты » Вопрос-Ответ. Шкафы-купе » С зеркалом » Двухдверные с зеркалом » Трехдверные с зеркалом » Зеркальные » Без зеркал » Белые » Пескоструй » В прихожую » Встроенные » Угловые Почему мы 19 лет работы на рынке короткие сроки изготовления 12162 выполненных заказов лучшая цена от производителя Шкафы-купе по размерам Двери-купе Шкафы купе Гардеробные Кухни Любая корпусная мебель на заказ Производство мебели Компания KBYRO осуществляет производство корпусной мебели более 14 лет. Изготавливаем классические шкафы купе на заказ в СПб по индивидуальным размерам и проектам. Наличие собственной фабрики позволяет поддерживать уровень цен на 10-30% ниже рыночных, а также сочетать доступную стоимость и высокое качество продукции. Мы активно внедряем и применяем современные технологии, а также следим за развитием отрасли. Схема работы Предлагаем заказать и купить шкаф купе в СПб недорого от производителя по своим размерам. На все изделия предоставляется гарантия 3 года. 1 Вызов замерщика Позвоните нам или оставьте заявку на сайте. 2 Заключение договора Разработка эскиза, подбор материалов, согласование сроков и цен. Стоимость шкафа купе на заказ определяется после согласования всех деталей. 3 Изготовление изделий Производство мебели. Шкафы купе по индивидуальным размерам и проектам в Санкт-Петербурге изготавливаются в строго определенные сроки, указанные в договоре. 4 Доставка и установка Собственная служба доставки и сервиса привезёт и установит мебель. Лучшие цены на шкафы-купе и встроенную мебель Компания KBYRO занимается производством корпусной мебели с 2004 года. У нас можно купить классические шкафы купе недорого эконом в Санкт-Петербурге на заказ: зеркальные , белые , с пескоструйным рисунком и любые другие. Ключевое направление нашей работы – проектирование и разработка мебели по индивидуальным параметрам клиента. Вся продукция изготавливается на основе современных, надежных и безопасных материалов. Особое внимание уделяется фурнитуре, так как традиционно именно эти элементы подвергаются наибольшей нагрузке. В 2013 году открылся интернет-магазин нашей компании. Теперь каждый клиент имеет возможность, не выходя из дома, купить шкаф купе встроенный в СПб на заказ по индивидуальным размерам недорого - в прихожую , на кухню, в спальню, с зеркалом и без зеркал , двухдверные , трехдверные и т.д. Все изделия реализуются по цене производства - без торговой наценки. С учетом невысокой стоимости доставки и сборки, а также регулярных акций и скидок, предложение является уникальным на рынке. Популярные шкафы-купе Белый шкаф купе для прихожей KBYRO H-2-1200 26 300 р. 24 700 р. Шкаф купе без зеркал KBYRO H-2-1200 25 650 р. 24 800 р. Шкаф купе с пескоструйным рисунком 3-х дв. (2400-2400-600) 99 000 р. 96 500 р. Шкаф купе зеркальный в прихожую KBYRO H-2-1200 29 515 р. 28 900 р. Шкаф купе без зеркал KBYRO H-2-1200 24 970 р. 24 300 р. Шкаф купе с 3 зеркалами KBYRO H-3-1800 39 900 р. 36 900 р. Двухдверный шкаф купе с зеркалом KBYRO H-2-1200 26 900 р. 24 900 р. Шкаф купе KBYRO H-4-2400 зеркальный 58 000 р. 56 550 р. (812) 595-09-92 , (812) 960-24-85 kbyro@yandex.ru Мы в контакте Полезная информация Политика конфиденциальности Возврат и обмен товара © Мебель на заказ «Kbyro.ru» 2007-2026г. Напишите нам сообщение! Бизнес-мессенджер",
+  "json_ld": [],
+  "document": {
+    "title": "Изготовление шкафов-купе на заказ в Санкт-Петербурге",
+    "meta_description": "Производство шкафов купе в СПб. Осуществляем изготовление мебели на заказ по индивидуальным размерам и проектам. Приглашаем купить недорого продукцию эконом у производителя.",
+    "meta_robots": "",
+    "viewport": "width=980",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "https://vk.com/public171334254",
+        "text": "Мы в контакте",
+        "rel": "external"
+      },
+      {
+        "href": "mailto:kbyro@yandex.ru",
+        "text": "kbyro@yandex.ru",
+        "rel": "external"
+      },
+      {
+        "href": "/o_kompanii",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "Услуги",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka",
+        "text": "Доставка",
+        "rel": ""
+      },
+      {
+        "href": "/vizov_zamerschika",
+        "text": "Вызов замерщика",
+        "rel": ""
+      },
+      {
+        "href": "/podem_na_etazh",
+        "text": "Подъём на этаж",
+        "rel": ""
+      },
+      {
+        "href": "/sborka_mebeli",
+        "text": "Сборка мебели",
+        "rel": ""
+      },
+      {
+        "href": "/garantiya_na_mebel",
+        "text": "Гарантия на мебель",
+        "rel": ""
+      },
+      {
+        "href": "/rassrochka",
+        "text": "Беспроцентная рассрочка на 6 мес.",
+        "rel": ""
+      },
+      {
+        "href": "/kredit_na_336_mes",
+        "text": "Кредит на 3-36 мес.",
+        "rel": ""
+      },
+      {
+        "href": "/ceni",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_dverey_kupe",
+        "text": "Калькулятор дверей-купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_shkafov_kupe",
+        "text": "Калькулятор шкафов-купе",
+        "rel": ""
+      },
+      {
+        "href": "/otpravit_eskiz_na_raschet",
+        "text": "Отправить эскиз на расчёт",
+        "rel": ""
+      },
+      {
+        "href": "/oplata",
+        "text": "Оплата онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/kak_zakazat",
+        "text": "Как заказать",
+        "rel": ""
+      },
+      {
+        "href": "/kontakti",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/akcii_i_skidki",
+        "text": "Акции и скидки",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/dveri_kupe",
+        "text": "» Двери купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe",
+        "text": "» Шкафы купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_shkafov_kupe",
+        "text": "» Калькулятор шкафов купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_dverey_kupe",
+        "text": "» Калькулятор дверей купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni_do_30_000_rub",
+        "text": "» Кухни до 30 000 руб",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni_do_60_000_rub",
+        "text": "» Кухни до 60 000 руб",
+        "rel": ""
+      },
+      {
+        "href": "/galereya_mebeli",
+        "text": "» ГАЛЕРЕЯ НАШЕЙ МЕБЕЛИ",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni_na_zakaz",
+        "text": "» Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/materiali_dlya_sistem_kupe",
+        "text": "» Материалы для систем купе.",
+        "rel": ""
+      },
+      {
+        "href": "/sposobi_oplati",
+        "text": "» Способы оплаты",
+        "rel": ""
+      },
+      {
+        "href": "/voprosotvet",
+        "text": "» Вопрос-Ответ.",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_s_zerkalom",
+        "text": "» С зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/dvuhdvernie_shkafi_kupe_s_zerkalom",
+        "text": "» Двухдверные с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/trehdvernie_shkafi_kupe_s_zerkalom",
+        "text": "» Трехдверные с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/zerkalnie_shkafi_kupe",
+        "text": "» Зеркальные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_bez_zerkal",
+        "text": "» Без зеркал",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/belie_shkafi_kupe",
+        "text": "» Белые",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_s_peskostruynim_risunkom",
+        "text": "» Пескоструй",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_v_prihozhuu",
+        "text": "» В прихожую",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/vstraivaemie_shkafi_kupe",
+        "text": "» Встроенные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/uglovie_shkafi_kupe",
+        "text": "» Угловые",
+        "rel": ""
+      },
+      {
+        "href": "tel:8125950992",
+        "text": "(812) 595-09-92",
+        "rel": ""
+      },
+      {
+        "href": "tel:8129602485",
+        "text": "(812) 960-24-85",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:8125950992",
+        "text": "(812) 595-09-92",
+        "rel": ""
+      },
+      {
+        "href": "tel:8129602485",
+        "text": "(812) 960-24-85",
+        "rel": ""
+      },
+      {
+        "href": "/o_kompanii",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "Услуги",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka",
+        "text": "Доставка",
+        "rel": ""
+      },
+      {
+        "href": "/vizov_zamerschika",
+        "text": "Вызов замерщика",
+        "rel": ""
+      },
+      {
+        "href": "/podem_na_etazh",
+        "text": "Подъём на этаж",
+        "rel": ""
+      },
+      {
+        "href": "/sborka_mebeli",
+        "text": "Сборка мебели",
+        "rel": ""
+      },
+      {
+        "href": "/garantiya_na_mebel",
+        "text": "Гарантия на мебель",
+        "rel": ""
+      },
+      {
+        "href": "/rassrochka",
+        "text": "Беспроцентная рассрочка на 6 мес.",
+        "rel": ""
+      },
+      {
+        "href": "/kredit_na_336_mes",
+        "text": "Кредит на 3-36 мес.",
+        "rel": ""
+      },
+      {
+        "href": "/ceni",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_dverey_kupe",
+        "text": "Калькулятор дверей-купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_shkafov_kupe",
+        "text": "Калькулятор шкафов-купе",
+        "rel": ""
+      },
+      {
+        "href": "/otpravit_eskiz_na_raschet",
+        "text": "Отправить эскиз на расчёт",
+        "rel": ""
+      },
+      {
+        "href": "/oplata",
+        "text": "Оплата онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/kak_zakazat",
+        "text": "Как заказать",
+        "rel": ""
+      },
+      {
+        "href": "/kontakti",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/akcii_i_skidki",
+        "text": "Акции и скидки",
+        "rel": ""
+      },
+      {
+        "href": "tel:8125950992",
+        "text": "(812) 595-09-92",
+        "rel": ""
+      },
+      {
+        "href": "tel:8129602485",
+        "text": "(812) 960-24-85",
+        "rel": ""
+      },
+      {
+        "href": "/akcii_i_skidki",
+        "text": "Работаем с понедельника по субботу",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/dveri_kupe",
+        "text": "» Двери купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe",
+        "text": "» Шкафы купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_shkafov_kupe",
+        "text": "» Калькулятор шкафов купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_dverey_kupe",
+        "text": "» Калькулятор дверей купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni_do_30_000_rub",
+        "text": "» Кухни до 30 000 руб",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni_do_60_000_rub",
+        "text": "» Кухни до 60 000 руб",
+        "rel": ""
+      },
+      {
+        "href": "/galereya_mebeli",
+        "text": "» ГАЛЕРЕЯ НАШЕЙ МЕБЕЛИ",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni_na_zakaz",
+        "text": "» Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/materiali_dlya_sistem_kupe",
+        "text": "» Материалы для систем купе.",
+        "rel": ""
+      },
+      {
+        "href": "/sposobi_oplati",
+        "text": "» Способы оплаты",
+        "rel": ""
+      },
+      {
+        "href": "/voprosotvet",
+        "text": "» Вопрос-Ответ.",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_s_zerkalom",
+        "text": "» С зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/dvuhdvernie_shkafi_kupe_s_zerkalom",
+        "text": "» Двухдверные с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/trehdvernie_shkafi_kupe_s_zerkalom",
+        "text": "» Трехдверные с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/zerkalnie_shkafi_kupe",
+        "text": "» Зеркальные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_bez_zerkal",
+        "text": "» Без зеркал",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/belie_shkafi_kupe",
+        "text": "» Белые",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_s_peskostruynim_risunkom",
+        "text": "» Пескоструй",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_v_prihozhuu",
+        "text": "» В прихожую",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/vstraivaemie_shkafi_kupe",
+        "text": "» Встроенные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/uglovie_shkafi_kupe",
+        "text": "» Угловые",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_shkafov_kupe",
+        "text": "Шкафы-купе по размерам",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kalkulyator_dverey_kupe",
+        "text": "Двери-купе",
+        "rel": ""
+      },
+      {
+        "href": "https://kbyro.ru/catalog/shkafi_kupe",
+        "text": "Шкафы купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/zerkalnie_shkafi_kupe",
+        "text": "зеркальные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/belie_shkafi_kupe",
+        "text": "белые",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_s_peskostruynim_risunkom",
+        "text": "с пескоструйным рисунком",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/vstraivaemie_shkafi_kupe",
+        "text": "шкаф купе встроенный",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_v_prihozhuu",
+        "text": "в прихожую",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_s_zerkalom",
+        "text": "с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe_bez_zerkal",
+        "text": "без зеркал",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/dvuhdvernie_shkafi_kupe_s_zerkalom",
+        "text": "двухдверные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/trehdvernie_shkafi_kupe_s_zerkalom",
+        "text": "трехдверные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H21200_beliy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H21200_beliy",
+        "text": "Белый шкаф купе для прихожей KBYRO H-2-1200",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200_dverirazdelitelirazdeliteli",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200_dverirazdelitelirazdeliteli",
+        "text": "Шкаф купе без зеркал KBYRO H-2-1200",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_3h_dv_vitrazhpeskostruy_24002400600",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_3h_dv_vitrazhpeskostruy_24002400600",
+        "text": "Шкаф купе с пескоструйным рисунком 3-х дв. (2400-2400-600)",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_s_dvumya_zerkalami_KBYRO_H21200",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_s_dvumya_zerkalami_KBYRO_H21200",
+        "text": "Шкаф купе зеркальный в прихожую KBYRO H-2-1200",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_bez_zerkal_KBYRO_H21200",
+        "text": "Шкаф купе без зеркал KBYRO H-2-1200",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_s_3_zerkalami_KBYRO_H31800",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_s_3_zerkalami_KBYRO_H31800",
+        "text": "Шкаф купе с 3 зеркалами KBYRO H-3-1800",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_c_zerkalom_i_dveru_s_delitelyami_KBYRO_H21200",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_c_zerkalom_i_dveru_s_delitelyami_KBYRO_H21200",
+        "text": "Двухдверный шкаф купе с зеркалом KBYRO H-2-1200",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H42400_zerkalniy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafi_kupe/shkaf_kupe_KBYRO_H42400_zerkalniy",
+        "text": "Шкаф купе KBYRO H-4-2400 зеркальный",
+        "rel": ""
+      },
+      {
+        "href": "tel:8125950992",
+        "text": "(812) 595-09-92",
+        "rel": ""
+      },
+      {
+        "href": "tel:8129602485",
+        "text": "(812) 960-24-85",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kbyro@yandex.ru",
+        "text": "kbyro@yandex.ru",
+        "rel": "external"
+      },
+      {
+        "href": "https://vk.com/public171334254",
+        "text": "Мы в контакте",
+        "rel": "external"
+      },
+      {
+        "href": "/poleznaya_informaciya",
+        "text": "Полезная информация",
+        "rel": ""
+      },
+      {
+        "href": "/politika_konfidencialnosti",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/vozvrat_i_obmen_tovara",
+        "text": "Возврат и обмен товара",
+        "rel": ""
+      },
+      {
+        "href": "https://www.jivo.ru/i_sa/?utm_source=kbyro.ru&utm_medium=link&utm_content=label_tooltip&utm_campaign=from_widget",
+        "text": "Бизнес-мессенджер",
+        "rel": "nofollow noopener noreferrer"
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 0,
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "link": 122,
+      "image": 16,
+      "list_item": 0,
+      "strong": 0,
+      "form": 0,
+      "input": 5
+    }
+  }
+}

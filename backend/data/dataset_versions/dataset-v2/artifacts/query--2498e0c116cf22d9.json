@@ -1,0 +1,62 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://krasnodar-kuhni-na-zakaz.ru/",
+  "final_url": "https://krasnodar-kuhni-na-zakaz.ru/",
+  "status_code": 402,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+    "content-length": "1879",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 14:51:33 GMT",
+    "expires": "0",
+    "pragma": "no-cache",
+    "x-content-type-options": "nosniff",
+    "x-flexbe": "front-node-bcfd48db7-8hw4c in 0.01s",
+    "x-powered-by": "flexbe.com"
+  },
+  "response_time_ms": 3611.0343,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:51:36.399521+00:00",
+  "html": "<!DOCTYPE html><html><head><title> Сайт заблокирован </title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"width=1200, viewport-fit=cover\"><script src=\"/_s/build/theme/4/_viewport.js\"></script><script>\n      if (window.parent !== window) {\n        const locationChangeMessage = () => {\n          window.parent.postMessage(\n            {\n              message: 'LOCATION_CHANGE',\n              payload: {\n                title: document.title,\n                location: window.location.toString(),\n              },\n            },\n            '*',\n          )\n        }\n\n        window.addEventListener('hashchange', locationChangeMessage)\n        window.addEventListener('popstate', locationChangeMessage)\n        window.addEventListener('load', locationChangeMessage)\n      }\n    </script><meta name=\"robots\" content=\"none\"><base target=\"_top\"><link rel=\"icon\" href=\"/_s/images/favicon.png?3\" type=\"image/png\"><link href=\"/_s/build/land_font.css?b03ba828\" rel=\"stylesheet\" type=\"text/css\"><link href=\"/_s/build/auth.css?b03ba828\" media=\"all\" rel=\"stylesheet\" type=\"text/css\"></head><body><!--googleoff: all--><!-- noindex --><div class=\"auth admin-ui\"><a href=\"https://flexbe.ru/?utm_source=clients&amp;utm_campaign=blocked\" class=\"logo\" title=\"Платформа для создания сайтов Flexbe\"><svg><use xlink:href=\"/_s/images/auth/auth.svg?b03ba828#flexbe\"></use></svg></a><div class=\"site_status site_blocked\"><div class=\"message\"><div class=\"text\">Сайт заблокирован</div><div class=\"desc\">Если вы владелец сайта, просто оплатите аккаунт</div><a href=\"https://app.flexbe.ru/account/722557/billing/\" class=\"button\">Перейти к оплате</a></div></div><i></i></div><!-- /noindex --><!--googleon: all--></body></html>",
+  "text": "Сайт заблокирован Сайт заблокирован Если вы владелец сайта, просто оплатите аккаунт Перейти к оплате",
+  "json_ld": [],
+  "document": {
+    "title": "Сайт заблокирован",
+    "meta_description": "",
+    "meta_robots": "none",
+    "viewport": "width=1200, viewport-fit=cover",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "https://flexbe.ru/?utm_source=clients&utm_campaign=blocked",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://app.flexbe.ru/account/722557/billing/",
+        "text": "Перейти к оплате",
+        "rel": ""
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 0,
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "link": 2,
+      "image": 0,
+      "list_item": 0,
+      "strong": 0,
+      "form": 0,
+      "input": 0
+    }
+  }
+}

@@ -1,0 +1,831 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kazan.essokna.ru/",
+  "final_url": "https://kazan.essokna.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:34:29 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx",
+    "set-cookie": "PHPSESSID=e4457c62546c96ce1c10b26b0c16cd6b; path=/",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/8.4.15"
+  },
+  "response_time_ms": 3335.4414,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:34:32.057713+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" prefix=\"og: https://ogp.me/ns# website: https://ogp.me/ns/website#\"><head>\n\t<!-- essokna.ru -->\n\t<meta charset=\"utf-8\">\n\t<base href=\"https://kazan.essokna.ru/\">\n\t<title>Установка пластиковых окон Казань цена от 2436 руб.</title>\n\t<meta name=\"description\" content=\"Закажите пластиковые окна с установкой од ключ в Казани Цена с установкой от 2436 руб. Деревянные окна, стеклопакеты, остекление. ☎ +7(929)728-42-25 Официальный сайт производителя окон компании RR GROUP Казань Скидки в мае\">\n\t<meta name=\"keywords\" content=\"пластиковые окна, цена окна, купить окна, Казань, остекление, пвх окна, установка, цена окна от 2436 рублей\">\n\t<meta name=\"generator\" content=\"x94web Engine That Runs Super-fast\">\n\t<meta name=\"application-name\" content=\"RR GROUP\">\n\t<meta name=\"author\" content=\"RR GROUP\">\n\t<meta name=\"apple-mobile-web-app-title\" content=\"RR GROUP\">\n\t<meta name=\"image\" content=\"https://kazan.essokna.ru/img/1014/co_main.jpg\">\n\t<meta name=\"yandex-verification\" content=\"fd759bf5ea06d975\">\n\t\t\t\t\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<meta name=\"format-detection\" content=\"telephone=no\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t<meta name=\"counters\" content=\"counters\" id=\"counters\" data-visited=\"0\" data-map=\"55.773981,49.116071\" data-ymetrika=\"57248227\" data-gog_anal=\"\" data-capcha_key=\"6LdvvtMUAAAAADaMFSYxGbgwsmA1iSEivQt9CglI\">\n\n\t<meta name=\"twitter:card\" content=\"summary_large_image\">\n\t<meta name=\"twitter:description\" content=\"Закажите пластиковые окна с установкой од ключ в Казани Цена с установкой от 2436 руб. Деревянные окна, стеклопакеты, остекление. ☎ +7(929)728-42-25 Официальный сайт производителя окон компании RR GROUP Казань Скидки в мае\">\n\t<meta name=\"twitter:title\" content=\"Установка пластиковых окон Казань цена от 2436 руб.\">\n\n\t<meta property=\"og:type\" content=\"website\">\n\t<meta property=\"og:site_name\" content=\"RR GROUP\">\n\t<meta property=\"og:title\" content=\"Установка пластиковых окон Казань цена от 2436 руб.\">\n\t<meta property=\"og:description\" content=\"Закажите пластиковые окна с установкой од ключ в Казани Цена с установкой от 2436 руб. Деревянные окна, стеклопакеты, остекление. ☎ +7(929)728-42-25 Официальный сайт производителя окон компании RR GROUP Казань Скидки в мае\">\n\t<meta property=\"og:url\" content=\"https://kazan.essokna.ru/\">\n\t<meta property=\"og:locale\" content=\"ru_RU\">\n\t<meta property=\"og:image\" content=\"https://kazan.essokna.ru/img/1014/co_main.jpg\">\n\t<meta property=\"og:image:type\" content=\"image/jpeg\">\n\t<meta property=\"og:image:secure_url\" content=\"https://kazan.essokna.ru/img/1014/co_main.jpg\">\n\t<meta property=\"og:image:width\" content=\"1200\">\n\t<meta property=\"og:image:height\" content=\"630\">\n\t\t\n\t<link rel=\"shortcut icon\" href=\"/img/fav/17008/favicon.ico\" type=\"image/x-icon\">\n\t<link rel=\"shortcut icon\" href=\"/img/fav/17008/favicon.ico\" type=\"image/vnd.microsoft.icon\">\n\t<link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"/img/fav/17008/apple-icon-57x57.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"/img/fav/17008/apple-icon-60x60.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"/img/fav/17008/apple-icon-72x72.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"/img/fav/17008/apple-icon-76x76.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"/img/fav/17008/apple-icon-114x114.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"/img/fav/17008/apple-icon-120x120.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"/img/fav/17008/apple-icon-144x144.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"/img/fav/17008/apple-icon-152x152.png\">\n\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/img/fav/17008/apple-icon-180x180.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/img/fav/17008/android-icon-192x192.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/img/fav/17008/favicon-32x32.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/img/fav/17008/favicon-96x96.png\">\n\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/img/fav/17008/favicon-16x16.png\">\n\t<link rel=\"manifest\" href=\"/img/fav/17008/manifest.json\">\n\t<meta name=\"msapplication-TileColor\" content=\"#ffffff\">\n\t<meta name=\"msapplication-TileImage\" content=\"/img/fav/17008/ms-icon-144x144.png\">\n\t<meta name=\"theme-color\" content=\"#ffffff\">\n\t<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"#ffffff\">\n\t<meta name=\"msapplication-navbutton-color\" content=\"#000\">\n\n\t<!--link rel=\"amphtml\" href=\"https://kazan.essokna.ru/amp/main\"-->\n\t<link rel=\"canonical\" href=\"https://kazan.essokna.ru/\">\n\t<!--link rel=\"alternate\" type=\"application/rss+xml\" href=\"https://kazan.essokna.ru/feed/main\" title=\"Установка пластиковых окон Казань цена от 2436 руб.\" /-->\n\t\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"Organization\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Казань, Россия\",\"postalCode\":\"420021\",\"streetAddress\":\"улица Сары Садыковой, 30\"},\"email\":\"kazan@essokna.ru\",\"name\":\"RR GROUP\",\"telephone\":\"+7 929 728-42-25\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"RR GROUP\", \"alternateName\": \"RR GROUP. Казань\", \"url\": \"https://kazan.essokna.ru/\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"LocalBusiness\", \"name\": \"RR GROUP\", \"url\": \"https://kazan.essokna.ru/\", \"logo\": \"/img/1014/logo.png\", \"image\": \"https://kazan.essokna.ru/img/1014/co_main.jpg\", \"description\": \"Установка пластиковых окон Казани под ключ - цена от 2436 руб.\", \"address\":{\"@type\": \"PostalAddress\", \"streetAddress\": \"улица Сары Садыковой, 30\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"postalCode\": \"420021\", \"addressCountry\": \"Россия\"}, \"geo\":{\"@type\": \"GeoCoordinates\", \"latitude\": \"55.773981\", \"longitude\": \"49.116071\"}, \"openingHours\": \"Mo, Tu, We, Th, Fr 09:00-19:00 Sa 10:00-15:00\", \"telephone\": \"+79297284225\", \"priceRange\": \"$$\", \"contactPoint\":{\"@type\": \"ContactPoint\", \"telephone\": \"+79297284225\", \"contactType\": \"sales\"}}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"ImageObject\",\"contentLocation\": \"Установка пластиковых окон Казань цена от 2436 руб., Россия\",\"contentUrl\": \"https://kazan.essokna.ru/img/1014/co_main.jpg\",\"description\": \"Закажите пластиковые окна с установкой од ключ в Казани Цена с установкой от 2436 руб. Деревянные окна, стеклопакеты, остекление. ☎ +7(929)728-42-25 Официальный сайт производителя окон компании RR GROUP Казань Скидки в мае\",\"name\": \"Установка окон в Казани и Республике Татарстан\"}</script>\n<script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"serviceType\": \"Продажа и установка окон в Казани от 2436 руб.\", \"provider\":{\"@type\": \"LocalBusiness\", \"image\": \"/img/1014/logo.png\", \"priceRange\": \"$$\", \"address\":{\"@type\": \"PostalAddress\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"streetAddress\": \"улица Сары Садыковой, 30\"}, \"description\": \"Выполним качественную установку окон в Казани по выгодной цене от 2436 руб. в мае 2026 г. Гарантия 13 месяцев. Выезд и замер 0 рублей. Производство, продажа, установка, ремонт.\", \"name\": \"RR GROUP\", \"telephone\": \"+79297284225\"}, \"areaServed\":{\"@type\": \"State\", \"name\": \"Казань\"}}</script>\n\t<link href=\"/t/z0/css/h-bootstrap.css\" rel=\"stylesheet\">\n\t<link href=\"/t/z0/css/h-main.min.css\" rel=\"stylesheet\">\n<style>:root {--main-color: #0B2F6E;\n--footer: #10181B;\n--bg17: url(#gradient2);\n}</style>\n</head>\n<body>\n\t<header class=\"header\">\n\n\t\t<div class=\"header-top bg-secondary d-none d-sm-block\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row align-items-center\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_order\">\n\t\t\t\t\t\t\t<a title=\"Вызвать замерщика Казань\" class=\"text-dark\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=estimator\" data-yevent=\"click_estimator\" data-param=\"estimator|Вызвать замерщика\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/pencil-ruler.svg\" height=\"15\" alt=\"Вызвать замерщика Казань\">\n\t\t\t\t\t\t\t\t<small>Вызвать замерщика</small>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_email\">\n\t\t\t\t\t\t\t<a data-yevent=\"click_email\" title=\"Написать на kazan@essokna.ru\" href=\"mailto:kazan@essokna.ru\" class=\"text-dark text-decoration-none\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/envelope-open.svg\" height=\"15\" alt=\"Написать на kazan@essokna.ru\">\n\t\t\t\t\t\t\t\t<small>kazan@essokna.ru</small>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_callback  text-center\">\n\t\t\t\t\t\t\t<a title=\"Обратный звонок Казань\" class=\"text-dark\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=call_back\" data-yevent=\"click_call_back\" data-param=\"call_back|Заказать обратный звонок\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/phone-office.svg\" height=\"15\" alt=\"Обратный звонок Казань\">\n\t\t\t\t\t\t\t\t<small>Обратный звонок</small>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3 py-1\">\n\t\t\t\t\t\t<div class=\"header-top_time d-flex\tw-100 align-items-center justify-content-end\">\n\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/clock.svg\" height=\"15\" alt=\"Режим работы\" class=\"mr-1\">\n\t\t\t\t\t\t\t<small class=\"text-nowrap\">Ежедневно 08:00 - 18:00</small>\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"header-conacts pt-1\">\n\t\t\t<div class=\"container\">\n\t\t\t\t\n\t\t\t\t<div class=\"row align-items-end justify-content-between\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t<div class=\"top_logo\">\n\t\t\t\t\t\t\t<a title=\"Продажа и установка окон в Казани от 2436 руб.\" href=\"/\"><img src=\"/img/1014/logo.png\" class=\"img-responsive\" alt=\"Продажа и установка окон в Казани от 2436 руб.\"></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"d-none d-lg-block col-lg-3 my-2\">\n\t\t\t\t\t\t<b class=\"mb-0\">Окна и остекление по лучшей цене Казань</b>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"d-none d-lg-block col-lg-3 my-2\">\n\t\t\t\t\t\t<address class=\"mb-0\">420021, Россия, г. <a data-toggle=\"modal\" data-target=\"#domain_linking\">Казань</a>, улица Сары Садыковой, 30</address>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-3 text-right\">\n\t\t\t\t\t\t<div class=\"phone text-nowrap font-weight-bold\">\n\t\t\t\t\t\t\t<a title=\"Позвоните нам в Казани\" data-yevent=\"click_phone\" href=\"tel:+7929728-42-25\" class=\"d-block\"><small>+7 (929)</small> 728-42-25</a>\n\t\t\t\t\t\t\t<!--a target='_blank' rel='nofollow' data-yevent='click_whatsapp' href='/wa_go'  class='btn btn-sm my-2 text-white bg-whatsapp py-0 px-1'><img src='/t/z0/i/cons/whatsapp.svg' height='18' alt='Напшите WhatsApp' />WhatsApp</a-->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<div class=\"header-menu bg-accent\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<nav class=\"navbar sticky-top navbar-expand-lg navbar-light bg-accent p-0\" itemscope=\"itemscope\" itemtype=\"http://www.schema.org/SiteNavigationElement\">\n\t\t\t\t\t<button class=\"navbar-toggler  py-1 my-1 border-white text-white\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar-catalog\" aria-controls=\"navbar-catalog\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span>Услуги</span></button>\n\t\t\t\t\t<button class=\"navbar-toggler py-1 my-1 border-white text-white\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span>Меню</span></button>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n\t\t\t\t\t\t<ul class=\"navbar-nav nav-fill justify-content-around w-100 small\">\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a data-yevent=\"click_calc\" target=\"_blank\" class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"КАЛЬКУЛЯТОР\" href=\"/quiz\" itemprop=\"url\">КАЛЬКУЛЯТОР</a><meta content=\"https://kazan.essokna.ru/img/1014/co_quiz.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ЦЕНЫ\" href=\"/tseny\" itemprop=\"url\">ЦЕНЫ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_tseny.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"УСЛУГИ\" href=\"/uslugi\" itemprop=\"url\">УСЛУГИ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_uslugi.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ГАЛЕРЕЯ\" href=\"/gallery\" itemprop=\"url\">ГАЛЕРЕЯ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_gallery.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"АКЦИИ\" href=\"/akcii\" itemprop=\"url\">АКЦИИ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_akcii.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ОТЗЫВЫ\" href=\"/otzivy\" itemprop=\"url\">ОТЗЫВЫ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_otzivy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"КОНТАКТЫ\" href=\"/kontakty\" itemprop=\"url\">КОНТАКТЫ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_kontakty.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ВИДЕО\" href=\"/video\" itemprop=\"url\">ВИДЕО</a><meta content=\"https://kazan.essokna.ru/img/1014/co_video.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"СЕРТИФИКАТЫ\" href=\"/sertifikaty\" itemprop=\"url\">СЕРТИФИКАТЫ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_sertifikaty.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 border-right border-light\" title=\"ОПЛАТА\" href=\"/oplata\" itemprop=\"url\">ОПЛАТА</a><meta content=\"https://kazan.essokna.ru/img/1014/co_oplata.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\" itemprop=\"name\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-3 \" title=\"ДОСТАВКА\" href=\"/dostavka\" itemprop=\"url\">ДОСТАВКА</a><meta content=\"https://kazan.essokna.ru/img/1014/co_dostavka.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div>\n\t\t\t\t</nav>\n\t\t\t</div>\n\t\t</div>\n\n\t</header>\n\t<div class=\"collapse navbar-collapse mt-2\" id=\"navbar-catalog\">\n\t\t<div class=\"catalog w-100\" itemscope=\"itemscope\" itemtype=\"http://www.schema.org/SiteNavigationElement\">\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-\" aria-expanded=\"false\">Окна</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/plastikovye-okna\" title=\"Пластиковые окна\">Пластиковые окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_plastikovye-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/alyuminievye-okna\" title=\"Алюминиевые окна\">Алюминиевые окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_alyuminievye-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/mansardnye-okna\" title=\"Мансардные окна\">Мансардные окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_mansardnye-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okna-v-kottedzh\" title=\"Окна в коттедж\">Окна в коттедж</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okna-v-kottedzh.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/razdvizhnye-okna\" title=\"Раздвижные окна\">Раздвижные окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_razdvizhnye-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okna-dlya-dachi\" title=\"Окна для дачи\">Окна для дачи</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okna-dlya-dachi.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okna-rekhau\" title=\"Окна рехау\">Окна рехау</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okna-rekhau.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okna-v-dom\" title=\"Окна в дом\">Окна в дом</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okna-v-dom.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okna-dlya-besedki\" title=\"Окна для беседки\">Окна для беседки</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okna-dlya-besedki.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okna-dlya-terrasy\" title=\"Окна для террасы\">Окна для террасы</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okna-dlya-terrasy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/derevyannye-okna\" title=\"Деревянные окна\">Деревянные окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_derevyannye-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/nedorogie-okna\" title=\"Недорогие окна\">Недорогие окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_nedorogie-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-13\" aria-expanded=\"false\">Остекление</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-13\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/balkony-i-lodzhii\" title=\"Балконы и лоджии\">Балконы и лоджии</a><meta content=\"https://kazan.essokna.ru/img/1014/co_balkony-i-lodzhii.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/vhodnye-gruppy\" title=\"Входные группы\">Входные группы</a><meta content=\"https://kazan.essokna.ru/img/1014/co_vhodnye-gruppy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/panoramnye-okna\" title=\"Панорамное остекление\">Панорамное остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_panoramnye-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/vitrazhnoe-osteklenie\" title=\"Витражное остекление\">Витражное остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_vitrazhnoe-osteklenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/verandy-terrasy\" title=\"Веранды / террасы\">Веранды / террасы</a><meta content=\"https://kazan.essokna.ru/img/1014/co_verandy-terrasy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-verandy\" title=\"Остекление веранды\">Остекление веранды</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-verandy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-terrasy\" title=\"Остекление террасы\">Остекление террасы</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-terrasy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-zdanij\" title=\"Остекление зданий\">Остекление зданий</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-zdanij.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-balkona\" title=\"Остекление балкона\">Остекление балкона</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-balkona.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/fasadnoe-osteklenie\" title=\"Фасадное остекление\">Фасадное остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_fasadnoe-osteklenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-kvartir\" title=\"Остекление квартир\">Остекление квартир</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-kvartir.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/holodnoe-osteklenie\" title=\"Холодное остекление\">Холодное остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_holodnoe-osteklenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/teploe-osteklenie\" title=\"Теплое остекление\">Теплое остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_teploe-osteklenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-kottedzhej\" title=\"Остекление коттеджей\">Остекление коттеджей</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-kottedzhej.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/osteklenie-lodzhii\" title=\"Остекление лоджии\">Остекление лоджии</a><meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-lodzhii.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/razdvizhnoe-osteklenie\" title=\"Раздвижное остекление\">Раздвижное остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_razdvizhnoe-osteklenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/bezramnoe-osteklenie\" title=\"Безрамное остекление\">Безрамное остекление</a><meta content=\"https://kazan.essokna.ru/img/1014/co_bezramnoe-osteklenie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/alyuminievyj-balkon\" title=\"Алюминиевый балкон\">Алюминиевый балкон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_alyuminievyj-balkon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-32\" aria-expanded=\"false\">Услуги</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-32\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/montazh-okon\" title=\"Монтаж окон\">Монтаж окон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_montazh-okon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/izgotovlenie-okon\" title=\"Изготовление окон\">Изготовление окон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_izgotovlenie-okon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/balkon-pod-klyuch\" title=\"Балкон под ключ\">Балкон под ключ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_balkon-pod-klyuch.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/remont-okon\" title=\"Ремонт окон\">Ремонт окон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_remont-okon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/zamery-okon\" title=\"Замер окон\">Замер окон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_zamery-okon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/ustanovka-okon\" title=\"Установка окон под ключ\">Установка окон под ключ</a><meta content=\"https://kazan.essokna.ru/img/1014/co_ustanovka-okon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/zamena-ostekleniya\" title=\"Замена остекления\">Замена остекления</a><meta content=\"https://kazan.essokna.ru/img/1014/co_zamena-ostekleniya.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/zamena-plastikovyh-okon\" title=\"Замента пластиковых окон\">Замента пластиковых окон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_zamena-plastikovyh-okon.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/okno-regulirovka\" title=\"Регулировка окон\">Регулировка окон</a><meta content=\"https://kazan.essokna.ru/img/1014/co_okno-regulirovka.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/servisnoe-obsluzhivanie\" title=\"Сервисное обслуживание\">Сервисное обслуживание</a><meta content=\"https://kazan.essokna.ru/img/1014/co_servisnoe-obsluzhivanie.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/otdelka-balkonov-i-lodzhij\" title=\"Отделка балконов и лоджий\">Отделка балконов и лоджий</a><meta content=\"https://kazan.essokna.ru/img/1014/co_otdelka-balkonov-i-lodzhij.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<div class=\"catalog__block border-accent shadow-sm mb-2\">\n\t\t\t\t<button class=\"catalog__block-title bg-accent w-100 border-0 text-left pt-2 pb-2 pl-3 text-white h3 mb-0\" type=\"button\" data-toggle=\"collapse\" data-target=\"#catalog__block-44\" aria-expanded=\"false\">Комплектующие</button>\n\t\t\t\t<ul class=\"catalog__block-list list-unstyled mb-0 collapse hide\" id=\"catalog__block-44\">\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/zhalyuzi-na-okna\" title=\"Жалюзи на окна\">Жалюзи на окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_zhalyuzi-na-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/podokonniki\" title=\"Подоконники\">Подоконники</a><meta content=\"https://kazan.essokna.ru/img/1014/co_podokonniki.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/otkosy\" title=\"Откосы\">Откосы</a><meta content=\"https://kazan.essokna.ru/img/1014/co_otkosy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/otlivy\" title=\"Отливы\">Отливы</a><meta content=\"https://kazan.essokna.ru/img/1014/co_otlivy.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/furnitura\" title=\"Фурнитура\">Фурнитура</a><meta content=\"https://kazan.essokna.ru/img/1014/co_furnitura.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/nalichniki-na-okna\" title=\"Наличиники на окна\">Наличиники на окна</a><meta content=\"https://kazan.essokna.ru/img/1014/co_nalichniki-na-okna.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/moskitnye-setki\" title=\"Москитные сетки\">Москитные сетки</a><meta content=\"https://kazan.essokna.ru/img/1014/co_moskitnye-setki.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/plastikovye-dveri\" title=\"Пластиковые двери\">Пластиковые двери</a><meta content=\"https://kazan.essokna.ru/img/1014/co_plastikovye-dveri.jpg\" itemprop=\"image\"></li>\n\t\t\t\t\t<li itemprop=\"name\"><a itemprop=\"url\" class=\"d-block text-body pt-1 py-2 px-3\" href=\"/balkonnye-dveri\" title=\"Балконные двери\">Балконные двери</a><meta content=\"https://kazan.essokna.ru/img/1014/co_balkonnye-dveri.jpg\" itemprop=\"image\"></li>\n\t\t\t\t</ul>    \n\t\t\t</div>\n\t\t</div>\n\t</div>\n\n\t<main class=\"py-2\">\n\t\t<div class=\"container\">\n\t\t\t\n\t\t\t<!-- АКЦИЯ БАННЕР -->\n\t\t\t<section class=\"border-bottom mb-3\">\n\t\t\t\t\n\t\t\t\t<div class=\"row mb-2\">\n\t\t\t\t\t<div class=\"col px-0 main_cahnge\">\n\n\n\t\t\t\t\t\t<img src=\"/img/1014/main-top-lq.jpg\" class=\"w-100 main-top img-responsive\" data-ar=\"img/1014/o1690212268.jpg,img/1014/o1686384306.jpg,img/1014/o1678166692.jpg\" alt=\"Установка окон в Казани и Республике Татарстан\" title=\"Установка окон в Казани и Республике Татарстан\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"text-center position-absolute text-white w-100 main_top\">\n\t\t\t\t\t\t\t<h1 class=\"m-0 py-1 px-2\">Установка окон в Казани и Республике Татарстан<!--tmp--></h1>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t<div class=\"row mb-2\">\n\t\t\t\t\t<div class=\"col-md-9 text-center\">\n\t\t\t\t\t\t<h3 class=\"mb-3\">Получить актуальную для мая цену на изготовление и установку окон в Казани. после нескольких вопросов</h3>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"col-md-3 text-center\">\t\n\t\t\t\t\t\t<a data-yevent=\"click_calc\" title=\"Узнать цену на Установка окон в Казани и Республике Татарстан\" href=\"/quiz\" class=\"text-white btn rounded bg-accent\">ПОЛУЧИТЬ ЦЕНУ</a>\n\t\t\t\t\t\t<p class=\"mt-3 small\">* расчёт является предварительным</p>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t</section>\n\t\t\t<!-- АКЦИЯ БАННЕР -->\n\t\t\t\n\t\t\t<!-- BLOCK 1 START -->\n\t\t\t<nav class=\"py-2\" itemscope=\"itemscope\" itemtype=\"http://www.schema.org/SiteNavigationElement\">\n\t\t\t\t\n\t\t\t\t<h2 class=\"text-center text-secondary my-3\">Окна, стеклопакеты от производителя</h2>\n\t\t\t\t<div class=\"row gallery\">\n\t\t\t\t\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/plastikovye-okna\" title=\"Пластиковые окна Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_plastikovye-okna.jpg\" alt=\"Пластиковые окна Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Пластиковые окна Казань\" href=\"/plastikovye-okna\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Пластиковые окна</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Пластиковые окна Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/plastikovye-okna\">от 4911 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_plastikovye-okna.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Пластиковые окна\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/alyuminievye-okna\" title=\"Алюминиевые окна Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_alyuminievye-okna.jpg\" alt=\"Алюминиевые окна Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Алюминиевые окна Казань\" href=\"/alyuminievye-okna\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Алюминиевые окна</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Алюминиевые окна Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/alyuminievye-okna\">от 5424 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_alyuminievye-okna.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Алюминиевые окна\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/balkony-i-lodzhii\" title=\"Балконы и лоджии Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_balkony-i-lodzhii.jpg\" alt=\"Балконы и лоджии Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Балконы и лоджии Казань\" href=\"/balkony-i-lodzhii\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Балконы и лоджии</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Балконы и лоджии Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/balkony-i-lodzhii\">от 16233 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_balkony-i-lodzhii.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Балконы и лоджии\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/osteklenie-kvartir\" title=\"Остекление квартир Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_osteklenie-kvartir.jpg\" alt=\"Остекление квартир Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Остекление квартир Казань\" href=\"/osteklenie-kvartir\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Остекление квартир</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Остекление квартир Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/osteklenie-kvartir\">от 9795 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_osteklenie-kvartir.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Остекление квартир\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/okna-dlya-dachi\" title=\"Окна для дачи Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_okna-dlya-dachi.jpg\" alt=\"Окна для дачи Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Окна для дачи Казань\" href=\"/okna-dlya-dachi\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Окна для дачи</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Окна для дачи Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/okna-dlya-dachi\">от 3265 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_okna-dlya-dachi.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Окна для дачи\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/mansardnye-okna\" title=\"Мансардные окна Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_mansardnye-okna.jpg\" alt=\"Мансардные окна Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Мансардные окна Казань\" href=\"/mansardnye-okna\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Мансардные окна</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Мансардные окна Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/mansardnye-okna\">от 9784 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_mansardnye-okna.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Мансардные окна\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/vhodnye-gruppy\" title=\"Входные группы Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_vhodnye-gruppy.jpg\" alt=\"Входные группы Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Входные группы Казань\" href=\"/vhodnye-gruppy\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Входные группы</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Входные группы Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/vhodnye-gruppy\">от 17869 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_vhodnye-gruppy.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Входные группы\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-6 col-sm-6 col-md-6 col-lg-3 px-1 mt-0 mb-1\">\n\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t<a href=\"/verandy-terrasy\" title=\"Веранды/Террасы Казань\">\n\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/s_verandy-terrasy.jpg\" alt=\"Веранды/Террасы Казань\" class=\"img-responsive\">\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Веранды/Террасы Казань\" href=\"/verandy-terrasy\" class=\"shop-main__card-price d-block p-2 text-danger text-center position-absolute font-weight-bolder\">\n\t\t\t\t\t\t\t\t\t<h3 class=\"small font-weight-bold\" itemprop=\"name\">Веранды/Террасы</h3>\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t<a title=\"Веранды/Террасы Казань\" class=\"btn btn-sm bg-accent position-absolute shadow-sm text-white\" itemprop=\"url\" href=\"https://kazan.essokna.ru/verandy-terrasy\">от 32435 руб. </a>\n\t\t\t\t\t\t\t\t<meta content=\"https://kazan.essokna.ru/img/1014/co_verandy-terrasy.jpg\" itemprop=\"image\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<button class=\"btn w-100 bg-accent mt-2 text-white\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-query=\"form=order_top&amp;msg=Веранды/Террасы\" data-yevent=\"click_call_back\">ЗАКАЗАТЬ</button>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\n\t\t\t</nav>\n\t\t\t<!-- BLOCK 1 END -->\n\n\t\t\t<!-- BLOCK 2 START -->\n\t\t\t<section class=\"py-2 s__adv\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\n\t\t\t\t\t\t<h2 class=\"col text-center text-secondary mb-4\">Установка окон в Казани под ключ</h2>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t\t<nav class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/remont-okon\" title=\"ремонт окон в Казани\">\n\t\t\t\t\t\t\t<h3>ремонт окон</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1014/t_remont-okon.jpg\" alt=\"ремонт окон в Казани\" title=\"ремонт окон в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Ремонт окон в Казани 100% качество</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/teploe-osteklenie\" title=\"теплое остекление в Казани\">\n\t\t\t\t\t\t\t<h3>теплое остекление</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1014/t_teploe-osteklenie.jpg\" alt=\"теплое остекление в Казани\" title=\"теплое остекление в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Утепляем балконы под ключ всего за 48 часов</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/razdvizhnye-okna\" title=\"раздвижные окна в Казани\">\n\t\t\t\t\t\t\t<h3>раздвижные окна</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1014/t_razdvizhnye-okna.jpg\" alt=\"раздвижные окна в Казани\" title=\"раздвижные окна в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Раздвижные окна любой формы под ключ</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/panoramnye-okna\" title=\"панорамные окна в Казани\">\n\t\t\t\t\t\t\t<h3>панорамные окна</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1014/t_panoramnye-okna.jpg\" alt=\"панорамные окна в Казани\" title=\"панорамные окна в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Панормамное остекление кровель и стен</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/okna-v-kottedzh\" title=\"окна в коттедж в Казани\">\n\t\t\t\t\t\t\t<h3>окна в коттедж</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1014/t_okna-v-kottedzh.jpg\" alt=\"окна в коттедж в Казани\" title=\"окна в коттедж в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Уютные окна на заказ для коттеджей и домов</span>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 text-center mb-4 text-decoration-none\">\n\t\t\t\t\t\t<a href=\"/osteklenie-balkona\" title=\"остекление балкона в Казани\">\n\t\t\t\t\t\t\t<h3>остекление балкона</h3>\n\t\t\t\t\t\t\t<img src=\"/img/1014/t_osteklenie-balkona.jpg\" alt=\"остекление балкона в Казани\" title=\"остекление балкона в Казани\" class=\"img-responsive img-thumbnail mx-auto\">\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t<span class=\"d-none d-md-block\">Холодное остекление балконов в Казани</span>\n\t\t\t\t\t</div>\n\n\t\t\t\n\t\t\t\t</nav>\n\t\t\t</section>\n\n<!-- БЛОК. Текст главной -->\t\t\t\n\t\t\t<section class=\"auto-text clearfix mb-4 mt-3 text-justify\">\n\t\t\t\t<h2>Продажа и монтаж окон в Казани и Республике Татарстан</h2>\n<p>Основным направлением компании RR GROUP в 2026 году является комплексное остекление квартир, офисов, загородных домов и дач.  Мы выбираем лучших поставщиков комплектующих материалов и тщательно контролируем каждый этап производства. В нашей компании вы сможете заказать деревянные, пластиковые и алюминиевые окна различных размеров, цветов и конфигураций. Своим заказчикам мы предлагаем полный комплекс услуг от дизайна проекта (если это необходимо) до сервисного обслуживания.</p><a class=\"small\" data-toggle=\"collapse\" href=\"#collapseExample\">Читать ещё</a>\n\t\t\t\t\n\t\t\t\t<div class=\"collapse\" id=\"collapseExample\">\n\t\t\t\t<p>Менеджеры компании RR GROUP проконсультируют вас по всем вопросам и помогут сделать оптимальный выбор оконного профиля, который будет соответствовать вашим требованиям. Окна — это то, чем вы будете пользоваться постоянно на протяжении многих лет, и мы хотим, чтобы вы сделай правильный выбор.</p>\n<p>Для наших специалистов нет невыполнимых задач. Мы гарантируем реализацию проекта любой сложности. Наши специалисты работают в этой сфере уже много лет и имеют огромный опыт в решении самых сложных задач. Доверив остекление нашей компании, вы получите отличный сервис, индивидуальный подход и 106% качество.</p>\t\t\t\t</div>\n\t\t\t\t\n\t\t\t</section>\n\t\t\n<!-- БЛОК. ГАЛЕРЕЯ -->\n\t\t\t<section class=\"s__shop element-id\">\n\t\t\t\t<div class=\"border-bottom pb-2\">\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<h2 class=\"col text-center my-3\">Фотографии Окон</h2>\n\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"row gallery\">\n\n\n<!--DEBUG\n-2117 days \nDEBUG-->\n\n<!--DEBUG\n-2233 days \nDEBUG-->\n\n<!--DEBUG\n-2325 days \nDEBUG-->\n\n<!--DEBUG\n-2436 days \nDEBUG-->\n<!--++-->\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан 2020.07.09 14:34:29\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1014/gb_1.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/gs_1-lq.jpg\" class=\"img-responsive\" alt=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1014/gb_1.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2020.07.09 14:34:29\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан 2020.03.17 14:34:29\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1014/gb_2.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/gs_2-lq.jpg\" class=\"img-responsive\" alt=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1014/gb_2.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2020.03.17 14:34:29\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан 2019.12.16 14:34:29\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1014/gb_3.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/gs_3-lq.jpg\" class=\"img-responsive\" alt=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1014/gb_3.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2019.12.16 14:34:29\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t\t<figure itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" class=\"col-6 col-md-6 col-lg-3\">\n\t\t\t\t\t\t\t<div class=\"shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom\">\n\t\t\t\t\t\t\t\t<div class=\"shop-main__card-img position-relative\">\n\t\t\t\t\t\t\t\t\t<a itemscope=\"\" itemtype=\"http://schema.org/ImageObject\" title=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан 2019.09.11 14:34:29\" data-fancybox=\"gallery-2\" class=\"fancybox\" href=\"/img/1014/gb_4.jpg\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/img/1014/gs_4-lq.jpg\" class=\"img-responsive\" alt=\"Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан\">\n\t\t\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/search.svg\" class=\"icon\" alt=\"Увеличить\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"name\" content=\"\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentUrl\" content=\"/img/1014/gb_4.jpg\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"author\" content=\"RR GROUP\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"contentLocation\" content=\"Казань, Россия\">\n\t\t\t\t\t\t\t\t\t\t<meta itemprop=\"datePublished\" content=\"2019.09.11 14:34:29\">\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<p class=\"shop-main__card-text text-center mb-0\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<figcaption class=\"d-none\">Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан</figcaption>\n\t\t\t\t\t\t</figure>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"text-center py-3\"><a href=\"/gallery\" class=\"btn bg-accent text-white\">Смотреть больше</a></div>\n\t\t\t\t</div>\n\t\t\t</section>\n\t\t\t\n<!-- БЛОК: Товары -->\n\t\t\t<!--section class=\"s__shop element-id mb-4\">\n\t\t\t\t<div class=\"border-bottom pb-2\">\n\t\t\t\t\t<div class=\"row gallery\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t<h2 class=\"col-12 text-center text-secondary my-3\">Каталог заборов</h2>\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\t\t<div class='col-6 col-lg-3 p-1'>\n\t\t\t\t\t\t\t<div class='shop-main__card shadow-sm mt-1 mb-3 mx-auto border-bottom'>\n\t\t\t\t\t\t\t\t<div class='shop-main__card-img position-relative'>\n\t\t\t\t\t\t\t\t\t<a href='/product/otkatnye-vorota-s-kalitkoj-i-ehlementami-kovki'>\n\t\t\t\t\t\t\t\t\t\t<img src='https://svaya72.ru/img/products/zab/small/2519.jpg' class='img-responsive' alt='Откатные ворота с калиткой и элементами ковки' />\n\t\t\t\t\t\t\t\t\t\t<span class='shop-main__card-price d-block p-1 text-dark text-left position-absolute font-weight-bolder small'>Цена 138000 руб.</span>\n\t\t\t\t\t\t\t\t\t\t<span class='btn btn-sm bg-accent position-absolute shadow-sm text-white small'>подробно</span>\n\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class='shop-main__card-description border px-2 py-1'>\n\t\t\t\t\t\t\t\t\t<p class='shop-main__card-text text-center mb-0'>Глухие ворота с элементами ковки и встроенной калиткой. Верхняя часть перфорирована ковкой. Калитка устроена в воротах</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</section-->\n\t\t\t\n<!-- БЛОК. Преимущества -->\n\t\t\t<section class=\"py-4 s__adv\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t\t<h2 class=\"text-center text-secondary my-3\">Преимущества RR GROUP</h2>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/phone-call.svg\" class=\"icon\" alt=\"phone-call_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Всегда на связи\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Наши менеджеры в Казани всегда готовы проконсультировать вас и ответить на все интересующие вас вопросы</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/pencil-ruler.svg\" class=\"icon\" alt=\"pencil-ruler_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Сервисное сопровождение\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Мы предлагает гарантийное и послегарантийное обслуживание. Вы будете рады нашей работе долгие годы</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/factory.svg\" class=\"icon\" alt=\"factory_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Без переплат\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Собственное производство позволяет предлагать самые невысокие цены на продукцию, изготовленную в соответствии со строгими стандартами</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/delivery.svg\" class=\"icon\" alt=\"delivery_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Мобильный офис\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">7 дней в неделю. Возможность оформить заказ и оплатить любым удобным способом прямо на дому. Звоните +7 929 728-42-25</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/instrument.svg\" class=\"icon\" alt=\"instrument_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Опытный персонал\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Все наши сотрудники прошли полное обучение и имеют за плечами огромный опыт качественно выполненных работ</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6 col-md-4 col-lg-2\">\n\t\t\t\t\t\t<div class=\"adv__item text-center my-3 mx-auto\">\n\t\t\t\t\t\t\t<div class=\"adv__item-img\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/umbrella.svg\" class=\"icon\" alt=\"umbrella_icon\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"adv__item-text py-3 small\">Широкий ассортимент\t\t\t\t\t\t\t\t<hr class=\"w-50\"><span class=\"text-muted\">Окон и дверей из ПВХ, дерева, алюминия, мансардных и панорамных окон в различных цветах. Входные группы веранды и террасы</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</section>\n\n<!-- БЛОК. Отзывы -->\t\t\t\n\t\t\t<section class=\"row py-4\">\n\t\t\t\t<h2 class=\"col-12 text-center mb-4\">Отзывы клиентов</h2>\n\t\t\t\t\n\t\n\t\t\t\t<div class=\"col-sm-12 col-md-6\">\n\t\t\t\t\t<b>Ольга М.</b><br>\n\t\t\t\t\t<img src=\"/img//1014/f1744522455.jpg\" class=\"img-thumbnail float-left mr-3 mt-2\" alt=\"Отзыв Ольга М. о RR GROUP\">\n\t\t\t\t\t<p class=\"pl-3 text-secondary mb-2 text-justify\">Выбор стекольщиков огромный! Приглашала много замерщиков.из 7 выбрала мир окон. Изготавливают в верхнем Весёлом.очень быстро!  И сравнительно с другими не дорого. Мастер профи! Если будешь заказывать&nbsp;рекомендую!</p>\n\t\t\t\t\tКазань <small class=\"text-dark\">[ 13.04.2025 05:34 ]</small>\n\t\t\t\t</div>\n\t\n\t\t\t\t<div class=\"col-sm-12 col-md-6\">\n\t\t\t\t\t<b>Елена</b><br>\n\t\t\t\t\t<img src=\"/img//1014/f1742897851.jpg\" class=\"img-thumbnail float-left mr-3 mt-2\" alt=\"Отзыв Елена о RR GROUP\">\n\t\t\t\t\t<p class=\"pl-3 text-secondary mb-2 text-justify\">Большое спасибо ребятам за выполненную работу. Установили 3 пластиковых окна. Все сделали качественно и быстро, убрали за собой мусор. Просто молодцы!!! Рекомендую всем!!!</p>\n\t\t\t\t\tКазань <small class=\"text-dark\">[ 25.03.2025 10:17 ]</small>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-12 text-center pt-4\"><a href=\"/otzivy\" class=\"btn bg-accent text-white\">Читать больше</a><hr></div>\n\t\t\t</section>\n\t\t\t\n<!-- БЛОК. Таблица цен -->\n\t\t\t<section class=\"row mt-3\">\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<h2 class=\"col-12 text-center mb-4\">Цены на окна и остекление Казань в мае</h2>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-12\">\n\t\t\t\t\t<table class=\"price_table table table-hover table-responsive-sm table-bordered mb-4 shadow-sm small\">\n\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td>Наименование</td>\n\t\t\t\t\t\t\t\t<td>Цена руб. от</td>\n\t\t\t\t\t\t\t\t<td>Ед. изм.</td>\n\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tbody><tr>\n\t\t\t\t\t\t\t<td>Пластиковые окна REHAU</td>\n\t\t\t\t\t\t\t<td>3948 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Деревянные окна</td>\n\t\t\t\t\t\t\t<td>7548 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Входные группы, двери ПВХ</td>\n\t\t\t\t\t\t\t<td>7362 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Раздвижные порталы</td>\n\t\t\t\t\t\t\t<td>17570 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Алюминиевые раздвижные окна PROVEDAL</td>\n\t\t\t\t\t\t\t<td>2765 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t<td>Безрамное остекление LUMON</td>\n\t\t\t\t\t\t\t<td>20080 руб.</td>\n\t\t\t\t\t\t\t<td>м2</td>\n\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\n\t\t\t\t\t</tbody></table>\n\t\t\t\t</div>\n\t\t\t</section>\n\n<!-- БЛОК. Почему мы -->\n\t\t\t<section class=\"py-4 s__adv\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t<h3 class=\"text-center text-secondary mb-3\">Почему мы</h3>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row small\">\n<div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Гарантия</b> 5 лет на все виды выполненных работ по окнам и остеклению.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Профессиональные</b> и опытные монтажники по всем окнам и балконам.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Одни</b> из самых выгодных цен по городу на ремонт и монтажные работы.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Контроль</b> качества всех работ установки окон, остекления и утепления.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Минимальные</b> сроки производства, монтажа окон, остекления и утепления.</div><div class=\"col-sm-6 col-md-4 col-lg-2 text-center text-secondary\"><b>Полный</b> комплекс услуг по монтажу и утеплению, остеклению и ремонту.</div>\t\t\t\t</div>\n\t\t\t</section>\n\t\t\t\n<!-- БЛОК. Способы оплаты2 -->\n\t\t\t<section class=\"row my-4 py-4\">\n\t\t\t\t<div class=\"col-12\"><h3 class=\"text-center mb-4\">Способы оплаты</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Принимаем к оплате наличные денежные средства\">💰<br>НАЛИЧНЫЕ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"По счёту от юр. лица. Реквизиты в контактах\">📄<br>ПО СЧЁТУ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Банковской картой по терминалу оплаты\">💳<br>КАРТОЙ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Перевод на банковскую карту Сбербанка\">💸<br>ПЕРЕВОД</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Работаем в кредит с банками партнёрами\">📈<br>КРЕДИТ</h3></div>\n<div class=\"col-4 col-md-2\"><h3 class=\"bg-light border mx-1 py-4 rounded text-center small\" title=\"Уточняйте о наличии рассрочки на продукцию и услуги\">💹<br>РАССРОЧКА</h3></div>\n\t\t\t</section>\n\t\t\n\t\t</div>\n\t</main>\n\t<!-- footer -->\n\t<footer class=\"main-footer py-4 text-white small mt-4\" title=\"Окна и остекление по лучшей цене Казань\">\n\t\t<div class=\"container\">\n\t\t\t<nav class=\"navbar navbar-expand-lg navbar-light bg-trasparent p-0\">\n\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"text-white\">Меню</span></button>\n\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbar\">\n\t\t\t\t\t<ul class=\"navbar-nav nav-fill justify-content-around w-100\">\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"КАЛЬКУЛЯТОР\" href=\"/quiz\">КАЛЬКУЛЯТОР</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ЦЕНЫ\" href=\"/tseny\">ЦЕНЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"УСЛУГИ\" href=\"/uslugi\">УСЛУГИ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ГАЛЕРЕЯ\" href=\"/gallery\">ГАЛЕРЕЯ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"АКЦИИ\" href=\"/akcii\">АКЦИИ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ОТЗЫВЫ\" href=\"/otzivy\">ОТЗЫВЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"КОНТАКТЫ\" href=\"/kontakty\">КОНТАКТЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ВИДЕО\" href=\"/video\">ВИДЕО</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"СЕРТИФИКАТЫ\" href=\"/sertifikaty\">СЕРТИФИКАТЫ</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ОПЛАТА\" href=\"/oplata\">ОПЛАТА</a></li>\n\t\t\t\t\t\t\t<li class=\"nav-item\"><a class=\"nav-link font-weight-bold text-white text-uppercase py-1 border-right\" title=\"ДОСТАВКА\" href=\"/dostavka\">ДОСТАВКА</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</nav>\n\t\t\t<hr class=\"bg-light\">\n\t\t</div>\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-address\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\"><img src=\"/t/z0/i/cons/map-marker.svg\" class=\"icon\" alt=\"Адрес RR GROUP в Казани\"></div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Наш адрес:</div>\n\t\t\t\t\t\t\t\t<div class=\"item\">\n\t\t\t\t\t\t\t\t\t<span>420021</span>,<span>Россия</span>, <span>Республика Татарстан</span>, <span>Казань</span>, <span>улица Сары Садыковой, 30</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"mt-2\"><b>Режим работы:</b><br>Ежедневно 08:00 - 18:00</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-phones\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/phone-mobile.svg\" class=\"icon\" alt=\"Телефон\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Телефоны:</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<span>\n\t\t\t\t\t\t\t\t\t<a title=\"Телефон городской Казань\" href=\"tel:9297284225\" class=\"text-white\">+7 (929) 728-42-25</a><br>\n\t\t\t\t\t\t\t\t\t<a data-yevent=\"click_phone\" title=\"Телефон сотовый\" href=\"tel:+79297284225\" class=\"text-white\">+7 9297284225</a><br>\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold my-2\">Поделиться:</div>\n\t\t\t\t\t\t\t\t<!--div class=\"ya-share2\" data-curtain data-shape=\"round\" data-services=\"collections,vkontakte,odnoklassniki,telegram\"></div-->\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-meil\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/envelope.svg\" class=\"icon\" alt=\"Письмо\">\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\"> E-mail:</div>\n\t\t\t\t\t\t\t\t<a data-yevent=\"click_email\" title=\"Написать нам!\" href=\"mailto:kazan@essokna.ru\" class=\"text-white\">kazan@essokna.ru</a>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"row mt-2\">\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/vk.svg\" class=\"icon\" alt=\"Вконтакте: Окна Казани вконтакте\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/max.svg\" class=\"icon\" alt=\"Окна Казани в MAXe\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!--div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div-->\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t<!--div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<img src=\"/t/z0/i/cons/yt.svg\" class=\"icon\" alt=\"YouTube: Окна Казани в youtube\" />\n\t\t\t\t\t\t\t</div-->\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-sm-12 col-md-6 col-lg-3\">\n\t\t\t\t\t<div class=\"footer-item my-3 footer-pay\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/card.svg\" class=\"icon\" alt=\"Принимаем к оплате\"></span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Принимаем к оплате:</div>\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/card-visa.svg\" class=\"icon\" alt=\"Карта виза\"></span>\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/card-maestro.svg\" class=\"icon\" alt=\"Карта маэстро\"></span>\n\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t<div class=\"col-3 mt-3 text-center\">\n\t\t\t\t\t\t\t\t<span><img src=\"/t/z0/i/cons/umbrella.svg\" class=\"icon\" alt=\"Наши партнёры в Казани\"></span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-9 mt-3 pl-0\">\n\t\t\t\t\t\t\t\t<div class=\"name text-uppercase font-weight-bold mb-2\">Наши партнёры:</div>\n\t\t\t\t\t\t\t\t<!--a href='https://domain.to.partner'>domain.to.partner</a><br /-->\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col\"><hr class=\"bg-light\">\n\t\t\t\t\t<div class=\"copyright mt-1 text-white-50\">\n\t\t\t\t\t\t© 2026<a href=\"https://essokna.ru\" class=\"text-white-50\"> Компания \"<span>RR GROUP</span>\"</a>. <span title=\"Ltu Tid.Template.Sid.Pid.Ses-Counter.fpath.OrCo\">28.10.2022 1014.z0.17008.100.0.main.0</span> <br>\n\t\t\t\t\t\tВНИМАНИЕ: Цены на сайте не являются публичной офёртой и могут отличаться, уточняйте у наших менеджеров!<br>\n\t\t\t\t\t\t<a title=\"Политика конфиденциальности\" href=\"/policy\">Политика конфиденциальности</a> / <a title=\"Разработка сайтов Казань\" rel=\"nofollow\" class=\"text-white\" href=\"https://lid.am/?utm_place=z0_footer&amp;utm_from=kazan.essokna.ru\">Разработка и продвижение сайтов Казань</a>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"container get_us\">Нашли ошибку в работе сайта? <a rel=\"nofollow, noindex, noreferrer\" href=\"/send_abuse\">напишите нам</a></div>\t</footer>\n\n\t<!--Боковые кнопки!-->\n\t<div class=\"fixed-btn__block\">\n\t\t\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-whatsapp p-2 border\">\n\t\t\t<a rel=\"nofollow\" data-yevent=\"click_whatsapp\" title=\"whatsapp kazan.essokna.ru\" href=\"/wa_go\" target=\"_blank\" class=\"text-decoration-none\"><img src=\"/t/z0/i/cons/whatsapp.svg\" class=\"icon\" alt=\"icon\"></a><a rel=\"nofollow\" data-yevent=\"click_whatsapp\" title=\"whatsapp kazan.essokna.ru\" href=\"/wa_go\" target=\"_blank\" class=\"text-white text-right text-uppercase small\">Наш whatsapp</a>\n\t\t</div>\n\t\t\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-accent p-2 border\">\n\t\t\t<a href=\"/quiz\" data-yevent=\"click_calc\"><img src=\"/t/z0/i/cons/calculator.svg\" class=\"icon\" alt=\"quiz\"></a><a target=\"_blank\" href=\"/quiz\" data-yevent=\"click_calc\" class=\"text-white text-right text-uppercase small\">Калькулятор</a>\n\t\t</div>\n\t\t\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-accent p-2 border\">\n\t\t\t<a data-yevent=\"click_\" title=\"Вызвать замерщика\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_estimator|Вызвать замерщика\"><img src=\"/t/z0/i/cons/estimator.svg\" class=\"icon\" alt=\"icon\"></a><a data-yevent=\"click_estimator\" title=\"Вызвать замерщика\" class=\"text-white text-right text-uppercase small\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_estimator|Вызвать замерщика\">Вызвать замерщика</a>\n\t\t</div>\n\t\t<div class=\"btn__block-item d-flex justify-content-between align-items-center shadow-sm mb-2 bg-accent p-2 border\">\n\t\t\t<a data-yevent=\"click_\" title=\"Обратный звонок\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_call_back|Обратный звонок\"><img src=\"/t/z0/i/cons/call_back.svg\" class=\"icon\" alt=\"icon\"></a><a data-yevent=\"click_call_back\" title=\"Обратный звонок\" class=\"text-white text-right text-uppercase small\" data-toggle=\"modal\" data-target=\"#ItemModal\" data-param=\"click_call_back|Обратный звонок\">Обратный звонок</a>\n\t\t</div>\n\t\t\n\t</div>\n\n\t<!-- Кнопка вверх -->\n\t<div class=\"to-top\"><img src=\"/t/z0/i/cons/arrow-up.svg\" class=\"icon\" alt=\"Icon Arrow Up\"></div>\n\n\t<!-- Модальные окна -->\n\t<div class=\"modal fade\" id=\"ItemModal\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n\t\t<div class=\"modal-dialog\" role=\"document\">\n\t\t\t<div class=\"modal-content\" id=\"dynamic_body\">\n\t\t\t\t<!--Динамическая загрузка формы-->\n\t\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t\t<h5 class=\"modal-title\">ВЫЗОВ ЗАМЕРЩИКА</h5>\n\t\t\t\t\t\t<a data-dismiss=\"modal\" aria-label=\"Close\" class=\"btn close\"><span aria-hidden=\"true\">×</span></a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<form id=\"fm_XX\">\n\t\t\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t\t\t<div class=\"d-none\"><input type=\"hidden\" name=\"g-recaptcha-response\"><input name=\"form_id\" value=\"estimator\"></div>\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col\"><label for=\"nme\" class=\"col-form-label\">Ваше имя:</label><input type=\"text\" class=\"form-control\" id=\"nme\" name=\"nme\" placeholder=\"Ваше имя\" required=\"\"></div>\n\t\t\t\t\t\t\t\t<div class=\"col\"><label for=\"phn_1\" class=\"col-form-label\">Ваш телефон:</label><input type=\"tel\" class=\"form-control\" id=\"phn_1\" name=\"phn\" placeholder=\"Номер телефона\" required=\"\"></div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<label for=\"txt\" class=\"col-form-label\">Сообщение:</label>\n\t\t\t\t\t\t\t\t<textarea class=\"form-control\" id=\"txt\" rows=\"3\" name=\"txt\" placeholder=\"Текст обращения при необходимости\"></textarea>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"modal-footer\">\n\t\t\t\t\t\t\t<div class=\"col d-none d-sm-block\"><small><a href=\"/policy\" title=\"Политика конфиденцальности\" target=\"_blank\">Политика конфиденцальности</a></small></div>\n\t\t\t\t\t\t\t<div class=\"col text-right\"><button type=\"button\" class=\"btn bg-accent text-white\">ОТПРАВИТЬ</button></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t<!--Динамическая загрузка формы-->\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\t<!-- Модальные окна -->\n\t<!--div class=\"modal fade\" class=\"vcard\">\n\t\t<div>\n\t\t\t<span class=\"category\">Кафе</span>-<span class=\"category\">кулинария</span>\n\t\t\t<span class=\"fn org\">Ромашка</span>\n\t\t</div>\n\t\t<div class=\"adr\">\n\t\t\t<span class=\"locality\">г. Солнечный</span>,\n\t\t\t<span class=\"street-address\">просп. Романтиков, д. 21</span>\n\t\t</div>\n\t\t<div class=\"tel\">Телефон: \n\t\t\t<abbr class=\"value\" title=\"+ 7 (890) 123-45-67\">123-45-67</abbr>\n\t\t</div>\n\t</div-->\n\t\n\t<div class=\"modal fade\" id=\"domain_linking\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n\t\t<div class=\"modal-dialog\" role=\"document\">\n\t\t\t<div class=\"modal-content\">\n\t\t\t\t<div class=\"modal-header\">\n\t\t\t\t\t<h5 class=\"modal-title\">Контакты в городах</h5>\n\t\t\t\t\t<a data-dismiss=\"modal\" aria-label=\"Close\" class=\"btn close\"><span aria-hidden=\"true\">×</span></a>\n\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t<div class=\"modal-body\">\n\t\t\t\t\t<input type=\"text\" class=\"sq form-control\" data-target=\"city\" placeholder=\"Поиск по городам\">\n\t\t\t\t\t<p class=\"domain_linking mt-3 pl-3 sr\">\n<a href=\"https://chelyabinsk.essokna.ru?utm_source=neighbour\">Челябинск</a>\n<a href=\"https://rnd.essokna.ru?utm_source=neighbour\">Ростов-на-Дону</a>\n<a href=\"https://ufa.essokna.ru?utm_source=neighbour\">Уфа</a>\n<a href=\"https://volgograd.essokna.ru?utm_source=neighbour\">Волгоград</a>\n<a href=\"https://perm.essokna.ru?utm_source=neighbour\">Пермь</a>\n<a href=\"https://krasnoyarsk.essokna.ru?utm_source=neighbour\">Красноярск</a>\n<a href=\"https://voronezh.essokna.ru?utm_source=neighbour\">Воронеж</a>\n<a href=\"https://saratov.essokna.ru?utm_source=neighbour\">Саратов</a>\n<a href=\"https://krasnodar.essokna.ru?utm_source=neighbour\">Краснодар</a>\n<a href=\"https://tolyatti.essokna.ru?utm_source=neighbour\">Тольятти</a>\n<a href=\"https://essokna.ru?utm_source=neighbour\">Москва</a>\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"modal-footer\">\n\t\t\t\t\t<div class=\"col d-none d-sm-block\"><small><a href=\"/policy\" title=\"Политика конфиденцальности\" target=\"_blank\">Политика конфиденцальности</a></small></div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\n\t<div id=\"thx_replace\" class=\"modal\">\n\t\t<!--Подмена в модальнике-->\n\t\t<div class=\"modal-body\">\n\t\t\t<h5>СПАСИБО ЗА ЗАЯВКУ</h5>\n\t\t\t<p>Мы свяжемся с вами удобным способом, максимально быстро. Обычно это не более 15 минут</p>\n\t\t</div>\n\t</div>\n\t\n\t<link href=\"/t/z0/css/f-jquery.fancybox.min.css\" rel=\"stylesheet\">\n\t<script src=\"/t/z0/js/f-01_jquery-3.2.1.min.js\"></script>\n\t<script src=\"/t/z0/js/f-jquery.fancybox.min.js\"></script>\n\t<script src=\"/t/z0/js/f-main.js\"></script>\n\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js\" integrity=\"sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js\"></script>\n\n<svg aria-hidden=\"true\" style=\"position: absolute; width: 0; height: 0; overflow: hidden;\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><defs>\n<linearGradient id=\"gradient\"><stop offset=\"0%\" stop-color=\"#eea448\"></stop><stop offset=\"100%\" stop-color=\"#f37145\"></stop></linearGradient><linearGradient id=\"gradient2\"><stop offset=\"0%\" stop-color=\"#ee5948\"></stop><stop offset=\"100%\" stop-color=\"#f34564\"></stop></linearGradient>\n<symbol id=\"icon-check-circle\" viewBox=\"0 0 32 32\"><path d=\"M16 0.5c-8.56 0-15.5 6.94-15.5 15.5s6.94 15.5 15.5 15.5 15.5-6.94 15.5-15.5-6.94-15.5-15.5-15.5zM16 3.5c6.908 0 12.5 5.591 12.5 12.5 0 6.908-5.591 12.5-12.5 12.5-6.908 0-12.5-5.591-12.5-12.5 0-6.908 5.591-12.5 12.5-12.5zM24.763 11.642l-1.409-1.42c-0.292-0.294-0.767-0.296-1.061-0.004l-8.835 8.764-3.737-3.767c-0.292-0.294-0.767-0.296-1.061-0.004l-1.42 1.409c-0.294 0.292-0.296 0.767-0.004 1.061l5.674 5.72c0.292 0.294 0.767 0.296 1.061 0.004l10.787-10.7c0.294-0.292 0.296-0.767 0.004-1.061z\"></path></symbol>\n<symbol id=\"icon-times\" viewBox=\"0 0 22 32\"><path d=\"M15.17 16l6.254-6.254c0.767-0.768 0.767-2.012 0-2.78l-1.39-1.39c-0.767-0.768-2.012-0.768-2.78 0l-6.254 6.254-6.254-6.254c-0.768-0.768-2.012-0.768-2.78 0l-1.39 1.39c-0.767 0.768-0.767 2.012 0 2.78l6.254 6.254-6.254 6.254c-0.767 0.767-0.767 2.012 0 2.78l1.39 1.39c0.767 0.767 2.013 0.767 2.78 0l6.254-6.254 6.254 6.254c0.767 0.767 2.012 0.767 2.78 0l1.39-1.39c0.767-0.767 0.767-2.012 0-2.78l-6.254-6.254z\"></path></symbol>\n<symbol id=\"icon-clock\" viewBox=\"0 0 32 32\"><path d=\"M16 0.5c-8.563 0-15.5 6.938-15.5 15.5s6.938 15.5 15.5 15.5 15.5-6.938 15.5-15.5-6.938-15.5-15.5-15.5zM16 28.5c-6.906 0-12.5-5.594-12.5-12.5s5.594-12.5 12.5-12.5 12.5 5.594 12.5 12.5-5.594 12.5-12.5 12.5zM19.863 21.975l-5.306-3.856c-0.194-0.144-0.306-0.369-0.306-0.606v-10.262c0-0.412 0.338-0.75 0.75-0.75h2c0.413 0 0.75 0.338 0.75 0.75v8.856l4.175 3.038c0.337 0.244 0.406 0.712 0.163 1.050l-1.175 1.619c-0.244 0.331-0.712 0.406-1.050 0.163z\"></path></symbol>\n<symbol id=\"icon-close\" viewBox=\"0 0 22 32\"><path d=\"M15.17 16l6.254-6.254c0.767-0.768 0.767-2.012 0-2.78l-1.39-1.39c-0.767-0.768-2.012-0.768-2.78 0l-6.254 6.254-6.254-6.254c-0.768-0.768-2.012-0.768-2.78 0l-1.39 1.39c-0.767 0.768-0.767 2.012 0 2.78l6.254 6.254-6.254 6.254c-0.767 0.767-0.767 2.012 0 2.78l1.39 1.39c0.767 0.767 2.013 0.767 2.78 0l6.254-6.254 6.254 6.254c0.767 0.767 2.012 0.767 2.78 0l1.39-1.39c0.767-0.767 0.767-2.012 0-2.78l-6.254-6.254z\"></path></symbol>\n<symbol id=\"icon-phone\" viewBox=\"0 0 32 32\"><path d=\"M31.087 22.613l-7-3c-0.173-0.076-0.376-0.12-0.588-0.12-0.467 0-0.885 0.214-1.16 0.549l-0.002 0.003-3.1 3.788c-4.885-2.34-8.734-6.189-11.014-10.935l-0.060-0.139 3.787-3.1c0.338-0.277 0.552-0.694 0.552-1.161 0-0.213-0.044-0.415-0.125-0.599l0.004 0.010-3-7c-0.239-0.538-0.768-0.906-1.384-0.906-0.119 0-0.234 0.014-0.345 0.040l0.010-0.002-6.5 1.5c-0.671 0.159-1.163 0.753-1.163 1.462 0 0 0 0 0 0v-0c0 16.031 12.994 29 29 29 0 0 0.001 0 0.001 0 0.709 0 1.303-0.492 1.459-1.152l0.002-0.010 1.5-6.5c0.023-0.1 0.037-0.215 0.037-0.333 0-0.619-0.371-1.152-0.903-1.388l-0.010-0.004z\"></path></symbol>\n<symbol id=\"icon-star-regular\" viewBox=\"0 0 36 32\"><path d=\"M33.006 10.719l-9.131-1.331-4.081-8.275c-0.731-1.475-2.85-1.494-3.587 0l-4.081 8.275-9.131 1.331c-1.637 0.238-2.294 2.256-1.106 3.412l6.606 6.438-1.563 9.094c-0.281 1.644 1.45 2.875 2.9 2.106l8.169-4.294 8.169 4.294c1.45 0.762 3.181-0.462 2.9-2.106l-1.563-9.094 6.606-6.438c1.188-1.156 0.531-3.175-1.106-3.412zM24.288 19.519l1.481 8.65-7.769-4.081-7.769 4.081 1.481-8.65-6.287-6.125 8.688-1.262 3.888-7.875 3.887 7.875 8.688 1.262-6.287 6.125z\"></path></symbol>\n<symbol id=\"icon-star-half\" viewBox=\"0 0 34 32\"><path d=\"M31.784 10.719l-9.148-1.332-4.088-8.274c-0.367-0.739-1.084-1.113-1.801-1.113-0.712 0-1.424 0.369-1.793 1.113l-4.089 8.274-9.149 1.331c-1.641 0.238-2.298 2.256-1.109 3.412l6.618 6.438-1.566 9.092c-0.223 1.299 0.814 2.341 1.976 2.341 0.308 0 0.625-0.073 0.929-0.234l8.184-4.293 8.184 4.294c0.304 0.159 0.62 0.232 0.927 0.232 1.163 0 2.201-1.038 1.979-2.337l-1.564-9.093 6.619-6.436c1.19-1.156 0.532-3.175-1.108-3.412zM24.176 18.419l-1.133 1.101 1.488 8.646-7.782-4.083 0.002-19.824 3.888 7.87 8.703 1.267-5.166 5.024z\"></path></symbol>\n<symbol id=\"icon-star-solid\" viewBox=\"0 0 36 32\"><path d=\"M16.206 1.113l-4.081 8.275-9.131 1.331c-1.637 0.238-2.294 2.256-1.106 3.412l6.606 6.438-1.563 9.094c-0.281 1.644 1.45 2.875 2.9 2.106l8.169-4.294 8.169 4.294c1.45 0.762 3.181-0.462 2.9-2.106l-1.563-9.094 6.606-6.438c1.188-1.156 0.531-3.175-1.106-3.412l-9.131-1.331-4.081-8.275c-0.731-1.475-2.85-1.494-3.587 0z\"></path></symbol>\n<symbol id=\"icon-arrow\" viewBox=\"0 0 32 32\"><path d=\"M31.5 16c0-8.563-6.938-15.5-15.5-15.5s-15.5 6.938-15.5 15.5 6.938 15.5 15.5 15.5 15.5-6.938 15.5-15.5zM3.5 16c0-6.906 5.594-12.5 12.5-12.5s12.5 5.594 12.5 12.5-5.594 12.5-12.5 12.5-12.5-5.594-12.5-12.5zM8 17.25v-2.5c0-0.412 0.338-0.75 0.75-0.75h7.25v-4.188c0-0.669 0.806-1 1.281-0.531l6.188 6.188c0.294 0.294 0.294 0.769 0 1.063l-6.188 6.188c-0.475 0.475-1.281 0.137-1.281-0.531v-4.188h-7.25c-0.412 0-0.75-0.337-0.75-0.75z\"></path></symbol>\n<symbol id=\"icon-car\" viewBox=\"0 0 32 32\"><path d=\"M31.249 11h-3.742l-1.040-2.6c-1.069-2.673-3.619-4.4-6.499-4.4h-7.938c-2.879 0-5.43 1.727-6.499 4.4l-1.040 2.6h-3.741c-0.488 0-0.846 0.459-0.728 0.932l0.375 1.5c0.083 0.334 0.383 0.568 0.728 0.568h1.254c-0.839 0.733-1.38 1.799-1.38 3v3c0 1.008 0.385 1.917 1 2.621v3.379c0 1.104 0.896 2 2 2h2c1.104 0 2-0.896 2-2v-2h16v2c0 1.104 0.896 2 2 2h2c1.104 0 2-0.896 2-2v-3.379c0.615-0.703 1-1.613 1-2.621v-3c0-1.201-0.541-2.267-1.379-3h1.254c0.344 0 0.644-0.234 0.727-0.568l0.375-1.5c0.118-0.473-0.24-0.932-0.728-0.932zM9.246 9.886c0.456-1.139 1.559-1.886 2.786-1.886h7.938c1.227 0 2.33 0.747 2.786 1.886l1.246 3.114h-16l1.246-3.114zM6 19.988c-1.2 0-2-0.797-2-1.994s0.8-1.994 2-1.994 3 1.794 3 2.991-1.8 0.997-3 0.997zM26 19.988c-1.2 0-3 0.199-3-0.997s1.8-2.991 3-2.991 2 0.797 2 1.994-0.8 1.994-2 1.994z\"></path></symbol>\n<symbol id=\"icon-check\" viewBox=\"0 0 32 32\"><path d=\"M10.869 27.463l-10.4-10.4c-0.625-0.625-0.625-1.638 0-2.263l2.263-2.263c0.625-0.625 1.638-0.625 2.263 0l7.006 7.006 15.006-15.006c0.625-0.625 1.638-0.625 2.263 0l2.263 2.263c0.625 0.625 0.625 1.638 0 2.263l-18.4 18.4c-0.625 0.625-1.638 0.625-2.263-0z\"></path></symbol>\n<symbol id=\"icon-money\" viewBox=\"0 0 40 32\"><path d=\"M20 9c-3.314 0-6 3.134-6 7s2.686 7 6 7c3.313 0 6-3.133 6-7s-2.686-7-6-7zM22.5 19.5c0 0.276-0.224 0.5-0.5 0.5h-4c-0.276 0-0.5-0.224-0.5-0.5v-1c0-0.276 0.224-0.5 0.5-0.5h1v-3.465l-0.029 0.019c-0.078 0.053-0.174 0.084-0.277 0.084-0.173 0-0.325-0.088-0.415-0.221l-0.001-0.002-0.555-0.832c-0.053-0.078-0.084-0.174-0.084-0.277 0-0.173 0.088-0.325 0.221-0.415l0.002-0.001 0.958-0.639c0.234-0.158 0.522-0.252 0.832-0.252 0 0 0 0 0 0h0.849c0.276 0 0.5 0.224 0.5 0.5v5.5h1c0.276 0 0.5 0.224 0.5 0.5v1zM38 4h-36c-1.104 0-2 0.896-2 2v20c0 1.104 0.896 2 2 2h36c1.104 0 2-0.896 2-2v-20c0-1.104-0.896-2-2-2zM37 21c-2.209 0-4 1.791-4 4h-26c0-2.209-1.791-4-4-4v-10c2.209 0 4-1.791 4-4h26c0 2.209 1.791 4 4 4v10z\"></path></symbol>\n<symbol id=\"icon-calendar\" viewBox=\"0 0 32 32\"><path d=\"M27.875 2.5h-2.875v-1.5c0-0.552-0.448-1-1-1s-1 0.448-1 1v1.5h-14v-1.5c0-0.552-0.448-1-1-1s-1 0.448-1 1v1.5h-2.875c-2.275 0-4.125 1.85-4.125 4.125v21.25c0 2.275 1.85 4.125 4.125 4.125h23.75c2.275 0 4.125-1.85 4.125-4.125v-21.25c0-2.275-1.85-4.125-4.125-4.125zM30 27.875c0 1.174-0.951 2.125-2.125 2.125h-23.75c-1.174 0-2.125-0.951-2.125-2.125v-16.563c0-0.173 0.14-0.313 0.313-0.313h27.375c0.173 0 0.313 0.14 0.313 0.313z\"></path></symbol>\n<symbol id=\"icon-email\" viewBox=\"0 0 32 32\"><path d=\"M30.857 4.571h-29.714l14.857 12.238 15.025-12.203c-0.055-0.016-0.111-0.028-0.168-0.034z\"></path><path d=\"M16.721 19.173c-0.421 0.345-1.027 0.345-1.448 0l-15.273-12.583v19.696c0 0.631 0.512 1.143 1.143 1.143h29.714c0.631 0 1.143-0.512 1.143-1.143v-19.527l-15.279 12.414z\"></path></symbol><symbol id=\"icon-pin\" viewBox=\"0 0 32 32\"><path d=\"M16 0c-5.881 0-10.667 4.785-10.667 10.667 0 1.766 0.441 3.516 1.281 5.069l8.803 15.921c0.117 0.212 0.341 0.344 0.583 0.344s0.466-0.131 0.583-0.344l8.806-15.926c0.836-1.547 1.277-3.298 1.277-5.064 0-5.881-4.785-10.667-10.667-10.667zM16 16c-2.941 0-5.333-2.393-5.333-5.333s2.393-5.333 5.333-5.333 5.333 2.393 5.333 5.333c0 2.941-2.393 5.333-5.333 5.333z\"></path></symbol>\n<symbol id=\"icon-search\" viewBox=\"0 0 32 32\"><path d=\"M31.563 27.669l-6.231-6.231c-0.281-0.281-0.663-0.438-1.063-0.438h-1.019c1.725-2.206 2.75-4.981 2.75-8 0-7.181-5.819-13-13-13s-13 5.819-13 13 5.819 13 13 13c3.019 0 5.794-1.025 8-2.75v1.019c0 0.4 0.156 0.781 0.438 1.063l6.231 6.231c0.587 0.587 1.538 0.587 2.119 0l1.769-1.769c0.587-0.587 0.587-1.538 0.006-2.125zM13 21c-4.419 0-8-3.575-8-8 0-4.419 3.575-8 8-8 4.419 0 8 3.575 8 8 0 4.419-3.575 8-8 8z\"></path></symbol>\n<symbol id=\"icon-moneybill\" viewBox=\"0 0 32 32\"><path d=\"M608 64H32C14.3 64 0 78.3 0 96v320c0 17.7 14.3 32 32 32h576c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zM32 96h64c0 35.3-28.7 64-64 64zm0 320v-64c35.3 0 64 28.7 64 64zm576 0h-64c0-35.3 28.7-64 64-64zm0-96c-52.9 0-96 43.1-96 96H128c0-52.9-43.1-96-96-96V192c52.9 0 96-43.1 96-96h384c0 52.9 43.1 96 96 96zm0-160c-35.3 0-64-28.7-64-64h64zm-288-32c-61.9 0-112 57.3-112 128s50.1 128 112 128c61.8 0 112-57.3 112-128s-50.1-128-112-128zm0 224c-44.1 0-80-43.1-80-96s35.9-96 80-96 80 43.1 80 96-35.9 96-80 96zm32-63.9h-16v-88c0-4.4-3.6-8-8-8h-13.7c-4.7 0-9.4 1.4-13.3 4l-15.3 10.2c-3.7 2.5-4.6 7.4-2.2 11.1l8.9 13.3c2.5 3.7 7.4 4.6 11.1 2.2l.5-.3V288h-16c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-7.9z\"></path></symbol>\n</defs></svg>\n\n</body></html>",
+  "text": "Установка пластиковых окон Казань цена от 2436 руб. Вызвать замерщика kazan@essokna.ru Обратный звонок Ежедневно 08:00 - 18:00 Окна и остекление по лучшей цене Казань 420021, Россия, г. Казань , улица Сары Садыковой, 30 +7 (929) 728-42-25 Услуги Меню КАЛЬКУЛЯТОР ЦЕНЫ УСЛУГИ ГАЛЕРЕЯ АКЦИИ ОТЗЫВЫ КОНТАКТЫ ВИДЕО СЕРТИФИКАТЫ ОПЛАТА ДОСТАВКА Окна Пластиковые окна Алюминиевые окна Мансардные окна Окна в коттедж Раздвижные окна Окна для дачи Окна рехау Окна в дом Окна для беседки Окна для террасы Деревянные окна Недорогие окна Остекление Балконы и лоджии Входные группы Панорамное остекление Витражное остекление Веранды / террасы Остекление веранды Остекление террасы Остекление зданий Остекление балкона Фасадное остекление Остекление квартир Холодное остекление Теплое остекление Остекление коттеджей Остекление лоджии Раздвижное остекление Безрамное остекление Алюминиевый балкон Услуги Монтаж окон Изготовление окон Балкон под ключ Ремонт окон Замер окон Установка окон под ключ Замена остекления Замента пластиковых окон Регулировка окон Сервисное обслуживание Отделка балконов и лоджий Комплектующие Жалюзи на окна Подоконники Откосы Отливы Фурнитура Наличиники на окна Москитные сетки Пластиковые двери Балконные двери Установка окон в Казани и Республике Татарстан Получить актуальную для мая цену на изготовление и установку окон в Казани. после нескольких вопросов ПОЛУЧИТЬ ЦЕНУ * расчёт является предварительным Окна, стеклопакеты от производителя Пластиковые окна от 4911 руб. ЗАКАЗАТЬ Алюминиевые окна от 5424 руб. ЗАКАЗАТЬ Балконы и лоджии от 16233 руб. ЗАКАЗАТЬ Остекление квартир от 9795 руб. ЗАКАЗАТЬ Окна для дачи от 3265 руб. ЗАКАЗАТЬ Мансардные окна от 9784 руб. ЗАКАЗАТЬ Входные группы от 17869 руб. ЗАКАЗАТЬ Веранды/Террасы от 32435 руб. ЗАКАЗАТЬ Установка окон в Казани под ключ ремонт окон Ремонт окон в Казани 100% качество теплое остекление Утепляем балконы под ключ всего за 48 часов раздвижные окна Раздвижные окна любой формы под ключ панорамные окна Панормамное остекление кровель и стен окна в коттедж Уютные окна на заказ для коттеджей и домов остекление балкона Холодное остекление балконов в Казани Продажа и монтаж окон в Казани и Республике Татарстан Основным направлением компании RR GROUP в 2026 году является комплексное остекление квартир, офисов, загородных домов и дач. Мы выбираем лучших поставщиков комплектующих материалов и тщательно контролируем каждый этап производства. В нашей компании вы сможете заказать деревянные, пластиковые и алюминиевые окна различных размеров, цветов и конфигураций. Своим заказчикам мы предлагаем полный комплекс услуг от дизайна проекта (если это необходимо) до сервисного обслуживания. Читать ещё Менеджеры компании RR GROUP проконсультируют вас по всем вопросам и помогут сделать оптимальный выбор оконного профиля, который будет соответствовать вашим требованиям. Окна — это то, чем вы будете пользоваться постоянно на протяжении многих лет, и мы хотим, чтобы вы сделай правильный выбор. Для наших специалистов нет невыполнимых задач. Мы гарантируем реализацию проекта любой сложности. Наши специалисты работают в этой сфере уже много лет и имеют огромный опыт в решении самых сложных задач. Доверив остекление нашей компании, вы получите отличный сервис, индивидуальный подход и 106% качество. Фотографии Окон Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Установка пластиковых окон Казань цена от 2436 руб. 2026 г. Республике Татарстан Смотреть больше Преимущества RR GROUP Всегда на связи Наши менеджеры в Казани всегда готовы проконсультировать вас и ответить на все интересующие вас вопросы Сервисное сопровождение Мы предлагает гарантийное и послегарантийное обслуживание. Вы будете рады нашей работе долгие годы Без переплат Собственное производство позволяет предлагать самые невысокие цены на продукцию, изготовленную в соответствии со строгими стандартами Мобильный офис 7 дней в неделю. Возможность оформить заказ и оплатить любым удобным способом прямо на дому. Звоните +7 929 728-42-25 Опытный персонал Все наши сотрудники прошли полное обучение и имеют за плечами огромный опыт качественно выполненных работ Широкий ассортимент Окон и дверей из ПВХ, дерева, алюминия, мансардных и панорамных окон в различных цветах. Входные группы веранды и террасы Отзывы клиентов Ольга М. Выбор стекольщиков огромный! Приглашала много замерщиков.из 7 выбрала мир окон. Изготавливают в верхнем Весёлом.очень быстро! И сравнительно с другими не дорого. Мастер профи! Если будешь заказывать рекомендую! Казань [ 13.04.2025 05:34 ] Елена Большое спасибо ребятам за выполненную работу. Установили 3 пластиковых окна. Все сделали качественно и быстро, убрали за собой мусор. Просто молодцы!!! Рекомендую всем!!! Казань [ 25.03.2025 10:17 ] Читать больше Цены на окна и остекление Казань в мае Наименование Цена руб. от Ед. изм. Пластиковые окна REHAU 3948 руб. м2 Деревянные окна 7548 руб. м2 Входные группы, двери ПВХ 7362 руб. м2 Раздвижные порталы 17570 руб. м2 Алюминиевые раздвижные окна PROVEDAL 2765 руб. м2 Безрамное остекление LUMON 20080 руб. м2 Почему мы Гарантия 5 лет на все виды выполненных работ по окнам и остеклению. Профессиональные и опытные монтажники по всем окнам и балконам. Одни из самых выгодных цен по городу на ремонт и монтажные работы. Контроль качества всех работ установки окон, остекления и утепления. Минимальные сроки производства, монтажа окон, остекления и утепления. Полный комплекс услуг по монтажу и утеплению, остеклению и ремонту. Способы оплаты 💰 НАЛИЧНЫЕ 📄 ПО СЧЁТУ 💳 КАРТОЙ 💸 ПЕРЕВОД 📈 КРЕДИТ 💹 РАССРОЧКА Меню КАЛЬКУЛЯТОР ЦЕНЫ УСЛУГИ ГАЛЕРЕЯ АКЦИИ ОТЗЫВЫ КОНТАКТЫ ВИДЕО СЕРТИФИКАТЫ ОПЛАТА ДОСТАВКА Наш адрес: 420021 , Россия , Республика Татарстан , Казань , улица Сары Садыковой, 30 Режим работы: Ежедневно 08:00 - 18:00 Телефоны: +7 (929) 728-42-25 +7 9297284225 Поделиться: E-mail: kazan@essokna.ru Принимаем к оплате: Наши партнёры: © 2026 Компания \" RR GROUP \" . 28.10.2022 1014.z0.17008.100.0.main.0 ВНИМАНИЕ: Цены на сайте не являются публичной офёртой и могут отличаться, уточняйте у наших менеджеров! Политика конфиденциальности / Разработка и продвижение сайтов Казань Нашли ошибку в работе сайта? напишите нам Наш whatsapp Калькулятор Вызвать замерщика Обратный звонок ВЫЗОВ ЗАМЕРЩИКА × Ваше имя: Ваш телефон: Сообщение: Политика конфиденцальности ОТПРАВИТЬ Контакты в городах × Челябинск Ростов-на-Дону Уфа Волгоград Пермь Красноярск Воронеж Саратов Краснодар Тольятти Москва Политика конфиденцальности СПАСИБО ЗА ЗАЯВКУ Мы свяжемся с вами удобным способом, максимально быстро. Обычно это не более 15 минут",
+  "json_ld": [
+    "{\"@context\": \"https://schema.org\", \"@type\": \"Organization\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Казань, Россия\",\"postalCode\":\"420021\",\"streetAddress\":\"улица Сары Садыковой, 30\"},\"email\":\"kazan@essokna.ru\",\"name\":\"RR GROUP\",\"telephone\":\"+7 929 728-42-25\"}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"RR GROUP\", \"alternateName\": \"RR GROUP. Казань\", \"url\": \"https://kazan.essokna.ru/\"}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"LocalBusiness\", \"name\": \"RR GROUP\", \"url\": \"https://kazan.essokna.ru/\", \"logo\": \"/img/1014/logo.png\", \"image\": \"https://kazan.essokna.ru/img/1014/co_main.jpg\", \"description\": \"Установка пластиковых окон Казани под ключ - цена от 2436 руб.\", \"address\":{\"@type\": \"PostalAddress\", \"streetAddress\": \"улица Сары Садыковой, 30\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"postalCode\": \"420021\", \"addressCountry\": \"Россия\"}, \"geo\":{\"@type\": \"GeoCoordinates\", \"latitude\": \"55.773981\", \"longitude\": \"49.116071\"}, \"openingHours\": \"Mo, Tu, We, Th, Fr 09:00-19:00 Sa 10:00-15:00\", \"telephone\": \"+79297284225\", \"priceRange\": \"$$\", \"contactPoint\":{\"@type\": \"ContactPoint\", \"telephone\": \"+79297284225\", \"contactType\": \"sales\"}}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"ImageObject\",\"contentLocation\": \"Установка пластиковых окон Казань цена от 2436 руб., Россия\",\"contentUrl\": \"https://kazan.essokna.ru/img/1014/co_main.jpg\",\"description\": \"Закажите пластиковые окна с установкой од ключ в Казани Цена с установкой от 2436 руб. Деревянные окна, стеклопакеты, остекление. ☎ +7(929)728-42-25 Официальный сайт производителя окон компании RR GROUP Казань Скидки в мае\",\"name\": \"Установка окон в Казани и Республике Татарстан\"}",
+    "{\"@context\": \"https://schema.org\", \"@type\": \"Service\", \"serviceType\": \"Продажа и установка окон в Казани от 2436 руб.\", \"provider\":{\"@type\": \"LocalBusiness\", \"image\": \"/img/1014/logo.png\", \"priceRange\": \"$$\", \"address\":{\"@type\": \"PostalAddress\", \"addressLocality\": \"Казань\", \"addressRegion\": \"Республика Татарстан\", \"streetAddress\": \"улица Сары Садыковой, 30\"}, \"description\": \"Выполним качественную установку окон в Казани по выгодной цене от 2436 руб. в мае 2026 г. Гарантия 13 месяцев. Выезд и замер 0 рублей. Производство, продажа, установка, ремонт.\", \"name\": \"RR GROUP\", \"telephone\": \"+79297284225\"}, \"areaServed\":{\"@type\": \"State\", \"name\": \"Казань\"}}"
+  ],
+  "document": {
+    "title": "Установка пластиковых окон Казань цена от 2436 руб.",
+    "meta_description": "Закажите пластиковые окна с установкой од ключ в Казани Цена с установкой от 2436 руб. Деревянные окна, стеклопакеты, остекление. ☎ +7(929)728-42-25 Официальный сайт производителя окон компании RR GROUP Казань Скидки в мае",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "https://kazan.essokna.ru/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kazan@essokna.ru",
+        "text": "kazan@essokna.ru",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Казань",
+        "rel": ""
+      },
+      {
+        "href": "tel:+7929728-42-25",
+        "text": "+7 (929) 728-42-25",
+        "rel": ""
+      },
+      {
+        "href": "/quiz",
+        "text": "КАЛЬКУЛЯТОР",
+        "rel": ""
+      },
+      {
+        "href": "/tseny",
+        "text": "ЦЕНЫ",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "УСЛУГИ",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "ГАЛЕРЕЯ",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "АКЦИИ",
+        "rel": ""
+      },
+      {
+        "href": "/otzivy",
+        "text": "ОТЗЫВЫ",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty",
+        "text": "КОНТАКТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/video",
+        "text": "ВИДЕО",
+        "rel": ""
+      },
+      {
+        "href": "/sertifikaty",
+        "text": "СЕРТИФИКАТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/oplata",
+        "text": "ОПЛАТА",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka",
+        "text": "ДОСТАВКА",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovye-okna",
+        "text": "Пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "/alyuminievye-okna",
+        "text": "Алюминиевые окна",
+        "rel": ""
+      },
+      {
+        "href": "/mansardnye-okna",
+        "text": "Мансардные окна",
+        "rel": ""
+      },
+      {
+        "href": "/okna-v-kottedzh",
+        "text": "Окна в коттедж",
+        "rel": ""
+      },
+      {
+        "href": "/razdvizhnye-okna",
+        "text": "Раздвижные окна",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-dachi",
+        "text": "Окна для дачи",
+        "rel": ""
+      },
+      {
+        "href": "/okna-rekhau",
+        "text": "Окна рехау",
+        "rel": ""
+      },
+      {
+        "href": "/okna-v-dom",
+        "text": "Окна в дом",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-besedki",
+        "text": "Окна для беседки",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-terrasy",
+        "text": "Окна для террасы",
+        "rel": ""
+      },
+      {
+        "href": "/derevyannye-okna",
+        "text": "Деревянные окна",
+        "rel": ""
+      },
+      {
+        "href": "/nedorogie-okna",
+        "text": "Недорогие окна",
+        "rel": ""
+      },
+      {
+        "href": "/balkony-i-lodzhii",
+        "text": "Балконы и лоджии",
+        "rel": ""
+      },
+      {
+        "href": "/vhodnye-gruppy",
+        "text": "Входные группы",
+        "rel": ""
+      },
+      {
+        "href": "/panoramnye-okna",
+        "text": "Панорамное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/vitrazhnoe-osteklenie",
+        "text": "Витражное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/verandy-terrasy",
+        "text": "Веранды / террасы",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-verandy",
+        "text": "Остекление веранды",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-terrasy",
+        "text": "Остекление террасы",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-zdanij",
+        "text": "Остекление зданий",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkona",
+        "text": "Остекление балкона",
+        "rel": ""
+      },
+      {
+        "href": "/fasadnoe-osteklenie",
+        "text": "Фасадное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kvartir",
+        "text": "Остекление квартир",
+        "rel": ""
+      },
+      {
+        "href": "/holodnoe-osteklenie",
+        "text": "Холодное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/teploe-osteklenie",
+        "text": "Теплое остекление",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kottedzhej",
+        "text": "Остекление коттеджей",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-lodzhii",
+        "text": "Остекление лоджии",
+        "rel": ""
+      },
+      {
+        "href": "/razdvizhnoe-osteklenie",
+        "text": "Раздвижное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/bezramnoe-osteklenie",
+        "text": "Безрамное остекление",
+        "rel": ""
+      },
+      {
+        "href": "/alyuminievyj-balkon",
+        "text": "Алюминиевый балкон",
+        "rel": ""
+      },
+      {
+        "href": "/montazh-okon",
+        "text": "Монтаж окон",
+        "rel": ""
+      },
+      {
+        "href": "/izgotovlenie-okon",
+        "text": "Изготовление окон",
+        "rel": ""
+      },
+      {
+        "href": "/balkon-pod-klyuch",
+        "text": "Балкон под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/remont-okon",
+        "text": "Ремонт окон",
+        "rel": ""
+      },
+      {
+        "href": "/zamery-okon",
+        "text": "Замер окон",
+        "rel": ""
+      },
+      {
+        "href": "/ustanovka-okon",
+        "text": "Установка окон под ключ",
+        "rel": ""
+      },
+      {
+        "href": "/zamena-ostekleniya",
+        "text": "Замена остекления",
+        "rel": ""
+      },
+      {
+        "href": "/zamena-plastikovyh-okon",
+        "text": "Замента пластиковых окон",
+        "rel": ""
+      },
+      {
+        "href": "/okno-regulirovka",
+        "text": "Регулировка окон",
+        "rel": ""
+      },
+      {
+        "href": "/servisnoe-obsluzhivanie",
+        "text": "Сервисное обслуживание",
+        "rel": ""
+      },
+      {
+        "href": "/otdelka-balkonov-i-lodzhij",
+        "text": "Отделка балконов и лоджий",
+        "rel": ""
+      },
+      {
+        "href": "/zhalyuzi-na-okna",
+        "text": "Жалюзи на окна",
+        "rel": ""
+      },
+      {
+        "href": "/podokonniki",
+        "text": "Подоконники",
+        "rel": ""
+      },
+      {
+        "href": "/otkosy",
+        "text": "Откосы",
+        "rel": ""
+      },
+      {
+        "href": "/otlivy",
+        "text": "Отливы",
+        "rel": ""
+      },
+      {
+        "href": "/furnitura",
+        "text": "Фурнитура",
+        "rel": ""
+      },
+      {
+        "href": "/nalichniki-na-okna",
+        "text": "Наличиники на окна",
+        "rel": ""
+      },
+      {
+        "href": "/moskitnye-setki",
+        "text": "Москитные сетки",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovye-dveri",
+        "text": "Пластиковые двери",
+        "rel": ""
+      },
+      {
+        "href": "/balkonnye-dveri",
+        "text": "Балконные двери",
+        "rel": ""
+      },
+      {
+        "href": "/quiz",
+        "text": "ПОЛУЧИТЬ ЦЕНУ",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovye-okna",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/plastikovye-okna",
+        "text": "Пластиковые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/plastikovye-okna",
+        "text": "от 4911 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/alyuminievye-okna",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/alyuminievye-okna",
+        "text": "Алюминиевые окна",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/alyuminievye-okna",
+        "text": "от 5424 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/balkony-i-lodzhii",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/balkony-i-lodzhii",
+        "text": "Балконы и лоджии",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/balkony-i-lodzhii",
+        "text": "от 16233 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kvartir",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-kvartir",
+        "text": "Остекление квартир",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/osteklenie-kvartir",
+        "text": "от 9795 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-dachi",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/okna-dlya-dachi",
+        "text": "Окна для дачи",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/okna-dlya-dachi",
+        "text": "от 3265 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/mansardnye-okna",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/mansardnye-okna",
+        "text": "Мансардные окна",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/mansardnye-okna",
+        "text": "от 9784 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/vhodnye-gruppy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/vhodnye-gruppy",
+        "text": "Входные группы",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/vhodnye-gruppy",
+        "text": "от 17869 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/verandy-terrasy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/verandy-terrasy",
+        "text": "Веранды/Террасы",
+        "rel": ""
+      },
+      {
+        "href": "https://kazan.essokna.ru/verandy-terrasy",
+        "text": "от 32435 руб.",
+        "rel": ""
+      },
+      {
+        "href": "/remont-okon",
+        "text": "ремонт окон",
+        "rel": ""
+      },
+      {
+        "href": "/teploe-osteklenie",
+        "text": "теплое остекление",
+        "rel": ""
+      },
+      {
+        "href": "/razdvizhnye-okna",
+        "text": "раздвижные окна",
+        "rel": ""
+      },
+      {
+        "href": "/panoramnye-okna",
+        "text": "панорамные окна",
+        "rel": ""
+      },
+      {
+        "href": "/okna-v-kottedzh",
+        "text": "окна в коттедж",
+        "rel": ""
+      },
+      {
+        "href": "/osteklenie-balkona",
+        "text": "остекление балкона",
+        "rel": ""
+      },
+      {
+        "href": "#collapseExample",
+        "text": "Читать ещё",
+        "rel": ""
+      },
+      {
+        "href": "/img/1014/gb_1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/img/1014/gb_2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/img/1014/gb_3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/img/1014/gb_4.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "Смотреть больше",
+        "rel": ""
+      },
+      {
+        "href": "/otzivy",
+        "text": "Читать больше",
+        "rel": ""
+      },
+      {
+        "href": "/quiz",
+        "text": "КАЛЬКУЛЯТОР",
+        "rel": ""
+      },
+      {
+        "href": "/tseny",
+        "text": "ЦЕНЫ",
+        "rel": ""
+      },
+      {
+        "href": "/uslugi",
+        "text": "УСЛУГИ",
+        "rel": ""
+      },
+      {
+        "href": "/gallery",
+        "text": "ГАЛЕРЕЯ",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "АКЦИИ",
+        "rel": ""
+      },
+      {
+        "href": "/otzivy",
+        "text": "ОТЗЫВЫ",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty",
+        "text": "КОНТАКТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/video",
+        "text": "ВИДЕО",
+        "rel": ""
+      },
+      {
+        "href": "/sertifikaty",
+        "text": "СЕРТИФИКАТЫ",
+        "rel": ""
+      },
+      {
+        "href": "/oplata",
+        "text": "ОПЛАТА",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka",
+        "text": "ДОСТАВКА",
+        "rel": ""
+      },
+      {
+        "href": "tel:9297284225",
+        "text": "+7 (929) 728-42-25",
+        "rel": ""
+      },
+      {
+        "href": "tel:+79297284225",
+        "text": "+7 9297284225",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kazan@essokna.ru",
+        "text": "kazan@essokna.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://essokna.ru",
+        "text": "Компания \" RR GROUP \"",
+        "rel": ""
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://lid.am/?utm_place=z0_footer&utm_from=kazan.essokna.ru",
+        "text": "Разработка и продвижение сайтов Казань",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/send_abuse",
+        "text": "напишите нам",
+        "rel": "nofollow, noindex, noreferrer"
+      },
+      {
+        "href": "/wa_go",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/wa_go",
+        "text": "Наш whatsapp",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/quiz",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/quiz",
+        "text": "Калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Вызвать замерщика",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденцальности",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "https://chelyabinsk.essokna.ru?utm_source=neighbour",
+        "text": "Челябинск",
+        "rel": ""
+      },
+      {
+        "href": "https://rnd.essokna.ru?utm_source=neighbour",
+        "text": "Ростов-на-Дону",
+        "rel": ""
+      },
+      {
+        "href": "https://ufa.essokna.ru?utm_source=neighbour",
+        "text": "Уфа",
+        "rel": ""
+      },
+      {
+        "href": "https://volgograd.essokna.ru?utm_source=neighbour",
+        "text": "Волгоград",
+        "rel": ""
+      },
+      {
+        "href": "https://perm.essokna.ru?utm_source=neighbour",
+        "text": "Пермь",
+        "rel": ""
+      },
+      {
+        "href": "https://krasnoyarsk.essokna.ru?utm_source=neighbour",
+        "text": "Красноярск",
+        "rel": ""
+      },
+      {
+        "href": "https://voronezh.essokna.ru?utm_source=neighbour",
+        "text": "Воронеж",
+        "rel": ""
+      },
+      {
+        "href": "https://saratov.essokna.ru?utm_source=neighbour",
+        "text": "Саратов",
+        "rel": ""
+      },
+      {
+        "href": "https://krasnodar.essokna.ru?utm_source=neighbour",
+        "text": "Краснодар",
+        "rel": ""
+      },
+      {
+        "href": "https://tolyatti.essokna.ru?utm_source=neighbour",
+        "text": "Тольятти",
+        "rel": ""
+      },
+      {
+        "href": "https://essokna.ru?utm_source=neighbour",
+        "text": "Москва",
+        "rel": ""
+      },
+      {
+        "href": "/policy",
+        "text": "Политика конфиденцальности",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Услуги",
+      "Меню",
+      "Окна",
+      "Остекление",
+      "Услуги",
+      "Комплектующие",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "ЗАКАЗАТЬ",
+      "Меню",
+      "ОТПРАВИТЬ"
+    ],
+    "h1_texts": [
+      "Установка окон в Казани и Республике Татарстан"
+    ],
+    "h2_texts": [
+      "Окна, стеклопакеты от производителя",
+      "Установка окон в Казани под ключ",
+      "Продажа и монтаж окон в Казани и Республике Татарстан",
+      "Фотографии Окон",
+      "Преимущества RR GROUP",
+      "Отзывы клиентов",
+      "Цены на окна и остекление Казань в мае"
+    ],
+    "h3_texts": [
+      "Получить актуальную для мая цену на изготовление и установку окон в Казани. после нескольких вопросов",
+      "Пластиковые окна",
+      "Алюминиевые окна",
+      "Балконы и лоджии",
+      "Остекление квартир",
+      "Окна для дачи",
+      "Мансардные окна",
+      "Входные группы",
+      "Веранды/Террасы",
+      "ремонт окон",
+      "теплое остекление",
+      "раздвижные окна",
+      "панорамные окна",
+      "окна в коттедж",
+      "остекление балкона",
+      "Почему мы",
+      "Способы оплаты",
+      "💰 НАЛИЧНЫЕ",
+      "📄 ПО СЧЁТУ",
+      "💳 КАРТОЙ",
+      "💸 ПЕРЕВОД",
+      "📈 КРЕДИТ",
+      "💹 РАССРОЧКА"
+    ],
+    "counts": {
+      "paragraph": 12,
+      "h1": 1,
+      "h2": 7,
+      "h3": 23,
+      "link": 146,
+      "image": 50,
+      "list_item": 72,
+      "strong": 10,
+      "form": 1,
+      "input": 5
+    }
+  }
+}

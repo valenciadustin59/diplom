@@ -1,0 +1,28 @@
+{
+  "version": "dataset-v2",
+  "kind": "dataset",
+  "feature_schema_version": "v2",
+  "extraction_artifact_version": "extraction-v2",
+  "label_schema_version": "hybrid-v1",
+  "paths": {
+    "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\dataset.csv",
+    "failures_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\failures.csv",
+    "checkpoint_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\checkpoint.json",
+    "artifacts_dir": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\artifacts",
+    "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v2\\seeds.csv"
+  },
+  "labeling": {
+    "expert_labels_path": "data\\dataset_versions\\dataset-v2\\expert_labels.csv",
+    "expert_labels_loaded": 0,
+    "weak_label_source": "serp_rank",
+    "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score"
+  },
+  "coverage": {
+    "rows_count": 423,
+    "failures_count": 32,
+    "unique_queries": 49,
+    "unique_domains": 290,
+    "failure_rate": 0.07033,
+    "empty_text_rate": 0.0
+  }
+}

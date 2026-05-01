@@ -173,6 +173,91 @@ def test_build_dataset_from_seed_csv_writes_dataset_failures_artifacts_and_hybri
     assert len(rows_after_resume) == 1
 
 
+def test_build_dataset_deduplicates_search_results_before_parallel_fetch(monkeypatch, tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    failures_path = tmp_path / "failures.csv"
+    checkpoint_path = tmp_path / "checkpoint.json"
+    seeds_path = tmp_path / "seeds.csv"
+
+    with seeds_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(
+            file,
+            fieldnames=["query", "category", "intent", "city", "region_code", "top_n", "pages_to_scan"],
+        )
+        writer.writeheader()
+        writer.writerow(
+            {
+                "query": "ремонт квартир москва",
+                "category": "ремонт квартир",
+                "intent": "commercial",
+                "city": "москва",
+                "region_code": 213,
+                "top_n": 3,
+                "pages_to_scan": 1,
+            }
+        )
+
+    monkeypatch.setattr(
+        "app.ml.dataset_builder.search_serp",
+        lambda query, top_n, region_code=None, page=0: [
+            {
+                "url": "https://example.com/page-1",
+                "title": "Page 1",
+                "snippet": "Snippet 1",
+                "rank": 1,
+                "serp_page": page,
+            },
+            {
+                "url": "https://example.com/page-1",
+                "title": "Page 1 duplicate",
+                "snippet": "Snippet duplicate",
+                "rank": 2,
+                "serp_page": page,
+            },
+            {
+                "url": "https://example.com/page-2",
+                "title": "Page 2",
+                "snippet": "Snippet 2",
+                "rank": 3,
+                "serp_page": page,
+            },
+        ],
+    )
+    monkeypatch.setattr(
+        "app.ml.dataset_builder.fetch_page",
+        lambda url, use_browser=True: {
+            "status": "success",
+            "fetch_method": "http",
+            "fetch_error_code": None,
+            "fetch_error_message": None,
+            "final_url": url,
+            "http_status": 200,
+            "html": "<html><head><title>Example</title></head><body><h1>Header</h1><p>Body</p></body></html>",
+            "text": "Header Body",
+        },
+    )
+    monkeypatch.setattr("app.ml.dataset_builder.build_features", lambda html, text, query: _feature_row(1.0))
+
+    result = build_dataset(
+        seeds_file=seeds_path,
+        output_path=dataset_path,
+        failures_path=failures_path,
+        checkpoint_path=checkpoint_path,
+        dataset_version="dataset-v2-test",
+        overwrite=True,
+        max_workers=2,
+        query_delay_seconds=0.0,
+    )
+
+    with dataset_path.open("r", encoding="utf-8", newline="") as file:
+        rows = list(csv.DictReader(file))
+    checkpoint = json.loads(checkpoint_path.read_text(encoding="utf-8"))
+
+    assert result["rows_count"] == 2
+    assert [row["url"] for row in rows] == ["https://example.com/page-1", "https://example.com/page-2"]
+    assert len(checkpoint["written_keys"]) == 2
+
+
 def test_freeze_primary_dataset_as_baseline_copies_bundle(monkeypatch, tmp_path):
     dataset_path = tmp_path / "ru_commercial_dataset.csv"
     failures_path = tmp_path / "ru_commercial_dataset_failures.csv"

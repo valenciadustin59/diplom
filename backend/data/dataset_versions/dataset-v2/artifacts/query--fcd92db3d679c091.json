@@ -1,0 +1,766 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://www.kuhni-nsk.ru/catalog/shkafy_kupe/",
+  "final_url": "https://www.kuhni-nsk.ru/catalog/shkafy_kupe/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 15:07:17 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "p3p": "policyref=\"/bitrix/p3p.xml\", CP=\"NON DSP COR CUR ADM DEV PSA PSD OUR UNR BUS UNI COM NAV INT DEM STA\"",
+    "pragma": "no-cache",
+    "server": "nginx/1.28.3",
+    "set-cookie": "PHPSESSID=5M8XzmhtxEYPSI3vAP7ypZ6iqiQdDPV6; path=/; domain=kuhni-nsk.ru; HttpOnly",
+    "vary": "Accept-Encoding",
+    "x-powered-cms": "Bitrix Site Manager (72ad65a2c31e8970c38f878586cdb93e)"
+  },
+  "response_time_ms": 7018.0767,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:07:24.376393+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" class=\" bx-core bx-win bx-no-touch bx-no-retina bx-chrome js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths cssobjectfit\"><!--<![endif]--><head><script src=\"https://mc.yandex.ru/metrika-tags/_/tag_ec.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><script src=\"https://mc.yandex.ru/metrika/tag_phone.js?ver=2490&amp;b=p\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t<!-- Google Tag Manager \n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-M4SL7R2');</script>\n\n End Google Tag Manager -->\n\t<!-- Roistat Counter Start -->\n\t<script async=\"\" src=\"https://cloud.roistat.com/static/marketplace/JivoSite/script.js\"></script><script async=\"\" id=\"mango-js\" src=\"//widgets.mango-office.ru/widgets/mango.js\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script async=\"\" src=\"//widget.flamp.ru/loader.js\"></script><script type=\"text/javascript\" async=\"\" id=\"tmr-code\" src=\"https://top-fwz1.mail.ru/js/code.js\"></script><script charset=\"UTF-8\" async=\"\" src=\"https://cloud.roistat.com/api/site/1.0/d50deb96e023f9ee478ac2a91229d01a/init?referrer=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F\"></script><script>\n\t(function(w, d, s, h, id) {\n\t\tw.roistatProjectId = id; w.roistatHost = h;\n\t\tvar p = d.location.protocol == \"https:\" ? \"https://\" : \"http://\";\n\t\tvar u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? \"/dist/module.js\" : \"/api/site/1.0/\"+id+\"/init?referrer=\"+encodeURIComponent(d.location.href);\n\t\tvar js = d.createElement(s); js.charset=\"UTF-8\"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);\n\t})(window, document, 'script', 'cloud.roistat.com', 'd50deb96e023f9ee478ac2a91229d01a');\n\t</script>\n\t<!-- Roistat Counter End -->\n\t\t<title>Шкафы купе недорого: купить готовый шкаф-купе в Новосибирске, каталог с фото и ценами</title>\n\t\t\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, shrink-to-fit=no\">\n\t\t<link rel=\"shortcut icon\" href=\"/favicon.ico\">\n\n        <script defer=\"\" src=\"https://smartcaptcha.yandexcloud.net/captcha.js\" data-skip-moving=\"true\"></script>\n\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n<meta name=\"robots\" content=\"index, follow\">\n<meta name=\"keywords\" content=\"шкаф-купе, шкаф-купе недорого, купить дешево, готовый шкаф купе\">\n<meta name=\"description\" content=\"Хотите купить шкаф-купе недорого в Новосибирске? В нашем интернет-магазине большой выбор готовых шкафов-купе в наличии и под заказ. Каталог шкафов-купе цены и фото.\">\n<link rel=\"canonical\" href=\"https://www.kuhni-nsk.ru/catalog/shkafy_kupe/\">\n<link href=\"https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"/bitrix/js/ui/design-tokens/dist/ui.design-tokens.min.css?176001907423463\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"/bitrix/js/ui/fonts/opensans/ui.font.opensans.min.css?17600182432320\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"/bitrix/js/main/popup/dist/main.popup.bundle.min.css?176001919128056\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"/bitrix/cache/css/s2/kuhni/page_817cdad61176c6fe7a5043ae56379579/page_817cdad61176c6fe7a5043ae56379579_v1.css?17769346505146\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"/bitrix/cache/css/s2/kuhni/template_24fd44f6b027c5b3e05fa8f813335c10/template_24fd44f6b027c5b3e05fa8f813335c10_v1.css?1776932584207482\" type=\"text/css\" data-template-style=\"true\" rel=\"stylesheet\">\n<script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess) {BX.message[i]=mess[i];} return true;}};</script>\n<script>(window.BX||top.BX).message({\"JS_CORE_LOADING\":\"Загрузка...\",\"JS_CORE_NO_DATA\":\"- Нет данных -\",\"JS_CORE_WINDOW_CLOSE\":\"Закрыть\",\"JS_CORE_WINDOW_EXPAND\":\"Развернуть\",\"JS_CORE_WINDOW_NARROW\":\"Свернуть в окно\",\"JS_CORE_WINDOW_SAVE\":\"Сохранить\",\"JS_CORE_WINDOW_CANCEL\":\"Отменить\",\"JS_CORE_WINDOW_CONTINUE\":\"Продолжить\",\"JS_CORE_H\":\"ч\",\"JS_CORE_M\":\"м\",\"JS_CORE_S\":\"с\",\"JSADM_AI_HIDE_EXTRA\":\"Скрыть лишние\",\"JSADM_AI_ALL_NOTIF\":\"Показать все\",\"JSADM_AUTH_REQ\":\"Требуется авторизация!\",\"JS_CORE_WINDOW_AUTH\":\"Войти\",\"JS_CORE_IMAGE_FULL\":\"Полный размер\"});</script>\n\n<script src=\"/bitrix/js/main/core/core.min.js?1760019239229643\"></script>\n\n<script>BX.Runtime.registerExtension({\"name\":\"main.core\",\"namespace\":\"BX\",\"loaded\":true});</script>\n<script>BX.setJSList([\"\\/bitrix\\/js\\/main\\/core\\/core_ajax.js\",\"\\/bitrix\\/js\\/main\\/core\\/core_promise.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/promise\\/js\\/promise.js\",\"\\/bitrix\\/js\\/main\\/loadext\\/loadext.js\",\"\\/bitrix\\/js\\/main\\/loadext\\/extension.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/promise\\/js\\/promise.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/find\\/js\\/find.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/includes\\/js\\/includes.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/matches\\/js\\/matches.js\",\"\\/bitrix\\/js\\/ui\\/polyfill\\/closest\\/js\\/closest.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/fill\\/main.polyfill.fill.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/find\\/js\\/find.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/matches\\/js\\/matches.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/core\\/dist\\/polyfill.bundle.js\",\"\\/bitrix\\/js\\/main\\/core\\/core.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/intersectionobserver\\/js\\/intersectionobserver.js\",\"\\/bitrix\\/js\\/main\\/lazyload\\/dist\\/lazyload.bundle.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/core\\/dist\\/polyfill.bundle.js\",\"\\/bitrix\\/js\\/main\\/parambag\\/dist\\/parambag.bundle.js\"]);\n</script>\n<script>BX.Runtime.registerExtension({\"name\":\"fx\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"ui.design-tokens\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"ui.fonts.opensans\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"main.popup\",\"namespace\":\"BX.Main\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"popup\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>(window.BX||top.BX).message({\"LANGUAGE_ID\":\"ru\",\"FORMAT_DATE\":\"DD.MM.YYYY\",\"FORMAT_DATETIME\":\"DD.MM.YYYY HH:MI:SS\",\"COOKIE_PREFIX\":\"BITRIX_SM\",\"SERVER_TZ_OFFSET\":\"10800\",\"UTF_MODE\":\"Y\",\"SITE_ID\":\"s2\",\"SITE_DIR\":\"\\/\",\"USER_ID\":\"\",\"SERVER_TIME\":1777648037,\"USER_TZ_OFFSET\":0,\"USER_TZ_AUTO\":\"Y\",\"bitrix_sessid\":\"612fa3f5ee390ca2ea411e1ef5ccb662\"});</script>\n\n\n<script src=\"/bitrix/cache/js/s2/kuhni/kernel_main/kernel_main_v1.js?1776927910158483\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js\"></script>\n<script src=\"/bitrix/js/main/popup/dist/main.popup.bundle.min.js?176240748667480\"></script>\n<script>BX.setJSList([\"\\/bitrix\\/js\\/main\\/core\\/core_fx.js\",\"\\/bitrix\\/js\\/main\\/session.js\",\"\\/bitrix\\/js\\/main\\/pageobject\\/dist\\/pageobject.bundle.js\",\"\\/bitrix\\/js\\/main\\/core\\/core_window.js\",\"\\/bitrix\\/js\\/main\\/date\\/main.date.js\",\"\\/bitrix\\/js\\/main\\/core\\/core_date.js\",\"\\/bitrix\\/js\\/main\\/utils.js\",\"\\/local\\/templates\\/.default\\/components\\/bitrix\\/catalog\\/kuhni_catalog\\/script.js\",\"\\/local\\/templates\\/.default\\/components\\/bitrix\\/catalog\\/kuhni_catalog\\/bitrix\\/catalog.section.list\\/.default\\/script.js\",\"\\/scripts\\/modernizr-2.0.6.min.js\",\"\\/scripts\\/jquery\\/jquery-2.0.3.min.js\",\"\\/scripts\\/jquery\\/jquery-ui-1.10.2.custom.min.js\",\"\\/scripts\\/jquery\\/jquery.browser.js\",\"\\/scripts\\/jquery\\/jquery.carouFredSel-6.2.1-packed.js\",\"\\/scripts\\/jquery\\/jquery.mousewheel.min.js\",\"\\/scripts\\/jquery\\/jquery.ui.touch-punch.min.js\",\"\\/scripts\\/jquery\\/jquery.touchSwipe.min.js\",\"\\/scripts\\/jquery\\/jquery.fancybox.pack.js\",\"\\/scripts\\/jquery\\/jquery.maskedinput-1.3.1.min.js\",\"\\/scripts\\/jquery\\/jquery.numberMask.min.js\",\"\\/scripts\\/jquery\\/jquery.validate.min.js\",\"\\/scripts\\/jquery\\/additional-methods.min.js\",\"\\/scripts\\/jquery\\/jquery.scrollbar.min.js\",\"\\/scripts\\/jquery\\/jquery.imagesloaded.js\",\"\\/scripts\\/elementStatus.js\",\"\\/scripts\\/selectStyler.js\",\"\\/scripts\\/jquery.bxslider\\/jquery.bxslider.min.js\",\"\\/scripts\\/app.js\",\"\\/bitrix\\/components\\/bitrix\\/search.title\\/script.js\",\"\\/bitrix\\/components\\/custom\\/search.title\\/script.js\"]);</script>\n<script>BX.setCSSList([\"\\/styles\\/catalog.css\",\"\\/local\\/templates\\/.default\\/components\\/bitrix\\/catalog\\/kuhni_catalog\\/style.css\",\"\\/local\\/templates\\/.default\\/components\\/bitrix\\/catalog\\/kuhni_catalog\\/bitrix\\/catalog.section.list\\/.default\\/style.css\",\"\\/local\\/templates\\/.default\\/components\\/bitrix\\/catalog\\/kuhni_catalog\\/bitrix\\/catalog.section\\/.default\\/style.css\",\"\\/styles\\/normalize.css\",\"\\/styles\\/type.css\",\"\\/styles\\/layout.css\",\"\\/styles\\/grid.css\",\"\\/styles\\/form.css\",\"\\/styles\\/selectStyler.css\",\"\\/styles\\/jquery.scrollbar.css\",\"\\/styles\\/jquery.fancybox.css\",\"\\/scripts\\/jquery.bxslider\\/jquery.bxslider.css\",\"\\/styles\\/screen.css\",\"\\/styles\\/new_header.css\",\"\\/styles\\/color.css\",\"\\/bitrix\\/templates\\/.default\\/components\\/bitrix\\/search.title\\/kuhni_head_search\\/style.css\",\"\\/bitrix\\/templates\\/.default\\/components\\/custom\\/search.title\\/kuhni_head_search_mobile\\/style.css\",\"\\/local\\/templates\\/kuhni\\/styles.css\"]);</script>\n<meta property=\"ya:interaction\" content=\"XML_FORM\">\n<meta property=\"ya:interaction:url\" content=\"https://www.kuhni-nsk.ru/catalog/shkafy_kupe/?mode=xml\">\n\n\n\n<script src=\"/bitrix/cache/js/s2/kuhni/template_c7d12af547ed858c2633b6d3e22f079f/template_c7d12af547ed858c2633b6d3e22f079f_v1.js?1776932604612519\"></script>\n<script src=\"/bitrix/cache/js/s2/kuhni/page_e4d24f345787d7a90926685901f6ea16/page_e4d24f345787d7a90926685901f6ea16_v1.js?17769328041370\"></script>\n\n\t\t<!-- Top.Mail.Ru counter -->\n<script type=\"text/javascript\">\nvar _tmr = window._tmr || (window._tmr = []);\n_tmr.push({id: \"3663819\", type: \"pageView\", start: (new Date()).getTime()});\n(function (d, w, id) {\n  if (d.getElementById(id)) return;\n  var ts = d.createElement(\"script\"); ts.type = \"text/javascript\"; ts.async = true; ts.id = id;\n  ts.src = \"https://top-fwz1.mail.ru/js/code.js\";\n  var f = function () {var s = d.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(ts, s);};\n  if (w.opera == \"[object Opera]\") { d.addEventListener(\"DOMContentLoaded\", f, false); } else { f(); }\n})(document, window, \"tmr-code\");\n</script>\n<noscript><div><img src=\"https://top-fwz1.mail.ru/counter?id=3663819;js=na\" style=\"position:absolute;left:-9999px;\" alt=\"Top.Mail.Ru\" /></div></noscript>\n<!-- /Top.Mail.Ru counter -->\n\n<script type=\"application/ld+json\">\n\t[{\n\t\t\t\"@context\": \"https://schema.org\",\n\t\t\t\"@type\": [\"FurnitureStore\", \"Organization\"],\n\t\t\t\"@id\": \"https://www.kuhni-nsk.ru/#organization\",\n\t\t\t\"name\": \"Кухни-НСК\",\n\t\t\t\"url\": \"https://www.kuhni-nsk.ru/\",\n\t\t\t\"logo\": \"https://www.kuhni-nsk.ru/files/logo-png.png\",\n\t\t\t\"image\": \"https://www.kuhni-nsk.ru/files/logo-png.png\",\n\t\t\t\"description\": \"Кухни на заказ и кухонные гарнитуры в Новосибирске. Работаем с 2011 года, установили более 8641 кухни. Прямые поставки от 20 фабрик.\",\n\t\t\t\"foundingDate\": \"2011\",\n\t\t\t\"telephone\": \"+73833888995\",\n\t\t\t\"email\": \"kuhni-nsk@mail.ru\",\n\t\t\t\"address\": {\n\t\t\t\t\"@type\": \"PostalAddress\",\n\t\t\t\t\"streetAddress\": \"пр. Дзержинского, 1/1, ТЦ Солнечный, 1 этаж\",\n\t\t\t\t\"addressLocality\": \"Новосибирск\",\n\t\t\t\t\"addressRegion\": \"Новосибирская область\",\n\t\t\t\t\"addressCountry\": \"RU\"\n\t\t\t},\n\t\t\t\"geo\": {\n\t\t\t\t\"@type\": \"GeoCoordinates\",\n\t\t\t\t\"latitude\": \"54.8469\",\n\t\t\t\t\"longitude\": \"83.1035\"\n\t\t\t},\n\t\t\t\"openingHoursSpecification\": [{\n\t\t\t\t\t\"@type\": \"OpeningHoursSpecification\",\n\t\t\t\t\t\"dayOfWeek\": [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\"],\n\t\t\t\t\t\"opens\": \"10:00\",\n\t\t\t\t\t\"closes\": \"19:00\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"@type\": \"OpeningHoursSpecification\",\n\t\t\t\t\t\"dayOfWeek\": [\"Saturday\", \"Sunday\"],\n\t\t\t\t\t\"opens\": \"10:00\",\n\t\t\t\t\t\"closes\": \"18:00\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"contactPoint\": [{\n\t\t\t\t\t\"@type\": \"ContactPoint\",\n\t\t\t\t\t\"telephone\": \"+73833888995\",\n\t\t\t\t\t\"contactType\": \"sales\",\n\t\t\t\t\t\"areaServed\": \"RU\",\n\t\t\t\t\t\"availableLanguage\": \"Russian\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"@type\": \"ContactPoint\",\n\t\t\t\t\t\"telephone\": \"+73833888997\",\n\t\t\t\t\t\"contactType\": \"customer service\",\n\t\t\t\t\t\"availableLanguage\": \"Russian\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"sameAs\": [\n\t\t\t\t\"https://t.me/kuhni_na_zakaz_nsk\",\n\t\t\t\t\"https://novosibirsk.flamp.ru/firm/kukhni_nsk_magazin_mebeli_dlya_kukhni-70000001028636908\"\n\t\t\t],\n\t\t\t\"hasOfferCatalog\": {\n\t\t\t\t\"@type\": \"OfferCatalog\",\n\t\t\t\t\"name\": \"Каталог кухонь\",\n\t\t\t\t\"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/\",\n\t\t\t\t\"itemListElement\": [{\n\t\t\t\t\t\t\"@type\": \"OfferCatalog\",\n\t\t\t\t\t\t\"name\": \"Кухни на заказ\",\n\t\t\t\t\t\t\"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/na-zakaz/\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"OfferCatalog\",\n\t\t\t\t\t\t\"name\": \"Угловые кухни\",\n\t\t\t\t\t\t\"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/uglovie/\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"OfferCatalog\",\n\t\t\t\t\t\t\"name\": \"Прямые кухни\",\n\t\t\t\t\t\t\"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/pryamye/\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"@type\": \"OfferCatalog\",\n\t\t\t\t\t\t\"name\": \"Бюджетные кухни\",\n\t\t\t\t\t\t\"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/econom/\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t},\n\n\t\t{\n\t\t\t\"@context\": \"https://schema.org\",\n\t\t\t\"@type\": \"WebSite\",\n\t\t\t\"url\": \"https://www.kuhni-nsk.ru/\",\n\t\t\t\"name\": \"Кухни-НСК — кухни на заказ в Новосибирске\",\n\t\t\t\"potentialAction\": {\n\t\t\t\t\"@type\": \"SearchAction\",\n\t\t\t\t\"target\": {\n\t\t\t\t\t\"@type\": \"EntryPoint\",\n\t\t\t\t\t\"urlTemplate\": \"https://www.kuhni-nsk.ru/catalog/kuhni/?q={search_term_string}\"\n\t\t\t\t},\n\t\t\t\t\"query-input\": \"required name=search_term_string\"\n\t\t\t}\n\t\t}\n\t]\n</script>\n\t<style>.SmartCaptcha-Overlay{\n  position:fixed;\n  z-index:9999999;\n  top:-10000px;\n  left:-10000px;\n\n  width:100%;\n  width:var(--smart-captcha-doc-width, 100%);\n  height:100%;\n  height:var(--smart-captcha-doc-height, 100%);\n  margin:0;\n  padding:0;\n\n  background:rgba(0, 0, 0, 0.4);\n}\n\n.SmartCaptcha-Overlay.SmartCaptcha-Overlay_visible{\n  position:fixed;\n  top:0;\n  left:0;\n}\n\n.SmartCaptcha-Overlay.SmartCaptcha-Overlay_no_background{\n  background:none;\n}\n\n.SmartCaptcha-Overlay .SmartCaptcha-Spin{\n  position:absolute;\n  top:50%;\n  left:0;\n  right:0;\n\n  margin:auto;\n\n  transform:translateY(-50%);\n}\n</style><style>.SmartCaptcha-Spin{\n  display:none;\n  visibility:hidden;\n\n  box-sizing:border-box;\n\n  border:2px solid transparent;\n  border-radius:50%;\n  background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));\n}\n.SmartCaptcha-Spin::after{\n  visibility:hidden;\n\n  content:'\\00A0';\n}\n.SmartCaptcha-Overlay_visible.SmartCaptcha-Overlay_show_spinner .SmartCaptcha-Spin{\n  display:inline-block;\n  visibility:visible;\n\n  width:50px;\n  height:50px;\n\n  border-top-color:#5282FF;\n  border-left-color:#5282FF;\n\n  animation:islands-spin 1s .21s infinite linear;\n\n  backface-visibility:hidden;\n}\n .SmartCaptcha-Overlay_visible.SmartCaptcha-Overlay_show_spinner .SmartCaptcha-Spin{\n  border-top-color:var(--spin-view-default-border-color, #5282FF);\n  border-left-color:var(--spin-view-default-border-color, #5282FF);\n}\n\n@keyframes islands-spin{\n  from{\n    transform:rotate(0deg);\n  }\n\n  to{\n    transform:rotate(360deg);\n  }\n}\n</style><style>.smart-captcha{\n  min-width:300px;\n  height:102px;\n}\n\n.smart-captcha_invisible{\n  height:0;\n}\n</style><link rel=\"prefetch\" as=\"script\" href=\"https://smartcaptcha.yandexcloud.net/shield.99cae02f31149fbbaa53.chunk.js\"></head>\n\t<body style=\"\">\n<!-- Google Tag Manager (noscript) \n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M4SL7R2\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\nEnd Google Tag Manager (noscript) -->\t\n\t\t<div id=\"panel\"></div>\n\t\t<div class=\"template\">\n\t\t\t<div class=\"template__top\">\n\t\t\t\t<div id=\"header\" class=\"site-header\">\n\t\t\t\t\t<div class=\"site-header__top hidden-sm-down\">\n\t\t\t\t\t\t<div class=\"site-header__topmenu top-menu\">\n\t\t\t\t\t\t\t<div class=\"container-fluid\">\n\t\t\t\t\t\t\t\t<div class=\"top-menu__inner\">\n\t\t\t\t\t\t\t\t\t\t<ul class=\"top-menu__list\">\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/contact/\" class=\"top-menu__link\">Контакты</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/kredit/\" class=\"top-menu__link\">Рассрочка</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/dostavka_oplata/\" class=\"top-menu__link\">Доставка и оплата</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/sborka_montaz/\" class=\"top-menu__link\">Сборка и монтаж</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/articles/\" class=\"top-menu__link\">Статьи</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/about/\" class=\"top-menu__link\">Нам 14 лет</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/catalog/kuhni/na-zakaz/\" class=\"top-menu__link\">Кухни на заказ</a></li>\n\t\t\t\t\t<li class=\"top-menu__item\"><a href=\"/raschet_stoimosti_kuhni/\" class=\"top-menu__link\">Расчёт онлайн</a></li>\n\t\t\t</ul>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"site-header__middle\">\n\t\t\t\t\t\t<div class=\"container-fluid\">\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-3 pull-xs-right\" style=\"display: none;\">\n\t\t\t\t\t\t\t\t\t<div class=\"site-header__fixed auto-fixed auto-fixed--init auto-fixed--left fixed\" data-phantom=\"\"><div class=\"bx-panel__phantom\" style=\"height: 0px;\"></div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"site-header__basket header-basket auto-fixed__wrap\" id=\"site-header__basket\" style=\"left: 0px;\">\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/personal/cart/\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"header-basket__cont hidden-md-up\"><span class=\"header-basket__link\">Корзина пуста</span></div>\n\t<div class=\"header-basket__inner\">\n\t\t<div class=\"header-basket__count\">0</div>\n\t\t<div class=\"header-basket__sum\">Корзина пуста</div>\n\t\t<div class=\"header-basket__foot hidden-sm-down\"><span class=\"header-basket__link\">&nbsp;</span></div>\n\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"for_mobile\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"logo_mini\">\n\t\t\t\t\t\t\t\t\t\t\t<a href=\"/\"><img src=\"/files/logo-png-mob.png\" alt=\"Кухни, кухонные гарнитуры в Новосибирске\"></a>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"midle-header\">\n\t\t\t\t\t\t\t\t<div style=\"width: 15%;float: left;\">\n\t\t\t\t\t\t\t\t\t<div class=\"logo-block\"><a href=\"/\" class=\"logo-block__link\"><img src=\"/files/logo-png.png\" alt=\"Кухни, кухонные гарнитуры в Новосибирске\" class=\"logo-block__img\"></a></div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div style=\"width: 60%;\">\n\t\t\t\t\t\t\t\t\t\t    <!-- Первая колонка с адресами -->\n\t\t\t\t\t\t\t\t\t\t    <div class=\"col-xs-12 col-sm-6 col-md-6\">\n\t\t\t\t\t\t\t\t\t\t        <div class=\"header-contact\">\n\t\t\t\t\t\t\t\t\t\t            <div class=\"header-contact__address hidden-sm-down\">\n\t\t\t\t\t\t\t\t\t\t                ТЦ Солнечный, 1 этаж \n     <br>\nпр.Дзержинского 1/1 \n\n\n\t\t\t\t\t\t\t\t\t\t            </div>\n\t\t\t\t\t\t\t\t\t\t            <div class=\"header-contact__address hidden-sm-down\">\n\t\t\t\t\t\t\t\t\t\t                \t\t\t\t\t\t\t\t\t\t            </div>\n\t\t\t\t\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t\t\t\t\t    </div>\n\n\t\t\t\t\t\t\t\t\t\t    <!-- Вторая колонка с контактами -->\n\t\t\t\t\t\t\t\t\t\t    <div class=\"col-xs-12 col-sm-6 col-md-6\">\n\t\t\t\t\t\t\t\t\t\t        <div class=\"header-contact\">\n\t\t\t\t\t\t\t\t\t\t            <div class=\"header-contact__phone\">\n\t\t\t\t\t\t\t\t\t\t                <a href=\"https://max.ru/u/f9LHodD0cOJKMQxfBa0aFuA8qNkw_cdXTSjKxD9UXNQ899sStrKW47u7hpQ\"><img width=\"27\" alt=\"max 2.png\" src=\"/upload/medialibrary/b3d/v7ck9xi2dvg08c9o6dwhgfneovxmp4tz.png\" height=\"27\" title=\"max 2.png\"></a>&nbsp;<a href=\"https://t.me/kuhni_na_zakaz_nsk?text=Пишу+вам+с+сайта+kuhni-nsk\" target=\"_blank\"><img width=\"23\" alt=\"телега.png\" src=\"/upload/medialibrary/94e/94e9d9b1f6cb1d389b836c07187b3035.png\" height=\"23\" title=\"телега.png\" hspace=\"0\" border=\"0\"></a>\t\t\t\t\t\t\t\t\t\t            </div>\n\t\t\t\t\t\t\t\t\t\t            <div class=\"header-contact__phone\">\n\t\t\t\t\t\t\t\t\t\t                <a href=\"tel:+73833888995\"><font size=\"3\"><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit;\"><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.933333;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.866667;\">(</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.8;\">3</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.733333;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.666667;\">3</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.6;\">)</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.533333;\">3</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.466667;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.4;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.333333;\">-</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.266667;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.2;\">9</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.133333;\">-</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.0666667;\">9</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0;\">5</small></small></font></a>\t\t\t\t\t\t\t\t\t\t            </div>\n\t\t\t\t\t\t\t\t\t\t            <div class=\"header-contact__worktime hidden-sm-down\">\n\t\t\t\t\t\t\t\t\t\t                \n<div>пн-пт: 10-19,сб-вс: 10-18</div>\n\n\t\t\t\t\t\t\t\t\t\t            </div>\n\t\t\t\t\t\t\t\t\t\t        </div>\n\t\t\t\t\t\t\t\t\t\t    </div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div style=\"width: 19%;\" class=\"os-mobile\">\n\t\t\t\t\t\t\t\t\t<div>\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"footer-callback__button button button--lg button--danger order_call_link callback_header\"><span class=\"button__inner\">ОБРАТНЫЙ ЗВОНОК</span></a>\n\t\t\t\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t\t\t\t\t<div id=\"search\" class=\"site-header__search header-search\">\n\t\t<form action=\"/catalog/\" novalidate=\"\">\n\t\t\t<div class=\"header-search__inp-wrap form-input form-input--lg form-input--wrap\">\n\t\t\t\t<span class=\"form-input-wrap\"><input id=\"title-search-input\" name=\"q\" type=\"text\" autocomplete=\"off\" class=\"header-search__input form-input form-input--lg\"></span>\n\t\t\t\t<button class=\"header-search__button button button--lg\" type=\"button\" name=\"s\" value=\"Поиск\"><span class=\"button__inner\"></span></button>\n\t\t\t\t\t\t\t</div>\n\t\t</form>\n\t</div>\n<script>\n\tBX.ready(function(){\n\t\tnew JCTitleSearch({\n\t\t\t'AJAX_PAGE' : '/catalog/shkafy_kupe/',\n\t\t\t'CONTAINER_ID': 'search',\n\t\t\t'INPUT_ID': 'title-search-input',\n\t\t\t'MIN_QUERY_LEN': 2\n\t\t});\n\t});\n</script>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"site-header__bottom\">\n\t\t\t\t\t\t<div class=\"main-menu menu--touch\">\n\t\t\t\t\t\t\t<div class=\"container-fluid\">\n\t\t\t\t\t\t\t\t<nav class=\"main-menu__wrap\">\n\t\t\t\t\t\t\t\t\t\n\t<ul class=\"main-menu__list\">\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-menu__item main-menu__item--catalog collapse-block out\">\n\t\t\t\t\t\t<div class=\"collapse-block__head\">\n\t\t\t\t\t\t\t<i class=\"collapse-block__button\"></i>\n\t\t\t\t\t\t\t<a href=\"/catalog/\" class=\"main-menu__link\"><span class=\"main-menu__link-text\">Каталог</span></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"main-menu__dropdown collapse-block__cont collapse-block__cont--md collapse\">\n\t\t\t\t\t\t\t\t<div id=\"search-mobile\" class=\"mobile_search hidden-md-up\">\n\t\t<form action=\"/catalog/\" novalidate=\"\">\n\t\t\t<div class=\"header-search__inp-wrap form-input form-input--lg form-input--wrap\">\n\t\t\t\t<span class=\"form-input-wrap\"><input id=\"title-search-input-mobile\" name=\"q\" type=\"text\" autocomplete=\"off\" class=\"header-search__input form-input form-input--lg\"></span>\n\t\t\t\t<button class=\"header-search__button button button--lg\" type=\"submit\" name=\"s\" value=\"Поиск\"><span class=\"button__inner\"></span></button>\n\t\t\t\t\t\t\t</div>\n\t\t</form>\n\t</div>\n<script>\n\tBX.ready(function(){\n\t\tnew JCTitleSearchCustom({\n\t\t\t'AJAX_PAGE' : '/catalog/shkafy_kupe/',\n\t\t\t'CONTAINER_ID': 'search-mobile',\n\t\t\t'INPUT_ID': 'title-search-input-mobile',\n\t\t\t'MIN_QUERY_LEN': 2\n\t\t});\n\t});\n</script>\n\t\t\t\t\t\t\t<div class=\"main-submenu\">\n\t\t\t\t\t\t\t\t<ul class=\"main-submenu__list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item main-submenu__item--root\"><a href=\"/catalog/kuhni/\" class=\"main-submenu__link\">Кухонные гарнитуры</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/na-zakaz/\" class=\"main-submenu__link\">Кухни на заказ</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/uglovie/\" class=\"main-submenu__link\">Угловые кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/pryamye/\" class=\"main-submenu__link\">Прямые кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/modulnye_kuhni/\" class=\"main-submenu__link\">Модульные кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/econom/\" class=\"main-submenu__link\">Бюджетные кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/pod-potolok/\" class=\"main-submenu__link\">Кухни до потолка</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/malenkie/\" class=\"main-submenu__link\">Кухни маленькие</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/s_barnoi_stoikoi/\" class=\"main-submenu__link\">С барной стойкой</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/v_hrushhevke_6m2/\" class=\"main-submenu__link\">Кухни в хрущевку</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/modern/\" class=\"main-submenu__link\">Современные кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/klassika/\" class=\"main-submenu__link\">Классические кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/belie/\" class=\"main-submenu__link\">Белые кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/gotovii/\" class=\"main-submenu__link\">В наличии</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/kuhni_ot_proizvoditelei/\" class=\"main-submenu__link\">От производителя</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/foto/\" class=\"main-submenu__link\">Наши работы (фото)</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/sale/\" class=\"main-submenu__link\">РАСПРОДАЖА</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item main-submenu__item--root\"><a href=\"/catalog/mebel_dlya_kukhni/\" class=\"main-submenu__link\">Мебель для кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stol/\" class=\"main-submenu__link\">Столы</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stulya_barnye/\" class=\"main-submenu__link\">Стулья барные</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stulya/\" class=\"main-submenu__link\">Стулья</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stoly_stulya_dlya_kukhni/\" class=\"main-submenu__link\">Столы + стулья</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/ugolki_i_divany/\" class=\"main-submenu__link\">Диваны и кресла</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item main-submenu__item--root\"><a href=\"/catalog/mebel_dlya_doma/\" class=\"main-submenu__link\">Мебель для дома</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/gostinye/\" class=\"main-submenu__link\">Гостиные</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/prikhozhie/\" class=\"main-submenu__link\">Прихожие</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/spalni/\" class=\"main-submenu__link\">Для спальни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/shkafy_kupe/\" class=\"main-submenu__link main-submenu__link--current\">Шкафы-купе</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/shkaf_na_zakaz/\" class=\"main-submenu__link\">Шкафы на заказ</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-menu__item hidden-sm-down\">\n\t\t\t\t\t\t<a href=\"/catalog/kuhni/\" class=\"main-menu__link\"><span class=\"main-menu__link-text\">Кухни</span></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-menu__item hidden-sm-down\">\n\t\t\t\t\t\t<a href=\"/design-project/\" class=\"main-menu__link\"><span class=\"main-menu__link-text\">Бесплатный<br> дизайн-проект</span></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-menu__item hidden-sm-down\">\n\t\t\t\t\t\t<a href=\"/catalog/kuhni/foto/\" class=\"main-menu__link\"><span class=\"main-menu__link-text\">Портфолио работ</span></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-menu__item hidden-sm-down\">\n\t\t\t\t\t\t<a href=\"/sale/\" class=\"main-menu__link\"><span class=\"main-menu__link-text\">Распродажи<br> и акции</span></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t</ul>\n\t\t\t\t\t\t\t\t</nav>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div><!--header-->\n\t\t\t</div>\n\t\t\t<div class=\"template__middle\">\n\t\t\t\t<div id=\"content\" class=\"template__middle-cont site-content typo\">\n\t\t\t\t\t<div class=\"container-fluid\">\n\t\t\t\t\t\t<div class=\"breadcrumb\">\n\t<ol class=\"breadcrumb__list\"><li class=\"breadcrumb__item\"><a class=\"breadcrumb__link\" href=\"/\">Главная</a></li><li class=\"breadcrumb__item\"><a class=\"breadcrumb__link\" href=\"/catalog/\">Каталог</a></li><li class=\"breadcrumb__item\"><a class=\"breadcrumb__link\" href=\"/catalog/mebel_dlya_doma/\">Мебель для дома</a></li><li class=\"breadcrumb__item breadcrumb__item--current\">Шкафы-купе</li></ol></div>\n<div class=\"row\">\n\t<div class=\"col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 spacer-block hidden-sm-down\">\n\t\t<div class=\"column-left\">\n\t\t\t<div class=\"main-submenu spacer-block\">\n\t\t\t\t\t\t\t\t\t<ul class=\"main-submenu__list\">\n\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item main-submenu__item--root\"><a href=\"/catalog/mebel_dlya_doma/\" class=\"main-submenu__link\">Мебель для дома</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/gostinye/\" class=\"main-submenu__link\">Гостиные</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/prikhozhie/\" class=\"main-submenu__link\">Прихожие</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/spalni/\" class=\"main-submenu__link\">Для спальни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/shkafy_kupe/\" class=\"main-submenu__link main-submenu__link--current\">Шкафы-купе</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/shkaf_na_zakaz/\" class=\"main-submenu__link\">Шкафы на заказ</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item main-submenu__item--root\"><a href=\"/catalog/kuhni/\" class=\"main-submenu__link\">Кухонные гарнитуры</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/na-zakaz/\" class=\"main-submenu__link\">Кухни на заказ</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/uglovie/\" class=\"main-submenu__link\">Угловые кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/pryamye/\" class=\"main-submenu__link\">Прямые кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/modulnye_kuhni/\" class=\"main-submenu__link\">Модульные кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/econom/\" class=\"main-submenu__link\">Бюджетные кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/pod-potolok/\" class=\"main-submenu__link\">Кухни до потолка</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/malenkie/\" class=\"main-submenu__link\">Кухни маленькие</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/s_barnoi_stoikoi/\" class=\"main-submenu__link\">С барной стойкой</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/v_hrushhevke_6m2/\" class=\"main-submenu__link\">Кухни в хрущевку</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/modern/\" class=\"main-submenu__link\">Современные кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/klassika/\" class=\"main-submenu__link\">Классические кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/belie/\" class=\"main-submenu__link\">Белые кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/gotovii/\" class=\"main-submenu__link\">В наличии</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/kuhni_ot_proizvoditelei/\" class=\"main-submenu__link\">От производителя</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/kuhni/foto/\" class=\"main-submenu__link\">Наши работы (фото)</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/sale/\" class=\"main-submenu__link\">РАСПРОДАЖА</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item main-submenu__item--root\"><a href=\"/catalog/mebel_dlya_kukhni/\" class=\"main-submenu__link\">Мебель для кухни</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stol/\" class=\"main-submenu__link\">Столы</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stulya_barnye/\" class=\"main-submenu__link\">Стулья барные</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stulya/\" class=\"main-submenu__link\">Стулья</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/stoly_stulya_dlya_kukhni/\" class=\"main-submenu__link\">Столы + стулья</a></li>\n\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"main-submenu__item\"><a href=\"/catalog/ugolki_i_divany/\" class=\"main-submenu__link\">Диваны и кресла</a></li>\n\t\t\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\t<div class=\"col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9 pull-xs-right spacer-block\">\n\t\t<div class=\"column-center-l\" itemscope=\"\" itemtype=\"http://schema.org/ItemList\">\n\t\t\t\t\t\t\t<div class=\"head-block\">\n\t\t\t\t\t<div class=\"head-block__inner text-xs-center text-md-left\">\n\t\t\t\t\t\t<h1 class=\"head-block__title h4\" itemprop=\"name\">Шкафы-купе</h1>\n\t\t\t\t\t\t<div class=\"head-block__cont\">\n\t\t\t\t\t\t\t<div class=\"sort-block\">\n\t\t\t\t\t\t\t\t<form action=\"/catalog/shkafy_kupe/\" method=\"get\">\n\t\t\t\t\t\t\t\t\t<div class=\"sort-block__inner\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"sort-block__item\">\n\t\t\t\t\t\t\t\t\t\t\t<select name=\"sort\" class=\"sort-block__select form-select\" onchange=\"this.form.submit();\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"sort\" selected=\"\">Популярности</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"name\">Названию</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"price\">Цене</option>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t\t\t\t\t<a class=\"img_filter\" onclick=\"show_filter();\"><img src=\"/images/filter.jpg\"></a>\n\t\t\t\t\t\t\t\t\t\t\t<a id=\"img_close_filter\" onclick=\"close_filter();\"><img src=\"/images/close.jpg\"></a>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"sort-block__item\">\n\t\t\t\t\t\t\t\t\t\t\tПоказать:\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"radio-box radio-box--type1 js-inp-parent no-empty\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"size\" class=\"radio-box__input js-inp no-empty\" value=\"12\" onchange=\"this.form.submit();\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"radio-box__text\">12</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"radio-box radio-box--type1 js-inp-parent no-empty checked\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"size\" class=\"radio-box__input js-inp no-empty checked\" value=\"24\" checked=\"\" onchange=\"this.form.submit();\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"radio-box__text\">24</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"radio-box radio-box--type1 js-inp-parent no-empty\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"size\" class=\"radio-box__input js-inp no-empty\" value=\"48\" onchange=\"this.form.submit();\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"radio-box__text\">48</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</form>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"column-right spacer-block pull-lg-right hidden-sm-down\">\n\t<div class=\"filter-block\">\n\t\t<form name=\"arrFilter_form\" id=\"filter-form\" action=\"/catalog/shkafy_kupe/\" method=\"get\" novalidate=\"\">\n\t\t\t<div class=\"filter-block__inner\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"collapse-block form-group out\">\n\t\t\t\t\t\t\t<div class=\"form-group__title collapse-block__head\"><span class=\"collapse-block__button\">\n\t\t\t\t\t\t\t<i class=\"collapse-block__button-icon\"></i>\n\t\t\t\t\t\t\t<b class=\"collapse-block__button-text\">Производство</b></span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group__cont collapse-block__cont collapse out\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t<ul class=\"check-list width-full\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"check-list__item col-xs-12 col-sm-4 col-lg-12 \">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"check-box filter-block__checkbox\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"checkbox\" value=\"Y\" name=\"arrFilter_17_3028401693\" id=\"arrFilter_17_3028401693\" class=\"check-box__input\"><i class=\"check-box__icon\"></i>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"check-box__text\">ТриЯ</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t<div class=\"filter-block__buttons text-xs-center\">\n\t\t\t\t\t<button type=\"submit\" name=\"set_filter\" class=\"button button--lg button--danger width-full\"><span class=\"button__inner\"><b class=\"button__text\">Применить</b></span></button>\n\t\t\t\t\t<button type=\"submit\" name=\"del_filter\" class=\"button button--link filter-block__reset\">Сбросить параметры</button>\n\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>\n<script>\n\t$(document).ready(function(){\n\t\t$('.cur-seo-val').change(function(){\n\t\t\tif($(this).hasClass('checked')) {\n\t\t\t\t$('#filter-form').attr('action', $(this).data('seo-link'));\n\t\t\t}\n\t\t\telse {\n\t\t\t\t$('#filter-form').attr('action', $(this).data('seo-base-link'));\n\t\t\t}\n\t\t});\n\t});\n</script>\t\t\t\t\t\t\t\t\t\t<div class=\"hidden-lg-up hidden-sm-down spacer-block\"></div>\n\t\t\t\t\t<div class=\"column-center-r\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"catalog-block\">\n\t\t<div class=\"catalog-block__body\">\n\t\t\t<div class=\"catalog-block__list-outer rox\">\n\t\t\t\t<ul class=\"catalog-block__list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"catalog-block__list-item col-xs-12 col-sm-6 col-md-4 col-lg-4\" id=\"bx_3966226736_104980\" itemprop=\"itemListElement\" itemscope=\"\" itemtype=\"http://schema.org/Offer\">\n\t\t\t\t\t\t\t<a href=\"/catalog/shkafy_kupe/trast_belyy_sneg_steklo_belyy_glyanets_steklo_belyy_glyanets/\" class=\"catalog-item\" title=\"Шкаф-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец\" itemprop=\"url\">\n\t\t\t\t\t\t\t\t<div class=\"catalog-item__inner\">\n\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__image image-block\" itemprop=\"image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"image-block__inner\"><img src=\"/upload/resize_cache/iblock/f87/448_288_1/f87e58fbd4921692c2c53bcdf37e6759.jpg\" alt=\"купить в Новосибирске Шкафы-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец ТриЯ \" title=\"Шкаф-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец ТриЯ \" class=\"image-block__item\" itemprop=\"contentUrl\"></span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__title h5\" itemprop=\"name\">Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец</div>\n\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__cont\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tсерия шкафов\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__cont-desc\" title=\"Шкаф-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец ТриЯ \">\n\t\t\t\t\t\t\t\t\t\t\tШкаф-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец ТриЯ \t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__foot\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"price-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price-block__item\">46 597 руб.</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"collapse\" itemprop=\"price\">46597</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"collapse\" itemprop=\"priceCurrency\">RUB</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"catalog-block__list-item col-xs-12 col-sm-6 col-md-4 col-lg-4\" id=\"bx_3966226736_104684\" itemprop=\"itemListElement\" itemscope=\"\" itemtype=\"http://schema.org/Offer\">\n\t\t\t\t\t\t\t<a href=\"/catalog/shkafy_kupe/rumer_yasen_shimo/\" class=\"catalog-item\" title=\"Шкаф-купе Румер Ясень шимо\" itemprop=\"url\">\n\t\t\t\t\t\t\t\t<div class=\"catalog-item__inner\">\n\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__image image-block\" itemprop=\"image\" itemscope=\"\" itemtype=\"http://schema.org/ImageObject\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"image-block__inner\"><img src=\"/upload/resize_cache/iblock/c06/448_288_1/c064a3ed84ef69a4276298d2a3a17643.jpg\" alt=\"купить в Новосибирске Шкафы-купе Румер Ясень шимо ТриЯ \" title=\"Шкаф-купе Румер Ясень шимо ТриЯ \" class=\"image-block__item\" itemprop=\"contentUrl\"></span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__title h5\" itemprop=\"name\">Румер  Ясень шимо</div>\n\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__cont\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tСерия шкафов-купе\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__cont-desc\" title=\"Шкаф-купе Румер Ясень шимо ТриЯ \">\n\t\t\t\t\t\t\t\t\t\t\tШкаф-купе Румер Ясень шимо ТриЯ \t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"catalog-item__foot\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"price-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"price-block__item\">18 797 руб.</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"collapse\" itemprop=\"price\">18797</span>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"collapse\" itemprop=\"priceCurrency\">RUB</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"catalog-block__foot\">\n\t\t\t\t\t</div>\n\t</div>\n\t<div class=\"seo-block pt-sans hidden-sm-down\" itemprop=\"description\">\n\t\t<h2>Готовые шкафы-купе не дорого эконом-класса</h2>\n \n<div> \n  <div style=\"text-align: justify;\">Многие владельцы небольших квартир согласятся с тем, что готовые <i>шкафы-купе эконом-класса</i> – это отличный способ обновить и облагородить интерьер любой комнаты с минимальными затратами. Действительно, такую мебель можно встретить в прихожей, гостиной, детской,&nbsp;<a href=\"/catalog/spalni/\" title=\"Перейти в каталог мебели для спальни\">спальне</a>, санузлах и даже лоджиях. И все это благодаря трем основным преимуществам этой конструкции по сравнению с другими секциями для хранения.</div>\n \n  <div style=\"text-align: justify;\"> \n    <br>\n   </div>\n \n  <div style=\"text-align: justify;\">Во-первых, сегодня шкафы-купе эконом-класса находятся на пике популярности, поэтому практически все российские мебельные фабрики предлагают десятки самых различных моделей, отличающихся дизайном, наполнением, стилем, цветовой гаммой и материалом. Для изготовления фасадов купе используются ЛДСП, МДФ, ПВХ, а для декора – зеркала, тонированное и матовое стекло (без или с рисунком, нанесенным с помощью фотопечати или технологии пескоструя), ротанг, кожзам, ткань и многое другое. Большинство шкафов-купе доступны в нескольких габаритных размерах и наиболее популярных оттенках. В нашем каталоге есть подробная информация о представленных моделях (габариты, варианты исполнения, цена), которая поможет сделать окончательный выбор. Более того, шкафы-купе для спальни можно дополнить кроватью, комодом, прикроватной тумбой из той же коллекции, чтобы получить стильный интерьер.&nbsp;</div>\n \n  <div style=\"text-align: justify;\"> \n    <br>\n   </div>\n \n  <div style=\"text-align: justify;\">Во-вторых, такая мебель – практична и многофункциональна. <b>Шкафы-купе эконом-класса</b> и элитная серийная мебель разрабатываются на фабриках одними и теми же конструкторами и дизайнерами, которые принимают во внимание не только эргономику модели, но и отзывы своих клиентов. В результате, готовые шкафы-купе ни в чем не уступают более дорогим «собратьям». Они доставляются в минимально короткие сроки, полностью укомплектованными и готовыми к монтажу, легко собираются даже непрофессионалами. Однако при выборе следует помнить, что на некоторых вещах не следует экономить (лучше взять модель с хорошей фурнитурой и меньшими габаритами, чем наоборот).&nbsp;</div>\n \n  <div style=\"text-align: justify;\">В зависимости от комнаты, конструкция имеет свое наполнение. Для прихожей важно наличие большого отделения под верхнюю одежду и обувного ящика, а для спальни – полки или выдвижные ящики. Также не стоит забывать, что неглубокие шкафы-купе с глянцевыми, стеклянными или зеркальными фасадами способны визуально расширять пространство и делать комнату светлее.&nbsp;</div>\n\n  <div style=\"text-align: justify;\">\n    <br>\n  </div>\n\n  <div style=\"text-align: justify;\">В-третьих, цены на готовые шкафы-купе эконом-класса всегда гораздо привлекательнее выполненных по индивидуальному заказу, ведь серийная мебель обходится покупателям дешевле. Кроме того, компания «Кухни-НСК» работает напрямую с российскими производителями мебели, поэтому может предложить цены ниже, чем в других интернет-магазинах и мебельных салонах. Мы ценим своих клиентов, а потому часто проводим акции и дарим скидки, что делает покупку еще выгоднее.&nbsp;</div>\n\n  <div style=\"text-align: justify;\">\n    <br>\n  </div>\n\n  <div style=\"text-align: justify;\">«Кухни-НСК» - это отличная возможность заказать недорогую мебель по привлекательным ценам, не выходя из дома! Чтобы задать уточняющие вопросы или сделать заказ, достаточно всего лишь набрать наш номер телефона ((383) 361-50-01 или (383) 354-98-02), написать в чат на сайте или по адресу kuhni-nsk@mail.ru.\n    <br>\n  </div>\n </div>\n \t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"hidden-lg-up\"><br><br></div>\n\t\t\t\t\t<div class=\"column-right pull-lg-right clear-right hidden-sm-down\">\n\t\t\t\t\t\t\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-notice spacer-block\">\n\t\t<div class=\"article-notice__head\"><div class=\"article-notice__title\">Полезные статьи</div></div>\n\t\t<div class=\"article-notice__body\">\n\t\t\t<div class=\"article-notice__list-outer\">\n\t\t\t\t<ul class=\"article-notice__list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"article-notice__list-item\" id=\"bx_3218110189_61492\">\n\t\t\t\t\t\t\t<div class=\"article-notice-item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-notice-item__image image-block\"><a href=\"/articles/vse-o-mebeli/remont-odnokomnatnoy-42-kv-m-diskus-svechka/\"><img src=\"/upload/resize_cache/iblock/db2/170_200_1/db2961d355a2bcf304c1376dfc989ed3.jpg\" alt=\"\" class=\"image-block__item\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-notice-item__title\"><a href=\"/articles/vse-o-mebeli/remont-odnokomnatnoy-42-kv-m-diskus-svechka/\" class=\"article-notice-item__link\">Идеи ремонта однокомнатной 42 кв.м Дискус свечка</a></div>\n\t\t\t\t\t\t\t\t<div class=\"article-notice-item__cont\">\n\t\t\t\t\t\t\t\t\t<div style=\"text-align: justify;\">В статье пример ремонта однешки 42 кв.м в 18-этажной свечке Дискус. Пример функциональной расстановки...</div>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"article-notice-item__foot\">\n\t\t\t\t\t\t\t\t\t<a href=\"/articles/vse-o-mebeli/remont-odnokomnatnoy-42-kv-m-diskus-svechka/\" class=\"article-notice-item__full-link\">читать далее</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"article-notice__list-item\" id=\"bx_3218110189_53684\">\n\t\t\t\t\t\t\t<div class=\"article-notice-item\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-notice-item__image image-block\"><a href=\"/articles/vse-o-mebeli/remont-3-kh-komnatnoy-kvartiry-studii-73-75-kv-m-v-svechke-diskus/\"><img src=\"/upload/resize_cache/iblock/030/170_200_1/030d279b236fdf537d0f42de030db894.jpg\" alt=\"\" class=\"image-block__item\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"article-notice-item__title\"><a href=\"/articles/vse-o-mebeli/remont-3-kh-komnatnoy-kvartiry-studii-73-75-kv-m-v-svechke-diskus/\" class=\"article-notice-item__link\">Идеи дизайна и ремонта 3-х комнатной студии 73 кв.м  застройщик Дискус</a></div>\n\t\t\t\t\t\t\t\t<div class=\"article-notice-item__cont\">\n\t\t\t\t\t\t\t\t\t<div style=\"text-align: justify;\">В этой статье были продемонстрированы мебель и ремонт 3-х комнатной квартиры студии в 18-этажной свечке...</div>\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"article-notice-item__foot\">\n\t\t\t\t\t\t\t\t\t<a href=\"/articles/vse-o-mebeli/remont-3-kh-komnatnoy-kvartiry-studii-73-75-kv-m-v-svechke-diskus/\" class=\"article-notice-item__full-link\">читать далее</a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"hidden-lg-up\"><br></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"portfolio-notice spacer-block\">\n\t\t<div class=\"portfolio-notice__head\">\n\t\t\t<div class=\"portfolio-notice__title\">Новинки портфолио</div>\n\t\t</div>\n\t\t<div class=\"portfolio-notice__body\">\n\t\t\t<div class=\"slider-block portfolio-slider\">\n\t\t\t\t<div class=\"slider-block__group slider-block__preview\">\n\t\t\t\t\t<a class=\"slider-block__arrow slider-block__arrow--prev\" href=\"javascript:void(0);\" style=\"display: block;\"></a>\n\t\t\t\t\t<a class=\"slider-block__arrow slider-block__arrow--next\" href=\"javascript:void(0);\" style=\"display: block;\"></a>\n\t\t\t\t\t<div class=\"slider-block__crop\">\n\t\t\t\t\t\t<div class=\"slider-block__wrap row\">\n\t\t\t\t\t\t\t<div class=\"caroufredsel_wrapper\" style=\"display: block; text-align: start; float: none; position: relative; inset: auto; z-index: auto; width: 190px; height: 369px; margin: 0px; overflow: hidden;\"><ul class=\"slider-block__list width-full js-slider\" style=\"text-align: left; float: none; position: absolute; inset: 0px auto auto 0px; margin: 0px; height: 2091px; width: 190px;\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_82676\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/modern_seriya_5_k9/\" title=\"Кухня угловая на заказ  белая 9 кв.м 10 кв.м 12 кв.м без ручек встроенная тёмный низ/светлый верх 2ряда встроенная посудомойка стильные под потолок плита встроенная портфолио\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/8c3/170_200_1/8c34f3c05cc30f47872deeb046b2346c.JPG\" alt=\"Фото кухня угловая на заказ белая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_84876\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/lada_584/\" title=\"Кухня угловая на заказ большая хай-тек модерн белая 12 кв.м матовая Витрина 2ряда встроенная посудомойка чёрно-белая стильные духовой шкаф в пенале под потолок плита встроенная портфолио\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/b61/170_200_1/b613900e34552e14018ad38cd183be38.jpg\" alt=\"Фото кухня угловая на заказ хай-тек модерн белая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_65299\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/lada_736/\" title=\"Кухня угловая  белая 9 кв.м 10 кв.м 12 кв.м плита встроенная встроенная посудомойка портфолио встроенная глянцевая стильные под потолок белая с деревом\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/a2a/170_200_1/a2a3cd268fe00f55c7eeace3e229deb3.jpg\" alt=\"Фото кухня угловая белая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_115236\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/lada_328/\" title=\"Кухня угловая модерн белая 10 кв.м 12 кв.м матовая без ручек встроенная 2ряда стильные под потолок белая с деревом плита встроенная портфолио телевизор на кухне\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/13b/170_200_1/13bdb40d8451941c77cc3bf7bf0f3c74.jpg\" alt=\"Фото кухня угловая модерн белая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_78876\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/lada_325/\" title=\"Кухня прямая на заказ большая модерн белая кухня-гостиная пеналы 4м глянцевая 2ряда встроенная посудомойка чёрно-белая стильные духовой шкаф в пенале под потолок плита встроенная портфолио телевизор на кухне со встроенным холодильником\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/c63/170_200_1/c638921e835bc9e9f604f916652c8c0c.JPG\" alt=\"Фото кухня прямая на заказ модерн белая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_67515\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/imperial_11/\" title=\"Кухня прямая на заказ модерн белая кухня-гостиная без ручек 3м встроенная Side-by-Side глянцевая Gola 2ряда встроенная посудомойка стильные духовой шкаф в пенале под потолок белая с деревом плита встроенная портфолио\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/01f/170_200_1/01fdd89554eac580e8051cbf27900591.jpg\" alt=\"Фото кухня прямая на заказ модерн белая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"slider-block__item col-xs-12 col-sm-4 col-md-4 col-lg-12\" id=\"bx_1970176138_85461\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"image-block\"><a href=\"/catalog/kuhni/lada_672/\" title=\"Кухня угловая модерн розовая серая студия портфолио матовая стильные\" class=\"image-block__inner\"><img class=\"image-block__item\" src=\"https://www.kuhni-nsk.ru/upload/resize_cache/iblock/a55/170_200_1/a55c6d11bda33777feb41c5bf7a81054.jpg\" alt=\"Фото кухня угловая модерн розовая серая \"></a></div>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t</div>\n\t<div class=\"col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 spacer-block clear-left hidden-sm-down\">\n\t\t<div class=\"column-left\">\n\t\t\t<div class=\"comments-notice spacer-block hidden-sm-down\">\n\t<div class=\"comments-notice__head\">\n\t\t<div class=\"comments-notice__title\">ОТЗЫВЫ</div>\n\t</div>\n\t<!--div class=\"comments-notice__body\"-->\n\t\t<script>!function(d,s){var js,fjs=d.getElementsByTagName(s)[0];js=d.createElement(s);js.async=1;js.src=\"//widget.flamp.ru/loader.js\";fjs.parentNode.insertBefore(js,fjs);}(document,\"script\");</script>\n\t<!--/div-->\n<iframe scrolling=\"no\" frameborder=\"0\" allowtransparency=\"true\" src=\"//widget.flamp.ru/?id=70000001028636908&amp;type=big&amp;count=3&amp;orientation=portrait&amp;\" style=\"width: 228px; height: 550px; border: none;\"></iframe></div>\n<div class=\"info-block spacer-block hidden-sm-down\">\n\t<div class=\"info-block__item\">\n\t\t<div class=\"info-block__item-image image-block\">\n\t\t\t<br>\n\t\t</div>\n\t</div>\n</div><!--\n<div class=\"spacer-block hidden-sm-down\"> \t\n<script type=\"text/javascript\" src=\"//vk.com/js/api/openapi.js?139\"></script>\n \t\nVK Widget  \t \t\n<script type=\"text/javascript\">\n\tVK.Widgets.Group(\"vk_groups\", {mode: 4, width: \"220\", height: \"400\"}, 50828459);\n\t</script>\n</div>\n\n<div class=\"spacer-block hidden-sm-down\">\n  <br />\n</div>\n\n<div class=\"spacer-block hidden-sm-down\">Цены могут меняться, уточняйте стоимость у менеджеров!!\n  <br />\n </div>\n\n         -->\n\n\n                                                                     \n<br><br> \n\n<!-- Put this script tag to the <head> of your page -->\n<script type=\"text/javascript\" src=\"https://vk.com/js/api/openapi.js?168\"></script>\n\n<!-- Put this div tag to the place, where the Group block will be -->\n<div id=\"vk_groups\" style=\"width: 200px; height: 298px; background: none;\"><iframe name=\"fXD1ec74\" frameborder=\"0\" src=\"https://vk.com/widget_community.php?app=0&amp;width=200px&amp;_ver=1&amp;gid=50828459&amp;mode=3&amp;color1=FFFFFF&amp;color2=000000&amp;color3=5181B8&amp;class_name=&amp;height=400&amp;url=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;referrer=&amp;title=%D0%A8%D0%BA%D0%B0%D1%84%D1%8B%20%D0%BA%D1%83%D0%BF%D0%B5%20%D0%BD%D0%B5%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%BE%3A%20%D0%BA%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%88%D0%BA%D0%B0%D1%84-%D0%BA%D1%83%D0%BF%D0%B5%20%D0%B2%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B5%2C%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D1%81%20%D1%84%D0%BE%D1%82%D0%BE%20%D0%B8%20%D1%86...&amp;19de41478c4\" width=\"200\" height=\"185\" scrolling=\"no\" id=\"vkwidget1\" style=\"overflow: hidden; height: 298px;\"></iframe></div>\n<script type=\"text/javascript\">\n  VK.Widgets.Group(\"vk_groups\", {mode: 3, height: 400, color1: \"FFFFFF\", color2: \"000000\", color3: \"5181B8\"}, 50828459);\n</script>\n<!-- без обложки\n<div id=\"vk_groups\"></div>\n<script type=\"text/javascript\">\n  VK.Widgets.Group(\"vk_groups\", {mode: 3, no_cover: 1, height: 400, color1: \"FFFFFF\", color2: \"000000\", color3: \"5181B8\"}, 50828459);\n</script>       -->\n<!--одноклассникм\n<div class=\"spacer-block hidden-sm-down\"> \t\n  <div id=\"ok_group_widget\"></div>\n \t\n<img id=\"bxid_932016\" src=\"/bitrix/images/fileman/htmledit2/script.gif\" />\n </div> \n<!--одноклассник-->\n \n<!--vk\n\n<img id=\"bxid_277313\" src=\"/bitrix/images/fileman/htmledit2/script.gif\" />\n\n\n<div id=\"vk_groups\"></div>\n<img id=\"bxid_841662\" src=\"/bitrix/images/fileman/htmledit2/script.gif\" />\n\n\n    vk-->\n\n<br>\t\t</div>\n\t</div>\n</div></div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"clearfix\"></div>\n\t\t\t\t</div><!--content-->\n\t\t\t</div>\n\n\t\t\t<div class=\"template__bottom\">\n\t\t\t\t<div class=\"site-footer\">\n\t\t\t\t\t<div class=\"site-footer__top\"><div class=\"container-fluid\"></div></div>\n\t\t\t\t\t<div class=\"site-footer__middle text-xs-center text-md-left\">\n\t\t\t\t\t\t<div class=\"container-fluid\">\n\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t<div class=\"col-xs-12 hidden-md-up\">\n\t\t\t\t\t\t\t\t\t<div class=\"footer-menu\">\n\t\t\t\t\t\t\t\t\t\t\t<ul class=\"footer-menu__list\">\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/contact/\" class=\"footer-menu__link\">Контакты</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/about/\" class=\"footer-menu__link\">О компании</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/otzivi_o_kuhni-nsk/\" class=\"footer-menu__link\">Отзывы</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/foto/\" class=\"footer-menu__link\">Портфолио</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/design-project/\" class=\"footer-menu__link\">Дизайн проекты <small>(бесплатно)</small></a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/raschet_stoimosti_kuhni/\" class=\"footer-menu__link\">Расчёт кухни онлайн</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/dostavka_oplata/\" class=\"footer-menu__link\">Доставка и оплата</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/another-city/\" class=\"footer-menu__link\">Другой город</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog-map/\" class=\"footer-menu__link\">Карта сайта (кухни)</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/sborka_montaz/\" class=\"footer-menu__link\">Сборка и монтаж</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/kredit/\" class=\"footer-menu__link\">Рассрочка</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/articles/\" class=\"footer-menu__link\">Статьи</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/na-zakaz/\" class=\"footer-menu__link\">Кухни на заказ</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/sale/\" class=\"footer-menu__link\">Распродажи и акции</a></li>\n\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-2 col-sm-2 col-md-3 col-lg-3 col-xl-2 hidden-sm-down\">\n\t\t\t\t\t\t\t\t\t<div class=\"footer-menu\">\n\t\t\t\t\t\t\t\t\t\t\t<ul class=\"footer-menu__list\">\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/na-zakaz/\" class=\"footer-menu__link\">Кухни на заказ</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/uglovie/\" class=\"footer-menu__link\">Угловые кухни</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/econom/\" class=\"footer-menu__link\">Кухни эконом</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/malenkie/\" class=\"footer-menu__link\">Кухни маленькие</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/gostinye/\" class=\"footer-menu__link\">Мебель для гостиной</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/prikhozhie/\" class=\"footer-menu__link\">Мебель для прихожей</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/spalni/\" class=\"footer-menu__link\">Мебель для спальни</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/shkafy_kupe/\" class=\"footer-menu__link current\">Шкафы-купе</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/catalog/kuhni/foto/\" class=\"footer-menu__link\">Наши работы (фото)</a></li>\n\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-2 col-sm-2 col-md-3 col-lg-3 col-xl-2 hidden-sm-down\">\n\t\t\t\t\t\t\t\t\t<div class=\"footer-menu\">\n\t\t\t\t\t\t\t\t\t\t\t<ul class=\"footer-menu__list\">\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/about/\" class=\"footer-menu__link\">О нас</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/dostavka_oplata/\" class=\"footer-menu__link\">Доставка и оплата</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/otzivi_o_kuhni-nsk/\" class=\"footer-menu__link\">Отзывы</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/kredit/\" class=\"footer-menu__link\">Рассрочка</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/sborka_montaz/\" class=\"footer-menu__link\">Сборка и монтаж</a></li>\n\t\t\t\t\t<li class=\"footer-menu__item\"><a href=\"/contact/\" class=\"footer-menu__link\">Контакты</a></li>\n\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-12 hidden-md-up\"><br></div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xl-offset-2 col-xs-offset-0\">\n\t\t\t\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__city\">г. Новосибирск</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__other-city hidden-sm-down\"><a href=\"/another-city/\">ИНОГОРОДНИМ</a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__address\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<br>\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__address\">\n\t\t\t\t\t\t\t\t\t\t\t\t\tпр. Дзержинского 1/1 \n<div>ТЦ Солнечный, 1 этаж</div>\n \n<div> \n  <br>\n </div>\n \n<div><a href=\"https://www.kuhni-nsk.ru/about/politika-konfidentsialnosti/\" target=\"_blank\">Политика конфиденциальности</a>&nbsp; &nbsp; &nbsp; &nbsp;\n  <br>\n \n  <div> \n    <br>\n   </div>\n \n  <div> \n    <div> \n      <br>\n     </div>\n   </div>\n </div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6\">\n\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__worktime hidden-sm-down\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n<div>Пн.-Пт.: 10.00-19.00&nbsp;</div>\n \n<div>Сб.-Вс.: 10.00-18.00</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__phone\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"tel:+73833888995\"><span class=\"goHTPjH goHTPjC_goHTPb0 goHTPjW_goHTPGo goHTPjH_goHTPjT goHTPjH_goHTPXV\" style=\"max-width: 2150px; --left-column-width: 252px; --right-column-width: 252px; --sidebar-column-width: 400px;\"><span><span><span><span style=\"background-color: rgb(255, 255, 0);\"></span></span></span></span></span><font size=\"3\"><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit;\"><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.933333;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.866667;\">(</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.8;\">3</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.733333;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.666667;\">3</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.6;\">)</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit;\"> </small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.533333;\">3</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.466667;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.4;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.333333;\">-</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.266667;\">8</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.2;\">9</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.133333;\">-</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0.0666667;\">9</small><small style=\"display: inline; margin: 0px; padding: 0px; font-size: inherit; color: inherit; line-height: inherit; opacity: 0;\">5</small></small></font></a>\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__phone\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n<div><a href=\"https://wa.me/79607810550?text=Здравствуйте,%20мне%20нужна%20кухня\"><font size=\"3\">Отдел качества:&nbsp;</font></a></div>\n\n<div><a href=\"tel:+73833888997\"><font size=\"3\">(383) 388-89-97</font></a></div>\n \n<div><a href=\"mailto:kuhni-nsk@mail.ru\" target=\"_blank\">kuhni-nsk@mail.ru</a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"footer-contact__worktime hidden-md-up\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\n<div>Пн.-Пт.: 10.00-19.00&nbsp;</div>\n \n<div>Сб.-Вс.: 10.00-18.00</div>\n\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"footer-callback\">\n\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"footer-callback__button button button--lg button--danger width-full pt-sans order_call_link\"><span class=\"button__inner\">Заказать обратный звонок</span></a>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"col-xs-2 col-sm-2 col-md-3 col-lg-2 col-xl-2 hidden-md-down\">\n\t\t\t\t\t\t\t\t\t<div class=\"site-footer__logo logo-block\"><a href=\"/\" class=\"logo-block__link\"><img src=\"/files/logo-footer.png\" alt=\"\" class=\"logo-block__img\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"site-footer__bottom text-xs-center text-md-left\">\n\t\t\t\t\t\t<div class=\"container-fluid\">\n\t\t\t\t\t\t\t<div class=\"copyright\">© 2026 Все права защищены <br> Предложение не является публичной офертой</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"hidden\">\n\t\t\t\t\t<!-- Сюда вставлять скрипты, скрытые блоки -->\n\t\t\t\t</div>\n\t\t\t</div><!--footer-->\n\t\t</div><script type=\"text/javascript\" async=\"\" src=\"https://privacy-cs.mail.ru/static/sync-loader.js\"></script><!--nofooter -->\n\t\t<div class=\"popup_window call_master_window\">\n\t<div class=\"popup_window--close link-action--remove\"></div>\n\t<div class=\"popup_window--title\">Вызвать замерщика</div>\n\t<div class=\"popup_window--body\">\n\t\t\t\t\t\t<form name=\"iblock_add\" action=\"/catalog/shkafy_kupe/\" method=\"post\" enctype=\"multipart/form-data\" class=\"validate_form\" novalidate=\"novalidate\">\n\t\t\t<input type=\"hidden\" name=\"sessid\" id=\"sessid\" value=\"612fa3f5ee390ca2ea411e1ef5ccb662\">\t\t\t\t\t\t<input type=\"hidden\" name=\"PROPERTY[207][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"recaptcha_token\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"iblock_submit_cm\" value=\"Y\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[229][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[230][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[231][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[232][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[233][0]\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"popup_window--group\">\n\t\t\t\t\t\t<label for=\"cm_NAME\">Ваше имя</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"cm_NAME\" name=\"PROPERTY[NAME][0]\" value=\"\" class=\"form-input width-full popup_window--input\">\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"popup_window--group\">\n\t\t\t\t\t\t<label for=\"cm_132\">Ваш телефон</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"cm_132\" name=\"PROPERTY[132][0]\" value=\"\" class=\"form-input width-full popup_window--input\">\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"PROPERTY[134][0]\" value=\"/catalog/shkafy_kupe/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t            <div style=\"height: 150px;\" id=\"captcha-container\" class=\"smart-captcha\" data-sitekey=\"ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f\" data-testid=\"smartCaptcha-container\"><div style=\"display: none;\"><iframe frameborder=\"0\" src=\"https://smartcaptcha.yandexcloud.net/backend.d9627726d03678c949b5.html?sitekey=ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f&amp;theme=light&amp;hl=ru&amp;host=www.kuhni-nsk.ru&amp;href=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false\" allow=\"encrypted-media *; accelerometer\" data-testid=\"backend-iframe\" title=\"SmartCaptcha backend\" aria-hidden=\"true\" style=\"display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);\"></iframe></div><input type=\"hidden\" name=\"smart-token\" data-testid=\"smart-token\"><iframe frameborder=\"0\" src=\"https://smartcaptcha.yandexcloud.net/checkbox.ru.bb01fbaa69273bb18ded.html?sitekey=ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f&amp;theme=light&amp;hl=ru&amp;host=www.kuhni-nsk.ru&amp;href=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false\" allow=\"encrypted-media *; accelerometer\" data-testid=\"checkbox-iframe\" title=\"SmartCaptcha checkbox\" style=\"display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);\"></iframe></div>\n\t\t\t<button type=\"submit\" name=\"iblock_submit_cm\" value=\"Y\" class=\"button button--lg button--danger popup_window--button\"><span class=\"button__inner\"><span class=\"button__text\">ОСТАВИТЬ ЗАЯВКУ</span></span></button>\n\t\t\t<p></p>\n\t\t\t<div class=\"popup_window--group agreement\">\n\t\t\t\t<label><input type=\"checkbox\" name=\"agreement\" value=\"Y\" checked=\"\" class=\"\"> Согласен с обработкой <a href=\"/about/politika-konfidentsialnosti/\"> персональных данных</a></label>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>\t\t<div class=\"popup_window order_call_window\" style=\"width:320px\">\n\t<div class=\"popup_window--close link-action--remove\"></div>\n\t<div class=\"popup_window--title\">Обратный звонок</div>\n\t<div class=\"popup_window--body\">\n\t\t\t\t\t\t<form name=\"iblock_add\" action=\"/catalog/shkafy_kupe/\" method=\"post\" enctype=\"multipart/form-data\" class=\"validate_form\" novalidate=\"novalidate\">\n\t\t\t<input type=\"hidden\" name=\"sessid\" id=\"sessid_1\" value=\"612fa3f5ee390ca2ea411e1ef5ccb662\">\t\t\t\t\t\t<input type=\"hidden\" name=\"PROPERTY[201][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"recaptcha_token\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"iblock_submit_oc\" value=\"Y\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[224][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[225][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[226][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[227][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"PROPERTY[228][0]\" value=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"popup_window--group\">\n\t\t\t\t\t\t<label for=\"cm_NAME\">Ваше имя</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"cm_NAME\" name=\"PROPERTY[NAME][0]\" value=\"\" class=\"form-input width-full popup_window--input\">\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"PROPERTY[168][0]\" value=\"/catalog/shkafy_kupe/\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"popup_window--group\">\n\t\t\t\t\t\t<label for=\"cm_133\">Ваш телефон</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"cm_133\" name=\"PROPERTY[133][0]\" value=\"\" class=\"form-input width-full popup_window--input\">\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t            <div style=\"height: 150px;\" id=\"captcha-container\" class=\"smart-captcha\" data-sitekey=\"ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f\" data-testid=\"smartCaptcha-container\"><div style=\"display: none;\"><iframe frameborder=\"0\" src=\"https://smartcaptcha.yandexcloud.net/backend.d9627726d03678c949b5.html?sitekey=ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f&amp;theme=light&amp;hl=ru&amp;host=www.kuhni-nsk.ru&amp;href=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false\" allow=\"encrypted-media *; accelerometer\" data-testid=\"backend-iframe\" title=\"SmartCaptcha backend\" aria-hidden=\"true\" style=\"display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);\"></iframe></div><input type=\"hidden\" name=\"smart-token\" data-testid=\"smart-token\"><iframe frameborder=\"0\" src=\"https://smartcaptcha.yandexcloud.net/checkbox.ru.bb01fbaa69273bb18ded.html?sitekey=ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f&amp;theme=light&amp;hl=ru&amp;host=www.kuhni-nsk.ru&amp;href=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false\" allow=\"encrypted-media *; accelerometer\" data-testid=\"checkbox-iframe\" title=\"SmartCaptcha checkbox\" style=\"display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);\"></iframe></div>\n\t\t\t<button type=\"submit\" name=\"iblock_submit_oc\" value=\"Y\" class=\"button button--lg button--danger popup_window--button\"><span class=\"button__inner\"><span class=\"button__text\">ОСТАВИТЬ ЗАЯВКУ</span></span></button>\n\t\t\t<p></p>\n\t\t\t<div class=\"popup_window--group agreement\">\n\t\t\t\t<label><input type=\"checkbox\" name=\"agreement\" value=\"Y\" checked=\"\" class=\"\"> Согласен с обработкой <a href=\"/about/politika-konfidentsialnosti/\"> персональных данных</a></label>\n\t\t\t</div>\n\t\t</form>\n\t</div>\n</div>\t\t<div class=\"popup_window call_work_window\">\n\t<div class=\"popup_window--close link-action--remove\"></div>\n\t<div class=\"popup_window--title\">Записаться на собеседование</div>\n\t<div class=\"popup_window--body\">\n\t\t\t\t\t\t<form name=\"iblock_add\" action=\"/catalog/shkafy_kupe/\" method=\"post\" enctype=\"multipart/form-data\" class=\"validate_form\" novalidate=\"novalidate\">\n\t\t\t<input type=\"hidden\" name=\"sessid\" id=\"sessid_2\" value=\"612fa3f5ee390ca2ea411e1ef5ccb662\">\t\t\t\t\t\t<input type=\"hidden\" name=\"PROPERTY[211][0]\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"recaptcha_token\" value=\"\">\n\t\t\t<input type=\"hidden\" name=\"iblock_submit_ow\" value=\"Y\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"popup_window--group\">\n\t\t\t\t\t\t<label for=\"cm_NAME\">Ваше имя</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"cm_NAME\" name=\"PROPERTY[NAME][0]\" value=\"\" class=\"form-input width-full popup_window--input\">\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"popup_window--group\">\n\t\t\t\t\t\t<label for=\"cm_192\">Ваш телефон</label>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" id=\"cm_192\" name=\"PROPERTY[192][0]\" value=\"\" class=\"form-input width-full popup_window--input\">\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\n\t\t\t            <div style=\"height: 150px;\" id=\"captcha-container\" class=\"smart-captcha\" data-sitekey=\"ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f\" data-testid=\"smartCaptcha-container\"><div style=\"display: none;\"><iframe frameborder=\"0\" src=\"https://smartcaptcha.yandexcloud.net/backend.d9627726d03678c949b5.html?sitekey=ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f&amp;theme=light&amp;hl=ru&amp;host=www.kuhni-nsk.ru&amp;href=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false\" allow=\"encrypted-media *; accelerometer\" data-testid=\"backend-iframe\" title=\"SmartCaptcha backend\" aria-hidden=\"true\" style=\"display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);\"></iframe></div><input type=\"hidden\" name=\"smart-token\" data-testid=\"smart-token\"><iframe frameborder=\"0\" src=\"https://smartcaptcha.yandexcloud.net/checkbox.ru.bb01fbaa69273bb18ded.html?sitekey=ysc1_qet2uBfglTrRyyFbbODCXExwY0JZusnybUTMWfNHc615127f&amp;theme=light&amp;hl=ru&amp;host=www.kuhni-nsk.ru&amp;href=https%3A%2F%2Fwww.kuhni-nsk.ru%2Fcatalog%2Fshkafy_kupe%2F&amp;test=false&amp;webview=false&amp;hideChallengeContainer=false\" allow=\"encrypted-media *; accelerometer\" data-testid=\"checkbox-iframe\" title=\"SmartCaptcha checkbox\" style=\"display: block; width: 100%; height: 100%; z-index: 0; transform: translate3d(0px, 0px, 0px);\"></iframe></div>\n\t\t\t<button type=\"submit\" name=\"iblock_submit_ow\" value=\"Y\" class=\"button button--lg button--danger popup_window--button\"><span class=\"button__inner\"><span class=\"button__text\">ОСТАВИТЬ ЗАЯВКУ</span></span></button>\n\t\t\t<p></p>\n\t\t\t<div class=\"popup_window--group agreement\">\n\t\t\t\t<label><input type=\"checkbox\" name=\"agreement\" value=\"Y\" checked=\"\" class=\"\"> Согласен с обработкой <a href=\"/about/politika-konfidentsialnosti/\"> персональных данных</a></label>\n\t\t\t</div>\n\n\t\t</form>\n\t</div>\n</div>        <!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(18773827, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/18773827\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /GoogleAnalytics \n<script>\n(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\nm=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');\n\nga('create', 'UA-96543604-1', 'auto');\nga('send', 'pageview');\n\n</script>\n-->\n<!-- /Обратная связь jivo \n<script src=\"//code.jivosite.com/widget/9TyPNHPLjp\" async></script>\n-->\n<!-- /подмена номеров -->\n<script>\n    (function(w, d, u, i, o, s, p) {\n        if (d.getElementById(i)) { return; } w['MangoObject'] = o;\n        w[o] = w[o] || function() { (w[o].q = w[o].q || []).push(arguments) }; w[o].u = u; w[o].t = 1 * new Date();\n        s = d.createElement('script'); s.async = 1; s.id = i; s.src = u;\n        p = d.getElementsByTagName('script')[0]; p.parentNode.insertBefore(s, p);\n    }(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));\n    mgo({calltracking: {id: 31765, elements: [{\"numberText\":\"73833888995\"}]}});\n</script>\n\t\t<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n<style>\n@import url('https://fonts.googleapis.com/css?family=Roboto');\n\n.nav-bottom {\n        position: fixed;\n        bottom: 0px;\n        right: 0px;\n        padding: 5px;\n        margin: 0px;\n        transition: 1s;        \n}\n\n.whatsapp-button {\n        justify-content: center;\n        align-content: center;\n        width: 60px;\n        z-index: 999999999;\n        margin: 10px;\n        padding: 7px;\n        border: none;\n        outline: none;\n        cursor: pointer;\n        border-radius: 50%;\n        background-color: rgb(255, 255, 255);\n}\n .showmobile {display: none;} \n  /* Показываем на маленьких экранах */ \n  @media (max-width : 990px){ \n      .showmobile {display: block;}\n  }\n</style>\n<a href=\"https://max.ru/u/f9LHodD0cOJKMQxfBa0aFuA8qNkw_cdXTSjKxD9UXNQ899sStrKW47u7hpQ\" class=\"nav-bottom  showmobile\">\n       \n       \n<button type=\"button\" class=\"whatsapp-button\">\n<div class=\"icon-whatsapp\" src=\"/upload/medialibrary/b3d/v7ck9xi2dvg08c9o6dwhgfneovxmp4tz.png\">\n<svg width=\"100%\" height=\"100%\" viewBox=\"0 0 80 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"80\" height=\"80\" rx=\"40\" fill=\"url(#paint0_linear_5_55)\"></rect>\n<rect width=\"80\" height=\"80\" rx=\"40\" fill=\"url(#paint1_radial_5_55)\"></rect>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M40.4931 62.4927C35.9886 62.4927 33.8953 61.8322 30.2566 59.1904C27.955 62.1625 20.6668 64.4851 20.3489 60.5113C20.3489 57.5284 19.6913 55.0077 18.946 52.2558C18.0583 48.8654 17.05 45.0899 17.05 39.6192C17.05 26.5533 27.7249 16.7236 40.3726 16.7236C53.0312 16.7236 62.9499 27.0376 62.9499 39.7403C62.9924 52.2464 52.9451 62.426 40.4931 62.4927ZM40.6794 28.0173C34.52 27.6981 29.7196 31.98 28.6565 38.6946C27.7797 44.2534 29.336 51.0229 30.6621 51.3752C31.2978 51.5293 32.8979 50.2304 33.8953 49.2287C35.5444 50.373 37.4649 51.0602 39.4629 51.2211C45.8451 51.5294 51.2985 46.6495 51.727 40.2467C51.9764 33.8302 47.0625 28.3955 40.6794 28.0283V28.0173Z\" fill=\"white\"></path>\n<defs>\n<linearGradient id=\"paint0_linear_5_55\" x1=\"9.42776\" y1=\"60.8429\" x2=\"80\" y2=\"40\" gradientUnits=\"userSpaceOnUse\">\n<stop stop-color=\"#44CCFF\"></stop>\n<stop offset=\"0.662\" stop-color=\"#5533EE\"></stop>\n<stop offset=\"1\" stop-color=\"#9933DD\"></stop>\n</linearGradient>\n<radialGradient id=\"paint1_radial_5_55\" cx=\"0\" cy=\"0\" r=\"1\" gradientUnits=\"userSpaceOnUse\" gradientTransform=\"translate(-1.90326 -35.1348) rotate(51.356) scale(97.0814 40)\">\n<stop stop-color=\"#0000FF\"></stop>\n<stop offset=\"1\" stop-opacity=\"0\"></stop>\n</radialGradient>\n</defs>\n</svg>\n</div>\n       \n</button>\n</a>\t\t<!-- BEGIN JIVOSITE INTEGRATION WITH ROISTAT -->\n<script>\n(function(w, d, s, h) {\n    w.roistatWithJivoSiteIntegrationWebHook = 'https://cloud.roistat.com/integration/webhook?key=084f4f36fc7099f42e8556dff11aec0d';\n    var p = d.location.protocol == \"https:\" ? \"https://\" : \"http://\";\n    var u = \"/static/marketplace/JivoSite/script.js\";\n    var js = d.createElement(s); js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);\n    })(window, document, 'script', 'cloud.roistat.com');\n</script>\n<!-- END JIVOSITE INTEGRATION WITH ROISTAT -->\n<!-- Вставьте этот скрипт перед закрывающим тегом </body> -->\n<!-- Токен {wz_metric} используется для подстановки кода аналитики. Убедитесь, чтобы токен и текст, в котором он прописан, были разделены как минимум одним символом пробела. -->\n\n<script>\n(function () {\nfunction ChangeLinkWA() {\nthis.text = \"Пишу вам с сайта КУХНИ-НСК. Номер моей заявки: {wz_metric}\";\nthis.cookieSource = \"roistat_visit\";\n}\n\nChangeLinkWA.prototype.editLink = function (url, id) {\nif (\ndecodeURIComponent(url.split(\"text=\")[1]) ===\nthis.text.replace(/{wz_metric}/gi, id)\n)\nreturn;\nvar regexNumberPhone = /\\d+/;\nif (!regexNumberPhone.test(url)) return;\nvar phone = url.match(regexNumberPhone)[0];\nvar host = url.split(phone)[0];\nvar newUrl =\nhost === \"https://wa.me/\"\n? host.toString()+phone.toString()+\"?text=\"+(this.text.replace(/{wz_metric}/gi, id))\n: host.toString()+phone.toString()+\"&text=\"+(this.text.replace(/{wz_metric}/gi, id));\nreturn newUrl;\n};\n\nChangeLinkWA.prototype.getCookie = function (name) {\nvar cookie = document.cookie;\nvar matches = cookie.match(\nnew RegExp(\n\"(?:^|; )\"+(name.replace(/([.$?*|{}()[]\\/+^])/g, \"\\\\$1\"))+\"=([^;]*)\"\n)\n);\nreturn matches ? decodeURIComponent(matches[1]) : undefined;\n};\n\nChangeLinkWA.prototype.censusLinks = function () {\nvar links = document.querySelectorAll(\n'[href*=\"//wa.me\"], [href*=\"//api.whatsapp.com/send\"], [href*=\"//web.whatsapp.com/send\"], [href^=\"whatsapp://send\"]'\n);\nvar id = this.getCookie(this.cookieSource);\nvar that = this;\nlinks.forEach(function (link) {\nvar newLink = that.editLink(link.href, id);\nif (newLink) link.href = newLink;\n});\n};\n\nwindow.addEventListener(\"DOMContentLoaded\", function () {\nif (!(window.__wz_scripts && window.__wz_scripts.scriptsChangeLinkWA)) {\nif (!window.__wz_scripts) window.__wz_scripts = {};\nwindow.__wz_scripts.scriptsChangeLinkWA = new ChangeLinkWA();\nvar interval = setInterval(function () {\nvar id = window.__wz_scripts.scriptsChangeLinkWA.getCookie(\nwindow.__wz_scripts.scriptsChangeLinkWA.cookieSource\n);\nif (id) {\nclearInterval(interval);\nwindow.__wz_scripts.scriptsChangeLinkWA.censusLinks();\n}\n}, 200);\n}\n});\n})();\n</script>\n<!--  отравляем формы Отправляет цель в Яндекс.Метрику Отправляет цель в Tag Manage -->\n<script>\ndocument.addEventListener('DOMContentLoaded', function() {\n    // Находим все формы с name=\"iblock_add\"\n    document.querySelectorAll('form[name=\"iblock_add\"]').forEach(function(form) {\n        // Обработчик отправки формы\n        form.addEventListener('submit', function() {\n            // Яндекс.Метрика\n            if (typeof ym !== 'undefined') {\n                ym(18773827, 'reachGoal', 'forma');\n                console.log('YM: Цель \"forma\" отправлена');\n            }\n            \n            // Tag Manager (если используется)\n            if (typeof _tmr !== 'undefined') {\n                _tmr.push({ \n                    type: 'reachGoal', \n                    id: 3663819, \n                    goal: 'forma'\n                });\n                console.log('TMR: Цель \"forma\" отправлена');\n            }\n        });\n    });\n});\n</script>\t\t\n\t\t<div class=\"popup_window--overlay\"></div>\n\n\t\t<div class=\"scroll_to_top\" ss=\"scroll_to_header\" style=\"bottom: 30px;\"> ^ </div>\n\n<script>\n    (function () {\n        if (window.roistat !== undefined) {\n            handler();\n        } else {\n            var pastCallback = typeof window.onRoistatAllModulesLoaded === \"function\" ? window.onRoistatAllModulesLoaded : null;\n            window.onRoistatAllModulesLoaded = function () {\n                if (pastCallback !== null) {\n                    pastCallback();\n                }\n                handler();\n            };\n        }\n\n        function handler() {\n            function init() {\n                appendMessageToLinks();\n\n                var delays = [1000, 5000, 15000];\n                setTimeout(function func(i) {\n                    if (i === undefined) {\n                        i = 0;\n                    }\n                    appendMessageToLinks();\n                    i++;\n                    if (typeof delays[i] !== 'undefined') {\n                        setTimeout(func, delays[i], i);\n                    }\n                }, delays[0]);\n            }\n\n            function replaceQueryParam(url, param, value) {\n                var explodedUrl = url.split('?');\n                var baseUrl = explodedUrl[0] || '';\n                var query = '?' + (explodedUrl[1] || '');\n                var regex = new RegExp(\"([?;&])\" + param + \"[^&;]*[;&]?\");\n                var queryWithoutParameter = query.replace(regex, \"$1\").replace(/&$/, '');\n                return baseUrl + (queryWithoutParameter.length > 2 ? queryWithoutParameter + '&' : '?') + (value ? param + \"=\" + value : '');\n            }\n\n            function appendMessageToLinks() {\n                var message = 'Пишу вам с сайта КУХНИ-НСК. Номер моей заявки: {roistat_visit}';\n                var text = message.replace(/{roistat_visit}/g, window.roistatGetCookie('roistat_visit'));\n                text = encodeURI(text);\n                var linkElements = document.querySelectorAll('[href*=\"//t.me\"]')\n                for (var elementKey in linkElements) {\n                    if (linkElements.hasOwnProperty(elementKey)) {\n                        var element = linkElements[elementKey];\n                        element.href = replaceQueryParam(element.href, 'text', text);\n                    }\n                }\n            }\n\n            if (document.readyState === 'loading') {\n                document.addEventListener('DOMContentLoaded', init);\n            } else {\n                init();\n            }\n        };\n    })();\n</script>\n<script src=\"/local/templates/kuhni/accordion.js\"></script>\n\t\n<div class=\"SmartCaptcha-Overlay SmartCaptcha-Overlay_show_spinner\" data-testid=\"advanced-container\" tabindex=\"-1\" style=\"--smart-captcha-doc-height: 720px; --smart-captcha-doc-width: 1280px;\"><div class=\"SmartCaptcha-Spin\"></div></div><div class=\"SmartCaptcha-Overlay SmartCaptcha-Overlay_show_spinner\" data-testid=\"advanced-container\" tabindex=\"-1\" style=\"--smart-captcha-doc-height: 720px; --smart-captcha-doc-width: 1280px;\"><div class=\"SmartCaptcha-Spin\"></div></div><div class=\"SmartCaptcha-Overlay SmartCaptcha-Overlay_show_spinner\" data-testid=\"advanced-container\" tabindex=\"-1\" style=\"--smart-captcha-doc-height: 720px; --smart-captcha-doc-width: 1280px;\"><div class=\"SmartCaptcha-Spin\"></div></div><div class=\"title-search-result\"></div><div class=\"title-search-result-mobile\"></div><script type=\"text/javascript\" async=\"\" src=\"https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=3663819\"></script></body></html>",
+  "text": "Шкафы купе недорого: купить готовый шкаф-купе в Новосибирске, каталог с фото и ценами Контакты Рассрочка Доставка и оплата Сборка и монтаж Статьи Нам 14 лет Кухни на заказ Расчёт онлайн Корзина пуста 0 Корзина пуста ТЦ Солнечный, 1 этаж пр.Дзержинского 1/1 8 ( 3 8 3 ) 3 8 8 - 8 9 - 9 5 пн-пт: 10-19,сб-вс: 10-18 ОБРАТНЫЙ ЗВОНОК Каталог Кухонные гарнитуры Кухни на заказ Угловые кухни Прямые кухни Модульные кухни Бюджетные кухни Кухни до потолка Кухни маленькие С барной стойкой Кухни в хрущевку Современные кухни Классические кухни Белые кухни В наличии От производителя Наши работы (фото) РАСПРОДАЖА Мебель для кухни Столы Стулья барные Стулья Столы + стулья Диваны и кресла Мебель для дома Гостиные Прихожие Для спальни Шкафы-купе Шкафы на заказ Кухни Бесплатный дизайн-проект Портфолио работ Распродажи и акции Главная Каталог Мебель для дома Шкафы-купе Мебель для дома Гостиные Прихожие Для спальни Шкафы-купе Шкафы на заказ Кухонные гарнитуры Кухни на заказ Угловые кухни Прямые кухни Модульные кухни Бюджетные кухни Кухни до потолка Кухни маленькие С барной стойкой Кухни в хрущевку Современные кухни Классические кухни Белые кухни В наличии От производителя Наши работы (фото) РАСПРОДАЖА Мебель для кухни Столы Стулья барные Стулья Столы + стулья Диваны и кресла Шкафы-купе Популярности Названию Цене Показать: 12 24 48 Производство ТриЯ Применить Сбросить параметры Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец серия шкафов Шкаф-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец ТриЯ 46 597 руб. 46597 RUB Румер Ясень шимо Серия шкафов-купе Шкаф-купе Румер Ясень шимо ТриЯ 18 797 руб. 18797 RUB Готовые шкафы-купе не дорого эконом-класса Многие владельцы небольших квартир согласятся с тем, что готовые шкафы-купе эконом-класса – это отличный способ обновить и облагородить интерьер любой комнаты с минимальными затратами. Действительно, такую мебель можно встретить в прихожей, гостиной, детской, спальне , санузлах и даже лоджиях. И все это благодаря трем основным преимуществам этой конструкции по сравнению с другими секциями для хранения. Во-первых, сегодня шкафы-купе эконом-класса находятся на пике популярности, поэтому практически все российские мебельные фабрики предлагают десятки самых различных моделей, отличающихся дизайном, наполнением, стилем, цветовой гаммой и материалом. Для изготовления фасадов купе используются ЛДСП, МДФ, ПВХ, а для декора – зеркала, тонированное и матовое стекло (без или с рисунком, нанесенным с помощью фотопечати или технологии пескоструя), ротанг, кожзам, ткань и многое другое. Большинство шкафов-купе доступны в нескольких габаритных размерах и наиболее популярных оттенках. В нашем каталоге есть подробная информация о представленных моделях (габариты, варианты исполнения, цена), которая поможет сделать окончательный выбор. Более того, шкафы-купе для спальни можно дополнить кроватью, комодом, прикроватной тумбой из той же коллекции, чтобы получить стильный интерьер. Во-вторых, такая мебель – практична и многофункциональна. Шкафы-купе эконом-класса и элитная серийная мебель разрабатываются на фабриках одними и теми же конструкторами и дизайнерами, которые принимают во внимание не только эргономику модели, но и отзывы своих клиентов. В результате, готовые шкафы-купе ни в чем не уступают более дорогим «собратьям». Они доставляются в минимально короткие сроки, полностью укомплектованными и готовыми к монтажу, легко собираются даже непрофессионалами. Однако при выборе следует помнить, что на некоторых вещах не следует экономить (лучше взять модель с хорошей фурнитурой и меньшими габаритами, чем наоборот). В зависимости от комнаты, конструкция имеет свое наполнение. Для прихожей важно наличие большого отделения под верхнюю одежду и обувного ящика, а для спальни – полки или выдвижные ящики. Также не стоит забывать, что неглубокие шкафы-купе с глянцевыми, стеклянными или зеркальными фасадами способны визуально расширять пространство и делать комнату светлее. В-третьих, цены на готовые шкафы-купе эконом-класса всегда гораздо привлекательнее выполненных по индивидуальному заказу, ведь серийная мебель обходится покупателям дешевле. Кроме того, компания «Кухни-НСК» работает напрямую с российскими производителями мебели, поэтому может предложить цены ниже, чем в других интернет-магазинах и мебельных салонах. Мы ценим своих клиентов, а потому часто проводим акции и дарим скидки, что делает покупку еще выгоднее. «Кухни-НСК» - это отличная возможность заказать недорогую мебель по привлекательным ценам, не выходя из дома! Чтобы задать уточняющие вопросы или сделать заказ, достаточно всего лишь набрать наш номер телефона ((383) 361-50-01 или (383) 354-98-02), написать в чат на сайте или по адресу kuhni-nsk@mail.ru. Полезные статьи Идеи ремонта однокомнатной 42 кв.м Дискус свечка В статье пример ремонта однешки 42 кв.м в 18-этажной свечке Дискус. Пример функциональной расстановки... читать далее Идеи дизайна и ремонта 3-х комнатной студии 73 кв.м застройщик Дискус В этой статье были продемонстрированы мебель и ремонт 3-х комнатной квартиры студии в 18-этажной свечке... читать далее Новинки портфолио ОТЗЫВЫ Контакты О компании Отзывы Портфолио Дизайн проекты (бесплатно) Расчёт кухни онлайн Доставка и оплата Другой город Карта сайта (кухни) Сборка и монтаж Рассрочка Статьи Кухни на заказ Распродажи и акции Кухни на заказ Угловые кухни Кухни эконом Кухни маленькие Мебель для гостиной Мебель для прихожей Мебель для спальни Шкафы-купе Наши работы (фото) О нас Доставка и оплата Отзывы Рассрочка Сборка и монтаж Контакты г. Новосибирск ИНОГОРОДНИМ пр. Дзержинского 1/1 ТЦ Солнечный, 1 этаж Политика конфиденциальности Пн.-Пт.: 10.00-19.00 Сб.-Вс.: 10.00-18.00 8 ( 3 8 3 ) 3 8 8 - 8 9 - 9 5 Отдел качества: (383) 388-89-97 kuhni-nsk@mail.ru Пн.-Пт.: 10.00-19.00 Сб.-Вс.: 10.00-18.00 Заказать обратный звонок © 2026 Все права защищены Предложение не является публичной офертой Вызвать замерщика Ваше имя Ваш телефон ОСТАВИТЬ ЗАЯВКУ Согласен с обработкой персональных данных Обратный звонок Ваше имя Ваш телефон ОСТАВИТЬ ЗАЯВКУ Согласен с обработкой персональных данных Записаться на собеседование Ваше имя Ваш телефон ОСТАВИТЬ ЗАЯВКУ Согласен с обработкой персональных данных ^",
+  "json_ld": [
+    "[{ \"@context\": \"https://schema.org\", \"@type\": [\"FurnitureStore\", \"Organization\"], \"@id\": \"https://www.kuhni-nsk.ru/#organization\", \"name\": \"Кухни-НСК\", \"url\": \"https://www.kuhni-nsk.ru/\", \"logo\": \"https://www.kuhni-nsk.ru/files/logo-png.png\", \"image\": \"https://www.kuhni-nsk.ru/files/logo-png.png\", \"description\": \"Кухни на заказ и кухонные гарнитуры в Новосибирске. Работаем с 2011 года, установили более 8641 кухни. Прямые поставки от 20 фабрик.\", \"foundingDate\": \"2011\", \"telephone\": \"+73833888995\", \"email\": \"kuhni-nsk@mail.ru\", \"address\": { \"@type\": \"PostalAddress\", \"streetAddress\": \"пр. Дзержинского, 1/1, ТЦ Солнечный, 1 этаж\", \"addressLocality\": \"Новосибирск\", \"addressRegion\": \"Новосибирская область\", \"addressCountry\": \"RU\" }, \"geo\": { \"@type\": \"GeoCoordinates\", \"latitude\": \"54.8469\", \"longitude\": \"83.1035\" }, \"openingHoursSpecification\": [{ \"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\"], \"opens\": \"10:00\", \"closes\": \"19:00\" }, { \"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": [\"Saturday\", \"Sunday\"], \"opens\": \"10:00\", \"closes\": \"18:00\" } ], \"contactPoint\": [{ \"@type\": \"ContactPoint\", \"telephone\": \"+73833888995\", \"contactType\": \"sales\", \"areaServed\": \"RU\", \"availableLanguage\": \"Russian\" }, { \"@type\": \"ContactPoint\", \"telephone\": \"+73833888997\", \"contactType\": \"customer service\", \"availableLanguage\": \"Russian\" } ], \"sameAs\": [ \"https://t.me/kuhni_na_zakaz_nsk\", \"https://novosibirsk.flamp.ru/firm/kukhni_nsk_magazin_mebeli_dlya_kukhni-70000001028636908\" ], \"hasOfferCatalog\": { \"@type\": \"OfferCatalog\", \"name\": \"Каталог кухонь\", \"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/\", \"itemListElement\": [{ \"@type\": \"OfferCatalog\", \"name\": \"Кухни на заказ\", \"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/na-zakaz/\" }, { \"@type\": \"OfferCatalog\", \"name\": \"Угловые кухни\", \"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/uglovie/\" }, { \"@type\": \"OfferCatalog\", \"name\": \"Прямые кухни\", \"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/pryamye/\" }, { \"@type\": \"OfferCatalog\", \"name\": \"Бюджетные кухни\", \"url\": \"https://www.kuhni-nsk.ru/catalog/kuhni/econom/\" } ] } }, { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"url\": \"https://www.kuhni-nsk.ru/\", \"name\": \"Кухни-НСК — кухни на заказ в Новосибирске\", \"potentialAction\": { \"@type\": \"SearchAction\", \"target\": { \"@type\": \"EntryPoint\", \"urlTemplate\": \"https://www.kuhni-nsk.ru/catalog/kuhni/?q={search_term_string}\" }, \"query-input\": \"required name=search_term_string\" } } ]"
+  ],
+  "document": {
+    "title": "Шкафы купе недорого: купить готовый шкаф-купе в Новосибирске, каталог с фото и ценами",
+    "meta_description": "Хотите купить шкаф-купе недорого в Новосибирске? В нашем интернет-магазине большой выбор готовых шкафов-купе в наличии и под заказ. Каталог шкафов-купе цены и фото.",
+    "meta_robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0, shrink-to-fit=no",
+    "canonical": "https://www.kuhni-nsk.ru/catalog/shkafy_kupe/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/contact/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/kredit/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka_oplata/",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "/sborka_montaz/",
+        "text": "Сборка и монтаж",
+        "rel": ""
+      },
+      {
+        "href": "/articles/",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "Нам 14 лет",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/na-zakaz/",
+        "text": "Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/raschet_stoimosti_kuhni/",
+        "text": "Расчёт онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/personal/cart/",
+        "text": "Корзина пуста 0 Корзина пуста",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://max.ru/u/f9LHodD0cOJKMQxfBa0aFuA8qNkw_cdXTSjKxD9UXNQ899sStrKW47u7hpQ",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/kuhni_na_zakaz_nsk?text=Пишу+вам+с+сайта+kuhni-nsk",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833888995",
+        "text": "8 ( 3 8 3 ) 3 8 8 - 8 9 - 9 5",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "ОБРАТНЫЙ ЗВОНОК",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/",
+        "text": "Кухонные гарнитуры",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/na-zakaz/",
+        "text": "Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/uglovie/",
+        "text": "Угловые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/pryamye/",
+        "text": "Прямые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/modulnye_kuhni/",
+        "text": "Модульные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/econom/",
+        "text": "Бюджетные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/pod-potolok/",
+        "text": "Кухни до потолка",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/malenkie/",
+        "text": "Кухни маленькие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/s_barnoi_stoikoi/",
+        "text": "С барной стойкой",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/v_hrushhevke_6m2/",
+        "text": "Кухни в хрущевку",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/modern/",
+        "text": "Современные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/klassika/",
+        "text": "Классические кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/belie/",
+        "text": "Белые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/gotovii/",
+        "text": "В наличии",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni_ot_proizvoditelei/",
+        "text": "От производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/foto/",
+        "text": "Наши работы (фото)",
+        "rel": ""
+      },
+      {
+        "href": "/sale/",
+        "text": "РАСПРОДАЖА",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel_dlya_kukhni/",
+        "text": "Мебель для кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stol/",
+        "text": "Столы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stulya_barnye/",
+        "text": "Стулья барные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stulya/",
+        "text": "Стулья",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stoly_stulya_dlya_kukhni/",
+        "text": "Столы + стулья",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/ugolki_i_divany/",
+        "text": "Диваны и кресла",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel_dlya_doma/",
+        "text": "Мебель для дома",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/gostinye/",
+        "text": "Гостиные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/prikhozhie/",
+        "text": "Прихожие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/spalni/",
+        "text": "Для спальни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy_kupe/",
+        "text": "Шкафы-купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkaf_na_zakaz/",
+        "text": "Шкафы на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/",
+        "text": "Кухни",
+        "rel": ""
+      },
+      {
+        "href": "/design-project/",
+        "text": "Бесплатный дизайн-проект",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/foto/",
+        "text": "Портфолио работ",
+        "rel": ""
+      },
+      {
+        "href": "/sale/",
+        "text": "Распродажи и акции",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel_dlya_doma/",
+        "text": "Мебель для дома",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel_dlya_doma/",
+        "text": "Мебель для дома",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/gostinye/",
+        "text": "Гостиные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/prikhozhie/",
+        "text": "Прихожие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/spalni/",
+        "text": "Для спальни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy_kupe/",
+        "text": "Шкафы-купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkaf_na_zakaz/",
+        "text": "Шкафы на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/",
+        "text": "Кухонные гарнитуры",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/na-zakaz/",
+        "text": "Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/uglovie/",
+        "text": "Угловые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/pryamye/",
+        "text": "Прямые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/modulnye_kuhni/",
+        "text": "Модульные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/econom/",
+        "text": "Бюджетные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/pod-potolok/",
+        "text": "Кухни до потолка",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/malenkie/",
+        "text": "Кухни маленькие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/s_barnoi_stoikoi/",
+        "text": "С барной стойкой",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/v_hrushhevke_6m2/",
+        "text": "Кухни в хрущевку",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/modern/",
+        "text": "Современные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/klassika/",
+        "text": "Классические кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/belie/",
+        "text": "Белые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/gotovii/",
+        "text": "В наличии",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni_ot_proizvoditelei/",
+        "text": "От производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/foto/",
+        "text": "Наши работы (фото)",
+        "rel": ""
+      },
+      {
+        "href": "/sale/",
+        "text": "РАСПРОДАЖА",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel_dlya_kukhni/",
+        "text": "Мебель для кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stol/",
+        "text": "Столы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stulya_barnye/",
+        "text": "Стулья барные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stulya/",
+        "text": "Стулья",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stoly_stulya_dlya_kukhni/",
+        "text": "Столы + стулья",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/ugolki_i_divany/",
+        "text": "Диваны и кресла",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy_kupe/trast_belyy_sneg_steklo_belyy_glyanets_steklo_belyy_glyanets/",
+        "text": "Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец серия шкафов Шкаф-купе Траст Белый снег, Стекло Белый Глянец/Стекло Белый Глянец ТриЯ 46 597 руб. 46597 RUB",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy_kupe/rumer_yasen_shimo/",
+        "text": "Румер Ясень шимо Серия шкафов-купе Шкаф-купе Румер Ясень шимо ТриЯ 18 797 руб. 18797 RUB",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/spalni/",
+        "text": "спальне",
+        "rel": ""
+      },
+      {
+        "href": "/articles/vse-o-mebeli/remont-odnokomnatnoy-42-kv-m-diskus-svechka/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/articles/vse-o-mebeli/remont-odnokomnatnoy-42-kv-m-diskus-svechka/",
+        "text": "Идеи ремонта однокомнатной 42 кв.м Дискус свечка",
+        "rel": ""
+      },
+      {
+        "href": "/articles/vse-o-mebeli/remont-odnokomnatnoy-42-kv-m-diskus-svechka/",
+        "text": "читать далее",
+        "rel": ""
+      },
+      {
+        "href": "/articles/vse-o-mebeli/remont-3-kh-komnatnoy-kvartiry-studii-73-75-kv-m-v-svechke-diskus/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/articles/vse-o-mebeli/remont-3-kh-komnatnoy-kvartiry-studii-73-75-kv-m-v-svechke-diskus/",
+        "text": "Идеи дизайна и ремонта 3-х комнатной студии 73 кв.м застройщик Дискус",
+        "rel": ""
+      },
+      {
+        "href": "/articles/vse-o-mebeli/remont-3-kh-komnatnoy-kvartiry-studii-73-75-kv-m-v-svechke-diskus/",
+        "text": "читать далее",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/modern_seriya_5_k9/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/lada_584/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/lada_736/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/lada_328/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/lada_325/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/imperial_11/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/lada_672/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/contact/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/otzivi_o_kuhni-nsk/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/foto/",
+        "text": "Портфолио",
+        "rel": ""
+      },
+      {
+        "href": "/design-project/",
+        "text": "Дизайн проекты (бесплатно)",
+        "rel": ""
+      },
+      {
+        "href": "/raschet_stoimosti_kuhni/",
+        "text": "Расчёт кухни онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka_oplata/",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "/another-city/",
+        "text": "Другой город",
+        "rel": ""
+      },
+      {
+        "href": "/catalog-map/",
+        "text": "Карта сайта (кухни)",
+        "rel": ""
+      },
+      {
+        "href": "/sborka_montaz/",
+        "text": "Сборка и монтаж",
+        "rel": ""
+      },
+      {
+        "href": "/kredit/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "/articles/",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/na-zakaz/",
+        "text": "Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/sale/",
+        "text": "Распродажи и акции",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/na-zakaz/",
+        "text": "Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/uglovie/",
+        "text": "Угловые кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/econom/",
+        "text": "Кухни эконом",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/malenkie/",
+        "text": "Кухни маленькие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/gostinye/",
+        "text": "Мебель для гостиной",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/prikhozhie/",
+        "text": "Мебель для прихожей",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/spalni/",
+        "text": "Мебель для спальни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy_kupe/",
+        "text": "Шкафы-купе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni/foto/",
+        "text": "Наши работы (фото)",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "/dostavka_oplata/",
+        "text": "Доставка и оплата",
+        "rel": ""
+      },
+      {
+        "href": "/otzivi_o_kuhni-nsk/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/kredit/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "/sborka_montaz/",
+        "text": "Сборка и монтаж",
+        "rel": ""
+      },
+      {
+        "href": "/contact/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/another-city/",
+        "text": "ИНОГОРОДНИМ",
+        "rel": ""
+      },
+      {
+        "href": "https://www.kuhni-nsk.ru/about/politika-konfidentsialnosti/",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833888995",
+        "text": "8 ( 3 8 3 ) 3 8 8 - 8 9 - 9 5",
+        "rel": ""
+      },
+      {
+        "href": "https://wa.me/79607810550?text=Здравствуйте,%20мне%20нужна%20кухня",
+        "text": "Отдел качества:",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833888997",
+        "text": "(383) 388-89-97",
+        "rel": ""
+      },
+      {
+        "href": "mailto:kuhni-nsk@mail.ru",
+        "text": "kuhni-nsk@mail.ru",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заказать обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/about/politika-konfidentsialnosti/",
+        "text": "персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "/about/politika-konfidentsialnosti/",
+        "text": "персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "/about/politika-konfidentsialnosti/",
+        "text": "персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "https://max.ru/u/f9LHodD0cOJKMQxfBa0aFuA8qNkw_cdXTSjKxD9UXNQ899sStrKW47u7hpQ",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Применить",
+      "Сбросить параметры",
+      "ОСТАВИТЬ ЗАЯВКУ",
+      "ОСТАВИТЬ ЗАЯВКУ",
+      "ОСТАВИТЬ ЗАЯВКУ"
+    ],
+    "h1_texts": [
+      "Шкафы-купе"
+    ],
+    "h2_texts": [
+      "Готовые шкафы-купе не дорого эконом-класса"
+    ],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 3,
+      "h1": 1,
+      "h2": 1,
+      "h3": 0,
+      "link": 142,
+      "image": 20,
+      "list_item": 116,
+      "strong": 3,
+      "form": 7,
+      "input": 42
+    }
+  }
+}

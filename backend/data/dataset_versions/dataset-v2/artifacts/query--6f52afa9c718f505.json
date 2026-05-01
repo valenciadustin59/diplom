@@ -1,0 +1,587 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://kuhni-52.ru/",
+  "final_url": "https://kuhni-52.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:52:26 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "openresty",
+    "set-cookie": "PHPSESSID=153bdc1d3241531aad61c37ffff0ce9c; expires=Fri, 08-May-2026 14:52:26 GMT; Max-Age=604800; path=/; HttpOnly",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "MODX Revolution"
+  },
+  "response_time_ms": 6780.1247,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:52:32.276757+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" class=\"js\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t\t<title>Кухни на заказ по индивидуальным размерам - МояКухня</title>\n<meta name=\"keywords\" content=\"кухни на заказ в нижнем новгороде, кухни по индивидуальным размерам\">\n<meta name=\"description\" content=\"Компания &quot;МояКухня&quot; изготавливает кухни на заказ по индивидуальным размерам в Нижнем Новгороде. Опытные дизайнеры составят для вас шедевр.\">\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n<meta name=\"description\" content=\"\">\n<meta property=\"og:url\" content=\"https://kuhni-52.ru/\">\n<meta property=\"og:title\" content=\"Фабричные кухни на заказ по индивидуальным размерам - МояКухня\" itemprop=\"name\">\n<meta property=\"og:description\" content=\"Компания &quot;МояКухня&quot; изготавливает кухни на заказ по индивидуальным размерам в Нижнем Новгороде. Опытные дизайнеры составят для вас шедевр.\" itemprop=\"description\">\n<meta property=\"og:image\" content=\"https://kuhni-52.ru/assets/mykitchen/images/logo.png\" itemprop=\"image\">\n<meta property=\"twitter:card\" content=\"summary\">\n<meta property=\"twitter:title\" content=\"Фабричные кухни на заказ по индивидуальным размерам - МояКухня\">\n<meta property=\"twitter:description\" content=\"Компания &quot;МояКухня&quot; изготавливает кухни на заказ по индивидуальным размерам в Нижнем Новгороде. Опытные дизайнеры составят для вас шедевр.\">\n<meta property=\"twitter:image\" content=\"https://kuhni-52.ru/assets/mykitchen/images/logo.png\">    \n<base href=\"https://kuhni-52.ru/\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&amp;display=swap\" rel=\"stylesheet\">\n<link href=\"/assets/components/themebootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">\n<link href=\"/assets/mykitchen/css/jquery.fancybox.min.css\" rel=\"stylesheet\">\n<link href=\"/assets/mykitchen/css/add2.css\" rel=\"stylesheet\">\n\n\n\n\n\n\n\n\n<script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script src=\"//code.jivo.ru/widget/W2SPtguLX4\" async=\"\"></script>\n\t<link rel=\"stylesheet\" href=\"/assets/components/msearch2/css/web/default.css\" type=\"text/css\">\n\n\t<script type=\"text/javascript\">\n\t\tif (typeof mse2Config == \"undefined\") {mse2Config = {\"cssUrl\":\"\\/assets\\/components\\/msearch2\\/css\\/web\\/\",\"jsUrl\":\"\\/assets\\/components\\/msearch2\\/js\\/web\\/\",\"actionUrl\":\"\\/assets\\/components\\/msearch2\\/action.php\"};}\n\t\tif (typeof mse2FormConfig == \"undefined\") {mse2FormConfig = {};}\n\t\tmse2FormConfig[\"6f86db5e31d7d45aa6307fc93921c94ca46b5b0f\"] = {\"autocomplete\":\"results\",\"queryVar\":\"query\",\"minQuery\":3,\"pageId\":14};\n\t</script>\n<link rel=\"stylesheet\" href=\"/assets/components/minishop2/css/web/default.css?v=888c7ca881\" type=\"text/css\">\n<link rel=\"stylesheet\" href=\"/assets/components/minishop2/css/web/lib/jquery.jgrowl.min.css\" type=\"text/css\">\n<script>miniShop2Config = {\"close_all_message\":\"\\u0437\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c \\u0432\\u0441\\u0435\",\"cssUrl\":\"\\/assets\\/components\\/minishop2\\/css\\/web\\/\",\"jsUrl\":\"\\/assets\\/components\\/minishop2\\/js\\/web\\/\",\"actionUrl\":\"\\/assets\\/components\\/minishop2\\/action.php\",\"ctx\":\"web\",\"price_format\":[2,\".\",\" \"],\"price_format_no_zeros\":true,\"weight_format\":[3,\".\",\" \"],\"weight_format_no_zeros\":true};</script>\n<link rel=\"stylesheet\" href=\"/assets/components/ajaxform/css/default.css\" type=\"text/css\">\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/assets/components/msearch2/css/web/jquery-ui/jquery-ui.min.css\"><link rel=\"stylesheet\" href=\"https://code.jivo.ru/css/cdddffe/widget.css\" class=\"jv-css\"></head>\n\t<body>\n\t    <div class=\"top-bar\">\n\t         <div class=\"container\">\n\t            <div class=\"row h50 align-items-center\">\n\t               <div class=\"col-6 tmbl\"><a href=\"/contacts/\" class=\"address\">г. Нижний Новгород, ул. Гордеевская, д.7, ТЦ «Мебельный базар», 2 этаж</a></div>\n\t               <div class=\"col-2 tmbl\"><a href=\"tel:+78314139014\" class=\"phone\">+7 (831) 413-90-14</a></div>\n\t               <div class=\"col-3 tmbl\"> <span class=\"timework\">10:00-21:00 (без выходных)</span></div>\n\t               <div class=\"col-1 tmbl text-right\">\n\t                   <a href=\"https://t.me/MK_52_1\" class=\"telegram\" target=\"_blank\"></a>\n\t                   <a href=\"https://vk.com/kuhni_52\" class=\"vk\" target=\"_blank\"></a>\n\t                   <a href=\"https://ok.ru/group/70000006140384\" class=\"ok\" target=\"_blank\"></a>\n\t               </div>\n\t        </div>\n\t        </div>\n\t     </div>\n\t    <div class=\"slider\">\n\t    <div id=\"carousel-main\" class=\"carousel slide carousel-fade\" data-ride=\"carousel\">\n<ol class=\"carousel-indicators\">\n <li data-target=\"#carousel-main\" data-slide-to=\"0\" class=\"active\"></li>\n<li data-target=\"#carousel-main\" data-slide-to=\"1\" class=\"\"></li>\n<li data-target=\"#carousel-main\" data-slide-to=\"2\" class=\"\"></li>\n</ol>\n   <div class=\"carousel-inner\">\n       <div class=\"carousel-item active\">\n  <div class=\"banner1\">\n   <a href=\"/proektyi-kuxon/\"><img src=\"images/slide-1.jpg\" alt=\"&lt;h1&gt;Кухни на заказ &lt;br/&gt;по индивидуальным размерам&lt;/h1&gt; &lt;span&gt;&lt;div class=&quot;h12&quot;&gt;&lt;/div&gt;Качественная мебель наш девиз!&lt;/span&gt;&lt;span&gt;Мы знаем рецепт вашей кухни!&lt;/span&gt;&lt;a href=&quot;/proektyi-kuxon/&quot; class=&quot;btn-pk&quot;&gt;Подбор кухни&lt;/a&gt;\">\n    </a><div class=\"carousel-caption1 d-none d-md-block\"><a href=\"/proektyi-kuxon/\"><h1>Кухни на заказ <br>по индивидуальным размерам</h1> <span><div class=\"h12\"></div>Качественная мебель наш девиз!</span><span>Мы знаем рецепт вашей кухни!</span></a><a href=\"/proektyi-kuxon/\" class=\"btn-pk\">Подбор кухни</a></div>\n  </div>\n</div>\n<div class=\"carousel-item \">\n  <div class=\"banner1\">\n   <a href=\"\"><img src=\"images/slide-2.jpg\" alt=\"Кухни на заказ &lt;br/&gt;по индивидуальным размерам &lt;span&gt;&lt;div class=&quot;h12&quot;&gt;&lt;/div&gt;Учтем все ваши пожелания!&lt;/span&gt;&lt;span&gt;Ваша идея станет идеальной кухней!&lt;/span&gt;&lt;a href=&quot;#&quot; class=&quot;btn-zz&quot; data-toggle=&quot;modal&quot; data-target=&quot;.bs-order-modal-sm&quot;&gt;Запись на замер&lt;/a&gt;\">\n    </a><div class=\"carousel-caption1 d-none d-md-block\"><a href=\"\">Кухни на заказ <br>по индивидуальным размерам <span><div class=\"h12\"></div>Учтем все ваши пожелания!</span><span>Ваша идея станет идеальной кухней!</span></a><a href=\"#\" class=\"btn-zz\" data-toggle=\"modal\" data-target=\".bs-order-modal-sm\">Запись на замер</a></div>\n  </div>\n</div>\n<div class=\"carousel-item \">\n  <div class=\"banner1\">\n   <a href=\"https://vk.com/kuhni_52\"><img src=\"images/banner_vk.jpg\" alt=\"Присоединяйтесь к нам ВКонтакте и получите скидку 30%&lt;div class=&quot;h12&quot;&gt;&lt;/div&gt; &lt;a href=&quot;https://vk.com/kuhni_52&quot; class=&quot;btn-zz&quot;  target=&quot;_blank&quot;&gt;Присоединиться&lt;/a&gt;\">\n    </a><div class=\"carousel-caption1 d-none d-md-block\"><a href=\"https://vk.com/kuhni_52\">Присоединяйтесь к нам ВКонтакте и получите скидку 30%<div class=\"h12\"></div> </a><a href=\"https://vk.com/kuhni_52\" class=\"btn-zz\" target=\"_blank\">Присоединиться</a></div>\n  </div>\n</div>\n\t</div>\n <a class=\"carousel-control-prev\" href=\"#carousel-main\" role=\"button\" data-slide=\"prev\">\n    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"carousel-control-next\" href=\"#carousel-main\" role=\"button\" data-slide=\"next\">\n    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n\t     <div class=\"container\">\n\t       <div class=\"menu\">\n\t         <div class=\"row mlr0\">\n<a href=\"/\" class=\"logo\"></a>\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container\">\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbar\">\n            <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item first\">\n                        <a class=\"nav-link\" href=\"o-kompanii/\">О компании</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"proektyi-kuxon/\">Проекты кухонь</a>\n                    </li><li class=\"nav-item dropdown \">\n                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\">Мебель</a>\n                        <ul class=\"dropdown-menu\"><li class=\"nav-item first\">\n                        <a class=\"nav-link\" href=\"korpusnaya-mebel/shkafyi/\">Шкафы</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"korpusnaya-mebel/tumbyi/\">Тумбы</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"korpusnaya-mebel/mebel-dlya-gostinoj/\">Мебель для гостиной</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"korpusnaya-mebel/mebel-dlya-prixozhej/\">Мебель для прихожей</a>\n                    </li><li class=\"nav-item last\">\n                        <a class=\"nav-link\" href=\"korpusnaya-mebel/mebel-dlya-vannoj/\">Мебель для ванной</a>\n                    </li></ul>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"nashi-rabotyi/\">Наши работы</a>\n                    </li><li class=\"nav-item dropdown \">\n                        <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\">Клиентам</a>\n                        <ul class=\"dropdown-menu\"><li class=\"nav-item first\">\n                        <a class=\"nav-link\" href=\"klientam/garantiya.html\">Гарантия</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"klientam/dostavka.html\">Доставка</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"klientam/usloviya-rassrochki.html\">Условия рассрочки</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"klientam/sborka-i-montazh.html\">Сборка и монтаж</a>\n                    </li><li class=\"nav-item \">\n                        <a class=\"nav-link\" href=\"klientam/oplata.html\">Оплата</a>\n                    </li><li class=\"nav-item last\">\n                        <a class=\"nav-link\" href=\"https://kuhni-52.ru/otzyivyi/\">Отзывы</a>\n                    </li></ul>\n                    </li><li class=\"nav-item last\">\n                        <a class=\"nav-link\" href=\"contacts/\">Контакты</a>\n                    </li>\n            </ul>\n        </div>\n        <form data-key=\"6f86db5e31d7d45aa6307fc93921c94ca46b5b0f\" action=\"system/rezultatyi-poiska.html\" method=\"get\" class=\"msearch2 search-form\" id=\"mse2_form\" style=\"display: none;\">\n        <input type=\"text\" class=\"form-control ui-autocomplete-input\" id=\"search\" name=\"query\" value=\"\" placeholder=\"\" autocomplete=\"off\">\n        <button type=\"submit\" class=\"btn-search\"></button>\n</form>\n         <a href=\"\" class=\"search-button\"></a>\n    </div>\n</nav>\n</div>\n\t      </div>\n\t      </div>\n\t    </div>\n\n<div class=\"container\">\n\t    <div class=\"main-titles\">\n\t     <h3 class=\"main-title\">Проекты кухонь</h3>\n\t     </div>\n\t     <div class=\"projects row\">\n\t         <div class=\"ms2_product col-md-4 mb-95 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Студия\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box\">\n        <input type=\"hidden\" name=\"id\" value=\"251\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-studiya.html\">\n                                    <img src=\"/assets/images/products/251/small/studiya.jpg\" class=\"mw-100\" alt=\"Кухня Студия\" title=\"Кухня Студия\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Кухни из пластика\">\n            <meta itemprop=\"name\" content=\"Кухня Студия\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"25000\">\n            <meta itemprop=\"lowPrice\" content=\"25000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n                <div class=\"d-flex justify-content-between justify-content-md-start\">\n                    <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-studiya.html\" class=\"font-weight-bold link-project\">Кухня Студия</a>\n                    <span class=\"price ml-auto text-right\">от 25 000 руб. / п.м.</span>\n                                    </div>\n                <div class=\"flags d-flex justify-content-around justify-content-md-start\">\n                                                                            </div>\n                            </div>\n            <div class=\"col-12 text-md-left mb-3\">\n                <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-studiya.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-95 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Дуэт\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box\">\n        <input type=\"hidden\" name=\"id\" value=\"253\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-duet.html\">\n                                    <img src=\"/assets/images/products/253/small/duet.jpg\" class=\"mw-100\" alt=\"Кухня Дуэт\" title=\"Кухня Дуэт\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Кухни из пластика\">\n            <meta itemprop=\"name\" content=\"Кухня Дуэт\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"25000\">\n            <meta itemprop=\"lowPrice\" content=\"25000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n                <div class=\"d-flex justify-content-between justify-content-md-start\">\n                    <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-duet.html\" class=\"font-weight-bold link-project\">Кухня Дуэт</a>\n                    <span class=\"price ml-auto text-right\">от 25 000 руб. / п.м.</span>\n                                    </div>\n                <div class=\"flags d-flex justify-content-around justify-content-md-start\">\n                                                                            </div>\n                            </div>\n            <div class=\"col-12 text-md-left mb-3\">\n                <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-duet.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-95 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Альберт\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box\">\n        <input type=\"hidden\" name=\"id\" value=\"260\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-albert.html\">\n                                    <img src=\"/assets/images/products/260/small/fm5n8t-316.jpg\" class=\"mw-100\" alt=\"Кухня Альберт\" title=\"Кухня Альберт\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Кухни из пластика\">\n            <meta itemprop=\"name\" content=\"Кухня Альберт\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"36000\">\n            <meta itemprop=\"lowPrice\" content=\"36000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n                <div class=\"d-flex justify-content-between justify-content-md-start\">\n                    <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-albert.html\" class=\"font-weight-bold link-project\">Кухня Альберт</a>\n                    <span class=\"price ml-auto text-right\">от 36 000 руб. / п.м.</span>\n                                    </div>\n                <div class=\"flags d-flex justify-content-around justify-content-md-start\">\n                                                                            </div>\n                            </div>\n            <div class=\"col-12 text-md-left mb-3\">\n                <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-albert.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-95 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Ольга\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box\">\n        <input type=\"hidden\" name=\"id\" value=\"261\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-olga.html\">\n                                    <img src=\"/assets/images/products/261/small/g2zyo0-301.jpg\" class=\"mw-100\" alt=\"Кухня Ольга\" title=\"Кухня Ольга\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Кухни из пластика\">\n            <meta itemprop=\"name\" content=\"Кухня Ольга\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"36000\">\n            <meta itemprop=\"lowPrice\" content=\"36000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n                <div class=\"d-flex justify-content-between justify-content-md-start\">\n                    <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-olga.html\" class=\"font-weight-bold link-project\">Кухня Ольга</a>\n                    <span class=\"price ml-auto text-right\">от 36 000 руб. / п.м.</span>\n                                    </div>\n                <div class=\"flags d-flex justify-content-around justify-content-md-start\">\n                                                                            </div>\n                            </div>\n            <div class=\"col-12 text-md-left mb-3\">\n                <a href=\"proektyi-kuxon/kuxni-iz-plastika/kuxnya-olga.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-95 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Катерина\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box\">\n        <input type=\"hidden\" name=\"id\" value=\"262\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"proektyi-kuxon/kuxni-iz-mdf/kuxnya-katerina.html\">\n                                    <img src=\"/assets/images/products/262/small/5ck2p0-224.jpg\" class=\"mw-100\" alt=\"Кухня Катерина\" title=\"Кухня Катерина\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Кухни из МДФ\">\n            <meta itemprop=\"name\" content=\"Кухня Катерина\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"40000\">\n            <meta itemprop=\"lowPrice\" content=\"40000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n                <div class=\"d-flex justify-content-between justify-content-md-start\">\n                    <a href=\"proektyi-kuxon/kuxni-iz-mdf/kuxnya-katerina.html\" class=\"font-weight-bold link-project\">Кухня Катерина</a>\n                    <span class=\"price ml-auto text-right\">от 40 000 руб. / п.м.</span>\n                                    </div>\n                <div class=\"flags d-flex justify-content-around justify-content-md-start\">\n                                                                            </div>\n                            </div>\n            <div class=\"col-12 text-md-left mb-3\">\n                <a href=\"proektyi-kuxon/kuxni-iz-mdf/kuxnya-katerina.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-95 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Прованс\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box\">\n        <input type=\"hidden\" name=\"id\" value=\"263\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"proektyi-kuxon/kuxni-pvx-mdf/kuxnya-provans.html\">\n                                    <img src=\"/assets/images/products/263/small/xozabm-331.jpg\" class=\"mw-100\" alt=\"Кухня Прованс\" title=\"Кухня Прованс\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Кухни ПВХ-МДФ\">\n            <meta itemprop=\"name\" content=\"Кухня Прованс\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"25000\">\n            <meta itemprop=\"lowPrice\" content=\"25000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n                <div class=\"d-flex justify-content-between justify-content-md-start\">\n                    <a href=\"proektyi-kuxon/kuxni-pvx-mdf/kuxnya-provans.html\" class=\"font-weight-bold link-project\">Кухня Прованс</a>\n                    <span class=\"price ml-auto text-right\">от 25 000 руб. / п.м.</span>\n                                    </div>\n                <div class=\"flags d-flex justify-content-around justify-content-md-start\">\n                                                                            </div>\n                            </div>\n            <div class=\"col-12 text-md-left mb-3\">\n                <a href=\"proektyi-kuxon/kuxni-pvx-mdf/kuxnya-provans.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n            </div>\n        </div>\n    </form>\n</div>\n\n            <a href=\"/proektyi-kuxon/\" class=\"btn-more mmt\">Смотреть все</a>\n\t     </div>\n\t     </div>\n\n\n <div class=\"container-fluid bg-adv\">\n\t      <div class=\"container\">\n\t       <div class=\"main-titles\">\n\t        <h3 class=\"main-title-w\">Наши преимущества</h3>\n\t       </div>\n\t       <div class=\"slide-adv\">\n\t          <div class=\"d-carousel\">\n   <div class=\"jcarousel-container jcarousel-container-horizontal\" style=\"position: relative; display: block;\"><div class=\"jcarousel-clip jcarousel-clip-horizontal\" style=\"overflow: hidden; position: relative;\"><ul class=\"carousel jcarousel-list jcarousel-list-horizontal\" style=\"overflow: hidden; position: relative; top: 0px; left: -384.852px; margin: 0px; padding: 0px; width: 1540px;\">\n       <li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal\" jcarouselindex=\"1\" style=\"float: left; list-style: none;\"><img src=\"images/advantage/3d-project2.png\" alt=\"adv\" class=\"adv-img\"><span class=\"adv-s\">3D проект - бесплатно!</span></li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal\" jcarouselindex=\"2\" style=\"float: left; list-style: none;\"><img src=\"images/advantage/rassrochka2.png\" alt=\"adv\" class=\"adv-img\"><span class=\"adv-s\">рассрочка платежа!</span></li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal\" jcarouselindex=\"3\" style=\"float: left; list-style: none;\"><img src=\"images/advantage/podarok2.png\" alt=\"adv\" class=\"adv-img\"><span class=\"adv-s\">подарок каждому клиенту!</span></li><li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal\" jcarouselindex=\"4\" style=\"float: left; list-style: none;\"><img src=\"images/advantage/3d-project2.png\" alt=\"adv\" class=\"adv-img\"><span class=\"adv-s\">3D проект - бесплатно!</span></li>\n   </ul></div><div class=\"jcarousel-prev jcarousel-prev-horizontal\" style=\"display: block;\"></div><div class=\"jcarousel-next jcarousel-next-horizontal\" style=\"display: block;\"></div></div>\n</div>\n\n\t       </div>\n\t       </div>\n\t     </div>\n\t     \n\t    <div class=\"container\">\n\t    <div class=\"main-titles\">\n\t     <h3 class=\"main-title\">Наши работы</h3>\n\t     </div>\n\t     \n\t     <div class=\"projects row\">\n            <div class=\"ms2_product col-md-4 mb-60 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Роза\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box2\">\n        <input type=\"hidden\" name=\"id\" value=\"224\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"nashi-rabotyi/roza.html\">\n                                    <img src=\"/assets/images/products/224/small/1620293582233.jpg\" class=\"mw-100\" alt=\"Кухня Роза\" title=\"Кухня Роза\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Наши работы\">\n            <meta itemprop=\"name\" content=\"Кухня Роза\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"30000\">\n            <meta itemprop=\"lowPrice\" content=\"30000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n               \n            </div>\n            <div class=\"col-12 text-md-left\">\n                <a href=\"nashi-rabotyi/roza.html\" class=\"btn-more\">Подробнее</a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-60 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Кристайлл\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box2\">\n        <input type=\"hidden\" name=\"id\" value=\"225\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"nashi-rabotyi/kristajl.html\">\n                                    <img src=\"/assets/images/products/225/small/1620293237095.jpg\" class=\"mw-100\" alt=\"Кухня Кристайлл\" title=\"Кухня Кристайлл\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Наши работы\">\n            <meta itemprop=\"name\" content=\"Кухня Кристайлл\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"32000\">\n            <meta itemprop=\"lowPrice\" content=\"32000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n               \n            </div>\n            <div class=\"col-12 text-md-left\">\n                <a href=\"nashi-rabotyi/kristajl.html\" class=\"btn-more\">Подробнее</a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-60 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Кантри\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box2\">\n        <input type=\"hidden\" name=\"id\" value=\"226\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"nashi-rabotyi/kantri.html\">\n                                    <img src=\"/assets/images/products/226/small/1620293721856.jpg\" class=\"mw-100\" alt=\"Кухня Кантри\" title=\"Кухня Кантри\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Наши работы\">\n            <meta itemprop=\"name\" content=\"Кухня Кантри\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"30000\">\n            <meta itemprop=\"lowPrice\" content=\"30000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n               \n            </div>\n            <div class=\"col-12 text-md-left\">\n                <a href=\"nashi-rabotyi/kantri.html\" class=\"btn-more\">Подробнее</a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-60 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Ирис\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box2\">\n        <input type=\"hidden\" name=\"id\" value=\"227\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"nashi-rabotyi/iris.html\">\n                                    <img src=\"/assets/images/products/227/small/1620293200390.jpg\" class=\"mw-100\" alt=\"Кухня Ирис\" title=\"Кухня Ирис\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Наши работы\">\n            <meta itemprop=\"name\" content=\"Кухня Ирис\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"36500\">\n            <meta itemprop=\"lowPrice\" content=\"36500\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n               \n            </div>\n            <div class=\"col-12 text-md-left\">\n                <a href=\"nashi-rabotyi/iris.html\" class=\"btn-more\">Подробнее</a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-60 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Грей глянец\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box2\">\n        <input type=\"hidden\" name=\"id\" value=\"228\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"nashi-rabotyi/grej-glyanecz.html\">\n                                    <img src=\"/assets/images/products/228/small/1620293691140.jpg\" class=\"mw-100\" alt=\"Грей глянец\" title=\"Грей глянец\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Наши работы\">\n            <meta itemprop=\"name\" content=\"Грей глянец\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"32000\">\n            <meta itemprop=\"lowPrice\" content=\"32000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n               \n            </div>\n            <div class=\"col-12 text-md-left\">\n                <a href=\"nashi-rabotyi/grej-glyanecz.html\" class=\"btn-more\">Подробнее</a>\n            </div>\n        </div>\n    </form>\n</div>\n<div class=\"ms2_product col-md-4 mb-60 plr475\" itemtype=\"http://schema.org/Product\" itemscope=\"\">\n    <meta itemprop=\"description\" content=\"Кухня Бетон\">\n    <form method=\"post\" class=\"ms2_form d-flex flex-column align-items-center  product-box2\">\n        <input type=\"hidden\" name=\"id\" value=\"229\">\n        <input type=\"hidden\" name=\"count\" value=\"1\">\n        <input type=\"hidden\" name=\"options\" value=\"[]\">\n        <div class=\"col-12 text-center no-gutters plr0\">\n            <a href=\"nashi-rabotyi/beton.html\">\n                                    <img src=\"/assets/images/products/229/small/1620297659807.jpg\" class=\"mw-100\" alt=\"Кухня Бетон\" title=\"Кухня Бетон\" itemprop=\"image\">\n                            </a>\n        </div>\n        <div class=\"col-12 d-flex flex-column align-items-center no-gutters\" itemtype=\"http://schema.org/AggregateOffer\" itemprop=\"offers\" itemscope=\"\">\n            <meta itemprop=\"category\" content=\"Наши работы\">\n            <meta itemprop=\"name\" content=\"Кухня Бетон\">\n            <meta itemprop=\"offerCount\" content=\"1\">\n            <meta itemprop=\"price\" content=\"34000\">\n            <meta itemprop=\"lowPrice\" content=\"34000\">\n            <meta itemprop=\"priceCurrency\" content=\"RUR\">\n\n            <div class=\"col-12 mt-3\">\n               \n            </div>\n            <div class=\"col-12 text-md-left\">\n                <a href=\"nashi-rabotyi/beton.html\" class=\"btn-more\">Подробнее</a>\n            </div>\n        </div>\n    </form>\n</div>\n\n          <a href=\"/nashi-rabotyi/\" class=\"btn-more mmt2\">Смотреть все</a>\n\t     </div>\n\t     </div>\n\n\t     \n<div class=\"container-fluid bg-z\">\n\t        <div class=\"container\">\n\t          <div class=\"main-titles\">\n\t             <h3 class=\"main-title-w\">Как мы работаем</h3>\n\t           </div>\n\t           \n\t            <div class=\"row pt60 mlr0\">\n\t                 <div class=\"col-8\"><span class=\"f20bu\">Шаг 1. <span class=\"fox\">15 минут</span></span>\n\t                 <span class=\"f18b\">Оставьте заявку на сайте или позвоните по телефону: +7 (831) 413-90-14.</span>\n\t                 \n\t                 <span class=\"f20bu\">Шаг 2. <span class=\"fox\">1 день</span></span>\n\t                 <span class=\"f18b\">В удобное для вас время замерим помещение.</span>\n\t                 \n\t                 <span class=\"f20bu\">Шаг 3. <span class=\"fox\">1 день</span></span>\n\t                 <span class=\"f18b\">Совершенно бесплатно создадим для вас идивидуальный дизайн-проект кухни и согласуем все моменты.</span>\n\t                 \n\t                 <span class=\"f20bu\">Шаг 4. <span class=\"fox\">21 день</span></span>\n\t                 <span class=\"f18b\">Изготовим кухню вашей мечты в соответствии с утвержденным дизайн-проектом.</span>\n\t                 \n\t                 <span class=\"f20bu\">Шаг 5. <span class=\"fox\">1 день</span></span>\n\t                 <span class=\"f18b\">В удобное для вас время доставим и смонтируем вашу кухню.</span>\n\t                 \n\t                 </div>\n\t                 <div class=\"col-4 mbl\"><div class=\"order-form\">\n<h4 class=\"title-form\" id=\"myModalLabel\">Оставить заявку</h4>\n<form action=\"\" method=\"post\" class=\"ajax_form af_callback\" id=\"ajax_form\" onsubmit=\"ym(84949417,'reachGoal','order-form'); return true;\">\n    <div class=\"form-group\">\n        <div class=\"controls12\">\n            <input type=\"text\" id=\"name12\" name=\"name12\" value=\"\" placeholder=\"Ваше имя\" class=\"form-control\">\n            <span class=\"error_name12\"></span>\n        </div>\n    </div>\n\t <div class=\"form-group\">\n        <div class=\"controls12\">\n            <input type=\"text\" id=\"phone12\" name=\"phone12\" value=\"\" placeholder=\"Ваш телефон\" class=\"form-control mask\">\n            <span class=\"error_phone12\"></span>\n        </div>\n    </div>\n    \n     <div class=\"form-group\">\n        <div class=\"controls12\">\n            <select name=\"podarok12\" id=\"podarok12\">\n                <option selected=\"\" value=\"none\" hidden=\"\">Выбрать подарок</option>\n                <option>Мойка</option>\n                <option>Вытяжка</option>\n                <option>Скидка 10%</option>\n            </select> \n            <span class=\"error_podarok12\"></span>\n        </div>\n    </div>\n      <div class=\"form-group\">\n     <div class=\"controls12\">\n\t <div class=\"f-row-p mbl\">\n\t <input type=\"hidden\" name=\"policy12[]\" value=\"\">\n      <input class=\"c-policy\" type=\"checkbox\" value=\"Согласен(а) на обработку персональных данных\" name=\"policy12[]\"><label for=\"policy12\">Даю свое <a href=\"/docs/soglasie.pdf\" target=\"_blank\">Согласие на обработку персональных данных</a> в соответствии с установленной формой<span class=\"zvezda\">*</span></label> \n\t    <span class=\"error_policy12\"></span>\n   </div>\n   </div>\n   </div>\n    <div class=\"form-group\">\n        <div class=\"controls12\">\n            <button type=\"submit\" class=\"submit_button12\">Отправить</button>\n        </div>\n    </div>\n    \n    \n\n\t<input type=\"hidden\" name=\"af_action\" value=\"70d5fbe53193346aa0e7733e023c00e8\">\n</form>\n</div>\n</div>\n\t             </div>\n\t           \n\t        </div>\n\t     </div>\t\n\n<div class=\"container\">\n\t          \n\t     <div class=\"main-titles\">\n\t     <h3 class=\"main-title\">О нас</h3>\n\t     <div class=\"content\">\n\t       <p>Наша компания начала свой путь в далеком 1998 году, сейчас мы уже крупный холдинг развивающихся производств, специализирующихся на изготовлении фабричной мебели для кухни.</p>\n<p><span class=\"bold\">Главная задача нашего холдинга</span> — помочь Вам подобрать свою Идеальную кухню, которая будет радовать Вас долгие годы: своей красотой, практичностью и удобством.</p>\n<p>Для начала давайте все же разберемся, что такое фабричная мебель?</p>\n<p>Фабричная мебель — это мебель, изготовленная в соответствии со всеми действующими стандартами и ГОСТами, что особенно важно с учетом перепадов влажности и температуры на кухне. Наша мебель производится на автоматизированном производстве.</p>\n<p>Фабричная мебель станет отличным вариантом, если Вы ищете идеальную, спроектированную с учетом всех ваших пожеланий в плане красоты и комфорта-кухню.</p>\n<h3>Что для нас кухня?</h3>\n<p>Кухня — это душа дома. Ведь именно здесь мы каждый день готовим еду, даем волю своему воображению, устраиваем вечерние посиделки с друзьями или просто обычный перекус. Поэтому кухня должна быть удобной, стильной, эстетичной и при этом удобной, а мебель в ней — очень функциональной и прочной.</p>\n<p>Это одно из тех пространств в доме, где важны функциональность и практичность. Комфортно организованное кухонное пространство значительно сэкономит ваше время при приготовлении пищи, сделает вашу жизнь проще и превращает ежедневное приготовление пищи из рутины в приятное времяпрепровождение.</p>\n<h3>Почему стоит обратиться именно в нашу компанию?</h3>\n<p><span class=\"bold\">Полный комплекс услуг</span> от нашей компании. Заказывая кухонную мебель по индивидуальному размеру, Вы можете быть уверены, что весь комплекс услуг оказывается централизованно: от замеров и доставки до монтажа и обслуживания. Ведь наши клиенты не покупают кухню, а покупают комплексное решение, за которое отвечает наша компания <span class=\"bold\">«<span class=\"fox\">МОЯ</span>КУХНЯ»</span>.</p>\n<p><span class=\"bold\">Материалы.</span> Наша компания изготавливает мебель для кухни, только из качественных материалов. Все покрытия долговечные и практичные, ведь мы учитываем то, что кухонная мебель и столешница будут ежедневно и интенсивно подвергаться воздействию горячих паров, воды и тд.</p>\n<p><span class=\"bold\">Дизайн.</span> В отличие от готовых кухонных гарнитуров, которые обычно все как под копирку, фабричная мебель позволит Вам создать кухню с особой атмосферой, которая будет радовать Вас долгие годы.</p>\n<p>Заказывая кухню в <span class=\"bold\">«<span class=\"fox\">МОЯ</span>КУХНЯ»</span>, вам будут предложены десятки различных дизайнерских решений и вариантов внешнего вида и функциональности Вашей будущей кухни.</p>\n<p>В отличие от типовой серийной мебели, фабричные кухни на заказ изготавливаются индивидуально для каждого потребителя. Учитываются все пожелания заказчика: от цвета и фактуры фасадов, до внешнего вида фурнитуры и ручек, формы кухонных секций и конфигурации кухни.</p>\n<p><span class=\"bold\">Скорость.</span> Если сроки сжатые и кухня нужна срочно, мы не подведем — срок доставки мебели составляет 14-30 календарных дней в зависимости от сложности технологического процесса и выбранного вами фасадного материала.</p>\n<p>Вместе с договором Вы получите от нас рекомендации относительно расстояний для установки или переноса электрических и сантехнических установок, если это необходимо для выбранной Вами кухни.</p>\n<p><span class=\"bold\">Приемлемые цены.</span> Это преимущество позволяет подобрать подходящую кухню, которая не ударит по семейному бюджету. В нашей компании также присутствуют скидки и акции поэтому, если Вы хотите сэкономить, обращайтесь к нам! При выборе модульной кухни мы предлагаем вам СКИДКУ, которая существенно снизит затраты, не ограничивая Вас в выборе материалов и комплектующих!</p>\n<p><span class=\"bold\">Наша компания заботится о своей репутации поэтому <span class=\"fox\">мы изготавливаем для Вас только качественную мебель!</span></span></p>\n\t     </div>\n\t     \n<div class=\"main-titles\">\n\t     <h3 class=\"main-title\">Отзывы</h3>\n\t     </div>\n\t     <div class=\"slide-otzyv\">\n\t      <div class=\"d-carousel\">\n\t      <div class=\"jcarousel-container jcarousel-container-horizontal\" style=\"position: relative; display: block;\"><div class=\"jcarousel-clip jcarousel-clip-horizontal\" style=\"overflow: hidden; position: relative;\"><ul class=\"carousel jcarousel-list jcarousel-list-horizontal\" style=\"overflow: hidden; position: relative; top: 0px; left: -384.62px; margin: 0px; padding: 0px; width: 1925px;\">\n\t        <li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal\" jcarouselindex=\"1\" style=\"float: left; list-style: none;\">\n<div class=\"otzyv\">\n   <img src=\"photo_2025-06-05_08-42-22 (2) — копия.jpg\" alt=\"Наталия\">\n   <span class=\"klient\">Наталия</span>\n   <span class=\"date\">10 Июня 2025</span>\n</div>   \n<img src=\"NOm4Ba_RX1w.jpg\" alt=\"\" class=\"img-k\">\n<div class=\"intro\">\n<a href=\"otzyivyi/otzyiv-klienta-nataliya.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n</div>\n</li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal\" jcarouselindex=\"2\" style=\"float: left; list-style: none;\">\n<div class=\"otzyv\">\n   <img src=\"Леонид.png\" alt=\"Леонид\">\n   <span class=\"klient\">Леонид</span>\n   <span class=\"date\">05 Июня 2025</span>\n</div>   \n<img src=\"photo_2025-06-05_08-47-53 — копия.jpg\" alt=\"\" class=\"img-k\">\n<div class=\"intro\">\n<a href=\"otzyivyi/otzyiv-leonid.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n</div>\n</li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal\" jcarouselindex=\"3\" style=\"float: left; list-style: none;\">\n<div class=\"otzyv\">\n   <img src=\"54и.jpg\" alt=\"Илья\">\n   <span class=\"klient\">Илья</span>\n   <span class=\"date\">13 Октября 2023</span>\n</div>   \n<img src=\"bs0RJ4QtZJemfBIPJGgASrWS3GlimzK9ye6lZ6Rtrrq_AZvSUKC2M-M5ZOo7XOob1g7rI_ZzLiB9ylGn6hnxgu3-.jpg\" alt=\"\" class=\"img-k\">\n<div class=\"intro\">\n<a href=\"otzyivyi/otzyiv-klienta-ilya.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n</div>\n</li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal\" jcarouselindex=\"4\" style=\"float: left; list-style: none;\">\n<div class=\"otzyv\">\n   <img src=\"54.jpg\" alt=\"Нина\">\n   <span class=\"klient\">Нина</span>\n   <span class=\"date\">13 Ноября 2024</span>\n</div>   \n<img src=\"изображение_viber_2024-10-16_15-11-10-788.jpg\" alt=\"\" class=\"img-k\">\n<div class=\"intro\">\n<a href=\"otzyivyi/otzyiv-klienta-nina.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n</div>\n</li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-5 jcarousel-item-5-horizontal\" jcarouselindex=\"5\" style=\"float: left; list-style: none;\">\n<div class=\"otzyv\">\n   <img src=\"14 (2).png\" alt=\"Владимир\">\n   <span class=\"klient\">Владимир</span>\n   <span class=\"date\">10 Июня 2022</span>\n</div>   \n<img src=\"few05HAV-olXOkEpp4dIQMyOcMn8ZVWC-ayjLbXjmsY5jrMj04zEoeKUmImEZ5XADj_0QXRe5EUCiBz-ZVBclcKM.jpg\" alt=\"\" class=\"img-k\">\n<div class=\"intro\">\n<a href=\"otzyivyi/otzyiv-klienta-vladimir.html\" class=\"more\">Подробнее <div class=\"box-sportlight-arrow\"></div></a>\n</div>\n</li>\n           </ul></div><div class=\"jcarousel-prev jcarousel-prev-horizontal\" style=\"display: block;\"></div><div class=\"jcarousel-next jcarousel-next-horizontal\" style=\"display: block;\"></div></div>\n           </div>\n          </div>\n          \n<div class=\"brand\">\n\t     <div class=\"main-titles\">\n\t     <h3 class=\"main-title\">Партнеры</h3>\n\t     </div>\n\t     <div id=\"slide\"><div class=\"d-carousel2\">\n   <div class=\"jcarousel-container jcarousel-container-horizontal\" style=\"position: relative; display: block;\"><div class=\"jcarousel-clip jcarousel-clip-horizontal\" style=\"overflow: hidden; position: relative;\"><ul class=\"carousel jcarousel-list jcarousel-list-horizontal\" style=\"overflow: hidden; position: relative; top: 0px; left: 0px; margin: 0px; padding: 0px; width: 1155px;\">\n       <li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal\" jcarouselindex=\"1\" style=\"float: left; list-style: none;\"><img src=\"images/brand/blum.png\" alt=\"brand\"></li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal\" jcarouselindex=\"2\" style=\"float: left; list-style: none;\"><img src=\"images/brand/boyard.png\" alt=\"brand\"></li>\n<li class=\"jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal\" jcarouselindex=\"3\" style=\"float: left; list-style: none;\"><img src=\"images/brand/egger.png\" alt=\"brand\"></li>\n   </ul></div><div class=\"jcarousel-prev jcarousel-prev-horizontal\" style=\"display: block;\"></div><div class=\"jcarousel-next jcarousel-next-horizontal\" style=\"display: block;\"></div></div>\n</div></div>\n\t     </div>\n\t     </div>\n\t     \n\t    </div>\n\n <footer>\n\t    <div class=\"container\">\n\t    <div class=\"row\">\n\t    <div class=\"col-4 mbl\">\n\t        <a href=\"/\" class=\"logo-i\"></a>\n\t        <a href=\"tel:+78314139014\" class=\"phone\">+7 (831) 413-90-14</a>\n\t        <a href=\"#\" class=\"call\" data-toggle=\"modal\" data-target=\".bs-callback-modal-sm\">Перезвоните мне</a>\n\t        <span class=\"timework mt40\">10:00-21:00 (без выходных)</span>\n\t        <a href=\"#\" class=\"address mt40\">г. Нижний Новгород, ул. Гордеевская, д.7, ТЦ «Мебельный базар», 2 этаж</a>\n\t        <div class=\"mt60\">\n\t         <a href=\"https://t.me/MK_52_1\" class=\"telegram fdb\" target=\"_blank\"></a>\n\t        <a href=\"https://vk.com/kuhni_52\" class=\"vk fdb\" target=\"_blank\"></a>\n\t         <a href=\"https://ok.ru/group/70000006140384\" class=\"ok fdb\" target=\"_blank\"></a>\n\t        </div>\n\t        </div>\n\t        <div class=\"col-2 mbl\">\n<span class=\"f20\">Компания</span>\n<a href=\"/o-kompanii/\" class=\"f-menu\">О компании</a>\n<a href=\"/proektyi-kuxon/\" class=\"f-menu\">Проекты кухонь</a>\n<a href=\"/konstruktor-kuxni-onlajn-3d.html\" class=\"f-menu\">Конструктор кухонь</a>\n<a href=\"/korpusnaya-mebel/\" class=\"f-menu\">Корпусная мебель</a>\n<a href=\"/nashi-rabotyi/\" class=\"f-menu\">Наши работы</a>\n<a href=\"/otzyivyi/\" class=\"f-menu\">Отзывы</a>\n<a href=\"/klientam/\" class=\"f-menu\">Клиентам</a>\n<a href=\"#\" class=\"f-menu\" data-toggle=\"modal\" data-target=\".bs-order-modal-sm\">Заказать замер</a>\n<a href=\"/contacts/\" class=\"f-menu\">Контакты</a>\n</div>\n<div class=\"col-3 mbl\">\n<span class=\"f20\">Кухни по материалам</span>\n<a href=\"/proektyi-kuxon/kuxni-iz-plastika/\" class=\"f-menu\">Кухни из пластика</a>\n<a href=\"/proektyi-kuxon/kuxni-iz-massiva/\" class=\"f-menu\">Кухни из массива</a>\n<a href=\"/proektyi-kuxon/kuxni-pvx/\" class=\"f-menu\">Кухни из ПВХ</a>\n<a href=\"/proektyi-kuxon/kuxni-pvx-mdf/\" class=\"f-menu\">Кухни из ПВХ-МДФ</a>\n<a href=\"/proektyi-kuxon/kuxni-iz-mdf/\" class=\"f-menu\">Кухни из МДФ (эмаль)</a>\n</div>\n<div class=\"col-3 mbl\">\n<span class=\"f20\">Кухни по стилю</span>\n<a href=\"/proektyi-kuxon/?msoption|style=%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA%D0%B0\" class=\"f-menu\">Кухни в стиле Классика</a>\n<a href=\"proektyi-kuxon/?msoption|style=Прованс\" class=\"f-menu\">Кухни в стиле Прованс</a>\n<a href=\"#\" class=\"f-menu\">Кухни в стиле Лофт</a>\n<a href=\"/proektyi-kuxon/?msoption|style=Модерн\" class=\"f-menu\">Кухни в стиле Модерн</a>\n<a href=\"/proektyi-kuxon/?msoption|style=Современный%20стиль\" class=\"f-menu\">Кухни в современном стиле</a>\n<a href=\"/proektyi-kuxon/?msoption|style=Неоклассика\" class=\"f-menu\">Кухни в стиле Неоклассика</a>\n</div>     \n\t    </div>\n\t    <div class=\"hrg\"></div>\n\t    <div class=\"row\">\n\t    <div class=\"col-8 copy\">\n\t    Все права защищены © «МояКухня» 2025. Копирование материалов с сайта запрещено.\n\t    <a href=\"/docs/Personal_Data_Policy.pdf\" target=\"_blank\" class=\"b-policy\">Политика конфиденциальности</a>\n\t    </div>\n\t    <div class=\"col-4 text-right\"><a href=\"https://s-graf.ru\" class=\"developer\">Разработка сайта - «СеоГрафика»</a></div>\n\t    </div>\n\t     </div>\n\t    </footer>\n\t    <div class=\"modal fade bs-callback-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\" style=\"display: none;\">\n  <div class=\"modal-dialog modal-sm\">\n    <div class=\"modal-content\">\n\t  <div class=\"modal-header\">\n\t      <h4 class=\"modal-title\" id=\"myModalLabel\">Обратный звонок</h4>\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">x</button>\n        </div>\n        <div id=\"call-d\">Оставьте ваше имя и телефон, и мы<br>\nсвяжемся с вами в ближайшее время</div>\n<form action=\"\" method=\"post\" class=\"ajax_form af_callback\" id=\"ajax_form\" onsubmit=\"ym(84949417,'reachGoal','callback'); return true;\">\n\n    <div class=\"form-group\">\n        <div class=\"controls11\">\n            <input type=\"text\" id=\"name11\" name=\"name11\" value=\"\" placeholder=\"Ваше имя\" class=\"form-control\">\n            <span class=\"error_name11\"></span>\n        </div>\n    </div>\n\t <div class=\"form-group\">\n        <div class=\"controls11\">\n            <input type=\"text\" id=\"phone11\" name=\"phone11\" value=\"\" placeholder=\"+7 (xxx) xxx-xxxx\" class=\"form-control mask\">\n            <span class=\"error_phone11\"></span>\n        </div>\n    </div>\n   <div class=\"form-group\">\n     <div class=\"controls11\">\n\t <div class=\"f-row-p\">\n\t <input type=\"hidden\" name=\"policy11[]\" value=\"\">\n      <input class=\"c-policy\" type=\"checkbox\" value=\"Согласен(а) на обработку персональных данных\" name=\"policy11[]\"><label for=\"policy11\">Даю свое <a href=\"/docs/soglasie.pdf\" target=\"_blank\">Согласие на обработку персональных данных</a> в соответствии с установленной формой<span class=\"zvezda\">*</span></label> \n\t    <span class=\"error_policy11\"></span>\n   </div>\n   </div>\n   </div>\n    <div class=\"form-group\">\n        <div class=\"controls11\">\n            <button type=\"submit\" class=\"submit_button11\">Перезвоните мне</button>\n        </div>\n    </div>\n    \n    \n\n\t<input type=\"hidden\" name=\"af_action\" value=\"f1ddfef94ffd103c91218afb6a5de128\">\n</form>\n  </div>\n  </div>\n</div>\n\n\t    <div class=\"modal fade bs-order-modal-sm\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"mySmallModalLabel\" aria-hidden=\"true\" style=\"display: none;\">\n  <div class=\"modal-dialog modal-sm\">\n    <div class=\"modal-content\">\n\t  <div class=\"modal-header\">\n<h4 class=\"title-form\" id=\"myModalLabel\">Оставить заявку</h4>\n<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">x</button>\n</div>\n<form action=\"\" method=\"post\" class=\"ajax_form af_callback\" id=\"ajax_form\" onsubmit=\"ym(84949417,'reachGoal','order-main'); return true;\">\n    <div class=\"form-group\">\n        <div class=\"controls12\">\n            <input type=\"text\" id=\"name12\" name=\"name12\" value=\"\" placeholder=\"Ваше имя\" class=\"form-control\">\n            <span class=\"error_name12\"></span>\n        </div>\n    </div>\n\t <div class=\"form-group\">\n        <div class=\"controls12\">\n            <input type=\"text\" id=\"phone12\" name=\"phone12\" value=\"\" placeholder=\"Ваш телефон\" class=\"form-control mask\">\n            <span class=\"error_phone12\"></span>\n        </div>\n    </div>\n    \n     <div class=\"form-group\">\n        <div class=\"controls12\">\n            <select name=\"podarok12\" id=\"podarok12\">\n                <option selected=\"\" value=\"none\" hidden=\"\">Выбрать подарок</option>\n                <option>Мойка</option>\n                <option>Вытяжка</option>\n                <option>Скидка 10%</option>\n            </select> \n            <span class=\"error_podarok12\"></span>\n        </div>\n    </div>\n      <div class=\"form-group\">\n     <div class=\"controls12\">\n\t <div class=\"f-row-p\">\n\t <input type=\"hidden\" name=\"policy12[]\" value=\"\">\n      <input class=\"c-policy\" type=\"checkbox\" value=\"Согласен(а) на обработку персональных данных\" name=\"policy12[]\"><label for=\"policy12\">Даю свое <a href=\"/docs/soglasie.pdf\" target=\"_blank\">Согласие на обработку персональных данных</a> в соответствии с установленной формой<span class=\"zvezda\">*</span></label> \n\t    <span class=\"error_policy12\"></span>\n   </div>\n   </div>\n   </div>\n    <div class=\"form-group\">\n        <div class=\"controls12\">\n            <button type=\"submit\" class=\"submit_button12\">Отправить</button>\n        </div>\n    </div>\n    \n    \n\n\t<input type=\"hidden\" name=\"af_action\" value=\"947abc965c1dd8ee396c47fd8ee2b894\">\n</form>\n</div>\n</div>\n</div>\n \n\t    <div id=\"cookieBanner\" style=\"display: block;\">\n<div class=\"cookieBanner-container\">\n<div class=\"cookieBanner-accept\">\n<button id=\"acceptCookies\">Принять</button>\n</div>   \n<div class=\"cookieBanner-content\">\nПродолжая использовать сайт, вы даете согласие на обработку файлов cookie, генерируемых Яндекс.Метрикой. Если вы не хотите, чтобы ваши данные обрабатывались: тогда отключите в настройках вашего браузера файлы cookie или покиньте сайт. <a href=\"/docs/Personal_Data_Policy.pdf\" target=\"_blank\">Политика конфиденциальности</a>\n</div>\n</div>\n</div>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n if (!localStorage.getItem(\"cookiesAccepted\")) {\n     document.getElementById(\"cookieBanner\").style.display = \"block\";\n    }\n  document.getElementById(\"acceptCookies\").addEventListener(\"click\", function () {\n  localStorage.setItem(\"cookiesAccepted\", true);\n  document.getElementById(\"cookieBanner\").style.display = \"none\";\n  });\n  });\n</script>\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(84949417, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/84949417\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\t<script src=\"/assets/components/themebootstrap/js/jquery-3.5.1.min.js\"></script>\n<script src=\"/assets/mykitchen/js/jquery.fancybox.min.js\"></script>\n<script src=\"/assets/components/themebootstrap/js/bootstrap.bundle.min.js\"></script>\n<script src=\"/assets/mykitchen/js/jquery.jcarousel.js\"></script>\n<script src=\"/assets/mykitchen/js/jquery-migrate.min.js\"></script>\n<script src=\"/assets/mykitchen/js/custom-script.js\"></script>\n<script src=\"/assets/components/msearch2/js/web/default.js\"></script>\n\n\t<script type=\"text/javascript\">\n\t\tif ($(\"form.msearch2\").length) {\n\t\t\tmSearch2.Form.initialize(\"form.msearch2\");\n\t\t}\n\t</script>\n<script src=\"/assets/components/minishop2/js/web/default.js?v=888c7ca881\"></script>\n<script src=\"/assets/components/minishop2/js/web/lib/jquery.jgrowl.min.js\"></script>\n<script src=\"/assets/components/minishop2/js/web/message_settings.js\"></script>\n<script src=\"/assets/components/ajaxform/js/default.js\"></script>\n<script type=\"text/javascript\">AjaxForm.initialize({\"assetsUrl\":\"\\/assets\\/components\\/ajaxform\\/\",\"actionUrl\":\"\\/assets\\/components\\/ajaxform\\/action.php\",\"closeMessage\":\"\\u0437\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c \\u0432\\u0441\\u0435\",\"formSelector\":\"form.ajax_form\",\"pageId\":1});</script><script src=\"/assets/components/ajaxform/js/lib/jquery.form.min.js\"></script><ul id=\"ui-id-1\" tabindex=\"0\" class=\"ui-menu ui-widget ui-widget-content ui-autocomplete ui-front\" style=\"display: none;\"></ul><div role=\"status\" aria-live=\"assertive\" aria-relevant=\"additions\" class=\"ui-helper-hidden-accessible\"></div>\n\n<div id=\"jivo-iframe-container\" style=\"opacity: 0; visibility: hidden; width: 0px; height: 0px; overflow: hidden;\"><iframe src=\"\" role=\"presentation\" allow=\"autoplay\" title=\"Jivochat\" name=\"jivo_container\" id=\"jivo_container\" frameborder=\"no\"></iframe></div><jdiv><jdiv class=\"globalClass__glXV3 global__bmC69 __light__T1MHS __green__Sr1G_ jv-windows jv-chrome jv-desktop\" style=\"--jv-font-family: 'Arial', system-ui, -apple-system, 'Arial', sans-serif;\"><jdiv translate=\"no\" class=\"notranslate\" style=\"animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: Label_CLOSE_WIDGET__jzm8j; display: block; z-index: 2147483646; position: fixed;\"><jdiv id=\"jvLabelWrap\" translate=\"no\" class=\"container__17Wxg __bottom__Udpfw __isShow__UDgTx notranslate\" style=\"--jv-label-font-size: 15px; --jv-label-font-style: normal; --jv-label-text-color: #ffffff; --jv-label-background: linear-gradient(95deg, #2f324a 20%, #424867 80%); --jv-label-background-corner: #424867; max-width: calc(-80px + 100vw); bottom: 0px; right: 40px;\"><jdiv class=\"icon__QmncK\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200h20v20H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20d%3D%22M3%203h14a2%202%200%200%201%202%202v10a2%202%200%200%201-2%202H3a2%202%200%200%201-2-2V5a2%202%200%200%201%202-2z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.5%22%20d%3D%22M16.074%207.064l-6.01%204.01-6.01-4.01%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv><jdiv class=\"hoverArea__uCpXp\"><jdiv class=\"menu__ASVkP __bottom__JZv0P\"></jdiv></jdiv><jdiv class=\"text__akV3R contentTransitionWrap__U7_Nd __bottom__LkT2Q __isOffline__Mr9sN __noCopyright__TxMFu\">Отправьте нам сообщение</jdiv><jdiv class=\"leaf__NmXJj\"><jdiv class=\"leaf__CFft7 _bottom__kDPM_\"><jdiv class=\"cssLeaf__BBk_b\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2240%22%20viewBox%3D%220%200%2032%2040%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23424867%22%20d%3D%22M0%200h9.02L32%2033.196V40H0z%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23424867%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%235e5f61%22%20d%3D%22M9%200c3.581.05%2023%205.426%2023%2033.08v.03C18.922%2030.751%209%2019.311%209%205.554V0z%22%20fill-opacity%3D%220.7%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv></jdiv></jdiv></jdiv></jdiv><jdiv id=\"jivo-player\" class=\"player__DCKE5\"><audio preload=\"auto\" id=\"jivo-sound-agent_message\"><source src=\"https://code.jivo.ru/sounds/agent_message.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivo.ru/sounds/agent_message.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivo.ru/sounds/agent_message.wav\" type=\"audio/wav\"></audio><audio preload=\"auto\" id=\"jivo-sound-notification\"><source src=\"https://code.jivo.ru/sounds/notification.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivo.ru/sounds/notification.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivo.ru/sounds/notification.wav\" type=\"audio/wav\"></audio><audio preload=\"auto\" id=\"jivo-sound-outgoing_message\"><source src=\"https://code.jivo.ru/sounds/outgoing_message.mp3\" type=\"audio/mpeg\"><source src=\"https://code.jivo.ru/sounds/outgoing_message.ogg\" type=\"audio/ogg; codecs=vorbis\"><source src=\"https://code.jivo.ru/sounds/outgoing_message.wav\" type=\"audio/wav\"></audio></jdiv><jdiv id=\"jcont\" translate=\"no\" class=\"notranslate\" style=\"animation-duration: 300ms; animation-timing-function: cubic-bezier(0.39, 0.24, 0.21, 0.99); animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: WidgetContainer_CLOSE_WIDGET__sbXVl; --jright: 30px; --jheight: 496px; display: block; position: fixed; --jlabelwidth: 300px; --jlabelright: 40px;\"><jdiv dir=\"ltr\" id=\"jivo_action\" class=\"wrap__mirQH\"><jdiv id=\"jivo_close_button\" class=\"closeButton__EYmnW\"><jdiv class=\"closeIcon__ImyKe\" style=\"background-image: url(&quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2228%22%20height%3D%2228%22%20viewBox%3D%220%200%2028%2028%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20transform%3D%22translate(2%202)%22%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%23FFF%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212.75%22%20stroke%3D%22%23222D38%22%20stroke-width%3D%221.5%22%20opacity%3D%221%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cg%20fill%3D%22%23222D38%22%20opacity%3D%221%22%20transform%3D%22translate(6%206)%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22rotate(45%206.24%206.01)%22%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Crect%20width%3D%221.611%22%20height%3D%2213.9%22%20x%3D%225.435%22%20y%3D%22-.941%22%20rx%3D%22.806%22%20transform%3D%22scale(-1%201)%20rotate(45%200%20-9.058)%22%2F%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A&quot;);\"></jdiv></jdiv></jdiv></jdiv><jdiv class=\"jv-pseudo-height\"></jdiv><jdiv class=\"jv-mouse-track\"></jdiv></jdiv></jdiv></body></html>",
+  "text": "Кухни на заказ по индивидуальным размерам - МояКухня г. Нижний Новгород, ул. Гордеевская, д.7, ТЦ «Мебельный базар», 2 этаж +7 (831) 413-90-14 10:00-21:00 (без выходных) Кухни на заказ по индивидуальным размерам Качественная мебель наш девиз! Мы знаем рецепт вашей кухни! Подбор кухни Кухни на заказ по индивидуальным размерам Учтем все ваши пожелания! Ваша идея станет идеальной кухней! Запись на замер Присоединяйтесь к нам ВКонтакте и получите скидку 30% Присоединиться Previous Next О компании Проекты кухонь Мебель Шкафы Тумбы Мебель для гостиной Мебель для прихожей Мебель для ванной Наши работы Клиентам Гарантия Доставка Условия рассрочки Сборка и монтаж Оплата Отзывы Контакты Проекты кухонь Кухня Студия от 25 000 руб. / п.м. Подробнее Кухня Дуэт от 25 000 руб. / п.м. Подробнее Кухня Альберт от 36 000 руб. / п.м. Подробнее Кухня Ольга от 36 000 руб. / п.м. Подробнее Кухня Катерина от 40 000 руб. / п.м. Подробнее Кухня Прованс от 25 000 руб. / п.м. Подробнее Смотреть все Наши преимущества 3D проект - бесплатно! рассрочка платежа! подарок каждому клиенту! 3D проект - бесплатно! Наши работы Подробнее Подробнее Подробнее Подробнее Подробнее Подробнее Смотреть все Как мы работаем Шаг 1. 15 минут Оставьте заявку на сайте или позвоните по телефону: +7 (831) 413-90-14. Шаг 2. 1 день В удобное для вас время замерим помещение. Шаг 3. 1 день Совершенно бесплатно создадим для вас идивидуальный дизайн-проект кухни и согласуем все моменты. Шаг 4. 21 день Изготовим кухню вашей мечты в соответствии с утвержденным дизайн-проектом. Шаг 5. 1 день В удобное для вас время доставим и смонтируем вашу кухню. Оставить заявку Выбрать подарок Мойка Вытяжка Скидка 10% Даю свое Согласие на обработку персональных данных в соответствии с установленной формой * Отправить О нас Наша компания начала свой путь в далеком 1998 году, сейчас мы уже крупный холдинг развивающихся производств, специализирующихся на изготовлении фабричной мебели для кухни. Главная задача нашего холдинга — помочь Вам подобрать свою Идеальную кухню, которая будет радовать Вас долгие годы: своей красотой, практичностью и удобством. Для начала давайте все же разберемся, что такое фабричная мебель? Фабричная мебель — это мебель, изготовленная в соответствии со всеми действующими стандартами и ГОСТами, что особенно важно с учетом перепадов влажности и температуры на кухне. Наша мебель производится на автоматизированном производстве. Фабричная мебель станет отличным вариантом, если Вы ищете идеальную, спроектированную с учетом всех ваших пожеланий в плане красоты и комфорта-кухню. Что для нас кухня? Кухня — это душа дома. Ведь именно здесь мы каждый день готовим еду, даем волю своему воображению, устраиваем вечерние посиделки с друзьями или просто обычный перекус. Поэтому кухня должна быть удобной, стильной, эстетичной и при этом удобной, а мебель в ней — очень функциональной и прочной. Это одно из тех пространств в доме, где важны функциональность и практичность. Комфортно организованное кухонное пространство значительно сэкономит ваше время при приготовлении пищи, сделает вашу жизнь проще и превращает ежедневное приготовление пищи из рутины в приятное времяпрепровождение. Почему стоит обратиться именно в нашу компанию? Полный комплекс услуг от нашей компании. Заказывая кухонную мебель по индивидуальному размеру, Вы можете быть уверены, что весь комплекс услуг оказывается централизованно: от замеров и доставки до монтажа и обслуживания. Ведь наши клиенты не покупают кухню, а покупают комплексное решение, за которое отвечает наша компания « МОЯ КУХНЯ» . Материалы. Наша компания изготавливает мебель для кухни, только из качественных материалов. Все покрытия долговечные и практичные, ведь мы учитываем то, что кухонная мебель и столешница будут ежедневно и интенсивно подвергаться воздействию горячих паров, воды и тд. Дизайн. В отличие от готовых кухонных гарнитуров, которые обычно все как под копирку, фабричная мебель позволит Вам создать кухню с особой атмосферой, которая будет радовать Вас долгие годы. Заказывая кухню в « МОЯ КУХНЯ» , вам будут предложены десятки различных дизайнерских решений и вариантов внешнего вида и функциональности Вашей будущей кухни. В отличие от типовой серийной мебели, фабричные кухни на заказ изготавливаются индивидуально для каждого потребителя. Учитываются все пожелания заказчика: от цвета и фактуры фасадов, до внешнего вида фурнитуры и ручек, формы кухонных секций и конфигурации кухни. Скорость. Если сроки сжатые и кухня нужна срочно, мы не подведем — срок доставки мебели составляет 14-30 календарных дней в зависимости от сложности технологического процесса и выбранного вами фасадного материала. Вместе с договором Вы получите от нас рекомендации относительно расстояний для установки или переноса электрических и сантехнических установок, если это необходимо для выбранной Вами кухни. Приемлемые цены. Это преимущество позволяет подобрать подходящую кухню, которая не ударит по семейному бюджету. В нашей компании также присутствуют скидки и акции поэтому, если Вы хотите сэкономить, обращайтесь к нам! При выборе модульной кухни мы предлагаем вам СКИДКУ, которая существенно снизит затраты, не ограничивая Вас в выборе материалов и комплектующих! Наша компания заботится о своей репутации поэтому мы изготавливаем для Вас только качественную мебель! Отзывы Наталия 10 Июня 2025 Подробнее Леонид 05 Июня 2025 Подробнее Илья 13 Октября 2023 Подробнее Нина 13 Ноября 2024 Подробнее Владимир 10 Июня 2022 Подробнее Партнеры +7 (831) 413-90-14 Перезвоните мне 10:00-21:00 (без выходных) г. Нижний Новгород, ул. Гордеевская, д.7, ТЦ «Мебельный базар», 2 этаж Компания О компании Проекты кухонь Конструктор кухонь Корпусная мебель Наши работы Отзывы Клиентам Заказать замер Контакты Кухни по материалам Кухни из пластика Кухни из массива Кухни из ПВХ Кухни из ПВХ-МДФ Кухни из МДФ (эмаль) Кухни по стилю Кухни в стиле Классика Кухни в стиле Прованс Кухни в стиле Лофт Кухни в стиле Модерн Кухни в современном стиле Кухни в стиле Неоклассика Все права защищены © «МояКухня» 2025. Копирование материалов с сайта запрещено. Политика конфиденциальности Разработка сайта - «СеоГрафика» Обратный звонок x Оставьте ваше имя и телефон, и мы свяжемся с вами в ближайшее время Даю свое Согласие на обработку персональных данных в соответствии с установленной формой * Перезвоните мне Оставить заявку x Выбрать подарок Мойка Вытяжка Скидка 10% Даю свое Согласие на обработку персональных данных в соответствии с установленной формой * Отправить Принять Продолжая использовать сайт, вы даете согласие на обработку файлов cookie, генерируемых Яндекс.Метрикой. Если вы не хотите, чтобы ваши данные обрабатывались: тогда отключите в настройках вашего браузера файлы cookie или покиньте сайт. Политика конфиденциальности Отправьте нам сообщение",
+  "json_ld": [],
+  "document": {
+    "title": "Кухни на заказ по индивидуальным размерам - МояКухня",
+    "meta_description": "Компания \"МояКухня\" изготавливает кухни на заказ по индивидуальным размерам в Нижнем Новгороде. Опытные дизайнеры составят для вас шедевр.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/contacts/",
+        "text": "г. Нижний Новгород, ул. Гордеевская, д.7, ТЦ «Мебельный базар», 2 этаж",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78314139014",
+        "text": "+7 (831) 413-90-14",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/MK_52_1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kuhni_52",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://ok.ru/group/70000006140384",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/",
+        "text": "Кухни на заказ по индивидуальным размерам Качественная мебель наш девиз! Мы знаем рецепт вашей кухни!",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/",
+        "text": "Подбор кухни",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Кухни на заказ по индивидуальным размерам Учтем все ваши пожелания! Ваша идея станет идеальной кухней!",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Запись на замер",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kuhni_52",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kuhni_52",
+        "text": "Присоединяйтесь к нам ВКонтакте и получите скидку 30%",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kuhni_52",
+        "text": "Присоединиться",
+        "rel": ""
+      },
+      {
+        "href": "#carousel-main",
+        "text": "Previous",
+        "rel": ""
+      },
+      {
+        "href": "#carousel-main",
+        "text": "Next",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "o-kompanii/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/",
+        "text": "Проекты кухонь",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Мебель",
+        "rel": ""
+      },
+      {
+        "href": "korpusnaya-mebel/shkafyi/",
+        "text": "Шкафы",
+        "rel": ""
+      },
+      {
+        "href": "korpusnaya-mebel/tumbyi/",
+        "text": "Тумбы",
+        "rel": ""
+      },
+      {
+        "href": "korpusnaya-mebel/mebel-dlya-gostinoj/",
+        "text": "Мебель для гостиной",
+        "rel": ""
+      },
+      {
+        "href": "korpusnaya-mebel/mebel-dlya-prixozhej/",
+        "text": "Мебель для прихожей",
+        "rel": ""
+      },
+      {
+        "href": "korpusnaya-mebel/mebel-dlya-vannoj/",
+        "text": "Мебель для ванной",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Клиентам",
+        "rel": ""
+      },
+      {
+        "href": "klientam/garantiya.html",
+        "text": "Гарантия",
+        "rel": ""
+      },
+      {
+        "href": "klientam/dostavka.html",
+        "text": "Доставка",
+        "rel": ""
+      },
+      {
+        "href": "klientam/usloviya-rassrochki.html",
+        "text": "Условия рассрочки",
+        "rel": ""
+      },
+      {
+        "href": "klientam/sborka-i-montazh.html",
+        "text": "Сборка и монтаж",
+        "rel": ""
+      },
+      {
+        "href": "klientam/oplata.html",
+        "text": "Оплата",
+        "rel": ""
+      },
+      {
+        "href": "https://kuhni-52.ru/otzyivyi/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "contacts/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-studiya.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-studiya.html",
+        "text": "Кухня Студия",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-studiya.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-duet.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-duet.html",
+        "text": "Кухня Дуэт",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-duet.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-albert.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-albert.html",
+        "text": "Кухня Альберт",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-albert.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-olga.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-olga.html",
+        "text": "Кухня Ольга",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-plastika/kuxnya-olga.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-mdf/kuxnya-katerina.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-mdf/kuxnya-katerina.html",
+        "text": "Кухня Катерина",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-iz-mdf/kuxnya-katerina.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-pvx-mdf/kuxnya-provans.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-pvx-mdf/kuxnya-provans.html",
+        "text": "Кухня Прованс",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/kuxni-pvx-mdf/kuxnya-provans.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/",
+        "text": "Смотреть все",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/roza.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/roza.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/kristajl.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/kristajl.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/kantri.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/kantri.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/iris.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/iris.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/grej-glyanecz.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/grej-glyanecz.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/beton.html",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "nashi-rabotyi/beton.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/nashi-rabotyi/",
+        "text": "Смотреть все",
+        "rel": ""
+      },
+      {
+        "href": "/docs/soglasie.pdf",
+        "text": "Согласие на обработку персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "otzyivyi/otzyiv-klienta-nataliya.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "otzyivyi/otzyiv-leonid.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "otzyivyi/otzyiv-klienta-ilya.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "otzyivyi/otzyiv-klienta-nina.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "otzyivyi/otzyiv-klienta-vladimir.html",
+        "text": "Подробнее",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78314139014",
+        "text": "+7 (831) 413-90-14",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Перезвоните мне",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "г. Нижний Новгород, ул. Гордеевская, д.7, ТЦ «Мебельный базар», 2 этаж",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/MK_52_1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/kuhni_52",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://ok.ru/group/70000006140384",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/o-kompanii/",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/",
+        "text": "Проекты кухонь",
+        "rel": ""
+      },
+      {
+        "href": "/konstruktor-kuxni-onlajn-3d.html",
+        "text": "Конструктор кухонь",
+        "rel": ""
+      },
+      {
+        "href": "/korpusnaya-mebel/",
+        "text": "Корпусная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/nashi-rabotyi/",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/otzyivyi/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/klientam/",
+        "text": "Клиентам",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Заказать замер",
+        "rel": ""
+      },
+      {
+        "href": "/contacts/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/kuxni-iz-plastika/",
+        "text": "Кухни из пластика",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/kuxni-iz-massiva/",
+        "text": "Кухни из массива",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/kuxni-pvx/",
+        "text": "Кухни из ПВХ",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/kuxni-pvx-mdf/",
+        "text": "Кухни из ПВХ-МДФ",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/kuxni-iz-mdf/",
+        "text": "Кухни из МДФ (эмаль)",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/?msoption|style=%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D0%BA%D0%B0",
+        "text": "Кухни в стиле Классика",
+        "rel": ""
+      },
+      {
+        "href": "proektyi-kuxon/?msoption|style=Прованс",
+        "text": "Кухни в стиле Прованс",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Кухни в стиле Лофт",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/?msoption|style=Модерн",
+        "text": "Кухни в стиле Модерн",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/?msoption|style=Современный%20стиль",
+        "text": "Кухни в современном стиле",
+        "rel": ""
+      },
+      {
+        "href": "/proektyi-kuxon/?msoption|style=Неоклассика",
+        "text": "Кухни в стиле Неоклассика",
+        "rel": ""
+      },
+      {
+        "href": "/docs/Personal_Data_Policy.pdf",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://s-graf.ru",
+        "text": "Разработка сайта - «СеоГрафика»",
+        "rel": ""
+      },
+      {
+        "href": "/docs/soglasie.pdf",
+        "text": "Согласие на обработку персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "/docs/soglasie.pdf",
+        "text": "Согласие на обработку персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "/docs/Personal_Data_Policy.pdf",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Отправить",
+      "x",
+      "Перезвоните мне",
+      "x",
+      "Отправить",
+      "Принять"
+    ],
+    "h1_texts": [
+      "Кухни на заказ по индивидуальным размерам"
+    ],
+    "h2_texts": [],
+    "h3_texts": [
+      "Проекты кухонь",
+      "Наши преимущества",
+      "Наши работы",
+      "Как мы работаем",
+      "О нас",
+      "Что для нас кухня?",
+      "Почему стоит обратиться именно в нашу компанию?",
+      "Отзывы",
+      "Партнеры"
+    ],
+    "counts": {
+      "paragraph": 16,
+      "h1": 1,
+      "h2": 0,
+      "h3": 9,
+      "link": 105,
+      "image": 33,
+      "list_item": 32,
+      "strong": 0,
+      "form": 16,
+      "input": 52
+    }
+  }
+}

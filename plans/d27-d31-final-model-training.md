@@ -14,7 +14,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 - [x] (2026-05-01 16:00 +05:00) GitHub issues were created through the Codex GitHub connector: `#46` through `#50`.
 - [x] (2026-05-01 16:15 +05:00) Local fallback documentation was added because unauthenticated GitHub access to this private repository can return `404 Not Found`.
-- [ ] D27: Build `dataset-v2` from the seed catalog in controlled batches.
+- [x] (2026-05-01 20:19 +05:00) D27: Built `dataset-v2` from seed offsets `0-49` and `50-99` after a clean rebuild. Generated `dataset.csv` with `885` successful rows, `failures.csv` with `49` failed fetches, `checkpoint.json`, `dataset.dataset.json`, and `885` snapshot artifacts. A temporary D27 quality probe reported `ready_for_training=true`, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, and `artifact_coverage_ratio=1.0`.
 - [ ] D28: Validate `dataset-v2` quality gates, manifest and group split.
 - [ ] D29: Train a candidate page-quality model from `dataset-v2`.
 - [ ] D30: Run ranking benchmark and compare the candidate model against the current artifact.
@@ -24,6 +24,15 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 - Observation: Other Codex dialogs may not see GitHub issues for this repository.
   Evidence: public `https://github.com/valenciadustin59/diplom/issues` and `https://api.github.com/repos/valenciadustin59/diplom/issues?state=all&per_page=100` can return `404 Not Found` without authenticated GitHub access, even though `git ls-remote origin` works.
+
+- Observation: `--top-n 5` does not override `top_n` values already stored in `dataset-v2/seeds.csv`; it only provides a default when a seed row has no `top_n`.
+  Evidence: `load_seed_rows('data/dataset_versions/dataset-v2/seeds.csv', default_top_n=5)` loads `top_n=10` and `pages_to_scan=2` from the seed catalog, so each 50-seed batch can try up to 100 SERP pages rather than 50 single-page queries.
+
+- Observation: Lazy concurrent loading of the sentence-transformers model can degrade a dataset run if HuggingFace connectivity resets during worker threads.
+  Evidence: an intermediate batch produced `486` rows with `semantic_similarity=0` while logs showed repeated `huggingface.co` HEAD retries. After the local model cache became available and the generated dataset was rebuilt, the final D27 dataset has only `3` zero-semantic rows.
+
+- Observation: Some SERP payloads can contain duplicate result URLs for the same query, and the old builder only filtered keys already written before the current page.
+  Evidence: an intermediate dataset had `42` duplicate `(query,url)` groups. `backend/app/ml/dataset_builder.py` now deduplicates search results before submitting page fetches to the thread pool, and the clean D27 rebuild has `duplicate_query_url_groups=0`.
 
 ## Decision Log
 
@@ -35,9 +44,19 @@ The user-visible result is simple: after this plan is complete, a new audit shou
   Rationale: each stage has different failure modes and evidence requirements; splitting keeps commits and validation understandable.
   Date/Author: 2026-05-01 / Codex
 
+- Decision: Keep the seed catalog unchanged and process the first two 50-seed offsets using the catalog's stored `top_n=10` and `pages_to_scan=2`.
+  Rationale: the catalog is the source of truth for D17/D27 dataset coverage, and the first two controlled batches already pass the D28 quantitative gates without needing offsets `100` or `150`.
+  Date/Author: 2026-05-01 / Codex
+
+- Decision: Add pre-fetch SERP result deduplication to `dataset_builder` and rebuild D27 artifacts with `--overwrite`.
+  Rationale: duplicate training rows bias model training and make artifact coverage less clear; fixing the builder before publishing D27 data is safer than post-processing generated CSV files.
+  Date/Author: 2026-05-01 / Codex
+
 ## Outcomes & Retrospective
 
-No implementation work for D27-D31 has been completed yet. The outcome so far is a local, self-contained backlog that can be followed without GitHub Issues access.
+D27 is complete locally. The versioned `dataset-v2` bundle now has enough rows, query coverage, domain coverage, city coverage and artifact coverage for D28's formal manifest step. The main implementation lesson is that live dataset collection needs quality probes between batches: the first attempt revealed duplicate SERP rows and a transient semantic-model loading problem, both of which were resolved before keeping the final generated data.
+
+D28 remains next. It should generate the canonical `manifest.json` and `split.json` from the D27 dataset instead of rebuilding the dataset again.
 
 ## Context and Orientation
 

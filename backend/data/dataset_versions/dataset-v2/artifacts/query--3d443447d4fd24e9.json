@@ -1,0 +1,55 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://profi.ru/geo-kzn/remont/remont-kvartir/",
+  "final_url": "https://profi.ru/geo-kzn/remont/remont-kvartir/",
+  "status_code": 418,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-length": "7333",
+    "content-type": "text/html",
+    "date": "Fri, 01 May 2026 15:13:39 GMT",
+    "etag": "\"69205fd2-1ca5\"",
+    "p3p": "policyref=\"/w3c/p3p.xml\", CP=\"CUR ADM OUR NOR STA NID\"",
+    "server": "nginx",
+    "set-cookie": "sid=ubq6jGn0wyM3Hg/VPb8GAg==; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/"
+  },
+  "response_time_ms": 9824.9217,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:13:48.152485+00:00",
+  "html": "<!DOCTYPE html><html><head>\n  <meta charset=\"utf-8\">\n  <meta http-equiv=\"Content-Language\" content=\"ru_RU\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n  <meta name=\"description\" content=\"Профи.ру\">\n  <style>\n\t  html {\n\t\t  font-family: -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;\n\t  }\n\n\t  html, body {\n      width: 100%;\n      height: 100%;\n\t\t  margin: 0;\n      padding: 0;\n\t  }\n\n    .page {\n      display: flex;\n      flex-direction: column;\n      min-height: 100%;\n      color: #333;\n    }\n\n    .container {\n\t    margin: 0 auto;\n\t    padding: 0 20px;\n\t    box-sizing: border-box;\n    }\n\n    .header {\n      display: flex;\n      align-items: center;\n\t    justify-content: center;\n      width: 100%;\n      height: 60px;\n    }\n\n    .header__logo {\n\t    width: 156px;\n\t    height: 30px;\n      background: url(\"data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTU2IiBoZWlnaHQ9IjMwIiB2aWV3Qm94PSIwIDAgMTU2IDMwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMTUwLjk1MSA2LjQ4NjUySDE1NkwxNDYuOTEyIDI5Ljk1NjJIMTQxLjk4OEwxNDQuNjQ1IDIzLjAwMUwxMzcuMDY2IDYuNDg2NTJIMTQyLjI0MUwxNDcuMDM4IDE2LjczMzJMMTUwLjk1MSA2LjQ4NjUyWiIgZmlsbD0iI0U3MjU0MSIvPgo8cGF0aCBkPSJNMTI5LjE2MSAyMy40MDk3QzEyNy40OTYgMjMuNDA5NyAxMjUuNjk2IDIyLjkyODUgMTI0LjYwOCAyMS42OTM0VjMwSDExOS45MjFWNi40ODY1MkgxMjQuNjA4VjcuNzU2NThDMTI1LjY5NiA2LjUyMDI3IDEyNy40OTYgNi4wNDAyNiAxMjkuMTYxIDYuMDQwMjZDMTM0LjM5MyA2LjA0MDI2IDEzNy41MTggMTAuMjYyOSAxMzcuNTE4IDE0LjcyNDRDMTM3LjUxOCAxOS4xODU4IDEzNC4zOTMgMjMuNDA4NSAxMjkuMTYxIDIzLjQwODVWMjMuNDA5N1pNMTI4Ljc1MyAxMC40MDA0QzEyNi42OCAxMC40MDA0IDEyNC40MDQgMTEuODQxNyAxMjQuNDA0IDE0LjcyNTZDMTI0LjQwNCAxNy42MDk1IDEyNi42OCAxOS4wNTA4IDEyOC43NTMgMTkuMDUwOEMxMzEuMTY1IDE5LjA1MDggMTMyLjgyOSAxNy4wMjU3IDEzMi44MjkgMTQuNzI1NkMxMzIuODI5IDEyLjQyNTUgMTMxLjE2NCAxMC40MDA0IDEyOC43NTMgMTAuNDAwNFoiIGZpbGw9IiNFNzI1NDEiLz4KPHBhdGggZD0iTTExNy42MDIgMTkuMzk4M0MxMTcuNjAyIDIxLjM4NTkgMTE2LjAwOSAyMi45OTYgMTE0LjA0MiAyMi45OTZIMTA2LjkyMUMxMDQuOTU0IDIyLjk5NiAxMDMuMzYxIDIxLjM4NDYgMTAzLjM2MSAxOS4zOTgzQzEwMy4zNjEgMTcuNDEyIDEwNC45NTQgMTUuODAwNyAxMDYuOTIxIDE1LjgwMDdIMTE0LjA0MkMxMTYuMDA5IDE1LjgwMDcgMTE3LjYwMiAxNy40MTIgMTE3LjYwMiAxOS4zOTgzWiIgZmlsbD0iI0U3MjU0MSIvPgo8cGF0aCBkPSJNMTA2LjcwMSA5Ljg3NDZDMTA2LjcwMSA3LjgwMjc2IDEwOC4zNjIgNi4xMjQ0NCAxMTAuNDEyIDYuMTI0NDRDMTEyLjQ2MyA2LjEyNDQ0IDExNC4xMjQgNy44MDQwNiAxMTQuMTI0IDkuODc0NkMxMTQuMTI0IDExLjk0NTEgMTEyLjQ2MyAxMy42MjQ4IDExMC40MTIgMTMuNjI0OEMxMDguMzYyIDEzLjYyNDggMTA2LjcwMSAxMS45NDUxIDEwNi43MDEgOS44NzQ2WiIgZmlsbD0iI0U3MjU0MSIvPgo8cGF0aCBkPSJNODQuMjgwOCA2LjQ4NjUySDg4Ljk2ODJWMTYuNDQwN0w5Ni4zNDAyIDYuNDg2NTJIMTAxLjAyOFYyMi45NjM1SDk2LjM0MDJWMTMuMDA5M0w4OC45NjgyIDIyLjk2MzVIODQuMjgwOFY2LjQ4NjUyWiIgZmlsbD0iI0U3MjU0MSIvPgo8cGF0aCBkPSJNNjcuNDMxMyAwSDcyLjExODhWNi40ODc3N0g3My40NzcxQzc4LjUwNDcgNi40ODc3NyA4Mi4yMDc0IDkuOTg5MTcgODIuMjA3NCAxNC43MjU2QzgyLjIwNzQgMTkuODA1OCA3OC43NDIzIDIyLjk2MzUgNzMuNTEwNSAyMi45NjM1SDcyLjExNzVWMjkuOTY2Mkg2Ny40MzAxVjIyLjk2MzVINjYuMDM3MUM2MC43NzE5IDIyLjk2MzUgNTcuMzc0OCAxOS44MDU4IDU3LjM3NDggMTQuNzI1NkM1Ny4zNzQ4IDkuOTg5MTcgNjEuMDQ0MSA2LjQ4Nzc3IDY2LjEwNTEgNi40ODc3N0g2Ny40MzAxVjBINjcuNDMxM1pNNjUuOTcwMyAxMC42MDY3QzYzLjQ4OTkgMTAuNjA2NyA2Mi4wNjM1IDEyLjI1NDMgNjIuMDYzNSAxNC43MjU2QzYyLjA2MzUgMTcuMTk3IDYzLjM4ODQgMTguODQ0NSA2Ni4wMDM3IDE4Ljg0NDVINjcuNDMwMVYxMC42MDY3SDY1Ljk2OTFINjUuOTcwM1pNNzIuMTIgMTAuNjA2N1YxOC44NDQ1SDczLjU4MUM3Ni4xOTYzIDE4Ljg0NDUgNzcuNTIxMiAxNy4wOTMyIDc3LjUyMTIgMTQuNzI1NkM3Ny41MjEyIDEyLjM1OCA3Ni4wNjAyIDEwLjYwNjcgNzMuNTgxIDEwLjYwNjdINzIuMTJaIiBmaWxsPSIjRTcyNTQxIi8+CjxwYXRoIGQ9Ik01Ni4xNTM4IDE0Ljc1OTRDNTYuMTUzOCAxOS44NzQ2IDUyLjExMDkgMjMuNDA5NyA0Ny4yNTI4IDIzLjQwOTdDNDIuMzk0NiAyMy40MDk3IDM4LjMxODMgMTkuNzcwOCAzOC4zMTgzIDE0Ljc1OTRDMzguMzE4MyA5Ljc0NzkxIDQyLjI5MzIgNi4wNDAyNiA0Ny4yMTgxIDYuMDQwMjZDNTIuMTQzMSA2LjA0MDI2IDU2LjE1MjYgOS42NzkxNiA1Ni4xNTI2IDE0Ljc1OTRINTYuMTUzOFpNNDQuMjI5MyAxMS41NjhDNDMuMzQ2IDEyLjQ2MDUgNDMuMDA1OCAxMy41MjQzIDQzLjAwNTggMTQuNzYwNkM0My4wMDU4IDE3LjMwMDcgNDQuODA1OCAxOS4wNTA4IDQ3LjI1MTUgMTkuMDUwOEM0OS42OTczIDE5LjA1MDggNTEuNDYzOSAxNy4xOTcgNTEuNDYzOSAxNC43NjA2QzUxLjQ2MzkgMTQuMTA4MSA1MS4zNjI1IDEzLjUyNDMgNTEuMTU4MyAxMi45NzU1QzUwLjY4MzMgMTEuODc2NyA0OS45Njk1IDExLjIyNDIgNDguOTE2NyAxMC43MTA0QzQ4LjM3MzYgMTAuNTA0MiA0Ny44MjkzIDEwLjQwMTcgNDcuMjUxNSAxMC40MDE3QzQ2LjAyOCAxMC40MDE3IDQ1LjE0NDcgMTAuNzc5MiA0NC4yMjggMTEuNTY5Mkw0NC4yMjkzIDExLjU2OFoiIGZpbGw9IiNFNzI1NDEiLz4KPHBhdGggZD0iTTI4LjczOTQgMjMuNDA5N0MyNy4wNzQyIDIzLjQwOTcgMjUuMjc0MiAyMi45Mjg1IDI0LjE4NjggMjEuNjkzNFYzMEgxOS40OTk0VjYuNDg2NTJIMjQuMTg2OFY3Ljc1NjU4QzI1LjI3NDIgNi41MjAyNyAyNy4wNzQyIDYuMDQwMjYgMjguNzM5NCA2LjA0MDI2QzMzLjk3MTEgNi4wNDAyNiAzNy4wOTYxIDEwLjI2MjkgMzcuMDk2MSAxNC43MjQ0QzM3LjA5NjEgMTkuMTg1OCAzMy45NzExIDIzLjQwODUgMjguNzM5NCAyMy40MDg1VjIzLjQwOTdaTTI4LjMzMTEgMTAuNDAwNEMyNi4yNTg5IDEwLjQwMDQgMjMuOTgyNyAxMS44NDE3IDIzLjk4MjcgMTQuNzI1NkMyMy45ODI3IDE3LjYwOTUgMjYuMjU4OSAxOS4wNTA4IDI4LjMzMTEgMTkuMDUwOEMzMC43NDM1IDE5LjA1MDggMzIuNDA3NCAxNy4wMjU3IDMyLjQwNzQgMTQuNzI1NkMzMi40MDc0IDEyLjQyNTUgMzAuNzQyMiAxMC40MDA0IDI4LjMzMTEgMTAuNDAwNFoiIGZpbGw9IiNFNzI1NDEiLz4KPHBhdGggZD0iTTE2LjUxMDUgNi40ODY1MlYyMi45NjM1SDExLjgyMzFWMTAuNjA1NEg0LjY4ODY0VjIyLjk2MzVILTEuNTI1ODhlLTA1VjYuNDg2NTJIMTYuNTEwNVoiIGZpbGw9IiNFNzI1NDEiLz4KPC9zdmc+Cg==\");\n\t    background-size: 156px 30px;\n    }\n\n    .content {\n      width: 100%;\n      flex: auto;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n    }\n\n    .title {\n      margin-top: 25px;\n\t    font-size: 22px;\n\t    font-style: normal;\n\t    font-weight: 600;\n\t    line-height: 26px;\n\t    letter-spacing: 0.352px;\n    }\n\n    .description {\n\t    margin-top: 10px;\n\t    font-size: 15px;\n\t    font-style: normal;\n\t    font-weight: 400;\n\t    line-height: 20px;\n\t    letter-spacing: -0.24px;\n    }\n\n    .title, .description {\n      text-align: center;\n    }\n\n    .button {\n      margin-top: 25px;\n\t    padding: 10px 15px;\n\t    border-radius: 9px;\n\t    background: #333;\n\t    color: #FFF;\n\t    font-size: 15px;\n\t    font-style: normal;\n\t    font-weight: 600;\n\t    line-height: 20px;\n\t    letter-spacing: -0.24px;\n      cursor: pointer;\n    }\n\n\t  @media (min-width: 732px) {\n\t\t  .container {\n\t\t\t  max-width: 1020px;\n\t\t\t  padding: 0 30px;\n\t\t  }\n\n      .header {\n\t      justify-content: flex-start;\n      }\n\n\t\t  .description {\n\t\t\t  font-size: 17px;\n\t\t\t  line-height: 22px;\n\t\t  }\n\t  }\n  </style>\n</head>\n<body>\n<div class=\"page\">\n  <header class=\"header container\">\n    <a class=\"header__link\" href=\"/\">\n      <div class=\"header__logo\"></div>\n    </a>\n  </header>\n  <main class=\"content container\">\n    <picture>\n      <source srcset=\"https://cdn.profi.ru/profi-front-web/error-page-image/tv-1x.webp 1x, https://cdn.profi.ru/profi-front-web/error-page-image/tv-2x.webp 2x\" type=\"image/webp\">\n      <img src=\"https://cdn.profi.ru/profi-front-web/error-page-image/tv-1x.png\" srcset=\"https://cdn.profi.ru/profi-front-web/error-page-image/tv-1x.png 1x, https://cdn.profi.ru/profi-front-web/error-page-image/tv-2x.png 2x\" alt=\"Oops\" width=\"125\" height=\"152\">\n    </picture>\n    <div class=\"title\">Не смогли открыть страницу</div>\n    <div class=\"description\">\n      Возможно, у вас включён VPN. Попробуйте обновить страницу\n    </div>\n    <div class=\"button\" onclick=\"location.reload()\">Обновить</div>\n  </main>\n</div>\n\n</body></html>",
+  "text": "Не смогли открыть страницу Возможно, у вас включён VPN. Попробуйте обновить страницу Обновить",
+  "json_ld": [],
+  "document": {
+    "title": "",
+    "meta_description": "Профи.ру",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0, user-scalable=no",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 0,
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "link": 1,
+      "image": 1,
+      "list_item": 0,
+      "strong": 0,
+      "form": 0,
+      "input": 0
+    }
+  }
+}

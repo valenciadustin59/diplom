@@ -1,0 +1,59 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://www.ozon.ru/category/vhodnye-dveri-9747/review/",
+  "final_url": "https://www.ozon.ru/category/vhodnye-dveri-9747/review/?__rr=1",
+  "status_code": 403,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-encoding": "gzip",
+    "content-type": "text/html",
+    "date": "Fri, 01 May 2026 14:48:14 GMT",
+    "ozon-antibot": "1",
+    "server": "nginx",
+    "set-cookie": "abt_data=7.bm1WSiyZxnh6DIbfXoOG9bz5ebclEl94yoPNcOgQKTMZd5lJk0MoJ-CeMsKhRL0lyGDcel-zbjzvT9kuwftMr6W78YRQVqeO0-3BioEQrRtP2V5JixAiS21LavgXZl9RFJBikQSv5eTSdiaSk3hUvb9o6raon8ZVdeVMZ4NtShunbqCU0G7oX29bc0S4ne6xdwglnGbbs81AINuFxS93j2FGJUVAuUozAldckLs1GTtiIv7AW9MwtJVEms-E6FZYnU7NBr_pL0i-fT8L9gXj6nCuC7HlRZlmze9GgN4BniebFPdm9ryi8AVsB2t5wiryY5Vuc_nf98swXRYZkHMqCtz-GFkW3ddniPt8rRfuxZ9-Qr_dsEhDnEwxROpE8MlxKOdA_cLkcYYDuaCPFd9sqFPQW-5jKrMyQxPoZnGO-VV8IeX2i5wOVRfRA8DME0r0ww; expires=Sat, 01 May 2027 14:48:14 GMT; domain=ozon.ru; path=/; HttpOnly; secure; SameSite=None; Partitioned"
+  },
+  "response_time_ms": 2961.5519,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:48:16.608232+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,minimum-scale=1\"><meta name=\"robots\" content=\"noindex, nofollow\"><link rel=\"stylesheet\" href=\"https://cdn1.ozone.ru/s3/abt-complaints/static/v1/common.css\"><style>.con { overflow: auto; margin: auto; } .mc { max-width: 420px; padding: 0 16px; overflow: auto }  .bc { padding-top: 32px }  h1 { margin: 24px 0 8px 0 }  .tc { padding: 8px 0 }  ul { margin: 8px 0 8px 0; padding-left: 24px }  .h { font-size: 12px; line-height: 16px; color: rgba(0, 26, 52, .6) }  .rb { margin-bottom: 16px }  .sb { background-color: transparent; color: var(--ctrlPrimary); padding: 6px }  .sb:hover { color: var(--hoverPrimary) }  .im { margin-left: -16px; width: 144px }  @media (max-width: 375px) { .im { width: 104px }  h1 { margin-top: 20px; font-size: 20px; line-height: 24px }  .bc { padding-bottom: 50px }  .tc { color: rgba(0, 26, 52, .6) } }</style><title>Доступ ограничен</title></head><body><div class=\"con\"><div class=\"mc\"><div class=\"c\"><img class=\"im\" alt=\"warning\" src=\"https://cdn1.ozone.ru/s3/abt-complaints/static/v1/img/warn.png\"><h1>Доступ ограничен</h1><p class=\"h\">Инцидент: fab_nmk_20260501144814_01KQJ05Z52HKZWR2KV2Q7874BM</p><div class=\"tc\"><p>Чтобы решить проблему, попробуйте сделать следующее:</p><ul><li>Немного подождать и нажать на кнопку «Обновить»</li><li>Отключить VPN, если он используется</li><li>Обновить версию браузера или мобильного приложения</li><li>Подключиться к другому WI-FI или мобильной сети</li><li>Перезагрузить домашний роутер, если используется домашний WI-FI</li></ul></div><p class=\"h\">Если ничего не помогает, пожалуйста, обратитесь в службу поддержки</p></div><div class=\"bc\"><button class=\"rb\" onclick=\"reload()\">Обновить</button><a onclick=\"complain()\" rel=\"nofollow\"><button class=\"sb\" tabindex=\"-1\">Служба поддержки</button></a></div></div></div><script>let reload = function () { const url = new URL(location.href); url.searchParams.delete(\"abt_att\"); window.location.href = url.toString() };let complain=function(){var e=\"\"===\"true\",n=\"https://www.ozon.ru/complaint/support/?incident_id=fab_nmk_20260501144814_01KQJ05Z52HKZWR2KV2Q7874BM&token=1.5XN2m2ciSLiIq80g_4vK0osl61V7Amb4jH-BDadiZ7LpBp0HX6zp930u4duepRLjTz4qr2mfkuukb8ck0O8M6G4FgXL9CgXPzE7UAKJqZVSf16FU1yU97N0WsMheqTDIIB0eso7jawz_jHCktUJE64W1siVNGofixYx0QECpwJBOSjsZpOfBC4khfiHsCbTKnztLCwjq6Yw3VQVbp2JPG_BsFef1MH7MsAqHDVdcTJBhe-93lk04G9e9Nvrujjr5xNYHZcsQQWXSPEII1zsJMvkE9flJ_XxGDBCQJ_oD9IjPib40oUJPBaJ8NopycS35MqidimBuw1xp8ampbfdxpNtxyjg&via=html&platform=web&back_url=/\";e?window.open(n,\"_blank\"):location.href=n}; function p() {setTimeout(() => {const container = document.querySelector(\".mc\");if (!container) {return}window.parent.postMessage(`{ \"formHeight\": \"${container.offsetHeight + parseFloat(getComputedStyle(document.documentElement).fontSize)}\" }`, '*')}, 200);}window.addEventListener('load', p)</script>\n</body></html>",
+  "text": "Доступ ограничен Доступ ограничен Инцидент: fab_nmk_20260501144814_01KQJ05Z52HKZWR2KV2Q7874BM Чтобы решить проблему, попробуйте сделать следующее: Немного подождать и нажать на кнопку «Обновить» Отключить VPN, если он используется Обновить версию браузера или мобильного приложения Подключиться к другому WI-FI или мобильной сети Перезагрузить домашний роутер, если используется домашний WI-FI Если ничего не помогает, пожалуйста, обратитесь в службу поддержки Обновить Служба поддержки",
+  "json_ld": [],
+  "document": {
+    "title": "Доступ ограничен",
+    "meta_description": "",
+    "meta_robots": "noindex, nofollow",
+    "viewport": "width=device-width,initial-scale=1,minimum-scale=1",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "",
+        "text": "Служба поддержки",
+        "rel": "nofollow"
+      }
+    ],
+    "button_texts": [
+      "Обновить",
+      "Служба поддержки"
+    ],
+    "h1_texts": [
+      "Доступ ограничен"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 3,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 1,
+      "image": 1,
+      "list_item": 5,
+      "strong": 0,
+      "form": 0,
+      "input": 0
+    }
+  }
+}

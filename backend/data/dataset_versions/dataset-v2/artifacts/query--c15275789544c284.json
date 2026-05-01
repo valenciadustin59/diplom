@@ -1,0 +1,1058 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://spb.shkafplus.ru/",
+  "final_url": "https://spb.shkafplus.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=windows-1251",
+    "date": "Fri, 01 May 2026 15:06:01 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx",
+    "set-cookie": "dc0b8c71213ef9af0d7b7158df15cff9=c2c9e0a92f64e62d245fd4493b28aff9; expires=Fri, 01-May-2026 18:06:01 GMT; Max-Age=10800\newc_5dc0c5d534598f23a330750f2e78f31c=0_5e25e31639a3acb4f65df869a52dc731; expires=Mon, 30-Apr-2029 15:06:01 GMT; Max-Age=94608000\ndc0b8c71213ef9af0d7b7158df15cff9=c2c9e0a92f64e62d245fd4493b28aff9; expires=Fri, 01-May-2026 18:06:01 GMT; Max-Age=10800; domain=spb.shkafplus.ru",
+    "vary": "Accept-Encoding"
+  },
+  "response_time_ms": 3808.8232,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:06:04.932336+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n<meta name=\"author\" content=\"\">\n<meta name=\"audience\" content=\"All\">\n<meta name=\"allow-search\" content=\"yes\">\n<meta name=\"robots\" content=\"index,follow\">\n<link rel=\"icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n<link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n<meta name=\"viewport\" content=\"width=device-width, user-scalable=yes\">\n<meta name=\"HandheldFriendly\" content=\"true\">\n<meta name=\"apple-touch-fullscreen\" content=\"yes\">\n<meta name=\"yandex-verification\" content=\"d9510896cd8966f4\">\n<meta name=\"yandex-verification\" content=\"6c7d644d0c45f3de\">\n<meta name=\"yandex-verification\" content=\"73ef3142c7032392\">\n<meta name=\"google-site-verification\" content=\"YIZSLeJQNG6q4vngvjDBE3gBYopfrTHfol7_A8r4CEE\">\n<meta name=\"google-site-verification\" content=\"ZYKXQekIpNgIWHhzhbcqhrMYVdtMXf05CId28RntfuY\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1251\">\n<title>Шкафы-купе на заказ в Санкт-Петербурге - изготовление по индивидуальным размерам, заказать недорого от производителя</title>\n<meta name=\"Description\" content=\"Где заказать идеальный шкаф купе в Санкт-Петербурге? Мебельная фабрика Шкаф Плюс - производство шкафов на заказ! Изготовление по индивидуальным размерам, мебель которая идеально впишется в интерьер. Недорого! Цены от производителя\">\n<meta property=\"og:title\" content=\"Шкафы-купе на заказ в Санкт-Петербурге - изготовление по индивидуальным размерам, заказать недорого от производителя\">\n<meta property=\"og:type\" content=\"article\">\n<meta property=\"og:url\" content=\"https://spb.shkafplus.ru/index.php\">\n<meta property=\"og:image\" content=\"https://spb.shkafplus.ru/logo.png\">\n<meta property=\"og:description\" data-content=\"5\" content=\"Где заказать идеальный шкаф купе в Санкт-Петербурге? Мебельная фабрика Шкаф Плюс - производство шкафов на заказ! Изготовление по индивидуальным размерам, мебель которая идеально впишется в интерьер. Недорого! Цены от производителя\">\n<meta property=\"fb:admins\" content=\"\">\n\n<base href=\"https://spb.shkafplus.ru/\">\n<link rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/owl.carousel.min.css\"><link rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/owl.theme.default.min.css\"><link rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/owl.carousel.min.css\">\n<link rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/owl.theme.default.min.css\"><link rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/blueimp-gallery.min.css\"><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" src=\"https://my.zadarma.com/callbackWidget/js/main.min.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/jquery-1.11.3.min.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/tether.min.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/touch.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/bootstrap.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/bootstrap3-typeahead.js\"></script><link href=\"https://spb.shkafplus.ru/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/jquery.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/jquery.maskedinput.min.js\"></script><!--link href=\"https://spb.shkafplus.ru/css/jquery.mCustomScrollbar.css\" rel=\"stylesheet\" type=\"text/css\" /><script src=\"https://spb.shkafplus.ru/js/jquery.mCustomScrollbar.min.js\"></script--><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/jquery.mousewheel.min.js\"></script><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/bootstrap-slider.js\"></script><link href=\"https://spb.shkafplus.ru/css/bootstrap-slider.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/jquery.magnific-popup.js\"></script><link href=\"https://spb.shkafplus.ru/css/magnific-popup.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><link type=\"text/css\" rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/css_57OaJV/theme.css\"><link type=\"text/css\" rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/font-awesome.min.css\"><!--[if IE 7]><link type='text/css' rel=\"stylesheet\" href=\"https://spb.shkafplus.ru/css/font-awesome-ie7.min.css\"><![endif]--><!--[if IE]><script src=\"https://spb.shkafplus.ru/js/html5shiv.js\"></script><![endif]--><link href=\"https://spb.shkafplus.ru/css/emoji.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><link href=\"https://spb.shkafplus.ru/css/prettify.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><link href=\"https://spb.shkafplus.ru/css/datepicker.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><link href=\"https://spb.shkafplus.ru/css/jquery-ui.css\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><link href=\"//fonts.googleapis.com/css?family=Roboto+Condensed:100,400,300,700,900&amp;subset=latin,cyrillic-ext\" rel=\"stylesheet\" type=\"text/css\"><link href=\"//fonts.googleapis.com/css?family=Roboto+Condensed:100,400,300,700,900&amp;subset=latin,cyrillic-ext\" rel=\"stylesheet\" type=\"text/css\"><link href=\"https://spb.shkafplus.ru/style.php?css=7f151b8dd6863db6ab16f16e31da0796&amp;1726254391\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\"><script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/owl.carousel.min.js\"></script><script src=\"https://spb.shkafplus.ru/js/jquery.blueimp-gallery.min.js\"></script><script>$(document).ready(function() {if (document.getElementById('gallery')) {blueimp.Gallery( document.getElementById('gallery').getElementsByTagName('a'),{container: '#blueimp-gallery-carousel',carousel: true,hidePageScrollbars: false,toggleControlsOnReturn: false,toggleSlideshowOnSpace: false,enableKeyboardNavigation: true,closeOnEscape: false,closeOnSlideClick: false,closeOnSwipeUpOrDown: false,disableScroll: false,startSlideshow: true});}});</script>\n<script type=\"text/javascript\" src=\"https://my.zadarma.com/callbackWidget/js/combine.min.js?v=1.15.4\"></script></head>\n<body class=\"mbg\"><div id=\"overDiv\" style=\"position:absolute;  visibility:hidden;  z-index:999;\"></div> <div class=\"outerbox\" id=\"outerbox\"><div id=\"main_background\" class=\"carouselbox\"></div><div style=\"top:0px; margin-bottom:0px; position: relative; z-index: 0;\" class=\"cc\"></div><div id=\"mdiv0\"><div style=\"position: relative; z-index:1;\" id=\"mdiv1\"><div class=\"contentbox\" id=\"contentbox\"><div class=\"incbx\"><div class=\"navbar-inner\" style=\"vertical-align: center; color: #34353C; background-color: #F6F6F6; \" id=\"navtopper\"><div class=\"inntp\"><table class=\"intbl\"><tbody class=\"pd5\"><tr><td align=\"left\" valign=\"middle\" class=\"lfmob\" id=\"tinlogo\" style=\"white-space:nowrap;\"><a href=\"https://spb.shkafplus.ru/\" title=\"Где заказать идеальный шкаф купе в Санкт-Петербурге? Мебельная фабрика Шкаф Плюс - производство шкафов на заказ! Изготовление по индивидуальным размерам, мебель которая идеально впишется в интерьер. Недорого! Цены от производителя\" class=\"inlogo\"><span class=\"lgbig\"><img alt=\"Шкаф Плюс\" src=\"/lgor4.svg\"></span><span class=\"lgmin\"><img alt=\"Шкаф Плюс\" src=\"https://shkafplus.ru/lgw.svg\"></span></a></td><td width=\"100%\" valign=\"middle\" class=\"lfmob t0003\"><div class=\"d0003\"><div class=\"mob\" style=\"text-align: left;\">\n<div class=\"nc4 \" style=\"font-size: 24pt; line-height: 0.8;\"><strong><a href=\"tel:&lt;noindex&gt;+7(921)930-9994&lt;/noindex&gt;\"><noindex>+7(921)930-9994</noindex></a></strong></div>\n<a href=\"tel:&lt;noindex&gt;+7(921)930-9994&lt;/noindex&gt;\" class=\"ib\" style=\"color: #585858; font-size: 12pt;\"></a><a href=\"whatsapp://send?phone=+79779919929\" style=\"color: #339966; font-size: 12pt;\"><i class=\"fa fa-whatsapp green\"></i> Написать нам в WhatsApp</a><br><a href=\"https://t.me/shkafplus\" style=\"color: #0088cc; font-size: 12pt;\"><i class=\"fa fa-telegram blue\"></i> Готовые работы в Telegram </a><br><a href=\"/contacts/\" style=\"color: #000000; font-size: 12pt;\"><i class=\"fa fa-map-o\"></i> Адреса салонов<br></a><i class=\"fa fa-percent\"></i> <strong>Рассрочка 0% до 24 мес !</strong></div>\n<table class=\"table2 nomob\">\n<tbody>\n<tr>\n<td class=\"ll\" style=\"vertical-align: top;\">\n<div style=\"font-size: 22px;\"><strong><a rel=\"nofollow\" class=\"cu\" onclick=\"$('#zcwMiniButton').click()\"><i class=\"fa fa-phone-square nc4\"></i> <span></span></a><a href=\"tel:&lt;noindex&gt;+7(921)930-9994&lt;/noindex&gt;\"><noindex>+7(921)930-9994</noindex></a></strong></div>\n<div class=\"small\"><strong>работаем ежедневно </strong>07:30-22:00</div>\n</td>\n<td class=\"ll\" style=\"vertical-align: top;\">\n<div style=\"font-size: 22px;\"><span style=\"color: #e07e2c;\"><strong><span style=\"color: #ff6e00;\">0% до 24мес.</span><br></strong></span></div>\n<div class=\"lnk small\"><strong>Санкт Петербург, Коломяжский пр., 27А<br>ТЦ Вагант: Подольск,Станционная улица 11<br></strong></div>\n</td>\n<td class=\"rr\" style=\"font-size: 12px; vertical-align: top;\">\n<div class=\"ll\"><!--noindex--><a href=\"/?page=zayavka&amp;mpol=1\" class=\"btn btn-primary btn-lg iframe\">Вызвать замерщика БЕСПЛАТНО</a><!--/noindex--></div>\n</td>\n</tr>\n</tbody>\n</table>\n</div></td><td valign=\"middle\" style=\"text-align: right; overflow: hidden; vertical-align: middle;\" id=\"tinbg\"><div id=\"bigb\" class=\"cc nowrap transparent\"><a href=\"https://spb.shkafplus.ru/index.php?action=basket\" title=\"Корзина\"><i id=\"tbs\" class=\"fa fa-shopping-basket fa-2x ib cc\"></i></a><div class=\"small lnk\"><a class=\"ml tlt cu\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"\" data-original-title=\"Корзина\">В корзине: <span id=\"itemcount\">0</span></a></div></div></td></tr></tbody></table></div></div><div class=\"navbar  nnn\">\n<div class=\"navbar-inner\" style=\"white-space:nowrap;\" id=\"naviner\">\n<div class=\"container\" style=\"margin-bottom:0px;\" id=\"navbarcontainer\">\n<div class=\"nav-collapse navbar-responsive-collapse ww\"><ul class=\"nav fixedmenu_inner\" id=\"inrnav\"><li id=\"inmenu\" class=\"f1\"><a class=\"cu\"><i class=\"fa fa-reorder nc1 fa-2x\"></i><span class=\"ib ml itm\">Меню</span></a></li>\n<li class=\"f1 logomini mest9\"><a href=\"https://spb.shkafplus.ru/\" title=\"Главная\"><img alt=\"Шкаф Плюс\" src=\"https://shkafplus.ru/lgw.svg\"></a></li>\n<li class=\"dropdown noactive\" id=\"lZZQTRf\"><a href=\"mebel_na_zakaz/\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">Каталоги <i class=\"fa fa-angle-down\"></i></a><ul class=\"dropdown-menu ll\">\n<li><a href=\"/katalog_detskie_\">Детские</a></li>\n<li><a href=\"/katalog/dveri_kupe/\">Двери купе</a></li>\n<li><a href=\"/katalog/garderob/\">Гардеробные</a></li>\n<li><a href=\"/katalog_gostinyie_\">Гостиные</a></li>\n<li><a href=\"/katalog_prihojie_\">Прихожие</a></li>\n<li><a href=\"/katalog_shkafyi_\">Шкафы</a></li>\n<li><a href=\"/katalog_spalni_\">Спальни</a></li>\n<li><a href=\"/katalog/transformer/\">Трансформеры</a></li></ul></li>\n<li class=\"dropdown noactive\"><a href=\"/info/materialyi/\">Материалы</a></li>\n<li class=\"dropdown noactive\"><a href=\"kredit_i_rassrochka/\">Рассрочка</a></li>\n<li class=\"dropdown noactive\"><a href=\"3d_vizualizatziya/\">3D Проект</a></li>\n<li class=\"dropdown noactive\"><a href=\"konstruktor/\">Конструктор</a></li>\n<li class=\"dropdown noactive\"><a href=\"contacts/\">Контакты</a></li><li class=\"dropdown noactive mesoc\"><a href=\"https://vk.com/net_stressa\" class=\"soc soc-vk\"><i class=\"fa fa-vk fa-2x fa-fw\" title=\"Присоединяйтесь к нашей группе Вконтакте\"></i></a><a href=\"whatsapp://send?phone=+79779919929\" class=\"soc soc-wh\"><i class=\"fa fa-whatsapp fa-2x fa-fw\" title=\"Заходите в наш чат Whatsapp\"></i></a><a href=\"https://t.me/shkafplus\" class=\"soc soc-tg\"><i class=\"fa fa-telegram fa-2x fa-fw\" title=\"Заходите в наш чат в Telegram\"></i></a><a href=\"mailto:shkafplus@yandex.ru\" class=\"soc soc-mail\"><i class=\"fa fa-envelope fa-2x fa-fw\" title=\"Отправьте нам E-mail\"></i></a></li>\n<li class=\"f1\" id=\"regauth\"><a rel=\"nofollow\" href=\"https://spb.shkafplus.ru/index.php?sign_in=1\" title=\"Войти / Регистрация\"><i class=\"fa fa-sign-in fa-fw\"></i><span class=\"entr\"> Войти</span></a></li><li class=\"f1 lbask\" id=\"lbask\"><a id=\"bskt\" href=\"https://spb.shkafplus.ru/index.php?action=basket&amp;flag=rus\" data-original-title=\"Добавлено в корзину\" rel=\"tooltip\" data-placement=\"bottom\"><i class=\"fa fa-shopping-cart fa-fw\"></i> <b id=\"scart\">0</b><span class=\"scursign\"><noindex>руб.</noindex></span></a></li><li id=\"searchmini\"><form class=\"navbar-search blk\" method=\"get\" id=\"header_searcH_form\" name=\"header_searcH_form\" action=\"https://spb.shkafplus.ru/index.php\">\n<div id=\"accordeon_search\" class=\"mr\">\n<div class=\"right-inner-addon\" style=\"margin-top: 12px;\">\n    <i id=\"sic\" class=\"fa fa-search nvs\"></i>\n    <input value=\"\" name=\"query\" id=\"search_input\" onkeyup=\"submit_search1(event); get_search_tips(this, 'rus');\" type=\"text\" class=\"form-control\" onblur=\"$('#accordeon_search').width(oldww);\" autocomplete=\"off\" placeholder=\"Поиск по каталогу\" onfocus=\"var neww=($('#inrnav').width()-$('#regauth').width()-60); if (neww&lt;300) { neww=300; } $('#accordeon_search').width(neww); $('#search_tips').width(neww); $('#search_tips_cont').width(neww);\">\n</div>\n<input type=\"hidden\" id=\"search_usl\" value=\"AND\"><input type=\"hidden\" name=\"usl\" value=\"AND\"></div><div id=\"search_tips\" class=\"search_tips hidden\" onmouseout=\"hide_search_tips();\" onmouseover=\"show_search_tips();\"><div id=\"search_tips_cont\"></div></div>\n</form><script>var oldww=$('#accordeon_search').width();</script></li>\n<span class=\"clearfix\"></span></ul>\n</div>\n</div>\n</div>\n</div><div align=\"left\" id=\"topsubmenu\"><table style=\"width:100%;\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" bgcolor=\"#F6F6F6\" class=\"dropdown-submenu\"><tbody></tbody></table></div><div id=\"maint_tr\"><div id=\"centermenubig\" style=\"margin-right: 60px;margin-left:20px;\"><div id=\"centermenu\" style=\"padding: 20px 40px 20px 40px; width: 100%; border: 0 !important;\"><div id=\"div_content\"><div class=\"pa1\">\n<p></p><div class=\"parallax_container\" style=\"height:550px;\"><div class=\"parallax\" style=\"height:550px; background: url(/shkaf.jpg) no-repeat fixed center / cover ;\"><div class=\"ib painner\"><p></p>\n<img src=\"/shkaf.jpg\" class=\"hidden\" caption=\"false\" width=\"132\" height=\"74\">\n<div>\n<div class=\"w60 pull-left ll\">\n<div class=\"mb\"><span style=\"font-size: 30pt; line-height: 1;\"><strong>Шкафы купе на заказ в Санкт-Петербурге!</strong><br></span></div>\n<div class=\"mu\"><div id=\"iblock_owl_350_8788fbfd976593e9b5f13845f9a0e0e6\" class=\"ibnumlist\"><div class=\"inl2 mb\"><a><div class=\"cc ib pull-left nml2 itm0 mr\" style=\"background-color: #FF9336 !important;height: 64px; width: 64px; -webkit-border-radius: 100%; -moz-border-radius: 100%; padding: 12px; border-radius: 100%; color: #fff !important;\"><i class=\"fa fa-industry fa-fw\" style=\"font-size: 28px; margin-top: 6px; color: #fff !important;\"></i></div></a><div class=\"inln2 strong\">Собственное производство.</div><div class=\"inld2\">Производство любой корпусной мебели.</div><div class=\"clearfix\"></div></div><div class=\"inl2 mb\"><a><div class=\"cc ib pull-left nml2 itm0 mr\" style=\"background-color: #FF9336 !important;height: 64px; width: 64px; -webkit-border-radius: 100%; -moz-border-radius: 100%; padding: 12px; border-radius: 100%; color: #fff !important;\"><i class=\"fa fa-expand fa-fw\" style=\"font-size: 28px; margin-top: 6px; color: #fff !important;\"></i></div></a><div class=\"inln2 strong\">Бесплатный вызов и замер в Санкт-Петербурге.</div><div class=\"inld2\">Выезд на замеры с образцами и каталогами. Делаем визуализацию.</div><div class=\"clearfix\"></div></div><div class=\"inl2 mb\"><a><div class=\"cc ib pull-left nml2 itm0 mr\" style=\"background-color: #FF9336 !important;height: 64px; width: 64px; -webkit-border-radius: 100%; -moz-border-radius: 100%; padding: 12px; border-radius: 100%; color: #fff !important;\"><i class=\"fa fa-envira fa-fw\" style=\"font-size: 28px; margin-top: 6px; color: #fff !important;\"></i></div></a><div class=\"inln2 strong\">Экологично и безопасно. </div><div class=\"inld2\">МДФ и Массив. Экологичные и безопасные материалы.</div><div class=\"clearfix\"></div></div><div class=\"inl2 mb\"><a><div class=\"cc ib pull-left nml2 itm0 mr\" style=\"background-color: #FF9336 !important;height: 64px; width: 64px; -webkit-border-radius: 100%; -moz-border-radius: 100%; padding: 12px; border-radius: 100%; color: #fff !important;\"><i class=\"fa fa-truck fa-fw\" style=\"font-size: 28px; margin-top: 6px; color: #fff !important;\"></i></div></a><div class=\"inln2 strong\">Сборка в день доставки.</div><div class=\"inld2\">Доставка и сборка мебели производится в один день.</div><div class=\"clearfix\"></div></div><div class=\"clearfix\"></div></div></div>\n</div>\n<div class=\"w40 pull-right\"><noindex>\n<div class=\"well contactform\">\n<p class=\"cc\"><span style=\"font-size: 18pt;\"><strong>ОСТАВЬТЕ ЗАЯВКУ</strong></span><br>на бесплатную консультацию<strong><br></strong></p>\n<script>\n        function sndr() {\n        var errs=0;\n        \n        if ($('#ihwd').val()=='') {\n        $('#aihwd').addClass('has-error');\n        errs=1;\n        } else {\n        $('#aihwd').removeClass('has-error');\n        }\n        \n        if ($('#itelefon').val()=='') {\n        $('#aitelefon').addClass('has-error');\n        errs=1;\n        } else {\n        $('#aitelefon').removeClass('has-error');\n        }\n        if ($('#icaptcha').val()=='') {\n        $('#aicaptcha').addClass('has-error');\n        errs=1;\n        } else {\n        $('#aicaptcha').removeClass('has-error');\n        }\n        \nif (errs==0) {\n        sndo();\n        }\n        }\n        function formrefr () {\n        $(\"#icap\").attr('src','captcha/index.php?id=c2c9e0a92f64e62d245fd4493b28aff9&t='+microtime());\n        }\n        function sndo () {\n            $('#s99613c3d36fb3a68c19f70d881dc0b7f').removeClass('hidden');\n$(\"#sufo\").load( \"https://spb.shkafplus.ru/index.php\", {'speek':'rus', 'pty':'', 'action':'sendok', 'bpage':'x', 'mpol': 3, 'fio': $('#ifio').val(), 'antispam_a8664dacdce49b83510ecb04d7d0ea182': $('#icaptcha').val(), 'antispam_row8664dacdce49b83510ecb04d7d0ea182': $('#icaptcharow').val(), 'other': $('#iother').val(), 'hwd': document.getElementById('ihwd').value, 'telefon': document.getElementById('itelefon').value} , function(){\n   \t\t\t$('#s99613c3d36fb3a68c19f70d881dc0b7f').addClass('hidden');\n\n            initcuj();\n   \t\t\t});\n             \n        }\n        function cvalid(el) {\n        if (el) {\n        el.value = el.value.replace(/[^0-9\\.]/g,'');\n        if (el.value=='') {\n        $('#a'+el.id).addClass('has-error');\n        }  else {\n        $('#a'+el.id).removeClass('has-error');\n        }\n        }\n    }\n    function valid(field) {\n        if (field) {\n        if (field.value=='') {\n        $('#a'+field.id).addClass('has-error');\n        }  else {\n        $('#a'+field.id).removeClass('has-error');\n        }\n        }\n    }\n</script>\n<div id=\"s99613c3d36fb3a68c19f70d881dc0b7f\" class=\"hidden\">\n<div style=\"position: fixed; top: 50%; left: 50%;\"><i class=\"fa fa-spinner fa-3x fa-spin\"></i></div>\n</div>\n<div id=\"conform\" class=\"cc\">\n<div id=\"sufo\" class=\"ib fcnt\"><form action=\"https://spb.shkafplus.ru/index.php\" enctype=\"multipart/form-data\" method=\"post\" id=\"fform17776479612782\" class=\"form-inline form-envelope\">\n<input type=\"hidden\" name=\"action\" value=\"sendok\">\n<input type=\"hidden\" name=\"bpage\" value=\"x\">\n<input type=\"hidden\" name=\"pty\" value=\"\">\n<input type=\"hidden\" name=\"mpol\" value=\"0\">\n<input type=\"hidden\" id=\"ifio\" name=\"fio\" value=\"Гость\"><div class=\"dblk\">\n<span class=\"sblk\"><strong><font color=\"#FF8F32\">*Ширина/Высота/Глубина см:</font></strong></span>\n<span id=\"aihwd\" class=\"form-group sblk ww\"><input placeholder=\"Ширина/Высота/Глубина см\" type=\"text\" maxlength=\"100\" id=\"ihwd\" name=\"hwd\" value=\"\" class=\"form-control\" onblur=\"valid(this)\" onkeyup=\"valid(this)\" required=\"\"><div class=\"small muted\"></div></span>\n</div>\n<div class=\"dblk\">\n<span class=\"sblk\"><strong><font color=\"#FF8F32\">*Ваш телефон:</font></strong></span>\n<span id=\"aitelefon\" class=\"form-group sblk ww\"><input type=\"text\" maxlength=\"25\" id=\"itelefon\" name=\"telefon\" value=\"\" class=\"form-control\" onblur=\"valid(this)\" onkeyup=\"valid(this)\" required=\"\" placeholder=\"Ваш телефон\"><div class=\"small muted\">Просто заполните заявку ниже. Мы перезвоним в течении 30 сек</div></span>\n</div>\n\n<input type=\"hidden\" id=\"iother\" name=\"other\" value=\"-\">\n<div class=\"dblk\">\n    <span class=\"sblk\"><font class=\"nc3 strong\">*Ответьте на вопрос:</font></span>\n    <span class=\"sblk ww\">\n    <div><i>КaKoй дeHb Heдeлu слeдyeT зa BTopHuKoM?</i></div>\n    <div id=\"aicaptcha\" class=\"form-group\"><input id=\"icaptcha\" type=\"text\" name=\"antispam_a8664dacdce49b83510ecb04d7d0ea182\" class=\"form-control\" onblur=\"valid(this)\" onkeyup=\"valid(this)\" required=\"\"><input type=\"hidden\" name=\"antispam_row8664dacdce49b83510ecb04d7d0ea182\" value=\"a064a0709c131b9bdfb681a6592fddc8\" id=\"icaptcharow\"></div>\n    <div class=\"muted small\"></div>\n    </span>\n    </div>\n    <div class=\"dblk\">\n    <span class=\"sblk\">\n    <div class=\"ll\"><button type=\"button\" class=\"btn btn-primary btn-lg\" onclick=\"sndr();\"><i class=\"fa fa-envelope\"></i> Отправить</button>\n    <div class=\"confident small muted lnk mu\"><a href=\"/privacy.php\" class=\"iframe\">* сегодня получили расчет уже : 19 человек. Отправляя персональные данные Вы соглашаетесь с политикой конфиденциальности и даете согласие на обработку персональных данных</a></div>\n    </div>\n    </span>\n  </div>\n</form></div></div></div>\n</noindex></div>\n</div>\n<div class=\"clearfix\"></div>\n<p></p><div class=\"clearfix\"></div></div></div></div><p></p>\n</div>\n<h1>Шкафы купе на заказ по индивидуальным размерам</h1>\nВыбор шкафа непростое решение. Так много вариантов предлагается на рынке. Однако, когда дело доходит до максимально эффективного использования пространства. Встроенный шкаф становится несомненным фаворитом. Заказать шкаф по индивидуальным размерам - создать уникальное решение. Полностью соответствующее вашим потребностям и размерам помещения.Выбор материалов, отделки и конфигурации, сделает шкаф функциональным, и гармонично впишется в интерьер. Предлагаем шкафы на заказ по индивидуальным размерам в Санкт-Петербурге. Замер, доставка, сборка - бесплатно!&nbsp; Цена от производителя Гарантия качества.<br>\n<h2>Производство шкафов - от замера до сборки:</h2>\n✔️ Фабрика образована в 2001 году. Более 15 лет успешной работы. <br>✔️ Сейчас это современное производство площадью 1100 м2.<br>✔️ Надежная раскройная линия ЧПУ (Германия) и присадочно-фрезеровочные комплексы ЧПУ (Италия)<br>✔️ Производство мебели из экологических и безопасных материалов<br>✔️ Собственный штат сотрудников: замерщики, сборщики, водители более 30 сотрудников, <br>Мебель на заказ в срок без задержек <strong>гарантируем цену ниже на 30%</strong> чем предлагают мебельные магазины. <strong>За 20 лет</strong> работы продано <strong>более 8600 заказов</strong>, вот некоторые из них. <div class=\"mu mb\"><div id=\"links\" class=\"links mu mb\"><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/1-3.jpg\" title=\"дизайнеры\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/1-3.jpg\" alt=\"дизайнеры\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/10-2.jpg\" title=\"10-2.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/10-2.jpg\" alt=\"10-2.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/11-1.jpg\" title=\"11-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/11-1.jpg\" alt=\"11-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/12-1.jpg\" title=\"12-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/12-1.jpg\" alt=\"12-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/13-1.jpg\" title=\"13-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/13-1.jpg\" alt=\"13-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/15.jpg\" title=\"15.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/15.jpg\" alt=\"15.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/16.jpg\" title=\"16.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/16.jpg\" alt=\"16.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/17-1.jpg\" title=\"17-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/17-1.jpg\" alt=\"17-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/18-2.jpg\" title=\"18-2.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/18-2.jpg\" alt=\"18-2.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/2-1.jpg\" title=\"2-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/2-1.jpg\" alt=\"2-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/2.jpg\" title=\"2.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/2.jpg\" alt=\"2.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/3.jpeg\" title=\"3.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/3.jpeg\" alt=\"3.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/3.jpg\" title=\"3.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/3.jpg\" alt=\"3.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/4-1.jpg\" title=\"4-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/4-1.jpg\" alt=\"4-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/5-1.jpg\" title=\"5-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/5-1.jpg\" alt=\"5-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/5.jpeg\" title=\"5.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/5.jpeg\" alt=\"5.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/6-1.jpg\" title=\"6-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/6-1.jpg\" alt=\"6-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/7.jpg\" title=\"7.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/7.jpg\" alt=\"7.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/8-1.jpg\" title=\"8-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/8-1.jpg\" alt=\"8-1.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/9-2.jpg\" title=\"9-2.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/9-2.jpg\" alt=\"9-2.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/shkafplus/p1-1.jpg\" title=\"p1-1.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/shkafplus/p1-1.jpg\" alt=\"p1-1.jpg\"></a></div><div class=\"clearfix\"></div></div><div class=\"clearfix\"></div><br> <br> <div class=\"parallax_container\" style=\"height:350px;\"><div class=\"parallax\" style=\"height:350px; background: url(images/bg-1.jpg) no-repeat fixed center / cover ;\"><div class=\"ib painner\">\n<p><img src=\"images/bg-1.jpg\" class=\"hidden\" width=\"132\" height=\"74\"></p>\n<div style=\"text-align: center;\"><span style=\"font-size: 18pt;\">Запишитесь на <strong>бесплатную консультацию</strong> и узнайте <strong>9 ошибок</strong>, которые совершают <strong>95% людей</strong>, которые хотят купить шкаф.</span></div>\n<p style=\"text-align: center;\"></p><div class=\"specbt\"><a id=\"tip_956\" class=\"btn btn-lg btn-success\" href=\"#form_956\">БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ</a></div><p></p>\n<p style=\"text-align: center;\"><strong><span class=\"lnk\">Отправить заявку можно по телефону <noindex>+7(921)930-9994</noindex><br></span></strong></p>\n<p></p><div class=\"clearfix\"></div></div></div></div><br><br><span>Сделать заказ на шкаф купе - значит инвестировать в долговечность и стиль. Неудивительно, что многие предпочитают встроенные шкафы , ведь они позволяют оптимизировать пространство и добавляют изысканности любому помещению. Возможность заказать шкаф по индивидуальным размерам делает мебель доступным широкому кругу покупателей, в Санкт-Петербурге существует множество предложений от производителей, предлагающих качественные встраиваемые шкафы на заказ по привлекательным ценам. Таким образом, выбирая шкафу Нас, вы получаете не только идеально подходящую мебель, но и возможность сэкономить, не жертвуя при этом качеством и стилем.</span><br><br><p></p>\n<table style=\"width: 90%; margin-left: auto; margin-right: auto;\">\n<tbody>\n<tr>\n<td style=\"width: 50%; text-align: center;\"><a href=\"/katalog_shkafyi_\" title=\"шкафы на заказ\"><img src=\"/gallery/shkaf.jpg\" alt=\"шкафы на заказ\" width=\"90%\"></a><br><a href=\"/katalog_shkafyi_\" title=\"шкафы на каказ\"><em>шкафы</em></a><br><br></td>\n<td style=\"width: 50%; text-align: center;\"><a href=\"/katalog_detskie_\" title=\"детские на заказ\"><img src=\"/gallery/detskaya.jpg\" alt=\"детский на заказ\" caption=\"false\" width=\"90%\"></a><br><em><a href=\"/katalog_detskie_\" title=\"детские на заказ\">детские</a></em><br><br></td>\n</tr>\n<tr>\n<td style=\"width: 50%; text-align: center;\"><a href=\"/katalog_shkafyi_\" title=\"гардеробная\"><img src=\"/gallery/garderobnaya.jpg\" alt=\"гардеробные на заказ\" width=\"90%\"></a><br><a href=\"/katalog_shkafyi_\" title=\"гардеробная на заказ\"><em>гардеробные, кресла</em></a><br><br></td>\n<td style=\"width: 50%; text-align: center;\"><a href=\"/katalog_prihojie_\" title=\"прихожие \"><img src=\"/gallery/prikhozhaya.jpg\" alt=\"прихожие на заказ\" width=\"90%\"></a><br><a href=\"/katalog_prihojie_\" title=\"прихожие\"><em>прихожие</em></a><br><br></td>\n</tr>\n<tr>\n<td style=\"width: 50%; text-align: center;\"><a href=\"/katalog_gostinyie_\" title=\"гостиная\"><img src=\"/gallery/gostinaya.jpg\" alt=\"гостиные на заказ\" width=\"90%\"></a><br><em><a href=\"/katalog_gostinyie_\" title=\"гостиные\">гостиные, диваны</a></em></td>\n<td style=\"width: 50%; text-align: center;\"><a href=\"/katalog_spalni_\" title=\"мебель в спальню\"><img src=\"/gallery/spalnya.jpg\" alt=\"спальни на заказ\" width=\"90%\"></a><br><a href=\"/katalog_spalni_\" title=\"мебель в спальную\"><em>спальни, кровати в спальню</em></a><br><br></td>\n</tr>\n</tbody>\n</table>\n<br>\n<h2>Процесс заказа шкафа</h2>\nПервый шаг создания шкафа.&nbsp;Эамеры и проектирование. Этап критичен, так как от точности замеров зависит не только внешний вид, но и функциональность мебели. Где планируется установка шкафа? Приедут наши замерщики проведут все необходимые измерения. Они учтут все особенности пространства, включая ниши, выступы и уровень пола. После этого, на основе полученных размерам, будет разработан проект шкафа, который идеально впишется в интерьер и удовлетворит все потребности заказчика.<br><br>Выбор материалов и комплектующих - следующий этап, где клиенту предложат широкий ассортимент вариантов для индивидуального шкафа купе. В каталоге представлены различные виды фасадов, от классических до современных, а также многообразие отделочных материалов - от недорогих ЛДСП до эксклюзивных вариантов шпона или стекла. Можно выбрать фурнитуру и аксессуары, которые обеспечат удобство использования шкафа на долгие годы. Встроенный шкаф купе будет спроектирован так, чтобы гармонировать с общим дизайном комнаты и быть максимально функциональным.<br><br><span><br><div id=\"iblock_owl_300_04f60c50b1fcf216356920f92f9190c3\"><div class=\"item blk pd5 cc pull-left itemdiv\" style=\"height: 300px; width: 33%; overflow: hidden;\"><div class=\"cc owl-inner mb\" style=\"height: 180px; overflow: hidden;\"><a><div class=\"cc ib\" style=\"height: 180px; width: 180px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%;\"><i class=\"fa fa-calculator fa-fw\" style=\"margin-top: 45px; font-size: 90px;color: #34353C !important;\"></i></div></a></div><div><a><div class=\"owl-title cc h3 b\" style=\"line-height: 1em; margin: 0px;\">Просчёт по телефону</div><div class=\"h4 cc owl-text\" style=\"\"> До замера по телефону</div></a></div></div><div class=\"item blk pd5 cc pull-left itemdiv\" style=\"height: 300px; width: 33%; overflow: hidden;\"><div class=\"cc owl-inner mb\" style=\"height: 180px; overflow: hidden;\"><a><div class=\"cc ib\" style=\"height: 180px; width: 180px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%;\"><i class=\"fa fa-expand fa-fw\" style=\"margin-top: 45px; font-size: 90px;color: #34353C !important;\"></i></div></a></div><div><a><div class=\"owl-title cc h3 b\" style=\"line-height: 1em; margin: 0px;\">Точный замер</div><div class=\"h4 cc owl-text\" style=\"\"> Бесплатно</div></a></div></div><div class=\"item blk pd5 cc pull-left itemdiv\" style=\"height: 300px; width: 33%; overflow: hidden;\"><div class=\"cc owl-inner mb\" style=\"height: 180px; overflow: hidden;\"><a><div class=\"cc ib\" style=\"height: 180px; width: 180px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%;\"><i class=\"fa fa-codepen fa-fw\" style=\"margin-top: 45px; font-size: 90px;color: #34353C !important;\"></i></div></a></div><div><a><div class=\"owl-title cc h3 b\" style=\"line-height: 1em; margin: 0px;\">Производство заказа</div><div class=\"h4 cc owl-text\" style=\"\">Соблюдение сроков договора</div></a></div></div><div class=\"item blk pd5 cc pull-left itemdiv\" style=\"height: 300px; width: 33%; overflow: hidden;\"><div class=\"cc owl-inner mb\" style=\"height: 180px; overflow: hidden;\"><a><div class=\"cc ib\" style=\"height: 180px; width: 180px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%;\"><i class=\"fa fa-truck fa-fw\" style=\"margin-top: 45px; font-size: 90px;color: #34353C !important;\"></i></div></a></div><div><a><div class=\"owl-title cc h3 b\" style=\"line-height: 1em; margin: 0px;\">Доставка</div><div class=\"h4 cc owl-text\" style=\"\"> Бесплатно</div></a></div></div><div class=\"item blk pd5 cc pull-left itemdiv\" style=\"height: 300px; width: 33%; overflow: hidden;\"><div class=\"cc owl-inner mb\" style=\"height: 180px; overflow: hidden;\"><a><div class=\"cc ib\" style=\"height: 180px; width: 180px; -webkit-border-radius: 100%; -moz-border-radius: 100%; border-radius: 100%;\"><i class=\"fa fa-wrench fa-fw\" style=\"margin-top: 45px; font-size: 90px;color: #34353C !important;\"></i></div></a></div><div><a><div class=\"owl-title cc h3 b\" style=\"line-height: 1em; margin: 0px;\">Сборка, оплата</div><div class=\"h4 cc owl-text\" style=\"\"> до 13% от стоимости</div></a></div></div><div class=\"clearfix\"></div></div></span><br><br>Согласование дизайна и цены - всегда&nbsp; заключительный этап перед тем, как заказать шкаф купе. Заказчик встречается с дизайнером для утверждения всех деталей проекта. Вместе они просматривают:<br><br>\n<ul>\n<li>окончательные эскизы,</li>\n<li>выбранные материалы,</li>\n<li>комплектующие,</li>\n<li>расцветки и дополнительные опции.</li>\n</ul>\nПосле утверждения всех нюансов составляется окончательная смета. в Санкт-Петербурге можно найти множество предложений по изготовлению шкафов недорого по индивидуальным размерам, что делает процесс выбора еще более привлекательным. Клиент получает полную информацию о стоимости и сроках изготовления, после чего может принять окончательное решение о заказе мебели.<br><br>\n<div style=\"clear: both;\">\n<h2>Виды шкафов</h2>\nВстроенные шкафы являются популярным решением для тех, кто хочет при&nbsp;эксплуатации&nbsp; максимально эффективно использовать пространство в&nbsp;&nbsp;пределах своей комнаты. Он позволяет вписать мебель в нишу или между стенами, создавая иллюзию единства с интерьером. Могут быть выполнены по индивидуальным размерам, что идеально подходит для комнат с нестандартной планировкой. Заказать шкаф такого типа можно с различными вариантами отделки и наполнения, что позволяет создать уникальное решение для хранения.<br><br>Корпусные шкафы отличаются от встроенных тем, что являются отдельно стоящей мебелью. Предлагаем широкий выбор материалов, цветов и фурнитуры, что позволяет подобрать шкаф недорого для любого интерьера. Мы предлагаем корпусные шкафы со скидками и акциями, делая мебель доступной для широкого круга покупателей.<br><br>Угловые шкафы отличный способ использовать угловое пространство в комнатах. Шкафы на заказ по индивидуальным размерам недорого от производителя. Предлагаем в широком ассортименте, они позволяют удобно разместить вещи, используя обычно невостребованную площадь. Купить шкаф недорого от производителя можно на нашей Фабрике. Различные варианты отделки позволит гармонично вписать мебель в интерьер даже под углом или на балкон. Производство шкафа 15-20 дней. Цена от производителя и гарантия качества. Наша мебель - функциональное&nbsp; и стильное решение для современного жилища.<br>\n<p><span>&nbsp;</span></p>\n</div>\n</div><div class=\"blfp\"><div class=\"bltit lnk\"><a href=\"https://spb.shkafplus.ru/index.php?action=blog\"><h2 class=\"h2 bh2 pull-left ib\" style=\"margin-top: 0;\">Наши работы. Фотогалерея</h2></a><div class=\"pull-right ml\">\n</div><!--/noindex--><div class=\"clearfix\"></div><div id=\"fb-root\"></div>\n<!--script>(function(d, s, id) {\n  var js, fjs = d.getElementsByTagName(s)[0];\n  if (d.getElementById(id)) return;\n  js = d.createElement(s); js.id = id;\n  js.src = \"//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=\";\n  fjs.parentNode.insertBefore(js, fjs);\n}(document, 'script', 'facebook-jssdk'));</script--><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2023/01/06/2'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2023/01/06/2\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/14/5.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Шкаф купе встроенный и перегородка</h2></a>\n<div class=\"bdes txt4 muted\">Шкаф встроенный и шкаф-перегородка на заказ</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC\"><img src=\"ava.php?t=1&amp;u=%EC%E5%E1%E5%EB%FC&amp;token=8eb044ee22bee63139c8c6bb1e507f56\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC\">@мебель</a><br>\n<span class=\"muted small nowrap\">2023/01/06 <i>23:32:58</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/5.jpeg\" class=\"imb2 img-responsive\">📷 Шкаф купе встроенный и шкаф-перегородка<br>\n<p>Набор мебели на заказ</p>\n<div class=\"mu mb\"><div id=\"links\" class=\"links mu mb\"><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/1.jpeg\" title=\"1.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/1.jpeg\" alt=\"1.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/2.jpeg\" title=\"2.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/2.jpeg\" alt=\"2.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/3.jpeg\" title=\"3.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/3.jpeg\" alt=\"3.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/4.jpeg\" title=\"4.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/4.jpeg\" alt=\"4.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/5.jpeg\" title=\"5.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/5.jpeg\" alt=\"5.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/6.jpeg\" title=\"6.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/6.jpeg\" alt=\"6.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/14/7.jpeg\" title=\"7.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/14/7.jpeg\" alt=\"7.jpeg\"></a></div><div class=\"clearfix\"></div></div><div class=\"clearfix\"></div><br>Выполненный под заказ в Санкт-Петербурге по пожеланиям и предпочтениям покупателя, из качественных, надёжных материалов и прочной фурнитуры. </div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2023/01/06/2\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%E2%20%EF%F0%E8%F5%EE%E6%F3%FE\">в прихожую</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E3%E0%F0%E4%E5%F0%EE%E1%ED%E0%FF\">гардеробная</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E7%E5%F0%EA%E0%EB%E0\">зеркала</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E4%E2%E5%F0%E8\">двери</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F1%EF%E0%EB%FC%ED%FF\">спальня</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2023/01/06/1'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2023/01/06/1\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/13/2.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Гардеробная, двери купе и стеллажи</h2></a>\n<div class=\"bdes txt4 muted\">Гардеробная и двери купе  ЛДСП дуб сонома Увадрев, профиль Аристо золото матовое  </div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC\"><img src=\"ava.php?t=1&amp;u=%EC%E5%E1%E5%EB%FC&amp;token=8eb044ee22bee63139c8c6bb1e507f56\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC\">@мебель</a><br>\n<span class=\"muted small nowrap\">2023/01/06 <i>23:25:08</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/13/2.jpeg\" class=\"imb2 img-responsive\">📷 Гардеробная и двери купе в Санкт-Петербурге<br>🌿 ЛДСП дуб сонома Увадрев, профиль Аристо золото<br>💰 Стоимость</div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2023/01/06/1\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%E3%E0%F0%E4%E5%F0%EE%E1%ED%E0%FF%20%F1%E8%F1%F2%E5%EC%E0\">гардеробная система</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E4%E2%E5%F0%E8%20%EA%F3%EF%E5\">двери купе</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EE%F2%E7%FB%E2\">отзыв</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EF%E5%F1%EA%EE%F1%F2%F0%F3%E9%ED%FB%E5\">пескоструйные</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2023/01/04/2'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2023/01/04/2\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/12/4.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Корпусные тумбы для ТВ, столы письменные</h2></a>\n<div class=\"bdes txt4 muted\"> Набор корпусной мебели на заказ в Санкт-Петербурге</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC\"><img src=\"ava.php?t=1&amp;u=%EC%E5%E1%E5%EB%FC&amp;token=8eb044ee22bee63139c8c6bb1e507f56\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC\">@мебель</a><br>\n<span class=\"muted small nowrap\">2023/01/04 <i>01:46:03</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/12/4.jpeg\" class=\"imb2 img-responsive\">📷 Набор корпусной мебели<br>🌿 ЛДСП Пикар Увадрев <br>Стоимость, размеры в описании </div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2023/01/04/2\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%E2%FB%F1%EE%F2%E0\">высота</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F8%E8%F0%E8%ED%E0\">ширина</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E3%EB%F3%E1%E8%ED%E0\">глубина</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F1%F2%E2%EE%F0%F7%E0%F2%FB%E5%20%F1%F2%EE%EB%E8%EA%E8\">створчатые столики</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2023/01/04/1'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2023/01/04/1\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/11/2.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Большой шкаф купе для одежды, комод с ящиками</h2></a>\n<div class=\"bdes txt4 muted\">Шкаф купе и комод на заказ в прихожую</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\"><img src=\"ava.php?t=1&amp;u=%EA%F3%F5%ED%E8&amp;token=e974e1e673c1242d2cee6995257686f8\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\">@кухни</a><br>\n<span class=\"muted small nowrap\">2023/01/04 <i>01:30:06</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/11/2.jpeg\" class=\"imb2 img-responsive\">📷 Шкаф купе и комод в прихожую. Место специально для обуви. <br>🌿 ЛДСП Белый, профиль Аристо хром матовый<br>🔥 количество полок 12 , 3 штанги, угловой элемент<br>💰 Стоит 87.825 руб<br>📐1900/2552/600</div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2023/01/04/1\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%EF%F0%E8%F5%EE%E6%E0%FF\">прихожая</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EA%EE%EC%EE%E4%FB\">комоды</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EE%F2%E7%FB%E2%FB\">отзывы</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EF%EE%EB%EA%E8\">полки</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F1%E5%F0%F2%E8%F4%E8%EA%E0%F2%FB\">сертификаты</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2022/12/16/3'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2022/12/16/3\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/3/3.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Двери купе индивидуальный размер,с вставкой стеклом</h2></a>\n<div class=\"bdes txt4 muted\">Двери купе индивидуальный размер в Санкт-Петербурге</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\"><img src=\"ava.php?t=1&amp;u=%EA%F3%F5%ED%E8&amp;token=e974e1e673c1242d2cee6995257686f8\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\">@кухни</a><br>\n<span class=\"muted small nowrap\">2022/12/16 <i>15:25:53</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/3/3.jpeg\" class=\"imb2 img-responsive\">Выполненный под заказ в Санкт-Петербурге по пожеланиям и предпочтениям покупателя, из качественных, надёжных материалов и прочной фурнитуры. Самых разных: маленькие и узкие, черные и темные, элитные и эконом, с антресолью и без. Оставьте заявку через форму<br><div class=\"mu mb\"><div id=\"links\" class=\"links mu mb\"><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/3/1.jpeg\" title=\"1.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/3/1.jpeg\" alt=\"1.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/3/2.jpeg\" title=\"2.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/3/2.jpeg\" alt=\"2.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/3/3.jpeg\" title=\"3.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/3/3.jpeg\" alt=\"3.jpeg\"></a></div><div class=\"clearfix\"></div></div><div class=\"clearfix\"></div><br>\n<h3>Двери раздвижные индивидуальный размер - фото</h3>\n</div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2022/12/16/3\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%EF%F0%FF%EC%FB%E5%20%E4%E2%E5%F0%E8%20%EA%F3%EF%E5\">прямые двери купе</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E4%E2%E5%F0%ED%FB%E5\">дверные</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F1%F2%E5%ED%EA%E8\">стенки</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F1%F2%E0%F2%FC%E8\">статьи</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EB%E0%EA%EE%E1%E5%EB%FC\">лакобель</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2022/12/16/2'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2022/12/16/2\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/2/1.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Встроенный распашной на заказ</h2></a>\n<div class=\"bdes txt4 muted\">Встроенный распашной на заказ МДФ в Санкт-Петербурге</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\"><img src=\"ava.php?t=1&amp;u=%EA%F3%F5%ED%E8&amp;token=e974e1e673c1242d2cee6995257686f8\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\">@кухни</a><br>\n<span class=\"muted small nowrap\">2022/12/16 <i>15:15:01</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/1.jpeg\" class=\"imb2 img-responsive\">Выполненный под заказ по пожеланиям и предпочтениям покупателя, из качественных, надёжных материалов и прочной фурнитуры. С дверцами под полок и фрезеровкой <div class=\"mu mb\"><div id=\"links\" class=\"links mu mb\"><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/2/1.jpeg\" title=\"1.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/1.jpeg\" alt=\"1.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/2/2.jpeg\" title=\"2.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/2.jpeg\" alt=\"2.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/2/3.jpeg\" title=\"3.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/3.jpeg\" alt=\"3.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/2/4.jpeg\" title=\"4.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/4.jpeg\" alt=\"4.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/2/5.jpeg\" title=\"5.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/5.jpeg\" alt=\"5.jpeg\"></a><a href=\"https://spb.shkafplus.ru/gallery/0gotovie/2/6.jpeg\" title=\"6.jpeg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/2/6.jpeg\" alt=\"6.jpeg\"></a></div><div class=\"clearfix\"></div></div><div class=\"clearfix\"></div><br>\n<h3>Распашной шкаф из МДФ</h3>\n</div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2022/12/16/2\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%F0%E0%F1%EF%E0%F8%ED%EE%E9%20%F8%EA%E0%F4\">распашной шкаф</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%E8%E7%20%CC%C4%D4\">шкаф из МДФ</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%FD%EC%E0%EB%FC\">эмаль</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E7%E5%F0%EA%E0%EB%E0\">зеркала</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2022/12/16/1'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2022/12/16/1\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0gotovie/1/1.jpeg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Прихожая и шкаф-купе на заказ</h2></a>\n<div class=\"bdes txt4 muted\">Прихожая и шкаф-купе на заказ в Санкт-Петербурге</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\"><img src=\"ava.php?t=1&amp;u=%EA%F3%F5%ED%E8&amp;token=e974e1e673c1242d2cee6995257686f8\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8\">@кухни</a><br>\n<span class=\"muted small nowrap\">2022/12/16 <i>15:00:14</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0gotovie/1/1.jpeg\" class=\"imb2 img-responsive\">📷 Прихожая и шкаф-купе на заказ<br>🌿 Фасады ЛДСП Ясень анкор светлый<br>📐 шкаф-купе 1990 х 2350 х 500 <br>📐 прихожая 750 х 2350 х 350<br>💰Цена 95.000 руб</div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2022/12/16/1\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%E2%20%EF%F0%E8%F5%EE%E6%F3%FE\">шкаф в прихожую</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%EA%F3%EF%E5%20%F1%20%E7%E5%F0%EA%E0%EB%EE%EC\">шкаф купе с зеркалом</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F0%E0%F1%F7%E5%F2\">расчет</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E3%EB%E0%E2%ED%E0%FF\">главная</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2021/03/29/1'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2021/03/29/1\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0blog/14.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Встроенный шкаф с зеркалом</h2></a>\n<div class=\"bdes txt4 muted\">Вместительный встроенный шкаф с зеркалом на заказ в Санкт-Петербурге</div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7\"><img src=\"ava.php?t=1&amp;u=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7&amp;token=e1e33658cc544504812371f32a57a659\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7\">@мебель: шкаф и кухня на заказ</a><br>\n<span class=\"muted small nowrap\">2021/03/29 <i>23:32:02</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0blog/14.jpg\" class=\"imb2 img-responsive\">Вместительный, удобный, практичный, от пола до потолка, от стеночки до до стеночки, встроенный шкаф-купе с зеркалом гармонично вписался в прихожую.</div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2021/03/29/1\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%EA%F3%EF%E5%20%F1%20%E7%E5%F0%EA%E0%EB%EE%EC\">шкаф купе с зеркалом</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%E2%20%EF%F0%E8%F5%EE%E6%F3%FE%20%F1%20%EF%EE%EB%EA%E0%EC%E8\">шкаф в прихожую с полками</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div class=\"blgitm mb cu\" style=\"overflow:hidden;\" onclick=\"document.location.href='https://spb.shkafplus.ru/index.php?message=2021/01/31/1'\">\n<div class=\"mb mr\">\n<div class=\"mb blogcell\">\n<div class=\"pull-left nolnk2 w80 blogt\"><a href=\"https://spb.shkafplus.ru/index.php?message=2021/01/31/1\"><img src=\"https://spb.shkafplus.ru/images/empty.png\" class=\"blgimt\" style=\"background-image:url(https://spb.shkafplus.ru/gallery/0sale/sale.jpg); background-position: center center; background-size: cover; background-repeat: no-repeat;\"><h2 style=\"margin: 0;\">Распродажа из офиса</h2></a>\n<div class=\"bdes txt4 muted\">Мы закрываем одну из розничных точек, поэтому готовы предложить Вам качественную мебель с хорошей скидкой. </div>\n</div>\n<div class=\"pull-right mu bloga\" align=\"right\"><a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7\"><img src=\"ava.php?t=1&amp;u=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7&amp;token=e1e33658cc544504812371f32a57a659\" class=\"mavatar pull-right ml\"></a>\n<div class=\"pull-right\"> <a href=\"https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7\">@мебель: шкаф и кухня на заказ</a><br>\n<span class=\"muted small nowrap\">2021/01/31 <i>17:48:41</i></span></div>\n</div>\n<div class=\"clearfix\"></div><div class=\"blogitm\"><img src=\"https://spb.shkafplus.ru/gallery/0sale/sale.jpg\" class=\"imb2 img-responsive\">Внимание тотальная распродажа мебели! Мы закрываем одну из розничных точек в Москве, поэтому готовы предложить Вам качественную мебель с хорошей скидкой. Скидка 50% от цены 2020 года. Успейте купить, все в отлчином состоянии. Офис,&nbsp;карта и адрес на сайте.&nbsp;Категории товаров включают: тумбы в спальные, модульные уголки, книжные, стулья в кабинет, подвесные вешалки, мягкая тумба с подъемным механизмом. </div><div class=\"clearfix\"></div></div><div class=\"blgbtm\"><div class=\"mu mb\"><a class=\"btn btn-primary btn-lg\" href=\"https://spb.shkafplus.ru/index.php?message=2021/01/31/1\">ПОДРОБНЕЕ &gt;&gt;</a></div><span class=\"blog-tags lnk\"><a href=\"https://spb.shkafplus.ru/index.php?tag=%F0%E0%F1%EF%F0%EE%E4%E0%E6%E0\">распродажа</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%F1%EA%E8%E4%EA%E0\">скидка</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EA%F3%F5%EE%ED%ED%FB%E5%20%F2%EE%E2%E0%F0%FB\">кухонные товары</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%EA%F0%EE%E2%E0%F2%E8\">кровати</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E8%ED%F2%E5%F0%ED%E5%F2\">интернет</a><a href=\"https://spb.shkafplus.ru/index.php?tag=%E2%E5%ED%E3%E5\">венге</a></span>\n<div class=\"clearfix\"></div></div>\n</div></div><div align=\"center\" class=\"mb\"><a href=\"https://spb.shkafplus.ru/index.php?action=blog&amp;start=9&amp;tag=\" class=\"mr btn btn-primary btn-lg\"><i class=\"fa fa-chevron-left\"></i> Предыдущие</a> </div></div><div class=\"clearfix\"></div></div><div class=\"divs0\"><div class=\"x0002\"><!--start x0002--><h2>Преимущества шкафов купе на заказ</h2>\nИндивидуальный дизайн и функциональность становятся ключевыми факторами. Позволяя создать уникальное изделие, которое идеально впишется в интерьер и будет отвечать всем требованиям заказчика. Возможность выбрать конкретные размеры, стиль (лофт, классик), цвет (орех, венге)&nbsp; и комплектующие делает эксклюзивным мебель. Кроме того, функциональность может быть максимально адаптирована под хранение конкретных вещей, будь то гардероб,&nbsp;стенки, книги,&nbsp;постирочные или бытовая техника.<br><br><span style=\"font-size: 18pt;\">Лучшие условия:</span><br>\n<ul>\n<li>Производим -&nbsp;изготавливаем от 5 рабочих дней.</li>\n<li>Использование высококачественной гарнитуры, импортные материалы .</li>\n<li>Оформления фасадов с вставками: глянцевые стекла, кожа, матирование, фотопечать с рисунком, витражи со стеклом.</li>\n<li>Индивидуальный подход к каждому партнёру.</li>\n<li>Современное высокотехнологичное оборудование.</li>\n<li>Постоянное расширение ассортимента предлагаемой продукции.</li>\n<li>Фабрика гарантируем качество товара.</li>\n</ul>\nОптимальное использование пространства - существенное преимущество. Эффективно использовать каждый сантиметр помещения, даже если речь идет о нестандартных или ограниченных пространствах, такое&nbsp;место как мансарды или ниши. Благодаря точному замеру и проектированию по индивидуальным размерам, можно добиться максимальной вместительности и удобства использования, не теряя при этом на функциональности.<br><br>Выбор материалов и фурнитуры - важный этап. Клиенты могут выбрать из широкого ассортимента материалов, позволяя контролировать как внешний вид и стоимость готового изделия. У Нас можно выбрать шкафы из бюджетных вариантов с пленкой ЛДСП или более дорогие и экологически чистые материалы, такие как натуральное дерево. Фурнитура также играет не последнюю роль, ведь от качества ручек, направляющих и замков зависит долговечность и удобство использования шкафа.<br><br>Встроенные шкафы практичное и экономически выгодное решение для квартиры. Наша специалисты предлагают недорого изготовление шкафов. Менеджеры подберут материалы и&nbsp;помогут выберать комплектующие. Получите идеально подходящий по стилю и функциональности шкаф, не переплачивая за ненужные опции или стандартные решения, не подходящие под конкретные размеры и потребности.<br><br>\n<h2>Сроки изготовления и установки шкафов купе</h2>\nСтандартные сроки выполнения варьируются в зависимости от множества факторов, включая сложность дизайна и загруженность производства. Время потребуется от двух до четырех недель с момента утверждения проекта до начала монтажных работ. Шкаф купе встроенный на заказ требует более тщательного подхода к изготовлению, так как должен идеально вписаться в отведенное пространство. При этом, если вы решили заказать шкаф по своим размерам, уточняйте у производителя возможные даты начала и окончания работ.<br><br><br><span></span>\n<p><span style=\"font-size: 18pt;\">Наше <strong>производство:</strong></span></p>\n<div class=\"mu mb\"><div id=\"links\" class=\"links mu mb\"><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170123.jpg\" title=\"IMG_20190304_170123.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170123.jpg\" alt=\"IMG_20190304_170123.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170126.jpg\" title=\"IMG_20190304_170126.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170126.jpg\" alt=\"IMG_20190304_170126.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170130.jpg\" title=\"IMG_20190304_170130.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170130.jpg\" alt=\"IMG_20190304_170130.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170134.jpg\" title=\"IMG_20190304_170134.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170134.jpg\" alt=\"IMG_20190304_170134.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170146.jpg\" title=\"IMG_20190304_170146.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170146.jpg\" alt=\"IMG_20190304_170146.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170159.jpg\" title=\"IMG_20190304_170159.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170159.jpg\" alt=\"IMG_20190304_170159.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170203.jpg\" title=\"IMG_20190304_170203.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170203.jpg\" alt=\"IMG_20190304_170203.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170231.jpg\" title=\"IMG_20190304_170231.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170231.jpg\" alt=\"IMG_20190304_170231.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170240.jpg\" title=\"IMG_20190304_170240.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170240.jpg\" alt=\"IMG_20190304_170240.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170247.jpg\" title=\"IMG_20190304_170247.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170247.jpg\" alt=\"IMG_20190304_170247.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170307.jpg\" title=\"IMG_20190304_170307.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170307.jpg\" alt=\"IMG_20190304_170307.jpg\"></a><a href=\"https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170315.jpg\" title=\"IMG_20190304_170315.jpg\" data-gallery=\"\"><img src=\"https://spb.shkafplus.ru/gallery/proizv/thumbnail/IMG_20190304_170315.jpg\" alt=\"IMG_20190304_170315.jpg\"></a></div><div class=\"clearfix\"></div></div><div class=\"clearfix\"></div><br><br>Срочное изготовление шкафов купе может потребоваться в случае, если клиенту необходимо получить мебель в кратчайшие сроки. Такие услуги обычно предлагаются за дополнительную плату, и сроки могут быть сокращены до одной-двух недель. Шкафы купе от производителя часто имеют опцию экспресс-изготовления, позволяющую клиентам купить шкаф купе, не жертвуя качеством, но при этом получить его значительно быстрее стандартного срока.<br><br>Что касается условий и гарантий на монтажные работы, то при заказе шкафа купе важно убедиться, что производитель предоставляет гарантию на установку. Качественные шкафы должны сопровождаться гарантийным обслуживанием, которое может включать бесплатное устранение возможных дефектов, возникших по вине производителя. Шкаф купе недорого по индивидуальным размерам также должен соответствовать всем стандартам качества, поэтому не стесняйтесь спрашивать о гарантийных обязательствах до совершения заказа.<span></span><br><br><span></span>\n<div style=\"clear: both;\">\n<p><span>&nbsp;</span></p>\n</div>\n<div class=\"offer2\">\n<p style=\"text-align: center;\"><span style=\"font-size: 18pt;\">Замер, доставка в Санкт-Петербурге&nbsp; и области, подъем бесплатно</span></p>\n<h4>Рассчитать и задать вопросы:<strong> </strong> время с 08 до 22</h4>\n<div class=\"specbt\"><a id=\"tip_958\" class=\"btn btn-lg btn-success\" href=\"#form_958\">ВЫЗВАТЬ МАСТЕРА</a></div></div>\n<br><br>\n<h2>Стоимость шкафов купе на заказ</h2>\nФакторы, влияющие на цену шкафов, многообразны и включают в себя материалы, размеры, дизайн и внутреннее наполнение. Чем качественнее материал и сложнее конструкция, тем выше будет стоимость. Например, шкаф купе на заказ по индивидуальным размерам может стоить дороже, чем стандартные модели из-за необходимости адаптации проекта под конкретные параметры помещения. Кроме того, дополнительные опции, такие как зеркальные фасады, металлические штанги, LED-подсветка и&nbsp;другие специализированные аксессуары для хранения, также увеличивают итоговую цену.<br><br><strong>Чтобы сэкономить на покупке шкафа купе без потери качества, можно рассмотреть следующие варианты:<br></strong> <br>\n<ol>\n<li>Выбрать более доступные материалы для фасадов и внутренних элементов, не уступающие по прочности и внешнему виду.</li>\n<li>Отказаться от сложных дизайнерских решений и ограничиться стандартными модулями.</li>\n<li>Использовать акции и скидки, которые часто предлагают мебельные компании.</li>\n</ol>\nЦена на шкафы от производителя ШкафПлюс дешевле, чем в розничных магазинах, поскольку исключается наценка посредников.<br><br>\n<p><span style=\"font-size: 18pt;\">Заключение</span></p>\nВ итоге, заказать шкаф купе на индивидуальные размеры на нашей фабрике - оптимальное решение для тех, кто стремится максимально эффективно использовать пространство своего жилища. Встроенные шкафы купе на заказ в Санкт-Петербурге позволяют создать уникальное хранилище, полностью соответствующее&nbsp; потребностям и стилю интерьера. Благодаря возможности заказать шкаф по своим размерам, можно не только экономически, но и эстетически оптимизировать пространство. Шкаф купе на заказ недорого по индивидуальным размерам - выгодное вложение в комфорт и порядок вашего дома.<br><br>\n<div class=\"nomob\"><br>Производством мебели включает в себя разработку оригинального макета, в котором будут отражены все ваши пожелания. Реализация заданий отличается высокой оперативностью, дополняемой лояльными ценами и гарантиями производителя. У нас вы сможете заказать практически любую корпусную мебель!</div>\n<!--end x0002--></div><div><div class=\"content\"><div class=\"hidden\" id=\"vipsk\">5%</div>\n<div class=\"clearfix\"></div>\n</div>\n</div></div></div></div><div class=\"hidden\" id=\"clockdiv\"><a class=\"cu\"><span id=\"clock\" style=\"font-size: 80%;\"><span>01 мая 2026</span><span id=\"clock_h\" class=\"hidden\">18</span><span class=\"hidden\">:</span><span id=\"clock_m\" class=\"hidden\">06</span></span></a><input type=\"hidden\" id=\"viewmessage\" value=\"\"></div><!--HTML CODE PLACE HERE--><!-- Insert counters below -->\n</div><!-- end3 --><div class=\"clearfix\"></div>\n<div id=\"maint_bottom\"><div id=\"tx0011\"></div></div><!-- end9 --><div class=\"clearfix\"></div></div><!-- end6 --></div></div><!-- end11  --><div class=\"dbl\"><div class=\"bottom_links\"><div class=\"scewcont\"><div class=\"scewbg\"></div></div><div id=\"bottom_links_inner\" class=\"cc\"><div style=\"width:100%; position: relative;\"><div><div class=\"empty_iblock\" style=\"width: 100%; height: 100px;\">Menu</div><div class=\"pull-right mr conta\" align=\"left\" style=\"text-align: left; margin:20px;\">\n<div class=\"footer-contacts\">\n<div class=\"tel pull-right rr\">\n<div class=\"telf\"></div>\n<div class=\"cbck mb lnk\"><a data-toggle=\"modal\" data-target=\"#myRing\" href=\"#ring\">Заказать обратный звонок</a></div>\n<div class=\"hidden scic\"><a href=\"https://vk.com/net_stressa\" class=\"soc2\"><i style=\"color: #4f75a2\" class=\"fa fa-vk fa-fw\" title=\"Присоединяйтесь к нашей группе Вконтакте\"></i></a><a href=\"whatsapp://send?phone=+79779919929\" class=\"soc2\"><i style=\"color: #d34836\" class=\"fa fa-google-plus-square fa-fw\" title=\"Заходите в наш чат Whatsapp\"></i></a></div>\n<div class=\"adre\"></div>\n<div class=\"adre zpoz mu\">с 07 до 23</div>\n<div class=\"hidden mwrp\"><a href=\"https://shkafplus.ru/index.php?action=sendmail\" class=\"mailus\">Связаться</a></div>\n</div>\n<div class=\"clearfix\"></div>\n</div>\n</div>\n<div class=\"clearfix\"></div>\n</div>\n<div class=\"clearfix\"></div>\n<div class=\"clearfix\"></div></div></div></div></div><!-- end10 --><div class=\"dbl\"><div class=\"minusmargin cc\"><div class=\"footer\"><div id=\"footer_inner\"><div class=\"mr ml ftr\"><noindex><div class=\"pull-left nolnk small\" id=\"btm_cp\"><span id=\"btm_copy\">©2026 - Шкаф Плюс. Все права защищены.</span> </div><div class=\"pull-right\" id=\"soc_icons\"><a href=\"https://vk.com/net_stressa\" class=\"soc soc-vk\"><i class=\"fa fa-vk fa-2x fa-fw\" title=\"Присоединяйтесь к нашей группе Вконтакте\"></i></a><a href=\"whatsapp://send?phone=+79779919929\" class=\"soc soc-wh\"><i class=\"fa fa-whatsapp fa-2x fa-fw\" title=\"Заходите в наш чат Whatsapp\"></i></a><a href=\"https://t.me/shkafplus\" class=\"soc soc-tg\"><i class=\"fa fa-telegram fa-2x fa-fw\" title=\"Заходите в наш чат в Telegram\"></i></a><a href=\"mailto:shkafplus@yandex.ru\" class=\"soc soc-mail\"><i class=\"fa fa-envelope fa-2x fa-fw\" title=\"Отправьте нам E-mail\"></i></a><div class=\"clearfix\"></div></div></noindex><div class=\"clearfix\"></div><div class=\"nolnk cc codiv\"><div style=\"text-align: center;\"><a href=\"/katalog_detskie_\">детская </a>| <a href=\"/katalog_gostinyie_\">в гостиную</a> | <a href=\"/katalog_prihojie_\">прихожие </a>| <a href=\"/katalog_shkafyi_\">шкафы </a>| <a href=\"/katalog_spalni_\">cпальни </a> <br> <a href=\"/privacy.php\">Политика конфиденциальности. Публичная оферта</a>\n\n<script type=\"text/javascript\">\nvar ZCallbackWidgetLinkId  = '9b50b03444773b0fbebd9ab550c457fa';\nvar ZCallbackWidgetDomain  = 'my.zadarma.com';\n(function(){\n    var lt = document.createElement('script');\n    lt.type ='text/javascript';\n    lt.charset = 'utf-8';\n    lt.async = true;\n    lt.src = 'https://' + ZCallbackWidgetDomain + '/callbackWidget/js/main.min.js';\n    var sc = document.getElementsByTagName('script')[0];\n    if (sc) sc.parentNode.insertBefore(lt, sc);\n    else document.documentElement.firstChild.appendChild(lt);\n})();\n</script>\n\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function(m,e,t,r,i,k,a){\n        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n        m[i].l=1*new Date();\n        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\n        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)\n    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');\n\n    ym(95318969, 'init', {webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/95318969\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter --></div></div></div></div></div></div></div><noindex><div id=\"form_956\" class=\"mfp-hide white-popup-block mfp-with-anim\"><form method=\"post\" action=\"\" id=\"frm_956\"><input type=\"hidden\" name=\"tith\" value=\"БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ\"><input type=\"hidden\" name=\"fcf\" value=\"956\"><input type=\"hidden\" name=\"mtime\" value=\"1777647961\"><input type=\"hidden\" name=\"spec\" value=\"dfbc715c6164dd6f94a8db1dc8ebcdad\"><input type=\"hidden\" name=\"token\" value=\"7f39f045b2c3ec4e6faa7af845938449\"><input type=\"hidden\" name=\"page\" value=\"x0001\"><table cellpadding=\"5\" border=\"0\" width=\"100%\" class=\"table2\"><tbody><tr><td style=\"white-space:nowrap;\"><label for=\"name_956\">Ваше имя: </label></td><td class=\"ww\"><input id=\"name_956\" name=\"name\" size=\"30\" value=\"\" class=\"form-control\" type=\"text\" required=\"\"></td></tr><tr><td style=\"white-space:nowrap;\"><label for=\"tel_956\">Ваш телефон: </label></td><td class=\"ww\"><input id=\"tel_956\" name=\"tel\" size=\"30\" value=\"\" class=\"form-control\" type=\"text\" placeholder=\"Оставьте ваш телефон и мы Вам перезвоним\" required=\"\"></td></tr><tr><td colspan=\"2\" align=\"center\" class=\"specbt\"><input class=\"btn btn-primary btn-lg\" value=\"БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ\" type=\"submit\"></td></tr><tr><td colspan=\"2\" align=\"center\"></td></tr></tbody></table></form><div id=\"response_956\" class=\"hidden\"></div></div></noindex><noindex><div id=\"form_958\" class=\"mfp-hide white-popup-block mfp-with-anim\"><form method=\"post\" action=\"\" id=\"frm_958\"><input type=\"hidden\" name=\"tith\" value=\"ВЫЗВАТЬ МАСТЕРА\"><input type=\"hidden\" name=\"fcf\" value=\"958\"><input type=\"hidden\" name=\"mtime\" value=\"1777647961\"><input type=\"hidden\" name=\"spec\" value=\"7e50b45a804101031697541cfe9d0ebd\"><input type=\"hidden\" name=\"token\" value=\"34b5deaaee0da49219e8263506950337\"><input type=\"hidden\" name=\"page\" value=\"x0002\"><table cellpadding=\"5\" border=\"0\" width=\"100%\" class=\"table2\"><tbody><tr><td style=\"white-space:nowrap;\"><label for=\"name_958\">Ваше имя: </label></td><td class=\"ww\"><input id=\"name_958\" name=\"name\" size=\"30\" value=\"\" class=\"form-control\" type=\"text\" required=\"\"></td></tr><tr><td style=\"white-space:nowrap;\"><label for=\"tel_958\">Ваш телефон: </label></td><td class=\"ww\"><input id=\"tel_958\" name=\"tel\" size=\"30\" value=\"\" class=\"form-control\" type=\"text\" placeholder=\"Оставьте ваш телефон и мы Вам перезвоним\" required=\"\"></td></tr><tr><td colspan=\"2\" align=\"center\" class=\"specbt\"><input class=\"btn btn-primary btn-lg\" value=\"ВЫЗВАТЬ МАСТЕРА\" type=\"submit\"></td></tr><tr><td colspan=\"2\" align=\"center\"></td></tr></tbody></table></form><div id=\"response_958\" class=\"hidden\"></div></div></noindex><script src=\"https://spb.shkafplus.ru/js/chart.js\"></script><!-- The blueimp Gallery widget -->\n<div id=\"blueimp-gallery\" class=\"blueimp-gallery blueimp-gallery-controls\">\n<div class=\"slides\"></div>\n<h3 class=\"title\">Title</h3>\n<a class=\"prev\">‹</a>\n<a class=\"next\">›</a>\n<a class=\"close\">×</a>\n<a class=\"play-pause\"></a>\n<ol class=\"indicator\"></ol>\n</div>\n<script>\nvar oldr='';\nvar editmode=0;\nvar ses='c2c9e0a92f64e62d245fd4493b28aff9';\nvar dopget='';var q=1777647961;var cur='';var sub='';var td = new Date();var now=parseInt(td.getTime());\nfunction microtime() {var d=new Date();var s=parseInt(d.getTime());\nreturn Math.round(1777647961+s-now);\n\n}\n\nfunction curlink() {\n$('.url_d41d8cd98f00b204e9800998ecf8427e').addClass('active');\n}\nfunction blink(){\n$('.blinked').delay(100).fadeTo(100,0.5).delay(100).fadeTo(100,1, blink);\n}\nfunction nextfr(jscatid) {\ndocument.getElementById(\"ciblock\"+jscatid).style.left='-920px';\nsetTimeout(function() {\nvar j=document.getElementById('jsmax'+jscatid);\nvar s=document.getElementById('jscatid'+jscatid);\nj.value=(1+Math.round(j.value));\nscriptNode = document.createElement('script');\nscriptNode.src = 'https://spb.shkafplus.ru/js.php?session='+ses+'&noname=0&mpol=0&sta='+j.value+'&catid='+s.value+$('#dope'+jscatid).val()+'&speek=rus&wu=&wtk=';\nscriptNode.type = 'text/javascript';\ndocument.getElementsByTagName('head')[0].appendChild(scriptNode);\n},500);\n}\nfunction prevfr(jscatid) {\nvar j=document.getElementById('jsmax'+jscatid);\nvar s=document.getElementById('jscatid'+jscatid);\nif (Math.round(j.value)>=1) {\ndocument.getElementById(\"ciblock\"+jscatid).style.left='0px';\nif (document.getElementById(\"prevlev\"+jscatid)) {\ndocument.getElementById(\"prevlev\"+jscatid).className=\"cblock\";\n}\nsetTimeout(function() {\nj.value=(Math.round(j.value)-1);\nif (j.value<0) { j.value=0; }\nscriptNode = document.createElement('script');\nscriptNode.src = 'https://spb.shkafplus.ru/js.php?session='+ses+'&noname=0&mpol=0&sta='+j.value+'&catid='+s.value+$('#dope'+jscatid).val()+'&speek=rus&unifid=&wu=&wtk=';\nscriptNode.type = 'text/javascript';\ndocument.getElementsByTagName('head')[0].appendChild(scriptNode);\n},500);\n}\n}\n\nfunction mousewl(jscatid) {\n\n$('#jsphp'+jscatid).bind('mousewheel', function(event, delta) {\nvar dir = delta > 0 ? 'Up' : 'Down',\nvel = Math.abs(delta);\nif (dir=='Up') {\nvar j=document.getElementById('jsmax'+jscatid);\nvar s=document.getElementById('jscatid'+jscatid);\nif (Math.round(j.value)>=1) {\nj.value=(Math.round(j.value)-1);\nscriptNode = document.createElement('script');\nscriptNode.src = 'https://spb.shkafplus.ru/js.php?session='+ses+'&noname=0&mpol=0&sta='+j.value+'&catid='+s.value+$('#dope'+jscatid).val()+'&speek=rus&unifid=&wu=&wtk=';\nscriptNode.type = 'text/javascript';\ndocument.getElementsByTagName('head')[0].appendChild(scriptNode);\n}\n}\n\nif (dir=='Down') {\nvar j=document.getElementById('jsmax'+jscatid);\nvar s=document.getElementById('jscatid'+jscatid);\nif ($('#nextb'+jscatid)){\n\nif ($('#nextb'+jscatid).className!='fa fa-chevron-right transparent') {\nj.value=(1+Math.round(j.value));\nscriptNode = document.createElement('script');\nscriptNode.src = 'https://spb.shkafplus.ru/js.php?session='+ses+'&mpol=0&noname=0&sta='+j.value+'&catid='+s.value+$('#dope'+jscatid).val()+'&speek=rus&unifid=&wu=&wtk=';\nscriptNode.type = 'text/javascript';\ndocument.getElementsByTagName('head')[0].appendChild(scriptNode);\n}\n}\n}\n\nreturn false;\n});\n\n$('#jsphp'+jscatid).swiperight(function() {\nvar j=document.getElementById('jsmax'+jscatid);\nvar s=document.getElementById('jscatid'+jscatid);\nif (Math.round(j.value)>=1) {\nif (Math.round(j.value)>=4) {\nj.value=(Math.round(j.value)-4);\n} else {\nj.value=(Math.round(j.value)-1);\n}\ndocument.getElementById(\"ciblock\"+jscatid).style.left='1380px';\nif (document.getElementById(\"prevlev\"+jscatid)) { document.getElementById(\"prevlev\"+jscatid).className=\"cblock\"; }\nsetTimeout(function() {\nscriptNode = document.createElement('script');\nscriptNode.src = 'https://spb.shkafplus.ru/js.php?session='+ses+'&mpol=0&noname=0&sta='+j.value+'&catid='+s.value+$('#dope'+jscatid).val()+'&speek=rus&unifid=&wu=&wtk=';\nscriptNode.type = 'text/javascript';\ndocument.getElementsByTagName('head')[0].appendChild(scriptNode);\n},500);\n}\n});\n$('#jsphp'+jscatid).swipeleft(function() {\nvar j=document.getElementById('jsmax'+jscatid);\nvar s=document.getElementById('jscatid'+jscatid);\nif ($('#nextb'+jscatid)){\n\nif ($('#nextb'+jscatid).className!='fa fa-chevron-right transparent') {\nj.value=(4+Math.round(j.value));\ndocument.getElementById(\"ciblock\"+jscatid).style.left='-2300px';\nsetTimeout(function() {\nscriptNode = document.createElement('script');\nscriptNode.src = 'https://spb.shkafplus.ru/js.php?session='+ses+'&mpol=0&noname=0&sta='+j.value+'&catid='+s.value+$('#dope'+jscatid).val()+'&speek=rus&unifid=&wu=&wtk=';\nscriptNode.type = 'text/javascript';\ndocument.getElementsByTagName('head')[0].appendChild(scriptNode);\n},500);\n}\n}\n});\n}\n</script>\n<script type=\"text/javascript\" src=\"https://spb.shkafplus.ru/js/cache/f4901546bcffb95a06e23d5bf15bce7a.js?1726254391\"></script>\n<script>\nvar cursig='руб.';\n\n$(document).ready(function() {\n$('.navbar ul.nav li.dropdown').on('mouseover',function() {\n$(this).click();\n$(this).addClass('open');\n});\n$('.navbar ul.nav li.dropdown').on('mouseout',function() {\n$(this).click();\n$(this).removeClass('open');\n\n});\n$('.navbar ul.nav li.dropdown').on('click',function() {\n$(this).toggleClass('open');\n});\n$('.yacm').on('click', function (event) {\n$(this).toggleClass('collapsed');\n$(this).toggleClass('in');\nevent.preventDefault();\nevent.stopPropagation();\nvar ob=$(this).attr('href');\n/*$(ob).toggleClass('collapse');*/\n$(ob).toggleClass('in');\n});\n/*\n$('.btp').mCustomScrollbar({theme:\"dark2\",\n            scrollInertia: 0,\n            autoDraggerLength: true,\n            advanced: {\n            \tnormalizeMouseWheelDelta: true,\n                updateOnContentResize: true,\n                updateOnBrowserResize: true\n                },\n            scrollButtons: {enable: false}\n\t\t  });\n*/\n\ninitcuj();\n$(\"#tel_mod\").mask(\"+7(999)999-99-99\");\n$('#tip_mod').magnificPopup({\n\t\tremovalDelay: 50,\n\t\ttype: 'inline',\n\t\tpreloader: false,\n\t\tfocus: '#name_mod',\n\t\tmainClass: 'mfp-zoom-in',\n\t\tcallbacks: {\n\t\t\tclose: function() {\n\t\t\t\t$(\"#frm_mod\").attr(\"class\",\"\");\n\t\t\t\t$(\"#response_mod\").attr(\"class\", \"hidden\");\n    \t\t\t},\n\t\t\tbeforeOpen: function() {\n\t\t\t\tif($(window).width() < 700) {\n\t\t\t\t\tthis.st.focus = false;\n\t\t\t\t} else {\n\t\t\t\t\tthis.st.focus = '#name_mod';\n\t\t\t\t}\n\t\t\t}\n\t\t}\n});\n$(\"#frm_mod\").bind(\"submit\", function() { $(\"#frm_mod\").attr(\"class\",\"hidden\"); $(\"#response_mod\").attr(\"class\",\"\"); $(\"#response_mod\").html(\"<div class='cc muted'><i class='fa fa-spinner fa-spin  fa-3x'></i></div>\"); $.ajax({ type:\"GET\", cache:false, url:\"https://spb.shkafplus.ru/callme.php\", data:$(this).serializeArray(), success: function(data) { $(\"#response_mod\").html(data); } }); return false; });\n\nvar muop=0;\n$('#inmenu a').click(function () {\nif (muop==0) {\n$('.fixedmenu_inner').find('li:not(\"#lbask\")').find('a').addClass('nohidden');\n$('.fixedmenu_inner').find('li:not(\"#lbask\")').find('a').removeClass('hiddenmo');\nmuop=1;\n} else {\n$('.fixedmenu_inner').find('li:not(\"#lbask\")').find('a').addClass('hiddenmo');\n$('.fixedmenu_inner').find('li:not(\"#lbask\")').find('a').removeClass('nohidden');\nmuop=0;\n}\n});\n\n    $('ul.dropdown-menu-left [data-toggle=dropdown]').on('click', function (event) {\n        event.preventDefault();\n        event.stopPropagation();\n        $('ul.dropdown-menu [data-toggle=dropdown]').parent().removeClass('open');\n        $(this).parent().addClass('open');\n        var menu = $(this).parent().find(\"ul\");\n        var elem=$(this).parent();\n        menu.removeClass('hidden');\n        menu.css({left: ($(this).width()+10), marginTop: -elem.height()});\n    });\n    $('ul.dropdown-menu-right [data-toggle=dropdown]').on('click', function (event) {\n        event.preventDefault();\n        event.stopPropagation();\n        $('ul.dropdown-menu [data-toggle=dropdown]').parent().removeClass('open');\n        $(this).parent().addClass('open');\n        var menu = $(this).parent().find(\"ul\");\n        var elem=$(this).parent();\n        menu.removeClass('hidden');\n        menu.css({left: -menu.width(), marginTop: -elem.height()\n        });\n    });\n\n$(\"#sic\").click(function() { $('#search_input').val(''); $(\"#search_input\").focus(); $(\"#search_tips\").addClass(\"hidden\"); $(\"#search_input\").keyup(); });\n$(\"#search_input\").focus(function() {\n$(\"#sic\").addClass(\"sblack\");\n$(\"#sic\").addClass(\"fa-close\");\n$(\"#sic\").addClass(\"cu\");\n$(\"#sic\").removeClass(\"fa-search\");\n});\n$(\"#search_input\").blur(function() {\n$(\"#sic\").removeClass(\"sblack\");\n$(\"#sic\").removeClass(\"cu\");\n$(\"#sic\").removeClass(\"fa-close\");\n$(\"#sic\").addClass(\"fa-search\");\n});\n$(\"#search_input\").focusout(function() {\n$(\"#sic\").removeClass(\"sblack\");\n$(\"#sic\").removeClass(\"cu\");\n$(\"#sic\").removeClass(\"fa-close\");\n$(\"#sic\").addClass(\"fa-search\");\n});\n\n$(\"#search_input\").keyup(function() {\nif($(\"#search_input\").val()==\"\") {\n$(\"#sic\").removeClass(\"sblack\");\n$(\"#sic\").removeClass(\"cu\");\n$(\"#sic\").removeClass(\"fa-close\");\n$(\"#sic\").addClass(\"fa-search\");\nsetTimeout(\"$('#search_tips').addClass('hidden');\", 500);\n} else {\n$(\"#sic\").addClass(\"sblack\");\n$(\"#sic\").addClass(\"fa-close\");\n$(\"#sic\").addClass(\"cu\");\n$(\"#sic\").removeClass(\"fa-search\");\n}\n});\n$(window).scroll(function () {\nif ($(this).scrollTop() > 20) {\n\n$('#back-top').stop(true).css({\"display\":\"block\"}).animate({\"opacity\": 0.8}, 400);\n\n} else {\n\n$('#back-top').stop(true).animate({\"opacity\": 0}, 400, function(){$(this).css({\"display\":\"none\"})});\n\n}\n});\n$('#back-top').click(function () {\n$('body, html').stop(true).animate({scrollTop: 0}, 600);\nreturn false;\n});\n\n$(\".tlt\").tooltip({ animation: false });\n$(\".dropdown-menu > li > a\").click(function () {x = $(this).attr(\"href\"); if(x==\"#\") { return false;}});\n$(\"a[rel=car_group]\").magnificPopup({type:'image',gallery:{ enabled:true } }); $(\"a[rel=full_group]\").magnificPopup({type:'image', closeBtnInside: false, closeOnContentClick: false, image: { verticalFit: false },gallery:{ enabled:true } });\n$('.tooltips').tooltip();\n$(\"a[rel=example_group]\").magnificPopup({type:'image', options: { markup: '<div class=\"mfp-figure\">'+'<div class=\"mfp-close\"></div>'+'<figure>'+'<div class=\"mfp-img\"></div>'+'<figcaption>'+'<div class=\"mfp-bottom-bar\">'+'<div class=\"mfp-title\"></div>'+'<div class=\"mfp-counter\"></div>'+'</div>'+'</figcaption>'+'</figure>'+'</div>',cursor: 'mfp-zoom-out-cur',titleSrc: 'title', verticalFit: true,tError: '<a href=\"%url%\">Фото отсутствует</a>'},gallery:{ enabled:true } });\n$(\"a.ciframe\").magnificPopup({type: 'iframe',callbacks: {open: function () {$.magnificPopup.instance.close = function () {$.magnificPopup.proto.close.call(this);parent.location.reload(true);};}}});\n$(\"a.iframe\").magnificPopup({type: 'iframe' });\n$(\"a.iframestatic\").magnificPopup({type: 'iframe',iframe: {markup: '<div class=\"mfp-iframe-scaler transbg\">'+'<div class=\"mfp-close\"></div>'+'<iframe class=\"mfp-iframe transbg\" frameborder=\"0\" allowfullscreen></iframe>'+'</div>'},closeOnBgClick: false });\n$(\"a.modalframe\").magnificPopup({type: 'iframe' ,iframe: {markup: '<div class=\"mfp-iframe-scaler modalframe-container\">'+'<div class=\"mfp-close\"></div>'+'<iframe class=\"mfp-iframe modalframe-inner cc\" frameborder=\"0\" allowfullscreen></iframe>'+'</div>'},closeOnBgClick: true});\n$(\"a.transiframe\").magnificPopup({ type: 'iframe' ,iframe: {markup: '<div class=\"mfp-iframe-scaler tra cc\">'+'<div class=\"mfp-close\"></div>'+'<iframe class=\"mfp-iframe cc\" frameborder=\"0\" allowfullscreen></iframe>'+'</div>'},closeOnBgClick: true});\n$(\".mgnf\").bind(\n'click', function() {\n$.magnificPopup.open({ titleSrc: 'title', verticalFit: true, showCloseBtn: true, closeBtnInside: true, items: { src: this.src },type: 'image'},0);\n});\n$(\".sradiobtn>img\").bind(\n'click', function() {\n$.magnificPopup.open({ titleSrc: 'title', verticalFit: true, showCloseBtn: true, closeBtnInside: true, items: { src: this.src },type: 'image'},0);\n});\n\n});\n</script><style>#jswarn .alert {display: block !important; visibility: visible !important;}#jswarn {display: block !important; visibility: visible !important;}</style>\n<div id=\"mousealert\" class=\"hidden\" style=\"position:absolute; z-index: 9999;\"></div><div class=\"btop tlt cu\" id=\"back-top\" data-title=\"Наверх\" data-original-title=\"\" title=\"\"><div class=\"cc bctop\"><i class=\"fa fa-chevron-up fa-2x\"></i></div></div></div><div id=\"myRing\" class=\"modal fade\" role=\"dialog\"><div class=\"modal-dialog\"><div class=\"modal-content\"><div class=\"modal-body\"><button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\">×</button><iframe width=\"280\" height=\"300\" style=\"height: 300px; border: 0;\" src=\"index.php?action=ring&amp;mpol=1\" class=\"w90 pull-left\"></iframe><div class=\"clearfix\"></div></div></div></div></div>\n</div></body></html>",
+  "text": "Шкафы-купе на заказ в Санкт-Петербурге - изготовление по индивидуальным размерам, заказать недорого от производителя +7(921)930-9994 Написать нам в WhatsApp Готовые работы в Telegram Адреса салонов Рассрочка 0% до 24 мес ! +7(921)930-9994 работаем ежедневно 07:30-22:00 0% до 24мес. Санкт Петербург, Коломяжский пр., 27А ТЦ Вагант: Подольск,Станционная улица 11 Вызвать замерщика БЕСПЛАТНО В корзине: 0 Меню Каталоги Детские Двери купе Гардеробные Гостиные Прихожие Шкафы Спальни Трансформеры Материалы Рассрочка 3D Проект Конструктор Контакты Войти 0 руб. Шкафы купе на заказ в Санкт-Петербурге! Собственное производство. Производство любой корпусной мебели. Бесплатный вызов и замер в Санкт-Петербурге. Выезд на замеры с образцами и каталогами. Делаем визуализацию. Экологично и безопасно. МДФ и Массив. Экологичные и безопасные материалы. Сборка в день доставки. Доставка и сборка мебели производится в один день. ОСТАВЬТЕ ЗАЯВКУ на бесплатную консультацию *Ширина/Высота/Глубина см: *Ваш телефон: Просто заполните заявку ниже. Мы перезвоним в течении 30 сек *Ответьте на вопрос: КaKoй дeHb Heдeлu слeдyeT зa BTopHuKoM? Отправить * сегодня получили расчет уже : 19 человек. Отправляя персональные данные Вы соглашаетесь с политикой конфиденциальности и даете согласие на обработку персональных данных Шкафы купе на заказ по индивидуальным размерам Выбор шкафа непростое решение. Так много вариантов предлагается на рынке. Однако, когда дело доходит до максимально эффективного использования пространства. Встроенный шкаф становится несомненным фаворитом. Заказать шкаф по индивидуальным размерам - создать уникальное решение. Полностью соответствующее вашим потребностям и размерам помещения.Выбор материалов, отделки и конфигурации, сделает шкаф функциональным, и гармонично впишется в интерьер. Предлагаем шкафы на заказ по индивидуальным размерам в Санкт-Петербурге. Замер, доставка, сборка - бесплатно! Цена от производителя Гарантия качества. Производство шкафов - от замера до сборки: ✔️ Фабрика образована в 2001 году. Более 15 лет успешной работы. ✔️ Сейчас это современное производство площадью 1100 м2. ✔️ Надежная раскройная линия ЧПУ (Германия) и присадочно-фрезеровочные комплексы ЧПУ (Италия) ✔️ Производство мебели из экологических и безопасных материалов ✔️ Собственный штат сотрудников: замерщики, сборщики, водители более 30 сотрудников, Мебель на заказ в срок без задержек гарантируем цену ниже на 30% чем предлагают мебельные магазины. За 20 лет работы продано более 8600 заказов , вот некоторые из них. Запишитесь на бесплатную консультацию и узнайте 9 ошибок , которые совершают 95% людей , которые хотят купить шкаф. БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ Отправить заявку можно по телефону +7(921)930-9994 Сделать заказ на шкаф купе - значит инвестировать в долговечность и стиль. Неудивительно, что многие предпочитают встроенные шкафы , ведь они позволяют оптимизировать пространство и добавляют изысканности любому помещению. Возможность заказать шкаф по индивидуальным размерам делает мебель доступным широкому кругу покупателей, в Санкт-Петербурге существует множество предложений от производителей, предлагающих качественные встраиваемые шкафы на заказ по привлекательным ценам. Таким образом, выбирая шкафу Нас, вы получаете не только идеально подходящую мебель, но и возможность сэкономить, не жертвуя при этом качеством и стилем. шкафы детские гардеробные, кресла прихожие гостиные, диваны спальни, кровати в спальню Процесс заказа шкафа Первый шаг создания шкафа. Эамеры и проектирование. Этап критичен, так как от точности замеров зависит не только внешний вид, но и функциональность мебели. Где планируется установка шкафа? Приедут наши замерщики проведут все необходимые измерения. Они учтут все особенности пространства, включая ниши, выступы и уровень пола. После этого, на основе полученных размерам, будет разработан проект шкафа, который идеально впишется в интерьер и удовлетворит все потребности заказчика. Выбор материалов и комплектующих - следующий этап, где клиенту предложат широкий ассортимент вариантов для индивидуального шкафа купе. В каталоге представлены различные виды фасадов, от классических до современных, а также многообразие отделочных материалов - от недорогих ЛДСП до эксклюзивных вариантов шпона или стекла. Можно выбрать фурнитуру и аксессуары, которые обеспечат удобство использования шкафа на долгие годы. Встроенный шкаф купе будет спроектирован так, чтобы гармонировать с общим дизайном комнаты и быть максимально функциональным. Просчёт по телефону До замера по телефону Точный замер Бесплатно Производство заказа Соблюдение сроков договора Доставка Бесплатно Сборка, оплата до 13% от стоимости Согласование дизайна и цены - всегда заключительный этап перед тем, как заказать шкаф купе. Заказчик встречается с дизайнером для утверждения всех деталей проекта. Вместе они просматривают: окончательные эскизы, выбранные материалы, комплектующие, расцветки и дополнительные опции. После утверждения всех нюансов составляется окончательная смета. в Санкт-Петербурге можно найти множество предложений по изготовлению шкафов недорого по индивидуальным размерам, что делает процесс выбора еще более привлекательным. Клиент получает полную информацию о стоимости и сроках изготовления, после чего может принять окончательное решение о заказе мебели. Виды шкафов Встроенные шкафы являются популярным решением для тех, кто хочет при эксплуатации максимально эффективно использовать пространство в пределах своей комнаты. Он позволяет вписать мебель в нишу или между стенами, создавая иллюзию единства с интерьером. Могут быть выполнены по индивидуальным размерам, что идеально подходит для комнат с нестандартной планировкой. Заказать шкаф такого типа можно с различными вариантами отделки и наполнения, что позволяет создать уникальное решение для хранения. Корпусные шкафы отличаются от встроенных тем, что являются отдельно стоящей мебелью. Предлагаем широкий выбор материалов, цветов и фурнитуры, что позволяет подобрать шкаф недорого для любого интерьера. Мы предлагаем корпусные шкафы со скидками и акциями, делая мебель доступной для широкого круга покупателей. Угловые шкафы отличный способ использовать угловое пространство в комнатах. Шкафы на заказ по индивидуальным размерам недорого от производителя. Предлагаем в широком ассортименте, они позволяют удобно разместить вещи, используя обычно невостребованную площадь. Купить шкаф недорого от производителя можно на нашей Фабрике. Различные варианты отделки позволит гармонично вписать мебель в интерьер даже под углом или на балкон. Производство шкафа 15-20 дней. Цена от производителя и гарантия качества. Наша мебель - функциональное и стильное решение для современного жилища. Наши работы. Фотогалерея Шкаф купе встроенный и перегородка Шкаф встроенный и шкаф-перегородка на заказ @мебель 2023/01/06 23:32:58 📷 Шкаф купе встроенный и шкаф-перегородка Набор мебели на заказ Выполненный под заказ в Санкт-Петербурге по пожеланиям и предпочтениям покупателя, из качественных, надёжных материалов и прочной фурнитуры. ПОДРОБНЕЕ >> в прихожую гардеробная зеркала двери спальня Гардеробная, двери купе и стеллажи Гардеробная и двери купе ЛДСП дуб сонома Увадрев, профиль Аристо золото матовое @мебель 2023/01/06 23:25:08 📷 Гардеробная и двери купе в Санкт-Петербурге 🌿 ЛДСП дуб сонома Увадрев, профиль Аристо золото 💰 Стоимость ПОДРОБНЕЕ >> гардеробная система двери купе отзыв пескоструйные Корпусные тумбы для ТВ, столы письменные Набор корпусной мебели на заказ в Санкт-Петербурге @мебель 2023/01/04 01:46:03 📷 Набор корпусной мебели 🌿 ЛДСП Пикар Увадрев Стоимость, размеры в описании ПОДРОБНЕЕ >> высота ширина глубина створчатые столики Большой шкаф купе для одежды, комод с ящиками Шкаф купе и комод на заказ в прихожую @кухни 2023/01/04 01:30:06 📷 Шкаф купе и комод в прихожую. Место специально для обуви. 🌿 ЛДСП Белый, профиль Аристо хром матовый 🔥 количество полок 12 , 3 штанги, угловой элемент 💰 Стоит 87.825 руб 📐1900/2552/600 ПОДРОБНЕЕ >> прихожая комоды отзывы полки сертификаты Двери купе индивидуальный размер,с вставкой стеклом Двери купе индивидуальный размер в Санкт-Петербурге @кухни 2022/12/16 15:25:53 Выполненный под заказ в Санкт-Петербурге по пожеланиям и предпочтениям покупателя, из качественных, надёжных материалов и прочной фурнитуры. Самых разных: маленькие и узкие, черные и темные, элитные и эконом, с антресолью и без. Оставьте заявку через форму Двери раздвижные индивидуальный размер - фото ПОДРОБНЕЕ >> прямые двери купе дверные стенки статьи лакобель Встроенный распашной на заказ Встроенный распашной на заказ МДФ в Санкт-Петербурге @кухни 2022/12/16 15:15:01 Выполненный под заказ по пожеланиям и предпочтениям покупателя, из качественных, надёжных материалов и прочной фурнитуры. С дверцами под полок и фрезеровкой Распашной шкаф из МДФ ПОДРОБНЕЕ >> распашной шкаф шкаф из МДФ эмаль зеркала Прихожая и шкаф-купе на заказ Прихожая и шкаф-купе на заказ в Санкт-Петербурге @кухни 2022/12/16 15:00:14 📷 Прихожая и шкаф-купе на заказ 🌿 Фасады ЛДСП Ясень анкор светлый 📐 шкаф-купе 1990 х 2350 х 500 📐 прихожая 750 х 2350 х 350 💰Цена 95.000 руб ПОДРОБНЕЕ >> шкаф в прихожую шкаф купе с зеркалом расчет главная Встроенный шкаф с зеркалом Вместительный встроенный шкаф с зеркалом на заказ в Санкт-Петербурге @мебель: шкаф и кухня на заказ 2021/03/29 23:32:02 Вместительный, удобный, практичный, от пола до потолка, от стеночки до до стеночки, встроенный шкаф-купе с зеркалом гармонично вписался в прихожую. ПОДРОБНЕЕ >> шкаф купе с зеркалом шкаф в прихожую с полками Распродажа из офиса Мы закрываем одну из розничных точек, поэтому готовы предложить Вам качественную мебель с хорошей скидкой. @мебель: шкаф и кухня на заказ 2021/01/31 17:48:41 Внимание тотальная распродажа мебели! Мы закрываем одну из розничных точек в Москве, поэтому готовы предложить Вам качественную мебель с хорошей скидкой. Скидка 50% от цены 2020 года. Успейте купить, все в отлчином состоянии. Офис, карта и адрес на сайте. Категории товаров включают: тумбы в спальные, модульные уголки, книжные, стулья в кабинет, подвесные вешалки, мягкая тумба с подъемным механизмом. ПОДРОБНЕЕ >> распродажа скидка кухонные товары кровати интернет венге Предыдущие Преимущества шкафов купе на заказ Индивидуальный дизайн и функциональность становятся ключевыми факторами. Позволяя создать уникальное изделие, которое идеально впишется в интерьер и будет отвечать всем требованиям заказчика. Возможность выбрать конкретные размеры, стиль (лофт, классик), цвет (орех, венге) и комплектующие делает эксклюзивным мебель. Кроме того, функциональность может быть максимально адаптирована под хранение конкретных вещей, будь то гардероб, стенки, книги, постирочные или бытовая техника. Лучшие условия: Производим - изготавливаем от 5 рабочих дней. Использование высококачественной гарнитуры, импортные материалы . Оформления фасадов с вставками: глянцевые стекла, кожа, матирование, фотопечать с рисунком, витражи со стеклом. Индивидуальный подход к каждому партнёру. Современное высокотехнологичное оборудование. Постоянное расширение ассортимента предлагаемой продукции. Фабрика гарантируем качество товара. Оптимальное использование пространства - существенное преимущество. Эффективно использовать каждый сантиметр помещения, даже если речь идет о нестандартных или ограниченных пространствах, такое место как мансарды или ниши. Благодаря точному замеру и проектированию по индивидуальным размерам, можно добиться максимальной вместительности и удобства использования, не теряя при этом на функциональности. Выбор материалов и фурнитуры - важный этап. Клиенты могут выбрать из широкого ассортимента материалов, позволяя контролировать как внешний вид и стоимость готового изделия. У Нас можно выбрать шкафы из бюджетных вариантов с пленкой ЛДСП или более дорогие и экологически чистые материалы, такие как натуральное дерево. Фурнитура также играет не последнюю роль, ведь от качества ручек, направляющих и замков зависит долговечность и удобство использования шкафа. Встроенные шкафы практичное и экономически выгодное решение для квартиры. Наша специалисты предлагают недорого изготовление шкафов. Менеджеры подберут материалы и помогут выберать комплектующие. Получите идеально подходящий по стилю и функциональности шкаф, не переплачивая за ненужные опции или стандартные решения, не подходящие под конкретные размеры и потребности. Сроки изготовления и установки шкафов купе Стандартные сроки выполнения варьируются в зависимости от множества факторов, включая сложность дизайна и загруженность производства. Время потребуется от двух до четырех недель с момента утверждения проекта до начала монтажных работ. Шкаф купе встроенный на заказ требует более тщательного подхода к изготовлению, так как должен идеально вписаться в отведенное пространство. При этом, если вы решили заказать шкаф по своим размерам, уточняйте у производителя возможные даты начала и окончания работ. Наше производство: Срочное изготовление шкафов купе может потребоваться в случае, если клиенту необходимо получить мебель в кратчайшие сроки. Такие услуги обычно предлагаются за дополнительную плату, и сроки могут быть сокращены до одной-двух недель. Шкафы купе от производителя часто имеют опцию экспресс-изготовления, позволяющую клиентам купить шкаф купе, не жертвуя качеством, но при этом получить его значительно быстрее стандартного срока. Что касается условий и гарантий на монтажные работы, то при заказе шкафа купе важно убедиться, что производитель предоставляет гарантию на установку. Качественные шкафы должны сопровождаться гарантийным обслуживанием, которое может включать бесплатное устранение возможных дефектов, возникших по вине производителя. Шкаф купе недорого по индивидуальным размерам также должен соответствовать всем стандартам качества, поэтому не стесняйтесь спрашивать о гарантийных обязательствах до совершения заказа. Замер, доставка в Санкт-Петербурге и области, подъем бесплатно Рассчитать и задать вопросы: время с 08 до 22 ВЫЗВАТЬ МАСТЕРА Стоимость шкафов купе на заказ Факторы, влияющие на цену шкафов, многообразны и включают в себя материалы, размеры, дизайн и внутреннее наполнение. Чем качественнее материал и сложнее конструкция, тем выше будет стоимость. Например, шкаф купе на заказ по индивидуальным размерам может стоить дороже, чем стандартные модели из-за необходимости адаптации проекта под конкретные параметры помещения. Кроме того, дополнительные опции, такие как зеркальные фасады, металлические штанги, LED-подсветка и другие специализированные аксессуары для хранения, также увеличивают итоговую цену. Чтобы сэкономить на покупке шкафа купе без потери качества, можно рассмотреть следующие варианты: Выбрать более доступные материалы для фасадов и внутренних элементов, не уступающие по прочности и внешнему виду. Отказаться от сложных дизайнерских решений и ограничиться стандартными модулями. Использовать акции и скидки, которые часто предлагают мебельные компании. Цена на шкафы от производителя ШкафПлюс дешевле, чем в розничных магазинах, поскольку исключается наценка посредников. Заключение В итоге, заказать шкаф купе на индивидуальные размеры на нашей фабрике - оптимальное решение для тех, кто стремится максимально эффективно использовать пространство своего жилища. Встроенные шкафы купе на заказ в Санкт-Петербурге позволяют создать уникальное хранилище, полностью соответствующее потребностям и стилю интерьера. Благодаря возможности заказать шкаф по своим размерам, можно не только экономически, но и эстетически оптимизировать пространство. Шкаф купе на заказ недорого по индивидуальным размерам - выгодное вложение в комфорт и порядок вашего дома. Производством мебели включает в себя разработку оригинального макета, в котором будут отражены все ваши пожелания. Реализация заданий отличается высокой оперативностью, дополняемой лояльными ценами и гарантиями производителя. У нас вы сможете заказать практически любую корпусную мебель! 5% 01 мая 2026 18 : 06 Menu Заказать обратный звонок с 07 до 23 Связаться ©2026 - Шкаф Плюс. Все права защищены. детская | в гостиную | прихожие | шкафы | cпальни Политика конфиденциальности. Публичная оферта Ваше имя: Ваш телефон: Ваше имя: Ваш телефон: Title ‹ › × ×",
+  "json_ld": [],
+  "document": {
+    "title": "Шкафы-купе на заказ в Санкт-Петербурге - изготовление по индивидуальным размерам, заказать недорого от производителя",
+    "meta_description": "Где заказать идеальный шкаф купе в Санкт-Петербурге? Мебельная фабрика Шкаф Плюс - производство шкафов на заказ! Изготовление по индивидуальным размерам, мебель которая идеально впишется в интерьер. Недорого! Цены от производителя",
+    "meta_robots": "index,follow",
+    "viewport": "width=device-width, user-scalable=yes",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "https://spb.shkafplus.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:<noindex>+7(921)930-9994</noindex>",
+        "text": "+7(921)930-9994",
+        "rel": ""
+      },
+      {
+        "href": "tel:<noindex>+7(921)930-9994</noindex>",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "whatsapp://send?phone=+79779919929",
+        "text": "Написать нам в WhatsApp",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/shkafplus",
+        "text": "Готовые работы в Telegram",
+        "rel": ""
+      },
+      {
+        "href": "/contacts/",
+        "text": "Адреса салонов",
+        "rel": ""
+      },
+      {
+        "href": "tel:<noindex>+7(921)930-9994</noindex>",
+        "text": "+7(921)930-9994",
+        "rel": ""
+      },
+      {
+        "href": "/?page=zayavka&mpol=1",
+        "text": "Вызвать замерщика БЕСПЛАТНО",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?action=basket",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "В корзине: 0",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Меню",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "mebel_na_zakaz/",
+        "text": "Каталоги",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_detskie_",
+        "text": "Детские",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/dveri_kupe/",
+        "text": "Двери купе",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/garderob/",
+        "text": "Гардеробные",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_gostinyie_",
+        "text": "Гостиные",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_prihojie_",
+        "text": "Прихожие",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_shkafyi_",
+        "text": "Шкафы",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_spalni_",
+        "text": "Спальни",
+        "rel": ""
+      },
+      {
+        "href": "/katalog/transformer/",
+        "text": "Трансформеры",
+        "rel": ""
+      },
+      {
+        "href": "/info/materialyi/",
+        "text": "Материалы",
+        "rel": ""
+      },
+      {
+        "href": "kredit_i_rassrochka/",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "3d_vizualizatziya/",
+        "text": "3D Проект",
+        "rel": ""
+      },
+      {
+        "href": "konstruktor/",
+        "text": "Конструктор",
+        "rel": ""
+      },
+      {
+        "href": "contacts/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/net_stressa",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "whatsapp://send?phone=+79779919929",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/shkafplus",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "mailto:shkafplus@yandex.ru",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?sign_in=1",
+        "text": "Войти",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?action=basket&flag=rus",
+        "text": "0 руб.",
+        "rel": "tooltip"
+      },
+      {
+        "href": "/privacy.php",
+        "text": "* сегодня получили расчет уже : 19 человек. Отправляя персональные данные Вы соглашаетесь с политикой конфиденциальности и даете согласие на обработку персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/1-3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/10-2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/11-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/12-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/13-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/15.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/16.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/17-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/18-2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/2-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/3.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/3.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/4-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/5-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/5.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/6-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/7.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/8-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/9-2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/shkafplus/p1-1.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#form_956",
+        "text": "БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_shkafyi_",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_shkafyi_",
+        "text": "шкафы",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_detskie_",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_detskie_",
+        "text": "детские",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_shkafyi_",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_shkafyi_",
+        "text": "гардеробные, кресла",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_prihojie_",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_prihojie_",
+        "text": "прихожие",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_gostinyie_",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_gostinyie_",
+        "text": "гостиные, диваны",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_spalni_",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_spalni_",
+        "text": "спальни, кровати в спальню",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Просчёт по телефону До замера по телефону",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Точный замер Бесплатно",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Производство заказа Соблюдение сроков договора",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Доставка Бесплатно",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Сборка, оплата до 13% от стоимости",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?action=blog",
+        "text": "Наши работы. Фотогалерея",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/06/2",
+        "text": "Шкаф купе встроенный и перегородка",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC",
+        "text": "@мебель",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/1.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/2.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/3.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/4.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/5.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/6.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/14/7.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/06/2",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E2%20%EF%F0%E8%F5%EE%E6%F3%FE",
+        "text": "в прихожую",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E3%E0%F0%E4%E5%F0%EE%E1%ED%E0%FF",
+        "text": "гардеробная",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E7%E5%F0%EA%E0%EB%E0",
+        "text": "зеркала",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E4%E2%E5%F0%E8",
+        "text": "двери",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F1%EF%E0%EB%FC%ED%FF",
+        "text": "спальня",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/06/1",
+        "text": "Гардеробная, двери купе и стеллажи",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC",
+        "text": "@мебель",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/06/1",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E3%E0%F0%E4%E5%F0%EE%E1%ED%E0%FF%20%F1%E8%F1%F2%E5%EC%E0",
+        "text": "гардеробная система",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E4%E2%E5%F0%E8%20%EA%F3%EF%E5",
+        "text": "двери купе",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EE%F2%E7%FB%E2",
+        "text": "отзыв",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EF%E5%F1%EA%EE%F1%F2%F0%F3%E9%ED%FB%E5",
+        "text": "пескоструйные",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/04/2",
+        "text": "Корпусные тумбы для ТВ, столы письменные",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC",
+        "text": "@мебель",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/04/2",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E2%FB%F1%EE%F2%E0",
+        "text": "высота",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F8%E8%F0%E8%ED%E0",
+        "text": "ширина",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E3%EB%F3%E1%E8%ED%E0",
+        "text": "глубина",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F1%F2%E2%EE%F0%F7%E0%F2%FB%E5%20%F1%F2%EE%EB%E8%EA%E8",
+        "text": "створчатые столики",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/04/1",
+        "text": "Большой шкаф купе для одежды, комод с ящиками",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "@кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2023/01/04/1",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EF%F0%E8%F5%EE%E6%E0%FF",
+        "text": "прихожая",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EA%EE%EC%EE%E4%FB",
+        "text": "комоды",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EE%F2%E7%FB%E2%FB",
+        "text": "отзывы",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EF%EE%EB%EA%E8",
+        "text": "полки",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F1%E5%F0%F2%E8%F4%E8%EA%E0%F2%FB",
+        "text": "сертификаты",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2022/12/16/3",
+        "text": "Двери купе индивидуальный размер,с вставкой стеклом",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "@кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/3/1.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/3/2.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/3/3.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2022/12/16/3",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EF%F0%FF%EC%FB%E5%20%E4%E2%E5%F0%E8%20%EA%F3%EF%E5",
+        "text": "прямые двери купе",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E4%E2%E5%F0%ED%FB%E5",
+        "text": "дверные",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F1%F2%E5%ED%EA%E8",
+        "text": "стенки",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F1%F2%E0%F2%FC%E8",
+        "text": "статьи",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EB%E0%EA%EE%E1%E5%EB%FC",
+        "text": "лакобель",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2022/12/16/2",
+        "text": "Встроенный распашной на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "@кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/2/1.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/2/2.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/2/3.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/2/4.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/2/5.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/0gotovie/2/6.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2022/12/16/2",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F0%E0%F1%EF%E0%F8%ED%EE%E9%20%F8%EA%E0%F4",
+        "text": "распашной шкаф",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%E8%E7%20%CC%C4%D4",
+        "text": "шкаф из МДФ",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%FD%EC%E0%EB%FC",
+        "text": "эмаль",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E7%E5%F0%EA%E0%EB%E0",
+        "text": "зеркала",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2022/12/16/1",
+        "text": "Прихожая и шкаф-купе на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EA%F3%F5%ED%E8",
+        "text": "@кухни",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2022/12/16/1",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%E2%20%EF%F0%E8%F5%EE%E6%F3%FE",
+        "text": "шкаф в прихожую",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%EA%F3%EF%E5%20%F1%20%E7%E5%F0%EA%E0%EB%EE%EC",
+        "text": "шкаф купе с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F0%E0%F1%F7%E5%F2",
+        "text": "расчет",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E3%EB%E0%E2%ED%E0%FF",
+        "text": "главная",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2021/03/29/1",
+        "text": "Встроенный шкаф с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7",
+        "text": "@мебель: шкаф и кухня на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2021/03/29/1",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%EA%F3%EF%E5%20%F1%20%E7%E5%F0%EA%E0%EB%EE%EC",
+        "text": "шкаф купе с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F8%EA%E0%F4%20%E2%20%EF%F0%E8%F5%EE%E6%F3%FE%20%F1%20%EF%EE%EB%EA%E0%EC%E8",
+        "text": "шкаф в прихожую с полками",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2021/01/31/1",
+        "text": "Распродажа из офиса",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?buser=%EC%E5%E1%E5%EB%FC%3A%20%F8%EA%E0%F4%20%E8%20%EA%F3%F5%ED%FF%20%ED%E0%20%E7%E0%EA%E0%E7",
+        "text": "@мебель: шкаф и кухня на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?message=2021/01/31/1",
+        "text": "ПОДРОБНЕЕ >>",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F0%E0%F1%EF%F0%EE%E4%E0%E6%E0",
+        "text": "распродажа",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%F1%EA%E8%E4%EA%E0",
+        "text": "скидка",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EA%F3%F5%EE%ED%ED%FB%E5%20%F2%EE%E2%E0%F0%FB",
+        "text": "кухонные товары",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%EA%F0%EE%E2%E0%F2%E8",
+        "text": "кровати",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E8%ED%F2%E5%F0%ED%E5%F2",
+        "text": "интернет",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?tag=%E2%E5%ED%E3%E5",
+        "text": "венге",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/index.php?action=blog&start=9&tag=",
+        "text": "Предыдущие",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170123.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170126.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170130.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170134.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170146.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170159.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170203.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170231.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170240.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170247.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170307.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://spb.shkafplus.ru/gallery/proizv/IMG_20190304_170315.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#form_958",
+        "text": "ВЫЗВАТЬ МАСТЕРА",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "01 мая 2026 18 : 06",
+        "rel": ""
+      },
+      {
+        "href": "#ring",
+        "text": "Заказать обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/net_stressa",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "whatsapp://send?phone=+79779919929",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://shkafplus.ru/index.php?action=sendmail",
+        "text": "Связаться",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/net_stressa",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "whatsapp://send?phone=+79779919929",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/shkafplus",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "mailto:shkafplus@yandex.ru",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_detskie_",
+        "text": "детская",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_gostinyie_",
+        "text": "в гостиную",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_prihojie_",
+        "text": "прихожие",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_shkafyi_",
+        "text": "шкафы",
+        "rel": ""
+      },
+      {
+        "href": "/katalog_spalni_",
+        "text": "cпальни",
+        "rel": ""
+      },
+      {
+        "href": "/privacy.php",
+        "text": "Политика конфиденциальности. Публичная оферта",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "‹",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "›",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "×",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Отправить",
+      "×"
+    ],
+    "h1_texts": [
+      "Шкафы купе на заказ по индивидуальным размерам"
+    ],
+    "h2_texts": [
+      "Производство шкафов - от замера до сборки:",
+      "Процесс заказа шкафа",
+      "Виды шкафов",
+      "Наши работы. Фотогалерея",
+      "Шкаф купе встроенный и перегородка",
+      "Гардеробная, двери купе и стеллажи",
+      "Корпусные тумбы для ТВ, столы письменные",
+      "Большой шкаф купе для одежды, комод с ящиками",
+      "Двери купе индивидуальный размер,с вставкой стеклом",
+      "Встроенный распашной на заказ",
+      "Прихожая и шкаф-купе на заказ",
+      "Встроенный шкаф с зеркалом",
+      "Распродажа из офиса",
+      "Преимущества шкафов купе на заказ",
+      "Сроки изготовления и установки шкафов купе",
+      "Стоимость шкафов купе на заказ"
+    ],
+    "h3_texts": [
+      "Двери раздвижные индивидуальный размер - фото",
+      "Распашной шкаф из МДФ",
+      "Title"
+    ],
+    "counts": {
+      "paragraph": 17,
+      "h1": 1,
+      "h2": 16,
+      "h3": 3,
+      "link": 207,
+      "image": 88,
+      "list_item": 34,
+      "strong": 22,
+      "form": 4,
+      "input": 32
+    }
+  }
+}

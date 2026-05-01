@@ -1,0 +1,58 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://2gis.ru/ekaterinburg/firm/70000001088861605/tab/reviews",
+  "final_url": "https://2gis.ru/ekaterinburg/firm/70000001088861605/tab/reviews",
+  "status_code": 403,
+  "redirect_chain": [],
+  "response_headers": {
+    "access-control-allow-origin": "*",
+    "content-length": "1412",
+    "content-type": "text/html",
+    "date": "Fri, 01 May 2026 15:10:39 GMT",
+    "server": "nginx",
+    "x-webfront": "98b10a89-1911"
+  },
+  "response_time_ms": 2003.7505,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:10:41.036290+00:00",
+  "html": "<!DOCTYPE html><html><head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n  </head>\n  <body>\n    <div style=\"text-align: center\">\n      <h1>Forbidden</h1>\n      <p id=\"REQUEST-DATE\">Datetime: 2026-05-01 15:10:39 +0000</p>\n      <p id=\"REQUEST-IP\">IP: 217.217.246.8</p>\n      <p id=\"REQUEST-ID\">ID: dAK0pkwwOqM1</p>\n      <p id=\"ORIGIN-ID\">Origin: https://2gis.ru</p>\n      <p>\n        If you are not a bot, please copy the report and send it to our\n        <a href=\"mailto:support@2gis.ru?subject=Unlawful blocking\">\n          support team.\n        </a>\n      </p>\n      <p><button onclick=\"copy()\">Copy</button></p>\n    </div>\n\n    <script>\n      function copy() {\n        document.oncopy = function (e) {\n          const t = {\n            report: {\n              datetime: document.getElementById(\"REQUEST-DATE\").innerHTML,\n              ip: document.getElementById(\"REQUEST-IP\").innerHTML,\n              id: document.getElementById(\"REQUEST-ID\").innerHTML,\n            },\n          };\n          e.clipboardData.setData(\"text\", JSON.stringify(t));\n          e.preventDefault();\n        };\n        document.execCommand(\"copy\");\n      }\n\n      document.addEventListener(\"DOMContentLoaded\", function () {\n        const origin = window.location.protocol + \"//\" + window.location.host;\n        document.getElementById(\"ORIGIN-ID\").innerHTML = \"Origin: \" + origin;\n      });\n    </script>\n  \n\n</body></html>",
+  "text": "Forbidden Datetime: 2026-05-01 15:10:39 +0000 IP: 217.217.246.8 ID: dAK0pkwwOqM1 Origin: https://2gis.ru If you are not a bot, please copy the report and send it to our support team. Copy",
+  "json_ld": [],
+  "document": {
+    "title": "",
+    "meta_description": "",
+    "meta_robots": "",
+    "viewport": "",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "mailto:support@2gis.ru?subject=Unlawful blocking",
+        "text": "support team.",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Copy"
+    ],
+    "h1_texts": [
+      "Forbidden"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 6,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 1,
+      "image": 0,
+      "list_item": 0,
+      "strong": 0,
+      "form": 0,
+      "input": 0
+    }
+  }
+}

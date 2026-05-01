@@ -1,0 +1,1247 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://petro-mebel.com/kuhni-na-zakaz/",
+  "final_url": "https://petro-mebel.com/kuhni-na-zakaz/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:54:04 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx",
+    "set-cookie": "PHPSESSID=b7fd17def67ab0736c88f92f61e67b26; expires=Fri, 08-May-2026 14:54:04 GMT; Max-Age=604800; path=/; HttpOnly",
+    "x-powered-by": "PHP/5.6.36"
+  },
+  "response_time_ms": 7195.5509,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:54:11.150139+00:00",
+  "html": "<!DOCTYPE html><html class=\" js no-touch csstransforms3d csstransitions csstransforms webkit chrome win js\" style=\"\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><meta http-equiv=\"origin-trial\" content=\"A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==\">\n\n\t\t<!-- Basic -->\n\t\t<meta charset=\"utf-8\">\n\t\t<title>Кухни на заказ в СПб: каталог с ценами и фото | Купить кухню от производителя в Санкт-Петербурге</title>\t\t\n\t\t<meta name=\"keywords\" content=\"\">\n\t\t<meta name=\"description\" content=\"Компания производитель Петро-Мебель предлагает купить кухни на заказ по индивидуальным размерам. Каталог с фото и ценами позволит заказать недорогой кухонный гарнитур в СПб с доставкой и гарантией. Мы изготавливаем кухни высокого качества с 2003 года. Низкая стоимость, дизайн-проект бесплатно.\">\n\t\t\n\t\t\n\t\t<base href=\"/\">\n\n\t\t<!-- Mobile Metas -->\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\n\t\t<!-- Web Fonts  -->\n\t\t<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n<link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&amp;display=swap\" rel=\"stylesheet\">\n\n\t\t<!-- Libs CSS -->\n\t\t<link rel=\"stylesheet\" href=\"/vendor/bootstrap/css/bootstrap.css\">\n\t\t<link rel=\"stylesheet\" href=\"/vendor/font-awesome/css/font-awesome.css\">\n\t\t<link rel=\"stylesheet\" href=\"/vendor/owl-carousel/owl.carousel.css\" media=\"screen\">\n\t\t<link rel=\"stylesheet\" href=\"/vendor/owl-carousel/owl.theme.css\" media=\"screen\">\n\t\t<link rel=\"stylesheet\" href=\"/vendor/magnific-popup/magnific-popup.css\" media=\"screen\">\n\t\t<link rel=\"stylesheet\" href=\"/vendor/isotope/jquery.isotope.css\" media=\"screen\">\n\t\t<link rel=\"stylesheet\" href=\"/vendor/mediaelement/mediaelementplayer.css\" media=\"screen\">\n\n\t\t<!-- Theme CSS -->\n\t\t<link rel=\"stylesheet\" href=\"/css/theme.css\">\n\t\t<link rel=\"stylesheet\" href=\"/css/theme-elements.css\">\n\t\t<link rel=\"stylesheet\" href=\"/css/theme-blog.css\">\n\t\t<link rel=\"stylesheet\" href=\"/css/theme-shop.css\">\n\t\t<link rel=\"stylesheet\" href=\"/css/theme-animate.css\">\n\t\t\n\n\t\t<!-- Current Page CSS -->\n\t\t<link rel=\"stylesheet\" href=\"vendor/rs-plugin/css/settings.css\" media=\"screen\">\n\t\t<link rel=\"stylesheet\" href=\"vendor/circle-flip-slideshow/css/component.css\" media=\"screen\">\n\n\t\t<!-- Responsive CSS -->\n\t\t<link rel=\"stylesheet\" href=\"css/theme-responsive.css\">\n\n\t\t<!-- Skin CSS -->\n\t\t<link rel=\"stylesheet\" href=\"css/skins/default.css\">\n\n\t\t<!-- Custom CSS -->\n\t\t<link rel=\"stylesheet\" href=\"css/custom.css\">\n\n\t\t<!-- Head Libs -->\n\t\t<script type=\"text/javascript\" async=\"\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script type=\"text/javascript\" async=\"\" charset=\"utf-8\" src=\"https://www.gstatic.com/recaptcha/releases/gTpTIWhbKpxADzTzkcabhXN4/recaptcha__ru.js\" crossorigin=\"anonymous\" integrity=\"sha384-vWGPerp3azmuzWDyi82ckaYtdMYBt+f7dUndDVasuVwj6oF81JmZ5G11/+g0TEHs\"></script><script src=\"vendor/modernizr.js\"></script>\n\t\t\n\t\t\n\t\t<!-- Swiper -->\n\t\t<link rel=\"stylesheet\" href=\"vendor/swiper/idangerous.swiper.css\">\n\n\t\t<!--[if IE]>\n\t\t\t<link rel=\"stylesheet\" href=\"css/ie.css\">\n\t\t<![endif]-->\n\n\t\t<!--[if lte IE 8]>\n\t\t\t<script src=\"vendor/respond.js\"></script>\n\t\t<![endif]-->\n<link rel=\"shortcut icon\" href=\"//petro-mebel.com/favicon.ico\"><link type=\"image/png\" sizes=\"120x120\" rel=\"icon\" href=\"/favicon-120-120.png\">\n\n<link rel=\"canonical\" href=\"https://petro-mebel.com/kuhni-na-zakaz/\">\n\n\n        <style>\n            #calculation-kitchen{\n                margin: 30px 0 0;\n                height: 450px;\n            }\n            .slide-wrapper{\n                height: 100%;\n                background-color: #F0F0ED;\n                padding: 20px 10px;\n                border: 1px solid #e6e5e3;\n                \n            }\n            #kitchen-model-image {\n                height: 210px;\n            }\n            #kitchen-model-image img{\n                width: 100%;\n            }\n        </style>\n<meta name=\"google-site-verification\" content=\"XFQw0G3Kr7hf8Ci57-QykYla0LafWxO4IOllOI5tETg\">\n<script src=\"//www.google.com/recaptcha/api.js\"></script>\n</head>\t\n    <body>\n\n\t\t<div class=\"body\">\n\t\t    \n<div class=\"toppanel\"><div class=\"all\">\n\t<a href=\"\" class=\"link-nav\"><img src=\"/images/menu.png\"></a>\n\t<ul>\n\t<li><a href=\"/\">Главная</a></li>\n\t<li><a href=\"/kuhni-na-zakaz/\">Каталог</a></li>\n\t<li><a href=\"/servis/dostavka-i-sborka\" rel=\"nofollow\">Оплата и доставка</a></li>\n\t<li><a href=\"/info/kuxni-na-zakaz-v-rassrochku\" rel=\"nofollow\">Кредит и рассрочка</a></li>\n\t<li><a class=\"free\" href=\"/info/rasschitat-stoimost-kuxni\">Бесплатный расчет</a></li>\n\t<li><a href=\"/contact\" rel=\"nofollow\">Контакты</a></li>\n\n\t</ul>\n\n\t<div class=\"mob-links\">\n\t\t<a href=\"/\">Главная</a>\n\t\t<a href=\"/kuhni-na-zakaz/\">Каталог</a>\n\t\t<a href=\"/info/rasschitat-stoimost-kuxni\">Расчет</a>\n\t</div>\n\t</div>\n</div>\n\n<div class=\"header\">\n\t<a href=\"/\"><img src=\"/images/logo-new.jpg\" class=\"logo\"></a>\n\n\t<a href=\"/info/novosti/\" class=\"actions_link\" rel=\"nofollow\">Акции</a>\n\t<a href=\"/contact\" class=\"shops_link\" rel=\"nofollow\">Санкт-Петербург</a>\n\n\t<div class=\"phones\">\n<span><small>м. Ладожская<br>м. пр.Просвещения</small></span><span><a href=\"tel:+78123290572\">+7(812)329-05-72</a> <br><a href=\"tel:+78126220628\">+7(812)622-06-28</a></span>\n\t\t\n\t\t\n\n\t\t<button class=\"btn btn-link btn-ajax-call-back\" data-toggle=\"collapse\" data-target=\"#ajax-call-back\">\n                                <span>Не хочу звонить!</span>\n                            </button>\n\t</div>\n\n\t <div id=\"ajax-call-back\" class=\"ajax-call-back collapse\">\n                                <div style=\"padding: 20px;\">\n                                    <button class=\"btn btn-xs pull-right\" data-toggle=\"collapse\" data-target=\"#ajax-call-back\" style=\"margin-top: 13px;\">×</button>\n<div class=\"h2 short\">Обратный звонок</div>\n<p>Оставьте свой номер и мы перезвоним, чтобы ответить на Ваши вопросы</p>\n<div class=\"clearfix\"></div>\n<form id=\"contact-form\" method=\"post\" onsubmit=\"yaCounter30427122.reachGoal('obratnuy-zvonok'); return true;\">\n    \n\n<div class=\"row\">\n\t<div class=\"col-md-6\">\n\t\t<div class=\"form-group \">\n\t\t\t<label class=\"control-label\" for=\"name\">Представьтесь, пожалуйста *</label>\n\t\t\t<input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\" value=\"\" maxlength=\"100\" placeholder=\"\">\n\t\t\t\n\t\t</div>\n\t</div>\n\t<div class=\"col-md-6\">\n\t\t<div class=\"form-group \">\n\t\t\t<label class=\"control-label\" for=\"phone\">Номер телефона *</label>\n\t\t\t<input type=\"text\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"\" maxlength=\"100\" placeholder=\"\">\n\t\t\t\n\t\t</div>\n\t</div>\n</div>\n <div class=\"row politikaTerms\">\n\n\t<div class=\"col-md-12\">\n\t<label class=\"checkbox\" for=\"callBackTerms\"><input type=\"checkbox\" class=\"checkbox__input\" name=\"callBackTerms\" id=\"callBackTerms\"> <span class=\"checkbox__label\"></span>Я согласен с <a href=\"/politika-konfidenczialnosti#soglasie \" target=\"_blank\">правилами обработки</a> персональных данных\n\t</label>\n</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-md-12\">\n              <label class=\"control-label\">Для успешной отправки необходимо пройти проверку *</label>\n              <div class=\"g-recaptcha\" data-sitekey=\"6LcYHnUUAAAAAL7eXuLG-sSgYQaMQSouc8vSByra\"><div style=\"width: 304px; height: 78px;\"><div><iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-e3ycok4wkefy\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcYHnUUAAAAAL7eXuLG-sSgYQaMQSouc8vSByra&amp;co=aHR0cHM6Ly9wZXRyby1tZWJlbC5jb206NDQz&amp;hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=b21lsw12e0h5\"></iframe></div><textarea id=\"g-recaptcha-response\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div></div>\n              <span class=\"error_g-recaptcha-response error\"></span>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-md-12\">\n\t    <input type=\"hidden\" name=\"call-back\" value=\"go\">\n\t\t<button type=\"submit\" class=\"btn btn-primary btn-lg ajax-form2\" name=\"call-back\" id=\"callBackBtn\" disabled=\"\" onclick=\"yaCounter30427122.reachGoal('obratnuy-zvonok'); return true;\">Жду звонка</button>\n<p><i>* поля, обязательные для заполнения.</i></p>\n\t</div>\n</div>\n \n</form>\n                                </div>\n                            </div>\n\n\n\n\n\t<a href=\"info/rasschitat-stoimost-kuxni\" class=\"rasschet\">Получить проект и расчет</a>\n\t<a href=\"/info/onlajn-kalkulyator-kuxni\" class=\"rasschet calc\">Калькулятор онлайн</a>\n\n\n\t<div class=\"big_menu\">\n\t\t<ul>\n\t\t\t<li><a href=\"/kuhni-na-zakaz-primery/\">Наши работы</a></li>\n<li><a href=\"/custom/kitchens/classic/\">Кухни Классика</a></li>\n\t\t\t<li><a href=\"/custom/kitchens/modern/\">Современные кухни</a></li>\n\t\t\t<li><a href=\"/info/reviews/\" rel=\"nofollow\">Отзывы</a></li>\n\t\t\t\n\t\t</ul>\n\n\t</div>\n</div>\n\n<div class=\"top_menu\"><a href=\"#\" class=\"link_nav\">Меню</a>\n\t<ul>\n\t<li class=\"dropdown mega-menu-item mega-menu-fullwidth menu_parent\">\n    <a class=\"dropdown-toggle\" href=\"/kuhni-na-zakaz/\" onclick=\"return true;\">\n        Кухни на заказ\n        <i class=\"icon icon-angle-down\"></i>\n    </a>\n    <ul class=\"dropdown-menu long-columns \">\n        <li class=\"menu_parent\">\n<div class=\"mega-menu-content\"><div class=\"horiz-menu\">\n\t<ul>\n\t\t<li class=\"menu_parent\"><span class=\"title\">Форма</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/pryamyie-kuxni\">Прямые</a></li>\t\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/uglovie-kuhni\">Угловые\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/p-obraznyie-kuxni\">П-образные\t</a></li>\n<li><a href=\"https://petro-mebel.com/custom/kitchens/radiusnyie-kuxni\">Радиусные\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\n<li class=\"menu_parent\"><span class=\"title\">Стиль</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/classic/\">Классические\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/modern/\">Современные\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/kuxni-na-zakaz-loft\">Лофт\t</a></li>\n<li><a href=\"https://petro-mebel.com/custom/kitchens/kuxni-v-skandinavskom-stile\">Скандинавские\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-kantri/\">Кантри\t</a></li>\n<li><a href=\"https://petro-mebel.com/anglijskie-kuxni/\">Английские\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-xaj-tek/\">Хай-тек\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-provans/\">Прованс\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\n\t\t<li class=\"menu_parent\"><span class=\"title\">Материал</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/\">Egger</a></li>\t\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/classic/mdf-plenochnyie/\">МДФ в пленке\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/\">Эмаль (Крашеный МДФ)\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/modern/akril/\">Акриловые\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/modern/plastik/\">Пластиковые\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/classic/massiv/\">Массив\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/modern/shpon\">Шпон\t</a></li>\n\n\t\t\t</ul>\n\t\t</li>\n\t\t<li class=\"menu_parent\"><span class=\"title\">Фасады</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/glyanczevyie-kuxni\">Глянцевые\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/matovyie-kuxni\">Матовые\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-s-patinoj/\">С патиной\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\t\t<li class=\"menu_parent\"><span class=\"title\">Цвета</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/belyie-kuxni\">Белые\t</a></li>\n                        <li><a href=\"https://petro-mebel.com/kuxni-seryie\">Серые\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\t\t\n\t\t<li class=\"menu_parent\"><span class=\"title\">Размер</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/malenkie-kuxni\">Маленькие\t</a></li>\n<li><a href=\"https://petro-mebel.com/bolshie-kuxni/\">Большие\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\t\t<li class=\"menu_parent\"><span class=\"title\">Особенности</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/kuxni-s-barnoj-stojkoj\">С барной стойкой\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/kuxni-pod-potolok\">Под потолок\t</a></li>\n<li><a href=\"https://petro-mebel.com/custom/kitchens/kuxni-s-ostrovom-na-zakaz\">С островом\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-s-antresolyami\">С антресолями\t</a></li>\n<li><a href=\"https://petro-mebel.com/trexurovnenyie-kuxni\">Трехуровневые\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-bez-ruchek/\">Без ручек\t</a></li>\n<li><a href=\"https://petro-mebel.com/kuxni-s-penalom/\">С пеналом\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\t\t<li class=\"menu_parent\"><span class=\"title\">Другое</span>\n\t\t\t<ul>\n\t\t\t<li><a href=\"https://petro-mebel.com/kuhni-na-zakaz-primery\">Примеры работ\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/zd-proektyi/\">3D Проекты\t</a></li>\n\t\t\t<li><a href=\"https://petro-mebel.com/custom/kitchens/komplektuyushhie/\">Комплектующие\t</a></li>\n\t\t\t</ul>\n\t\t</li>\n\n\t</ul>\n</div>\n</div>\n        </li>\n    </ul>\n</li>\n<li class=\"dropdown mega-menu-item menu_parent\">\n    <a class=\"dropdown-toggle\" href=\"javascript:void(0);\">\n        Сервис\n        <i class=\"icon icon-angle-down\"></i>\n    </a>\n    <ul class=\"dropdown-menu\">\n        <li class=\"menu_parent\">\n            <div class=\"mega-menu-content\">\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n<ul class=\"sub-menu\"><li class=\"first\"><a href=\"servis/zamer\" rel=\"nofollow\">Замер кухни</a></li><li><a href=\"servis/dizajn-proekt\" rel=\"nofollow\">Дизайн-проект кухни</a></li><li class=\"last\"><a href=\"servis/dostavka-i-sborka\" rel=\"nofollow\">Доставка и сборка кухонь</a></li></ul>\n                    </div>\n                </div>\n            </div>\n        </li>\n    </ul>\n</li>\n<li><a href=\"sale/\" rel=\"nofollow\">Распродажа кухонь</a></li>\n<li class=\"dropdown mega-menu-item menu_parent\">\n    <a class=\"dropdown-toggle\" href=\"javascript:void(0);\">\n        Покупателю\n        <i class=\"icon icon-angle-down\"></i>\n    </a>\n    <ul class=\"dropdown-menu\">\n        <li class=\"menu_parent\">\n            <div class=\"mega-menu-content\">\n                <div class=\"row\">\n                    <div class=\"col-md-12\">\n<ul class=\"sub-menu\"><li class=\"first\"><a href=\"info/o-kompanii\">О компании</a></li><li><a href=\"info/novosti/\" rel=\"nofollow\">Акции на кухни в СПб</a></li><li><a href=\"info/reviews/\" rel=\"nofollow\">Отзывы</a></li><li><a href=\"info/usloviya-oplaty\" rel=\"nofollow\">Условия оплаты</a></li><li><a href=\"info/kuxni-na-zakaz-v-rassrochku\" rel=\"nofollow\">Кухни на заказ в рассрочку</a></li><li><a href=\"info/rasschitat-stoimost-kuxni\">Рассчитать стоимость кухни</a></li><li><a href=\"info/onlajn-kalkulyator-kuxni\">Калькулятор кухни онлайн</a></li><li><a href=\"info/chasto-zadavaemyie-voprosyi\" rel=\"nofollow\">Часто задаваемые вопросы</a></li><li><a href=\"info/poleznyie-stati/\" rel=\"nofollow\">Полезные статьи</a></li><li><a href=\"contact\" rel=\"nofollow\">Где купить?</a></li><li class=\"last\"><a href=\"info/vakansii\">Вакансии</a></li></ul>\n                    </div>\n                </div>\n            </div>\n        </li>\n    </ul>\n</li>\n<li><a href=\"contact\" rel=\"nofollow\">Контакты</a></li>\n\t</ul>\n</div>\n\n\n\n<div class=\"container\"><ul id=\"breadcrumb\" itemprop=\"breadcrumb\"><li><a href=\"https://petro-mebel.com/\">Главная</a></li><li>Кухни на заказ</li></ul></div>\n\t\t    <div role=\"main\" class=\"main\">\n\t\t    <div class=\"container\">\n                <hr>\n\t\t\t\t\t<h1>Кухни на заказ</h1>\n\n\t\t\t\t\t\t\t<div id=\"ajax-calck\" class=\"ajax-call-back collapse\">\n                                <div style=\"padding: 20px;\">\n                                    <button class=\"btn btn-xs pull-right\" data-toggle=\"collapse\" data-target=\"#ajax-calck\" style=\"margin-top: 13px;\">×</button>\n<div class=\"h2 short\">Обратный звонок</div>\n<p>Оставьте свой номер и мы перезвоним, чтобы ответить на Ваши вопросы</p>\n<div class=\"clearfix\"></div>\n<form id=\"calck-form\" method=\"post\" onsubmit=\"yaCounter30427122.reachGoal('obratnuy-zvonok'); return true;\">\n\n\n\n<div class=\"row\">\n\t<div class=\"col-md-6\">\n\t\t<div class=\"form-group \">\n\t\t\t<label class=\"control-label\" for=\"name\">Представьтесь, пожалуйста *</label>\n\t\t\t\n\t\t\t<input type=\"text\" class=\"form-control\" id=\"name\" name=\"name\" value=\"\" maxlength=\"100\" placeholder=\"\">\n<input type=\"HIDDEN\" name=\"pageurl\" value=\"http://www.petro-mebel.com/kuhni-na-zakaz/\">\n\t\t\t\n\t\t</div>\n\t</div>\n\t<div class=\"col-md-6\">\n\t\t<div class=\"form-group \">\n\t\t\t<label class=\"control-label\" for=\"phone\">Номер телефона *</label>\n\t\t\t\n\t\t\t<input type=\"text\" class=\"form-control\" id=\"phone\" name=\"phone\" value=\"\" maxlength=\"100\" placeholder=\"\">\n\t\t\t\n\t\t</div>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col-md-12\">\n\t\t<div class=\"form-group \">\n\t\t\t<label class=\"control-label\" for=\"message\">Размеры и пожелания к будущей кухне:</label>\n\t\t\t\n\t\t\t<textarea name=\"message\" id=\"message\" class=\"form-control\" maxlength=\"5000\" rows=\"10\"></textarea>\n\t\t\t\n\t\t</div>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col\">\n              <label class=\"control-label\">Для успешной отправки необходимо пройти проверку *</label>\n              <div class=\"g-recaptcha\" data-sitekey=\"6LcYHnUUAAAAAL7eXuLG-sSgYQaMQSouc8vSByra\"><div style=\"width: 304px; height: 78px;\"><div><iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-60mqq4al6hsy\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcYHnUUAAAAAL7eXuLG-sSgYQaMQSouc8vSByra&amp;co=aHR0cHM6Ly9wZXRyby1tZWJlbC5jb206NDQz&amp;hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=vdnbl14zsknl\"></iframe></div><textarea id=\"g-recaptcha-response-1\" name=\"g-recaptcha-response\" class=\"g-recaptcha-response\" style=\"width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;\"></textarea></div><iframe style=\"display: none;\"></iframe></div>\n              <span class=\"error_g-recaptcha-response error\"></span>\n\t</div>\n</div>\n<div class=\"row\">\n\t<div class=\"col\">\n\t\t<button type=\"submit\" name=\"submit\" value=\"Отправить\" class=\"btn btn-primary btn-lg ajax-form\">Отправить</button><p><i>* поля, обязательные для заполнения. Заполняя форму,<br> вы соглашаетесть с <a href=\"/usloviya-obrabotki-dannyix\" rel=\"nofollow\">условиями обработки данных</a>.</i></p>\n\t</div>\n</div>\n\n\n</form>\n\n\n\n\n\n\n                                </div>\n                            </div>\n\n\n<div class=\"tags\">\n<button class=\"btn btn-link btn-ajax-call-back\" data-toggle=\"collapse\" data-target=\"#ajax-calck\">\n                                <span>Расчет кухни</span>\n                            </button>\n <a href=\"/custom/kitchens/classic/\">Классические</a> <a href=\"/custom/kitchens/modern/\">Современные</a> <a href=\"/custom/kitchens/kuxni-na-zakaz-loft\">Лофт</a> <a href=\"https://petro-mebel.com/kuxni-kantri/\">Кантри</a> <a href=\"https://petro-mebel.com/kuxni-xaj-tek/\">Хай-тек</a> <a href=\"https://petro-mebel.com/anglijskie-kuxni/\">Английский стиль</a> <a href=\"https://petro-mebel.com/custom/kitchens/kuxni-v-skandinavskom-stile\">Скандинавский стиль</a> <a href=\"https://petro-mebel.com/kuxni-provans/\">Прованс</a> <a href=\"https://petro-mebel.com/custom/kitchens/pryamyie-kuxni\">Прямые</a> <a href=\"/custom/kitchens/uglovie-kuhni\">Угловые</a> <a href=\"https://petro-mebel.com/custom/kitchens/p-obraznyie-kuxni\">П-образные</a> <a href=\"/custom/kitchens/kuxni-s-barnoj-stojkoj\">С барной стойкой</a> <a href=\"https://petro-mebel.com/custom/kitchens/kuxni-pod-potolok\">Под потолок</a> <a href=\"https://petro-mebel.com/custom/kitchens/kuxni-s-ostrovom-na-zakaz\">С островом</a> <a href=\"https://petro-mebel.com/kuxni-s-antresolyami\">С антресолями</a> <a href=\"/custom/kitchens/matovyie-kuxni\">Матовые</a> <a href=\"https://petro-mebel.com/kuxni-s-patinoj/\">С патиной</a> <a href=\"https://petro-mebel.com/custom/kitchens/glyanczevyie-kuxni\">Глянцевые</a> <a href=\"https://petro-mebel.com/trexurovnenyie-kuxni\">Трехуровневые</a> <a href=\"https://petro-mebel.com/kuxni-bez-ruchek/\">Без ручек</a> <a href=\"https://petro-mebel.com/kuxni-s-penalom/\">С пеналом</a> <a href=\"https://petro-mebel.com/custom/kitchens/radiusnyie-kuxni\">Радиусные</a> <a href=\"https://petro-mebel.com/custom/kitchens/belyie-kuxni\">Белые</a> <a href=\"https://petro-mebel.com/kuxni-seryie\">Серые</a> <a href=\"https://petro-mebel.com/bolshie-kuxni/\">Большие</a> <a href=\"https://petro-mebel.com/custom/kitchens/malenkie-kuxni\">Маленькие</a> <a href=\"/custom/kitchens/modern/akril/\">Акриловые</a> <a href=\"/custom/kitchens/modern/plastik/\">Из пластика</a> <a href=\"/custom/kitchens/modern/shpon\">Шпон</a> <a href=\"/custom/kitchens/modern/mdf-plenochnyie/\">МДФ в пленке</a> <a href=\"/custom/kitchens/classic/mdf-plenochnyie/\">МДФ в пленке классика</a> <a href=\"/custom/kitchens/classic/massiv/\">Массив</a> <a href=\"/custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/\">Эмаль</a> \n\n<a href=\"\" class=\"open-tags\"><span class=\"o\">Все категории</span><span class=\"c\">Скрыть теги</span></a>\n</div>\n\n\n</div>\n<div class=\"home-intro\">\n\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"row\"><div class=\"container\">\n\t\t\t\t\t\t\t<div class=\"col-md-8\">\n\t\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\t\tОставьте заявку на бесплатный расчет кухни\n\t\t\t\t\t\t\t\t\t<span>Оцените качество наших кухонь и обратитесь к дизайнерам для составления проекта</span>\n\t\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-md-4\">\n\t\t\t\t\t\t\t\t<div class=\"get-started\">\n\t\t\t\t\t\t\t\t\t<a href=\"/info/rasschitat-stoimost-kuxni\" class=\"btn btn-lg btn-primary\">Оставить заявку</a>\n\t\t\t\t\t\t\t\t\t<div class=\"learn-more\"><a href=\"kuhni-na-zakaz-primery/\">или посмотрите примеры</a></div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div></div><div class=\"container\">\n<p>Компания «Петро-Мебель» изготавливает эстетичную надежную кухонную мебель на заказ в Санкт-Петербурге. Исходя из предпочтений покупателя и особенностей кухни, мы разрабатываем и реализуем эксклюзивные проекты в г. Санкт-Петербург и ЛО.</p>\n<p>Кухонное пространство должно быть уютным и удобным: здесь готовят и наслаждаются вкусными блюдами, общаются с родственниками и друзьями. Мы предлагаем вам сделать подарок себе и близким - купить гарнитур мечты.</p><p>У нас вы можете заказать кухню, которая будет полностью соответствовать ожиданиям и сможет радовать вас много лет! «Петро-Мебель» располагает огромным выбором материалов, комплектующих, функциональной фурнитуры, что позволяет реализовать идеи любой сложности по приятно доступным ценам.</p>\n<ul class=\"kitchens-styles-new\">\n\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/images/kuxnya-s-frezerovkoj-tuluza.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухни на заказ в классическом стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 58 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/images/kuxnya-na-zakaz-s-plastikovyimi-fasadami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Современные кухни на заказ</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 54 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/kuxni-na-zakaz-loft\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/images/pryamaya-kuxnya-s-kombinirovannymi-fasadami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухни Лофт</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 55 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/kuxni-v-skandinavskom-stile\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни в скандинавском стиле\" class=\"img-responsive\" src=\"https://petro-mebel.com/assets/components/phpthumbof/cache/p-obraznaya-kuxnya-pod-potolok.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухни в скандинавском стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 67 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"kuxni-kantri/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни кантри\" class=\"img-responsive\" src=\"/assets/images/kuxnya-s-matovyimi-fasadami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухни кантри</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 80 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"anglijskie-kuxni/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Английские кухни\" class=\"img-responsive\" src=\"/assets/images/%D0%B4363.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Английские кухни</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 83 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"/kuxni-provans/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Прованс\" class=\"img-responsive\" src=\"/assets/images/kuxnya-iz-massiva-yasenya-na-zakaz.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухни прованс</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 80 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/pryamyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Прямые кухни\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/77%20%281%29.39c9de9ad913fc346d28580f54cb9550.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 55 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/uglovie-kuhni\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-stile-loft-s-fasadami-vhc.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 58 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n</ul>\n<p align=\"center\">\n\t<a href=\"/info/rasschitat-stoimost-kuxni\" class=\"btn btn-lg btn-primary\">Рассчитать стоимость кухни</a></p>\n<ul class=\"kitchens-styles-new\">\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/p-obraznyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"П-образные кухни\" class=\"img-responsive\" src=\"/assets/images/kuxnya-na-zakaz-so-semnoj-barnoj-stojkoj.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">П-образные</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 97 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li><li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/kuxni-s-ostrovom-na-zakaz\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни с островом\" class=\"img-responsive\" src=\"/assets/images/kuxnya-egger-s-ostrovom.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">С островом</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 138 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"/kuxni-s-antresolyami\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни с антресолями\" class=\"img-responsive\" src=\"/assets/images/kuxnya-s-akrilovyimi-fasadami-i-antresolyami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">С антресолями</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 55 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/kuxni-pod-potolok\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни под потолок\" class=\"img-responsive\" src=\"/assets/images/uglovaya-kuxnya-s-antresolyami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Под потолок</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 67 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"/trexurovnenyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни с антресолями\" class=\"img-responsive\" src=\"/assets/images/content/11.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Трехуровневые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 67 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/glyanczevyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Глянцевые кухни\" class=\"img-responsive\" src=\"/assets/images/antresoli-3.jpeg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Глянцевые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 60 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/matovyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Матовые кухни на заказ\" class=\"img-responsive\" src=\"/assets/images/pryamaya-kuxnya-s-kombinirovannymi-fasadami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Матовые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 59 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"/kuxni-s-patinoj/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"С патиной\" class=\"img-responsive\" src=\"/assets/images/kuxnya-na-zakaz-s-fasadami-iz-massiva-olxi.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">С патиной</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 100 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/belyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Белые кухни\" class=\"img-responsive\" src=\"/assets/images/belaya-kuxnya-na-zakaz-s-derevom.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Белые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена от 52 000 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n</ul>\n<div class=\"bottom-benefits\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<div class=\"block\">\n\t\t\t\t\t<p><span>Собственное производство</span>\n\t\t\t\t\tМы занимаемся изготовлением кухонь на заказ с 2003 года. Все процессы производства идеально отлажены</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"block\">\n\t\t\t\t\t<p><span>Выгодные цены</span>\n\t\t\t\t\tСтоимость наших кухонь в среднем на 15% ниже, чем у других мебельных фабрик, предлагающих продукцию аналогичного качества</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t<div class=\"block\">\n\t\t\t\t\t<p><span>Точные сроки</span>\n\t\t\t\t\tСрок изготовления мебели – 22 рабочих дня. Мы стараемся делать все возможное, чтобы кухня радовала своих хозяев как можно скорее</p>\n\t\t\t\t\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div><br><p align=\"center\">\n\t<a href=\"/info/rasschitat-stoimost-kuxni\" class=\"btn btn-lg btn-primary\">Рассчитать стоимость кухни</a></p>\n<ul class=\"kitchens-styles-new\">\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"/kuxni-seryie\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"серые кухни\" class=\"img-responsive\" src=\"/assets/images/p-obraznaya-kuxnya-iz-plastika.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Серые</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"bolshie-kuxni/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Большие кухни\" class=\"img-responsive\" src=\"/assets/images/prostornaya-uglovaya-kuxnya-s-frezerovkoj.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Большие</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/malenkie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Маленькие кухни\" class=\"img-responsive\" src=\"/assets/images/pryamaya-kuhnya-v-stile-loft.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Маленькие</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/radiusnyie-kuxni\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Радиусные кухни\" class=\"img-responsive\" src=\"/assets/images/antresoli.jpeg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Радиусные</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/kuxni-s-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/images/kuxnya-s-barnoj-stojkoj.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">С барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"kuxni-bez-ruchek/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни без ручек\" class=\"img-responsive\" src=\"/assets/images/uglovaya-kuxnya-pod-potolok-s-penalom.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Без ручек</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"/kuxni-s-penalom/\" rel=\"nofollow\" class=\"thumb-info\">\n\t\t\t<img alt=\"Кухни с пеналом\" class=\"img-responsive\" src=\"/assets/images/seraya-kuxnya-pod-potolok-s-plastikovyimi-fasadami.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">С пеналом</span>\n\t\t\t\t<span class=\"thumb-info-type\"></span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/images/kuxnya-v-cvete-royalvud-goluboj.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">МДФ пленка Классика</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: МДФ в пленке</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"images/225-5.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Из массива</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: массив</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n</ul>\n<p align=\"center\">\n\t<a href=\"/info/rasschitat-stoimost-kuxni\" class=\"btn btn-lg btn-primary\">Рассчитать стоимость кухни</a></p>\n<ul class=\"kitchens-styles-new\">\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"assets/images/kuxnya-s-frezerovkoj-tuluza.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">МДФ крашеные на заказ</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: МДФ крашеные</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/images/content/55.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">МДФ пленка современные</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: МДФ в пленке</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/akril/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"images/221-1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Акриловые</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: акрил</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-pod-potolok-s-nishej-1.17ff19d26ab93c575dc189f8f2ffba10.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Из пластика</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: пластик</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/shpon\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"\" class=\"img-responsive\" src=\"images/250119-2.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Из шпона</span>\n\t\t\t\t<span class=\"thumb-info-type\">Материал фасадов: шпон</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Universal\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\t\t</a>\n\t</div>\n</li>\n</ul>\n<p><b>Примеры кухонь:</b></p>\t\n<ul class=\"kitchens-styles-new\">\n<li class=\"col-md-4 isotope-item massiv\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/kuxnya-na-zakaz-s-fasadami-iz-massiva-olxi\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ с фасадами из массива ольхи\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-na-zakaz-s-fasadami-iz-massiva-olxi.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ с фасадами из массива ольхи</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 206 509 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/uglovaya-kuxnya-pod-potolok-s-penalom\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня под потолок с пеналом\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-pod-potolok-s-penalom.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня под потолок с пеналом</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 186 786 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/svetlaya-kuxnya-v-klassicheskom-stile\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Светлая кухня в классическом стиле\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/svetlaya-kuxnya-v-klassicheskom-stile.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Светлая кухня в классическом стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 119 168 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-pod-potolok-s-antresolyami-i-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня под потолок с антресолями и барной стойкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-pod-potolok-s-antresolyami-i-barnoj-stojkoj.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня под потолок с антресолями и барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 170 140 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/p-obraznaya-kuxnya-egger\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"П-образная кухня Egger\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/p-obraznaya-kuxnya-egger.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">П-образная кухня Egger</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 164 625 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-s-ostrovom-v-klassicheskom-stile\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с островом в классическом стиле\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-ostrovom-v-klassicheskom-stile.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с островом в классическом стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 403 868 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item ldsp\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kuxnya-iz-ldsp-bez-verxnix-shkafov\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня из ЛДСП без верхних шкафов\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-iz-ldsp-bez-verxnix-shkafov.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня из ЛДСП без верхних шкафов</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 95 692 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-s-frezerovkoj-tuluza\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ с фрезеровкой Тулуза\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-frezerovkoj-tuluza.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ с фрезеровкой Тулуза</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 128 370 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item massiv\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/kuxnya-iz-massiva-yasenya-na-zakaz\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня из массива ясеня на заказ\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-iz-massiva-yasenya-na-zakaz.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня из массива ясеня на заказ</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 196 788 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kuxnya-s-gnutyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ с гнутыми фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/%D0%B4%D0%BE%D0%B3213__.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ с гнутыми фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 97 480 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/prostornaya-uglovaya-kuxnya-s-frezerovkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Просторная угловая кухня с фрезеровкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/prostornaya-uglovaya-kuxnya-s-frezerovkoj.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Просторная угловая кухня с фрезеровкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 153 425 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/kuxnya-s-akrilovyimi-fasadami-i-antresolyami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с акриловыми фасадами и антресолями\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-akrilovyimi-fasadami-i-antresolyami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с акриловыми фасадами и антресолями</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 116 500 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/pryamaya-kuxnya-s-antresolyami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая кухня с антресолями\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuxnya-s-antresolyami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая кухня с антресолями</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 133 680 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/uglovaya-kuxnya-s-fasadami-iz-plastika\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с фасадами из пластика\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-fasadami-iz-plastika.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с фасадами из пластика</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 231 846 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item massiv\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/kuxnya-iz-massiva-s-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня из массива с барной стойкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-iz-massiva-uglovaya.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня из массива с барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 143 739 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/akrilovaya-kuxnya-na-zakaz-adelkreis\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Акриловая кухня на заказ Adelkreis\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/akrilovaya-kuxnya-na-zakaz-adelkreis-1.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Акриловая кухня на заказ Adelkreis</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 107 420 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-s-matovyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с матовыми фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-matovyimi-fasadami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с матовыми фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 124 000 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/kuxnya-v-stile-loft\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ в стиле лофт\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-stile-loft.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ в стиле лофт</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 100 350 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/uglovaya-kuxnya-s-ventilyaczionnyim-korobom\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с вентиляционным коробом\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-ventilyaczionnyim-korobom.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с вентиляционным коробом</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 82 615 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-pod-potolok-s-nishej\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня под потолок с нишей\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-pod-potolok-s-nishej-1.17ff19d26ab93c575dc189f8f2ffba10.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня под потолок с нишей</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 115 354 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/kuxnya-na-zakaz-s-fasadami-adelkreis\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ с фасадами Adelkreis\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-na-zakaz-s-fasadami-adelkreis.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ с фасадами Adelkreis</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 125 306 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/belaya-kuxnya-na-zakaz-s-frezerovkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Белая кухня на заказ с фрезеровкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/belaya-kuxnya-na-zakaz-s-frezerovkoj.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Белая кухня на заказ с фрезеровкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 87 605 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item massiv\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/uglovaya-kuxnya-na-zakaz-iz-massiva\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня на заказ из массива\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-na-zakaz-iz-massiva.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня на заказ из массива</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 165310 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kuxnya-v-stile-loft-s-fasadami-vhc\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня в стиле лофт с фасадами ВХЦ\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-stile-loft-s-fasadami-vhc.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня в стиле лофт с фасадами ВХЦ</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 72 725 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/kuxnya-egger-s-ostrovom\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня Egger с островом\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-egger-s-ostrovom-1.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня Egger с островом</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 138 040 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/uglovaya-kuxnya-s-penalom-i-tumboj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с пеналом и тумбой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-penalom-i-tumboj.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с пеналом и тумбой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 113 749 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-s-antresolyami-i-penalom-dlya-texniki\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с антресолями и пеналом для техники\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-antresolyami-i-penalom-dlya-texniki.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с антресолями и пеналом для техники</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 230 220 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-na-zakaz-matovaya-v-stile-provans\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня матовая в стиле Прованс\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-na-zakaz-matovaya-v-stile-provans-0.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня матовая в стиле Прованс</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 92 567 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/uglovaya-kuxnya-s-antresolyami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с антресолями\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-antresolyami.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с антресолями</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 93 307 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item ldsp\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/kuxnya-s-fasadami-egger-s-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с фасадами Egger с барной стойкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/malenkaya-kuhnya-s-barnoy-stoykoy.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с фасадами Egger с барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 74 892 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/seraya-kuxnya-pod-potolok-s-plastikovyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Серая кухня под потолок с пластиковыми фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/seraya-kuxnya-pod-potolok-s-plastikovyimi-fasadami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Серая кухня под потолок с пластиковыми фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 101 596 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/uglovaya-kuxnya-s-tumboj-pod-tv\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с тумбой под TV\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-tumboj-pod-tv.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с тумбой под TV</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 148 162 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/kompaktnaya-kuxnya-v-klassicheskom-stile\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Компактная кухня в классическом стиле\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kompaktnaya-kuxnya-v-klassicheskom-stile.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Компактная кухня в классическом стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 104 460 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item massiv\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/kuxnya-iz-massiva-duba-s-nestandartnyimi-fasadami-i-vitrinami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня из массива дуба с нестандартными фасадами и витринами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/1kuxnya-iz-massiva-duba-s-nestandartnyimi-fasadami-i-vitrinami-4.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня из массива дуба с нестандартными фасадами и витринами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 209720 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/uglovaya-kuxnya-v-stile-loft-s-shaxtoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня на заказ в стиле Лофт\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-v-stile-loft-s-shaxtoj.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня на заказ в стиле Лофт</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 66 210 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/uglovaya-kuxnya-na-zakaz-iz-akrila-i-plastika\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня на заказ из акрила и пластика\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-na-zakaz-iz-akrila-i-plastika.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня на заказ из акрила и пластика</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 84 412 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/belaya-kuxnya-na-zakaz-s-derevom\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Белая кухня на заказ с элементами под дерево\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/belaya-kuxnya-na-zakaz-s-derevom.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Белая кухня на заказ с элементами под дерево</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 92 089 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/pryamaya-kuxnya-v-skandinavskom-stile\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая кухня в скандинавском стиле\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuxnya-v-skandinavskom-stile.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая кухня в скандинавском стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 126 846 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/uglovaya-kuxnya-s-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с барной стойкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-barnoj-stojkoj-plenka.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 122 971 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/uglovaya-kuxnya-so-stoleshniczej-pod-podokonnik\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня со столешницей под подоконник\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-so-stoleshniczej-pod-podokonnik.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня со столешницей под подоконник</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 198 034 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-s-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с барной стойкой лофт\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-barnoj-stojkoj.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с барной стойкой лофт</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 136 880 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/svetlaya-kuxnya-s-frezerovkoj-provans\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Светлая кухня на заказ с фрезеровкой Прованс Классика\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/svetlaya-kuxnya-s-frezerovkoj-provans.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Светлая кухня на заказ с фрезеровкой Прованс Классика</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 79 400 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item massiv\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/massiv/kuxnya-iz-massiva-nika-noche\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня из массива Ника Ноче\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/%D0%B4363.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня из массива Ника Ноче</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 249 374 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/p-obraznaya-kuxnya-pod-potolok\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"П-образная кухня под потолок\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/p-obraznaya-kuxnya-pod-potolok.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">П-образная кухня под потолок</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 150 267 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item mdf-krash\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/pryamaya-kuxnya-s-frezerovkoj-okeaniya\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая кухня с фрезеровкой Океания\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuxnya-s-frezerovkoj-okeaniya.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая кухня с фрезеровкой Океания</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 161 464 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/uglovaya-kuxnya-pod-potolok\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня под потолок\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-pod-potolok.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня под потолок</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 178 045 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/biryuzovaya-kuxnya-v-stile-provans\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Бирюзовая кухня на заказ в стиле Прованс\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/biryuzovaya-kuxnya-v-stile-provans.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Бирюзовая кухня на заказ в стиле Прованс</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 110 255 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/uglovaya-kuxnya-s-fasadami-fenix\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с фасадами FENIX\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-fasadami-fenix.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с фасадами FENIX</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 180 744руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/akril/uglovaya-kuxnya-s-nishami-i-yashhikami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня с нишами и ящиками\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-s-nishami-i-yashhikami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня с нишами и ящиками</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 141 177 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kuxnya-v-skandinavskom-stile-s-ostrovom\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня в скандинавском стиле с островом\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-skandinavskom-stile-s-ostrovom.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня в скандинавском стиле с островом</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 283 814 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item akril\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/nebolshaya-uglovaya-kuxnya-egger\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Небольшая угловая кухня Egger\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/nebolshaya-uglovaya-kuxnya-egger-2.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Небольшая угловая кухня Egger</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 109 179 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/kuxnya-na-zakaz-v-klassicheskom-stile\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ в классическом стиле\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-na-zakaz-v-klassicheskom-stile.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ в классическом стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 117 420 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-so-slozhnoj-nishej\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня со сложной нишей\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-so-slozhnoj-nishej.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня со сложной нишей</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 127 640 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/lakonichnaya-kuxnya-s-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Лаконичная кухня с барной стойкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/lakonichnaya-kuxnya-s-barnoj-stojkoj-1.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Лаконичная кухня с барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 127 514 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/kuxnya-na-zakaz-gzhel\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Угловая кухня на заказ Гжель МДФ в пленке\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/uglovaya-kuxnya-gzhel.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Угловая кухня на заказ Гжель МДФ в пленке</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 99 314 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/pryamaya-belaya-kuxnya-s-derevyannyimi-kontrastami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая белая кухня с деревянными контрастами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-belaya-kuxnya-s-derevyannyimi-kontrastami-1.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая белая кухня с деревянными контрастами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 113 247 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kuxnya-v-sovremennom-stile-s-kontrastnyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня в современном стиле с контрастными фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-sovremennom-stile-s-kontrastnyimi-fasadami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня в современном стиле с контрастными фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 131 428 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kompaktnaya-kuxnya-loft\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Компактная кухня лофт\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuhnya-v-stile-loft.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Компактная кухня лофт</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 54 775 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/bolshaya-p-obraznaya-kuxnya\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Большая П-образная кухня\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/bolshaya-p-obraznaya-kuxnya-klassika.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Большая П-образная кухня</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 152 306 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/bolshaya-uglovaya-kuxnya-s-fasadami-fenix\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Большая угловая кухня с фасадами Fenix\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/bolshaya-uglovaya-kuxnya-s-fasadami-fenix.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Большая угловая кухня с фасадами Fenix</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 186 864 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-na-zakaz-s-plastikovyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с пластиковыми фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-na-zakaz-s-plastikovyimi-fasadami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с пластиковыми фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 120 910 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/seraya-pryamaya-kuxnya-bez-ruchek\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Серая прямая кухня без ручек\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/seraya-pryamaya-kuxnya-bez-ruchek.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Серая прямая кухня без ручек</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 102 097 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/kuxnya-v-czvete-singl-grafit\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня в цвете Сингл Графит\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-czvete-singl-grafit.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня в цвете Сингл Графит</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 134 097 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/mdf-plenochnyie/kuxnya-s-antresolyami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с антресолями на заказ\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/77%20%281%29.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с антресолями на заказ</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 75 980 руб</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/kuxnya-v-czvete-royalvud-goluboj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ в цвете Роялвуд Голубой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-v-cvete-royalvud-goluboj.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ в цвете Роялвуд Голубой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 99 314 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-na-zakaz-so-semnoj-barnoj-stojkoj\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня на заказ со съемной барной стойкой\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-na-zakaz-so-semnoj-barnoj-stojkoj.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня на заказ со съемной барной стойкой</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 198 960 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/pryamaya-kuxnya-s-kombinirovannyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая кухня с комбинированными фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuxnya-s-kombinirovannymi-fasadami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая кухня с комбинированными фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 141 478 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item \">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/loft-beton\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Лофт-Бетон\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/11%20%287%29.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Лофт-Бетон</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: </span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/kuxnya-s-kombinirovannyimi-fasadami\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Кухня с комбинированными фасадами\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/kuxnya-s-kombinirovannyimi-fasadami.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Кухня с комбинированными фасадами</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 49 607 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/p-obraznaya-kuxnya-iz-plastika\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"П-образная кухня из пластика\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/p-obraznaya-kuxnya-iz-plastika.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">П-образная кухня из пластика</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 96 434 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item pdf-plen\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/classic/mdf-plenochnyie/pryamaya-kuxnya-pod-potolok\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая кухня под потолок\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuxnya-pod-potolok.7355cb212573b504f8170d1ec6b727a1.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая кухня под потолок</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 90 067 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n<li class=\"col-md-4 isotope-item plastik\">\n\t<div class=\"portfolio-item img-thumbnail\">\n\t\t<a href=\"custom/kitchens/modern/plastik/pryamaya-kuxnya-v-sovremennom-stile\" class=\"thumb-info\" rel=\"nofollow\">\n\t\t\t<img alt=\"Прямая кухня в современном стиле\" class=\"img-responsive\" src=\"/assets/components/phpthumbof/cache/pryamaya-kuxnya-v-sovremennom-stile.abbbc5427525c76f73dcd0124a352ec3.jpg\">\n\t\t\t<span class=\"thumb-info-title\">\n\t\t\t\t<span class=\"thumb-info-inner\">Прямая кухня в современном стиле</span>\n\t\t\t\t<span class=\"thumb-info-type\">Цена: 98 900 руб.</span>\n\t\t\t</span>\n\t\t\t<span class=\"thumb-info-action\">\n\t\t\t\t<span title=\"Расчет мебели для кухни онлайн | Купить кухонные гарнитуры в 1 клик\" class=\"thumb-info-action-icon\"><i class=\"icon icon-link\"></i></span>\n\t\t\t</span>\n\n\n\t\t</a>\n\n\t\t\n\t</div>\n</li>\n</ul>\t\n\n<a href=\"/kuhni-na-zakaz-primery\" class=\"all-works\">Посмотреть все примеры работ</a>\n<ul style=\"list-style-image: url('/assets/images/content/icon1.png')\"> \n\t<li>Компания «Петро-Мебель» с&nbsp;2003 года производит кухни на&nbsp;собственной фабрике.</li>\n\t<li>Мебель изготавливается точно по&nbsp;размерам на&nbsp;итальянском оборудовании: не&nbsp;допускается нарушения технологий и&nbsp;методов работы, применения некачественных материалов и&nbsp;комплектующих.</li>\n\t<li>«Петро-Мебель» сотрудничает с&nbsp;известнейшими российскими и&nbsp;зарубежными поставщиками&nbsp;— производителями фасадов, столешниц, стеновых панелей, фурнитуры.</li>\n\t<li>Для увеличения надежности гарнитура мы&nbsp;формируем на&nbsp;фасадах защитную кромку, на&nbsp;столешницах&nbsp;— незаметные герметичные швы.</li>\n\t<li>Все работы проводятся в&nbsp;строгом соответствии со&nbsp;стандартами и&nbsp;санитарными нормами.</li>\n\t<li>Кухни, готовые к&nbsp;сборке, доставляют в&nbsp;собранном виде.</li>\n\t<li>Сборка гарантирует длительную и&nbsp;беспроблемную эксплуатацию. Проводится квалифицированным мастером аккуратно и&nbsp;быстро: все технологические операции тщательно отработаны.</li>\n</ul>\n<h2>Что представлено в каталоге</h2>\n<p>Фотографии кухонных гарнитуров, подобранные по категориям, сориентируют вас по стилям, цвету, фактурам, ценам.</p>\n<p>Вся мебель представлена в демонстрационном варианте. В каталоге: реализованные нами проекты, выполненные по индивидуальным размерам.</p>\n<p>На основе любого из них можно разработать проект с учетом конкретных ограничений и условий. Фабрика предлагает большой выбор стильных материалов и комплектующих для мебели – вы сможете воплотить любую идею по выгодной цене.</p>\n<p>«Петро-Мебель» не продает готовую мебель: у нас можно купить только выставочные образцы по акции со скидкой.</p>\n<h2>Какие кухни изготавливает «Петро-Мебель»</h2>\n<p>Выбирая мебель для кухни в г Санкт-Петербург, обратите внимание на производителя «Петро-Мебель».</p>\n<p>Мы проектируем и изготавливаем кухни в классических и современных стилях. Минимализм, лофт, неоклассика – мы реализуем любую вашу идею. Вы можете заказать изготовление кухни по индивидуальным размерам, шкафы с гнутыми фасадами и многое другое.</p>\n<p>Дизайнеры индивидуально работают с каждым проектом: перед запуском в производство проводится осмотр помещения, замеры. При разработке мебели для кухни необходимо учитывать, есть ли особенности помещения, где проложены коммуникации, как будет располагаться бытовая техника.</p>\n<p>Оговариваются все детали, учитывается расположение бытовой техники, размеры фасадов, освещение, цвет. </p>\n<p>Реализовать проект кухни можно с помощью различных материалов: от данного решения зависит и долговечность, и качество, и цена. Для комплектации мы предлагаем корпуса из ЛДСП, фасады из массива дерева и экошпона, МДФ, пластика и ЛДСП с различной облицовкой. </p>\n<p>Можно взять за основу проект определенного дизайнера, представленный в каталоге на нашем сайте или фото кухни, выбранное в интернете. При разработке дизайна вам будет представлен наглядный проект, который позволит оценить внешний вид и функциональность.</p>\n<p>При заказе кухонь в классических стилях вы сможете выбрать вариант фрезеровки, декора, заказать патинирование, окрашивание, дополнить мебель цветными витражами и стильными ручками.</p>\n<p>С помощью дизайнеров придадите гарнитуру нужный вам уровень комфорта: выберете вариант открывания шкафов, петли и доводчики, системы хранения и т.д. Гарнитур будет запущен в производство только после полного согласования всех деталей с заказчиком.</p>\n<p>Срок изготовления гарнитура - 22 рабочих дня.</p>\n<h3>Сотрудничество с компанией «Петро-Мебель»</h3>\n<ul style=\"list-style-image: url('/assets/images/content/icon1.png')\">  \n\t<li>Качество изготовления кухонь, точные размеры и добротная сборка.</li>\n\t<li>Помощь дизайнера с первой минуты общения на сайте и в салонах.</li>\n\t<li>Внимательный подход.</li>\n\t<li>Реальные цены (стоимость в среднем на 15% ниже, чем у других мебельных фабрик). </li>\n\t<li>Расчет цены по фото или эскизу.</li>\n\t<li>Доступность образцов гарнитуров в салонах Санкт-Петербурга.</li>\n\t<li>Точные сроки изготовления – 22 рабочих дня.</li>\n\t<li>Бесплатный замер (при заказе) доставка и сборка.</li>\n\t<li>Гарантия на мебель – 18 месяцев.</li>\n</ul>\n<h3>Как мы работаем</h3>\n<p>\n\t<img src=\"/assets/images/scheme-sotrudnichestva-1.jpg\" width=\"100%\">\n</p>\n<ul style=\"list-style-image: url('/assets/images/content/icon1.png')\"> \n\t<li>Вы оставляете заявку на сайте.</li>\n\t<li>Дизайнеры связываются с вами для обсуждения проекта и расчета стоимости.</li>\n\t<li>Планируется выезд замерщика.</li>\n\t<li>При встрече в салоне проходит подробное обсуждение составляющих проекта (в договоре прописываются все решения).</li>\n\t<li>Проект кухни выполняется в формате 3D: вы сможете внести заключительные корректировки.</li>\n\t<li>После подписания договора вы оплачиваете 50% от указанной суммы.</li>\n\t<li>Кухня запускается в производство.</li>\n\t<li>После получения информации о готовности проплачиваете оставшиеся 50%.</li>\n\t<li>Затем ожидаете доставку и сборку в оговоренное время. </li>\n<li>Получаете письменно оформленную гарантию и памятку по уходу за мебелью, составленную индивидуально с учетом процесса изготовления, тестирования и сборки.</li>\n<li>Мы сотрудничаем с несколькими банками, поэтому нашим клиентам доступна рассрочка платежа.</li>\n</ul>\n<p>Сегодня многие мебельные магазины и&nbsp;компании предоставляют клиентам услуги по&nbsp;изготовлению недорогой мебели на&nbsp;заказ по&nbsp;индивидуальным размерам. При этом окончательная стоимость выбранных моделей часто оказывается выше, поскольку расчеты ведутся по&nbsp;базовым расценкам. Некоторые компании предлагают недорого заказать гарнитур по картинке из каталога, без четкой детализации и возможности выбора материалов. В итоге покупатели получают кухонные шкафы, отличающиеся по виду от фото, к тому же сделанные из самого дешевого ДСП. Качество мебели для кухни от «Петро-Мебель» можно увидеть вживую в наших салонах в г. Санкт-Петербург, там же можно обсудить варианты изготовления гарнитура именно под ваш бюджет и пожелания.</p>\n<p>Преимущества сотрудничества с&nbsp;профессионалами&nbsp;— услуга под ключ. Мы&nbsp;разрабатываем проект с&nbsp;учетом планировки и&nbsp;интерьера, безошибочно проводим замеры. Учитывая опыт наших экспертов и&nbsp;отзывы покупателей, даем советы при выборе материалов и&nbsp;мебельных товаров. Общаясь с&nbsp;заказчиком, добиваемся идеального сочетания стиля, цены и&nbsp;практичности.</p>\n<p>Планируете покупку мебели на&nbsp;заказ? С&nbsp;дизайнерами «Петро-Мебель» вы&nbsp;сможете приобрести кухню, уникальную по&nbsp;эстетике и&nbsp;комфорту.</p>\n<p>Специалисты помогут учесть максимальное количество нужных вам мелочей и&nbsp;создать красивый интерьер: мы&nbsp;учтем дизайн и&nbsp;высоту шкафов, сочетание цветов, расположение полок. При работе над проектом вы&nbsp;совершенно бесплатно сможете поэкспериментировать с&nbsp;материалами, фактурами.</p>\n<p>Заказ кухни по заданным размерам доступен в любом из салонов компании «Петро-Мебель» в Санкт-Петербурге. Если у вас есть вопросы, пишите нам на сайте или в соцсетях, выбирайте телефон любого из наших салонов и обращайтесь за консультацией! Ждем ваших заявок и решений!</p>\n\n                    \n                </div>\n\t\t\t</div>\n\t\t\t<footer class=\"short\" id=\"footer\">\n\t<div class=\"container\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"col-md-8\">\n\t\t\t\t<div class=\"h4\">«Петро-Мебель» </div>\n\n\n\n\n\n\t\t\t\t<p></p>\n\t\t\t\t<hr class=\"light\"><div class=\"col-md-1\">\n\t\t\t\t\t<a href=\"https://petro-mebel.com/\" class=\"logo\" style=\"width:40px;overflow:hidden;\"><img alt=\"Петро-Мебель\" width=\"100\" src=\"assets/images/temp/logo_petro_mebel_2.png\"></a>\n\t\t\t\t</div><div class=\"footer-copyright\"><div class=\"col-md-11\">\n\t\t\t\t\t<p>© 2003 — 2026. Все права защищены.</p>\n\t\t\t\t\t<p>© \"Петро-Мебель\". <a href=\"https://petro-mebel.com/karta-sajta\">Карта сайта</a> <a href=\"https://petro-mebel.com/politika-konfidenczialnosti\">Политика конфиденциальности</a></p>\n<p><a href=\"https://vk.com/petro_mebel\" rel=\"nofollow\" target=\"_blank\"><img alt=\"Петро-мебель ВКонтакте\" width=\"10%\" src=\"https://petro-mebel.com/assets/images/logo-vk.png\"></a></p>\n\t\t\t\t</div></div>\n\t\n\t\t\n\t\t\t</div>\n\t\t\t<div class=\"col-md-3 col-md-offset-1\">\n\t\t\t\t<div class=\"h5 short\">Свяжитесь с нами!</div>\n\t\t\t\t<span class=\"phone\">\n<span><a href=\"&lt;/span\">\n\t\t\t\t</a><ul class=\"list icons list-unstyled\"><a href=\"&lt;/span\">\n\t\t\t\t\t</a><li><a href=\"&lt;/span\"><i class=\"icon icon-envelope\"></i></a><a href=\"mailto:sales@petro-mebel.com\">sales@petro-mebel.com</a></li>\n\t\t\t\t</ul><a href=\"https://petro-mebel.com/servis/dostavka-i-sborka\"><img alt=\"способы оплаты\" width=\"100%\" src=\"https://petro-mebel.com/assets/images/sposoby-oplaty.png\"></a>\n\t\t\t</span></span></div>\n\t\t</div>\n\t</div>\n\t\n\n\n\n<a rel=\"nofollow\" target=\"_blank\" href=\"https://api.whatsapp.com/send?phone=79919110238\" class=\"whatsapp-icon\"><img src=\"/images/whatsapp-br.png\"></a>\n\n\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function (d, w, c) {\n        (w[c] = w[c] || []).push(function() {\n            try {\n                w.yaCounter30427122 = new Ya.Metrika({\n                    id:30427122,\n                    clickmap:true,\n                    trackLinks:true,\n                    accurateTrackBounce:true,\n                    webvisor:true\n                });\n            } catch(e) { }\n        });\n\n        var n = d.getElementsByTagName(\"script\")[0],\n            s = d.createElement(\"script\"),\n            f = function () { n.parentNode.insertBefore(s, n); };\n        s.type = \"text/javascript\";\n        s.async = true;\n        s.src = \"https://mc.yandex.ru/metrika/watch.js\";\n\n        if (w.opera == \"[object Opera]\") {\n            d.addEventListener(\"DOMContentLoaded\", f, false);\n        } else { f(); }\n    })(document, window, \"yandex_metrika_callbacks\");\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/30427122\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n\n\t\n<!-- BEGIN JIVOSITE CODE {literal} -->\n<script type=\"text/javascript\">\n\nsetTimeout(function () {\n               (function(){ var widget_id = '63XI7OA6Ob';\nvar s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();\n            }, 5000);\n\n</script>\n<!-- END JIVOSITE CODE -->\n\n<div id=\"jivowrap\"></div>\n\n</footer><div role=\"dialog\" aria-live=\"polite\" aria-label=\"cookieconsent\" aria-describedby=\"cookieconsent:desc\" class=\"cookieDialac\" style=\"display: flex;\"><span id=\"cookieconsent:desc\" class=\"cookieMssage\">Наш сайт использует файлы cookie.\n        Продолжая использовать сайт, вы соглашаетесь с условиями обработки cookie, указанными <a target=\"_blank\" href=\"/politika-konfidenczialnosti#cookie\">здесь</a>.</span>\n    <div class=\"cookieCompliance\"><a aria-label=\"allow cookies\" role=\"button\" tabindex=\"0\" class=\"allowCookies\">Согласен</a></div>\n</div>\n\t\t\n\t\t<!-- Libs -->\n<script src=\"vendor/jquery.js\"></script>\n<script src=\"vendor/jquery.appear.js\"></script>\n<script src=\"vendor/jquery.easing.js\"></script>\n<script src=\"vendor/jquery.cookie.js\"></script>\n<script src=\"vendor/bootstrap/js/bootstrap.js\"></script>\n<script src=\"vendor/jquery.validate.js\"></script>\n<script src=\"vendor/jquery.stellar.js\"></script>\n<script src=\"vendor/jquery.knob.js\"></script>\n\n<script src=\"vendor/twitterjs/twitter.js\"></script>\n<script src=\"vendor/isotope/jquery.isotope.js\"></script>\n<script src=\"vendor/owl-carousel/owl.carousel.js\"></script>\n<script src=\"vendor/jflickrfeed/jflickrfeed.js\"></script>\n<script src=\"vendor/magnific-popup/magnific-popup.js\"></script>\n<script src=\"vendor/mediaelement/mediaelement-and-player.js\"></script>\n\n<!-- Theme Initializer -->\n<script src=\"js/theme.plugins.js\"></script>\n<script src=\"js/theme.js\"></script><a class=\"scroll-to-top\" href=\"#\" id=\"scrollToTop\"><i class=\"icon icon-chevron-up icon-white\"></i></a>\n\n<!-- Current Page JS -->\n<script src=\"vendor/rs-plugin/js/jquery.themepunch.tools.min.js\"></script>\n<script src=\"vendor/rs-plugin/js/jquery.themepunch.revolution.js\"></script>\n<script src=\"vendor/circle-flip-slideshow/js/jquery.flipshow.js\"></script>\n<script src=\"js/views/view.home.js\"></script>\n<script src=\"/js/jquery.cookie.js\"></script>\n\n<!-- Custom JS -->\n<script src=\"js/custom.js\"></script>\n\t\t\n\t\n<div style=\"background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;\"><div style=\"width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;\"></div><div style=\"z-index: 2000000000; position: relative;\"><iframe title=\"текущую проверку reCAPTCHA можно пройти в течение ещё двух минут\" name=\"c-60mqq4al6hsy\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/bframe?hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;k=6LcYHnUUAAAAAL7eXuLG-sSgYQaMQSouc8vSByra&amp;bft=0dAFcWeA71pBpF4g8ltne3YF0J2HDi86GRtE9eD51HA9z0nXTF6M-OReuBZTJWmUMaRAe9w-vCa1sBivJ9EzDWAuvDirIypTUHPQ\" style=\"width: 100%; height: 100%;\"></iframe></div></div><div style=\"background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility linear 0.3s, opacity 0.3s linear; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;\"><div style=\"width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;\"></div><div class=\"g-recaptcha-bubble-arrow\" style=\"border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;\"></div><div style=\"z-index: 2000000000; position: relative;\"><iframe title=\"текущую проверку reCAPTCHA можно пройти в течение ещё двух минут\" name=\"c-e3ycok4wkefy\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/bframe?hl=ru&amp;v=gTpTIWhbKpxADzTzkcabhXN4&amp;k=6LcYHnUUAAAAAL7eXuLG-sSgYQaMQSouc8vSByra&amp;bft=0dAFcWeA7BKGrb_5GDy7KzLBJy80iUG79GMljLYpoYL-AmaezNee8dGS4s4heF1pMlj9NH1zXEK30Dp4ln9RL6DcI9CoL6PTPqfA\" style=\"width: 100%; height: 100%;\"></iframe></div></div></body></html>",
+  "text": "Кухни на заказ в СПб: каталог с ценами и фото | Купить кухню от производителя в Санкт-Петербурге Главная Каталог Оплата и доставка Кредит и рассрочка Бесплатный расчет Контакты Главная Каталог Расчет Акции Санкт-Петербург м. Ладожская м. пр.Просвещения +7(812)329-05-72 +7(812)622-06-28 Не хочу звонить! × Обратный звонок Оставьте свой номер и мы перезвоним, чтобы ответить на Ваши вопросы Представьтесь, пожалуйста * Номер телефона * Я согласен с правилами обработки персональных данных Для успешной отправки необходимо пройти проверку * Жду звонка * поля, обязательные для заполнения. Получить проект и расчет Калькулятор онлайн Наши работы Кухни Классика Современные кухни Отзывы Меню Кухни на заказ Форма Прямые Угловые П-образные Радиусные Стиль Классические Современные Лофт Скандинавские Кантри Английские Хай-тек Прованс Материал Egger МДФ в пленке Эмаль (Крашеный МДФ) Акриловые Пластиковые Массив Шпон Фасады Глянцевые Матовые С патиной Цвета Белые Серые Размер Маленькие Большие Особенности С барной стойкой Под потолок С островом С антресолями Трехуровневые Без ручек С пеналом Другое Примеры работ 3D Проекты Комплектующие Сервис Замер кухни Дизайн-проект кухни Доставка и сборка кухонь Распродажа кухонь Покупателю О компании Акции на кухни в СПб Отзывы Условия оплаты Кухни на заказ в рассрочку Рассчитать стоимость кухни Калькулятор кухни онлайн Часто задаваемые вопросы Полезные статьи Где купить? Вакансии Контакты Главная Кухни на заказ Кухни на заказ × Обратный звонок Оставьте свой номер и мы перезвоним, чтобы ответить на Ваши вопросы Представьтесь, пожалуйста * Номер телефона * Размеры и пожелания к будущей кухне: Для успешной отправки необходимо пройти проверку * Отправить * поля, обязательные для заполнения. Заполняя форму, вы соглашаетесть с условиями обработки данных . Расчет кухни Классические Современные Лофт Кантри Хай-тек Английский стиль Скандинавский стиль Прованс Прямые Угловые П-образные С барной стойкой Под потолок С островом С антресолями Матовые С патиной Глянцевые Трехуровневые Без ручек С пеналом Радиусные Белые Серые Большие Маленькие Акриловые Из пластика Шпон МДФ в пленке МДФ в пленке классика Массив Эмаль Все категории Скрыть теги Оставьте заявку на бесплатный расчет кухни Оцените качество наших кухонь и обратитесь к дизайнерам для составления проекта Оставить заявку или посмотрите примеры Компания «Петро-Мебель» изготавливает эстетичную надежную кухонную мебель на заказ в Санкт-Петербурге. Исходя из предпочтений покупателя и особенностей кухни, мы разрабатываем и реализуем эксклюзивные проекты в г. Санкт-Петербург и ЛО. Кухонное пространство должно быть уютным и удобным: здесь готовят и наслаждаются вкусными блюдами, общаются с родственниками и друзьями. Мы предлагаем вам сделать подарок себе и близким - купить гарнитур мечты. У нас вы можете заказать кухню, которая будет полностью соответствовать ожиданиям и сможет радовать вас много лет! «Петро-Мебель» располагает огромным выбором материалов, комплектующих, функциональной фурнитуры, что позволяет реализовать идеи любой сложности по приятно доступным ценам. Кухни на заказ в классическом стиле Цена от 58 000 руб Современные кухни на заказ Цена от 54 000 руб Кухни Лофт Цена от 55 000 руб Кухни в скандинавском стиле Цена от 67 000 руб Кухни кантри Цена от 80 000 руб Английские кухни Цена от 83 000 руб Кухни прованс Цена от 80 000 руб Прямые Цена от 55 000 руб Угловые Цена от 58 000 руб Рассчитать стоимость кухни П-образные Цена от 97 000 руб С островом Цена от 138 000 руб С антресолями Цена от 55 000 руб Под потолок Цена от 67 000 руб Трехуровневые Цена от 67 000 руб Глянцевые Цена от 60 000 руб Матовые Цена от 59 000 руб С патиной Цена от 100 000 руб Белые Цена от 52 000 руб Собственное производство Мы занимаемся изготовлением кухонь на заказ с 2003 года. Все процессы производства идеально отлажены Выгодные цены Стоимость наших кухонь в среднем на 15% ниже, чем у других мебельных фабрик, предлагающих продукцию аналогичного качества Точные сроки Срок изготовления мебели – 22 рабочих дня. Мы стараемся делать все возможное, чтобы кухня радовала своих хозяев как можно скорее Рассчитать стоимость кухни Серые Большие Маленькие Радиусные С барной стойкой Без ручек С пеналом МДФ пленка Классика Материал фасадов: МДФ в пленке Из массива Материал фасадов: массив Рассчитать стоимость кухни МДФ крашеные на заказ Материал фасадов: МДФ крашеные МДФ пленка современные Материал фасадов: МДФ в пленке Акриловые Материал фасадов: акрил Из пластика Материал фасадов: пластик Из шпона Материал фасадов: шпон Примеры кухонь: Кухня на заказ с фасадами из массива ольхи Цена: 206 509 руб. Угловая кухня под потолок с пеналом Цена: 186 786 руб. Светлая кухня в классическом стиле Цена: 119 168 руб. Кухня под потолок с антресолями и барной стойкой Цена: 170 140 руб. П-образная кухня Egger Цена: 164 625 руб. Кухня с островом в классическом стиле Цена: 403 868 руб. Кухня из ЛДСП без верхних шкафов Цена: 95 692 руб. Кухня на заказ с фрезеровкой Тулуза Цена: 128 370 руб. Кухня из массива ясеня на заказ Цена: 196 788 руб. Кухня на заказ с гнутыми фасадами Цена: 97 480 руб. Просторная угловая кухня с фрезеровкой Цена: 153 425 руб. Кухня с акриловыми фасадами и антресолями Цена: 116 500 руб. Прямая кухня с антресолями Цена: 133 680 руб. Угловая кухня с фасадами из пластика Цена: 231 846 руб. Кухня из массива с барной стойкой Цена: 143 739 руб. Акриловая кухня на заказ Adelkreis Цена: 107 420 руб. Кухня с матовыми фасадами Цена: 124 000 руб. Кухня на заказ в стиле лофт Цена: 100 350 руб. Угловая кухня с вентиляционным коробом Цена: 82 615 руб. Кухня под потолок с нишей Цена: 115 354 руб. Кухня на заказ с фасадами Adelkreis Цена: 125 306 руб. Белая кухня на заказ с фрезеровкой Цена: 87 605 руб. Угловая кухня на заказ из массива Цена: 165310 руб. Кухня в стиле лофт с фасадами ВХЦ Цена: 72 725 руб. Кухня Egger с островом Цена: 138 040 руб. Угловая кухня с пеналом и тумбой Цена: 113 749 руб. Кухня с антресолями и пеналом для техники Цена: 230 220 руб. Кухня матовая в стиле Прованс Цена: 92 567 руб. Угловая кухня с антресолями Цена: 93 307 руб. Кухня с фасадами Egger с барной стойкой Цена: 74 892 руб. Серая кухня под потолок с пластиковыми фасадами Цена: 101 596 руб. Угловая кухня с тумбой под TV Цена: 148 162 руб. Компактная кухня в классическом стиле Цена: 104 460 руб. Кухня из массива дуба с нестандартными фасадами и витринами Цена: 209720 руб. Угловая кухня на заказ в стиле Лофт Цена: 66 210 руб. Угловая кухня на заказ из акрила и пластика Цена: 84 412 руб. Белая кухня на заказ с элементами под дерево Цена: 92 089 руб. Прямая кухня в скандинавском стиле Цена: 126 846 руб. Угловая кухня с барной стойкой Цена: 122 971 руб. Угловая кухня со столешницей под подоконник Цена: 198 034 руб. Кухня с барной стойкой лофт Цена: 136 880 руб. Светлая кухня на заказ с фрезеровкой Прованс Классика Цена: 79 400 руб. Кухня из массива Ника Ноче Цена: 249 374 руб. П-образная кухня под потолок Цена: 150 267 руб. Прямая кухня с фрезеровкой Океания Цена: 161 464 руб. Угловая кухня под потолок Цена: 178 045 руб. Бирюзовая кухня на заказ в стиле Прованс Цена: 110 255 руб. Угловая кухня с фасадами FENIX Цена: 180 744руб. Угловая кухня с нишами и ящиками Цена: 141 177 руб. Кухня в скандинавском стиле с островом Цена: 283 814 руб. Небольшая угловая кухня Egger Цена: 109 179 руб. Кухня на заказ в классическом стиле Цена: 117 420 руб. Кухня со сложной нишей Цена: 127 640 руб. Лаконичная кухня с барной стойкой Цена: 127 514 руб. Угловая кухня на заказ Гжель МДФ в пленке Цена: 99 314 руб. Прямая белая кухня с деревянными контрастами Цена: 113 247 руб. Кухня в современном стиле с контрастными фасадами Цена: 131 428 руб. Компактная кухня лофт Цена: 54 775 руб. Большая П-образная кухня Цена: 152 306 руб. Большая угловая кухня с фасадами Fenix Цена: 186 864 руб. Кухня с пластиковыми фасадами Цена: 120 910 руб. Серая прямая кухня без ручек Цена: 102 097 руб. Кухня в цвете Сингл Графит Цена: 134 097 руб. Кухня с антресолями на заказ Цена: 75 980 руб Кухня на заказ в цвете Роялвуд Голубой Цена: 99 314 руб. Кухня на заказ со съемной барной стойкой Цена: 198 960 руб. Прямая кухня с комбинированными фасадами Цена: 141 478 руб. Лофт-Бетон Цена: Кухня с комбинированными фасадами Цена: 49 607 руб. П-образная кухня из пластика Цена: 96 434 руб. Прямая кухня под потолок Цена: 90 067 руб. Прямая кухня в современном стиле Цена: 98 900 руб. Посмотреть все примеры работ Компания «Петро-Мебель» с 2003 года производит кухни на собственной фабрике. Мебель изготавливается точно по размерам на итальянском оборудовании: не допускается нарушения технологий и методов работы, применения некачественных материалов и комплектующих. «Петро-Мебель» сотрудничает с известнейшими российскими и зарубежными поставщиками — производителями фасадов, столешниц, стеновых панелей, фурнитуры. Для увеличения надежности гарнитура мы формируем на фасадах защитную кромку, на столешницах — незаметные герметичные швы. Все работы проводятся в строгом соответствии со стандартами и санитарными нормами. Кухни, готовые к сборке, доставляют в собранном виде. Сборка гарантирует длительную и беспроблемную эксплуатацию. Проводится квалифицированным мастером аккуратно и быстро: все технологические операции тщательно отработаны. Что представлено в каталоге Фотографии кухонных гарнитуров, подобранные по категориям, сориентируют вас по стилям, цвету, фактурам, ценам. Вся мебель представлена в демонстрационном варианте. В каталоге: реализованные нами проекты, выполненные по индивидуальным размерам. На основе любого из них можно разработать проект с учетом конкретных ограничений и условий. Фабрика предлагает большой выбор стильных материалов и комплектующих для мебели – вы сможете воплотить любую идею по выгодной цене. «Петро-Мебель» не продает готовую мебель: у нас можно купить только выставочные образцы по акции со скидкой. Какие кухни изготавливает «Петро-Мебель» Выбирая мебель для кухни в г Санкт-Петербург, обратите внимание на производителя «Петро-Мебель». Мы проектируем и изготавливаем кухни в классических и современных стилях. Минимализм, лофт, неоклассика – мы реализуем любую вашу идею. Вы можете заказать изготовление кухни по индивидуальным размерам, шкафы с гнутыми фасадами и многое другое. Дизайнеры индивидуально работают с каждым проектом: перед запуском в производство проводится осмотр помещения, замеры. При разработке мебели для кухни необходимо учитывать, есть ли особенности помещения, где проложены коммуникации, как будет располагаться бытовая техника. Оговариваются все детали, учитывается расположение бытовой техники, размеры фасадов, освещение, цвет. Реализовать проект кухни можно с помощью различных материалов: от данного решения зависит и долговечность, и качество, и цена. Для комплектации мы предлагаем корпуса из ЛДСП, фасады из массива дерева и экошпона, МДФ, пластика и ЛДСП с различной облицовкой. Можно взять за основу проект определенного дизайнера, представленный в каталоге на нашем сайте или фото кухни, выбранное в интернете. При разработке дизайна вам будет представлен наглядный проект, который позволит оценить внешний вид и функциональность. При заказе кухонь в классических стилях вы сможете выбрать вариант фрезеровки, декора, заказать патинирование, окрашивание, дополнить мебель цветными витражами и стильными ручками. С помощью дизайнеров придадите гарнитуру нужный вам уровень комфорта: выберете вариант открывания шкафов, петли и доводчики, системы хранения и т.д. Гарнитур будет запущен в производство только после полного согласования всех деталей с заказчиком. Срок изготовления гарнитура - 22 рабочих дня. Сотрудничество с компанией «Петро-Мебель» Качество изготовления кухонь, точные размеры и добротная сборка. Помощь дизайнера с первой минуты общения на сайте и в салонах. Внимательный подход. Реальные цены (стоимость в среднем на 15% ниже, чем у других мебельных фабрик). Расчет цены по фото или эскизу. Доступность образцов гарнитуров в салонах Санкт-Петербурга. Точные сроки изготовления – 22 рабочих дня. Бесплатный замер (при заказе) доставка и сборка. Гарантия на мебель – 18 месяцев. Как мы работаем Вы оставляете заявку на сайте. Дизайнеры связываются с вами для обсуждения проекта и расчета стоимости. Планируется выезд замерщика. При встрече в салоне проходит подробное обсуждение составляющих проекта (в договоре прописываются все решения). Проект кухни выполняется в формате 3D: вы сможете внести заключительные корректировки. После подписания договора вы оплачиваете 50% от указанной суммы. Кухня запускается в производство. После получения информации о готовности проплачиваете оставшиеся 50%. Затем ожидаете доставку и сборку в оговоренное время. Получаете письменно оформленную гарантию и памятку по уходу за мебелью, составленную индивидуально с учетом процесса изготовления, тестирования и сборки. Мы сотрудничаем с несколькими банками, поэтому нашим клиентам доступна рассрочка платежа. Сегодня многие мебельные магазины и компании предоставляют клиентам услуги по изготовлению недорогой мебели на заказ по индивидуальным размерам. При этом окончательная стоимость выбранных моделей часто оказывается выше, поскольку расчеты ведутся по базовым расценкам. Некоторые компании предлагают недорого заказать гарнитур по картинке из каталога, без четкой детализации и возможности выбора материалов. В итоге покупатели получают кухонные шкафы, отличающиеся по виду от фото, к тому же сделанные из самого дешевого ДСП. Качество мебели для кухни от «Петро-Мебель» можно увидеть вживую в наших салонах в г. Санкт-Петербург, там же можно обсудить варианты изготовления гарнитура именно под ваш бюджет и пожелания. Преимущества сотрудничества с профессионалами — услуга под ключ. Мы разрабатываем проект с учетом планировки и интерьера, безошибочно проводим замеры. Учитывая опыт наших экспертов и отзывы покупателей, даем советы при выборе материалов и мебельных товаров. Общаясь с заказчиком, добиваемся идеального сочетания стиля, цены и практичности. Планируете покупку мебели на заказ? С дизайнерами «Петро-Мебель» вы сможете приобрести кухню, уникальную по эстетике и комфорту. Специалисты помогут учесть максимальное количество нужных вам мелочей и создать красивый интерьер: мы учтем дизайн и высоту шкафов, сочетание цветов, расположение полок. При работе над проектом вы совершенно бесплатно сможете поэкспериментировать с материалами, фактурами. Заказ кухни по заданным размерам доступен в любом из салонов компании «Петро-Мебель» в Санкт-Петербурге. Если у вас есть вопросы, пишите нам на сайте или в соцсетях, выбирайте телефон любого из наших салонов и обращайтесь за консультацией! Ждем ваших заявок и решений! «Петро-Мебель» © 2003 — 2026. Все права защищены. © \"Петро-Мебель\". Карта сайта Политика конфиденциальности Свяжитесь с нами! sales@petro-mebel.com Наш сайт использует файлы cookie. Продолжая использовать сайт, вы соглашаетесь с условиями обработки cookie, указанными здесь . Согласен",
+  "json_ld": [],
+  "document": {
+    "title": "Кухни на заказ в СПб: каталог с ценами и фото | Купить кухню от производителя в Санкт-Петербурге",
+    "meta_description": "Компания производитель Петро-Мебель предлагает купить кухни на заказ по индивидуальным размерам. Каталог с фото и ценами позволит заказать недорогой кухонный гарнитур в СПб с доставкой и гарантией. Мы изготавливаем кухни высокого качества с 2003 года. Низкая стоимость, дизайн-проект бесплатно.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "https://petro-mebel.com/kuhni-na-zakaz/",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni-na-zakaz/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/servis/dostavka-i-sborka",
+        "text": "Оплата и доставка",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/info/kuxni-na-zakaz-v-rassrochku",
+        "text": "Кредит и рассрочка",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/info/rasschitat-stoimost-kuxni",
+        "text": "Бесплатный расчет",
+        "rel": ""
+      },
+      {
+        "href": "/contact",
+        "text": "Контакты",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni-na-zakaz/",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/info/rasschitat-stoimost-kuxni",
+        "text": "Расчет",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/info/novosti/",
+        "text": "Акции",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/contact",
+        "text": "Санкт-Петербург",
+        "rel": "nofollow"
+      },
+      {
+        "href": "tel:+78123290572",
+        "text": "+7(812)329-05-72",
+        "rel": ""
+      },
+      {
+        "href": "tel:+78126220628",
+        "text": "+7(812)622-06-28",
+        "rel": ""
+      },
+      {
+        "href": "/politika-konfidenczialnosti#soglasie",
+        "text": "правилами обработки",
+        "rel": ""
+      },
+      {
+        "href": "info/rasschitat-stoimost-kuxni",
+        "text": "Получить проект и расчет",
+        "rel": ""
+      },
+      {
+        "href": "/info/onlajn-kalkulyator-kuxni",
+        "text": "Калькулятор онлайн",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni-na-zakaz-primery/",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/classic/",
+        "text": "Кухни Классика",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/modern/",
+        "text": "Современные кухни",
+        "rel": ""
+      },
+      {
+        "href": "/info/reviews/",
+        "text": "Отзывы",
+        "rel": "nofollow"
+      },
+      {
+        "href": "#",
+        "text": "Меню",
+        "rel": ""
+      },
+      {
+        "href": "/kuhni-na-zakaz/",
+        "text": "Кухни на заказ",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/pryamyie-kuxni",
+        "text": "Прямые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/uglovie-kuhni",
+        "text": "Угловые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/p-obraznyie-kuxni",
+        "text": "П-образные",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/radiusnyie-kuxni",
+        "text": "Радиусные",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/classic/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-na-zakaz-loft",
+        "text": "Лофт",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-v-skandinavskom-stile",
+        "text": "Скандинавские",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-kantri/",
+        "text": "Кантри",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/anglijskie-kuxni/",
+        "text": "Английские",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-xaj-tek/",
+        "text": "Хай-тек",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-provans/",
+        "text": "Прованс",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/",
+        "text": "Egger",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/classic/mdf-plenochnyie/",
+        "text": "МДФ в пленке",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/",
+        "text": "Эмаль (Крашеный МДФ)",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/modern/akril/",
+        "text": "Акриловые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/modern/plastik/",
+        "text": "Пластиковые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/classic/massiv/",
+        "text": "Массив",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/modern/shpon",
+        "text": "Шпон",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/glyanczevyie-kuxni",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/matovyie-kuxni",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-s-patinoj/",
+        "text": "С патиной",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/belyie-kuxni",
+        "text": "Белые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-seryie",
+        "text": "Серые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/malenkie-kuxni",
+        "text": "Маленькие",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/bolshie-kuxni/",
+        "text": "Большие",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-s-barnoj-stojkoj",
+        "text": "С барной стойкой",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-pod-potolok",
+        "text": "Под потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-s-ostrovom-na-zakaz",
+        "text": "С островом",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-s-antresolyami",
+        "text": "С антресолями",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/trexurovnenyie-kuxni",
+        "text": "Трехуровневые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-bez-ruchek/",
+        "text": "Без ручек",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-s-penalom/",
+        "text": "С пеналом",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuhni-na-zakaz-primery",
+        "text": "Примеры работ",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/zd-proektyi/",
+        "text": "3D Проекты",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/komplektuyushhie/",
+        "text": "Комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Сервис",
+        "rel": ""
+      },
+      {
+        "href": "servis/zamer",
+        "text": "Замер кухни",
+        "rel": "nofollow"
+      },
+      {
+        "href": "servis/dizajn-proekt",
+        "text": "Дизайн-проект кухни",
+        "rel": "nofollow"
+      },
+      {
+        "href": "servis/dostavka-i-sborka",
+        "text": "Доставка и сборка кухонь",
+        "rel": "nofollow"
+      },
+      {
+        "href": "sale/",
+        "text": "Распродажа кухонь",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript:void(0);",
+        "text": "Покупателю",
+        "rel": ""
+      },
+      {
+        "href": "info/o-kompanii",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "info/novosti/",
+        "text": "Акции на кухни в СПб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "info/reviews/",
+        "text": "Отзывы",
+        "rel": "nofollow"
+      },
+      {
+        "href": "info/usloviya-oplaty",
+        "text": "Условия оплаты",
+        "rel": "nofollow"
+      },
+      {
+        "href": "info/kuxni-na-zakaz-v-rassrochku",
+        "text": "Кухни на заказ в рассрочку",
+        "rel": "nofollow"
+      },
+      {
+        "href": "info/rasschitat-stoimost-kuxni",
+        "text": "Рассчитать стоимость кухни",
+        "rel": ""
+      },
+      {
+        "href": "info/onlajn-kalkulyator-kuxni",
+        "text": "Калькулятор кухни онлайн",
+        "rel": ""
+      },
+      {
+        "href": "info/chasto-zadavaemyie-voprosyi",
+        "text": "Часто задаваемые вопросы",
+        "rel": "nofollow"
+      },
+      {
+        "href": "info/poleznyie-stati/",
+        "text": "Полезные статьи",
+        "rel": "nofollow"
+      },
+      {
+        "href": "contact",
+        "text": "Где купить?",
+        "rel": "nofollow"
+      },
+      {
+        "href": "info/vakansii",
+        "text": "Вакансии",
+        "rel": ""
+      },
+      {
+        "href": "contact",
+        "text": "Контакты",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://petro-mebel.com/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/usloviya-obrabotki-dannyix",
+        "text": "условиями обработки данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/custom/kitchens/classic/",
+        "text": "Классические",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/modern/",
+        "text": "Современные",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/kuxni-na-zakaz-loft",
+        "text": "Лофт",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-kantri/",
+        "text": "Кантри",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-xaj-tek/",
+        "text": "Хай-тек",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/anglijskie-kuxni/",
+        "text": "Английский стиль",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-v-skandinavskom-stile",
+        "text": "Скандинавский стиль",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-provans/",
+        "text": "Прованс",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/pryamyie-kuxni",
+        "text": "Прямые",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/uglovie-kuhni",
+        "text": "Угловые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/p-obraznyie-kuxni",
+        "text": "П-образные",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/kuxni-s-barnoj-stojkoj",
+        "text": "С барной стойкой",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-pod-potolok",
+        "text": "Под потолок",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/kuxni-s-ostrovom-na-zakaz",
+        "text": "С островом",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-s-antresolyami",
+        "text": "С антресолями",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/matovyie-kuxni",
+        "text": "Матовые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-s-patinoj/",
+        "text": "С патиной",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/glyanczevyie-kuxni",
+        "text": "Глянцевые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/trexurovnenyie-kuxni",
+        "text": "Трехуровневые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-bez-ruchek/",
+        "text": "Без ручек",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-s-penalom/",
+        "text": "С пеналом",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/radiusnyie-kuxni",
+        "text": "Радиусные",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/belyie-kuxni",
+        "text": "Белые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/kuxni-seryie",
+        "text": "Серые",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/bolshie-kuxni/",
+        "text": "Большие",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/custom/kitchens/malenkie-kuxni",
+        "text": "Маленькие",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/modern/akril/",
+        "text": "Акриловые",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/modern/plastik/",
+        "text": "Из пластика",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/modern/shpon",
+        "text": "Шпон",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/modern/mdf-plenochnyie/",
+        "text": "МДФ в пленке",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/classic/mdf-plenochnyie/",
+        "text": "МДФ в пленке классика",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/classic/massiv/",
+        "text": "Массив",
+        "rel": ""
+      },
+      {
+        "href": "/custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/",
+        "text": "Эмаль",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Все категории Скрыть теги",
+        "rel": ""
+      },
+      {
+        "href": "/info/rasschitat-stoimost-kuxni",
+        "text": "Оставить заявку",
+        "rel": ""
+      },
+      {
+        "href": "kuhni-na-zakaz-primery/",
+        "text": "или посмотрите примеры",
+        "rel": ""
+      },
+      {
+        "href": "custom/kitchens/classic/",
+        "text": "Кухни на заказ в классическом стиле Цена от 58 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/",
+        "text": "Современные кухни на заказ Цена от 54 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/kuxni-na-zakaz-loft",
+        "text": "Кухни Лофт Цена от 55 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/kuxni-v-skandinavskom-stile",
+        "text": "Кухни в скандинавском стиле Цена от 67 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "kuxni-kantri/",
+        "text": "Кухни кантри Цена от 80 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "anglijskie-kuxni/",
+        "text": "Английские кухни Цена от 83 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/kuxni-provans/",
+        "text": "Кухни прованс Цена от 80 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/pryamyie-kuxni",
+        "text": "Прямые Цена от 55 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/uglovie-kuhni",
+        "text": "Угловые Цена от 58 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/info/rasschitat-stoimost-kuxni",
+        "text": "Рассчитать стоимость кухни",
+        "rel": ""
+      },
+      {
+        "href": "custom/kitchens/p-obraznyie-kuxni",
+        "text": "П-образные Цена от 97 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/kuxni-s-ostrovom-na-zakaz",
+        "text": "С островом Цена от 138 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/kuxni-s-antresolyami",
+        "text": "С антресолями Цена от 55 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/kuxni-pod-potolok",
+        "text": "Под потолок Цена от 67 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/trexurovnenyie-kuxni",
+        "text": "Трехуровневые Цена от 67 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/glyanczevyie-kuxni",
+        "text": "Глянцевые Цена от 60 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/matovyie-kuxni",
+        "text": "Матовые Цена от 59 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/kuxni-s-patinoj/",
+        "text": "С патиной Цена от 100 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/belyie-kuxni",
+        "text": "Белые Цена от 52 000 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/info/rasschitat-stoimost-kuxni",
+        "text": "Рассчитать стоимость кухни",
+        "rel": ""
+      },
+      {
+        "href": "/kuxni-seryie",
+        "text": "Серые",
+        "rel": "nofollow"
+      },
+      {
+        "href": "bolshie-kuxni/",
+        "text": "Большие",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/malenkie-kuxni",
+        "text": "Маленькие",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/radiusnyie-kuxni",
+        "text": "Радиусные",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/kuxni-s-barnoj-stojkoj",
+        "text": "С барной стойкой",
+        "rel": "nofollow"
+      },
+      {
+        "href": "kuxni-bez-ruchek/",
+        "text": "Без ручек",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/kuxni-s-penalom/",
+        "text": "С пеналом",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/",
+        "text": "МДФ пленка Классика Материал фасадов: МДФ в пленке",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/",
+        "text": "Из массива Материал фасадов: массив",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/info/rasschitat-stoimost-kuxni",
+        "text": "Рассчитать стоимость кухни",
+        "rel": ""
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/",
+        "text": "МДФ крашеные на заказ Материал фасадов: МДФ крашеные",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/",
+        "text": "МДФ пленка современные Материал фасадов: МДФ в пленке",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/akril/",
+        "text": "Акриловые Материал фасадов: акрил",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/",
+        "text": "Из пластика Материал фасадов: пластик",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/shpon",
+        "text": "Из шпона Материал фасадов: шпон",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/kuxnya-na-zakaz-s-fasadami-iz-massiva-olxi",
+        "text": "Кухня на заказ с фасадами из массива ольхи Цена: 206 509 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/uglovaya-kuxnya-pod-potolok-s-penalom",
+        "text": "Угловая кухня под потолок с пеналом Цена: 186 786 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/svetlaya-kuxnya-v-klassicheskom-stile",
+        "text": "Светлая кухня в классическом стиле Цена: 119 168 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-pod-potolok-s-antresolyami-i-barnoj-stojkoj",
+        "text": "Кухня под потолок с антресолями и барной стойкой Цена: 170 140 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/p-obraznaya-kuxnya-egger",
+        "text": "П-образная кухня Egger Цена: 164 625 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-s-ostrovom-v-klassicheskom-stile",
+        "text": "Кухня с островом в классическом стиле Цена: 403 868 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kuxnya-iz-ldsp-bez-verxnix-shkafov",
+        "text": "Кухня из ЛДСП без верхних шкафов Цена: 95 692 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-s-frezerovkoj-tuluza",
+        "text": "Кухня на заказ с фрезеровкой Тулуза Цена: 128 370 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/kuxnya-iz-massiva-yasenya-na-zakaz",
+        "text": "Кухня из массива ясеня на заказ Цена: 196 788 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kuxnya-s-gnutyimi-fasadami",
+        "text": "Кухня на заказ с гнутыми фасадами Цена: 97 480 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/prostornaya-uglovaya-kuxnya-s-frezerovkoj",
+        "text": "Просторная угловая кухня с фрезеровкой Цена: 153 425 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/kuxnya-s-akrilovyimi-fasadami-i-antresolyami",
+        "text": "Кухня с акриловыми фасадами и антресолями Цена: 116 500 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/pryamaya-kuxnya-s-antresolyami",
+        "text": "Прямая кухня с антресолями Цена: 133 680 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/uglovaya-kuxnya-s-fasadami-iz-plastika",
+        "text": "Угловая кухня с фасадами из пластика Цена: 231 846 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/kuxnya-iz-massiva-s-barnoj-stojkoj",
+        "text": "Кухня из массива с барной стойкой Цена: 143 739 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/akrilovaya-kuxnya-na-zakaz-adelkreis",
+        "text": "Акриловая кухня на заказ Adelkreis Цена: 107 420 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-s-matovyimi-fasadami",
+        "text": "Кухня с матовыми фасадами Цена: 124 000 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/kuxnya-v-stile-loft",
+        "text": "Кухня на заказ в стиле лофт Цена: 100 350 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/uglovaya-kuxnya-s-ventilyaczionnyim-korobom",
+        "text": "Угловая кухня с вентиляционным коробом Цена: 82 615 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-pod-potolok-s-nishej",
+        "text": "Кухня под потолок с нишей Цена: 115 354 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/kuxnya-na-zakaz-s-fasadami-adelkreis",
+        "text": "Кухня на заказ с фасадами Adelkreis Цена: 125 306 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/belaya-kuxnya-na-zakaz-s-frezerovkoj",
+        "text": "Белая кухня на заказ с фрезеровкой Цена: 87 605 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/uglovaya-kuxnya-na-zakaz-iz-massiva",
+        "text": "Угловая кухня на заказ из массива Цена: 165310 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kuxnya-v-stile-loft-s-fasadami-vhc",
+        "text": "Кухня в стиле лофт с фасадами ВХЦ Цена: 72 725 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/kuxnya-egger-s-ostrovom",
+        "text": "Кухня Egger с островом Цена: 138 040 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/uglovaya-kuxnya-s-penalom-i-tumboj",
+        "text": "Угловая кухня с пеналом и тумбой Цена: 113 749 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-s-antresolyami-i-penalom-dlya-texniki",
+        "text": "Кухня с антресолями и пеналом для техники Цена: 230 220 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/kuxnya-na-zakaz-matovaya-v-stile-provans",
+        "text": "Кухня матовая в стиле Прованс Цена: 92 567 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/uglovaya-kuxnya-s-antresolyami",
+        "text": "Угловая кухня с антресолями Цена: 93 307 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/kuxnya-s-fasadami-egger-s-barnoj-stojkoj",
+        "text": "Кухня с фасадами Egger с барной стойкой Цена: 74 892 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/seraya-kuxnya-pod-potolok-s-plastikovyimi-fasadami",
+        "text": "Серая кухня под потолок с пластиковыми фасадами Цена: 101 596 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/uglovaya-kuxnya-s-tumboj-pod-tv",
+        "text": "Угловая кухня с тумбой под TV Цена: 148 162 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/kompaktnaya-kuxnya-v-klassicheskom-stile",
+        "text": "Компактная кухня в классическом стиле Цена: 104 460 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/kuxnya-iz-massiva-duba-s-nestandartnyimi-fasadami-i-vitrinami",
+        "text": "Кухня из массива дуба с нестандартными фасадами и витринами Цена: 209720 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/uglovaya-kuxnya-v-stile-loft-s-shaxtoj",
+        "text": "Угловая кухня на заказ в стиле Лофт Цена: 66 210 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/uglovaya-kuxnya-na-zakaz-iz-akrila-i-plastika",
+        "text": "Угловая кухня на заказ из акрила и пластика Цена: 84 412 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/belaya-kuxnya-na-zakaz-s-derevom",
+        "text": "Белая кухня на заказ с элементами под дерево Цена: 92 089 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/pryamaya-kuxnya-v-skandinavskom-stile",
+        "text": "Прямая кухня в скандинавском стиле Цена: 126 846 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/uglovaya-kuxnya-s-barnoj-stojkoj",
+        "text": "Угловая кухня с барной стойкой Цена: 122 971 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/uglovaya-kuxnya-so-stoleshniczej-pod-podokonnik",
+        "text": "Угловая кухня со столешницей под подоконник Цена: 198 034 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-s-barnoj-stojkoj",
+        "text": "Кухня с барной стойкой лофт Цена: 136 880 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/svetlaya-kuxnya-s-frezerovkoj-provans",
+        "text": "Светлая кухня на заказ с фрезеровкой Прованс Классика Цена: 79 400 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/massiv/kuxnya-iz-massiva-nika-noche",
+        "text": "Кухня из массива Ника Ноче Цена: 249 374 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/p-obraznaya-kuxnya-pod-potolok",
+        "text": "П-образная кухня под потолок Цена: 150 267 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/kuxni-mdf-krashenyie-na-zakaz/pryamaya-kuxnya-s-frezerovkoj-okeaniya",
+        "text": "Прямая кухня с фрезеровкой Океания Цена: 161 464 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/uglovaya-kuxnya-pod-potolok",
+        "text": "Угловая кухня под потолок Цена: 178 045 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/biryuzovaya-kuxnya-v-stile-provans",
+        "text": "Бирюзовая кухня на заказ в стиле Прованс Цена: 110 255 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/uglovaya-kuxnya-s-fasadami-fenix",
+        "text": "Угловая кухня с фасадами FENIX Цена: 180 744руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/akril/uglovaya-kuxnya-s-nishami-i-yashhikami",
+        "text": "Угловая кухня с нишами и ящиками Цена: 141 177 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kuxnya-v-skandinavskom-stile-s-ostrovom",
+        "text": "Кухня в скандинавском стиле с островом Цена: 283 814 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/kuxni-na-zakaz-s-fasadami-egger/nebolshaya-uglovaya-kuxnya-egger",
+        "text": "Небольшая угловая кухня Egger Цена: 109 179 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/kuxnya-na-zakaz-v-klassicheskom-stile",
+        "text": "Кухня на заказ в классическом стиле Цена: 117 420 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-so-slozhnoj-nishej",
+        "text": "Кухня со сложной нишей Цена: 127 640 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/lakonichnaya-kuxnya-s-barnoj-stojkoj",
+        "text": "Лаконичная кухня с барной стойкой Цена: 127 514 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/kuxnya-na-zakaz-gzhel",
+        "text": "Угловая кухня на заказ Гжель МДФ в пленке Цена: 99 314 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/pryamaya-belaya-kuxnya-s-derevyannyimi-kontrastami",
+        "text": "Прямая белая кухня с деревянными контрастами Цена: 113 247 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kuxnya-v-sovremennom-stile-s-kontrastnyimi-fasadami",
+        "text": "Кухня в современном стиле с контрастными фасадами Цена: 131 428 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kompaktnaya-kuxnya-loft",
+        "text": "Компактная кухня лофт Цена: 54 775 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/bolshaya-p-obraznaya-kuxnya",
+        "text": "Большая П-образная кухня Цена: 152 306 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/bolshaya-uglovaya-kuxnya-s-fasadami-fenix",
+        "text": "Большая угловая кухня с фасадами Fenix Цена: 186 864 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-na-zakaz-s-plastikovyimi-fasadami",
+        "text": "Кухня с пластиковыми фасадами Цена: 120 910 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/seraya-pryamaya-kuxnya-bez-ruchek",
+        "text": "Серая прямая кухня без ручек Цена: 102 097 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/kuxnya-v-czvete-singl-grafit",
+        "text": "Кухня в цвете Сингл Графит Цена: 134 097 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/mdf-plenochnyie/kuxnya-s-antresolyami",
+        "text": "Кухня с антресолями на заказ Цена: 75 980 руб",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/kuxnya-v-czvete-royalvud-goluboj",
+        "text": "Кухня на заказ в цвете Роялвуд Голубой Цена: 99 314 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-na-zakaz-so-semnoj-barnoj-stojkoj",
+        "text": "Кухня на заказ со съемной барной стойкой Цена: 198 960 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/pryamaya-kuxnya-s-kombinirovannyimi-fasadami",
+        "text": "Прямая кухня с комбинированными фасадами Цена: 141 478 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/loft-beton",
+        "text": "Лофт-Бетон Цена:",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/kuxnya-s-kombinirovannyimi-fasadami",
+        "text": "Кухня с комбинированными фасадами Цена: 49 607 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/p-obraznaya-kuxnya-iz-plastika",
+        "text": "П-образная кухня из пластика Цена: 96 434 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/classic/mdf-plenochnyie/pryamaya-kuxnya-pod-potolok",
+        "text": "Прямая кухня под потолок Цена: 90 067 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "custom/kitchens/modern/plastik/pryamaya-kuxnya-v-sovremennom-stile",
+        "text": "Прямая кухня в современном стиле Цена: 98 900 руб.",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/kuhni-na-zakaz-primery",
+        "text": "Посмотреть все примеры работ",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/karta-sajta",
+        "text": "Карта сайта",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/politika-konfidenczialnosti",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/petro_mebel",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "</span",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "</span",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "</span",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "mailto:sales@petro-mebel.com",
+        "text": "sales@petro-mebel.com",
+        "rel": ""
+      },
+      {
+        "href": "https://petro-mebel.com/servis/dostavka-i-sborka",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://api.whatsapp.com/send?phone=79919110238",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/politika-konfidenczialnosti#cookie",
+        "text": "здесь",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Согласен",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Не хочу звонить!",
+      "×",
+      "Жду звонка",
+      "×",
+      "Отправить",
+      "Расчет кухни"
+    ],
+    "h1_texts": [
+      "Кухни на заказ"
+    ],
+    "h2_texts": [
+      "Что представлено в каталоге",
+      "Какие кухни изготавливает «Петро-Мебель»"
+    ],
+    "h3_texts": [
+      "Сотрудничество с компанией «Петро-Мебель»",
+      "Как мы работаем"
+    ],
+    "counts": {
+      "paragraph": 38,
+      "h1": 1,
+      "h2": 2,
+      "h3": 2,
+      "link": 237,
+      "image": 112,
+      "list_item": 210,
+      "strong": 1,
+      "form": 2,
+      "input": 7
+    }
+  }
+}

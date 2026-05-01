@@ -1,0 +1,614 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://tskdoors.ru/",
+  "final_url": "https://tskdoors.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate",
+    "content-encoding": "gzip",
+    "content-length": "12374",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 14:42:43 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "pragma": "no-cache",
+    "server": "nginx",
+    "set-cookie": "PHPSESSID=305e1fc81cbba3ccfab88a5364e6cca1; path=/",
+    "vary": "Accept-Encoding"
+  },
+  "response_time_ms": 11155.4265,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:42:54.222741+00:00",
+  "html": "<html><head>\n\n                                                      <title>Купить входные и межкомнатные двери в Москве, цены на фурнитуру снижены до конца мая | tskdoors.ru</title>\n      \t\n      <meta name=\"description\" content=\"Качественные двери ✔ купить в Москве от производителя ✔Низкие цены ✔Скидки до 40% ✔Рассрочка ✔Заказать двери.\">\n      <link rel=\"shortcut icon\" href=\"/favicon/favicon.png\" type=\"image/x-icon\">\n  \n      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n      <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">\n      <meta name=\"geo.placename\" content=\"Москва, Россия\">\n                        <script type=\"text/javascript\" src=\"/wp-content/themes/theme/js/jquery.min.js\"></script>\n      <script type=\"text/javascript\" src=\"/wp-content/themes/theme/js/script.js\"></script>\n      <script type=\"text/javascript\" src=\"/wp-content/themes/theme/js/blk.js\"></script>\n      <script type=\"text/javascript\" src=\"/wp-content/themes/theme/js/main.js\"></script>\n      <script src=\"//code.jquery.com/jquery-latest.js\"></script>\n      <script src=\"/wp-content/themes/theme/js/countdown.js\"></script>\n      <script>\n         $(document).ready(function(){\n         \t$(\"#countdown\").countdown({\n         \t\tdate: \"30 June 2100 00:00:00\",\n         \t\tformat: \"on\"\n         \t},\n         \t\n         \tfunction() {\n         \t\t// callback function\n         \t});\n         });\n         \n      </script>\n      <link rel=\"stylesheet\" href=\"/wp-content/themes/theme/css/style.css\" type=\"text/css\" media=\"screen\">\n\t  \n   </head>\n   <body id=\"page1\" class=\"new_main\">\n                  \n      <div id=\"new_header\">\n         <div class=\"main\">\n            <div class=\"logo col-1\">\n               <a><img src=\"/design/logo.png\" alt=\"\" title=\"двери Москва\"></a>\n               <a onclick=\"changeStyleDiv5()\" id=\"mnnn1\"><img src=\"/design/menu.png\" width=\"100%\" class=\"korolmenu\"></a>\n               <a onclick=\"changeStyleDiv6()\" id=\"mnnn2\" style=\"display:none;\"><img src=\"/design/menu2.png\" width=\"100%\" class=\"korolmenu\"></a>\n            </div>\n            <div class=\"discript col-1\"></div>\n            <div class=\"messenger col-1\">\n               <p>Связаться с нами</p>\n                              <p>\n                  <a href=\"tel:8-800-770-64-27\"><img src=\"/design/wa_ico.png\" style=\"width:40px\" alt=\"Позвонить нам\"></a>&nbsp;&nbsp;&nbsp;\t\t  \n                  <a href=\"/kalkulyator-dverey/\"><img src=\"/design/vb_ico.png\" style=\"width:40px\"></a>&nbsp;&nbsp;&nbsp;\n                  <a href=\"/feedbacks/\"><img src=\"/design/tm_ico.png\" style=\"width:40px\"></a>\n               </p>\n               <p>\n               </p>\n            </div>\n            <div class=\"button_header\">\n               <div class=\"lopal1\" style=\"width: 265px;margin: 0 auto;margin-bottom:2px;\"><a class=\"btn_top\" style=\"color: #2d4b90;background: none;\" href=\"tel:8-800-770-64-27\"><span class=\"blink2\">📞</span> 8-800-770-64-27</a></div>\n               <div class=\"lopal\">\n                  <a href=\"/kalkulyator-dverey/\" style=\"padding: 2px 7px 8px 7px;\">\n                     <div class=\"menu-title left-menu-kalk-fon\" style=\"border: 2px solid #ffa010;background:#ffa010;\">\n                        <div class=\"menu-title-txt-wrap\">\n                           <div class=\" left-menu-kalk\"><span style=\"color: #312e2e;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Калькулятор</span></div>\n                           <img src=\"/design/calculyator.gif\" style=\"margin-top: -4px;margin-left: -2px;float: right;border: 2px solid white;height: 45px;\">\n                           <div class=\"clear\"></div>\n                        </div>\n                     </div>\n                  </a>\n               </div>\n               <div class=\"lopal44\"><a class=\"btn_bottom\" href=\"#openModal\" onclick=\"changeStyleDiv1()\">Бесплатная консультация</a></div>\n            </div>\n            <div id=\"contact_info\">\n               <p><a href=\"tel:8-800-770-64-27\" class=\"phone roistat-phone\">8-800-770-64-27</a></p>\n               <p style=\"margin-bottom:2px;\">Россия, <strong>г. Москва</strong></p>\n               <p style=\"margin-bottom:2px;\">Время работы с 8:00 до 20:00</p>\n            </div>\n         </div>\n         <div class=\"clear\"></div>\n      </div>\n\t  \n\t  \n\t  \n      <div class=\"row-top\" id=\"akkord213\">\n         <div class=\"main\">\n            <div class=\"wrapper\">\n               <center><a class=\"ssylka-menu\">Меню</a></center>\n               <ul class=\"menu\">\n                  <li><a href=\"#home\"></a></li>\n\t\t\t\t                    <li><a href=\"#mzh\">Межкомнатные</a></li>\n                  <li><a href=\"#vh\">Входные</a></li>\n\n\t\t\t\t  \n\t\t\t\t                                                         \t\t\t\n                  <li><a href=\"#payment\">Оплата</a></li>\n                  <li><a href=\"#installment-plan\">Рассрочка</a></li>\n                  <li><a href=\"#video\">Видео</a></li>\n                  <li><a href=\"#reviews\">Отзывы</a></li>\n                  <li><a href=\"#contacts\">Контакты</a></li>\n               </ul>\n            </div>\n         </div>\n         <div id=\"akkord\">\n            <div class=\"pop\">\n               <ul>\n                  <li><a href=\"#home\"></a></li>\n                  <li><a href=\"#prices\">Цены</a></li>\n\t\t\t\t  \n\n\t\t\t\t  \n                                                       \t\t\t\n                  <li><a href=\"#payment\">Оплата</a></li>\n                  <li><a href=\"#installment-plan\">Рассрочка</a></li>\n                  <li><a href=\"#video\">Видео</a></li>\n                  <li><a href=\"#reviews\">Отзывы</a></li>\n                  <li><a href=\"#contacts\">Контакты</a></li>\n               </ul>\n            </div>\n         </div>\n      </div>\n      <script>\n         function changeStyleDiv5(){\n            document.getElementById('akkord213').style.display = 'block';\n            document.getElementById('mnnn1').style.display = 'none';\n            document.getElementById('mnnn2').style.display = 'block';\n         }\n      </script>\n      <script>\n         function changeStyleDiv6(){\n            document.getElementById('akkord213').style.display = 'none';\n            document.getElementById('mnnn1').style.display = 'block';\n            document.getElementById('mnnn2').style.display = 'none';\n         }\n      </script>\n      \t    <div id=\"openModal\" class=\"modal\">\n      <div class=\"modal-dialog\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <center><h3 class=\"modal-title\">Бесплатная консультация</h3></center>\n            <a href=\"#close\" onclick=\"changeStyleDiv2()\" title=\"Close\" class=\"close\">×</a>\n          </div>\n          <div class=\"modal-body\">\n       <center><input type=\"text\" id=\"fastFeedbackText_feedbackBlockFile33\" style=\"width:250px;\" class=\"phone2\" placeholder=\"Ваш телефон\" name=\"phone\"></center>\n\t   <center><button class=\"desmodwin\" name=\"submit_button\" id=\"submit_button\" onclick=\"sendFastFeedback('_feedbackBlockFile33', '/otpravka/')\" type=\"button\">Отправить</button></center>\n\t   <script>\n            document.querySelector(\"#fastFeedbackText_feedbackBlockFile33\").addEventListener(\"keyup\", event => {\n              if (event.key !== \"Enter\") return;\n              sendFastFeedback('_feedbackBlockFile33', '/otpravka/');\n              event.preventDefault();\n            });\n          </script>\n          </div>\n        </div>\n      </div>\n    </div>\n\t\n\t\n\t\t    <div id=\"openModal2\" class=\"modal\">\n      <div class=\"modal-dialog\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <center><h3 class=\"modal-title\">Введите данные</h3></center>\n            <a href=\"#close\" onclick=\"changeStyleDiv2()\" title=\"Close\" class=\"close\">×</a>\n          </div>\n          <div class=\"modal-body\">\n       <center><input type=\"text\" id=\"fastFeedbackText_feedbackBlockFile34\" style=\"width:250px;\" class=\"phone2\" placeholder=\"Ваш телефон\" name=\"phone\"></center>\n\t   <center><button class=\"desmodwin\" name=\"submit_button\" id=\"submit_button\" onclick=\"sendFastFeedback('_feedbackBlockFile34', '/otpravka/')\" type=\"button\">Отправить</button></center>\n\t   <script>\n            document.querySelector(\"#fastFeedbackText_feedbackBlockFile34\").addEventListener(\"keyup\", event => {\n              if (event.key !== \"Enter\") return;\n              sendFastFeedback('_feedbackBlockFile34', '/otpravka/');\n              event.preventDefault();\n            });\n          </script>\n          </div>\n        </div>\n      </div>\n    </div>\n\t\n\t\n\t\t\t    <div id=\"openModal3\" class=\"modal\">\n      <div class=\"modal-dialog\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <center><h3 class=\"modal-title\">Получить каталог</h3></center>\n            <a href=\"#close\" onclick=\"changeStyleDiv3()\" title=\"Close\" class=\"close\">×</a>\n          </div>\n          <div class=\"modal-body\">\n       <center><input type=\"text\" id=\"fastFeedbackText_feedbackBlockFile334\" style=\"width:250px;\" class=\"phone2\" placeholder=\"Ваш телефон\" name=\"phone\"></center>\n\t   <center><button class=\"desmodwin\" name=\"submit_button\" id=\"submit_button\" onclick=\"sendFastFeedback('_feedbackBlockFile334', '/otpravka/')\" type=\"button\">Получить</button></center>\n\t   <script>\n            document.querySelector(\"#fastFeedbackText_feedbackBlockFile334\").addEventListener(\"keyup\", event => {\n              if (event.key !== \"Enter\") return;\n              sendFastFeedback('_feedbackBlockFile334', '/otpravka/');\n              event.preventDefault();\n            });\n          </script>\n          </div>\n        </div>\n      </div>\n    </div>\n\t\n\t<script src=\"/wp-content/themes/theme/js/forma-svyaz.js\"></script>\n      <!--- row-rop --->\n      <div style=\"clear:both;\"></div>\n      <div id=\"slider\" class=\"nivoSlider newSliderStyle\">\n         <a name=\"rasschet\"></a>\n         <a class=\"nivo-imageLink slider_item\" style=\"background: rgba(0, 0, 0, 0) url('/img/dveri/fon-top.jpg') no-repeat scroll 50% 50%; display: block;background-size: cover;\">\n            <div class=\"slide_content_wrap\">\n               <center>\n                  <h1 class=\"h1nagalvnoy\">Входные и межкомнатные двери в Москве </h1>\n               </center>\n                                 <p class=\"skidkavverh\"><span><img src=\"/img/dverf.png\" alt=\"двери Москва\" title=\"Межкомнатные двери в Москве\" style=\"position: relative;float: left;width: 37px;\"> <b>Скидка</b> на двери в Москве <b> 16% до 02.05.2026</b> </span>\n   </p>    \n  \n               <br>\n               <div style=\"clear:both;\"></div>\n               <center>\n                  <ul id=\"countdown\">\n                     <li> <span class=\"\" id=\"lorik\">01</span>\n                     </li>\n                     <li> <span class=\"hours\" id=\"lorik\">04</span>\n                     </li>\n                     <li> <span class=\"minutes\" id=\"lorik\">17</span>\n                     </li>\n                     <li> <span class=\"seconds\" id=\"lorik\">06</span>\n                     </li>\n                  </ul>\n                  <ul id=\"countdown\" class=\"lorikong\">\n                     <li class=\"list\" id=\"spankorol\">\n                        <p class=\"timeRef\" id=\"spankorol1\">дней</p>\n                     </li>\n                     <li class=\"list\" id=\"spankorol\">\n                        <p class=\"timeRef\" id=\"spankorol1\">часов</p>\n                     </li>\n                     <li class=\"list\" id=\"spankorol\">\n                        <p class=\"timeR\" id=\"spankorol1\">минут</p>\n                     </li>\n                     <li class=\"list\" id=\"spankorol\">\n                        <p class=\"timeR\" id=\"spankorol1\">секунд</p>\n                     </li>\n                  </ul>\n               </center>\n               <center><input type=\"text\" id=\"fastFeedbackText_feedbackBlockFile\" class=\"phone2\" placeholder=\"*Ваш телефон\" name=\"phone\"></center>\n               <center><button class=\"slider_form_btn\" name=\"submit_button\" id=\"submit_button\" onclick=\"sendFastFeedback('_feedbackBlockFile', '/otpravka/')\" type=\"button\">Получить лучшую цену</button></center>\n               <script>\n                  document.querySelector(\"#fastFeedbackText_feedbackBlockFile\").addEventListener(\"keyup\", event => {\n                    if (event.key !== \"Enter\") return;\n                    sendFastFeedback('_feedbackBlockFile', '/otpravka/');\n                    event.preventDefault();\n                  });\n               </script>\n               <br>\n            </div>\n         </a>\n      </div>\n      <div class=\"clearing\"></div>\n\t        \n      <!-- Блочка -->\n      <a name=\"pr\"></a>\n      <div class=\"main bg-2\">\n      <center><img class=\"rt_pic\" src=\"/img/dveri/dveri.jpg\" alt=\"Межкомнатные и входные в Москве\" title=\"Межкомнатные и входные в Москве\" style=\"width: 100px; margin: 0 20px 50px 0;\"></center>\n          <p>Заказывайте лучшие металлические, пластиковые, МДФ двери в Москве дешево. Наша фирма продает большой ассортимент межкомнатных и металлических дверей от различных заводов: Аргус, Ратибор, МетаЛюкс, Сударь, Софья, Браво и др. Имеются двери для технических помещений, квартир, офисов, коттеджей, домов с разными цветами и дизайном. Вы обязательно купите дверь по вкусу!</p>\n      <div class=\"clearing\"></div>\n\t  <br>\n     <div class=\"bloking-flexing3 cost-border cont\">\n\t \n               \n        \n    \n            \n          \n               \n        \n    \n<div><h2>Пластиковые двери</h2><center style=\"position: relative\"><img src=\"/img/dveri/plastikovye-dveri.jpg\" alt=\"Пластиковые двери\" title=\"Пластиковые двери\" style=\"object-fit: contain\"><div class=\"bs-product\"><div class=\"bs-discount star\"><span>-<b>16% </b></span>\n</div>\n</div>\n</center><p style=\"height: 145px\">Цена на входные пластиковые двери Москве зависит от различных факторов: комплектации, размера, толщины профиля и т.д.</p>\n<div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\">Каталог</a></div>\n</div><div><h2>Входные двери</h2><center style=\"position: relative\"><img src=\"/img/dveri/vhodnye-dveri.jpg\" alt=\"Входные двери\" title=\"Входные двери\" style=\"object-fit: contain\"><div class=\"hit-prodaj\" style=\"display: block\">Хит продаж</div></center><p style=\"height: 145px\">В процессе производства входных дверей Москве мы утепляем дверные полотна минеральной ватой. Большинство изделий имеют ребрами жесткости, которые препятствуют перекосу конструкции при значительной нагрузке.</p><div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a href=\"#vh\" class=\"btn_bottom\" onclick=\"changeStyleDiv1()\">Каталог</a></div></div><div><h2>Межкомнатные двери</h2><center style=\"position: relative\"><img src=\"/img/dveri/mezhkomnatnye-dveri.jpg\" alt=\"Межкомнатные двери\" title=\"Межкомнатные двери\" style=\"object-fit: contain\"><div class=\"bs-product\"><div class=\"bs-discount star\"><span>-<b>16% </b></span>\n</div>\n</div>\n</center><p style=\"height: 145px\">Чем мы отличаемся от других компаний. Принцип работы – это выполнение заказа на следующий день. Выбирайте межкомнатные двери Москве и заказывайте на tskdoors.ru. Наше предложение порадует Вас.</p>\n<div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a href=\"#mzh\" class=\"btn_bottom\" onclick=\"changeStyleDiv1()\">Каталог</a></div>\n</div>\n</div>\n<div class=\"clearing\"></div>\n\n\n\n<a name=\"vh\"></a>\n\n<h2 id=\"vh\">Металлические двери</h2>\n\n                  \t\t\t\t\t \n                <p>Вы найдете металлические двери в Москве высокого качества с различными видами отделки и конструктивного исполнения. У нас представлены металлические группы для технических помещений.</p>\n\t\t\t\t\t \n\n <div class=\"bloking-flexing5 cost-border cont\">\n <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери Авангард</h3>\n      <center><img src=\"/img/dveri/vh-dver-1.jpg\" alt=\"Двери Авангард\" title=\"Двери Авангард\"></center>\n      <p class=\"pcenter\"> Цена:  \n\t  \n\t  \n\t   <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 49062 ₽</span> </p>\n      <p class=\"cost-price\"><span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">42295</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери Конверс-М</h3>\n      <center><img src=\"/img/dveri/vh-dver-2.jpg\" alt=\"Конверс-М\" title=\"Конверс-М\"></center>\n      <p class=\"pcenter\"> Цена:  \n\n\n\t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 49062 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">42295</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери Грация</h3>\n      <center><img src=\"/img/dveri/vh-dver-3.jpg\" alt=\"Грация\" title=\"Грация\"></center>\n      <p class=\"pcenter\"> Цена:  \n\n\n\t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 42582 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">36709</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  SOPRANO</h3>\n      <center><img src=\"/img/dveri/vh-dver-4.jpg\" alt=\"SOPRANO\" title=\"SOPRANO\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 42582 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">36709</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Tokio</h3>\n      <center><img src=\"/img/dveri/vh-dver-5.jpg\" alt=\"Tokio\" title=\"Tokio\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 49000 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">42241</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n\n\n\n\n</div>\n <div class=\"clearing\"></div>\n \n <div class=\"bloking-flexing5 cost-border cont\">\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Versace</h3>\n      <center><img src=\"/img/dveri/vh-dver-6.jpg\" alt=\"Versace\" title=\"Versace\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 87000 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">75000</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Хаски</h3>\n      <center><img src=\"/img/dveri/vh-dver-7.jpg\" alt=\"Хаски\" title=\"Хаски\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 98600 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">85000</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Stella</h3>\n      <center><img src=\"/img/dveri/vh-dver-8.jpg\" alt=\"Stella\" title=\"Stella\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 63800 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">55000</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Provence</h3>\n      <center><img src=\"/img/dveri/vh-dver-9.jpg\" alt=\"Provence\" title=\"Provence\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 64960 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">56000</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Polo</h3>\n      <center><img src=\"/img/dveri/vh-dver-10.jpg\" alt=\"Polo\" title=\"Polo\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 77720 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">67000</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n</div>\n \n <div class=\"clearing\"></div>\n \n<center><a href=\"#openModal3\" onclick=\"changeStyleDiv1()\" style=\"max-width: 253px;display: block;padding: 9px;text-transform: uppercase;text-decoration: none;border: 1px solid;margin-bottom: 30px;\">Получить весь каталог</a></center>\n\n <div class=\"clearing\"></div>\n \n   <center><h2 style=\"margin-top:10px;margin-bottom:5px;\">Рейтинг входных дверей</h2></center>\n<br>\n    <!-- виды дверей -->\n\n<div class=\"clearing\"></div>\n<div class=\"blokireyting\">\n\n<div class=\"blokrey\">\n<div class=\"psdddmms\"><div class=\"blockrei\"><div class=\"blockrei1\"><div class=\"hit-badge3\">1300 продаж</div>\n<div class=\"vendor-flag-wrap\"><p>Хит продаж</p></div>\n<div class=\"vendor-number\">№1</div><center><span class=\"opaaa\"><br>Дверь Giada</span></center>\n<center><img src=\"/img/dveri/dver-giada.jpg\" alt=\"Дверь Giada\" title=\"Дверь Giada\" class=\"image-sert\"></center><div><br></div>\n</div>\n<div class=\"blockrei2\">\n<p>Бронированные двери серии Stability Proof в Москве: новая коллекция входных уличных дверей</p>\n<ul>\n<li class=\"libla2\">Декоративная плита МДФ</li><li class=\"libla2\">Полотно — 80 мм.</li><li class=\"libla2\">Дверной короб 120 мм</li><li class=\"libla2\">2040х850</li></ul></div>\n<div class=\"blockrei3\">\n<center><img src=\"/img/zvezda.jpg\" alt=\"\" title=\"\" width=\"65%\"></center>\n<p class=\"pcenter2\"> Цена:  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 56997 ₽</span> </p>\n      <p class=\"cost-price2\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">49135</span></span> ₽</p>\n<div class=\"perehod\">\n<a href=\"#openModal2\" class=\"btn-violet\" style=\"color: white;\">Заказать дверь</a>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n<div class=\"blokrey\">\n<div class=\"psdddmms\"><div class=\"blockrei\"><div class=\"blockrei1\"><div class=\"hit-badge3\">920 продаж</div>\n<div class=\"vendor-flag-wrap\"><p>Выбор аристократов</p></div>\n<div class=\"vendor-number\">№2</div><center><span class=\"opaaa\"><br>ДВЕРЬ АМАЛИЯ</span></center>\n<center><img src=\"/img/dveri/dver-amaliya.jpg\" alt=\"ДВЕРЬ АМАЛИЯ\" title=\"ДВЕРЬ АМАЛИЯ\" class=\"image-sert\"></center><div><br></div>\n</div>\n<div class=\"blockrei2\">\n<p>Изготовитель гарантирует соответствие дверей Амалия в  требованиям ГОСТу.</p>\n<ul>\n<li class=\"libla2\">Регулятор притвора: есть</li><li class=\"libla2\">Броненакладка: врезка CRIT</li><li class=\"libla2\">Ручка: Handle on Square</li><li class=\"libla2\">2050х960</li></ul></div>\n<div class=\"blockrei3\">\n<center><img src=\"/img/zvezda.jpg\" alt=\"\" title=\"\" width=\"65%\"></center>\n<p class=\"pcenter2\"> Цена:  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 73972 ₽</span> </p>\n      <p class=\"cost-price2\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">63769</span></span> ₽</p>\n<div class=\"perehod\">\n<a href=\"#openModal2\" class=\"btn-violet\" style=\"color: white;\">Заказать дверь</a>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n<div class=\"blokrey\">\n<div class=\"psdddmms\"><div class=\"blockrei\"><div class=\"blockrei1\"><div class=\"hit-badge3\">730 продаж</div>\n<div class=\"vendor-flag-wrap\"><p>Лучшая цена</p></div>\n<div class=\"vendor-number\">№3</div><center><span class=\"opaaa\"><br>VERY DVERI</span></center>\n<center><img src=\"/img/dveri/very-dveri.jpg\" alt=\"VERY DVERI\" title=\"VERY DVERI\" class=\"image-sert\"></center><div><br></div>\n</div>\n<div class=\"blockrei2\">\n<p>Фабрика входных дверей в Москве занимет высокие позиции на рынке благодаря доступной цене.</p>\n<ul>\n<li class=\"libla2\">Толщина полотна: 70 мм</li><li class=\"libla2\">Лист металла на: 1,2 мм</li><li class=\"libla2\">2050х960</li><li class=\"libla2\">Мдф накладки: 10/10 мм</li></ul></div>\n<div class=\"blockrei3\">\n<center><img src=\"/img/zvezda.jpg\" alt=\"\" title=\"\" width=\"65%\"></center>\n<p class=\"pcenter2\"> Цена:  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 10222 ₽</span> </p>\n      <p class=\"cost-price2\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">8812</span></span> ₽</p>\n<div class=\"perehod\">\n<a href=\"#openModal2\" class=\"btn-violet\" style=\"color: white;\">Заказать дверь</a>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n</div>\n \n \n <div class=\"clearing\"></div>\n \n \n \n\n\n\n\n<div class=\"clearing\"></div>\n<h2 id=\"mzh\">Межкомнатные двери</h2>\n                <p>Двери межкомнатные: цена определяет материал. Материал, из которого изготавливают двери в Москве, влияет на эксплуатационные, потребительские характеристики готового изделия.</p>\n <div class=\"bloking-flexing5 cost-border cont\">\n\n\n\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Гранд</h3>\n      <center><img src=\"/img/dveri/mezh-dver-1.jpg\" alt=\"Гранд\" title=\"Гранд\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 7760 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">6690</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Скинни</h3>\n      <center><img src=\"/img/dveri/mezh-dver-2.jpg\" alt=\"Скинни\" title=\"Скинни\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 6554 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">5650</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Гланта</h3>\n      <center><img src=\"/img/dveri/mezh-dver-3.jpg\" alt=\"Гланта\" title=\"Гланта\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 9048 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">7800</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Гланта со стеклом</h3>\n      <center><img src=\"/img/dveri/mezh-dver-4.jpg\" alt=\"Гланта со стеклом\" title=\"Гланта со стеклом\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 9860 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">8500</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Доррен</h3>\n      <center><img src=\"/img/dveri/mezh-dver-5.jpg\" alt=\"Доррен\" title=\"Доррен\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 11600 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">10000</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n\n\n</div>\n <div class=\"clearing\"></div>\n \n \n  <div class=\"bloking-flexing5 cost-border cont\">\n\n\n\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Стокгольм</h3>\n      <center><img src=\"/img/dveri/mezh-dver-6.jpg\" alt=\"Стокгольм\" title=\"Стокгольм\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 11252 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">9700</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n\n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Стокгольм красный</h3>\n      <center><img src=\"/img/dveri/mezh-dver-7.jpg\" alt=\"Стокгольм красный\" title=\"Стокгольм красный\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 10417 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">8980</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Стокголь желтый</h3>\n      <center><img src=\"/img/dveri/mezh-dver-8.jpg\" alt=\"Стокголь желтый\" title=\"Стокголь желтый\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 10417 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">8980</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Гланта синий</h3>\n      <center><img src=\"/img/dveri/mezh-dver-9.jpg\" alt=\"Гланта синий\" title=\"Гланта синий\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 8816 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">7600</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n   \n   \n   \n   <div itemscope=\"\" itemtype=\"http://schema.org/Product\">\n   <h3 itemprop=\"name\">Двери  Гланта, латте</h3>\n      <center><img src=\"/img/dveri/mezh-dver-10.jpg\" alt=\"Гланта, латте\" title=\"Гланта, латте\"></center>\n      <p class=\"pcenter\"> Цена:  \t  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 12180 ₽</span> </p>\n      <p class=\"cost-price\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">10500</span></span> ₽</p>\n      <div class=\"lopal44 new\" style=\"width: 100%; margin: 0 auto; text-align: center;\"><a class=\"btn_bottom\" href=\"#openModal2\" onclick=\"changeStyleDiv1()\" style=\"display: inline-flex; justify-content: center;\"><svg><use xlink:href=\"#icon-cart\"><svg id=\"icon-cart\" viewBox=\"0 0 32 32\"><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M31.789 6.897c-0.249-0.391-0.676-0.676-1.138-0.676l-22.473-1.031-0.782-3.058c-0.178-0.64-0.711-1.067-1.387-1.067h-4.587c-0.782 0-1.422 0.64-1.422 1.422s0.64 1.422 1.422 1.422h3.485l3.911 15.219-0.96 3.983c-0.107 0.427 0 0.889 0.249 1.209 0.284 0.356 0.676 0.533 1.102 0.533h17.423c0.782 0 1.422-0.64 1.422-1.422s-0.64-1.422-1.422-1.422h-15.574l0.391-1.636 14.223-0.676c0.533-0.036 0.996-0.356 1.209-0.818l4.978-10.667c0.213-0.391 0.178-0.889-0.071-1.316zM24.677 16.924l-13.263 0.604-2.382-9.458 19.379 0.889-3.733 7.965z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M10.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667-2.667 1.194-2.667 2.667c0 1.473 1.194 2.667 2.667 2.667z\"></path><path fill=\"#fff\" style=\"fill: var(--color1, #fff)\" d=\"M26.137 30.935c1.473 0 2.667-1.194 2.667-2.667s-1.194-2.667-2.667-2.667c-1.473 0-2.667 1.194-2.667 2.667s1.194 2.667 2.667 2.667z\"></path></svg></use></svg> <span class=\"af\">Купить</span> </a></div>\n   </div>\n\n\n</div>\n\n\n\n\n<div class=\"clearing\"></div>\n\n\n\n<center><a href=\"#openModal3\" onclick=\"changeStyleDiv1()\" style=\"max-width: 253px;display: block;padding: 9px;text-transform: uppercase;text-decoration: none;border: 1px solid;margin-bottom: 30px;\">Получить весь каталог</a></center>\n\n\n\n<div class=\"clearing\"></div>\n\n  <center><h2 style=\"margin-top:10px;margin-bottom:5px;\">Рейтинг межкомнатных дверей</h2></center>\n<br>\n    <!-- виды дверей -->\n\n<div class=\"clearing\"></div>\n<div class=\"blokireyting\">\n\n<div class=\"blokrey\">\n<div class=\"psdddmms\"><div class=\"blockrei\"><div class=\"blockrei1\"><div class=\"hit-badge3\">1760 продаж</div>\n<div class=\"vendor-flag-wrap\"><p>Хит продаж</p></div>\n<div class=\"vendor-number\">№1</div><center><span class=\"opaaa\"><br>ДВЕРЬ ГЕРДА</span></center>\n<center><img src=\"/img/dveri/dver-gerda.jpg\" alt=\"ДВЕРЬ ГЕРДА\" title=\"ДВЕРЬ ГЕРДА\" class=\"image-sert\"></center><div><br></div>\n</div>\n<div class=\"blockrei2\">\n<p>Двери коллекции \"Герда\" отличаются от коллекций, прямолинейными линиями профиля.</p>\n<ul>\n<li class=\"libla2\">Толщина полотна: 40 мм</li><li class=\"libla2\">Покрытие: ПВХ. ПВХ Deluxe</li><li class=\"libla2\">Высота полотна: 2000 мм</li><li class=\"libla2\">Ширина полотна: 800 мм</li></ul></div>\n<div class=\"blockrei3\">\n<center><img src=\"/img/zvezda.jpg\" alt=\"\" title=\"\" width=\"65%\"></center>\n<p class=\"pcenter2\"> Цена:  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 2317 ₽</span> </p>\n      <p class=\"cost-price2\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">1997</span></span> ₽</p>\n<div class=\"perehod\">\n<a href=\"#openModal2\" class=\"btn-violet\" style=\"color: white;\">Заказать дверь</a>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n<div class=\"blokrey\">\n<div class=\"psdddmms\"><div class=\"blockrei\"><div class=\"blockrei1\"><div class=\"hit-badge3\">1540 продаж</div>\n<div class=\"vendor-flag-wrap\"><p>Тонкий стиль</p></div>\n<div class=\"vendor-number\">№2</div><center><span class=\"opaaa\"><br>ДВЕРЬ INVISIBLE</span></center>\n<center><img src=\"/img/dveri/dver-invisible.jpg\" alt=\"ДВЕРЬ INVISIBLE\" title=\"ДВЕРЬ INVISIBLE\" class=\"image-sert\"></center><div><br></div>\n</div>\n<div class=\"blockrei2\">\n<p>Грунтованные под финишную отделку двери в Арбате с кромкой из ABS-пластика.</p>\n<ul>\n<li class=\"libla2\">2050х900</li><li class=\"libla2\">Блок укомплектован петлями AGB Eclipse 2.0</li><li class=\"libla2\">Цвет фурнитуры: мат.хром</li><li class=\"libla2\">Короб из бруса</li></ul></div>\n<div class=\"blockrei3\">\n<center><img src=\"/img/zvezda.jpg\" alt=\"\" title=\"\" width=\"65%\"></center>\n<p class=\"pcenter2\"> Цена:  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 26361 ₽</span> </p>\n      <p class=\"cost-price2\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">22725</span></span> ₽</p>\n<div class=\"perehod\">\n<a href=\"#openModal2\" class=\"btn-violet\" style=\"color: white;\">Заказать дверь</a>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n<div class=\"blokrey\">\n<div class=\"psdddmms\"><div class=\"blockrei\"><div class=\"blockrei1\"><div class=\"hit-badge3\">1150 продаж</div>\n<div class=\"vendor-flag-wrap\"><p>Идеальное качество</p></div>\n<div class=\"vendor-number\">№3</div><center><span class=\"opaaa\"><br>ДВЕРЬ A2S RAL</span></center>\n<center><img src=\"/img/dveri/dver-a2s-ral.jpg\" alt=\"ДВЕРЬ A2S RAL\" title=\"ДВЕРЬ A2S RAL\" class=\"image-sert\"></center><div><br></div>\n</div>\n<div class=\"blockrei2\">\n<p>Дверь A2S RAL в Москвеэто интерпретация модерновых мотивов.</p>\n<ul>\n<li class=\"libla2\">2050х900</li><li class=\"libla2\">Каркас - клееный массив</li><li class=\"libla2\">Наружное покрытие – MDF 8мм</li><li class=\"libla2\">Щитовое полотно без четверти</li></ul></div>\n<div class=\"blockrei3\">\n<center><img src=\"/img/zvezda.jpg\" alt=\"\" title=\"\" width=\"65%\"></center>\n<p class=\"pcenter2\"> Цена:  <span class=\"costbgr\">-<b>16% </b></span>&nbsp;<span class=\"through\"> 19520 ₽</span> </p>\n      <p class=\"cost-price2\">Цена: от <span itemprop=\"offers\" itemscope=\"\" itemtype=\"http://schema.org/Offer\"><meta itemprop=\"priceCurrency\" content=\"RUB\"><link itemprop=\"availability\" href=\"https://schema.org/InStock\"><span itemprop=\"price\">16828</span></span> ₽</p>\n<div class=\"perehod\">\n<a href=\"#openModal2\" class=\"btn-violet\" style=\"color: white;\">Заказать дверь</a>\n</div>\n</div>\n</div>\n</div>\n</div>\n\n</div>\n\n<div class=\"clearing\"></div>\n\n\n\n\n<div class=\"emptylol\">\n\n<div class=\"clearing\"></div>\n <h2>Цветовые оттенки дверей</h2>\n  <div class=\"bloking-flexing7 emptydiv\" style=\"cursor:pointer;\">\n<div><img src=\"/img/dveri/cvet1.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Лиственница кремовая</p></div>\n<div><img src=\"/img/dveri/cvet2.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Орех темный</p></div>\n<div><img src=\"/img/dveri/cvet3.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Орех золотистый</p></div>\n<div><img src=\"/img/dveri/cvet4.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Дуб дорато</p></div>\n<div><img src=\"/img/dveri/cvet5.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Орех вела</p></div>\n<div><img src=\"/img/dveri/cvet6.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Орех пекан</p></div>\n<div><img src=\"/img/dveri/cvet7.jpg\" class=\"fz__minimized\" style=\"hegith:85px;\"><p style=\"text-align:center;margin-top:1px;\">Дуб дымчатый</p></div>\n  </div>\n<div class=\"clearing\"></div>\n</div>\n\n\n<div class=\"clearing\"></div>\n\n\n         </div>\n    \n\n         <div style=\"clear:both;\"></div>      \n\n      <div class=\"main bg-2\">\n\n\n         <br>\n\n         <h2 id=\"stocks\">Акции</h2>\n         <div class=\"bloking-flexing3\">\n            <div>\n               <center><img src=\"/img/dveri/akciya-1.jpg\" alt=\"Скидка на двери из экошпона\" title=\"Скидка на гранитные двери\"></center>\n               <h3 style=\"color:#ffa010; text-align: center\">Двери из экошпона в Москве цена снижена до 10%</h3>\n            </div>\n            <div>\n               <center><img src=\"/img/dveri/akciya-2.jpg\" alt=\"Двери из массива по цене МДФ\" title=\"Двери из массива по цене МДФ\"></center>\n               <h3 style=\"color:#ffa010; text-align: center\">Двери из массива по цене МДФ</h3>\n            </div>\n            <div>\n               <center><img src=\"/img/dveri/akciya-3.jpg\" alt=\"Стальные двери по цене межкомнатных\" title=\"Стальные двери по цене межкомнатных\"></center>\n               <h3 style=\"color:#ffa010; text-align: center\">Стальные двери по цене межкомнатных</h3>\n            </div>\n         </div>\n\t  \n\t  <div class=\"clearing\"></div>\n\t  \n      <div class=\"main\">\n         <h2>ДОСТАВКА И УСТАНОВКА</h2>\n         <div class=\"bloking-flexing2\">\n            <div style=\"float: right\">\n               <center><img src=\"/img/pamyatniki/dostavka.jpg\" alt=\"Доставка\" title=\"Доставка\" style=\"object-fit: contain;    height: 100px;\">\n               </center>\n            </div>\n            <div>\n                              <p>Быстро, недорого и аккуратно осуществляем доставку и установку двери в Москве.</p>\n               <br>\n\n            </div>\n         </div>\n      </div>\n\t  \n\t  \n      <br>\n\n      <div style=\"clear:both;\"></div>\n      <h2 id=\"installment-plan\">Рассрочка на двери</h2>\n      <div class=\"main bg-2\" style=\"margin-top:0px;\">\n         <p style=\"font-size:18px;text-align:center;\">Предоставляем рассрочку на двери ОТ 6 ДО 36 МЕСЯЦЕВ</p>\n         <div style=\"clear:both;\"></div>\n         <div class=\"bloking-flexing3 pay\">\n            <div>\n               <center><img src=\"/img/tinkoff.jpg\" alt=\"Рассрочка на 6 месяцев\" title=\"Рассрочка на 6 месяцев\"></center>\n               <center>\n                  <h3>Рассрочка на 6 месяцев</h3>\n               </center>\n            </div>\n            <div>\n               <center><img src=\"/img/visa.png\" alt=\"Кредит - двери Москве\" title=\"Кредит - двери Москве\"></center>\n               <center>\n                  <h3>Рассрочка на 6 месяцев</h3>\n               </center>\n            </div>\n            <div>\n               <center><img src=\"/img/mastercard.jpg\" alt=\"Рассрочка - двери Москве\" title=\"Рассрочка - двери Москве\"></center>\n               <center>\n                  <h3>Рассрочка на 4 месяца</h3>\n               </center>\n            </div>\n         </div>\n         <div style=\"clear:both;\"></div>\n      </div>\n      <br>\n      <div style=\"clear:both;\"></div>\n      <h2 id=\"payment\">Оплата</h2>\n      <div class=\"main bg-2\">\n         <div class=\"bloking-flexing4 pay\">\n            <div>\n               <center><img src=\"/img/pay-card.jpg\" alt=\"Перевод на карту\" title=\"Перевод на карту\" style=\"height: 200px\"></center>\n               <center>\n                  <h3>Перевод на карту</h3>\n               </center>\n            </div>\n            <div>\n               <center><img src=\"/img/pay-online.jpg\" alt=\"Оплата онлайн\" title=\"Оплата онлайн\" style=\"height: 200px\"></center>\n               <center>\n                  <h3>Оплата онлайн</h3>\n               </center>\n            </div>\n            <div>\n               <center><img src=\"/img/pay-cash.jpg\" alt=\"Оплата наличными\" title=\"Оплата наличными\" style=\"height: 200px\"></center>\n               <center>\n                  <h3>Оплата наличными</h3>\n               </center>\n            </div>\n\n            <div>\n               <center><img src=\"/img/beznal.jpg\" alt=\"Безналичный расчет\" title=\"Безналичный расчет на гранитные двери в Москве\" style=\"height: 200px;\"></center>\n               <center>\n                  <h3>Безналичный расчёт</h3>\n               </center>\n            </div>\n         </div>\n      </div>\n      <br>\n\t  \n      <div style=\"clear:both;\"></div>\n      <br>\n      <div style=\"clear:both;\"></div>\n      <h2 id=\"video\">Видео</h2>\n      <div class=\"main bg-2\">\n         <div style=\"text-align:center;max-width:80%;margin:0 auto\"><iframe width=\"100%\" height=\"300\" src=\"https://www.youtube.com/embed/3sSjPd9oCjA\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></div>\n      </div>\n      <br>\n      <div style=\"clear:both;\"></div>\n      <h2 id=\"reviews\">Отзывы</h2>\n      <div class=\"main bg-2\">\n         <p class=\"template-module-reviews-title\" style=\"font-size:25px;\">Николай,</p>\n         <p class=\"template-module-reviews-date\"><strong>08.04.2026</strong></p>\n      <p class=\"template-module-reviews-notes\"> Воспользовался сервисом данной компании в Москве. Впечатления приятные! Сделали все мгновенно, особую благодарность хотел бы сказать менеджеру Александру! Советую!</p>\n      </div>\n</div>\n  \n      <br>\n      <div style=\"clear:both;\"></div>\n      <div style=\"clear:both;\"></div>\n                  <div class=\"main bg-2\" style=\"font-size:21px;text-align:center;\">\n         <h2 id=\"contacts\">Контакты</h2>\n\t\t \n\t\t\n\t\t \n         <div itemscope=\"\" itemtype=\"http://schema.org/Organization\">\n            <meta itemprop=\"name\" content=\"\">\n            <meta itemprop=\"address\" content=\"г.Москва\">\n            <meta itemprop=\"telephone\" content=\"8-800-770-64-27\">\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n            <div>Компания \"<span style=\"text-transform:uppercase;\">tskdoors.ru</span>\"</div>\n            <div><span> Россия, г. Москва, ул. Зеленая, д. 18</span>;</div>\n            Телефон:<span>\n            <a href=\"tel:8-800-770-64-27\">8-800-770-64-27</a></span>\n         </div>\n\t\t \n\t\t          <div style=\"display:none;\" itemscope=\"\" itemtype=\"http://schema.org/LocalBusiness\">   \n\t\t\t<meta itemprop=\"name\" content=\"tskdoors.ru\">\n\t\t\t<meta itemprop=\"image\" content=\"http://tskdoors.ru/design/logo.png\">\n\t\t\t    <div style=\"display:none;\" itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\">\n\t\t\t\t<meta itemprop=\"addressLocality\" content=\"Москва\">\n\t\t\t\t<meta itemprop=\"streetAddress\" content=\"ул. Зеленая 20\">\n\t\t\t\t<meta itemprop=\"telephone\" content=\"8-800-770-64-27\">\n\t\t\t\t</div>\n\t\t\t\t   </div>\n      </div>\n      <br><br>  \n      <div style=\"clear:both;\"></div>\n      <div class=\"main form_bottom\">\n         <div id=\"form_width\">\n            <center>\n               <h2 style=\"color:white;\">Получить скидку прямо сейчас</h2>\n            </center>\n            <div class=\"formaniz\">\n               <div class=\"form_border col-1\">\n<center><input name=\"phone\" id=\"fastFeedbackText_feedbackBlockFile25555\" type=\"text\" placeholder=\"Ваш телефон*\"></center>\n                  <div class=\"form_icon\" id=\"user_icon\"></div>\n               </div>\n               <div class=\"last_button col-1\">\n                  <center>\n                     <button class=\"button_form btn\" name=\"submit_button\" id=\"submit_button\" onclick=\"sendFastFeedback('_feedbackBlockFile25555', '/otpravka/')\">\n                        <p id=\"butt_f\">Отправить</p>\n                     </button>\n                  </center>\n               </div>\n            </div>\n            <script>\n               document.querySelector(\"#fastFeedbackText_feedbackBlockFile25555\").addEventListener(\"keyup\", event => {\n               if (event.key !== \"Enter\") return;\n               sendFastFeedback('_feedbackBlockFile25555', '/otpravka/');\n               event.preventDefault();\n               });\n            </script>\n            <div class=\"clear\"></div>\n            <br>\n            <div class=\"line\" style=\"text-align: center\">\n               <input style=\"display: inline !important;-webkit-appearance: checkbox;-moz-appearance: checkbox;\" type=\"checkbox\" id=\"eula2\" name=\"data[new][eula]\" value=\"1\" checked=\"checked\">\n               <label for=\"eula2\"> &nbsp;Согласен на обработку своих данных</label>\n               <p></p>\n            </div>\n            <div class=\"clear\"></div>\n         </div>\n      </div>\n      <div style=\"clear:both;\"></div>\n\n      <br><br>\n\n      <div class=\"main bg-2 kofdo\">\n         <center>\n            <h2>Работаем по всей стране</h2>\n         </center>\n         <div class=\"bloking-flexing4\">\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/sokol/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Сокол</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/horoshyovskij/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Хорошёвский</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/hovrino/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Ховрино</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/timiryazevskij/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Тимирязевский</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/levoberezhnyj/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Левобережный</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/dmitrovskij/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Дмитровский</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/koptevo/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Коптево</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/molzhaninovskij/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Молжаниновский</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/degunino vostochnoe/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Дегунино Восточное</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/golovinskij/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Головинский</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/aeroport/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Аэропорт</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/savyolki/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Савёлки</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/kryukovo/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Крюково</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/matushkino/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Матушкино</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/silino/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Силино</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/staroe kryukovo/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Старое Крюково</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/pavlovskij-posad/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Павловский Посад</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/malahovka/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Малаховка</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/roshal/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Рузф</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/reshetnikovo/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Решетниково</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/volokolamsk/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Волоколамск</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/likino-dulevo/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Ликино-Дулево</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/lopatino/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Лопатино</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/krasnogor_pamyatnikisk/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Красногорск</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/tuchkovo/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Тучково</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/zareche/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Заречье</span></center>\n\t\t\t\t</a>\n</div>\n<div style=\"margin-bottom: 20px;min-height: 50px;border: 2px solid;line-height: 3;\">\n<a href=\"/dver/ilinskij/\" style=\"text-decoration: none;color: #000;\">\n\n\n\t\t\t\t<center><span>Ильинский</span></center>\n\t\t\t\t</a>\n</div>\n         </div>\n      </div>\n\n      <div style=\"clear:both;\"></div>\n      <div class=\"clear\"></div>\n      <!--- Блок контент --->\n      <div class=\"dostavka\" style=\"background: url('/img/dveri/fon.jpg') 0 0 fixed;background-size: cover;\">\n         <div class=\"container-fluid\">\n         </div>\n      </div>\n      <div class=\"main form_bottom\" id=\"calculator\">\n         <div id=\"form_width\">\n            <center><span class=\"formaspan\">Рассчитать стоимость</span></center>\n            <div class=\"formaniz\">\n               <div class=\"form_border col-1\">\n<center><input name=\"phone\" id=\"fastFeedbackText_feedbackBlockFile2\" type=\"text\" placeholder=\"Ваш телефон*\"></center>\n                  <div class=\"form_icon\" id=\"user_icon\"></div>\n               </div>\n               <div class=\"last_button col-1\">\n                  <center>\n                     <button class=\"button_form btn\" name=\"submit_button\" id=\"submit_button\" onclick=\"sendFastFeedback('_feedbackBlockFile2', '/otpravka/')\">\n                        <p id=\"butt_f\">Отправить</p>\n                     </button>\n                  </center>\n               </div>\n            </div>\n            <script>\n               document.querySelector(\"#fastFeedbackText_feedbackBlockFile2\").addEventListener(\"keyup\", event => {\n               if (event.key !== \"Enter\") return;\n               sendFastFeedback('_feedbackBlockFile2', '/otpravka/');\n               event.preventDefault();\n               });\n            </script>\n            <div class=\"clear\"></div>\n            <br>\n            <div class=\"line\" style=\"text-align: center\">\n               <input style=\"display: inline !important;-webkit-appearance: checkbox;-moz-appearance: checkbox;\" type=\"checkbox\" id=\"eula2\" name=\"data[new][eula]\" value=\"1\" checked=\"checked\">\n               <label for=\"eula2\"> &nbsp;Согласен на обработку персональных данных</label>\n               <p></p>\n            </div>\n            <div class=\"clear\"></div>\n         </div>\n      </div>\n      <div id=\"new_header\">\n         <div class=\"main\">\n            <div class=\"logo col-1\">\n<a href=\"/\"><img src=\"/design/logo.png\" alt=\"двери в Москве\" title=\"двери в Москве\" width=\"100%\"></a>\n            </div>\n            <div class=\"discript col-1\"></div>\n            <div class=\"messenger col-1\">\n               <p>Связаться с нами</p>\n               <p>\n                  <a href=\"tel:8-800-770-64-27\"><img src=\"/design/wa_ico.png\" style=\"width:40px\" alt=\"Позвонить нам\"></a>&nbsp;&nbsp;&nbsp;\t\t  \n                  <a href=\"/kalkulyator-dverey/\"><img src=\"/design/vb_ico.png\" style=\"width:40px\"></a>&nbsp;&nbsp;&nbsp;\n                  <a href=\"/feedbacks/\"><img src=\"/design/tm_ico.png\" style=\"width:40px\"></a>\n               </p>\n               <p>\n               </p>\n            </div>\n            <div class=\"button_header\">\n               <div class=\"lopal\">\n                  <a href=\"/kalkulyator-dverey/\" style=\"padding: 2px 7px 8px 7px;\">\n                     <div class=\"menu-title left-menu-kalk-fon\" style=\"border: 2px solid #ffa010;background:#ffa010;\">\n                        <div class=\"menu-title-txt-wrap\">\n                           <div class=\" left-menu-kalk\"><span style=\"color: #312e2e;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Калькулятор</span></div>\n                           <img src=\"/design/calculyator.gif\" style=\"margin-top: -4px;margin-left: -2px;float: right;border: 2px solid white;height: 45px;\">\n                           <div class=\"clear\"></div>\n                        </div>\n                     </div>\n                  </a>\n               </div>\n               <a class=\"btn_bottom\" href=\"#openModal\" onclick=\"changeStyleDiv1()\">Обратный звонок</a>\n            </div>\n            <div id=\"contact_info\">\n               <p><a href=\"tel:8-800-770-64-27\" class=\"phone roistat-phone\">8-800-770-64-27</a></p>\n               <p>Время работы с 8:00 до 20:00</p>\n            </div>\n         </div>\n         <div class=\"clear\"></div>\n      </div>\n      <div style=\"clear:both;\"></div>\n      <div class=\"row-top2\" style=\"height:auto;padding-top: 10px;padding-bottom: 10px;text-align:left;\">\n         <div class=\"main\">\n<div class=\"miklla\">\n<div class=\"leftmenupr\">\n<ul>\n<li><a href=\"/\">Главная</a></li>\n</ul>\n</div>\n<div class=\"leftmenupr\">\n<ul>\n <li><a href=\"/dver/\">Двери</a></li>\n</ul>\n</div>\n<div class=\"leftmenupr\">\n<ul>\n<li><a href=\"/vakansiya/\">Вакансии</a></li>\n</ul>\n</div>\n<div class=\"leftmenupr\">\n<ul>\n<li><a href=\"/sotrudnichestvo/\">Сотрудничество</a></li>\n</ul>\n</div>\n<div class=\"leftmenupr\">\n<ul>\n<li><a href=\"/feedbacks/\">Обратная связь</a></li>\n</ul>\n</div>\n</div>\n         </div>\n      </div>\n      <div style=\"clear:both;\"></div>\n      <div id=\"footer\" style=\"background: #f1f2f4;\">\n         <div class=\"main\">\n            <div class=\"wrap\">\n               <div class=\"copy col-1\">\n                           <p>2015 - 2026 © tskdoors.ru</p>\n               </div>\n               <div class=\"social col-right\">\n                  <div class=\"wrapper\">\n                     <a href=\"/sozdanie-saitov/\">Создание сайтов</a> \n                  </div>\n               </div>\n               <div class=\"clear\"></div>\n            </div>\n         </div>\n      </div>\n      <div style=\"display:none;\"><!--LiveInternet counter--><script type=\"text/javascript\">\ndocument.write(\"<a href='//www.liveinternet.ru/click' \"+\n\"target=_blank><img src='//counter.yadro.ru/hit?t45.6;r\"+\nescape(document.referrer)+((typeof(screen)==\"undefined\")?\"\":\n\";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?\nscreen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\n\";h\"+escape(document.title.substring(0,150))+\";\"+Math.random()+\n\"' alt='' title='LiveInternet' \"+\n\"border='0' width='31' height='31'><\\/a>\")\n</script><a href=\"//www.liveinternet.ru/click\" target=\"_blank\"><img src=\"//counter.yadro.ru/hit?t45.6;r;s1280*720*24;uhttps%3A//tskdoors.ru/;h%u041A%u0443%u043F%u0438%u0442%u044C%20%u0432%u0445%u043E%u0434%u043D%u044B%u0435%20%u0438%20%u043C%u0435%u0436%u043A%u043E%u043C%u043D%u0430%u0442%u043D%u044B%u0435%20%u0434%u0432%u0435%u0440%u0438%20%u0432%20%u041C%u043E%u0441%u043A%u0432%u0435%2C%20%u0446%u0435%u043D%u044B%20%u043D%u0430%20%u0444%u0443%u0440%u043D%u0438%u0442%u0443%u0440%u0443%20%u0441%u043D%u0438%u0436%u0435%u043D%u044B%20%u0434%u043E%20%u043A%u043E%u043D%u0446%u0430%20%u043C%u0430%u044F%20%7C%20tskdoors.ru;0.14740976383168658\" alt=\"\" title=\"LiveInternet\" border=\"0\" width=\"31\" height=\"31\"></a><!--/LiveInternet--></div>\n      <script>\n         document.addEventListener(\"DOMContentLoaded\", function () {\n           var scrollbar = document.body.clientWidth - window.innerWidth + 'px';\n           console.log(scrollbar);\n           document.querySelector('[href=\"#openModal\"]').addEventListener('click', function () {\n             document.body.style.overflow = 'hidden';\n             document.querySelector('#openModal').style.marginLeft = scrollbar;\n           });\n           document.querySelector('[href=\"#close\"]').addEventListener('click', function () {\n             document.body.style.overflow = 'visible';\n             document.querySelector('#openModal').style.marginLeft = '0px';\n           });\n         });\n      </script>\n\t  \t    <script type=\"text/javascript\" src=\"/js/litezoom.js\"></script>\n    <script type=\"text/javascript\">$('.fz__minimized').litezoom({speed:400, viewTitle:true});</script>\n   \n\n</body></html>",
+  "text": "Купить входные и межкомнатные двери в Москве, цены на фурнитуру снижены до конца мая | tskdoors.ru Связаться с нами 📞 8-800-770-64-27 Калькулятор Бесплатная консультация 8-800-770-64-27 Россия, г. Москва Время работы с 8:00 до 20:00 Меню Межкомнатные Входные Оплата Рассрочка Видео Отзывы Контакты Цены Оплата Рассрочка Видео Отзывы Контакты Бесплатная консультация × Отправить Введите данные × Отправить Получить каталог × Получить Входные и межкомнатные двери в Москве Скидка на двери в Москве 16% до 02.05.2026 01 04 17 06 дней часов минут секунд Получить лучшую цену Заказывайте лучшие металлические, пластиковые, МДФ двери в Москве дешево. Наша фирма продает большой ассортимент межкомнатных и металлических дверей от различных заводов: Аргус, Ратибор, МетаЛюкс, Сударь, Софья, Браво и др. Имеются двери для технических помещений, квартир, офисов, коттеджей, домов с разными цветами и дизайном. Вы обязательно купите дверь по вкусу! Пластиковые двери - 16% Цена на входные пластиковые двери Москве зависит от различных факторов: комплектации, размера, толщины профиля и т.д. Каталог Входные двери Хит продаж В процессе производства входных дверей Москве мы утепляем дверные полотна минеральной ватой. Большинство изделий имеют ребрами жесткости, которые препятствуют перекосу конструкции при значительной нагрузке. Каталог Межкомнатные двери - 16% Чем мы отличаемся от других компаний. Принцип работы – это выполнение заказа на следующий день. Выбирайте межкомнатные двери Москве и заказывайте на tskdoors.ru. Наше предложение порадует Вас. Каталог Металлические двери Вы найдете металлические двери в Москве высокого качества с различными видами отделки и конструктивного исполнения. У нас представлены металлические группы для технических помещений. Двери Авангард Цена: - 16% 49062 ₽ 42295 ₽ Купить Двери Конверс-М Цена: - 16% 49062 ₽ Цена: от 42295 ₽ Купить Двери Грация Цена: - 16% 42582 ₽ Цена: от 36709 ₽ Купить Двери SOPRANO Цена: - 16% 42582 ₽ Цена: от 36709 ₽ Купить Двери Tokio Цена: - 16% 49000 ₽ Цена: от 42241 ₽ Купить Двери Versace Цена: - 16% 87000 ₽ Цена: от 75000 ₽ Купить Двери Хаски Цена: - 16% 98600 ₽ Цена: от 85000 ₽ Купить Двери Stella Цена: - 16% 63800 ₽ Цена: от 55000 ₽ Купить Двери Provence Цена: - 16% 64960 ₽ Цена: от 56000 ₽ Купить Двери Polo Цена: - 16% 77720 ₽ Цена: от 67000 ₽ Купить Получить весь каталог Рейтинг входных дверей 1300 продаж Хит продаж №1 Дверь Giada Бронированные двери серии Stability Proof в Москве: новая коллекция входных уличных дверей Декоративная плита МДФ Полотно — 80 мм. Дверной короб 120 мм 2040х850 Цена: - 16% 56997 ₽ Цена: от 49135 ₽ Заказать дверь 920 продаж Выбор аристократов №2 ДВЕРЬ АМАЛИЯ Изготовитель гарантирует соответствие дверей Амалия в требованиям ГОСТу. Регулятор притвора: есть Броненакладка: врезка CRIT Ручка: Handle on Square 2050х960 Цена: - 16% 73972 ₽ Цена: от 63769 ₽ Заказать дверь 730 продаж Лучшая цена №3 VERY DVERI Фабрика входных дверей в Москве занимет высокие позиции на рынке благодаря доступной цене. Толщина полотна: 70 мм Лист металла на: 1,2 мм 2050х960 Мдф накладки: 10/10 мм Цена: - 16% 10222 ₽ Цена: от 8812 ₽ Заказать дверь Межкомнатные двери Двери межкомнатные: цена определяет материал. Материал, из которого изготавливают двери в Москве, влияет на эксплуатационные, потребительские характеристики готового изделия. Двери Гранд Цена: - 16% 7760 ₽ Цена: от 6690 ₽ Купить Двери Скинни Цена: - 16% 6554 ₽ Цена: от 5650 ₽ Купить Двери Гланта Цена: - 16% 9048 ₽ Цена: от 7800 ₽ Купить Двери Гланта со стеклом Цена: - 16% 9860 ₽ Цена: от 8500 ₽ Купить Двери Доррен Цена: - 16% 11600 ₽ Цена: от 10000 ₽ Купить Двери Стокгольм Цена: - 16% 11252 ₽ Цена: от 9700 ₽ Купить Двери Стокгольм красный Цена: - 16% 10417 ₽ Цена: от 8980 ₽ Купить Двери Стокголь желтый Цена: - 16% 10417 ₽ Цена: от 8980 ₽ Купить Двери Гланта синий Цена: - 16% 8816 ₽ Цена: от 7600 ₽ Купить Двери Гланта, латте Цена: - 16% 12180 ₽ Цена: от 10500 ₽ Купить Получить весь каталог Рейтинг межкомнатных дверей 1760 продаж Хит продаж №1 ДВЕРЬ ГЕРДА Двери коллекции \"Герда\" отличаются от коллекций, прямолинейными линиями профиля. Толщина полотна: 40 мм Покрытие: ПВХ. ПВХ Deluxe Высота полотна: 2000 мм Ширина полотна: 800 мм Цена: - 16% 2317 ₽ Цена: от 1997 ₽ Заказать дверь 1540 продаж Тонкий стиль №2 ДВЕРЬ INVISIBLE Грунтованные под финишную отделку двери в Арбате с кромкой из ABS-пластика. 2050х900 Блок укомплектован петлями AGB Eclipse 2.0 Цвет фурнитуры: мат.хром Короб из бруса Цена: - 16% 26361 ₽ Цена: от 22725 ₽ Заказать дверь 1150 продаж Идеальное качество №3 ДВЕРЬ A2S RAL Дверь A2S RAL в Москвеэто интерпретация модерновых мотивов. 2050х900 Каркас - клееный массив Наружное покрытие – MDF 8мм Щитовое полотно без четверти Цена: - 16% 19520 ₽ Цена: от 16828 ₽ Заказать дверь Цветовые оттенки дверей Лиственница кремовая Орех темный Орех золотистый Дуб дорато Орех вела Орех пекан Дуб дымчатый Акции Двери из экошпона в Москве цена снижена до 10% Двери из массива по цене МДФ Стальные двери по цене межкомнатных ДОСТАВКА И УСТАНОВКА Быстро, недорого и аккуратно осуществляем доставку и установку двери в Москве. Рассрочка на двери Предоставляем рассрочку на двери ОТ 6 ДО 36 МЕСЯЦЕВ Рассрочка на 6 месяцев Рассрочка на 6 месяцев Рассрочка на 4 месяца Оплата Перевод на карту Оплата онлайн Оплата наличными Безналичный расчёт Видео Отзывы Николай, 08.04.2026 Воспользовался сервисом данной компании в Москве. Впечатления приятные! Сделали все мгновенно, особую благодарность хотел бы сказать менеджеру Александру! Советую! Контакты Компания \" tskdoors.ru \" Россия, г. Москва, ул. Зеленая, д. 18 ; Телефон: 8-800-770-64-27 Получить скидку прямо сейчас Отправить Согласен на обработку своих данных Работаем по всей стране Сокол Хорошёвский Ховрино Тимирязевский Левобережный Дмитровский Коптево Молжаниновский Дегунино Восточное Головинский Аэропорт Савёлки Крюково Матушкино Силино Старое Крюково Павловский Посад Малаховка Рузф Решетниково Волоколамск Ликино-Дулево Лопатино Красногорск Тучково Заречье Ильинский Рассчитать стоимость Отправить Согласен на обработку персональных данных Связаться с нами Калькулятор Обратный звонок 8-800-770-64-27 Время работы с 8:00 до 20:00 Главная Двери Вакансии Сотрудничество Обратная связь 2015 - 2026 © tskdoors.ru Создание сайтов",
+  "json_ld": [],
+  "document": {
+    "title": "Купить входные и межкомнатные двери в Москве, цены на фурнитуру снижены до конца мая | tskdoors.ru",
+    "meta_description": "Качественные двери ✔ купить в Москве от производителя ✔Низкие цены ✔Скидки до 40% ✔Рассрочка ✔Заказать двери.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=1",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "tel:8-800-770-64-27",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator-dverey/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/feedbacks/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:8-800-770-64-27",
+        "text": "📞 8-800-770-64-27",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator-dverey/",
+        "text": "Калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "#openModal",
+        "text": "Бесплатная консультация",
+        "rel": ""
+      },
+      {
+        "href": "tel:8-800-770-64-27",
+        "text": "8-800-770-64-27",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Меню",
+        "rel": ""
+      },
+      {
+        "href": "#home",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#mzh",
+        "text": "Межкомнатные",
+        "rel": ""
+      },
+      {
+        "href": "#vh",
+        "text": "Входные",
+        "rel": ""
+      },
+      {
+        "href": "#payment",
+        "text": "Оплата",
+        "rel": ""
+      },
+      {
+        "href": "#installment-plan",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "#video",
+        "text": "Видео",
+        "rel": ""
+      },
+      {
+        "href": "#reviews",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "#contacts",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "#home",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#prices",
+        "text": "Цены",
+        "rel": ""
+      },
+      {
+        "href": "#payment",
+        "text": "Оплата",
+        "rel": ""
+      },
+      {
+        "href": "#installment-plan",
+        "text": "Рассрочка",
+        "rel": ""
+      },
+      {
+        "href": "#video",
+        "text": "Видео",
+        "rel": ""
+      },
+      {
+        "href": "#reviews",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "#contacts",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "#close",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "#close",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "#close",
+        "text": "×",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Входные и межкомнатные двери в Москве Скидка на двери в Москве 16% до 02.05.2026 01 04 17 06 дней часов минут секунд Получить лучшую цену",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "#vh",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "#mzh",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal3",
+        "text": "Получить весь каталог",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Заказать дверь",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Заказать дверь",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Заказать дверь",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Купить",
+        "rel": ""
+      },
+      {
+        "href": "#openModal3",
+        "text": "Получить весь каталог",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Заказать дверь",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Заказать дверь",
+        "rel": ""
+      },
+      {
+        "href": "#openModal2",
+        "text": "Заказать дверь",
+        "rel": ""
+      },
+      {
+        "href": "tel:8-800-770-64-27",
+        "text": "8-800-770-64-27",
+        "rel": ""
+      },
+      {
+        "href": "/dver/sokol/",
+        "text": "Сокол",
+        "rel": ""
+      },
+      {
+        "href": "/dver/horoshyovskij/",
+        "text": "Хорошёвский",
+        "rel": ""
+      },
+      {
+        "href": "/dver/hovrino/",
+        "text": "Ховрино",
+        "rel": ""
+      },
+      {
+        "href": "/dver/timiryazevskij/",
+        "text": "Тимирязевский",
+        "rel": ""
+      },
+      {
+        "href": "/dver/levoberezhnyj/",
+        "text": "Левобережный",
+        "rel": ""
+      },
+      {
+        "href": "/dver/dmitrovskij/",
+        "text": "Дмитровский",
+        "rel": ""
+      },
+      {
+        "href": "/dver/koptevo/",
+        "text": "Коптево",
+        "rel": ""
+      },
+      {
+        "href": "/dver/molzhaninovskij/",
+        "text": "Молжаниновский",
+        "rel": ""
+      },
+      {
+        "href": "/dver/degunino vostochnoe/",
+        "text": "Дегунино Восточное",
+        "rel": ""
+      },
+      {
+        "href": "/dver/golovinskij/",
+        "text": "Головинский",
+        "rel": ""
+      },
+      {
+        "href": "/dver/aeroport/",
+        "text": "Аэропорт",
+        "rel": ""
+      },
+      {
+        "href": "/dver/savyolki/",
+        "text": "Савёлки",
+        "rel": ""
+      },
+      {
+        "href": "/dver/kryukovo/",
+        "text": "Крюково",
+        "rel": ""
+      },
+      {
+        "href": "/dver/matushkino/",
+        "text": "Матушкино",
+        "rel": ""
+      },
+      {
+        "href": "/dver/silino/",
+        "text": "Силино",
+        "rel": ""
+      },
+      {
+        "href": "/dver/staroe kryukovo/",
+        "text": "Старое Крюково",
+        "rel": ""
+      },
+      {
+        "href": "/dver/pavlovskij-posad/",
+        "text": "Павловский Посад",
+        "rel": ""
+      },
+      {
+        "href": "/dver/malahovka/",
+        "text": "Малаховка",
+        "rel": ""
+      },
+      {
+        "href": "/dver/roshal/",
+        "text": "Рузф",
+        "rel": ""
+      },
+      {
+        "href": "/dver/reshetnikovo/",
+        "text": "Решетниково",
+        "rel": ""
+      },
+      {
+        "href": "/dver/volokolamsk/",
+        "text": "Волоколамск",
+        "rel": ""
+      },
+      {
+        "href": "/dver/likino-dulevo/",
+        "text": "Ликино-Дулево",
+        "rel": ""
+      },
+      {
+        "href": "/dver/lopatino/",
+        "text": "Лопатино",
+        "rel": ""
+      },
+      {
+        "href": "/dver/krasnogor_pamyatnikisk/",
+        "text": "Красногорск",
+        "rel": ""
+      },
+      {
+        "href": "/dver/tuchkovo/",
+        "text": "Тучково",
+        "rel": ""
+      },
+      {
+        "href": "/dver/zareche/",
+        "text": "Заречье",
+        "rel": ""
+      },
+      {
+        "href": "/dver/ilinskij/",
+        "text": "Ильинский",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:8-800-770-64-27",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator-dverey/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/feedbacks/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator-dverey/",
+        "text": "Калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "#openModal",
+        "text": "Обратный звонок",
+        "rel": ""
+      },
+      {
+        "href": "tel:8-800-770-64-27",
+        "text": "8-800-770-64-27",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/dver/",
+        "text": "Двери",
+        "rel": ""
+      },
+      {
+        "href": "/vakansiya/",
+        "text": "Вакансии",
+        "rel": ""
+      },
+      {
+        "href": "/sotrudnichestvo/",
+        "text": "Сотрудничество",
+        "rel": ""
+      },
+      {
+        "href": "/feedbacks/",
+        "text": "Обратная связь",
+        "rel": ""
+      },
+      {
+        "href": "/sozdanie-saitov/",
+        "text": "Создание сайтов",
+        "rel": ""
+      },
+      {
+        "href": "//www.liveinternet.ru/click",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Отправить",
+      "Отправить",
+      "Получить",
+      "Получить лучшую цену",
+      "Отправить",
+      "Отправить"
+    ],
+    "h1_texts": [
+      "Входные и межкомнатные двери в Москве"
+    ],
+    "h2_texts": [
+      "Пластиковые двери",
+      "Входные двери",
+      "Межкомнатные двери",
+      "Металлические двери",
+      "Рейтинг входных дверей",
+      "Межкомнатные двери",
+      "Рейтинг межкомнатных дверей",
+      "Цветовые оттенки дверей",
+      "Акции",
+      "ДОСТАВКА И УСТАНОВКА",
+      "Рассрочка на двери",
+      "Оплата",
+      "Видео",
+      "Отзывы",
+      "Контакты",
+      "Получить скидку прямо сейчас",
+      "Работаем по всей стране"
+    ],
+    "h3_texts": [
+      "Бесплатная консультация",
+      "Введите данные",
+      "Получить каталог",
+      "Двери Авангард",
+      "Двери Конверс-М",
+      "Двери Грация",
+      "Двери SOPRANO",
+      "Двери Tokio",
+      "Двери Versace",
+      "Двери Хаски",
+      "Двери Stella",
+      "Двери Provence",
+      "Двери Polo",
+      "Двери Гранд",
+      "Двери Скинни",
+      "Двери Гланта",
+      "Двери Гланта со стеклом",
+      "Двери Доррен",
+      "Двери Стокгольм",
+      "Двери Стокгольм красный",
+      "Двери Стокголь желтый",
+      "Двери Гланта синий",
+      "Двери Гланта, латте",
+      "Двери из экошпона в Москве цена снижена до 10%",
+      "Двери из массива по цене МДФ",
+      "Стальные двери по цене межкомнатных",
+      "Рассрочка на 6 месяцев",
+      "Рассрочка на 6 месяцев",
+      "Рассрочка на 4 месяца",
+      "Перевод на карту",
+      "Оплата онлайн",
+      "Оплата наличными",
+      "Безналичный расчёт"
+    ],
+    "counts": {
+      "paragraph": 103,
+      "h1": 1,
+      "h2": 17,
+      "h3": 33,
+      "link": 106,
+      "image": 68,
+      "list_item": 52,
+      "strong": 32,
+      "form": 0,
+      "input": 8
+    }
+  }
+}

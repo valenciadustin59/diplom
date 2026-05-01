@@ -1,0 +1,210 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://profinn52.ru/",
+  "final_url": "https://profinn52.ru/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 14:31:22 GMT",
+    "server": "nginx-reuseport/1.21.1",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/5.6.40"
+  },
+  "response_time_ms": 5032.297,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:31:26.612231+00:00",
+  "html": "<!DOCTYPE html><html><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t<title>Профи НН - Производство Пластиковых окон в Нижнем Новгороде - Главная</title>\n\n\t\t<meta name=\"description\" content=\"Заказать пластиковые окна по доступным ценам от производителя в Нижнем Новгороде и области.\">\n\t\t\n\t\t<link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n\t\t<link rel=\"icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n\t\t\n\t\t<link rel=\"canonical\" href=\"https://profinn52.ru/\">\n\t\t\t<meta charset=\"utf-8\">\n\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css\">\n\t<link rel=\"stylesheet\" href=\"/res/style.css\">\n\t<link rel=\"stylesheet\" href=\"/res/content.css\">\n\t<link rel=\"stylesheet\" href=\"/modules/res/font-awesome.css\">\n</head>\n<body>\n\t<div class=\"header\">\n\t\t<div class=\"center\">\n\t\t\t<a href=\"./\" class=\"logo\"></a>\n\t\t\t<a href=\"\" class=\"button calc\" data-modal=\"#modal\">Рассчитать заказ <i class=\"fa fa-arrow-right\"></i></a>\n\t\t\t<div class=\"menu\">\n\t\t\t\t<a href=\"/o-nas\">О нас</a> <a href=\"/partneram\">Партнерам</a> <a href=\"/galereya\">Галерея</a> <a href=\"/kontakty\">Контакты</a> \t\t\t</div>\n\t\t</div>\n\t</div>\n\t<header>\n\t\t<div class=\"center\">\n\t\t\t<div class=\"info\">\n\t\t\t\t<div class=\"phone\">8 (831) 291-50-52</div>\n\t\t\t\t<br>\n\t\t\t\t<div class=\"mail\"><a href=\"mailto:profi-nn@yandex.ru\">profi-nn@yandex.ru</a></div>\n\t\t\t</div>\n\t\t\t<div class=\"main-bnr\">\n\t\t\t\t<div class=\"slider\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"sel\"><h2>ПЛАСТИКОВЫЕ ОКНА ОТ ПРОИЗВОДИТЕЛЯ</h2><p>Благодаря наличию собственного производства, мы предлагаем окна ПВХ по вполне доступным ценам. При этом мы не просто продаем готовую продукцию стандартных размеров. Наши мастера готовы выполнить пластиковые окна, идеально подходящие под ваш оконный проем. Внимание к каждому клиенту, упорство и аккуратность в работе, надежные поставщики – вот главные составляющие нашего успеха!&nbsp;</p></div>\n\t\t\t\t\t\t\t\t\t\t<div><h2>ТЕХНОЛОГИЧНОЕ ОБОРУДОВАНИЕ</h2><p>Многие производители пластиковых окон в Нижнем Новгороде экономят на оборудовании. В нашей компании производство осуществляется на современном высокотехнологичном оборудовании немецкой марки Fimtec. Оно отличается высокой точностью и надежностью, позволяя выпускать прочные и долговечные изделия.</p></div>\n\t\t\t\t\t\t\t\t\t\t<div><h3 style=\"text-align:right\">НОВАЯ СИСТЕМА<br>КОНТРОЛЯ КАЧЕСТВА<br>ПРОДУКЦИИ</h3><p style=\"text-align:right\">Изготавливая пластиковые окна, наше производство ставит своими приоритетами качество и доступную цену. Перед отгрузкой клиенту пластиковые окна, изготовление которых было заказано в нашей компании, проходят полноценный контроль качества и соответствия ГОСТу. Переход с ручной на автоматическую линию позволил значительно сократить время на производство пластиковых окон.</p><p style=\"text-align:right\">&nbsp;</p></div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t<div class=\"points\">\n\t\t\t\t\t<a href=\"\" class=\"sel\"></a><a href=\"\"></a><a href=\"\"></a>\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"title\">\n\t\t\t\t<h1 class=\"underline text-center\">Главная.</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"slider-bg\">\n\t\t\t\t\t\t<div class=\"sel\"><img src=\"files/5.jpg\"></div>\n\t\t\t\t\t\t<div><img src=\"files/7.jpg\"></div>\n\t\t\t\t\t\t<div><img src=\"files/6.jpg\"></div>\n\t\t\t\t\t</div>\n\t</header>\n\t<div class=\"main\">\n\t\t\t\t<div class=\"about\">\n\t\t\t<div class=\"center\">\n\t\t\t\t<h2 class=\"text-center underline text-blue\">мы любим<br>наше дело!</h2><div class=\"text-center\"><p>“ПРОФИ НН”– это одно из ведущих предприятий Нижнего Новгорода, специализирующихся на производстве высококачественных пластиковых окон. Весь цикл изготовления изделий из ПВХ и алюминиевых профилей осуществляется на собственной современной высокотехнологичной базе с применением лучших материалов и комплектующих, что подтверждается соответствующими сертификатами.</p><a href=\"/o-nas\" class=\"more text-light-blue\">Читать подробнее о компании <i class=\"fa fa-arrow-right\"></i></a></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"app\">\n\t\t\t<div class=\"text-center\"><h2 class=\"title\">Преимущества</h2></div>\n\t\t\t<div class=\"center\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col wow bounceInUp\" style=\"visibility: hidden; animation-name: none;\"><img src=\"res/images/i1.png\" class=\"ico\"><div><h3 class=\"underline\">Окна для каждого: от бюджетных до корпоративных решений!</h3><p>Окна ПВХ без посредников и переплат! Наша главная задача - &nbsp;обеспечить клиента качественным продуктом по адекватной цене.</p></div></div>\n\t\t\t\t\t<div class=\"col wow bounceInUp\" data-wow-delay=\"0.5s\" style=\"visibility: hidden; animation-delay: 0.5s; animation-name: none;\"><img src=\"res/images/i2.png\" class=\"ico\"><div><h3 class=\"underline\">Квалифицированная консультация и индивидуальность в работе с клиентом.</h3><p>На этапе планирования наши менеджеры учтут все нюансы монтажа и будущей отделки</p></div></div>\n\t\t\t\t\t<div class=\"col wow bounceInUp\" data-wow-delay=\"1.0s\" style=\"visibility: hidden; animation-delay: 1s; animation-name: none;\"><img src=\"res/images/i3.png\" class=\"ico\"><div><h3 class=\"underline\">Собственное автоматизированное производство окон.</h3><p>Производство окон ПВХ оснащено станками повышенной точности, а также колоссального качества</p></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col wow bounceInUp\" data-wow-delay=\"1.5s\" style=\"visibility: hidden; animation-delay: 1.5s; animation-name: none;\"><img src=\"res/images/i4.png\" class=\"ico\"><div><h3 class=\"underline\">Доступные цены от производителя и гибкая система скидок.</h3><p>Мы не гонимся за сверхприбылью. Наша цель — создать качественный продукт по разумной цене.</p></div></div>\n\t\t\t\t\t<div class=\"col wow bounceInUp\" data-wow-delay=\"2.0s\" style=\"visibility: hidden; animation-delay: 2s; animation-name: none;\"><img src=\"res/images/i5.png\" class=\"ico\"><div><h3 class=\"underline\">Бесплатный замер окон. Точный и качественный монтаж.</h3><p>Чтобы каждый шаг на пути к новым окнам был легким и приятным, мы предъявляем высокие требования к профессиональным и личным качествам сотрудников.</p></div></div>\n\t\t\t\t\t<div class=\"col wow bounceInUp\" data-wow-delay=\"2.5s\" style=\"visibility: hidden; animation-delay: 2.5s; animation-name: none;\"><img src=\"res/images/i6.png\" class=\"ico\"><div><h3 class=\"underline\">Гарантия на окна 5 лет и 3 года на монтаж.</h3><p>Собственное высокотехнологичное производство пластиковых окон и современные европейские материалы дадут Вам уверенность в качестве нашей продукции</p></div></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"products\">\n\t\t\t<div class=\"text-center\"><h2 class=\"title\">Продукция</h2></div>\n\t\t\t<div class=\"center\">\n\t\t\t\t<div class=\"text-center\"><p>Многие производители окон, предлагающие свои изделия по приемлемой цене, занимаются изготовлением лишь стандартных моделей в стандартном размерном ряду. Производство пластиковых окон в нашей компании всегда осуществляется по индивидуальному проекту в соответствии с конкретными нуждами каждого клиента. По вашему желанию к любому заказу можно добавить многофункциональные и эксклюзивные аксессуары. Если вас интересует недорогое и качественное производство пластиковых окон в Нижнем Новгороде, звоните нам, и вы не ошибетесь!</p></div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t<div class=\"product\"><span>Конструкции из пвх профиля</span>\n\t\t\t\t\t\t\t<div><h2>Конструкции из пвх профиля</h2><p>характеризуются: долговечностью, устойчивостью ко всем видам метеорологических воздействий, герметичностью, пожаробезосностью, экологичностью, существенным снижением теплопотерь через оконные конструкции.</p><a href=\"/konstrukcii-iz-pvh-profilya\" class=\"more text-yellow\">Подробнее о производстве <i class=\"fa fa-arrow-right\"></i></a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t<div class=\"product\"><span>Изделия из алюминиевого профиля</span>\n\t\t\t\t\t\t\t<div><h2>Изделия из алюминиевого профиля</h2><p>устойчивость к коррозии, хорошая тепло- и звукоизоляция, пожаростойкость, легкость конструкций, экологичность и эстетическая привлекательность – все эти качества алюминия послужили основаниями для того, чтобы сделать выбор в пользу этого материала.</p><a href=\"/izdeliya-iz-alyuminievogo-profilya\" class=\"more text-yellow\">Подробнее о производстве <i class=\"fa fa-arrow-right\"></i></a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col\">\n\t\t\t\t\t\t<div class=\"product\"><span>Производство стеклопакетов</span>\n\t\t\t\t\t\t\t<div><h2>Производство стеклопакетов</h2><p>Стеклопакеты производства Компании «Профи НН» обладают улучшенными тепло – и звукоизоляционными свойствами, обеспечивая ощутимую экономию энергоресурсов, расходуемую на отопление.</p><a href=\"/proizvodstvo-steklopaketov\" class=\"more text-yellow\">Подробнее о производстве <i class=\"fa fa-arrow-right\"></i></a></div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"feedback\">\n\t\t\t<div class=\"center\">\n\t\t\t\t<h2 class=\"text-center underline text-blue\">Для расчёта стоимости заполните простую форму<br>Менеджер перезвонит Вам и уточнит удобное для Вас время бесплатного замера</h2>\n\t\t\t\t<div class=\"form\">\n\t\t\t\t\t<form action=\"json/callback\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"+7 (      )       -     -\" name=\"phone\">\n\t\t\t\t\t\t<input type=\"text\" placeholder=\"ваше имя\" name=\"name\">\n\t\t\t\t\t\t<button class=\"button\">Рассчитать окна <i class=\"fa fa-arrow-right\"></i></button>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"text-center\"><h2 class=\"title\">Гарантия качества</h2></div>\n\t\t\t\t<div class=\"text-center\"><p>Имея внушительный опыт собственного производства пластиковых окон мы убедились в надёжности и высоком качестве закупаемых материалов. Мы используем только лучшую профильную систему и фурнитуру!</p></div>\n\t\t\t\t<div class=\"scroller\">\n\t\t\t\t\t<a href=\"\" class=\"prev disabled\"></a><a href=\"\" class=\"next\"></a>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<div class=\"slider-wrap\" style=\"width: 1323px; left: 0px;\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/15.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/16.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/17.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/18.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/19.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/20.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/21.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/22.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 147px;\"><a href=\"\" target=\"_blank\" style=\"background-image: url(/files/23.jpg);\"></a></div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t</div>\n\t<footer>\n\t\t<div class=\"center\">\n\t\t\t<div class=\"contact\">\n\t\t\t\t<a href=\"./\" class=\"logo\"></a>\n\t\t\t\t<p>ООО “Профи НН”<br>Производство и продажа оконных конструкций в Нижнем Новгороде. 2026г.<br>8 (831) 291-50-52<br>E-mail: <a href=\"mailto:profi-nn@yandex.ru\">profi-nn@yandex.ru</a></p>\n\t\t\t</div>\n\t\t\t<div class=\"menu\">\n\t\t\t\t<div>\n\t\t\t\t\t<a href=\"./\">Главная</a>\n\t\t\t\t\t<a href=\"/o-nas\">О нас</a> <a href=\"/partneram\">Партнерам</a> <a href=\"/galereya\">Галерея</a> <a href=\"/kontakty\">Контакты</a> \t\t\t\t</div>\n\t\t\t\t<div class=\"sub\">\n\t\t\t\t\t<a href=\"/konstrukcii-iz-pvh-profilya\">Конструкции из пвх профиля</a> <a href=\"/izdeliya-iz-alyuminievogo-profilya\">Изделия из алюминиевого профиля</a> <a href=\"/proizvodstvo-steklopaketov\">Производство стеклопакетов</a> \t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"social\">\n\t\t\t\t<h2>МЫ В СОЦИАЛЬНЫХ СЕТЯХ</h2>\n\t\t\t\t<p>\n\t\t\t\t\t<a href=\"https://vk.com/profinn_gk\" class=\"link vk\" target=\"_blank\"></a>\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t</p>\n\t\t\t\t<p>603032 г. Нижний Новгород,  ул. Памирская, 11В</p>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"copyright\">\n\t\t\t<!--<div class=\"center\">Создано на Ultima Thule. 2016 г.</div>-->\n\t\t\t© 2026 ПРОФИ НН<br>\n\t\t\tВсе данные, представленные на сайте, носят сугубо информационный характер и не являются исчерпывающими. Для более подробной информации следует обращаться к менеджерам компании по указанным на сайте телефонам. Вся представленная на сайте информация, касающаяся комплектации, технических характеристик, цветовых сочетаний, а также стоимости и фото продукции, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями пункта 2 статьи 437 Гражданского Кодекса Российской Федерации. Указанные цены являются рекомендованными и могут отличаться от действительных цен.<br>\n\t\t\tНаш сайт, для корректной работы, собирает техническую информацию о посетителях сайта: cookie, данные об IP-адресе, местоположении и другую. Если вы не хотите оставлять о себе эту информацию для ее дальнейшей обработки - покиньте сайт. Вся информация собирается и обрабатывается согласно <a href=\"/privacy_policy\" target=\"_blank\">политике конфиденциальности</a>.\n\t\t</div>\n\t</footer>\n\t<div id=\"light\" style=\"display: none;\"></div>\n\t<div class=\"box fixed\" style=\"display: none;\" id=\"modal\">\n\t\t<a href=\"#\" class=\"close\"></a>\n\t\t<p>Мы свяжемся с Вами<br>в самое ближайшее время!</p>\n\t\t<form action=\"json/callback\" data-success=\"success\">\n\t\t\t<input type=\"text\" placeholder=\"+7 (      )       -     -\" name=\"phone\"><br>\n\t\t\t<input type=\"text\" placeholder=\"Ваше Имя\" name=\"name\"><br>\n\t\t\t<button class=\"button\">Отправить данные</button>\n\t\t</form>\n\t\t<p class=\"form_send_agreement\">Отправляя данную форму, Вы подтверждаете, что ознакомлены с <a href=\"/privacy_policy\" target=\"_blank\">политикой конфиденциальности</a> и даёте <a href=\"/personal_data\" target=\"_blank\">согласие на обработку персональных данных</a></p>\n\t</div>\n\t<div class=\"box fixed success\" style=\"display: none;\" id=\"success\">\n\t\t<a href=\"#\" class=\"close\"></a>\n\t\t<p>Ваша заявка отправлена.<br>Спасибо за обращение в нашу<br>компанию, специалист перезвонит<br>Вам в течение 12 минут!</p>\n\t\t<button class=\"button\">Отлично!</button>\n\t</div>\n\t<script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script src=\"/modules/res/jquery.js\"></script>\n\t<script src=\"/modules/res/jquery.noty.js\"></script>\n\t<script src=\"/cache/script_df6d88.js\"></script>\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js\"></script>\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js\"></script>\n\t<script>\nnew WOW().init();\n\t</script>\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();\n   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}\n   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(103407266, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/103407266\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n</body></html>",
+  "text": "Профи НН - Производство Пластиковых окон в Нижнем Новгороде - Главная Рассчитать заказ О нас Партнерам Галерея Контакты 8 (831) 291-50-52 profi-nn@yandex.ru ПЛАСТИКОВЫЕ ОКНА ОТ ПРОИЗВОДИТЕЛЯ Благодаря наличию собственного производства, мы предлагаем окна ПВХ по вполне доступным ценам. При этом мы не просто продаем готовую продукцию стандартных размеров. Наши мастера готовы выполнить пластиковые окна, идеально подходящие под ваш оконный проем. Внимание к каждому клиенту, упорство и аккуратность в работе, надежные поставщики – вот главные составляющие нашего успеха! ТЕХНОЛОГИЧНОЕ ОБОРУДОВАНИЕ Многие производители пластиковых окон в Нижнем Новгороде экономят на оборудовании. В нашей компании производство осуществляется на современном высокотехнологичном оборудовании немецкой марки Fimtec. Оно отличается высокой точностью и надежностью, позволяя выпускать прочные и долговечные изделия. НОВАЯ СИСТЕМА КОНТРОЛЯ КАЧЕСТВА ПРОДУКЦИИ Изготавливая пластиковые окна, наше производство ставит своими приоритетами качество и доступную цену. Перед отгрузкой клиенту пластиковые окна, изготовление которых было заказано в нашей компании, проходят полноценный контроль качества и соответствия ГОСТу. Переход с ручной на автоматическую линию позволил значительно сократить время на производство пластиковых окон. Главная. мы любим наше дело! “ПРОФИ НН”– это одно из ведущих предприятий Нижнего Новгорода, специализирующихся на производстве высококачественных пластиковых окон. Весь цикл изготовления изделий из ПВХ и алюминиевых профилей осуществляется на собственной современной высокотехнологичной базе с применением лучших материалов и комплектующих, что подтверждается соответствующими сертификатами. Читать подробнее о компании Преимущества Окна для каждого: от бюджетных до корпоративных решений! Окна ПВХ без посредников и переплат! Наша главная задача - обеспечить клиента качественным продуктом по адекватной цене. Квалифицированная консультация и индивидуальность в работе с клиентом. На этапе планирования наши менеджеры учтут все нюансы монтажа и будущей отделки Собственное автоматизированное производство окон. Производство окон ПВХ оснащено станками повышенной точности, а также колоссального качества Доступные цены от производителя и гибкая система скидок. Мы не гонимся за сверхприбылью. Наша цель — создать качественный продукт по разумной цене. Бесплатный замер окон. Точный и качественный монтаж. Чтобы каждый шаг на пути к новым окнам был легким и приятным, мы предъявляем высокие требования к профессиональным и личным качествам сотрудников. Гарантия на окна 5 лет и 3 года на монтаж. Собственное высокотехнологичное производство пластиковых окон и современные европейские материалы дадут Вам уверенность в качестве нашей продукции Продукция Многие производители окон, предлагающие свои изделия по приемлемой цене, занимаются изготовлением лишь стандартных моделей в стандартном размерном ряду. Производство пластиковых окон в нашей компании всегда осуществляется по индивидуальному проекту в соответствии с конкретными нуждами каждого клиента. По вашему желанию к любому заказу можно добавить многофункциональные и эксклюзивные аксессуары. Если вас интересует недорогое и качественное производство пластиковых окон в Нижнем Новгороде, звоните нам, и вы не ошибетесь! Конструкции из пвх профиля Конструкции из пвх профиля характеризуются: долговечностью, устойчивостью ко всем видам метеорологических воздействий, герметичностью, пожаробезосностью, экологичностью, существенным снижением теплопотерь через оконные конструкции. Подробнее о производстве Изделия из алюминиевого профиля Изделия из алюминиевого профиля устойчивость к коррозии, хорошая тепло- и звукоизоляция, пожаростойкость, легкость конструкций, экологичность и эстетическая привлекательность – все эти качества алюминия послужили основаниями для того, чтобы сделать выбор в пользу этого материала. Подробнее о производстве Производство стеклопакетов Производство стеклопакетов Стеклопакеты производства Компании «Профи НН» обладают улучшенными тепло – и звукоизоляционными свойствами, обеспечивая ощутимую экономию энергоресурсов, расходуемую на отопление. Подробнее о производстве Для расчёта стоимости заполните простую форму Менеджер перезвонит Вам и уточнит удобное для Вас время бесплатного замера Рассчитать окна Гарантия качества Имея внушительный опыт собственного производства пластиковых окон мы убедились в надёжности и высоком качестве закупаемых материалов. Мы используем только лучшую профильную систему и фурнитуру! ООО “Профи НН” Производство и продажа оконных конструкций в Нижнем Новгороде. 2026г. 8 (831) 291-50-52 E-mail: profi-nn@yandex.ru Главная О нас Партнерам Галерея Контакты Конструкции из пвх профиля Изделия из алюминиевого профиля Производство стеклопакетов МЫ В СОЦИАЛЬНЫХ СЕТЯХ 603032 г. Нижний Новгород, ул. Памирская, 11В © 2026 ПРОФИ НН Все данные, представленные на сайте, носят сугубо информационный характер и не являются исчерпывающими. Для более подробной информации следует обращаться к менеджерам компании по указанным на сайте телефонам. Вся представленная на сайте информация, касающаяся комплектации, технических характеристик, цветовых сочетаний, а также стоимости и фото продукции, носит информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями пункта 2 статьи 437 Гражданского Кодекса Российской Федерации. Указанные цены являются рекомендованными и могут отличаться от действительных цен. Наш сайт, для корректной работы, собирает техническую информацию о посетителях сайта: cookie, данные об IP-адресе, местоположении и другую. Если вы не хотите оставлять о себе эту информацию для ее дальнейшей обработки - покиньте сайт. Вся информация собирается и обрабатывается согласно политике конфиденциальности . Мы свяжемся с Вами в самое ближайшее время! Отправить данные Отправляя данную форму, Вы подтверждаете, что ознакомлены с политикой конфиденциальности и даёте согласие на обработку персональных данных Ваша заявка отправлена. Спасибо за обращение в нашу компанию, специалист перезвонит Вам в течение 12 минут! Отлично!",
+  "json_ld": [],
+  "document": {
+    "title": "Профи НН - Производство Пластиковых окон в Нижнем Новгороде - Главная",
+    "meta_description": "Заказать пластиковые окна по доступным ценам от производителя в Нижнем Новгороде и области.",
+    "meta_robots": "",
+    "viewport": "",
+    "canonical": "https://profinn52.ru/",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "./",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "",
+        "text": "Рассчитать заказ",
+        "rel": ""
+      },
+      {
+        "href": "/o-nas",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "/partneram",
+        "text": "Партнерам",
+        "rel": ""
+      },
+      {
+        "href": "/galereya",
+        "text": "Галерея",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "mailto:profi-nn@yandex.ru",
+        "text": "profi-nn@yandex.ru",
+        "rel": ""
+      },
+      {
+        "href": "/o-nas",
+        "text": "Читать подробнее о компании",
+        "rel": ""
+      },
+      {
+        "href": "/konstrukcii-iz-pvh-profilya",
+        "text": "Подробнее о производстве",
+        "rel": ""
+      },
+      {
+        "href": "/izdeliya-iz-alyuminievogo-profilya",
+        "text": "Подробнее о производстве",
+        "rel": ""
+      },
+      {
+        "href": "/proizvodstvo-steklopaketov",
+        "text": "Подробнее о производстве",
+        "rel": ""
+      },
+      {
+        "href": "./",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "mailto:profi-nn@yandex.ru",
+        "text": "profi-nn@yandex.ru",
+        "rel": ""
+      },
+      {
+        "href": "./",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/o-nas",
+        "text": "О нас",
+        "rel": ""
+      },
+      {
+        "href": "/partneram",
+        "text": "Партнерам",
+        "rel": ""
+      },
+      {
+        "href": "/galereya",
+        "text": "Галерея",
+        "rel": ""
+      },
+      {
+        "href": "/kontakty",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/konstrukcii-iz-pvh-profilya",
+        "text": "Конструкции из пвх профиля",
+        "rel": ""
+      },
+      {
+        "href": "/izdeliya-iz-alyuminievogo-profilya",
+        "text": "Изделия из алюминиевого профиля",
+        "rel": ""
+      },
+      {
+        "href": "/proizvodstvo-steklopaketov",
+        "text": "Производство стеклопакетов",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/profinn_gk",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/privacy_policy",
+        "text": "политике конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/privacy_policy",
+        "text": "политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/personal_data",
+        "text": "согласие на обработку персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Рассчитать окна",
+      "Отправить данные",
+      "Отлично!"
+    ],
+    "h1_texts": [
+      "Главная."
+    ],
+    "h2_texts": [
+      "ПЛАСТИКОВЫЕ ОКНА ОТ ПРОИЗВОДИТЕЛЯ",
+      "ТЕХНОЛОГИЧНОЕ ОБОРУДОВАНИЕ",
+      "мы любим наше дело!",
+      "Преимущества",
+      "Продукция",
+      "Конструкции из пвх профиля",
+      "Изделия из алюминиевого профиля",
+      "Производство стеклопакетов",
+      "Для расчёта стоимости заполните простую форму Менеджер перезвонит Вам и уточнит удобное для Вас время бесплатного замера",
+      "Гарантия качества",
+      "МЫ В СОЦИАЛЬНЫХ СЕТЯХ"
+    ],
+    "h3_texts": [
+      "НОВАЯ СИСТЕМА КОНТРОЛЯ КАЧЕСТВА ПРОДУКЦИИ",
+      "Окна для каждого: от бюджетных до корпоративных решений!",
+      "Квалифицированная консультация и индивидуальность в работе с клиентом.",
+      "Собственное автоматизированное производство окон.",
+      "Доступные цены от производителя и гибкая система скидок.",
+      "Бесплатный замер окон. Точный и качественный монтаж.",
+      "Гарантия на окна 5 лет и 3 года на монтаж."
+    ],
+    "counts": {
+      "paragraph": 22,
+      "h1": 1,
+      "h2": 11,
+      "h3": 7,
+      "link": 41,
+      "image": 10,
+      "list_item": 0,
+      "strong": 0,
+      "form": 2,
+      "input": 4
+    }
+  }
+}

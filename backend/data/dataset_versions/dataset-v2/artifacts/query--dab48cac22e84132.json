@@ -1,0 +1,684 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://znatokmebeli.ru/catalog/shkafy-kupe",
+  "final_url": "https://znatokmebeli.ru/catalog/shkafy-kupe",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "connection": "keep-alive",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Fri, 01 May 2026 15:07:23 GMT",
+    "server": "nginx",
+    "set-cookie": "_csrf=7714c1d4ae2f3545fef9d61cd04a6709ee7117c6316775e3a2cac0ba3899472da%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22T5Tpqtjf-_nDoaMcgj5EQ6-AqGnhLbYr%22%3B%7D; path=/; httponly",
+    "strict-transport-security": "max-age=31536000;",
+    "transfer-encoding": "chunked",
+    "vary": "Accept-Encoding"
+  },
+  "response_time_ms": 11570.1003,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T15:07:34.077691+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\" class=\"js rgba no-touchevents textshadow boxsizing borderradius desktop portrait\" style=\"\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta name=\"SKYPE_TOOLBAR\" content=\"SKYPE_TOOLBAR_PARSER_COMPATIBLE\">\n    <meta name=\"format-detection\" content=\"telephone=no\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <meta name=\"HandheldFriendly\" content=\"true\">\n    <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\">\n    <meta name=\"csrf-param\" content=\"_csrf\">\n    <meta name=\"csrf-token\" content=\"SW9lci1saDcdWjECXBgCUWQwCzZCDSVULgVQN3xaRXY4KAsaYQ4xRQ==\">\n    <title>Шкафы-купе в Новосибирске недорого в каталоге с ценами и фото - ЗНАТОК МЕБЕЛИ</title>\n    <meta name=\"description\" content=\"Шкафы-купе в Новосибирске ☆ Каталог «Знаток мебели» ☆ Актуальные цены и фото ☎ Контакты продавцов ✓ Скидки, акции и распродажи ➨ Заходите!\">\n<meta property=\"og:title\" content=\"Шкафы-купе в Новосибирске - ЗНАТОК МЕБЕЛИ\">\n<meta property=\"og:image\" content=\"/upload/category/58/icon/icon_58.jpg\">\n<link href=\"/css/normalize.css\" rel=\"stylesheet\">\n<link href=\"/css/bootstrap.css?5\" rel=\"stylesheet\">\n<link href=\"/css/slick.css\" rel=\"stylesheet\">\n<link href=\"/css/jquery.fancybox.css\" rel=\"stylesheet\">\n<link href=\"/css/custom.css?10\" rel=\"stylesheet\">\n<link href=\"/css/bootstrap-responsive.css?5\" rel=\"stylesheet\">\n<link href=\"/css/bootstrap-social.css\" rel=\"stylesheet\">\n<link href=\"/css/font-awesome/css/font-awesome.min.css\" rel=\"stylesheet\">\n<link href=\"https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&amp;subset=latin,latin-ext,cyrillic-ext,cyrillic\" rel=\"stylesheet\">\n<link href=\"https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic&amp;subset=latin,latin-ext,cyrillic-ext,cyrillic\" rel=\"stylesheet\">\n<script type=\"text/javascript\" async=\"\" src=\"https://www.google-analytics.com/analytics.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-EBBW05ZS2Y&amp;cx=c&amp;gtm=4e64t1\"></script><script src=\"https://connect.facebook.net/signals/config/319117402588407?v=2.9.310&amp;r=stable&amp;domain=znatokmebeli.ru&amp;hme=97937018cefade17726f0472876fc101316b2ce9008a35a6a5a7977d7436151a&amp;ex_m=104%2C205%2C154%2C22%2C72%2C73%2C145%2C68%2C67%2C11%2C162%2C90%2C16%2C138%2C127%2C39%2C75%2C78%2C134%2C159%2C164%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C165%2C170%2C219%2C62%2C186%2C187%2C55%2C276%2C30%2C74%2C231%2C230%2C229%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C155%2C76%2C158%2C156%2C157%2C50%2C60%2C123%2C15%2C161%2C45%2C263%2C264%2C262%2C26%2C27%2C28%2C48%2C146%2C77%2C112%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C144%2C147%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C149%2C148%2C150%2C141%2C139%2C25%2C35%2C59%2C109%2C160%2C70%2C17%2C152%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C34%2C278%2C293%2C212%2C201%2C202%2C200%2C296%2C288%2C52%2C213%2C107%2C131%2C80%2C121%2C54%2C47%2C49%2C113%2C120%2C126%2C58%2C64%2C151%2C115%2C37%2C32%2C53%2C56%2C100%2C163%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C166%2C167%2C94%2C95%2C9%2C125%2C102%2C51%2C142%2C87%2C79%2C71%2C117%2C106%2C43%2C143%2C0%2C82%2C137%2C140%2C153%2C38%2C108%2C13%2C168\" async=\"\"></script><script async=\"\" src=\"https://connect.facebook.net/en_US/fbevents.js\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script type=\"text/javascript\" src=\"//an.yandex.ru/system/context.js\" async=\"\"></script><script src=\"/js/modernizr.min.js\"></script>\n<script src=\"/js/jquery-1.11.3.min.js\"></script>\n<script src=\"/js/jquery-migrate-1.2.1.min.js\"></script>\n<script src=\"/js/bootstrap.min.js\"></script>\n<script src=\"/js/slick.js\"></script>\n<script src=\"/js/jquery.fancybox.js\"></script>\n<script src=\"/js/device.min.js\"></script>\n<script src=\"/js/scripts.js?4\"></script>\n<script src=\"/js/fancybox.js\"></script>\n<script src=\"/js/jquery.easing.js\"></script>\n<script src=\"/js/jquery.ui.totop.min.js\"></script>\n<script src=\"/js/maskedinput.js\"></script>\n<script src=\"/js/is.mobile.js\"></script>\n<script src=\"//vk.com/js/api/openapi.js?139\"></script>\n<script src=\"//vk.com/js/api/share.js?94\"></script>\n<script src=\"//yastatic.net/es5-shims/0.0.2/es5-shims.min.js\"></script>\n<script src=\"//yastatic.net/share2/share.js\"></script>    <style type=\"text/css\">\n        #get_discount {display:none;}\n    </style>\n    <style type=\"text/css\">.fancybox-margin{margin-right:0px;}</style><link rel=\"preconnect\" href=\"https://yastatic.net\"><link rel=\"preconnect\" href=\"https://avatars.mds.yandex.net\"><link rel=\"preconnect\" href=\"https://mc.yandex.ru\"><link rel=\"preconnect\" href=\"https://ads.adfox.ru\"><link rel=\"preload\" href=\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\" type=\"font/woff2\" as=\"font\" crossorigin=\"anonymous\"><style id=\"ysTextCssRule\">@font-face {\n        font-family: \"YS Text Variable\";\n        src: url(\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\") format(\"woff2\");\n        font-weight: 400 700;\n        font-display: optional;\n    }</style><script async=\"\" crossorigin=\"anonymous\" src=\"https://yastatic.net/safeframe-bundles/0.83/host.js\"></script><style type=\"text/css\">.UZznxc{height:inherit;max-height:inherit;min-height:inherit;width:100%}</style></head>\n\n<body>\n\n<div class=\"wrapper\">\n\n<header>\n    <div class=\"container-fluid\">\n        <div class=\"row-fluid\">\n            <ul class=\"top-nav pull-right\">\n                <li><a href=\"/action\">Распродажи и акции</a></li>\n                <li><a href=\"/catalog\">Каталог мебели</a></li>\n                <li><a href=\"/company\">Магазины</a></li>\n                <li><a href=\"/article\">Статьи</a></li>\n            </ul>\n        </div>\n                    <a href=\"/\" title=\"\" class=\"logo\"><img src=\"/img/logo.png\" alt=\"Знаток мебели в Новосибирске\" title=\"Знаток мебели\"></a>\n                <div class=\"top-search\">\n            <form action=\"/search\" method=\"get\">\n                <fieldset>\n                    <input type=\"text\" name=\"text\" placeholder=\"Поиск\">\n                    <input type=\"submit\" value=\"\">\n                </fieldset>\n            </form>\n        </div>\n                    <span class=\"slogan\">Знаем всё о мебели в Новосибирске</span>\n                <div class=\"clearfix\"></div>\n    </div>\n</header>\n\n\n\n<div class=\"nav_wrap\">\n    <div class=\"container-fluid\">\n        <span id=\"mobile_nav\"></span>\n        <ul class=\"nav\" style=\"display: block;\">\n                            <li>\n                    <a href=\"/catalog/myagkaya-mebel\" class=\"sub\">Мягкая мебель</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <a href=\"/catalog/divany\">Диваны</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/kresla\">Кресла</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/elitnye-divany\">Элитные диваны</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/uglovie-divani\">Угловые диваны</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/pufy-i-banketki\">Пуфы и банкетки</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/divany-dlya-kafe-i-ofisa\">Диваны для кафе и офиса</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/beskarkasnaya-mebel\">Бескаркасная мебель</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/komplekty-myagkoj-mebeli\">Комплекты мягкой мебели</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/kresla-kachalki\">Кресла-качалки</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action/rasprodazha-myagkoj-mebeli-skidki-do-50\"><img src=\"/img/banners/banner-menu.jpg\" alt=\"Распродажа диванов со скидками до 50%\" title=\"Распродажа диванов от компании Автор\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                            <li>\n                    <a href=\"/catalog/korpusnaya-mebel\" class=\"sub\">Корпусная мебель</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <a href=\"/catalog/gostinye\">Гостиные</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stoly-pismennye\">Столы письменные</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/tv-tumby\">ТВ-тумбы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stenki\">Стенки</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stoly-knizhki\">Столы-книжки</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stellazhi\">Стеллажи</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/spalni\">Спальни</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/kompyuternye-stoly\">Компьютерные столы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/tualetnye-stoliki\">Туалетные столики</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/krovati\">Кровати</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/zhurnalnye-stoly\">Журнальные столы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/tumby\">Тумбы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/komody\">Комоды</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stulya\">Стулья</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/polki-i-penaly\">Полки и пеналы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/prihozhie\">Прихожие</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/kabinety\">Кабинеты</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/biblioteki\">Библиотеки</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                            <li>\n                    <a href=\"/catalog/kuhni\" class=\"sub\">Кухни</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <a href=\"/catalog/kuhonnye-garnitury\">Кухонные гарнитуры</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/kuhonnye-divany\">Кухонные диваны</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/bufety-i-vitriny\">Буфеты и витрины</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/kuhonnye-ugolki\">Кухонные уголки</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stulya-dlya-kuhni\">Стулья для кухни</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/taburety\">Табуреты</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/stoly-obedennye\">Столы обеденные</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/servirovochnye-stoliki\">Сервировочные столики</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                            <li>\n                    <a href=\"/catalog/detskaya-mebel\" class=\"sub\">Детская мебель</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <a href=\"/catalog/detskaya-korpusnaya-mebel\">Детская корпусная мебель</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/detskie-krovati\">Детские кровати</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/detskie-divany\">Детские диваны</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/detskie-kresla\">Детские кресла</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/mebel-dlya-detskih-sadov\">Мебель для детских садов</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                            <li>\n                    <a href=\"/catalog/shkafy\" class=\"sub\">Шкафы</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <span>Шкафы-купе</span>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/shkafy-raspashnye\">Шкафы распашные</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/uglovye-shkafy\">Угловые шкафы</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                            <li>\n                    <a href=\"/catalog/ofisnaya-mebel\" class=\"sub\">Офисная мебель</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <a href=\"/catalog/ofisnye-kresla-i-stulya\">Офисные кресла и стулья</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/mebel-dlya-ofisa\">Мебель для офиса</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/ofisnye-divany\">Офисные диваны</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/sejfy\">Сейфы</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                            <li>\n                    <a href=\"/catalog/matrasy\" class=\"sub\">Матрасы</a>\n                    <div class=\"megamenu\" style=\"top: 60px;\">\n                        <div class=\"megamenu_wrap\">\n                            <div class=\"megamenu_img\">\n                                <!--noindex-->\n                                <a href=\"/catalog/kresla/kreslo-lotos-2761\" rel=\"nofollow\">                                <!--img src=\"< ?=$item['mainBanner']['img']['src']?>\" alt=\"< ?=$key . \" - Изображение\"?>\" title=\"< ?=$key . \" - Категория\"?>\"-->\n                                <img src=\"/img/megamenu_img.png\" alt=\"Кресло Сиена-1 в Новосибирске\" title=\"Кресло Сиена-1 в Новосибирске\">\n                                </a>                                <!--/noindex-->\n                            </div>\n\n                            <div class=\"megamenu_content\">\n                                <ul class=\"sub_categories\">\n                                                                            <li>\n                                            <a href=\"/catalog/ortopedicheskie-matrasy\">Ортопедические матрасы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/detskie-matrasy\">Детские матрасы</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/osnovaniya-dlya-matrasov\">Основания для матрасов</a>                                        </li>\n                                                                            <li>\n                                            <a href=\"/catalog/odeyala\">Одеяла, подушки, чехлы</a>                                        </li>\n                                                                    </ul>\n                                                                    <div class=\"megamenu_banner\"><a href=\"/action\"><img src=\"/img/megamenu_banner1.png\" alt=\"Акции и распродажи мебели с ценами и фото\" title=\"Каталог акций и распродаж мебели\"></a></div>\n                                                            </div>\n                            <div class=\"clearfix\"></div>\n                        </div>\n                    </div>\n                </li>\n                    </ul>\n    </div>\n</div>\n<div class=\"nav_place\"></div>\n\n<!--?if (\\Yii::$app->request->pathInfo != \"\"){?>\n< ?= $this->render('yadirect'); ?>\n< ?}?-->\n<div class=\"container-fluid\">\n    <div class=\"breadcrumb\">\n        <a href=\"/\" class=\"home_link\" title=\"Главная\"></a>\n        <a href=\"/catalog\" title=\"Каталог\">Каталог</a>\n                    <a href=\"shkafy\" title=\"Шкафы\">Шкафы</a>\n                <span>Шкафы-купе</span>\n    </div>\n\n            <div class=\"row-fluid articles_content\">\n            <div class=\"span3\"><img src=\"/upload/category/58/icon/icon_58.jpg\" alt=\"Шкафы-купе в Новосибирске с ценами и фото\" title=\"Шкафы-купе в Новосибирске каталог\" class=\"content_img\"></div>\n            <div class=\"span6\">\n                <article>\n                    <h1>Шкафы-купе в Новосибирске</h1>\n                    <p style=\"text-align:justify\">Нужен новый шкаф-купе? Начните поиск на сайте ЗНАТОК МЕБЕЛИ! В нашем каталоге найдется всё: шкафы-купе в наличии и на заказ с фото и ценами от разных магазинов и производителей мебели в Новосибирске. Для каждой модели на сайте мы делаем описание - указываем размеры, материалы, возможные цветовые решения и, конечно, контакты продавца, чтобы Ваш поиск был максимально удобным. Хотите купить шкаф-купе недорого или со скидкой? Пожалуйста! Посмотрите модели с купонами «Получить скидку» или модели, участвующие в распродаже. Удачных Вам поисков!</p>\n                </article>\n            </div>\n            <div class=\"span3 pull-right\"><!--img src=\"/img/temp/articles_img.jpg\" alt=\"\" class=\"content_img\"-->\n                            </div>\n        </div>\n    \n    \n</div>\n\n<div class=\"banners_box\">\n    <div class=\"container-fluid\">\n        <div class=\"row-fluid\">\n            <div class=\"span6 pull-left\">\n                <!--noindex-->\n                <a href=\"http://gurbanov.zm54.ru\" rel=\"nofollow\" target=\"_blank\" referrerpolicy=\"origin\">\n                    <img src=\"/img/banners/banner1.gif\" alt=\"Диваны от ИП Гурбанов\" title=\"Мягкая мебель от ИП Гурбанов\">\n                </a>\n                <!--/noindex-->\n            </div>\n            <div class=\"span6 pull-right\">\n                <!--noindex-->\n                <a href=\"http://avtor.zm54.ru\" rel=\"nofollow\" target=\"_blank\" referrerpolicy=\"origin\" ]=\"\">\n                    <img src=\"/img/banners/flo.gif\" alt=\"Дизайнерский диван\" title=\"Дизайнерский диван\">\n                </a>\n                <!--/noindex-->\n            </div>\n\n        </div>\n    </div>\n</div>\n<div class=\"container-fluid\">\n    <div class=\"items_filter\">\n\n        <div class=\"sort_box\">\n            <label>Сортировка по:</label>\n            <div class=\"sorting_links\">\n                                <a href=\"/catalog/shkafy-kupe?sort=price_up\">Цене </a>                <a href=\"/catalog/shkafy-kupe?sort=new_up\">Новизне</a>\n            </div>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid items_container\">\n\n    <div id=\"w0\" class=\"page_box\"><span class=\"items_showing\">Показано 1-10 из 10</span></div>    <div class=\"items_wrap\">\n    <div class=\"items_list\">\n                    <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"50413\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-2433\"><img src=\"/upload/goods/2433/images/4068/small_image_4068.jpg\" alt=\"Шкаф-купе 2-дверный картинка\" title=\"Шкаф-купе 2-дверный фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        15400 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-2433\">Шкаф-купе 2-дверный</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"42203\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalom-2444\"><img src=\"/upload/goods/2444/images/4082/small_image_4082.jpg\" alt=\"Шкаф-купе 2-дверный с зеркалом картинка\" title=\"Шкаф-купе 2-дверный с зеркалом фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        19350 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalom-2444\">Шкаф-купе 2-дверный с зеркалом</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"32686\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/uglovye-shkafy/sekciya-uglovaya-2432\"><img src=\"/upload/goods/2432/images/4066/small_image_4066.jpg\" alt=\"Секция угловая картинка\" title=\"Секция угловая фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        4700 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/uglovye-shkafy/sekciya-uglovaya-2432\">Секция угловая</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"32437\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-foto-duo-619\"><img src=\"/upload/goods/619/images/784/small_image_784.jpg\" alt=\"Шкаф-купе 2-дверн. Экспресс Фото дуо картинка\" title=\"Шкаф-купе 2-дверн. Экспресс Фото дуо фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        24900 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-foto-duo-619\">Шкаф-купе 2-дверн. Экспресс Фото дуо</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"2801\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-2434\"><img src=\"/upload/goods/2434/images/4070/small_image_4070.jpg\" alt=\"Шкаф-купе 3-дверный картинка\" title=\"Шкаф-купе 3-дверный фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        20350 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-2434\">Шкаф-купе 3-дверный</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"2700\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-raspashnye/shkaf-raspashnoj-kombi-4165\"><img src=\"/upload/goods/4165/images/10745/small_image_10745.jpg\" alt=\"Шкаф распашной &quot;Комби&quot; картинка\" title=\"Шкаф распашной &quot;Комби&quot; фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        22600 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-raspashnye/shkaf-raspashnoj-kombi-4165\">Шкаф распашной \"Комби\"</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"2579\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-3-zerkalami-2447\"><img src=\"/upload/goods/2447/images/4085/small_image_4085.jpg\" alt=\"Шкаф-купе 3-дверный с 3 зеркалами картинка\" title=\"Шкаф-купе 3-дверный с 3 зеркалами фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        32100 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-3-zerkalami-2447\">Шкаф-купе 3-дверный с 3 зеркалами</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"2292\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-zerkalom-2446\"><img src=\"/upload/goods/2446/images/4084/small_image_4084.jpg\" alt=\"Шкаф-купе 3-дверный с зеркалом картинка\" title=\"Шкаф-купе 3-дверный с зеркалом фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        24200 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-zerkalom-2446\">Шкаф-купе 3-дверный с зеркалом</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"1050\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-medium-duo-618\"><img src=\"/upload/goods/618/images/782/small_image_782.jpg\" alt=\"Шкаф-купе 2-дверн. Экспресс Медиум дуо картинка\" title=\"Шкаф-купе 2-дверн. Экспресс Медиум дуо фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        20500 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-medium-duo-618\">Шкаф-купе 2-дверн. Экспресс Медиум дуо</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                                <div class=\"item_box_wrap\">\n                <div class=\"item_box\" data-sort=\"39\">\n                                                                                    <span class=\"item_preview\">\n                                                            <a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalami-2445\"><img src=\"/upload/goods/2445/images/4083/small_image_4083.jpg\" alt=\"Шкаф-купе 2-дверный с 2 зеркалами картинка\" title=\"Шкаф-купе 2-дверный с 2 зеркалами фото\"></a>                        </span>\n\n                                                                                    <span class=\"item_cost\">\n                                        23250 <span class=\"ruble\">руб.</span>\n                                    </span>\n                                                        <!--?if ($one->discount>0 and $one->price > 0):?>\n                                <span class=\"item_discount\">-< ?=$one->discount?>% <a href=\"#get_discount\" rel=\"nofollow\" onclick=\"$('#discount_item').val(< ?=$one->id?>);\" class=\"modalbox\">Получить купон</a></span>\n                            < ?endif;?-->\n                                                <span class=\"item_name\"><a href=\"/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalami-2445\">Шкаф-купе 2-дверный с 2 зеркалами</a></span>\n                                                                <span class=\"company_name\"><strong>Продавец: </strong><a href=\"/company/ip-gurbanov\">ИП Гурбанов Р.А., мебель от производителя</a></span>\n                                    </div>\n            </div>\n                        </div>\n</div>\n\n    <!--div class=\"items_wrap\">\n            < ?\n            echo ListView::widget([\n                'dataProvider' => $goodsDataProvider,\n                //'itemView' => '_list',\n                'itemView' => function ($model, $key, $index, $widget) {\n                    return $this->render('_list',['model' => $model, 'viewArticles' => ($index === 12)]);\n\n                    // or just do some echo\n                    // return $model->title . ' posted by ' . $model->author;\n                },\n                'options' => [\n                    //    'tag' => 'div',\n                    'class' => 'items_list',\n                    //    'id' => 'news-list',\n                ],\n                'itemOptions' => [\n                    'tag' => 'div',\n                    'class' => 'item_box_wrap',\n                ],\n                'emptyText' => 'В этой категории пока нет товаров',\n                /*'emptyTextOptions' => [\n                    'tag' => 'div',\n                ],*/\n                'layout' => \"{items}\",\n            ]);\n\n\n            ?>\n    </div-->\n\n    <div id=\"w1\" class=\"page_box\"><span class=\"items_showing\">Показано 1-10 из 10</span></div>\n</div>\n\n    <div class=\"container-fluid\">\n        <div class=\"row-fluid articles_content\">\n\n            <div class=\"span12\">\n                <article>\n                                    </article>\n            </div>\n\n        </div>\n    </div>\n\n<div class=\"container-fluid shift-bottom\">\n    <div class=\"row-fluid social-box\">\n        <div class=\"span6\">\n            <!-- VK Widget -->\n            <div id=\"vk_groups\" style=\"width: 573px; height: 205px; background: none;\"><iframe name=\"fXDc4b3a\" frameborder=\"0\" src=\"https://vk.com/widget_community.php?app=0&amp;width=573px&amp;_ver=1&amp;gid=135186680&amp;mode=3&amp;color1=&amp;color2=&amp;color3=&amp;class_name=&amp;no_cover=1&amp;height=215&amp;url=https%3A%2F%2Fznatokmebeli.ru%2Fcatalog%2Fshkafy-kupe&amp;referrer=&amp;title=%D0%A8%D0%BA%D0%B0%D1%84%D1%8B-%D0%BA%D1%83%D0%BF%D0%B5%20%D0%B2%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%D0%B5%20-%20%D0%97%D0%9D%D0%90%D0%A2%D0%9E%D0%9A%20%D0%9C%D0%95%D0%91%D0%95%D0%9B%D0%98&amp;19de4148f10\" width=\"573\" height=\"185\" scrolling=\"no\" id=\"vkwidget1\" style=\"overflow: hidden; height: 205px;\"></iframe></div>\n            <script type=\"text/javascript\">\n                VK.Widgets.Group(\"vk_groups\", {mode: 3, no_cover:1, width: \"auto\", height: 215}, 135186680);\n            </script>\n        </div>\n        <div class=\"span6\">\n            <div id=\"ok_group_widget\"><iframe id=\"__okGroup0\" scrolling=\"no\" frameborder=\"0\" src=\"https://connect.ok.ru/dk?st.cmd=WidgetGroup&amp;st.groupId=%2054417334337761&amp;st.fid=__okGroup0&amp;st.hoster=https%3A%2F%2Fznatokmebeli.ru%2Fcatalog%2Fshkafy-kupe&amp;st.settings=%7B%22width%22%3A525%2C%22height%22%3A215%7D\" allowfullscreen=\"\" style=\"border: 0px; width: 525px; height: 215px;\"></iframe></div>\n            <style>#__okGroup0{width:100% !important;}</style>\n            <script>\n                !function (d, id, did, st) {\n                    var js = d.createElement(\"script\");\n                    js.src = \"https://connect.ok.ru/connect.js\";\n                    js.onload = js.onreadystatechange = function () {\n                        if (!this.readyState || this.readyState == \"loaded\" || this.readyState == \"complete\") {\n                            if (!this.executed) {\n                                this.executed = true;\n                                setTimeout(function () {\n                                    OK.CONNECT.insertGroupWidget(id,did,st);\n                                }, 0);\n                            }\n                        }}\n                    d.documentElement.appendChild(js);\n                }(document,\"ok_group_widget\",\"%2054417334337761\",'{\"width\":525,\"height\":215}');\n            </script>\n        </div>\n    </div>\n</div>\n<div class=\"banners_box\">\n    <div class=\"container-fluid\">\n        <div class=\"row-fluid\">\n            <div class=\"span6 pull-left\">\n                <!--noindex-->\n                <a href=\"http://gurbanov.zm54.ru\" rel=\"nofollow\" target=\"_blank\" referrerpolicy=\"origin\">\n                    <img src=\"/img/banners/banner1.gif\" alt=\"Диваны от ИП Гурбанов\" title=\"Мягкая мебель от ИП Гурбанов\">\n                </a>\n                <!--/noindex-->\n            </div>\n            <div class=\"span6 pull-right\">\n                <!--noindex-->\n                <a href=\"http://avtor.zm54.ru\" rel=\"nofollow\" target=\"_blank\" referrerpolicy=\"origin\" ]=\"\">\n                    <img src=\"/img/banners/flo.gif\" alt=\"Дизайнерский диван\" title=\"Дизайнерский диван\">\n                </a>\n                <!--/noindex-->\n            </div>\n\n        </div>\n    </div>\n</div>\n\n\n\n<div class=\"push\"></div>\n</div>\n\n<div class=\"container-fluid shift-bottom yadirect-box\">\n    <!-- Yandex.RTB R-A-141514-1 -->\n    <div id=\"yandex_rtb_R-A-141514-1\" data-facab88995=\"\"></div>\n    <script type=\"text/javascript\">\n        (function(w, d, n, s, t) {\n            w[n] = w[n] || [];\n            w[n].push(function() {\n                Ya.Context.AdvManager.render({\n                    blockId: \"R-A-141514-1\",\n                    renderTo: \"yandex_rtb_R-A-141514-1\",\n                    async: true\n                });\n            });\n            t = d.getElementsByTagName(\"script\")[0];\n            s = d.createElement(\"script\");\n            s.type = \"text/javascript\";\n            s.src = \"//an.yandex.ru/system/context.js\";\n            s.async = true;\n            t.parentNode.insertBefore(s, t);\n        })(this, this.document, \"yandexContextAsyncCallbacks\");\n    </script>\n</div><footer>\n    <div class=\"foot_top\">\n        <div class=\"container-fluid\">\n            <div class=\"row-fluid\">\n\n                <div class=\"span6\">\n                    <span class=\"footer_title\">Категории</span>\n                    <ul class=\"nav_foot\" style=\"display: block;\">\n                        <li><a href=\"/catalog/myagkaya-mebel\">Мягкая мебель</a></li>\n                        <li><a href=\"/catalog/detskaya-mebel\">Детская мебель</a></li>\n                        <li><a href=\"/catalog/matrasy\">Матрасы</a></li>\n                        <li><a href=\"/catalog/korpusnaya-mebel\">Корпусная мебель</a></li>\n                        <li><a href=\"/catalog/shkafy\">Шкафы</a></li>\n                        <li><a href=\"/catalog/ofisnaya-mebel\">Офисная мебель</a></li>\n                        <li><a href=\"/catalog/kuhni\">Кухни</a></li>\n                    </ul>\n                </div>\n                <div class=\"span6\">\n                    <div class=\"span6\">\n                        <span class=\"footer_title\">Дополнительно</span>\n                        <ul class=\"nav_foot nav_single\" style=\"display: block;\">\n                            <!--<li></li>-->\n                            <li><a href=\"/mall\">Торговые центры</a></li>\n                        </ul>\n                    </div>\n                    <div class=\"span6\">\n                        <!--<span class=\"made\">Создано в студии «»</span>-->\n                        <span class=\"copy\">© 2006-2026 Знаток мебели</span>\n                        <!--<div class=\"social-buttons\">\n                            <a class=\"btn btn-social-icon btn-vk\" href=\"//vk.com/znatokmebeli\" rel=\"nofollow\" target=\"_blank\">\n                                <span class=\"fa fa-vk\"></span>\n                            </a>\n                            <a class=\"btn btn-social-icon btn-odnoklassniki\" href=\"//ok.ru/group/54417334337761\" rel=\"nofollow\" target=\"_blank\">\n                                <span class=\"fa fa-odnoklassniki\"></span>\n                            </a>\n                            <a class=\"btn btn-social-icon btn-facebook\" href=\"//www.facebook.com/znatokmebeli/\" rel=\"nofollow\" target=\"_blank\">\n                                <span class=\"fa fa-facebook\"></span>\n                            </a>\n                            <a class=\"btn btn-social-icon btn-google\" href=\"//plus.google.com/communities/111974589057762112831\" rel=\"nofollow\" target=\"_blank\">\n                                <span class=\"fa fa-google\"></span>\n                            </a>\n                            <a class=\"btn btn-social-icon btn-pinterest\" href=\"//www.youtube.com/channel/UCQtbV2XCEWoGk7SqAgD8Xgw\" rel=\"nofollow\" target=\"_blank\">\n                                <span class=\"fa fa-youtube\"></span>\n                            </a>\n                        </div>-->\n                    </div>\n                </div>\n\n            </div>\n        </div>\n    </div>\n    <div class=\"foot_bottom\">\n        <div class=\"container-fluid\">\n            <p>Обратите внимание! Цены на сайте указаны для ознакомления с ценовой политикой, носят информационный характер и не являются публичной офертой, определяемой Статьёй 437 (2) ГК РФ. Данное положение\n                распространяется на любую информацию, опубликованную на сайте. Для получения точной информации о ценах и других характеристиках товаров обращайтесь в салоны компаний-продавцов по указанным телефонам.</p>\n        </div>\n    </div>\n</footer>\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n    (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n    ym(37735115, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n    });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/37735115\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=UA-90415869-1\"></script>\n<script>\n    window.dataLayer = window.dataLayer || [];\n    function gtag(){dataLayer.push(arguments);}\n    gtag('js', new Date());\n\n    gtag('config', 'UA-90415869-1');\n</script>\n\n<!-- Facebook Pixel Code -->\n<script>\n    !function(f,b,e,v,n,t,s)\n    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n        n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n        n.queue=[];t=b.createElement(e);t.async=!0;\n        t.src=v;s=b.getElementsByTagName(e)[0];\n        s.parentNode.insertBefore(t,s)}(window, document,'script',\n        'https://connect.facebook.net/en_US/fbevents.js');\n    fbq('init', '319117402588407');\n    fbq('track', 'PageView');\n</script>\n<noscript><img height=\"1\" width=\"1\" style=\"display:none\"\n               src=\"https://www.facebook.com/tr?id=319117402588407&ev=PageView&noscript=1\"\n    /></noscript>\n<!-- End Facebook Pixel Code -->\n\n<div id=\"get_discount\"><!-- hidden inline form -->\n    <div id=\"get_discount_content\">\n        <span class=\"coupon_form_title\">Получение купона на скидку</span>\n        <form id=\"discount_form\" name=\"discount_contacts\" value=\"/site/get-discount\" method=\"post\" class=\"form_check\" onsubmit=\"yaCounter37735115.reachGoal('COUPON', function () { }); return true;\">\n            <div id=\"discount_goods_name\"></div>\n            <div id=\"discount_value\"></div>\n            <p class=\"rline\">\n                <label for=\"discount_name\">Ваше имя</label>\n                <input type=\"text\" id=\"discount_name\" name=\"discount_name\" class=\"rfield empty_field\">\n            <span class=\"rfield_error\">Заполните это поле</span></p>\n            <p class=\"rline\">\n                <label for=\"discount_phone\">Ваш номер телефона</label>\n                <input type=\"text\" id=\"discount_phone\" name=\"discount_phone\" class=\"rfield phonefield empty_field\">\n            <span class=\"rfield_error\">Заполните это поле</span></p>\n            <input type=\"hidden\" id=\"discount_item\" name=\"discount_item\">\n            <input type=\"submit\" id=\"discount_send\" class=\"btn btn-small btn_send_discount disabled\" value=\"Получить скидку\">\n            <div id=\"discount_send_loading\" style=\"display:none;\">\n                <img src=\"/img/bx_loader.gif\">\n            </div>\n            <ol id=\"terms_list\">\n                <li>1. Вы получите SMS с информацией о товаре и магазине.</li>\n                <li>2. Ваше имя и телефон будут переданы в магазин.</li>\n                <li>3. Для получения скидки Вам нужно показать SMS или назвать свои данные в магазине.</li>\n                <li><i>Внимание! На один товар действует только один купон. Скидки по купонам не суммируются с другими акциями в магазине.</i></li>\n            </ol>\n            <br>\n            Отправляя заявку, Вы соглашаетесь с <a href=\"/privacy\" target=\"_blank\" class=\"text-info text-underline\">Пользовательским соглашением о персональных данных</a>\n        </form>\n    </div>\n    <span id=\"get_discount_message\" style=\"font-weight: bold; color: red;\"></span>\n</div>\n\n    <script src=\"/js/jquery.lazyload.min.js\"></script>\n\n\n\n<a href=\"#\" id=\"ui-to-top\" class=\"ui-to-top fa fa-2x fa-angle-up\"></a></body><script src=\"https://connect.ok.ru/connect.js\"></script></html>",
+  "text": "Шкафы-купе в Новосибирске недорого в каталоге с ценами и фото - ЗНАТОК МЕБЕЛИ Распродажи и акции Каталог мебели Магазины Статьи Знаем всё о мебели в Новосибирске Мягкая мебель Диваны Кресла Элитные диваны Угловые диваны Пуфы и банкетки Диваны для кафе и офиса Бескаркасная мебель Комплекты мягкой мебели Кресла-качалки Корпусная мебель Гостиные Столы письменные ТВ-тумбы Стенки Столы-книжки Стеллажи Спальни Компьютерные столы Туалетные столики Кровати Журнальные столы Тумбы Комоды Стулья Полки и пеналы Прихожие Кабинеты Библиотеки Кухни Кухонные гарнитуры Кухонные диваны Буфеты и витрины Кухонные уголки Стулья для кухни Табуреты Столы обеденные Сервировочные столики Детская мебель Детская корпусная мебель Детские кровати Детские диваны Детские кресла Мебель для детских садов Шкафы Шкафы-купе Шкафы распашные Угловые шкафы Офисная мебель Офисные кресла и стулья Мебель для офиса Офисные диваны Сейфы Матрасы Ортопедические матрасы Детские матрасы Основания для матрасов Одеяла, подушки, чехлы Каталог Шкафы Шкафы-купе Шкафы-купе в Новосибирске Нужен новый шкаф-купе? Начните поиск на сайте ЗНАТОК МЕБЕЛИ! В нашем каталоге найдется всё: шкафы-купе в наличии и на заказ с фото и ценами от разных магазинов и производителей мебели в Новосибирске. Для каждой модели на сайте мы делаем описание - указываем размеры, материалы, возможные цветовые решения и, конечно, контакты продавца, чтобы Ваш поиск был максимально удобным. Хотите купить шкаф-купе недорого или со скидкой? Пожалуйста! Посмотрите модели с купонами «Получить скидку» или модели, участвующие в распродаже. Удачных Вам поисков! Сортировка по: Цене Новизне Показано 1-10 из 10 15400 руб. Шкаф-купе 2-дверный Продавец: ИП Гурбанов Р.А., мебель от производителя 19350 руб. Шкаф-купе 2-дверный с зеркалом Продавец: ИП Гурбанов Р.А., мебель от производителя 4700 руб. Секция угловая Продавец: ИП Гурбанов Р.А., мебель от производителя 24900 руб. Шкаф-купе 2-дверн. Экспресс Фото дуо Продавец: ИП Гурбанов Р.А., мебель от производителя 20350 руб. Шкаф-купе 3-дверный Продавец: ИП Гурбанов Р.А., мебель от производителя 22600 руб. Шкаф распашной \"Комби\" Продавец: ИП Гурбанов Р.А., мебель от производителя 32100 руб. Шкаф-купе 3-дверный с 3 зеркалами Продавец: ИП Гурбанов Р.А., мебель от производителя 24200 руб. Шкаф-купе 3-дверный с зеркалом Продавец: ИП Гурбанов Р.А., мебель от производителя 20500 руб. Шкаф-купе 2-дверн. Экспресс Медиум дуо Продавец: ИП Гурбанов Р.А., мебель от производителя 23250 руб. Шкаф-купе 2-дверный с 2 зеркалами Продавец: ИП Гурбанов Р.А., мебель от производителя Показано 1-10 из 10 Категории Мягкая мебель Детская мебель Матрасы Корпусная мебель Шкафы Офисная мебель Кухни Дополнительно Торговые центры © 2006-2026 Знаток мебели Обратите внимание! Цены на сайте указаны для ознакомления с ценовой политикой, носят информационный характер и не являются публичной офертой, определяемой Статьёй 437 (2) ГК РФ. Данное положение распространяется на любую информацию, опубликованную на сайте. Для получения точной информации о ценах и других характеристиках товаров обращайтесь в салоны компаний-продавцов по указанным телефонам. Получение купона на скидку Ваше имя Заполните это поле Ваш номер телефона Заполните это поле 1. Вы получите SMS с информацией о товаре и магазине. 2. Ваше имя и телефон будут переданы в магазин. 3. Для получения скидки Вам нужно показать SMS или назвать свои данные в магазине. Внимание! На один товар действует только один купон. Скидки по купонам не суммируются с другими акциями в магазине. Отправляя заявку, Вы соглашаетесь с Пользовательским соглашением о персональных данных",
+  "json_ld": [],
+  "document": {
+    "title": "Шкафы-купе в Новосибирске недорого в каталоге с ценами и фото - ЗНАТОК МЕБЕЛИ",
+    "meta_description": "Шкафы-купе в Новосибирске ☆ Каталог «Знаток мебели» ☆ Актуальные цены и фото ☎ Контакты продавцов ✓ Скидки, акции и распродажи ➨ Заходите!",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/action",
+        "text": "Распродажи и акции",
+        "rel": ""
+      },
+      {
+        "href": "/catalog",
+        "text": "Каталог мебели",
+        "rel": ""
+      },
+      {
+        "href": "/company",
+        "text": "Магазины",
+        "rel": ""
+      },
+      {
+        "href": "/article",
+        "text": "Статьи",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/myagkaya-mebel",
+        "text": "Мягкая мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/divany",
+        "text": "Диваны",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla",
+        "text": "Кресла",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/elitnye-divany",
+        "text": "Элитные диваны",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/uglovie-divani",
+        "text": "Угловые диваны",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/pufy-i-banketki",
+        "text": "Пуфы и банкетки",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/divany-dlya-kafe-i-ofisa",
+        "text": "Диваны для кафе и офиса",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/beskarkasnaya-mebel",
+        "text": "Бескаркасная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/komplekty-myagkoj-mebeli",
+        "text": "Комплекты мягкой мебели",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla-kachalki",
+        "text": "Кресла-качалки",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/action/rasprodazha-myagkoj-mebeli-skidki-do-50",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/korpusnaya-mebel",
+        "text": "Корпусная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/gostinye",
+        "text": "Гостиные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stoly-pismennye",
+        "text": "Столы письменные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/tv-tumby",
+        "text": "ТВ-тумбы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stenki",
+        "text": "Стенки",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stoly-knizhki",
+        "text": "Столы-книжки",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stellazhi",
+        "text": "Стеллажи",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/spalni",
+        "text": "Спальни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kompyuternye-stoly",
+        "text": "Компьютерные столы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/tualetnye-stoliki",
+        "text": "Туалетные столики",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/krovati",
+        "text": "Кровати",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/zhurnalnye-stoly",
+        "text": "Журнальные столы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/tumby",
+        "text": "Тумбы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/komody",
+        "text": "Комоды",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stulya",
+        "text": "Стулья",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/polki-i-penaly",
+        "text": "Полки и пеналы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/prihozhie",
+        "text": "Прихожие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kabinety",
+        "text": "Кабинеты",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/biblioteki",
+        "text": "Библиотеки",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni",
+        "text": "Кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/kuhonnye-garnitury",
+        "text": "Кухонные гарнитуры",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhonnye-divany",
+        "text": "Кухонные диваны",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/bufety-i-vitriny",
+        "text": "Буфеты и витрины",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhonnye-ugolki",
+        "text": "Кухонные уголки",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stulya-dlya-kuhni",
+        "text": "Стулья для кухни",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/taburety",
+        "text": "Табуреты",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/stoly-obedennye",
+        "text": "Столы обеденные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/servirovochnye-stoliki",
+        "text": "Сервировочные столики",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/detskaya-mebel",
+        "text": "Детская мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/detskaya-korpusnaya-mebel",
+        "text": "Детская корпусная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/detskie-krovati",
+        "text": "Детские кровати",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/detskie-divany",
+        "text": "Детские диваны",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/detskie-kresla",
+        "text": "Детские кресла",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel-dlya-detskih-sadov",
+        "text": "Мебель для детских садов",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy",
+        "text": "Шкафы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/shkafy-raspashnye",
+        "text": "Шкафы распашные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/uglovye-shkafy",
+        "text": "Угловые шкафы",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/ofisnaya-mebel",
+        "text": "Офисная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/ofisnye-kresla-i-stulya",
+        "text": "Офисные кресла и стулья",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/mebel-dlya-ofisa",
+        "text": "Мебель для офиса",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/ofisnye-divany",
+        "text": "Офисные диваны",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/sejfy",
+        "text": "Сейфы",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/matrasy",
+        "text": "Матрасы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kresla/kreslo-lotos-2761",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/ortopedicheskie-matrasy",
+        "text": "Ортопедические матрасы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/detskie-matrasy",
+        "text": "Детские матрасы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/osnovaniya-dlya-matrasov",
+        "text": "Основания для матрасов",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/odeyala",
+        "text": "Одеяла, подушки, чехлы",
+        "rel": ""
+      },
+      {
+        "href": "/action",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "shkafy",
+        "text": "Шкафы",
+        "rel": ""
+      },
+      {
+        "href": "http://gurbanov.zm54.ru",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "http://avtor.zm54.ru",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/shkafy-kupe?sort=price_up",
+        "text": "Цене",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe?sort=new_up",
+        "text": "Новизне",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-2433",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-2433",
+        "text": "Шкаф-купе 2-дверный",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalom-2444",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalom-2444",
+        "text": "Шкаф-купе 2-дверный с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/uglovye-shkafy/sekciya-uglovaya-2432",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/uglovye-shkafy/sekciya-uglovaya-2432",
+        "text": "Секция угловая",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-foto-duo-619",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-foto-duo-619",
+        "text": "Шкаф-купе 2-дверн. Экспресс Фото дуо",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-2434",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-2434",
+        "text": "Шкаф-купе 3-дверный",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-raspashnye/shkaf-raspashnoj-kombi-4165",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-raspashnye/shkaf-raspashnoj-kombi-4165",
+        "text": "Шкаф распашной \"Комби\"",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-3-zerkalami-2447",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-3-zerkalami-2447",
+        "text": "Шкаф-купе 3-дверный с 3 зеркалами",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-zerkalom-2446",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-3-dvernyj-s-zerkalom-2446",
+        "text": "Шкаф-купе 3-дверный с зеркалом",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-medium-duo-618",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvern-ekspress-medium-duo-618",
+        "text": "Шкаф-купе 2-дверн. Экспресс Медиум дуо",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalami-2445",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy-kupe/shkaf-kupe-2-dvernyj-s-zerkalami-2445",
+        "text": "Шкаф-купе 2-дверный с 2 зеркалами",
+        "rel": ""
+      },
+      {
+        "href": "/company/ip-gurbanov",
+        "text": "ИП Гурбанов Р.А., мебель от производителя",
+        "rel": ""
+      },
+      {
+        "href": "http://gurbanov.zm54.ru",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "http://avtor.zm54.ru",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/myagkaya-mebel",
+        "text": "Мягкая мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/detskaya-mebel",
+        "text": "Детская мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/matrasy",
+        "text": "Матрасы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/korpusnaya-mebel",
+        "text": "Корпусная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/shkafy",
+        "text": "Шкафы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/ofisnaya-mebel",
+        "text": "Офисная мебель",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/kuhni",
+        "text": "Кухни",
+        "rel": ""
+      },
+      {
+        "href": "/mall",
+        "text": "Торговые центры",
+        "rel": ""
+      },
+      {
+        "href": "/privacy",
+        "text": "Пользовательским соглашением о персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [
+      "Шкафы-купе в Новосибирске"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 4,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 126,
+      "image": 34,
+      "list_item": 74,
+      "strong": 10,
+      "form": 2,
+      "input": 6
+    }
+  }
+}

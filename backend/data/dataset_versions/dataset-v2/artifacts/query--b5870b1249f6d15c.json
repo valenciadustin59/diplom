@@ -1,0 +1,700 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://potolki-novosib.ru/ceny",
+  "final_url": "https://potolki-novosib.ru/ceny",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Fri, 01 May 2026 14:22:51 GMT",
+    "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+    "link": "</templates/potolki/css/all.min.css?2341>; rel=preload; as=style, </templates/potolki/css/theme-layout.css?2341>; rel=preload; as=style, </templates/potolki/css/jquery.fancybox.css?2341>; rel=preload; as=style, </templates/potolki/css/slick.css?2341>; rel=preload; as=style, </templates/potolki/css/styles.css?2341>; rel=preload; as=style, </templates/potolki/css/fonts.css?2341>; rel=preload; as=style, </templates/potolki/css/colors.css?2341>; rel=preload; as=style, </templates/potolki/css/theme-gui.css?2341>; rel=preload; as=style, </templates/potolki/widgets/html/ceny.css?2341>; rel=preload; as=style, </templates/potolki/css/jquery.jscrollpane.css?2341>; rel=preload; as=style, </templates/potolki/system/minprice.css?2341>; rel=preload; as=style, </templates/potolki/system/calculator_ceny_action.css?2341>; rel=preload; as=style, </templates/potolki/widgets/roof_steps/roof_steps.css?2341>; rel=preload; as=style, </templates/potolki/widgets/html/work-new.css?2341>; rel=preload; as=style, </templates/potolki/system/revews.css?2341>; rel=preload; as=style, </templates/potolki/widgets/html/best.css?2341>; rel=preload; as=style, </templates/potolki/widgets/html/form_question.css?2341>; rel=preload; as=style, </templates/potolki/widgets/html/table-price.css?2341>; rel=preload; as=style, </templates/potolki/css/banners.css?2341>; rel=preload; as=style, </templates/potolki/css/magnific-popup.css?2341>; rel=preload; as=style, </templates/potolki/js/jquery.maskedinput.js?2341>; rel=preload; as=script, </templates/potolki/js/jquery.fancybox.js?2341>; rel=preload; as=script, </templates/potolki/js/slick.js?2341>; rel=preload; as=script, </templates/potolki/js/form.js?2341>; rel=preload; as=script, </templates/potolki/js/jscrollpane.min.js?2341>; rel=preload; as=script, </templates/potolki/js/mousewheel.js?2341>; rel=preload; as=script, </templates/potolki/content/ceny_list.js?2341>; rel=preload; as=script, </templates/potolki/js/calculator_ceny_action.js?2341>; rel=preload; as=script, </templates/potolki/widgets/html/city.js?2341>; rel=preload; as=script, </templates/potolki/widgets/html/banner_top.js?2341>; rel=preload; as=script, </templates/potolki/js/jquery.magnific-popup.min.js?2341>; rel=preload; as=script, </templates/potolki/js/core.js?2341>; rel=preload; as=script",
+    "pragma": "no-cache",
+    "server": "nginx/1.18.0",
+    "set-cookie": "PHPSESSID=5e904e063cedecec6ad01ab75b5c9df4; path=/\nicms[device_type]=desktop; expires=Sat, 01-May-2027 14:22:51 GMT; Max-Age=31536000; path=/; domain=potolki-novosib.ru; httponly",
+    "strict-transport-security": "max-age=31536000",
+    "vary": "Accept-Encoding",
+    "x-powered-by": "PHP/5.6.40"
+  },
+  "response_time_ms": 10671.7389,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-01T14:23:01.931992+00:00",
+  "html": "<!DOCTYPE html><html><head><script src=\"https://mc.yandex.ru/metrika-tags/_/tag_ec.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n\t\t<title>Цены на натяжные потолки в Новосибирске с установкой за метр квадратный — \"ИваГрупп\"</title>\n\t\t<meta property=\"og:title\" content=\"Цены на натяжные потолки в Новосибирске с установкой за метр квадратный — \" ИваГрупп\"\"=\"\">\n\t\t<meta property=\"og:site_name\" content=\"&quot;ИваГрупп&quot;\">\n\t\t<meta property=\"og:image\" content=\"/templates/potolki/images/logo.png\">\n\t\t<meta property=\"og:type\" content=\"website\">\n\t\t<meta property=\"og:url\" content=\"\">\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t\t<meta name=\"msvalidate.01\" content=\"4B67FEAFF2B2E9A1BF8F326E8593E0D0\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t\t\n\n\t\t<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/favicons/apple-touch-icon.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicons/favicon-32x32.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/favicons/android-chrome-192x192.png\">\n\t\t<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicons/favicon-16x16.png\">\n\t\t<link rel=\"manifest\" href=\"/favicons/site.webmanifest\">\n\t\t<link rel=\"mask-icon\" href=\"/favicons/safari-pinned-tab.svg\" color=\"#ff6700\">\n\t\t<link rel=\"shortcut icon\" href=\"/favicons/favicon.ico\">\n\t\t<meta name=\"msapplication-TileColor\" content=\"#ff6700\">\n\t\t<meta name=\"msapplication-TileImage\" content=\"/favicons/mstile-144x144.png\">\n\t\t<meta name=\"msapplication-config\" content=\"/favicons/browserconfig.xml\">\n\t\t<meta name=\"theme-color\" content=\"#636363\">\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<!--[if lt IE 9]>\n\t\t\t<script src=\"//html5shiv.googlecode.com/svn/trunk/html5.js\"></script>\n\t\t<![endif]-->\n\t\t\n\t\t<link rel=\"preload\" href=\"/templates/potolki/webfonts/fa-brands-400.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n\t\t<link rel=\"preload\" href=\"/templates/potolki/webfonts/fa-regular-400.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n\t\t<link rel=\"preload\" href=\"/templates/potolki/webfonts/fa-solid-900.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"anonymous\">\n\t\t\n\t\t\n\t\t\t<meta name=\"keywords\" content=\"цены, стоимость, цена за кв метр, натяжные потолки, заказать, установить, скидки\">\n\t<meta name=\"description\" content=\"Цены на натяжные потолки в Новосибирске с установкой. ✅ Установка потолков от 160 руб за кв метр. От покупки натяжных потолков до монтажа натяжного полотна - 1 день. Расчет цены 1м2 потолка по вашим размерам можно сделать в калькуляторе.\">\n\t<meta property=\"og:description\" content=\"Цены на натяжные потолки в Новосибирске с установкой. ✅ Установка потолков от 160 руб за кв метр. От покупки натяжных потолков до монтажа натяжного полотна - 1 день. Расчет цены 1м2 потолка по вашим размерам можно сделать в калькуляторе.\">\n\t<link rel=\"search\" type=\"application/opensearchdescription+xml\" href=\"/search/opensearch\" title=\"Поиск на &quot;ИваГрупп&quot;\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/all.min.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/theme-layout.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/jquery.fancybox.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/slick.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/styles.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/fonts.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/colors.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/theme-gui.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/html/ceny.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/jquery.jscrollpane.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/system/minprice.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/system/calculator_ceny_action.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/roof_steps/roof_steps.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/html/work-new.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/system/revews.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/html/best.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/html/form_question.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/widgets/html/table-price.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/banners.css?2341\">\n\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/templates/potolki/css/magnific-popup.css?2341\">\n\t<script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/jquery.maskedinput.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/jquery.fancybox.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/slick.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/form.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/jscrollpane.min.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/mousewheel.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/content/ceny_list.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/calculator_ceny_action.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/widgets/html/city.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/widgets/html/banner_top.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/jquery.magnific-popup.min.js?2341\"></script>\n\t<script defer=\"\" type=\"text/javascript\" src=\"/templates/potolki/js/core.js?2341\"></script>\n\t\t<script> \n\t\t\tfunction func(){}\n\t\twindow.addEventListener(\"wheel\", func, {passive: true});\n\t\t\n\t\t\tvar phone_mask = true;\n\t\t\tvar lightPrice = 300;\n\t\t\tvar ugolPrice = 250;\n\t\t\tvar urovenPrice = 1500;\n\t\t\tvar podsvetkaPrice = 350;\n\t\t\tvar photoprintPrice = 1000;\n\t\t\tvar lightinsertPrice = 1500;\n\t\t\tvar karnizPrice = 350;\n\t\t\tvar elektrikaPrice = 120;\n\t\t\tvar linesPrice=350;\n\t\t\tvar AlProfile=218; \n\t\t\tvar ustanovka=390; \n\t\t\tvar ustanovkalight=650; \n\t\t\tvar EcoPrice=550; \n\t\t\tvar priceRoof = {\n\t\t\t\t'mat_white': 190,\n\t\t\t\t'mat_color':190,\n\t\t\t\t'satin_white':590,\n\t\t\t\t'satin_color':590,\n\t\t\t\t'glan_color':590,\n\t\t\t\t'glan_white':190,\n\t\t\t\t'tkan_color':2500,\n\t\t\t\t'tkan_white':1250,\n\t\t\t};\n\t\t</script> \n\t\t\n\t<script charset=\"utf-8\" type=\"text/javascript\" src=\"//cdn.callibri.ru/widget_v2.min.js\" name=\"callibriWidget\"></script></head>\n\t<body>\n\t<script type=\"text/javascript\" src=\"/templates/potolki/js/jquery.js?2404203\"></script>\n<div class=\"wrapper\">\n\t\t<div class=\"header\">\n\t<div class=\"wrapper-header\">\n\t\t\t\t\t<div class=\"wrapper__top-line\">\n\t\t\t\t<div class=\"container\">\n\t\t\t\t\t<div class=\"row justify-content-between align-items-center\">\n\t\t\t\t\t\t<div class=\"col-lg-4 col-7 position-static d-flex align-items-center justify-content-sm-start justify-content-between pr-0\">\n\t\t\t\t\t\t\t<div class=\"\">\n<div class=\"top-line__city\">\n\t<a href=\"javascript:void(0)\" class=\"d-flex align-items-center\">\n\t\t<i class=\"fas fa-map-marker-alt\"></i>\n\t\t<span class=\"mx-2\">Новосибирск</span>\n\t\t<i class=\"fas fa-angle-down\"></i>\n\t</a>\n\t<div class=\"top-line__city-open\">\n\t\t<ul>\n\t\t<li><a href=\"/\">Новосибирск</a></li>\n\t\t\t\t\t\n\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-v-kirovskom-raione-novosibirska.html\">Кировский район</a></li>\n\t\t\t\t\t\n\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-v-kalininskom-raione-ekaterinburga.html\">Калининский район</a></li>\n\t\t\t\t\t\n\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-v-pervomaiskom-raione-novosibirska.html\">Первомайский</a></li>\n\t\t\t\t\t\n\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-v-sovetskom-raione-novosibirska.html\">Советский район</a></li>\n\t\t\t\t\t\n\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-v-leninskom-raione-novosibirska.html\">Ленинский район</a></li>\n\t\t\t\t\t\n\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-v-oktjabrskom-raione-novosibirska.html\">Октябрьский район</a></li>\n\t\t\t\t</ul>\n\t</div>\n</div>\n\t</div>\n\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-lg-8 col-5 pl-0\">\n\t\t\t\t\t\t\t<div class=\"\">\n<ul class=\"top-line__links d-flex justify-content-end align-items-center\">\n\t<li class=\"pr-lg-4\"><a href=\"#\" class=\"write-me d-flex align-items-center popUpForm\" data-title=\"Напишите нам сообщение\" data-fields=\"name,phone,comment\" data-button=\"Написать сообщение\" data-bform=\"Мы постараемся ответить Вам в самый короткий срок\"><i class=\"far fa-envelope mr-2\"></i>\n<span>Написать нам</span></a></li>\n\t<li class=\"top-time d-lg-flex d-none align-items-center\"><i class=\"far fa-clock mr-2\"></i>\n<span>ежедневно с 09.00 до 18.00</span></li>\n</ul>\t</div>\n\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t\t<header>\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row align-items-center py-3\">\n\t\t\t\t\t<div class=\"col-3 header-logo\">\n\t\t\t\t\t\t<a href=\"/\">\n\t\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t\t<img alt=\"&quot;ИваГрупп&quot;\" class=\"img-fluid\" src=\"/templates/potolki/images/logo.png\">\n\t\t\t\t\t\t\t</picture>\n\t\t\t\t\t\t</a>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-9 header__info-wrapper pl-0\">\n\t\t\t\t\t\t<div class=\"header__top-info d-flex align-items-center justify-content-between pb-md-3 pb-0\">\n\t\t\t\t\t\t\t<div class=\"d-flex\">\n\t\t\t\t\t\t\t\t<div class=\"header-losung d-xl-block d-none\">\n\t\t\t\t\t\t\t\t\t<div class=\"\">\n<strong>Натяжные потолки <br>от производителя в Новосибирске</strong>\t</div>\n\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"header-losung__adding d-lg-block d-none\">\n\t\t\t\t\t\t\t\t\t<div class=\"\">\n<strong>Выставочный зал</strong><br>г.Новосибирск, ул. Чернышевский спуск, д. 5 \"Б\" <a href=\"/company/kontakty.html\" target=\"__blank\">ещё адреса</a>\t</div>\n\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"\">\n<div class=\"phone-potolki\"><span>Всегда на связи</span><a href=\"tel:+73833181299\" class=\"roistat-phone-number zvonok\">8 (383) 318-12-99</a></div>\t</div>\n\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"header-bottom-button d-md-flex d-none justify-content-end\">\n\t\t\t\t\t\t\t<ul class=\"d-flex align-items-center justify-content-lg-end justify-content-between\">\n\t<li><a href=\"javascript:\" class=\"zamer popUpForm\" data-title=\"Закажите бесплатный выезд замерщика\" data-fields=\"name,phone\" data-bform=\"Заполните форму для вызова замерщика\" data-button=\"Заказать выезд замерщика\">Вызов замерщика</a></li>\n\t<li><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите звонок\" data-fields=\"name,phone\" data-bform=\"И наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать звонок\">Заказать звонок</a></li>\n\t<li><a class=\"raschet_\" href=\"/kalkulyator\">Калькулятор</a></li>\n\t<li class=\"header_question\"><a href=\"javascript:void(0)\" class=\"popUpForm\" data-title=\"Задайте вопрос\" data-fields=\"name,phone,comment\" data-button=\"Отправить\">Задать вопрос</a></li>\n</ul>\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"vissible-header-mobile d-flex justify-content-between\">\n\t\t\t\t<div class=\"phone-hidden-header\"><b class=\"phone_engels zvonok\"><a href=\"tel:+73833181299\" class=\"roistat-phone-number zvonok\">8 (383) 318-12-99</a></b></div>\n\t\t\t\t<div class=\"button-hidden-header\"><a href=\"javascript:\" class=\"_zvonok popUpForm\" data-title=\"Заказать звонок\" data-fields=\"name,phone\" data-button=\"Отправить\">Заказать звонок</a></div>\n\t\t\t</div>\n\t\t</header>\n\t</div>\n\t\t<div class=\"hid-me\">\n\t\t<div class=\"topmenu\">\n\t\t\t<div class=\"container\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-12\"><div class=\"\">\n<nav class=\"navbar navbar-expand-lg p-lg-0\">\n\t<a href=\"javascript:void(0)\" class=\"d-lg-none d-flex align-items-center justify-content-between mobile-menu__link\">\n\t\t<span class=\"title-menu\">Меню</span>\n\t\t<span class=\"menu-btn\">\n\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t<span class=\"icon-bar\"></span>\n\t\t\t<span class=\"icon-bar\"></span>\n\t\t</span>\n\t</a>\n\t<div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">\n\t\t<ul class=\"navbar-nav w-100 menu\">\n\t\t\t<li class=\"navbar-nav flex-fill \">\n\t\t\t\t<a class=\"nav-link\" href=\"/akcii\" target=\"_self\"><span class=\"wrap\">Акции и скидки</span></a>\n\t\t\t</li>\n\t\t\t<li class=\"navbar-nav flex-fill \">\n\t\t\t\t<a class=\"nav-link\" href=\"/ceny\" target=\"_self\"><span class=\"wrap\">Цены на потолки</span></a>\n\t\t\t</li>\n\t\t\t<li class=\"navbar-nav flex-fill\">\n\t\t\t\t<a class=\"nav-link\" href=\"/potolki\" target=\"_self\"><span class=\"wrap\">Каталог</span></a>\n\t\t\t\t<div class=\"catalog__top-menu\">\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li class=\"catalog__top-menu-title\">Фактуры натяжных потолков</li>\n\t\t\t\t\t\t<li><a href=\"/potolki/matovye-natjazhnye-potolki.html\">Матовые натяжные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/gljancevye-natjazhnye-potolki.html\">Глянцевые натяжные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/satinovye-natjazhnye-potolki.html\">Сатиновые натяжные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/tkanevye-natjazhnye-potolki.html\">Тканевые натяжные потолки</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li class=\"catalog__top-menu-title\">Помещения</li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-zal.html\">В зал</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-na-kuhnyu.html\">На кухню</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-gostinnuyu.html\">В гостиную</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-detskuyu.html\">В детскую комнату</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-spalnyu.html\">В спальню</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-koridor.html\">В коридор</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-vannuyu-komnatu.html\">В ванную комнату и санузел</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-na-balkon.html\">На балкон</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li class=\"catalog__top-menu-title\">Технологии натяжных потолков</li>\n\t\t\t\t\t\t<li><a href=\"/potolki/tenevye-natjazhnye-potolki-eurokraab.html\">Теневые потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-s-trekovymi-svetilnikami.html\">Трековые светильники</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/protivopozharnye-natjazhnye-potolki-teqtum.html\">Противопожарные Teqtum</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-s-nishami-slott.html\">Ниши SLOTT и демпферные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/besschelevye-natjazhnye-potolki-kraab.html\">Бесщелевые потолки KRAAB</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/dvuhurovnevye-natjazhnye-potolki.html\">Двухуровневые потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/svetovye-linii.html\">Световые линии</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/parjaschie-natjazhnye-potolki.html\">Парящие потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/potolki-zvezdnoe-nebo.html\">Потолок \"Звездное Небо\"</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/3d-natjazhnye-potolki.html\">3D натяжные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnoi-potolok-v-vide-neba.html\">Небо с облаками</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/mnogourovnevye-natjazhnye-potolki.html\">Многоуровневые потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-s-fotopechatyu.html\">Потолки с фотопечатью</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/natjazhnye-potolki-s-podsvetkoi.html\">Потолки с подсветкой</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/reznye-potolki-apply.html\">Резные потолки Apply</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/cvetnye-natjazhnye-potolki.html\">Цветные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/besshovnye-natjazhnye-potolki.html\">Бесшовные потолки</a></li>\n\t\t\t\t\t\t<li><a href=\"/potolki/nisha-pod-karniz.html\">Ниша под карниз</a></li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</li>\n\t\t\t<li class=\"navbar-nav flex-fill \">\n\t\t\t\t<a class=\"nav-link\" href=\"/rphotos\" target=\"_self\"><span class=\"wrap\">Наши работы</span></a>\n\t\t\t</li>\n\t\t\t<li class=\"navbar-nav flex-fill \">\n\t\t\t\t<a class=\"nav-link\" href=\"/otzyvy\" target=\"_self\"><span class=\"wrap\">Видео и отзывы</span></a>\n\t\t\t</li>\n\t\t\t<li class=\"navbar-nav flex-fill \">\n\t\t\t\t<a class=\"nav-link\" href=\"/company\" target=\"_self\"><span class=\"wrap\">О компании</span></a>\n\t\t\t</li>\n\t\t\t<li class=\"navbar-nav flex-fill \">\n\t\t\t\t<a class=\"nav-link\" href=\"/company/kontakty.html\" target=\"_self\"><span class=\"wrap\">Контакты</span></a>\n\t\t\t</li>\n\t\t</ul>\n\t</div>\n<select><option value=\"/\"></option></select></nav>\n\n<script>$(function(){$(\".mobile-menu__link\").click(function () {$(this).toggleClass(\"open-menu\");$(this).parent().find(\".navbar-collapse\").slideToggle();});})</script>\n\n\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t</div>\n\n</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t\t</div>\n\t<div class=\"content-body\">\n\t<div class=\"position-relative\">\n<div class=\"top wrapper__banner-akcii\">\n\t<div class=\"container\">\n\t\t<div class=\"row align-items-center\">\n\t\t\t<div class=\"col-lg-6 py-lg-0 py-sm-4 pt-3 pb-1 text-lg-left text-center\">\n\t\t\t\t<div class=\"heading-banner\"><h1>Цены на натяжные потолки с установкой</h1></div>\n<div class=\"d-sm-block d-none\">\n<p>\n\tЧтобы узнать предварительную стоимость натяжных потолков, стоит открыть калькулятор онлайн. Внесите известные данные в графы, получите результат.\n\nОн будет примерным, так как более точную информацию даст только наш специалист после замера. Консультация на объекте займет минимальное время.\n\n</p>\n</div>\t\t\t</div>\n\t\t\t<div class=\"col-xl-5 offset-xl-1 col-lg-6 pb-lg-0 pb-3\">\n\t\t\t\t<div class=\"form-wrp\">\n\t\t\t\t\t<div class=\"week-form\">\n\t\t\t\t\t\t<form class=\"normalForm disabled_phone\" data-title=\"Заказ потолка по специальной цене по Пятницам 390 М2\">\n\t\t\t\t\t\t<div class=\"week-form__title\"> По <span>Пятницам</span> у нас <br>натяжные потолки</div>\n\t\t\t\t\t\t<div class=\"week-form__price\">\n\t\t\t\t\t\t\tВсего за  <span>390 руб./м²</span> *\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"week-form__square-input d-flex align-items-center justify-content-lg-end justify-content-center\">\n\t\t\t\t\t\t\t<div class=\"square-input__text\">Площадь Вашего потолка</div> \n\t\t\t\t\t\t\t<input type=\"text\" value=\"9\" name=\"square\" data-price=\"390\" class=\"price_week\"> \n\t\t\t\t\t\t\t<div class=\"square-input__type\">м<sup>2</sup></div> \n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"week-form__price-today text-lg-right text-center\">\n\t\t\t\t\t\t\tВаша цена сегодня <span><span class=\"itog\">3 510</span> <small>руб.</small></span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"form-wrapper__banner\">\n\t\t\t\t\t\t\t<div class=\"d-flex pt-3 mypres_form-fields\">\n\t\t\t\t\t\t\t\t<input type=\"hidden\" name=\"price\" value=\"390 руб./м²\">\n\t\t\t\t\t\t\t\t<input type=\"text\" name=\"phone\" id=\"top-phone\" placeholder=\"Ваш телефон\" class=\"disabled_phone\" im-insert=\"true\">\n\t\t\t\t\t\t\t\t<button type=\"submit\">Заказать по акции</button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<label class=\"form-agreement-yes checkbox-week-label d-inline-block\">\n\t\t\t\t\t\t\t\t<input class=\"checkbox-week\" name=\"is_allowed_personal\" checked=\"checked\" value=\"1\" type=\"checkbox\">\n\t\t\t\t\t\t\t\t<span class=\"checkbox-week-custom\"></span>\n\t\t\t\t\t\t\t\t<span class=\"checkbox-week-label-in\">Согласен с <a href=\"/pages/privacy.html\" target=\"_blank\"> политикой конфиденциальности</a></span>\n\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</form>\n\t\t\t\t\t\t<div class=\"form-text\">* Профиль и установка считаются отдельно</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<picture>\n\t\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/templates/potolki/images//gerl.webp\" class=\"lazyloaded\" srcset=\"/templates/potolki/images//gerl.webp\">\n\t\t\t\t\t\t\t<img data-src=\"/templates/potolki/images/png/gerl.png\" class=\"gerl-form lazyload lazyloaded\" loading=\"lazy\" src=\"/templates/potolki/images/png/gerl.png\">\n\t\t\t\t\t\t</picture>\n\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\t\t\t\t\t\t\t\t<a class=\"main-next__arrow\" href=\"#price-trhee\"><i class=\"fas fa-angle-double-down\"></i></a>\n\t\t\t</div>\n\n\t\t\t<div class=\"container\">\n\t\t\t<ul class=\"breadcrumb d-flex align-items-center justify-content-md-start justify-content-center\">\n    <li class=\"home\">\n        <a href=\"/\">Натяжные потолки</a>\n    </li>\n            <li class=\"sep\">»</li>\n                                <li>\n                                    <span>Цены на натяжные потолки за 1 м²</span>\n                            </li>\n                                    </ul>\t\t</div>\n\t\t\t<div class=\"content-wrapper\">\n\t\t<div class=\"container\">\n\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"col-12\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<article>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<h2>Цены на натяжные потолки за 1 м²</h2>\n\n\n\n\n<div class=\"main-module position-relative pt-0\" id=\"price-trhee\">\n\t<div class=\"main-module__body\">\n\t\t<div class=\"row wrp-tarif\">\n\t\t\t<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t<div class=\"price__block text-center\">\n\t\t<div class=\"title-tarif d-flex align-items-center justify-content-center\">Матовый \"MSD Classic\" <br> белый</div>\n\t\t<div class=\"price-tarif big-price d-flex align-items-center justify-content-center\">490 <small>руб/м²</small></div>\n\t</div>\n</div>\n\n<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t<div class=\"price__block text-center\">\n\t\t<div class=\"title-tarif d-flex align-items-center justify-content-center\">Сатиновый \"MSD Classic\" <br> белый</div>\n\t\t<div class=\"price-tarif big-price d-flex align-items-center justify-content-center\">490 <small>руб/м²</small></div>\n\t</div>\n</div>\n\n<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t<div class=\"price__block text-center\">\n\t\t<div class=\"title-tarif d-flex align-items-center justify-content-center\">Глянцевый \"MSD Classic\" <br> белый</div>\n\t\t<div class=\"price-tarif big-price d-flex align-items-center justify-content-center\">490 <small>руб/м²</small></div>\n\t</div>\n</div>\n\n<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t<div class=\"price__block text-center\">\n\t\t<div class=\"title-tarif d-flex align-items-center justify-content-center\">Тканевый \"Descor\" <br> белый</div>\n\t\t<div class=\"price-tarif big-price d-flex align-items-center justify-content-center\">1950 <small>руб/м²</small></div>\n\t</div>\n</div>\n\n\t\t</div>\n\t</div>\n\t<a class=\"main-next__arrow\" href=\"#calculate-block\"><i class=\"fas fa-angle-double-down\"></i></a>\n</div>\n<div class=\"wrapper__calculator gray-bg-dark main-module position-relative no-title-padding  full-width\" id=\"calculate-block\">\n\t<div class=\"wrapper__calculator-in\">\n\t\t<div class=\"new__title__rasch text-center\">\n\t\t\t<div class=\"h1 mb-sm-0\">Расчет стоимости натяжного потолка</div>\n\t\t\tЗаполните простую форму для расчета стоимости натяжных потолков\n\t\t</div>\n\t\t<form id=\"calculator2\">\n\t\t\t<div class=\"wrp-calculator__new\">\n\t\t\t\t<div class=\"calculator__title\">Укажите параметры потолка</div>\n\t\t\t\t<div class=\"row mx-sm-0\">\n\t\t\t\t\t<div class=\"col-lg-6 col-12 align-self-start right-calc-block\">\n\t\t\t\t\t\t<div class=\"d-flex align-items-center mb-sm-2 mb-3 flex-wrap\">\n\t\t\t\t\t\t\t<div class=\"calc-field__title col-lg-6 col-md-4 col-sm-6 col-12\">Выберите материал</div>\n\t\t\t\t\t\t\t<div class=\"calc-field__input col-lg-6 col-md-8 col-sm-6 col-12 pr-sm-0\">\n\t\t\t\t\t\t\t\t<select name=\"typewall\" id=\"typewall\" class=\"form-control\">\n\t\t\t\t\t\t\t\t\t<option>Выберите материал</option>\n\t\t\t\t\t\t\t\t\t<option selected=\"\" value=\"mat\">Матовый</option>\n\t\t\t\t\t\t\t\t\t<option value=\"satin\">Сатиновый</option>\n\t\t\t\t\t\t\t\t\t<option value=\"glan\">Глянцевый</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"d-flex align-items-center my-sm-2 my-3 flex-wrap\">\n\t\t\t\t\t\t\t<div class=\"calc-field__title col-lg-6 col-md-4 col-sm-6 col-12\">Выберите цвет</div>\n\t\t\t\t\t\t\t<div class=\"calc-field__input col-lg-6 col-md-8 col-sm-6 col-12 pr-sm-0\">\n\t\t\t\t\t\t\t\t <select name=\"color\" id=\"color\" class=\"form-control\">\n\t\t\t\t\t\t\t\t\t<option>Выберите цвет</option>\n\t\t\t\t\t\t\t\t\t<option selected=\"\" value=\"white\">Белый</option>\n\t\t\t\t\t\t\t\t\t<option value=\"color\">Цветной</option>\n\t\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"d-flex align-items-center my-sm-2 my-3 flex-wrap\">\n\t\t\t\t\t\t\t<div class=\"calc-field__title col-lg-6 col-md-4 col-sm-6 col-12\">Площадь помещения</div>\n\t\t\t\t\t\t\t<div class=\"calc-field__input d-flex field-with-unit col-lg-6 col-md-8 col-sm-6 col-12 align-items-center pr-sm-0\">\n\t\t\t\t\t\t\t\t<input class=\"form-control\" id=\"square\" name=\"square\" value=\"10\" type=\"text\" onkeyup=\"return proverka(this);\" onchange=\"return proverka(this);\">\n\t\t\t\t\t\t\t\t<span class=\"metr__calc\">м<sup>2</sup></span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"d-flex align-items-center my-sm-2 my-3 flex-wrap\">\n\t\t\t\t\t\t\t<div class=\"calc-field__title col-lg-6 col-md-4 col-sm-6 col-12\">Количество люстр</div>\n\t\t\t\t\t\t\t<div class=\"calc-field__input d-flex field-with-unit col-lg-6 col-md-8 col-sm-6 col-12 align-items-center pr-sm-0\">\n\t\t\t\t\t\t\t\t<input class=\"form-control\" id=\"light\" name=\"light\" value=\"0\" type=\"text\" onkeyup=\"return proverka(this);\" onchange=\"return proverka(this);\">\n\t\t\t\t\t\t\t\t<span class=\"metr__calc\">шт.</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"d-flex align-items-center my-sm-2 my-3 flex-wrap\">\n\t\t\t\t\t\t\t<div class=\"calc-field__title col-lg-6 col-md-4 col-sm-6 col-12\">Нужна электропроводка</div>\n\t\t\t\t\t\t\t<div class=\"calc-field__input d-flex field-radio col-lg-6 col-md-8 col-sm-6 col-12 align-items-center pr-sm-0 justify-content-sm-start justify-content-center\">\n\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" name=\"elektrika\" value=\"Да\">\n\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Да</span>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" name=\"elektrika\" value=\"Нет\">\n\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Нет</span>\n\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"d-flex align-items-center my-sm-2 my-3 flex-wrap\">\n\t\t\t\t\t\t\t<div class=\"calc-field__title col-lg-6 col-md-4 col-sm-6 col-12\">Установить карнизы для штор</div>\n\t\t\t\t\t\t\t<div class=\"calc-field__input d-flex align-items-center field-with-unit col-lg-6 col-md-8 col-sm-6 col-12 pr-sm-0\">\n\t\t\t\t\t\t\t\t<input class=\"form-control\" id=\"karniz\" name=\"karniz\" type=\"text\" onkeyup=\"return proverka(this);\" onchange=\"return proverka(this);\">\n\t\t\t\t\t\t\t\t<span class=\"metr__calc\">пог. м</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"field-button col-12 mt-3 pr-lg-0 d-flex justify-content-lg-end justify-content-center\">\n\t\t\t\t\t\t\t<a href=\"javascript:\" class=\"getRaschet2 button-general\"><span>Рассчитать</span></a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-lg-6 col-12 align-self-end right-calc-image\">\n\t\t\t\t\t\t<img alt=\"Расчет стоимости натяжного потолка\" class=\"to_hide img-fluid calc-image d-lg-block d-none mx-auto\" src=\"/templates/potolki/images/png/man.png\">\n\t\t\t\t\t\t\t\t\t\t\t\t<div id=\"raschet_html\" style=\"display:none\">\n\t\t\t\t\t\t\t<div id=\"informl\" class=\"table-price\"> \n\t\t\t\t\t\t\t\t<table>\n\t\t\t\t\t\t\t\t\t<thead>\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<th>Наименование</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Цена</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Кол-во</th>\n\t\t\t\t\t\t\t\t\t\t\t<th>Сумма</th>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</thead>\n\t\t\t\t\t\t\t\t\t<tbody></tbody>\n\t\t\t\t\t\t\t\t\t<tfoot>\n\t\t\t\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t\t\t\t<td class=\"text-left\" colspan=\"2\">Итого стоимость:</td>\n\t\t\t\t\t\t\t\t\t\t\t<td colspan=\"2\" class=\"text-right\"><nobr><b class=\"itog_calk\"> </b> руб.</nobr></td>\n\t\t\t\t\t\t\t\t\t\t</tr>\n\t\t\t\t\t\t\t\t\t</tfoot>\n\t\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<input type=\"hidden\" name=\"message\" id=\"lcomment\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"clearfix\">\n\t\t\t\t<div class=\"wrapper-gray-light-step \">\n\t\t\t\t\t<div class=\"wrapper__akcii\">\n\t\t\t\t\t\t<div class=\"wrapper__akcii__list\">\n\t\t\t\t\t\t\t<div class=\"white-popup mfp-hide hide1\">\n\t\t\t\t\t\t\t\t<div class=\"mfp-popup\">Выберите подходящую для Вас акцию!</div>\n\t\t\t\t\t\t\t\t<div class=\"list-action\">\n\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" data-price=\"5\" name=\"akcii\" value=\"Скидка при заказе сайта 5\" checked=\"\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Скидка при заказе сайта <strong>5%</strong></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" data-price=\"5\" name=\"akcii\" value=\"Скидка пенсионерам 5\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Скидка пенсионерам <strong>5%</strong></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" data-price=\"5\" name=\"akcii\" value=\"Скидка новоселам 5\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Скидка новоселам <strong>5%</strong></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" data-price=\"5\" name=\"akcii\" value=\"Скидка за договор в день замера 5\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Скидка за договор в день замера <strong>5%</strong></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t\t<label class=\"akcii-block\">\n\t\t\t\t\t\t\t\t\t\t\t\t<input class=\"checkbox-akcii\" type=\"radio\" data-price=\"5\" name=\"akcii\" value=\"Скидка от заказа более 40 кв.м 5\">\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"checkbox-customakcii\"></span>\n\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"labelakcii\">Скидка от заказа более 40 кв.м <strong>5%</strong></span>\n\t\t\t\t\t\t\t\t\t\t\t</label>\n\t\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"text-center pt-3 button-action\">\n\t\t\t\t\t\t\t\t\t<a href=\"javascript:\" class=\"close_action_one mfp-popup button-general\"><span>Выбрать акцию &gt;</span></a>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div> \n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\t\n\t\t\t\t</div>\t\n\t\t\t\t<div class=\"clearfix\">\n\t\t\t\t\t<div id=\"pp_pform\" class=\"form-calc-ceny \">\n\t\t\t\t\t\t<div class=\"row white-popup_\">\n\t\t\t\t\t\t\t<div class=\"mfp-popup w-100\">Отправляются параметры расчета</div>\n\t\t\t\t\t\t\t<div class=\"wrapper__download-line w-100\">\n\t\t\t\t\t\t\t\t<div class=\"wrapper__download-line__block\">\n\t\t\t\t\t\t\t\t\t<div class=\"download-line__block__animation\">\n\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<ul class=\"mfp-popup__list\">\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t<div class=\"mfp-popup__title-list\">Вы выбрали акцию:</div>\n\t\t\t\t\t\t\t\t\t<div class=\"mfp-popup__text-list\"><span class=\"mfp-popup\"><span class=\"selected_action_step\"></span>%</span></div>\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t<div class=\"mfp-popup__title-list\">Для получения расчета стоимости с учетом акции</div>\n\t\t\t\t\t\t\t\t\t<div class=\"mfp-popup__text-list mfp-popup_red\">Оставьте пожалуйста свой контакт</div>\n\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t<div class=\"wrapper__akcii__form w-100\">\n\t\t\t\t\t\t\t\t<div class=\"wrapper__akcii-phone wrapper__akcii__form__title\">\n\t\t\t\t\t\t\t\t\t<div>Оставьте свой телефон для получения расчета стоимости с учетом акции <span class=\"changed-action\"><span class=\"selected_action_step\"></span>%</span></div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"row wrap-form-bottom\">\n\t\t\t\t\t\t\t\t\t<div class=\"col-sm-6 col-12 px-sm-0 pb-sm-0 pb-2\">\n\t\t\t\t\t\t\t\t\t\t<input placeholder=\"Ваш номер телефона\" class=\"form-control sender\" id=\"viber\" name=\"phone\" type=\"text\" im-insert=\"true\">\n\t\t\t\t\t\t\t\t\t\t<input style=\"display:none\" placeholder=\"Укажите Ваш email\" class=\"form-control sender\" id=\"email\" name=\"email\" type=\"text\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"hidden\">\n\t\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"toSendCalck\" value=\"email\" class=\"setSender \" id=\"emailr\"><label for=\"emailr\">Отправить на e-emal</label>\n\t\t\t\t\t\t\t\t\t\t<input type=\"radio\" name=\"toSendCalck\" value=\"viber\" class=\"setSender \" checked=\"\" id=\"viberr\"><label for=\"viberr\">Отправить Viber</label>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t<div class=\"col-sm-6 col-12 px-sm-0\">\n\t\t\t\t\t\t\t\t\t\t<a href=\"javascript:\" class=\"sendCalk button-general\"><span>Заказать по акции</span></a>\n\t\t\t\t\t\t\t\t\t\t<a href=\"javascript:\" class=\"text-center btn-block cancelCalk hidden\">Отмена</a>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"info-popup-form\">Наш менеджер свяжется с Вами после проведения расчета стоимости в течении 15 минут.</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form> \n\t</div>\n\t<a class=\"main-next__arrow\" href=\"#rev\"><i class=\"fas fa-angle-double-down\"></i></a>\n<div class=\"yehoo__bottom-info\">\n\t\t<sup>*</sup> Уважаемые клиенты, просим Вас обратить внимание, что цены меняются ежедневно не только в нашей компании, но и во всех регионах. Уточняйте актуальную стоимость у технологов на замере.\n\t</div>\n</div>\n\n<!-- <div class=\"clearfix row\">\n\t<div class=\"table-list\">\n\t\t<ul>\n\t\t\t<li><a href=\"javascript:void(0)\" class=\"red_other active\">Простой</a></li>\n\t\t\t<li><a href=\"javascript:void(0)\" class=\"red_other \">с подсветкой</a></li>\n\t\t\t<li><a href=\"javascript:void(0)\" class=\"red_other \">с нишевой подсветкой</a></li>\n\t\t<ul>\n\t</div>\n</div> -->\n<div class=\"main-module position-relative gray-bg full-width\" id=\"ceny\">\n\t\t\t<div class=\"main-module__title visible-content\">\n\t\t\t<span class=\"main-title__fst\">Примеры расчета цен вместе с работой</span>\n\t\t</div>\n\t\t<div class=\"ceny-planshet d-lg-block d-flex flex-wrap justify-content-center visible-content\">\n\t\t\t\t\t\t\t<div class=\"ceiling-wrapper \">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"ceiling-title d-lg-none col-12 text-center\">Натяжные потолки в гостинную с полотном KM2</div>\n\t\t\t\t<div class=\"ceiling-image col-lg-4 col-12 pr-lg-0 pb-lg-0 pb-3\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"zoom-block zoom-center d-block\" href=\"/upload/000/u6/ec/b7/0d38b949.jpg\" data-fancybox=\"\">\n\t\t\t\t\t<picture>\n\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/upload/000/u6/36/3f/8e705fcf.webp\" srcset=\"/upload/000/u6/36/3f/8e705fcf.webp\" class=\"lazyloaded\">\n\t\t\t\t\t\t<img alt=\"\" class=\"img-fluid lazyload lazyloaded\" data-src=\"/upload/000/u6/36/3f/8e705fcf.jpg\" loading=\"lazy\" src=\"/upload/000/u6/36/3f/8e705fcf.jpg\">\n\t\t\t\t\t</picture>\n\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-work col-lg-5 col-sm-6\">\n\t\t\t\t\t<div class=\"ceiling-work__scroll\" style=\"overflow: hidden; padding: 0px; width: 451px;\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"jspContainer\" style=\"width: 451px; height: 245px;\"><div class=\"jspPane\" style=\"padding: 0px; top: 0px; left: 0px; width: 451px;\"><div class=\"ceiling-title d-lg-block d-none\">Натяжные потолки в гостинную с полотном KM2</div><div class=\"ceiling-list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"div-scroll\">\n\t\t\t\t\t\t\t\t<ul>\n<li class=\"d-flex justify-content-between\"><span>Профиль стеновой алюминиевый</span> <span>25 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка точечных светильников</span> <span>12 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Полотно белое матовое противопожарное Teqtum KM2</span> <span>24 м²</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка полотна</span> <span>24 м²</span></li>\n</ul>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-prices-buttons col-lg-3 col-sm-6 pl-lg-0\">\n\t\t\t\t\t<div class=\"ceiling-wrap-price d-flex flex-column justify-content-center\">\n\t\t\t\t\t\t<div class=\"ceiling-price\">\n\t\t\t\t\t\t\t19 200 <span>руб.</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>Цена актуальна до 03.05.2026</p>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Цена с установкой </li>\n\t\t\t\t\t\t\t<li>Бесплатный сервис</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<button class=\"raschet button-general small-button px-0 popUpForm\" data-title=\"Закажите точный расчёт стоимости потолка\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-fields=\"name,phone\" data-button=\"Заказать расчёт\">Заказать расчёт</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t<div class=\"ceiling-wrapper \">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"ceiling-title d-lg-none col-12 text-center\">Белый матовый потолок в стиле LOFT</div>\n\t\t\t\t<div class=\"ceiling-image col-lg-4 col-12 pr-lg-0 pb-lg-0 pb-3\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"zoom-block zoom-center d-block\" href=\"/upload/000/u6/99/fa/e31764f0.jpg\" data-fancybox=\"\">\n\t\t\t\t\t<picture>\n\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/upload/000/u6/c4/cd/9a45d3be.webp\" srcset=\"/upload/000/u6/c4/cd/9a45d3be.webp\" class=\"lazyloaded\">\n\t\t\t\t\t\t<img alt=\"\" class=\"img-fluid lazyload lazyloaded\" data-src=\"/upload/000/u6/c4/cd/9a45d3be.jpg\" loading=\"lazy\" src=\"/upload/000/u6/c4/cd/9a45d3be.jpg\">\n\t\t\t\t\t</picture>\n\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-work col-lg-5 col-sm-6\">\n\t\t\t\t\t<div class=\"ceiling-work__scroll\" style=\"overflow: hidden; padding: 0px; width: 451px;\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"jspContainer\" style=\"width: 451px; height: 245px;\"><div class=\"jspPane\" style=\"padding: 0px; top: 0px; left: 0px; width: 451px;\"><div class=\"ceiling-title d-lg-block d-none\">Белый матовый потолок в стиле LOFT</div><div class=\"ceiling-list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"div-scroll\">\n\t\t\t\t\t\t\t\t<ul>\n<li class=\"d-flex justify-content-between\"><span>Профиль стеновой алюминиевый</span> <span>18 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка точечных светильников</span> <span>2 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка накладных светильников</span> <span>2 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Полотно белое матовое MSD Premium</span> <span>20 м²</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка полотна</span> <span>20 м²</span></li>\n</ul>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-prices-buttons col-lg-3 col-sm-6 pl-lg-0\">\n\t\t\t\t\t<div class=\"ceiling-wrap-price d-flex flex-column justify-content-center\">\n\t\t\t\t\t\t<div class=\"ceiling-price\">\n\t\t\t\t\t\t\t14 800 <span>руб.</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>Цена актуальна до 03.05.2026</p>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Цена с установкой </li>\n\t\t\t\t\t\t\t<li>Бесплатный сервис</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<button class=\"raschet button-general small-button px-0 popUpForm\" data-title=\"Закажите точный расчёт стоимости потолка\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-fields=\"name,phone\" data-button=\"Заказать расчёт\">Заказать расчёт</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t<div class=\"ceiling-wrapper \">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"ceiling-title d-lg-none col-12 text-center\">Черный матовый потолок в стиле LOFT</div>\n\t\t\t\t<div class=\"ceiling-image col-lg-4 col-12 pr-lg-0 pb-lg-0 pb-3\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"zoom-block zoom-center d-block\" href=\"/upload/000/u6/95/89/24473229.jpg\" data-fancybox=\"\">\n\t\t\t\t\t<picture>\n\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/upload/000/u6/b7/09/fed1e880.webp\" srcset=\"/upload/000/u6/b7/09/fed1e880.webp\" class=\"lazyloaded\">\n\t\t\t\t\t\t<img alt=\"\" class=\"img-fluid lazyload lazyloaded\" data-src=\"/upload/000/u6/b7/09/fed1e880.jpg\" loading=\"lazy\" src=\"/upload/000/u6/b7/09/fed1e880.jpg\">\n\t\t\t\t\t</picture>\n\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-work col-lg-5 col-sm-6\">\n\t\t\t\t\t<div class=\"ceiling-work__scroll\" style=\"overflow: hidden; padding: 0px; width: 451px;\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"jspContainer\" style=\"width: 451px; height: 245px;\"><div class=\"jspPane\" style=\"padding: 0px; top: 0px; left: 0px; width: 451px;\"><div class=\"ceiling-title d-lg-block d-none\">Черный матовый потолок в стиле LOFT</div><div class=\"ceiling-list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"div-scroll\">\n\t\t\t\t\t\t\t\t<ul>\n<li class=\"d-flex justify-content-between\"><span>Профиль стеновой алюминиевый</span> <span>20 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка точечных светильников</span> <span>10 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка рейлинга</span> <span>4,5 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Полотно черное (347) матовое MSD Premium</span> <span>24 м²</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка полотна</span> <span>24 м²</span></li>\n</ul>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-prices-buttons col-lg-3 col-sm-6 pl-lg-0\">\n\t\t\t\t\t<div class=\"ceiling-wrap-price d-flex flex-column justify-content-center\">\n\t\t\t\t\t\t<div class=\"ceiling-price\">\n\t\t\t\t\t\t\t20 700 <span>руб.</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>Цена актуальна до 03.05.2026</p>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Цена с установкой </li>\n\t\t\t\t\t\t\t<li>Бесплатный сервис</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<button class=\"raschet button-general small-button px-0 popUpForm\" data-title=\"Закажите точный расчёт стоимости потолка\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-fields=\"name,phone\" data-button=\"Заказать расчёт\">Заказать расчёт</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t<div class=\"ceiling-wrapper \">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"ceiling-title d-lg-none col-12 text-center\">Ниша SLOTT с белым рассеивателем на натяжном потолке</div>\n\t\t\t\t<div class=\"ceiling-image col-lg-4 col-12 pr-lg-0 pb-lg-0 pb-3\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"zoom-block zoom-center d-block\" href=\"/upload/000/u6/e0/a1/d694b7f2.jpg\" data-fancybox=\"\">\n\t\t\t\t\t<picture>\n\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/upload/000/u6/bb/01/f73d1120.webp\" srcset=\"/upload/000/u6/bb/01/f73d1120.webp\" class=\"lazyloaded\">\n\t\t\t\t\t\t<img alt=\"\" class=\"img-fluid lazyload lazyloaded\" data-src=\"/upload/000/u6/bb/01/f73d1120.jpg\" loading=\"lazy\" src=\"/upload/000/u6/bb/01/f73d1120.jpg\">\n\t\t\t\t\t</picture>\n\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-work col-lg-5 col-sm-6\">\n\t\t\t\t\t<div class=\"ceiling-work__scroll jspScrollable\" tabindex=\"0\" style=\"overflow: hidden; padding: 0px; width: 451px;\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"jspContainer\" style=\"width: 451px; height: 245px;\"><div class=\"jspPane\" style=\"padding: 0px; width: 461px; top: 0px;\"><div class=\"ceiling-title d-lg-block d-none\">Ниша SLOTT с белым рассеивателем на натяжном потолке</div><div class=\"ceiling-list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"div-scroll\">\n\t\t\t\t\t\t\t\t<ul>\n<li class=\"d-flex justify-content-between\"><span>Профиль стеновой теневой</span> <span>16 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Обработка угла на теневом профиле</span> <span>6 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Профиль нишевая подсветка SLOTT</span> <span>3 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка накладных светильников</span> <span>3 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Лента светодиодная 9,6 ВТ</span> <span>3 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка ленты</span> <span>3 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Блок 40 ВТ</span> <span>2 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Полотно белое матовое MSD Classic</span> <span>14 м²</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка полотна</span> <span>14 м²</span></li>\n</ul>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"jspVerticalBar\"><div class=\"jspCap jspCapTop\"></div><div class=\"jspTrack\" style=\"height: 245px;\"><div class=\"jspDrag\" style=\"height: 165px;\"><div class=\"jspDragTop\"></div><div class=\"jspDragBottom\"></div></div></div><div class=\"jspCap jspCapBottom\"></div></div></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-prices-buttons col-lg-3 col-sm-6 pl-lg-0\">\n\t\t\t\t\t<div class=\"ceiling-wrap-price d-flex flex-column justify-content-center\">\n\t\t\t\t\t\t<div class=\"ceiling-price\">\n\t\t\t\t\t\t\t22 450 <span>руб.</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>Цена актуальна до 03.05.2026</p>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Цена с установкой </li>\n\t\t\t\t\t\t\t<li>Бесплатный сервис</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<button class=\"raschet button-general small-button px-0 popUpForm\" data-title=\"Закажите точный расчёт стоимости потолка\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-fields=\"name,phone\" data-button=\"Заказать расчёт\">Заказать расчёт</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t<div class=\"ceiling-wrapper \">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"ceiling-title d-lg-none col-12 text-center\">Цена матового потолка 16 м² с бесщелевым профилем и люстрой</div>\n\t\t\t\t<div class=\"ceiling-image col-lg-4 col-12 pr-lg-0 pb-lg-0 pb-3\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"zoom-block zoom-center d-block\" href=\"/upload/000/u6/c2/da/dac9c0b2.jpeg\" data-fancybox=\"\">\n\t\t\t\t\t<picture>\n\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/upload/000/u6/8e/c0/27da3799.webp\" srcset=\"/upload/000/u6/8e/c0/27da3799.webp\" class=\"lazyloaded\">\n\t\t\t\t\t\t<img alt=\"\" class=\"img-fluid lazyload lazyloaded\" data-src=\"/upload/000/u6/8e/c0/27da3799.jpeg\" loading=\"lazy\" src=\"/upload/000/u6/8e/c0/27da3799.jpeg\">\n\t\t\t\t\t</picture>\n\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-work col-lg-5 col-sm-6\">\n\t\t\t\t\t<div class=\"ceiling-work__scroll\" style=\"overflow: hidden; padding: 0px; width: 451px;\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"jspContainer\" style=\"width: 451px; height: 245px;\"><div class=\"jspPane\" style=\"padding: 0px; top: 0px; left: 0px; width: 451px;\"><div class=\"ceiling-title d-lg-block d-none\">Цена матового потолка 16 м² с бесщелевым профилем и люстрой</div><div class=\"ceiling-list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"div-scroll\">\n\t\t\t\t\t\t\t\t<ul>\n<li class=\"d-flex justify-content-between\"><span>Профиль стеновой бесщелевой KRAAB</span> <span>16 м.п.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Обработка угла на бесщелевом профиле</span> <span>4 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка накладных светильников (люстра)</span> <span>1 шт.</span></li>\n<li class=\"d-flex justify-content-between\"><span>Полотно матовое MSD Premium</span> <span>16 м²</span></li>\n<li class=\"d-flex justify-content-between\"><span>Установка полотна</span> <span>16 м²</span></li>\n</ul>\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div></div></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-prices-buttons col-lg-3 col-sm-6 pl-lg-0\">\n\t\t\t\t\t<div class=\"ceiling-wrap-price d-flex flex-column justify-content-center\">\n\t\t\t\t\t\t<div class=\"ceiling-price\">\n\t\t\t\t\t\t\t41 500 <span>руб.</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>Цена актуальна до 03.05.2026</p>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Цена с установкой </li>\n\t\t\t\t\t\t\t<li>Бесплатный сервис</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<button class=\"raschet button-general small-button px-0 popUpForm\" data-title=\"Закажите точный расчёт стоимости потолка\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-fields=\"name,phone\" data-button=\"Заказать расчёт\">Заказать расчёт</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t\t\t\t<div class=\"ceiling-wrapper \">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"ceiling-title d-lg-none col-12 text-center\">Стоимость двухуровневого потолка для кухни 12 м²</div>\n\t\t\t\t<div class=\"ceiling-image col-lg-4 col-12 pr-lg-0 pb-lg-0 pb-3\">\n\t\t\t\t\t\t\t\t\t\t<a class=\"zoom-block zoom-center d-block\" href=\"/upload/000/u1/f1/5f/3822f296.jpg\" data-fancybox=\"\">\n\t\t\t\t\t<picture>\n\t\t\t\t\t\t<source type=\"image/webp\" data-srcset=\"/upload/000/u1/76/9c/68edc0c6.webp\" srcset=\"/upload/000/u1/76/9c/68edc0c6.webp\" class=\"lazyloaded\">\n\t\t\t\t\t\t<img alt=\"\" class=\"img-fluid lazyload lazyloaded\" data-src=\"/upload/000/u1/76/9c/68edc0c6.jpg\" loading=\"lazy\" src=\"/upload/000/u1/76/9c/68edc0c6.jpg\">\n\t\t\t\t\t</picture>\n\n\t\t\t\t\t</a>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-work col-lg-5 col-sm-6\">\n\t\t\t\t\t<div class=\"ceiling-work__scroll jspScrollable\" tabindex=\"0\" style=\"overflow: hidden; padding: 0px; width: 451px;\">\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t<div class=\"jspContainer\" style=\"width: 451px; height: 245px;\"><div class=\"jspPane\" style=\"padding: 0px; width: 461px; top: 0px;\"><div class=\"ceiling-title d-lg-block d-none\">Стоимость двухуровневого потолка для кухни 12 м²</div><div class=\"ceiling-list\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Профиль стеновой пластиковый: </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>14 пог.м</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Перехода уровня простой: </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>4 пог.м</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Матовый \"MSD Classic\" <br> белый: </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>8 м²</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Глянцевый \"MSD Classic\"<br> цветной: </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>4 м²</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Обвод трубы (16-32мм): </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>2 шт.</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Монтаж Круглых светильников: </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>3 шт.</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"d-flex justify-content-between\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>Установка потолка: </span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>12 м²</span></li>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</div></div><div class=\"jspVerticalBar\"><div class=\"jspCap jspCapTop\"></div><div class=\"jspTrack\" style=\"height: 245px;\"><div class=\"jspDrag\" style=\"height: 202px;\"><div class=\"jspDragTop\"></div><div class=\"jspDragBottom\"></div></div></div><div class=\"jspCap jspCapBottom\"></div></div></div></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"ceiling-prices-buttons col-lg-3 col-sm-6 pl-lg-0\">\n\t\t\t\t\t<div class=\"ceiling-wrap-price d-flex flex-column justify-content-center\">\n\t\t\t\t\t\t<div class=\"ceiling-price\">\n\t\t\t\t\t\t\t24 662  <span>руб.</span>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<p>Цена актуальна до 03.05.2026</p>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li>Цена с установкой </li>\n\t\t\t\t\t\t\t<li>Бесплатный сервис</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t<button class=\"raschet button-general small-button px-0 popUpForm\" data-title=\"Закажите точный расчёт стоимости потолка\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-fields=\"name,phone\" data-button=\"Заказать расчёт\">Заказать расчёт</button>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t\t</div>\n\t\t<a class=\"main-next__arrow\" href=\"#rev\"><i class=\"fas fa-angle-double-down\"></i></a>\n</div>\n\n<div class=\"main-module position-relative full-width\" id=\"rev\">\n\t<div class=\"main-module__title visible-content\"><span class=\"main-title__fst\">Работая с нами, Вы получаете 4 бесплатные опции</span></div>\n\t<div class=\"main-module__body visible-content\">\n\t\t<div class=\"row\">\n\t<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t\t<div class=\"work-new__block d-flex align-items-center justify-content-center flex-column text-center\">\n\t\t\t<div class=\"work-new__cover d-flex align-items-center justify-content-center \"><img src=\"/templates/potolki/images/work-new/1.png\" alt=\"Визуализация натяжного потолка\"></div>\n\t\t\tВизуализация<br>потолка\n\t\t</div>\n\t</div>\n\t<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t\t<div class=\"work-new__block d-flex align-items-center justify-content-center flex-column text-center\">\n\t\t\t<div class=\"work-new__cover d-flex align-items-center justify-content-center \"><img src=\"/templates/potolki/images/work-new/2.png\" alt=\"Бесплатные светильники MR-16\"></div>\n\t\t\tСветильники<br>MR-16\n\t\t</div>\n\t</div>\n\t<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t\t<div class=\"work-new__block d-flex align-items-center justify-content-center flex-column text-center\">\n\t\t\t<div class=\"work-new__cover d-flex align-items-center justify-content-center \"><img src=\"/templates/potolki/images/work-new/3.png\" alt=\"Установка натяжного потолка с пылесборником\"></div>\n\t\t\tУстановка<br>с пылесборником\n\t\t</div>\n\t</div>\n\t<div class=\"col-lg-3 col-sm-6 col-12 py-sm-3 py-2\">\n\t\t<div class=\"work-new__block d-flex align-items-center justify-content-center flex-column text-center\">\n\t\t\t<div class=\"work-new__cover d-flex align-items-center justify-content-center \"><img src=\"/templates/potolki/images/work-new/4.png\" alt=\"Бесплатные шины для штор\"></div>\n\t\t\tВыезд<br>замерщика\n\t\t</div>\n\t</div>\n</div>\n\n\n<div class=\"work-new__form text-center\">\n\t<div class=\"h3\">Даже если вы откажетесь от заказа, замер останется для вас – бесплатным!</div>\n\t<form class=\"normalForm disabled_phone\" data-title=\"Заказать бесплатный замер потолка\">\n\t<div class=\"row mx-0 justify-content-center\">\n\t\t<div class=\"col-xl-4 col-lg-5 col-md-7 pb-2 pt-xl-0 pt-2\"><input type=\"text\" name=\"phone\" placeholder=\"Ваш телефон\" class=\"disabled_phone\" im-insert=\"true\"></div>\n\t\t<div class=\"col-xl-3 col-lg-4 col-md-5 pb-2 pt-xl-0 pt-2\"><button type=\"submit\" class=\"button-general\">Получить бесплатно</button></div>\n\t</div>\n\t<label class=\"form-agreement-yes checkbox-week-label d-inline-block\">\n\t\t<input class=\"checkbox-week\" name=\"is_allowed_personal\" checked=\"checked\" value=\"1\" type=\"checkbox\">\n\t\t<span class=\"checkbox-week-custom\"></span>\n\t\t<span class=\"checkbox-week-label-in\">Согласен с <a href=\"/pages/privacy.html\" target=\"_blank\"> политикой конфиденциальности</a></span>\n\t</label>\n\t</form>\n</div>\n\n\n\t</div>\n\t<a class=\"main-next__arrow\" href=\"#best\"><i class=\"fas fa-angle-double-down\"></i></a>\n</div>\n\n\n<div class=\"main-module position-relative gray-bg full-width\" id=\"rev\">\n\t<div class=\"main-module__title visible-content\"><span class=\"main-title__fst\">Видео наших работ</span></div>\n\t<div class=\"main-module__body visible-content\">\n\t\t\n<div class=\"wrapper__revews row\">\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239616&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/ee/cc/b9a8c074.jpg\" alt=\"Светодиодная лента для бани и сауны — да, такая тоже есть \" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Светодиодная лента для бани и сауны — да, такая тоже есть                 </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239611&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/dc/86/49bb9703.jpg\" alt=\"Освещение может выглядеть красиво, но еще важно, какой свет оно даёт в интерьере.\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Освещение может выглядеть красиво, но еще важно, какой свет оно даёт в интерьере.                </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239605&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/9c/5f/f0c7e2df.jpg\" alt=\"Диффузоры для вентиляции тоже могут выглядеть аккуратно и современно.\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Диффузоры для вентиляции тоже могут выглядеть аккуратно и современно.                </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239603&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/fe/0d/44571369.jpg\" alt=\"Inter от Arte Lamp — безрамочная система для натяжных потолков с продуманным внешним видом и комфорт\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Inter от Arte Lamp — безрамочная система для натяжных потолков с продуманным внешним видом и комфорт                </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239593&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/c7/63/16451e74.jpg\" alt=\"Почему кухонный гарнитур уже стоит, а потолка еще нет?\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Почему кухонный гарнитур уже стоит, а потолка еще нет?                </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239585&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/18/37/7cb9e2f8.jpg\" alt=\"Одно из наиболее популярных решений для ванной комнаты.\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Одно из наиболее популярных решений для ванной комнаты.                </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239448&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/b2/f6/032191c1.jpg\" alt=\"Потолок можно сделать выше, чем вы думаете.\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Потолок можно сделать выше, чем вы думаете.                </div>\n        </div>\n                            <div class=\"col-lg-3 col-6 mobile-col py-2\">\n                                                        <div class=\"revews__block\">\n                                                                                <a class=\"revews__link video-block\" data-fancybox=\"\" data-type=\"iframe\" data-width=\"800\" data-height=\"600\" href=\"https://vkvideo.ru/video_ext.php?oid=-145968560&amp;id=456239437&amp;hd=3&amp;autoplay=1\">\n                                <img src=\"/upload/000/u1/35/d5/5f960819.jpg\" alt=\"Встроенная мебель\" class=\"img-fluid w-100\">\n                            </a>\n                                            </div>\n                                \n                                \n                                \n                <div class=\"text-center revews__title\">\n                    Встроенная мебель                </div>\n        </div>\n    </div>\n\t</div>\n\t<a class=\"main-next__arrow\" href=\"#best\"><i class=\"fas fa-angle-double-down\"></i></a>\n</div>\n<div class=\"main-module position-relative\" id=\"best\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-4 col-sm-6 col-12 d-md-flex align-items-start justify-content-between py-3 text-md-left text-center best-block popUpForm\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-title=\"Хотите заказать бесплатный замер?\" data-fields=\"name,phone\" data-button=\"Заказать замер\">\n\t\t\t<div class=\"icon-warpper-image\"><img src=\"/templates/potolki/images/png/potolki-1.png\" alt=\"\"></div>\n\t\t\t<div class=\"icon-warpper-potolki\">\n\t\t\t\t<div class=\"title-icon-potolki\">Бесплатный замер</div>\n\t\t\t\t<p>Узнайте, какие бывают стандартные размеры в конкретных типовых домах - это поможет Вам сделать выбор <span>ежедневно с 09.00 до 18.00</span></p>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-lg-4 col-sm-6 col-12 d-md-flex align-items-start justify-content-between py-3 text-md-left text-center best-block popUpForm\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-title=\"Хотите натяжной потолок без предоплаты и со скидкой?\" data-fields=\"name,phone\" data-button=\"Заказать потолок\">\n\t\t\t<div class=\"icon-warpper-image\"><img src=\"/templates/potolki/images/png/potolki-2.png\" alt=\"\"></div>\n\t\t\t<div class=\"icon-warpper-potolki\">\n\t\t\t\t<div class=\"title-icon-potolki\">Экономия бюджета</div>\n\t\t\t\t<p>Выгодные скидки и акции для наших клиентов <span>Работаем по договору!</span></p>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-lg-4 col-sm-6 col-12 d-md-flex align-items-start justify-content-between py-3 text-md-left text-center best-block popUpForm\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-title=\"Удобнее оплатить по карте или электронный кошелёк?\" data-fields=\"name,phone\" data-button=\"Оставить заявку\">\n\t\t\t<div class=\"icon-warpper-image\"><img src=\"/templates/potolki/images/png/potolki-3.png\" alt=\"\"></div>\n\t\t\t<div class=\"icon-warpper-potolki\">\n\t\t\t\t<div class=\"title-icon-potolki\">Принимаем к оплате</div>\n\t\t\t\t<img src=\"/templates/potolki/images/png/pay-potolki.png\" class=\"img-fluid\">\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-lg-4 col-sm-6 col-12 d-md-flex align-items-start justify-content-between py-3 text-md-left text-center best-block popUpForm\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-title=\"Хотите качественный потолок от производителя?\" data-fields=\"name,phone\" data-button=\"Заказать потолок\">\n\t\t\t<div class=\"icon-warpper-image\"><img src=\"/templates/potolki/images/png/potolki-9.png\" alt=\"\"></div>\n\t\t\t<div class=\"icon-warpper-potolki\">\n\t\t\t\t<div class=\"title-icon-potolki\">Собственное производство</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-lg-4 col-sm-6 col-12 d-md-flex align-items-start justify-content-between py-3 text-md-left text-center best-block popUpForm\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-title=\"Хотите быструю установку двухуровневого потолка?\" data-fields=\"name,phone\" data-button=\"Заказать быстрый монтаж\">\n\t\t\t<div class=\"icon-warpper-image\"><img src=\"/templates/potolki/images/png/potolki-10.png\" alt=\"\"></div>\n\t\t\t<div class=\"icon-warpper-potolki\">\n\t\t\t\t<div class=\"title-icon-potolki\">Двухуровневый потолок под ключ за 6 часов</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-lg-4 col-sm-6 col-12 d-md-flex align-items-start justify-content-between py-3 text-md-left text-center best-block popUpForm\" data-bform=\"Оставьте свой номер телефона и наш менеджер свяжется с Вами\" data-title=\"Хотите безопасный монтаж натяжных потолков?\" data-fields=\"name,phone\" data-button=\"Заказать безопасный монтаж\">\n\t\t\t<div class=\"icon-warpper-image\"><img src=\"/templates/potolki/images/png/potolki-11.png\" alt=\"\"></div>\n\t\t\t<div class=\"icon-warpper-potolki\">\n\t\t\t\t<div class=\"title-icon-potolki\">Безопасный монтаж</div>\n\t\t\t\t<p>Оборудование полностью сертифицировано</p>\n\t\t\t</div>\n\t\t</div>\n\t</div></div>\n<div class=\"row align-items-center pb-lg-4 text-lg-left text-center\">\n\t<div class=\"col-lg-6 col-12 pb-lg-3 pb-2\">\n\t\t<h2>Для чего вызывать замерщика</h2>\n<ul>\n\t<li>Оставьте заявку на сайте: телефон, имя, никакие больше персональные данные не нужны. Наш сотрудник приедет бесплатно по городу, измерит не только периметр комнаты, но подсчитает, сколько квадратных метров потребуется для создания потолка в один уровень или больше.</li>\n\t<li>Посоветует тип полотна — глянец, сатин, тканевое, а также вид освещения, даст советы по выбору. Также мастер составит полную схему проводки, если она требуется. При необходимости будет учтена зона освещения, нижний уровень конструкции или криволинейный участок.</li>\n\t<li>Цены на натяжные покрытия складываются из нескольких параметров: непосредственно стоимости материалов и комплектующих, площади помещения, сложности конструкции и ее установки, а также длительности работ. Все используемые материалы по качеству и характеристикам соответствуют требованиям и имеют стандарт производства. В смету уже включена стоимость базовых элементов, включая листы закладных под свет и крепления под полотна пвх.</li>\n</ul>\t</div>\n\t<div class=\"col-lg-6 col-12 pb-lg-3 pb-4\">\n\t\t\t\t<div class=\"video-with-sait revews__link\"><iframe scrolling=\"no\" src=\"https://vk.com/clip_ext.php?oid=-145968560&amp;id=456239244\" frameborder=\"0\" allowfullscreen=\"\"></iframe></div>\n\n\t</div>\n\n</div>\t\t\t\t\t\t</article>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</section>\n\t\t\t\t\t\t\t</div>\n\t\t</div>\n    </div>\n\t<div class=\"main-module position-relative \">\n\t<div class=\"container\"> \n\t\t\t\t<div class=\"main-module__title visible-content\">\n\t\t\t<span class=\"main-title__fst\">Цены на наши услуги по обслуживанию потолков</span>\n\t\t\t\t\t</div>\t\n\t\t\t\t<div class=\"main-module__body\">\n\t\t\t<div class=\"table-services\">\n\t<div class=\"th-table-block\">\n\t\t<div class=\"th-table tcol-1\">Наименование услуги</div>\n\t\t<div class=\"th-table tcol-2\">Цена</div>\n\t</div>\n\t<div class=\"tbody-table\">\n\t\t<div class=\"tr-table\">\n            <div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Слив воды при затоплении\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Слив воды при затоплении</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена от 1500&nbsp;руб.&nbsp;</div>\n\t\t</div>                     \n\t\t<div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Обвод (обход) трубы\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Обвод (обход) трубы на потолках</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 250&nbsp;руб.&nbsp;</div>\n\t\t</div>             \n\t\t<div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Применение строительного пылесоса\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Применение строительного пылесоса</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 990&nbsp;руб.&nbsp;</div>\n\t\t</div>                     \n\t\t<div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Закладная под карниз\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Закладная под карниз на натяжном потолке</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 250&nbsp;руб.&nbsp;</div>\n\t\t</div>\n        <div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Дополнительный угол\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Дополнительный угол на потолках</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 200&nbsp;руб.&nbsp;</div>\n\t\t</div>             \n\t\t<div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Установка светильников (ленты подсветки, освещения любого типа)\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Установка светильников (ленты подсветки, освещения любого типа)</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 350&nbsp;руб.&nbsp;</div>\n\t\t</div>\n        <div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Ремонт (порез на полотне, прокол, ожог, разрыв)\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Ремонт натяжного потолка (порез на полотне, прокол, ожог, разрыв)</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 990&nbsp;руб.&nbsp;</div>\n\t\t</div>\n        <div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Демонтаж полотна\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Демонтаж полотна</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 1500&nbsp;руб.&nbsp;</div>\n\t\t</div>\n        <div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Ремонт электрики под натяжных потолком\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Ремонт электрики под натяжным потолком<br></a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 1490&nbsp;руб.&nbsp;</div>\n\t\t</div>                   \n\t\t<div class=\"tr-table\">\n\t\t\t<div class=\"td-table tcol-1\"><a href=\"javascript:\" class=\"popUpForm\" data-title=\"Закажите услугу - Замена потолочной гардины на потолке\" data-fields=\"name,phone\" data-bform=\"Оставьте свои данные и наш менеджер перезвонит Вам в ближайшее время\" data-button=\"Заказать услугу\">Замена потолочной гардины</a></div>\n\t\t\t<div class=\"td-table tcol-2\">цена&nbsp;от 500&nbsp;руб.&nbsp;</div>\n\t\t</div>\n\t</div>\n</div>\n\n\n\t\t</div>\n\t</div>\n\t</div>\n\n\n\t\t<div class=\"\">\n<div class=\"wrapper__question-form\">\n\t<div class=\"container\">\n\t\t<div class=\"row question__row mx-0\">\n\t\t\t<div class=\"col-12 question__title-form h1 m-0\">Остались вопросы?</div>\n\t\t\t<div class=\"col-12 question__title-small\">ЗАПОЛНИТЕ ФОРМУ</div>\n\t\t\t<div class=\"col-12 question__text-form\">Оставьте свои контакты и наш специалист ответит на все Ваши вопросы</div>\n\t\t\t<form id=\"vopros\" class=\"col-12 normalForm disabled_phone\" data-title=\"Остались вопросы?\">\n\t\t\t\t<div class=\"d-flex flex-wrap question__form\">\n\t\t\t\t\t<div class=\"question__form-field\"><input id=\"questname\" name=\"name\" placeholder=\"Имя\" type=\"text\"></div>\n\t\t\t\t\t<div class=\"question__form-field\"><input id=\"questphone\" name=\"phone\" placeholder=\"+7 (___)___-__-__\" type=\"text\" im-insert=\"true\" class=\"disabled_phone\"></div>\n\t\t\t\t\t<div class=\"question__form-field\"><input class=\"button-general\" value=\"Отправить\" type=\"submit\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"question__agreement-yes\">\n\t\t\t\t\t<label class=\"form-agreement-yes checkbox-week-label\">\n\t\t\t\t\t\t<input class=\"checkbox-week\" name=\"is_allowed_personal\" checked=\"checked\" value=\"1\" type=\"checkbox\">\n\t\t\t\t\t\t<span class=\"checkbox-week-custom\"></span>\n\t\t\t\t\t\t<span class=\"checkbox-week-label-in\">Согласен с <a href=\"/pages/privacy.html\" target=\"_blank\"> политикой конфиденциальности</a></span>\n\t\t\t\t\t</label>\n\t\t\t\t</div>\n\t\t\t</form>\n\t\t\t<div class=\"col-12 text-center\">\n\t\t\t\t<div class=\"title-black-form-small d-flex align-items-center justify-content-md-start justify-content-center flex-wrap\">ИЛИ ПОЗВОНИТЕ МНЕ: <a class=\"roistat-phone-number mr-sm-0 mr-2 ml-2 zvonok\" href=\"tel:+73833181299\">8 (383) 318-12-99</a></div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>\n\n\t</div>\n\n<div class=\"main-module position-relative \">\n\t<div class=\"container\"> \n\t\t\t\t<div class=\"main-module__body\">\n\t\t\t<div class=\"widget_text_block\"><h2>Гарантии, сервисное обслуживание и почему выгодно работать с \"ИваГрупп\"</h2>\n<p>\n\tСоотнести с параметрами объекта ширину выбранного полотна может только квалифицированный замерщик натяжных потолков, поэтому чем раньше вы вызовите его на свой объект — квартиру, дом, офис, спортивный клуб, кафе и т. п., тем быстрее узнаете стоимость. Наши мастера подскажут оптимальный дизайн, который подойдет под условия использования помещения.<br>\n\t У нас большой выбор полотен, которые служат 15–17 лет, не теряя вида. Они отличаются стабильностью, а сроки монтажа остаются короткими.\n</p>\n<p>\n\tКроме того, от цены, озвученной замерщиком, наш менеджер сделает на конструкцию потолка скидку. Выберете подходящую для вас акцию с одноименной страницы сайта и не забудьте сообщить ему уникальный промокод из четырех цифр, который видите сейчас на экране.\n</p></div>\n\n\t\t</div>\n\t</div>\n\t</div>\n\n\n\t</div>\n\t<footer>\n\t\t<div class=\"container\" itemscope=\"\" itemtype=\"http://schema.org/Organization\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-lg-3 col-md-5 col-sm-7 d-sm-block d-none footer-fst\">\n\t\t\t\t\t<a itemprop=\"url\" href=\"/\" class=\"d-md-block d-none\">\n\t\t\t\t\t\t<img alt=\"&quot;ИваГрупп&quot;\" src=\"/templates/potolki/images/png/logo-footer.png\">\n\t\t\t\t\t\t<img alt=\"&quot;ИваГрупп&quot;\" class=\"d-none\" src=\"/templates/potolki/images/logo.png\" itemprop=\"image\">\n\t\t\t\t\t</a>\n\t\t\t\t\t<div class=\"\">\n<a href=\"/\">Натяжные потолки Новосибирск</a>\n<p>Внимание! Данный сайт носит информационный характер и ни при каких условиях не является публичной офертой, которая определяется положениями Статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг в Новосибирске, пожалуйста, обращайтесь к нашим менеджерам.</p>\t</div>\n\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-6 col-3 footer-sec d-md-flex d-none justify-content-lg-between justify-content-center\">\n\t\t\t\t\t<div class=\"d-lg-block d-none\">\n<ul class=\"menu\">\n                                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnoi-potolok-na-kuhnyu.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        В кухню                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnoi-potolok-v-zal.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        В зал                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnoi-potolok-v-spalnyu.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        В спальню                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnoi-potolok-v-detskuyu.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        В детскую                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnoi-potolok-v-koridor.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        В прихожую                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnoi-potolok-v-vannuyu-komnatu.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        В ванную комнату                                            </span>\n                </a>\n                                                </li></ul>\n    \t</div>\n\n<div class=\"d-lg-block d-none\">\n<ul class=\"menu\">\n                                        <li>\n                            <a class=\"item\" href=\"/potolki/matovye-natjazhnye-potolki.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Матовые потолки                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/gljancevye-natjazhnye-potolki.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Глянцевые потолки                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/satinovye-natjazhnye-potolki.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Сатиновые потолки                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/mnogourovnevye-natjazhnye-potolki.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Двухуровневые потолки                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnye-potolki-s-podsvetkoi.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Потолки со светодиодной подсветкой                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnye-potolki-s-trekovymi-svetilnikami.html\" target=\"_blank\">\n                    <span class=\"wrap\">\n                        Трековые светильники                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/svetovye-linii.html\" target=\"_blank\">\n                    <span class=\"wrap\">\n                        Световые линии                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/potolki-zvezdnoe-nebo.html\" target=\"_blank\">\n                    <span class=\"wrap\">\n                        Звёздное небо                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/tkanevye-natjazhnye-potolki.html\" target=\"_blank\">\n                    <span class=\"wrap\">\n                        Тканевые полотна                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki/natjazhnye-potolki-s-fotopechatyu.html\" target=\"_blank\">\n                    <span class=\"wrap\">\n                        Рисунок на потолке                                            </span>\n                </a>\n                                                </li></ul>\n    \t</div>\n\n<div class=\"\">\n<ul class=\"menu\">\n                                        <li>\n                            <a class=\"item\" href=\"/akcii\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Акции и скидки                                            </span>\n                </a>\n                                                                </li>\n                        <li class=\"active\">\n                            <a class=\"item\" href=\"/ceny\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Цены на потолки                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/potolki\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Каталог                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/rphotos\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Наши работы                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/otzyvy\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Видео и отзывы                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/company\" target=\"_self\">\n                    <span class=\"wrap\">\n                        О компании                                            </span>\n                </a>\n                                                                </li>\n                        <li>\n                            <a class=\"item\" href=\"/company/kontakty.html\" target=\"_self\">\n                    <span class=\"wrap\">\n                        Контакты                                            </span>\n                </a>\n                                                </li></ul>\n    \t</div>\n\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-lg-3 col-md-4 col-sm-5 col-12 footer-frd text-sm-right text-center\">\n\t\t\t\t\t<div class=\"d-flex flex-column justify-content-between\">\n<div itemprop=\"address\" itemscope=\"\" itemtype=\"http://schema.org/PostalAddress\" class=\"footer__contact\">\n\t<span itemprop=\"streetAddress\">г.Новосибирск, ул. Чернышевский спуск, д. 5 \"Б\"</span>\n</div>\n<div class=\"footer__address\">e-mail: <a href=\"mailto:alfa-potolkov@yandex.ru\"><span itemprop=\"email\">alfa-potolkov@yandex.ru</span></a></div>\n<div class=\"footer__phone\">тел.: <a href=\"tel:+73833181299\" class=\"roistat-phone-number zvonok\">8 (383) 318-12-99</a></div>\n\n  <ul class=\"footer__social d-flex justify-content-sm-end justify-content-center\">\n\n  \t<li><a href=\"https://t.me/IvaGroupSvetPotolki\" target=\"_blank\" rel=\"noreferrer\"><i class=\"fab fa-telegram\"></i></a></li>\n<li><a href=\"https://vk.com/ivagroupnsk\" target=\"_blank\" rel=\"noreferrer\"><i class=\"fab fa-vk\"></i></a></li>\n  </ul>\n\n<h4>Реквизиты компании</h4>\n<div>ИП Иванов Р.А<br>\nИНН: 450143675325<br>\nОГРН: 321547600010130<br>\nБИК банка: 044525974<br>\nР/c: 40802810700001817236<br>\nЭлектронная почта директора:<br>\nr9994690302@mail.ru</div>\t</div>\n\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"footer__bottom d-flex align-items-center\">\n\t\t\t\t<div class=\"footer-for\">\n\t\t\t\t\t<div class=\"\">\n<a href=\"/pages/privacy.html\" target=\"_blank\">Политика конфиденциальности</a>\t</div>\n\n\t\t\t\t</div>\n\t\t\t\t<div class=\"footer-fiv\">\n\t\t\t\t\t\t\t\t\t\t© <span itemprop=\"name\">\"ИваГрупп\"</span> 2007 - 2026\t\t\t\t</div>\n\t\t\t\t<div class=\"company-logo\">\n\t\t\t\t\t<a href=\"https://osa-digital.ru\" target=\"_blank\"><img src=\"https://osa-digital.ru/templates/osa/images/logo-img.svg\" alt=\"Логотип OSA Digital\">Разработка и продвижение</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</footer>\n</div>\n\t\t<script src=\"/templates/potolki/js/loadCSS.js\" async=\"\"></script>\n\t\t<script>\n\t\tdocument.addEventListener(\"DOMContentLoaded\", function(){\n\t\t\tloadScript('https://quiz.prodavec-potolkov.ru/quiz/js/quiz.js', function() {quiz.init({id: '5e0076e32293740044b6348f', btn:'.banner-test__btn'})} )\n\t\t})\n\t\t\n\t\t </script>\n\t\t<script src=\"//cdn.callibri.ru/callibri.js\" type=\"text/javascript\" charset=\"utf-8\"></script>\n\n\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\nvar yandexID = '73281544';\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(73281544, \"init\", {clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/73281544\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n\n\n<script type=\"text/javascript\" src=\"https://quiz.prodavec-potolkov.ru/quiz/js/quiz.js\"></script></body></html>",
+  "text": "Цены на натяжные потолки в Новосибирске с установкой за метр квадратный — \"ИваГрупп\" Новосибирск Новосибирск Кировский район Калининский район Первомайский Советский район Ленинский район Октябрьский район Написать нам ежедневно с 09.00 до 18.00 Натяжные потолки от производителя в Новосибирске Выставочный зал г.Новосибирск, ул. Чернышевский спуск, д. 5 \"Б\" ещё адреса Всегда на связи 8 (383) 318-12-99 Вызов замерщика Заказать звонок Калькулятор Задать вопрос 8 (383) 318-12-99 Заказать звонок Меню Акции и скидки Цены на потолки Каталог Фактуры натяжных потолков Матовые натяжные потолки Глянцевые натяжные потолки Сатиновые натяжные потолки Тканевые натяжные потолки Помещения В зал На кухню В гостиную В детскую комнату В спальню В коридор В ванную комнату и санузел На балкон Технологии натяжных потолков Теневые потолки Трековые светильники Противопожарные Teqtum Ниши SLOTT и демпферные потолки Бесщелевые потолки KRAAB Двухуровневые потолки Световые линии Парящие потолки Потолок \"Звездное Небо\" 3D натяжные потолки Небо с облаками Многоуровневые потолки Потолки с фотопечатью Потолки с подсветкой Резные потолки Apply Цветные потолки Бесшовные потолки Ниша под карниз Наши работы Видео и отзывы О компании Контакты Цены на натяжные потолки с установкой Чтобы узнать предварительную стоимость натяжных потолков, стоит открыть калькулятор онлайн. Внесите известные данные в графы, получите результат. Он будет примерным, так как более точную информацию даст только наш специалист после замера. Консультация на объекте займет минимальное время. По Пятницам у нас натяжные потолки Всего за 390 руб./м² * Площадь Вашего потолка м 2 Ваша цена сегодня 3 510 руб. Заказать по акции Согласен с политикой конфиденциальности * Профиль и установка считаются отдельно Натяжные потолки » Цены на натяжные потолки за 1 м² Цены на натяжные потолки за 1 м² Матовый \"MSD Classic\" белый 490 руб/м² Сатиновый \"MSD Classic\" белый 490 руб/м² Глянцевый \"MSD Classic\" белый 490 руб/м² Тканевый \"Descor\" белый 1950 руб/м² Расчет стоимости натяжного потолка Заполните простую форму для расчета стоимости натяжных потолков Укажите параметры потолка Выберите материал Выберите материал Матовый Сатиновый Глянцевый Выберите цвет Выберите цвет Белый Цветной Площадь помещения м 2 Количество люстр шт. Нужна электропроводка Да Нет Установить карнизы для штор пог. м Рассчитать Наименование Цена Кол-во Сумма Итого стоимость: руб. Выберите подходящую для Вас акцию! Скидка при заказе сайта 5% Скидка пенсионерам 5% Скидка новоселам 5% Скидка за договор в день замера 5% Скидка от заказа более 40 кв.м 5% Выбрать акцию > Отправляются параметры расчета Вы выбрали акцию: % Для получения расчета стоимости с учетом акции Оставьте пожалуйста свой контакт Оставьте свой телефон для получения расчета стоимости с учетом акции % Отправить на e-emal Отправить Viber Заказать по акции Отмена Наш менеджер свяжется с Вами после проведения расчета стоимости в течении 15 минут. * Уважаемые клиенты, просим Вас обратить внимание, что цены меняются ежедневно не только в нашей компании, но и во всех регионах. Уточняйте актуальную стоимость у технологов на замере. Примеры расчета цен вместе с работой Натяжные потолки в гостинную с полотном KM2 Натяжные потолки в гостинную с полотном KM2 Профиль стеновой алюминиевый 25 м.п. Установка точечных светильников 12 шт. Полотно белое матовое противопожарное Teqtum KM2 24 м² Установка полотна 24 м² 19 200 руб. Цена актуальна до 03.05.2026 Цена с установкой Бесплатный сервис Заказать расчёт Белый матовый потолок в стиле LOFT Белый матовый потолок в стиле LOFT Профиль стеновой алюминиевый 18 м.п. Установка точечных светильников 2 шт. Установка накладных светильников 2 шт. Полотно белое матовое MSD Premium 20 м² Установка полотна 20 м² 14 800 руб. Цена актуальна до 03.05.2026 Цена с установкой Бесплатный сервис Заказать расчёт Черный матовый потолок в стиле LOFT Черный матовый потолок в стиле LOFT Профиль стеновой алюминиевый 20 м.п. Установка точечных светильников 10 шт. Установка рейлинга 4,5 м.п. Полотно черное (347) матовое MSD Premium 24 м² Установка полотна 24 м² 20 700 руб. Цена актуальна до 03.05.2026 Цена с установкой Бесплатный сервис Заказать расчёт Ниша SLOTT с белым рассеивателем на натяжном потолке Ниша SLOTT с белым рассеивателем на натяжном потолке Профиль стеновой теневой 16 м.п. Обработка угла на теневом профиле 6 шт. Профиль нишевая подсветка SLOTT 3 м.п. Установка накладных светильников 3 шт. Лента светодиодная 9,6 ВТ 3 м.п. Установка ленты 3 м.п. Блок 40 ВТ 2 шт. Полотно белое матовое MSD Classic 14 м² Установка полотна 14 м² 22 450 руб. Цена актуальна до 03.05.2026 Цена с установкой Бесплатный сервис Заказать расчёт Цена матового потолка 16 м² с бесщелевым профилем и люстрой Цена матового потолка 16 м² с бесщелевым профилем и люстрой Профиль стеновой бесщелевой KRAAB 16 м.п. Обработка угла на бесщелевом профиле 4 шт. Установка накладных светильников (люстра) 1 шт. Полотно матовое MSD Premium 16 м² Установка полотна 16 м² 41 500 руб. Цена актуальна до 03.05.2026 Цена с установкой Бесплатный сервис Заказать расчёт Стоимость двухуровневого потолка для кухни 12 м² Стоимость двухуровневого потолка для кухни 12 м² Профиль стеновой пластиковый: 14 пог.м Перехода уровня простой: 4 пог.м Матовый \"MSD Classic\" белый: 8 м² Глянцевый \"MSD Classic\" цветной: 4 м² Обвод трубы (16-32мм): 2 шт. Монтаж Круглых светильников: 3 шт. Установка потолка: 12 м² 24 662 руб. Цена актуальна до 03.05.2026 Цена с установкой Бесплатный сервис Заказать расчёт Работая с нами, Вы получаете 4 бесплатные опции Визуализация потолка Светильники MR-16 Установка с пылесборником Выезд замерщика Даже если вы откажетесь от заказа, замер останется для вас – бесплатным! Получить бесплатно Согласен с политикой конфиденциальности Видео наших работ Светодиодная лента для бани и сауны — да, такая тоже есть Освещение может выглядеть красиво, но еще важно, какой свет оно даёт в интерьере. Диффузоры для вентиляции тоже могут выглядеть аккуратно и современно. Inter от Arte Lamp — безрамочная система для натяжных потолков с продуманным внешним видом и комфорт Почему кухонный гарнитур уже стоит, а потолка еще нет? Одно из наиболее популярных решений для ванной комнаты. Потолок можно сделать выше, чем вы думаете. Встроенная мебель Бесплатный замер Узнайте, какие бывают стандартные размеры в конкретных типовых домах - это поможет Вам сделать выбор ежедневно с 09.00 до 18.00 Экономия бюджета Выгодные скидки и акции для наших клиентов Работаем по договору! Принимаем к оплате Собственное производство Двухуровневый потолок под ключ за 6 часов Безопасный монтаж Оборудование полностью сертифицировано Для чего вызывать замерщика Оставьте заявку на сайте: телефон, имя, никакие больше персональные данные не нужны. Наш сотрудник приедет бесплатно по городу, измерит не только периметр комнаты, но подсчитает, сколько квадратных метров потребуется для создания потолка в один уровень или больше. Посоветует тип полотна — глянец, сатин, тканевое, а также вид освещения, даст советы по выбору. Также мастер составит полную схему проводки, если она требуется. При необходимости будет учтена зона освещения, нижний уровень конструкции или криволинейный участок. Цены на натяжные покрытия складываются из нескольких параметров: непосредственно стоимости материалов и комплектующих, площади помещения, сложности конструкции и ее установки, а также длительности работ. Все используемые материалы по качеству и характеристикам соответствуют требованиям и имеют стандарт производства. В смету уже включена стоимость базовых элементов, включая листы закладных под свет и крепления под полотна пвх. Цены на наши услуги по обслуживанию потолков Наименование услуги Цена Слив воды при затоплении цена от 1500 руб. Обвод (обход) трубы на потолках цена от 250 руб. Применение строительного пылесоса цена от 990 руб. Закладная под карниз на натяжном потолке цена от 250 руб. Дополнительный угол на потолках цена от 200 руб. Установка светильников (ленты подсветки, освещения любого типа) цена от 350 руб. Ремонт натяжного потолка (порез на полотне, прокол, ожог, разрыв) цена от 990 руб. Демонтаж полотна цена от 1500 руб. Ремонт электрики под натяжным потолком цена от 1490 руб. Замена потолочной гардины цена от 500 руб. Остались вопросы? ЗАПОЛНИТЕ ФОРМУ Оставьте свои контакты и наш специалист ответит на все Ваши вопросы Согласен с политикой конфиденциальности ИЛИ ПОЗВОНИТЕ МНЕ: 8 (383) 318-12-99 Гарантии, сервисное обслуживание и почему выгодно работать с \"ИваГрупп\" Соотнести с параметрами объекта ширину выбранного полотна может только квалифицированный замерщик натяжных потолков, поэтому чем раньше вы вызовите его на свой объект — квартиру, дом, офис, спортивный клуб, кафе и т. п., тем быстрее узнаете стоимость. Наши мастера подскажут оптимальный дизайн, который подойдет под условия использования помещения. У нас большой выбор полотен, которые служат 15–17 лет, не теряя вида. Они отличаются стабильностью, а сроки монтажа остаются короткими. Кроме того, от цены, озвученной замерщиком, наш менеджер сделает на конструкцию потолка скидку. Выберете подходящую для вас акцию с одноименной страницы сайта и не забудьте сообщить ему уникальный промокод из четырех цифр, который видите сейчас на экране. Натяжные потолки Новосибирск Внимание! Данный сайт носит информационный характер и ни при каких условиях не является публичной офертой, которая определяется положениями Статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о наличии и стоимости указанных товаров и (или) услуг в Новосибирске, пожалуйста, обращайтесь к нашим менеджерам. В кухню В зал В спальню В детскую В прихожую В ванную комнату Матовые потолки Глянцевые потолки Сатиновые потолки Двухуровневые потолки Потолки со светодиодной подсветкой Трековые светильники Световые линии Звёздное небо Тканевые полотна Рисунок на потолке Акции и скидки Цены на потолки Каталог Наши работы Видео и отзывы О компании Контакты г.Новосибирск, ул. Чернышевский спуск, д. 5 \"Б\" e-mail: alfa-potolkov@yandex.ru тел.: 8 (383) 318-12-99 Реквизиты компании ИП Иванов Р.А ИНН: 450143675325 ОГРН: 321547600010130 БИК банка: 044525974 Р/c: 40802810700001817236 Электронная почта директора: r9994690302@mail.ru Политика конфиденциальности © \"ИваГрупп\" 2007 - 2026 Разработка и продвижение",
+  "json_ld": [],
+  "document": {
+    "title": "Цены на натяжные потолки в Новосибирске с установкой за метр квадратный — \"ИваГрупп\"",
+    "meta_description": "Цены на натяжные потолки в Новосибирске с установкой. ✅ Установка потолков от 160 руб за кв метр. От покупки натяжных потолков до монтажа натяжного полотна - 1 день. Расчет цены 1м2 потолка по вашим размерам можно сделать в калькуляторе.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "javascript:void(0)",
+        "text": "Новосибирск",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Новосибирск",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-v-kirovskom-raione-novosibirska.html",
+        "text": "Кировский район",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-v-kalininskom-raione-ekaterinburga.html",
+        "text": "Калининский район",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-v-pervomaiskom-raione-novosibirska.html",
+        "text": "Первомайский",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-v-sovetskom-raione-novosibirska.html",
+        "text": "Советский район",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-v-leninskom-raione-novosibirska.html",
+        "text": "Ленинский район",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-v-oktjabrskom-raione-novosibirska.html",
+        "text": "Октябрьский район",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Написать нам",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/company/kontakty.html",
+        "text": "ещё адреса",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833181299",
+        "text": "8 (383) 318-12-99",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Вызов замерщика",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Заказать звонок",
+        "rel": ""
+      },
+      {
+        "href": "/kalkulyator",
+        "text": "Калькулятор",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "Задать вопрос",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833181299",
+        "text": "8 (383) 318-12-99",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Заказать звонок",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "Меню",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "Акции и скидки",
+        "rel": ""
+      },
+      {
+        "href": "/ceny",
+        "text": "Цены на потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/matovye-natjazhnye-potolki.html",
+        "text": "Матовые натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/gljancevye-natjazhnye-potolki.html",
+        "text": "Глянцевые натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/satinovye-natjazhnye-potolki.html",
+        "text": "Сатиновые натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/tkanevye-natjazhnye-potolki.html",
+        "text": "Тканевые натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-zal.html",
+        "text": "В зал",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-na-kuhnyu.html",
+        "text": "На кухню",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-gostinnuyu.html",
+        "text": "В гостиную",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-detskuyu.html",
+        "text": "В детскую комнату",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-spalnyu.html",
+        "text": "В спальню",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-koridor.html",
+        "text": "В коридор",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-vannuyu-komnatu.html",
+        "text": "В ванную комнату и санузел",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-na-balkon.html",
+        "text": "На балкон",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/tenevye-natjazhnye-potolki-eurokraab.html",
+        "text": "Теневые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-trekovymi-svetilnikami.html",
+        "text": "Трековые светильники",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/protivopozharnye-natjazhnye-potolki-teqtum.html",
+        "text": "Противопожарные Teqtum",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-nishami-slott.html",
+        "text": "Ниши SLOTT и демпферные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/besschelevye-natjazhnye-potolki-kraab.html",
+        "text": "Бесщелевые потолки KRAAB",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/dvuhurovnevye-natjazhnye-potolki.html",
+        "text": "Двухуровневые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/svetovye-linii.html",
+        "text": "Световые линии",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/parjaschie-natjazhnye-potolki.html",
+        "text": "Парящие потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/potolki-zvezdnoe-nebo.html",
+        "text": "Потолок \"Звездное Небо\"",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/3d-natjazhnye-potolki.html",
+        "text": "3D натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-vide-neba.html",
+        "text": "Небо с облаками",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/mnogourovnevye-natjazhnye-potolki.html",
+        "text": "Многоуровневые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-fotopechatyu.html",
+        "text": "Потолки с фотопечатью",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-podsvetkoi.html",
+        "text": "Потолки с подсветкой",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/reznye-potolki-apply.html",
+        "text": "Резные потолки Apply",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/cvetnye-natjazhnye-potolki.html",
+        "text": "Цветные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/besshovnye-natjazhnye-potolki.html",
+        "text": "Бесшовные потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/nisha-pod-karniz.html",
+        "text": "Ниша под карниз",
+        "rel": ""
+      },
+      {
+        "href": "/rphotos",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/otzyvy",
+        "text": "Видео и отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/company",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/company/kontakty.html",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "/pages/privacy.html",
+        "text": "политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "#price-trhee",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Натяжные потолки",
+        "rel": ""
+      },
+      {
+        "href": "#calculate-block",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Рассчитать",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Выбрать акцию >",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Заказать по акции",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Отмена",
+        "rel": ""
+      },
+      {
+        "href": "#rev",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u6/ec/b7/0d38b949.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u6/99/fa/e31764f0.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u6/95/89/24473229.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u6/e0/a1/d694b7f2.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u6/c2/da/dac9c0b2.jpeg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/upload/000/u1/f1/5f/3822f296.jpg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#rev",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pages/privacy.html",
+        "text": "политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "#best",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239616&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239611&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239605&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239603&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239593&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239585&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239448&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vkvideo.ru/video_ext.php?oid=-145968560&id=456239437&hd=3&autoplay=1",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#best",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Слив воды при затоплении",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Обвод (обход) трубы на потолках",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Применение строительного пылесоса",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Закладная под карниз на натяжном потолке",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Дополнительный угол на потолках",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Установка светильников (ленты подсветки, освещения любого типа)",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Ремонт натяжного потолка (порез на полотне, прокол, ожог, разрыв)",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Демонтаж полотна",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Ремонт электрики под натяжным потолком",
+        "rel": ""
+      },
+      {
+        "href": "javascript:",
+        "text": "Замена потолочной гардины",
+        "rel": ""
+      },
+      {
+        "href": "/pages/privacy.html",
+        "text": "политикой конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833181299",
+        "text": "8 (383) 318-12-99",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Натяжные потолки Новосибирск",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-na-kuhnyu.html",
+        "text": "В кухню",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-zal.html",
+        "text": "В зал",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-spalnyu.html",
+        "text": "В спальню",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-detskuyu.html",
+        "text": "В детскую",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-koridor.html",
+        "text": "В прихожую",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnoi-potolok-v-vannuyu-komnatu.html",
+        "text": "В ванную комнату",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/matovye-natjazhnye-potolki.html",
+        "text": "Матовые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/gljancevye-natjazhnye-potolki.html",
+        "text": "Глянцевые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/satinovye-natjazhnye-potolki.html",
+        "text": "Сатиновые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/mnogourovnevye-natjazhnye-potolki.html",
+        "text": "Двухуровневые потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-podsvetkoi.html",
+        "text": "Потолки со светодиодной подсветкой",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-trekovymi-svetilnikami.html",
+        "text": "Трековые светильники",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/svetovye-linii.html",
+        "text": "Световые линии",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/potolki-zvezdnoe-nebo.html",
+        "text": "Звёздное небо",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/tkanevye-natjazhnye-potolki.html",
+        "text": "Тканевые полотна",
+        "rel": ""
+      },
+      {
+        "href": "/potolki/natjazhnye-potolki-s-fotopechatyu.html",
+        "text": "Рисунок на потолке",
+        "rel": ""
+      },
+      {
+        "href": "/akcii",
+        "text": "Акции и скидки",
+        "rel": ""
+      },
+      {
+        "href": "/ceny",
+        "text": "Цены на потолки",
+        "rel": ""
+      },
+      {
+        "href": "/potolki",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/rphotos",
+        "text": "Наши работы",
+        "rel": ""
+      },
+      {
+        "href": "/otzyvy",
+        "text": "Видео и отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/company",
+        "text": "О компании",
+        "rel": ""
+      },
+      {
+        "href": "/company/kontakty.html",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "mailto:alfa-potolkov@yandex.ru",
+        "text": "alfa-potolkov@yandex.ru",
+        "rel": ""
+      },
+      {
+        "href": "tel:+73833181299",
+        "text": "8 (383) 318-12-99",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/IvaGroupSvetPotolki",
+        "text": "",
+        "rel": "noreferrer"
+      },
+      {
+        "href": "https://vk.com/ivagroupnsk",
+        "text": "",
+        "rel": "noreferrer"
+      },
+      {
+        "href": "/pages/privacy.html",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://osa-digital.ru",
+        "text": "Разработка и продвижение",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Заказать по акции",
+      "Заказать расчёт",
+      "Заказать расчёт",
+      "Заказать расчёт",
+      "Заказать расчёт",
+      "Заказать расчёт",
+      "Заказать расчёт",
+      "Получить бесплатно"
+    ],
+    "h1_texts": [
+      "Цены на натяжные потолки с установкой"
+    ],
+    "h2_texts": [
+      "Цены на натяжные потолки за 1 м²",
+      "Для чего вызывать замерщика",
+      "Гарантии, сервисное обслуживание и почему выгодно работать с \"ИваГрупп\""
+    ],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 13,
+      "h1": 1,
+      "h2": 3,
+      "h3": 0,
+      "link": 126,
+      "image": 32,
+      "list_item": 138,
+      "strong": 9,
+      "form": 4,
+      "input": 25
+    }
+  }
+}
