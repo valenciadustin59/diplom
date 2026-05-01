@@ -59,17 +59,63 @@ preliminary score -> competitor analysis -> serp_relative features -> final comp
 
 ## Active Task
 
-- [ ] `D37` / GitHub `#56`: add unified `v3` feature schema, build dataset evidence with `148` pre-competitor features, train non-production candidates, run hybrid/shadow benchmark, and keep production unchanged unless all top-3 guardrails pass.
+- [x] `D37` / GitHub `#56`: add unified `v3` feature schema, build dataset evidence with `148` pre-competitor features, train non-production candidates, run hybrid/shadow benchmark, and keep production unchanged unless all top-3 guardrails pass.
 
 ## Progress
 
 - [x] (2026-05-02) D37 GitHub issue `#56` created with the unified v3/hybrid/top-3 guardrail scope.
 - [x] (2026-05-02) Local D37 plan created in `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`.
-- [ ] Add `MODEL_SCHEMA_VERSION_V3` and the `148`-feature pre-competitor schema.
-- [ ] Create or refresh a D37 dataset bundle with actual v3 columns.
-- [ ] Train RF v3, CatBoost v3, and optional ranking candidate artifacts without replacing production.
-- [ ] Run D37 shadow benchmark against the current production reference.
-- [ ] Document publish/no-publish decision with evidence.
+- [x] (2026-05-02) Added `MODEL_SCHEMA_VERSION_V3` and the `148`-feature pre-competitor schema.
+- [x] (2026-05-02) Created D37 dataset bundle `backend/data/dataset_versions/dataset-v3-d37/` with actual v3 columns.
+- [x] (2026-05-02) Trained RF v3, CatBoost v3 and CatBoostRanker v3 candidate artifacts without replacing production.
+- [x] (2026-05-02) Ran D37 shadow benchmark against the current production reference.
+- [x] (2026-05-02) Documented D37 decision evidence: `pointwise_catboost` is publish-recommended by guardrails, while production artifact remains unchanged pending a controlled publish step.
+
+## D37 Evidence
+
+Dataset evidence:
+
+- bundle: `backend/data/dataset_versions/dataset-v3-d37/`
+- dataset: `backend/data/dataset_versions/dataset-v3-d37/dataset.csv`
+- manifest: `backend/data/dataset_versions/dataset-v3-d37/manifest.json`
+- split: `backend/data/dataset_versions/dataset-v3-d37/split.json`
+- report: `backend/data/dataset_versions/dataset-v3-d37/d37-v3-dataset-report.json`
+- rows: `885`
+- queries: `99`
+- model schema: `v3`
+- feature count: `148`
+- source raw artifacts: `885/885` found
+- split: `group_by_query`, `695` train rows, `190` validation rows, `0` query leakage
+
+Candidate artifacts:
+
+- RF v3: `backend/artifacts/page_quality_model.dataset-v3-d37-rf-candidate.pkl`
+- CatBoost v3: `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`
+- CatBoostRanker v3: `backend/artifacts/page_quality_model.dataset-v3-d37-ranking-candidate.pkl`
+- training report: `backend/artifacts/ranking-benchmarks/dataset-v3-d37/candidate-artifact-training-report.json`
+
+Shadow benchmark evidence:
+
+- report: `backend/artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json`
+- markdown: `backend/artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.md`
+- reference: `top_3_hit_rate=0.95`, `ndcg_at_10=0.909302`, `spearman_mean=0.153604`, `MAE=23.858757`
+- selected candidate: `pointwise_catboost`
+- selected candidate metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`
+- decision: `publish_candidate`
+- reason: `candidate_passed_all_publish_gates_and_outperformed_reference`
+- rejected candidates: RF v3 failed `top_3_hit_rate`; CatBoostRanker v3 failed `top_3_hit_rate`, RMSE/MAE comparability and absolute-error viability.
+- smoke explainability: `4/4` queries covered, bounded scores, explainability sensibility passed.
+
+Production state:
+
+- `backend/artifacts/page_quality_model.pkl` was not overwritten during D37 candidate training or benchmarking.
+- production SHA1 after D37 benchmark: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
+- D37 therefore proves a publishable candidate, but leaves actual product rollout to a controlled publish/smoke step.
+
+Checks:
+
+- `cd E:\codexPROJ\diplom\backend; .venv\Scripts\python.exe -m pytest tests\test_model_schema.py tests\test_v3_dataset.py tests\test_training_pipeline.py tests\test_training_dataset_quality.py tests\test_ranking_benchmark.py tests\test_shadow_benchmark.py -q` -> `27 passed`
+- `cd E:\codexPROJ\diplom; npm run test:scripts` -> `13 passed`
 
 ## Work Items
 

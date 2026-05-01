@@ -254,7 +254,7 @@ def _save_candidate_model(
 
 def _render_candidate_artifact_report_markdown(report: dict[str, Any]) -> str:
     lines = [
-        "# D34 Candidate Artifact Training Report",
+        "# Candidate Artifact Training Report",
         "",
         f"- Dataset path: `{report.get('dataset_path')}`",
         f"- Dataset version: `{report.get('dataset_version')}`",

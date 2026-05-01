@@ -355,15 +355,43 @@ The most important next steps are:
 5. Consider expert-labeled or weakly-labeled targets to complement rank-derived supervision.
 6. Separate methodological claims for commercial local queries from broader SEO claims.
 
+## D37 unified v3 candidate evidence
+
+D37 adds a wider pre-competitor model schema named `v3`. It is not a simple average of older model predictions. The candidate is trained on one unified feature vector:
+
+- `59` baseline text/HTML/query features;
+- `49` snapshot technical and commercial features;
+- `25` heavy-analysis features;
+- `15` intent-alignment features.
+
+The resulting schema has `148` features. It intentionally excludes the `29` SERP-relative features because those values are available only after competitor aggregation, while the current first scoring stage runs before that point.
+
+D37 dataset evidence is stored in `backend/data/dataset_versions/dataset-v3-d37/`. The bundle contains `885` rows, `99` queries, `885/885` resolved source artifacts, and a `group_by_query` split with `695` training rows and `190` validation rows. The split has no train/validation query overlap.
+
+D37 trained three non-production candidates:
+
+- `backend/artifacts/page_quality_model.dataset-v3-d37-rf-candidate.pkl`
+- `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`
+- `backend/artifacts/page_quality_model.dataset-v3-d37-ranking-candidate.pkl`
+
+The D37 shadow benchmark is stored in `backend/artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json`. It recommends `publish_candidate` and selects `pointwise_catboost`. The selected candidate preserved the reference `top_3_hit_rate` while improving the other release metrics:
+
+- reference: `top_3_hit_rate=0.95`, `ndcg_at_10=0.909302`, `spearman_mean=0.153604`, `MAE=23.858757`;
+- selected candidate: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`.
+
+The existing production artifact `backend/artifacts/page_quality_model.pkl` was not overwritten during D37. Its SHA1 remained `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. A later controlled publish/smoke step can roll out the D37 CatBoost v3 candidate if product rollout is desired.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
 - `backend/app/ml/dataset_builder.py`
+- `backend/app/ml/v3_dataset.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`
 - `backend/app/ml/publish.py`
 - `backend/app/ml/model.py`
+- `backend/app/ml/model_schema.py`
 - `backend/docs/ml_feature_inventory.md`
 - `backend/data/ru_commercial_dataset.manifest.json`
 - `backend/artifacts/page_quality_model.metadata.json`

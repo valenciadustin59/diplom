@@ -46,24 +46,38 @@
 
 Подробный план выполнения находится в `plans/d32-d36-model-productization.md`.
 
-## Active Backlog: D37 Unified V3 Feature Model
+## Current D37 Evidence: Unified V3 Feature Model
 
-GitHub issue `#56` is open for `D37: Unified v3 feature model with hybrid ensemble and top-3 guardrail`. Local source of truth: `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`.
+GitHub issue `#56` is implemented locally for `D37: Unified v3 feature model with hybrid ensemble and top-3 guardrail`. Local source of truth: `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`.
 
-D37 should not be implemented as only a prediction average of RF, CatBoost and Ranker artifacts. The intended product direction is a real unified feature model that uses a wider feature schema before any publish decision.
+D37 was implemented as a real unified feature model, not as only a prediction average of RF, CatBoost and Ranker artifacts.
 
-Recommended D37 scope:
+Completed D37 scope:
 
-- add `MODEL_SCHEMA_VERSION_V3`;
-- use `148` pre-competitor features: `59` baseline + `49` technical/commercial + `25` heavy-analysis + `15` intent-alignment;
-- create or refresh dataset evidence so the training CSV actually contains v3 columns;
-- train only non-production D37 candidates;
-- compare every candidate against the current production reference;
-- keep `backend/artifacts/page_quality_model.pkl` unchanged unless all guardrails pass.
+- added `MODEL_SCHEMA_VERSION_V3`;
+- used `148` pre-competitor features: `59` baseline + `49` technical/commercial + `25` heavy-analysis + `15` intent-alignment;
+- created `backend/data/dataset_versions/dataset-v3-d37/` with actual v3 columns;
+- trained non-production RF v3, CatBoost v3 and CatBoostRanker v3 candidates;
+- compared every candidate against the current production reference;
+- kept `backend/artifacts/page_quality_model.pkl` unchanged.
+
+D37 evidence:
+
+- dataset rows: `885`
+- queries: `99`
+- split: `group_by_query`, `695` train rows, `190` validation rows, no query leakage
+- source artifacts found: `885/885`
+- training report: `backend/artifacts/ranking-benchmarks/dataset-v3-d37/candidate-artifact-training-report.json`
+- shadow report: `backend/artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json`
+- decision: `publish_candidate`
+- selected candidate: `pointwise_catboost`
+- selected candidate metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`
+- reference metrics: `top_3_hit_rate=0.95`, `ndcg_at_10=0.909302`, `spearman_mean=0.153604`, `MAE=23.858757`
+- unchanged production SHA1: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`
 
 The full known runtime feature space is up to `177` features if `29` SERP-relative features are included. D37 intentionally treats `serp_relative` as a follow-up unless the implementation adds an explicit second post-competitor scoring pass, because those features are produced only after competitor aggregation.
 
-Publish guardrails remain strict: `top_3_hit_rate`, `ndcg_at_10`, `spearman_mean` and `mae` must not regress versus the current reference. If they do regress, the correct D37 result is another documented `keep_reference` decision.
+Next practical step: controlled publish/smoke for `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`, if the user chooses to roll out the D37 candidate.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -187,7 +201,7 @@ Publish guardrails remain strict: `top_3_hit_rate`, `ndcg_at_10`, `spearman_mean
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D36` are complete locally, and `D37` / GitHub `#56` is the active backlog item. The final ML evidence and model productization waves kept the current production model because D30/D35 recommended `keep_reference`, while preserving `dataset-v2`, the D29/D34 candidate artifacts and benchmark evidence. GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification.
+Canonical current status: `D1-D36` are complete locally, and `D37` / GitHub `#56` is implemented locally. The final ML evidence and model productization waves kept the current production model because D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommends `publish_candidate` for `pointwise_catboost`. Production artifact is still unchanged pending controlled rollout. GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification.
 
 Local source of truth:
 
@@ -217,6 +231,6 @@ Completed recent tasks:
 
 Active task:
 
-- `D37` / GitHub `#56`: open; add unified `v3` feature schema, build `148`-feature pre-competitor dataset evidence, train non-production candidates, run hybrid/shadow benchmark, and keep production unchanged unless all top-3 guardrails pass.
+- `D37` / GitHub `#56`: implemented locally; added unified `v3` feature schema, built `148`-feature pre-competitor dataset evidence, trained non-production candidates, ran shadow guardrails, selected `pointwise_catboost` as publish-recommended, and kept production unchanged pending controlled rollout.
 
-Next agent instruction: `D32-D36` is complete locally. Continue with D37 if the user asks to implement the next ML task. Do not add demo mode or rewrite backend orchestration; keep `backend/artifacts/page_quality_model.pkl` unchanged unless a future publish task explicitly passes the guardrails.
+Next agent instruction: `D32-D36` is complete locally and D37 is implemented locally. If the user asks to roll out the model, perform a controlled publish/smoke for `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`. Do not add demo mode or rewrite backend orchestration.

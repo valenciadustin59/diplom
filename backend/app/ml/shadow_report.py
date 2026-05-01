@@ -7,7 +7,7 @@ from typing import Any
 
 def render_shadow_benchmark_markdown(report: dict[str, Any]) -> str:
     lines = [
-        "# D35 Shadow Benchmark And Guardrails",
+        "# Shadow Benchmark And Guardrails",
         "",
         f"- Dataset path: `{report.get('dataset_path')}`",
         f"- Dataset version: `{report.get('dataset_version')}`",

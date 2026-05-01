@@ -1,0 +1,2025 @@
+{
+  "generated_at": "2026-05-01T19:43:01.259677+00:00",
+  "dataset_path": "data\\dataset_versions\\dataset-v3-d37\\dataset.csv",
+  "dataset_version": "dataset-v3-d37",
+  "model_schema_version": "v3",
+  "feature_count": 148,
+  "rows_count": 885,
+  "queries_count": 99,
+  "domains_count": 568,
+  "split": {
+    "split_mode": "group_by_query",
+    "train_rows_count": 695,
+    "validation_rows_count": 190,
+    "train_queries_count": 79,
+    "validation_queries_count": 20,
+    "query_overlap_count": 0
+  },
+  "reference_model": {
+    "model_path": "artifacts\\page_quality_model.pkl",
+    "sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9"
+  },
+  "candidate_output_paths": {
+    "pointwise_random_forest": "artifacts\\page_quality_model.dataset-v3-d37-rf-candidate.pkl",
+    "pointwise_catboost": "artifacts\\page_quality_model.dataset-v3-d37-catboost-candidate.pkl",
+    "best_ranking_candidate": "artifacts\\page_quality_model.dataset-v3-d37-ranking-candidate.pkl"
+  },
+  "saved_artifacts": {
+    "pointwise_random_forest": "artifacts\\page_quality_model.dataset-v3-d37-rf-candidate.pkl",
+    "pointwise_catboost": "artifacts\\page_quality_model.dataset-v3-d37-catboost-candidate.pkl",
+    "catboost_ranker": "artifacts\\page_quality_model.dataset-v3-d37-ranking-candidate.pkl"
+  },
+  "pointwise_benchmark": {
+    "enabled": true,
+    "catboost_metrics": {
+      "rmse": 14.865537,
+      "mae": 11.774165,
+      "spearman_mean": 0.421894,
+      "ndcg_at_10": 0.945929,
+      "top_3_hit_rate": 0.95,
+      "validation_queries": 20.0
+    }
+  },
+  "candidates": [
+    {
+      "candidate_name": "pointwise_random_forest",
+      "candidate_family": "pointwise",
+      "status": "available",
+      "model_path": "artifacts\\page_quality_model.dataset-v3-d37-rf-candidate.pkl",
+      "model_type": "RandomForestRegressor",
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {
+        "rmse": 15.182424,
+        "mae": 12.27095,
+        "spearman_mean": 0.39803,
+        "ndcg_at_10": 0.941689,
+        "top_3_hit_rate": 0.8,
+        "validation_queries": 20.0
+      },
+      "stability": {
+        "query_groups_count": 20,
+        "intents_count": 2,
+        "query_group_breakdown": [
+          {
+            "query": "входные двери Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.127273,
+              "ndcg_at_10": 0.872559,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.406061,
+              "ndcg_at_10": 0.943883,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери цена Казань",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.430303,
+              "ndcg_at_10": 0.971959,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери цена Москва",
+            "intent": "commercial",
+            "rows_count": 8,
+            "metrics": {
+              "spearman_mean": 0.166667,
+              "ndcg_at_10": 0.939467,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "как выбрать кухни на заказ",
+            "intent": "informational",
+            "rows_count": 3,
+            "metrics": {
+              "spearman_mean": 1.0,
+              "ndcg_at_10": 1.0,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.793939,
+              "ndcg_at_10": 0.970918,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.006061,
+              "ndcg_at_10": 0.914573,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ цена Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.854545,
+              "ndcg_at_10": 0.981413,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Казань",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.612121,
+              "ndcg_at_10": 0.979343,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Москва",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": -0.551515,
+              "ndcg_at_10": 0.846983,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Новосибирск",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.442424,
+              "ndcg_at_10": 0.94599,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки отзывы",
+            "intent": "informational",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.127273,
+              "ndcg_at_10": 0.959079,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "пластиковые окна Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.830303,
+              "ndcg_at_10": 0.973387,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "пластиковые окна отзывы",
+            "intent": "informational",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.418182,
+              "ndcg_at_10": 0.925137,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "ремонт квартир Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.321212,
+              "ndcg_at_10": 0.923702,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "ремонт квартир Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.321212,
+              "ndcg_at_10": 0.952974,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе Краснодар",
+            "intent": "commercial",
+            "rows_count": 9,
+            "metrics": {
+              "spearman_mean": 0.133333,
+              "ndcg_at_10": 0.906453,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.624242,
+              "ndcg_at_10": 0.959028,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе цена Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.515152,
+              "ndcg_at_10": 0.939854,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе цена Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.381818,
+              "ndcg_at_10": 0.927076,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          }
+        ],
+        "intent_breakdown": [
+          {
+            "intent": "commercial",
+            "rows_count": 167,
+            "queries_count": 17,
+            "metrics": {
+              "spearman_mean": 0.377362,
+              "ndcg_at_10": 0.938209,
+              "top_3_hit_rate": 0.823529,
+              "validation_queries": 17.0
+            }
+          },
+          {
+            "intent": "informational",
+            "rows_count": 23,
+            "queries_count": 3,
+            "metrics": {
+              "spearman_mean": 0.515152,
+              "ndcg_at_10": 0.961405,
+              "top_3_hit_rate": 0.666667,
+              "validation_queries": 3.0
+            }
+          }
+        ],
+        "query_group_metric_stddev": {
+          "spearman_mean": 0.343958,
+          "ndcg_at_10": 0.03638,
+          "top_3_hit_rate": 0.4
+        },
+        "intent_metric_stddev": {
+          "spearman_mean": 0.068895,
+          "ndcg_at_10": 0.011598,
+          "top_3_hit_rate": 0.078431
+        }
+      },
+      "feature_importance_summary": {
+        "available": true,
+        "top_features": [
+          {
+            "feature": "intent_alignment_score",
+            "importance": 0.133502
+          },
+          {
+            "feature": "semantic_similarity",
+            "importance": 0.078906
+          },
+          {
+            "feature": "local_intent_alignment",
+            "importance": 0.054732
+          },
+          {
+            "feature": "unique_word_count",
+            "importance": 0.032282
+          },
+          {
+            "feature": "http_status_ok",
+            "importance": 0.028863
+          },
+          {
+            "feature": "avg_word_length",
+            "importance": 0.02663
+          },
+          {
+            "feature": "http_status_code",
+            "importance": 0.025702
+          },
+          {
+            "feature": "word_count",
+            "importance": 0.020888
+          },
+          {
+            "feature": "performance_response_time_ms",
+            "importance": 0.018694
+          },
+          {
+            "feature": "performance_dom_node_count",
+            "importance": 0.017486
+          }
+        ],
+        "feature_count": 148
+      },
+      "reason": null
+    },
+    {
+      "candidate_name": "pointwise_catboost",
+      "candidate_family": "pointwise",
+      "status": "available",
+      "model_path": "artifacts\\page_quality_model.dataset-v3-d37-catboost-candidate.pkl",
+      "model_type": "CatBoostRegressor",
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {
+        "rmse": 14.865537,
+        "mae": 11.774165,
+        "spearman_mean": 0.421894,
+        "ndcg_at_10": 0.945929,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "stability": {
+        "query_groups_count": 20,
+        "intents_count": 2,
+        "query_group_breakdown": [
+          {
+            "query": "входные двери Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.115152,
+              "ndcg_at_10": 0.872496,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.50303,
+              "ndcg_at_10": 0.949978,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери цена Казань",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.442424,
+              "ndcg_at_10": 0.975429,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери цена Москва",
+            "intent": "commercial",
+            "rows_count": 8,
+            "metrics": {
+              "spearman_mean": 0.333333,
+              "ndcg_at_10": 0.955526,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "как выбрать кухни на заказ",
+            "intent": "informational",
+            "rows_count": 3,
+            "metrics": {
+              "spearman_mean": 0.5,
+              "ndcg_at_10": 0.957006,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.781818,
+              "ndcg_at_10": 0.968541,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.2,
+              "ndcg_at_10": 0.933404,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ цена Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.890909,
+              "ndcg_at_10": 0.988999,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Казань",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.50303,
+              "ndcg_at_10": 0.979476,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Москва",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.127273,
+              "ndcg_at_10": 0.941228,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Новосибирск",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.466667,
+              "ndcg_at_10": 0.960223,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки отзывы",
+            "intent": "informational",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": -0.042424,
+              "ndcg_at_10": 0.95027,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "пластиковые окна Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.90303,
+              "ndcg_at_10": 0.978235,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "пластиковые окна отзывы",
+            "intent": "informational",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.454545,
+              "ndcg_at_10": 0.923954,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "ремонт квартир Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.333333,
+              "ndcg_at_10": 0.888765,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "ремонт квартир Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.054545,
+              "ndcg_at_10": 0.932638,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе Краснодар",
+            "intent": "commercial",
+            "rows_count": 9,
+            "metrics": {
+              "spearman_mean": 0.216667,
+              "ndcg_at_10": 0.911077,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.806061,
+              "ndcg_at_10": 0.981577,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе цена Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.406061,
+              "ndcg_at_10": 0.940765,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе цена Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.442424,
+              "ndcg_at_10": 0.928992,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          }
+        ],
+        "intent_breakdown": [
+          {
+            "intent": "commercial",
+            "rows_count": 167,
+            "queries_count": 17,
+            "metrics": {
+              "spearman_mean": 0.442692,
+              "ndcg_at_10": 0.946315,
+              "top_3_hit_rate": 0.941176,
+              "validation_queries": 17.0
+            }
+          },
+          {
+            "intent": "informational",
+            "rows_count": 23,
+            "queries_count": 3,
+            "metrics": {
+              "spearman_mean": 0.30404,
+              "ndcg_at_10": 0.943743,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 3.0
+            }
+          }
+        ],
+        "query_group_metric_stddev": {
+          "spearman_mean": 0.263676,
+          "ndcg_at_10": 0.030131,
+          "top_3_hit_rate": 0.217945
+        },
+        "intent_metric_stddev": {
+          "spearman_mean": 0.069326,
+          "ndcg_at_10": 0.001286,
+          "top_3_hit_rate": 0.029412
+        }
+      },
+      "feature_importance_summary": {
+        "available": true,
+        "top_features": [
+          {
+            "feature": "performance_response_time_ms",
+            "importance": 4.113603
+          },
+          {
+            "feature": "intent_alignment_score",
+            "importance": 3.243318
+          },
+          {
+            "feature": "image_density_per_1000_words",
+            "importance": 3.1588
+          },
+          {
+            "feature": "word_count",
+            "importance": 2.953159
+          },
+          {
+            "feature": "avg_word_length",
+            "importance": 2.710486
+          },
+          {
+            "feature": "unique_word_ratio",
+            "importance": 2.370011
+          },
+          {
+            "feature": "unique_word_count",
+            "importance": 2.203663
+          },
+          {
+            "feature": "informational_intent_alignment",
+            "importance": 2.146294
+          },
+          {
+            "feature": "link_density_per_1000_words",
+            "importance": 1.950002
+          },
+          {
+            "feature": "title_semantic_alignment",
+            "importance": 1.840636
+          }
+        ],
+        "feature_count": 148
+      },
+      "reason": null
+    },
+    {
+      "candidate_name": "catboost_ranker",
+      "candidate_family": "ranking",
+      "status": "available",
+      "model_path": "artifacts\\page_quality_model.dataset-v3-d37-ranking-candidate.pkl",
+      "model_type": "CatBoostRanker",
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {
+        "rmse": 74.747766,
+        "mae": 72.26261,
+        "spearman_mean": 0.37355,
+        "ndcg_at_10": 0.934413,
+        "top_3_hit_rate": 0.75,
+        "validation_queries": 20.0
+      },
+      "stability": {
+        "query_groups_count": 20,
+        "intents_count": 2,
+        "query_group_breakdown": [
+          {
+            "query": "входные двери Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.272727,
+              "ndcg_at_10": 0.89024,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.236364,
+              "ndcg_at_10": 0.909379,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери цена Казань",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.248485,
+              "ndcg_at_10": 0.950522,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "входные двери цена Москва",
+            "intent": "commercial",
+            "rows_count": 8,
+            "metrics": {
+              "spearman_mean": 0.261905,
+              "ndcg_at_10": 0.938568,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "как выбрать кухни на заказ",
+            "intent": "informational",
+            "rows_count": 3,
+            "metrics": {
+              "spearman_mean": 1.0,
+              "ndcg_at_10": 1.0,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.90303,
+              "ndcg_at_10": 0.978004,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.066667,
+              "ndcg_at_10": 0.897699,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "кухни на заказ цена Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.781818,
+              "ndcg_at_10": 0.972549,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Казань",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.612121,
+              "ndcg_at_10": 0.973127,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Москва",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": -0.090909,
+              "ndcg_at_10": 0.874738,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки Новосибирск",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.29697,
+              "ndcg_at_10": 0.947121,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "натяжные потолки отзывы",
+            "intent": "informational",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.260606,
+              "ndcg_at_10": 0.961709,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "пластиковые окна Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.818182,
+              "ndcg_at_10": 0.974571,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "пластиковые окна отзывы",
+            "intent": "informational",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.454545,
+              "ndcg_at_10": 0.939915,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "ремонт квартир Екатеринбург",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.369697,
+              "ndcg_at_10": 0.937831,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "ремонт квартир Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.381818,
+              "ndcg_at_10": 0.899322,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе Краснодар",
+            "intent": "commercial",
+            "rows_count": 9,
+            "metrics": {
+              "spearman_mean": -0.233333,
+              "ndcg_at_10": 0.886067,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.406061,
+              "ndcg_at_10": 0.948107,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе цена Нижний Новгород",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.2,
+              "ndcg_at_10": 0.920884,
+              "top_3_hit_rate": 0.0,
+              "validation_queries": 1.0
+            }
+          },
+          {
+            "query": "шкафы-купе цена Самара",
+            "intent": "commercial",
+            "rows_count": 10,
+            "metrics": {
+              "spearman_mean": 0.224242,
+              "ndcg_at_10": 0.887914,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 1.0
+            }
+          }
+        ],
+        "intent_breakdown": [
+          {
+            "intent": "commercial",
+            "rows_count": 167,
+            "queries_count": 17,
+            "metrics": {
+              "spearman_mean": 0.338579,
+              "ndcg_at_10": 0.928626,
+              "top_3_hit_rate": 0.705882,
+              "validation_queries": 17.0
+            }
+          },
+          {
+            "intent": "informational",
+            "rows_count": 23,
+            "queries_count": 3,
+            "metrics": {
+              "spearman_mean": 0.571717,
+              "ndcg_at_10": 0.967208,
+              "top_3_hit_rate": 1.0,
+              "validation_queries": 3.0
+            }
+          }
+        ],
+        "query_group_metric_stddev": {
+          "spearman_mean": 0.308878,
+          "ndcg_at_10": 0.035764,
+          "top_3_hit_rate": 0.433013
+        },
+        "intent_metric_stddev": {
+          "spearman_mean": 0.116569,
+          "ndcg_at_10": 0.019291,
+          "top_3_hit_rate": 0.147059
+        }
+      },
+      "feature_importance_summary": {
+        "available": true,
+        "top_features": [
+          {
+            "feature": "unique_word_count",
+            "importance": 9.20419
+          },
+          {
+            "feature": "unique_word_ratio",
+            "importance": 7.159722
+          },
+          {
+            "feature": "link_count",
+            "importance": 6.043254
+          },
+          {
+            "feature": "word_count",
+            "importance": 5.593224
+          },
+          {
+            "feature": "avg_word_length",
+            "importance": 4.871532
+          },
+          {
+            "feature": "intent_confidence",
+            "importance": 3.81896
+          },
+          {
+            "feature": "query_term_count",
+            "importance": 3.792075
+          },
+          {
+            "feature": "avg_paragraph_length",
+            "importance": 2.968883
+          },
+          {
+            "feature": "link_density_per_1000_words",
+            "importance": 2.766863
+          },
+          {
+            "feature": "commercial_intent_alignment",
+            "importance": 2.609628
+          }
+        ],
+        "feature_count": 148
+      },
+      "reason": null
+    },
+    {
+      "candidate_name": "lightgbm_ranker",
+      "candidate_family": "ranking",
+      "status": "unavailable",
+      "model_path": null,
+      "model_type": null,
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {},
+      "stability": {},
+      "feature_importance_summary": {
+        "available": false,
+        "top_features": []
+      },
+      "reason": "lightgbm_not_installed"
+    },
+    {
+      "candidate_name": "xgboost_rank_pairwise",
+      "candidate_family": "ranking",
+      "status": "unavailable",
+      "model_path": null,
+      "model_type": null,
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {},
+      "stability": {},
+      "feature_importance_summary": {
+        "available": false,
+        "top_features": []
+      },
+      "reason": "xgboost_not_installed"
+    }
+  ],
+  "best_pointwise_candidate": {
+    "candidate_name": "pointwise_catboost",
+    "candidate_family": "pointwise",
+    "status": "available",
+    "model_path": "artifacts\\page_quality_model.dataset-v3-d37-catboost-candidate.pkl",
+    "model_type": "CatBoostRegressor",
+    "model_schema_version": "v3",
+    "feature_count": 148,
+    "metrics": {
+      "rmse": 14.865537,
+      "mae": 11.774165,
+      "spearman_mean": 0.421894,
+      "ndcg_at_10": 0.945929,
+      "top_3_hit_rate": 0.95,
+      "validation_queries": 20.0
+    },
+    "stability": {
+      "query_groups_count": 20,
+      "intents_count": 2,
+      "query_group_breakdown": [
+        {
+          "query": "входные двери Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.115152,
+            "ndcg_at_10": 0.872496,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.50303,
+            "ndcg_at_10": 0.949978,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери цена Казань",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.442424,
+            "ndcg_at_10": 0.975429,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери цена Москва",
+          "intent": "commercial",
+          "rows_count": 8,
+          "metrics": {
+            "spearman_mean": 0.333333,
+            "ndcg_at_10": 0.955526,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "как выбрать кухни на заказ",
+          "intent": "informational",
+          "rows_count": 3,
+          "metrics": {
+            "spearman_mean": 0.5,
+            "ndcg_at_10": 0.957006,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.781818,
+            "ndcg_at_10": 0.968541,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.2,
+            "ndcg_at_10": 0.933404,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ цена Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.890909,
+            "ndcg_at_10": 0.988999,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Казань",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.50303,
+            "ndcg_at_10": 0.979476,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Москва",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.127273,
+            "ndcg_at_10": 0.941228,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Новосибирск",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.466667,
+            "ndcg_at_10": 0.960223,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки отзывы",
+          "intent": "informational",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": -0.042424,
+            "ndcg_at_10": 0.95027,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "пластиковые окна Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.90303,
+            "ndcg_at_10": 0.978235,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "пластиковые окна отзывы",
+          "intent": "informational",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.454545,
+            "ndcg_at_10": 0.923954,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "ремонт квартир Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.333333,
+            "ndcg_at_10": 0.888765,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "ремонт квартир Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.054545,
+            "ndcg_at_10": 0.932638,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе Краснодар",
+          "intent": "commercial",
+          "rows_count": 9,
+          "metrics": {
+            "spearman_mean": 0.216667,
+            "ndcg_at_10": 0.911077,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.806061,
+            "ndcg_at_10": 0.981577,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе цена Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.406061,
+            "ndcg_at_10": 0.940765,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе цена Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.442424,
+            "ndcg_at_10": 0.928992,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        }
+      ],
+      "intent_breakdown": [
+        {
+          "intent": "commercial",
+          "rows_count": 167,
+          "queries_count": 17,
+          "metrics": {
+            "spearman_mean": 0.442692,
+            "ndcg_at_10": 0.946315,
+            "top_3_hit_rate": 0.941176,
+            "validation_queries": 17.0
+          }
+        },
+        {
+          "intent": "informational",
+          "rows_count": 23,
+          "queries_count": 3,
+          "metrics": {
+            "spearman_mean": 0.30404,
+            "ndcg_at_10": 0.943743,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 3.0
+          }
+        }
+      ],
+      "query_group_metric_stddev": {
+        "spearman_mean": 0.263676,
+        "ndcg_at_10": 0.030131,
+        "top_3_hit_rate": 0.217945
+      },
+      "intent_metric_stddev": {
+        "spearman_mean": 0.069326,
+        "ndcg_at_10": 0.001286,
+        "top_3_hit_rate": 0.029412
+      }
+    },
+    "feature_importance_summary": {
+      "available": true,
+      "top_features": [
+        {
+          "feature": "performance_response_time_ms",
+          "importance": 4.113603
+        },
+        {
+          "feature": "intent_alignment_score",
+          "importance": 3.243318
+        },
+        {
+          "feature": "image_density_per_1000_words",
+          "importance": 3.1588
+        },
+        {
+          "feature": "word_count",
+          "importance": 2.953159
+        },
+        {
+          "feature": "avg_word_length",
+          "importance": 2.710486
+        },
+        {
+          "feature": "unique_word_ratio",
+          "importance": 2.370011
+        },
+        {
+          "feature": "unique_word_count",
+          "importance": 2.203663
+        },
+        {
+          "feature": "informational_intent_alignment",
+          "importance": 2.146294
+        },
+        {
+          "feature": "link_density_per_1000_words",
+          "importance": 1.950002
+        },
+        {
+          "feature": "title_semantic_alignment",
+          "importance": 1.840636
+        }
+      ],
+      "feature_count": 148
+    },
+    "reason": null
+  },
+  "best_ranking_candidate": {
+    "candidate_name": "catboost_ranker",
+    "candidate_family": "ranking",
+    "status": "available",
+    "model_path": "artifacts\\page_quality_model.dataset-v3-d37-ranking-candidate.pkl",
+    "model_type": "CatBoostRanker",
+    "model_schema_version": "v3",
+    "feature_count": 148,
+    "metrics": {
+      "rmse": 74.747766,
+      "mae": 72.26261,
+      "spearman_mean": 0.37355,
+      "ndcg_at_10": 0.934413,
+      "top_3_hit_rate": 0.75,
+      "validation_queries": 20.0
+    },
+    "stability": {
+      "query_groups_count": 20,
+      "intents_count": 2,
+      "query_group_breakdown": [
+        {
+          "query": "входные двери Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.272727,
+            "ndcg_at_10": 0.89024,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.236364,
+            "ndcg_at_10": 0.909379,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери цена Казань",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.248485,
+            "ndcg_at_10": 0.950522,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери цена Москва",
+          "intent": "commercial",
+          "rows_count": 8,
+          "metrics": {
+            "spearman_mean": 0.261905,
+            "ndcg_at_10": 0.938568,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "как выбрать кухни на заказ",
+          "intent": "informational",
+          "rows_count": 3,
+          "metrics": {
+            "spearman_mean": 1.0,
+            "ndcg_at_10": 1.0,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.90303,
+            "ndcg_at_10": 0.978004,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.066667,
+            "ndcg_at_10": 0.897699,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ цена Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.781818,
+            "ndcg_at_10": 0.972549,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Казань",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.612121,
+            "ndcg_at_10": 0.973127,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Москва",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": -0.090909,
+            "ndcg_at_10": 0.874738,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Новосибирск",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.29697,
+            "ndcg_at_10": 0.947121,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки отзывы",
+          "intent": "informational",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.260606,
+            "ndcg_at_10": 0.961709,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "пластиковые окна Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.818182,
+            "ndcg_at_10": 0.974571,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "пластиковые окна отзывы",
+          "intent": "informational",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.454545,
+            "ndcg_at_10": 0.939915,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "ремонт квартир Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.369697,
+            "ndcg_at_10": 0.937831,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "ремонт квартир Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.381818,
+            "ndcg_at_10": 0.899322,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе Краснодар",
+          "intent": "commercial",
+          "rows_count": 9,
+          "metrics": {
+            "spearman_mean": -0.233333,
+            "ndcg_at_10": 0.886067,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.406061,
+            "ndcg_at_10": 0.948107,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе цена Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.2,
+            "ndcg_at_10": 0.920884,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе цена Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.224242,
+            "ndcg_at_10": 0.887914,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        }
+      ],
+      "intent_breakdown": [
+        {
+          "intent": "commercial",
+          "rows_count": 167,
+          "queries_count": 17,
+          "metrics": {
+            "spearman_mean": 0.338579,
+            "ndcg_at_10": 0.928626,
+            "top_3_hit_rate": 0.705882,
+            "validation_queries": 17.0
+          }
+        },
+        {
+          "intent": "informational",
+          "rows_count": 23,
+          "queries_count": 3,
+          "metrics": {
+            "spearman_mean": 0.571717,
+            "ndcg_at_10": 0.967208,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 3.0
+          }
+        }
+      ],
+      "query_group_metric_stddev": {
+        "spearman_mean": 0.308878,
+        "ndcg_at_10": 0.035764,
+        "top_3_hit_rate": 0.433013
+      },
+      "intent_metric_stddev": {
+        "spearman_mean": 0.116569,
+        "ndcg_at_10": 0.019291,
+        "top_3_hit_rate": 0.147059
+      }
+    },
+    "feature_importance_summary": {
+      "available": true,
+      "top_features": [
+        {
+          "feature": "unique_word_count",
+          "importance": 9.20419
+        },
+        {
+          "feature": "unique_word_ratio",
+          "importance": 7.159722
+        },
+        {
+          "feature": "link_count",
+          "importance": 6.043254
+        },
+        {
+          "feature": "word_count",
+          "importance": 5.593224
+        },
+        {
+          "feature": "avg_word_length",
+          "importance": 4.871532
+        },
+        {
+          "feature": "intent_confidence",
+          "importance": 3.81896
+        },
+        {
+          "feature": "query_term_count",
+          "importance": 3.792075
+        },
+        {
+          "feature": "avg_paragraph_length",
+          "importance": 2.968883
+        },
+        {
+          "feature": "link_density_per_1000_words",
+          "importance": 2.766863
+        },
+        {
+          "feature": "commercial_intent_alignment",
+          "importance": 2.609628
+        }
+      ],
+      "feature_count": 148
+    },
+    "reason": null
+  },
+  "best_overall_candidate": {
+    "candidate_name": "pointwise_catboost",
+    "candidate_family": "pointwise",
+    "status": "available",
+    "model_path": "artifacts\\page_quality_model.dataset-v3-d37-catboost-candidate.pkl",
+    "model_type": "CatBoostRegressor",
+    "model_schema_version": "v3",
+    "feature_count": 148,
+    "metrics": {
+      "rmse": 14.865537,
+      "mae": 11.774165,
+      "spearman_mean": 0.421894,
+      "ndcg_at_10": 0.945929,
+      "top_3_hit_rate": 0.95,
+      "validation_queries": 20.0
+    },
+    "stability": {
+      "query_groups_count": 20,
+      "intents_count": 2,
+      "query_group_breakdown": [
+        {
+          "query": "входные двери Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.115152,
+            "ndcg_at_10": 0.872496,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.50303,
+            "ndcg_at_10": 0.949978,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери цена Казань",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.442424,
+            "ndcg_at_10": 0.975429,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "входные двери цена Москва",
+          "intent": "commercial",
+          "rows_count": 8,
+          "metrics": {
+            "spearman_mean": 0.333333,
+            "ndcg_at_10": 0.955526,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "как выбрать кухни на заказ",
+          "intent": "informational",
+          "rows_count": 3,
+          "metrics": {
+            "spearman_mean": 0.5,
+            "ndcg_at_10": 0.957006,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.781818,
+            "ndcg_at_10": 0.968541,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.2,
+            "ndcg_at_10": 0.933404,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "кухни на заказ цена Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.890909,
+            "ndcg_at_10": 0.988999,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Казань",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.50303,
+            "ndcg_at_10": 0.979476,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Москва",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.127273,
+            "ndcg_at_10": 0.941228,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки Новосибирск",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.466667,
+            "ndcg_at_10": 0.960223,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "натяжные потолки отзывы",
+          "intent": "informational",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": -0.042424,
+            "ndcg_at_10": 0.95027,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "пластиковые окна Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.90303,
+            "ndcg_at_10": 0.978235,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "пластиковые окна отзывы",
+          "intent": "informational",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.454545,
+            "ndcg_at_10": 0.923954,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "ремонт квартир Екатеринбург",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.333333,
+            "ndcg_at_10": 0.888765,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "ремонт квартир Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.054545,
+            "ndcg_at_10": 0.932638,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе Краснодар",
+          "intent": "commercial",
+          "rows_count": 9,
+          "metrics": {
+            "spearman_mean": 0.216667,
+            "ndcg_at_10": 0.911077,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.806061,
+            "ndcg_at_10": 0.981577,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе цена Нижний Новгород",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.406061,
+            "ndcg_at_10": 0.940765,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        },
+        {
+          "query": "шкафы-купе цена Самара",
+          "intent": "commercial",
+          "rows_count": 10,
+          "metrics": {
+            "spearman_mean": 0.442424,
+            "ndcg_at_10": 0.928992,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 1.0
+          }
+        }
+      ],
+      "intent_breakdown": [
+        {
+          "intent": "commercial",
+          "rows_count": 167,
+          "queries_count": 17,
+          "metrics": {
+            "spearman_mean": 0.442692,
+            "ndcg_at_10": 0.946315,
+            "top_3_hit_rate": 0.941176,
+            "validation_queries": 17.0
+          }
+        },
+        {
+          "intent": "informational",
+          "rows_count": 23,
+          "queries_count": 3,
+          "metrics": {
+            "spearman_mean": 0.30404,
+            "ndcg_at_10": 0.943743,
+            "top_3_hit_rate": 1.0,
+            "validation_queries": 3.0
+          }
+        }
+      ],
+      "query_group_metric_stddev": {
+        "spearman_mean": 0.263676,
+        "ndcg_at_10": 0.030131,
+        "top_3_hit_rate": 0.217945
+      },
+      "intent_metric_stddev": {
+        "spearman_mean": 0.069326,
+        "ndcg_at_10": 0.001286,
+        "top_3_hit_rate": 0.029412
+      }
+    },
+    "feature_importance_summary": {
+      "available": true,
+      "top_features": [
+        {
+          "feature": "performance_response_time_ms",
+          "importance": 4.113603
+        },
+        {
+          "feature": "intent_alignment_score",
+          "importance": 3.243318
+        },
+        {
+          "feature": "image_density_per_1000_words",
+          "importance": 3.1588
+        },
+        {
+          "feature": "word_count",
+          "importance": 2.953159
+        },
+        {
+          "feature": "avg_word_length",
+          "importance": 2.710486
+        },
+        {
+          "feature": "unique_word_ratio",
+          "importance": 2.370011
+        },
+        {
+          "feature": "unique_word_count",
+          "importance": 2.203663
+        },
+        {
+          "feature": "informational_intent_alignment",
+          "importance": 2.146294
+        },
+        {
+          "feature": "link_density_per_1000_words",
+          "importance": 1.950002
+        },
+        {
+          "feature": "title_semantic_alignment",
+          "importance": 1.840636
+        }
+      ],
+      "feature_count": 148
+    },
+    "reason": null
+  },
+  "report_paths": {
+    "json_path": "artifacts\\ranking-benchmarks\\dataset-v3-d37\\candidate-artifact-training-report.json",
+    "markdown_path": "artifacts\\ranking-benchmarks\\dataset-v3-d37\\candidate-artifact-training-report.md"
+  }
+}

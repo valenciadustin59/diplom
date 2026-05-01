@@ -62,6 +62,13 @@ def _artifact_model_info(artifact: dict[str, Any], raw_payload: dict[str, Any], 
     }
 
 
+def _artifact_feature_columns_for_path(model_path: str | Path) -> list[str] | tuple[str, ...]:
+    artifact = load_model_artifact(model_path)
+    if artifact is None:
+        return get_model_feature_schema(MODEL_SCHEMA_VERSION_V2).feature_columns
+    return _artifact_feature_columns(artifact) or get_model_feature_schema(MODEL_SCHEMA_VERSION_V2).feature_columns
+
+
 def _candidate_name(raw_payload: dict[str, Any], model_path: str | Path, fallback: str) -> str:
     candidate_name = raw_payload.get("candidate_name")
     if isinstance(candidate_name, str) and candidate_name.strip():
@@ -287,11 +294,13 @@ def build_smoke_explainability_summary(
         {
             "model_name": "reference_artifact",
             "model_path": reference_model["model_path"],
+            "feature_columns": _artifact_feature_columns_for_path(reference_model["model_path"]),
         },
         *[
             {
                 "model_name": str(candidate.get("candidate_name") or Path(str(candidate.get("model_path"))).stem),
                 "model_path": str(candidate.get("model_path")),
+                "feature_columns": _artifact_feature_columns_for_path(str(candidate.get("model_path"))),
             }
             for candidate in candidates
             if candidate.get("status") == "available" and candidate.get("model_path")
@@ -328,7 +337,7 @@ def build_smoke_explainability_summary(
                         model_name=str(model_entry["model_name"]),
                         model_path=str(model_entry["model_path"]),
                         row=representative_row,
-                        feature_columns=feature_columns,
+                        feature_columns=model_entry.get("feature_columns") or feature_columns,
                     )
                     for model_entry in model_entries
                 ],

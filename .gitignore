@@ -49,3 +49,6 @@ backend/data/*.manifest.json
 !backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v3-d37-rf-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v3-d37-ranking-candidate.pkl

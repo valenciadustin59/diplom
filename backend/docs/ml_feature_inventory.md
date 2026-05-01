@@ -1,5 +1,16 @@
 # ML Feature Inventory
 
+## Current schema status after D37
+
+Production runtime artifact `backend/artifacts/page_quality_model.pkl` still uses the original `v1` schema with `59` baseline features. D37 added a non-production `v3` candidate schema with `148` pre-competitor features:
+
+- `59` baseline text/HTML/query features;
+- `49` snapshot technical and commercial features;
+- `25` heavy-analysis features;
+- `15` intent-alignment features.
+
+D37 intentionally does not include the `29` SERP-relative features in primary scoring, because they are available only after competitor aggregation. D37 dataset evidence is stored in `backend/data/dataset_versions/dataset-v3-d37/`, and the publish-recommended candidate is `backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl`. The current production artifact remains unchanged until a controlled publish/smoke step.
+
 Текущий runtime scoring использует `59` признаков страницы. Набор специально смещён не в сторону одиночных SEO-галочек, а в сторону комбинаций сигналов, потому что для дипломного проекта важно показать: модель оценивает не один параметр сам по себе, а то, как несколько параметров работают вместе.
 
 ## Группы признаков

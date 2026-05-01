@@ -3,8 +3,11 @@ from pathlib import Path
 from app.ml import FEATURE_COLUMNS, explain_score, load_saved_model, predict_score, train_quality_model
 from app.ml.dataset_builder import DATASET_COLUMNS
 from app.ml.model import load_model_artifact, save_model, train_model
+from app.features import INTENT_ALIGNMENT_FEATURE_COLUMNS, SERP_RELATIVE_FEATURE_COLUMNS, SNAPSHOT_AUXILIARY_FEATURE_COLUMNS
+from app.heavy_analysis import HEAVY_ANALYSIS_FEATURE_COLUMNS
 from app.ml.model_schema import get_model_feature_schema
 EXPECTED_V2_FEATURE_COUNT = len(get_model_feature_schema("v2").feature_columns)
+EXPECTED_V3_FEATURE_COUNT = len(get_model_feature_schema("v3").feature_columns)
 def _write_training_dataset(path: Path) -> None:
     with path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)
@@ -87,3 +90,21 @@ def test_predict_score_accepts_legacy_v1_artifact(tmp_path):
     assert explanation["model_info"]["feature_count"] == len(FEATURE_COLUMNS)
     assert isinstance(score, float)
     assert 0.0 <= score <= 100.0
+
+
+def test_model_schema_v3_combines_pre_competitor_feature_groups():
+    v1_columns = get_model_feature_schema("v1").feature_columns
+    v2_columns = get_model_feature_schema("v2").feature_columns
+    v3_columns = get_model_feature_schema("v3").feature_columns
+
+    assert EXPECTED_V3_FEATURE_COUNT == (
+        len(v1_columns)
+        + len(SNAPSHOT_AUXILIARY_FEATURE_COLUMNS)
+        + len(HEAVY_ANALYSIS_FEATURE_COLUMNS)
+        + len(INTENT_ALIGNMENT_FEATURE_COLUMNS)
+    )
+    assert len(v3_columns) == len(set(v3_columns))
+    assert v3_columns[: len(v2_columns)] == v2_columns
+    assert "heavy_analysis_overall_score" in v3_columns
+    assert "intent_alignment_score" in v3_columns
+    assert not any(feature_name in v3_columns for feature_name in SERP_RELATIVE_FEATURE_COLUMNS)
