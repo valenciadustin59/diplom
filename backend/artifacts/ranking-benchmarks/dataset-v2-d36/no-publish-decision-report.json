@@ -1,0 +1,344 @@
+{
+  "generated_at": "2026-05-01T18:26:06.740613+00:00",
+  "task": "D36",
+  "decision": {
+    "decision": "keep_reference",
+    "publish_action": "no_publish",
+    "reason": "d35_no_candidate_passed_all_publish_gates",
+    "d35_publish_recommendation": "keep_reference",
+    "d35_reason": "no_candidate_passed_all_publish_gates",
+    "selected_candidate": null,
+    "selected_runtime_artifact": {
+      "model_path": "artifacts\\page_quality_model.pkl",
+      "model_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+      "model_size_bytes": 6622116,
+      "public_metadata_path": "artifacts\\page_quality_model.metadata.json",
+      "public_metadata_sha1": "494d3ee12f4bf0eff0e848a81ac1c4426483afa2",
+      "public_metadata": {
+        "artifact_version": "ru_commercial_dataset-20260421-primary-20260421174901",
+        "artifact_family": "page_quality_model",
+        "artifact_path": "backend\\artifacts\\page_quality_model.pkl",
+        "model_type": "RandomForestRegressor",
+        "source": "local_dataset",
+        "trained_at": "2026-04-21T17:49:03.706834+00:00",
+        "published_at": "2026-04-21T17:49:01.452372+00:00",
+        "feature_count": 59,
+        "dataset_metadata": {
+          "dataset_version": "ru_commercial_dataset-20260421-primary",
+          "rows_count": 436,
+          "queries_count": 47,
+          "domains_count": 385,
+          "categories_count": 6,
+          "cities_count": 8,
+          "failure_rate": 0.07234,
+          "query_coverage_ratio": 0.235,
+          "attempted_query_coverage_ratio": 0.235,
+          "manifest_generated_at": "2026-04-21T17:23:49.060829+00:00"
+        },
+        "metrics_summary": {
+          "rmse": 32.310547,
+          "mae": 27.884077,
+          "spearman_mean": 0.229632,
+          "ndcg_at_10": 0.844962,
+          "top_3_hit_rate": 0.9,
+          "validation_queries": 10.0,
+          "split_mode": "group_by_query"
+        }
+      },
+      "model_info": {
+        "artifact_version": "ru_commercial_dataset-20260421-primary-20260421174901",
+        "artifact_family": "page_quality_model",
+        "model_type": "RandomForestRegressor",
+        "model_schema_version": "v1",
+        "source": "local_dataset",
+        "trained_at": "2026-04-21T17:49:03.706834+00:00",
+        "published_at": "2026-04-21T17:49:01.452372+00:00",
+        "feature_count": 59,
+        "dataset_version": "ru_commercial_dataset-20260421-primary",
+        "rows_count": 436,
+        "queries_count": 47,
+        "domains_count": 385,
+        "metrics_summary": {
+          "rmse": 32.310547,
+          "mae": 27.884077,
+          "spearman_mean": 0.229632,
+          "ndcg_at_10": 0.844962,
+          "top_3_hit_rate": 0.9,
+          "validation_queries": 10.0,
+          "split_mode": "group_by_query"
+        }
+      }
+    },
+    "production_artifact_sha1_before": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    "production_artifact_sha1_after": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    "production_artifact_unchanged": true
+  },
+  "shadow_evidence": {
+    "shadow_report_path": "artifacts\\ranking-benchmarks\\dataset-v2-d35\\shadow-benchmark-guardrails-report.json",
+    "shadow_report_generated_at": "2026-05-01T17:48:12.323184+00:00",
+    "dataset_version": "dataset-v2",
+    "rows_count": 885,
+    "queries_count": 99,
+    "reference_metrics": {
+      "rmse": 27.980756,
+      "mae": 23.858757,
+      "spearman_mean": 0.153604,
+      "ndcg_at_10": 0.909302,
+      "top_3_hit_rate": 0.95,
+      "validation_queries": 20.0
+    },
+    "best_candidate_by_ranking_metrics": "pointwise_catboost",
+    "smoke_explainability": {
+      "requested_queries_count": 4,
+      "covered_queries_count": 4,
+      "exact_match_queries_count": 3,
+      "fallback_match_queries_count": 1,
+      "missing_queries_count": 0
+    },
+    "explainability_sensibility_passed": true
+  },
+  "candidate_artifacts": [
+    {
+      "candidate_name": "pointwise_random_forest",
+      "candidate_family": "pointwise",
+      "status": "available",
+      "model_path": "artifacts\\page_quality_model.dataset-v2-expert-rf-candidate.pkl",
+      "artifact_version": "dataset-v2-pointwise_random_forest",
+      "dataset_version": "dataset-v2",
+      "model_schema_version": "v2",
+      "model_type": "RandomForestRegressor",
+      "feature_count": 108
+    },
+    {
+      "candidate_name": "pointwise_catboost",
+      "candidate_family": "pointwise",
+      "status": "available",
+      "model_path": "artifacts\\page_quality_model.dataset-v2-expert-catboost-candidate.pkl",
+      "artifact_version": "dataset-v2-pointwise_catboost",
+      "dataset_version": "dataset-v2",
+      "model_schema_version": "v2",
+      "model_type": "CatBoostRegressor",
+      "feature_count": 108
+    },
+    {
+      "candidate_name": "catboost_ranker",
+      "candidate_family": "ranking",
+      "status": "available",
+      "model_path": "artifacts\\page_quality_model.dataset-v2-ranking-candidate.pkl",
+      "artifact_version": "dataset-v2-catboost_ranker",
+      "dataset_version": "dataset-v2",
+      "model_schema_version": "v2",
+      "model_type": "CatBoostRanker",
+      "feature_count": 108
+    }
+  ],
+  "candidate_rejections": [
+    {
+      "candidate_name": "pointwise_random_forest",
+      "candidate_family": "pointwise",
+      "model_path": "artifacts\\page_quality_model.dataset-v2-expert-rf-candidate.pkl",
+      "publish_gate_passed": false,
+      "rejection_reasons": [
+        "top_3_hit_rate_regressed"
+      ],
+      "failed_checks": [
+        "top_3_hit_rate_not_worse"
+      ],
+      "candidate_metrics": {
+        "rmse": 15.309359,
+        "mae": 12.380441,
+        "spearman_mean": 0.398474,
+        "ndcg_at_10": 0.942676,
+        "top_3_hit_rate": 0.8,
+        "validation_queries": 20.0
+      },
+      "reference_metrics": {
+        "rmse": 27.980756,
+        "mae": 23.858757,
+        "spearman_mean": 0.153604,
+        "ndcg_at_10": 0.909302,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "metric_deltas": {
+        "rmse": -12.671397,
+        "mae": -11.478316,
+        "spearman_mean": 0.24487,
+        "ndcg_at_10": 0.033374,
+        "top_3_hit_rate": -0.15
+      },
+      "thresholds": {
+        "absolute_error_tolerance_ratio": 0.05,
+        "rmse_comparable_threshold": 29.379794,
+        "mae_comparable_threshold": 25.051695,
+        "ranking_family_mae_warning_threshold": 50.0
+      }
+    },
+    {
+      "candidate_name": "pointwise_catboost",
+      "candidate_family": "pointwise",
+      "model_path": "artifacts\\page_quality_model.dataset-v2-expert-catboost-candidate.pkl",
+      "publish_gate_passed": false,
+      "rejection_reasons": [
+        "top_3_hit_rate_regressed"
+      ],
+      "failed_checks": [
+        "top_3_hit_rate_not_worse"
+      ],
+      "candidate_metrics": {
+        "rmse": 14.980677,
+        "mae": 12.003497,
+        "spearman_mean": 0.404524,
+        "ndcg_at_10": 0.947887,
+        "top_3_hit_rate": 0.8,
+        "validation_queries": 20.0
+      },
+      "reference_metrics": {
+        "rmse": 27.980756,
+        "mae": 23.858757,
+        "spearman_mean": 0.153604,
+        "ndcg_at_10": 0.909302,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "metric_deltas": {
+        "rmse": -13.000079,
+        "mae": -11.85526,
+        "spearman_mean": 0.25092,
+        "ndcg_at_10": 0.038585,
+        "top_3_hit_rate": -0.15
+      },
+      "thresholds": {
+        "absolute_error_tolerance_ratio": 0.05,
+        "rmse_comparable_threshold": 29.379794,
+        "mae_comparable_threshold": 25.051695,
+        "ranking_family_mae_warning_threshold": 50.0
+      }
+    },
+    {
+      "candidate_name": "catboost_ranker",
+      "candidate_family": "ranking",
+      "model_path": "artifacts\\page_quality_model.dataset-v2-ranking-candidate.pkl",
+      "publish_gate_passed": false,
+      "rejection_reasons": [
+        "top_3_hit_rate_regressed",
+        "rmse_not_comparable",
+        "mae_not_comparable",
+        "ranking_family_absolute_error_not_viable"
+      ],
+      "failed_checks": [
+        "top_3_hit_rate_not_worse",
+        "rmse_comparable_or_better",
+        "mae_comparable_or_better",
+        "ranking_family_absolute_error_viable"
+      ],
+      "candidate_metrics": {
+        "rmse": 74.733525,
+        "mae": 72.250466,
+        "spearman_mean": 0.379091,
+        "ndcg_at_10": 0.938496,
+        "top_3_hit_rate": 0.8,
+        "validation_queries": 20.0
+      },
+      "reference_metrics": {
+        "rmse": 27.980756,
+        "mae": 23.858757,
+        "spearman_mean": 0.153604,
+        "ndcg_at_10": 0.909302,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "metric_deltas": {
+        "rmse": 46.752769,
+        "mae": 48.391709,
+        "spearman_mean": 0.225487,
+        "ndcg_at_10": 0.029194,
+        "top_3_hit_rate": -0.15
+      },
+      "thresholds": {
+        "absolute_error_tolerance_ratio": 0.05,
+        "rmse_comparable_threshold": 29.379794,
+        "mae_comparable_threshold": 25.051695,
+        "ranking_family_mae_warning_threshold": 50.0
+      }
+    }
+  ],
+  "rollback_reference": {
+    "rollback_required": false,
+    "rollback_reason": "No artifact was published in D36; the current production alias remains selected.",
+    "current_alias_model_path": "artifacts\\page_quality_model.pkl",
+    "current_alias_model_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    "current_alias_metadata_path": "artifacts\\page_quality_model.metadata.json",
+    "current_alias_metadata_sha1": "494d3ee12f4bf0eff0e848a81ac1c4426483afa2",
+    "versioned_reference_model_path": "artifacts\\versions\\page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl",
+    "versioned_reference_model_available": true,
+    "versioned_reference_model_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    "versioned_reference_metadata_path": "artifacts\\versions\\page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+    "versioned_reference_metadata_available": true,
+    "versioned_reference_metadata_sha1": "23b60a7226cddf360049fe0ea8223cd034ec7f55"
+  },
+  "verification": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "npm run build",
+        "status": "passed"
+      },
+      {
+        "name": "npm run site:check",
+        "status": "passed"
+      },
+      {
+        "name": "npm run test:scripts",
+        "status": "passed",
+        "details": "13 passed"
+      },
+      {
+        "name": "targeted backend pytest",
+        "status": "passed",
+        "details": "20 passed in 13.58s"
+      },
+      {
+        "name": "backend full pytest",
+        "status": "passed",
+        "details": "132 passed in 519.09s with CELERY_BROKER_URL=redis://localhost:1/0 and CELERY_RESULT_BACKEND=redis://localhost:1/0"
+      }
+    ],
+    "runtime_smoke": {
+      "status": "passed",
+      "summary_path": "..\\output\\runtime-smoke\\d36-smoke-summary.json",
+      "generated_at": "2026-05-01T18:13:31.032Z",
+      "audit_id": "a814ad9e-0f35-441e-a7d3-f82a34abaae9",
+      "audit_status": "completed",
+      "health_ready_status": "ready",
+      "ready_worker_count": 4,
+      "ready_missing_queues": [],
+      "competitors_found": 2,
+      "competitors_analyzed": 2,
+      "competitors_failed": 0,
+      "recommendation_total": 13,
+      "model_info": {
+        "dataset_version": "ru_commercial_dataset-20260421-primary",
+        "artifact_version": "ru_commercial_dataset-20260421-primary-20260421174901",
+        "model_schema_version": "v1",
+        "model_type": "RandomForestRegressor",
+        "source": "local_dataset",
+        "artifact_family": "page_quality_model"
+      },
+      "frontend_routes_count": 7,
+      "invalid_frontend_routes": [],
+      "failures": []
+    }
+  },
+  "invariants": {
+    "production_model_path": "artifacts\\page_quality_model.pkl",
+    "production_model_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    "runtime_dataset_version": "ru_commercial_dataset-20260421-primary",
+    "runtime_model_schema_version": "v1",
+    "candidate_artifacts_are_not_runtime_selected": true
+  },
+  "report_paths": {
+    "json_path": "artifacts\\ranking-benchmarks\\dataset-v2-d36\\no-publish-decision-report.json",
+    "markdown_path": "artifacts\\ranking-benchmarks\\dataset-v2-d36\\no-publish-decision-report.md"
+  }
+}

@@ -34,7 +34,7 @@
 
 Подробный план выполнения находится в `plans/d27-d31-final-model-training.md`.
 
-## Активная волна: D32-D36 Model Productization
+## Завершённая волна: D32-D36 Model Productization
 
 Эта волна заведена как GitHub issues `#51-#55`. Её смысл — не заменить модель любой ценой, а довести candidate до безопасного publish gate: экспертные метки, ranking-aware обучение, shadow benchmark, explainability guardrails, controlled publish или documented keep-reference.
 
@@ -42,7 +42,7 @@
 - `D33` / `#52`: completed locally; refreshed `manifest.json` and `split.json` after expert labels.
 - `D34` / `#53`: completed locally; RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production.
 - `D35` / `#54`: completed locally; shadow benchmark and explainability guardrails recommend `keep_reference`.
-- `D36` / `#55`: open; controlled publish, rollback path и product smoke verification.
+- `D36` / `#55`: completed locally; controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 
 Подробный план выполнения находится в `plans/d32-d36-model-productization.md`.
 
@@ -193,6 +193,6 @@ Active tasks:
 - `D33` / GitHub `#52`: completed locally; refreshed `dataset-v2` manifest and group split after expert labels.
 - `D34` / GitHub `#53`: completed locally; RF, CatBoost and CatBoostRanker candidate artifacts trained without replacing production.
 - `D35` / GitHub `#54`: completed locally; shadow benchmark and explainability guardrails recommend `keep_reference`.
-- `D36` / GitHub `#55`: open; controlled model publish, rollback path and product smoke verification.
+- `D36` / GitHub `#55`: completed locally; controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 
-Next agent instruction: start with `D36` unless the user explicitly chooses another task. Do not add demo mode, do not rewrite backend orchestration, and do not replace `backend/artifacts/page_quality_model.pkl` before D36.
+Next agent instruction: `D32-D36` is complete locally. Do not add demo mode or rewrite backend orchestration; keep `backend/artifacts/page_quality_model.pkl` unchanged unless a future publish task explicitly passes the guardrails.

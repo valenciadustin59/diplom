@@ -509,16 +509,16 @@ cd E:\codexPROJ\diplom\backend
 - `D31` / `#50` — completed locally: no-publish/keep-reference decision по D30 принят, runtime подтверждён smoke-аудитом.
 - D31 clean rerun evidence: `scripts/d31-runtime-smoke.mjs` regenerated `output/runtime-smoke/d31-smoke-summary.json` from a clean stack; audit `45ca43ab-fb3a-4045-a28a-5f012cee4ffb` completed with `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, `competitor_page` fan-out `2/2`, and runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`.
 
-Активный backend/ML backlog после `D31`:
+Завершённый backend/ML backlog `D32-D36` после `D31`:
 
 - `D32` / `#51` - completed locally: `197` expert-rubric labels for `dataset-v2`;
 - `D33` / `#52` - completed locally: `manifest.json` and `split.json` refreshed after applying expert labels;
 - `D34` / `#53` - completed locally: RF, CatBoost and CatBoostRanker candidate artifacts trained без замены production artifact;
 - `D35` / `#54` - completed locally: shadow benchmark and explainability guardrails recommend `keep_reference`;
-- `D36` / `#55` — open: controlled publish/rollback/smoke verification.
+- `D36` / `#55` — completed locally: controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 
 D34 evidence: `artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, `artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl`, and `artifacts/ranking-benchmarks/dataset-v2-d34/candidate-artifact-training-report.json`. Production artifact `artifacts/page_quality_model.pkl` remains unchanged.
 
-D35 evidence: `artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` recommends `keep_reference`; RF/CatBoost fail `top_3_hit_rate`, while CatBoostRanker also fails absolute-error guardrails. Smoke explainability has `3/4` exact query matches and `1/4` documented fallback.
+D35 evidence: `artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guardrails-report.json` recommends `keep_reference`; RF/CatBoost fail `top_3_hit_rate`, while CatBoostRanker also fails absolute-error guardrails. Smoke explainability has `3/4` exact query matches and `1/4` documented fallback. D36 evidence: `artifacts/ranking-benchmarks/dataset-v2-d36/no-publish-decision-report.json` and `.md` record the no-publish decision, rollback/reference hashes, product verification and unchanged production SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`; product smoke summary is `../output/runtime-smoke/d36-smoke-summary.json` for audit `a814ad9e-0f35-441e-a7d3-f82a34abaae9`.
 
 Если GitHub Issues недоступны из текущего окружения, подробные acceptance criteria и команды находятся в `../plans/d32-d36-model-productization.md`; `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённой волне.

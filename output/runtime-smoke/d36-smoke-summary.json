@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-05-01T18:13:31.032Z",
+  "audit_id": "a814ad9e-0f35-441e-a7d3-f82a34abaae9",
+  "audit_payload": {
+    "query": "ремонт квартир москва",
+    "target_url": "https://smartremontmsk.ru/",
+    "top_n": 2
+  },
+  "audit_poll_attempts": 39,
+  "health_ready_status": "ready",
+  "ready_worker_count": 4,
+  "ready_workers": [
+    "site-audit.cpu_ml@Qonwick",
+    "site-audit.heavy_analysis@Qonwick",
+    "site-audit.network@Qonwick",
+    "site-audit.pipeline@Qonwick"
+  ],
+  "ready_missing_queues": [],
+  "metrics_status": "degraded",
+  "metrics_workers_status": "ok",
+  "metrics_queue_pressure_status": "ok",
+  "metrics_stuck_processing_count": 3,
+  "metrics_queue_total_depth": 0,
+  "audit_status": "completed",
+  "score": 69.5249,
+  "competitors_found": 2,
+  "competitors_analyzed": 2,
+  "competitors_failed": 0,
+  "recommendation_total": 13,
+  "recommendation_groups": 4,
+  "recommendation_competitor_context": true,
+  "model_info": {
+    "dataset_version": "ru_commercial_dataset-20260421-primary",
+    "artifact_version": "ru_commercial_dataset-20260421-primary-20260421174901",
+    "model_schema_version": "v1",
+    "model_type": "RandomForestRegressor",
+    "source": "local_dataset",
+    "artifact_family": "page_quality_model"
+  },
+  "diagnostics_status": "completed",
+  "fan_out": {
+    "stage": "competitor_page",
+    "dispatch_count": 2,
+    "started_count": 2,
+    "terminal_count": 2,
+    "in_flight_count": 0,
+    "total_duration_ms": 20463.51,
+    "average_duration_ms": 10231.76,
+    "max_duration_ms": 13381.93,
+    "critical_path_duration_ms": 13381.93
+  },
+  "critical_path_modes": {
+    "fetch": "serial_sum",
+    "heavy_analysis": "serial_sum",
+    "features": "serial_sum",
+    "scoring": "serial_sum",
+    "competitors": "serial_sum",
+    "competitor_page": "fan_out_max",
+    "competitor_analysis": "fan_out_max",
+    "competitor_aggregation": "serial_sum",
+    "recommendations": "serial_sum",
+    "finalize": "serial_sum"
+  },
+  "frontend_routes": {
+    "/": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    },
+    "/audits/a814ad9e-0f35-441e-a7d3-f82a34abaae9": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    },
+    "/audits/a814ad9e-0f35-441e-a7d3-f82a34abaae9?tab=report": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    },
+    "/audits/a814ad9e-0f35-441e-a7d3-f82a34abaae9?tab=recommendations": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    },
+    "/audits/a814ad9e-0f35-441e-a7d3-f82a34abaae9?tab=timeline": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    },
+    "/audits/a814ad9e-0f35-441e-a7d3-f82a34abaae9?tab=pages": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    },
+    "/audits/a814ad9e-0f35-441e-a7d3-f82a34abaae9?tab=competitors": {
+      "status": 200,
+      "has_root": true,
+      "has_vite_entry": true
+    }
+  }
+}

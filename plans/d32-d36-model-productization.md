@@ -28,7 +28,7 @@ to publish, or explicitly keep the current production model with evidence.
 - [x] `D33` / GitHub `#52`: refresh `dataset-v2` manifest and group split after expert labels.
 - [x] `D34` / GitHub `#53`: train ranking-aware candidate models for product deployment.
 - [x] `D35` / GitHub `#54`: run shadow benchmark and explainability guardrails before publish.
-- [ ] `D36` / GitHub `#55`: controlled model publish, rollback path and product smoke verification.
+- [x] `D36` / GitHub `#55`: controlled keep-reference/no-publish decision, rollback evidence and product smoke verification.
 
 ## Progress
 
@@ -36,6 +36,7 @@ to publish, or explicitly keep the current production model with evidence.
 - [x] (2026-05-01) D33: Applied D32 expert labels to `dataset.csv` through `app.ml.expert_label_refresh`, regenerated `split.json` with `group_by_query`, and regenerated `manifest.json`. Dataset evidence now has `197` `hybrid` rows and `688` `weak_serp` rows, `expert_rows_count=197`, `hybrid_rows_count=197`, `unmatched_expert_labels_count=0`, artifact coverage `1.0`, and `ready_for_training=true`. Split stayed `695` train / `190` validation rows with `79` train queries / `20` validation queries and no query overlap. Production artifact hash remains unchanged.
 - [x] (2026-05-01) D34: Added `app.ml.candidate_artifacts` and trained three non-production candidate artifacts from the D33 `dataset-v2` evidence: `page_quality_model.dataset-v2-expert-rf-candidate.pkl`, `page_quality_model.dataset-v2-expert-catboost-candidate.pkl`, and `page_quality_model.dataset-v2-ranking-candidate.pkl`. Training used schema `v2`, `108` features, `group_by_query` split, `695` train rows / `190` validation rows, and `0` query overlap. D34 validation metrics selected `pointwise_catboost` as best overall (`spearman_mean=0.404524`, `ndcg_at_10=0.947887`, `top_3_hit_rate=0.8`, `MAE=12.003497`); the best ranking-aware available model is `catboost_ranker` (`spearman_mean=0.379091`, `ndcg_at_10=0.938496`, `top_3_hit_rate=0.8`, `MAE=72.250466`). LightGBM and XGBoost rankers are unavailable in the local environment. Production artifact `backend/artifacts/page_quality_model.pkl` remains unchanged at SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
 - [x] (2026-05-01) D35: Added `app.ml.shadow_benchmark` and ran a no-publish shadow benchmark/guardrail report for the three D34 artifacts against the current reference artifact. The report recommends `keep_reference` because no candidate passed all publish gates. RF and CatBoost improve Spearman/NDCG/RMSE/MAE but fail `top_3_hit_rate` (`0.8` vs reference `0.95`). `CatBoostRanker` also fails absolute-error viability (`MAE=72.250466` vs reference `23.858757`). Smoke explainability found rows for `4/4` D35 smoke queries, with `3` exact query matches and `1` documented fallback (`ремонт квартир москва` -> `ремонт квартир цена Москва`). Bounded explanation checks and the explicit explainability sensibility heuristic passed for all three candidates. Production artifact hash remains unchanged at SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`.
+- [x] (2026-05-01) D36: Added `app.ml.no_publish_decision` and finalized the controlled keep-reference/no-publish path from D35 evidence. D36 evidence report: `backend/artifacts/ranking-benchmarks/dataset-v2-d36/no-publish-decision-report.json` and `.md`; runtime smoke evidence: `output/runtime-smoke/d36-smoke-summary.json` with audit `a814ad9e-0f35-441e-a7d3-f82a34abaae9`. D36 confirms selected runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`, `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, and frontend routes passing. Production artifact SHA1 stayed `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9` before/after D36; no candidate was published.
 
 ## D32: Expert Labels
 
@@ -194,6 +195,13 @@ Keep-reference path:
 - Preserve candidate and benchmark evidence.
 - Document why publish was rejected.
 - Run smoke to prove the product still works on the selected production model.
+
+D36 output:
+
+- `backend/app/ml/no_publish_decision.py` generates the keep-reference report without invoking the publish path or mutating `artifacts/page_quality_model.pkl`.
+- `backend/artifacts/ranking-benchmarks/dataset-v2-d36/no-publish-decision-report.json` and `.md` record the no-publish decision, D35 rejection reasons, selected runtime artifact metadata, reference/rollback artifact hashes and verification status.
+- `output/runtime-smoke/d36-smoke-summary.json` records product smoke audit `a814ad9e-0f35-441e-a7d3-f82a34abaae9`: audit `completed`, readiness `ready`, `4` workers, missing queues `[]`, `2/2` competitors analyzed, `13` recommendations, runtime model `ru_commercial_dataset-20260421-primary` / schema `v1`, and all `7` frontend routes valid.
+- Production artifact SHA1 before and after D36: `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`; no D34/D35 candidate was published.
 
 Final checks:
 
