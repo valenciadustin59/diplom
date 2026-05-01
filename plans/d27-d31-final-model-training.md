@@ -19,7 +19,7 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 - [x] (2026-05-01 20:42 +05:00) D28: Generated canonical `split.json` with `group_by_query` mode (`695` train rows / `190` validation rows, `79` train queries / `20` validation queries, no query overlap) and canonical `manifest.json`. The manifest reports `ready_for_training=true`, `885` rows, `99` unique queries, `568` unique domains, `6` categories, `8` cities, `query_coverage_ratio=0.22`, `failure_rate=0.052463`, `artifact_coverage_ratio=1.0`, `missing_artifacts_count=0`, and no unmet requirements. D28 was pushed to `origin/main`; GitHub issue `#47` closure was not verified because `gh` is not installed in this environment.
 - [x] (2026-05-01 20:53 +05:00) D29: Trained `artifacts/page_quality_model.dataset-v2-candidate.pkl` from `dataset-v2` without replacing `artifacts/page_quality_model.pkl`. The candidate is `RandomForestRegressor`, `model_schema_version=v2`, `dataset_version=dataset-v2`, `885` rows, `99` queries, `568` domains, `108` features. Validation metrics: `rmse=15.026923`, `mae=12.478412`, `spearman_mean=0.282468`, `ndcg_at_10=0.939192`, `top_3_hit_rate=0.9`, `split_mode=group_by_query`; production artifact hash/timestamp stayed unchanged. The optional CatBoost benchmark from the same training run reported `rmse=14.870781`, `mae=12.251912`, `spearman_mean=0.268463`, `ndcg_at_10=0.942102`, and `top_3_hit_rate=0.8`.
 - [x] (2026-05-01 21:02 +05:00) D30: Ran ranking benchmark against the current production artifact and wrote `backend/artifacts/ranking-benchmarks/dataset-v2/ranking-benchmark-report.json` plus `.md`. The D29 candidate artifact was evaluated directly via `--candidate-model`; it improved absolute error versus production (`rmse` delta `-11.412967`, `mae` delta `-9.769919`) but underperformed production on ranking metrics (`spearman_mean` delta `-0.05409`, `ndcg_at_10` delta `-0.008862`, `top_3_hit_rate` delta `-0.05`). The report's publish recommendation is `keep_reference`; `artifacts/page_quality_model.pkl` hash/timestamp stayed unchanged.
-- [ ] D31: Publish the final model artifact and verify product behavior with smoke audits.
+- [ ] D31: Make the final publish/no-publish decision and verify product behavior with smoke audits.
 
 ## Surprises & Discoveries
 
@@ -46,6 +46,9 @@ The user-visible result is simple: after this plan is complete, a new audit shou
 
 - Observation: The ranking benchmark originally compared only newly trained ranking candidates against production, not the D29 candidate artifact itself.
   Evidence: `app.ml.ranking_benchmark` now accepts `--candidate-model` and records `candidate_model_comparison_to_reference` so D30 can directly compare `page_quality_model.dataset-v2-candidate.pkl` with `page_quality_model.pkl`.
+
+- Observation: `publish_best_ranking_model` is intentionally narrower than D30 benchmark comparison.
+  Evidence: it only publishes newly trained ranking candidates (`candidate_family=ranking`) and now raises if an in-memory benchmark winner comes from a non-ranking candidate artifact. The D29 pointwise candidate can be evaluated by D30, but it is not publishable through this ranking publish helper.
 
 ## Decision Log
 
@@ -129,7 +132,7 @@ Then run D29. Train a candidate model to a candidate path first. Do not overwrit
 
 Then run D30. Use ranking benchmark to compare the candidate against the current production artifact. SEO scoring is query-relative, so ranking evidence matters more than a single absolute regression metric.
 
-Finally run D31. Publish the model, run tests, start the full stack, run smoke audits, verify UI tabs, and commit/push the artifacts and docs.
+Finally run D31. Apply the D30 publish/no-publish decision, run tests, start the full stack, run smoke audits, verify UI tabs, and commit/push the artifacts and docs.
 
 ## Concrete Steps
 
@@ -261,9 +264,18 @@ Run D30 checks:
 
     .venv\Scripts\python.exe -m pytest tests\test_ranking_benchmark.py tests\test_model_evaluate.py tests\test_model_publish.py
 
-### D31: Publish and smoke-test final model
+### D31: Publish/no-publish decision and smoke-test final model state
 
-Publish through `app.ml.publish`:
+D30 currently recommends `keep_reference`. Treat this as a valid D31 completion path: do not replace `artifacts/page_quality_model.pkl` unless there is an explicit, documented override rationale.
+
+If keeping the current production artifact, verify the no-publish state first:
+
+    cd E:\codexPROJ\diplom\backend
+    .venv\Scripts\python.exe -c "from pathlib import Path; from app.ml.model import load_model_artifact; artifact = load_model_artifact(Path('artifacts/page_quality_model.pkl')); print({'dataset_version': artifact.get('dataset_version'), 'model_schema_version': artifact.get('model_schema_version'), 'artifact_version': artifact.get('artifact_version')})"
+
+Then run smoke checks against the unchanged production artifact.
+
+Only publish through `app.ml.publish` if D31 intentionally overrides D30:
 
     cd E:\codexPROJ\diplom\backend
     .venv\Scripts\python.exe -m app.ml.publish `
@@ -274,7 +286,7 @@ Publish through `app.ml.publish`:
       --random-state 42 `
       --model-schema-version v2
 
-Or publish the best ranking model if D30 proves that path is better:
+Or publish the best newly trained ranking model if a new benchmark proves that path is better. This helper does not publish the D29 pointwise candidate artifact directly:
 
     cd E:\codexPROJ\diplom\backend
     .venv\Scripts\python.exe -m app.ml.ranking_benchmark `
@@ -288,7 +300,7 @@ Or publish the best ranking model if D30 proves that path is better:
       --random-state 42 `
       --model-schema-version v2
 
-After publishing, restart the full stack:
+After the publish/no-publish decision, restart the full stack:
 
     cd E:\codexPROJ\diplom
     npm start

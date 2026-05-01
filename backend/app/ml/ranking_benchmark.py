@@ -701,6 +701,11 @@ def publish_best_ranking_model(
     best_candidate = benchmark_result["best_candidate"]
     if best_candidate is None or best_candidate.get("status") != "available" or best_candidate.get("model") is None:
         raise ValueError("No ranking candidate is available for publication.")
+    if best_candidate.get("candidate_family") != "ranking":
+        raise ValueError(
+            "Best benchmark candidate is not a ranking candidate. "
+            "publish_best_ranking_model only publishes newly trained ranking candidates."
+        )
     reference_candidate = benchmark_result["reference_candidate"]
     if not force_publish and reference_candidate is not None:
         if candidate_sort_key(best_candidate) <= candidate_sort_key(reference_candidate):

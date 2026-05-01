@@ -1,6 +1,7 @@
 import csv
 import json
 from pathlib import Path
+import pytest
 from app.ml.dataset_builder import DATASET_COLUMNS
 from app.ml.model import load_saved_model, save_model, train_model
 from app.ml.model_schema import get_model_feature_schema
@@ -199,3 +200,45 @@ def test_publish_best_ranking_model_writes_artifact_metadata_and_report(monkeypa
     published_metadata = json.loads(Path(result["published_metadata_path"]).read_text(encoding="utf-8"))
     assert published_metadata["candidate_name"] == "catboost_ranker"
     assert published_metadata["feature_importance_summary"]["available"] is True
+
+
+def test_publish_best_ranking_model_rejects_non_ranking_candidate(monkeypatch, tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    manifest_path = tmp_path / "manifest.json"
+    model_path = tmp_path / "page_quality_model.pkl"
+    report_dir = tmp_path / "reports"
+    _write_dataset(dataset_path)
+    _write_ready_manifest(manifest_path)
+
+    monkeypatch.setattr(
+        "app.ml.ranking_benchmark._run_ranking_benchmark_internal",
+        lambda **kwargs: {
+            "best_candidate": {
+                "candidate_name": "candidate_artifact",
+                "candidate_family": "pointwise_candidate",
+                "status": "available",
+                "model": train_model(n_samples=12, seed=9),
+                "metrics": {
+                    "rmse": 1.0,
+                    "mae": 1.0,
+                    "spearman_mean": 1.0,
+                    "ndcg_at_10": 1.0,
+                    "top_3_hit_rate": 1.0,
+                },
+            },
+            "reference_candidate": None,
+            "report": {"comparison_to_reference": None},
+            "report_paths": {},
+        },
+    )
+
+    with pytest.raises(ValueError, match="only publishes newly trained ranking candidates"):
+        publish_best_ranking_model(
+            dataset_path=dataset_path,
+            manifest_path=manifest_path,
+            model_path=model_path,
+            report_output_dir=report_dir,
+            force_publish=True,
+        )
+
+    assert not model_path.exists()

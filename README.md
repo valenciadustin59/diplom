@@ -102,7 +102,7 @@
 - `D28` / `#47` — completed/pushed: quality gates, `manifest.json` и group split проверены;
 - `D29` / `#48` — completed: candidate model обучена на `dataset-v2` без замены production artifact;
 - `D30` / `#49` — completed: candidate сравнен с текущей моделью через ranking benchmark, recommendation `keep_reference`;
-- `D31` / `#50` — опубликовать финальный artifact и проверить продукт smoke-аудитами.
+- `D31` / `#50` — принять publish/no-publish decision по D30 и проверить продукт smoke-аудитами.
 
 ### Distributed foundation `D1-D12`
 

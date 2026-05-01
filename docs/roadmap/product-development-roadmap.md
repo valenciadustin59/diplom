@@ -29,7 +29,7 @@
 - `D28` / `#47`: completed/pushed; quality gates, `manifest.json`, artifact coverage и `group_by_query` split проверены.
 - `D29` / `#48`: completed; candidate page-quality model обучена на `dataset-v2` без замены production artifact.
 - `D30` / `#49`: completed; ranking benchmark сравнил candidate с текущей моделью и рекомендует `keep_reference`.
-- `D31` / `#50`: опубликовать финальный model artifact и проверить продукт smoke-аудитами.
+- `D31` / `#50`: принять publish/no-publish decision по D30 и проверить продукт smoke-аудитами.
 
 Подробный план выполнения находится в `plans/d27-d31-final-model-training.md`.
 
@@ -170,6 +170,6 @@ Active tasks:
 - `D28` / GitHub `#47`: completed/pushed; dataset quality gates, manifest, artifact coverage and group split were validated.
 - `D29` / GitHub `#48`: completed; candidate page-quality model was trained from `dataset-v2` without replacing the production artifact.
 - `D30` / GitHub `#49`: completed; ranking benchmark compared the candidate against the current artifact and recommends `keep_reference`.
-- `D31` / GitHub `#50`: publish the final model artifact and verify product behavior with smoke audits.
+- `D31` / GitHub `#50`: make the final publish/no-publish decision and verify product behavior with smoke audits.
 
 Next agent instruction: if no newer explicit user task exists, start with `D31` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.

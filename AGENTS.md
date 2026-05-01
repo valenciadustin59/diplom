@@ -89,7 +89,7 @@
 - `D28` / GitHub `#47` — completed and pushed; GitHub issue closure unverified: `manifest.json` и `group_by_query` `split.json` сформированы, `ready_for_training=true`;
 - `D29` / GitHub `#48` — completed: candidate page-quality model обучена в `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl`, production artifact не заменён;
 - `D30` / GitHub `#49` — completed: ranking benchmark выполнен, report сохранён в `backend/artifacts/ranking-benchmarks/dataset-v2/`, recommendation `keep_reference`;
-- `D31` / GitHub `#50` — open: опубликовать финальную model artifact и проверить продукт smoke-аудитами.
+- `D31` / GitHub `#50` — open: принять publish/no-publish decision по D30, сохранить production artifact при `keep_reference` и проверить продукт smoke-аудитами.
 
 ### D1-D12 Summary
 
