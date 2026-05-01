@@ -35,6 +35,7 @@ backend/data/training_failures_batch*.csv
 backend/catboost_info/
 catboost_info/
 backend/site_audit_backend.egg-info/
+output/runtime-smoke/*.log
 
 frontend/*.tsbuildinfo
 

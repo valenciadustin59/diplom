@@ -29,7 +29,7 @@
 - `D28` / `#47`: completed/pushed; quality gates, `manifest.json`, artifact coverage и `group_by_query` split проверены.
 - `D29` / `#48`: completed; candidate page-quality model обучена на `dataset-v2` без замены production artifact.
 - `D30` / `#49`: completed; ranking benchmark сравнил candidate с текущей моделью и рекомендует `keep_reference`.
-- `D31` / `#50`: принять publish/no-publish decision по D30 и проверить продукт smoke-аудитами.
+- `D31` / `#50`: completed locally; no-publish/keep-reference decision по D30 принят, продукт проверен smoke-аудитом.
 
 Подробный план выполнения находится в `plans/d27-d31-final-model-training.md`.
 
@@ -155,7 +155,7 @@
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D30` are complete. The remaining practical backlog is `D31`, focused on final publication/no-publication decision and smoke verification. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
+Canonical current status: `D1-D31` are complete. The final ML evidence wave kept the current production model because D30 recommended `keep_reference`, while preserving `dataset-v2`, the D29 candidate artifact and the D30 benchmark evidence. If GitHub Issues are private or unavailable and return `404 Not Found`, use local files as the source of truth.
 
 Local source of truth:
 
@@ -170,6 +170,6 @@ Active tasks:
 - `D28` / GitHub `#47`: completed/pushed; dataset quality gates, manifest, artifact coverage and group split were validated.
 - `D29` / GitHub `#48`: completed; candidate page-quality model was trained from `dataset-v2` without replacing the production artifact.
 - `D30` / GitHub `#49`: completed; ranking benchmark compared the candidate against the current artifact and recommends `keep_reference`.
-- `D31` / GitHub `#50`: make the final publish/no-publish decision and verify product behavior with smoke audits.
+- `D31` / GitHub `#50`: completed locally; final no-publish/keep-reference decision was made and product behavior was verified with smoke audits.
 
-Next agent instruction: if no newer explicit user task exists, start with `D31` in `plans/d27-d31-final-model-training.md`. Do not add demo mode and do not rewrite backend orchestration for this wave.
+Next agent instruction: `D27-D31` are complete locally. If no newer explicit user task exists, ask the user for the next priority instead of adding demo mode or rewriting backend orchestration.
