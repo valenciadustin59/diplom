@@ -565,6 +565,31 @@ Candidate regression counts: RandomForestRegressor `8`, CatBoostRegressor `6`, C
 
 D50 verification passed with `25` targeted ML tests covering the new top-3 analysis logic and nearby shadow/no-publish/training/model-schema behavior.
 
+## D51 query-level preference labels
+
+D51 materializes a ranking-aware `dataset-v5` evidence bundle. The goal is to keep the page-quality score signal from `dataset-v4`, while adding query-level preference labels that can teach the next model which pages should outrank others inside the same query group.
+
+D51 runs `backend/app/ml/v5_preferences.py`. It copies `dataset-v4` into `dataset-v5`, marks the label schema as `ranking-aware-v5`, writes page labels and pairwise preference labels, regenerates the group-by-query split and writes dataset quality evidence. It does not train, publish, roll back or mutate the runtime artifact.
+
+D51 evidence is stored in:
+
+- `backend/data/dataset_versions/dataset-v5/dataset.csv`
+- `backend/data/dataset_versions/dataset-v5/page_labels.csv`
+- `backend/data/dataset_versions/dataset-v5/preference_labels.csv`
+- `backend/data/dataset_versions/dataset-v5/split.json`
+- `backend/data/dataset_versions/dataset-v5/manifest.json`
+- `backend/data/dataset_versions/dataset-v5/d51-preference-split-validation.json`
+- `backend/data/dataset_versions/dataset-v5/d51-query-preference-label-report.json`
+- `backend/data/dataset_versions/dataset-v5/d51-query-preference-label-report.md`
+
+The bundle contains `885` page labels and `3351` query-level preference labels. `2863` preferences are usable for training; `488` are marked `uncertain` with zero training weight so close or conflicting cases are documented without forcing a hard winner. Strength distribution: `strong=2047`, `weak=816`, `uncertain=488`.
+
+D51 uses D50 evidence directly: all `9/9` D50 focus queries are represented in usable preference labels. Preference reasons are `ranking_target_margin=3258`, `d50_top3_recovery=74`, and `d50_top3_conflict_manual_review=19`. The split remains group-by-query with `79` train queries, `20` validation queries and `0` overlap; manifest is `ready_for_training=true`.
+
+D51 verification passed with `35` targeted ML tests covering preference labels, D50 top-3 analysis, dataset-v4 compatibility, SEO-weighted labels, dataset quality, training pipeline and model schema behavior.
+
+Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -576,6 +601,7 @@ D50 verification passed with `25` targeted ML tests covering the new top-3 analy
 - `backend/app/ml/seo_weighted_shadow_benchmark.py`
 - `backend/app/ml/seo_weighted_no_publish_decision.py`
 - `backend/app/ml/top3_regression_analysis.py`
+- `backend/app/ml/v5_preferences.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`

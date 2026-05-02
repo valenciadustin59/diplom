@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "split_mode": "group_by_query",
+  "train_queries_count": 79,
+  "validation_queries_count": 20,
+  "preference_queries_count": 98,
+  "query_overlap_count": 0,
+  "query_overlap": [],
+  "unknown_preference_queries_count": 0,
+  "unknown_preference_queries": [],
+  "d50_focus_queries_count": 9,
+  "d50_focus_queries_represented_count": 9,
+  "d50_focus_queries_missing_count": 0,
+  "d50_focus_queries_missing": [],
+  "train_preferences_count": 2569,
+  "validation_preferences_count": 782,
+  "usable_preferences_count": 2863,
+  "uncertain_preferences_count": 488
+}

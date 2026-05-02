@@ -162,6 +162,14 @@ _TOP3_REGRESSION_ANALYSIS_EXPORTS = {
     "classify_failure_patterns",
     "run_d50_top3_regression_analysis",
 }
+_V5_PREFERENCES_EXPORTS = {
+    "DEFAULT_OUTPUT_PREFERENCE_LABELS_PATH",
+    "LABEL_SCHEMA_VERSION_V5",
+    "PREFERENCE_LABEL_SOURCE_V5",
+    "build_preference_labels",
+    "build_v5_query_preference_dataset",
+    "validate_preference_split",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -211,6 +219,9 @@ def __getattr__(name: str):
     if name in _TOP3_REGRESSION_ANALYSIS_EXPORTS:
         module = importlib.import_module("app.ml.top3_regression_analysis")
         return getattr(module, name)
+    if name in _V5_PREFERENCES_EXPORTS:
+        module = importlib.import_module("app.ml.v5_preferences")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -244,4 +255,5 @@ __all__ = [
     *_SEO_WEIGHTED_SHADOW_BENCHMARK_EXPORTS,
     *_SEO_WEIGHTED_NO_PUBLISH_DECISION_EXPORTS,
     *_TOP3_REGRESSION_ANALYSIS_EXPORTS,
+    *_V5_PREFERENCES_EXPORTS,
 ]
