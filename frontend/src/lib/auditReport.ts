@@ -6,7 +6,6 @@ import type {
   CompetitorResult,
   RecommendationsBundle,
 } from "../types";
-import { buildScoreConfidenceView, type ScoreConfidenceView } from "./auditConfidence";
 import { flattenRecommendationItems } from "./recommendations";
 import { getFetchMethodLabel, getIntentLabel, getRecommendationGroupLabel } from "./terminology";
 
@@ -63,8 +62,6 @@ export type AuditReportModel = {
   recommendationMetrics: ReportMetric[];
   competitorMetrics: ReportMetric[];
   runtimeMetrics: ReportMetric[];
-  modelMetrics: ReportMetric[];
-  scoreConfidence: ScoreConfidenceView;
   recommendationActions: ReportRecommendation[];
   groupSummaries: ReportMetric[];
   competitors: Array<{
@@ -217,8 +214,6 @@ function getScoreVerdict(score: number | null | undefined): string {
 function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditStatusResponse) {
   const breakdown = results?.score_breakdown ?? audit.score_breakdown ?? null;
   return {
-    breakdown,
-    modelInfo: breakdown?.model_info ?? null,
     finalScore: formatScore(breakdown?.final_score ?? results?.score ?? audit.score),
     ruleScore: formatScore(breakdown?.rule_score),
     mlScore: formatScore(breakdown?.ml_score),
@@ -228,51 +223,6 @@ function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditSta
   };
 }
 
-function getModelMetric(modelInfo: Record<string, unknown> | null, key: string): number | null {
-  const metrics = modelInfo?.metrics_summary;
-  if (!metrics || typeof metrics !== "object" || Array.isArray(metrics)) {
-    return null;
-  }
-  const value = (metrics as Record<string, unknown>)[key];
-  return typeof value === "number" && Number.isFinite(value) ? value : null;
-}
-
-function buildModelMetrics(modelInfo: Record<string, unknown> | null): ReportMetric[] {
-  if (!modelInfo) {
-    return [];
-  }
-
-  const modelType = getRecordString(modelInfo, "model_type") ?? "—";
-  const schema = getRecordString(modelInfo, "model_schema_version") ?? "—";
-  const dataset = getRecordString(modelInfo, "dataset_version") ?? "—";
-  const artifact = getRecordString(modelInfo, "artifact_version") ?? "—";
-  const featureCount = getRecordNumber(modelInfo, "feature_count");
-  const datasetRows = getRecordNumber(modelInfo, "dataset_rows");
-
-  return [
-    {
-      label: "Активная модель",
-      value: `${modelType} · ${schema}`,
-      note: "Runtime artifact, который считал score этого аудита.",
-    },
-    {
-      label: "Датасет модели",
-      value: dataset,
-      note: `${formatCount(datasetRows)} строк, ${formatCount(featureCount)} признаков.`,
-    },
-    {
-      label: "Artifact",
-      value: artifact,
-      note: "Версия опубликованного файла модели.",
-    },
-    {
-      label: "Top-3 / NDCG / MAE",
-      value: `${formatSignalScore(getModelMetric(modelInfo, "top_3_hit_rate"))} · ${formatScore(getModelMetric(modelInfo, "ndcg_at_10"))} · ${formatScore(getModelMetric(modelInfo, "mae"))}`,
-      note: "Ключевые offline-метрики publish guardrail.",
-    },
-  ];
-}
-
 function buildSeoMetrics(input: AuditReportInput): ReportMetric[] {
   const features = input.results?.features ?? input.audit.features ?? {};
   const queryIntent = input.results?.query_intent ?? input.audit.query_intent ?? null;
@@ -280,11 +230,6 @@ function buildSeoMetrics(input: AuditReportInput): ReportMetric[] {
   const heavyAnalysis = input.results?.heavy_analysis ?? input.audit.heavy_analysis ?? null;
 
   return [
-    {
-      label: "Версия признаков",
-      value: input.results?.feature_schema_version ?? input.audit.feature_schema_version ?? "—",
-      note: "Версия набора признаков, по которому построена итоговая оценка.",
-    },
     {
       label: "Намерение запроса",
       value: getIntentLabel(getRecordString(queryIntent, "label")),
@@ -449,15 +394,8 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
   const generatedAt = input.generatedAt ?? new Date();
   const score = input.results?.score ?? input.audit.score;
   const scoreBreakdown = getScoreBreakdown(input.results, input.audit);
-  const modelMetrics = buildModelMetrics(scoreBreakdown.modelInfo);
   const comparisonSummary = input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
   const recommendations = getEffectiveRecommendations(input);
-  const scoreConfidence = buildScoreConfidenceView({
-    audit: input.audit,
-    results: input.results,
-    recommendations,
-    comparisonSummary,
-  });
   const recommendationsSummary = recommendations?.summary ?? null;
   const domain = getDomainFromUrl(input.audit.target_url);
   const analyzedCompetitors =
@@ -486,7 +424,6 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
       `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
         recommendationsSummary?.high_priority_count,
       )} высокого приоритета.`,
-      `Доверие к score: ${scoreConfidence.label}. ${scoreConfidence.summary}`,
       `Распределённое выполнение: ${formatCount(input.diagnostics?.event_count)} событий таймлайна, критический путь ${formatReportDuration(
         input.diagnostics?.critical_path_duration_ms,
       )}.`,
@@ -495,8 +432,6 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     recommendationMetrics: buildRecommendationMetrics(recommendations),
     competitorMetrics: buildCompetitorMetrics(input),
     runtimeMetrics: buildRuntimeMetrics(input.diagnostics),
-    modelMetrics,
-    scoreConfidence,
     recommendationActions: buildRecommendationActions(recommendations),
     groupSummaries: buildGroupSummaries(recommendations),
     competitors: buildCompetitorRows(input.results?.competitor_results ?? input.audit.competitor_results),
@@ -551,18 +486,9 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
     "## Краткий вывод",
     ...report.summary.map((item) => `- ${item}`),
     "",
-    "## Доверие к score",
-    `- Уровень: ${report.scoreConfidence.label}`,
-    `- Вывод: ${report.scoreConfidence.summary}`,
-    `- Проверки: ${report.scoreConfidence.passedCount} ok, ${report.scoreConfidence.warningCount} warning, ${report.scoreConfidence.errorCount} error`,
-    ...report.scoreConfidence.reasons.map((reason) => `- ${reason.label}: ${reason.detail}`),
-    "",
     "## Объяснение оценки",
     `- Итоговая оценка: ${report.scoreBreakdown.finalScore}`,
     `- Методика: ${report.scoreBreakdown.methodology}`,
-    ...(report.modelMetrics.length > 0
-      ? ["", "### Статус модели", ...report.modelMetrics.map(renderMetricMarkdown)]
-      : []),
     "",
     "## SEO-сигналы",
     ...report.seoMetrics.map(renderMetricMarkdown),

@@ -2,7 +2,6 @@ import { Card } from "../components/Card";
 import type {
   RuntimeHealthModel,
   RuntimeIssue,
-  RuntimeMetric,
   RuntimeModelStatusView,
   RuntimeTone,
 } from "../lib/runtimeHealth";
@@ -63,76 +62,35 @@ function RuntimeMetricGrid({ model }: { model: RuntimeHealthModel }) {
   );
 }
 
-function RuntimeModelStatusMini({ modelStatus }: { modelStatus: RuntimeModelStatusView }) {
-  return (
-    <div className={`runtime-model-mini runtime-model-mini--${modelStatus.tone}`}>
-      <div>
-        <span className={getToneClass(modelStatus.tone)}>{modelStatus.statusLabel}</span>
-        <strong>{modelStatus.shortLabel}</strong>
-      </div>
-      <span>{modelStatus.datasetLabel}</span>
-    </div>
-  );
-}
-
 function RuntimeModelStatusCard({ modelStatus }: { modelStatus: RuntimeModelStatusView | null }) {
   if (!modelStatus) {
     return null;
   }
 
-  const top3 = modelStatus.metricRows.find((metric) => metric.label === "Top-3");
-  const ndcg = modelStatus.metricRows.find((metric) => metric.label === "NDCG@10");
-  const mae = modelStatus.metricRows.find((metric) => metric.label === "MAE");
-  const qualityMetrics: RuntimeMetric[] = [
-    {
-      label: "Признаки",
-      value: modelStatus.featureCountLabel,
-      note: "Количество сигналов, по которым оценивается страница.",
-      tone: modelStatus.tone,
-    },
-    {
-      label: "Обучающая выборка",
-      value: modelStatus.datasetLabel,
-      note: "Страницы и запросы, на которых проверялась текущая версия.",
-      tone: "ok",
-    },
-    {
-      label: "Точность топ-3",
-      value: top3?.value ?? "—",
-      note: "Насколько хорошо модель находит сильные страницы в верхней части выдачи.",
-      tone: top3?.tone ?? "muted",
-    },
-    {
-      label: "Средняя ошибка",
-      value: mae?.value ?? "—",
-      note: "Среднее отклонение предсказанного score на проверочной выборке.",
-      tone: mae?.tone ?? "muted",
-    },
-  ];
-
   return (
     <Card
-      title="Как работает модель оценки"
-      subtitle="Главные принципы расчёта score и параметры активной версии без истории старых моделей."
+      title="Как формируется оценка"
+      subtitle="Коротко о сигналах, которые помогают понять итоговый score без технических деталей модели."
       className="runtime-model-card"
     >
       <div className={`runtime-model-status runtime-model-status--${modelStatus.tone}`}>
         <div className="runtime-model-status__summary">
-          <span className={getToneClass(modelStatus.tone)}>{modelStatus.statusLabel}</span>
+          <span className={getToneClass(modelStatus.tone)}>
+            {modelStatus.tone === "ok" ? "Расчёт score доступен" : modelStatus.statusLabel}
+          </span>
           <h3>Оценка качества страницы</h3>
           <p>
-            Модель получает поисковый запрос и целевую страницу, превращает их в набор понятных сигналов и возвращает
-            самостоятельный score от 0 до 100.
+            Сервис сопоставляет целевую страницу с поисковым запросом, проверяет SEO, смысловые, коммерческие и
+            доверительные сигналы, а затем показывает самостоятельный score от 0 до 100.
           </p>
         </div>
-        <div className="runtime-model-status__facts">
-          <span>Версия признаков: {modelStatus.schemaLabel}</span>
-          <span>Признаков: {modelStatus.featureCountLabel}</span>
-          <span>Данные обучения: {modelStatus.datasetLabel}</span>
-          <span>Качество порядка: {ndcg?.value ?? "—"}</span>
-          <span>Проверено: {modelStatus.checkedAtLabel}</span>
-        </div>
       </div>
+
+      {modelStatus.tone !== "ok" ? (
+        <div className="feedback-banner feedback-banner--warning">
+          Расчёт score требует внимания: {modelStatus.detail}
+        </div>
+      ) : null}
 
       <div className="runtime-model-principles">
         <article>
@@ -151,16 +109,6 @@ function RuntimeModelStatusCard({ modelStatus }: { modelStatus: RuntimeModelStat
           <strong>4. Даёт score и рекомендации</strong>
           <p>Score показывает качество страницы под запрос, а рекомендации объясняют, какие действия улучшат результат.</p>
         </article>
-      </div>
-
-      <div className="report-metric-grid runtime-model-metrics">
-        {qualityMetrics.map((metric) => (
-          <div key={metric.label} className={`report-metric runtime-metric runtime-metric--${metric.tone}`}>
-            <span className="report-metric__label">{metric.label}</span>
-            <strong className="report-metric__value">{metric.value}</strong>
-            <p className="report-metric__note">{metric.note}</p>
-          </div>
-        ))}
       </div>
     </Card>
   );
@@ -203,7 +151,6 @@ export function RuntimeStatusCompactCard({ model, loading, error, onRefresh, onO
               <span>Проверено: {model.checkedAtLabel}</span>
             </div>
           </div>
-          {model.modelStatus ? <RuntimeModelStatusMini modelStatus={model.modelStatus} /> : null}
           <RuntimeIssueList issues={model.issues.slice(0, 3)} />
         </div>
       )}

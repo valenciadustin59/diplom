@@ -1063,11 +1063,12 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Отчёт аудита");
     expect(markup).toContain("Скачать Markdown");
-    expect(markup).toContain("Доверие к score");
-    expect(markup).toContain("Высокая уверенность");
+    expect(markup).not.toContain("Доверие к score");
     expect(markup).toContain("SEO-сигналы");
-    expect(markup).toContain("Статус модели");
-    expect(markup).toContain("CatBoostRegressor");
+    expect(markup).not.toContain("Статус модели");
+    expect(markup).not.toContain("CatBoostRegressor");
+    expect(markup).not.toContain("dataset-v3-d37");
+    expect(markup).not.toContain("Top-3");
     expect(markup).toContain("report-table--recommendations");
     expect(markup).toContain("Доказательство распределённого выполнения");
     expect(markup).toContain("Углублённый анализ");
@@ -1166,9 +1167,9 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Готовность рабочего стека");
     expect(markup).toContain("Рабочий стек не готов");
     expect(markup).toContain("audits.heavy_analysis");
-    expect(markup).toContain("Активная модель");
-    expect(markup).toContain("Оценка качества страницы");
-    expect(markup).toContain("dataset-v3-d37");
+    expect(markup).not.toContain("Активная модель");
+    expect(markup).not.toContain("Оценка качества страницы · v3");
+    expect(markup).not.toContain("dataset-v3-d37");
     expect(markup).toContain("Проверено:");
     expect(markup).toContain("Открыть стек");
   });
@@ -1201,14 +1202,17 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Как работает модель оценки");
-    expect(markup).toContain("Главные принципы расчёта score");
+    expect(markup).toContain("Как формируется оценка");
+    expect(markup).toContain("Коротко о сигналах");
     expect(markup).toContain("Понимает запрос");
     expect(markup).toContain("Проверяет качество страницы");
     expect(markup).toContain("Добавляет контекст выдачи");
     expect(markup).toContain("Даёт score и рекомендации");
-    expect(markup).toContain("Признаки");
-    expect(markup).toContain("148");
+    expect(markup).not.toContain("Признаки");
+    expect(markup).not.toContain("148 признаков");
+    expect(markup).not.toContain("Top-3");
+    expect(markup).not.toContain("Данные обучения");
+    expect(markup).not.toContain("dataset-v3-d37");
     expect(markup).not.toContain("Model registry и rollback evidence");
     expect(markup).not.toContain("RandomForestRegressor");
     expect(markup).not.toContain("Выполнить rollback");

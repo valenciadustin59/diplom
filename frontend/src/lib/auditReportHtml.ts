@@ -52,15 +52,6 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
           )
           .join("")
       : '<tr><td colspan="4">Конкурентные страницы пока не обработаны.</td></tr>';
-  const confidenceReasons = report.scoreConfidence.reasons
-    .map(
-      (reason) =>
-        `<li class="confidence-reason confidence-reason--${escapeHtml(reason.tone)}"><strong>${escapeHtml(
-          reason.label,
-        )}</strong><br><small>${escapeHtml(reason.detail)}</small></li>`,
-    )
-    .join("");
-
   return `<!doctype html>
 <html lang="ru">
 <head>
@@ -86,12 +77,6 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
     th { color: #667085; font-size: 13px; }
     .recommendations td { font-size: 13px; }
     .recommendations small { display: block; margin-top: 4px; }
-    .confidence-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 10px; }
-    .confidence-reason { padding: 12px; border-radius: 14px; border: 1px solid #edf1fa; background: #f8faff; overflow-wrap: anywhere; }
-    .confidence-reason--error { border-color: rgba(220, 38, 38, .24); background: rgba(254, 242, 242, .88); }
-    .confidence-reason--warning { border-color: rgba(217, 119, 6, .24); background: rgba(255, 251, 235, .9); }
-    .confidence-reason--ok { border-color: rgba(22, 163, 74, .2); background: rgba(240, 253, 244, .9); }
-    .confidence-reason--muted { border-color: #edf1fa; background: #f8faff; }
     @media print { body { padding: 0; background: #fff; } section, header { box-shadow: none; page-break-inside: avoid; } }
   </style>
 </head>
@@ -109,25 +94,12 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
       <ul>${report.summary.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
     </section>
     <section>
-      <h2>Доверие к score</h2>
-      <div class="grid">
-        ${report.scoreConfidence.metrics.map(renderMetricHtml).join("")}
-      </div>
-      <p class="muted">${escapeHtml(report.scoreConfidence.detail)}</p>
-      <ul class="confidence-list">${confidenceReasons}</ul>
-    </section>
-    <section>
       <h2>Объяснение оценки</h2>
       <div class="grid">
         ${renderMetricHtml({ label: "Итоговая оценка", value: report.scoreBreakdown.finalScore })}
         ${renderMetricHtml({ label: "Статус", value: report.statusLabel })}
       </div>
       <p class="muted">${escapeHtml(report.scoreBreakdown.methodology)}</p>
-      ${
-        report.modelMetrics.length > 0
-          ? `<h3>Статус модели</h3><div class="grid">${report.modelMetrics.map(renderMetricHtml).join("")}</div>`
-          : ""
-      }
     </section>
     <section>
       <h2>SEO-сигналы</h2>

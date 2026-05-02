@@ -120,8 +120,7 @@ export function AuditReportPage({
             <span className="eyebrow-pill">Отчёт аудита</span>
             <h2 className="report-hero__title">{report.domain}</h2>
             <p className="report-hero__text">
-              Единый отчёт для демонстрации SEO/ML-результата, конкурентного контекста, рекомендаций и распределённого
-              выполнения.
+              Единый отчёт для демонстрации SEO-результата, конкурентного контекста, рекомендаций и распределённого выполнения.
             </p>
             <div className="workspace-meta">
               <span className="workspace-meta__item">Запрос: {report.query}</span>
@@ -168,22 +167,6 @@ export function AuditReportPage({
         </div>
       </Card>
 
-      <Card
-        title="Доверие к score"
-        subtitle="Проверка полноты данных аудита: fetch, признаки, heavy analysis, конкуренты, рекомендации и metadata модели."
-      >
-        <MetricGrid items={report.scoreConfidence.metrics} />
-        <p className="report-section-note">{report.scoreConfidence.detail}</p>
-        <ul className="score-confidence__reasons" aria-label="Причины уверенности score в отчёте">
-          {report.scoreConfidence.reasons.map((reason) => (
-            <li key={reason.code} className={`score-confidence__reason score-confidence__reason--${reason.tone}`}>
-              <strong>{reason.label}</strong>
-              <span>{reason.detail}</span>
-            </li>
-          ))}
-        </ul>
-      </Card>
-
       <Card title="Объяснение оценки" subtitle="Отчёт показывает итоговый score и понятные факторы, которые сильнее всего повлияли на результат.">
         <MetricGrid
           items={[
@@ -192,15 +175,9 @@ export function AuditReportPage({
           ]}
         />
         <p className="report-section-note">{report.scoreBreakdown.methodology}</p>
-        {report.modelMetrics.length > 0 ? (
-          <>
-            <h3 className="report-subtitle">Статус модели</h3>
-            <MetricGrid items={report.modelMetrics} />
-          </>
-        ) : null}
       </Card>
 
-      <Card title="SEO-сигналы" subtitle="Сигналы из версии признаков v2, снимка целевой страницы и изолированного этапа углублённого анализа.">
+      <Card title="SEO-сигналы" subtitle="Ключевые сигналы целевой страницы, которые помогают объяснить итоговую оценку.">
         <MetricGrid items={report.seoMetrics} />
       </Card>
 

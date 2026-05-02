@@ -204,7 +204,7 @@ function buildMonitoringScoreMetrics(monitoring: RuntimeModelMonitoringResponse)
     {
       label: "Score avg",
       value: formatDecimal(distribution.average),
-      note: `Активная модель, ${formatCount(distribution.sample_size)} score-сэмплов.`,
+      note: `Текущий расчёт, ${formatCount(distribution.sample_size)} score-сэмплов.`,
       tone: distribution.sample_size > 0 ? "ok" : "muted",
     },
     {

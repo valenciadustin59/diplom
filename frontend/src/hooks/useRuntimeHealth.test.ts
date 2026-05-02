@@ -3,8 +3,10 @@ import { runtimeApi } from "../api/api";
 import { loadRuntimeHealthSnapshot } from "./useRuntimeHealth";
 
 describe("loadRuntimeHealthSnapshot", () => {
-  it("keeps partial runtime health visible when model registry polling fails", async () => {
+  it("loads launch-critical runtime health without registry or monitoring polling", async () => {
     const originalApi = { ...runtimeApi };
+    let registryCalled = false;
+    let monitoringCalled = false;
     runtimeApi.getLiveness = async () => ({
       status: "ok",
       app_name: "site-audit",
@@ -69,55 +71,23 @@ describe("loadRuntimeHealthSnapshot", () => {
       rollback: { available: true },
     });
     runtimeApi.getModelRegistry = async () => {
+      registryCalled = true;
       throw new Error("registry unavailable");
     };
-    runtimeApi.getModelMonitoring = async () => ({
-      status: "empty",
-      checked_at: "2026-05-02T00:00:00Z",
-      window_days: 30,
-      window_start: "2026-04-02T00:00:00Z",
-      window_end: "2026-05-02T00:00:00Z",
-      total_audits: 0,
-      audits_with_model_info: 0,
-      legacy_or_unknown_count: 0,
-      status_counts: {},
-      warning_count: 0,
-      warning_message_count: 0,
-      failure_count: 0,
-      active_model: null,
-      score_distribution: {
-        sample_size: 0,
-        average: null,
-        min: null,
-        max: null,
-        p25: null,
-        p50: null,
-        p75: null,
-        low_score_count: 0,
-        high_score_count: 0,
-        low_score_threshold: 50,
-        high_score_threshold: 80,
-      },
-      competitor_coverage: {
-        sample_size: 0,
-        total_found: 0,
-        total_analyzed: 0,
-        total_failed: 0,
-        average_found: null,
-        average_analyzed: null,
-        average_failed: null,
-        coverage_ratio: null,
-      },
-      model_usage: [],
-    });
+    runtimeApi.getModelMonitoring = async () => {
+      monitoringCalled = true;
+      throw new Error("monitoring unavailable");
+    };
 
     try {
       const snapshot = await loadRuntimeHealthSnapshot();
 
       expect(snapshot.runtimeHealth?.modelStatus?.shortLabel).toBe("Оценка качества страницы · v3");
       expect(snapshot.runtimeHealth?.modelRegistry).toBeNull();
-      expect(snapshot.runtimeHealth?.modelMonitoring?.empty).toBe(true);
-      expect(snapshot.runtimeError).toContain("registry unavailable");
+      expect(snapshot.runtimeHealth?.modelMonitoring).toBeNull();
+      expect(snapshot.runtimeError).toBeNull();
+      expect(registryCalled).toBe(false);
+      expect(monitoringCalled).toBe(false);
     } finally {
       Object.assign(runtimeApi, originalApi);
     }

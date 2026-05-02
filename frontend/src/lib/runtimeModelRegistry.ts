@@ -69,11 +69,6 @@ function formatCount(value: number | null | undefined): string {
   return typeof value === "number" && Number.isFinite(value) ? new Intl.NumberFormat("ru-RU").format(value) : "—";
 }
 
-function formatPercent(value: unknown): string {
-  const number = asNumber(value);
-  return number === null ? "—" : `${Math.round(number * 100)}%`;
-}
-
 function formatCheckedAt(value: string | null | undefined): string {
   if (!value) {
     return "—";
@@ -244,12 +239,6 @@ function buildSummaryMetrics(registry: RuntimeModelRegistryResponse): RuntimeMet
       value: statusLabel(rollbackStatus),
       note: "Dry-run checklist перед ручной инженерной операцией rollback.",
       tone: statusTone(rollbackStatus),
-    },
-    {
-      label: "Top-3 active",
-      value: formatPercent(registry.records.find((record) => record.role === "current")?.metrics_summary?.top_3_hit_rate),
-      note: "Публикационная метрика active artifact, если sidecar её содержит.",
-      tone: "ok",
     },
   ];
 }

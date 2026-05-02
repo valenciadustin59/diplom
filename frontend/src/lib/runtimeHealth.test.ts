@@ -411,10 +411,10 @@ describe("runtime health model", () => {
     expect(model.statusLabel).toBe("Рабочий стек готов");
     expect(model.metrics.find((metric) => metric.label === "Готовность")?.value).toBe("готов");
     expect(model.workerProfiles).toHaveLength(2);
-    expect(model.modelStatus?.statusLabel).toBe("Активная модель");
+    expect(model.modelStatus?.statusLabel).toBe("Расчёт score доступен");
     expect(model.modelStatus?.shortLabel).toBe("Оценка качества страницы · v3");
     expect(model.modelStatus?.datasetLabel).toContain("dataset-v3-d37");
-    expect(model.modelStatus?.metricRows.find((metric) => metric.label === "Top-3")?.value).toBe("95%");
+    expect(model.modelStatus?.metricRows).toHaveLength(0);
     expect(model.queues.find((queue) => queue.name === "audits.heavy_analysis")?.pressureLabel).toBe("простаивает");
     expect(model.issues[0].title).toBe("Рабочий стек готов к новым аудитам");
   });

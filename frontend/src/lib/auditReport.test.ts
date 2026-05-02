@@ -298,8 +298,8 @@ describe("audit report export", () => {
     expect(model.recommendationActions.map((item) => item.title)).toContain("Усилить title");
     expect(model.recommendationActions).toHaveLength(6);
     expect(model.stageRows[0].stage).toBe("Углублённый анализ");
-    expect(model.scoreConfidence.level).toBe("high");
-    expect(model.scoreConfidence.reasons.map((reason) => reason.code)).toContain("model_metadata_present");
+    expect(model.summary.join(" ")).not.toContain("Доверие к score");
+    expect(model.seoMetrics.map((metric) => metric.label)).not.toContain("Версия признаков");
   });
 
   it("builds report recommendations from stored audit payloads when endpoint data is unavailable", () => {
@@ -330,8 +330,10 @@ describe("audit report export", () => {
     const markdown = createAuditReportMarkdown(input);
     const html = createAuditReportHtml(input, { autoPrint: true });
 
-    expect(markdown).toContain("## Доверие к score");
-    expect(markdown).toContain("- Уровень: Высокая уверенность");
+    expect(markdown).not.toContain("## Доверие к score");
+    expect(markdown).not.toContain("Статус модели");
+    expect(markdown).not.toContain("CatBoostRegressor");
+    expect(markdown).not.toContain("dataset-v3-d37");
     expect(markdown).toContain("## Доказательство распределённого выполнения");
     expect(markdown).toContain("### Список действий");
     expect(markdown).toContain("TECHNICAL_LOW");
@@ -340,7 +342,10 @@ describe("audit report export", () => {
     expect(markdown.indexOf("TECHNICAL_SNIPPET")).toBeLessThan(markdown.indexOf("TECHNICAL_LOW"));
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("window.print");
-    expect(html).toContain("Доверие к score");
+    expect(html).not.toContain("Доверие к score");
+    expect(html).not.toContain("Статус модели");
+    expect(html).not.toContain("CatBoostRegressor");
+    expect(html).not.toContain("dataset-v3-d37");
     expect(html).toContain("SEO-сигналы");
     expect(html).toContain("TECHNICAL_LOW");
     expect(html.match(/TECHNICAL_/g)).toHaveLength(6);

@@ -4,8 +4,6 @@ import { buildRuntimeHealthModel, type RuntimeHealthModel } from "../lib/runtime
 import type {
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
-  RuntimeModelRegistryResponse,
-  RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
 } from "../types";
@@ -39,20 +37,15 @@ export async function loadRuntimeHealthSnapshot(): Promise<RuntimeHealthSnapshot
     runtimeApi.getReadiness(),
     runtimeApi.getMetrics(),
     runtimeApi.getModelStatus(),
-    runtimeApi.getModelRegistry(),
-    runtimeApi.getModelMonitoring(),
   ] as const);
-  const [liveResult, readinessResult, metricsResult, modelStatusResult, modelRegistryResult, modelMonitoringResult] =
-    results;
+  const [liveResult, readinessResult, metricsResult, modelStatusResult] = results;
   const live = getSettledValue<RuntimeLivenessResponse>(liveResult);
   const readiness = getSettledValue<RuntimeReadinessResponse>(readinessResult);
   const metrics = getSettledValue<RuntimeMetricsResponse>(metricsResult);
   const modelStatus = getSettledValue<RuntimeModelStatusResponse>(modelStatusResult);
-  const modelRegistry = getSettledValue<RuntimeModelRegistryResponse>(modelRegistryResult);
-  const modelMonitoring = getSettledValue<RuntimeModelMonitoringResponse>(modelMonitoringResult);
   const runtimeError = getRejectedMessages(results).join(" ") || null;
 
-  if (!live && !readiness && !metrics && !modelStatus && !modelRegistry && !modelMonitoring) {
+  if (!live && !readiness && !metrics && !modelStatus) {
     return {
       runtimeError: runtimeError || "Диагностика рабочего стека недоступна.",
       runtimeHealth: null,
@@ -61,7 +54,7 @@ export async function loadRuntimeHealthSnapshot(): Promise<RuntimeHealthSnapshot
 
   return {
     runtimeError,
-    runtimeHealth: buildRuntimeHealthModel({ live, readiness, metrics, modelStatus, modelRegistry, modelMonitoring }),
+    runtimeHealth: buildRuntimeHealthModel({ live, readiness, metrics, modelStatus }),
   };
 }
 

@@ -189,14 +189,6 @@ function asStringArray(value: unknown): string[] {
 function formatCount(value: number | null | undefined): string {
   return typeof value === "number" && Number.isFinite(value) ? String(value) : "—";
 }
-function formatMetricNumber(value: unknown, digits = 3): string {
-  const numberValue = asNumber(value);
-  return numberValue === null ? "—" : numberValue.toFixed(digits).replace(/\.?0+$/, "");
-}
-function formatPercent(value: unknown): string {
-  const numberValue = asNumber(value);
-  return numberValue === null ? "—" : `${Math.round(numberValue * 100)}%`;
-}
 function formatCheckedAt(value: string | null | undefined): string {
   if (!value) {
     return "нет данных";
@@ -602,39 +594,15 @@ function buildMetrics(input: RuntimeHealthInput, issues: RuntimeIssue[]): Runtim
 
 function getModelStatusLabel(status: string | null | undefined): string {
   if (status === "active") {
-    return "Активная модель";
+    return "Расчёт score доступен";
   }
   if (status === "fallback") {
-    return "Fallback-модель";
+    return "Расчёт score в резервном режиме";
   }
   if (status === "error") {
-    return "Ошибка модели";
+    return "Ошибка расчёта score";
   }
   return status ? getStatusLabel(status) : "Нет данных";
-}
-
-function buildModelMetricRows(metrics: Record<string, unknown>): RuntimeMetric[] {
-  const top3 = asNumber(metrics.top_3_hit_rate);
-  return [
-    {
-      label: "Top-3",
-      value: formatPercent(metrics.top_3_hit_rate),
-      note: "Попадание сильных страниц в верх SERP.",
-      tone: top3 !== null && top3 >= 0.95 ? "ok" : "warning",
-    },
-    {
-      label: "NDCG@10",
-      value: formatMetricNumber(metrics.ndcg_at_10),
-      note: "Качество порядка страниц в первой десятке.",
-      tone: "ok",
-    },
-    {
-      label: "MAE",
-      value: formatMetricNumber(metrics.mae),
-      note: "Средняя абсолютная ошибка score.",
-      tone: "ok",
-    },
-  ];
 }
 
 function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefined): RuntimeModelStatusView | null {
@@ -643,7 +611,6 @@ function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefi
   }
   const model = isRecord(status.model) ? status.model : {};
   const dataset = isRecord(status.dataset) ? status.dataset : {};
-  const metrics = isRecord(status.metrics_summary) ? status.metrics_summary : {};
   const publish = isRecord(status.publish) ? status.publish : {};
   const rollback = isRecord(status.rollback) ? status.rollback : {};
   const statusValue = asString(status.status) ?? "unknown";
@@ -689,7 +656,7 @@ function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefi
       : publishRecommendation || "решение публикации не указано",
     rollbackLabel: rollbackAvailable ? "Rollback доступен" : "Rollback не найден",
     artifactShaLabel: artifactSha ? artifactSha.slice(0, 12) : "—",
-    metricRows: buildModelMetricRows(metrics),
+    metricRows: [],
   };
 }
 
