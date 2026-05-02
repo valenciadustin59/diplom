@@ -133,6 +133,8 @@ Evidence:
 
 ## D48 / GitHub #67: Product-Critical Shadow Benchmark
 
+Status: completed locally.
+
 Goal: prove whether a D47 candidate is better than the current production model for product use.
 
 Guardrails:
@@ -147,12 +149,25 @@ Guardrails:
 
 Acceptance criteria:
 
-- Shadow benchmark report recommends one of:
+- Completed: shadow benchmark report recommends one of:
   - `publish_candidate`;
   - `keep_current`;
   - `needs_more_data`.
-- Report includes examples where the new score looks more convincing than current v3.
-- No production artifact is changed.
+- Completed: report includes product-critical examples for score response to critical vs supporting degradation.
+- Completed: no production artifact is changed.
+
+Evidence:
+
+- Runner: `backend/app/ml/seo_weighted_shadow_benchmark.py`.
+- D48 report: `backend/artifacts/ranking-benchmarks/dataset-v4-d48/d48-product-critical-shadow-report.json` and `.md`.
+- Base shadow report: `backend/artifacts/ranking-benchmarks/dataset-v4-d48/shadow-benchmark-guardrails-report.json` and `.md`.
+- Reference production metrics against `dataset-v4`: `MAE=8.113452`, `Spearman=0.415837`, `NDCG@10=0.97438`, `top_3_hit_rate=0.95`.
+- D48 decision: `keep_current`, reason `no_candidate_passed_product_critical_guardrails`.
+- RF candidate: improved absolute/ranking correlation metrics (`MAE=1.878591`, `Spearman=0.918117`, `NDCG@10=0.996819`) but failed publish because `top_3_hit_rate=0.6`, delta `-0.35`.
+- CatBoostRegressor candidate: best absolute fit (`MAE=1.231731`, `Spearman=0.959054`, `NDCG@10=0.998348`) but failed publish because `top_3_hit_rate=0.65`, delta `-0.30`; product feature guardrail also failed because top feature is supporting `word_count`.
+- CatBoostRanker candidate: failed publish because `top_3_hit_rate=0.7`, delta `-0.25`, and absolute-error viability failed (`MAE=66.10666`).
+- Product score-response check passed for all saved candidates: critical SEO degradation drops score more than supporting degradation, but this does not override top-3 and feature-dominance gates.
+- Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 ## D49 / GitHub #68: Controlled Publish Or No-Publish Decision
 

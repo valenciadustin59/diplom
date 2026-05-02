@@ -502,6 +502,37 @@ D47 evidence is stored in:
 
 D47 does not publish or mutate a runtime model. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D48 product-critical shadow benchmark
+
+D48 evaluates the D47 candidates against the current production artifact with release guardrails. It is intentionally a benchmark and decision-evidence step, not a training or publish step.
+
+D48 runs `backend/app/ml/seo_weighted_shadow_benchmark.py`, which wraps the existing shadow benchmark and adds product-specific checks:
+
+- top-3 release gate: candidate `top_3_hit_rate` must not regress against current production;
+- absolute and ranking metrics: `MAE`, `RMSE`, Spearman and `NDCG@10` are compared to production;
+- score boundedness: smoke explanations must stay within `0..100`;
+- feature dominance: top features must not be led by weak supporting factors such as raw text volume;
+- score response: synthetic critical SEO degradation must reduce score more than supporting-factor degradation.
+
+D48 evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d48/d48-product-critical-shadow-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d48/d48-product-critical-shadow-report.md`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d48/shadow-benchmark-guardrails-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d48/shadow-benchmark-guardrails-report.md`
+
+Production CatBoost v3 remains the reference. Against `dataset-v4`, its metrics are `MAE=8.113452`, `Spearman=0.415837`, `NDCG@10=0.97438`, `top_3_hit_rate=0.95`.
+
+D48 candidate outcomes:
+
+- RandomForestRegressor improves `MAE` to `1.878591`, Spearman to `0.918117` and `NDCG@10` to `0.996819`, but regresses `top_3_hit_rate` to `0.6`.
+- CatBoostRegressor improves `MAE` to `1.231731`, Spearman to `0.959054` and `NDCG@10` to `0.998348`, but regresses `top_3_hit_rate` to `0.65`; it also fails the feature-dominance guardrail because the top feature is `word_count`, a supporting signal.
+- CatBoostRanker reaches `top_3_hit_rate=0.7`, but has unacceptable absolute error (`MAE=66.10666`).
+
+The product score-response check passed for all candidates: critical SEO degradation produced a larger average score drop than supporting degradation. This is useful evidence that the D45/D46 rubric moved in the right direction, but it does not override the top-3 release gate.
+
+D48 decision is `keep_current` with reason `no_candidate_passed_product_critical_guardrails`. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -510,6 +541,7 @@ D47 does not publish or mutate a runtime model. The production artifact `backend
 - `backend/app/ml/v4_dataset.py`
 - `backend/app/ml/seo_weighted_labels.py`
 - `backend/app/ml/seo_weighted_candidate_training.py`
+- `backend/app/ml/seo_weighted_shadow_benchmark.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`
