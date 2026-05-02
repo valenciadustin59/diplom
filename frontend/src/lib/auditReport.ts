@@ -213,13 +213,22 @@ function getScoreVerdict(score: number | null | undefined): string {
 
 function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditStatusResponse) {
   const breakdown = results?.score_breakdown ?? audit.score_breakdown ?? null;
+  const competitiveness = breakdown?.competitiveness;
+  const hasCompetitivenessContext = Boolean(
+    competitiveness &&
+      typeof competitiveness === "object" &&
+      "context_available" in competitiveness &&
+      competitiveness.context_available === true,
+  );
   return {
     finalScore: formatScore(breakdown?.final_score ?? results?.score ?? audit.score),
     ruleScore: formatScore(breakdown?.rule_score),
     mlScore: formatScore(breakdown?.ml_score),
     methodology:
       breakdown?.methodology ??
-      "Итоговая оценка рассчитывается опубликованной ML-моделью по признакам самой страницы и её соответствию запросу. Конкурентный контекст используется отдельно для сравнения и рекомендаций; факторы ниже не складываются в финальный score.",
+      (hasCompetitivenessContext
+        ? "Итоговая оценка показывает конкурентоспособность страницы по запросу: качество самой страницы сопоставляется с обработанными конкурентами из выдачи."
+        : "Итоговая оценка рассчитывается по признакам самой страницы и её соответствию запросу; конкурентная корректировка появится после обработки достаточного числа конкурентов."),
   };
 }
 
@@ -306,8 +315,12 @@ function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
 
   return [
     {
-      label: "Оценка страницы",
+      label: "Конкурентный score",
       value: formatScore(summary?.user_score ?? input.results?.score ?? input.audit.score),
+    },
+    {
+      label: "Оценка самой страницы",
+      value: formatScore(summary?.primary_page_score ?? input.results?.score_breakdown?.primary_page_score),
     },
     {
       label: "Средняя оценка конкурентов",

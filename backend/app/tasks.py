@@ -480,6 +480,7 @@ def _build_competitor_aggregation_result(
     user_score: float,
     competitors: list[AuditCompetitor],
     query_intent: dict[str, object] | None,
+    requested_top_n: int | None,
 ) -> dict[str, object]:
     competitor_results = [_serialize_audit_competitor(item) for item in competitors]
     competitor_features = [
@@ -497,8 +498,16 @@ def _build_competitor_aggregation_result(
             competitor_results=competitor_results,
             query_intent=query_intent,
             serp_relative_summary=serp_relative_summary,
+            requested_top_n=requested_top_n,
         ),
     }
+
+
+def _extract_competitiveness_score(comparison_summary: dict[str, object]) -> float | None:
+    score = comparison_summary.get("competitiveness_score")
+    if not isinstance(score, (int, float)):
+        return None
+    return max(0.0, min(100.0, float(score)))
 
 
 def _upsert_audit_competitor_result(competitor: AuditCompetitor, result: dict[str, object], *, status: str) -> None:
@@ -1671,22 +1680,43 @@ def process_audit_aggregate_competitors(audit_id: str, processing_version: int) 
                 user_score=float(audit.score),
                 competitors=competitors,
                 query_intent=audit.query_intent if isinstance(audit.query_intent, dict) else None,
+                requested_top_n=int(audit.top_n) if audit.top_n is not None else None,
             ),
             processing_version=processing_version,
             event_buffer=event_buffer,
             summarize_result=lambda payload: _summarize_competitors(payload["competitor_results"]),
         )
         audit.features = aggregation_result["user_features"]
+        comparison_summary = aggregation_result["comparison_summary"]
+        competitiveness_score = (
+            _extract_competitiveness_score(comparison_summary)
+            if isinstance(comparison_summary, dict)
+            else None
+        )
         if isinstance(audit.score_breakdown, dict):
             relative_explanation = explain_score(aggregation_result["user_features"])
+            primary_page_score = float(
+                comparison_summary.get("primary_page_score", audit.score)
+                if isinstance(comparison_summary, dict)
+                else audit.score
+            )
+            final_score = competitiveness_score if competitiveness_score is not None else primary_page_score
             audit.score_breakdown = {
                 **audit.score_breakdown,
+                "final_score": round(final_score, 4),
+                "primary_page_score": round(primary_page_score, 4),
+                "competitiveness_score": round(final_score, 4),
+                "competitiveness": comparison_summary.get("competitiveness")
+                if isinstance(comparison_summary, dict)
+                else None,
                 "serp_relative_factors": relative_explanation.get("serp_relative_factors")
                 if isinstance(relative_explanation, dict)
                 else [],
             }
+        if competitiveness_score is not None:
+            audit.score = competitiveness_score
         audit.competitor_results = aggregation_result["competitor_results"]
-        audit.comparison_summary = aggregation_result["comparison_summary"]
+        audit.comparison_summary = comparison_summary
         audit.competitor_processing_status = COMPETITOR_PROCESSING_AGGREGATED
         _set_next_orchestration_stage(audit, RECOMMENDATIONS_STAGE)
         _flush_audit_events(db, event_buffer)

@@ -85,6 +85,9 @@ export type ScoreBreakdown = {
   final_score: number;
   rule_score: number;
   ml_score: number;
+  primary_page_score?: number;
+  competitiveness_score?: number;
+  competitiveness?: Record<string, unknown> | null;
   methodology?: string;
   interaction_signals?: Record<string, number>;
   positives?: ScoreFactor[];
@@ -590,12 +593,22 @@ export type CompetitorResult = {
 
 export type ComparisonSummary = {
   user_score: number;
+  primary_page_score?: number;
+  competitiveness_score?: number;
+  score_basis?: string;
   competitors_average_score: number;
   score_difference: number;
+  primary_score_difference?: number;
   competitors_count: number;
   competitors_found?: number;
   competitors_analyzed?: number;
   competitors_failed?: number;
+  competitor_best_score?: number | null;
+  competitor_median_score?: number | null;
+  competitiveness_position_band?: string | null;
+  competitiveness_score_delta?: number | null;
+  score_percentile?: number | null;
+  competitiveness?: Record<string, unknown> | null;
 };
 
 export type PageRow = {

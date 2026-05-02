@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import re
+from statistics import fmean
 from html import unescape
 from urllib.parse import parse_qs, unquote, urlparse
 
@@ -13,7 +14,8 @@ from app.features import (
     merge_intent_alignment_features,
     merge_snapshot_auxiliary_features,
 )
-from app.ml.model import compare_with_competitors, predict_score
+from app.competitiveness import build_competitiveness_score
+from app.ml.model import predict_score
 from app.parser import ensure_extraction_artifact, fetch_page
 from app.serp import SerpConfigurationError, SerpProviderError, search as search_serp
 
@@ -351,21 +353,18 @@ def build_comparison_summary(
     competitor_results: list[dict[str, object]],
     query_intent: dict[str, object] | None = None,
     serp_relative_summary: dict[str, object] | None = None,
+    requested_top_n: int | None = None,
 ) -> dict[str, object]:
     analyzed_results = [
         item
         for item in competitor_results
         if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float))
     ]
-    competitor_features = [item["features"] for item in analyzed_results]
+    competitor_scores = [float(item["score"]) for item in analyzed_results if isinstance(item.get("score"), (int, float))]
 
-    if len(competitor_features) >= MIN_COMPETITORS_FOR_COMPARISON:
-        comparison = compare_with_competitors(
-            user_pages_features=[user_features],
-            competitor_pages_features=competitor_features,
-        )
-        competitors_average_score = float(comparison["competitors_average_score"])
-        score_difference = float(comparison["score_difference"])
+    if len(competitor_scores) >= MIN_COMPETITORS_FOR_COMPARISON:
+        competitors_average_score = round(float(fmean(competitor_scores)), 4)
+        score_difference = round(float(user_score) - competitors_average_score, 4)
     else:
         competitors_average_score = 0.0
         score_difference = 0.0
@@ -373,15 +372,42 @@ def build_comparison_summary(
     competitors_found = len(competitor_results)
     competitors_analyzed = len(analyzed_results)
     competitors_failed = competitors_found - competitors_analyzed
+    competitiveness = build_competitiveness_score(
+        user_score=user_score,
+        competitor_results=competitor_results,
+        requested_top_n=requested_top_n,
+        min_competitors=MIN_COMPETITORS_FOR_COMPARISON,
+    )
+    competitiveness_score = float(competitiveness["competitiveness_score"])
+    primary_score_difference = (
+        round(float(user_score) - competitors_average_score, 4)
+        if competitors_analyzed >= MIN_COMPETITORS_FOR_COMPARISON
+        else score_difference
+    )
+    displayed_score_difference = (
+        round(competitiveness_score - competitors_average_score, 4)
+        if competitors_analyzed >= MIN_COMPETITORS_FOR_COMPARISON
+        else score_difference
+    )
 
     return {
-        "user_score": round(user_score, 4),
+        "user_score": round(competitiveness_score, 4),
+        "primary_page_score": round(user_score, 4),
+        "competitiveness_score": round(competitiveness_score, 4),
+        "score_basis": competitiveness.get("score_basis"),
         "competitors_average_score": competitors_average_score,
-        "score_difference": score_difference,
+        "score_difference": displayed_score_difference,
+        "primary_score_difference": primary_score_difference,
         "competitors_count": competitors_analyzed,
         "competitors_found": competitors_found,
         "competitors_analyzed": competitors_analyzed,
         "competitors_failed": competitors_failed,
+        "competitor_best_score": competitiveness.get("competitor_best_score"),
+        "competitor_median_score": competitiveness.get("competitor_median_score"),
+        "competitiveness_position_band": competitiveness.get("position_band"),
+        "competitiveness_score_delta": competitiveness.get("score_delta"),
+        "score_percentile": competitiveness.get("score_percentile"),
+        "competitiveness": competitiveness,
         "query_intent": query_intent if isinstance(query_intent, dict) else None,
         "serp_relative_summary": serp_relative_summary if isinstance(serp_relative_summary, dict) else None,
     }

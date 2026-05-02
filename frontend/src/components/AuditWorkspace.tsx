@@ -97,6 +97,28 @@ function formatImpact(value: number): string {
   return `вес ${rounded > 0 ? "+" : ""}${rounded}`;
 }
 
+function formatScoreValue(value: number | null | undefined): string {
+  return typeof value === "number" && Number.isFinite(value) ? String(Math.round(value * 10) / 10) : "0";
+}
+
+function formatSignedScoreValue(value: number | null | undefined): string {
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    return "0";
+  }
+  const rounded = Math.round(value * 10) / 10;
+  return `${rounded > 0 ? "+" : ""}${rounded}`;
+}
+
+function hasCompetitivenessContext(breakdown: ScoreBreakdown | null | undefined): boolean {
+  const competitiveness = breakdown?.competitiveness;
+  return Boolean(
+    competitiveness &&
+      typeof competitiveness === "object" &&
+      "context_available" in competitiveness &&
+      competitiveness.context_available === true,
+  );
+}
+
 function getScoreFactorId(item: ScoreFactor, index: number): string {
   return item.code ?? item.key ?? `${item.label}:${index}`;
 }
@@ -109,8 +131,12 @@ function formatScoreFactorDetail(item: ScoreFactor): string {
   return "";
 }
 
-function getScoreMethodologyText(): string {
-  return "Итоговый score рассчитывается по признакам самой страницы и её соответствию запросу. Конкуренты показываются отдельным контекстом ниже; карточки факторов не складываются в финальную оценку, а объясняют самые заметные причины результата.";
+function getScoreMethodologyText(breakdown?: ScoreBreakdown | null): string {
+  if (hasCompetitivenessContext(breakdown)) {
+    return "Итоговый score показывает конкурентоспособность страницы по конкретному запросу: сначала считается качество самой страницы, затем результат корректируется по разрыву со средними и сильнейшими обработанными конкурентами. Карточки факторов не складываются в финальную оценку, а объясняют главные причины результата.";
+  }
+
+  return "Итоговый score рассчитан по признакам самой страницы и её соответствию запросу. Конкурентная корректировка появится после обработки достаточного числа страниц из выдачи; карточки факторов не складываются в финальную оценку, а объясняют главные причины результата.";
 }
 
 const interactionSignalLabels: Record<string, string> = {
@@ -172,7 +198,7 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
   const positiveFactors = breakdown.positives ?? breakdown.top_positive_factors ?? [];
   const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
-  const methodology = getScoreMethodologyText();
+  const methodology = getScoreMethodologyText(breakdown);
 
   return (
     <Card
@@ -352,16 +378,24 @@ function OverviewPanel({
 
       <div className="metric-strip workspace-metric-strip">
         <div className="metric-box">
-          <span className="metric-box__label">Оценка страницы</span>
-          <strong className="metric-box__value">{comparisonSummary?.user_score ?? 0}</strong>
+          <span className="metric-box__label">Конкурентный score</span>
+          <strong className="metric-box__value">
+            {formatScoreValue(comparisonSummary?.competitiveness_score ?? comparisonSummary?.user_score)}
+          </strong>
+        </div>
+        <div className="metric-box">
+          <span className="metric-box__label">Оценка самой страницы</span>
+          <strong className="metric-box__value">
+            {formatScoreValue(comparisonSummary?.primary_page_score ?? currentResults?.score ?? currentAudit?.score)}
+          </strong>
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Средняя оценка конкурентов</span>
-          <strong className="metric-box__value">{comparisonSummary?.competitors_average_score ?? 0}</strong>
+          <strong className="metric-box__value">{formatScoreValue(comparisonSummary?.competitors_average_score)}</strong>
         </div>
         <div className="metric-box">
-          <span className="metric-box__label">Разница</span>
-          <strong className="metric-box__value">{comparisonSummary?.score_difference ?? 0}</strong>
+          <span className="metric-box__label">Разница с рынком</span>
+          <strong className="metric-box__value">{formatSignedScoreValue(comparisonSummary?.score_difference)}</strong>
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Конкуренты</span>
