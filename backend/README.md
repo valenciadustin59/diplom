@@ -6,8 +6,8 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - распределённую обработку stage-based pipeline через `Celery`;
 - получение и нормализацию данных по целевой странице и конкурентам;
 - извлечение контентных, семантических, технических, commercial и trust-признаков;
-- ML scoring и формирование score breakdown;
-- генерацию приоритетных рекомендаций;
+- базовый ML scoring страницы и competitor-aware пересчёт итогового конкурентного score;
+- генерацию приоритетных рекомендаций на основе отставания от конкурентов;
 - диагностику рабочего стека, проверку готовности и состояние распределённого исполнения.
 
 Корневой сценарий запуска всего проекта описан в `../README.md`. Этот файл сфокусирован на backend-архитектуре, API и распределённом runtime.
@@ -415,6 +415,9 @@ cd E:\codexPROJ\diplom\backend
 - `../plans/d38-controlled-publish-catboost-v3.md` — выполненный план D38 controlled publish CatBoost v3.
 - `../plans/d39-model-status-interface.md` — выполненный план D39 model status in interface.
 - `../plans/d40-d44-post-publish-model-operations.md` — завершённый локально backlog D40-D44 после публикации модели.
+- `../plans/d45-d49-seo-weighted-score-retraining.md` — historical SEO-weighted retraining wave, где публикации не было.
+- `../plans/d50-d54-v5-ranking-aware-model.md` — historical ranking-aware v5 evidence, later reinterpreted by D55 competitiveness policy.
+- `../plans/d55-d61-product-aligned-competitiveness.md` — текущая product-aligned competitiveness wave после D54.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -532,9 +535,9 @@ D35 evidence: `artifacts/ranking-benchmarks/dataset-v2-d35/shadow-benchmark-guar
 
 D37 / GitHub `#56` реализован локально как backend/ML unified `v3` feature model with hybrid/top-3 guardrail evidence. План находится в `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`. D37 добавил `MODEL_SCHEMA_VERSION_V3` на `148` pre-competitor features (`v1` baseline + technical/commercial + heavy-analysis + intent-alignment), создал `data/dataset_versions/dataset-v3-d37/` с реальными v3 columns (`885` rows, `99` queries, `695/190` group split, no query leakage), обучил non-production candidates и сравнил их с текущим reference. Shadow benchmark `artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json` рекомендует `publish_candidate` и выбирает `pointwise_catboost`: `top_3_hit_rate=0.95`, `ndcg_at_10=0.945929`, `spearman_mean=0.421894`, `MAE=11.774165`; reference: `0.95`, `0.909302`, `0.153604`, `23.858757`. `serp_relative` остаётся follow-up для second-pass scoring.
 
-D38 / GitHub `#57` реализован локально как controlled publish CatBoost v3. Production artifact `artifacts/page_quality_model.pkl` теперь указывает на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, artifact version `dataset-v3-d37-20260501200434`, schema `v3`, `148` features. Прежний v1 RandomForest сохранён для rollback в `artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl` с SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. D38 evidence: `artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json` и `.md`; smoke summary: `../output/runtime-smoke/d38-smoke-summary.json`.
+D38 / GitHub `#57` реализован локально как historical controlled publish CatBoost v3. После D38 production artifact `artifacts/page_quality_model.pkl` указывал на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, artifact version `dataset-v3-d37-20260501200434`, schema `v3`, `148` features. D58 later superseded this alias with the v5 pointwise CatBoost runtime; the v3 artifact remains rollback evidence in `artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`. D38 evidence: `artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json` и `.md`; smoke summary: `../output/runtime-smoke/d38-smoke-summary.json`.
 
-D39 / GitHub `#58` реализован локально как model status in interface. Backend endpoint `GET /health/model` отдаёт активный artifact, SHA1, metadata sidecar, model/dataset sections, `metrics_summary`, D38 publish context and rollback reference. UI читает этот endpoint через runtime health flow и показывает active model в stack UI, score breakdown и audit report/export. План: `../plans/d39-model-status-interface.md`.
+D39 / GitHub `#58` реализован локально как model status in interface. Backend endpoint `GET /health/model` отдаёт активный artifact, SHA1, metadata sidecar, model/dataset sections, `metrics_summary`, publish context and rollback reference. После D58 endpoint describes the active `dataset-v5` runtime artifact. План: `../plans/d39-model-status-interface.md`.
 
 D40 / GitHub `#59` реализован локально как model usage monitoring. Backend endpoint `GET /health/model/monitoring` построен на `app/model_monitoring.py`, агрегирует recent audit rows по runtime `model_info`, отдельно считает legacy/unknown audits и не меняет scoring/publish behavior.
 
@@ -546,4 +549,13 @@ D43 / GitHub `#62` реализован локально как read-only model 
 
 D44 / GitHub `#63` реализован локально как non-production second-pass competitor-aware score experiment. Backend modules `app/ml/second_pass.py` and `app/ml/second_pass_experiment.py` define the two-stage score contract, split-safe SERP-relative enrichment and offline candidate evaluation. Evidence: `artifacts/ranking-benchmarks/dataset-v3-d44/second-pass-experiment-report.json` and `.md`; non-production candidate: `artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl` plus `.metadata.json`. Decision: `do_not_continue_without_more_evidence` because top-3 and NDCG@10 regressed despite a tiny MAE improvement. D44 does not change runtime scoring or mutate `artifacts/page_quality_model.pkl`.
 
-Если GitHub Issues недоступны из текущего окружения, D40-D44 backlog и D37-D44 evidence находятся в `../plans/d40-d44-post-publish-model-operations.md`, `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend-heavy шаг нужно выбирать отдельно; не повторять rollout без явной новой задачи.
+Текущий backend/ML статус после product clarification:
+
+- `D55` switched release policy to `d55-product-aligned-v1`: `top_3_hit_rate` is now SERP-alignment diagnostics, while `MAE`, `Spearman`, `NDCG@10`, bounded scores, feature dominance, score response and recommendation consistency are release guardrails.
+- `D56` added `competitiveness-score-v1` after competitor aggregation. Backend preserves the model's `primary_page_score`, then writes final `audit.score` / `score_breakdown.final_score` as `competitiveness_score` when enough competitors were processed.
+- `D57` added `competitor-gap-priority-v1` for recommendations. Recommendation priority now depends on competitor gap, SEO/search importance and controllability, not only on a raw metric difference.
+- `D58` published `pointwise_catboost_v5` under the competitiveness scorecard. Current runtime artifact is `artifacts/page_quality_model.pkl`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`, dataset `dataset-v5`, artifact version `dataset-v5-20260502151507`, schema `v3`, `CatBoostRegressor`, `148` features. The previous v3 runtime is preserved as rollback evidence in `artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`.
+- `D59` and `D60` cleaned product-facing ML/debug clutter and clarified runtime assets versus archived research/evidence artifacts.
+- `D61` aligns this README, the root README, the roadmap and the ML appendix with the current competitiveness goal.
+
+Если GitHub Issues недоступны из текущего окружения, actual source of truth находится в `../AGENTS.md`, `../README.md`, `../docs/roadmap/product-development-roadmap.md`, `../plans/d45-d49-seo-weighted-score-retraining.md`, `../plans/d50-d54-v5-ranking-aware-model.md`, `../plans/d55-d61-product-aligned-competitiveness.md` и older historical plans. Не повторять rollout или менять runtime scoring без явно выбранной новой задачи.

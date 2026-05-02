@@ -53,7 +53,7 @@
 - Local mirror: `plans/d39-model-status-interface.md`.
 - Backend endpoint: `GET /health/model` exposes the selected production artifact, public metadata, dataset/version coverage, key guardrail metrics, publish decision context and rollback availability.
 - Frontend visibility: compact launch stack card, full `Стек` page, score breakdown card, audit report UI, Markdown export and HTML export now show model status where the data is available.
-- Current payload detects status `active`, model `CatBoostRegressor`, schema `v3`, dataset `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, rollback available.
+- Current payload after D58 detects status `active`, model `CatBoostRegressor`, schema `v3`, dataset `dataset-v5`, artifact `dataset-v5-20260502151507`, rollback available.
 - Verification status so far: `backend/tests/test_health_api.py` passed with `24 passed`; `npm --prefix frontend run test` passed with `45 passed`.
 
 ## Current D40-D44 Post-Publish Operations Evidence
@@ -149,6 +149,7 @@
 ## Current D55-D61 Product-Aligned Competitiveness Backlog
 
 - GitHub issues `#74-#80` were created on `2026-05-02` after the product goal was clarified as: evaluate how competitive a chosen page is for a concrete query using popular/top-10 SERP pages as context, then produce recommendations that help the page compete better for that query.
+- Local mirror: `plans/d55-d61-product-aligned-competitiveness.md`.
 - `D55` / GitHub `#74` - completed and pushed: product-aligned release policy now treats `top_3_hit_rate` as non-blocking SERP-alignment diagnostics, while `MAE`, `Spearman`, `NDCG@10`, score response, feature dominance and recommendation consistency are product guardrails.
 - `D56` / GitHub `#75` - completed and pushed: runtime audit aggregation now adds a `competitiveness-score-v1` layer after competitor processing. The original model score is preserved as `primary_page_score`; when at least two competitors are processed, the displayed/final `audit.score` and `score_breakdown.final_score` become `competitiveness_score`, derived from the target page score plus gaps to the average and strongest processed competitors. The comparison summary now exposes `primary_page_score`, `competitiveness_score`, `score_basis`, `primary_score_difference`, `competitor_best_score`, `competitor_median_score`, `score_percentile`, `competitiveness_position_band` and the full `competitiveness` payload.
 - D56 did not replace `backend/artifacts/page_quality_model.pkl`; it is a product scoring layer over target + top-N competitor context, not a retraining/publish task. D58 later replaced the runtime artifact through a controlled publish.
@@ -167,7 +168,7 @@
 - D58 verification passed: D58/v5/release-policy/health/registry/model-schema backend set `47 passed`; frontend report/UI tests `20 passed`; frontend production build passed.
 - `D59` / GitHub `#78` - completed and pushed: removed user-facing ML/debug clutter from the product UI.
 - `D60` / GitHub `#79` - completed and pushed: archived research artifacts and clarified runtime vs evidence assets.
-- `D61` / GitHub `#80` - open: rewrite project and ML documentation around the competitiveness goal.
+- `D61` / GitHub `#80` - completed locally: project and ML documentation rewritten around the clarified competitiveness goal. Root README, backend README, roadmap and ML methodology appendix now describe `primary_page_score` vs `competitiveness_score`, current `dataset-v5` CatBoost runtime, `top_3_hit_rate` as diagnostics and `competitor-gap-priority-v1` recommendations.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
@@ -589,6 +590,9 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `plans/d39-model-status-interface.md`;
 - `plans/d38-controlled-publish-catboost-v3.md`;
 - `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`;
+- `plans/d55-d61-product-aligned-competitiveness.md`;
+- `plans/d50-d54-v5-ranking-aware-model.md`;
+- `plans/d45-d49-seo-weighted-score-retraining.md`;
 - `plans/d32-d36-model-productization.md`;
 - `plans/d27-d31-final-model-training.md`;
 - этот раздел `AGENTS.md`;
@@ -600,12 +604,12 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 - сначала перечитать `AGENTS.md` и `README.md`;
 - затем проверить `git status`;
-- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальные D40-D44 / D37-D44 документы из этого файла;
+- если нужен GitHub, посмотреть open issues через локальный credential helper без вывода секретов; если GitHub возвращает `404`, использовать локальные D55-D61 / D50-D54 / D45-D49 / D40-D44 документы из этого файла;
 - не откатывать уже выполненные `D13-D26` без прямой причины.
 
 ## Последняя runtime smoke-проверка
 
-Последняя проверка полного локального stack выполнялась `2026-05-02` после D38 controlled publish:
+Последняя полная runtime smoke-проверка, зафиксированная в этом разделе, выполнялась `2026-05-02` после D38 controlled publish. Она является исторической smoke-проверкой v3; D58 позже заменил runtime artifact на v5 и был проверен targeted backend/frontend/build наборами:
 
 - `npm start` поднял `Redis`, `SearxNG`, backend, frontend и четыре Celery worker-профиля;
 - backend в этой проверке выбрал `http://127.0.0.1:8001/`, потому что `8000` был занят;
@@ -613,7 +617,7 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `GET /health/ready` вернул готовый стек с workers `pipeline`, `network`, `heavy_analysis`, `cpu_ml` и missing queues `[]`;
 - `GET /health/metrics` показывал рабочие `workers.status=ok` и `queue_pressure.status=ok`; общий `status=degraded` был только из-за старых SQLite rows со статусом `processing`;
 - smoke audit `сайт для фрилансеров` / `https://gigle.ru/` / `top_n=2` (`690504f2-ca2f-42a6-a012-e622438437a7`) завершился со status `completed`, score `83.7366`, `2` competitors found/analyzed и без failed competitors;
-- runtime score explanation подтвердил новую production model: `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, schema `v3`, `CatBoostRegressor`;
+- runtime score explanation подтвердил then-current production model: `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, schema `v3`, `CatBoostRegressor`;
 - timeline diagnostics подтвердил распределённую обработку конкурентов: `fan_out.stage=competitor_page`, `dispatch_count=2`, `terminal_count=2`.
 
 Локальный `GET /health/metrics` может показывать `degraded`, если в игнорируемой SQLite БД остались старые audit rows со статусом `processing`. Это не означает, что текущий worker stack не поднялся: для готовности distributed runtime сначала смотреть `GET /health/ready`, `workers.status`, `queue_pressure.status` и отсутствие `missing_queues`.
@@ -638,9 +642,9 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 - `baseline-v1` уже заморожен из текущего `ru_commercial_dataset.*`.
 - `dataset-v2/seeds.csv` уже создан и содержит 450 запросов.
 - `dataset-v2/expert_labels.csv` — шаблон для экспертной подвыборки.
-- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 реализовал unified `v3` feature-model experiment и получил `publish_candidate` для `pointwise_catboost`; D38 опубликовал CatBoost v3 как runtime artifact; D39 вывел активную модель в API/UI/report; D40 добавил monitoring по реальным audit/model usage; D41 добавил deterministic golden replay guardrails; D42 добавил score confidence/data-quality UX; D43 добавил read-only model registry/rollback evidence UI.
+- `dataset-v2/dataset.csv`, `failures.csv`, `checkpoint.json`, `dataset.dataset.json` и `artifacts/` уже созданы и отправлены в `origin/main` в рамках `D27`; `manifest.json` и `split.json` сформированы в рамках `D28`; candidate artifact `backend/artifacts/page_quality_model.dataset-v2-candidate.pkl` обучен в рамках `D29`; ranking benchmark выполнен в рамках `D30` и рекомендует `keep_reference`; D31 зафиксировал no-publish/keep-reference decision и smoke-проверку продукта; D32/D33 добавили и применили expert-rubric labels; D34 обучил новые RF/CatBoost/CatBoostRanker candidate artifacts без замены production; D35 shadow benchmark снова рекомендует `keep_reference`; D36 зафиксировал final keep-reference/no-publish evidence и clean product smoke; D37 реализовал unified `v3` feature-model experiment и получил `publish_candidate` для `pointwise_catboost`; D38 опубликовал CatBoost v3 как runtime artifact; D39 вывел активную модель в API/UI/report; D40 добавил monitoring по реальным audit/model usage; D41 добавил deterministic golden replay guardrails; D42 добавил score confidence/data-quality UX; D43 добавил read-only model registry/rollback evidence UI; D44 завершил non-production second-pass experiment; D45-D54 создали SEO-weighted/ranking-aware evidence; D55-D58 перевели проект на competitiveness scorecard и опубликовали v5 runtime; D59-D61 почистили UI/assets/docs.
 - `D44` завершён локально как non-production experiment; его evidence не рекомендует publish без дополнительной задачи.
-- `D38` заменил production artifact `backend/artifacts/page_quality_model.pkl` на CatBoost v3: SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, schema `v3`, artifact version `dataset-v3-d37-20260501200434`. Rollback на прежний v1 RandomForest сохранён в `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`. `D39` добавил `GET /health/model`; `D40` добавил `GET /health/model/monitoring`; `D41` добавил `app.ml.golden_replay` и evidence в `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`; `D42` добавил frontend confidence helper `frontend/src/lib/auditConfidence.ts`; `D43` добавил `GET /health/model/registry` и stack UI registry card; `D44` добавил offline second-pass experiment evidence in `backend/artifacts/ranking-benchmarks/dataset-v3-d44/` without changing runtime scoring.
+- `D38` historically replaced production artifact `backend/artifacts/page_quality_model.pkl` with CatBoost v3; `D58` later replaced it with v5 pointwise CatBoost: SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`, dataset `dataset-v5`, schema `v3`, artifact version `dataset-v5-20260502151507`. Rollback to v3 is preserved in `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`. `D39` added `GET /health/model`; `D40` added `GET /health/model/monitoring`; `D41` added `app.ml.golden_replay` and evidence in `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`; `D42` added frontend confidence helper `frontend/src/lib/auditConfidence.ts`; `D43` added `GET /health/model/registry`; `D44` added offline second-pass experiment evidence; `D56` added runtime competitiveness score; `D57` added competitor-gap priority; `D58` published v5 under the competitiveness scorecard.
 - `app.ml.dataset_builder` умеет собирать versioned dataset через `--versioned-layout` и писать raw snapshot artifacts.
 - `app.ml.dataset_quality` теперь включает dataset metadata, label provenance, artifact coverage и optional split summary.
 - `app.ml.train` умеет сохранять persisted split manifest и имеет `--split-only` режим без обучения модели.

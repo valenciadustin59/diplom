@@ -6,16 +6,18 @@
 
 ## Текущий статус
 
-Базовый пользовательский сценарий уже реализован: пользователь вводит поисковый запрос и URL, система собирает конкурентные страницы из SERP, анализирует target и competitors, считает ML score, сравнивает страницу с конкурентами и формирует рекомендации.
+Базовый пользовательский сценарий уже реализован: пользователь вводит поисковый запрос и URL, система собирает конкурентные страницы из SERP, анализирует target и competitors, считает базовый ML score страницы, пересчитывает итоговый конкурентный score относительно обработанных конкурентов и формирует рекомендации по самым важным отставаниям.
 
 Завершённые волны:
 
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
 - `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
-После `D26` проект уже соответствует дипломной теме, имеет отдельный report/export view, dedicated timeline UI, панель состояния рабочего стека, управляемую историю аудитов, план действий по рекомендациям и стабильную русскую терминологию интерфейса для демонстрации распределённого исполнения. Этап `D27-D31` завершил финальное ML-evidence доведение: `dataset-v2` собран, candidate обучен, benchmark рекомендовал `keep_reference`, а D31 подтвердил продукт clean smoke-аудитом. Следующий активный этап выбран как безопасное внедрение модели в продукт: `D32-D36`.
+После `D26` проект уже соответствовал дипломной теме, а последующие волны довели ML/product layer до текущей product-aligned версии. Исторически D27-D44 построили dataset/model evidence, v3 rollout, runtime observability и second-pass experiment. D45-D54 проверили SEO-weighted и ranking-aware candidates. D55-D58 уточнили продуктовую цель: не копировать SERP top-3 как абсолютную истину, а оценивать конкурентоспособность страницы в top-N контексте. D58 опубликовал активный `dataset-v5` pointwise CatBoost artifact.
 
-Важно: GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Поэтому активный backlog `D32-D36` продублирован локально в `AGENTS.md`, `README.md`, `backend/README.md` и `plans/d32-d36-model-productization.md`.
+Текущий runtime: `backend/artifacts/page_quality_model.pkl`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`, dataset `dataset-v5`, artifact `dataset-v5-20260502151507`, schema `v3`, `CatBoostRegressor`, `148` features. `top_3_hit_rate` теперь SERP-alignment diagnostics, not a release blocker.
+
+Важно: GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Поэтому актуальный operational status продублирован локально в `AGENTS.md`, `README.md`, `backend/README.md`, `backend/docs/ml_methodology_appendix.md` и planning files.
 
 ## Завершённая волна: D21-D26 Frontend/Product Layer
 
@@ -108,7 +110,7 @@ D39 evidence:
 
 - backend endpoint: `GET /health/model`
 - endpoint status for current artifact: `active`
-- model: `CatBoostRegressor`, schema `v3`, dataset `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`
+- current runtime after D58: `CatBoostRegressor`, schema `v3`, dataset `dataset-v5`, artifact `dataset-v5-20260502151507`
 - rollback availability: `true`
 - UI surfaces: compact stack card, full `Стек` page, score breakdown, audit report, Markdown export, HTML export
 - verification: `backend/tests/test_health_api.py` -> `24 passed`; `npm --prefix frontend run test` -> `45 passed`
@@ -172,7 +174,35 @@ D44 evidence:
 - decision: `do_not_continue_without_more_evidence`
 - invariant: non-production experiment only; no runtime scoring change, no publish, no rollback, no mutation of `backend/artifacts/page_quality_model.pkl`
 
-D40-D44 is complete locally. Next practical step should be selected explicitly; do not start a second-pass publish path from D44 evidence without a new task.
+D40-D44 is complete locally. Do not start a second-pass publish path from D44 evidence without a new task.
+
+## Current D45-D61 Evidence: Competitiveness-Oriented Product Goal
+
+GitHub issues `#64-#80` cover the shift from "model score as abstract page quality" to "competitive SEO audit for a concrete query."
+
+Completed scope:
+
+- `D45-D49`: built SEO-weighted deterministic rubric labels and `dataset-v4`, trained candidates, and recorded no-publish because the then-current release gates rejected them.
+- `D50-D54`: built `dataset-v5` with query-level preference labels and shortcut feature control, trained pointwise/ranking-aware/hybrid candidates, and recorded historical no-publish under the old top-3 blocking policy.
+- `D55` / GitHub `#74`: product-aligned release policy. `top_3_hit_rate` is now SERP-alignment diagnostics; blocking model metrics are `MAE`, `Spearman`, `NDCG@10`, feature dominance, score response and recommendation consistency.
+- `D56` / GitHub `#75`: runtime `competitiveness-score-v1`. The backend preserves `primary_page_score`, then sets final `competitiveness_score` after competitor aggregation when enough competitors are processed.
+- `D57` / GitHub `#76`: recommendation priority model `competitor-gap-priority-v1`, using competitor gap, SEO/search importance and controllability.
+- `D58` / GitHub `#77`: controlled publish of `pointwise_catboost_v5` under the competitiveness scorecard.
+- `D59` / GitHub `#78`: product UI cleanup, removing user-facing ML/debug clutter.
+- `D60` / GitHub `#79`: research artifact archiving and clearer runtime/evidence asset boundaries.
+- `D61` / GitHub `#80`: documentation rewrite around the clarified competitiveness goal.
+
+D58 current runtime evidence:
+
+- production artifact: `backend/artifacts/page_quality_model.pkl`
+- SHA1: `5374ca30f48f70d8629e7d84ec3df0524ef35b52`
+- dataset: `dataset-v5`
+- artifact version: `dataset-v5-20260502151507`
+- model: `CatBoostRegressor`, schema `v3`, `148` features
+- metrics: `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6` as non-blocking SERP diagnostics
+- rollback artifact: `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`
+
+The practical next tasks should now be product polish, documentation, evidence cleanup or carefully scoped new SEO capabilities. Do not re-run old D45-D54 no-publish logic as if it were still the current release policy.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -296,9 +326,9 @@ D40-D44 is complete locally. Next practical step should be selected explicitly; 
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D44` are complete locally.
+Canonical current status: `D1-D61` are complete or in this documentation closeout path.
 
-The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout; D39 made the active model visible in API/UI/report surfaces; D40 added post-publish model usage monitoring; D41 added deterministic golden replay guardrails; D42 added score confidence/data-quality UX without changing scoring; D43 added read-only model registry and rollback evidence UI; D44 added the non-production second-pass SERP-relative experiment and recommends `do_not_continue_without_more_evidence`. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56`, `#57`, `#58`, `#59`, `#60`, `#61`, `#62` and `#63` are the D37-D44 model rollout/interface/operations evidence.
+The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the current v5 pointwise CatBoost artifact. Production artifact `backend/artifacts/page_quality_model.pkl` now points to CatBoost v5 (`dataset-v5`, schema `v3`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`). `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
 
 Local source of truth:
 
@@ -311,6 +341,9 @@ Local source of truth:
 - `plans/d38-controlled-publish-catboost-v3.md`
 - `plans/d39-model-status-interface.md`
 - `plans/d40-d44-post-publish-model-operations.md`
+- `plans/d45-d49-seo-weighted-score-retraining.md`
+- `plans/d50-d54-v5-ranking-aware-model.md`
+- `plans/d55-d61-product-aligned-competitiveness.md`
 
 Completed tasks:
 
@@ -339,7 +372,16 @@ Completed model rollout/interface tasks:
 - `D42` / GitHub `#61`: implemented locally; score confidence/data-quality UX in audit overview, report UI, Markdown export and printable HTML export.
 - `D43` / GitHub `#62`: implemented locally; read-only model registry and rollback evidence UI with `/health/model/registry` and `Стек` UI section.
 - `D44` / GitHub `#63`: implemented locally; non-production second-pass competitor-aware score experiment with SERP-relative features and evidence in `backend/artifacts/ranking-benchmarks/dataset-v3-d44/`.
+- `D45-D49` / GitHub `#64-#68`: completed; SEO-weighted labels, dataset-v4, candidates, shadow benchmark and no-publish evidence.
+- `D50-D54` / GitHub `#69-#73`: completed; dataset-v5 preference labels, shortcut feature policy, candidates, historical shadow benchmark and no-publish evidence.
+- `D55` / GitHub `#74`: completed/pushed; product-aligned competitiveness release policy.
+- `D56` / GitHub `#75`: completed/pushed; runtime competitiveness score layer.
+- `D57` / GitHub `#76`: completed/pushed; competitor-gap recommendation priority model.
+- `D58` / GitHub `#77`: completed/pushed; controlled publish of `pointwise_catboost_v5`.
+- `D59` / GitHub `#78`: completed/pushed; user-facing ML/debug clutter removed.
+- `D60` / GitHub `#79`: completed/pushed; research artifacts archived and runtime/evidence asset boundaries clarified.
+- `D61` / GitHub `#80`: documentation rewrite around the competitiveness goal.
 
-Active post-publish operations tasks: none in D40-D44.
+Active post-publish operations tasks: none selected after D61.
 
-Next agent instruction: `D32-D44` is complete locally. Select a new task explicitly before changing model/runtime behavior. Do not repeat the CatBoost v3 rollout, publish the D44 candidate, add demo mode, or rewrite backend orchestration unless the user explicitly requests that scope.
+Next agent instruction: select a new task explicitly before changing model/runtime behavior. Do not repeat old rollouts, publish the D44 candidate, add demo mode, or rewrite backend orchestration unless the user explicitly requests that scope.
