@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 from app.ml import average_score
+from app.query_relevance import has_strong_query_topic_fit
 
 
 RecommendationPriority = Literal["high", "medium", "low"]
@@ -1438,7 +1439,7 @@ def generate_recommendations(
             "Раскройте тему полнее: сейчас текст покрывает слишком мало слов из поискового запроса.",
         )
 
-    if _float_feature(page_features, "semantic_similarity") < 0.45:
+    if _float_feature(page_features, "semantic_similarity") < 0.45 and not has_strong_query_topic_fit(page_features):
         add_recommendation(
             "LOW_SEMANTIC_RELEVANCE",
             "high",
@@ -1752,7 +1753,7 @@ def generate_recommendations(
                 "Страница заметно отстаёт от лидеров выдачи по совокупности ключевых групп сигналов. Приоритетно закрывайте разрывы относительно топа, а не только общие SEO-ошибки.",
             )
 
-        if _float_feature(page_features, "relative_gap_to_top_semantic_relevance") < -0.12:
+        if _float_feature(page_features, "relative_gap_to_top_semantic_relevance") < -0.12 and not has_strong_query_topic_fit(page_features):
             add_recommendation(
                 "RELATIVE_SEMANTIC_GAP",
                 "high",

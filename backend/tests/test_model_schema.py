@@ -149,8 +149,8 @@ def test_published_model_score_is_not_inflated_by_rule_layer(tmp_path):
     assert explanation["final_score"] == explanation["ml_score"]
     assert 0.0 <= explanation["rule_score"] < 100.0
     assert any(
-        factor.get("key") == "semantic_relevance" and float(factor.get("impact", 0.0)) < 0.0
-        for factor in explanation["top_negative_factors"]
+        factor.get("key") == "query_topic_fit" and float(factor.get("impact", 0.0)) > 0.0
+        for factor in explanation["top_positive_factors"]
     )
 
 
@@ -260,6 +260,15 @@ def test_query_relevance_guardrail_keeps_strong_lexical_match(tmp_path):
     assert explanation["ml_score"] == 64.0
     assert explanation["final_score"] == 64.0
     assert explanation["relevance_guardrail"]["active"] is False
+    assert any(
+        factor.get("key") == "query_topic_fit" and float(factor.get("impact", 0.0)) > 0.0
+        for factor in explanation["top_positive_factors"]
+    )
+    assert not any(
+        factor.get("key") in {"semantic_relevance", "content_depth_semantic_score", "semantic_content_richness"}
+        and float(factor.get("impact", 0.0)) < 0.0
+        for factor in explanation["top_negative_factors"]
+    )
 
 
 def test_rule_score_is_calibrated_instead_of_saturating_at_raw_impact_cap():

@@ -83,6 +83,41 @@ def test_generate_recommendations_returns_grouped_payload():
     assert any(deviation["trend"] == "behind" for deviation in competitor_gap_group["deviations"])
 
 
+def test_strong_topic_terms_prevent_false_low_semantic_recommendation():
+    page_features = {
+        "title_present": 1,
+        "meta_description_present": 1,
+        "h1_count": 1,
+        "query_in_title": 0,
+        "query_in_text": 0,
+        "keyword_coverage_ratio": 1.0,
+        "query_density": 0.04067,
+        "query_prominence_score": 0.516667,
+        "semantic_similarity": 0.196525,
+        "title_semantic_alignment": 0.065508,
+        "heading_semantic_alignment": 0.0,
+        "exact_query_count": 0,
+        "text_length_chars": 5200,
+        "text_to_html_ratio": 0.18,
+        "link_count": 8,
+        "image_count": 2,
+        "form_count": 1,
+        "serp_relative_context_available": 1,
+        "relative_gap_to_top_semantic_relevance": -0.3,
+    }
+
+    recommendations = generate_recommendations(
+        page_features=page_features,
+        page_score=64.0,
+        competitor_pages_features=[],
+    )
+
+    codes = flatten_codes(recommendations)
+    assert "LOW_SEMANTIC_RELEVANCE" not in codes
+    assert "RELATIVE_SEMANTIC_GAP" not in codes
+    assert "QUERY_NOT_IN_TEXT" in codes
+
+
 def test_generate_recommendations_skips_competitor_rules_with_single_competitor():
     page_features = {
         "title_present": 1,
