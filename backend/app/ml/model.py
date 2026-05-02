@@ -26,6 +26,7 @@ BACKEND_DIR = Path(__file__).resolve().parents[2]
 ARTIFACTS_DIR = BACKEND_DIR / "artifacts"
 DEFAULT_MODEL_PATH = ARTIFACTS_DIR / "page_quality_model.pkl"
 RULE_SCORE_REFERENCE_MAX = 150.0
+QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-guardrail-v1"
 FACTOR_MAX_IMPACTS = {
     "content_depth": 4.0,
     "semantic_relevance": 20.0,
@@ -118,6 +119,10 @@ def _vectorize_features(
 
 def _feature_value(features: dict[str, float | int], key: str) -> float:
     return float(features.get(key, 0.0))
+
+
+def _bounded_signal(value: float) -> float:
+    return max(0.0, min(1.0, value))
 
 
 def _has_feature(features: dict[str, float | int], key: str) -> bool:
@@ -901,12 +906,85 @@ def _build_serp_relative_factors(features: dict[str, float | int]) -> list[dict[
     return factors
 
 
+def _build_query_relevance_guardrail(
+    features: dict[str, float | int],
+    score: float,
+) -> dict[str, object]:
+    semantic_similarity = _bounded_signal(_feature_value(features, "semantic_similarity"))
+    keyword_coverage = _bounded_signal(_feature_value(features, "keyword_coverage_ratio"))
+    query_density = max(0.0, _feature_value(features, "query_density"))
+    query_in_title = _bounded_signal(_feature_value(features, "query_in_title"))
+    query_in_text = _bounded_signal(_feature_value(features, "query_in_text"))
+    exact_query_count = max(0.0, _feature_value(features, "exact_query_count"))
+    title_semantic_alignment = _bounded_signal(_feature_value(features, "title_semantic_alignment"))
+    heading_semantic_alignment = _bounded_signal(_feature_value(features, "heading_semantic_alignment"))
+    query_prominence = _bounded_signal(_feature_value(features, "query_prominence_score"))
+
+    density_signal = _bounded_signal(query_density / 0.01)
+    exact_or_structural_signal = max(
+        _bounded_signal(exact_query_count),
+        query_in_title,
+        query_in_text,
+        title_semantic_alignment,
+        heading_semantic_alignment,
+    )
+    relevance_score = _rounded_score(
+        (keyword_coverage * 35.0)
+        + (semantic_similarity * 25.0)
+        + (density_signal * 20.0)
+        + (max(exact_or_structural_signal, query_prominence) * 20.0)
+    ) / 100.0
+
+    reason: str | None = None
+    cap: float | None = None
+    if (
+        relevance_score < 0.28
+        and keyword_coverage < 0.5
+        and semantic_similarity < 0.38
+        and exact_or_structural_signal < 0.15
+        and query_density < 0.002
+    ):
+        reason = "severe_query_topic_mismatch"
+        cap = 42.0
+    elif (
+        relevance_score < 0.42
+        and keyword_coverage < 0.67
+        and semantic_similarity < 0.45
+        and exact_or_structural_signal < 0.2
+        and query_density < 0.004
+    ):
+        reason = "weak_query_topic_match"
+        cap = 58.0
+
+    adjusted_score = _rounded_score(min(score, cap)) if cap is not None else score
+    return {
+        "schema_version": QUERY_RELEVANCE_GUARDRAIL_VERSION,
+        "active": cap is not None and adjusted_score < score,
+        "reason": reason,
+        "cap": cap,
+        "original_score": score,
+        "adjusted_score": adjusted_score,
+        "score_delta": round(adjusted_score - score, 4),
+        "metrics": {
+            "relevance_score": round(relevance_score, 4),
+            "semantic_similarity": round(semantic_similarity, 4),
+            "keyword_coverage_ratio": round(keyword_coverage, 4),
+            "query_density": round(query_density, 6),
+            "density_signal": round(density_signal, 4),
+            "exact_or_structural_signal": round(exact_or_structural_signal, 4),
+            "query_prominence_score": round(query_prominence, 4),
+        },
+    }
+
+
 def _predict_model_score(features: dict[str, float | int], model_path: str | Path | None = None) -> float:
     artifact = get_model_artifact(model_path)
     model = artifact["model"]
     feature_columns = artifact.get("feature_columns") if isinstance(artifact.get("feature_columns"), (list, tuple)) else FEATURE_COLUMNS
     vector = _vectorize_features(features, feature_columns)
     return _rounded_score(float(model.predict([vector])[0]))
+
+
 def explain_score(
     features: dict[str, float | int],
     model_path: str | Path | None = None,
@@ -917,7 +995,21 @@ def explain_score(
 
     rule_weight = 0.65 if artifact.get("source") == "bootstrap" else 0.0
     ml_weight = 1.0 - rule_weight
-    final_score = _rounded_score(rule_score * rule_weight + ml_score * ml_weight)
+    raw_final_score = _rounded_score(rule_score * rule_weight + ml_score * ml_weight)
+    relevance_guardrail = _build_query_relevance_guardrail(features, raw_final_score)
+    final_score = float(relevance_guardrail["adjusted_score"])
+    if relevance_guardrail["active"]:
+        metrics = relevance_guardrail["metrics"]
+        relevance_score = metrics["relevance_score"] if isinstance(metrics, dict) else 0.0
+        factors.append(
+            {
+                "key": "query_relevance_guardrail",
+                "label": "Query-topic fit",
+                "impact": relevance_guardrail["score_delta"],
+                "value": relevance_score,
+                "detail": "Страница слабо совпадает с запросом: мало ключевых слов, смысловых совпадений и явных сигналов в title/тексте. Поэтому высокий score ограничен до сравнения с конкурентами.",
+            }
+        )
 
     positives = _select_positive_factors(factors)
     negatives = sorted(
@@ -940,8 +1032,10 @@ def explain_score(
 
     return {
         "final_score": final_score,
+        "uncapped_final_score": raw_final_score,
         "rule_score": rule_score,
         "ml_score": ml_score,
+        "relevance_guardrail": relevance_guardrail,
         "model_info": _build_model_info(artifact),
         "weights": {
             "rule_weight": round(rule_weight, 4),

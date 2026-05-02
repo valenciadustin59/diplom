@@ -191,6 +191,7 @@ select {
   margin: 6px 0 0;
   font-size: clamp(1.8rem, 2vw, 2.4rem);
   letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
 }
 
 .primary-button {
@@ -490,6 +491,14 @@ select {
   font-size: clamp(2rem, 4vw, 2.8rem);
   line-height: 1.02;
   letter-spacing: -0.05em;
+}
+
+.workspace-hero__target {
+  max-width: 720px;
+  margin: -2px 0 10px;
+  color: #385fcb;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .workspace-meta {

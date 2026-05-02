@@ -71,6 +71,7 @@ const humanLabelOverrides: Record<string, string> = {
   "Recommendation plan": "План рекомендаций",
   "Query intent": "Намерение запроса",
   "Query match": "Совпадение с запросом",
+  "Query-topic fit": "Соответствие теме запроса",
   "Query prominence": "Выраженность запроса",
   "Redirect efficiency": "Эффективность редиректов",
   "Semantic and Intent": "Смысл и намерение",

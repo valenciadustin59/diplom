@@ -11,6 +11,14 @@ EXPECTED_V2_FEATURE_COUNT = len(get_model_feature_schema("v2").feature_columns)
 EXPECTED_V3_FEATURE_COUNT = len(get_model_feature_schema("v3").feature_columns)
 
 
+class ConstantScoreModel:
+    def __init__(self, score: float):
+        self.score = score
+
+    def predict(self, rows):
+        return [self.score for _ in rows]
+
+
 def test_default_runtime_model_path_is_production_alias():
     assert DEFAULT_MODEL_PATH == ARTIFACTS_DIR / "page_quality_model.pkl"
     assert DEFAULT_MODEL_PATH.name == "page_quality_model.pkl"
@@ -144,6 +152,114 @@ def test_published_model_score_is_not_inflated_by_rule_layer(tmp_path):
         factor.get("key") == "semantic_relevance" and float(factor.get("impact", 0.0)) < 0.0
         for factor in explanation["top_negative_factors"]
     )
+
+
+def test_query_relevance_guardrail_caps_unrelated_commercial_page(tmp_path):
+    model_path = tmp_path / "constant-v3-model.pkl"
+    v3_columns = get_model_feature_schema("v3").feature_columns
+    features = {feature_name: 0.0 for feature_name in v3_columns}
+    features.update(
+        {
+            "word_count": 3600,
+            "heading_count": 8,
+            "title_present": 1,
+            "title_length_quality": 0.9,
+            "meta_description_present": 1,
+            "meta_length_quality": 0.9,
+            "semantic_similarity": 0.298144,
+            "keyword_coverage_ratio": 0.333333,
+            "query_density": 0.00028,
+            "query_in_title": 0,
+            "query_in_text": 0,
+            "exact_query_count": 0,
+            "title_semantic_alignment": 0,
+            "heading_semantic_alignment": 0,
+            "query_prominence_score": 0,
+            "page_indexable": 1,
+            "canonical_present": 1,
+            "canonical_matches_final_url": 1,
+            "commercial_signals_score": 0.888889,
+            "trust_signals_score": 0.925926,
+            "commercial_trust_score": 0.925926,
+            "intent_alignment_score": 0.534753,
+            "intent_is_commercial": 1,
+            "commercial_intent_alignment": 0.534753,
+        }
+    )
+    save_model(
+        model=ConstantScoreModel(86.0),
+        metrics={"mae": 1.0},
+        model_path=model_path,
+        metadata={
+            "source": "local_dataset",
+            "dataset_version": "guardrail-test",
+            "model_schema_version": "v3",
+            "feature_columns": v3_columns,
+        },
+    )
+
+    explanation = explain_score(features, model_path=model_path)
+
+    assert explanation["ml_score"] == 86.0
+    assert explanation["uncapped_final_score"] == 86.0
+    assert explanation["final_score"] == 42.0
+    assert explanation["relevance_guardrail"]["active"] is True
+    assert explanation["relevance_guardrail"]["reason"] == "severe_query_topic_mismatch"
+    assert any(
+        factor.get("key") == "query_relevance_guardrail" and float(factor.get("impact", 0.0)) < 0.0
+        for factor in explanation["top_negative_factors"]
+    )
+
+
+def test_query_relevance_guardrail_keeps_strong_lexical_match(tmp_path):
+    model_path = tmp_path / "constant-v3-relevant-model.pkl"
+    v3_columns = get_model_feature_schema("v3").feature_columns
+    features = {feature_name: 0.0 for feature_name in v3_columns}
+    features.update(
+        {
+            "word_count": 836,
+            "heading_count": 7,
+            "title_present": 1,
+            "title_length_quality": 0.8,
+            "meta_description_present": 1,
+            "meta_length_quality": 0.8,
+            "semantic_similarity": 0.196525,
+            "keyword_coverage_ratio": 1.0,
+            "query_density": 0.04067,
+            "query_in_title": 0,
+            "query_in_text": 0,
+            "exact_query_count": 0,
+            "title_semantic_alignment": 0,
+            "heading_semantic_alignment": 0,
+            "query_prominence_score": 0,
+            "page_indexable": 1,
+            "canonical_present": 1,
+            "canonical_matches_final_url": 1,
+            "commercial_signals_score": 0.666667,
+            "trust_signals_score": 0.711111,
+            "commercial_trust_score": 0.711111,
+            "intent_alignment_score": 0.54301,
+            "intent_is_commercial": 1,
+            "commercial_intent_alignment": 0.54301,
+        }
+    )
+    save_model(
+        model=ConstantScoreModel(64.0),
+        metrics={"mae": 1.0},
+        model_path=model_path,
+        metadata={
+            "source": "local_dataset",
+            "dataset_version": "guardrail-test",
+            "model_schema_version": "v3",
+            "feature_columns": v3_columns,
+        },
+    )
+
+    explanation = explain_score(features, model_path=model_path)
+
+    assert explanation["ml_score"] == 64.0
+    assert explanation["final_score"] == 64.0
+    assert explanation["relevance_guardrail"]["active"] is False
 
 
 def test_rule_score_is_calibrated_instead_of_saturating_at_raw_impact_cap():

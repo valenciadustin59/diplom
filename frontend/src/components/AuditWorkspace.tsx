@@ -92,6 +92,17 @@ function getDomain(url: string): string {
   }
 }
 
+function getDisplayUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    const path = parsed.pathname && parsed.pathname !== "/" ? parsed.pathname : "";
+    const query = parsed.search ?? "";
+    return decodeURI(`${parsed.hostname}${path}${query}`);
+  } catch {
+    return url;
+  }
+}
+
 function formatImpact(value: number): string {
   const rounded = Math.round(value * 10) / 10;
   return `вес ${rounded > 0 ? "+" : ""}${rounded}`;
@@ -347,6 +358,7 @@ function OverviewPanel({
           <div>
             <span className="eyebrow-pill">Обзор аудита</span>
             <h2 className="workspace-hero__title">{currentAudit ? getDomain(currentAudit.target_url) : "Аудит"}</h2>
+            {currentAudit ? <p className="workspace-hero__target">{getDisplayUrl(currentAudit.target_url)}</p> : null}
             <p className="workspace-hero__text">
               {currentAudit?.query ?? "Запустите аудит, чтобы увидеть метрики, сравнение и рекомендации."}
             </p>
@@ -620,7 +632,7 @@ export function AuditWorkspace({
       <div className="workspace__header">
         <div>
           <p className="content__eyebrow">Рабочее пространство аудита</p>
-          <h1 className="content__title">{getDomain(currentAudit.target_url)}</h1>
+          <h1 className="content__title">{getDisplayUrl(currentAudit.target_url)}</h1>
           <p className="workspace__subtitle">{currentAudit.query}</p>
         </div>
         <div className="workspace__status">
