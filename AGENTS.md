@@ -118,6 +118,19 @@
 - D49 decision is `keep_current` / `no_publish`, reason `d48_no_candidate_passed_product_critical_guardrails`. Candidate artifacts are explicitly marked not runtime-selected; the next modeling change requires a new task.
 - D49 verification passed: targeted no-publish checks plus the D45-D49 ML regression set (`48 passed`). Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`; runtime dataset remains `dataset-v3-d37`, schema `v3`.
 
+## Current D50-D54 Ranking-Aware v5 Plan
+
+- GitHub issues `#69-#73` were created on `2026-05-02`; local mirror: `plans/d50-d54-v5-ranking-aware-model.md`.
+- `D50` / GitHub `#69` - completed locally: top-3 regression analysis for D47/D48 dataset-v4 candidates against production CatBoost v3.
+- `D51` / GitHub `#70` - planned: query-level preference labels for ranking-aware `dataset-v5`.
+- `D52` / GitHub `#71` - planned: shortcut feature control and reusable score-response/feature-dominance guardrails for v5.
+- `D53` / GitHub `#72` - planned: non-production v5 candidate training with page-quality and ranking-aware candidates.
+- `D54` / GitHub `#73` - planned: shadow benchmark and controlled publish/no-publish decision for v5.
+- D50 evidence: `backend/app/ml/top3_regression_analysis.py`, `backend/artifacts/ranking-benchmarks/dataset-v5-d50/top3-regression-analysis.json`, and `top3-regression-analysis.md`.
+- D50 analyzed only the group-by-query validation split: `190` rows, `20` validation queries. It did not train, publish or mutate `backend/artifacts/page_quality_model.pkl`.
+- D50 result: `20` candidate/query top-3 regressions, `9` queries requiring D51 focus. Main patterns: `rank_prior_disagreement=20`, `shortcut_text_volume=16`, `aggregator_or_marketplace_distortion=7`.
+- Candidate regression counts in D50: RandomForest `8`, CatBoostRegressor `6`, CatBoostRanker `6`. Verification passed with `25` targeted ML tests. Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:

@@ -548,6 +548,23 @@ The selected runtime artifact remains `backend/artifacts/page_quality_model.pkl`
 
 D49 verification passed with the D45-D49 ML regression set: `48` tests passed across no-publish, shadow benchmark, ranking benchmark, dataset-v4, SEO-weighted labels, training pipeline, dataset quality and model schema coverage.
 
+## D50 top-3 regression analysis
+
+D50 starts the ranking-aware v5 wave. It analyzes why the dataset-v4 candidates were not published: the candidates improved absolute score fit but regressed product-critical top-3 behavior.
+
+D50 runs `backend/app/ml/top3_regression_analysis.py`. It reloads the current production artifact and all D47 candidates, recomputes predictions on the same group-by-query validation split, then compares predicted top-3 pages against SERP top-3 pages inside each query group. It is analysis-only: no training, no publish and no mutation of `backend/artifacts/page_quality_model.pkl`.
+
+D50 evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d50/top3-regression-analysis.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d50/top3-regression-analysis.md`
+
+The analysis covers `190` validation rows across `20` validation queries. It found `20` candidate/query top-3 regressions and `9` query groups that need D51 preference-label focus. The main failure patterns are `rank_prior_disagreement=20`, `shortcut_text_volume=16` and `aggregator_or_marketplace_distortion=7`.
+
+Candidate regression counts: RandomForestRegressor `8`, CatBoostRegressor `6`, CatBoostRanker `6`. The production CatBoost v3 artifact remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
+D50 verification passed with `25` targeted ML tests covering the new top-3 analysis logic and nearby shadow/no-publish/training/model-schema behavior.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -558,6 +575,7 @@ D49 verification passed with the D45-D49 ML regression set: `48` tests passed ac
 - `backend/app/ml/seo_weighted_candidate_training.py`
 - `backend/app/ml/seo_weighted_shadow_benchmark.py`
 - `backend/app/ml/seo_weighted_no_publish_decision.py`
+- `backend/app/ml/top3_regression_analysis.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`
