@@ -162,6 +162,13 @@ _TOP3_REGRESSION_ANALYSIS_EXPORTS = {
     "classify_failure_patterns",
     "run_d50_top3_regression_analysis",
 }
+_COMPETITIVENESS_RELEASE_POLICY_EXPORTS = {
+    "COMPETITIVENESS_RELEASE_POLICY_VERSION",
+    "build_competitiveness_release_scorecard",
+    "build_recommendation_consistency_contract",
+    "competitiveness_candidate_sort_key",
+    "split_shadow_rejection_reasons",
+}
 _V5_PREFERENCES_EXPORTS = {
     "DEFAULT_OUTPUT_PREFERENCE_LABELS_PATH",
     "LABEL_SCHEMA_VERSION_V5",
@@ -256,6 +263,9 @@ def __getattr__(name: str):
     if name in _TOP3_REGRESSION_ANALYSIS_EXPORTS:
         module = importlib.import_module("app.ml.top3_regression_analysis")
         return getattr(module, name)
+    if name in _COMPETITIVENESS_RELEASE_POLICY_EXPORTS:
+        module = importlib.import_module("app.ml.competitiveness_release_policy")
+        return getattr(module, name)
     if name in _V5_PREFERENCES_EXPORTS:
         module = importlib.import_module("app.ml.v5_preferences")
         return getattr(module, name)
@@ -301,6 +311,7 @@ __all__ = [
     *_SEO_WEIGHTED_SHADOW_BENCHMARK_EXPORTS,
     *_SEO_WEIGHTED_NO_PUBLISH_DECISION_EXPORTS,
     *_TOP3_REGRESSION_ANALYSIS_EXPORTS,
+    *_COMPETITIVENESS_RELEASE_POLICY_EXPORTS,
     *_V5_PREFERENCES_EXPORTS,
     *_V5_FEATURE_POLICY_EXPORTS,
     *_V5_CANDIDATE_TRAINING_EXPORTS,

@@ -7,6 +7,15 @@ import json
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
+from app.ml.competitiveness_release_policy import (
+    COMPETITIVENESS_RELEASE_POLICY_VERSION,
+    DEFAULT_ABSOLUTE_ERROR_TOLERANCE_RATIO,
+    DEFAULT_MAX_NDCG_REGRESSION,
+    DEFAULT_MAX_SPEARMAN_REGRESSION,
+    DEFAULT_TOP3_DIAGNOSTIC_FLOOR,
+    build_competitiveness_release_scorecard,
+    competitiveness_candidate_sort_key,
+)
 from app.ml.model import DEFAULT_MODEL_PATH, load_model_artifact, load_saved_model
 from app.ml.no_publish_decision import build_production_artifact_state, build_versioned_reference_state, sha1_file
 from app.ml.publish import ARTIFACTS_DIR, build_artifact_metadata_path
@@ -54,9 +63,10 @@ DEFAULT_D54_CANDIDATE_PATHS = (
     DEFAULT_D53_HYBRID_CANDIDATE_PATH,
 )
 DEFAULT_SPLIT_PATH = DATASET_VERSIONS_DIR / DEFAULT_DATASET_VERSION / "split.json"
-MIN_TOP3_HIT_RATE_FOR_PUBLISH = 0.95
-MAX_NDCG_MEANINGFUL_REGRESSION = 0.001
-ABSOLUTE_ERROR_TOLERANCE_RATIO = 0.05
+TOP3_HIT_RATE_DIAGNOSTIC_FLOOR = DEFAULT_TOP3_DIAGNOSTIC_FLOOR
+MAX_SPEARMAN_MEANINGFUL_REGRESSION = DEFAULT_MAX_SPEARMAN_REGRESSION
+MAX_NDCG_MEANINGFUL_REGRESSION = DEFAULT_MAX_NDCG_REGRESSION
+ABSOLUTE_ERROR_TOLERANCE_RATIO = DEFAULT_ABSOLUTE_ERROR_TOLERANCE_RATIO
 
 
 def _read_json(path: str | Path) -> dict[str, Any]:
@@ -323,7 +333,8 @@ def build_d54_product_guardrails(
     *,
     shadow_report: Mapping[str, Any],
     validation_rows: Sequence[dict[str, str]],
-    min_top3_hit_rate: float = MIN_TOP3_HIT_RATE_FOR_PUBLISH,
+    top3_diagnostic_floor: float = TOP3_HIT_RATE_DIAGNOSTIC_FLOOR,
+    max_spearman_regression: float = MAX_SPEARMAN_MEANINGFUL_REGRESSION,
     max_ndcg_regression: float = MAX_NDCG_MEANINGFUL_REGRESSION,
     absolute_error_tolerance_ratio: float = ABSOLUTE_ERROR_TOLERANCE_RATIO,
 ) -> dict[str, Any]:
@@ -345,39 +356,19 @@ def build_d54_product_guardrails(
             "passed": False,
             "failed_checks": ["model_path_missing"],
         }
-        reference_mae = _safe_float(reference_metrics.get("mae"))
-        mae_threshold = round(reference_mae * (1.0 + absolute_error_tolerance_ratio), 6)
-        candidate_top3 = _safe_float(candidate_metrics.get("top_3_hit_rate"))
-        reference_top3 = _safe_float(reference_metrics.get("top_3_hit_rate"))
-        candidate_ndcg = _safe_float(candidate_metrics.get("ndcg_at_10"))
-        reference_ndcg = _safe_float(reference_metrics.get("ndcg_at_10"))
-        candidate_mae = _safe_float(candidate_metrics.get("mae"))
-        checks = {
-            "base_shadow_publish_gate_passed": bool(base_guardrails.get("publish_gate_passed")),
-            "top_3_hit_rate_at_least_release_floor": candidate_top3 >= min_top3_hit_rate,
-            "top_3_hit_rate_not_below_reference": candidate_top3 >= reference_top3,
-            "ndcg_at_10_no_meaningful_regression": candidate_ndcg >= reference_ndcg - max_ndcg_regression,
-            "mae_comparable_or_better": candidate_mae <= mae_threshold,
-            "validation_scores_bounded": bool(bounds.get("passed")),
-            "feature_dominance_guardrail_passed": bool(feature_dominance.get("passed")),
-            "score_response_guardrail_passed": bool(score_response.get("passed")),
-        }
-        failed = [name for name, passed in checks.items() if not passed]
-        guardrails[candidate_name] = {
-            "passed": not failed,
-            "failed_checks": failed,
-            "checks": checks,
-            "base_rejection_reasons": list(base_guardrails.get("rejection_reasons") or []),
-            "thresholds": {
-                "min_top_3_hit_rate_for_publish": min_top3_hit_rate,
-                "max_ndcg_meaningful_regression": max_ndcg_regression,
-                "absolute_error_tolerance_ratio": absolute_error_tolerance_ratio,
-                "mae_comparable_threshold": mae_threshold,
-            },
-            "feature_dominance_guardrail": feature_dominance,
-            "score_response_guardrail": score_response,
-            "prediction_bounds": bounds,
-        }
+        guardrails[candidate_name] = build_competitiveness_release_scorecard(
+            candidate_name=candidate_name,
+            candidate_metrics=candidate_metrics,
+            reference_metrics=reference_metrics,
+            base_guardrails=base_guardrails,
+            feature_dominance=feature_dominance,
+            score_response=score_response,
+            prediction_bounds=bounds,
+            max_spearman_regression=max_spearman_regression,
+            max_ndcg_regression=max_ndcg_regression,
+            absolute_error_tolerance_ratio=absolute_error_tolerance_ratio,
+            top3_diagnostic_floor=top3_diagnostic_floor,
+        )
     return guardrails
 
 
@@ -409,8 +400,8 @@ def build_d54_decision(
             "reason": "no_candidate_passed_v5_release_guardrails",
         }
     reference_model = shadow_report.get("reference_model") if isinstance(shadow_report.get("reference_model"), dict) else {}
-    selected = max((candidates[name] for name in eligible_names), key=candidate_sort_key)
-    if candidate_sort_key(selected) <= candidate_sort_key(reference_model):
+    selected = max((candidates[name] for name in eligible_names), key=competitiveness_candidate_sort_key)
+    if competitiveness_candidate_sort_key(selected) <= competitiveness_candidate_sort_key(reference_model):
         return {
             "decision": "keep_current",
             "publish_action": "no_publish",
@@ -449,6 +440,16 @@ def _summarize_candidate_decisions(report: Mapping[str, Any]) -> list[dict[str, 
         feature = guardrail.get("feature_dominance_guardrail") if isinstance(guardrail.get("feature_dominance_guardrail"), dict) else {}
         response = guardrail.get("score_response_guardrail") if isinstance(guardrail.get("score_response_guardrail"), dict) else {}
         bounds = guardrail.get("prediction_bounds") if isinstance(guardrail.get("prediction_bounds"), dict) else {}
+        serp = (
+            guardrail.get("serp_alignment_diagnostics")
+            if isinstance(guardrail.get("serp_alignment_diagnostics"), dict)
+            else {}
+        )
+        recommendation = (
+            guardrail.get("recommendation_consistency")
+            if isinstance(guardrail.get("recommendation_consistency"), dict)
+            else {}
+        )
         summaries.append(
             {
                 "candidate_name": str(candidate_name),
@@ -456,11 +457,25 @@ def _summarize_candidate_decisions(report: Mapping[str, Any]) -> list[dict[str, 
                 "publish_allowed": bool(guardrail.get("passed")),
                 "failed_checks": list(guardrail.get("failed_checks") or []),
                 "base_rejection_reasons": list(guardrail.get("base_rejection_reasons") or []),
+                "base_page_quality_rejection_reasons": list(
+                    guardrail.get("base_page_quality_rejection_reasons") or []
+                ),
+                "base_serp_alignment_rejection_reasons": list(
+                    guardrail.get("base_serp_alignment_rejection_reasons") or []
+                ),
                 "candidate_metrics": _selected_metrics(candidate_metrics),
                 "reference_metrics": _selected_metrics(reference_metrics),
                 "metric_deltas": _selected_metrics(
                     comparison.get("metric_deltas") if isinstance(comparison.get("metric_deltas"), dict) else {}
                 ),
+                "metric_groups": guardrail.get("metric_groups"),
+                "serp_alignment_warnings": list(serp.get("warnings") or []),
+                "recommendation_consistency": {
+                    "contract_version": recommendation.get("contract_version"),
+                    "status": recommendation.get("status"),
+                    "passed": recommendation.get("passed"),
+                    "blocking": recommendation.get("blocking"),
+                },
                 "top_feature": feature.get("top_feature"),
                 "top_feature_group": feature.get("top_feature_group"),
                 "feature_guardrail_passed": bool(feature.get("passed")),
@@ -500,6 +515,7 @@ def render_d54_markdown(report: Mapping[str, Any]) -> str:
         f"- Selected candidate: `{decision.get('selected_candidate')}`",
         f"- Dataset: `{report.get('dataset_path')}`",
         f"- Feature policy: `{report.get('feature_policy_version')}`",
+        f"- Release policy: `{report.get('release_policy_version')}`",
         f"- Production SHA1 before: `{production.get('sha1_before')}`",
         f"- Production SHA1 after: `{production.get('sha1_after')}`",
         f"- Production changed by D54: `{production.get('changed_by_d54')}`",
@@ -520,8 +536,11 @@ def render_d54_markdown(report: Mapping[str, Any]) -> str:
                 f"- Publish allowed: `{candidate.get('publish_allowed')}`",
                 f"- Failed checks: `{', '.join(candidate.get('failed_checks') or []) or 'none'}`",
                 f"- Base rejection reasons: `{', '.join(candidate.get('base_rejection_reasons') or []) or 'none'}`",
+                f"- SERP alignment warnings: `{', '.join(candidate.get('serp_alignment_warnings') or []) or 'none'}`",
                 f"- Candidate metrics: `{_inline_json(candidate.get('candidate_metrics'))}`",
                 f"- Metric deltas: `{_inline_json(candidate.get('metric_deltas'))}`",
+                f"- Metric groups: `{_inline_json(candidate.get('metric_groups'))}`",
+                f"- Recommendation consistency: `{_inline_json(candidate.get('recommendation_consistency'))}`",
                 f"- Top feature: `{candidate.get('top_feature')}` (`{candidate.get('top_feature_group')}`)",
                 f"- Critical/supporting drop: `{candidate.get('average_critical_drop')}` / `{candidate.get('average_supporting_drop')}`",
                 f"- Prediction bounds: `{_inline_json(candidate.get('prediction_bounds'))}`",
@@ -614,6 +633,7 @@ def run_d54_shadow_decision(
         "page_labels_path": str(Path(page_labels_path)),
         "d53_report_path": str(Path(d53_report_path)),
         "feature_policy_version": FEATURE_POLICY_VERSION_V5,
+        "release_policy_version": COMPETITIVENESS_RELEASE_POLICY_VERSION,
         "reference_model_path": str(Path(reference_model_path)),
         "candidate_model_paths": [str(Path(path)) for path in candidate_model_paths],
         "shadow_benchmark": shadow_report,

@@ -643,16 +643,13 @@ D53 verification passed with the D50-D53 and nearby ML regression set: `50` test
 
 D54 runs the release gate for the D53 v5 candidates. It does not train another model and does not mutate the production artifact unless a candidate passes the publish guardrails.
 
-The D54 runner is `backend/app/ml/v5_shadow_decision.py`. It reuses the fixed D51/D52 group-by-query validation split and compares the active production CatBoost v3 model against the three D53 non-production candidates. The decision layer applies:
+The D54 runner is `backend/app/ml/v5_shadow_decision.py`. It reuses the fixed D51/D52 group-by-query validation split and compares the active production CatBoost v3 model against the three D53 non-production candidates. D55 adds `backend/app/ml/competitiveness_release_policy.py` and changes the future release decision layer to policy version `d55-product-aligned-v1`.
 
-- base shadow guardrails against the active production model;
-- explicit `top_3_hit_rate >= 0.95` publish floor;
-- no top-3 regression against the current production artifact;
-- no meaningful NDCG@10 regression;
-- MAE comparability;
-- D52 feature-dominance guardrail;
-- D52 score-response guardrail;
-- bounded `0..100` validation predictions.
+Under D55, `top_3_hit_rate` is no longer an absolute publish blocker for page-quality/competitiveness scoring. It is reported as SERP-alignment diagnostics and warnings. The blocking release scorecard is now separated into:
+
+- page-quality/competitiveness metrics: MAE comparability, Spearman and NDCG@10;
+- product guardrails: bounded validation scores, D52 feature-dominance, D52 score-response, and an explicit recommendation-consistency contract placeholder;
+- SERP-alignment diagnostics: `top_3_hit_rate` versus the diagnostic floor and current production, non-blocking.
 
 D54 evidence is stored in:
 
@@ -669,7 +666,7 @@ Candidate results:
 - `ranking_aware_catboost_v5`: `MAE=14.448487`, `Spearman=0.889367`, `NDCG@10=0.995447`, `top_3_hit_rate=0.55`.
 - `hybrid_catboost_ranker_v5`: `MAE=2.816326`, `Spearman=0.953195`, `NDCG@10=0.998127`, `top_3_hit_rate=0.65`.
 
-The final D54 decision is `keep_current` / `no_publish` with reason `no_candidate_passed_v5_release_guardrails`. Pointwise and hybrid candidates improve absolute error, Spearman and NDCG, but both regress top-3; the ranking-aware candidate also fails MAE comparability. D54 verification passed with the D50-D54 ML regression set: `53` tests passed. The production artifact remains unchanged at SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+The historical D54 evidence was generated before D55 and records `keep_current` / `no_publish` with reason `no_candidate_passed_v5_release_guardrails`. D55 does not publish a model and does not mutate the production artifact; it updates the decision policy so future v5 release checks evaluate competitiveness quality without requiring candidates to copy SERP top-3 ordering. The production artifact remains unchanged at SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 ## Files relevant to the ML appendix
 
@@ -686,6 +683,7 @@ The final D54 decision is `keep_current` / `no_publish` with reason `no_candidat
 - `backend/app/ml/v5_feature_policy.py`
 - `backend/app/ml/v5_candidate_training.py`
 - `backend/app/ml/v5_shadow_decision.py`
+- `backend/app/ml/competitiveness_release_policy.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`

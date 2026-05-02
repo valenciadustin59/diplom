@@ -128,7 +128,7 @@ def test_d54_decision_keeps_current_when_no_candidate_passes_product_gate() -> N
     assert decision["reason"] == "no_candidate_passed_v5_release_guardrails"
 
 
-def test_d54_product_guardrail_rejects_candidate_below_top3_floor(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_d54_product_guardrail_reports_low_top3_as_diagnostic(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(d54, "feature_dominance_guardrail", lambda candidate: {"passed": True})
     monkeypatch.setattr(d54, "score_response_guardrail", lambda **kwargs: {"passed": True})
     monkeypatch.setattr(d54, "_prediction_bounds", lambda **kwargs: {"passed": True})
@@ -155,16 +155,72 @@ def test_d54_product_guardrail_rejects_candidate_below_top3_floor(monkeypatch: p
                     "ndcg_at_10": 0.97,
                     "top_3_hit_rate": 0.95,
                 },
-                "guardrails": {"publish_gate_passed": True, "rejection_reasons": []},
+                "guardrails": {"publish_gate_passed": False, "rejection_reasons": ["top_3_hit_rate_regressed"]},
             }
         ],
     }
 
     guardrails = build_d54_product_guardrails(shadow_report=shadow_report, validation_rows=[])
 
-    assert guardrails["pointwise_catboost_v5"]["passed"] is False
-    assert "top_3_hit_rate_at_least_release_floor" in guardrails["pointwise_catboost_v5"]["failed_checks"]
-    assert "top_3_hit_rate_not_below_reference" in guardrails["pointwise_catboost_v5"]["failed_checks"]
+    assert guardrails["pointwise_catboost_v5"]["passed"] is True
+    assert guardrails["pointwise_catboost_v5"]["failed_checks"] == []
+    assert guardrails["pointwise_catboost_v5"]["base_serp_alignment_rejection_reasons"] == [
+        "top_3_hit_rate_regressed"
+    ]
+    assert guardrails["pointwise_catboost_v5"]["serp_alignment_diagnostics"]["blocking"] is False
+    assert guardrails["pointwise_catboost_v5"]["serp_alignment_diagnostics"]["warnings"] == [
+        "top_3_hit_rate_below_diagnostic_floor",
+        "top_3_hit_rate_below_reference",
+    ]
+
+
+def test_d54_decision_uses_competitiveness_metrics_without_top3_sorting() -> None:
+    shadow_report = {
+        "reference_model": {
+            "candidate_name": "reference_artifact",
+            "status": "available",
+            "metrics": {
+                "spearman_mean": 0.51,
+                "ndcg_at_10": 0.981,
+                "top_3_hit_rate": 0.9,
+                "mae": 8.0,
+            },
+        },
+        "candidates": [
+            {
+                "candidate_name": "legacy_aligned_candidate",
+                "status": "available",
+                "metrics": {
+                    "spearman_mean": 0.7,
+                    "ndcg_at_10": 0.99,
+                    "top_3_hit_rate": 1.0,
+                    "mae": 6.0,
+                },
+            },
+            {
+                "candidate_name": "product_quality_candidate",
+                "status": "available",
+                "metrics": {
+                    "spearman_mean": 0.95,
+                    "ndcg_at_10": 0.998,
+                    "top_3_hit_rate": 0.6,
+                    "mae": 1.2,
+                },
+            },
+        ],
+    }
+
+    decision = build_d54_decision(
+        shadow_report=shadow_report,
+        product_guardrails={
+            "legacy_aligned_candidate": {"passed": True},
+            "product_quality_candidate": {"passed": True},
+        },
+    )
+
+    assert decision["decision"] == "publish_candidate"
+    assert decision["publish_action"] == "controlled_publish_required"
+    assert decision["selected_candidate"] == "product_quality_candidate"
 
 
 def test_run_d54_shadow_decision_writes_no_publish_report_without_mutating_production(tmp_path: Path) -> None:
