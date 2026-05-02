@@ -639,6 +639,38 @@ The ranking-aware candidate uses CatBoostRanker with D51 preference pairs and a 
 
 D53 verification passed with the D50-D53 and nearby ML regression set: `50` tests passed. D53 is not a publish decision. The candidates are valid non-production evidence, but their `top_3_hit_rate` is still below the current production guardrail target. D54 must perform the formal shadow benchmark and controlled publish/no-publish decision. Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D54 v5 shadow benchmark and controlled decision
+
+D54 runs the release gate for the D53 v5 candidates. It does not train another model and does not mutate the production artifact unless a candidate passes the publish guardrails.
+
+The D54 runner is `backend/app/ml/v5_shadow_decision.py`. It reuses the fixed D51/D52 group-by-query validation split and compares the active production CatBoost v3 model against the three D53 non-production candidates. The decision layer applies:
+
+- base shadow guardrails against the active production model;
+- explicit `top_3_hit_rate >= 0.95` publish floor;
+- no top-3 regression against the current production artifact;
+- no meaningful NDCG@10 regression;
+- MAE comparability;
+- D52 feature-dominance guardrail;
+- D52 score-response guardrail;
+- bounded `0..100` validation predictions.
+
+D54 evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d54/shadow-benchmark-guardrails-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d54/shadow-benchmark-guardrails-report.md`
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d54/d54-shadow-decision-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d54/d54-shadow-decision-report.md`
+
+The D54 validation scope is `190` rows, `20` validation queries and `0` query overlap. The production reference on this controlled split has `MAE=7.452366`, `Spearman=0.51066`, `NDCG@10=0.981438` and `top_3_hit_rate=0.9`.
+
+Candidate results:
+
+- `pointwise_catboost_v5`: `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6`.
+- `ranking_aware_catboost_v5`: `MAE=14.448487`, `Spearman=0.889367`, `NDCG@10=0.995447`, `top_3_hit_rate=0.55`.
+- `hybrid_catboost_ranker_v5`: `MAE=2.816326`, `Spearman=0.953195`, `NDCG@10=0.998127`, `top_3_hit_rate=0.65`.
+
+The final D54 decision is `keep_current` / `no_publish` with reason `no_candidate_passed_v5_release_guardrails`. Pointwise and hybrid candidates improve absolute error, Spearman and NDCG, but both regress top-3; the ranking-aware candidate also fails MAE comparability. D54 verification passed with the D50-D54 ML regression set: `53` tests passed. The production artifact remains unchanged at SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -653,6 +685,7 @@ D53 verification passed with the D50-D53 and nearby ML regression set: `50` test
 - `backend/app/ml/v5_preferences.py`
 - `backend/app/ml/v5_feature_policy.py`
 - `backend/app/ml/v5_candidate_training.py`
+- `backend/app/ml/v5_shadow_decision.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`

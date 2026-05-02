@@ -197,6 +197,16 @@ _V5_CANDIDATE_TRAINING_EXPORTS = {
     "run_d53_candidate_training",
     "split_rows_from_manifest",
 }
+_V5_SHADOW_DECISION_EXPORTS = {
+    "DEFAULT_D54_CANDIDATE_PATHS",
+    "DEFAULT_D54_OUTPUT_DIR",
+    "DEFAULT_D54_REPORT_JSON_PATH",
+    "build_d54_decision",
+    "build_d54_product_guardrails",
+    "build_d54_shadow_benchmark",
+    "build_d54_validation_rows",
+    "run_d54_shadow_decision",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -255,6 +265,9 @@ def __getattr__(name: str):
     if name in _V5_CANDIDATE_TRAINING_EXPORTS:
         module = importlib.import_module("app.ml.v5_candidate_training")
         return getattr(module, name)
+    if name in _V5_SHADOW_DECISION_EXPORTS:
+        module = importlib.import_module("app.ml.v5_shadow_decision")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -291,4 +304,5 @@ __all__ = [
     *_V5_PREFERENCES_EXPORTS,
     *_V5_FEATURE_POLICY_EXPORTS,
     *_V5_CANDIDATE_TRAINING_EXPORTS,
+    *_V5_SHADOW_DECISION_EXPORTS,
 ]

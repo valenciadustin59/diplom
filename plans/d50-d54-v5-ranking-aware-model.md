@@ -146,4 +146,24 @@ Publish requirements:
 - Supporting features do not dominate explanations.
 - Critical degradation reduces score more than supporting degradation.
 
-If a candidate passes, D54 performs controlled publish with rollback and smoke evidence. If no candidate passes, D54 writes a no-publish report and keeps production.
+Acceptance:
+
+- Completed: D54 shadow benchmark compares current production CatBoost v3 against all D53 v5 candidates on the fixed D51/D52 validation split.
+- Completed: D52 feature-dominance, score-response and bounded-score guardrails are applied in the release decision.
+- Completed: controlled decision report keeps production unchanged because no v5 candidate passes the top-3 release gate.
+
+Evidence:
+
+- Runner: `backend/app/ml/v5_shadow_decision.py`.
+- Shadow report: `backend/artifacts/ranking-benchmarks/dataset-v5-d54/shadow-benchmark-guardrails-report.json` and `.md`.
+- Controlled decision report: `backend/artifacts/ranking-benchmarks/dataset-v5-d54/d54-shadow-decision-report.json` and `.md`.
+- Validation scope: `dataset-v5/dataset.controlled.csv`, `190` validation rows, `20` validation queries, `0` query overlap.
+- Production reference on the D54 controlled split: `MAE=7.452366`, `Spearman=0.51066`, `NDCG@10=0.981438`, `top_3_hit_rate=0.9`.
+- Candidate results:
+  - `pointwise_catboost_v5`: `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6`.
+  - `ranking_aware_catboost_v5`: `MAE=14.448487`, `Spearman=0.889367`, `NDCG@10=0.995447`, `top_3_hit_rate=0.55`.
+  - `hybrid_catboost_ranker_v5`: `MAE=2.816326`, `Spearman=0.953195`, `NDCG@10=0.998127`, `top_3_hit_rate=0.65`.
+- Decision: `keep_current` / `no_publish`, reason `no_candidate_passed_v5_release_guardrails`.
+- Product interpretation: pointwise and hybrid improve absolute error, Spearman and NDCG but fail top-3; ranking-aware also fails MAE comparability. This means v5 is useful evidence but not publishable.
+- Verification: targeted D54 tests plus D50-D54 nearby ML regression set passed as `53 passed`.
+- Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.

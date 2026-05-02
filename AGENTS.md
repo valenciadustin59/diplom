@@ -125,7 +125,7 @@
 - `D51` / GitHub `#70` - completed locally: query-level preference labels and versioned `dataset-v5` evidence bundle for ranking-aware training.
 - `D52` / GitHub `#71` - completed locally: shortcut feature control policy, controlled dataset and reusable feature-dominance/score-response guardrails for v5.
 - `D53` / GitHub `#72` - completed locally: non-production v5 candidate training with pointwise, ranking-aware and hybrid candidates.
-- `D54` / GitHub `#73` - planned: shadow benchmark and controlled publish/no-publish decision for v5.
+- `D54` / GitHub `#73` - completed locally: shadow benchmark and controlled no-publish decision for v5; production CatBoost v3 remains active.
 - D50 evidence: `backend/app/ml/top3_regression_analysis.py`, `backend/artifacts/ranking-benchmarks/dataset-v5-d50/top3-regression-analysis.json`, and `top3-regression-analysis.md`.
 - D50 analyzed only the group-by-query validation split: `190` rows, `20` validation queries. It did not train, publish or mutate `backend/artifacts/page_quality_model.pkl`.
 - D50 result: `20` candidate/query top-3 regressions, `9` queries requiring D51 focus. Main patterns: `rank_prior_disagreement=20`, `shortcut_text_volume=16`, `aggregator_or_marketplace_distortion=7`.
@@ -141,6 +141,10 @@
 - D53 trained on `dataset-v5/dataset.controlled.csv` with the D51/D52 group split (`695` train rows, `190` validation rows, `79/20` queries, `0` overlap), `148` v3 features and `2863` usable preferences (`2194` train, `669` validation). The CatBoostRanker used D51 preference pairs and a calibrated `0..100` wrapper; the hybrid combines pointwise score with calibrated ranker signal at `0.18` ranking weight.
 - D53 metrics: pointwise CatBoost v5 `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6`, weighted preference accuracy `0.784322`; ranking-aware CatBoost v5 `MAE=14.448487`, `Spearman=0.889367`, `NDCG@10=0.995447`, `top_3_hit_rate=0.55`, weighted preference accuracy `0.797401`; hybrid v5 `MAE=2.816326`, `Spearman=0.953195`, `NDCG@10=0.998127`, `top_3_hit_rate=0.65`, weighted preference accuracy `0.788169`.
 - D53 compatibility smoke passed for all `3` saved artifacts and D52 feature-dominance/score-response prechecks passed for all `3`. Verification passed with the D50-D53 and nearby ML regression set (`50 passed`). D53 is not a publish decision; D54 must compare these candidates against production guardrails. Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- D54 evidence: `backend/app/ml/v5_shadow_decision.py`, `backend/artifacts/ranking-benchmarks/dataset-v5-d54/shadow-benchmark-guardrails-report.json`, `.md`, `d54-shadow-decision-report.json`, and `d54-shadow-decision-report.md`.
+- D54 reused the D51/D52 validation split (`190` rows, `20` validation queries, `0` query overlap) and compared production CatBoost v3 against all `3` D53 candidates with D52 feature-dominance, score-response and bounded-score guardrails.
+- D54 decision is `keep_current` / `no_publish` with reason `no_candidate_passed_v5_release_guardrails`. Production reference on the D54 controlled validation split: `MAE=7.452366`, `Spearman=0.51066`, `NDCG@10=0.981438`, `top_3_hit_rate=0.9`. D53 candidates improved absolute/ranking-label metrics but regressed top-3: pointwise `top_3_hit_rate=0.6`, ranking-aware `0.55`, hybrid `0.65`; all are below the explicit publish floor `0.95` and below current production.
+- D54 product checks: pointwise and hybrid pass D52 feature/score-response/bounded-score checks but fail top-3 release gates; ranking-aware additionally fails MAE comparability. Verification passed with the D50-D54 and nearby ML regression set (`53 passed`). Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
