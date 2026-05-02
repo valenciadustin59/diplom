@@ -109,9 +109,29 @@ Scope:
 
 Acceptance:
 
-- Artifacts and metadata sidecars exist.
-- Compatibility smoke passes.
-- No production artifact is changed.
+- Completed: artifacts and metadata sidecars exist.
+- Completed: compatibility smoke passes for every saved artifact.
+- Completed: no production artifact is changed.
+
+Evidence:
+
+- Runner: `backend/app/ml/v5_candidate_training.py`.
+- Training report: `backend/artifacts/ranking-benchmarks/dataset-v5-d53/d53-candidate-training-report.json` and `.md`.
+- Candidate artifacts:
+  - `backend/artifacts/page_quality_model.dataset-v5-pointwise-catboost-candidate.pkl`
+  - `backend/artifacts/page_quality_model.dataset-v5-ranking-aware-catboost-candidate.pkl`
+  - `backend/artifacts/page_quality_model.dataset-v5-hybrid-candidate.pkl`
+- Each artifact has a `.metadata.json` sidecar marked `non_production=true`, `runtime_enabled=false`, `publish_decision_required=D54`.
+- Training data: `dataset-v5/dataset.controlled.csv`, `885` rows, `148` v3 features, D51/D52 split `695/190`, `79/20` queries and `0` query overlap.
+- Preference evidence: `2863` usable preferences, `2194` train preferences and `669` validation preferences.
+- Candidate metrics:
+  - `pointwise_catboost_v5`: `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6`, weighted preference accuracy `0.784322`.
+  - `ranking_aware_catboost_v5`: `MAE=14.448487`, `Spearman=0.889367`, `NDCG@10=0.995447`, `top_3_hit_rate=0.55`, weighted preference accuracy `0.797401`.
+  - `hybrid_catboost_ranker_v5`: `MAE=2.816326`, `Spearman=0.953195`, `NDCG@10=0.998127`, `top_3_hit_rate=0.65`, weighted preference accuracy `0.788169`.
+- D52 feature-dominance and score-response prechecks passed for all `3` saved D53 artifacts.
+- Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- Verification: D50-D53 and nearby ML regression set passed as `50 passed`.
+- D53 is not a publish decision. The low `top_3_hit_rate` values mean D54 must run the formal shadow benchmark and likely keep production unless guardrail context changes.
 
 ## D54 / GitHub #73: Shadow Benchmark And Controlled Decision
 

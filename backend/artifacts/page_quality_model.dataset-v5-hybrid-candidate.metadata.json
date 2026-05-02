@@ -1,0 +1,97 @@
+{
+  "artifact_version": "dataset-v5-d53-hybrid_catboost_ranker_v5",
+  "artifact_family": "page_quality_model.dataset-v5-hybrid-candidate",
+  "artifact_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v5-hybrid-candidate.pkl",
+  "model_type": "V5HybridRankerModel",
+  "model_schema_version": "v3",
+  "source": "local_dataset",
+  "trained_at": "2026-05-02T13:13:55.871684+00:00",
+  "published_at": "2026-05-02T13:13:55.871684+00:00",
+  "feature_count": 148,
+  "dataset_metadata": {
+    "dataset_version": "dataset-v5",
+    "rows_count": 0,
+    "queries_count": 0,
+    "domains_count": 0,
+    "categories_count": 0,
+    "cities_count": 0,
+    "failure_rate": null,
+    "query_coverage_ratio": null,
+    "attempted_query_coverage_ratio": null,
+    "manifest_generated_at": null
+  },
+  "metrics_summary": {
+    "rmse": 3.525109,
+    "mae": 2.816326,
+    "spearman_mean": 0.953195,
+    "ndcg_at_10": 0.998127,
+    "top_3_hit_rate": 0.65,
+    "validation_queries": 20.0
+  },
+  "training_task": "D53",
+  "candidate_name": "hybrid_catboost_ranker_v5",
+  "candidate_family": "hybrid",
+  "candidate_status": "available",
+  "non_production": true,
+  "runtime_enabled": false,
+  "publish_decision_required": "D54",
+  "feature_policy_version": "v5-shortcut-control-v1",
+  "training_target": "page_score_plus_calibrated_ranker_signal",
+  "feature_importance_summary": {
+    "available": true,
+    "top_features": [
+      {
+        "feature": "intent_alignment_score",
+        "importance": 9.756748
+      },
+      {
+        "feature": "word_count",
+        "importance": 7.474585
+      },
+      {
+        "feature": "page_indexable",
+        "importance": 6.977717
+      },
+      {
+        "feature": "canonical_signal_score",
+        "importance": 6.730922
+      },
+      {
+        "feature": "commercial_intent_alignment",
+        "importance": 4.881793
+      },
+      {
+        "feature": "query_semantic_alignment",
+        "importance": 3.752664
+      },
+      {
+        "feature": "navigational_intent_alignment",
+        "importance": 3.735525
+      },
+      {
+        "feature": "local_intent_alignment",
+        "importance": 3.59084
+      },
+      {
+        "feature": "canonical_matches_final_url",
+        "importance": 3.106916
+      },
+      {
+        "feature": "content_depth_semantic_score",
+        "importance": 2.686633
+      }
+    ],
+    "feature_count": 148
+  },
+  "compatibility_check": {
+    "load_model_artifact": true,
+    "predict_score_bounded": true,
+    "sample_score": 68.5459,
+    "model_schema_version": "v3",
+    "feature_count": 148,
+    "dataset_version": "dataset-v5",
+    "passed": true
+  },
+  "training_report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v5-d53\\d53-candidate-training-report.json",
+  "sha1": "9b43a3ec65e72c584e720052d3d228de2e1ee9ae"
+}

@@ -615,6 +615,30 @@ D52 evidence is stored in:
 
 The guardrail smoke was run against the `3` saved D47 candidate artifacts. RF passed D52 feature/response checks; CatBoostRegressor failed feature dominance because its top feature remained supporting `word_count`; CatBoostRanker passed D52 feature/response checks but remains non-production due the D48/D49 top-3 and absolute-error release blockers. Verification passed with the D50-D52 and nearby ML regression set: `46` tests passed. Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D53 non-production ranking-aware v5 candidates
+
+D53 trains candidate artifacts from the D51/D52 v5 evidence without changing the runtime artifact. It uses `backend/app/ml/v5_candidate_training.py` and the controlled dataset `backend/data/dataset_versions/dataset-v5/dataset.controlled.csv`.
+
+The D53 split reuses the D51/D52 group-by-query split: `695` train rows, `190` validation rows, `79` train queries, `20` validation queries and `0` query overlap. The training surface uses the `148` v3 features and `2863` usable D51 preferences (`2194` train preferences, `669` validation preferences).
+
+D53 creates three non-production artifacts:
+
+- `backend/artifacts/page_quality_model.dataset-v5-pointwise-catboost-candidate.pkl`
+- `backend/artifacts/page_quality_model.dataset-v5-ranking-aware-catboost-candidate.pkl`
+- `backend/artifacts/page_quality_model.dataset-v5-hybrid-candidate.pkl`
+
+All three have `.metadata.json` sidecars marked `non_production=true`, `runtime_enabled=false` and `publish_decision_required=D54`. Compatibility smoke passed for all three through `load_model_artifact` and `predict_score`.
+
+Validation metrics:
+
+- `pointwise_catboost_v5`: `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6`, weighted preference accuracy `0.784322`.
+- `ranking_aware_catboost_v5`: `MAE=14.448487`, `Spearman=0.889367`, `NDCG@10=0.995447`, `top_3_hit_rate=0.55`, weighted preference accuracy `0.797401`.
+- `hybrid_catboost_ranker_v5`: `MAE=2.816326`, `Spearman=0.953195`, `NDCG@10=0.998127`, `top_3_hit_rate=0.65`, weighted preference accuracy `0.788169`.
+
+The ranking-aware candidate uses CatBoostRanker with D51 preference pairs and a calibrated `0..100` wrapper. The hybrid candidate combines the pointwise score with calibrated ranker signal at `0.18` ranking weight. D52 feature-dominance and score-response prechecks passed for all three saved artifacts.
+
+D53 verification passed with the D50-D53 and nearby ML regression set: `50` tests passed. D53 is not a publish decision. The candidates are valid non-production evidence, but their `top_3_hit_rate` is still below the current production guardrail target. D54 must perform the formal shadow benchmark and controlled publish/no-publish decision. Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -628,6 +652,7 @@ The guardrail smoke was run against the `3` saved D47 candidate artifacts. RF pa
 - `backend/app/ml/top3_regression_analysis.py`
 - `backend/app/ml/v5_preferences.py`
 - `backend/app/ml/v5_feature_policy.py`
+- `backend/app/ml/v5_candidate_training.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`

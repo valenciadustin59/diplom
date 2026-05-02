@@ -182,6 +182,21 @@ _V5_FEATURE_POLICY_EXPORTS = {
     "run_d52_shortcut_feature_control",
     "score_response_guardrail",
 }
+_V5_CANDIDATE_TRAINING_EXPORTS = {
+    "DEFAULT_D53_HYBRID_CANDIDATE_PATH",
+    "DEFAULT_D53_OUTPUT_DIR",
+    "DEFAULT_D53_POINTWISE_CANDIDATE_PATH",
+    "DEFAULT_D53_RANKING_CANDIDATE_PATH",
+    "HYBRID_CANDIDATE_NAME",
+    "POINTWISE_CANDIDATE_NAME",
+    "RANKING_CANDIDATE_NAME",
+    "V5CalibratedRankerModel",
+    "V5HybridRankerModel",
+    "build_catboost_pairs",
+    "load_preference_pairs",
+    "run_d53_candidate_training",
+    "split_rows_from_manifest",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -237,6 +252,9 @@ def __getattr__(name: str):
     if name in _V5_FEATURE_POLICY_EXPORTS:
         module = importlib.import_module("app.ml.v5_feature_policy")
         return getattr(module, name)
+    if name in _V5_CANDIDATE_TRAINING_EXPORTS:
+        module = importlib.import_module("app.ml.v5_candidate_training")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -272,4 +290,5 @@ __all__ = [
     *_TOP3_REGRESSION_ANALYSIS_EXPORTS,
     *_V5_PREFERENCES_EXPORTS,
     *_V5_FEATURE_POLICY_EXPORTS,
+    *_V5_CANDIDATE_TRAINING_EXPORTS,
 ]
