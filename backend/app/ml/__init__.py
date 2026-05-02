@@ -132,6 +132,11 @@ _SECOND_PASS_EXPERIMENT_EXPORTS = {
     "run_second_pass_experiment",
     "write_second_pass_experiment_report",
 }
+_V4_DATASET_EXPORTS = {
+    "LABEL_SCHEMA_VERSION_V4",
+    "build_v4_dataset",
+    "load_seo_weighted_labels",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -166,6 +171,9 @@ def __getattr__(name: str):
     if name in _SECOND_PASS_EXPERIMENT_EXPORTS:
         module = importlib.import_module("app.ml.second_pass_experiment")
         return getattr(module, name)
+    if name in _V4_DATASET_EXPORTS:
+        module = importlib.import_module("app.ml.v4_dataset")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -194,4 +202,5 @@ __all__ = [
     *_CONTROLLED_PUBLISH_EXPORTS,
     *_SECOND_PASS_EXPORTS,
     *_SECOND_PASS_EXPERIMENT_EXPORTS,
+    *_V4_DATASET_EXPORTS,
 ]

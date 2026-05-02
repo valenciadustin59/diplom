@@ -1,0 +1,759 @@
+{
+  "generated_at": "2026-05-02T11:02:31.319827+00:00",
+  "task": "D46",
+  "dataset_version": "dataset-v4",
+  "source_dataset_version": "dataset-v3-d37",
+  "source_dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v3-d37\\dataset.csv",
+  "output_dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\dataset.csv",
+  "labels_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\expert_labels.csv",
+  "rows_count": 885,
+  "label_schema_version": "seo-weighted-v4",
+  "feature_schema_version": "v3",
+  "target_score_policy": "target_score_equals_d45_seo_weighted_expert_label",
+  "label_application": {
+    "source_rows_count": 885,
+    "output_rows_count": 885,
+    "labels_loaded": 885,
+    "labels_applied": 885,
+    "missing_labels_count": 0,
+    "missing_labels": [],
+    "unmatched_labels_count": 0,
+    "unmatched_labels": [],
+    "old_target_score_distribution": {
+      "min": 15.7895,
+      "p25": 63.1579,
+      "mean": 73.2127,
+      "p50": 74.2084,
+      "p75": 89.4737,
+      "max": 100.0
+    },
+    "new_target_score_distribution": {
+      "min": 13.7,
+      "p25": 66.2,
+      "mean": 68.1355,
+      "p50": 72.2,
+      "p75": 76.3,
+      "max": 87.2
+    },
+    "target_score_delta_distribution": {
+      "min": -77.8368,
+      "p25": -14.6737,
+      "mean": -5.0772,
+      "p50": -4.2053,
+      "p75": 5.6053,
+      "max": 27.1684
+    }
+  },
+  "label_evidence": {
+    "label_source_distribution": {
+      "seo_weighted_rubric_v4": 885
+    },
+    "quality_band_distribution": {
+      "blocked": 77,
+      "high": 2,
+      "low": 102,
+      "medium": 704
+    },
+    "cap_reason_distribution": {
+      "critical_http_status_not_ok": 57,
+      "critical_intent_alignment_weak": 76,
+      "critical_page_not_indexable": 75,
+      "critical_query_title_fit_weak": 297,
+      "critical_semantic_query_fit_weak": 77,
+      "critical_title_missing": 18,
+      "important_canonical_points_elsewhere": 25,
+      "important_commercial_trust_weak": 27,
+      "important_extremely_thin_content": 64,
+      "supporting_text_insufficient": 14
+    },
+    "critical_score_distribution": {
+      "min": 0.0662,
+      "p25": 0.6084,
+      "mean": 0.6361,
+      "p50": 0.6788,
+      "p75": 0.7376,
+      "max": 0.8618
+    },
+    "important_score_distribution": {
+      "min": 0.2292,
+      "p25": 0.703,
+      "mean": 0.7182,
+      "p50": 0.7444,
+      "p75": 0.7788,
+      "max": 0.849
+    },
+    "supporting_score_distribution": {
+      "min": 0.03,
+      "p25": 0.6387,
+      "mean": 0.6814,
+      "p50": 0.737,
+      "p75": 0.8,
+      "max": 0.9874
+    },
+    "rank_prior_score_distribution": {
+      "min": 0.5263,
+      "p25": 0.6316,
+      "mean": 0.766,
+      "p50": 0.7895,
+      "p75": 0.8947,
+      "max": 1.0
+    }
+  },
+  "split": {
+    "generated_at": "2026-05-02T11:02:31.205433+00:00",
+    "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\dataset.csv",
+    "dataset_version": "dataset-v4",
+    "split_mode": "group_by_query",
+    "test_size": 0.2,
+    "random_state": 42,
+    "train_rows_count": 695,
+    "validation_rows_count": 190,
+    "train_queries_count": 79,
+    "validation_queries_count": 20,
+    "train_queries": [
+      "входные двери Казань",
+      "входные двери Краснодар",
+      "входные двери Москва",
+      "входные двери Новосибирск",
+      "входные двери Самара",
+      "входные двери Санкт-Петербург",
+      "входные двери отзывы",
+      "входные двери цена Екатеринбург",
+      "входные двери цена Краснодар",
+      "входные двери цена Нижний Новгород",
+      "входные двери цена Новосибирск",
+      "входные двери цена Самара",
+      "входные двери цена Санкт-Петербург",
+      "как выбрать входные двери",
+      "как выбрать натяжные потолки",
+      "как выбрать пластиковые окна",
+      "как выбрать шкафы-купе",
+      "кухни на заказ Казань",
+      "кухни на заказ Краснодар",
+      "кухни на заказ Москва",
+      "кухни на заказ Новосибирск",
+      "кухни на заказ Самара",
+      "кухни на заказ Санкт-Петербург",
+      "кухни на заказ отзывы",
+      "кухни на заказ цена Казань",
+      "кухни на заказ цена Краснодар",
+      "кухни на заказ цена Москва",
+      "кухни на заказ цена Нижний Новгород",
+      "кухни на заказ цена Новосибирск",
+      "кухни на заказ цена Самара",
+      "кухни на заказ цена Санкт-Петербург",
+      "натяжные потолки Екатеринбург",
+      "натяжные потолки Краснодар",
+      "натяжные потолки Нижний Новгород",
+      "натяжные потолки Самара",
+      "натяжные потолки Санкт-Петербург",
+      "натяжные потолки цена Екатеринбург",
+      "натяжные потолки цена Казань",
+      "натяжные потолки цена Краснодар",
+      "натяжные потолки цена Москва",
+      "натяжные потолки цена Нижний Новгород",
+      "натяжные потолки цена Новосибирск",
+      "натяжные потолки цена Самара",
+      "натяжные потолки цена Санкт-Петербург",
+      "пластиковые окна Екатеринбург",
+      "пластиковые окна Казань",
+      "пластиковые окна Краснодар",
+      "пластиковые окна Москва",
+      "пластиковые окна Нижний Новгород",
+      "пластиковые окна Новосибирск",
+      "пластиковые окна Санкт-Петербург",
+      "пластиковые окна цена Екатеринбург",
+      "пластиковые окна цена Казань",
+      "пластиковые окна цена Краснодар",
+      "пластиковые окна цена Москва",
+      "пластиковые окна цена Нижний Новгород",
+      "пластиковые окна цена Новосибирск",
+      "пластиковые окна цена Самара",
+      "пластиковые окна цена Санкт-Петербург",
+      "ремонт квартир Казань",
+      "ремонт квартир Краснодар",
+      "ремонт квартир Новосибирск",
+      "ремонт квартир Самара",
+      "ремонт квартир Санкт-Петербург",
+      "ремонт квартир цена Москва",
+      "ремонт квартир цена Санкт-Петербург",
+      "шкафы-купе Екатеринбург",
+      "шкафы-купе Казань",
+      "шкафы-купе Москва",
+      "шкафы-купе Нижний Новгород",
+      "шкафы-купе Новосибирск",
+      "шкафы-купе Санкт-Петербург",
+      "шкафы-купе отзывы",
+      "шкафы-купе цена Екатеринбург",
+      "шкафы-купе цена Казань",
+      "шкафы-купе цена Краснодар",
+      "шкафы-купе цена Москва",
+      "шкафы-купе цена Новосибирск",
+      "шкафы-купе цена Санкт-Петербург"
+    ],
+    "validation_queries": [
+      "входные двери Екатеринбург",
+      "входные двери Нижний Новгород",
+      "входные двери цена Казань",
+      "входные двери цена Москва",
+      "как выбрать кухни на заказ",
+      "кухни на заказ Екатеринбург",
+      "кухни на заказ Нижний Новгород",
+      "кухни на заказ цена Екатеринбург",
+      "натяжные потолки Казань",
+      "натяжные потолки Москва",
+      "натяжные потолки Новосибирск",
+      "натяжные потолки отзывы",
+      "пластиковые окна Самара",
+      "пластиковые окна отзывы",
+      "ремонт квартир Екатеринбург",
+      "ремонт квартир Нижний Новгород",
+      "шкафы-купе Краснодар",
+      "шкафы-купе Самара",
+      "шкафы-купе цена Нижний Новгород",
+      "шкафы-купе цена Самара"
+    ],
+    "query_assignments": [
+      {
+        "query": "входные двери Екатеринбург",
+        "partition": "validation"
+      },
+      {
+        "query": "входные двери Казань",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери Москва",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери Нижний Новгород",
+        "partition": "validation"
+      },
+      {
+        "query": "входные двери Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери Самара",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери отзывы",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери цена Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери цена Казань",
+        "partition": "validation"
+      },
+      {
+        "query": "входные двери цена Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери цена Москва",
+        "partition": "validation"
+      },
+      {
+        "query": "входные двери цена Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери цена Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери цена Самара",
+        "partition": "train"
+      },
+      {
+        "query": "входные двери цена Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "как выбрать входные двери",
+        "partition": "train"
+      },
+      {
+        "query": "как выбрать кухни на заказ",
+        "partition": "validation"
+      },
+      {
+        "query": "как выбрать натяжные потолки",
+        "partition": "train"
+      },
+      {
+        "query": "как выбрать пластиковые окна",
+        "partition": "train"
+      },
+      {
+        "query": "как выбрать шкафы-купе",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ Екатеринбург",
+        "partition": "validation"
+      },
+      {
+        "query": "кухни на заказ Казань",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ Москва",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ Нижний Новгород",
+        "partition": "validation"
+      },
+      {
+        "query": "кухни на заказ Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ Самара",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ отзывы",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Екатеринбург",
+        "partition": "validation"
+      },
+      {
+        "query": "кухни на заказ цена Казань",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Москва",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Самара",
+        "partition": "train"
+      },
+      {
+        "query": "кухни на заказ цена Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки Казань",
+        "partition": "validation"
+      },
+      {
+        "query": "натяжные потолки Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки Москва",
+        "partition": "validation"
+      },
+      {
+        "query": "натяжные потолки Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки Новосибирск",
+        "partition": "validation"
+      },
+      {
+        "query": "натяжные потолки Самара",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки отзывы",
+        "partition": "validation"
+      },
+      {
+        "query": "натяжные потолки цена Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Казань",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Москва",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Самара",
+        "partition": "train"
+      },
+      {
+        "query": "натяжные потолки цена Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Казань",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Москва",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна Самара",
+        "partition": "validation"
+      },
+      {
+        "query": "пластиковые окна Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна отзывы",
+        "partition": "validation"
+      },
+      {
+        "query": "пластиковые окна цена Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Казань",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Москва",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Самара",
+        "partition": "train"
+      },
+      {
+        "query": "пластиковые окна цена Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир Екатеринбург",
+        "partition": "validation"
+      },
+      {
+        "query": "ремонт квартир Казань",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир Нижний Новгород",
+        "partition": "validation"
+      },
+      {
+        "query": "ремонт квартир Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир Самара",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир цена Москва",
+        "partition": "train"
+      },
+      {
+        "query": "ремонт квартир цена Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе Казань",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе Краснодар",
+        "partition": "validation"
+      },
+      {
+        "query": "шкафы-купе Москва",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе Нижний Новгород",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе Самара",
+        "partition": "validation"
+      },
+      {
+        "query": "шкафы-купе Санкт-Петербург",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе отзывы",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе цена Екатеринбург",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе цена Казань",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе цена Краснодар",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе цена Москва",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе цена Нижний Новгород",
+        "partition": "validation"
+      },
+      {
+        "query": "шкафы-купе цена Новосибирск",
+        "partition": "train"
+      },
+      {
+        "query": "шкафы-купе цена Самара",
+        "partition": "validation"
+      },
+      {
+        "query": "шкафы-купе цена Санкт-Петербург",
+        "partition": "train"
+      }
+    ],
+    "split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\split.json"
+  },
+  "query_leakage": {
+    "split_mode": "group_by_query",
+    "train_queries_count": 79,
+    "validation_queries_count": 20,
+    "query_overlap_count": 0,
+    "query_overlap": [],
+    "passed": true
+  },
+  "manifest_ready_for_training": true,
+  "manifest_quality_gates": {
+    "ready_for_training": true,
+    "thresholds": {
+      "min_rows": 400,
+      "min_unique_queries": 40,
+      "min_unique_domains": 250,
+      "min_unique_categories": 6,
+      "min_unique_cities": 6,
+      "min_query_coverage_ratio": 0.2,
+      "min_average_rows_per_query": 5.0,
+      "max_failure_rate": 0.2
+    },
+    "checks": [
+      {
+        "name": "min_rows",
+        "passed": true,
+        "actual": 885.0,
+        "expected": 400.0,
+        "comparator": "min"
+      },
+      {
+        "name": "min_unique_queries",
+        "passed": true,
+        "actual": 99.0,
+        "expected": 40.0,
+        "comparator": "min"
+      },
+      {
+        "name": "min_unique_domains",
+        "passed": true,
+        "actual": 568.0,
+        "expected": 250.0,
+        "comparator": "min"
+      },
+      {
+        "name": "min_unique_categories",
+        "passed": true,
+        "actual": 6.0,
+        "expected": 6.0,
+        "comparator": "min"
+      },
+      {
+        "name": "min_unique_cities",
+        "passed": true,
+        "actual": 8.0,
+        "expected": 6.0,
+        "comparator": "min"
+      },
+      {
+        "name": "min_query_coverage_ratio",
+        "passed": true,
+        "actual": 0.22,
+        "expected": 0.2,
+        "comparator": "min"
+      },
+      {
+        "name": "min_average_rows_per_query",
+        "passed": true,
+        "actual": 8.939394,
+        "expected": 5.0,
+        "comparator": "min"
+      },
+      {
+        "name": "max_failure_rate",
+        "passed": true,
+        "actual": 0.052463,
+        "expected": 0.2,
+        "comparator": "max"
+      },
+      {
+        "name": "split_present",
+        "passed": true,
+        "actual": true,
+        "expected": true,
+        "comparator": "is"
+      },
+      {
+        "name": "split_group_by_query",
+        "passed": true,
+        "actual": true,
+        "expected": true,
+        "comparator": "is"
+      },
+      {
+        "name": "split_train_queries_present",
+        "passed": true,
+        "actual": true,
+        "expected": true,
+        "comparator": "is"
+      },
+      {
+        "name": "split_validation_queries_present",
+        "passed": true,
+        "actual": true,
+        "expected": true,
+        "comparator": "is"
+      },
+      {
+        "name": "split_query_partitions_disjoint",
+        "passed": true,
+        "actual": true,
+        "expected": true,
+        "comparator": "is"
+      },
+      {
+        "name": "split_covers_dataset_queries",
+        "passed": true,
+        "actual": true,
+        "expected": true,
+        "comparator": "is"
+      }
+    ],
+    "unmet_requirements": []
+  },
+  "manifest_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\manifest.json",
+  "auxiliary_files": {
+    "failures": {
+      "source_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v3-d37\\failures.csv",
+      "output_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\failures.csv",
+      "rows_count": 49,
+      "copied": true
+    },
+    "seeds": {
+      "source_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v3-d37\\seeds.csv",
+      "output_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\seeds.csv",
+      "rows_count": 450,
+      "copied": true
+    }
+  },
+  "production_artifact": {
+    "path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+    "sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "changed_by_d46": false
+  }
+}

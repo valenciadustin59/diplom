@@ -94,7 +94,7 @@
 - GitHub issues `#64-#68` were created on `2026-05-02`.
 - Local mirror: `plans/d45-d49-seo-weighted-score-retraining.md`.
 - `D45` / GitHub `#64` - completed locally: SEO-weighted deterministic expert-rubric labels for a new `dataset-v4`, with critical/search-impact factors weighted above supporting UX/commercial signals.
-- `D46` / GitHub `#65` - planned: build and validate a versioned `dataset-v4` bundle with leakage-safe split and importance-weighted label evidence.
+- `D46` / GitHub `#65` - completed locally: versioned `dataset-v4` bundle built and validated with leakage-safe split and importance-weighted label evidence.
 - `D47` / GitHub `#66` - planned: train non-production SEO-weighted candidates without replacing `backend/artifacts/page_quality_model.pkl`.
 - `D48` / GitHub `#67` - planned: shadow benchmark the candidates against the current CatBoost v3 production model with top-3, NDCG, Spearman, MAE, score boundedness and recommendation-priority consistency guardrails.
 - `D49` / GitHub `#68` - planned: controlled publish or explicit no-publish decision. Publish only if D48 passes; otherwise keep production SHA `29c4b29455f795a535da94b2c6f36ef603d003eb`.
@@ -103,6 +103,9 @@
 - D45 generated `885` deterministic labels across `99` queries from `dataset-v3-d37`; split validation passed with `79` train queries, `20` validation queries and `0` query overlap. Labels are deterministic expert-rubric labels, not human labels.
 - D45 score distribution: min `13.7`, p25 `66.2`, mean `68.1355`, p50 `72.2`, p75 `76.3`, max `87.2`; quality bands `high=2`, `medium=704`, `low=102`, `blocked=77`.
 - D45 did not mutate the production artifact; `backend/artifacts/page_quality_model.pkl` SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- D46 evidence: `backend/app/ml/v4_dataset.py`, `backend/data/dataset_versions/dataset-v4/dataset.csv`, `failures.csv`, `seeds.csv`, `split.json`, `manifest.json`, `d46-dataset-v4-report.json`, and `d46-dataset-v4-report.md`.
+- D46 applied all `885/885` D45 labels directly as `target_score` with `label_schema_version=seo-weighted-v4` and `label_source=seo_weighted_rubric_v4`. This intentionally avoids adding another 30% weak SERP-rank hybrid on top of D45 because D45 already includes a small 5% rank prior.
+- D46 manifest is `ready_for_training=true`; split is `group_by_query` with `695` train rows, `190` validation rows, `79` train queries, `20` validation queries, and `0` query overlap. Dataset coverage: `885` rows, `49` failures, `99` attempted/success queries, `568` domains, `6` categories, `8` cities.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

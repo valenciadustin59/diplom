@@ -439,11 +439,37 @@ The D45 score distribution is deliberately bounded away from automatic perfect s
 
 D45 does not publish or mutate a runtime model. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D46 dataset-v4 build evidence
+
+D46 materializes the D45 SEO-weighted labels into a training-ready `dataset-v4` bundle.
+
+The target policy is intentionally direct: `target_score` equals the D45 SEO-weighted expert-rubric label. D46 does not blend the target again with weak SERP rank, because the D45 rubric already includes a small `5%` rank prior. This keeps the next model training focused on SEO-impact weighting rather than re-amplifying historical SERP order.
+
+D46 evidence is stored in:
+
+- `backend/app/ml/v4_dataset.py`
+- `backend/data/dataset_versions/dataset-v4/dataset.csv`
+- `backend/data/dataset_versions/dataset-v4/failures.csv`
+- `backend/data/dataset_versions/dataset-v4/seeds.csv`
+- `backend/data/dataset_versions/dataset-v4/split.json`
+- `backend/data/dataset_versions/dataset-v4/manifest.json`
+- `backend/data/dataset_versions/dataset-v4/d46-dataset-v4-report.json`
+- `backend/data/dataset_versions/dataset-v4/d46-dataset-v4-report.md`
+
+The bundle contains `885` successful rows, `49` failures and `450` copied seed rows. D46 applied all `885/885` D45 labels with `0` missing labels and `0` unmatched labels. Label schema is `seo-weighted-v4`; feature schema remains the D37 `v3` feature set used by the current runtime model family.
+
+The dataset is marked `ready_for_training=true`. The split is query-group safe: `695` train rows, `190` validation rows, `79` train queries, `20` validation queries and `0` train/validation query overlap. Coverage is `99` attempted/successful queries, `568` unique domains, `6` categories and `8` cities.
+
+The new target distribution matches the D45 bounded rubric: min `13.7`, p25 `66.2`, mean `68.1355`, p50 `72.2`, p75 `76.3`, max `87.2`. Compared with the previous D37 target distribution, the max no longer reaches an automatic `100`, which directly addresses the product concern that score explanations looked overly generous for some pages.
+
+D46 does not publish or mutate a runtime model. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
 - `backend/app/ml/dataset_builder.py`
 - `backend/app/ml/v3_dataset.py`
+- `backend/app/ml/v4_dataset.py`
 - `backend/app/ml/seo_weighted_labels.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`

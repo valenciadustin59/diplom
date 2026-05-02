@@ -53,6 +53,8 @@ Important wording: D45 labels are deterministic expert-rubric labels, not human 
 
 ## D46 / GitHub #65: Dataset v4 Build And Validation
 
+Status: completed locally.
+
 Goal: build a versioned `dataset-v4` bundle using the D45 SEO-weighted labels.
 
 Scope:
@@ -68,9 +70,24 @@ Scope:
 
 Acceptance criteria:
 
-- `manifest.json` marks the dataset as ready for training.
-- Validation report proves no query leakage and stable row/query coverage.
-- Existing dataset versions remain immutable.
+- Completed: `manifest.json` marks the dataset as ready for training.
+- Completed: validation report proves no query leakage and stable row/query coverage.
+- Completed: existing dataset versions remain immutable.
+
+Evidence:
+
+- Builder: `backend/app/ml/v4_dataset.py`.
+- Dataset bundle: `backend/data/dataset_versions/dataset-v4/dataset.csv`, `failures.csv`, `seeds.csv`, `split.json`, `manifest.json`.
+- Report: `backend/data/dataset_versions/dataset-v4/d46-dataset-v4-report.json` and `.md`.
+- Rows: `885` successful rows, `49` failures, `450` seed rows copied from the D37 evidence.
+- Labels: `885/885` D45 labels applied, `0` missing labels, `0` unmatched labels.
+- Target policy: `target_score_equals_d45_seo_weighted_expert_label`. D46 does not re-hybridize with 30% weak SERP rank because D45 labels already include a small `5%` rank prior.
+- Label schema: `seo-weighted-v4`; feature schema remains `v3`.
+- Manifest quality gates: `ready_for_training=true`.
+- Split: `group_by_query`, `695` train rows, `190` validation rows, `79` train queries, `20` validation queries, `0` query overlap.
+- Coverage: `99` successful/attempted queries, `568` unique domains, `6` categories, `8` cities.
+- New target distribution: min `13.7`, p25 `66.2`, mean `68.1355`, p50 `72.2`, p75 `76.3`, max `87.2`.
+- Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 ## D47 / GitHub #66: Train SEO-Weighted Candidate Models
 
