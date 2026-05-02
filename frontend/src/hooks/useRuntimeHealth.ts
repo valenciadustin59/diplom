@@ -4,6 +4,7 @@ import { buildRuntimeHealthModel, type RuntimeHealthModel } from "../lib/runtime
 import type {
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelRegistryResponse,
   RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
@@ -27,6 +28,43 @@ function getRejectedMessages(results: PromiseSettledResult<unknown>[]): string[]
   return results.flatMap((result) => (result.status === "rejected" ? [getErrorMessage(result.reason)] : []));
 }
 
+export type RuntimeHealthSnapshot = {
+  runtimeHealth: RuntimeHealthModel | null;
+  runtimeError: string | null;
+};
+
+export async function loadRuntimeHealthSnapshot(): Promise<RuntimeHealthSnapshot> {
+  const results = await Promise.allSettled([
+    runtimeApi.getLiveness(),
+    runtimeApi.getReadiness(),
+    runtimeApi.getMetrics(),
+    runtimeApi.getModelStatus(),
+    runtimeApi.getModelRegistry(),
+    runtimeApi.getModelMonitoring(),
+  ] as const);
+  const [liveResult, readinessResult, metricsResult, modelStatusResult, modelRegistryResult, modelMonitoringResult] =
+    results;
+  const live = getSettledValue<RuntimeLivenessResponse>(liveResult);
+  const readiness = getSettledValue<RuntimeReadinessResponse>(readinessResult);
+  const metrics = getSettledValue<RuntimeMetricsResponse>(metricsResult);
+  const modelStatus = getSettledValue<RuntimeModelStatusResponse>(modelStatusResult);
+  const modelRegistry = getSettledValue<RuntimeModelRegistryResponse>(modelRegistryResult);
+  const modelMonitoring = getSettledValue<RuntimeModelMonitoringResponse>(modelMonitoringResult);
+  const runtimeError = getRejectedMessages(results).join(" ") || null;
+
+  if (!live && !readiness && !metrics && !modelStatus && !modelRegistry && !modelMonitoring) {
+    return {
+      runtimeError: runtimeError || "Диагностика рабочего стека недоступна.",
+      runtimeHealth: null,
+    };
+  }
+
+  return {
+    runtimeError,
+    runtimeHealth: buildRuntimeHealthModel({ live, readiness, metrics, modelStatus, modelRegistry, modelMonitoring }),
+  };
+}
+
 export function useRuntimeHealth() {
   const [runtimeHealth, setRuntimeHealth] = useState<RuntimeHealthModel | null>(null);
   const [loadingRuntime, setLoadingRuntime] = useState(true);
@@ -38,27 +76,9 @@ export function useRuntimeHealth() {
       setLoadingRuntime(true);
     }
 
-    const results = await Promise.allSettled([
-      runtimeApi.getLiveness(),
-      runtimeApi.getReadiness(),
-      runtimeApi.getMetrics(),
-      runtimeApi.getModelStatus(),
-      runtimeApi.getModelMonitoring(),
-    ] as const);
-    const [liveResult, readinessResult, metricsResult, modelStatusResult, modelMonitoringResult] = results;
-    const live = getSettledValue<RuntimeLivenessResponse>(liveResult);
-    const readiness = getSettledValue<RuntimeReadinessResponse>(readinessResult);
-    const metrics = getSettledValue<RuntimeMetricsResponse>(metricsResult);
-    const modelStatus = getSettledValue<RuntimeModelStatusResponse>(modelStatusResult);
-    const modelMonitoring = getSettledValue<RuntimeModelMonitoringResponse>(modelMonitoringResult);
-
-    if (!live && !readiness && !metrics && !modelStatus && !modelMonitoring) {
-      setRuntimeError(getRejectedMessages(results).join(" ") || "Диагностика рабочего стека недоступна.");
-      setRuntimeHealth(null);
-    } else {
-      setRuntimeError(getRejectedMessages(results).join(" ") || null);
-      setRuntimeHealth(buildRuntimeHealthModel({ live, readiness, metrics, modelStatus, modelMonitoring }));
-    }
+    const snapshot = await loadRuntimeHealthSnapshot();
+    setRuntimeError(snapshot.runtimeError);
+    setRuntimeHealth(snapshot.runtimeHealth);
 
     if (!silent) {
       setLoadingRuntime(false);

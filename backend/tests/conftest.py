@@ -47,6 +47,7 @@ def integration_client(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Gener
     testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
     def override_get_db() -> Generator[Session, None, None]:
         db = testing_session_local()
         try:

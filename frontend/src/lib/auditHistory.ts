@@ -1,6 +1,7 @@
 import type { AuditCreatePayload, AuditStatus, AuditSummary } from "../types";
+import { resolveAuditModelArchive, type ActiveModelIdentity, type AuditModelArchiveInfo } from "./auditArchive";
 
-export type AuditHistoryFocusFilter = "all" | "successful" | "problematic" | "stale" | "hidden";
+export type AuditHistoryFocusFilter = "all" | "successful" | "problematic" | "stale" | "archived" | "hidden";
 
 export type AuditHistoryFilters = {
   status: "all" | AuditStatus;
@@ -15,6 +16,8 @@ export type AuditHistoryRow = {
   isProblematic: boolean;
   isStale: boolean;
   isSuccessful: boolean;
+  isArchived: boolean;
+  archiveInfo: AuditModelArchiveInfo;
 };
 
 export type AuditHistorySummary = {
@@ -23,6 +26,7 @@ export type AuditHistorySummary = {
   successful: number;
   problematic: number;
   stale: number;
+  archived: number;
   hidden: number;
   filtered: number;
 };
@@ -78,17 +82,19 @@ function normalizeText(value: string): string {
 function matchesFocus(row: AuditHistoryRow, focus: AuditHistoryFocusFilter): boolean {
   switch (focus) {
     case "all":
-      return !row.isHidden;
+      return !row.isHidden && !row.isArchived;
     case "successful":
-      return !row.isHidden && row.isSuccessful;
+      return !row.isHidden && !row.isArchived && row.isSuccessful;
     case "problematic":
-      return !row.isHidden && row.isProblematic;
+      return !row.isHidden && !row.isArchived && row.isProblematic;
     case "stale":
-      return !row.isHidden && row.isStale;
+      return !row.isHidden && !row.isArchived && row.isStale;
+    case "archived":
+      return !row.isHidden && row.isArchived;
     case "hidden":
       return row.isHidden;
     default:
-      return !row.isHidden;
+      return !row.isHidden && !row.isArchived;
   }
 }
 
@@ -118,11 +124,13 @@ export function buildAuditHistoryModel({
   audits,
   filters,
   hiddenAuditIds,
+  activeModel,
   now,
 }: {
   audits: AuditSummary[];
   filters: AuditHistoryFilters;
   hiddenAuditIds: string[];
+  activeModel?: ActiveModelIdentity;
   now: number;
 }): AuditHistoryModel {
   const hiddenIdSet = new Set(hiddenAuditIds);
@@ -130,6 +138,13 @@ export function buildAuditHistoryModel({
     const isHidden = hiddenIdSet.has(audit.id);
     const isStale = isStaleAudit(audit, now);
     const isSuccessful = isSuccessfulAudit(audit);
+    const archiveInfo = resolveAuditModelArchive({
+      status: audit.status,
+      score: audit.score,
+      scoreBreakdown: audit.scoreBreakdown,
+      activeModel,
+      createdAt: audit.createdAtTimestamp,
+    });
 
     return {
       audit,
@@ -137,20 +152,24 @@ export function buildAuditHistoryModel({
       isProblematic: audit.status === "failed" || audit.status === "completed_with_warnings" || isStale,
       isStale,
       isSuccessful,
+      isArchived: archiveInfo.isArchived,
+      archiveInfo,
     };
   });
   const visibleRows = allRows.filter((row) => !row.isHidden);
+  const activeVisibleRows = visibleRows.filter((row) => !row.isArchived);
   const rows = allRows.filter((row) => matchesFilters(row, filters));
 
   return {
     rows,
-    latestSuccessfulAudit: visibleRows.find((row) => row.isSuccessful)?.audit ?? null,
+    latestSuccessfulAudit: activeVisibleRows.find((row) => row.isSuccessful)?.audit ?? null,
     summary: {
       total: allRows.length,
-      visible: visibleRows.length,
-      successful: visibleRows.filter((row) => row.isSuccessful).length,
-      problematic: visibleRows.filter((row) => row.isProblematic).length,
-      stale: visibleRows.filter((row) => row.isStale).length,
+      visible: activeVisibleRows.length,
+      successful: activeVisibleRows.filter((row) => row.isSuccessful).length,
+      problematic: activeVisibleRows.filter((row) => row.isProblematic).length,
+      stale: activeVisibleRows.filter((row) => row.isStale).length,
+      archived: visibleRows.filter((row) => row.isArchived).length,
       hidden: allRows.length - visibleRows.length,
       filtered: rows.length,
     },

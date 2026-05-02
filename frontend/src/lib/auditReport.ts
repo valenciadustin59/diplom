@@ -6,6 +6,7 @@ import type {
   CompetitorResult,
   RecommendationsBundle,
 } from "../types";
+import { buildScoreConfidenceView, type ScoreConfidenceView } from "./auditConfidence";
 import { flattenRecommendationItems } from "./recommendations";
 import { getFetchMethodLabel, getIntentLabel, getRecommendationGroupLabel } from "./terminology";
 
@@ -63,6 +64,7 @@ export type AuditReportModel = {
   competitorMetrics: ReportMetric[];
   runtimeMetrics: ReportMetric[];
   modelMetrics: ReportMetric[];
+  scoreConfidence: ScoreConfidenceView;
   recommendationActions: ReportRecommendation[];
   groupSummaries: ReportMetric[];
   competitors: Array<{
@@ -222,7 +224,7 @@ function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditSta
     mlScore: formatScore(breakdown?.ml_score),
     methodology:
       breakdown?.methodology ??
-      "Гибридная оценка: SEO- и смысловые факторы по правилам дополняются ML-калибровкой по сохранённым признакам страницы.",
+      "Итоговая оценка рассчитывается опубликованной ML-моделью по признакам самой страницы и её соответствию запросу. Конкурентный контекст используется отдельно для сравнения и рекомендаций; факторы ниже не складываются в финальный score.",
   };
 }
 
@@ -450,6 +452,12 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
   const modelMetrics = buildModelMetrics(scoreBreakdown.modelInfo);
   const comparisonSummary = input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
   const recommendations = getEffectiveRecommendations(input);
+  const scoreConfidence = buildScoreConfidenceView({
+    audit: input.audit,
+    results: input.results,
+    recommendations,
+    comparisonSummary,
+  });
   const recommendationsSummary = recommendations?.summary ?? null;
   const domain = getDomainFromUrl(input.audit.target_url);
   const analyzedCompetitors =
@@ -478,6 +486,7 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
       `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
         recommendationsSummary?.high_priority_count,
       )} высокого приоритета.`,
+      `Доверие к score: ${scoreConfidence.label}. ${scoreConfidence.summary}`,
       `Распределённое выполнение: ${formatCount(input.diagnostics?.event_count)} событий таймлайна, критический путь ${formatReportDuration(
         input.diagnostics?.critical_path_duration_ms,
       )}.`,
@@ -487,6 +496,7 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     competitorMetrics: buildCompetitorMetrics(input),
     runtimeMetrics: buildRuntimeMetrics(input.diagnostics),
     modelMetrics,
+    scoreConfidence,
     recommendationActions: buildRecommendationActions(recommendations),
     groupSummaries: buildGroupSummaries(recommendations),
     competitors: buildCompetitorRows(input.results?.competitor_results ?? input.audit.competitor_results),
@@ -541,10 +551,14 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
     "## Краткий вывод",
     ...report.summary.map((item) => `- ${item}`),
     "",
-    "## Объяснение оценки и ML-калибровки",
+    "## Доверие к score",
+    `- Уровень: ${report.scoreConfidence.label}`,
+    `- Вывод: ${report.scoreConfidence.summary}`,
+    `- Проверки: ${report.scoreConfidence.passedCount} ok, ${report.scoreConfidence.warningCount} warning, ${report.scoreConfidence.errorCount} error`,
+    ...report.scoreConfidence.reasons.map((reason) => `- ${reason.label}: ${reason.detail}`),
+    "",
+    "## Объяснение оценки",
     `- Итоговая оценка: ${report.scoreBreakdown.finalScore}`,
-    `- Оценка по правилам: ${report.scoreBreakdown.ruleScore}`,
-    `- ML-калибровка: ${report.scoreBreakdown.mlScore}`,
     `- Методика: ${report.scoreBreakdown.methodology}`,
     ...(report.modelMetrics.length > 0
       ? ["", "### Статус модели", ...report.modelMetrics.map(renderMetricMarkdown)]

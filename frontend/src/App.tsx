@@ -73,6 +73,7 @@ function AuditWorkspaceRoute(props: AuditWorkspaceRouteProps) {
       loading={props.loadingAudit || isAuditRoutePending}
       error={props.workspaceError}
       activeTab={activeTab}
+      activeModelIdentity={props.runtimeHealth?.modelStatus ?? null}
       onTabChange={(tab) => setSearchParams(tab === "overview" ? {} : { tab })}
     />
   );
@@ -146,6 +147,7 @@ function AppShell() {
                     runtimeHealth={runtime.runtimeHealth}
                     loadingRuntime={runtime.loadingRuntime}
                     runtimeError={runtime.runtimeError}
+                    activeModelIdentity={runtime.runtimeHealth?.modelStatus ?? null}
                     onRefreshRuntime={() => runtime.refreshRuntimeHealth()}
                     onOpenRuntime={() => navigate("/?view=runtime")}
                     onRefreshRecent={() => workspace.refreshAudits()}

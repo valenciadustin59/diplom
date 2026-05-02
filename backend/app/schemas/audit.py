@@ -125,6 +125,23 @@ class AuditRead(BaseModel):
         return normalize_recommendations_payload(value)
 
 
+class AuditListItemRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    query: str
+    target_url: str
+    top_n: int
+    status: str
+    created_at: datetime
+    updated_at: datetime | None = None
+    score: float | None = None
+    score_breakdown: dict[str, object] | None = None
+    target_fetch_status: str | None = None
+    warnings: list[str] | None = None
+    error_message: str | None = None
+
+
 class AuditResultsRead(BaseModel):
     audit_id: str
     status: str

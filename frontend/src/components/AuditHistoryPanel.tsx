@@ -5,6 +5,7 @@ import {
   type AuditHistoryFilters,
   type AuditHistoryFocusFilter,
 } from "../lib/auditHistory";
+import type { ActiveModelIdentity } from "../lib/auditArchive";
 import type { AuditStatus, AuditSummary } from "../types";
 import { Card } from "./Card";
 import { RecentAuditList } from "./RecentAuditList";
@@ -26,6 +27,7 @@ const focusFilterOptions: Array<{ value: AuditHistoryFocusFilter; label: string 
   { value: "successful", label: "Успешные" },
   { value: "problematic", label: "Проблемные" },
   { value: "stale", label: "Зависшие/устаревшие" },
+  { value: "archived", label: "Архивные" },
   { value: "hidden", label: "Скрытые локально" },
 ];
 
@@ -37,6 +39,7 @@ type AuditHistoryPanelProps = {
   submitting: boolean;
   submissionError: string | null;
   success: string | null;
+  activeModelIdentity?: ActiveModelIdentity;
   onRefreshRecent: () => void;
   onOpenRuntime: () => void;
   onSelectAudit: (auditId: string) => void;
@@ -83,6 +86,9 @@ function createEmptyMessage(model: ReturnType<typeof buildAuditHistoryModel>, to
   if (totalAudits === 0) {
     return "Пока нет аудитов. Запустите первый анализ через форму нового аудита.";
   }
+  if (model.summary.archived > 0 && model.rows.length === 0 && model.hasActiveFilters) {
+    return "По текущим фильтрам ничего не найдено. Старые расчёты доступны через фокус «Архивные».";
+  }
   if (model.summary.hidden > 0 && model.rows.length === 0 && model.hasActiveFilters) {
     return "По текущим фильтрам ничего не найдено. Сбросьте фильтры или откройте скрытые локально записи.";
   }
@@ -106,6 +112,7 @@ export function AuditHistoryPanel({
   submitting,
   submissionError,
   success,
+  activeModelIdentity,
   onRefreshRecent,
   onOpenRuntime,
   onSelectAudit,
@@ -113,7 +120,13 @@ export function AuditHistoryPanel({
 }: AuditHistoryPanelProps) {
   const [filters, setFilters] = useState<AuditHistoryFilters>(defaultAuditHistoryFilters);
   const [hiddenAuditIds, setHiddenAuditIds] = useState<string[]>(readHiddenAuditIds);
-  const model = buildAuditHistoryModel({ audits: recentAudits, filters, hiddenAuditIds, now: Date.now() });
+  const model = buildAuditHistoryModel({
+    audits: recentAudits,
+    filters,
+    hiddenAuditIds,
+    activeModel: activeModelIdentity,
+    now: Date.now(),
+  });
   const heroScore = model.latestSuccessfulAudit?.score ?? model.rows[0]?.audit.score ?? 0;
   const hasRows = model.rows.length > 0;
   const latestSuccessfulLabel = model.latestSuccessfulAudit
@@ -175,9 +188,9 @@ export function AuditHistoryPanel({
 
       <div className="metric-strip metric-strip--history">
         <MetricBox label="Всего" value={model.summary.total} />
-        <MetricBox label="Видимые" value={model.summary.visible} />
+        <MetricBox label="Актуальные" value={model.summary.visible} />
         <MetricBox label="Успешные" value={model.summary.successful} />
-        <MetricBox label="Проблемные" value={model.summary.problematic} />
+        <MetricBox label="Архив" value={model.summary.archived} />
         <MetricBox label="Скрытые" value={model.summary.hidden} />
       </div>
 
@@ -233,9 +246,6 @@ export function AuditHistoryPanel({
         {recentError ? <div className="feedback-banner feedback-banner--error">{recentError}</div> : null}
         {submissionError ? <div className="feedback-banner feedback-banner--error">{submissionError}</div> : null}
         {success ? <div className="feedback-banner feedback-banner--success">{success}</div> : null}
-        <div className="feedback-banner feedback-banner--info history-local-note">
-          Скрытие локальное: запись остаётся на сервере и вернётся после восстановления или очистки настроек браузера.
-        </div>
         {loadingRecent && !hasRows ? (
           <div className="empty-state">Загружаем историю аудитов...</div>
         ) : !hasRows ? (

@@ -19,6 +19,8 @@ DeviationTrend = Literal["behind", "ahead", "aligned"]
 PRIORITY_ORDER: dict[RecommendationPriority, int] = {"high": 0, "medium": 1, "low": 2}
 MIN_COMPETITORS_FOR_RECOMMENDATIONS = 2
 RECOMMENDATIONS_SCHEMA_VERSION = "recommendations-v2"
+HIGH_PRIORITY_IMPORTANCE_THRESHOLD = 0.55
+MEDIUM_PRIORITY_IMPORTANCE_THRESHOLD = 0.3
 
 TECHNICAL_FEATURE_KEYS = {
     "page_indexable",
@@ -134,6 +136,86 @@ IMPACT_LABELS: dict[RecommendationPriority, str] = {
     "low": "Исправление носит точечный характер, но помогает дожать качество страницы относительно выдачи.",
 }
 
+METRIC_IMPORTANCE: dict[str, float] = {
+    # Critical crawl/indexing and document-understanding signals.
+    "page_indexable": 1.0,
+    "robots_noindex": 1.0,
+    "http_status_ok": 1.0,
+    "canonical_matches_final_url": 0.95,
+    "title_present": 0.95,
+    "query_in_title": 0.9,
+    "query_in_text": 0.9,
+    "semantic_similarity": 0.95,
+    "title_semantic_alignment": 0.9,
+    "heading_semantic_alignment": 0.8,
+    "intent_alignment_score": 0.95,
+    "h1_count": 0.85,
+    "keyword_coverage_ratio": 0.85,
+    "content_depth_semantic_score": 0.8,
+    "semantic_content_richness": 0.75,
+    "keyword_balance_score": 0.75,
+    "local_intent_alignment": 0.85,
+    "commercial_intent_alignment": 0.85,
+    "informational_intent_alignment": 0.75,
+    # Important but usually not single-point blockers.
+    "canonical_present": 0.75,
+    "redirect_count": 0.75,
+    "viewport_present": 0.75,
+    "contact_options_score": 0.7,
+    "trust_signals_score": 0.7,
+    "commercial_signals_score": 0.65,
+    "phone_present": 0.65,
+    "address_present": 0.65,
+    "business_hours_present": 0.55,
+    "cta_present": 0.65,
+    "value_proposition_present": 0.65,
+    "legal_requisites_present": 0.65,
+    "company_identity_present": 0.65,
+    "text_to_html_ratio": 0.55,
+    "lang_present": 0.5,
+    # Supporting signals: useful for SERP parity, but rarely a top priority alone.
+    "url_has_query_parameters": 0.45,
+    "url_parameter_count": 0.45,
+    "url_depth": 0.35,
+    "price_present": 0.35,
+    "reviews_present": 0.4,
+    "rating_present": 0.4,
+    "hreflang_present": 0.3,
+    "text_length_chars": 0.25,
+    "link_count": 0.25,
+    "image_count": 0.25,
+    "delivery_info_present": 0.25,
+    "payment_info_present": 0.25,
+    "messenger_present": 0.25,
+    "warranty_info_present": 0.25,
+    "returns_info_present": 0.25,
+    # Aggregated SERP-relative diagnostics.
+    "serp_relative_gap_score": 0.9,
+    "relative_gap_to_top_semantic_relevance": 0.9,
+    "relative_gap_to_top_intent_alignment": 0.9,
+    "relative_gap_to_top_technical_seo": 0.75,
+    "relative_gap_to_top_commercial_trust": 0.65,
+    "serp_relative_percentile": 0.7,
+    "page_score": 0.8,
+    "competitors_average_score": 0.8,
+}
+
+CRITICAL_PRIORITY_CODES = {
+    "LOW_PAGE_SCORE",
+    "MISSING_TITLE",
+    "QUERY_NOT_IN_TITLE",
+    "MISSING_H1",
+    "QUERY_NOT_IN_TEXT",
+    "LOW_SEMANTIC_RELEVANCE",
+    "TECHNICAL_INDEXING_BLOCK",
+    "TECHNICAL_CANONICAL_MISMATCH",
+    "INTENT_WEAK_LOCAL_ALIGNMENT",
+    "INTENT_WEAK_COMMERCIAL_ALIGNMENT",
+    "RELATIVE_SERP_GAP",
+    "RELATIVE_SEMANTIC_GAP",
+    "RELATIVE_INTENT_ALIGNMENT_GAP",
+}
+
 RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     "LOW_PAGE_SCORE": RecommendationTemplate("competitor_gap", "Низкая итоговая оценка", ("page_score",)),
     "BELOW_COMPETITORS": RecommendationTemplate(
@@ -176,12 +258,12 @@ RECOMMENDATION_TEMPLATES: dict[str, RecommendationTemplate] = {
     ),
     "THIN_CONTENT": RecommendationTemplate(
         "semantic_intent",
-        "Недостаточный объём основного контента",
+        "Недостаточно материала для раскрытия запроса",
         ("text_length_chars",),
     ),
     "CONTENT_SHORTER_THAN_COMPETITORS": RecommendationTemplate(
         "semantic_intent",
-        "Контент короче, чем у конкурентов",
+        "Тема раскрыта короче, чем у конкурентов",
         ("text_length_chars",),
     ),
     "LOW_TEXT_TO_HTML_RATIO": RecommendationTemplate(
@@ -362,7 +444,12 @@ METRIC_SPECS: dict[str, MetricSpec] = {
     "query_in_text": MetricSpec("Запрос в тексте", "binary", "higher_is_better"),
     "keyword_coverage_ratio": MetricSpec("Покрытие слов запроса", "ratio", "higher_is_better", tolerance=0.08),
     "semantic_similarity": MetricSpec("Смысловое соответствие", "score", "higher_is_better", tolerance=0.08),
-    "text_length_chars": MetricSpec("Объём текста", "chars", "higher_is_better", tolerance=120.0, minimum_scale=500.0),
+    "title_semantic_alignment": MetricSpec("Связь title с запросом", "score", "higher_is_better", tolerance=0.08),
+    "heading_semantic_alignment": MetricSpec("Связь заголовков с запросом", "score", "higher_is_better", tolerance=0.08),
+    "content_depth_semantic_score": MetricSpec("Раскрытие темы по смыслу", "score", "higher_is_better", tolerance=0.08),
+    "semantic_content_richness": MetricSpec("Смысловая полнота контента", "score", "higher_is_better", tolerance=0.08),
+    "keyword_balance_score": MetricSpec("Баланс ключевых слов", "score", "higher_is_better", tolerance=0.08),
+    "text_length_chars": MetricSpec("Достаточность материала", "chars", "higher_is_better", tolerance=120.0, minimum_scale=500.0),
     "text_to_html_ratio": MetricSpec("Доля текста в HTML", "ratio", "higher_is_better", tolerance=0.03),
     "link_count": MetricSpec("Количество ссылок", "count", "higher_is_better", tolerance=1.0),
     "image_count": MetricSpec("Количество изображений", "count", "higher_is_better", tolerance=1.0),
@@ -454,24 +541,37 @@ METRIC_SPECS: dict[str, MetricSpec] = {
 GROUP_DEVIATION_METRICS: dict[RecommendationGroupKey, tuple[str, ...]] = {
     "technical_seo": (
         "page_indexable",
-        "canonical_present",
+        "canonical_matches_final_url",
         "redirect_count",
         "viewport_present",
+        "lang_present",
+        "url_has_query_parameters",
         "url_depth",
     ),
     "commercial_trust": (
         "contact_options_score",
         "commercial_signals_score",
         "trust_signals_score",
+        "phone_present",
+        "address_present",
         "cta_present",
+        "value_proposition_present",
+        "legal_requisites_present",
         "price_present",
     ),
     "semantic_intent": (
         "semantic_similarity",
         "keyword_coverage_ratio",
         "intent_alignment_score",
+        "title_semantic_alignment",
+        "heading_semantic_alignment",
+        "content_depth_semantic_score",
+        "semantic_content_richness",
+        "keyword_balance_score",
         "query_in_title",
-        "text_length_chars",
+        "text_to_html_ratio",
+        "link_count",
+        "image_count",
     ),
     "competitor_gap": (
         "serp_relative_gap_score",
@@ -515,6 +615,20 @@ def _normalize_priority(value: object) -> RecommendationPriority:
     if value in PRIORITY_ORDER:
         return value  # type: ignore[return-value]
     return "low"
+
+
+def _priority_rank(priority: RecommendationPriority) -> int:
+    return PRIORITY_ORDER[priority]
+
+
+def _metric_importance(metric_code: str) -> float:
+    return max(0.0, min(1.0, METRIC_IMPORTANCE.get(metric_code, 0.5)))
+
+
+def _template_importance(metric_codes: tuple[str, ...]) -> float:
+    if not metric_codes:
+        return 0.5
+    return max(_metric_importance(metric_code) for metric_code in metric_codes)
 
 
 def _humanize_code(code: str) -> str:
@@ -602,13 +716,78 @@ def _gap_ratio(gap: float, benchmark_value: float, spec: MetricSpec) -> float:
     return gap / scale if scale else gap
 
 
-def _priority_from_gap(gap: float, benchmark_value: float, spec: MetricSpec) -> RecommendationPriority:
+def _priority_from_gap(metric_code: str, gap: float, benchmark_value: float, spec: MetricSpec) -> RecommendationPriority:
     ratio = _gap_ratio(gap, benchmark_value, spec)
-    if ratio >= 0.4:
+    importance = _metric_importance(metric_code)
+    severity = min(max(ratio, 0.0), 1.5) * importance
+    if severity >= HIGH_PRIORITY_IMPORTANCE_THRESHOLD or (importance >= 0.85 and ratio >= 0.35):
         return "high"
-    if ratio >= 0.18:
+    if severity >= MEDIUM_PRIORITY_IMPORTANCE_THRESHOLD or (importance >= 0.7 and ratio >= 0.18):
         return "medium"
     return "low"
+
+
+def _cap_priority_by_importance(priority: RecommendationPriority, importance: float) -> RecommendationPriority:
+    if priority == "high" and importance < 0.55:
+        return "medium"
+    if priority == "medium" and importance < 0.4:
+        return "low"
+    return priority
+
+
+def _strongest_gap_priority(
+    metric_codes: tuple[str, ...],
+    *,
+    page_features: dict[str, float | int],
+    competitor_avg_features: dict[str, float],
+    page_score: float | None,
+    competitors_average_score: float | None,
+) -> RecommendationPriority | None:
+    priorities: list[RecommendationPriority] = []
+    for metric_code in metric_codes:
+        current_value, benchmark_value, spec = _resolve_metric_values(
+            metric_code,
+            page_features=page_features,
+            competitor_avg_features=competitor_avg_features,
+            page_score=page_score,
+            competitors_average_score=competitors_average_score,
+        )
+        if current_value is None or benchmark_value is None or spec is None:
+            continue
+        performance_gap = benchmark_value - current_value if spec.direction == "higher_is_better" else current_value - benchmark_value
+        if performance_gap <= spec.tolerance:
+            continue
+        priorities.append(_priority_from_gap(metric_code, performance_gap, benchmark_value, spec))
+    if not priorities:
+        return None
+    return min(priorities, key=_priority_rank)
+
+
+def _resolve_recommendation_priority(
+    code: str,
+    base_priority: RecommendationPriority,
+    metric_codes: tuple[str, ...],
+    *,
+    page_features: dict[str, float | int],
+    competitor_avg_features: dict[str, float],
+    page_score: float | None,
+    competitors_average_score: float | None,
+) -> RecommendationPriority:
+    if code in CRITICAL_PRIORITY_CODES:
+        return "high"
+
+    importance = _template_importance(metric_codes)
+    priority = _cap_priority_by_importance(base_priority, importance)
+    gap_priority = _strongest_gap_priority(
+        metric_codes,
+        page_features=page_features,
+        competitor_avg_features=competitor_avg_features,
+        page_score=page_score,
+        competitors_average_score=competitors_average_score,
+    )
+    if gap_priority is not None and _priority_rank(gap_priority) < _priority_rank(priority):
+        return gap_priority
+    return priority
 
 
 def _build_deviation_summary(
@@ -618,14 +797,17 @@ def _build_deviation_summary(
     benchmark_value: float,
     trend: DeviationTrend,
 ) -> str:
-    benchmark_label = spec.benchmark_label or "среднего по конкурентам"
+    close_benchmark_label = spec.benchmark_label.lower() if spec.benchmark_label else "среднему по конкурентам"
+    comparison_benchmark_label = spec.benchmark_label.lower() if spec.benchmark_label else "среднего по конкурентам"
+    if comparison_benchmark_label.startswith("цель:"):
+        comparison_benchmark_label = comparison_benchmark_label.replace("цель:", "цели:", 1)
     if trend == "aligned":
-        return f"Метрика близка к {benchmark_label.lower()}."
+        return f"Метрика близка к {close_benchmark_label}."
 
     difference_label = _format_metric_value(abs(current_value - benchmark_value), spec.unit)
     if spec.direction == "higher_is_better":
-        return f"Страница {'отстаёт' if trend == 'behind' else 'опережает'} {benchmark_label.lower()} на {difference_label}."
-    return f"Значение {'хуже' if trend == 'behind' else 'лучше'} {benchmark_label.lower()} на {difference_label}."
+        return f"Страница {'отстаёт от' if trend == 'behind' else 'опережает'} {comparison_benchmark_label} на {difference_label}."
+    return f"Значение {'хуже' if trend == 'behind' else 'лучше'} {comparison_benchmark_label} на {difference_label}."
 
 
 def _build_group_deviation(
@@ -657,9 +839,11 @@ def _build_group_deviation(
         trend = "ahead"
     else:
         trend = "aligned"
+    if trend != "behind":
+        return None
 
     gap = round(max(performance_gap, 0.0), 4)
-    priority = "low" if trend == "aligned" else _priority_from_gap(gap, benchmark_value, spec)
+    priority = "low" if trend == "aligned" else _priority_from_gap(metric_code, gap, benchmark_value, spec)
     return {
         "code": metric_code,
         "label": spec.label,
@@ -730,13 +914,22 @@ def _build_groups_payload(
         group_key = template.group if template is not None else "competitor_gap"
         metrics = template.metrics if template is not None else ()
         title = template.title if template is not None else _humanize_code(draft.code)
+        priority = _resolve_recommendation_priority(
+            draft.code,
+            draft.priority,
+            metrics,
+            page_features=page_features,
+            competitor_avg_features=competitor_avg_features,
+            page_score=page_score,
+            competitors_average_score=competitors_average_score,
+        )
         item = {
             "code": draft.code,
-            "priority": draft.priority,
-            "impact": draft.priority,
+            "priority": priority,
+            "impact": priority,
             "title": title,
             "message": draft.message,
-            "expected_outcome": IMPACT_LABELS[draft.priority],
+            "expected_outcome": IMPACT_LABELS[priority],
             "evidence": _build_item_evidence(
                 metrics,
                 page_features=page_features,
@@ -774,6 +967,7 @@ def _build_groups_payload(
                     str(deviation.get("code") or ""),
                 )
             )
+            deviations = deviations[:8]
 
         group["deviations"] = deviations
         group["status"] = _build_group_status(
@@ -974,13 +1168,13 @@ def generate_recommendations(
         add_recommendation(
             "THIN_CONTENT",
             "medium",
-            "Увеличьте объём полезного основного текста: текущего контента недостаточно для уверенного сравнения с выдачей.",
+            "Добавьте полезные смысловые блоки, которые отвечают на запрос. Важен не объём ради объёма, а достаточное раскрытие темы.",
         )
     elif competitor_text_length and text_length_chars < competitor_text_length * 0.75:
         add_recommendation(
             "CONTENT_SHORTER_THAN_COMPETITORS",
             "medium",
-            "Расширьте страницу: у конкурентов в среднем контент заметно полнее.",
+            "Проверьте, какие важные смысловые блоки есть у конкурентов, и добавьте недостающие ответы на странице.",
         )
 
     if _float_feature(page_features, "text_to_html_ratio") < 0.12:

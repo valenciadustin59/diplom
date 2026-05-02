@@ -54,6 +54,9 @@ def test_list_audits_returns_created_items(client):
     assert isinstance(payload, list)
     assert len(payload) >= 1
     assert payload[0]['query'] == 'seo audit'
+    assert 'score_breakdown' in payload[0]
+    assert 'extracted_text' not in payload[0]
+    assert 'recommendations' not in payload[0]
 def test_get_audit_results_returns_structured_payload(client):
     created = client.post(
         '/audits',

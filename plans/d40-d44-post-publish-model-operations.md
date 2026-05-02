@@ -1,6 +1,6 @@
 # D40-D44 Post-Publish Model Operations Backlog
 
-This file is the local source of truth for the active post-D39 backlog. GitHub issues may be inaccessible to other Codex chats without authenticated access, so the tasks are mirrored here.
+This file is the local source of truth for the post-D39 backlog. GitHub issues may be inaccessible to other Codex chats without authenticated access, so the tasks are mirrored here.
 
 ## Context
 
@@ -10,9 +10,9 @@ D38 published the D37 `pointwise_catboost` candidate as the active runtime artif
 
 - `D40` / GitHub `#59` — completed locally: post-publish model monitoring dashboard.
 - `D41` / GitHub `#60` — completed locally: golden query replay guardrails after publish.
-- `D42` / GitHub `#61` — open: score confidence and data-quality warnings in audit UX.
-- `D43` / GitHub `#62` — open: model registry and rollback evidence UI.
-- `D44` / GitHub `#63` — open: second-pass competitor-aware score experiment with SERP-relative features.
+- `D42` / GitHub `#61` — completed locally: score confidence and data-quality warnings in audit UX.
+- `D43` / GitHub `#62` — completed locally: model registry and rollback evidence UI.
+- `D44` / GitHub `#63` — completed locally: second-pass competitor-aware score experiment with SERP-relative features.
 
 ## D40: Post-Publish Model Monitoring Dashboard
 
@@ -128,12 +128,26 @@ Implement D40 first because monitoring gives the product a baseline after D38/D3
 - [x] (2026-05-02) Local backlog mirror created in this file.
 - [x] (2026-05-02) D40 implementation.
 - [x] (2026-05-02) D41 implementation.
-- [ ] D42 implementation.
-- [ ] D43 implementation.
-- [ ] D44 implementation.
+- [x] (2026-05-02) D42 implementation.
+- [x] (2026-05-02) D43 implementation.
+- [x] (2026-05-02) D44 implementation.
 
-## D40-D41 Implementation Notes
+## D40-D44 Implementation Notes
 
 - `D40` adds `GET /health/model/monitoring` and `backend/app/model_monitoring.py`. The payload aggregates recent `Audit` rows by `score_breakdown.model_info`, exposes model usage, status/warning/failure counts, active-model score percentiles, competitor coverage, and counts legacy/unknown audits without `model_info` separately. The `Стек` runtime page now shows the monitoring section next to the D39 active model card.
 - `D41` adds deterministic offline golden replay evidence in `backend/app/ml/golden_replay.py`. The default command is `cd backend && .venv\Scripts\python.exe -m app.ml.golden_replay --output-dir artifacts/ranking-benchmarks/dataset-v3-d41`. It evaluates stored evidence for the fixed golden catalog, normalizes volatile `/health/model.checked_at` to the fixed report timestamp, includes rollback reference, and does not publish, roll back, or mutate `backend/artifacts/page_quality_model.pkl`. Default evidence uses one D38 smoke artifact plus explicit synthetic stored fixtures for the remaining catalog items; pass `--evidence-json` to evaluate externally captured snapshots.
 - D41 generated evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` and `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.md`; current decision is `passed` for `3/3` golden items and `21/21` guardrails.
+- `D42` adds frontend-only score confidence/data-quality view-model logic in `frontend/src/lib/auditConfidence.ts`. It classifies score confidence as `high`, `medium`, `low`, or `unknown` from existing audit/result payloads: fetch status/method, feature schema, heavy-analysis payload, competitor coverage, recommendations, `score_breakdown.model_info`, warnings, and failure context.
+- D42 UI surfaces are the audit overview card and the audit report tab/export. The overview shows a compact confidence badge plus a reason list; report UI, Markdown export, and printable HTML export include the same confidence metrics and reasons.
+- D42 intentionally does not change the numeric score formula, model artifact, backend scoring pipeline, publish flow, rollback flow, or `backend/artifacts/page_quality_model.pkl`.
+- D42 verification: `npm --prefix frontend run test -- src/lib/auditConfidence.test.ts src/lib/auditReport.test.ts src/lib/ui.test.tsx` passed with `23` tests; `npm --prefix frontend run build` passed.
+- `D43` adds read-only model registry discovery in `backend/app/model_registry.py` and exposes it as `GET /health/model/registry`. The payload lists the active alias, known versioned artifacts from `backend/artifacts/versions/`, public metadata sidecars, publish report paths, smoke evidence paths, SHA1 values, and rollback guardrails.
+- D43 registry discovery deliberately does not execute rollback and does not mutate `backend/artifacts/page_quality_model.pkl`. Rollback remains a controlled engineering operation; the UI shows only evidence and a dry-run/checklist state.
+- D43 UI surfaces are the existing `Стек` runtime page via `frontend/src/lib/runtimeModelRegistry.ts` and the new `Model registry и rollback evidence` section in `frontend/src/pages/RuntimeStatusPage.tsx`. Current CatBoost v3 and previous v1 RandomForest rollback artifacts render as separate records when metadata is present.
+- D43 missing rollback metadata/SHA1 conditions are warnings, not crashes. Backend tests cover artifact discovery and metadata normalization; frontend tests cover current/rollback rendering and long warning text in the registry card.
+- D43 verification: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_model_registry.py backend/tests/test_health_api.py::test_model_registry_endpoint_returns_release_history_payload` passed with D43-targeted backend tests; `npm --prefix frontend run test` passed; `npm --prefix frontend run build`, `npm run site:check`, `npm run test:scripts`, and `git diff --check` passed. A full backend `pytest` attempt still fails in `backend/tests/test_audit_pipeline.py` and `backend/tests/test_audits_api.py` where those lifecycle tests expect inline terminal processing from `process_audit.run()` rather than the queued stage handoff; D43 did not modify the audit task pipeline.
+- `D44` adds a non-production second-pass scoring contract in `backend/app/ml/second_pass.py` and an offline experiment runner in `backend/app/ml/second_pass_experiment.py`. The primary score remains the runtime score before competitor aggregation; the optional second-pass candidate is evaluated only after `serp_relative` features exist and skips back to the primary score when competitor coverage is weak.
+- D44 generated a separate candidate artifact at `backend/artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl` plus sidecar metadata at `backend/artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.metadata.json`. Both are marked `non_production=true`, `runtime_enabled=false`, and do not replace `backend/artifacts/page_quality_model.pkl`.
+- D44 evidence is stored in `backend/artifacts/ranking-benchmarks/dataset-v3-d44/second-pass-experiment-report.json` and `.md`. The experiment uses `177` features (`148` v3 pre-competitor + `29` SERP-relative), split-then-enrich query isolation, and compares the second-pass CatBoost candidate against the active CatBoost v3 primary model.
+- D44 decision is `do_not_continue_without_more_evidence`: MAE improved slightly (`-0.002376`), but top-3 hit rate regressed by `-0.1`, NDCG@10 regressed by `-0.000398`, and recommendation-consistency warning failed. This is evidence against a D45 publish path unless more data or a different second-pass design is requested.
+- D44 verification: `backend\.venv\Scripts\python.exe -m pytest backend\tests\test_second_pass_experiment.py backend\tests\test_features.py::test_merge_serp_relative_features_builds_gaps_and_fallbacks_with_single_competitor backend\tests\test_model_schema.py::test_model_schema_v3_combines_pre_competitor_feature_groups -q` passed with `4` tests; `certutil -hashfile backend\artifacts\page_quality_model.pkl SHA1` stayed `29c4b29455f795a535da94b2c6f36ef603d003eb`.

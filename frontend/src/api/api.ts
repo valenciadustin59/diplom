@@ -1,5 +1,6 @@
 import type {
   AuditCreatePayload,
+  AuditListItemResponse,
   AuditRecommendationsResponse,
   AuditResultsResponse,
   AuditStatusResponse,
@@ -7,6 +8,7 @@ import type {
   AuditTimelineEventsResponse,
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelRegistryResponse,
   RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
@@ -127,14 +129,15 @@ async function request<T>(
 ): Promise<T> {
   let response: Response;
   const { acceptedStatuses = [], ...requestInit } = init ?? {};
+  const headers = new Headers(requestInit.headers);
+  if (requestInit.body !== undefined && !headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
+  }
 
   try {
     response = await fetch(`${API_BASE_URL}${path}`, {
-      headers: {
-        "Content-Type": "application/json",
-        ...(requestInit.headers ?? {}),
-      },
       ...requestInit,
+      headers,
     });
   } catch (error) {
     throw new ApiError("Не удалось подключиться к серверному API", 0, error);
@@ -154,8 +157,8 @@ async function request<T>(
 }
 
 export const auditsApi = {
-  list(): Promise<AuditStatusResponse[]> {
-    return request<AuditStatusResponse[]>("/audits");
+  list(): Promise<AuditListItemResponse[]> {
+    return request<AuditListItemResponse[]>("/audits");
   },
 
   create(payload: AuditCreatePayload): Promise<AuditStatusResponse> {
@@ -201,6 +204,10 @@ export const runtimeApi = {
 
   getModelStatus(): Promise<RuntimeModelStatusResponse> {
     return request<RuntimeModelStatusResponse>("/health/model");
+  },
+
+  getModelRegistry(): Promise<RuntimeModelRegistryResponse> {
+    return request<RuntimeModelRegistryResponse>("/health/model/registry");
   },
 
   getModelMonitoring(): Promise<RuntimeModelMonitoringResponse> {

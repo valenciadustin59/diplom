@@ -114,6 +114,24 @@ _CONTROLLED_PUBLISH_EXPORTS = {
     "update_controlled_publish_verification",
     "validate_publish_shadow_report",
 }
+_SECOND_PASS_EXPORTS = {
+    "SECOND_PASS_CANDIDATE_FAMILY",
+    "SECOND_PASS_CONTRACT_VERSION",
+    "SECOND_PASS_MIN_COMPETITORS",
+    "SECOND_PASS_MODEL_SCHEMA_VERSION",
+    "build_second_pass_context",
+    "build_second_pass_score_result",
+    "get_second_pass_feature_columns",
+}
+_SECOND_PASS_EXPERIMENT_EXPORTS = {
+    "DEFAULT_D44_CANDIDATE_MODEL_PATH",
+    "DEFAULT_D44_DATASET_PATH",
+    "DEFAULT_D44_OUTPUT_DIR",
+    "enrich_rows_with_serp_relative_features",
+    "render_second_pass_experiment_markdown",
+    "run_second_pass_experiment",
+    "write_second_pass_experiment_report",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -142,6 +160,12 @@ def __getattr__(name: str):
     if name in _CONTROLLED_PUBLISH_EXPORTS:
         module = importlib.import_module("app.ml.controlled_publish")
         return getattr(module, name)
+    if name in _SECOND_PASS_EXPORTS:
+        module = importlib.import_module("app.ml.second_pass")
+        return getattr(module, name)
+    if name in _SECOND_PASS_EXPERIMENT_EXPORTS:
+        module = importlib.import_module("app.ml.second_pass_experiment")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -168,4 +192,6 @@ __all__ = [
     *_EVALUATE_EXPORTS,
     *_RANKING_BENCHMARK_EXPORTS,
     *_CONTROLLED_PUBLISH_EXPORTS,
+    *_SECOND_PASS_EXPORTS,
+    *_SECOND_PASS_EXPERIMENT_EXPORTS,
 ]

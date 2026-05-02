@@ -113,16 +113,19 @@ D39 evidence:
 - UI surfaces: compact stack card, full `Стек` page, score breakdown, audit report, Markdown export, HTML export
 - verification: `backend/tests/test_health_api.py` -> `24 passed`; `npm --prefix frontend run test` -> `45 passed`
 
-## Current D40-D41 Evidence: Post-Publish Model Operations
+## Current D40-D44 Evidence: Post-Publish Model Operations
 
 GitHub issues `#59-#63` were created on `2026-05-02`. Local source of truth: `plans/d40-d44-post-publish-model-operations.md`.
 
 The D40-D44 wave keeps the D38 CatBoost v3 production artifact in place and focuses on operating, validating and explaining it after publish.
 
-Completed D40-D41 scope:
+Completed D40-D44 scope:
 
 - `D40` / GitHub `#59`: post-publish model monitoring dashboard over real audit/model usage.
 - `D41` / GitHub `#60`: golden query replay guardrails after publish.
+- `D42` / GitHub `#61`: score confidence and data-quality warnings in audit UX.
+- `D43` / GitHub `#62`: model registry and rollback evidence UI.
+- `D44` / GitHub `#63`: non-production second-pass competitor-aware score experiment using `serp_relative` features.
 
 D40 evidence:
 
@@ -142,13 +145,34 @@ D41 evidence:
 - default evidence: one D38 smoke artifact plus explicit synthetic stored fixtures for the remaining golden items; `/health/model.checked_at` is normalized to the fixed report timestamp for reproducible output
 - invariant: no publish, no rollback, no mutation of `backend/artifacts/page_quality_model.pkl`
 
-Remaining active tasks:
+D42 evidence:
 
-- `D42` / GitHub `#61`: score confidence and data-quality warnings in audit UX.
-- `D43` / GitHub `#62`: model registry and rollback evidence UI.
-- `D44` / GitHub `#63`: non-production second-pass competitor-aware score experiment using `serp_relative` features.
+- frontend helper: `frontend/src/lib/auditConfidence.ts`
+- classification: `high` / `medium` / `low` / `unknown` score confidence from fetch status/method, feature schema, heavy analysis, competitor coverage, recommendations, `score_breakdown.model_info`, warnings and failure context
+- UI surfaces: audit overview compact badge and reason list; audit report tab; Markdown export; printable HTML export
+- invariant: UX/data-quality layer only; no numeric score formula change, no backend scoring change, no model artifact mutation
+- verification: `npm --prefix frontend run test -- src/lib/auditConfidence.test.ts src/lib/auditReport.test.ts src/lib/ui.test.tsx` -> `23 passed`; `npm --prefix frontend run build` -> passed
 
-Next practical step: implement D42 unless the user explicitly selects another remaining D40-D44 task.
+D43 evidence:
+
+- backend endpoint: `GET /health/model/registry`
+- backend helper: `backend/app/model_registry.py`
+- discovery source: active alias `backend/artifacts/page_quality_model.pkl`, versioned artifacts in `backend/artifacts/versions/`, public metadata sidecars, controlled publish reports and golden replay reports
+- UI surface: full `Стек` runtime page, section `Model registry и rollback evidence`
+- coverage: current CatBoost v3 record, previous v1 RandomForest rollback record, SHA1 values, publish report paths, smoke evidence paths and rollback dry-run checklist
+- invariant: read-only evidence/checklist layer only; no rollback execution, no publish action, no model artifact mutation
+
+D44 evidence:
+
+- backend helpers: `backend/app/ml/second_pass.py` and `backend/app/ml/second_pass_experiment.py`
+- report: `backend/artifacts/ranking-benchmarks/dataset-v3-d44/second-pass-experiment-report.json`
+- markdown: `backend/artifacts/ranking-benchmarks/dataset-v3-d44/second-pass-experiment-report.md`
+- candidate artifact: `backend/artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl` plus `.metadata.json`
+- model schema: `v3-serp-relative-experiment`, `177` features (`148` v3 pre-competitor + `29` SERP-relative)
+- decision: `do_not_continue_without_more_evidence`
+- invariant: non-production experiment only; no runtime scoring change, no publish, no rollback, no mutation of `backend/artifacts/page_quality_model.pkl`
+
+D40-D44 is complete locally. Next practical step should be selected explicitly; do not start a second-pass publish path from D44 evidence without a new task.
 
 ### D21 / #40: Audit Report And Export Dashboard
 
@@ -268,11 +292,13 @@ Next practical step: implement D42 unless the user explicitly selects another re
 
 Канонический статус сейчас: `D1-D26` завершены; следующий практический backlog должен быть выбран явно пользователем или через новый open GitHub issue.
 
-## Current Active Backlog Override
+## Current Backlog Override
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D41` are complete locally, and `D42-D44` are the active open backlog. The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout; D39 made the active model visible in API/UI/report surfaces; D40 added post-publish model usage monitoring; D41 added deterministic golden replay guardrails. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56`, `#57`, `#58`, `#59` and `#60` are the D37-D41 model rollout/interface/operations evidence; `#61-#63` are the open D42-D44 post-publish operations tasks.
+Canonical current status: `D1-D44` are complete locally.
+
+The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and the shadow benchmark recommended `publish_candidate` for `pointwise_catboost`; D38 completed the controlled rollout; D39 made the active model visible in API/UI/report surfaces; D40 added post-publish model usage monitoring; D41 added deterministic golden replay guardrails; D42 added score confidence/data-quality UX without changing scoring; D43 added read-only model registry and rollback evidence UI; D44 added the non-production second-pass SERP-relative experiment and recommends `do_not_continue_without_more_evidence`. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v3 (`dataset-v3-d37`, schema `v3`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`). GitHub issues `#46-#50` were verified and closed as completed on `2026-05-01`; issues `#51-#55` were also completed locally and closed after verification; `#56`, `#57`, `#58`, `#59`, `#60`, `#61`, `#62` and `#63` are the D37-D44 model rollout/interface/operations evidence.
 
 Local source of truth:
 
@@ -310,11 +336,10 @@ Completed model rollout/interface tasks:
 - `D39` / GitHub `#58`: implemented locally; active model status endpoint and UI visibility in stack, score explanation and audit report/export.
 - `D40` / GitHub `#59`: implemented locally; post-publish model monitoring dashboard with `/health/model/monitoring` and `Стек` UI section.
 - `D41` / GitHub `#60`: implemented locally; deterministic golden query replay guardrails with evidence in `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`.
+- `D42` / GitHub `#61`: implemented locally; score confidence/data-quality UX in audit overview, report UI, Markdown export and printable HTML export.
+- `D43` / GitHub `#62`: implemented locally; read-only model registry and rollback evidence UI with `/health/model/registry` and `Стек` UI section.
+- `D44` / GitHub `#63`: implemented locally; non-production second-pass competitor-aware score experiment with SERP-relative features and evidence in `backend/artifacts/ranking-benchmarks/dataset-v3-d44/`.
 
-Active post-publish operations tasks:
+Active post-publish operations tasks: none in D40-D44.
 
-- `D42` / GitHub `#61`: open; score confidence and data-quality warnings in audit UX.
-- `D43` / GitHub `#62`: open; model registry and rollback evidence UI.
-- `D44` / GitHub `#63`: open; second-pass competitor-aware score experiment with SERP-relative features.
-
-Next agent instruction: `D32-D41` is complete locally and `D42-D44` is active. Start with D42 unless the user explicitly selects another task. Do not repeat the CatBoost v3 rollout unless the user explicitly asks for rollback or republish. Do not add demo mode or rewrite backend orchestration.
+Next agent instruction: `D32-D44` is complete locally. Select a new task explicitly before changing model/runtime behavior. Do not repeat the CatBoost v3 rollout, publish the D44 candidate, add demo mode, or rewrite backend orchestration unless the user explicitly requests that scope.

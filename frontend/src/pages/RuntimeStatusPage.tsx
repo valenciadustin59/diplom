@@ -3,7 +3,6 @@ import type {
   RuntimeHealthModel,
   RuntimeIssue,
   RuntimeMetric,
-  RuntimeModelMonitoringView,
   RuntimeModelStatusView,
   RuntimeTone,
 } from "../lib/runtimeHealth";
@@ -64,20 +63,6 @@ function RuntimeMetricGrid({ model }: { model: RuntimeHealthModel }) {
   );
 }
 
-function RuntimeMetricTileGrid({ metrics, className = "" }: { metrics: RuntimeMetric[]; className?: string }) {
-  return (
-    <div className={`report-metric-grid ${className}`}>
-      {metrics.map((metric) => (
-        <div key={metric.label} className={`report-metric runtime-metric runtime-metric--${metric.tone}`}>
-          <span className="report-metric__label">{metric.label}</span>
-          <strong className="report-metric__value">{metric.value}</strong>
-          <p className="report-metric__note">{metric.note}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 function RuntimeModelStatusMini({ modelStatus }: { modelStatus: RuntimeModelStatusView }) {
   return (
     <div className={`runtime-model-mini runtime-model-mini--${modelStatus.tone}`}>
@@ -95,29 +80,81 @@ function RuntimeModelStatusCard({ modelStatus }: { modelStatus: RuntimeModelStat
     return null;
   }
 
+  const top3 = modelStatus.metricRows.find((metric) => metric.label === "Top-3");
+  const ndcg = modelStatus.metricRows.find((metric) => metric.label === "NDCG@10");
+  const mae = modelStatus.metricRows.find((metric) => metric.label === "MAE");
+  const qualityMetrics: RuntimeMetric[] = [
+    {
+      label: "Признаки",
+      value: modelStatus.featureCountLabel,
+      note: "Количество сигналов, по которым оценивается страница.",
+      tone: modelStatus.tone,
+    },
+    {
+      label: "Обучающая выборка",
+      value: modelStatus.datasetLabel,
+      note: "Страницы и запросы, на которых проверялась текущая версия.",
+      tone: "ok",
+    },
+    {
+      label: "Точность топ-3",
+      value: top3?.value ?? "—",
+      note: "Насколько хорошо модель находит сильные страницы в верхней части выдачи.",
+      tone: top3?.tone ?? "muted",
+    },
+    {
+      label: "Средняя ошибка",
+      value: mae?.value ?? "—",
+      note: "Среднее отклонение предсказанного score на проверочной выборке.",
+      tone: mae?.tone ?? "muted",
+    },
+  ];
+
   return (
     <Card
-      title="Активная ML-модель"
-      subtitle="Какой artifact сейчас считает score, на каком датасете он обучен и есть ли путь отката."
+      title="Как работает модель оценки"
+      subtitle="Главные принципы расчёта score и параметры активной версии без истории старых моделей."
       className="runtime-model-card"
     >
       <div className={`runtime-model-status runtime-model-status--${modelStatus.tone}`}>
         <div className="runtime-model-status__summary">
           <span className={getToneClass(modelStatus.tone)}>{modelStatus.statusLabel}</span>
-          <h3>{modelStatus.shortLabel}</h3>
-          <p>{modelStatus.detail}</p>
+          <h3>Оценка качества страницы</h3>
+          <p>
+            Модель получает поисковый запрос и целевую страницу, превращает их в набор понятных сигналов и возвращает
+            самостоятельный score от 0 до 100.
+          </p>
         </div>
         <div className="runtime-model-status__facts">
-          <span>Датасет: {modelStatus.datasetLabel}</span>
-          <span>Признаки: {modelStatus.featureCountLabel}</span>
-          <span>Artifact: {modelStatus.artifactLabel}</span>
-          <span>SHA1: {modelStatus.artifactShaLabel}</span>
-          <span>Опубликована: {modelStatus.publishedAtLabel}</span>
-          <span>{modelStatus.rollbackLabel}</span>
+          <span>Версия признаков: {modelStatus.schemaLabel}</span>
+          <span>Признаков: {modelStatus.featureCountLabel}</span>
+          <span>Данные обучения: {modelStatus.datasetLabel}</span>
+          <span>Качество порядка: {ndcg?.value ?? "—"}</span>
+          <span>Проверено: {modelStatus.checkedAtLabel}</span>
         </div>
       </div>
+
+      <div className="runtime-model-principles">
+        <article>
+          <strong>1. Понимает запрос</strong>
+          <p>Учитывает слова запроса, смысловую близость, title, заголовки и основной текст страницы.</p>
+        </article>
+        <article>
+          <strong>2. Проверяет качество страницы</strong>
+          <p>Смотрит на глубину контента, техническую доступность, canonical, редиректы, коммерческие и доверительные сигналы.</p>
+        </article>
+        <article>
+          <strong>3. Добавляет контекст выдачи</strong>
+          <p>После primary score обработанные конкуренты используются отдельно: для сравнения, разрывов и рекомендаций.</p>
+        </article>
+        <article>
+          <strong>4. Даёт score и рекомендации</strong>
+          <p>Score показывает качество страницы под запрос, а рекомендации объясняют, какие действия улучшат результат.</p>
+        </article>
+      </div>
+
       <div className="report-metric-grid runtime-model-metrics">
-        {modelStatus.metricRows.map((metric) => (
+        {qualityMetrics.map((metric) => (
           <div key={metric.label} className={`report-metric runtime-metric runtime-metric--${metric.tone}`}>
             <span className="report-metric__label">{metric.label}</span>
             <strong className="report-metric__value">{metric.value}</strong>
@@ -125,96 +162,6 @@ function RuntimeModelStatusCard({ modelStatus }: { modelStatus: RuntimeModelStat
           </div>
         ))}
       </div>
-      <div className="runtime-model-status__publish">
-        <strong>Решение публикации</strong>
-        <span>{modelStatus.publishLabel}</span>
-      </div>
-    </Card>
-  );
-}
-
-function RuntimeModelMonitoringCard({ monitoring }: { monitoring: RuntimeModelMonitoringView | null }) {
-  if (!monitoring) {
-    return null;
-  }
-
-  return (
-    <Card
-      title="Мониторинг ML-модели"
-      subtitle="Фактическое использование runtime-модели в recent-аудитах: score, конкуренты, warnings и legacy записи."
-      className="runtime-model-monitoring-card"
-    >
-      <div className={`runtime-model-monitoring runtime-model-monitoring--${monitoring.tone}`}>
-        <div className="runtime-model-monitoring__summary">
-          <span className={getToneClass(monitoring.tone)}>{monitoring.statusLabel}</span>
-          <h3>{monitoring.shortLabel}</h3>
-          <p>{monitoring.detail}</p>
-        </div>
-        <div className="runtime-model-monitoring__facts">
-          <span>Окно: {monitoring.windowLabel}</span>
-          <span>Проверено: {monitoring.checkedAtLabel}</span>
-          <span>Статусы: {monitoring.statusCountsLabel}</span>
-          <span>{monitoring.legacyLabel}</span>
-        </div>
-      </div>
-
-      <RuntimeMetricTileGrid metrics={monitoring.summaryMetrics} className="runtime-model-monitoring__metrics" />
-
-      {monitoring.empty ? (
-        <div className="empty-state">
-          Нет завершённых recent-аудитов с runtime model_info. Новые аудиты CatBoost v3 появятся здесь после расчёта score;
-          старые записи без metadata уже учтены как legacy/unknown.
-        </div>
-      ) : (
-        <>
-          <div className="runtime-model-monitoring__split">
-            <section>
-              <h4>Score активной модели</h4>
-              <RuntimeMetricTileGrid metrics={monitoring.scoreMetrics} className="runtime-model-monitoring__mini-grid" />
-            </section>
-            <section>
-              <h4>Покрытие конкурентов</h4>
-              <RuntimeMetricTileGrid metrics={monitoring.competitorMetrics} className="runtime-model-monitoring__mini-grid" />
-            </section>
-          </div>
-
-          <div className="report-table-shell runtime-model-usage-table">
-            <table className="report-table">
-              <thead>
-                <tr>
-                  <th>Модель</th>
-                  <th>Artifact</th>
-                  <th>Аудиты</th>
-                  <th>Статусы</th>
-                  <th>Score</th>
-                  <th>Конкуренты</th>
-                  <th>Последний аудит</th>
-                </tr>
-              </thead>
-              <tbody>
-                {monitoring.usageRows.map((row) => (
-                  <tr key={row.key}>
-                    <td>
-                      <strong>{row.modelLabel}</strong>
-                      <span className="timeline-table__muted">{row.datasetLabel}</span>
-                      {row.isActiveModel ? <span className={getToneClass("ok")}>active</span> : null}
-                    </td>
-                    <td>{row.artifactLabel}</td>
-                    <td>{row.auditCountLabel}</td>
-                    <td>
-                      <span>{row.statusCountsLabel}</span>
-                      <span className="timeline-table__muted">{row.warningFailureLabel}</span>
-                    </td>
-                    <td>{row.scoreLabel}</td>
-                    <td>{row.competitorCoverageLabel}</td>
-                    <td>{row.lastAuditAtLabel}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </>
-      )}
     </Card>
   );
 }
@@ -399,7 +346,6 @@ export function RuntimeStatusPage({ model, loading, error, onRefresh }: RuntimeS
           {error ? <div className="feedback-banner feedback-banner--warning">{error}</div> : null}
           <RuntimeMetricGrid model={model} />
           <RuntimeModelStatusCard modelStatus={model.modelStatus} />
-          <RuntimeModelMonitoringCard monitoring={model.modelMonitoring} />
           <Card title="Что восстановить" subtitle="Понятный вывод по готовности, нагрузке очередей и рискам контроля допуска.">
             <RuntimeIssueList issues={model.issues} />
           </Card>

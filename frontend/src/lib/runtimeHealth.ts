@@ -2,6 +2,7 @@ import type {
   RuntimeHealthCheck,
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelRegistryResponse,
   RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeQueueSnapshot,
@@ -10,8 +11,14 @@ import type {
   RuntimeWorkerTopologyCoverage,
   RuntimeWorkerTopologyProfile,
 } from "../types";
+import { buildModelRegistryView, type RuntimeModelRegistryView } from "./runtimeModelRegistry";
 import { buildModelMonitoringView, type RuntimeModelMonitoringView } from "./runtimeModelMonitoring";
 
+export type {
+  RuntimeModelRegistryRecordRow,
+  RuntimeModelRegistryView,
+  RuntimeRollbackChecklistRow,
+} from "./runtimeModelRegistry";
 export type { RuntimeModelMonitoringView, RuntimeModelUsageRow } from "./runtimeModelMonitoring";
 
 export type RuntimeTone = "ok" | "warning" | "error" | "muted";
@@ -77,6 +84,11 @@ export type RuntimeModelStatusView = {
   shortLabel: string;
   detail: string;
   checkedAtLabel: string;
+  artifactVersion: string | null;
+  artifactSha1: string | null;
+  datasetVersion: string | null;
+  modelSchemaVersion: string | null;
+  publishedAt: string | null;
   modelTypeLabel: string;
   schemaLabel: string;
   featureCountLabel: string;
@@ -99,6 +111,7 @@ export type RuntimeHealthModel = {
   statusTone: RuntimeTone;
   metrics: RuntimeMetric[];
   modelStatus: RuntimeModelStatusView | null;
+  modelRegistry: RuntimeModelRegistryView | null;
   modelMonitoring: RuntimeModelMonitoringView | null;
   components: RuntimeComponentRow[];
   workerProfiles: RuntimeWorkerProfileRow[];
@@ -114,6 +127,7 @@ type RuntimeHealthInput = {
   readiness: RuntimeReadinessResponse | null;
   metrics: RuntimeMetricsResponse | null;
   modelStatus?: RuntimeModelStatusResponse | null;
+  modelRegistry?: RuntimeModelRegistryResponse | null;
   modelMonitoring?: RuntimeModelMonitoringResponse | null;
 };
 const PROFILE_LABELS: Record<string, string> = {
@@ -634,11 +648,14 @@ function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefi
   const rollback = isRecord(status.rollback) ? status.rollback : {};
   const statusValue = asString(status.status) ?? "unknown";
   const modelType = asString(model.model_type) ?? "модель не определена";
-  const schemaVersion = asString(model.model_schema_version) ?? "схема не указана";
+  const schemaVersionRaw = asString(model.model_schema_version);
+  const schemaVersion = schemaVersionRaw ?? "схема не указана";
   const featureCount = asNumber(model.feature_count);
-  const artifactVersion = asString(model.artifact_version) ?? asString(status.artifact_path) ?? "артефакт не указан";
+  const artifactVersionRaw = asString(model.artifact_version);
+  const artifactVersion = artifactVersionRaw ?? asString(status.artifact_path) ?? "артефакт не указан";
   const artifactSha = asString(status.artifact_sha1);
-  const datasetVersion = asString(dataset.dataset_version) ?? "датасет не указан";
+  const datasetVersionRaw = asString(dataset.dataset_version);
+  const datasetVersion = datasetVersionRaw ?? "датасет не указан";
   const datasetRows = asNumber(dataset.rows_count);
   const datasetQueries = asNumber(dataset.queries_count);
   const selectedCandidate = asString(publish.selected_candidate) ?? asString(publish.candidate_name);
@@ -651,11 +668,16 @@ function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefi
     status: statusValue,
     statusLabel: getModelStatusLabel(statusValue),
     tone,
-    shortLabel: `${modelType} · ${schemaVersion}`,
+    shortLabel: `Оценка качества страницы · ${schemaVersion}`,
     detail: error
       ? error
-      : `Сейчас score считает ${modelType}; признаки берутся из схемы ${schemaVersion}, artifact ${artifactVersion}.`,
+      : `Score считается по признакам целевой страницы, смысловой близости к запросу, техническим, коммерческим и доверительным сигналам.`,
     checkedAtLabel: formatCheckedAt(status.checked_at),
+    artifactVersion: artifactVersionRaw,
+    artifactSha1: artifactSha,
+    datasetVersion: datasetVersionRaw,
+    modelSchemaVersion: schemaVersionRaw,
+    publishedAt: asString(model.published_at),
     modelTypeLabel: modelType,
     schemaLabel: schemaVersion,
     featureCountLabel: featureCount === null ? "—" : `${featureCount}`,
@@ -677,6 +699,7 @@ export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealt
   const issues = buildIssues(input, workerProfiles, queues);
   const metrics = buildMetrics(input, issues);
   const modelStatus = buildModelStatusView(input.modelStatus ?? null);
+  const modelRegistry = buildModelRegistryView(input.modelRegistry ?? null);
   const modelMonitoring = buildModelMonitoringView(input.modelMonitoring ?? null);
   const ready = input.readiness?.status === "ready";
   const hasErrorIssue = issues.some((issue) => issue.tone === "error");
@@ -699,6 +722,7 @@ export function buildRuntimeHealthModel(input: RuntimeHealthInput): RuntimeHealt
     statusTone,
     metrics,
     modelStatus,
+    modelRegistry,
     modelMonitoring,
     components: buildComponentRows(input),
     workerProfiles,

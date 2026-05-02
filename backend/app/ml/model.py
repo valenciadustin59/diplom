@@ -25,6 +25,45 @@ FEATURE_COLUMNS = list(BASELINE_FEATURE_COLUMNS)
 BACKEND_DIR = Path(__file__).resolve().parents[2]
 ARTIFACTS_DIR = BACKEND_DIR / "artifacts"
 DEFAULT_MODEL_PATH = ARTIFACTS_DIR / "page_quality_model.pkl"
+RULE_SCORE_REFERENCE_MAX = 150.0
+FACTOR_MAX_IMPACTS = {
+    "content_depth": 4.0,
+    "semantic_relevance": 20.0,
+    "keyword_coverage": 10.0,
+    "title_signal": 8.0,
+    "meta_signal": 5.0,
+    "heading_structure": 6.0,
+    "title_semantic_alignment": 6.0,
+    "heading_semantic_alignment": 5.0,
+    "content_depth_semantic_score": 8.0,
+    "semantic_content_richness": 8.0,
+    "keyword_balance": 7.0,
+    "conversion_signal": 4.0,
+    "query_prominence": 8.0,
+    "text_to_html_ratio": 4.0,
+    "uniqueness": 5.0,
+    "technical_indexability": 6.0,
+    "technical_canonical": 4.0,
+    "technical_redirects": 4.0,
+    "technical_url_hygiene": 3.0,
+    "technical_metadata": 2.0,
+    "commercial_completeness": 6.5,
+    "trust_signals": 5.85,
+    "contact_accessibility": 3.6,
+    "intent_alignment": 5.0,
+    "local_intent_fit": 3.6,
+    "commercial_intent_fit": 3.15,
+    "informational_intent_fit": 2.7,
+}
+
+LIMITING_FACTOR_DETAILS = {
+    "commercial_completeness": (
+        "Телефон, реквизиты и сведения о компании уже учтены в сигналах доверия. "
+        "Здесь оцениваются page-level сигналы: запись или заявка, преимущества, понятные условия "
+        "и базовая контактная опора на этой странице. Цена или полный прайс не считаются "
+        "обязательными для каждой посадочной и используются только как дополнительный сигнал."
+    ),
+}
 
 
 def _resolve_model_path(model_path: str | Path | None = None) -> Path:
@@ -33,6 +72,34 @@ def _resolve_model_path(model_path: str | Path | None = None) -> Path:
 
 def _rounded_score(value: float) -> float:
     return round(max(0.0, min(100.0, value)), 4)
+
+
+def _calibrate_rule_score(raw_score: float) -> float:
+    return _rounded_score((raw_score / RULE_SCORE_REFERENCE_MAX) * 100.0)
+
+
+def _build_limiting_factor(factor: dict[str, object]) -> dict[str, object] | None:
+    key = str(factor.get("key") or "")
+    max_impact = FACTOR_MAX_IMPACTS.get(key)
+    if max_impact is None or max_impact <= 0:
+        return None
+
+    impact = float(factor.get("impact") or 0.0)
+    if impact < 0:
+        return factor
+
+    gap = round(max_impact - impact, 4)
+    if gap < 1.25:
+        return None
+
+    return {
+        **factor,
+        "impact": round(-gap, 4),
+        "detail": LIMITING_FACTOR_DETAILS.get(
+            key,
+            "Фактор помогает странице, но набран не полностью; из-за этого итоговая оценка не поднимается выше.",
+        ),
+    }
 
 
 def _bounded_quality(value: float, target: float) -> float:
@@ -55,6 +122,91 @@ def _feature_value(features: dict[str, float | int], key: str) -> float:
 
 def _has_feature(features: dict[str, float | int], key: str) -> bool:
     return key in features
+
+
+def _offer_readiness_score(features: dict[str, float | int]) -> float:
+    page_level_signal_keys = (
+        "phone_present",
+        "address_present",
+        "business_hours_present",
+        "cta_present",
+        "value_proposition_present",
+    )
+    page_level_signals = [_feature_value(features, key) for key in page_level_signal_keys if _has_feature(features, key)]
+    if not page_level_signals:
+        return _feature_value(features, "commercial_signals_score")
+
+    page_level_score = sum(min(max(value, 0.0), 1.0) for value in page_level_signals) / len(page_level_signals)
+    return max(_feature_value(features, "commercial_signals_score"), page_level_score)
+
+
+def _present_signal_labels(features: dict[str, float | int], signals: tuple[tuple[str, str], ...]) -> list[str]:
+    return [label for key, label in signals if _feature_value(features, key) >= 1.0]
+
+
+def _build_offer_factor_detail(features: dict[str, float | int]) -> str | None:
+    present = _present_signal_labels(
+        features,
+        (
+            ("phone_present", "телефон"),
+            ("address_present", "адрес"),
+            ("business_hours_present", "график"),
+            ("cta_present", "запись или заявка"),
+            ("value_proposition_present", "преимущества"),
+        ),
+    )
+    if not present:
+        return None
+
+    detail = f"Засчитано на этой странице: {', '.join(present)}."
+    if _feature_value(features, "price_present") < 1.0:
+        detail += " Цена или полный прайс могут быть на отдельной странице сайта и не считаются обязательными здесь."
+    return detail
+
+
+def _build_trust_factor_detail(features: dict[str, float | int]) -> str | None:
+    present = _present_signal_labels(
+        features,
+        (
+            ("legal_requisites_present", "реквизиты"),
+            ("company_identity_present", "сведения о компании"),
+            ("address_present", "адрес"),
+            ("business_hours_present", "график"),
+            ("reviews_present", "отзывы"),
+            ("rating_present", "рейтинг"),
+        ),
+    )
+    if not present:
+        return None
+    return f"Засчитаны сигналы доверия: {', '.join(present)}."
+
+
+def _build_text_sufficiency_detail(word_count: float) -> str:
+    if word_count < 250:
+        return "Текста мало для уверенного анализа запроса. Это не оценка качества, а проверка базовой достаточности материала."
+    return "Засчитана базовая достаточность текста для анализа. Это не оценка качества: само качество текста оценивается отдельными смысловыми факторами."
+
+
+def _select_positive_factors(factors: list[dict[str, object]]) -> list[dict[str, object]]:
+    positives = sorted(
+        [factor for factor in factors if float(factor["impact"]) > 0],
+        key=lambda item: float(item["impact"]),
+        reverse=True,
+    )
+    selected = positives[:5]
+    selected_keys = {str(factor.get("key") or "") for factor in selected}
+
+    supporting_candidates = [
+        factor
+        for factor in positives
+        if str(factor.get("key") or "") in {"trust_signals", "contact_accessibility"}
+        and str(factor.get("key") or "") not in selected_keys
+        and float(factor["impact"]) >= 2.5
+    ]
+    if supporting_candidates:
+        selected.append(supporting_candidates[0])
+
+    return selected
 
 
 def create_dataset(n_samples: int = 500, seed: int = 42) -> tuple[list[list[float]], list[float]]:
@@ -478,9 +630,10 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
     factors = [
         {
             "key": "content_depth",
-            "label": "Content depth",
-            "impact": round(min(word_count / 1200.0, 1.0) * 18.0, 4),
+            "label": "Text sufficiency",
+            "impact": round(min(word_count / 700.0, 1.0) * 4.0, 4),
             "value": round(word_count, 4),
+            "detail": _build_text_sufficiency_detail(word_count),
         },
         {
             "key": "semantic_relevance",
@@ -631,13 +784,14 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
         )
 
     if _has_feature(features, "commercial_signals_score"):
-        commercial_signals_score = _feature_value(features, "commercial_signals_score")
+        commercial_signals_score = _offer_readiness_score(features)
         factors.append(
             {
                 "key": "commercial_completeness",
-                "label": "Commercial completeness",
+                "label": "Offer and conversion completeness",
                 "impact": round((commercial_signals_score - 0.35) * 10.0, 4),
                 "value": round(commercial_signals_score, 4),
+                "detail": _build_offer_factor_detail(features),
             }
         )
 
@@ -649,6 +803,7 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
                 "label": "Trust signals",
                 "impact": round((trust_signals_score - 0.35) * 9.0, 4),
                 "value": round(trust_signals_score, 4),
+                "detail": _build_trust_factor_detail(features),
             }
         )
 
@@ -707,7 +862,7 @@ def calculate_rule_score(features: dict[str, float | int]) -> tuple[float, list[
             }
         )
 
-    rule_score = _rounded_score(sum(float(item["impact"]) for item in factors))
+    rule_score = _calibrate_rule_score(sum(float(item["impact"]) for item in factors))
     return rule_score, factors
 
 
@@ -760,19 +915,27 @@ def explain_score(
     ml_score = _predict_model_score(features, model_path=model_path)
     rule_score, factors = calculate_rule_score(features)
 
-    rule_weight = 0.65 if artifact.get("source") == "bootstrap" else 0.45
+    rule_weight = 0.65 if artifact.get("source") == "bootstrap" else 0.0
     ml_weight = 1.0 - rule_weight
     final_score = _rounded_score(rule_score * rule_weight + ml_score * ml_weight)
 
-    positives = sorted(
-        [factor for factor in factors if float(factor["impact"]) > 0],
-        key=lambda item: float(item["impact"]),
-        reverse=True,
-    )[:5]
+    positives = _select_positive_factors(factors)
     negatives = sorted(
         [factor for factor in factors if float(factor["impact"]) <= 0],
         key=lambda item: float(item["impact"]),
     )[:5]
+    if len(negatives) < 5:
+        limiting_factors = [
+            limiting_factor
+            for factor in factors
+            if float(factor["impact"]) > 0
+            for limiting_factor in [_build_limiting_factor(factor)]
+            if limiting_factor is not None
+        ]
+        negatives = [
+            *negatives,
+            *sorted(limiting_factors, key=lambda item: float(item["impact"])),
+        ][:5]
     serp_relative_factors = _build_serp_relative_factors(features)
 
     return {

@@ -92,6 +92,29 @@ def test_model_status_endpoint_returns_runtime_model_payload(client, monkeypatch
     assert response.json() == payload
 
 
+def test_model_registry_endpoint_returns_release_history_payload(client, monkeypatch: pytest.MonkeyPatch):
+    payload = {
+        "status": "ok",
+        "checked_at": "2026-05-02T00:00:00+00:00",
+        "artifact_family": "page_quality_model",
+        "active_artifact_sha1": "active-sha",
+        "rollback_artifact_sha1": "rollback-sha",
+        "summary": {"record_count": 2, "current_count": 1, "rollback_count": 1, "archived_count": 0, "warning_count": 0},
+        "records": [
+            {"id": "current:active", "role": "current", "status": "ok", "model": {"model_type": "CatBoostRegressor"}},
+            {"id": "rollback:previous", "role": "rollback", "status": "ok", "model": {"model_type": "RandomForestRegressor"}},
+        ],
+        "rollback_check": {"status": "ok", "dry_run_only": True, "checklist": [], "warnings": []},
+        "invariants": {"does_not_execute_rollback": True},
+    }
+    monkeypatch.setattr("app.api.routes.health.build_model_registry_payload", lambda: payload)
+
+    response = client.get("/health/model/registry")
+
+    assert response.status_code == 200
+    assert response.json() == payload
+
+
 def test_model_monitoring_endpoint_returns_recent_usage_payload(client, monkeypatch: pytest.MonkeyPatch):
     model_status = {
         "status": "active",

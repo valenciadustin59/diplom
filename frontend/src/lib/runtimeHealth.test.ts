@@ -3,6 +3,7 @@ import { buildRuntimeHealthModel } from "./runtimeHealth";
 import type {
   RuntimeLivenessResponse,
   RuntimeMetricsResponse,
+  RuntimeModelRegistryResponse,
   RuntimeModelMonitoringResponse,
   RuntimeModelStatusResponse,
   RuntimeReadinessResponse,
@@ -184,6 +185,132 @@ function createModelStatus(overrides: Partial<RuntimeModelStatusResponse> = {}):
   };
 }
 
+function createModelRegistry(overrides: Partial<RuntimeModelRegistryResponse> = {}): RuntimeModelRegistryResponse {
+  return {
+    status: "ok",
+    checked_at: "2026-05-02T00:00:00Z",
+    artifact_family: "page_quality_model",
+    active_artifact_sha1: "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    rollback_artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    summary: {
+      record_count: 2,
+      current_count: 1,
+      rollback_count: 1,
+      archived_count: 0,
+      warning_count: 0,
+    },
+    records: [
+      {
+        id: "current:dataset-v3-d37-20260501200434",
+        role: "current",
+        status: "ok",
+        artifact_path: "artifacts/page_quality_model.pkl",
+        artifact_sha1: "29c4b29455f795a535da94b2c6f36ef603d003eb",
+        metadata_path: "artifacts/page_quality_model.metadata.json",
+        metadata_sha1: "metadata-sha-current",
+        model: {
+          model_type: "CatBoostRegressor",
+          model_schema_version: "v3",
+          feature_count: 148,
+          artifact_version: "dataset-v3-d37-20260501200434",
+          published_at: "2026-05-01T20:04:34Z",
+        },
+        dataset: {
+          dataset_version: "dataset-v3-d37",
+          rows_count: 885,
+          queries_count: 99,
+        },
+        metrics_summary: {
+          top_3_hit_rate: 0.95,
+          ndcg_at_10: 0.945929,
+          mae: 11.774165,
+        },
+        publish: {
+          selected_candidate: "pointwise_catboost",
+          publish_recommendation: "publish_candidate",
+        },
+        evidence: {
+          publish_report_path: "artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json",
+          publish_report_markdown_path: "artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.md",
+          shadow_report_path: "artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json",
+          smoke_summary_path: "../output/runtime-smoke/d38-smoke-summary.json",
+        },
+        warnings: [],
+      },
+      {
+        id: "rollback:ru_commercial_dataset-20260421-primary-20260421174901",
+        role: "rollback",
+        status: "ok",
+        artifact_path: "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl",
+        artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+        expected_artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+        artifact_sha1_matches: true,
+        metadata_path:
+          "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+        metadata_sha1: "metadata-sha-rollback",
+        expected_metadata_sha1: "metadata-sha-rollback",
+        metadata_sha1_matches: true,
+        model: {
+          model_type: "RandomForestRegressor",
+          model_schema_version: "v1",
+          feature_count: 59,
+          artifact_version: "ru_commercial_dataset-20260421-primary-20260421174901",
+          published_at: "2026-04-21T17:49:01Z",
+        },
+        dataset: {
+          dataset_version: "ru_commercial_dataset-20260421-primary",
+          rows_count: 436,
+          queries_count: 47,
+        },
+        metrics_summary: {
+          top_3_hit_rate: 0.9,
+          ndcg_at_10: 0.844962,
+        },
+        publish: {
+          publish_action: "rollback_reference",
+        },
+        evidence: {
+          publish_report_path: "artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json",
+          rollback_source: "controlled_publish_rollback_reference",
+        },
+        warnings: [],
+      },
+    ],
+    rollback_check: {
+      status: "ok",
+      dry_run_only: true,
+      target_artifact_path:
+        "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl",
+      target_artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+      target_metadata_path:
+        "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+      target_metadata_sha1: "metadata-sha-rollback",
+      checklist: [
+        {
+          code: "dry_run_only",
+          status: "info",
+          label: "Rollback is read-only in the product UI.",
+          detail: "The UI exposes evidence and checklist state only; actual rollback remains an engineering operation.",
+        },
+        {
+          code: "rollback_metadata_present",
+          status: "pass",
+          label: "Rollback metadata sidecar exists.",
+          detail: "The public metadata sidecar keeps dataset, schema and model evidence visible after rollback.",
+          path: "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+        },
+      ],
+      warnings: [],
+    },
+    invariants: {
+      dry_run_only: true,
+      does_not_execute_rollback: true,
+      does_not_mutate_model_artifacts: true,
+    },
+    ...overrides,
+  };
+}
+
 function createModelMonitoring(overrides: Partial<RuntimeModelMonitoringResponse> = {}): RuntimeModelMonitoringResponse {
   return {
     status: "warning",
@@ -285,7 +412,7 @@ describe("runtime health model", () => {
     expect(model.metrics.find((metric) => metric.label === "Готовность")?.value).toBe("готов");
     expect(model.workerProfiles).toHaveLength(2);
     expect(model.modelStatus?.statusLabel).toBe("Активная модель");
-    expect(model.modelStatus?.shortLabel).toBe("CatBoostRegressor · v3");
+    expect(model.modelStatus?.shortLabel).toBe("Оценка качества страницы · v3");
     expect(model.modelStatus?.datasetLabel).toContain("dataset-v3-d37");
     expect(model.modelStatus?.metricRows.find((metric) => metric.label === "Top-3")?.value).toBe("95%");
     expect(model.queues.find((queue) => queue.name === "audits.heavy_analysis")?.pressureLabel).toBe("простаивает");
@@ -431,13 +558,87 @@ describe("runtime health model", () => {
     });
 
     expect(model.modelMonitoring?.statusLabel).toBe("Есть предупреждения");
-    expect(model.modelMonitoring?.shortLabel).toBe("model_info в 3 из 4 аудитов");
-    expect(model.modelMonitoring?.legacyLabel).toBe("1 legacy/unknown");
-    expect(model.modelMonitoring?.summaryMetrics.find((metric) => metric.label === "Warnings/failures")?.value).toBe("1/1");
+    expect(model.modelMonitoring?.shortLabel).toBe("Данные score в 3 из 4 аудитов");
+    expect(model.modelMonitoring?.legacyLabel).toBe("1 старых записей");
+    expect(model.modelMonitoring?.summaryMetrics.find((metric) => metric.label === "Предупреждения/ошибки")?.value).toBe("1/1");
     expect(model.modelMonitoring?.scoreMetrics.find((metric) => metric.label === "Score p50")?.value).toBe("70");
     expect(model.modelMonitoring?.competitorMetrics.find((metric) => metric.label === "Coverage")?.value).toBe("83%");
     expect(model.modelMonitoring?.usageRows[0].modelLabel).toBe("CatBoostRegressor · v3");
     expect(model.modelMonitoring?.usageRows[0].competitorCoverageLabel).toContain("5/6");
+  });
+
+  it("summarizes model registry records and rollback dry-run evidence", () => {
+    const model = buildRuntimeHealthModel({
+      live: createLiveness(),
+      readiness: createReadiness(),
+      metrics: createMetrics(),
+      modelStatus: createModelStatus(),
+      modelRegistry: createModelRegistry(),
+    });
+
+    expect(model.modelRegistry?.statusLabel).toBe("готово");
+    expect(model.modelRegistry?.shortLabel).toContain("dataset-v3-d37-20260501200434");
+    expect(model.modelRegistry?.shortLabel).toContain("rollback");
+    expect(model.modelRegistry?.summaryMetrics.find((metric) => metric.label === "Records")?.value).toBe("2");
+    expect(model.modelRegistry?.summaryMetrics.find((metric) => metric.label === "Rollback check")?.value).toBe("готово");
+    expect(model.modelRegistry?.records[0].modelLabel).toContain("CatBoostRegressor · v3");
+    expect(model.modelRegistry?.records[0].evidenceLabels.join(" ")).toContain("d38-smoke-summary.json");
+    expect(model.modelRegistry?.records[1].roleLabel).toBe("rollback");
+    expect(model.modelRegistry?.records[1].modelLabel).toContain("RandomForestRegressor · v1");
+    expect(model.modelRegistry?.rollbackCheck?.dryRunLabel).toContain("UI не выполняет rollback");
+  });
+
+  it("keeps model registry warnings visible when rollback metadata is incomplete", () => {
+    const model = buildRuntimeHealthModel({
+      live: createLiveness(),
+      readiness: createReadiness(),
+      metrics: createMetrics(),
+      modelStatus: createModelStatus(),
+      modelRegistry: createModelRegistry({
+        status: "warning",
+        summary: {
+          record_count: 2,
+          current_count: 1,
+          rollback_count: 1,
+          archived_count: 0,
+          warning_count: 2,
+        },
+        records: createModelRegistry().records.map((record) =>
+          record.role === "rollback"
+            ? {
+                ...record,
+                status: "warning",
+                metadata_sha1: null,
+                warnings: [
+                  {
+                    code: "metadata_missing",
+                    message: "Public metadata sidecar is missing.",
+                    path: "artifacts/versions/missing.metadata.json",
+                  },
+                ],
+              }
+            : record,
+        ),
+        rollback_check: {
+          ...createModelRegistry().rollback_check,
+          status: "warning",
+          warnings: [
+            {
+              code: "rollback_metadata_present",
+              status: "warn",
+              label: "Rollback metadata sidecar exists.",
+              detail: "The public metadata sidecar keeps dataset, schema and model evidence visible after rollback.",
+              path: "artifacts/versions/missing.metadata.json",
+            },
+          ],
+        },
+      }),
+    });
+
+    expect(model.modelRegistry?.tone).toBe("warning");
+    expect(model.modelRegistry?.detail).toContain("предупреждения");
+    expect(model.modelRegistry?.records[1].warningLabels.join(" ")).toContain("Public metadata sidecar is missing.");
+    expect(model.modelRegistry?.rollbackCheck?.statusLabel).toBe("требует проверки");
   });
 
   it("keeps model monitoring empty state explicit", () => {
@@ -484,7 +685,7 @@ describe("runtime health model", () => {
 
     expect(model.modelMonitoring?.empty).toBe(true);
     expect(model.modelMonitoring?.statusLabel).toBe("Нет runtime-данных");
-    expect(model.modelMonitoring?.shortLabel).toBe("Нет аудитов с model_info");
-    expect(model.modelMonitoring?.detail).toContain("legacy/unknown");
+    expect(model.modelMonitoring?.shortLabel).toBe("Нет новых данных по score");
+    expect(model.modelMonitoring?.detail).toContain("старые строки учтены отдельно");
   });
 });

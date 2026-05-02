@@ -13,6 +13,20 @@ import {
 } from "./auditReport";
 import { createAuditReportHtml } from "./auditReportHtml";
 
+const modelInfo = {
+  model_type: "CatBoostRegressor",
+  model_schema_version: "v3",
+  dataset_version: "dataset-v3-d37",
+  artifact_version: "dataset-v3-d37-20260501200434",
+  feature_count: 148,
+  dataset_rows: 885,
+  metrics_summary: {
+    top_3_hit_rate: 0.95,
+    ndcg_at_10: 0.945929,
+    mae: 11.774165,
+  },
+};
+
 function createAudit(): AuditStatusResponse {
   return {
     id: "audit-1",
@@ -37,6 +51,7 @@ function createAudit(): AuditStatusResponse {
       final_score: 72.4,
       rule_score: 70,
       ml_score: 74,
+      model_info: modelInfo,
     },
     competitor_results: null,
     comparison_summary: {
@@ -82,6 +97,7 @@ function createResults(): AuditResultsResponse {
       final_score: 72.4,
       rule_score: 70,
       ml_score: 74,
+      model_info: modelInfo,
     },
     competitor_results: [
       {
@@ -282,6 +298,8 @@ describe("audit report export", () => {
     expect(model.recommendationActions.map((item) => item.title)).toContain("Усилить title");
     expect(model.recommendationActions).toHaveLength(6);
     expect(model.stageRows[0].stage).toBe("Углублённый анализ");
+    expect(model.scoreConfidence.level).toBe("high");
+    expect(model.scoreConfidence.reasons.map((reason) => reason.code)).toContain("model_metadata_present");
   });
 
   it("builds report recommendations from stored audit payloads when endpoint data is unavailable", () => {
@@ -312,6 +330,8 @@ describe("audit report export", () => {
     const markdown = createAuditReportMarkdown(input);
     const html = createAuditReportHtml(input, { autoPrint: true });
 
+    expect(markdown).toContain("## Доверие к score");
+    expect(markdown).toContain("- Уровень: Высокая уверенность");
     expect(markdown).toContain("## Доказательство распределённого выполнения");
     expect(markdown).toContain("### Список действий");
     expect(markdown).toContain("TECHNICAL_LOW");
@@ -320,6 +340,7 @@ describe("audit report export", () => {
     expect(markdown.indexOf("TECHNICAL_SNIPPET")).toBeLessThan(markdown.indexOf("TECHNICAL_LOW"));
     expect(html).toContain("<!doctype html>");
     expect(html).toContain("window.print");
+    expect(html).toContain("Доверие к score");
     expect(html).toContain("SEO-сигналы");
     expect(html).toContain("TECHNICAL_LOW");
     expect(html.match(/TECHNICAL_/g)).toHaveLength(6);

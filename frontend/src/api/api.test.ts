@@ -233,6 +233,52 @@ describe("runtimeApi", () => {
     }
   });
 
+  it("requests model registry from the health model registry endpoint", async () => {
+    const originalFetch = globalThis.fetch;
+    const calls: string[] = [];
+    globalThis.fetch = ((input: RequestInfo | URL) => {
+      calls.push(String(input));
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({
+            status: "ok",
+            checked_at: "2026-05-02T00:00:00Z",
+            artifact_family: "page_quality_model",
+            active_artifact_sha1: "active-sha",
+            rollback_artifact_sha1: "rollback-sha",
+            summary: {
+              record_count: 2,
+              current_count: 1,
+              rollback_count: 1,
+              archived_count: 0,
+              warning_count: 0,
+            },
+            records: [],
+            rollback_check: {
+              status: "ok",
+              dry_run_only: true,
+              checklist: [],
+              warnings: [],
+            },
+            invariants: {
+              does_not_execute_rollback: true,
+            },
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    }) as typeof fetch;
+
+    try {
+      const { runtimeApi } = await import("./api");
+      const registry = await runtimeApi.getModelRegistry();
+      expect(registry.artifact_family).toBe("page_quality_model");
+      expect(calls[0]).toContain("/health/model/registry");
+    } finally {
+      globalThis.fetch = originalFetch;
+    }
+  });
+
   it("requests model monitoring from the health model monitoring endpoint", async () => {
     const originalFetch = globalThis.fetch;
     const calls: string[] = [];

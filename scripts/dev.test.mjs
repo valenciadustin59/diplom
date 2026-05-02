@@ -84,5 +84,5 @@ test("buildCeleryWorkerArgs preserves platform-specific execution settings", () 
 });
 
 test("buildFrontendDevArgs binds Vite to loopback IPv4 for smoke checks", () => {
-  assert.deepEqual(buildFrontendDevArgs(), ["run", "dev", "--", "--host", "127.0.0.1"]);
+  assert.deepEqual(buildFrontendDevArgs(), ["run", "dev", "--", "--host", "127.0.0.1", "--port", "5173", "--strictPort"]);
 });

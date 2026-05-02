@@ -3,6 +3,8 @@ import { AuditReportPage } from "../pages/AuditReportPage";
 import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
+import { buildScoreConfidenceView } from "../lib/auditConfidence";
+import { resolveAuditModelArchive, type ActiveModelIdentity } from "../lib/auditArchive";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import type { RuntimeHealthModel } from "../lib/runtimeHealth";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
@@ -45,6 +47,7 @@ type AuditWorkspaceProps = {
   loading: boolean;
   error: string | null;
   activeTab: AuditTab;
+  activeModelIdentity?: ActiveModelIdentity;
   onTabChange: (tab: AuditTab) => void;
 };
 
@@ -60,6 +63,7 @@ type EmptyWorkspaceProps = {
   runtimeHealth: RuntimeHealthModel | null;
   loadingRuntime: boolean;
   runtimeError: string | null;
+  activeModelIdentity?: ActiveModelIdentity;
   onRefreshRuntime: () => void;
   onOpenRuntime: () => void;
   onRefreshRecent: () => void;
@@ -90,7 +94,7 @@ function getDomain(url: string): string {
 
 function formatImpact(value: number): string {
   const rounded = Math.round(value * 10) / 10;
-  return `${rounded > 0 ? "+" : ""}${rounded}`;
+  return `вес ${rounded > 0 ? "+" : ""}${rounded}`;
 }
 
 function getScoreFactorId(item: ScoreFactor, index: number): string {
@@ -102,29 +106,11 @@ function formatScoreFactorDetail(item: ScoreFactor): string {
     return item.detail;
   }
 
-  if (item.value !== undefined && item.value !== null) {
-    return `Значение фактора: ${item.value}`;
-  }
-
-  return "Фактор участвует в объяснении итоговой оценки.";
+  return "";
 }
 
-function formatScoreWeight(value: number | undefined): string | null {
-  if (typeof value !== "number" || Number.isNaN(value)) {
-    return null;
-  }
-  return `${Math.round(value * 100)}%`;
-}
-
-function getScoreMethodologyText(breakdown: ScoreBreakdown): string {
-  const ruleWeight = formatScoreWeight(breakdown.weights?.rule_weight);
-  const mlWeight = formatScoreWeight(breakdown.weights?.ml_weight);
-
-  if (ruleWeight && mlWeight) {
-    return `Итоговая оценка рассчитывается как гибрид объяснимых SEO- и смысловых сигналов с ML-калибровкой: ${ruleWeight} веса дают правила, ${mlWeight} — модель. Ниже показаны метрики, которые сильнее всего подняли или снизили результат.`;
-  }
-
-  return "Итоговая оценка рассчитывается по набору объяснимых SEO, смысловых, технических, коммерческих и доверительных сигналов с ML-калибровкой. Ниже показаны факторы, которые сильнее всего повлияли на результат.";
+function getScoreMethodologyText(): string {
+  return "Итоговый score рассчитывается по признакам самой страницы и её соответствию запросу. Конкуренты показываются отдельным контекстом ниже; карточки факторов не складываются в финальную оценку, а объясняют самые заметные причины результата.";
 }
 
 const interactionSignalLabels: Record<string, string> = {
@@ -151,82 +137,23 @@ function ScoreFactorList({
       <h4 className="score-factor-group__title">{title}</h4>
       {items.length > 0 ? (
         <div className="score-factor-list">
-          {items.map((item, index) => (
-            <article key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
-              <div className="score-factor__top">
-                <strong>{getHumanReadableLabel(item.label)}</strong>
-                <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
-              </div>
-              <p className="score-factor__detail">{formatScoreFactorDetail(item)}</p>
-            </article>
-          ))}
+          {items.map((item, index) => {
+            const detail = formatScoreFactorDetail(item);
+
+            return (
+              <article key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
+                <div className="score-factor__top">
+                  <strong>{getHumanReadableLabel(item.label)}</strong>
+                  <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
+                </div>
+                {detail ? <p className="score-factor__detail">{detail}</p> : null}
+              </article>
+            );
+          })}
         </div>
       ) : (
         <div className="empty-state">После завершения аудита здесь появятся объяснимые факторы оценки.</div>
       )}
-    </div>
-  );
-}
-
-function getModelInfoString(modelInfo: Record<string, unknown>, key: string): string | null {
-  const value = modelInfo[key];
-  return typeof value === "string" && value.trim() ? value : null;
-}
-
-function getModelInfoNumber(modelInfo: Record<string, unknown>, key: string): number | null {
-  const value = modelInfo[key];
-  return typeof value === "number" && Number.isFinite(value) ? value : null;
-}
-
-function getScoreModelMetric(modelInfo: Record<string, unknown>, key: string): number | null {
-  const metrics = modelInfo.metrics_summary;
-  if (!metrics || typeof metrics !== "object" || Array.isArray(metrics)) {
-    return null;
-  }
-  const value = (metrics as Record<string, unknown>)[key];
-  return typeof value === "number" && Number.isFinite(value) ? value : null;
-}
-
-function formatCompactNumber(value: number | null, digits = 3): string {
-  return value === null ? "—" : value.toFixed(digits).replace(/\.?0+$/, "");
-}
-
-function formatCompactPercent(value: number | null): string {
-  return value === null ? "—" : `${Math.round(value * 100)}%`;
-}
-
-function ScoreModelInfo({ modelInfo }: { modelInfo: Record<string, unknown> | undefined }) {
-  if (!modelInfo) {
-    return null;
-  }
-
-  const modelType = getModelInfoString(modelInfo, "model_type") ?? "модель не указана";
-  const schemaVersion = getModelInfoString(modelInfo, "model_schema_version") ?? "схема не указана";
-  const datasetVersion = getModelInfoString(modelInfo, "dataset_version") ?? "датасет не указан";
-  const artifactVersion = getModelInfoString(modelInfo, "artifact_version") ?? "artifact не указан";
-  const featureCount = getModelInfoNumber(modelInfo, "feature_count");
-  const datasetRows = getModelInfoNumber(modelInfo, "dataset_rows");
-  const top3 = getScoreModelMetric(modelInfo, "top_3_hit_rate");
-  const ndcg = getScoreModelMetric(modelInfo, "ndcg_at_10");
-  const mae = getScoreModelMetric(modelInfo, "mae");
-
-  return (
-    <div className="score-model-info">
-      <div className="score-model-info__summary">
-        <span className="eyebrow-pill">Активная модель score</span>
-        <strong>
-          {modelType} · {schemaVersion}
-        </strong>
-        <p>
-          {datasetVersion} · {datasetRows ?? "—"} строк · {featureCount ?? "—"} признаков
-        </p>
-      </div>
-      <div className="score-model-info__facts">
-        <span>Artifact: {artifactVersion}</span>
-        <span>Top-3: {formatCompactPercent(top3)}</span>
-        <span>NDCG@10: {formatCompactNumber(ndcg)}</span>
-        <span>MAE: {formatCompactNumber(mae)}</span>
-      </div>
     </div>
   );
 }
@@ -245,29 +172,20 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
   const positiveFactors = breakdown.positives ?? breakdown.top_positive_factors ?? [];
   const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
-  const methodology = getScoreMethodologyText(breakdown);
+  const methodology = getScoreMethodologyText();
 
   return (
     <Card
       title="Как формируется оценка"
-      subtitle="Итог складывается из объяснимых SEO- и смысловых сигналов и отдельной ML-калибровки."
+      subtitle="Короткая расшифровка результата без технических деталей модели."
     >
       <div className="score-breakdown">
         <p className="score-breakdown__methodology">{methodology}</p>
-        <ScoreModelInfo modelInfo={breakdown.model_info} />
 
         <div className="metric-strip metric-strip--comparison">
           <div className="metric-box">
             <span className="metric-box__label">Итоговая оценка</span>
             <strong className="metric-box__value">{breakdown.final_score}</strong>
-          </div>
-          <div className="metric-box">
-            <span className="metric-box__label">Оценка по правилам</span>
-            <strong className="metric-box__value">{breakdown.rule_score}</strong>
-          </div>
-          <div className="metric-box">
-            <span className="metric-box__label">ML-калибровка</span>
-            <strong className="metric-box__value">{breakdown.ml_score}</strong>
           </div>
         </div>
 
@@ -284,7 +202,7 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
         <div className="score-breakdown__grid">
           <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
-          <ScoreFactorList title="Что тянет оценку вниз" items={negativeFactors} tone="negative" />
+          <ScoreFactorList title="Что ограничивает оценку" items={negativeFactors} tone="negative" />
         </div>
       </div>
     </Card>
@@ -354,7 +272,7 @@ function AuditProgressBanner({ status }: { status: AuditStatus }) {
   const message =
     status === "queued"
       ? "Подготавливаем этапы анализа. Обычно первый статус меняется через несколько секунд."
-      : "Система загружает страницу, собирает конкурентов и пересчитывает итоговую оценку. Данные обновляются автоматически.";
+      : "Система загружает страницу, считает primary score и отдельно собирает конкурентов для сравнения и рекомендаций. Данные обновляются автоматически.";
 
   return (
     <div className="feedback-banner feedback-banner--info">
@@ -370,14 +288,31 @@ function OverviewPanel({
   recommendations,
   competitorScores,
   comparisonSummary,
+  activeModelIdentity,
 }: Pick<
   AuditWorkspaceProps,
-  "currentAudit" | "currentResults" | "recommendations" | "competitorScores" | "comparisonSummary"
+  "currentAudit" | "currentResults" | "recommendations" | "competitorScores" | "comparisonSummary" | "activeModelIdentity"
 >) {
   const topRecommendationItems = getTopRecommendationItems(recommendations, 3);
   const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
   const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
   const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
+  const scoreConfidence = buildScoreConfidenceView({
+    audit: currentAudit,
+    results: currentResults,
+    recommendations,
+    comparisonSummary,
+  });
+  const showDataQualityBadge = scoreConfidence.warningCount > 0 || scoreConfidence.errorCount > 0;
+  const archiveInfo = currentAudit
+    ? resolveAuditModelArchive({
+        status: currentAudit.status as AuditStatus,
+        score: currentResults?.score ?? currentAudit.score,
+        scoreBreakdown: currentResults?.score_breakdown ?? currentAudit.score_breakdown,
+        activeModel: activeModelIdentity,
+        createdAt: currentAudit.created_at,
+      })
+    : null;
 
   return (
     <div className="workspace-grid">
@@ -395,6 +330,11 @@ function OverviewPanel({
                 <span className="workspace-meta__item">Статус: {getAuditStatusLabel(currentAudit.status as AuditStatus)}</span>
                 <span className="workspace-meta__item">Запущен: {formatDate(currentAudit.created_at)}</span>
                 <span className="workspace-meta__item">Загрузка: {getFetchMethodLabel(currentResults?.target_fetch_method ?? currentAudit.target_fetch_method)}</span>
+                {showDataQualityBadge ? (
+                  <span className={`score-confidence__badge score-confidence__badge--${scoreConfidence.tone}`}>
+                    {scoreConfidence.compactLabel}
+                  </span>
+                ) : null}
               </div>
             ) : null}
           </div>
@@ -402,6 +342,13 @@ function OverviewPanel({
           <ScoreRing value={Math.round(comparisonSummary?.user_score ?? currentAudit?.score ?? 0)} />
         </div>
       </Card>
+
+      {archiveInfo?.isArchived ? (
+        <div className="feedback-banner feedback-banner--warning audit-archive-banner">
+          <strong>Архивный аудит</strong>
+          <div>Эта оценка рассчитана старой версией модели. Для актуального сравнения повторите аудит из истории.</div>
+        </div>
+      ) : null}
 
       <div className="metric-strip workspace-metric-strip">
         <div className="metric-box">
@@ -617,6 +564,7 @@ export function AuditWorkspace({
   loading,
   error,
   activeTab,
+  activeModelIdentity,
   onTabChange,
 }: AuditWorkspaceProps) {
   if (!currentAudit && loading) {
@@ -661,6 +609,7 @@ export function AuditWorkspace({
             recommendations={recommendations}
             competitorScores={competitorScores}
             comparisonSummary={comparisonSummary}
+            activeModelIdentity={activeModelIdentity}
           />
         ) : null}
 
@@ -732,6 +681,7 @@ export function EmptyWorkspace({
   runtimeHealth,
   loadingRuntime,
   runtimeError,
+  activeModelIdentity,
   onRefreshRuntime,
   onOpenRuntime,
   onRefreshRecent,
@@ -749,6 +699,7 @@ export function EmptyWorkspace({
         submitting={submitting}
         submissionError={submissionError}
         success={success}
+        activeModelIdentity={activeModelIdentity}
         onRefreshRecent={onRefreshRecent}
         onOpenRuntime={onOpenRuntime}
         onSelectAudit={onSelectAudit}

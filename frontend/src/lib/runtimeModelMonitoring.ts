@@ -178,19 +178,19 @@ function buildMonitoringSummaryMetrics(monitoring: RuntimeModelMonitoringRespons
       tone: monitoring.total_audits > 0 ? "ok" : "muted",
     },
     {
-      label: "С model_info",
+      label: "С данными score",
       value: formatCount(monitoring.audits_with_model_info),
-      note: "Аудиты, где score_breakdown сохранил metadata runtime-модели.",
+      note: "Аудиты, где сохранены сведения о расчёте score.",
       tone: monitoring.audits_with_model_info > 0 ? "ok" : "warning",
     },
     {
-      label: "Legacy/unknown",
+      label: "Старые записи",
       value: formatCount(monitoring.legacy_or_unknown_count),
-      note: "Старые записи без model_info учитываются отдельно.",
+      note: "Аудиты без новых сведений о расчёте учитываются отдельно.",
       tone: monitoring.legacy_or_unknown_count > 0 ? "warning" : "ok",
     },
     {
-      label: "Warnings/failures",
+      label: "Предупреждения/ошибки",
       value: `${formatCount(monitoring.warning_count)}/${formatCount(monitoring.failure_count)}`,
       note: "Аудиты с предупреждениями и ошибки в выбранном окне.",
       tone: monitoring.failure_count > 0 ? "error" : monitoring.warning_count > 0 ? "warning" : "ok",
@@ -277,16 +277,16 @@ export function buildModelMonitoringView(
     tone: getMonitoringTone(status),
     empty,
     shortLabel: empty
-      ? "Нет аудитов с model_info"
-      : `model_info в ${formatCount(monitoring.audits_with_model_info)} из ${formatCount(monitoring.total_audits)} аудитов`,
+      ? "Нет новых данных по score"
+      : `Данные score в ${formatCount(monitoring.audits_with_model_info)} из ${formatCount(monitoring.total_audits)} аудитов`,
     detail: empty
-      ? "За выбранное окно нет завершённых audit-записей с runtime model_info; legacy/unknown строки показаны отдельно и не ломают мониторинг."
+      ? "За выбранное окно нет завершённых аудит-записей с новыми сведениями о расчёте; старые строки учтены отдельно."
       : activeAuditCount > 0
-        ? `Активная модель найдена в ${formatCount(activeAuditCount)} recent-аудитах; score и competitor coverage рассчитаны по этим записям.`
-        : "Recent-аудиты содержат model_info, но активный artifact из /health/model среди них пока не найден.",
+        ? `Активная версия встретилась в ${formatCount(activeAuditCount)} recent-аудитах; score и покрытие конкурентов рассчитаны по этим записям.`
+        : "Recent-аудиты содержат сведения о расчёте, но активная версия среди них пока не найдена.",
     checkedAtLabel: formatCheckedAt(monitoring.checked_at),
     windowLabel: `${monitoring.window_days} дней · с ${formatCheckedAt(monitoring.window_start)}`,
-    legacyLabel: `${formatCount(monitoring.legacy_or_unknown_count)} legacy/unknown`,
+    legacyLabel: `${formatCount(monitoring.legacy_or_unknown_count)} старых записей`,
     statusCountsLabel: buildStatusCountsLabel(monitoring.status_counts),
     summaryMetrics: buildMonitoringSummaryMetrics(monitoring),
     scoreMetrics: buildMonitoringScoreMetrics(monitoring),

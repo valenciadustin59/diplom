@@ -363,6 +363,49 @@ def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
     assert any(deviation["code"] == "serp_relative_gap_score" for deviation in competitor_gap_group["deviations"])
 
 
+def test_competitor_deviation_priority_uses_metric_importance():
+    recommendations = generate_recommendations(
+        page_features={
+            "title_present": 1,
+            "query_in_title": 1,
+            "h1_count": 1,
+            "query_in_text": 1,
+            "keyword_coverage_ratio": 0.78,
+            "semantic_similarity": 0.42,
+            "intent_alignment_score": 0.7,
+            "text_length_chars": 2600,
+            "text_to_html_ratio": 0.2,
+            "link_count": 1,
+            "image_count": 0,
+        },
+        page_score=70.0,
+        competitor_pages_features=[
+            {
+                "semantic_similarity": 0.88,
+                "keyword_coverage_ratio": 0.82,
+                "intent_alignment_score": 0.75,
+                "text_to_html_ratio": 0.22,
+                "link_count": 12,
+                "image_count": 6,
+            },
+            {
+                "semantic_similarity": 0.86,
+                "keyword_coverage_ratio": 0.8,
+                "intent_alignment_score": 0.74,
+                "text_to_html_ratio": 0.2,
+                "link_count": 10,
+                "image_count": 4,
+            },
+        ],
+    )
+
+    semantic_group = get_group(recommendations, "semantic_intent")
+    deviations_by_code = {deviation["code"]: deviation for deviation in semantic_group["deviations"]}
+
+    assert deviations_by_code["semantic_similarity"]["priority"] == "high"
+    assert deviations_by_code["image_count"]["priority"] == "low"
+
+
 def test_normalize_recommendations_payload_converts_legacy_list():
     legacy_payload = [
         {

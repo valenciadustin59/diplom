@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_db_session
 from app.health import build_liveness_payload, build_metrics_payload, build_readiness_payload
+from app.model_registry import build_model_registry_payload
 from app.model_monitoring import DEFAULT_WINDOW_DAYS, MAX_WINDOW_DAYS, MIN_WINDOW_DAYS, build_model_monitoring_payload
 from app.model_status import build_model_status_payload
 
@@ -36,6 +37,11 @@ def metrics_endpoint() -> dict[str, Any]:
 @router.get("/health/model")
 def model_status_endpoint() -> dict[str, Any]:
     return build_model_status_payload()
+
+
+@router.get("/health/model/registry")
+def model_registry_endpoint() -> dict[str, Any]:
+    return build_model_registry_payload()
 
 
 @router.get("/health/model/monitoring")

@@ -135,6 +135,22 @@ export type AuditStatusResponse = {
   error_message: string | null;
 };
 
+export type AuditListItemResponse = Pick<
+  AuditStatusResponse,
+  | "id"
+  | "query"
+  | "target_url"
+  | "top_n"
+  | "status"
+  | "created_at"
+  | "updated_at"
+  | "score"
+  | "score_breakdown"
+  | "target_fetch_status"
+  | "warnings"
+  | "error_message"
+>;
+
 export type AuditResultsResponse = {
   audit_id: string;
   status: AuditStatus;
@@ -392,6 +408,88 @@ export type RuntimeModelStatusResponse = {
   rollback: Record<string, unknown>;
 };
 
+export type RuntimeModelRegistryRecordRole = "current" | "rollback" | "archived" | string;
+export type RuntimeModelRegistryRecordStatus = "ok" | "warning" | "error" | string;
+export type RuntimeRollbackChecklistStatus = "pass" | "warn" | "info" | string;
+
+export type RuntimeModelRegistryWarning = {
+  code: string;
+  message: string;
+  path?: string | null;
+};
+
+export type RuntimeModelRegistryEvidence = {
+  publish_report_path?: string | null;
+  publish_report_markdown_path?: string | null;
+  shadow_report_path?: string | null;
+  smoke_summary_path?: string | null;
+  golden_replay_report_path?: string | null;
+  golden_replay_report_markdown_path?: string | null;
+  golden_replay_decision?: string | null;
+  publish_action?: string | null;
+  publish_decision?: string | null;
+  selected_candidate?: string | null;
+  reason?: string | null;
+  rollback_source?: string | null;
+};
+
+export type RuntimeModelRegistryRecord = {
+  id: string;
+  role: RuntimeModelRegistryRecordRole;
+  status: RuntimeModelRegistryRecordStatus;
+  artifact_path: string | null;
+  artifact_sha1: string | null;
+  expected_artifact_sha1?: string | null;
+  artifact_sha1_matches?: boolean | null;
+  metadata_path: string | null;
+  metadata_sha1: string | null;
+  expected_metadata_sha1?: string | null;
+  metadata_sha1_matches?: boolean | null;
+  model: Record<string, unknown>;
+  dataset: Record<string, unknown>;
+  metrics_summary: Record<string, unknown>;
+  publish: Record<string, unknown>;
+  evidence: RuntimeModelRegistryEvidence;
+  warnings: RuntimeModelRegistryWarning[];
+};
+
+export type RuntimeRollbackChecklistItem = {
+  code: string;
+  status: RuntimeRollbackChecklistStatus;
+  label: string;
+  detail: string;
+  path?: string | null;
+};
+
+export type RuntimeModelRollbackCheck = {
+  status: RuntimeComponentStatus;
+  dry_run_only: boolean;
+  target_artifact_path?: string | null;
+  target_artifact_sha1?: string | null;
+  target_metadata_path?: string | null;
+  target_metadata_sha1?: string | null;
+  checklist: RuntimeRollbackChecklistItem[];
+  warnings: RuntimeRollbackChecklistItem[];
+};
+
+export type RuntimeModelRegistryResponse = {
+  status: RuntimeComponentStatus | "empty";
+  checked_at: string;
+  artifact_family: string;
+  active_artifact_sha1?: string | null;
+  rollback_artifact_sha1?: string | null;
+  summary: {
+    record_count: number;
+    current_count: number;
+    rollback_count: number;
+    archived_count: number;
+    warning_count: number;
+  };
+  records: RuntimeModelRegistryRecord[];
+  rollback_check: RuntimeModelRollbackCheck;
+  invariants: Record<string, unknown>;
+};
+
 export type RuntimeModelMonitoringScoreDistribution = {
   sample_size: number;
   average: number | null;
@@ -466,6 +564,7 @@ export type AuditSummary = {
   status: AuditStatus;
   createdAt: string;
   createdAtTimestamp: number | null;
+  scoreBreakdown: ScoreBreakdown | null;
 };
 
 export type CompetitorScore = {

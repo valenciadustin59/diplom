@@ -10,6 +10,8 @@ const frontendDir = path.join(rootDir, "frontend");
 const workerTopologyProfilesPath = path.join(backendDir, "app", "worker_topology_profiles.json");
 const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 const includeWorker = process.argv.includes("--with-worker");
+const frontendHost = "127.0.0.1";
+const frontendPort = Number(process.env.FRONTEND_PORT ?? 5173);
 const rawWorkerTopology = JSON.parse(readFileSync(workerTopologyProfilesPath, "utf8"));
 export const CELERY_WORKER_PROFILES = rawWorkerTopology.profiles.map((profile) => ({
   name: String(profile.name),
@@ -113,8 +115,8 @@ export function buildCeleryWorkerArgs(profileName) {
   return args;
 }
 
-export function buildFrontendDevArgs() {
-  return ["run", "dev", "--", "--host", "127.0.0.1"];
+export function buildFrontendDevArgs(port = 5173, host = "127.0.0.1") {
+  return ["run", "dev", "--", "--host", host, "--port", String(port), "--strictPort"];
 }
 
 function stopAll(code = 0) {
@@ -130,6 +132,12 @@ function stopAll(code = 0) {
   process.exit(code);
 }
 async function main() {
+  if (!(await isPortFree(frontendPort, frontendHost))) {
+    throw new Error(
+      `Frontend port ${frontendHost}:${frontendPort} is already in use. Stop the old dev server before running npm run dev:full.`,
+    );
+  }
+
   const backendPort = await findAvailablePort(8000);
   const apiUrl = `http://127.0.0.1:${backendPort}`;
   console.log("╨Ч╨░╨┐╤Г╤Б╨║ backend ╨╕ frontend ╨╛╨┤╨╜╨╛╨╣ ╨║╨╛╨╝╨░╨╜╨┤╨╛╨╣...");
@@ -142,7 +150,7 @@ async function main() {
     backendDir,
     buildBackendRuntimeEnv({ BACKEND_PORT: String(backendPort) }),
   );
-  runProcess("frontend", npmCommand, buildFrontendDevArgs(), frontendDir, {
+  runProcess("frontend", npmCommand, buildFrontendDevArgs(frontendPort, frontendHost), frontendDir, {
     VITE_API_URL: apiUrl,
   });
   if (includeWorker) {

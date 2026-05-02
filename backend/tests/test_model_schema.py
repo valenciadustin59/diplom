@@ -2,7 +2,7 @@ import csv
 from pathlib import Path
 from app.ml import FEATURE_COLUMNS, explain_score, load_saved_model, predict_score, train_quality_model
 from app.ml.dataset_builder import DATASET_COLUMNS
-from app.ml.model import load_model_artifact, save_model, train_model
+from app.ml.model import calculate_rule_score, load_model_artifact, save_model, train_model
 from app.features import INTENT_ALIGNMENT_FEATURE_COLUMNS, SERP_RELATIVE_FEATURE_COLUMNS, SNAPSHOT_AUXILIARY_FEATURE_COLUMNS
 from app.heavy_analysis import HEAVY_ANALYSIS_FEATURE_COLUMNS
 from app.ml.model_schema import get_model_feature_schema
@@ -90,6 +90,144 @@ def test_predict_score_accepts_legacy_v1_artifact(tmp_path):
     assert explanation["model_info"]["feature_count"] == len(FEATURE_COLUMNS)
     assert isinstance(score, float)
     assert 0.0 <= score <= 100.0
+
+
+def test_published_model_score_is_not_inflated_by_rule_layer(tmp_path):
+    model_path = tmp_path / "published-model.pkl"
+    features = {feature_name: 1.0 for feature_name in FEATURE_COLUMNS}
+    features.update(
+        {
+            "word_count": 1800,
+            "heading_count": 12,
+            "title_present": 1,
+            "title_length_quality": 1,
+            "meta_description_present": 1,
+            "meta_length_quality": 1,
+            "semantic_similarity": 0.9,
+            "keyword_coverage_ratio": 1,
+            "title_semantic_alignment": 0.9,
+            "heading_semantic_alignment": 0.9,
+            "content_depth_semantic_score": 0.9,
+            "semantic_content_richness": 0.9,
+            "keyword_balance_score": 1,
+            "conversion_signal_score": 1,
+            "query_prominence_score": 1,
+            "text_to_html_ratio": 0.25,
+            "unique_word_ratio": 0.9,
+        }
+    )
+    save_model(
+        model=train_model(n_samples=40, seed=11),
+        metrics={"rmse": 10.0},
+        model_path=model_path,
+        metadata={
+            "source": "local_dataset",
+            "dataset_version": "test-dataset",
+        },
+    )
+
+    explanation = explain_score(features, model_path=model_path)
+
+    assert explanation["weights"] == {"rule_weight": 0.0, "ml_weight": 1.0}
+    assert explanation["final_score"] == explanation["ml_score"]
+    assert 0.0 <= explanation["rule_score"] < 100.0
+    assert any(
+        factor.get("key") == "semantic_relevance" and float(factor.get("impact", 0.0)) < 0.0
+        for factor in explanation["top_negative_factors"]
+    )
+
+
+def test_rule_score_is_calibrated_instead_of_saturating_at_raw_impact_cap():
+    features = {
+        "word_count": 1621,
+        "heading_count": 12,
+        "title_present": 1,
+        "title_length_quality": 0.818182,
+        "meta_description_present": 1,
+        "meta_length_quality": 0.475862,
+        "semantic_similarity": 0.574954,
+        "keyword_coverage_ratio": 1,
+        "title_semantic_alignment": 0.3833,
+        "heading_semantic_alignment": 0.3833,
+        "content_depth_semantic_score": 0.574954,
+        "semantic_content_richness": 0.242439,
+        "keyword_balance_score": 0.992392,
+        "conversion_signal_score": 1,
+        "query_prominence_score": 0.8,
+        "text_to_html_ratio": 0.0951,
+        "unique_word_ratio": 0.4682,
+        "page_indexable": 1,
+        "canonical_present": 1,
+        "canonical_matches_final_url": 0,
+        "redirect_efficiency_score": 1,
+        "redirect_count": 0,
+        "url_hygiene_score": 1,
+        "technical_metadata_score": 1,
+        "commercial_signals_score": 1,
+        "trust_signals_score": 0.888889,
+        "contact_options_score": 0.6,
+        "intent_alignment_score": 0.782425,
+        "intent_is_local_commercial": 1,
+        "local_intent_alignment": 0.782425,
+        "intent_is_commercial": 1,
+        "commercial_intent_alignment": 0.743608,
+    }
+
+    rule_score, factors = calculate_rule_score(features)
+    raw_impact = sum(float(factor["impact"]) for factor in factors)
+
+    assert raw_impact > 100.0
+    assert 0.0 <= rule_score < 85.0
+
+
+def test_offer_readiness_does_not_require_price_on_the_audited_page():
+    features = {
+        "commercial_signals_score": 0.555556,
+        "phone_present": 1,
+        "address_present": 1,
+        "business_hours_present": 1,
+        "cta_present": 1,
+        "value_proposition_present": 1,
+        "price_present": 0,
+        "delivery_info_present": 0,
+        "payment_info_present": 0,
+    }
+
+    _, factors = calculate_rule_score(features)
+    offer_factor = next(factor for factor in factors if factor["key"] == "commercial_completeness")
+
+    assert offer_factor["label"] == "Offer and conversion completeness"
+    assert offer_factor["value"] == 1.0
+    assert offer_factor["impact"] == 6.5
+
+
+def test_text_volume_is_only_a_small_sufficiency_signal():
+    features = {
+        "word_count": 2400,
+        "semantic_similarity": 0.25,
+        "keyword_coverage_ratio": 0.2,
+        "title_present": 1,
+        "title_length_quality": 0.8,
+        "meta_description_present": 1,
+        "meta_length_quality": 0.8,
+        "heading_count": 4,
+        "title_semantic_alignment": 0.2,
+        "heading_semantic_alignment": 0.2,
+        "content_depth_semantic_score": 0.25,
+        "semantic_content_richness": 0.1,
+        "keyword_balance_score": 0.2,
+        "conversion_signal_score": 0.4,
+        "query_prominence_score": 0.2,
+        "text_to_html_ratio": 0.2,
+        "unique_word_ratio": 0.5,
+    }
+
+    _, factors = calculate_rule_score(features)
+    text_factor = next(factor for factor in factors if factor["key"] == "content_depth")
+
+    assert text_factor["label"] == "Text sufficiency"
+    assert text_factor["impact"] == 4.0
+    assert "не оценка качества" in str(text_factor["detail"])
 
 
 def test_model_schema_v3_combines_pre_competitor_feature_groups():

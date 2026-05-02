@@ -168,12 +168,26 @@ export function AuditReportPage({
         </div>
       </Card>
 
-      <Card title="Объяснение оценки и ML-калибровки" subtitle="Отчёт разделяет SEO-сигналы по правилам и ML-калибровку итоговой оценки.">
+      <Card
+        title="Доверие к score"
+        subtitle="Проверка полноты данных аудита: fetch, признаки, heavy analysis, конкуренты, рекомендации и metadata модели."
+      >
+        <MetricGrid items={report.scoreConfidence.metrics} />
+        <p className="report-section-note">{report.scoreConfidence.detail}</p>
+        <ul className="score-confidence__reasons" aria-label="Причины уверенности score в отчёте">
+          {report.scoreConfidence.reasons.map((reason) => (
+            <li key={reason.code} className={`score-confidence__reason score-confidence__reason--${reason.tone}`}>
+              <strong>{reason.label}</strong>
+              <span>{reason.detail}</span>
+            </li>
+          ))}
+        </ul>
+      </Card>
+
+      <Card title="Объяснение оценки" subtitle="Отчёт показывает итоговый score и понятные факторы, которые сильнее всего повлияли на результат.">
         <MetricGrid
           items={[
             { label: "Итоговая оценка", value: report.scoreBreakdown.finalScore },
-            { label: "Оценка по правилам", value: report.scoreBreakdown.ruleScore },
-            { label: "ML-калибровка", value: report.scoreBreakdown.mlScore },
             { label: "Статус", value: report.statusLabel },
           ]}
         />

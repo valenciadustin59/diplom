@@ -15,6 +15,7 @@ from app.schemas.audit import (
     AuditCreate,
     AuditEventRead,
     AuditEventTimelineRead,
+    AuditListItemRead,
     AuditTimelineDiagnosticsRead,
     AuditRead,
     AuditRecommendationsRead,
@@ -32,10 +33,10 @@ def _get_audit_or_404(db: Session, audit_id: str) -> Audit:
     return audit
 
 
-@router.get("/audits", response_model=list[AuditRead])
-def list_audits_endpoint(db: Session = Depends(get_db_session)) -> list[AuditRead]:
+@router.get("/audits", response_model=list[AuditListItemRead])
+def list_audits_endpoint(db: Session = Depends(get_db_session)) -> list[AuditListItemRead]:
     audits = db.scalars(select(Audit).order_by(Audit.created_at.desc())).all()
-    return [AuditRead.model_validate(audit) for audit in audits]
+    return [AuditListItemRead.model_validate(audit) for audit in audits]
 
 
 @router.post("/audits", response_model=AuditRead, status_code=status.HTTP_201_CREATED)

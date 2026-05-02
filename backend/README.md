@@ -240,6 +240,7 @@ Backend предоставляет health/runtime endpoint'ы:
 - `GET /health/ready` — готовность всего распределённого стека;
 - `GET /health/metrics` — диагностика очередей, воркеров и накопления задач;
 - `GET /health/model` — активный runtime ML artifact, dataset/schema metadata, guardrail metrics и rollback availability.
+- `GET /health/model/registry` — read-only model release history: current/rollback artifacts, versioned metadata sidecars, evidence paths, SHA1 guardrails и rollback dry-run checklist.
 - `GET /health/model/monitoring` — post-publish usage monitoring по `Audit.score_breakdown.model_info`: artifact/schema/dataset usage, score distribution, competitor coverage, warnings/failures и legacy/unknown audit rows.
 
 Если один из обязательных компонентов не готов, `GET /health/ready` возвращает `503`.
@@ -264,7 +265,7 @@ Readiness проверяет SearXNG через лёгкий endpoint `/healthz`
 - `GET /audits` — список аудитов;
 - `POST /audits` — создать новый аудит;
 - `GET /audits/{audit_id}` — текущее состояние аудита;
-- `GET /audits/{audit_id}/results` — результат, features и score breakdown;
+- `GET /audits/{audit_id}/results` — результат, features и score breakdown; D42 frontend confidence layer использует эти поля для data-quality UX без нового backend endpoint;
 - `GET /audits/{audit_id}/recommendations` — рекомендации;
 - `GET /audits/{audit_id}/events` — timeline событий аудита;
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
@@ -354,6 +355,7 @@ Benchmark работает поверх production API surface:
 - `GET /audits/{audit_id}/events/diagnostics`
 - `GET /health/metrics`
 - `GET /health/model`
+- `GET /health/model/registry`
 
 После `D20` markdown/JSON report дополнительно содержит section `Topology Profiles`: configured worker profiles, queue-to-profile map, per-profile queue pressure counts и флаг изоляции heavy analyzers.
 
@@ -412,7 +414,7 @@ cd E:\codexPROJ\diplom\backend
 - `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md` — активная локальная копия `D37` для unified `v3` feature model, hybrid candidate и top-3 guardrail.
 - `../plans/d38-controlled-publish-catboost-v3.md` — выполненный план D38 controlled publish CatBoost v3.
 - `../plans/d39-model-status-interface.md` — выполненный план D39 model status in interface.
-- `../plans/d40-d44-post-publish-model-operations.md` — активный backlog D40-D44 после публикации модели.
+- `../plans/d40-d44-post-publish-model-operations.md` — завершённый локально backlog D40-D44 после публикации модели.
 - `docs/ml_methodology_appendix.md` — ML methodology appendix.
 
 ## D16: SERP-Relative And Intent-Aware Features
@@ -538,6 +540,10 @@ D40 / GitHub `#59` реализован локально как model usage moni
 
 D41 / GitHub `#60` реализован локально как deterministic golden replay guardrails. Backend module `app/ml/golden_replay.py` генерирует `artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` и `.md`; default mode evaluates stored evidence offline, normalizes volatile `/health/model.checked_at` to the fixed report timestamp, includes rollback SHA1, and does not publish/rollback/mutate `artifacts/page_quality_model.pkl`. Default evidence uses one D38 smoke artifact plus explicit synthetic stored fixtures for the remaining catalog items; pass `--evidence-json` to evaluate externally captured snapshots.
 
-D42-D44 / GitHub `#61-#63` остаются открытой частью post-publish operations wave: score confidence/data-quality UX, model registry/rollback evidence UI, and non-production second-pass competitor-aware score experiment. Локальный backlog: `../plans/d40-d44-post-publish-model-operations.md`.
+D42 / GitHub `#61` реализован локально как frontend score confidence/data-quality UX layer поверх существующих audit payloads. Backend endpoint или scoring formula не менялись: UI использует `GET /audits/{audit_id}`, `GET /audits/{audit_id}/results` и `GET /audits/{audit_id}/recommendations`, чтобы классифицировать confidence как `high` / `medium` / `low` / `unknown`.
 
-Если GitHub Issues недоступны из текущего окружения, D40-D44 backlog и D37-D41 evidence находятся в `../plans/d40-d44-post-publish-model-operations.md`, `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend шаг — D42 score confidence/data-quality UX, если пользователь не выбрал другую задачу; не повторять rollout.
+D43 / GitHub `#62` реализован локально как read-only model registry and rollback evidence UI. Backend module `app/model_registry.py` exposes `GET /health/model/registry`, scans `artifacts/versions/` plus public metadata sidecars and evidence reports, normalizes current CatBoost v3 and rollback v1 RandomForest records, and warns rather than crashes when rollback metadata/SHA1 is missing. The endpoint and UI do not execute rollback or mutate `artifacts/page_quality_model.pkl`; actual rollback remains a controlled engineering operation.
+
+D44 / GitHub `#63` реализован локально как non-production second-pass competitor-aware score experiment. Backend modules `app/ml/second_pass.py` and `app/ml/second_pass_experiment.py` define the two-stage score contract, split-safe SERP-relative enrichment and offline candidate evaluation. Evidence: `artifacts/ranking-benchmarks/dataset-v3-d44/second-pass-experiment-report.json` and `.md`; non-production candidate: `artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl` plus `.metadata.json`. Decision: `do_not_continue_without_more_evidence` because top-3 and NDCG@10 regressed despite a tiny MAE improvement. D44 does not change runtime scoring or mutate `artifacts/page_quality_model.pkl`.
+
+Если GitHub Issues недоступны из текущего окружения, D40-D44 backlog и D37-D44 evidence находятся в `../plans/d40-d44-post-publish-model-operations.md`, `../plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `../plans/d38-controlled-publish-catboost-v3.md` и `../plans/d39-model-status-interface.md`; `../plans/d32-d36-model-productization.md` и `../plans/d27-d31-final-model-training.md` использовать как историческое evidence по завершённым волнам. Следующий backend-heavy шаг нужно выбирать отдельно; не повторять rollout без явной новой задачи.

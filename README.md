@@ -125,7 +125,11 @@ D40 / GitHub `#59` реализован локально как post-publish mod
 
 D41 / GitHub `#60` реализован локально как deterministic golden query replay guardrails. Команда `cd backend && .venv\Scripts\python.exe -m app.ml.golden_replay --output-dir artifacts/ranking-benchmarks/dataset-v3-d41` формирует JSON/Markdown evidence без live network, publish или rollback; volatile `/health/model.checked_at` нормализуется к фиксированному report timestamp. Default evidence использует один D38 smoke artifact и явно помеченные synthetic stored fixtures для остальных golden items. Evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d41/golden-replay-report.json` и `.md`; текущий decision `passed`, `3/3` golden items passed, `21/21` guardrails passed.
 
-D42-D44 / GitHub `#61-#63` остаются открытой частью post-publish operations wave. Локальная копия backlog: `plans/d40-d44-post-publish-model-operations.md`. Остались: `D42` score confidence/data-quality UX, `D43` model registry and rollback evidence UI, `D44` non-production second-pass competitor-aware score experiment with `serp_relative` features. Начинать следующую реализацию лучше с `D42`, если пользователь не выбрал другую задачу.
+D42 / GitHub `#61` реализован локально как score confidence/data-quality UX layer. Frontend helper `frontend/src/lib/auditConfidence.ts` классифицирует уверенность score как `high` / `medium` / `low` / `unknown` по существующим audit payloads: fetch status/method, feature schema, heavy analysis, competitor coverage, recommendations, `score_breakdown.model_info`, warnings и failure context. UI показывает компактный бейдж и reason list в обзоре аудита, а вкладка `Отчёт`, Markdown export и HTML/printable export включают те же confidence metrics. D42 не меняет numeric score formula, backend scoring pipeline или `backend/artifacts/page_quality_model.pkl`.
+
+D43 / GitHub `#62` реализован локально как read-only model registry and rollback evidence UI. Backend endpoint `GET /health/model/registry` сканирует active alias, `backend/artifacts/versions/`, public metadata sidecars и evidence reports, показывает текущий CatBoost v3, rollback v1 RandomForest, SHA1, publish/smoke report paths и rollback guardrail warnings. Frontend показывает это в существующем экране `Стек` как `Model registry и rollback evidence` с dry-run checklist; UI не выполняет rollback, а actual rollback остаётся controlled engineering operation.
+
+D44 / GitHub `#63` реализован локально как non-production second-pass competitor-aware score experiment. Локальная копия backlog: `plans/d40-d44-post-publish-model-operations.md`. Evidence: `backend/artifacts/ranking-benchmarks/dataset-v3-d44/second-pass-experiment-report.json` и `.md`; candidate artifact `backend/artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl` помечен non-production и не заменяет active runtime model.
 
 ### Distributed foundation `D1-D12`
 
@@ -227,6 +231,7 @@ Invoke-RestMethod -Uri "http://127.0.0.1:8000/health/metrics"
 - `GET /health/ready` может вернуть `503`, если распределённый стек не готов.
 - `GET /health/metrics` показывает накопление задач в очередях, нагрузку очередей, активность воркеров и алерты рабочего стека.
 - `GET /health/model` показывает активный runtime ML artifact, dataset/schema metadata, guardrail metrics и rollback availability.
+- `GET /health/model/registry` показывает read-only release history: current/rollback artifacts, versioned metadata sidecars, publish/smoke evidence paths, SHA1 и rollback dry-run checklist.
 - `GET /health/model/monitoring` показывает recent usage опубликованной модели: coverage `model_info`, score distribution, competitor coverage, warnings/failures и legacy/unknown audit rows.
 - Локальный `GET /health/metrics` может показывать `degraded`, если в SQLite остались старые audit rows со статусом `processing`; для фактической готовности нового запуска сначала смотрите `GET /health/ready` и покрытие очередей воркерами.
 
@@ -330,6 +335,7 @@ cd E:\codexPROJ\diplom\backend
 - `GET /health/ready` — готовность распределённого стека.
 - `GET /health/metrics` — диагностика очередей, воркеров и накопления задач.
 - `GET /health/model` — активная runtime ML-модель и её publish/rollback metadata.
+- `GET /health/model/registry` — read-only model registry, release history и rollback evidence checklist.
 - `GET /health/model/monitoring` — recent model usage monitoring over audit `score_breakdown.model_info`.
 
 ### Audits
@@ -337,7 +343,7 @@ cd E:\codexPROJ\diplom\backend
 - `GET /audits` — список аудитов.
 - `POST /audits` — создать новый аудит.
 - `GET /audits/{audit_id}` — текущее состояние аудита.
-- `GET /audits/{audit_id}/results` — результат и score breakdown.
+- `GET /audits/{audit_id}/results` — результат и score breakdown; frontend D42 дополнительно строит UX-уверенность score из этих полей без нового backend endpoint.
 - `GET /audits/{audit_id}/recommendations` — рекомендации.
 - `GET /audits/{audit_id}/events` — timeline событий.
 - `GET /audits/{audit_id}/events/diagnostics` — диагностика critical path и fan-out.
@@ -504,4 +510,8 @@ cd E:\codexPROJ\diplom\backend
   --output data\dataset_versions\dataset-v2\manifest.json
 ```
 
-Волна `D32-D36` завершена локально: D36 зафиксировал controlled keep-reference/no-publish decision, rollback/reference evidence и product smoke verification без замены production artifact. D37 реализован локально в `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`: v3 dataset/candidates/shadow guardrails доказали publishable `pointwise_catboost`. D38 реализован локально в `plans/d38-controlled-publish-catboost-v3.md`: CatBoost v3 опубликован в production alias `backend/artifacts/page_quality_model.pkl`, rollback artifact сохранён, product smoke passed. D39 реализован локально в `plans/d39-model-status-interface.md`: active model status выведен в `/health/model`, stack UI, score breakdown и audit report/export. D40/D41 реализованы локально в `plans/d40-d44-post-publish-model-operations.md`: model monitoring добавлен в `/health/model/monitoring` и экран `Стек`, golden replay evidence хранится в `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`. Активный backlog после D41: D42-D44 из `plans/d40-d44-post-publish-model-operations.md` / GitHub `#61-#63`. Исторические планы `plans/d32-d36-model-productization.md` и `plans/d27-d31-final-model-training.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.
+Волна `D32-D36` завершена локально: D36 зафиксировал controlled keep-reference/no-publish decision, rollback/reference evidence и product smoke verification без замены production artifact. D37 реализован локально в `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`: v3 dataset/candidates/shadow guardrails доказали publishable `pointwise_catboost`. D38 реализован локально в `plans/d38-controlled-publish-catboost-v3.md`: CatBoost v3 опубликован в production alias `backend/artifacts/page_quality_model.pkl`, rollback artifact сохранён, product smoke passed. D39 реализован локально в `plans/d39-model-status-interface.md`: active model status выведен в `/health/model`, stack UI, score breakdown и audit report/export.
+
+D40-D44 реализованы локально в `plans/d40-d44-post-publish-model-operations.md`: model monitoring добавлен в `/health/model/monitoring` и экран `Стек`, golden replay evidence хранится в `backend/artifacts/ranking-benchmarks/dataset-v3-d41/`, audit UX показывает score confidence/data-quality reason list без изменения модели, `/health/model/registry` и stack UI показывают current/rollback release evidence без выполнения rollback, а D44 добавляет offline second-pass experiment с `serp_relative` features.
+
+D44 decision: `do_not_continue_without_more_evidence`. Second-pass CatBoost candidate slightly improves MAE but regresses top-3 and NDCG@10, so no publish/rollout should be started from D44 without a new explicit evidence task. Исторические планы `plans/d32-d36-model-productization.md` и `plans/d27-d31-final-model-training.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, эти планы и `AGENTS.md` считать актуальным backlog source of truth.

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { auditsApi, ApiError } from "../api/api";
 import type {
   AuditCreatePayload,
+  AuditListItemResponse,
   AuditResultsResponse,
   AuditStatus,
   AuditStatusResponse,
@@ -43,7 +44,7 @@ function getCreatedAtTimestamp(value: string): number | null {
   return date.getTime();
 }
 
-function mapSummary(audit: AuditStatusResponse): AuditSummary {
+function mapSummary(audit: AuditListItemResponse): AuditSummary {
   return {
     id: audit.id,
     domain: getDomainFromUrl(audit.target_url),
@@ -54,6 +55,7 @@ function mapSummary(audit: AuditStatusResponse): AuditSummary {
     status: audit.status,
     createdAt: formatCreatedAt(audit.created_at),
     createdAtTimestamp: getCreatedAtTimestamp(audit.created_at),
+    scoreBreakdown: audit.score_breakdown,
   };
 }
 

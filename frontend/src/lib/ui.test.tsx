@@ -178,6 +178,122 @@ const runtimeTopology = {
   ],
 };
 
+const runtimeModelRegistry = {
+  status: "ok",
+  checked_at: "2026-05-02T00:00:00Z",
+  artifact_family: "page_quality_model",
+  active_artifact_sha1: "29c4b29455f795a535da94b2c6f36ef603d003eb",
+  rollback_artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+  summary: {
+    record_count: 2,
+    current_count: 1,
+    rollback_count: 1,
+    archived_count: 0,
+    warning_count: 0,
+  },
+  records: [
+    {
+      id: "current:dataset-v3-d37-20260501200434",
+      role: "current",
+      status: "ok",
+      artifact_path: "artifacts/page_quality_model.pkl",
+      artifact_sha1: "29c4b29455f795a535da94b2c6f36ef603d003eb",
+      metadata_path: "artifacts/page_quality_model.metadata.json",
+      metadata_sha1: "metadata-sha-current",
+      model: {
+        model_type: "CatBoostRegressor",
+        model_schema_version: "v3",
+        feature_count: 148,
+        artifact_version: "dataset-v3-d37-20260501200434",
+        published_at: "2026-05-01T20:04:34Z",
+      },
+      dataset: {
+        dataset_version: "dataset-v3-d37",
+        rows_count: 885,
+        queries_count: 99,
+      },
+      metrics_summary: {
+        top_3_hit_rate: 0.95,
+        ndcg_at_10: 0.945929,
+      },
+      publish: {
+        selected_candidate: "pointwise_catboost",
+        publish_recommendation: "publish_candidate",
+      },
+      evidence: {
+        publish_report_path: "artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json",
+        publish_report_markdown_path: "artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.md",
+        shadow_report_path: "artifacts/ranking-benchmarks/dataset-v3-d37-shadow/shadow-benchmark-guardrails-report.json",
+        smoke_summary_path: "../output/runtime-smoke/d38-smoke-summary.json",
+      },
+      warnings: [],
+    },
+    {
+      id: "rollback:ru_commercial_dataset-20260421-primary-20260421174901",
+      role: "rollback",
+      status: "ok",
+      artifact_path: "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl",
+      artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+      metadata_path: "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+      metadata_sha1: "metadata-sha-rollback",
+      model: {
+        model_type: "RandomForestRegressor",
+        model_schema_version: "v1",
+        feature_count: 59,
+        artifact_version: "ru_commercial_dataset-20260421-primary-20260421174901",
+        published_at: "2026-04-21T17:49:01Z",
+      },
+      dataset: {
+        dataset_version: "ru_commercial_dataset-20260421-primary",
+        rows_count: 436,
+        queries_count: 47,
+      },
+      metrics_summary: {
+        top_3_hit_rate: 0.9,
+        ndcg_at_10: 0.844962,
+      },
+      publish: {
+        publish_action: "rollback_reference",
+      },
+      evidence: {
+        publish_report_path: "artifacts/ranking-benchmarks/dataset-v3-d37-d38/controlled-publish-report.json",
+        rollback_source: "controlled_publish_rollback_reference",
+      },
+      warnings: [],
+    },
+  ],
+  rollback_check: {
+    status: "ok",
+    dry_run_only: true,
+    target_artifact_path: "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl",
+    target_artifact_sha1: "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+    target_metadata_path:
+      "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+    target_metadata_sha1: "metadata-sha-rollback",
+    checklist: [
+      {
+        code: "dry_run_only",
+        status: "info",
+        label: "Rollback is read-only in the product UI.",
+        detail: "The UI exposes evidence and checklist state only; actual rollback remains an engineering operation.",
+      },
+      {
+        code: "rollback_metadata_present",
+        status: "pass",
+        label: "Rollback metadata sidecar exists.",
+        detail: "The public metadata sidecar keeps dataset, schema and model evidence visible after rollback.",
+        path: "artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+      },
+    ],
+    warnings: [],
+  },
+  invariants: {
+    dry_run_only: true,
+    does_not_execute_rollback: true,
+    does_not_mutate_model_artifacts: true,
+  },
+};
+
 const runtimeWorkspaceProps = {
   runtimeHealth: buildRuntimeHealthModel({
     live: {
@@ -359,6 +475,7 @@ const runtimeWorkspaceProps = {
         model_sha1: "rollback-sha",
       },
     },
+    modelRegistry: runtimeModelRegistry,
     modelMonitoring: {
       status: "ok",
       checked_at: "2026-05-02T00:00:00Z",
@@ -656,7 +773,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Стек");
   });
 
-  it("renders history records returned by the API without hiding stale in-flight rows", () => {
+  it("renders current in-flight history records returned by the API", () => {
     const markup = renderToStaticMarkup(
       <EmptyWorkspace
         {...emptyWorkspaceBaseProps}
@@ -671,8 +788,9 @@ describe("AuditWorkspace", () => {
             topN: 10,
             score: 0,
             status: "processing",
-            createdAt: "1 янв. 2026 г., 10:00",
-            createdAtTimestamp: 0,
+            createdAt: "2 мая 2026 г., 10:00",
+            createdAtTimestamp: Date.UTC(2026, 4, 2, 10, 0, 0),
+            scoreBreakdown: null,
           },
         ]}
       />,
@@ -686,7 +804,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Повторить аудит");
     expect(markup).toContain("Скрыть локально");
     expect(markup).toContain("Скрытые локально");
-    expect(markup).toContain("Зависший/устаревший");
+    expect(markup).toContain("Архивные");
     expect(markup).toContain("Открыть стек");
     expect(markup).not.toContain("Загружаем историю аудитов");
   });
@@ -763,9 +881,87 @@ describe("AuditWorkspace", () => {
     );
 
     expect(markup).toContain("Смысловое соответствие");
-    expect(markup).toContain("Коммерческая полнота");
-    expect(markup).toContain("Активная модель score");
-    expect(markup).toContain("dataset-v3-d37");
+    expect(markup).toContain("Оффер и запись/заявка");
+    expect(markup).toContain("Короткая расшифровка результата без технических деталей модели.");
+    expect(markup).toContain("не складываются в финальную оценку");
+    expect(markup).toContain("вес -3.5");
+    expect(markup).not.toContain("Активная модель score");
+    expect(markup).not.toContain("dataset-v3-d37");
+    expect(markup).not.toContain("Значение фактора");
+    expect(markup).not.toContain("Доверие к score");
+  });
+
+  it("renders score confidence warnings for incomplete audit data", () => {
+    const longWarning =
+      "Очень длинное предупреждение о неполном конкурентном покрытии, которое должно переноситься внутри карточки доверия к score без поломки узкой раскладки.";
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          status: "completed_with_warnings",
+          score: 58,
+          feature_schema_version: null,
+          heavy_analysis: null,
+          warnings: [longWarning],
+          comparison_summary: {
+            user_score: 58,
+            competitors_average_score: 0,
+            score_difference: 0,
+            competitors_count: 3,
+            competitors_found: 3,
+            competitors_analyzed: 0,
+            competitors_failed: 3,
+          },
+        })}
+        currentResults={createResults({
+          status: "completed_with_warnings",
+          score: 58,
+          feature_schema_version: null,
+          heavy_analysis: null,
+          target_fetch_status: "success",
+          target_fetch_method: "browser",
+          warnings: [longWarning],
+          score_breakdown: {
+            final_score: 58,
+            rule_score: 55,
+            ml_score: 61,
+          },
+          comparison_summary: {
+            user_score: 58,
+            competitors_average_score: 0,
+            score_difference: 0,
+            competitors_count: 3,
+            competitors_found: 3,
+            competitors_analyzed: 0,
+            competitors_failed: 3,
+          },
+        })}
+        recommendations={null}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={{
+          user_score: 58,
+          competitors_average_score: 0,
+          score_difference: 0,
+          competitors_count: 3,
+          competitors_found: 3,
+          competitors_analyzed: 0,
+          competitors_failed: 3,
+        }}
+        auditStatus="completed_with_warnings"
+        loading={false}
+        error={null}
+        activeTab="overview"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Данные: частичные");
+    expect(markup).toContain(longWarning);
+    expect(markup).toContain("score-confidence__badge--warning");
+    expect(markup).not.toContain("Доверие к score");
   });
 
   it("renders audit report dashboard with export actions and runtime evidence", () => {
@@ -778,6 +974,8 @@ describe("AuditWorkspace", () => {
           feature_schema_version: "v2",
           query_intent: { label: "commercial", confidence: 0.8 },
           heavy_analysis: { summary: "ok" },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
           comparison_summary: {
             user_score: 72.4,
             competitors_average_score: 78.2,
@@ -793,6 +991,8 @@ describe("AuditWorkspace", () => {
             status_code: 200,
             fetch_method: "http",
           },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
           heavy_analysis: { summary: "ok" },
           query_intent: { label: "commercial", confidence: 0.8 },
           features: {
@@ -863,6 +1063,8 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Отчёт аудита");
     expect(markup).toContain("Скачать Markdown");
+    expect(markup).toContain("Доверие к score");
+    expect(markup).toContain("Высокая уверенность");
     expect(markup).toContain("SEO-сигналы");
     expect(markup).toContain("Статус модели");
     expect(markup).toContain("CatBoostRegressor");
@@ -965,13 +1167,13 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Рабочий стек не готов");
     expect(markup).toContain("audits.heavy_analysis");
     expect(markup).toContain("Активная модель");
-    expect(markup).toContain("CatBoostRegressor");
+    expect(markup).toContain("Оценка качества страницы");
     expect(markup).toContain("dataset-v3-d37");
     expect(markup).toContain("Проверено:");
     expect(markup).toContain("Открыть стек");
   });
 
-  it("renders full stack model monitoring usage", () => {
+  it("does not render model monitoring noise in the stack UI", () => {
     const markup = renderToStaticMarkup(
       <RuntimeStatusPage
         model={runtimeWorkspaceProps.runtimeHealth}
@@ -981,18 +1183,38 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Мониторинг ML-модели");
-    expect(markup).toContain("Использование штатно");
-    expect(markup).toContain("model_info в 2 из 3 аудитов");
-    expect(markup).toContain("Legacy/unknown");
-    expect(markup).toContain("CatBoostRegressor · v3");
-    expect(markup).toContain("dataset-v3-d37-20260501200434");
-    expect(markup).toContain("3/4 проанализировано");
-    expect(markup).toContain("Score активной модели");
-    expect(markup).toContain("Покрытие конкурентов");
+    expect(markup).not.toContain("Мониторинг расчёта score");
+    expect(markup).not.toContain("Данные score в 2 из 3 аудитов");
+    expect(markup).not.toContain("Score активной модели");
+    expect(markup).not.toContain("Покрытие конкурентов");
+    expect(markup).not.toContain("RandomForestRegressor");
+    expect(markup).not.toContain("dataset-v3-d37-20260501200434");
   });
 
-  it("renders model monitoring empty state", () => {
+  it("renders model principles instead of rollback registry history", () => {
+    const markup = renderToStaticMarkup(
+      <RuntimeStatusPage
+        model={runtimeWorkspaceProps.runtimeHealth}
+        loading={false}
+        error={null}
+        onRefresh={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Как работает модель оценки");
+    expect(markup).toContain("Главные принципы расчёта score");
+    expect(markup).toContain("Понимает запрос");
+    expect(markup).toContain("Проверяет качество страницы");
+    expect(markup).toContain("Добавляет контекст выдачи");
+    expect(markup).toContain("Даёт score и рекомендации");
+    expect(markup).toContain("Признаки");
+    expect(markup).toContain("148");
+    expect(markup).not.toContain("Model registry и rollback evidence");
+    expect(markup).not.toContain("RandomForestRegressor");
+    expect(markup).not.toContain("Выполнить rollback");
+  });
+
+  it("keeps model monitoring empty state hidden from the stack UI", () => {
     const runtimeHealth = runtimeWorkspaceProps.runtimeHealth;
     const markup = renderToStaticMarkup(
       <RuntimeStatusPage
@@ -1005,8 +1227,8 @@ describe("AuditWorkspace", () => {
                 statusLabel: "Нет runtime-данных",
                 tone: "muted",
                 empty: true,
-                shortLabel: "Нет аудитов с model_info",
-                detail: "За выбранное окно нет завершённых audit-записей с runtime model_info.",
+                shortLabel: "Нет новых данных по score",
+                detail: "За выбранное окно нет завершённых аудит-записей с новыми сведениями о расчёте.",
                 usageRows: [],
               }
             : null,
@@ -1017,9 +1239,9 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Нет аудитов с model_info");
-    expect(markup).toContain("Нет завершённых recent-аудитов с runtime model_info");
-    expect(markup).toContain("legacy/unknown");
+    expect(markup).not.toContain("Нет новых данных по score");
+    expect(markup).not.toContain("Нет завершённых recent-аудитов с новыми сведениями о расчёте score");
+    expect(markup).not.toContain("старые записи уже учтены отдельно");
   });
 
   it("renders report recommendations from the stored audit data when endpoint data is absent", () => {
