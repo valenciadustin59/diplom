@@ -1,7 +1,7 @@
 {
   "artifact_version": "dataset-v5-20260502151507",
   "artifact_family": "page_quality_model",
-  "artifact_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+  "artifact_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\versions\\page_quality_model--dataset-v5-20260502151507.pkl",
   "model_type": "CatBoostRegressor",
   "model_schema_version": "v3",
   "source": "local_dataset",

@@ -214,6 +214,12 @@ _V5_SHADOW_DECISION_EXPORTS = {
     "build_d54_validation_rows",
     "run_d54_shadow_decision",
 }
+_V5_COMPETITIVENESS_PUBLISH_EXPORTS = {
+    "DEFAULT_D58_OUTPUT_DIR",
+    "DEFAULT_D58_REPORT_JSON_PATH",
+    "run_d58_competitiveness_publish",
+    "update_d58_verification",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -278,6 +284,9 @@ def __getattr__(name: str):
     if name in _V5_SHADOW_DECISION_EXPORTS:
         module = importlib.import_module("app.ml.v5_shadow_decision")
         return getattr(module, name)
+    if name in _V5_COMPETITIVENESS_PUBLISH_EXPORTS:
+        module = importlib.import_module("app.ml.v5_competitiveness_publish")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -316,4 +325,5 @@ __all__ = [
     *_V5_FEATURE_POLICY_EXPORTS,
     *_V5_CANDIDATE_TRAINING_EXPORTS,
     *_V5_SHADOW_DECISION_EXPORTS,
+    *_V5_COMPETITIVENESS_PUBLISH_EXPORTS,
 ]
