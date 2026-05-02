@@ -1,0 +1,218 @@
+{
+  "generated_at": "2026-05-02T10:55:47.407520+00:00",
+  "task": "D45",
+  "dataset_version": "dataset-v4",
+  "source_dataset_version": "dataset-v3-d37",
+  "source_dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v3-d37\\dataset.csv",
+  "labels_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v4\\expert_labels.csv",
+  "labeler": "d45_seo_weighted_rubric_v1",
+  "label_source": "seo_weighted_rubric_v4",
+  "label_semantics": {
+    "deterministic_expert_rubric": true,
+    "human_labels": false,
+    "description": "Labels are generated from a documented SEO-weighted rubric, not from manual human annotation."
+  },
+  "rows_count": 885,
+  "labels_count": 885,
+  "queries_count": 99,
+  "domains_count": 568,
+  "rubric_weights": {
+    "critical": {
+      "total": 0.55,
+      "features": {
+        "crawl_indexability": 0.18,
+        "canonical_consistency": 0.12,
+        "title_query_fit": 0.19,
+        "heading_query_fit": 0.1,
+        "semantic_query_fit": 0.25,
+        "intent_alignment": 0.16
+      }
+    },
+    "important": {
+      "total": 0.3,
+      "features": {
+        "technical_metadata": 0.22,
+        "page_structure": 0.16,
+        "commercial_trust": 0.24,
+        "offer_and_conversion": 0.2,
+        "mobile_render_performance": 0.18
+      }
+    },
+    "supporting": {
+      "total": 0.1,
+      "features": {
+        "text_sufficiency": 0.25,
+        "media_and_internal_navigation": 0.2,
+        "secondary_commercial_details": 0.35,
+        "structured_support": 0.2
+      }
+    },
+    "rank_prior": {
+      "total": 0.05,
+      "features": {
+        "serp_rank_prior": 1.0
+      }
+    }
+  },
+  "score_distribution": {
+    "min": 13.7,
+    "p25": 66.2,
+    "mean": 68.1355,
+    "p50": 72.2,
+    "p75": 76.3,
+    "max": 87.2
+  },
+  "quality_band_distribution": {
+    "blocked": 77,
+    "high": 2,
+    "low": 102,
+    "medium": 704
+  },
+  "cap_reason_distribution": {
+    "critical_http_status_not_ok": 57,
+    "critical_intent_alignment_weak": 76,
+    "critical_page_not_indexable": 75,
+    "critical_query_title_fit_weak": 297,
+    "critical_semantic_query_fit_weak": 77,
+    "critical_title_missing": 18,
+    "important_canonical_points_elsewhere": 25,
+    "important_commercial_trust_weak": 27,
+    "important_extremely_thin_content": 64,
+    "supporting_text_insufficient": 14
+  },
+  "page_type_distribution": {
+    "article": 20,
+    "category": 26,
+    "content": 224,
+    "homepage": 517,
+    "product": 98
+  },
+  "label_examples": {
+    "high": [
+      {
+        "query": "как выбрать пластиковые окна",
+        "url": "https://okonti.ru/articles/kak-vybrat-plastikovye-okna-v-kvartiru/",
+        "score": 87.2,
+        "quality_band": "high",
+        "cap_reasons": "",
+        "top_positive_factors": "crawl_indexability:1.000|canonical_consistency:1.000|text_sufficiency:1.000|media_and_internal_navigation:1.000",
+        "top_negative_factors": "page_structure:0.501|structured_support:0.515|mobile_render_performance:0.589"
+      },
+      {
+        "query": "как выбрать пластиковые окна",
+        "url": "https://geometrium-school.ru/blog/kak-vybrat-plastikovye-okna/",
+        "score": 86.0,
+        "quality_band": "high",
+        "cap_reasons": "",
+        "top_positive_factors": "crawl_indexability:1.000|canonical_consistency:1.000|text_sufficiency:1.000|media_and_internal_navigation:1.000",
+        "top_negative_factors": "page_structure:0.481|structured_support:0.595|mobile_render_performance:0.618"
+      }
+    ],
+    "medium": [
+      {
+        "query": "натяжные потолки Москва",
+        "url": "https://www.potolkoff.ru/",
+        "score": 72.0,
+        "quality_band": "medium",
+        "cap_reasons": "",
+        "top_positive_factors": "crawl_indexability:1.000|canonical_consistency:1.000|commercial_trust:1.000|text_sufficiency:1.000",
+        "top_negative_factors": "page_structure:0.175|title_query_fit:0.352"
+      },
+      {
+        "query": "натяжные потолки цена Самара",
+        "url": "https://www.potolkoffsam.ru/",
+        "score": 72.0,
+        "quality_band": "medium",
+        "cap_reasons": "",
+        "top_positive_factors": "crawl_indexability:1.000|canonical_consistency:1.000|text_sufficiency:1.000|technical_metadata:0.951",
+        "top_negative_factors": "heading_query_fit:0.285|title_query_fit:0.396"
+      },
+      {
+        "query": "пластиковые окна Самара",
+        "url": "https://oknazavr.ru/samara/plastikovye-okna/",
+        "score": 72.0,
+        "quality_band": "medium",
+        "cap_reasons": "",
+        "top_positive_factors": "crawl_indexability:1.000|offer_and_conversion:1.000|text_sufficiency:1.000|media_and_internal_navigation:1.000",
+        "top_negative_factors": "canonical_consistency:0.150|structured_support:0.375|title_query_fit:0.449"
+      }
+    ],
+    "low": [
+      {
+        "query": "входные двери цена Нижний Новгород",
+        "url": "https://2gis.ru/n_novgorod/search/Входные двери/rubricId/9972",
+        "score": 13.7,
+        "quality_band": "blocked",
+        "cap_reasons": "critical_http_status_not_ok|critical_intent_alignment_weak|critical_page_not_indexable|critical_query_title_fit_weak|critical_semantic_query_fit_weak|critical_title_missing|important_commercial_trust_weak|important_extremely_thin_content",
+        "top_positive_factors": "mobile_render_performance:0.514|technical_metadata:0.260|offer_and_conversion:0.220",
+        "top_negative_factors": "title_query_fit:0.000|secondary_commercial_details:0.000|structured_support:0.000|media_and_internal_navigation:0.005"
+      },
+      {
+        "query": "кухни на заказ цена Новосибирск",
+        "url": "http://mebelin-nsk.ru/kukhni",
+        "score": 13.9,
+        "quality_band": "blocked",
+        "cap_reasons": "critical_http_status_not_ok|critical_intent_alignment_weak|critical_page_not_indexable|critical_query_title_fit_weak|critical_semantic_query_fit_weak|important_commercial_trust_weak|important_extremely_thin_content",
+        "top_positive_factors": "mobile_render_performance:0.520|page_structure:0.380|technical_metadata:0.340",
+        "top_negative_factors": "commercial_trust:0.000|offer_and_conversion:0.000|media_and_internal_navigation:0.000|secondary_commercial_details:0.000"
+      },
+      {
+        "query": "ремонт квартир Казань",
+        "url": "https://profi.ru/geo-kzn/remont/remont-kvartir/",
+        "score": 14.3,
+        "quality_band": "blocked",
+        "cap_reasons": "critical_http_status_not_ok|critical_intent_alignment_weak|critical_page_not_indexable|critical_query_title_fit_weak|critical_semantic_query_fit_weak|critical_title_missing|important_commercial_trust_weak|important_extremely_thin_content",
+        "top_positive_factors": "technical_metadata:0.629|mobile_render_performance:0.594|crawl_indexability:0.230",
+        "top_negative_factors": "title_query_fit:0.000|heading_query_fit:0.000|commercial_trust:0.000|offer_and_conversion:0.000"
+      }
+    ],
+    "capped": [
+      {
+        "query": "входные двери Санкт-Петербург",
+        "url": "https://spb.lemanapro.ru/catalogue/vhodnye-dveri/",
+        "score": 32.4,
+        "quality_band": "blocked",
+        "cap_reasons": "critical_http_status_not_ok|critical_intent_alignment_weak|critical_page_not_indexable|critical_query_title_fit_weak|critical_semantic_query_fit_weak|important_extremely_thin_content",
+        "top_positive_factors": "commercial_trust:0.720|technical_metadata:0.640|mobile_render_performance:0.589",
+        "top_negative_factors": "secondary_commercial_details:0.000|structured_support:0.000|media_and_internal_navigation:0.005|semantic_query_fit:0.036"
+      },
+      {
+        "query": "входные двери Самара",
+        "url": "https://samara.lemanapro.ru/catalogue/vhodnye-dveri/",
+        "score": 32.4,
+        "quality_band": "blocked",
+        "cap_reasons": "critical_http_status_not_ok|critical_intent_alignment_weak|critical_page_not_indexable|critical_query_title_fit_weak|critical_semantic_query_fit_weak|important_extremely_thin_content",
+        "top_positive_factors": "commercial_trust:0.720|technical_metadata:0.640|mobile_render_performance:0.589",
+        "top_negative_factors": "secondary_commercial_details:0.000|structured_support:0.000|media_and_internal_navigation:0.005|semantic_query_fit:0.025"
+      },
+      {
+        "query": "шкафы-купе Самара",
+        "url": "https://samara.lemanapro.ru/catalogue/shkafy-kupe/",
+        "score": 32.4,
+        "quality_band": "blocked",
+        "cap_reasons": "critical_http_status_not_ok|critical_intent_alignment_weak|critical_page_not_indexable|critical_query_title_fit_weak|critical_semantic_query_fit_weak|important_extremely_thin_content",
+        "top_positive_factors": "commercial_trust:0.720|technical_metadata:0.640|mobile_render_performance:0.589",
+        "top_negative_factors": "secondary_commercial_details:0.000|structured_support:0.000|media_and_internal_navigation:0.005|semantic_query_fit:0.007"
+      }
+    ]
+  },
+  "split_validation": {
+    "source_split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v3-d37\\split.json",
+    "passed": true,
+    "split_mode": "group_by_query",
+    "label_queries_count": 99,
+    "train_queries_count": 79,
+    "validation_queries_count": 20,
+    "query_overlap_count": 0,
+    "query_overlap": [],
+    "uncovered_label_queries_count": 0,
+    "uncovered_label_queries": [],
+    "extra_split_queries_count": 0,
+    "extra_split_queries": []
+  },
+  "production_artifact": {
+    "path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+    "sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "changed_by_d45": false
+  }
+}

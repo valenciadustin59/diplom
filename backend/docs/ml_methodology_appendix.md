@@ -414,11 +414,37 @@ D38 report evidence is stored in:
 
 Runtime smoke evidence is stored in `output/runtime-smoke/d38-smoke-summary.json`. The smoke audit `690504f2-ca2f-42a6-a012-e622438437a7` completed with `2/2` competitors analyzed, `11` recommendations, four workers, missing queues `[]`, and runtime model metadata `dataset-v3-d37` / schema `v3` / `CatBoostRegressor`.
 
+## D45 SEO-weighted label evidence
+
+D45 starts a new retraining wave by creating deterministic expert-rubric labels for `dataset-v4`.
+
+These labels are not human labels. They are generated from a documented SEO-weighted rubric that intentionally gives more influence to factors that affect search ranking and page interpretation:
+
+- critical factors: crawl/indexability, HTTP status, canonical consistency, title/query fit, heading/query fit, semantic/query fit and intent alignment;
+- important factors: technical metadata, page structure, commercial trust, offer/conversion path and mobile/render/performance signals;
+- supporting factors: text sufficiency, media/internal navigation, secondary commercial details and structured support;
+- rank prior: a small stabilizing signal, not the dominant target.
+
+D45 evidence is stored in:
+
+- `backend/app/ml/seo_weighted_labels.py`
+- `backend/data/dataset_versions/dataset-v4/expert_labels.csv`
+- `backend/data/dataset_versions/dataset-v4/d45-seo-weighted-label-report.json`
+- `backend/data/dataset_versions/dataset-v4/d45-seo-weighted-label-report.md`
+- `backend/data/dataset_versions/dataset-v4/d45-split-validation.json`
+
+The generated sidecar contains `885` labels across `99` queries. Split validation reuses the `dataset-v3-d37` query-group split and passes with `79` train queries, `20` validation queries and `0` train/validation query overlap.
+
+The D45 score distribution is deliberately bounded away from automatic perfect scores: min `13.7`, p25 `66.2`, mean `68.1355`, p50 `72.2`, p75 `76.3`, max `87.2`. Quality bands: `high=2`, `medium=704`, `low=102`, `blocked=77`.
+
+D45 does not publish or mutate a runtime model. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
 - `backend/app/ml/dataset_builder.py`
 - `backend/app/ml/v3_dataset.py`
+- `backend/app/ml/seo_weighted_labels.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`

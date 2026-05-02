@@ -1,0 +1,14 @@
+{
+  "source_split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v3-d37\\split.json",
+  "passed": true,
+  "split_mode": "group_by_query",
+  "label_queries_count": 99,
+  "train_queries_count": 79,
+  "validation_queries_count": 20,
+  "query_overlap_count": 0,
+  "query_overlap": [],
+  "uncovered_label_queries_count": 0,
+  "uncovered_label_queries": [],
+  "extra_split_queries_count": 0,
+  "extra_split_queries": []
+}

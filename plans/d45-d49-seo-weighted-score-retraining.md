@@ -15,6 +15,8 @@ This wave should produce a new candidate model trained on an SEO-weighted target
 
 ## D45 / GitHub #64: SEO-Weighted Label Rubric v4
 
+Status: completed locally.
+
 Goal: create a deterministic expert-rubric label layer that encodes SEO impact weighting explicitly.
 
 Scope:
@@ -30,10 +32,24 @@ Scope:
 
 Acceptance criteria:
 
-- A JSON/CSV label evidence bundle exists for `dataset-v4`.
-- The label report lists weights per feature group and examples of high/medium/low impact decisions.
-- Query-group split remains leakage-safe.
-- No production artifact is changed.
+- Completed: a JSON/CSV label evidence bundle exists for `dataset-v4`.
+- Completed: the label report lists weights per feature group and examples of high/medium/low impact decisions.
+- Completed: query-group split remains leakage-safe.
+- Completed: no production artifact is changed.
+
+Evidence:
+
+- Generator: `backend/app/ml/seo_weighted_labels.py`.
+- Label sidecar: `backend/data/dataset_versions/dataset-v4/expert_labels.csv`.
+- Reports: `backend/data/dataset_versions/dataset-v4/d45-seo-weighted-label-report.json` and `.md`.
+- Split validation: `backend/data/dataset_versions/dataset-v4/d45-split-validation.json`.
+- Generated labels: `885` rows across `99` queries.
+- Split validation: `group_by_query`, `79` train queries, `20` validation queries, `0` query overlap.
+- Score distribution: min `13.7`, p25 `66.2`, mean `68.1355`, p50 `72.2`, p75 `76.3`, max `87.2`.
+- Quality bands: `high=2`, `medium=704`, `low=102`, `blocked=77`.
+- Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
+Important wording: D45 labels are deterministic expert-rubric labels, not human labels.
 
 ## D46 / GitHub #65: Dataset v4 Build And Validation
 
