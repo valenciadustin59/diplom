@@ -19,8 +19,11 @@ DeviationTrend = Literal["behind", "ahead", "aligned"]
 PRIORITY_ORDER: dict[RecommendationPriority, int] = {"high": 0, "medium": 1, "low": 2}
 MIN_COMPETITORS_FOR_RECOMMENDATIONS = 2
 RECOMMENDATIONS_SCHEMA_VERSION = "recommendations-v2"
+PRIORITY_MODEL_VERSION = "competitor-gap-priority-v1"
 HIGH_PRIORITY_IMPORTANCE_THRESHOLD = 0.55
 MEDIUM_PRIORITY_IMPORTANCE_THRESHOLD = 0.3
+HIGH_PRIORITY_SCORE_THRESHOLD = 42.0
+MEDIUM_PRIORITY_SCORE_THRESHOLD = 18.0
 
 TECHNICAL_FEATURE_KEYS = {
     "page_indexable",
@@ -198,6 +201,69 @@ METRIC_IMPORTANCE: dict[str, float] = {
     "serp_relative_percentile": 0.7,
     "page_score": 0.8,
     "competitors_average_score": 0.8,
+}
+
+METRIC_CONTROLLABILITY: dict[str, float] = {
+    "page_indexable": 0.9,
+    "robots_noindex": 0.9,
+    "http_status_ok": 0.75,
+    "canonical_present": 0.9,
+    "canonical_matches_final_url": 0.9,
+    "redirect_count": 0.75,
+    "viewport_present": 0.9,
+    "lang_present": 0.75,
+    "hreflang_present": 0.45,
+    "url_has_query_parameters": 0.8,
+    "url_parameter_count": 0.8,
+    "url_depth": 0.4,
+    "title_present": 0.95,
+    "query_in_title": 0.95,
+    "meta_description_present": 0.75,
+    "h1_count": 0.8,
+    "query_in_text": 0.9,
+    "keyword_coverage_ratio": 0.9,
+    "semantic_similarity": 0.9,
+    "title_semantic_alignment": 0.9,
+    "heading_semantic_alignment": 0.85,
+    "content_depth_semantic_score": 0.85,
+    "semantic_content_richness": 0.8,
+    "keyword_balance_score": 0.8,
+    "text_length_chars": 0.35,
+    "text_to_html_ratio": 0.6,
+    "link_count": 0.35,
+    "image_count": 0.3,
+    "form_count": 0.8,
+    "phone_present": 0.8,
+    "email_present": 0.7,
+    "address_present": 0.75,
+    "business_hours_present": 0.65,
+    "price_present": 0.55,
+    "delivery_info_present": 0.55,
+    "payment_info_present": 0.55,
+    "cta_present": 0.85,
+    "messenger_present": 0.45,
+    "value_proposition_present": 0.8,
+    "reviews_present": 0.5,
+    "rating_present": 0.45,
+    "warranty_info_present": 0.55,
+    "returns_info_present": 0.55,
+    "legal_requisites_present": 0.8,
+    "company_identity_present": 0.8,
+    "contact_options_score": 0.8,
+    "commercial_signals_score": 0.75,
+    "trust_signals_score": 0.75,
+    "intent_alignment_score": 0.9,
+    "local_intent_alignment": 0.85,
+    "commercial_intent_alignment": 0.85,
+    "informational_intent_alignment": 0.75,
+    "serp_relative_gap_score": 0.75,
+    "relative_gap_to_top_semantic_relevance": 0.85,
+    "relative_gap_to_top_intent_alignment": 0.85,
+    "relative_gap_to_top_technical_seo": 0.75,
+    "relative_gap_to_top_commercial_trust": 0.7,
+    "serp_relative_percentile": 0.65,
+    "page_score": 0.75,
+    "competitors_average_score": 0.75,
 }
 
 CRITICAL_PRIORITY_CODES = {
@@ -599,6 +665,68 @@ def average_competitor_features(
     return {key: value / count for key, value in totals.items()}
 
 
+def _safe_float(value: object) -> float | None:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def _quantile(values: list[float], ratio: float) -> float:
+    if not values:
+        return 0.0
+    if len(values) == 1:
+        return values[0]
+    ordered = sorted(values)
+    index = (len(ordered) - 1) * max(0.0, min(1.0, ratio))
+    lower = int(index)
+    upper = min(lower + 1, len(ordered) - 1)
+    fraction = index - lower
+    return ordered[lower] + (ordered[upper] - ordered[lower]) * fraction
+
+
+def competitor_benchmark_features(
+    competitor_pages_features: list[dict[str, float | int]],
+) -> dict[str, float]:
+    """Build a strong-but-realistic competitor benchmark for recommendations."""
+    if not competitor_pages_features:
+        return {}
+
+    values_by_key: dict[str, list[float]] = {}
+    for features in competitor_pages_features:
+        for key, value in features.items():
+            numeric_value = _safe_float(value)
+            if numeric_value is None:
+                continue
+            values_by_key.setdefault(key, []).append(numeric_value)
+
+    benchmarks: dict[str, float] = {}
+    for key, values in values_by_key.items():
+        spec = METRIC_SPECS.get(key)
+        if spec is None:
+            benchmarks[key] = sum(values) / float(len(values))
+        elif spec.direction == "higher_is_better":
+            benchmarks[key] = _quantile(values, 0.75)
+        else:
+            benchmarks[key] = _quantile(values, 0.25)
+    return benchmarks
+
+
+def _average_competitor_page_score(competitor_pages_features: list[dict[str, float | int]]) -> float | None:
+    scores: list[float] = []
+    for features in competitor_pages_features:
+        for key in ("_page_score", "page_score", "score"):
+            if key not in features:
+                continue
+            value = _safe_float(features.get(key))
+            if value is not None:
+                scores.append(value)
+                break
+    if not scores:
+        return None
+    return sum(scores) / float(len(scores))
+
+
 def _has_feature(features: dict[str, float | int], key: str) -> bool:
     return key in features
 
@@ -623,6 +751,10 @@ def _priority_rank(priority: RecommendationPriority) -> int:
 
 def _metric_importance(metric_code: str) -> float:
     return max(0.0, min(1.0, METRIC_IMPORTANCE.get(metric_code, 0.5)))
+
+
+def _metric_controllability(metric_code: str) -> float:
+    return max(0.0, min(1.0, METRIC_CONTROLLABILITY.get(metric_code, 0.65)))
 
 
 def _template_importance(metric_codes: tuple[str, ...]) -> float:
@@ -697,7 +829,7 @@ def _build_item_evidence(
         if current_value is None or spec is None:
             continue
 
-        benchmark_label = spec.benchmark_label or "Среднее по конкурентам"
+        benchmark_label = spec.benchmark_label or "Конкурентный ориентир"
         evidence.append(
             {
                 "label": spec.label,
@@ -716,15 +848,88 @@ def _gap_ratio(gap: float, benchmark_value: float, spec: MetricSpec) -> float:
     return gap / scale if scale else gap
 
 
-def _priority_from_gap(metric_code: str, gap: float, benchmark_value: float, spec: MetricSpec) -> RecommendationPriority:
-    ratio = _gap_ratio(gap, benchmark_value, spec)
+def _priority_reason(
+    *,
+    metric_code: str,
+    gap_ratio: float,
+    importance: float,
+    controllability: float,
+) -> str:
+    spec = METRIC_SPECS.get(metric_code)
+    label = spec.label if spec is not None else _humanize_code(metric_code)
+    return (
+        f"Приоритет учитывает конкурентный разрыв по фактору «{label}»: "
+        f"{round(max(gap_ratio, 0.0) * 100.0)}%, SEO-вес {round(importance * 100.0)}% "
+        f"и управляемость правки {round(controllability * 100.0)}%."
+    )
+
+
+def _priority_assessment_from_gap(
+    metric_code: str,
+    gap: float,
+    benchmark_value: float,
+    spec: MetricSpec,
+) -> dict[str, object]:
+    ratio = max(_gap_ratio(gap, benchmark_value, spec), 0.0)
     importance = _metric_importance(metric_code)
-    severity = min(max(ratio, 0.0), 1.5) * importance
-    if severity >= HIGH_PRIORITY_IMPORTANCE_THRESHOLD or (importance >= 0.85 and ratio >= 0.35):
-        return "high"
-    if severity >= MEDIUM_PRIORITY_IMPORTANCE_THRESHOLD or (importance >= 0.7 and ratio >= 0.18):
-        return "medium"
-    return "low"
+    controllability = _metric_controllability(metric_code)
+    bounded_ratio = min(ratio, 1.0)
+    weighted_factor = (importance * 0.72) + (controllability * 0.28)
+    priority_score = round(min(100.0, bounded_ratio * weighted_factor * 100.0), 4)
+    if priority_score >= HIGH_PRIORITY_SCORE_THRESHOLD or (
+        importance >= 0.85 and controllability >= 0.65 and ratio >= 0.35
+    ):
+        priority: RecommendationPriority = "high"
+    elif priority_score >= MEDIUM_PRIORITY_SCORE_THRESHOLD or (
+        importance >= 0.7 and controllability >= 0.55 and ratio >= 0.18
+    ):
+        priority = "medium"
+    else:
+        priority = "low"
+
+    priority = _cap_priority_by_importance(priority, importance)
+    return {
+        "priority": priority,
+        "priority_score": priority_score,
+        "priority_reason": _priority_reason(
+            metric_code=metric_code,
+            gap_ratio=ratio,
+            importance=importance,
+            controllability=controllability,
+        ),
+        "priority_model_version": PRIORITY_MODEL_VERSION,
+        "gap_ratio": round(ratio, 4),
+        "metric_importance": round(importance, 4),
+        "metric_controllability": round(controllability, 4),
+    }
+
+
+def _base_priority_assessment(
+    code: str,
+    priority: RecommendationPriority,
+    metric_codes: tuple[str, ...],
+) -> dict[str, object]:
+    importance = _template_importance(metric_codes)
+    base_score = {"high": 78.0, "medium": 46.0, "low": 18.0}[priority]
+    if code in CRITICAL_PRIORITY_CODES:
+        base_score = max(base_score, 86.0)
+        reason = "Критический фактор напрямую влияет на конкурентность страницы по запросу."
+    else:
+        reason = "Приоритет основан на SEO-весе связанных факторов; явный конкурентный разрыв по метрике не найден."
+    priority_score = round(min(100.0, base_score * ((importance * 0.7) + 0.3)), 4)
+    return {
+        "priority": priority,
+        "priority_score": priority_score,
+        "priority_reason": reason,
+        "priority_model_version": PRIORITY_MODEL_VERSION,
+        "gap_ratio": None,
+        "metric_importance": round(importance, 4),
+        "metric_controllability": None,
+    }
+
+
+def _priority_from_gap(metric_code: str, gap: float, benchmark_value: float, spec: MetricSpec) -> RecommendationPriority:
+    return _priority_assessment_from_gap(metric_code, gap, benchmark_value, spec)["priority"]  # type: ignore[return-value]
 
 
 def _cap_priority_by_importance(priority: RecommendationPriority, importance: float) -> RecommendationPriority:
@@ -735,15 +940,15 @@ def _cap_priority_by_importance(priority: RecommendationPriority, importance: fl
     return priority
 
 
-def _strongest_gap_priority(
+def _strongest_gap_priority_assessment(
     metric_codes: tuple[str, ...],
     *,
     page_features: dict[str, float | int],
     competitor_avg_features: dict[str, float],
     page_score: float | None,
     competitors_average_score: float | None,
-) -> RecommendationPriority | None:
-    priorities: list[RecommendationPriority] = []
+) -> dict[str, object] | None:
+    assessments: list[dict[str, object]] = []
     for metric_code in metric_codes:
         current_value, benchmark_value, spec = _resolve_metric_values(
             metric_code,
@@ -757,10 +962,72 @@ def _strongest_gap_priority(
         performance_gap = benchmark_value - current_value if spec.direction == "higher_is_better" else current_value - benchmark_value
         if performance_gap <= spec.tolerance:
             continue
-        priorities.append(_priority_from_gap(metric_code, performance_gap, benchmark_value, spec))
-    if not priorities:
+        assessments.append(_priority_assessment_from_gap(metric_code, performance_gap, benchmark_value, spec))
+    if not assessments:
         return None
-    return min(priorities, key=_priority_rank)
+    return min(
+        assessments,
+        key=lambda assessment: (
+            _priority_rank(_normalize_priority(assessment.get("priority"))),
+            -float(assessment.get("priority_score") or 0.0),
+        ),
+    )
+
+
+def _strongest_gap_priority(
+    metric_codes: tuple[str, ...],
+    *,
+    page_features: dict[str, float | int],
+    competitor_avg_features: dict[str, float],
+    page_score: float | None,
+    competitors_average_score: float | None,
+) -> RecommendationPriority | None:
+    assessment = _strongest_gap_priority_assessment(
+        metric_codes,
+        page_features=page_features,
+        competitor_avg_features=competitor_avg_features,
+        page_score=page_score,
+        competitors_average_score=competitors_average_score,
+    )
+    if assessment is None:
+        return None
+    return _normalize_priority(assessment.get("priority"))
+
+
+def _resolve_recommendation_priority_details(
+    code: str,
+    base_priority: RecommendationPriority,
+    metric_codes: tuple[str, ...],
+    *,
+    page_features: dict[str, float | int],
+    competitor_avg_features: dict[str, float],
+    page_score: float | None,
+    competitors_average_score: float | None,
+) -> dict[str, object]:
+    if code in CRITICAL_PRIORITY_CODES:
+        base_priority = "high"
+
+    importance = _template_importance(metric_codes)
+    priority = _cap_priority_by_importance(base_priority, importance)
+    base_assessment = _base_priority_assessment(code, priority, metric_codes)
+    gap_assessment = _strongest_gap_priority_assessment(
+        metric_codes,
+        page_features=page_features,
+        competitor_avg_features=competitor_avg_features,
+        page_score=page_score,
+        competitors_average_score=competitors_average_score,
+    )
+    if gap_assessment is None:
+        return base_assessment
+
+    gap_priority = _normalize_priority(gap_assessment.get("priority"))
+    if _priority_rank(gap_priority) < _priority_rank(priority):
+        return gap_assessment
+    if _priority_rank(gap_priority) == _priority_rank(priority) and float(gap_assessment.get("priority_score") or 0.0) >= float(
+        base_assessment.get("priority_score") or 0.0
+    ):
+        return gap_assessment
+    return base_assessment
 
 
 def _resolve_recommendation_priority(
@@ -773,21 +1040,16 @@ def _resolve_recommendation_priority(
     page_score: float | None,
     competitors_average_score: float | None,
 ) -> RecommendationPriority:
-    if code in CRITICAL_PRIORITY_CODES:
-        return "high"
-
-    importance = _template_importance(metric_codes)
-    priority = _cap_priority_by_importance(base_priority, importance)
-    gap_priority = _strongest_gap_priority(
+    assessment = _resolve_recommendation_priority_details(
+        code,
+        base_priority,
         metric_codes,
         page_features=page_features,
         competitor_avg_features=competitor_avg_features,
         page_score=page_score,
         competitors_average_score=competitors_average_score,
     )
-    if gap_priority is not None and _priority_rank(gap_priority) < _priority_rank(priority):
-        return gap_priority
-    return priority
+    return _normalize_priority(assessment.get("priority"))
 
 
 def _build_deviation_summary(
@@ -797,8 +1059,8 @@ def _build_deviation_summary(
     benchmark_value: float,
     trend: DeviationTrend,
 ) -> str:
-    close_benchmark_label = spec.benchmark_label.lower() if spec.benchmark_label else "среднему по конкурентам"
-    comparison_benchmark_label = spec.benchmark_label.lower() if spec.benchmark_label else "среднего по конкурентам"
+    close_benchmark_label = spec.benchmark_label.lower() if spec.benchmark_label else "конкурентному ориентиру"
+    comparison_benchmark_label = spec.benchmark_label.lower() if spec.benchmark_label else "конкурентного ориентира"
     if comparison_benchmark_label.startswith("цель:"):
         comparison_benchmark_label = comparison_benchmark_label.replace("цель:", "цели:", 1)
     if trend == "aligned":
@@ -843,18 +1105,25 @@ def _build_group_deviation(
         return None
 
     gap = round(max(performance_gap, 0.0), 4)
-    priority = "low" if trend == "aligned" else _priority_from_gap(metric_code, gap, benchmark_value, spec)
+    priority_details = _priority_assessment_from_gap(metric_code, gap, benchmark_value, spec)
+    priority = _normalize_priority(priority_details.get("priority"))
     return {
         "code": metric_code,
         "label": spec.label,
         "unit": spec.unit,
         "current_value": round(current_value, 4),
         "benchmark_value": round(benchmark_value, 4),
-        "benchmark_label": spec.benchmark_label or "Среднее по конкурентам",
+        "benchmark_label": spec.benchmark_label or "Конкурентный ориентир",
         "delta": delta,
         "gap": gap,
         "trend": trend,
         "priority": priority,
+        "priority_score": priority_details["priority_score"],
+        "priority_reason": priority_details["priority_reason"],
+        "priority_model_version": priority_details["priority_model_version"],
+        "gap_ratio": priority_details["gap_ratio"],
+        "metric_importance": priority_details["metric_importance"],
+        "metric_controllability": priority_details["metric_controllability"],
         "summary": _build_deviation_summary(
             spec=spec,
             current_value=current_value,
@@ -914,7 +1183,7 @@ def _build_groups_payload(
         group_key = template.group if template is not None else "competitor_gap"
         metrics = template.metrics if template is not None else ()
         title = template.title if template is not None else _humanize_code(draft.code)
-        priority = _resolve_recommendation_priority(
+        priority_details = _resolve_recommendation_priority_details(
             draft.code,
             draft.priority,
             metrics,
@@ -923,6 +1192,7 @@ def _build_groups_payload(
             page_score=page_score,
             competitors_average_score=competitors_average_score,
         )
+        priority = _normalize_priority(priority_details.get("priority"))
         item = {
             "code": draft.code,
             "priority": priority,
@@ -930,6 +1200,9 @@ def _build_groups_payload(
             "title": title,
             "message": draft.message,
             "expected_outcome": IMPACT_LABELS[priority],
+            "priority_score": priority_details["priority_score"],
+            "priority_reason": priority_details["priority_reason"],
+            "priority_model_version": priority_details["priority_model_version"],
             "evidence": _build_item_evidence(
                 metrics,
                 page_features=page_features,
@@ -947,7 +1220,13 @@ def _build_groups_payload(
         group = groups[group_key]
         items = group["items"]
         if isinstance(items, list):
-            items.sort(key=lambda item: (PRIORITY_ORDER[_normalize_priority(item.get("priority"))], str(item.get("code") or "")))
+            items.sort(
+                key=lambda item: (
+                    PRIORITY_ORDER[_normalize_priority(item.get("priority"))],
+                    -float(item.get("priority_score") or 0.0),
+                    str(item.get("code") or ""),
+                )
+            )
 
         deviations: list[dict[str, object]] = []
         if include_deviations:
@@ -963,6 +1242,7 @@ def _build_groups_payload(
                 key=lambda deviation: (
                     0 if deviation.get("trend") == "behind" else 1 if deviation.get("trend") == "aligned" else 2,
                     PRIORITY_ORDER[_normalize_priority(deviation.get("priority"))],
+                    -float(deviation.get("priority_score") or 0.0),
                     -float(deviation.get("gap") or 0.0),
                     str(deviation.get("code") or ""),
                 )
@@ -1015,6 +1295,7 @@ def _build_recommendations_payload(
             "low_priority_count": by_priority["low"],
             "groups_with_issues": sum(1 for group in groups if group.get("items")),
             "competitor_context": has_competitor_context,
+            "priority_model_version": PRIORITY_MODEL_VERSION,
             "score_gap_vs_competitors": round(page_score - competitors_average_score, 4)
             if has_competitor_context and page_score is not None and competitors_average_score is not None
             else None,
@@ -1076,8 +1357,10 @@ def generate_recommendations(
     drafts: list[RecommendationDraft] = []
     competitor_pages_features = competitor_pages_features or []
     has_competitor_context = len(competitor_pages_features) >= MIN_COMPETITORS_FOR_RECOMMENDATIONS
-    competitor_avg_features = average_competitor_features(competitor_pages_features) if has_competitor_context else {}
-    competitors_average_score = average_score(competitor_pages_features) if has_competitor_context else None
+    competitor_avg_features = competitor_benchmark_features(competitor_pages_features) if has_competitor_context else {}
+    competitors_average_score = _average_competitor_page_score(competitor_pages_features) if has_competitor_context else None
+    if has_competitor_context and competitors_average_score is None:
+        competitors_average_score = average_score(competitor_pages_features)
     has_technical_context = any(_has_feature(page_features, key) for key in TECHNICAL_FEATURE_KEYS)
     has_commercial_trust_context = any(_has_feature(page_features, key) for key in COMMERCIAL_TRUST_FEATURE_KEYS)
     has_intent_context = any(_has_feature(page_features, key) for key in INTENT_ALIGNMENT_FEATURE_KEYS)

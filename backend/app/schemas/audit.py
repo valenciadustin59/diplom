@@ -27,6 +27,8 @@ class AuditRecommendationEvidenceRead(BaseModel):
 
 
 class AuditRecommendationItemRead(BaseModel):
+    model_config = ConfigDict(extra="allow")
+
     code: str
     priority: RecommendationPriority
     impact: RecommendationPriority
@@ -38,6 +40,8 @@ class AuditRecommendationItemRead(BaseModel):
 
 
 class AuditRecommendationDeviationRead(BaseModel):
+    model_config = ConfigDict(extra="allow")
+
     code: str
     label: str
     unit: str
@@ -62,6 +66,8 @@ class AuditRecommendationGroupRead(BaseModel):
 
 
 class AuditRecommendationSummaryRead(BaseModel):
+    model_config = ConfigDict(extra="allow")
+
     total_recommendations: int
     high_priority_count: int
     medium_priority_count: int

@@ -28,6 +28,9 @@ export type Recommendation = {
   title: string;
   message: string;
   expected_outcome: string;
+  priority_score?: number | null;
+  priority_reason?: string | null;
+  priority_model_version?: string | null;
   evidence: RecommendationEvidence[];
   related_metrics: string[];
 };
@@ -43,6 +46,12 @@ export type RecommendationDeviation = {
   gap: number;
   trend: RecommendationTrend;
   priority: RecommendationPriority;
+  priority_score?: number | null;
+  priority_reason?: string | null;
+  priority_model_version?: string | null;
+  gap_ratio?: number | null;
+  metric_importance?: number | null;
+  metric_controllability?: number | null;
   summary: string;
 };
 
@@ -63,6 +72,7 @@ export type RecommendationsSummary = {
   low_priority_count: number;
   groups_with_issues: number;
   competitor_context: boolean;
+  priority_model_version?: string | null;
   score_gap_vs_competitors: number | null;
 };
 

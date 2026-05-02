@@ -1754,11 +1754,16 @@ def process_audit_generate_recommendations(audit_id: str, processing_version: in
         if audit.score is None:
             raise RuntimeError("Target page score is not available for recommendations")
 
-        competitor_features = [
-            item["features"]
-            for item in (audit.competitor_results or [])
-            if isinstance(item.get("features"), dict)
-        ]
+        competitor_features: list[dict[str, object]] = []
+        for item in audit.competitor_results or []:
+            features = item.get("features")
+            if not isinstance(features, dict):
+                continue
+            enriched_features = dict(features)
+            score = item.get("score")
+            if isinstance(score, (int, float)):
+                enriched_features["_page_score"] = float(score)
+            competitor_features.append(enriched_features)
         recommendations = _run_logged_step(
             audit_id,
             RECOMMENDATIONS_STAGE,

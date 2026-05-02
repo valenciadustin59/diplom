@@ -404,6 +404,96 @@ def test_competitor_deviation_priority_uses_metric_importance():
 
     assert deviations_by_code["semantic_similarity"]["priority"] == "high"
     assert deviations_by_code["image_count"]["priority"] == "low"
+    assert deviations_by_code["semantic_similarity"]["priority_model_version"] == "competitor-gap-priority-v1"
+    assert deviations_by_code["semantic_similarity"]["priority_score"] > deviations_by_code["image_count"]["priority_score"]
+    assert "конкурентный разрыв" in deviations_by_code["semantic_similarity"]["priority_reason"]
+
+
+def test_recommendations_priority_model_uses_actual_competitor_scores():
+    recommendations = generate_recommendations(
+        page_features={
+            "title_present": 1,
+            "query_in_title": 1,
+            "h1_count": 1,
+            "query_in_text": 1,
+            "keyword_coverage_ratio": 0.76,
+            "semantic_similarity": 0.72,
+            "intent_alignment_score": 0.7,
+            "text_length_chars": 2200,
+            "text_to_html_ratio": 0.18,
+            "link_count": 8,
+            "image_count": 2,
+        },
+        page_score=58.0,
+        competitor_pages_features=[
+            {
+                "_page_score": 80.0,
+                "semantic_similarity": 0.73,
+                "keyword_coverage_ratio": 0.77,
+                "intent_alignment_score": 0.72,
+            },
+            {
+                "_page_score": 82.0,
+                "semantic_similarity": 0.74,
+                "keyword_coverage_ratio": 0.78,
+                "intent_alignment_score": 0.73,
+            },
+        ],
+    )
+
+    competitor_gap_group = get_group(recommendations, "competitor_gap")
+    below_item = next(item for item in competitor_gap_group["items"] if item["code"] == "BELOW_COMPETITORS")
+
+    assert recommendations["summary"]["score_gap_vs_competitors"] == -23.0
+    assert recommendations["summary"]["priority_model_version"] == "competitor-gap-priority-v1"
+    assert below_item["priority"] == "high"
+    assert below_item["priority_model_version"] == "competitor-gap-priority-v1"
+    assert below_item["evidence"][1]["value"] == "81.0"
+
+
+def test_competitor_gap_priority_caps_supporting_quantity_metrics():
+    recommendations = generate_recommendations(
+        page_features={
+            "title_present": 1,
+            "query_in_title": 1,
+            "h1_count": 1,
+            "query_in_text": 1,
+            "keyword_coverage_ratio": 0.82,
+            "semantic_similarity": 0.82,
+            "intent_alignment_score": 0.8,
+            "text_length_chars": 900,
+            "text_to_html_ratio": 0.22,
+            "link_count": 0,
+            "image_count": 0,
+        },
+        page_score=76.0,
+        competitor_pages_features=[
+            {
+                "text_length_chars": 5600,
+                "link_count": 80,
+                "image_count": 30,
+                "semantic_similarity": 0.84,
+                "keyword_coverage_ratio": 0.83,
+                "intent_alignment_score": 0.81,
+            },
+            {
+                "text_length_chars": 6200,
+                "link_count": 90,
+                "image_count": 40,
+                "semantic_similarity": 0.85,
+                "keyword_coverage_ratio": 0.84,
+                "intent_alignment_score": 0.82,
+            },
+        ],
+    )
+
+    semantic_group = get_group(recommendations, "semantic_intent")
+    deviations_by_code = {deviation["code"]: deviation for deviation in semantic_group["deviations"]}
+    items_by_code = {item["code"]: item for item in semantic_group["items"]}
+
+    assert items_by_code["THIN_CONTENT"]["priority"] == "low"
+    assert deviations_by_code["link_count"]["priority"] == "low"
+    assert deviations_by_code["image_count"]["priority"] == "low"
 
 
 def test_normalize_recommendations_payload_converts_legacy_list():

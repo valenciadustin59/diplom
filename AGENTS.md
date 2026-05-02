@@ -154,7 +154,10 @@
 - D56 does not replace `backend/artifacts/page_quality_model.pkl`; the CatBoost v3 production artifact remains the runtime model. D56 is a product scoring layer over target + top-N competitor context, not a retraining/publish task.
 - D56 frontend copy now labels the overview score as `Конкурентный score` and keeps `Оценка самой страницы` as explanatory context, so the UI no longer presents the primary page score as the final product meaning.
 - D56 evidence so far: `backend/tests/test_competitiveness_score.py` and `backend/tests/test_ml_compare.py` passed with `7 passed`; frontend tests passed with `61 passed`; frontend production build passed.
-- `D57` / GitHub `#76` - open: competitor-gap recommendation priority model.
+- `D57` / GitHub `#76` - completed and pushed: recommendations now use `competitor-gap-priority-v1`, a versioned priority layer that combines competitor gap size, SEO/search importance and controllability. The recommendation payload now carries `priority_score`, `priority_reason` and `priority_model_version` for new items/deviations while legacy payloads stay clean.
+- D57 uses a strong-but-realistic competitor benchmark (`p75` for higher-is-better metrics and `p25` for lower-is-better metrics) instead of plain averages for recommendation gaps. Runtime recommendations also use stored processed competitor scores (`_page_score`) when computing `score_gap_vs_competitors`, so recommendation priority matches the actual audit context.
+- D57 keeps supporting quantitative factors such as text volume, links and images capped below high priority unless they are backed by stronger search-impact signals. It does not retrain or replace `backend/artifacts/page_quality_model.pkl`; production runtime artifact remains CatBoost v3.
+- D57 evidence so far: `backend/tests/test_recommendations.py` passed with `9 passed`; targeted API lifecycle recommendation test passed; targeted frontend report/UI tests passed with `20 passed`; frontend production build passed.
 - `D58` / GitHub `#77` - open: re-evaluate/publish candidate under the competitiveness scorecard; should wait for D56/D57 evidence.
 - `D59` / GitHub `#78` - completed and pushed: removed user-facing ML/debug clutter from the product UI.
 - `D60` / GitHub `#79` - completed and pushed: archived research artifacts and clarified runtime vs evidence assets.
