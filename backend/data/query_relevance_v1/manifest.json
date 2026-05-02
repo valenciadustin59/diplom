@@ -48,6 +48,12 @@
     "comparison": 19,
     "informational": 21
   },
+  "diversity_policy": {
+    "positive_page_pattern": "Generated per query from focus, intent, city and lexical modifiers.",
+    "negative_page_traps": "Generated per query with hard-negative traps for off-topic, wrong intent, wrong city and missing query-specific evidence.",
+    "minimum_unique_positive_patterns": 180,
+    "minimum_unique_negative_traps": 180
+  },
   "labeling_goal": "Train query relevance so the product first separates pages that truly match the user query from strong-looking but off-topic pages.",
   "pairing_policy": {
     "gold": "Dedicated page for the exact product/service/topic and query intent.",

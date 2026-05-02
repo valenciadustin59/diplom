@@ -34,6 +34,16 @@ def test_query_relevance_catalog_is_balanced_by_category() -> None:
     assert all(sum(1 for row in rows if row["category"] == category) == 10 for category in categories)
 
 
+def test_query_relevance_catalog_has_diverse_row_level_hints() -> None:
+    rows = _load_rows()
+
+    assert len({row["positive_page_pattern"] for row in rows}) >= 180
+    assert len({row["negative_page_traps"] for row in rows}) >= 180
+    assert any("цена диапазон тариф" in row["positive_page_pattern"] for row in rows)
+    assert any("информационная статья без товара услуги" in row["negative_page_traps"] for row in rows)
+    assert any("другой город" in row["negative_page_traps"] for row in rows)
+
+
 def test_query_relevance_manifest_matches_catalog() -> None:
     rows = _load_rows()
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
@@ -42,3 +52,4 @@ def test_query_relevance_manifest_matches_catalog() -> None:
     assert manifest["rows"] == len(rows)
     assert manifest["unique_queries"] == len({row["query"] for row in rows})
     assert manifest["categories"] == len({row["category"] for row in rows})
+    assert manifest["diversity_policy"]["minimum_unique_positive_patterns"] == 180

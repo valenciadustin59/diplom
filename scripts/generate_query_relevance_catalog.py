@@ -410,6 +410,89 @@ QUERY_GROUPS: Final[list[dict[str, object]]] = [
 ]
 
 
+def _has_any(value: str, tokens: tuple[str, ...]) -> bool:
+    return any(token in value for token in tokens)
+
+
+def _dedupe_parts(parts: list[str]) -> str:
+    return "; ".join(dict.fromkeys(part for part in parts if part))
+
+
+def _build_positive_page_pattern(group: dict[str, object], row: dict[str, object]) -> str:
+    query = str(row["query"]).lower()
+    focus = str(row["query_focus"])
+    intent = str(row["intent"])
+    city = str(row.get("city") or "")
+    target_topic = str(group["target_topic"])
+
+    parts = [f"страница должна явно отвечать на потребность: {focus}"]
+    if intent == "comparison":
+        parts.append("нужны реальные отзывы рейтинг сравнение кейсы или понятные критерии выбора")
+    elif intent == "informational":
+        parts.append("нужен полезный разбор темы с конкретными критериями примерами и ответом на вопрос")
+    else:
+        parts.append(f"нужна коммерческая посадочная внутри темы: {target_topic}")
+
+    if city:
+        parts.append(f"должна быть привязка к городу {city}: адрес зона работы доставка или филиал")
+    if _has_any(query, ("цена", "стоимость", "тариф")):
+        parts.append("обязательны цена диапазон тариф калькулятор или понятная логика расчета")
+    if _has_any(query, ("купить", "заказать", "под ключ", "с установкой")):
+        parts.append("нужна возможность покупки заказа заявки консультации или подбора конкретного предложения")
+    if _has_any(query, ("производитель", "застройщик", "агентство", "компания", "клиника", "лаборатория", "студия")):
+        parts.append("важны признаки реального исполнителя: реквизиты команда лицензии кейсы адрес или портфолио")
+    if _has_any(query, ("монтаж", "установка", "демонтаж", "ремонт", "замена", "обслуживание", "заправка")):
+        parts.append("должна быть описана конкретная услуга процесс сроки гарантия и условия выезда")
+    if _has_any(query, ("5 тонн", "10 тонн", "м2", "однокомнат", "балкон", "лоджи", "реформер", "акпп")):
+        parts.append("должны совпадать важные уточнения из запроса: формат размер мощность тип объекта или комплектация")
+    if _has_any(query, ("отзывы", "рейтинг", "лучшие")):
+        parts.append("нужны отзывы рейтинги сравнение вариантов или доказательства опыта")
+    if _has_any(query, ("как ", "какой ", "какую ", "чем ", "выбрать", "подготовиться", "проходит", "отличается")):
+        parts.append("страница должна помогать принять решение а не просто продавать услугу")
+    if _has_any(query, ("рядом", "на дому", "с доставкой", "с выездом")):
+        parts.append("важна логистика: зона обслуживания выезд доставка карта или способы получения услуги")
+
+    return _dedupe_parts(parts)
+
+
+def _build_negative_page_traps(group: dict[str, object], row: dict[str, object]) -> str:
+    query = str(row["query"]).lower()
+    focus = str(row["query_focus"])
+    intent = str(row["intent"])
+    city = str(row.get("city") or "")
+
+    parts = [
+        f"мусор: страница не раскрывает {focus}, даже если у нее хороший title текст или коммерческие блоки",
+        f"hard-negative из другой тематики: {group['negative_page_traps']}",
+    ]
+    if city:
+        parts.append(f"слабая релевантность: страница про другой город или без подтверждения работы в {city}")
+    if intent == "commercial":
+        parts.append("слабая релевантность: информационная статья без товара услуги цены заявки или контакта исполнителя")
+    if intent == "comparison":
+        parts.append("слабая релевантность: продающая страница без отзывов рейтинга сравнения или социального доказательства")
+    if intent == "informational":
+        parts.append("слабая релевантность: каталог или рекламная страница без ответа на вопрос пользователя")
+    if _has_any(query, ("цена", "стоимость", "тариф")):
+        parts.append("hard-negative: страница обещает услугу но не дает цены диапазона тарифа или способа расчета")
+    if _has_any(query, ("купить", "заказать")):
+        parts.append("hard-negative: обзор или блог без возможности купить заказать или отправить заявку")
+    if _has_any(query, ("производитель", "застройщик")):
+        parts.append("hard-negative: агрегатор или статья без признаков производителя застройщика или прямого продавца")
+    if _has_any(query, ("монтаж", "установка", "ремонт", "замена", "обслуживание")):
+        parts.append("hard-negative: каталог товаров без подтверждения выполнения нужной услуги")
+    if _has_any(query, ("5 тонн", "10 тонн", "м2", "акпп", "реформер")):
+        parts.append("hard-negative: страница совпадает по теме но игнорирует ключевой технический уточнитель запроса")
+    if _has_any(query, ("отзывы", "рейтинг", "лучшие")):
+        parts.append("hard-negative: нет отзывов рейтинга сравнения или кейсов, только обычное описание услуги")
+    if _has_any(query, ("как ", "какой ", "какую ", "чем ", "выбрать", "подготовиться", "проходит", "отличается")):
+        parts.append("hard-negative: страница не объясняет критерии выбора причины отличия подготовку или этапы")
+    if _has_any(query, ("рядом", "на дому", "с доставкой", "с выездом")):
+        parts.append("hard-negative: нет зоны обслуживания доставки выезда адреса или локального подтверждения")
+
+    return _dedupe_parts(parts)
+
+
 def build_rows() -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
     for group in QUERY_GROUPS:
@@ -424,10 +507,10 @@ def build_rows() -> list[dict[str, object]]:
                 "top_n": TOP_N,
                 "pages_to_scan": PAGES_TO_SCAN,
                 "target_topic": group["target_topic"],
-                "positive_page_pattern": group["positive_page_pattern"],
-                "negative_page_traps": group["negative_page_traps"],
                 **row,
             }
+            enriched["positive_page_pattern"] = _build_positive_page_pattern(group, enriched)
+            enriched["negative_page_traps"] = _build_negative_page_traps(group, enriched)
             rows.append(enriched)
 
     queries = [str(row["query"]) for row in rows]
@@ -436,6 +519,10 @@ def build_rows() -> list[dict[str, object]]:
     if len(set(queries)) != len(queries):
         duplicates = sorted({query for query in queries if queries.count(query) > 1})
         raise ValueError(f"Duplicate queries: {duplicates}")
+    if len({str(row["positive_page_pattern"]) for row in rows}) < 180:
+        raise ValueError("Positive relevance hints are too repetitive")
+    if len({str(row["negative_page_traps"]) for row in rows}) < 180:
+        raise ValueError("Negative relevance traps are too repetitive")
     return rows
 
 
@@ -466,6 +553,12 @@ def write_manifest(rows: list[dict[str, object]]) -> None:
         "fields": FIELDS,
         "category_names": categories,
         "intent_counts": intent_counts,
+        "diversity_policy": {
+            "positive_page_pattern": "Generated per query from focus, intent, city and lexical modifiers.",
+            "negative_page_traps": "Generated per query with hard-negative traps for off-topic, wrong intent, wrong city and missing query-specific evidence.",
+            "minimum_unique_positive_patterns": 180,
+            "minimum_unique_negative_traps": 180,
+        },
         "labeling_goal": (
             "Train query relevance so the product first separates pages that truly match the user query "
             "from strong-looking but off-topic pages."
@@ -506,8 +599,10 @@ def write_readme() -> None:
                 "",
                 "- `target_topic` — what the query is actually about.",
                 "- `query_focus` — the exact user need inside the topic.",
-                "- `positive_page_pattern` — what a strong relevant page should contain.",
-                "- `negative_page_traps` — examples of pages that must be treated as irrelevant even if they have good SEO structure.",
+                "- `positive_page_pattern` — query-level evidence a strong relevant page should contain.",
+                "- `negative_page_traps` — query-level hard negatives that must be treated as irrelevant even if they have good SEO structure.",
+                "",
+                "The positive/negative descriptions are intentionally generated per row. They vary by intent, city, price modifiers, purchase verbs, service verbs, technical modifiers and comparison/informational wording.",
                 "",
                 "Recommended next training step:",
                 "",

@@ -18,8 +18,10 @@ Additional fields describe how to judge relevance:
 
 - `target_topic` — what the query is actually about.
 - `query_focus` — the exact user need inside the topic.
-- `positive_page_pattern` — what a strong relevant page should contain.
-- `negative_page_traps` — examples of pages that must be treated as irrelevant even if they have good SEO structure.
+- `positive_page_pattern` — query-level evidence a strong relevant page should contain.
+- `negative_page_traps` — query-level hard negatives that must be treated as irrelevant even if they have good SEO structure.
+
+The positive/negative descriptions are intentionally generated per row. They vary by intent, city, price modifiers, purchase verbs, service verbs, technical modifiers and comparison/informational wording.
 
 Recommended next training step:
 
