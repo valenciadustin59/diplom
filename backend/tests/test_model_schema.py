@@ -2,12 +2,21 @@ import csv
 from pathlib import Path
 from app.ml import FEATURE_COLUMNS, explain_score, load_saved_model, predict_score, train_quality_model
 from app.ml.dataset_builder import DATASET_COLUMNS
+from app.ml.model import ARTIFACTS_DIR, DEFAULT_MODEL_PATH
 from app.ml.model import calculate_rule_score, load_model_artifact, save_model, train_model
 from app.features import INTENT_ALIGNMENT_FEATURE_COLUMNS, SERP_RELATIVE_FEATURE_COLUMNS, SNAPSHOT_AUXILIARY_FEATURE_COLUMNS
 from app.heavy_analysis import HEAVY_ANALYSIS_FEATURE_COLUMNS
 from app.ml.model_schema import get_model_feature_schema
 EXPECTED_V2_FEATURE_COUNT = len(get_model_feature_schema("v2").feature_columns)
 EXPECTED_V3_FEATURE_COUNT = len(get_model_feature_schema("v3").feature_columns)
+
+
+def test_default_runtime_model_path_is_production_alias():
+    assert DEFAULT_MODEL_PATH == ARTIFACTS_DIR / "page_quality_model.pkl"
+    assert DEFAULT_MODEL_PATH.name == "page_quality_model.pkl"
+    assert "candidate" not in DEFAULT_MODEL_PATH.name
+
+
 def _write_training_dataset(path: Path) -> None:
     with path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=DATASET_COLUMNS)

@@ -38,7 +38,7 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - `app/health.py` — liveness, readiness и runtime metrics.
 - `app/distributed_benchmark.py` — benchmark/reporting workflow для distributed runtime.
 - `tests/` — backend test suite.
-- `artifacts/` — модельные и benchmark-артефакты.
+- `artifacts/` — модельные и benchmark-артефакты; `artifacts/README.md` фиксирует границу между production runtime alias и research/evidence archive.
 
 ## Архитектурная модель
 
