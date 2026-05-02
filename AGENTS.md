@@ -123,7 +123,7 @@
 - GitHub issues `#69-#73` were created on `2026-05-02`; local mirror: `plans/d50-d54-v5-ranking-aware-model.md`.
 - `D50` / GitHub `#69` - completed locally: top-3 regression analysis for D47/D48 dataset-v4 candidates against production CatBoost v3.
 - `D51` / GitHub `#70` - completed locally: query-level preference labels and versioned `dataset-v5` evidence bundle for ranking-aware training.
-- `D52` / GitHub `#71` - planned: shortcut feature control and reusable score-response/feature-dominance guardrails for v5.
+- `D52` / GitHub `#71` - completed locally: shortcut feature control policy, controlled dataset and reusable feature-dominance/score-response guardrails for v5.
 - `D53` / GitHub `#72` - planned: non-production v5 candidate training with page-quality and ranking-aware candidates.
 - `D54` / GitHub `#73` - planned: shadow benchmark and controlled publish/no-publish decision for v5.
 - D50 evidence: `backend/app/ml/top3_regression_analysis.py`, `backend/artifacts/ranking-benchmarks/dataset-v5-d50/top3-regression-analysis.json`, and `top3-regression-analysis.md`.
@@ -133,6 +133,10 @@
 - D51 evidence: `backend/app/ml/v5_preferences.py`, `backend/data/dataset_versions/dataset-v5/dataset.csv`, `page_labels.csv`, `preference_labels.csv`, `split.json`, `manifest.json`, `d51-preference-split-validation.json`, `d51-query-preference-label-report.json`, and `.md`.
 - D51 created `885` page labels and `3351` query-level preference labels: `2047` strong, `816` weak, `488` uncertain. `2863` preferences are usable for training; uncertain preferences have zero training weight.
 - D51 represented all `9/9` D50 focus queries in usable preferences and preserved group-by-query split with `79` train queries, `20` validation queries, `0` query overlap. Manifest is `ready_for_training=true`; verification passed with `35` targeted ML tests. Production SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- D52 evidence: `backend/app/ml/v5_feature_policy.py`, `backend/data/dataset_versions/dataset-v5/dataset.controlled.csv`, `feature_policy.json`, and `backend/artifacts/ranking-benchmarks/dataset-v5-d52/shortcut-feature-control-report.json`, `.md`.
+- D52 feature policy version is `v5-shortcut-control-v1`; it classifies the `148` v3 features into `41` critical, `69` important and `38` supporting features. It caps `22` raw shortcut/count features (`word_count`, text/html length, heading/link/image/list/strong counts and related densities) so thin-page risk remains but long pages no longer get unlimited upside.
+- D52 controlled dataset keeps `885` rows, writes `feature_policy_version` per row, and records `7733` shortcut value caps. Reusable guardrails were run against the `3` saved D47 candidate artifacts: RF passed feature/score-response guardrails, CatBoostRegressor failed feature dominance because top feature stayed supporting `word_count`, CatBoostRanker passed these D52 guardrails but still remains non-production due previous D48/D49 release blockers.
+- D52 verification passed with the D50-D52 and nearby ML regression set (`46 passed`). Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

@@ -170,6 +170,18 @@ _V5_PREFERENCES_EXPORTS = {
     "build_v5_query_preference_dataset",
     "validate_preference_split",
 }
+_V5_FEATURE_POLICY_EXPORTS = {
+    "DEFAULT_CONTROLLED_DATASET_PATH",
+    "DEFAULT_D52_OUTPUT_DIR",
+    "DEFAULT_FEATURE_POLICY_PATH",
+    "FEATURE_POLICY_VERSION_V5",
+    "apply_feature_policy_to_features",
+    "build_controlled_dataset",
+    "classify_feature_group",
+    "feature_dominance_guardrail",
+    "run_d52_shortcut_feature_control",
+    "score_response_guardrail",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -222,6 +234,9 @@ def __getattr__(name: str):
     if name in _V5_PREFERENCES_EXPORTS:
         module = importlib.import_module("app.ml.v5_preferences")
         return getattr(module, name)
+    if name in _V5_FEATURE_POLICY_EXPORTS:
+        module = importlib.import_module("app.ml.v5_feature_policy")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -256,4 +271,5 @@ __all__ = [
     *_SEO_WEIGHTED_NO_PUBLISH_DECISION_EXPORTS,
     *_TOP3_REGRESSION_ANALYSIS_EXPORTS,
     *_V5_PREFERENCES_EXPORTS,
+    *_V5_FEATURE_POLICY_EXPORTS,
 ]

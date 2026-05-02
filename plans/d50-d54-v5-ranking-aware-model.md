@@ -78,8 +78,23 @@ Scope:
 
 Acceptance:
 
-- Feature policy and tests exist.
-- Supporting features cannot dominate a publishable candidate.
+- Completed: feature policy and tests exist.
+- Completed: controlled `dataset-v5` training surface exists at `backend/data/dataset_versions/dataset-v5/dataset.controlled.csv`.
+- Completed: supporting features cannot dominate a publishable candidate because D52 provides reusable feature-dominance and score-response guardrails for D53/D54.
+
+Evidence:
+
+- Runner/policy: `backend/app/ml/v5_feature_policy.py`.
+- Controlled dataset: `backend/data/dataset_versions/dataset-v5/dataset.controlled.csv`.
+- Feature policy sidecar: `backend/data/dataset_versions/dataset-v5/feature_policy.json`.
+- Report: `backend/artifacts/ranking-benchmarks/dataset-v5-d52/shortcut-feature-control-report.json` and `.md`.
+- Feature policy version: `v5-shortcut-control-v1`.
+- Feature groups across the `148` v3 features: `critical=41`, `important=69`, `supporting=38`.
+- Shortcut caps: `22` raw/count features, including `word_count`, `text_length_chars`, `html_length_chars`, `unique_word_count`, heading counts, `link_count`, `image_count`, list/strong counts and related densities.
+- Controlled dataset rows: `885`; shortcut value caps recorded: `7733`.
+- Candidate guardrail smoke against saved D47 artifacts: `3` saved candidates evaluated. RF passed D52 feature/response guardrails; CatBoostRegressor failed feature dominance because top feature is supporting `word_count`; CatBoostRanker passed D52 feature/response guardrails but remains non-production due previous D48/D49 release blockers.
+- Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- Verification: D50-D52 and nearby ML regression set passed as `46 passed`.
 
 ## D53 / GitHub #72: Non-Production v5 Candidate Training
 

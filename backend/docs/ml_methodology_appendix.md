@@ -590,6 +590,31 @@ D51 verification passed with `35` targeted ML tests covering preference labels, 
 
 Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D52 shortcut feature control
+
+D52 adds a reusable feature policy for the ranking-aware v5 wave. It is not a training or publish step. The purpose is to prevent the next candidate from learning shortcuts such as "more text means better page" while still preserving genuine thin-page risk.
+
+D52 runs `backend/app/ml/v5_feature_policy.py`. The policy version is `v5-shortcut-control-v1`. It classifies the `148` v3 features into `41` critical, `69` important and `38` supporting features. Critical features cover crawl/indexability, canonical, title/query fit, semantic fit and intent alignment. Supporting features include raw volume/count signals such as `word_count`, text/html length, heading counts, `link_count`, `image_count`, list/strong counts, density features and shallow commercial binaries.
+
+The controlled dataset is stored at:
+
+- `backend/data/dataset_versions/dataset-v5/dataset.controlled.csv`
+- `backend/data/dataset_versions/dataset-v5/feature_policy.json`
+
+The controlled dataset keeps all `885` rows and adds `feature_policy_version` per row. The policy caps `22` shortcut features and recorded `7733` capped shortcut values. This means a very thin page can still be penalized, but a long page cannot keep gaining score just because the extracted text, links or images are extremely large.
+
+D52 also creates reusable release guardrails for D53/D54:
+
+- feature dominance: a publishable candidate must not have a supporting shortcut as its top feature, and supporting features must not dominate top-10 importance;
+- score response: synthetic degradation of critical SEO/search features must reduce score more than degradation of supporting shortcut features.
+
+D52 evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d52/shortcut-feature-control-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v5-d52/shortcut-feature-control-report.md`
+
+The guardrail smoke was run against the `3` saved D47 candidate artifacts. RF passed D52 feature/response checks; CatBoostRegressor failed feature dominance because its top feature remained supporting `word_count`; CatBoostRanker passed D52 feature/response checks but remains non-production due the D48/D49 top-3 and absolute-error release blockers. Verification passed with the D50-D52 and nearby ML regression set: `46` tests passed. Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -602,6 +627,7 @@ Production remains unchanged: `backend/artifacts/page_quality_model.pkl` stays S
 - `backend/app/ml/seo_weighted_no_publish_decision.py`
 - `backend/app/ml/top3_regression_analysis.py`
 - `backend/app/ml/v5_preferences.py`
+- `backend/app/ml/v5_feature_policy.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`
