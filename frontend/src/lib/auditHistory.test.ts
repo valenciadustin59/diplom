@@ -34,14 +34,6 @@ function createSummary(overrides: Partial<AuditSummary> = {}): AuditSummary {
   };
 }
 
-const activeModel = {
-  artifactVersion: "dataset-v3-d37-20260501200434",
-  artifactSha1: null,
-  datasetVersion: "dataset-v3-d37",
-  modelSchemaVersion: "v3",
-  publishedAt: "2026-01-01T10:10:00Z",
-};
-
 describe("audit history model", () => {
   it("excludes locally hidden rows by default and shows them through the hidden focus", () => {
     const visible = createSummary({ id: "visible", domain: "visible.example" });
@@ -51,14 +43,12 @@ describe("audit history model", () => {
       audits: [hidden, visible],
       filters: defaultAuditHistoryFilters,
       hiddenAuditIds: ["hidden"],
-      activeModel,
       now,
     });
     const hiddenModel = buildAuditHistoryModel({
       audits: [hidden, visible],
       filters: { ...defaultAuditHistoryFilters, focus: "hidden" },
       hiddenAuditIds: ["hidden"],
-      activeModel,
       now,
     });
 
@@ -79,7 +69,6 @@ describe("audit history model", () => {
       audits: [staleAudit],
       filters: defaultAuditHistoryFilters,
       hiddenAuditIds: [],
-      activeModel,
       now,
     });
 
@@ -112,15 +101,14 @@ describe("audit history model", () => {
       audits: [hiddenLatest, failed, visibleSuccessful],
       filters: defaultAuditHistoryFilters,
       hiddenAuditIds: ["latest"],
-      activeModel,
       now,
     });
 
     expect(model.latestSuccessfulAudit?.id).toBe("older-warning");
   });
 
-  it("moves old model rows into archive and keeps latest successful on the current model", () => {
-    const archived = createSummary({
+  it("keeps old model rows visible because history is a database list, not a model archive", () => {
+    const oldModel = createSummary({
       id: "old-model",
       domain: "old.example",
       scoreBreakdown: {
@@ -148,7 +136,7 @@ describe("audit history model", () => {
         },
       },
     });
-    const current = createSummary({ id: "current-model", domain: "current.example" });
+    const current = createSummary({ id: "current-model", domain: "current.example", createdAtTimestamp: now + 1000 });
     const oldProcessing = createSummary({
       id: "old-processing",
       domain: "old-processing.example",
@@ -167,25 +155,20 @@ describe("audit history model", () => {
     });
 
     const defaultModel = buildAuditHistoryModel({
-      audits: [archived, legacyWithoutArtifact, oldProcessing, current, newProcessing],
+      audits: [current, newProcessing, oldModel, legacyWithoutArtifact, oldProcessing],
       filters: defaultAuditHistoryFilters,
       hiddenAuditIds: [],
-      activeModel,
-      now,
-    });
-    const archiveModel = buildAuditHistoryModel({
-      audits: [archived, legacyWithoutArtifact, oldProcessing, current, newProcessing],
-      filters: { ...defaultAuditHistoryFilters, focus: "archived" },
-      hiddenAuditIds: [],
-      activeModel,
       now,
     });
 
-    expect(defaultModel.rows.map((row) => row.audit.id)).toEqual(["current-model", "new-processing"]);
-    expect(defaultModel.summary.visible).toBe(2);
-    expect(defaultModel.summary.archived).toBe(3);
+    expect(defaultModel.rows.map((row) => row.audit.id)).toEqual([
+      "current-model",
+      "new-processing",
+      "old-model",
+      "bootstrap-model",
+      "old-processing",
+    ]);
+    expect(defaultModel.summary.visible).toBe(5);
     expect(defaultModel.latestSuccessfulAudit?.id).toBe("current-model");
-    expect(archiveModel.rows.map((row) => row.audit.id)).toEqual(["old-model", "bootstrap-model", "old-processing"]);
-    expect(archiveModel.rows[0].archiveInfo.label).toBe("Архив старой оценки");
   });
 });

@@ -804,7 +804,6 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Повторить аудит");
     expect(markup).toContain("Скрыть локально");
     expect(markup).toContain("Скрытые локально");
-    expect(markup).toContain("Архивные");
     expect(markup).toContain("Открыть стек");
     expect(markup).not.toContain("Загружаем историю аудитов");
   });

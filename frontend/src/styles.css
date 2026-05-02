@@ -475,10 +475,6 @@ select {
   grid-column: 1 / -1;
 }
 
-.audit-archive-banner {
-  grid-column: 1 / -1;
-}
-
 .workspace-hero__content {
   display: flex;
   align-items: center;
@@ -1837,11 +1833,6 @@ select {
 .recent-list__item--hidden {
   border-style: dashed;
   opacity: 0.74;
-}
-
-.recent-list__item--archived {
-  border-color: rgba(255, 181, 71, 0.24);
-  background: rgba(255, 250, 241, 0.78);
 }
 
 .recent-list__content {

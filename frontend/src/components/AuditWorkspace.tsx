@@ -4,7 +4,6 @@ import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
 import { buildScoreConfidenceView } from "../lib/auditConfidence";
-import { resolveAuditModelArchive, type ActiveModelIdentity } from "../lib/auditArchive";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import type { RuntimeHealthModel } from "../lib/runtimeHealth";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
@@ -47,7 +46,6 @@ type AuditWorkspaceProps = {
   loading: boolean;
   error: string | null;
   activeTab: AuditTab;
-  activeModelIdentity?: ActiveModelIdentity;
   onTabChange: (tab: AuditTab) => void;
 };
 
@@ -63,7 +61,6 @@ type EmptyWorkspaceProps = {
   runtimeHealth: RuntimeHealthModel | null;
   loadingRuntime: boolean;
   runtimeError: string | null;
-  activeModelIdentity?: ActiveModelIdentity;
   onRefreshRuntime: () => void;
   onOpenRuntime: () => void;
   onRefreshRecent: () => void;
@@ -118,6 +115,52 @@ function formatSignedScoreValue(value: number | null | undefined): string {
   }
   const rounded = Math.round(value * 10) / 10;
   return `${rounded > 0 ? "+" : ""}${rounded}`;
+}
+
+function getFiniteNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+function getCompetitivenessMetric(breakdown: ScoreBreakdown | null | undefined, key: string): number | null {
+  return getFiniteNumber(breakdown?.competitiveness?.[key]);
+}
+
+function getDisplayedFinalScore({
+  currentAudit,
+  currentResults,
+  comparisonSummary,
+}: {
+  currentAudit: AuditStatusResponse | null;
+  currentResults: AuditResultsResponse | null;
+  comparisonSummary: ComparisonSummary | null;
+}): number {
+  return (
+    getFiniteNumber(currentResults?.score_breakdown?.final_score) ??
+    getFiniteNumber(currentResults?.score_breakdown?.competitiveness_score) ??
+    getFiniteNumber(currentResults?.score) ??
+    getFiniteNumber(currentAudit?.score_breakdown?.final_score) ??
+    getFiniteNumber(currentAudit?.score) ??
+    getFiniteNumber(comparisonSummary?.competitiveness_score) ??
+    getFiniteNumber(comparisonSummary?.user_score) ??
+    0
+  );
+}
+
+function getDisplayedPrimaryScore({
+  currentAudit,
+  currentResults,
+  comparisonSummary,
+}: {
+  currentAudit: AuditStatusResponse | null;
+  currentResults: AuditResultsResponse | null;
+  comparisonSummary: ComparisonSummary | null;
+}): number {
+  return (
+    getFiniteNumber(currentResults?.score_breakdown?.primary_page_score) ??
+    getFiniteNumber(currentAudit?.score_breakdown?.primary_page_score) ??
+    getFiniteNumber(comparisonSummary?.primary_page_score) ??
+    getDisplayedFinalScore({ currentAudit, currentResults, comparisonSummary })
+  );
 }
 
 function hasCompetitivenessContext(breakdown: ScoreBreakdown | null | undefined): boolean {
@@ -325,15 +368,24 @@ function OverviewPanel({
   recommendations,
   competitorScores,
   comparisonSummary,
-  activeModelIdentity,
 }: Pick<
   AuditWorkspaceProps,
-  "currentAudit" | "currentResults" | "recommendations" | "competitorScores" | "comparisonSummary" | "activeModelIdentity"
+  "currentAudit" | "currentResults" | "recommendations" | "competitorScores" | "comparisonSummary"
 >) {
   const topRecommendationItems = getTopRecommendationItems(recommendations, 3);
   const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
   const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
   const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
+  const finalScore = getDisplayedFinalScore({ currentAudit, currentResults, comparisonSummary });
+  const primaryScore = getDisplayedPrimaryScore({ currentAudit, currentResults, comparisonSummary });
+  const competitorAverageScore =
+    getCompetitivenessMetric(currentResults?.score_breakdown, "competitor_average_score") ??
+    getCompetitivenessMetric(currentAudit?.score_breakdown, "competitor_average_score") ??
+    getFiniteNumber(comparisonSummary?.competitors_average_score);
+  const marketDifference =
+    competitorAverageScore !== null
+      ? finalScore - competitorAverageScore
+      : getFiniteNumber(comparisonSummary?.score_difference);
   const scoreConfidence = buildScoreConfidenceView({
     audit: currentAudit,
     results: currentResults,
@@ -341,15 +393,6 @@ function OverviewPanel({
     comparisonSummary,
   });
   const showDataQualityBadge = scoreConfidence.warningCount > 0 || scoreConfidence.errorCount > 0;
-  const archiveInfo = currentAudit
-    ? resolveAuditModelArchive({
-        status: currentAudit.status as AuditStatus,
-        score: currentResults?.score ?? currentAudit.score,
-        scoreBreakdown: currentResults?.score_breakdown ?? currentAudit.score_breakdown,
-        activeModel: activeModelIdentity,
-        createdAt: currentAudit.created_at,
-      })
-    : null;
 
   return (
     <div className="workspace-grid">
@@ -377,37 +420,26 @@ function OverviewPanel({
             ) : null}
           </div>
 
-          <ScoreRing value={Math.round(comparisonSummary?.user_score ?? currentAudit?.score ?? 0)} />
+          <ScoreRing value={Math.round(finalScore)} />
         </div>
       </Card>
-
-      {archiveInfo?.isArchived ? (
-        <div className="feedback-banner feedback-banner--warning audit-archive-banner">
-          <strong>Архивный аудит</strong>
-          <div>Эта оценка рассчитана старой версией модели. Для актуального сравнения повторите аудит из истории.</div>
-        </div>
-      ) : null}
 
       <div className="metric-strip workspace-metric-strip">
         <div className="metric-box">
           <span className="metric-box__label">Конкурентный score</span>
-          <strong className="metric-box__value">
-            {formatScoreValue(comparisonSummary?.competitiveness_score ?? comparisonSummary?.user_score)}
-          </strong>
+          <strong className="metric-box__value">{formatScoreValue(finalScore)}</strong>
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Оценка самой страницы</span>
-          <strong className="metric-box__value">
-            {formatScoreValue(comparisonSummary?.primary_page_score ?? currentResults?.score ?? currentAudit?.score)}
-          </strong>
+          <strong className="metric-box__value">{formatScoreValue(primaryScore)}</strong>
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Средняя оценка конкурентов</span>
-          <strong className="metric-box__value">{formatScoreValue(comparisonSummary?.competitors_average_score)}</strong>
+          <strong className="metric-box__value">{formatScoreValue(competitorAverageScore)}</strong>
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Разница с рынком</span>
-          <strong className="metric-box__value">{formatSignedScoreValue(comparisonSummary?.score_difference)}</strong>
+          <strong className="metric-box__value">{formatSignedScoreValue(marketDifference)}</strong>
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Конкуренты</span>
@@ -610,7 +642,6 @@ export function AuditWorkspace({
   loading,
   error,
   activeTab,
-  activeModelIdentity,
   onTabChange,
 }: AuditWorkspaceProps) {
   if (!currentAudit && loading) {
@@ -655,7 +686,6 @@ export function AuditWorkspace({
             recommendations={recommendations}
             competitorScores={competitorScores}
             comparisonSummary={comparisonSummary}
-            activeModelIdentity={activeModelIdentity}
           />
         ) : null}
 
@@ -727,7 +757,6 @@ export function EmptyWorkspace({
   runtimeHealth,
   loadingRuntime,
   runtimeError,
-  activeModelIdentity,
   onRefreshRuntime,
   onOpenRuntime,
   onRefreshRecent,
@@ -745,7 +774,6 @@ export function EmptyWorkspace({
         submitting={submitting}
         submissionError={submissionError}
         success={success}
-        activeModelIdentity={activeModelIdentity}
         onRefreshRecent={onRefreshRecent}
         onOpenRuntime={onOpenRuntime}
         onSelectAudit={onSelectAudit}

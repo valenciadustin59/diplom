@@ -232,6 +232,53 @@ function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditSta
   };
 }
 
+function getReportComparisonSummary(input: AuditReportInput) {
+  return input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
+}
+
+function getReportScoreBreakdown(input: AuditReportInput) {
+  return input.results?.score_breakdown ?? input.audit.score_breakdown ?? null;
+}
+
+function getReportCompetitivenessMetric(input: AuditReportInput, key: string): number | null {
+  const competitiveness = getReportScoreBreakdown(input)?.competitiveness;
+  return getRecordNumber(competitiveness, key);
+}
+
+function getReportFinalScore(input: AuditReportInput): number | null {
+  const summary = getReportComparisonSummary(input);
+  const breakdown = getReportScoreBreakdown(input);
+  return (
+    breakdown?.final_score ??
+    breakdown?.competitiveness_score ??
+    input.results?.score ??
+    input.audit.score ??
+    summary?.competitiveness_score ??
+    summary?.user_score ??
+    null
+  );
+}
+
+function getReportPrimaryScore(input: AuditReportInput): number | null {
+  const summary = getReportComparisonSummary(input);
+  const breakdown = getReportScoreBreakdown(input);
+  return breakdown?.primary_page_score ?? summary?.primary_page_score ?? getReportFinalScore(input);
+}
+
+function getReportCompetitorAverageScore(input: AuditReportInput): number | null {
+  const summary = getReportComparisonSummary(input);
+  return getReportCompetitivenessMetric(input, "competitor_average_score") ?? summary?.competitors_average_score ?? null;
+}
+
+function getReportMarketDifference(input: AuditReportInput): number | null {
+  const finalScore = getReportFinalScore(input);
+  const averageScore = getReportCompetitorAverageScore(input);
+  if (typeof finalScore === "number" && typeof averageScore === "number") {
+    return finalScore - averageScore;
+  }
+  return getReportComparisonSummary(input)?.score_difference ?? null;
+}
+
 function buildSeoMetrics(input: AuditReportInput): ReportMetric[] {
   const features = input.results?.features ?? input.audit.features ?? {};
   const queryIntent = input.results?.query_intent ?? input.audit.query_intent ?? null;
@@ -308,27 +355,31 @@ function getEffectiveRecommendations(input: AuditReportInput): RecommendationsBu
 }
 
 function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
-  const summary = input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
+  const summary = getReportComparisonSummary(input);
   const found = summary?.competitors_found ?? summary?.competitors_count ?? 0;
   const analyzed = summary?.competitors_analyzed ?? summary?.competitors_count ?? 0;
   const failed = summary?.competitors_failed ?? Math.max(0, found - analyzed);
+  const finalScore = getReportFinalScore(input);
+  const primaryScore = getReportPrimaryScore(input);
+  const averageScore = getReportCompetitorAverageScore(input);
+  const marketDifference = getReportMarketDifference(input);
 
   return [
     {
       label: "Конкурентный score",
-      value: formatScore(summary?.user_score ?? input.results?.score ?? input.audit.score),
+      value: formatScore(finalScore),
     },
     {
       label: "Оценка самой страницы",
-      value: formatScore(summary?.primary_page_score ?? input.results?.score_breakdown?.primary_page_score),
+      value: formatScore(primaryScore),
     },
     {
       label: "Средняя оценка конкурентов",
-      value: formatScore(summary?.competitors_average_score),
+      value: formatScore(averageScore),
     },
     {
       label: "Разница",
-      value: formatSignedScore(summary?.score_difference),
+      value: formatSignedScore(marketDifference),
       note: "Положительное значение означает преимущество целевой страницы.",
     },
     {
@@ -405,9 +456,10 @@ function buildStageRows(diagnostics: AuditTimelineDiagnosticsResponse | null): R
 
 export function buildAuditReportModel(input: AuditReportInput): AuditReportModel {
   const generatedAt = input.generatedAt ?? new Date();
-  const score = input.results?.score ?? input.audit.score;
+  const score = getReportFinalScore(input);
   const scoreBreakdown = getScoreBreakdown(input.results, input.audit);
-  const comparisonSummary = input.results?.comparison_summary ?? input.audit.comparison_summary ?? null;
+  const comparisonSummary = getReportComparisonSummary(input);
+  const marketDifference = getReportMarketDifference(input);
   const recommendations = getEffectiveRecommendations(input);
   const recommendationsSummary = recommendations?.summary ?? null;
   const domain = getDomainFromUrl(input.audit.target_url);
@@ -432,7 +484,7 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
       `Аудит по запросу "${input.audit.query}" для ${domain}.`,
       `Итоговая оценка: ${formatScore(score)}. ${getScoreVerdict(score)}`,
       `Конкурентный контекст: обработано ${analyzedCompetitors} страниц, разница с конкурентами ${formatSignedScore(
-        comparisonSummary?.score_difference,
+        marketDifference,
       )}.`,
       `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
         recommendationsSummary?.high_priority_count,

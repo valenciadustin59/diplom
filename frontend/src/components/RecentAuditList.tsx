@@ -16,7 +16,6 @@ function getRowClassName(row: AuditHistoryRow, activeAuditId?: string | null): s
   return [
     "recent-list__item",
     row.audit.id === activeAuditId ? "recent-list__item--active" : null,
-    row.isArchived ? "recent-list__item--archived" : null,
     row.isHidden ? "recent-list__item--hidden" : null,
   ].filter(Boolean).join(" ");
 }
@@ -30,9 +29,6 @@ function getRowFlags(row: AuditHistoryRow): string[] {
   }
   if (row.isHidden) {
     flags.push("Скрыт локально");
-  }
-  if (row.isArchived) {
-    flags.push(row.archiveInfo.label);
   }
   return flags;
 }
