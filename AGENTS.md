@@ -89,7 +89,7 @@
 - `D44` / GitHub `#63` — completed locally: controlled second-pass competitor-aware score experiment with `serp_relative` features.
 - Do not repeat D38 CatBoost v3 rollout unless the user explicitly asks for rollback or republish. D44 evidence recommends not continuing to publish without more evidence.
 
-## Current D45-D49 Planned SEO-Weighted Retraining
+## Current D45-D49 SEO-Weighted Retraining Evidence
 
 - GitHub issues `#64-#68` were created on `2026-05-02`.
 - Local mirror: `plans/d45-d49-seo-weighted-score-retraining.md`.
@@ -97,7 +97,7 @@
 - `D46` / GitHub `#65` - completed locally: versioned `dataset-v4` bundle built and validated with leakage-safe split and importance-weighted label evidence.
 - `D47` / GitHub `#66` - completed locally: non-production SEO-weighted candidates trained from `dataset-v4` without replacing `backend/artifacts/page_quality_model.pkl`.
 - `D48` / GitHub `#67` - completed locally: product-critical shadow benchmark compared D47 candidates against the current CatBoost v3 production model and recommends `keep_current`.
-- `D49` / GitHub `#68` - planned: controlled no-publish decision from D48 evidence unless the user explicitly asks for a new modeling iteration. D48 did not pass publish guardrails, so keep production SHA `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- `D49` / GitHub `#68` - completed locally: controlled no-publish decision recorded from D48 evidence; production CatBoost v3 remains active because no D47 candidate passed product-critical guardrails.
 - Product intent: the model should help pages rank higher in search by weighting crawl/indexability, page understanding, semantic/query fit and intent alignment above weak supporting signals such as raw text volume, image count, link count, price presence or messengers.
 - D45 evidence: `backend/app/ml/seo_weighted_labels.py`, `backend/data/dataset_versions/dataset-v4/expert_labels.csv`, `d45-seo-weighted-label-report.json`, `d45-seo-weighted-label-report.md`, and `d45-split-validation.json`.
 - D45 generated `885` deterministic labels across `99` queries from `dataset-v3-d37`; split validation passed with `79` train queries, `20` validation queries and `0` query overlap. Labels are deterministic expert-rubric labels, not human labels.
@@ -114,6 +114,9 @@
 - D48 reference metrics against `dataset-v4`: production CatBoost v3 `MAE=8.113452`, `Spearman=0.415837`, `NDCG@10=0.97438`, `top_3_hit_rate=0.95`.
 - D48 candidate deltas versus production: RF improved MAE/Spearman/NDCG but regressed `top_3_hit_rate` by `-0.35`; CatBoostRegressor improved MAE/Spearman/NDCG but regressed `top_3_hit_rate` by `-0.30` and failed the product feature guardrail because its top feature is supporting `word_count`; CatBoostRanker regressed `top_3_hit_rate` by `-0.25` and failed absolute-error viability (`MAE=66.10666`).
 - D48 decision is `keep_current` with reason `no_candidate_passed_product_critical_guardrails`; production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- D49 evidence: `backend/app/ml/seo_weighted_no_publish_decision.py`, `backend/artifacts/ranking-benchmarks/dataset-v4-d49/d49-no-publish-decision-report.json`, and `d49-no-publish-decision-report.md`.
+- D49 decision is `keep_current` / `no_publish`, reason `d48_no_candidate_passed_product_critical_guardrails`. Candidate artifacts are explicitly marked not runtime-selected; the next modeling change requires a new task.
+- D49 verification passed: targeted no-publish checks plus the D45-D49 ML regression set (`48 passed`). Production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`; runtime dataset remains `dataset-v3-d37`, schema `v3`.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

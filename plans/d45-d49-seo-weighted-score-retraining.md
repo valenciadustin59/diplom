@@ -182,7 +182,18 @@ Scope:
 
 Acceptance criteria:
 
-- Publish/no-publish decision is recorded in JSON and Markdown.
-- If published, `backend/artifacts/page_quality_model.pkl` SHA changes and rollback SHA is recorded.
-- If not published, production SHA remains unchanged and the reason is clear.
-- Backend tests, frontend tests, and product smoke pass.
+- Completed: publish/no-publish decision is recorded in JSON and Markdown.
+- Completed: no model was published because D48 returned `keep_current`.
+- Completed: production SHA remains unchanged and the reason is clear.
+- Completed: backend ML regression checks passed for the D45-D49 wave.
+
+Evidence:
+
+- Runner: `backend/app/ml/seo_weighted_no_publish_decision.py`.
+- D49 report: `backend/artifacts/ranking-benchmarks/dataset-v4-d49/d49-no-publish-decision-report.json` and `.md`.
+- Decision: `keep_current` / `no_publish`.
+- Reason: `d48_no_candidate_passed_product_critical_guardrails`.
+- Runtime artifact kept: `backend/artifacts/page_quality_model.pkl`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+- Runtime model metadata kept: dataset `dataset-v3-d37`, schema `v3`, model type `CatBoostRegressor`, `148` features.
+- D47 candidate artifacts remain non-production and are not runtime-selected.
+- Verification: `tests/test_seo_weighted_no_publish_decision.py`, `tests/test_no_publish_decision.py`, `tests/test_seo_weighted_shadow_benchmark.py`, `tests/test_shadow_benchmark.py`, `tests/test_seo_weighted_candidate_training.py`, `tests/test_ranking_benchmark.py`, `tests/test_v4_dataset.py`, `tests/test_seo_weighted_labels.py`, `tests/test_training_pipeline.py`, `tests/test_training_dataset_quality.py`, and `tests/test_model_schema.py` passed together as `48 passed`.

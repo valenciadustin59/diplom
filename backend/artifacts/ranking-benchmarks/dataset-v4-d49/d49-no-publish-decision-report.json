@@ -1,0 +1,329 @@
+{
+  "generated_at": "2026-05-02T11:56:03.466769+00:00",
+  "task": "D49",
+  "decision": {
+    "decision": "keep_current",
+    "publish_action": "no_publish",
+    "reason": "d48_no_candidate_passed_product_critical_guardrails",
+    "d48_publish_recommendation": "keep_current",
+    "d48_reason": "no_candidate_passed_product_critical_guardrails",
+    "selected_candidate": null,
+    "selected_runtime_artifact": {
+      "model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+      "model_sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+      "model_size_bytes": 579339,
+      "public_metadata_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.metadata.json",
+      "public_metadata_sha1": "7b4b879bebcaf307f2bba452cf01362ffabbaac0",
+      "public_metadata": {
+        "artifact_version": "dataset-v3-d37-20260501200434",
+        "artifact_family": "page_quality_model",
+        "artifact_path": "artifacts\\page_quality_model.pkl",
+        "model_type": "CatBoostRegressor",
+        "model_schema_version": "v3",
+        "source": "local_dataset",
+        "trained_at": "2026-05-01T19:43:01.259677+00:00",
+        "published_at": "2026-05-01T20:04:34.923991+00:00",
+        "feature_count": 148,
+        "dataset_metadata": {
+          "dataset_version": "dataset-v3-d37",
+          "rows_count": 885,
+          "queries_count": 99,
+          "domains_count": 568,
+          "categories_count": 0,
+          "cities_count": 0,
+          "failure_rate": null,
+          "query_coverage_ratio": null,
+          "attempted_query_coverage_ratio": null,
+          "manifest_generated_at": null
+        },
+        "metrics_summary": {
+          "rmse": 14.865537,
+          "mae": 11.774165,
+          "spearman_mean": 0.421894,
+          "ndcg_at_10": 0.945929,
+          "top_3_hit_rate": 0.95,
+          "validation_queries": 20.0,
+          "split_mode": "group_by_query"
+        },
+        "candidate_name": "pointwise_catboost",
+        "candidate_family": "pointwise",
+        "feature_importance_summary": null,
+        "shadow_report_path": "artifacts\\ranking-benchmarks\\dataset-v3-d37-shadow\\shadow-benchmark-guardrails-report.json",
+        "shadow_decision": {
+          "publish_recommendation": "publish_candidate",
+          "selected_candidate": "pointwise_catboost",
+          "reason": "candidate_passed_all_publish_gates_and_outperformed_reference",
+          "reference_model": {
+            "model_path": "artifacts\\page_quality_model.pkl",
+            "source": "local_dataset",
+            "model_type": "RandomForestRegressor",
+            "trained_at": "2026-04-21T17:49:03.706834+00:00",
+            "published_at": "2026-04-21T17:49:01.452372+00:00",
+            "artifact_version": "ru_commercial_dataset-20260421-primary-20260421174901",
+            "dataset_version": "ru_commercial_dataset-20260421-primary",
+            "model_schema_version": "v1",
+            "candidate_name": null,
+            "candidate_family": null,
+            "feature_count": 59,
+            "rows_count": 436,
+            "queries_count": 47,
+            "domains_count": 385
+          }
+        },
+        "rollback_reference": {
+          "rollback_model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\versions\\page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl",
+          "rollback_model_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+          "rollback_metadata_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\versions\\page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json",
+          "rollback_metadata_sha1": "23b60a7226cddf360049fe0ea8223cd034ec7f55",
+          "created_model_copy": false,
+          "created_metadata_copy": false,
+          "source_model_path": "artifacts\\page_quality_model.pkl",
+          "source_model_sha1": "5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9",
+          "source_metadata_path": "artifacts\\page_quality_model.metadata.json",
+          "source_metadata_sha1": "494d3ee12f4bf0eff0e848a81ac1c4426483afa2"
+        }
+      },
+      "model_info": {
+        "artifact_version": "dataset-v3-d37-20260501200434",
+        "artifact_family": "page_quality_model",
+        "model_type": "CatBoostRegressor",
+        "model_schema_version": "v3",
+        "source": "local_dataset",
+        "trained_at": "2026-05-01T19:43:01.259677+00:00",
+        "published_at": "2026-05-01T20:04:34.923991+00:00",
+        "feature_count": 148,
+        "dataset_version": "dataset-v3-d37",
+        "rows_count": 885,
+        "queries_count": 99,
+        "domains_count": 568,
+        "metrics_summary": {
+          "rmse": 14.865537,
+          "mae": 11.774165,
+          "spearman_mean": 0.421894,
+          "ndcg_at_10": 0.945929,
+          "top_3_hit_rate": 0.95,
+          "validation_queries": 20.0,
+          "split_mode": "group_by_query"
+        }
+      }
+    },
+    "production_artifact_sha1_before": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "production_artifact_sha1_after": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "production_artifact_unchanged": true
+  },
+  "d48_evidence": {
+    "d48_report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v4-d48\\d48-product-critical-shadow-report.json",
+    "dataset_version": "dataset-v4",
+    "reference_metrics": {
+      "rmse": 11.973977,
+      "mae": 8.113452,
+      "spearman_mean": 0.415837,
+      "ndcg_at_10": 0.97438,
+      "top_3_hit_rate": 0.95,
+      "validation_queries": 20.0
+    },
+    "metric_deltas_by_candidate": {
+      "pointwise_random_forest": {
+        "spearman_mean": 0.50228,
+        "ndcg_at_10": 0.022439,
+        "top_3_hit_rate": -0.35,
+        "rmse": -9.417723,
+        "mae": -6.234861
+      },
+      "pointwise_catboost": {
+        "spearman_mean": 0.543217,
+        "ndcg_at_10": 0.023968,
+        "top_3_hit_rate": -0.3,
+        "rmse": -10.131877,
+        "mae": -6.881721
+      },
+      "catboost_ranker": {
+        "spearman_mean": 0.49519,
+        "ndcg_at_10": 0.022055,
+        "top_3_hit_rate": -0.25,
+        "rmse": 55.89217,
+        "mae": 57.993208
+      }
+    },
+    "decision": {
+      "publish_recommendation": "keep_current",
+      "selected_candidate": null,
+      "reason": "no_candidate_passed_product_critical_guardrails"
+    }
+  },
+  "candidate_decisions": [
+    {
+      "candidate_name": "pointwise_random_forest",
+      "model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl",
+      "publish_allowed": false,
+      "shadow_gate_passed": false,
+      "product_gate_passed": false,
+      "base_rejection_reasons": [
+        "top_3_hit_rate_regressed"
+      ],
+      "product_failed_checks": [
+        "base_shadow_publish_gate_passed"
+      ],
+      "candidate_metrics": {
+        "rmse": 2.556254,
+        "mae": 1.878591,
+        "spearman_mean": 0.918117,
+        "ndcg_at_10": 0.996819,
+        "top_3_hit_rate": 0.6,
+        "validation_queries": 20.0
+      },
+      "reference_metrics": {
+        "rmse": 11.973977,
+        "mae": 8.113452,
+        "spearman_mean": 0.415837,
+        "ndcg_at_10": 0.97438,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "metric_deltas": {
+        "rmse": -9.417723,
+        "mae": -6.234861,
+        "spearman_mean": 0.50228,
+        "ndcg_at_10": 0.022439,
+        "top_3_hit_rate": -0.35
+      },
+      "top_feature": "informational_intent_alignment",
+      "top_feature_group": "critical",
+      "feature_guardrail_passed": true,
+      "score_response_guardrail_passed": true,
+      "average_critical_drop": 34.5498,
+      "average_supporting_drop": 5.763
+    },
+    {
+      "candidate_name": "pointwise_catboost",
+      "model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl",
+      "publish_allowed": false,
+      "shadow_gate_passed": false,
+      "product_gate_passed": false,
+      "base_rejection_reasons": [
+        "top_3_hit_rate_regressed"
+      ],
+      "product_failed_checks": [
+        "base_shadow_publish_gate_passed",
+        "feature_importance_seo_weighted"
+      ],
+      "candidate_metrics": {
+        "rmse": 1.8421,
+        "mae": 1.231731,
+        "spearman_mean": 0.959054,
+        "ndcg_at_10": 0.998348,
+        "top_3_hit_rate": 0.65,
+        "validation_queries": 20.0
+      },
+      "reference_metrics": {
+        "rmse": 11.973977,
+        "mae": 8.113452,
+        "spearman_mean": 0.415837,
+        "ndcg_at_10": 0.97438,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "metric_deltas": {
+        "rmse": -10.131877,
+        "mae": -6.881721,
+        "spearman_mean": 0.543217,
+        "ndcg_at_10": 0.023968,
+        "top_3_hit_rate": -0.3
+      },
+      "top_feature": "word_count",
+      "top_feature_group": "supporting",
+      "feature_guardrail_passed": false,
+      "score_response_guardrail_passed": true,
+      "average_critical_drop": 21.3917,
+      "average_supporting_drop": 3.9823
+    },
+    {
+      "candidate_name": "catboost_ranker",
+      "model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl",
+      "publish_allowed": false,
+      "shadow_gate_passed": false,
+      "product_gate_passed": false,
+      "base_rejection_reasons": [
+        "top_3_hit_rate_regressed",
+        "rmse_not_comparable",
+        "mae_not_comparable",
+        "ranking_family_absolute_error_not_viable"
+      ],
+      "product_failed_checks": [
+        "base_shadow_publish_gate_passed"
+      ],
+      "candidate_metrics": {
+        "rmse": 67.866147,
+        "mae": 66.10666,
+        "spearman_mean": 0.911027,
+        "ndcg_at_10": 0.996435,
+        "top_3_hit_rate": 0.7,
+        "validation_queries": 20.0
+      },
+      "reference_metrics": {
+        "rmse": 11.973977,
+        "mae": 8.113452,
+        "spearman_mean": 0.415837,
+        "ndcg_at_10": 0.97438,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 20.0
+      },
+      "metric_deltas": {
+        "rmse": 55.89217,
+        "mae": 57.993208,
+        "spearman_mean": 0.49519,
+        "ndcg_at_10": 0.022055,
+        "top_3_hit_rate": -0.25
+      },
+      "top_feature": "canonical_signal_score",
+      "top_feature_group": "critical",
+      "feature_guardrail_passed": true,
+      "score_response_guardrail_passed": true,
+      "average_critical_drop": 0.8909,
+      "average_supporting_drop": 0.1436
+    }
+  ],
+  "rollback_reference": {
+    "rollback_required": false,
+    "rollback_reason": "D49 did not publish a dataset-v4 candidate; the current production alias remains selected.",
+    "current_alias_model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+    "current_alias_model_sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "current_alias_metadata_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.metadata.json",
+    "current_alias_metadata_sha1": "7b4b879bebcaf307f2bba452cf01362ffabbaac0",
+    "versioned_reference_model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\versions\\page_quality_model--dataset-v3-d37-20260501200434.pkl",
+    "versioned_reference_model_available": true,
+    "versioned_reference_model_sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "versioned_reference_metadata_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\versions\\page_quality_model--dataset-v3-d37-20260501200434.metadata.json",
+    "versioned_reference_metadata_available": true,
+    "versioned_reference_metadata_sha1": "d351513237785e650a3e4d5a37bac75f016cae2a"
+  },
+  "verification": {
+    "status": "passed",
+    "checks": [
+      {
+        "name": "D49 targeted no-publish tests",
+        "status": "passed"
+      },
+      {
+        "name": "D45-D49 ML regression set (48 tests)",
+        "status": "passed"
+      },
+      {
+        "name": "D48 product-critical evidence review",
+        "status": "passed"
+      }
+    ]
+  },
+  "invariants": {
+    "production_model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+    "production_model_sha1": "29c4b29455f795a535da94b2c6f36ef603d003eb",
+    "runtime_dataset_version": "dataset-v3-d37",
+    "runtime_model_schema_version": "v3",
+    "candidate_artifacts_are_not_runtime_selected": true,
+    "next_modeling_step_requires_new_task": true
+  },
+  "report_paths": {
+    "json_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v4-d49\\d49-no-publish-decision-report.json",
+    "markdown_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v4-d49\\d49-no-publish-decision-report.md"
+  }
+}

@@ -150,6 +150,12 @@ _SEO_WEIGHTED_SHADOW_BENCHMARK_EXPORTS = {
     "build_product_guardrails",
     "run_d48_product_shadow_benchmark",
 }
+_SEO_WEIGHTED_NO_PUBLISH_DECISION_EXPORTS = {
+    "DEFAULT_D49_OUTPUT_DIR",
+    "build_d49_no_publish_report",
+    "run_d49_no_publish_decision",
+    "validate_d48_keep_current_report",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -193,6 +199,9 @@ def __getattr__(name: str):
     if name in _SEO_WEIGHTED_SHADOW_BENCHMARK_EXPORTS:
         module = importlib.import_module("app.ml.seo_weighted_shadow_benchmark")
         return getattr(module, name)
+    if name in _SEO_WEIGHTED_NO_PUBLISH_DECISION_EXPORTS:
+        module = importlib.import_module("app.ml.seo_weighted_no_publish_decision")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -224,4 +233,5 @@ __all__ = [
     *_V4_DATASET_EXPORTS,
     *_SEO_WEIGHTED_CANDIDATE_TRAINING_EXPORTS,
     *_SEO_WEIGHTED_SHADOW_BENCHMARK_EXPORTS,
+    *_SEO_WEIGHTED_NO_PUBLISH_DECISION_EXPORTS,
 ]

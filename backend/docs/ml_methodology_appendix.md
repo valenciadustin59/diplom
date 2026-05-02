@@ -533,6 +533,21 @@ The product score-response check passed for all candidates: critical SEO degrada
 
 D48 decision is `keep_current` with reason `no_candidate_passed_product_critical_guardrails`. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D49 no-publish release decision
+
+D49 turns the D48 benchmark result into an explicit release decision. It does not train, publish, roll back or mutate the runtime artifact.
+
+D49 runs `backend/app/ml/seo_weighted_no_publish_decision.py`. The decision is `keep_current` with publish action `no_publish`, because no D47 candidate passed the product-critical guardrails. This keeps the current CatBoost v3 production model active while preserving the dataset-v4 candidates as non-production evidence.
+
+D49 evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d49/d49-no-publish-decision-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d49/d49-no-publish-decision-report.md`
+
+The selected runtime artifact remains `backend/artifacts/page_quality_model.pkl`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`, dataset `dataset-v3-d37`, schema `v3`, model type `CatBoostRegressor`, with `148` features. Candidate artifacts from D47 are explicitly not runtime-selected.
+
+D49 verification passed with the D45-D49 ML regression set: `48` tests passed across no-publish, shadow benchmark, ranking benchmark, dataset-v4, SEO-weighted labels, training pipeline, dataset quality and model schema coverage.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -542,6 +557,7 @@ D48 decision is `keep_current` with reason `no_candidate_passed_product_critical
 - `backend/app/ml/seo_weighted_labels.py`
 - `backend/app/ml/seo_weighted_candidate_training.py`
 - `backend/app/ml/seo_weighted_shadow_benchmark.py`
+- `backend/app/ml/seo_weighted_no_publish_decision.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`
