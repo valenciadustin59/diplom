@@ -95,7 +95,7 @@
 - Local mirror: `plans/d45-d49-seo-weighted-score-retraining.md`.
 - `D45` / GitHub `#64` - completed locally: SEO-weighted deterministic expert-rubric labels for a new `dataset-v4`, with critical/search-impact factors weighted above supporting UX/commercial signals.
 - `D46` / GitHub `#65` - completed locally: versioned `dataset-v4` bundle built and validated with leakage-safe split and importance-weighted label evidence.
-- `D47` / GitHub `#66` - planned: train non-production SEO-weighted candidates without replacing `backend/artifacts/page_quality_model.pkl`.
+- `D47` / GitHub `#66` - completed locally: non-production SEO-weighted candidates trained from `dataset-v4` without replacing `backend/artifacts/page_quality_model.pkl`.
 - `D48` / GitHub `#67` - planned: shadow benchmark the candidates against the current CatBoost v3 production model with top-3, NDCG, Spearman, MAE, score boundedness and recommendation-priority consistency guardrails.
 - `D49` / GitHub `#68` - planned: controlled publish or explicit no-publish decision. Publish only if D48 passes; otherwise keep production SHA `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 - Product intent: the model should help pages rank higher in search by weighting crawl/indexability, page understanding, semantic/query fit and intent alignment above weak supporting signals such as raw text volume, image count, link count, price presence or messengers.
@@ -106,6 +106,10 @@
 - D46 evidence: `backend/app/ml/v4_dataset.py`, `backend/data/dataset_versions/dataset-v4/dataset.csv`, `failures.csv`, `seeds.csv`, `split.json`, `manifest.json`, `d46-dataset-v4-report.json`, and `d46-dataset-v4-report.md`.
 - D46 applied all `885/885` D45 labels directly as `target_score` with `label_schema_version=seo-weighted-v4` and `label_source=seo_weighted_rubric_v4`. This intentionally avoids adding another 30% weak SERP-rank hybrid on top of D45 because D45 already includes a small 5% rank prior.
 - D46 manifest is `ready_for_training=true`; split is `group_by_query` with `695` train rows, `190` validation rows, `79` train queries, `20` validation queries, and `0` query overlap. Dataset coverage: `885` rows, `49` failures, `99` attempted/success queries, `568` domains, `6` categories, `8` cities.
+- D47 evidence: `backend/app/ml/seo_weighted_candidate_training.py`, `backend/artifacts/ranking-benchmarks/dataset-v4-d47/d47-candidate-training-report.json`, `.md`, and `candidate-artifact-training-report.json`, `.md`.
+- D47 candidate artifacts: `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl` (SHA1 `6ff84515690e07c2f0b5daa141deede491bd0c9d`), `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl` (SHA1 `24b774fea9402478223a6ab1d87b0758efd6d131`), and `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl` (SHA1 `e7af615565ddec429fa592c1a8f9418bbba26471`), each with a `.metadata.json` sidecar marked `non_production=true` and `runtime_enabled=false`.
+- D47 metrics on the query-group validation split: RF `MAE=1.878591`, `Spearman=0.918117`, `NDCG@10=0.996819`, `top_3_hit_rate=0.6`; CatBoostRegressor `MAE=1.231731`, `Spearman=0.959054`, `NDCG@10=0.998348`, `top_3_hit_rate=0.65`; CatBoostRanker `MAE=66.10666`, `Spearman=0.911027`, `NDCG@10=0.996435`, `top_3_hit_rate=0.7`.
+- D47 is not a publish decision. D48 must run product-critical shadow guardrails against the current CatBoost v3 production artifact before D49 can publish or explicitly keep current production. D47 did not mutate the production artifact; `backend/artifacts/page_quality_model.pkl` SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

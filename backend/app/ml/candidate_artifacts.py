@@ -203,6 +203,7 @@ def _model_metadata(
     feature_columns: list[str] | tuple[str, ...],
     model_schema_version: str,
     trained_at: str,
+    artifact_metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     return {
         "source": "local_dataset",
@@ -218,6 +219,7 @@ def _model_metadata(
         "queries_count": len({str(row.get("query") or "") for row in rows}),
         "domains_count": len({str(row.get("domain") or "") for row in rows}),
         "trained_at": trained_at,
+        **(artifact_metadata or {}),
     }
 
 
@@ -233,6 +235,7 @@ def _save_candidate_model(
     feature_columns: list[str] | tuple[str, ...],
     model_schema_version: str,
     trained_at: str,
+    artifact_metadata: dict[str, Any] | None = None,
 ) -> Path:
     saved_path = save_model(
         model=candidate["model"],
@@ -246,6 +249,7 @@ def _save_candidate_model(
             feature_columns=feature_columns,
             model_schema_version=model_schema_version,
             trained_at=trained_at,
+            artifact_metadata=artifact_metadata,
         ),
     )
     candidate["model_path"] = str(saved_path)
@@ -350,6 +354,7 @@ def train_candidate_artifacts(
     test_size: float = 0.2,
     random_state: int = 42,
     model_schema_version: str = DEFAULT_TRAINING_MODEL_SCHEMA_VERSION,
+    artifact_metadata: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     _validate_candidate_output_paths(
         [rf_model_path, catboost_model_path, ranking_model_path],
@@ -447,6 +452,7 @@ def train_candidate_artifacts(
             feature_columns=feature_columns,
             model_schema_version=resolved_schema.version,
             trained_at=trained_at,
+            artifact_metadata=artifact_metadata,
         )
         saved_artifacts[str(candidate["candidate_name"])] = str(saved_path)
 
@@ -468,6 +474,7 @@ def train_candidate_artifacts(
             feature_columns=feature_columns,
             model_schema_version=resolved_schema.version,
             trained_at=trained_at,
+            artifact_metadata=artifact_metadata,
         )
         saved_artifacts[str(best_ranking_candidate["candidate_name"])] = str(saved_path)
 
@@ -484,6 +491,12 @@ def train_candidate_artifacts(
         "rows_count": len(rows),
         "queries_count": len({str(row.get("query") or "") for row in rows}),
         "domains_count": len({str(row.get("domain") or "") for row in rows}),
+        "training_parameters": {
+            "test_size": float(test_size),
+            "random_state": int(random_state),
+            "force_catboost": True,
+            "model_schema_version": resolved_schema.version,
+        },
         "split": _split_summary(train_rows, validation_rows, split_metadata),
         "reference_model": {
             "model_path": str(Path(reference_model_path)),

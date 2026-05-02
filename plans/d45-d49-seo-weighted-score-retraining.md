@@ -91,6 +91,8 @@ Evidence:
 
 ## D47 / GitHub #66: Train SEO-Weighted Candidate Models
 
+Status: completed locally.
+
 Goal: train non-production candidates optimized for credible SEO score behavior.
 
 Scope:
@@ -105,9 +107,29 @@ Scope:
 
 Acceptance criteria:
 
-- Candidate artifacts load through the runtime model loader.
-- Candidate metadata includes dataset version, feature count, training parameters and metrics.
-- Training report explains why each candidate is or is not viable.
+- Completed: candidate artifacts load through the runtime model loader.
+- Completed: candidate metadata includes dataset version, feature count, training parameters and metrics.
+- Completed: training report explains why each candidate is or is not viable.
+- Completed: no production artifact is changed.
+
+Evidence:
+
+- Training wrapper: `backend/app/ml/seo_weighted_candidate_training.py`.
+- Generic training report: `backend/artifacts/ranking-benchmarks/dataset-v4-d47/candidate-artifact-training-report.json` and `.md`.
+- D47 report: `backend/artifacts/ranking-benchmarks/dataset-v4-d47/d47-candidate-training-report.json` and `.md`.
+- Dataset: `dataset-v4`, label schema `seo-weighted-v4`, model schema `v3`, `148` features, `885` rows, `99` queries, `568` domains.
+- Split: `group_by_query`, `695` train rows, `190` validation rows, `79` train queries, `20` validation queries, `0` query overlap.
+- Saved non-production artifacts:
+  - `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl`, SHA1 `6ff84515690e07c2f0b5daa141deede491bd0c9d`;
+  - `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl`, SHA1 `24b774fea9402478223a6ab1d87b0758efd6d131`;
+  - `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl`, SHA1 `e7af615565ddec429fa592c1a8f9418bbba26471`.
+- Each artifact has a `.metadata.json` sidecar with `training_task=D47`, `non_production=true`, `runtime_enabled=false`, `target_policy=target_score_equals_d45_seo_weighted_expert_label` and compatibility check `passed=true`.
+- Metrics:
+  - RandomForestRegressor: `RMSE=2.556254`, `MAE=1.878591`, `Spearman=0.918117`, `NDCG@10=0.996819`, `top_3_hit_rate=0.6`.
+  - CatBoostRegressor: `RMSE=1.8421`, `MAE=1.231731`, `Spearman=0.959054`, `NDCG@10=0.998348`, `top_3_hit_rate=0.65`.
+  - CatBoostRanker: `RMSE=67.866147`, `MAE=66.10666`, `Spearman=0.911027`, `NDCG@10=0.996435`, `top_3_hit_rate=0.7`.
+- LightGBM and XGBoost ranking candidates were unavailable in the local environment (`lightgbm_not_installed`, `xgboost_not_installed`).
+- D47 is not a publish decision. The current production artifact SHA1 remains `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
 ## D48 / GitHub #67: Product-Critical Shadow Benchmark
 

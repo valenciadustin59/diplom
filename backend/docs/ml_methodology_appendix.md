@@ -464,6 +464,44 @@ The new target distribution matches the D45 bounded rubric: min `13.7`, p25 `66.
 
 D46 does not publish or mutate a runtime model. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
 
+## D47 SEO-weighted candidate training evidence
+
+D47 trains non-production model candidates from `dataset-v4`. It does not publish a model and does not change the active runtime artifact.
+
+The D47 training path is `backend/app/ml/seo_weighted_candidate_training.py`. It reuses the shared candidate-artifact workflow, but fixes the task-specific inputs:
+
+- dataset: `backend/data/dataset_versions/dataset-v4/dataset.csv`;
+- target policy: `target_score_equals_d45_seo_weighted_expert_label`;
+- label schema: `seo-weighted-v4`;
+- model schema: `v3`;
+- feature count: `148`;
+- split: `group_by_query`, `695` train rows, `190` validation rows and `0` query overlap.
+
+D47 saved three non-production candidates:
+
+- `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl`
+- `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl`
+- `backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl`
+
+Each candidate has a `.metadata.json` sidecar marked `training_task=D47`, `non_production=true`, `runtime_enabled=false` and `publish_decision_required=D48/D49`. Compatibility checks passed for all three saved artifacts: each loads through `load_model_artifact`, uses schema `v3`, has `148` features, reports `dataset-v4` and returns a bounded `predict_score` sample.
+
+Validation metrics:
+
+- RandomForestRegressor: `RMSE=2.556254`, `MAE=1.878591`, `Spearman=0.918117`, `NDCG@10=0.996819`, `top_3_hit_rate=0.6`.
+- CatBoostRegressor: `RMSE=1.8421`, `MAE=1.231731`, `Spearman=0.959054`, `NDCG@10=0.998348`, `top_3_hit_rate=0.65`.
+- CatBoostRanker: `RMSE=67.866147`, `MAE=66.10666`, `Spearman=0.911027`, `NDCG@10=0.996435`, `top_3_hit_rate=0.7`.
+
+The CatBoostRegressor is the best D47 pointwise candidate by validation quality, but D47 is deliberately not a release decision. D48 must compare candidates against the active production artifact with product-critical guardrails, especially `top_3_hit_rate` and recommendation-priority consistency.
+
+D47 evidence is stored in:
+
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d47/candidate-artifact-training-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d47/candidate-artifact-training-report.md`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d47/d47-candidate-training-report.json`
+- `backend/artifacts/ranking-benchmarks/dataset-v4-d47/d47-candidate-training-report.md`
+
+D47 does not publish or mutate a runtime model. The production artifact `backend/artifacts/page_quality_model.pkl` remains SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
@@ -471,6 +509,7 @@ D46 does not publish or mutate a runtime model. The production artifact `backend
 - `backend/app/ml/v3_dataset.py`
 - `backend/app/ml/v4_dataset.py`
 - `backend/app/ml/seo_weighted_labels.py`
+- `backend/app/ml/seo_weighted_candidate_training.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`
 - `backend/app/ml/evaluate.py`

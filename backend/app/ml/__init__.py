@@ -137,6 +137,13 @@ _V4_DATASET_EXPORTS = {
     "build_v4_dataset",
     "load_seo_weighted_labels",
 }
+_SEO_WEIGHTED_CANDIDATE_TRAINING_EXPORTS = {
+    "DEFAULT_D47_CATBOOST_CANDIDATE_PATH",
+    "DEFAULT_D47_OUTPUT_DIR",
+    "DEFAULT_D47_RANKING_CANDIDATE_PATH",
+    "DEFAULT_D47_RF_CANDIDATE_PATH",
+    "run_d47_candidate_training",
+}
 def __getattr__(name: str):
     if name in _DATASET_BUILDER_EXPORTS:
         module = importlib.import_module("app.ml.dataset_builder")
@@ -174,6 +181,9 @@ def __getattr__(name: str):
     if name in _V4_DATASET_EXPORTS:
         module = importlib.import_module("app.ml.v4_dataset")
         return getattr(module, name)
+    if name in _SEO_WEIGHTED_CANDIDATE_TRAINING_EXPORTS:
+        module = importlib.import_module("app.ml.seo_weighted_candidate_training")
+        return getattr(module, name)
     raise AttributeError(name)
 __all__ = [
     "DEFAULT_MODEL_PATH",
@@ -203,4 +213,5 @@ __all__ = [
     *_SECOND_PASS_EXPORTS,
     *_SECOND_PASS_EXPERIMENT_EXPORTS,
     *_V4_DATASET_EXPORTS,
+    *_SEO_WEIGHTED_CANDIDATE_TRAINING_EXPORTS,
 ]

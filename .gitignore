@@ -54,3 +54,6 @@ backend/data/*.manifest.json
 !backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v3-d37-ranking-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl
+!backend/artifacts/page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl
