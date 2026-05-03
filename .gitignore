@@ -45,6 +45,7 @@ Thumbs.db
 
 backend/data/*.manifest.json
 !backend/data/ru_commercial_dataset.manifest.json
+backend/data/dataset_versions/dataset-v6-query-relevance/artifacts/
 !backend/artifacts/page_quality_model.pkl
 !backend/artifacts/page_quality_model.dataset-v2-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl
@@ -57,3 +58,4 @@ backend/data/*.manifest.json
 !backend/artifacts/page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v6-query-relevance-candidate.pkl

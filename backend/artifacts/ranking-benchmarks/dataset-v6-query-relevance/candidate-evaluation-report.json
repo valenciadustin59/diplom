@@ -1,0 +1,89 @@
+{
+  "dataset_path": "data\\dataset_versions\\dataset-v6-query-relevance\\dataset.csv",
+  "rows_count": 1814,
+  "queries_count": 200,
+  "domains_count": 1134,
+  "train_rows": 1457,
+  "validation_rows": 357,
+  "split": {
+    "split_mode": "group_by_query"
+  },
+  "candidate_model_schema_version": "v3",
+  "candidate_feature_count": 148,
+  "candidates": [
+    {
+      "model_type": "RandomForestRegressor",
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {
+        "rmse": 20.984378,
+        "mae": 16.75919,
+        "spearman_mean": 0.300122,
+        "ndcg_at_10": 0.919595,
+        "top_3_hit_rate": 0.95,
+        "validation_queries": 40.0,
+        "split_mode": "group_by_query"
+      }
+    },
+    {
+      "model_type": "CatBoostRegressor",
+      "model_schema_version": "v3",
+      "feature_count": 148,
+      "metrics": {
+        "rmse": 21.059531,
+        "mae": 16.752985,
+        "spearman_mean": 0.275583,
+        "ndcg_at_10": 0.919969,
+        "top_3_hit_rate": 0.925,
+        "validation_queries": 40.0,
+        "split_mode": "group_by_query"
+      }
+    }
+  ],
+  "best_candidate": {
+    "model_type": "RandomForestRegressor",
+    "model_schema_version": "v3",
+    "feature_count": 148,
+    "metrics": {
+      "rmse": 20.984378,
+      "mae": 16.75919,
+      "spearman_mean": 0.300122,
+      "ndcg_at_10": 0.919595,
+      "top_3_hit_rate": 0.95,
+      "validation_queries": 40.0,
+      "split_mode": "group_by_query"
+    }
+  },
+  "benchmark": {
+    "enabled": true,
+    "catboost_metrics": {
+      "rmse": 21.059531,
+      "mae": 16.752985,
+      "spearman_mean": 0.275583,
+      "ndcg_at_10": 0.919969,
+      "top_3_hit_rate": 0.925,
+      "validation_queries": 40.0
+    }
+  },
+  "reference_model": {
+    "model_path": "artifacts\\page_quality_model.pkl",
+    "model_info": {
+      "source": "local_dataset",
+      "model_type": "CatBoostRegressor",
+      "trained_at": "2026-05-02T13:13:55.871684+00:00",
+      "dataset_rows": 885,
+      "dataset_version": "dataset-v5",
+      "model_schema_version": "v3",
+      "feature_count": 148
+    },
+    "metrics": {
+      "rmse": 30.063137,
+      "mae": 24.224482,
+      "spearman_mean": -0.022147,
+      "ndcg_at_10": 0.863113,
+      "top_3_hit_rate": 0.825,
+      "validation_queries": 40.0,
+      "split_mode": "group_by_query"
+    }
+  }
+}

@@ -1,0 +1,388 @@
+dataset_version,feature_schema_version,extraction_artifact_version,label_schema_version,label_source,weak_target_score,expert_target_score,query,category,intent,city,region_code,url,domain,rank,serp_page,title,snippet,page_type,fetch_status,fetch_error,artifact_path,artifact_sha1,artifact_size_bytes,target_score
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,козловой кран купить,industrial_cranes,commercial,,,https://www.vseinstrumenti.ru/category/krany-kozlovye-170137/,vseinstrumenti.ru,1,0,,,category,failed,Page.content: Unable to retrieve content because the page is navigating and changing the content.,,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,52.6316,,ремонт квартир москва,apartment_renovation,commercial,Москва,213,https://domclick.ru/my-home/promo/remont/pod-klyuch,domclick.ru,10,0,,,content,failed,Browser rendering did not produce usable content,,,0,52.6316
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,84.2105,,ремонт квартир под ключ цена,apartment_renovation,commercial,,,https://blog.domclick.ru/dom-i-uyut/post/skolko-stoit-remont-v-novostrojke-v-2025-godu,blog.domclick.ru,4,0,,,article,failed,Browser rendering did not produce usable content,,,0,84.2105
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,капитальный ремонт квартиры москва,apartment_renovation,commercial,Москва,213,https://domclick.ru/my-home/promo/remont/kapitalnyj,domclick.ru,3,0,,,content,failed,Browser rendering did not produce usable content,,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,ремонт квартиры в новостройке,apartment_renovation,commercial,,,https://avadom.ru/articles/remont-s-nulya-v-novostroyke/,avadom.ru,8,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://avadom.ru/articles/remont-s-nulya-v-novostroyke/
+Call log:
+  - navigating to ""https://avadom.ru/articles/remont-s-nulya-v-novostroyke/"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,84.2105,,как выбрать компанию по ремонту квартир,apartment_renovation,informational,,,https://rg.ru/2025/05/21/kak-vybrat-kompaniiu-dlia-remonta-kvartiry-5-glavnyh-sovetov.html,rg.ru,4,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://rg.ru/2025/05/21/kak-vybrat-kompaniiu-dlia-remonta-kvartiry-5-glavnyh-sovetov.html
+Call log:
+  - navigating to ""https://rg.ru/2025/05/21/kak-vybrat-kompaniiu-dlia-remonta-kvartiry-5-glavnyh-sovetov.html"", waiting until ""domcontentloaded""
+",,,0,84.2105
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,натяжной потолок цена за м2,stretch_ceilings,commercial,,,https://натяжные-потолки24.рф/kalkulyator,натяжные-потолки24.рф,5,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://xn---24-5cdzfqpipcoam4bg2mvc.xn--p1ai/kalkulyator
+Call log:
+  - navigating to ""https://xn---24-5cdzfqpipcoam4bg2mvc.xn--p1ai/kalkulyator"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,какой натяжной потолок выбрать,stretch_ceilings,informational,,,https://blog.domclick.ru/dom-i-uyut/post/kakoj-natyazhnoj-potolok-vybrat-sravnenie-materialov-faktur-i-cen,blog.domclick.ru,3,0,,,article,failed,Browser rendering did not produce usable content,,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,84.2105,,окна пвх на балкон,plastic_windows,commercial,,,https://okna-magnit.ru/okna-pod-klyuch/vidyi-okon/balkonnyoe/,okna-magnit.ru,4,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://okna-magnit.ru/okna-pod-klyuch/vidyi-okon/balkonnyoe/
+Call log:
+  - navigating to ""https://okna-magnit.ru/okna-pod-klyuch/vidyi-okon/balkonnyoe/"", waiting until ""domcontentloaded""
+",,,0,84.2105
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,окна пвх на балкон,plastic_windows,commercial,,,https://oknafoster.ru/osteklenie-balkonov-oknami-pvh/,oknafoster.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://oknafoster.ru/osteklenie-balkonov-oknami-pvh/
+Call log:
+  - navigating to ""https://oknafoster.ru/osteklenie-balkonov-oknami-pvh/"", waiting until ""domcontentloaded""
+",,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,остекление лоджии цена,plastic_windows,commercial,,,https://www.oknastreet.ru/stoimost-new/kalkuljator-balkonov.html,oknastreet.ru,5,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.oknastreet.ru/stoimost-new/kalkuljator-balkonov.html
+Call log:
+  - navigating to ""https://www.oknastreet.ru/stoimost-new/kalkuljator-balkonov.html"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,замена пластиковых окон,plastic_windows,commercial,,,https://www.fabrikaokon.ru/poleznoe/zamena-plastikovyix-okon.html,fabrikaokon.ru,3,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.fabrikaokon.ru/poleznoe/zamena-plastikovyix-okon.html"", waiting until ""domcontentloaded""
+",,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,энергосберегающие окна пвх,plastic_windows,commercial,,,https://okna-magnit.ru/okna-pod-klyuch/vidyi-okon/energosberegayushhie/,okna-magnit.ru,2,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://okna-magnit.ru/okna-pod-klyuch/vidyi-okon/energosberegayushhie/
+Call log:
+  - navigating to ""https://okna-magnit.ru/okna-pod-klyuch/vidyi-okon/energosberegayushhie/"", waiting until ""domcontentloaded""
+",,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,68.4211,,энергосберегающие окна пвх,plastic_windows,commercial,,,https://rosstip.ru/news/9386-kak-vybrat-energoeffektivnye-pvkh-okna-dlya-stroitelstva-kriterii-tekhnologii-i-sovety-spetsialistov,rosstip.ru,7,0,,,article,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://rosstip.ru/news/9386-kak-vybrat-energoeffektivnye-pvkh-okna-dlya-stroitelstva-kriterii-tekhnologii-i-sovety-spetsialistov"", waiting until ""domcontentloaded""
+",,,0,68.4211
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,ремонт пластиковых окон,plastic_windows,commercial,,,https://www.fabrikaokon.ru/remont-okon-pvh.html,fabrikaokon.ru,1,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.fabrikaokon.ru/remont-okon-pvh.html"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,металлические входные двери цена,entrance_doors,commercial,,,https://www.vseinstrumenti.ru/tag-page/vhodnye-metallicheskie-dveri-dlya-chastnogo-doma-i-kottedzha-519195/,vseinstrumenti.ru,5,0,,,content,failed,Page.content: Unable to retrieve content because the page is navigating and changing the content.,,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,84.2105,,дверь входная в квартиру,entrance_doors,commercial,,,https://blog.domclick.ru/dom-i-uyut/post/kak-vybrat-vhodnuyu-dver-v-kvartiru-ili-dom,blog.domclick.ru,4,0,,,article,failed,Browser rendering did not produce usable content,,,0,84.2105
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,как выбрать входную дверь,entrance_doors,informational,,,https://blog.domclick.ru/dom-i-uyut/post/kak-vybrat-vhodnuyu-dver-v-kvartiru-ili-dom,blog.domclick.ru,2,0,,,article,failed,Browser rendering did not produce usable content,,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,как выбрать входную дверь,entrance_doors,informational,,,https://rg.ru/2024/07/31/kak-vybrat-vhodnuiu-dver-v-kvartiru-rejting-i-sovety-ekspertov.html,rg.ru,6,0,,,content,failed,Browser rendering did not produce usable content,,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,стоматология москва,dentistry,commercial,Москва,213,https://infodoctor.ru/klinika/stomatology,infodoctor.ru,6,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://infodoctor.ru/klinika/stomatology"", waiting until ""domcontentloaded""
+",,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,стоматология москва,dentistry,commercial,Москва,213,https://medadvisor.ru/moskva/clinics/stomatologicheskie-kliniki,medadvisor.ru,8,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://medadvisor.ru/moskva/clinics/stomatologicheskie-kliniki
+Call log:
+  - navigating to ""https://medadvisor.ru/moskva/clinics/stomatologicheskie-kliniki"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,детская стоматология рядом,dentistry,commercial,,,https://naudent.ru/detskaya-stomatologiya/,naudent.ru,5,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://naudent.ru/detskaya-stomatologiya/
+Call log:
+  - navigating to ""https://naudent.ru/detskaya-stomatologiya/"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,84.2105,,банкротство физ лиц москва,bankruptcy_law,commercial,Москва,213,https://bankirro.ru/,bankirro.ru,4,0,,,homepage,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://bankirro.ru/
+Call log:
+  - navigating to ""https://bankirro.ru/"", waiting until ""domcontentloaded""
+",,,0,84.2105
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,списание долгов через банкротство,bankruptcy_law,commercial,,,https://alexeydemidov.ru/blog/kak-spisyvayut-dolgi-posle-bankrotstva/,alexeydemidov.ru,5,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://alexeydemidov.ru/blog/kak-spisyvayut-dolgi-posle-bankrotstva/
+Call log:
+  - navigating to ""https://alexeydemidov.ru/blog/kak-spisyvayut-dolgi-posle-bankrotstva/"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,списание долгов через банкротство,bankruptcy_law,commercial,,,https://juristonline.com/news/detail/protsedura-bankrotstva-fizicheskogo-litsa-poshagovaya-instruktsiya-sroki-i-posledstviya/,juristonline.com,8,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://juristonline.com/news/detail/protsedura-bankrotstva-fizicheskogo-litsa-poshagovaya-instruktsiya-sroki-i-posledstviya/
+Call log:
+  - navigating to ""https://juristonline.com/news/detail/protsedura-bankrotstva-fizicheskogo-litsa-poshagovaya-instruktsiya-sroki-i-posledstviya/"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,68.4211,,консультация по банкротству бесплатно,bankruptcy_law,commercial,,,https://dolgam.net/onlayn-konsultatsiya/,dolgam.net,7,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://dolgam.net/onlayn-konsultatsiya/
+Call log:
+  - navigating to ""https://dolgam.net/onlayn-konsultatsiya/"", waiting until ""domcontentloaded""
+",,,0,68.4211
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,консультация по банкротству бесплатно,bankruptcy_law,commercial,,,https://financentr.ru/free-consult,financentr.ru,8,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://financentr.ru/free-consult
+Call log:
+  - navigating to ""https://financentr.ru/free-consult"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,банкротство физических лиц отзывы,bankruptcy_law,comparison,,,https://www.vbr.ru/bankrotstvo/otzivy/,vbr.ru,1,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.vbr.ru/bankrotstvo/otzivy/"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,бухгалтерские услуги для ип,accounting_services,commercial,,,https://baliot.ru/buhgalterskie-uslugi/autsorsing/ip/,baliot.ru,2,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://baliot.ru/buhgalterskie-uslugi/autsorsing/ip/
+Call log:
+  - navigating to ""https://baliot.ru/buhgalterskie-uslugi/autsorsing/ip/"", waiting until ""domcontentloaded""
+",,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,бухгалтерские услуги для ип,accounting_services,commercial,,,https://www.sravni.ru/biznes-accounting/ip/,sravni.ru,5,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.sravni.ru/biznes-accounting/ip/
+Call log:
+  - navigating to ""https://www.sravni.ru/biznes-accounting/ip/"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,бухгалтер для маркетплейсов,accounting_services,commercial,,,https://www.profdelo.com/blog/bukhgalteriya-dlya-marketpleysov/,profdelo.com,8,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.profdelo.com/blog/bukhgalteriya-dlya-marketpleysov/
+Call log:
+  - navigating to ""https://www.profdelo.com/blog/bukhgalteriya-dlya-marketpleysov/"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,автосервис москва,car_service,commercial,Москва,213,https://www.fitauto.ru/,fitauto.ru,3,0,,,homepage,failed,Browser rendering did not produce usable content,,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,замена масла рядом,car_service,commercial,,,https://yaikar.ru/gde-nayti-mobilnuyu-masterskuyu-dlya-zameny-masla/,yaikar.ru,5,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://yaikar.ru/gde-nayti-mobilnuyu-masterskuyu-dlya-zameny-masla/"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,диагностика автомобиля цена,car_service,commercial,,,https://blizko.ru/predl/transport/vehicle/repaircar/diagnostika/16484,blizko.ru,3,0,,,content,failed,Browser rendering did not produce usable content,,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,68.4211,,кузовной ремонт цена,car_service,commercial,,,https://jointmotors.ru/price/,jointmotors.ru,7,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://jointmotors.ru/price/
+Call log:
+  - navigating to ""https://jointmotors.ru/price/"", waiting until ""domcontentloaded""
+",,,0,68.4211
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,автосервис отзывы,car_service,comparison,,,https://msk.auto-firmika.ru/__avtoservisy_otzyvy,msk.auto-firmika.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://msk.auto-firmika.ru/__avtoservisy_otzyvy
+Call log:
+  - navigating to ""https://msk.auto-firmika.ru/__avtoservisy_otzyvy"", waiting until ""domcontentloaded""
+",,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,грузоперевозки москва,cargo_transport,commercial,Москва,213,https://pecom.ru/,pecom.ru,6,0,,,homepage,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://pecom.ru/"", waiting until ""domcontentloaded""
+",,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,заказать газель для перевозки,cargo_transport,commercial,,,https://perevozki-na-gazeli.com/calc/,perevozki-na-gazeli.com,8,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://perevozki-na-gazeli.com/calc/
+Call log:
+  - navigating to ""https://perevozki-na-gazeli.com/calc/"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,заказать газель для перевозки,cargo_transport,commercial,,,https://gazelkin.ru/transportation/zakazat-perevozku/,gazelkin.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://gazelkin.ru/transportation/zakazat-perevozku/
+Call log:
+  - navigating to ""https://gazelkin.ru/transportation/zakazat-perevozku/"", waiting until ""domcontentloaded""
+",,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,квартирный переезд цена,cargo_transport,commercial,,,https://www.dellin.ru/services/moving/,dellin.ru,2,0,,,category,failed,Browser rendering did not produce usable content,,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,перевозка мебели с грузчиками,cargo_transport,commercial,,,https://www.dellin.ru/cargo-types/furniture/,dellin.ru,9,0,,,content,failed,Browser rendering did not produce usable content,,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,междугородние грузоперевозки,cargo_transport,commercial,,,https://pecom.ru/dlv/size/perevozka-mejgorod/,pecom.ru,1,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://pecom.ru/dlv/size/perevozka-mejgorod/
+Call log:
+  - navigating to ""https://pecom.ru/dlv/size/perevozka-mejgorod/"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,междугородние грузоперевозки,cargo_transport,commercial,,,https://mtkkompas.ru/uslugi/prochie-uslugi/mezhdugorodnie-gruzoperevozki/,mtkkompas.ru,9,0,,,content,failed,"Page.goto: net::ERR_CERT_DATE_INVALID at https://mtkkompas.ru/uslugi/prochie-uslugi/mezhdugorodnie-gruzoperevozki/
+Call log:
+  - navigating to ""https://mtkkompas.ru/uslugi/prochie-uslugi/mezhdugorodnie-gruzoperevozki/"", waiting until ""domcontentloaded""
+",,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,доставка груза по россии,cargo_transport,commercial,,,https://pecom.ru/directions/perevozki-po-rossii/,pecom.ru,1,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://pecom.ru/directions/perevozki-po-rossii/"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,доставка груза по россии,cargo_transport,commercial,,,https://www.dellin.ru/products/ltl/,dellin.ru,3,0,,,product,failed,Browser rendering did not produce usable content,,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,грузчики и машина недорого,cargo_transport,commercial,,,https://nashigruzchiki.ru/,nashigruzchiki.ru,9,0,,,homepage,failed,"Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://nashigruzchiki.ru/
+Call log:
+  - navigating to ""https://nashigruzchiki.ru/"", waiting until ""domcontentloaded""
+",,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,как выбрать транспортную компанию,cargo_transport,informational,,,https://pecom.ru/info/kak-vybrat-transportnuyu-kompaniyu-dlya-dostavki-gruza-v-2025-godu/,pecom.ru,5,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://pecom.ru/info/kak-vybrat-transportnuyu-kompaniyu-dlya-dostavki-gruza-v-2025-godu/"", waiting until ""domcontentloaded""
+",,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,63.1579,,абонемент на пилатес,pilates_fitness,commercial,,,https://www.yapokupayu.ru/blogs/post/pilates-v-sankt-peterburge,yapokupayu.ru,8,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.yapokupayu.ru/blogs/post/pilates-v-sankt-peterburge
+Call log:
+  - navigating to ""https://www.yapokupayu.ru/blogs/post/pilates-v-sankt-peterburge"", waiting until ""domcontentloaded""
+",,,0,63.1579
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,чем отличается пилатес от йоги,pilates_fitness,informational,,,https://yogajournal.ru/body/practice/yoga-therapy/chem-otlichaetsya-yoga-ot-pilatesa_536_897/,yogajournal.ru,6,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://yogajournal.ru/body/practice/yoga-therapy/chem-otlichaetsya-yoga-ot-pilatesa_536_897/
+Call log:
+  - navigating to ""https://yogajournal.ru/body/practice/yoga-therapy/chem-otlichaetsya-yoga-ot-pilatesa_536_897/"", waiting until ""domcontentloaded""
+",,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,сдать анализы москва,medical_tests,commercial,Москва,213,https://napopravku.ru/moskva/uslugi/analizy/,napopravku.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://napopravku.ru/moskva/uslugi/analizy/
+Call log:
+  - navigating to ""https://napopravku.ru/moskva/uslugi/analizy/"", waiting until ""domcontentloaded""
+",,,0,57.8947
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,общий анализ крови цена,medical_tests,commercial,,,https://kdl.ru/analizy-i-tseny/obshiy-analiz-krovi,kdl.ru,1,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://kdl.ru/analizy-i-tseny/obshiy-analiz-krovi
+Call log:
+  - navigating to ""https://kdl.ru/analizy-i-tseny/obshiy-analiz-krovi"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,общий анализ крови цена,medical_tests,commercial,,,https://gemotest.ru/,gemotest.ru,2,0,,,homepage,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://gemotest.ru/
+Call log:
+  - navigating to ""https://gemotest.ru/"", waiting until ""domcontentloaded""
+",,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,общий анализ крови цена,medical_tests,commercial,,,https://www.cmd-online.ru/analizy-i-tseny/katalog-analizov/msk/klinicheskij-analiz-krovi-complete-blood-count_110006/,cmd-online.ru,3,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.cmd-online.ru/analizy-i-tseny/katalog-analizov/msk/klinicheskij-analiz-krovi-complete-blood-count_110006/
+Call log:
+  - navigating to ""https://www.cmd-online.ru/analizy-i-tseny/katalog-analizov/msk/klinicheskij-analiz-krovi-complete-blood-count_110006/"", waiting until ""domcontentloaded""
+",,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,68.4211,,общий анализ крови цена,medical_tests,commercial,,,https://dnkom.ru/analizy-i-tseny/obshchiy-analiz-krovi-gruppy-krovi/,dnkom.ru,7,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://dnkom.ru/analizy-i-tseny/obshchiy-analiz-krovi-gruppy-krovi/"", waiting until ""domcontentloaded""
+",,,0,68.4211
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,лаборатория анализов отзывы,medical_tests,comparison,,,https://www.otzyvru.com/meditsina/laboratorii/,otzyvru.com,6,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.otzyvru.com/meditsina/laboratorii/"", waiting until ""domcontentloaded""
+",,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,52.6316,,как подготовиться к анализу крови,medical_tests,informational,,,https://citilab.ru/info/rules/blood/,citilab.ru,10,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://citilab.ru/info/rules/blood/
+Call log:
+  - navigating to ""https://citilab.ru/info/rules/blood/"", waiting until ""domcontentloaded""
+",,,0,52.6316
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,мебель на заказ москва,custom_furniture,commercial,Москва,213,https://repo-mebel.ru/,repo-mebel.ru,6,0,,,homepage,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://repo-mebel.ru/
+Call log:
+  - navigating to ""https://repo-mebel.ru/"", waiting until ""domcontentloaded""
+",,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,гардеробная на заказ,custom_furniture,commercial,,,https://abelle-project.ru/,abelle-project.ru,2,0,,,homepage,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://abelle-project.ru/
+Call log:
+  - navigating to ""https://abelle-project.ru/"", waiting until ""domcontentloaded""
+",,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,89.4737,,детская мебель на заказ,custom_furniture,commercial,,,https://mamka.moscow/,mamka.moscow,3,0,,,homepage,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://mamka.moscow/
+Call log:
+  - navigating to ""https://mamka.moscow/"", waiting until ""domcontentloaded""
+",,,0,89.4737
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,как выбрать мебель на заказ,custom_furniture,informational,,,https://rg.ru/2025/02/26/7-sekretov-kak-vybrat-mebel-na-zakaz-kotoraia-prosluzhit-15-let.html,rg.ru,1,0,,,content,failed,Browser rendering did not produce usable content,,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,94.7368,,купить кондиционер с установкой,air_conditioners,commercial,,,https://www.dns-shop.ru/catalog/17a8d3a316404e77/kondicionery-split-sistemy/,dns-shop.ru,2,0,,,product,failed,Browser rendering did not produce usable content,,,0,94.7368
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,78.9474,,установка кондиционера цена,air_conditioners,commercial,,,https://blog.domclick.ru/dom-i-uyut/post/skolko-stoit-ustanovit-kondicioner,blog.domclick.ru,5,0,,,article,failed,Browser rendering did not produce usable content,,,0,78.9474
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,73.6842,,сплит система в квартиру,air_conditioners,commercial,,,https://www.dns-shop.ru/catalog/17a8d3a316404e77/kondicionery-split-sistemy/,dns-shop.ru,6,0,,,product,failed,Browser rendering did not produce usable content,,,0,73.6842
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,68.4211,,кондиционеры москва,air_conditioners,commercial,Москва,213,https://www.technopark.ru/konditsionery/,technopark.ru,7,0,,,content,failed,Browser rendering did not produce usable content,,,0,68.4211
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,кондиционеры отзывы,air_conditioners,comparison,,,https://www.vseinstrumenti.ru/category/konditsionery-i-split-sistemy-2777/otzyvy/,vseinstrumenti.ru,1,0,,,category,failed,Page.content: Unable to retrieve content because the page is navigating and changing the content.,,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,52.6316,,мойка окон клининг,cleaning,commercial,,,https://www.uehat.com/catalog/nl/8/185/8782437,uehat.com,10,0,,,product,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://www.uehat.com/catalog/nl/8/185/8782437"", waiting until ""domcontentloaded""
+",,,0,52.6316
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,дизайнерский ремонт квартиры,apartment_renovation,commercial,,,https://domclick.ru/my-home/promo/remont/dizajnerskij,domclick.ru,4,0,,,content,failed,Browser rendering did not produce usable content,,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,бригада для ремонта квартиры,apartment_renovation,commercial,,,https://vgasa.ru/stati/o-remontah/100732-kak-vybrat-brigadu-dlya-remonta-kvartiry-pravilno-podrobnyj-gajd.html,vgasa.ru,7,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://vgasa.ru/stati/o-remontah/100732-kak-vybrat-brigadu-dlya-remonta-kvartiry-pravilno-podrobnyj-gajd.html
+Call log:
+  - navigating to ""https://vgasa.ru/stati/o-remontah/100732-kak-vybrat-brigadu-dlya-remonta-kvartiry-pravilno-podrobnyj-gajd.html"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,натяжной потолок с подсветкой,stretch_ceilings,commercial,,,https://www.ceilavi.ru/catalog/pods/,ceilavi.ru,7,0,,,product,failed,"Page.goto: net::ERR_CERT_COMMON_NAME_INVALID at https://www.ceilavi.ru/catalog/pods/
+Call log:
+  - navigating to ""https://www.ceilavi.ru/catalog/pods/"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,лечение кариеса цена,dentistry,commercial,,,https://blizko.ru/predl/promgood/medicina/stomatologicheskie_uslugi/obschaya_stomatologiya/lechenie_kariesa,blizko.ru,8,0,,,content,failed,Browser rendering did not produce usable content,,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,0.0,,перевозка мебели с грузчиками,cargo_transport,commercial,,,https://pecom.ru/dlv/good/perevozka-mebely/,pecom.ru,10,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://pecom.ru/dlv/good/perevozka-mebely/"", waiting until ""domcontentloaded""
+",,,0,0.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,кондиционеры отзывы,air_conditioners,comparison,,,https://hi-tech.mail.ru/review/107180-luchshie-kondicionery-dlya-kvartiry/,hi-tech.mail.ru,7,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://hi-tech.mail.ru/review/107180-luchshie-kondicionery-dlya-kvartiry/
+Call log:
+  - navigating to ""https://hi-tech.mail.ru/review/107180-luchshie-kondicionery-dlya-kvartiry/"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,клининг после ремонта,cleaning,commercial,,,https://www.cian.ru/stati-uborka-posle-remonta-kak-otmyt-kvartiru-samomu-i-kogda-luchshe-vyzvat-klining-341871/,cian.ru,1,0,,,content,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.cian.ru/stati-uborka-posle-remonta-kak-otmyt-kvartiru-samomu-i-kogda-luchshe-vyzvat-klining-341871/
+Call log:
+  - navigating to ""https://www.cian.ru/stati-uborka-posle-remonta-kak-otmyt-kvartiru-samomu-i-kogda-luchshe-vyzvat-klining-341871/"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,клининг после ремонта,cleaning,commercial,,,https://klining24.ru/articles/uborka-posle-remonta-polnyj-perechen-rabot-i-etapy/,klining24.ru,2,0,,,article,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://klining24.ru/articles/uborka-posle-remonta-polnyj-perechen-rabot-i-etapy/
+Call log:
+  - navigating to ""https://klining24.ru/articles/uborka-posle-remonta-polnyj-perechen-rabot-i-etapy/"", waiting until ""domcontentloaded""
+",,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,77.7778,,клининг после ремонта,cleaning,commercial,,,https://cleanon.ru/articles/chto-vhodit-v-uborku-posle-remonta-kvartiry-etapy-i-uslugi-klininga/,cleanon.ru,3,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://cleanon.ru/articles/chto-vhodit-v-uborku-posle-remonta-kvartiry-etapy-i-uslugi-klininga/
+Call log:
+  - navigating to ""https://cleanon.ru/articles/chto-vhodit-v-uborku-posle-remonta-kvartiry-etapy-i-uslugi-klininga/"", waiting until ""domcontentloaded""
+",,,0,77.7778
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,клининг после ремонта,cleaning,commercial,,,https://www.avito.ru/journal/articles/kak-ubrat-kvartiru-posle-remonta,avito.ru,4,0,,,article,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.avito.ru/journal/articles/kak-ubrat-kvartiru-posle-remonta
+Call log:
+  - navigating to ""https://www.avito.ru/journal/articles/kak-ubrat-kvartiru-posle-remonta"", waiting until ""domcontentloaded""
+",,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,55.5556,,разработка интернет магазина,seo_webdev,commercial,,,https://iteraciya.ru/services/internet-magazin/,iteraciya.ru,5,0,,,category,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://iteraciya.ru/services/internet-magazin/
+Call log:
+  - navigating to ""https://iteraciya.ru/services/internet-magazin/"", waiting until ""domcontentloaded""
+",,,0,55.5556
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,контекстная реклама настройка,seo_webdev,commercial,,,https://mediasummit.kz/marketing/nastrojka-kontekstnoj-reklamy/,mediasummit.kz,8,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://mediasummit.kz/marketing/nastrojka-kontekstnoj-reklamy/"", waiting until ""domcontentloaded""
+",,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,seo продвижение цена,seo_webdev,commercial,,,https://kokoc.com/blog/skolko-stoit-seo-prodvizhenie/,kokoc.com,4,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://kokoc.com/blog/skolko-stoit-seo-prodvizhenie/
+Call log:
+  - navigating to ""https://kokoc.com/blog/skolko-stoit-seo-prodvizhenie/"", waiting until ""domcontentloaded""
+",,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,как выбрать seo подрядчика,seo_webdev,informational,,,https://searchindustrial.ru/blog/seo/kak-vybrat-podryadchika-po-seo/,searchindustrial.ru,1,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://searchindustrial.ru/blog/seo/kak-vybrat-podryadchika-po-seo/
+Call log:
+  - navigating to ""https://searchindustrial.ru/blog/seo/kak-vybrat-podryadchika-po-seo/"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,как выбрать seo подрядчика,seo_webdev,informational,,,https://rbru.ru/blog/kak-vybrat-seo-podryadchika,rbru.ru,4,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://rbru.ru/blog/kak-vybrat-seo-podryadchika
+Call log:
+  - navigating to ""https://rbru.ru/blog/kak-vybrat-seo-podryadchika"", waiting until ""domcontentloaded""
+",,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,как выбрать seo подрядчика,seo_webdev,informational,,,https://seo-performance.ru/article/kak-vybrat-podryadchika-dlya-seo-prodvizheniya/,seo-performance.ru,7,0,,,article,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://seo-performance.ru/article/kak-vybrat-podryadchika-dlya-seo-prodvizheniya/"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,как выбрать seo подрядчика,seo_webdev,informational,,,https://4px.ru/blog/na-chto-obrashchat-vnimanie-pri-vybore-seo-spetsialista-i-kak-nayti-nadezhnuyu-seo-kompaniyu/,4px.ru,8,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://4px.ru/blog/na-chto-obrashchat-vnimanie-pri-vybore-seo-spetsialista-i-kak-nayti-nadezhnuyu-seo-kompaniyu/
+Call log:
+  - navigating to ""https://4px.ru/blog/na-chto-obrashchat-vnimanie-pri-vybore-seo-spetsialista-i-kak-nayti-nadezhnuyu-seo-kompaniyu/"", waiting until ""domcontentloaded""
+",,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,как выбрать seo подрядчика,seo_webdev,informational,,,https://ravixgroup.ru/blog/kak-vybrat-seo-podryadchika,ravixgroup.ru,9,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://ravixgroup.ru/blog/kak-vybrat-seo-podryadchika
+Call log:
+  - navigating to ""https://ravixgroup.ru/blog/kak-vybrat-seo-podryadchika"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,77.7778,,новостройки москва купить,new_buildings,commercial,Москва,213,https://domclick.ru/novostrojki,domclick.ru,3,0,,,content,failed,Browser rendering did not produce usable content,,,0,77.7778
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,77.7778,,квартира в новостройке цена,new_buildings,commercial,,,https://domclick.ru/novostrojki,domclick.ru,3,0,,,content,failed,Browser rendering did not produce usable content,,,0,77.7778
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,квартира в новостройке цена,new_buildings,commercial,,,https://novostroev.ru/flats/moskva/,novostroev.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://novostroev.ru/flats/moskva/
+Call log:
+  - navigating to ""https://novostroev.ru/flats/moskva/"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,55.5556,,жк бизнес класса москва,new_buildings,commercial,Москва,213,https://domclick.ru/novostrojki/bisnes-klassa,domclick.ru,5,0,,,content,failed,Browser rendering did not produce usable content,,,0,55.5556
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,77.7778,,новостройки рядом с метро,new_buildings,commercial,,,https://domclick.ru/novostrojki/ryadom-s-metro,domclick.ru,3,0,,,content,failed,Browser rendering did not produce usable content,,,0,77.7778
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,купить студию в новостройке,new_buildings,commercial,,,https://www.pik.ru/search/studio,pik.ru,2,0,,,content,failed,Browser rendering did not produce usable content,,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,купить студию в новостройке,new_buildings,commercial,,,https://domclick.ru/pokupka/kvartiry/novostrojki/studii,domclick.ru,7,0,,,content,failed,Browser rendering did not produce usable content,,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,новостройки от застройщика,new_buildings,commercial,,,https://domclick.ru/novostrojki,domclick.ru,2,0,,,content,failed,Browser rendering did not produce usable content,,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,новостройки от застройщика,new_buildings,commercial,,,https://www.pik.ru/,pik.ru,8,0,,,homepage,failed,Browser rendering did not produce usable content,,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,0.0,,новостройки от застройщика,new_buildings,commercial,,,https://novostroycity.ru/novostroiki,novostroycity.ru,10,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://novostroycity.ru/novostroiki
+Call log:
+  - navigating to ""https://novostroycity.ru/novostroiki"", waiting until ""domcontentloaded""
+",,,0,0.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,77.7778,,квартира с отделкой в новостройке,new_buildings,commercial,,,https://blog.domclick.ru/nedvizhimost/post/kvartira-s-otdelkoj-ot-zastrojshika-na-chto-obratit-vnimanie,blog.domclick.ru,3,0,,,article,failed,Browser rendering did not produce usable content,,,0,77.7778
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,новостройки отзывы,new_buildings,comparison,,,https://blog.domclick.ru/nedvizhimost/post/chto-luchshe-novostroika-ili-vtorichka,blog.domclick.ru,9,0,,,article,failed,Browser rendering did not produce usable content,,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,как выбрать квартиру в новостройке,new_buildings,informational,,,https://blog.domclick.ru/nedvizhimost/post/kak-vybrat-kvartiru-v-novostroike-5-glavnykh-pravil,blog.domclick.ru,2,0,,,article,failed,Browser rendering did not produce usable content,,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,как выбрать квартиру в новостройке,new_buildings,informational,,,https://tatraindia.com/kak-vybrat-kvartiru-v-novostrojke-i-ne-pozhalet-sovety-po-czene-i-kachestvu.html,tatraindia.com,9,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://tatraindia.com/kak-vybrat-kvartiru-v-novostrojke-i-ne-pozhalet-sovety-po-czene-i-kachestvu.html"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,аренда манипулятора,special_equipment_rental,commercial,,,https://kmu-manipulator.ru/,kmu-manipulator.ru,4,0,,,homepage,failed,"Page.goto: net::ERR_CERT_DATE_INVALID at https://kmu-manipulator.ru/
+Call log:
+  - navigating to ""https://kmu-manipulator.ru/"", waiting until ""domcontentloaded""
+",,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,аренда манипулятора,special_equipment_rental,commercial,,,https://vsemanipulyatory.ru/,vsemanipulyatory.ru,8,0,,,homepage,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://vsemanipulyatory.ru/
+Call log:
+  - navigating to ""https://vsemanipulyatory.ru/"", waiting until ""domcontentloaded""
+",,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,аренда мини экскаватора,special_equipment_rental,commercial,,,https://www.avito.ru/all/predlozheniya_uslug/transport_perevozki/arenda_spetstekhniki/zemleroynaya_tekhnika/mini_ekskavator-ASgBAgICBESYC8SfAZoL3J8B7o4O9KSNA~zaEvCkjQM?q=мини+экскаватор,avito.ru,1,0,,,content,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.avito.ru/all/predlozheniya_uslug/transport_perevozki/arenda_spetstekhniki/zemleroynaya_tekhnika/mini_ekskavator-ASgBAgICBESYC8SfAZoL3J8B7o4O9KSNA~zaEvCkjQM?q=%D0%BC%D0%B8%D0%BD%D0%B8+%D1%8D%D0%BA%D1%81%D0%BA%D0%B0%D0%B2%D0%B0%D1%82%D0%BE%D1%80
+Call log:
+  - navigating to ""https://www.avito.ru/all/predlozheniya_uslug/transport_perevozki/arenda_spetstekhniki/zemleroynaya_tekhnika/mini_ekskavator-ASgBAgICBESYC8SfAZoL3J8B7o4O9KSNA~zaEvCkjQM?q=%D0%",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,аренда мини экскаватора,special_equipment_rental,commercial,,,https://spectehnikadmd.ru/mini-ekskavatory/,spectehnikadmd.ru,4,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://spectehnikadmd.ru/mini-ekskavatory/
+Call log:
+  - navigating to ""https://spectehnikadmd.ru/mini-ekskavatory/"", waiting until ""domcontentloaded""
+",,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,55.5556,,аренда мини экскаватора,special_equipment_rental,commercial,,,https://stroiradar.ru/mini-excavator/,stroiradar.ru,5,0,,,content,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://stroiradar.ru/mini-excavator/
+Call log:
+  - navigating to ""https://stroiradar.ru/mini-excavator/"", waiting until ""domcontentloaded""
+",,,0,55.5556
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,44.4444,,аренда мини экскаватора,special_equipment_rental,commercial,,,https://uslugi.yandex.ru/1-moscow-and-moscow-oblast/category/arenda/spetstehnika/miniekskavatoryi--4512,uslugi.yandex.ru,6,0,,,category,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://uslugi.yandex.ru/1-moscow-and-moscow-oblast/category/arenda/spetstehnika/miniekskavatoryi--4512
+Call log:
+  - navigating to ""https://uslugi.yandex.ru/1-moscow-and-moscow-oblast/category/arenda/spetstehnika/miniekskavatoryi--4512"", waiting until ""domcontentloaded""
+",,,0,44.4444
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,аренда мини экскаватора,special_equipment_rental,commercial,,,https://futovik.ru/ru/zakazat-excawator-mini,futovik.ru,7,0,,,content,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://futovik.ru/ru/zakazat-excawator-mini
+Call log:
+  - navigating to ""https://futovik.ru/ru/zakazat-excawator-mini"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,аренда мини экскаватора,special_equipment_rental,commercial,,,http://www.arendacase.ru/miniekskavatory.html,arendacase.ru,9,0,,,content,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at http://www.arendacase.ru/miniekskavatory.html
+Call log:
+  - navigating to ""http://www.arendacase.ru/miniekskavatory.html"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,спецтехника с оператором,special_equipment_rental,commercial,,,https://kraft-mann.ru/operatori-spectehniki/,kraft-mann.ru,7,0,,,content,failed,"Page.goto: net::ERR_CERT_DATE_INVALID at https://kraft-mann.ru/operatori-spectehniki/
+Call log:
+  - navigating to ""https://kraft-mann.ru/operatori-spectehniki/"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,спецтехника с оператором,special_equipment_rental,commercial,,,https://strmax96.ru/blog/arenda-s-operatorom,strmax96.ru,8,0,,,article,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://strmax96.ru/blog/arenda-s-operatorom
+Call log:
+  - navigating to ""https://strmax96.ru/blog/arenda-s-operatorom"", waiting until ""domcontentloaded""
+",,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,55.5556,,аренда спецтехники отзывы,special_equipment_rental,comparison,,,https://rosstip.ru/news/4063-top-10-platform-dlya-arendy-spetstekhniki-sravnenie-udobstva-tsen-i-assortimenta,rosstip.ru,5,0,,,article,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://rosstip.ru/news/4063-top-10-platform-dlya-arendy-spetstekhniki-sravnenie-udobstva-tsen-i-assortimenta"", waiting until ""domcontentloaded""
+",,,0,55.5556
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,77.7778,,обучение аналитик данных,online_courses,commercial,,,https://career.hh.ru/collection/edprogram/kursy-analitika-dannyh,career.hh.ru,3,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://career.hh.ru/collection/edprogram/kursy-analitika-dannyh
+Call log:
+  - navigating to ""https://career.hh.ru/collection/edprogram/kursy-analitika-dannyh"", waiting until ""domcontentloaded""
+",,,0,77.7778
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,курсы английского онлайн,online_courses,commercial,,,https://vc.ru/edu/490090-top-60-kursov-angliiskogo-yazyka-ot-onlain-shkol,vc.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://vc.ru/edu/490090-top-60-kursov-angliiskogo-yazyka-ot-onlain-shkol
+Call log:
+  - navigating to ""https://vc.ru/edu/490090-top-60-kursov-angliiskogo-yazyka-ot-onlain-shkol"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,профессия frontend разработчик,online_courses,commercial,,,https://www.profguide.io/professions/front_end_developer.html,profguide.io,1,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.profguide.io/professions/front_end_developer.html
+Call log:
+  - navigating to ""https://www.profguide.io/professions/front_end_developer.html"", waiting until ""domcontentloaded""
+",,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,купить вино онлайн,wine_store,commercial,,,https://bristol.ru/collections/vino,bristol.ru,7,0,,,content,failed,Browser rendering did not produce usable content,,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,красное сухое вино купить,wine_store,commercial,,,https://www.winelab.ru/catalog/krasnoe-suhoe-vino,winelab.ru,2,0,,,product,failed,Browser rendering did not produce usable content,,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,красное сухое вино купить,wine_store,commercial,,,https://bristol.ru/collections/krasnoe-suhoe-vino,bristol.ru,4,0,,,content,failed,Browser rendering did not produce usable content,,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,0.0,,красное сухое вино купить,wine_store,commercial,,,https://online.globus.ru/catalog/vino_krasnoe_sukhoe_rossiya,online.globus.ru,10,0,,,product,failed,"Page.goto: net::ERR_CONNECTION_CLOSED at https://online.globus.ru/catalog/vino_krasnoe_sukhoe_rossiya
+Call log:
+  - navigating to ""https://online.globus.ru/catalog/vino_krasnoe_sukhoe_rossiya"", waiting until ""domcontentloaded""
+",,,0,0.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,белое вино цена,wine_store,commercial,,,https://www.winelab.ru/catalog/beloe-vino,winelab.ru,2,0,,,product,failed,Browser rendering did not produce usable content,,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,игристое вино купить,wine_store,commercial,,,https://bristol.ru/collections/igristoe-vino,bristol.ru,1,0,,,content,failed,Browser rendering did not produce usable content,,,0,100.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,88.8889,,игристое вино купить,wine_store,commercial,,,https://www.winelab.ru/catalog/igristoe-vino,winelab.ru,2,0,,,product,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.winelab.ru/catalog/igristoe-vino
+Call log:
+  - navigating to ""https://www.winelab.ru/catalog/igristoe-vino"", waiting until ""domcontentloaded""
+",,,0,88.8889
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,0.0,,игристое вино купить,wine_store,commercial,,,https://www.winelab.ru/catalog/igristoe/ct_RU,winelab.ru,10,0,,,product,failed,Browser rendering did not produce usable content,,,0,0.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,44.4444,,вино с доставкой,wine_store,commercial,,,https://bristol.ru/collections/vino,bristol.ru,6,0,,,content,failed,Browser rendering did not produce usable content,,,0,44.4444
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,44.4444,,французское вино купить,wine_store,commercial,,,https://bristol.ru/collections/vina-francii,bristol.ru,6,0,,,content,failed,Browser rendering did not produce usable content,,,0,44.4444
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,0.0,,французское вино купить,wine_store,commercial,,,https://online.globus.ru/catalog/vino_krasnoe_frantsiya,online.globus.ru,10,0,,,product,failed,"Page.goto: net::ERR_CONNECTION_TIMED_OUT at https://online.globus.ru/catalog/vino_krasnoe_frantsiya
+Call log:
+  - navigating to ""https://online.globus.ru/catalog/vino_krasnoe_frantsiya"", waiting until ""domcontentloaded""
+",,,0,0.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,вино к мясу выбрать,wine_store,informational,,,https://swn.ru/articles/vino-i-myaso-kak-pravilno-sochetat,swn.ru,4,0,,,article,failed,Browser rendering did not produce usable content,,,0,66.6667
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,33.3333,,как выбрать хорошее вино,wine_store,informational,,,https://lisa.ru/moy-uyutnyy-dom/eda/852162-kak-vybrat-horoshee-vino-podrobnyj-gid-po-sortam/,lisa.ru,7,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://lisa.ru/moy-uyutnyy-dom/eda/852162-kak-vybrat-horoshee-vino-podrobnyj-gid-po-sortam/
+Call log:
+  - navigating to ""https://lisa.ru/moy-uyutnyy-dom/eda/852162-kak-vybrat-horoshee-vino-podrobnyj-gid-po-sortam/"", waiting until ""domcontentloaded""
+",,,0,33.3333
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,22.2222,,как выбрать хорошее вино,wine_store,informational,,,https://winestyle.ru/articles/wine/wine_rating_new.html,winestyle.ru,8,0,,,article,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://winestyle.ru/articles/wine/wine_rating_new.html
+Call log:
+  - navigating to ""https://winestyle.ru/articles/wine/wine_rating_new.html"", waiting until ""domcontentloaded""
+",,,0,22.2222
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,как выбрать хорошее вино,wine_store,informational,,,https://lenta.ru/articles/2024/12/29/raiting/,lenta.ru,9,0,,,article,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://lenta.ru/articles/2024/12/29/raiting/
+Call log:
+  - navigating to ""https://lenta.ru/articles/2024/12/29/raiting/"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,0.0,,как выбрать хорошее вино,wine_store,informational,,,https://yourwine.pro/blog/kak-vybrat-vino-i-ne-oshibitsya/,yourwine.pro,10,0,,,article,failed,"Page.goto: net::ERR_NAME_NOT_RESOLVED at https://yourwine.pro/blog/kak-vybrat-vino-i-ne-oshibitsya/
+Call log:
+  - navigating to ""https://yourwine.pro/blog/kak-vybrat-vino-i-ne-oshibitsya/"", waiting until ""domcontentloaded""
+",,,0,0.0
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,68.4211,,семейная ипотека на новостройку,new_buildings,commercial,,,https://www.sberbank.ru/ru/person/buildings,sberbank.ru,7,0,,,content,failed,Browser rendering did not produce usable content,,,0,68.4211
+dataset-v6-query-relevance,v2,extraction-v2,hybrid-v1,weak_serp,57.8947,,семейная ипотека на новостройку,new_buildings,commercial,,,https://blog.domclick.ru/ipoteka/post/semejnaya-ipoteka-kak-poluchit-kredit-s-gosudarstvennoj-podderzhkoj,blog.domclick.ru,9,0,,,article,failed,Browser rendering did not produce usable content,,,0,57.8947
