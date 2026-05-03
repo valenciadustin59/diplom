@@ -167,7 +167,7 @@ export function AuditReportPage({
         </div>
       </Card>
 
-      <Card title="Объяснение оценки" subtitle="Отчёт показывает итоговый score и понятные факторы, которые сильнее всего повлияли на результат.">
+      <Card title="Объяснение оценки" subtitle="Отчёт показывает, насколько страница подходит под запрос и что сильнее всего влияет на результат.">
         <MetricGrid
           items={[
             { label: "Итоговая оценка", value: report.scoreBreakdown.finalScore },
@@ -177,7 +177,7 @@ export function AuditReportPage({
         <p className="report-section-note">{report.scoreBreakdown.methodology}</p>
       </Card>
 
-      <Card title="SEO-сигналы" subtitle="Ключевые сигналы целевой страницы, которые помогают объяснить итоговую оценку.">
+      <Card title="Ключевые проверки страницы" subtitle="Что помогает понять, подходит ли страница под запрос и ожидания пользователя.">
         <MetricGrid items={report.seoMetrics} />
       </Card>
 

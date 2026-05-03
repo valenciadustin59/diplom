@@ -82,7 +82,7 @@ describe("loadRuntimeHealthSnapshot", () => {
     try {
       const snapshot = await loadRuntimeHealthSnapshot();
 
-      expect(snapshot.runtimeHealth?.modelStatus?.shortLabel).toBe("Оценка качества страницы · v3");
+      expect(snapshot.runtimeHealth?.modelStatus?.shortLabel).toBe("Оценка соответствия запросу · v3");
       expect(snapshot.runtimeHealth?.modelRegistry).toBeNull();
       expect(snapshot.runtimeHealth?.modelMonitoring).toBeNull();
       expect(snapshot.runtimeError).toBeNull();

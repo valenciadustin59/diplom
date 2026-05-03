@@ -1458,6 +1458,19 @@ select {
   color: var(--muted);
 }
 
+.score-breakdown__context-note,
+.metric-box__note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.metric-strip.score-explanation-principles {
+  align-items: stretch;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .score-confidence {
   min-width: 0;
   display: grid;
@@ -1648,14 +1661,26 @@ select {
 }
 
 .score-factor__impact {
-  font-weight: 700;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  max-width: 46%;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: right;
+  overflow-wrap: anywhere;
 }
 
 .score-factor__impact--positive {
+  background: rgba(62, 170, 112, 0.12);
   color: #217a4f;
 }
 
 .score-factor__impact--negative {
+  background: rgba(236, 95, 95, 0.1);
   color: #af3535;
 }
 
@@ -2912,6 +2937,10 @@ select {
   .metric-strip--actions,
   .filters--history,
   .metric-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-strip.score-explanation-principles {
     grid-template-columns: 1fr;
   }
 

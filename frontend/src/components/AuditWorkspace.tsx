@@ -101,8 +101,14 @@ function getDisplayUrl(url: string): string {
 }
 
 function formatImpact(value: number): string {
-  const rounded = Math.round(value * 10) / 10;
-  return `вес ${rounded > 0 ? "+" : ""}${rounded}`;
+  const magnitude = Math.abs(value);
+  if (magnitude >= 12) {
+    return value >= 0 ? "Сильно помогает" : "Сильно ограничивает";
+  }
+  if (magnitude >= 6) {
+    return value >= 0 ? "Заметно помогает" : "Заметно ограничивает";
+  }
+  return value >= 0 ? "Может помочь" : "Небольшое ограничение";
 }
 
 function formatScoreValue(value: number | null | undefined): string {
@@ -187,21 +193,30 @@ function formatScoreFactorDetail(item: ScoreFactor): string {
 
 function getScoreMethodologyText(breakdown?: ScoreBreakdown | null): string {
   if (hasCompetitivenessContext(breakdown)) {
-    return "Итоговый score показывает конкурентоспособность страницы по конкретному запросу: сначала считается качество самой страницы, затем результат корректируется по разрыву со средними и сильнейшими обработанными конкурентами. Карточки факторов не складываются в финальную оценку, а объясняют главные причины результата.";
+    return "Оценка отвечает на практический вопрос: насколько эта страница подходит под введённый запрос и выглядит сильной на фоне найденных конкурентов. Если страница плохо отвечает на запрос, отдельные сильные элементы не смогут сделать результат высоким.";
   }
 
-  return "Итоговый score рассчитан по признакам самой страницы и её соответствию запросу. Конкурентная корректировка появится после обработки достаточного числа страниц из выдачи; карточки факторов не складываются в финальную оценку, а объясняют главные причины результата.";
+  return "Оценка сначала показывает, насколько сама страница отвечает введённому запросу: раскрывает тему, совпадает с намерением пользователя и содержит полезную информацию для действия. Сравнение с конкурентами появится после обработки страниц из выдачи.";
 }
 
-const interactionSignalLabels: Record<string, string> = {
-  query_semantic_alignment: "Смысловое соответствие + покрытие запроса",
-  title_semantic_alignment: "Title + смысловое соответствие",
-  heading_semantic_alignment: "Заголовки + смысловое соответствие",
-  query_prominence_score: "Выраженность запроса",
-  keyword_balance_score: "Баланс ключевых слов",
-  semantic_content_richness: "Глубина и смысловая полнота контента",
-  cta_semantic_score: "Призыв к действию + коммерческое намерение",
-};
+const scoreExplanationPrinciples = [
+  {
+    title: "Соответствие запросу",
+    detail: "Страница должна реально отвечать на то, что пользователь ищет.",
+  },
+  {
+    title: "Полезность страницы",
+    detail: "Проверяется полнота ответа, понятность структуры и достаточность информации для выбора.",
+  },
+  {
+    title: "Коммерческая готовность",
+    detail: "Для коммерческих запросов важны контакты, действие, доверие и понятный путь к заявке.",
+  },
+  {
+    title: "Сравнение с выдачей",
+    detail: "Результат читается на фоне страниц, которые уже находятся рядом с пользователем в поиске.",
+  },
+];
 
 function ScoreFactorList({
   title,
@@ -242,8 +257,8 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
   if (!breakdown) {
     return (
       <Card
-        title="Как формируется оценка"
-        subtitle="После завершения аудита здесь появится объяснение итоговой оценки, её сильных сторон и просадок."
+        title="Что означает оценка"
+        subtitle="После завершения аудита здесь появится понятное объяснение результата, сильных сторон и просадок."
       >
         <div className="empty-state">Дождитесь завершения анализа, чтобы увидеть расшифровку итоговой оценки.</div>
       </Card>
@@ -256,8 +271,8 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
   return (
     <Card
-      title="Как формируется оценка"
-      subtitle="Короткая расшифровка результата без технических деталей модели."
+      title="Что означает оценка"
+      subtitle="Оценка показывает, насколько страница подходит под запрос и насколько уверенно конкурирует в выдаче."
     >
       <div className="score-breakdown">
         <p className="score-breakdown__methodology">{methodology}</p>
@@ -269,14 +284,19 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
           </div>
         </div>
 
+        <div className="metric-strip metric-strip--comparison score-explanation-principles">
+          {scoreExplanationPrinciples.map((principle) => (
+            <div key={principle.title} className="metric-box">
+              <strong className="metric-box__value">{principle.title}</strong>
+              <p className="metric-box__note">{principle.detail}</p>
+            </div>
+          ))}
+        </div>
+
         {breakdown.interaction_signals ? (
-          <div className="metric-strip metric-strip--comparison">
-            {Object.entries(breakdown.interaction_signals).map(([key, value]) => (
-              <div key={key} className="metric-box">
-                <span className="metric-box__label">{interactionSignalLabels[key] ?? key}</span>
-                <strong className="metric-box__value">{value.toFixed(2)}</strong>
-              </div>
-            ))}
+          <div className="score-breakdown__context-note">
+            Отдельные проверки показываются ниже как сильные стороны и ограничения страницы. Они помогают понять, что
+            улучшать, но не раскрывают внутренний расчёт оценки.
           </div>
         ) : null}
 
@@ -352,7 +372,7 @@ function AuditProgressBanner({ status }: { status: AuditStatus }) {
   const message =
     status === "queued"
       ? "Подготавливаем этапы анализа. Обычно первый статус меняется через несколько секунд."
-      : "Система загружает страницу, считает primary score и отдельно собирает конкурентов для сравнения и рекомендаций. Данные обновляются автоматически.";
+      : "Система загружает целевую страницу, проверяет её соответствие запросу и отдельно собирает конкурентов для сравнения и рекомендаций. Данные обновляются автоматически.";
 
   return (
     <div className="feedback-banner feedback-banner--info">
@@ -426,7 +446,7 @@ function OverviewPanel({
 
       <div className="metric-strip workspace-metric-strip">
         <div className="metric-box">
-          <span className="metric-box__label">Конкурентный score</span>
+          <span className="metric-box__label">Конкурентная оценка</span>
           <strong className="metric-box__value">{formatScoreValue(finalScore)}</strong>
         </div>
         <div className="metric-box">

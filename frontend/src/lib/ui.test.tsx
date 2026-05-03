@@ -881,12 +881,13 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Смысловое соответствие");
     expect(markup).toContain("Оффер и запись/заявка");
-    expect(markup).toContain("Короткая расшифровка результата без технических деталей модели.");
-    expect(markup).toContain("не складываются в финальную оценку");
-    expect(markup).toContain("вес -3.5");
+    expect(markup).toContain("Оценка показывает, насколько страница подходит под запрос");
+    expect(markup).toContain("Соответствие запросу");
+    expect(markup).toContain("Небольшое ограничение");
     expect(markup).not.toContain("Активная модель score");
     expect(markup).not.toContain("dataset-v3-d37");
     expect(markup).not.toContain("Значение фактора");
+    expect(markup).not.toContain("вес -3.5");
     expect(markup).not.toContain("Доверие к score");
   });
 
@@ -1063,7 +1064,7 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Отчёт аудита");
     expect(markup).toContain("Скачать Markdown");
     expect(markup).not.toContain("Доверие к score");
-    expect(markup).toContain("SEO-сигналы");
+    expect(markup).toContain("Ключевые проверки страницы");
     expect(markup).not.toContain("Статус модели");
     expect(markup).not.toContain("CatBoostRegressor");
     expect(markup).not.toContain("dataset-v3-d37");
@@ -1201,12 +1202,12 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Как формируется оценка");
-    expect(markup).toContain("Коротко о сигналах");
-    expect(markup).toContain("Понимает запрос");
-    expect(markup).toContain("Проверяет качество страницы");
-    expect(markup).toContain("Добавляет контекст выдачи");
-    expect(markup).toContain("Даёт score и рекомендации");
+    expect(markup).toContain("Что оценивает сервис");
+    expect(markup).toContain("как читать итоговую оценку");
+    expect(markup).toContain("Проверяет попадание в запрос");
+    expect(markup).toContain("Оценивает полноту ответа");
+    expect(markup).toContain("Сравнивает с конкурентами");
+    expect(markup).toContain("Подсказывает, что улучшить");
     expect(markup).not.toContain("Признаки");
     expect(markup).not.toContain("148 признаков");
     expect(markup).not.toContain("Top-3");

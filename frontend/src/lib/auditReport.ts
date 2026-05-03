@@ -98,7 +98,7 @@ const groupStatusLabels = {
 const stageLabels: Record<string, string> = {
   fetch: "Загрузка целевой страницы",
   heavy_analysis: "Углублённый анализ",
-  features: "Извлечение признаков",
+  features: "Проверка страницы",
   scoring: "Расчёт оценки",
   competitors: "Поиск конкурентов",
   competitor_page: "Загрузка конкурентов",
@@ -203,12 +203,12 @@ function getScoreVerdict(score: number | null | undefined): string {
     return "Итоговая оценка ещё не рассчитана. Отчёт можно открыть, но выводы появятся после завершения аудита.";
   }
   if (score >= 80) {
-    return "Страница выглядит конкурентоспособной: дальше важны точечные улучшения и удержание сильных факторов.";
+    return "Страница хорошо подходит под запрос и выглядит конкурентоспособной: дальше важны точечные улучшения.";
   }
   if (score >= 60) {
-    return "Страница находится в рабочем диапазоне, но видны зоны роста относительно лидеров выдачи.";
+    return "Страница в целом отвечает запросу, но видны зоны роста относительно конкурентов.";
   }
-  return "Страница заметно отстаёт по совокупности SEO, смысловых, коммерческих, доверительных и конкурентных сигналов.";
+  return "Страница слабо закрывает запрос или заметно уступает конкурентам по важным для пользователя элементам.";
 }
 
 function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditStatusResponse) {
@@ -227,8 +227,8 @@ function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditSta
     methodology:
       breakdown?.methodology ??
       (hasCompetitivenessContext
-        ? "Итоговая оценка показывает конкурентоспособность страницы по запросу: качество самой страницы сопоставляется с обработанными конкурентами из выдачи."
-        : "Итоговая оценка рассчитывается по признакам самой страницы и её соответствию запросу; конкурентная корректировка появится после обработки достаточного числа конкурентов."),
+        ? "Итоговая оценка показывает, насколько страница подходит под запрос и выглядит сильной на фоне обработанных конкурентов из выдачи."
+        : "Итоговая оценка сначала показывает, насколько сама страница отвечает запросу. Сравнение с конкурентами появится после обработки страниц из выдачи."),
   };
 }
 
@@ -304,7 +304,7 @@ function buildSeoMetrics(input: AuditReportInput): ReportMetric[] {
     {
       label: "Смысловое соответствие",
       value: formatSignalScore(getRecordNumber(features, "semantic_similarity")),
-      note: "Насколько текст страницы соответствует поисковому запросу.",
+      note: "Насколько содержание страницы отвечает введённому запросу.",
     },
     {
       label: "Соответствие намерению",
@@ -345,7 +345,7 @@ function buildRecommendationMetrics(recommendations: RecommendationsBundle | nul
     {
       label: "Разница с конкурентами",
       value: formatSignedScore(summary?.score_gap_vs_competitors),
-      note: summary?.competitor_context ? "Расчёт учитывает сравнение с конкурентами." : "Недостаточно данных по конкурентам.",
+      note: summary?.competitor_context ? "Показывает отрыв или отставание от найденных страниц." : "Недостаточно данных по конкурентам.",
     },
   ];
 }
@@ -366,7 +366,7 @@ function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
 
   return [
     {
-      label: "Конкурентный score",
+      label: "Конкурентная оценка",
       value: formatScore(finalScore),
     },
     {
@@ -553,9 +553,9 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
     "",
     "## Объяснение оценки",
     `- Итоговая оценка: ${report.scoreBreakdown.finalScore}`,
-    `- Методика: ${report.scoreBreakdown.methodology}`,
+    `- Пояснение: ${report.scoreBreakdown.methodology}`,
     "",
-    "## SEO-сигналы",
+    "## Ключевые проверки страницы",
     ...report.seoMetrics.map(renderMetricMarkdown),
     "",
     "## Конкурентный контекст",

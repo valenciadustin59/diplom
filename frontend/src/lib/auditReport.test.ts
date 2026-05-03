@@ -346,7 +346,7 @@ describe("audit report export", () => {
     expect(html).not.toContain("Статус модели");
     expect(html).not.toContain("CatBoostRegressor");
     expect(html).not.toContain("dataset-v3-d37");
-    expect(html).toContain("SEO-сигналы");
+    expect(html).toContain("Ключевые проверки страницы");
     expect(html).toContain("TECHNICAL_LOW");
     expect(html.match(/TECHNICAL_/g)).toHaveLength(6);
   });

@@ -102,7 +102,7 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
       <p class="muted">${escapeHtml(report.scoreBreakdown.methodology)}</p>
     </section>
     <section>
-      <h2>SEO-сигналы</h2>
+      <h2>Ключевые проверки страницы</h2>
       <div class="grid">${report.seoMetrics.map(renderMetricHtml).join("")}</div>
     </section>
     <section>

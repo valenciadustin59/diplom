@@ -594,13 +594,13 @@ function buildMetrics(input: RuntimeHealthInput, issues: RuntimeIssue[]): Runtim
 
 function getModelStatusLabel(status: string | null | undefined): string {
   if (status === "active") {
-    return "Расчёт score доступен";
+    return "Расчёт оценки доступен";
   }
   if (status === "fallback") {
-    return "Расчёт score в резервном режиме";
+    return "Расчёт оценки в резервном режиме";
   }
   if (status === "error") {
-    return "Ошибка расчёта score";
+    return "Ошибка расчёта оценки";
   }
   return status ? getStatusLabel(status) : "Нет данных";
 }
@@ -635,10 +635,10 @@ function buildModelStatusView(status: RuntimeModelStatusResponse | null | undefi
     status: statusValue,
     statusLabel: getModelStatusLabel(statusValue),
     tone,
-    shortLabel: `Оценка качества страницы · ${schemaVersion}`,
+    shortLabel: `Оценка соответствия запросу · ${schemaVersion}`,
     detail: error
       ? error
-      : `Score считается по признакам целевой страницы, смысловой близости к запросу, техническим, коммерческим и доверительным сигналам.`,
+      : `Оценка показывает, насколько целевая страница отвечает запросу, закрывает ожидания пользователя и выглядит конкурентной в выдаче.`,
     checkedAtLabel: formatCheckedAt(status.checked_at),
     artifactVersion: artifactVersionRaw,
     artifactSha1: artifactSha,
