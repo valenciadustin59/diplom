@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 
 
-QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-guardrail-v1"
+QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-guardrail-v2"
 SEMANTIC_LIMITING_FACTOR_KEYS = frozenset(
     {
         "semantic_relevance",
@@ -74,28 +74,41 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     keyword_coverage = metrics["keyword_coverage_ratio"]
     query_density = metrics["query_density"]
     exact_or_structural_signal = metrics["exact_or_structural_signal"]
+    query_prominence = metrics["query_prominence_score"]
     relevance_score = metrics["relevance_score"]
+    strong_topic_fit = has_strong_query_topic_fit(features)
 
     reason: str | None = None
     cap: float | None = None
     if (
-        relevance_score < 0.28
+        not strong_topic_fit
+        and relevance_score < 0.28
         and keyword_coverage < 0.5
         and semantic_similarity < 0.38
         and exact_or_structural_signal < 0.15
         and query_density < 0.002
     ):
         reason = "severe_query_topic_mismatch"
-        cap = 42.0
+        cap = 35.0
     elif (
-        relevance_score < 0.42
+        not strong_topic_fit
+        and relevance_score < 0.42
         and keyword_coverage < 0.67
         and semantic_similarity < 0.45
         and exact_or_structural_signal < 0.2
         and query_density < 0.004
     ):
         reason = "weak_query_topic_match"
-        cap = 58.0
+        cap = 55.0
+    elif (
+        not strong_topic_fit
+        and relevance_score < 0.58
+        and keyword_coverage < 0.8
+        and exact_or_structural_signal < 0.35
+        and query_prominence < 0.35
+    ):
+        reason = "partial_query_topic_match"
+        cap = 72.0
 
     adjusted_score = round(max(0.0, min(100.0, min(score, cap))), 4) if cap is not None else score
     return {

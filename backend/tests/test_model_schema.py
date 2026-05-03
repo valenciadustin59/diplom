@@ -202,7 +202,7 @@ def test_query_relevance_guardrail_caps_unrelated_commercial_page(tmp_path):
 
     assert explanation["ml_score"] == 86.0
     assert explanation["uncapped_final_score"] == 86.0
-    assert explanation["final_score"] == 42.0
+    assert explanation["final_score"] == 35.0
     assert explanation["relevance_guardrail"]["active"] is True
     assert explanation["relevance_guardrail"]["reason"] == "severe_query_topic_mismatch"
     assert any(
@@ -269,6 +269,58 @@ def test_query_relevance_guardrail_keeps_strong_lexical_match(tmp_path):
         and float(factor.get("impact", 0.0)) < 0.0
         for factor in explanation["top_negative_factors"]
     )
+
+
+def test_query_relevance_guardrail_caps_partial_query_match(tmp_path):
+    model_path = tmp_path / "constant-v3-partial-relevance-model.pkl"
+    v3_columns = get_model_feature_schema("v3").feature_columns
+    features = {feature_name: 0.0 for feature_name in v3_columns}
+    features.update(
+        {
+            "word_count": 2100,
+            "heading_count": 9,
+            "title_present": 1,
+            "title_length_quality": 0.85,
+            "meta_description_present": 1,
+            "meta_length_quality": 0.85,
+            "semantic_similarity": 0.52,
+            "keyword_coverage_ratio": 0.5,
+            "query_density": 0.006,
+            "query_in_title": 0,
+            "query_in_text": 0,
+            "exact_query_count": 0,
+            "title_semantic_alignment": 0.1,
+            "heading_semantic_alignment": 0.1,
+            "query_prominence_score": 0.2,
+            "page_indexable": 1,
+            "canonical_present": 1,
+            "canonical_matches_final_url": 1,
+            "commercial_signals_score": 1,
+            "trust_signals_score": 1,
+            "commercial_trust_score": 1,
+            "intent_alignment_score": 0.8,
+            "intent_is_commercial": 1,
+            "commercial_intent_alignment": 0.8,
+        }
+    )
+    save_model(
+        model=ConstantScoreModel(91.0),
+        metrics={"mae": 1.0},
+        model_path=model_path,
+        metadata={
+            "source": "local_dataset",
+            "dataset_version": "guardrail-test",
+            "model_schema_version": "v3",
+            "feature_columns": v3_columns,
+        },
+    )
+
+    explanation = explain_score(features, model_path=model_path)
+
+    assert explanation["ml_score"] == 91.0
+    assert explanation["final_score"] == 72.0
+    assert explanation["relevance_guardrail"]["reason"] == "partial_query_topic_match"
+    assert explanation["relevance_guardrail"]["active"] is True
 
 
 def test_rule_score_is_calibrated_instead_of_saturating_at_raw_impact_cap():
