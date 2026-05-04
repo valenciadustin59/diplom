@@ -3,7 +3,8 @@ from __future__ import annotations
 from collections.abc import Mapping
 
 
-QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-multiplier-v1"
+QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-contract-v2"
+QUERY_RELEVANCE_EARLY_STOP_VERSION = "query-relevance-early-stop-v1"
 SEMANTIC_LIMITING_FACTOR_KEYS = frozenset(
     {
         "semantic_relevance",
@@ -49,6 +50,13 @@ def _multiplied_score(score: float, multiplier: float) -> float:
     return round(max(0.0, min(100.0, score * _bounded_signal(multiplier))), 4)
 
 
+def _banded_score(score: float, multiplier: float, band_max: float | None) -> float:
+    adjusted_score = _multiplied_score(score, multiplier)
+    if band_max is None:
+        return adjusted_score
+    return round(max(0.0, min(float(band_max), adjusted_score)), 4)
+
+
 def build_query_topic_metrics(features: Mapping[str, object]) -> dict[str, float]:
     semantic_similarity = _bounded_signal(_feature_value(features, "semantic_similarity"))
     keyword_coverage = _bounded_signal(_feature_value(features, "keyword_coverage_ratio"))
@@ -71,6 +79,7 @@ def build_query_topic_metrics(features: Mapping[str, object]) -> dict[str, float
     title_semantic_alignment = _bounded_signal(_feature_value(features, "title_semantic_alignment"))
     heading_semantic_alignment = _bounded_signal(_feature_value(features, "heading_semantic_alignment"))
     query_prominence = _bounded_signal(_feature_value(features, "query_prominence_score"))
+    title_heading_signal = max(query_in_title, title_semantic_alignment, heading_semantic_alignment)
 
     density_signal = _bounded_signal(query_density / 0.01)
     core_density_signal = _bounded_signal(core_query_density / 0.008)
@@ -97,6 +106,12 @@ def build_query_topic_metrics(features: Mapping[str, object]) -> dict[str, float
         "query_intent_modifier_coverage_ratio": round(intent_modifier_coverage, 4),
         "query_density": round(query_density, 6),
         "query_core_density": round(core_query_density, 6),
+        "exact_query_count": round(exact_query_count, 4),
+        "query_in_title": round(query_in_title, 4),
+        "query_in_text": round(query_in_text, 4),
+        "title_semantic_alignment": round(title_semantic_alignment, 4),
+        "heading_semantic_alignment": round(heading_semantic_alignment, 4),
+        "title_heading_signal": round(title_heading_signal, 4),
         "density_signal": round(density_signal, 4),
         "core_density_signal": round(core_density_signal, 4),
         "exact_or_structural_signal": round(exact_or_structural_signal, 4),
@@ -117,6 +132,58 @@ def has_strong_query_topic_fit(features: Mapping[str, object]) -> bool:
     )
 
 
+def _content_evaluable_for_query(features: Mapping[str, object]) -> bool:
+    if _has_numeric_feature(features, "http_status_ok") and _feature_value(features, "http_status_ok") < 0.5:
+        return False
+    word_count = _feature_value(features, "word_count")
+    text_length_chars = _feature_value(features, "text_length_chars")
+    return word_count >= 80.0 or text_length_chars >= 500.0
+
+
+def build_query_relevance_preflight_decision(features: Mapping[str, object]) -> dict[str, object]:
+    metrics = build_query_topic_metrics(features)
+    strong_topic_fit = has_strong_query_topic_fit(features)
+    content_evaluable = _content_evaluable_for_query(features)
+    unusable_reasons = _page_unusable_reasons(features)
+    confident_full_mismatch = (
+        content_evaluable
+        and not unusable_reasons
+        and not strong_topic_fit
+        and metrics["relevance_score"] <= 0.15
+        and metrics["semantic_similarity"] <= 0.22
+        and metrics["query_core_keyword_coverage_ratio"] <= 0.05
+        and metrics["query_core_density"] <= 0.0008
+        and metrics["exact_query_count"] <= 0.0
+        and metrics["title_heading_signal"] <= 0.05
+        and metrics["query_prominence_score"] <= 0.08
+    )
+    if confident_full_mismatch:
+        return {
+            "schema_version": QUERY_RELEVANCE_EARLY_STOP_VERSION,
+            "decision": "stop",
+            "should_stop": True,
+            "confidence": "high",
+            "reason": "confident_full_query_mismatch",
+            "score_floor": 0.0,
+            "score_ceiling": 5.0,
+            "safe_to_skip_competitors": True,
+            "content_evaluable": content_evaluable,
+            "metrics": metrics,
+        }
+    return {
+        "schema_version": QUERY_RELEVANCE_EARLY_STOP_VERSION,
+        "decision": "continue",
+        "should_stop": False,
+        "confidence": "low" if content_evaluable else "insufficient_content",
+        "reason": "not_confident_enough_for_early_stop",
+        "score_floor": None,
+        "score_ceiling": None,
+        "safe_to_skip_competitors": False,
+        "content_evaluable": content_evaluable,
+        "metrics": metrics,
+    }
+
+
 def build_query_relevance_guardrail(features: Mapping[str, object], score: float) -> dict[str, object]:
     metrics = build_query_topic_metrics(features)
     semantic_similarity = metrics["semantic_similarity"]
@@ -127,6 +194,7 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     relevance_score = metrics["relevance_score"]
     strong_topic_fit = has_strong_query_topic_fit(features)
     unusable_reasons = _page_unusable_reasons(features)
+    early_stop_decision = build_query_relevance_preflight_decision(features)
 
     reason: str | None = None
     band: str | None = None
@@ -139,6 +207,12 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         band_min = 0.0
         band_max = 10.0
         relevance_multiplier = 0.10
+    elif early_stop_decision["should_stop"]:
+        reason = "confident_full_query_mismatch"
+        band = "full_mismatch"
+        band_min = 0.0
+        band_max = 5.0
+        relevance_multiplier = 0.05
     elif (
         not strong_topic_fit
         and relevance_score < 0.35
@@ -146,11 +220,11 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         and semantic_similarity < 0.38
         and core_query_density < 0.002
     ):
-        reason = "severe_query_topic_mismatch"
-        band = "mismatch"
-        band_min = 0.0
-        band_max = 15.0
-        relevance_multiplier = 0.15
+        reason = "probable_query_topic_mismatch"
+        band = "probable_mismatch"
+        band_min = 6.0
+        band_max = 25.0
+        relevance_multiplier = 0.25
     elif (
         not strong_topic_fit
         and relevance_score < 0.48
@@ -160,9 +234,9 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     ):
         reason = "weak_query_topic_match"
         band = "weak_match"
-        band_min = 0.0
-        band_max = 45.0
-        relevance_multiplier = 0.45
+        band_min = 25.0
+        band_max = 55.0
+        relevance_multiplier = 0.55
     elif (
         not strong_topic_fit
         and relevance_score < 0.58
@@ -172,11 +246,11 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     ):
         reason = "partial_query_topic_match"
         band = "partial_match"
-        band_min = 0.0
-        band_max = 72.0
-        relevance_multiplier = 0.72
+        band_min = 55.0
+        band_max = 80.0
+        relevance_multiplier = 0.80
 
-    adjusted_score = _multiplied_score(score, relevance_multiplier)
+    adjusted_score = _banded_score(score, relevance_multiplier, band_max)
     dynamic_cap = adjusted_score if adjusted_score < score else None
     return {
         "schema_version": QUERY_RELEVANCE_GUARDRAIL_VERSION,
@@ -192,4 +266,6 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         "score_delta": round(adjusted_score - score, 4),
         "metrics": metrics,
         "unusable_reasons": unusable_reasons,
+        "early_stop_decision": early_stop_decision,
+        "early_stop": bool(early_stop_decision["should_stop"]),
     }

@@ -26,8 +26,12 @@
   },
   "labeling_policy": {
     "label_source": "deterministic_expert_rubric",
-    "target_formula": "query_relevance_multiplier * competitiveness_base_score",
-    "full_mismatch_score_range": "0-15",
+    "target_formula": "min(dynamic_relevance_cap, query_relevance_multiplier * competitiveness_base_score)",
+    "score_contract_version": "query-competitiveness-final-v2",
+    "query_relevance_contract_version": "query-relevance-contract-v2",
+    "early_stop_decision_version": "query-relevance-early-stop-v1",
+    "full_mismatch_score_range": "0-5",
+    "probable_mismatch_score_range": "6-25",
     "intent_modifiers_only_when_present_in_query": true
   },
   "minimum_requirements": {

@@ -326,9 +326,9 @@ The practical next tasks should now be product polish, documentation, evidence c
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D69` are complete locally except the intentionally blocked live collection/publish step for `dataset-v7-final`.
+Canonical current status: `D1-D70` are complete locally except the intentionally blocked live collection/publish step for `dataset-v7-final`.
 
-The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the current v5 pointwise CatBoost artifact. D62-D68 then made query relevance the strict final score gate: severe mismatch now falls into `0-15`, and the `dataset-v7-final` pipeline is prepared for a fresh 500-query top-10 collection before a final controlled publish. D69 made that collection path safer: domain caps are enforced before parallel fetch and hard negatives are materialized from saved snapshots with query-dependent feature recomputation. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v5 (`dataset-v5`, schema `v3`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`) until `dataset-v7-final` is collected, labeled and passed through controlled publish. `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
+The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the current v5 pointwise CatBoost artifact. D62-D68 then made query relevance the strict final score gate, and D69 made the `dataset-v7-final` collection path safer with domain caps and snapshot-based hard negatives. D70 tightens the relevance contract again: confident full mismatch is `0-5` and eligible for future early stop, while ambiguous low relevance continues the audit as `probable_mismatch` up to `25`. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v5 (`dataset-v5`, schema `v3`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`) until `dataset-v7-final` is collected, labeled and passed through controlled publish. `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
 
 Local source of truth:
 
@@ -346,6 +346,7 @@ Local source of truth:
 - `plans/d55-d61-product-aligned-competitiveness.md`
 - `plans/d62-d68-final-query-competitiveness.md`
 - `plans/d69-dataset-v7-collection-readiness.md`
+- `plans/d70-conservative-query-relevance-contract.md`
 
 Completed tasks:
 
@@ -385,6 +386,7 @@ Completed model rollout/interface tasks:
 - `D61` / GitHub `#80`: documentation rewrite around the competitiveness goal.
 - `D62-D68`: implemented locally; final query relevance multiplier, `dataset-v7-final` seed catalog, final release pipeline and grouped score explanation UI. Controlled publish is blocked until real top-10 collection and deterministic labels are available.
 - `D69`: implemented locally; `dataset_builder` domain cap before parallel fetch, `final_hard_negatives` snapshot-based hard-negative materialization, and final pipeline readiness checks for `dataset.with-hard-negatives.csv`.
+- `D70`: implemented locally; conservative early-stop decision contract, full mismatch `0-5`, probable mismatch up to `25`, and v7 final score contract bumped to `query-competitiveness-final-v2`.
 
 Active post-publish operations tasks: collect `dataset-v7-final` with `--max-domain-rows-per-domain 12`, materialize hard negatives, then label/train/decide before any controlled publish.
 

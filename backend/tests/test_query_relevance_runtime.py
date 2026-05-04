@@ -1,5 +1,9 @@
 from app.features import build_features
-from app.query_relevance import build_query_relevance_guardrail, has_strong_query_topic_fit
+from app.query_relevance import (
+    build_query_relevance_guardrail,
+    build_query_relevance_preflight_decision,
+    has_strong_query_topic_fit,
+)
 
 
 def _patch_semantic_similarity(monkeypatch, value: float) -> None:
@@ -111,12 +115,13 @@ def test_unrelated_ecommerce_page_is_capped_when_only_intent_modifier_matches(mo
     assert features["query_intent_modifier_coverage_ratio"] == 1.0
     assert features["query_core_keyword_coverage_ratio"] == 0.0
     assert guardrail["active"] is True
-    assert guardrail["reason"] == "severe_query_topic_mismatch"
-    assert guardrail["band"] == "mismatch"
-    assert guardrail["band_min"] == 0.0
-    assert guardrail["band_max"] == 15.0
-    assert guardrail["query_relevance_multiplier"] == 0.15
-    assert guardrail["adjusted_score"] == 13.2
+    assert guardrail["reason"] == "probable_query_topic_mismatch"
+    assert guardrail["band"] == "probable_mismatch"
+    assert guardrail["band_min"] == 6.0
+    assert guardrail["band_max"] == 25.0
+    assert guardrail["query_relevance_multiplier"] == 0.25
+    assert guardrail["adjusted_score"] == 22.0
+    assert guardrail["early_stop"] is False
 
 
 def test_relevant_product_page_without_buy_word_keeps_value_for_commercial_query(monkeypatch):
@@ -194,11 +199,74 @@ def test_unrelated_good_page_keeps_quality_difference_inside_low_relevance_band(
     weak_page = build_query_relevance_guardrail(features, 40.0)
     strong_page = build_query_relevance_guardrail(features, 90.0)
 
-    assert weak_page["reason"] == "severe_query_topic_mismatch"
-    assert strong_page["reason"] == "severe_query_topic_mismatch"
-    assert weak_page["adjusted_score"] == 6.0
-    assert strong_page["adjusted_score"] == 13.5
-    assert weak_page["adjusted_score"] < strong_page["adjusted_score"] <= 15.0
+    assert weak_page["reason"] == "probable_query_topic_mismatch"
+    assert strong_page["reason"] == "probable_query_topic_mismatch"
+    assert weak_page["early_stop"] is False
+    assert strong_page["early_stop"] is False
+    assert weak_page["adjusted_score"] == 10.0
+    assert strong_page["adjusted_score"] == 22.5
+    assert weak_page["adjusted_score"] < strong_page["adjusted_score"] <= 25.0
+
+
+def test_confident_full_mismatch_is_early_stop_candidate():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 1200,
+        "text_length_chars": 7200,
+        "semantic_similarity": 0.08,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_density": 0.0,
+        "query_core_term_count": 0,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 0,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.0,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 90.0)
+
+    assert decision["should_stop"] is True
+    assert decision["decision"] == "stop"
+    assert decision["confidence"] == "high"
+    assert decision["score_ceiling"] == 5.0
+    assert guardrail["reason"] == "confident_full_query_mismatch"
+    assert guardrail["band"] == "full_mismatch"
+    assert guardrail["query_relevance_multiplier"] == 0.05
+    assert guardrail["adjusted_score"] == 4.5
+    assert guardrail["early_stop"] is True
+
+
+def test_low_relevance_with_structural_signal_does_not_early_stop():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 1200,
+        "text_length_chars": 7200,
+        "semantic_similarity": 0.1,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_density": 0.0,
+        "query_core_term_count": 0,
+        "exact_query_count": 0,
+        "query_in_title": 1,
+        "query_in_text": 0,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.0,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 90.0)
+
+    assert decision["should_stop"] is False
+    assert guardrail["early_stop"] is False
 
 
 def test_unusable_page_is_kept_in_zero_to_ten_band():

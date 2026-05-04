@@ -21,10 +21,10 @@ from app.ml.train import (
 from app.query_relevance import build_query_relevance_guardrail, build_query_topic_metrics
 
 
-TASK_RANGE = "D62-D68"
+TASK_RANGE = "D62-D70"
 FINAL_DATASET_VERSION = "dataset-v7-final"
 FINAL_ARTIFACT_VERSION = "dataset-v7-final-query-competitiveness"
-FINAL_SCORE_CONTRACT_VERSION = "query-competitiveness-final-v1"
+FINAL_SCORE_CONTRACT_VERSION = "query-competitiveness-final-v2"
 FINAL_LABEL_SCHEMA_VERSION = "query-competitiveness-rubric-v1"
 FINAL_MODEL_PATH = Path(__file__).resolve().parents[2] / "artifacts" / "page_quality_model.dataset-v7-final-candidate.pkl"
 FINAL_DATASET_DIR = Path(__file__).resolve().parents[2] / "data" / "dataset_versions" / FINAL_DATASET_VERSION

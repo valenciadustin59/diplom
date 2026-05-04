@@ -73,9 +73,9 @@ def test_final_target_uses_relevance_multiplier_for_unrelated_page() -> None:
 
     label = final_target_score(row)
 
-    assert label["query_relevance_multiplier"] == 0.15
-    assert label["query_relevance_band"] == "mismatch"
-    assert 0.0 <= label["target_score"] <= 15.0
+    assert label["query_relevance_multiplier"] == 0.05
+    assert label["query_relevance_band"] == "full_mismatch"
+    assert 0.0 <= label["target_score"] <= 5.0
 
 
 def test_final_target_keeps_strong_relevance_without_buy_or_price_terms() -> None:

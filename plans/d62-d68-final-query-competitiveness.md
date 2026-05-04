@@ -4,11 +4,12 @@ This local mirror records the final-model implementation direction after the pro
 
 ## Implemented
 
-- `D62`: runtime query relevance is now `query-relevance-multiplier-v1`. Severe topic mismatch uses a multiplier and keeps the final score in `0-15`; page-unusable cases remain `0-10`; weak and partial matches use lower multipliers. Commercial modifiers such as `купить` and `цена` are still treated as modifiers, not as the topic core.
+- `D62`: runtime query relevance was introduced as a multiplier around score. D70 later superseded the exact contract with `query-relevance-contract-v2`, where confident full mismatch is `0-5` and ambiguous mismatch continues as `probable_mismatch` up to `25`. Commercial modifiers such as `купить` and `цена` are still treated as modifiers, not as the topic core.
 - `D63`: `query_relevance_v2` seed catalog and `dataset-v7-final` seed manifest were generated from `scripts/generate_final_query_catalog.py`: `500` unique queries, `50` expanded categories, top-10 collection intent, and five cities.
 - `D64-D67`: `app.ml.final_query_competitiveness` now provides the final release pipeline: validate dataset readiness, apply deterministic expert-rubric labels, train a v3 CatBoost candidate, run product guardrails, and publish only after a `publish_candidate` decision.
 - `D68`: score explanation now supports five user-facing factor groups: query relevance, topic completeness, commercial trust, technical access, and competitor context. The UI keeps old top positive/negative factors as fallback for legacy audits.
 - `D69`: collection readiness was added after this wave. `dataset_builder` now has `--max-domain-rows-per-domain`, and `app.ml.final_hard_negatives` materializes `dataset.with-hard-negatives.csv` from saved snapshots before final training.
+- `D70`: conservative early-stop contract was added after this wave. Early stop is a decision payload only until D71 wires it into audit orchestration.
 
 ## Current State
 

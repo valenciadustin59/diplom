@@ -202,13 +202,14 @@ def test_query_relevance_guardrail_caps_unrelated_commercial_page(tmp_path):
 
     assert explanation["ml_score"] == 86.0
     assert explanation["uncapped_final_score"] == 86.0
-    assert explanation["final_score"] == 12.9
+    assert explanation["final_score"] == 21.5
     assert explanation["relevance_guardrail"]["active"] is True
-    assert explanation["relevance_guardrail"]["reason"] == "severe_query_topic_mismatch"
-    assert explanation["relevance_guardrail"]["band"] == "mismatch"
-    assert explanation["relevance_guardrail"]["band_max"] == 15.0
-    assert explanation["relevance_guardrail"]["query_relevance_multiplier"] == 0.15
-    assert explanation["relevance_guardrail"]["cap"] == 12.9
+    assert explanation["relevance_guardrail"]["reason"] == "probable_query_topic_mismatch"
+    assert explanation["relevance_guardrail"]["band"] == "probable_mismatch"
+    assert explanation["relevance_guardrail"]["band_max"] == 25.0
+    assert explanation["relevance_guardrail"]["query_relevance_multiplier"] == 0.25
+    assert explanation["relevance_guardrail"]["cap"] == 21.5
+    assert explanation["relevance_guardrail"]["early_stop"] is False
     assert any(
         factor.get("key") == "query_relevance_guardrail" and float(factor.get("impact", 0.0)) < 0.0
         for factor in explanation["top_negative_factors"]
@@ -329,10 +330,10 @@ def test_query_relevance_guardrail_caps_partial_query_match(tmp_path):
     explanation = explain_score(features, model_path=model_path)
 
     assert explanation["ml_score"] == 91.0
-    assert explanation["final_score"] == 65.52
+    assert explanation["final_score"] == 72.8
     assert explanation["relevance_guardrail"]["reason"] == "partial_query_topic_match"
     assert explanation["relevance_guardrail"]["active"] is True
-    assert explanation["relevance_guardrail"]["query_relevance_multiplier"] == 0.72
+    assert explanation["relevance_guardrail"]["query_relevance_multiplier"] == 0.8
 
 
 def test_rule_score_is_calibrated_instead_of_saturating_at_raw_impact_cap():

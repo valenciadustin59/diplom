@@ -173,7 +173,7 @@
 ## Current D62-D68 Final Query-Competitiveness Evidence
 
 - `D62-D68` are implemented locally as the final-model direction; local mirror: `plans/d62-d68-final-query-competitiveness.md`.
-- Runtime query relevance now uses `query-relevance-multiplier-v1`: unusable pages stay in `0-10`, severe query mismatch stays in `0-15`, weak/partial matches use lower multipliers, and strong query fit keeps the model score.
+- Runtime query relevance was introduced in D62 and tightened in D70. Current contract is `query-relevance-contract-v2`: unusable pages stay in `0-10`, confident full query mismatch stays in `0-5`, ambiguous mismatch becomes `probable_mismatch` up to `25`, weak/partial matches use broader caps, and strong query fit keeps the model score.
 - Commercial words such as `купить`, `цена` and `заказать` remain intent modifiers. They affect relevance only when present in the query and are not treated as the core topic.
 - `dataset-v6-query-relevance` is historical draft evidence, not the final training source.
 - `dataset-v7-final` has final seeds generated from `backend/data/query_relevance_v2/final_training_queries.csv`: `500` unique queries, `50` categories, `top_n=10`, `pages_to_scan=1`, five cities, and hard-negative instructions. Its manifest is intentionally `ready_for_training=false` until real top-10 collection and deterministic expert labels are produced.
@@ -191,6 +191,15 @@
 - `backend/app/ml/final_query_competitiveness.py` now blocks final training if the v7 manifest requires hard negatives and the hard-negative dataset is missing or empty.
 - D69 targeted verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_training_pipeline.py::test_build_dataset_enforces_domain_cap_before_parallel_fetch backend/tests/test_final_hard_negatives.py backend/tests/test_final_query_competitiveness.py -q` -> `6 passed`.
 - Next live step is collection, not publish: `cd backend && .venv\Scripts\python.exe -m app.ml.dataset_builder --versioned-layout --dataset-version dataset-v7-final --max-domain-rows-per-domain 12 --max-workers 6 --query-delay 1.0`. After collection, mark `manifest.json` `ready_for_training=true`, run `python -m app.ml.final_hard_negatives`, then validate/train/decide with `app.ml.final_query_competitiveness`.
+
+## Current D70 Conservative Query Relevance Contract Evidence
+
+- `D70` is implemented locally; local mirror: `plans/d70-conservative-query-relevance-contract.md`.
+- `backend/app/query_relevance.py` now exposes `build_query_relevance_preflight_decision` with schema `query-relevance-early-stop-v1`.
+- Early stop is only a decision contract at D70. It is not wired into audit orchestration yet; that belongs to D71.
+- The early-stop decision requires enough text, no unusable load/indexability state, very low relevance, very low semantic similarity, near-zero query core coverage/density, no exact query match, no title/heading signal and no query prominence.
+- `backend/app/ml/final_query_competitiveness.py` now records `query-competitiveness-final-v2` because v7 labels use the new full-mismatch `0-5` contract.
+- D70 targeted verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_query_relevance_runtime.py backend/tests/test_final_query_competitiveness.py backend/tests/test_model_schema.py::test_query_relevance_guardrail_caps_unrelated_commercial_page backend/tests/test_model_schema.py::test_query_relevance_guardrail_caps_partial_query_match -q` -> `16 passed`.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
