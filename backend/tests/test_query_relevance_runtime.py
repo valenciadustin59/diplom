@@ -113,9 +113,10 @@ def test_unrelated_ecommerce_page_is_capped_when_only_intent_modifier_matches(mo
     assert guardrail["active"] is True
     assert guardrail["reason"] == "severe_query_topic_mismatch"
     assert guardrail["band"] == "mismatch"
-    assert guardrail["band_min"] == 10.0
-    assert guardrail["band_max"] == 35.0
-    assert guardrail["adjusted_score"] == 32.0
+    assert guardrail["band_min"] == 0.0
+    assert guardrail["band_max"] == 15.0
+    assert guardrail["query_relevance_multiplier"] == 0.15
+    assert guardrail["adjusted_score"] == 13.2
 
 
 def test_relevant_product_page_without_buy_word_keeps_value_for_commercial_query(monkeypatch):
@@ -195,9 +196,9 @@ def test_unrelated_good_page_keeps_quality_difference_inside_low_relevance_band(
 
     assert weak_page["reason"] == "severe_query_topic_mismatch"
     assert strong_page["reason"] == "severe_query_topic_mismatch"
-    assert weak_page["adjusted_score"] == 20.0
-    assert strong_page["adjusted_score"] == 32.5
-    assert weak_page["adjusted_score"] < strong_page["adjusted_score"] < 35.0
+    assert weak_page["adjusted_score"] == 6.0
+    assert strong_page["adjusted_score"] == 13.5
+    assert weak_page["adjusted_score"] < strong_page["adjusted_score"] <= 15.0
 
 
 def test_unusable_page_is_kept_in_zero_to_ten_band():

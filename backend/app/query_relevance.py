@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 
 
-QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-bands-v1"
+QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-multiplier-v1"
 SEMANTIC_LIMITING_FACTOR_KEYS = frozenset(
     {
         "semantic_relevance",
@@ -45,10 +45,8 @@ def _page_unusable_reasons(features: Mapping[str, object]) -> list[str]:
     return reasons
 
 
-def _banded_score(score: float, lower_bound: float, upper_bound: float) -> tuple[float, float]:
-    quality_ratio = _bounded_signal(score / 100.0)
-    dynamic_limit = round(lower_bound + ((upper_bound - lower_bound) * quality_ratio), 4)
-    return round(max(0.0, min(100.0, min(score, dynamic_limit))), 4), dynamic_limit
+def _multiplied_score(score: float, multiplier: float) -> float:
+    return round(max(0.0, min(100.0, score * _bounded_signal(multiplier))), 4)
 
 
 def build_query_topic_metrics(features: Mapping[str, object]) -> dict[str, float]:
@@ -134,11 +132,13 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     band: str | None = None
     band_min: float | None = None
     band_max: float | None = None
+    relevance_multiplier = 1.0
     if unusable_reasons:
         reason = "page_unusable"
         band = "unusable"
         band_min = 0.0
         band_max = 10.0
+        relevance_multiplier = 0.10
     elif (
         not strong_topic_fit
         and relevance_score < 0.35
@@ -148,8 +148,9 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     ):
         reason = "severe_query_topic_mismatch"
         band = "mismatch"
-        band_min = 10.0
-        band_max = 35.0
+        band_min = 0.0
+        band_max = 15.0
+        relevance_multiplier = 0.15
     elif (
         not strong_topic_fit
         and relevance_score < 0.48
@@ -159,8 +160,9 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     ):
         reason = "weak_query_topic_match"
         band = "weak_match"
-        band_min = 35.0
-        band_max = 55.0
+        band_min = 0.0
+        band_max = 45.0
+        relevance_multiplier = 0.45
     elif (
         not strong_topic_fit
         and relevance_score < 0.58
@@ -170,14 +172,12 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     ):
         reason = "partial_query_topic_match"
         band = "partial_match"
-        band_min = 55.0
+        band_min = 0.0
         band_max = 72.0
+        relevance_multiplier = 0.72
 
-    adjusted_score, dynamic_cap = (
-        _banded_score(score, band_min, band_max)
-        if band_min is not None and band_max is not None
-        else (round(max(0.0, min(100.0, score)), 4), None)
-    )
+    adjusted_score = _multiplied_score(score, relevance_multiplier)
+    dynamic_cap = adjusted_score if adjusted_score < score else None
     return {
         "schema_version": QUERY_RELEVANCE_GUARDRAIL_VERSION,
         "active": adjusted_score < score,
@@ -186,6 +186,7 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         "band_min": band_min,
         "band_max": band_max,
         "cap": dynamic_cap,
+        "query_relevance_multiplier": round(relevance_multiplier, 4),
         "original_score": score,
         "adjusted_score": adjusted_score,
         "score_delta": round(adjusted_score - score, 4),

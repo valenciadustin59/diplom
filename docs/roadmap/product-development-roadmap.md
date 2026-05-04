@@ -326,9 +326,9 @@ The practical next tasks should now be product polish, documentation, evidence c
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D61` are complete or in this documentation closeout path.
+Canonical current status: `D1-D68` are complete locally except the intentionally blocked live collection/publish step for `dataset-v7-final`.
 
-The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the current v5 pointwise CatBoost artifact. Production artifact `backend/artifacts/page_quality_model.pkl` now points to CatBoost v5 (`dataset-v5`, schema `v3`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`). `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
+The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the current v5 pointwise CatBoost artifact. D62-D68 then made query relevance the strict final score gate: severe mismatch now falls into `0-15`, and the `dataset-v7-final` pipeline is prepared for a fresh 500-query top-10 collection before a final controlled publish. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v5 (`dataset-v5`, schema `v3`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`) until `dataset-v7-final` is collected, labeled and passed through controlled publish. `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
 
 Local source of truth:
 
@@ -344,6 +344,7 @@ Local source of truth:
 - `plans/d45-d49-seo-weighted-score-retraining.md`
 - `plans/d50-d54-v5-ranking-aware-model.md`
 - `plans/d55-d61-product-aligned-competitiveness.md`
+- `plans/d62-d68-final-query-competitiveness.md`
 
 Completed tasks:
 
@@ -381,7 +382,8 @@ Completed model rollout/interface tasks:
 - `D59` / GitHub `#78`: completed/pushed; user-facing ML/debug clutter removed.
 - `D60` / GitHub `#79`: completed/pushed; research artifacts archived and runtime/evidence asset boundaries clarified.
 - `D61` / GitHub `#80`: documentation rewrite around the competitiveness goal.
+- `D62-D68`: implemented locally; final query relevance multiplier, `dataset-v7-final` seed catalog, final release pipeline and grouped score explanation UI. Controlled publish is blocked until real top-10 collection and deterministic labels are available.
 
-Active post-publish operations tasks: none selected after D61.
+Active post-publish operations tasks: collect and label `dataset-v7-final` before running the final controlled publish path.
 
 Next agent instruction: select a new task explicitly before changing model/runtime behavior. Do not repeat old rollouts, publish the D44 candidate, add demo mode, or rewrite backend orchestration unless the user explicitly requests that scope.

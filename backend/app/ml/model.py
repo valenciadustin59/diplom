@@ -912,6 +912,117 @@ def _build_serp_relative_factors(features: dict[str, float | int]) -> list[dict[
     return factors
 
 
+FACTOR_GROUPS = (
+    (
+        "query_relevance",
+        "Соответствие запросу",
+        "Насколько страница отвечает теме и намерению введённого запроса.",
+        {
+            "query_topic_fit",
+            "query_relevance_guardrail",
+            "semantic_relevance",
+            "keyword_coverage",
+            "query_prominence",
+            "intent_alignment",
+            "commercial_intent_fit",
+            "informational_intent_fit",
+            "local_intent_fit",
+        },
+    ),
+    (
+        "content_depth",
+        "Полнота раскрытия темы",
+        "Достаточно ли контента, структуры и смыслового покрытия, чтобы страница была полезной.",
+        {
+            "content_depth",
+            "content_depth_semantic_score",
+            "semantic_content_richness",
+            "heading_structure",
+            "title_signal",
+            "title_semantic_alignment",
+            "heading_semantic_alignment",
+            "keyword_balance",
+            "meta_signal",
+        },
+    ),
+    (
+        "commercial_trust",
+        "Коммерция и доверие",
+        "Понятно ли, кто оказывает услугу, как связаться и почему странице можно доверять.",
+        {
+            "commercial_completeness",
+            "commercial_signals",
+            "trust_signals",
+            "contact_accessibility",
+            "conversion_signal",
+        },
+    ),
+    (
+        "technical_access",
+        "Техническая доступность",
+        "Может ли поисковая система нормально прочитать, проиндексировать и понять страницу.",
+        {
+            "technical_indexability",
+            "technical_canonical",
+            "technical_redirects",
+            "technical_url_hygiene",
+            "technical_metadata",
+            "text_to_html_ratio",
+        },
+    ),
+)
+
+
+def _factor_without_raw_value(factor: dict[str, object]) -> dict[str, object]:
+    return {
+        "key": factor.get("key"),
+        "label": factor.get("label"),
+        "impact": round(float(factor.get("impact") or 0.0), 4),
+        "detail": factor.get("detail"),
+    }
+
+
+def _build_factor_groups(
+    factors: list[dict[str, object]],
+    serp_relative_factors: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    groups: list[dict[str, object]] = []
+    for group_key, title, summary, factor_keys in FACTOR_GROUPS:
+        items = [
+            _factor_without_raw_value(factor)
+            for factor in factors
+            if str(factor.get("key") or "") in factor_keys and abs(float(factor.get("impact") or 0.0)) >= 1.0
+        ]
+        items = sorted(items, key=lambda item: abs(float(item.get("impact") or 0.0)), reverse=True)[:4]
+        groups.append({"key": group_key, "title": title, "summary": summary, "items": items})
+
+    competitor_items: list[dict[str, object]] = []
+    for factor in serp_relative_factors:
+        direction = str(factor.get("direction") or "")
+        impact = -6.0 if direction == "below_top" else 4.0
+        competitor_items.append(
+            {
+                "key": factor.get("key"),
+                "label": factor.get("label"),
+                "impact": impact,
+                "detail": (
+                    "Страница отстаёт от лидеров выдачи по этому блоку."
+                    if impact < 0.0
+                    else "Страница выглядит конкурентно относительно лидеров выдачи по этому блоку."
+                ),
+            }
+        )
+    groups.append(
+        {
+            "key": "competitor_context",
+            "title": "Сравнение с конкурентами",
+            "summary": "Как страница выглядит на фоне обработанных страниц из выдачи.",
+            "items": competitor_items[:4],
+        }
+    )
+    return groups
+
+
 def _predict_model_score(features: dict[str, float | int], model_path: str | Path | None = None) -> float:
     artifact = get_model_artifact(model_path)
     model = artifact["model"]
@@ -942,7 +1053,7 @@ def explain_score(
                 "label": "Query-topic fit",
                 "impact": relevance_guardrail["score_delta"],
                 "value": relevance_score,
-                "detail": "Страница слабо совпадает с запросом: мало совпадений по теме, смыслу и заметности запроса. Поэтому итоговая оценка перенесена в более низкий диапазон, а качество страницы учитывается внутри этого диапазона.",
+                "detail": "Страница слабо совпадает с запросом: мало совпадений по теме, смыслу и заметности запроса. Поэтому соответствие запросу стало главным множителем, а качество страницы не может само по себе поднять итоговую оценку.",
             }
         )
     elif has_strong_query_topic_fit(features):
@@ -976,6 +1087,7 @@ def explain_score(
             *sorted(limiting_factors, key=lambda item: float(item["impact"])),
         ][:5]
     serp_relative_factors = _build_serp_relative_factors(features)
+    factor_groups = _build_factor_groups(factors, serp_relative_factors)
 
     return {
         "final_score": final_score,
@@ -990,6 +1102,7 @@ def explain_score(
         },
         "top_positive_factors": positives,
         "top_negative_factors": negatives,
+        "factor_groups": factor_groups,
         "serp_relative_factors": serp_relative_factors,
     }
 

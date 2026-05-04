@@ -170,6 +170,17 @@
 - `D60` / GitHub `#79` - completed and pushed: archived research artifacts and clarified runtime vs evidence assets.
 - `D61` / GitHub `#80` - completed locally: project and ML documentation rewritten around the clarified competitiveness goal. Root README, backend README, roadmap and ML methodology appendix now describe `primary_page_score` vs `competitiveness_score`, current `dataset-v5` CatBoost runtime, `top_3_hit_rate` as diagnostics and `competitor-gap-priority-v1` recommendations.
 
+## Current D62-D68 Final Query-Competitiveness Evidence
+
+- `D62-D68` are implemented locally as the final-model direction; local mirror: `plans/d62-d68-final-query-competitiveness.md`.
+- Runtime query relevance now uses `query-relevance-multiplier-v1`: unusable pages stay in `0-10`, severe query mismatch stays in `0-15`, weak/partial matches use lower multipliers, and strong query fit keeps the model score.
+- Commercial words such as `купить`, `цена` and `заказать` remain intent modifiers. They affect relevance only when present in the query and are not treated as the core topic.
+- `dataset-v6-query-relevance` is historical draft evidence, not the final training source.
+- `dataset-v7-final` has final seeds generated from `backend/data/query_relevance_v2/final_training_queries.csv`: `500` unique queries, `50` categories, `top_n=10`, `pages_to_scan=1`, five cities, and hard-negative instructions. Its manifest is intentionally `ready_for_training=false` until real top-10 collection and deterministic expert labels are produced.
+- Final release pipeline module: `backend/app/ml/final_query_competitiveness.py`. It validates dataset readiness, applies deterministic expert-rubric labels, trains a v3 CatBoost candidate, runs product guardrails and only then allows controlled publish.
+- Running `cd backend && .venv\Scripts\python.exe -m app.ml.final_query_competitiveness` currently writes blocked evidence to `backend/artifacts/ranking-benchmarks/dataset-v7-final/final-query-competitiveness-report.json` because `dataset-v7-final/dataset.csv` has not been collected yet.
+- Score explanations now include `factor_groups` for user-facing UI: query relevance, content depth, commercial trust, technical access and competitor context. Old top positive/negative factors remain for legacy compatibility.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:

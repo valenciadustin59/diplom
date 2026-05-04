@@ -1637,6 +1637,40 @@ select {
   align-content: start;
 }
 
+.score-factor-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.score-factor-summary {
+  display: grid;
+  gap: 12px;
+  align-self: start;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.score-factor-summary__header {
+  display: grid;
+  gap: 6px;
+}
+
+.score-factor-summary__header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.score-factor-summary__items {
+  display: grid;
+  gap: 10px;
+}
+
 .score-factor {
   align-self: start;
   padding: 16px;
@@ -2917,7 +2951,8 @@ select {
   .runtime-rollback-check,
   .runtime-rollback-check__items,
   .score-model-info,
-  .score-breakdown__grid {
+  .score-breakdown__grid,
+  .score-factor-groups {
     grid-template-columns: 1fr;
   }
 

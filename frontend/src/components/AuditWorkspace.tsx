@@ -31,6 +31,7 @@ import type {
   RecommendationsBundle,
   ScoreBreakdown,
   ScoreFactor,
+  ScoreFactorGroup,
 } from "../types";
 
 type AuditWorkspaceProps = {
@@ -253,6 +254,41 @@ function ScoreFactorList({
   );
 }
 
+function ScoreFactorGroups({ groups }: { groups: ScoreFactorGroup[] }) {
+  return (
+    <div className="score-factor-groups">
+      {groups.map((group) => (
+        <article key={group.key} className="score-factor-summary">
+          <div className="score-factor-summary__header">
+            <strong>{group.title}</strong>
+            <p>{group.summary}</p>
+          </div>
+          {group.items.length > 0 ? (
+            <div className="score-factor-summary__items">
+              {group.items.slice(0, 4).map((item, index) => {
+                const tone = item.impact >= 0 ? "positive" : "negative";
+                const detail = formatScoreFactorDetail(item);
+
+                return (
+                  <div key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
+                    <div className="score-factor__top">
+                      <strong>{getHumanReadableLabel(item.label)}</strong>
+                      <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
+                    </div>
+                    {detail ? <p className="score-factor__detail">{detail}</p> : null}
+                  </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="empty-state">Явных просадок или сильных сигналов в этом блоке не найдено.</div>
+          )}
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | undefined }) {
   if (!breakdown) {
     return (
@@ -267,6 +303,7 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
 
   const positiveFactors = breakdown.positives ?? breakdown.top_positive_factors ?? [];
   const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
+  const factorGroups = breakdown.factor_groups ?? [];
   const methodology = getScoreMethodologyText(breakdown);
 
   return (
@@ -300,10 +337,14 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
           </div>
         ) : null}
 
-        <div className="score-breakdown__grid">
-          <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
-          <ScoreFactorList title="Что ограничивает оценку" items={negativeFactors} tone="negative" />
-        </div>
+        {factorGroups.length > 0 ? (
+          <ScoreFactorGroups groups={factorGroups} />
+        ) : (
+          <div className="score-breakdown__grid">
+            <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
+            <ScoreFactorList title="Что ограничивает оценку" items={negativeFactors} tone="negative" />
+          </div>
+        )}
       </div>
     </Card>
   );

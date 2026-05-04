@@ -202,11 +202,13 @@ def test_query_relevance_guardrail_caps_unrelated_commercial_page(tmp_path):
 
     assert explanation["ml_score"] == 86.0
     assert explanation["uncapped_final_score"] == 86.0
-    assert explanation["final_score"] == 31.5
+    assert explanation["final_score"] == 12.9
     assert explanation["relevance_guardrail"]["active"] is True
     assert explanation["relevance_guardrail"]["reason"] == "severe_query_topic_mismatch"
     assert explanation["relevance_guardrail"]["band"] == "mismatch"
-    assert explanation["relevance_guardrail"]["cap"] == 31.5
+    assert explanation["relevance_guardrail"]["band_max"] == 15.0
+    assert explanation["relevance_guardrail"]["query_relevance_multiplier"] == 0.15
+    assert explanation["relevance_guardrail"]["cap"] == 12.9
     assert any(
         factor.get("key") == "query_relevance_guardrail" and float(factor.get("impact", 0.0)) < 0.0
         for factor in explanation["top_negative_factors"]
@@ -262,6 +264,13 @@ def test_query_relevance_guardrail_keeps_strong_lexical_match(tmp_path):
     assert explanation["ml_score"] == 64.0
     assert explanation["final_score"] == 64.0
     assert explanation["relevance_guardrail"]["active"] is False
+    assert {group["key"] for group in explanation["factor_groups"]} >= {
+        "query_relevance",
+        "content_depth",
+        "commercial_trust",
+        "technical_access",
+        "competitor_context",
+    }
     assert any(
         factor.get("key") == "query_topic_fit" and float(factor.get("impact", 0.0)) > 0.0
         for factor in explanation["top_positive_factors"]
@@ -320,9 +329,10 @@ def test_query_relevance_guardrail_caps_partial_query_match(tmp_path):
     explanation = explain_score(features, model_path=model_path)
 
     assert explanation["ml_score"] == 91.0
-    assert explanation["final_score"] == 70.47
+    assert explanation["final_score"] == 65.52
     assert explanation["relevance_guardrail"]["reason"] == "partial_query_topic_match"
     assert explanation["relevance_guardrail"]["active"] is True
+    assert explanation["relevance_guardrail"]["query_relevance_multiplier"] == 0.72
 
 
 def test_rule_score_is_calibrated_instead_of_saturating_at_raw_impact_cap():

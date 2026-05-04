@@ -91,6 +91,13 @@ export type ScoreFactor = {
   value?: number | string | null;
 };
 
+export type ScoreFactorGroup = {
+  key: string;
+  title: string;
+  summary: string;
+  items: ScoreFactor[];
+};
+
 export type ScoreBreakdown = {
   final_score: number;
   rule_score: number;
@@ -105,6 +112,7 @@ export type ScoreBreakdown = {
   factors?: ScoreFactor[];
   top_positive_factors?: ScoreFactor[];
   top_negative_factors?: ScoreFactor[];
+  factor_groups?: ScoreFactorGroup[];
   serp_relative_factors?: Array<Record<string, unknown>>;
   model_info?: Record<string, unknown>;
   weights?: Record<string, number>;
