@@ -60,6 +60,34 @@ def test_relevant_storage_page_keeps_score_with_inflected_commercial_query(monke
     assert guardrail["active"] is False
 
 
+def test_relevant_noncommercial_query_does_not_require_buy_or_price_terms(monkeypatch):
+    _patch_semantic_similarity(monkeypatch, 0.21)
+    html = """
+    <html>
+      <head>
+        <title>Пересадка орхидеи после цветения</title>
+        <meta name="description" content="Когда пересаживать орхидею и как подготовить корни после цветения." />
+      </head>
+      <body>
+        <h1>Как пересадить орхидею после цветения</h1>
+        <p>Инструкция объясняет пересадку орхидеи после цветения: осмотр корней,
+        выбор прозрачного горшка, удаление сухих участков и аккуратное добавление
+        свежего субстрата без стресса для растения.</p>
+      </body>
+    </html>
+    """
+
+    features = build_features(html=html, text="", query="пересадка орхидеи после цветения")
+    guardrail = build_query_relevance_guardrail(features, 78.0)
+
+    assert features["query_intent_modifier_count"] == 0
+    assert features["query_intent_modifier_coverage_ratio"] == 0.0
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
+    assert has_strong_query_topic_fit(features) is True
+    assert guardrail["active"] is False
+    assert guardrail["adjusted_score"] == 78.0
+
+
 def test_unrelated_ecommerce_page_is_capped_when_only_intent_modifier_matches(monkeypatch):
     _patch_semantic_similarity(monkeypatch, 0.29)
     html = """
