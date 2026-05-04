@@ -17,7 +17,7 @@ from app.parser import ensure_extraction_artifact, extraction_artifact_html, ext
 
 HARD_NEGATIVE_POLICY_VERSION = "dataset-v7-hard-negatives-v1"
 DEFAULT_OUTPUT_PATH = FINAL_DATASET_DIR / "dataset.with-hard-negatives.csv"
-DEFAULT_REPORT_PATH = FINAL_DATASET_DIR / "d69-hard-negatives-report.json"
+DEFAULT_REPORT_PATH = FINAL_DATASET_DIR / "d76-hard-negatives-report.json"
 
 HARD_NEGATIVE_EXTRA_COLUMNS = [
     "hard_negative",
@@ -163,45 +163,50 @@ def materialize_hard_negatives(
         category = str(row.get("category") or "").strip()
         if category:
             rows_by_category[category].append(row)
+    category_names = sorted(rows_by_category)
 
     hard_negative_rows: list[dict[str, object]] = []
     missing_artifact_count = 0
     duplicate_keys: set[tuple[str, str, str]] = set()
+    source_category_counts: dict[str, int] = defaultdict(int)
+    target_category_counts: dict[str, int] = defaultdict(int)
 
     for seed_index, seed in enumerate(seeds):
         target_category = str(seed.get("category") or "").strip()
-        source_pool = [
-            row
-            for category, category_rows in sorted(rows_by_category.items())
-            if category and category != target_category
-            for row in category_rows
-        ]
-        if not source_pool:
+        candidate_categories = [category for category in category_names if category and category != target_category]
+        if not candidate_categories:
             continue
         accepted_for_query = 0
-        cursor = seed_index % len(source_pool)
-        for offset in range(len(source_pool)):
+        category_cursor = (seed_index * max(max_negatives_per_query, 1)) % len(candidate_categories)
+        for category_offset in range(len(candidate_categories)):
             if accepted_for_query >= max_negatives_per_query:
                 break
-            source_row = source_pool[(cursor + offset) % len(source_pool)]
-            key = (
-                str(seed.get("query") or ""),
-                str(source_row.get("url") or ""),
-                str(source_row.get("query") or ""),
-            )
-            if key in duplicate_keys:
-                continue
-            duplicate_keys.add(key)
-            cloned_row = _clone_as_hard_negative(
-                dataset_path=resolved_dataset_path,
-                source_row=source_row,
-                target_seed=seed,
-            )
-            if cloned_row is None:
-                missing_artifact_count += 1
-                continue
-            hard_negative_rows.append(cloned_row)
-            accepted_for_query += 1
+            source_category = candidate_categories[(category_cursor + category_offset) % len(candidate_categories)]
+            category_rows = rows_by_category[source_category]
+            row_cursor = (seed_index + accepted_for_query) % len(category_rows)
+            for row_offset in range(len(category_rows)):
+                source_row = category_rows[(row_cursor + row_offset) % len(category_rows)]
+                key = (
+                    str(seed.get("query") or ""),
+                    str(source_row.get("url") or ""),
+                    str(source_row.get("query") or ""),
+                )
+                if key in duplicate_keys:
+                    continue
+                duplicate_keys.add(key)
+                cloned_row = _clone_as_hard_negative(
+                    dataset_path=resolved_dataset_path,
+                    source_row=source_row,
+                    target_seed=seed,
+                )
+                if cloned_row is None:
+                    missing_artifact_count += 1
+                    continue
+                hard_negative_rows.append(cloned_row)
+                source_category_counts[source_category] += 1
+                target_category_counts[target_category] += 1
+                accepted_for_query += 1
+                break
 
     original_rows: list[dict[str, object]] = []
     for row in source_rows:
@@ -216,7 +221,7 @@ def materialize_hard_negatives(
     output_rows = [*original_rows, *hard_negative_rows]
     _write_csv(output_path, output_rows)
     report = {
-        "task": "D69",
+        "task": "D76",
         "generated_at": datetime.now(UTC).isoformat(),
         "hard_negative_policy_version": HARD_NEGATIVE_POLICY_VERSION,
         "dataset_path": str(resolved_dataset_path),
@@ -228,6 +233,10 @@ def materialize_hard_negatives(
         "output_rows_count": len(output_rows),
         "max_negatives_per_query": max_negatives_per_query,
         "missing_artifact_count": missing_artifact_count,
+        "source_categories_count": len(source_category_counts),
+        "target_categories_count": len(target_category_counts),
+        "source_category_distribution": dict(sorted(source_category_counts.items())),
+        "target_category_distribution": dict(sorted(target_category_counts.items())),
     }
     Path(report_path).parent.mkdir(parents=True, exist_ok=True)
     Path(report_path).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -193,6 +193,8 @@
 - D75 completed live raw collection, not publish. Full seed pass plus repair pass produced `500/500` queries with successful rows, `3876` rows, `367` failures, `2253` domains, `50` categories, `5` cities, `3876` local snapshot artifacts and max single-domain repeat `12` under the D69 cap.
 - D75 local mirror: `plans/d75-dataset-v7-controlled-collection.md`; progress evidence: `backend/data/dataset_versions/dataset-v7-final/d75-collection-progress.json` and `.md`.
 - Keep `manifest.json` `ready_for_training=false` until deterministic expert labels, hard negatives and split validation are complete. Current `dataset.csv` weak-label fields are builder placeholders, not final v7 labels. Snapshot artifacts are large local/generated evidence and are ignored for new files by `.gitignore`.
+- D76 completed local hard-negative materialization from D75 snapshots. Local mirror: `plans/d76-dataset-v7-hard-negatives.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.with-hard-negatives.csv` and `d76-hard-negatives-report.json`.
+- D76 generated `1000` hard-negative rows, `2` per query for `500/500` target queries, across `50/50` target categories and `50/50` source categories, with `0` missing artifacts and `0` same-category pairs. `final_query_competitiveness --validate` now passes hard-negative checks and still blocks only because `manifest_ready_for_training=false`.
 
 ## Current D70 Conservative Query Relevance Contract Evidence
 

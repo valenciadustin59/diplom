@@ -42,9 +42,9 @@
   },
   "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
   "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv",
-  "status": "raw_collection_completed",
+  "status": "hard_negatives_materialized",
   "ready_for_training": false,
-  "reason": "Final top-10 raw collection is complete. Deterministic expert labels and hard negatives must be generated before training.",
+  "reason": "Final top-10 raw collection and hard negatives are materialized. Deterministic expert labels and split validation must be generated before training.",
   "collection_progress": {
     "task": "D75",
     "started_at": "2026-05-04T12:10:25+00:00",
@@ -64,5 +64,22 @@
     "failure_rate": 0.086495,
     "empty_text_rate": 0.0,
     "notes": "Raw collection completed for all 500 seed queries. dataset.csv still contains collection-time placeholder weak labels and is not the final deterministic expert-labeled training surface."
+  },
+  "hard_negative_progress": {
+    "task": "D76",
+    "completed_at": "2026-05-04T17:41:13+00:00",
+    "policy_version": "dataset-v7-hard-negatives-v1",
+    "dataset_with_hard_negatives_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.with-hard-negatives.csv",
+    "report_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\d76-hard-negatives-report.json",
+    "source_rows_count": 3876,
+    "hard_negative_rows_count": 1000,
+    "output_rows_count": 4876,
+    "max_negatives_per_query": 2,
+    "queries_with_hard_negatives": 500,
+    "source_categories_count": 50,
+    "target_categories_count": 50,
+    "missing_artifact_count": 0,
+    "same_category_pairs": 0,
+    "notes": "Hard negatives are cloned from saved D75 snapshots from other categories and recompute query-dependent features under the target query."
   }
 }

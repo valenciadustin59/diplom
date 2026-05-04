@@ -142,6 +142,9 @@ def test_materialize_hard_negatives_recomputes_features_for_target_query(tmp_pat
     negative_rows = [row for row in output_rows if row["hard_negative"] == "1"]
 
     assert report["hard_negative_rows_count"] == 2
+    assert report["task"] == "D76"
+    assert report["source_categories_count"] == 2
+    assert report["target_categories_count"] == 2
     assert len(output_rows) == 4
     assert len(negative_rows) == 2
     assert {row["label_source"] for row in negative_rows} == {"hard_negative_v7"}
