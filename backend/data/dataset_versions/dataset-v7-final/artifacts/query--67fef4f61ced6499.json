@@ -1,0 +1,256 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://za-far.ru/prajs-list.html",
+  "final_url": "https://za-far.ru/prajs-list.html",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "access-control-allow-origin": "*",
+    "cache-control": "private, max-age=0",
+    "connection": "Keep-Alive",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 04 May 2026 12:05:18 GMT",
+    "keep-alive": "timeout=2, max=100",
+    "last-modified": "Mon, 04 May 2026 12:05:18 GMT",
+    "server": "Apache/2.4.29 (Ubuntu)",
+    "set-cookie": "A=1; path=/",
+    "transfer-encoding": "chunked",
+    "x-xss-protection": "0"
+  },
+  "response_time_ms": 3159.2579,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-04T12:05:19.849157+00:00",
+  "html": "<!DOCTYPE html><html class=\"other desktop layout with_header_logo with_header_sitename with_header_contacts with_column_submenu with_footer_contacts\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"format-detection\" content=\"telephone=no\"><meta name=\"viewport\" content=\"width=device-width\"><meta name=\"description\" content=\"Доступные цены на услуги ветклиники и квалифицированная помощь животным в круглосуточной ветеринарных клиниках службы «Захаров и Фарафонтова» в Калининграде\"><meta name=\"keywords\" content=\"ветклиника цены, цены на услуги ветклиник, ветеринарная клиника цены , УЗИ кошке, УЗИ коту, УЗИ собаке, рентген собака, рентген кошка, анализы кошке, анализы собаки\"><meta name=\"google-site-verification\" content=\"T-k0bAVebJOm1PEG3gbriM_rlZpjmrMMNrdPVW2GTvM\"><meta name=\"yandex-verification\" content=\"a50ccd795a7139e3\"><title>Прайс-лист ветеринарной клиники, цены ветклиника</title><base href=\"https://za-far.ru/\"><link rel=\"canonical\" href=\"https://za-far.ru/prajs-list.html\"><link rel=\"shortcut icon\" href=\"/.files/favicons/3237.ico\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/.merged/481.styles.c.primary.css\"><link rel=\"stylesheet\" type=\"text/css\" href=\"/.files/templates/293/general.css\"><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script>page_id = 1428850; template_pic = null; panels_H = 0;</script><script type=\"text/javascript\" src=\"/.merged/481.script.primary.js\"></script><script type=\"text/javascript\" src=\"/.files/templates/293/general.js\"></script><script type=\"text/javascript\" src=\"/.files/templates/199/general.js\"></script><style type=\"text/css\"> a[name]:empty { top: -57px; } </style><style type=\"text/css\"></style></head><body class=\"layout\"><div class=\"layout\"><div><div><div class=\"header\"><div><a class=\"logo\" href=\"/\" title=\"Ветклиника «Захаров и Фарафонтова» Калининград\"><img src=\"/.files/logos.desktop/3237.png\" alt=\"Ветклиника «Захаров и Фарафонтова» Калининград\" style=\"width: 100.00%;\"><span style=\"display: none; background-image: url(/.files/logos.desktop/3237.png); height: 100.00%;\"></span></a><a class=\"sitename\" href=\"/\" title=\"Ветклиника «Захаров и Фарафонтова» Калининград\">Ветклиника «Захаров и Фарафонтова» Калининград</a><div class=\"contacts\"><a href=\"/akcii-i-skidki.html\" class=\"link\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по ссылке', 'Контакты в шапке')\"><img src=\"/.files/pages/1428243/sale3.png\" width=\"27\" style=\"margin-right: 7px; margin-top: 13px\" class=\"nomobile notablet\" alt=\"Ветеринарная клиника «Захаров и Фарафонтова» в Калининграде\" title=\"Ветеринарная клиника «Захаров и Фарафонтова» в Калининграде\">Акции</a> <span class=\"socials\"><a href=\"https://t.me/zafar39\" class=\"social social_telegram\" target=\"_blank\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по соцсети', 'Контакты в шапке')\"></a></span> <a href=\"/\" class=\"link\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по ссылке', 'Контакты в шапке')\">Ветслужба «Захаров и Фарафонтова»</a> <a href=\"/\" class=\"link\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по ссылке', 'Контакты в шапке')\"><img src=\"/.files/pages/1428243/logo_header.png\" alt=\"\" width=\"45\" style=\"margin-top: 7px\"></a> <a href=\"tel:84012971903\" class=\"phone\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по телефону', 'Контакты в шапке')\">8 (4012) 97-19-03 (круглосуточно)</a></div></div></div><div class=\"content\"><div class=\"column\"><div class=\"submenu\"><ul><li><a href=\"/lechenie-koshek.html\" title=\"Лечение кошек\">Лечение кошек</a></li><li><a href=\"/lechenie-sobak.html\" title=\"Лечение собак\">Лечение собак</a></li><li><a href=\"/lechenie-loshadej.html\" title=\"Лечение лошадей\">Лечение лошадей</a></li><li><a href=\"/lechenie-gryzunov.html\" title=\"Лечение грызунов, птиц\">Лечение грызунов, птиц</a></li><li><a href=\"/veterinar.html\" title=\"Ветеринарные врачи, вызов ветеринара круглосуточно\">Ветеринарные врачи</a></li><li><a href=\"/raspisanie-vetkliniki.html\" title=\"Расписание ветклиники\">Расписание</a></li><li class=\"selected\"><a href=\"/prajs-list.html\" title=\"Прайс-лист ветеринарной клиники, цены ветклиника\" class=\"selected\">Прайс-лист</a></li><li><a href=\"/vetklinika.html\" title=\"Ветклиника в Калининграде, ветеринарные врачи\">О клинике</a></li><li><a href=\"/vetkliniki.html\" title=\"Ветеринарные клиники, адреса и телефоны ветклиник\">Адреса и телефоны</a></li></ul></div><div class=\"block\"><a href=\"/akcii-i-skidki.html\" class=\"normal\" style=\"text-decoration: none\"><p style=\"background-color: #dbf9de;\n    padding: 11px 26px;\n    margin-top: -31px;\n    border: 1px solid #b4e4b9;\n    color: #00ab10;\"><span>\n<img src=\"/.files/pages/1428243/sale4.png\" width=\"27\" style=\"margin-right: 7px\" alt=\"Ветеринарная клиника в Калининграде \n«Захаров и Фарафонтова»\" title=\"Ветеринарная клиника в Калининграде \n«Захаров и Фарафонтова»\"></span> Акции и скидки</p>\n</a>\n\n<br>\n\n<div>\n<a href=\"https://za-far.ru/vetkliniki.html\" style=\"color: #fff;\"><p class=\"center normal\" style=\"background-color: #b70d62; height: 34px; padding-top: 6px; margin-bottom: -1px\">Адреса ветклиник</p>\n<img src=\"/.files/pages/1428243/karta_zafar.jpg\" alt=\"Ветеринарная клиника в Калининграде \n«Захаров и Фарафонтова»\" title=\"Ветеринарная клиника в Калининграде \n«Захаров и Фарафонтова»\"></a></div>\n\n\n\n\n<br><br>\n<a href=\"https://za-far.ru/vetkliniki/veterinar-na-dom.html\" class=\"big center \">\n<img src=\"/.files/pages/1428243/am.png\" style=\"padding-left: 38px\" width=\"140px\" alt=\"Ветеринарная клиника в Калининграде \n«Захаров и Фарафонтова»\" title=\"Ветеринарная клиника в Калининграде \n«Захаров и Фарафонтова»\">\n<p>Вызов ветеринара на&nbsp;дом</p></a>\n<p class=\"center\">По субботам с 9:00 до 21:00</p>\n<p class=\"center  biggest\"><a href=\"tel:84012329900\" style=\"text-decoration: none\" class=\"nowrap\">8 (4012) 32-99-00</a></p>\n\n\n\n<br><br><br><br><br><div class=\"center\">\n<!-- Yandex.Metrika informer -->\n<a href=\"https://metrika.yandex.ru/stat/?id=33293723&amp;from=informer\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://informer.yandex.ru/informer/33293723/1_0_FFFFFFFF_F1F1F1FF_1_uniques\" style=\"width:1px; height:1px; border:0;\" alt=\"Яндекс.Метрика\" title=\"Яндекс.Метрика: данные за сегодня (уникальные посетители)\"></a>\n<!-- /Yandex.Metrika informer -->\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function (d, w, c) {\n        (w[c] = w[c] || []).push(function() {\n            try {\n                w.yaCounter33293723 = new Ya.Metrika({\n                    id:33293723,\n                    clickmap:true,\n                    trackLinks:true,\n                    accurateTrackBounce:true,\n                    webvisor:true,\n                    trackHash:true\n                });\n            } catch(e) { }\n        });\n\n        var n = d.getElementsByTagName(\"script\")[0],\n            s = d.createElement(\"script\"),\n            f = function () { n.parentNode.insertBefore(s, n); };\n        s.type = \"text/javascript\";\n        s.async = true;\n        s.src = \"https://mc.yandex.ru/metrika/watch.js\";\n\n        if (w.opera == \"[object Opera]\") {\n            d.addEventListener(\"DOMContentLoaded\", f, false);\n        } else { f(); }\n    })(document, window, \"yandex_metrika_callbacks\");\n</script>\n<!-- /Yandex.Metrika counter -->\n\n</div></div></div><div class=\"page\"><h1 class=\"center\" style=\"color: #b70d62\">Цены на услуги ветклиники<br class=\"nodesktop nomoble\"> в клиниках «Захаров и Фарафонтова»</h1>\n<div style=\"border: 2px dotted #f1947c; background-color: #fffafc\" class=\"center\"><div style=\"padding: 19px 19px 9px 19px\">\n<p class=\"warning h3 unshift\">Внимание!</p>\n<p>В прайсе указана минимальная стоимость услуги.\n</p><p>Услуга рассчитывается в зависимости от размера, вида животного, от сложности проведения манипуляций в каждом конкретном случае. Заболевание животного может быть индивидуальным, требующим дополнительного исследования и дополнительных процедур.\n</p><p>Цены на&nbsp;услуги клиники на&nbsp;сайте не&nbsp;являются публичной офертой согласно&nbsp;ст.&nbsp;437 (2) ГК&nbsp;РФ&nbsp;и&nbsp;могут отличаться от&nbsp;цен в&nbsp;клинике. Уточнить цену на&nbsp;услугу можно у&nbsp;администратора клиники по&nbsp;телефону.\n</p>\n</div></div><br>\n\n<div class=\"columns noborder\"><div>\n<p class=\"\">В любой из наших ветклиник вы можете сделать УЗИ, рентген, анализы кошке, коту, собаке или другим животным.</p>\n<p>\nНиже указаны <b>цены</b> на некоторые услуги <b>ветеринарной клиники</b>. Ознакомиться с полным прейскурантом цен можно в любой из наших ветеринарных клиник.\nТочную стоимость лечения вашего питомца определит ветеринарный врач после осмотра животного. </p>\n\n</div><div>\n\n<p>Обратите внимание, что в ветклиниках «Захаров и Фарафонтова» регулярно проводятся <a href=\"/akcii-i-skidki.html\" title=\"Акции и скидки\" class=\"contrast\">акции</a> на некоторые ветеринарные услуги. Также наши постоянные клиенты могут принять участие в <a href=\"/akcii-i-skidki/veterinarnaya-sluzhba-zaharov-i-farafontova-zapuskaet-pro.html\" title=\"Программа лояльности\" class=\"contrast\">программе лояльности</a> и получить скидку 10 % на год обслуживания. </p><p>Стоимость услуг указана без учета анестезии, расходных материалов, фиксации животного в случае необходимости.</p></div></div>\n<br><div class=\"columns noborder\"><div>\n<p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Прием ветеринарных врачей</p><hr class=\"notablet nomobile\">\n<table class=\"default\">\n  <tbody>\n\n    <tr>\n      <td>Первичный осмотр, консультация</td>\n      <td class=\"right nowrap\">1 737 руб.</td>\n    </tr>\n    <tr>\n      <td>Консультация узкопрофильного специалиста</td>\n      <td class=\"right nowrap\">2 895 руб.</td>\n    </tr>\n    <tr>\n      <td>Консультация и приём главного врача</td>\n      <td class=\"right nowrap\">3 474 руб.</td>\n    </tr>\n\n  </tbody>\n</table>\n\n<br><p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Терапевтические процедуры</p><hr class=\"notablet nomobile\">\n<table class=\"default\"><tbody>\n<tr><td>Инъекции п/к и в/м</td><td class=\"right nowrap\">322 руб.</td></tr>\n<tr><td>Инъекция в/в</td><td class=\"right nowrap\">415 руб.</td></tr>\n<tr><td>Постановка капельницы <span class=\"nowrap\">в/в (до 3-х часов)</span></td><td class=\"right nowrap\">1046 руб.</td></tr>\n<tr><td>Постановка <span class=\"nowrap\">в/в катетера</span></td><td class=\"right nowrap\">846 руб.</td></tr>\n<tr><td>Чистка параанальных желёз</td><td class=\"right nowrap\">612 руб.</td></tr>\n<tr><td>Стрижка когтей и клюва</td><td class=\"right nowrap\">630 руб.</td></tr>\n<tr><td>Электронное мечение животных (чипирование)</td><td class=\"right nowrap\">2 422 руб.</td></tr>\n</tbody></table></div><div>\n<p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Анализы и обследования</p>\n<hr class=\"notablet nomobile\">\n<table class=\"default\"><tbody>\n\n<tr><td>УЗИ одного органа</td><td class=\"right nowrap\">1 923 руб.</td></tr>\n<tr><td>УЗИ сердца</td><td class=\"right nowrap\">5 017 руб.</td></tr>\n<tr><td>УЗИ диагностика органов брюшной полости</td><td class=\"right nowrap\">2 826 руб.</td></tr>\n<tr><td>Рентген съёмка серийная</td><td class=\"right nowrap\">6 436 руб.</td></tr>\n<tr><td>Рентген снимок</td><td class=\"right nowrap\">1 290 руб.</td></tr>\n</tbody></table>\n\n<br><p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Кастрация, стерилизация кошек и собак</p><hr class=\"notablet nomobile\">\n<table class=\"default\"><tbody>\n\n<tr><td>Кастрация кобеля  (без&nbsp;стоимости анестезии)</td><td class=\"right nowrap\">6 610 руб.</td></tr>\n<tr><td>Кастрация кота (полная стоимость)</td><td class=\"right nowrap\">4 515 руб.</td></tr>\n<tr><td>Кастрация кошки (с&nbsp;общей анестезией <span class=\"nowrap\">и&nbsp;а/б)</span></td><td class=\"right nowrap\">7 836 руб.</td></tr>\n<tr><td>Кастрация суки до 20&nbsp;кг (без&nbsp;стоимости анестезии)</td><td class=\"right nowrap\">7 836 руб.</td></tr>\n<tr><td>Кастрация суки от&nbsp;20 до&nbsp;40&nbsp;кг (без&nbsp;стоимости анестезии)</td><td class=\"right nowrap\">11 373 руб.</td></tr></tbody></table></div></div>\n\n<br>\n\n\n\n\n<br>\n<div style=\"border: 2px dotted #f1947c; background-color: #fffafc\" class=\"center\"><div style=\"padding: 19px 19px 9px 19px\">\n<p class=\"warning h3 unshift\">Внимание! </p>\n<p class=\"warning h3 unshift\">Стоимость услуг в&nbsp;ночное время!</p>\n\n<p>В&nbsp;связи с&nbsp;объективной физиологической сложностью работы в&nbsp;ночное время в&nbsp;клиниках «Агат-Центр» и&nbsp;«Ветеринарный госпиталь» с&nbsp;круглосуточным режимом работы вводится надбавка&nbsp;20% к&nbsp;стоимости ветеринарных услуг, оказываемых в&nbsp;период времени с&nbsp;21:00 до&nbsp;09:00.</p>\n<p>Надбавка&nbsp;20% не&nbsp;распространяется:<br>\n—&nbsp;На&nbsp;стоимость услуг стационара;<br>\n—&nbsp;На&nbsp;ветеринарные услуги владельцам, обратившимся за&nbsp;ветеринарными услугами до&nbsp;21:00.\n</p>\n</div></div>\n<br>\n<p class=\"h2 center\">Прайс-лист с 21:00 до 09:00</p>\n<div class=\"columns noborder\"><div>\n<p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Прием ветеринарных врачей</p><hr class=\"notablet nomobile\">\n<table class=\"default\">\n  <tbody>\n\n    <tr>\n      <td>Первичный осмотр, консультация</td>\n      <td class=\"right nowrap\">2 085 руб.</td>\n    </tr>\n    <tr>\n      <td>Консультация узкопрофильного специалиста</td>\n      <td class=\"right nowrap\">3 474 руб.</td>\n    </tr>\n    <tr>\n      <td>Консультация и приём главного врача</td>\n      <td class=\"right nowrap\">4 168 руб.</td>\n    </tr>\n\n  </tbody>\n</table>\n\n<br><p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Терапевтические процедуры</p><hr class=\"notablet nomobile\">\n<table class=\"default\"><tbody>\n<tr><td>Инъекции п/к и в/м</td><td class=\"right nowrap\">386 руб.</td></tr>\n<tr><td>Инъекция в/в</td><td class=\"right nowrap\">498 руб.</td></tr>\n<tr><td>Постановка капельницы <span class=\"nowrap\">в/в (до 3-х часов)</span></td><td class=\"right nowrap\">1 255 руб.</td></tr>\n<tr><td>Постановка <span class=\"nowrap\">в/в катетера</span></td><td class=\"right nowrap\">1 014 руб.</td></tr>\n<tr><td>Чистка параанальных желёз</td><td class=\"right nowrap\">734 руб.</td></tr>\n<tr><td>Стрижка когтей и клюва</td><td class=\"right nowrap\">756 руб.</td></tr>\n<tr><td>Электронное мечение животных (чипирование)</td><td class=\"right nowrap\">2 906 руб.</td></tr>\n</tbody></table></div><div>\n<p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Анализы и обследования</p>\n<hr class=\"notablet nomobile\">\n<table class=\"default\"><tbody>\n\n<tr><td>УЗИ одного органа</td><td class=\"right nowrap\">2 307 руб.</td></tr>\n<tr><td>УЗИ сердца</td><td class=\"right nowrap\">6 020 руб.</td></tr>\n<tr><td>УЗИ диагностика органов брюшной полости</td><td class=\"right nowrap\">3 390 руб.</td></tr>\n<tr><td>Рентген съёмка серийная</td><td class=\"right nowrap\">7 723 руб.</td></tr>\n<tr><td>Рентген снимок</td><td class=\"right nowrap\">1 548 руб.</td></tr>\n</tbody></table>\n\n<br><p class=\"h3\" style=\"color: #b70d62\"><span style=\"margin-left: 20px\" class=\"notablet nomobile\"></span>Кастрация, стерилизация кошек и собак</p><hr class=\"notablet nomobile\">\n<table class=\"default\"><tbody>\n\n<tr><td>Кастрация кобеля  (без&nbsp;стоимости анестезии)</td><td class=\"right nowrap\">7 932 руб.</td></tr>\n<tr><td>Кастрация кота (полная стоимость)</td><td class=\"right nowrap\">5 418 руб.</td></tr>\n<tr><td>Кастрация кошки (с&nbsp;общей анестезией <span class=\"nowrap\">и&nbsp;а/б)</span></td><td class=\"right nowrap\">9 402 руб.</td></tr>\n<tr><td>Кастрация суки до 20&nbsp;кг (без&nbsp;стоимости анестезии)</td><td class=\"right nowrap\">9 402 руб.</td></tr>\n<tr><td>Кастрация суки от&nbsp;20 до&nbsp;40&nbsp;кг (без&nbsp;стоимости анестезии)</td><td class=\"right nowrap\">13 647 руб.</td></tr></tbody></table></div></div>\n<br><br>\n<p class=\"center big\">Cтоимость других ветеринарных услуг уточняйте по телефону</p>\n\n\n\n\n<div>\n\n\n\n<p class=\"center\"><a href=\"tel:84012686858\" style=\"text-decoration: none; color: #00ab10\" class=\"nowrap h0\">8 (4012) 68-68-58</a></p>\n</div></div></div><div class=\"footer\"><div><div class=\"contacts\"><a href=\"/vetkliniki.html\" class=\"link\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по ссылке', 'Контакты в подвале')\">Ветеринарные клиники — все адреса в Калининграде</a> <a href=\"/vetkliniki/veterinar-na-dom.html\" class=\"link\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по ссылке', 'Контакты в подвале')\">Вызов ветеринара на дом по субботам с 9:00 до 21:00</a> <a href=\"/vetkliniki/veterinarnyj-gospital.html\" class=\"link\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по ссылке', 'Контакты в подвале')\">Круглосуточная ветклиника</a> <a href=\"mailto:vetagat@mail.ru\" class=\"email\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по почте', 'Контакты в подвале')\">vetagat@mail.ru</a> <span class=\"socials\"><a href=\"https://t.me/zafar39\" class=\"social social_telegram\" target=\"_blank\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по соцсети', 'Контакты в подвале')\"></a><a href=\"https://vk.com/vet_agat\" class=\"social social_vk\" target=\"_blank\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по соцсети', 'Контакты в подвале')\"></a><a href=\"https://www.youtube.com/user/ZaharovFarafontova/videos\" class=\"social social_youtube\" target=\"_blank\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по соцсети', 'Контакты в подвале')\"></a></span> <span class=\"link\">Контакты Дирекции:</span> <a href=\"tel:84012329939\" class=\"phone\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по телефону', 'Контакты в подвале')\">8 (4012) 32-99-39</a> <a href=\"mailto:za-far@mail.ru\" class=\"email\" onclick=\"common.meters.send('События Simpio.RU', 'Клик по почте', 'Контакты в подвале')\">za-far@mail.ru</a> <span class=\"link\"><div style=\"border: 2px dotted #f1947c; background-color: #fffafc\" class=\"center nodesktop\"><div style=\"padding: 19px 19px 9px 19px\"> <p class=\"warning h2 unshift\">Внимание!</p> <p class=\"warning h3 unshift\">Уважаемые владельцы домашних животных!</p> <p class=\"warning h3 unshift\">Телефон дирекции НЕ ПРЕДНАЗНАЧЕН для консультаций, записи животного на приём и справочной информации!</p> <p class=\"warning h3 unshift\">По интересующему вас вопросу вы можете обратиться к администратору по телефону или с визитом&nbsp;в любую из наших клиник.</p> <p class=\"warning h3 unshift\">Телефоны и адреса&nbsp;всех наших&nbsp;клиник вы можете найти в разделе сайта <a href=\"https://za-far.ru/vetkliniki.html\" title=\"\">«Адреса и телефоны»</a>.</p> <p></p> </div></div></span></div><div class=\"somelink\"><a href=\"https://www.simpio.ru\" target=\"_blank\">Сайт работает на Simpio.RU</a></div><div class=\"somelink\"><a href=\"javascript://\" onclick=\"return common.c.switch_M('mobile')\" rel=\"nofollow\">Мобильная версия</a></div><div class=\"somelink\"><a href=\"javascript://\" onclick=\"return common.hints.center(this, this.parentNode.nextElementSibling.firstElementChild.cloneNode(true))\" rel=\"nofollow\">Правовая информация</a></div><div style=\"display: none;\"><div class=\"hints_list\"><a href=\"javascript://\" onclick=\"common.meters.send('События Simpio.RU', 'Просмотр политики', 'Подвал'); common.popup('/privacy/', 800, 600, true); return false\" rel=\"nofollow\">Политика обработки персональных данных</a><a href=\"javascript://\" onclick=\"common.meters.send('События Simpio.RU', 'Просмотр соглашения', 'Подвал'); common.popup('/agreement/', 800, 600, true); return false\" rel=\"nofollow\">Пользовательское соглашение</a></div></div><div class=\"somelink\"><a href=\"/sitemap/\">Карта сайта</a></div></div></div></div></div></div><script type=\"text/javascript\" src=\"/.merged/481.script.secondary.js\"></script><link rel=\"stylesheet\" type=\"text/css\" href=\"/.merged/481.styles.c.secondary.css\"><script>common.attach(document, 'DOMContentLoaded', function () { common.c.init('desktop'); } );</script><div itemscope=\"itemscope\" itemtype=\"http://schema.org/BreadcrumbList\"><div itemscope=\"itemscope\" itemprop=\"itemListElement\" itemtype=\"http://schema.org/ListItem\"><meta itemprop=\"position\" content=\"1\"><div itemscope=\"itemscope\" itemprop=\"item\" itemtype=\"http://schema.org/Thing\" id=\"https://za-far.ru/\"><meta itemprop=\"name\" content=\"Круглосуточная ветеринарная клиника в Калининграде\"></div></div><div itemscope=\"itemscope\" itemprop=\"itemListElement\" itemtype=\"http://schema.org/ListItem\"><meta itemprop=\"position\" content=\"2\"><div itemscope=\"itemscope\" itemprop=\"item\" itemtype=\"http://schema.org/Thing\"><meta itemprop=\"name\" content=\"Прайс-лист\"></div></div></div><script>common.meters.init.ym('33293723', '195.222.141.203')</script>\n</body></html>",
+  "text": "Прайс-лист ветеринарной клиники, цены ветклиника Ветклиника «Захаров и Фарафонтова» Калининград Акции Ветслужба «Захаров и Фарафонтова» 8 (4012) 97-19-03 (круглосуточно) Лечение кошек Лечение собак Лечение лошадей Лечение грызунов, птиц Ветеринарные врачи Расписание Прайс-лист О клинике Адреса и телефоны Акции и скидки Адреса ветклиник Вызов ветеринара на дом По субботам с 9:00 до 21:00 8 (4012) 32-99-00 Цены на услуги ветклиники в клиниках «Захаров и Фарафонтова» Внимание! В прайсе указана минимальная стоимость услуги. Услуга рассчитывается в зависимости от размера, вида животного, от сложности проведения манипуляций в каждом конкретном случае. Заболевание животного может быть индивидуальным, требующим дополнительного исследования и дополнительных процедур. Цены на услуги клиники на сайте не являются публичной офертой согласно ст. 437 (2) ГК РФ и могут отличаться от цен в клинике. Уточнить цену на услугу можно у администратора клиники по телефону. В любой из наших ветклиник вы можете сделать УЗИ, рентген, анализы кошке, коту, собаке или другим животным. Ниже указаны цены на некоторые услуги ветеринарной клиники . Ознакомиться с полным прейскурантом цен можно в любой из наших ветеринарных клиник. Точную стоимость лечения вашего питомца определит ветеринарный врач после осмотра животного. Обратите внимание, что в ветклиниках «Захаров и Фарафонтова» регулярно проводятся акции на некоторые ветеринарные услуги. Также наши постоянные клиенты могут принять участие в программе лояльности и получить скидку 10 % на год обслуживания. Стоимость услуг указана без учета анестезии, расходных материалов, фиксации животного в случае необходимости. Прием ветеринарных врачей Первичный осмотр, консультация 1 737 руб. Консультация узкопрофильного специалиста 2 895 руб. Консультация и приём главного врача 3 474 руб. Терапевтические процедуры Инъекции п/к и в/м 322 руб. Инъекция в/в 415 руб. Постановка капельницы в/в (до 3-х часов) 1046 руб. Постановка в/в катетера 846 руб. Чистка параанальных желёз 612 руб. Стрижка когтей и клюва 630 руб. Электронное мечение животных (чипирование) 2 422 руб. Анализы и обследования УЗИ одного органа 1 923 руб. УЗИ сердца 5 017 руб. УЗИ диагностика органов брюшной полости 2 826 руб. Рентген съёмка серийная 6 436 руб. Рентген снимок 1 290 руб. Кастрация, стерилизация кошек и собак Кастрация кобеля (без стоимости анестезии) 6 610 руб. Кастрация кота (полная стоимость) 4 515 руб. Кастрация кошки (с общей анестезией и а/б) 7 836 руб. Кастрация суки до 20 кг (без стоимости анестезии) 7 836 руб. Кастрация суки от 20 до 40 кг (без стоимости анестезии) 11 373 руб. Внимание! Стоимость услуг в ночное время! В связи с объективной физиологической сложностью работы в ночное время в клиниках «Агат-Центр» и «Ветеринарный госпиталь» с круглосуточным режимом работы вводится надбавка 20% к стоимости ветеринарных услуг, оказываемых в период времени с 21:00 до 09:00. Надбавка 20% не распространяется: — На стоимость услуг стационара; — На ветеринарные услуги владельцам, обратившимся за ветеринарными услугами до 21:00. Прайс-лист с 21:00 до 09:00 Прием ветеринарных врачей Первичный осмотр, консультация 2 085 руб. Консультация узкопрофильного специалиста 3 474 руб. Консультация и приём главного врача 4 168 руб. Терапевтические процедуры Инъекции п/к и в/м 386 руб. Инъекция в/в 498 руб. Постановка капельницы в/в (до 3-х часов) 1 255 руб. Постановка в/в катетера 1 014 руб. Чистка параанальных желёз 734 руб. Стрижка когтей и клюва 756 руб. Электронное мечение животных (чипирование) 2 906 руб. Анализы и обследования УЗИ одного органа 2 307 руб. УЗИ сердца 6 020 руб. УЗИ диагностика органов брюшной полости 3 390 руб. Рентген съёмка серийная 7 723 руб. Рентген снимок 1 548 руб. Кастрация, стерилизация кошек и собак Кастрация кобеля (без стоимости анестезии) 7 932 руб. Кастрация кота (полная стоимость) 5 418 руб. Кастрация кошки (с общей анестезией и а/б) 9 402 руб. Кастрация суки до 20 кг (без стоимости анестезии) 9 402 руб. Кастрация суки от 20 до 40 кг (без стоимости анестезии) 13 647 руб. Cтоимость других ветеринарных услуг уточняйте по телефону 8 (4012) 68-68-58 Ветеринарные клиники — все адреса в Калининграде Вызов ветеринара на дом по субботам с 9:00 до 21:00 Круглосуточная ветклиника vetagat@mail.ru Контакты Дирекции: 8 (4012) 32-99-39 za-far@mail.ru Внимание! Уважаемые владельцы домашних животных! Телефон дирекции НЕ ПРЕДНАЗНАЧЕН для консультаций, записи животного на приём и справочной информации! По интересующему вас вопросу вы можете обратиться к администратору по телефону или с визитом в любую из наших клиник. Телефоны и адреса всех наших клиник вы можете найти в разделе сайта «Адреса и телефоны» . Сайт работает на Simpio.RU Мобильная версия Правовая информация Политика обработки персональных данных Пользовательское соглашение Карта сайта",
+  "json_ld": [],
+  "document": {
+    "title": "Прайс-лист ветеринарной клиники, цены ветклиника",
+    "meta_description": "Доступные цены на услуги ветклиники и квалифицированная помощь животным в круглосуточной ветеринарных клиниках службы «Захаров и Фарафонтова» в Калининграде",
+    "meta_robots": "",
+    "viewport": "width=device-width",
+    "canonical": "https://za-far.ru/prajs-list.html",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Ветклиника «Захаров и Фарафонтова» Калининград",
+        "rel": ""
+      },
+      {
+        "href": "/akcii-i-skidki.html",
+        "text": "Акции",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/zafar39",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Ветслужба «Захаров и Фарафонтова»",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:84012971903",
+        "text": "8 (4012) 97-19-03 (круглосуточно)",
+        "rel": ""
+      },
+      {
+        "href": "/lechenie-koshek.html",
+        "text": "Лечение кошек",
+        "rel": ""
+      },
+      {
+        "href": "/lechenie-sobak.html",
+        "text": "Лечение собак",
+        "rel": ""
+      },
+      {
+        "href": "/lechenie-loshadej.html",
+        "text": "Лечение лошадей",
+        "rel": ""
+      },
+      {
+        "href": "/lechenie-gryzunov.html",
+        "text": "Лечение грызунов, птиц",
+        "rel": ""
+      },
+      {
+        "href": "/veterinar.html",
+        "text": "Ветеринарные врачи",
+        "rel": ""
+      },
+      {
+        "href": "/raspisanie-vetkliniki.html",
+        "text": "Расписание",
+        "rel": ""
+      },
+      {
+        "href": "/prajs-list.html",
+        "text": "Прайс-лист",
+        "rel": ""
+      },
+      {
+        "href": "/vetklinika.html",
+        "text": "О клинике",
+        "rel": ""
+      },
+      {
+        "href": "/vetkliniki.html",
+        "text": "Адреса и телефоны",
+        "rel": ""
+      },
+      {
+        "href": "/akcii-i-skidki.html",
+        "text": "Акции и скидки",
+        "rel": ""
+      },
+      {
+        "href": "https://za-far.ru/vetkliniki.html",
+        "text": "Адреса ветклиник",
+        "rel": ""
+      },
+      {
+        "href": "https://za-far.ru/vetkliniki/veterinar-na-dom.html",
+        "text": "Вызов ветеринара на дом",
+        "rel": ""
+      },
+      {
+        "href": "tel:84012329900",
+        "text": "8 (4012) 32-99-00",
+        "rel": ""
+      },
+      {
+        "href": "https://metrika.yandex.ru/stat/?id=33293723&from=informer",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/akcii-i-skidki.html",
+        "text": "акции",
+        "rel": ""
+      },
+      {
+        "href": "/akcii-i-skidki/veterinarnaya-sluzhba-zaharov-i-farafontova-zapuskaet-pro.html",
+        "text": "программе лояльности",
+        "rel": ""
+      },
+      {
+        "href": "tel:84012686858",
+        "text": "8 (4012) 68-68-58",
+        "rel": ""
+      },
+      {
+        "href": "/vetkliniki.html",
+        "text": "Ветеринарные клиники — все адреса в Калининграде",
+        "rel": ""
+      },
+      {
+        "href": "/vetkliniki/veterinar-na-dom.html",
+        "text": "Вызов ветеринара на дом по субботам с 9:00 до 21:00",
+        "rel": ""
+      },
+      {
+        "href": "/vetkliniki/veterinarnyj-gospital.html",
+        "text": "Круглосуточная ветклиника",
+        "rel": ""
+      },
+      {
+        "href": "mailto:vetagat@mail.ru",
+        "text": "vetagat@mail.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/zafar39",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/vet_agat",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/user/ZaharovFarafontova/videos",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:84012329939",
+        "text": "8 (4012) 32-99-39",
+        "rel": ""
+      },
+      {
+        "href": "mailto:za-far@mail.ru",
+        "text": "za-far@mail.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://za-far.ru/vetkliniki.html",
+        "text": "«Адреса и телефоны»",
+        "rel": ""
+      },
+      {
+        "href": "https://www.simpio.ru",
+        "text": "Сайт работает на Simpio.RU",
+        "rel": ""
+      },
+      {
+        "href": "javascript://",
+        "text": "Мобильная версия",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript://",
+        "text": "Правовая информация",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript://",
+        "text": "Политика обработки персональных данных",
+        "rel": "nofollow"
+      },
+      {
+        "href": "javascript://",
+        "text": "Пользовательское соглашение",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/sitemap/",
+        "text": "Карта сайта",
+        "rel": ""
+      }
+    ],
+    "button_texts": [],
+    "h1_texts": [
+      "Цены на услуги ветклиники в клиниках «Захаров и Фарафонтова»"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 34,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 40,
+      "image": 7,
+      "list_item": 9,
+      "strong": 2,
+      "form": 0,
+      "input": 0
+    }
+  }
+}

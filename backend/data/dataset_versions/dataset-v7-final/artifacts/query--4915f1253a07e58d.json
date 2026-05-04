@@ -1,0 +1,55 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://secrets.tbank.ru/biznes-s-nulya/kak-otkryt-veterinarnuyu-kliniku/",
+  "final_url": "https://secrets.tbank.ru/biznes-s-nulya/kak-otkryt-veterinarnuyu-kliniku/",
+  "status_code": 401,
+  "redirect_chain": [],
+  "response_headers": {
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "connection": "keep-alive",
+    "content-type": "text/html",
+    "date": "Mon, 04 May 2026 12:07:58 GMT",
+    "expires": "0",
+    "keep-alive": "timeout=15",
+    "pragma": "no-cache",
+    "server": "QRATOR",
+    "set-cookie": "qrator_jsr=v2.0.1777896478.776.c3de8dcbUvvm3ZQg|IabuMdYoQFBLHPEe|0BKcR/TBSkanEjxhMauIl+ntyCy523+8WF++AfTLoHjmRFyyJohpD8y1RRtiiBUOp5IpQmCvBW7kX/xKDRR6S3afL5iHTPCSVnFW3A2IuU8=-9Fn982qy8vaAJMw46RHpIuHe1mA=-00; Max-Age=300; Path=/; SameSite=None; Secure; Domain=.tbank.ru;",
+    "transfer-encoding": "chunked"
+  },
+  "response_time_ms": 2011.891,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-04T12:07:59.248604+00:00",
+  "html": "<!DOCTYPE html><html><head>\n    <link rel=\"icon\" href=\"data:,\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"referrer\" content=\"no-referrer\"><script src=\"/__qrator/qauth_utm_v2d_v9118.js\" charset=\"utf-8\"></script>\n \n    <script>\n        qauth_show_captcha = function (token, image) {\n            document.getElementById(\"captcha-img\").setAttribute(\"src\", image);\n            document.getElementById(\"captcha-token\").value = token;\n            document.getElementById(\"wrapper-main\").style.display = 'none';\n            document.getElementById(\"wrapper-captcha\").style.display = 'block';\n        }\n        submit_captcha = function () {\n            qauth_submit_captcha(document.getElementById(\"captcha-token\").value, document.getElementById(\"captcha-input\").value);\n        }\n    </script>\n \n</head>\n<body>\n<div id=\"wrapper-main\">\n</div>\n<div id=\"wrapper-captcha\" style=\"display: none\">\n    <p>Пожалуйста, пройдите проверку.</p>\n    <p>Ваш IP-адрес: 195.222.141.203</p>\n    <div class=\"captcha-area\">\n        <img id=\"captcha-img\" src=\"data:,\">\n    </div>\n    <div>\n        <input id=\"captcha-input\" type=\"text\" placeholder=\"Enter captcha\" maxlength=\"8\" spellcheck=\"false\" required=\"\">\n        <input id=\"captcha-token\" hidden=\"\">\n        <button class=\"check-btn\" onclick=\"submit_captcha()\">Check</button>\n        <button class=\"reload-btn\" onclick=\"qauth_reload()\">Reload</button>\n    </div>\n</div>\n\n</body></html>",
+  "text": "Пожалуйста, пройдите проверку. Ваш IP-адрес: 195.222.141.203 Check Reload",
+  "json_ld": [],
+  "document": {
+    "title": "",
+    "meta_description": "",
+    "meta_robots": "",
+    "viewport": "",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [],
+    "button_texts": [
+      "Check",
+      "Reload"
+    ],
+    "h1_texts": [],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 2,
+      "h1": 0,
+      "h2": 0,
+      "h3": 0,
+      "link": 0,
+      "image": 1,
+      "list_item": 0,
+      "strong": 0,
+      "form": 0,
+      "input": 2
+    }
+  }
+}

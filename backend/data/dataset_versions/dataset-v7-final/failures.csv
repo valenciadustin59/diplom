@@ -1,0 +1,19 @@
+dataset_version,feature_schema_version,extraction_artifact_version,label_schema_version,label_source,weak_target_score,expert_target_score,query,category,intent,city,region_code,url,domain,rank,serp_page,title,snippet,page_type,fetch_status,fetch_error,artifact_path,artifact_sha1,artifact_size_bytes,target_score
+dataset-v7-final,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,ветеринарная клиника Москва,veterinary_clinic,commercial,Москва,213,https://pets.mos.ru/vetklinica/,pets.mos.ru,4,0,,,content,failed,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://pets.mos.ru/vetklinica/"", waiting until ""domcontentloaded""
+",,,0,66.6667
+dataset-v7-final,v2,extraction-v2,hybrid-v1,weak_serp,11.1111,,ветеринарная клиника отзывы,veterinary_clinic,comparison,,,https://vetlaif.ru/reviews,vetlaif.ru,9,0,,,content,failed,"Page.goto: net::ERR_CONNECTION_CLOSED at https://vetlaif.ru/reviews
+Call log:
+  - navigating to ""https://vetlaif.ru/reviews"", waiting until ""domcontentloaded""
+",,,0,11.1111
+dataset-v7-final,v2,extraction-v2,hybrid-v1,weak_serp,55.5556,,ветеринарная клиника для бизнеса,veterinary_clinic,commercial,,,https://bzplan.ru/wp-content/uploads/2025/03/vetklinika.pdf,bzplan.ru,5,0,,,content,failed,"Page.goto: Download is starting
+Call log:
+  - navigating to ""https://bzplan.ru/wp-content/uploads/2025/03/vetklinika.pdf"", waiting until ""domcontentloaded""
+",,,0,55.5556
+dataset-v7-final,v2,extraction-v2,hybrid-v1,weak_serp,44.4444,,ветеринарная клиника для бизнеса,veterinary_clinic,commercial,,,https://www.1cbit.ru/blog/kak-otkryt-veterinarnuyu-kliniku/,1cbit.ru,6,0,,,article,failed,Browser rendering did not produce usable content,,,0,44.4444
+dataset-v7-final,v2,extraction-v2,hybrid-v1,weak_serp,66.6667,,ветеринарная клиника под ключ,veterinary_clinic,commercial,,,https://www.1cbit.ru/blog/kak-otkryt-veterinarnuyu-kliniku/,1cbit.ru,4,0,,,article,failed,Browser rendering did not produce usable content,,,0,66.6667
+dataset-v7-final,v2,extraction-v2,hybrid-v1,weak_serp,100.0,,ветеринарная клиника рядом,veterinary_clinic,commercial,Москва,213,https://yandex.ru/maps/213/moscow/category/veterinary_clinic/184107216/,yandex.ru,1,0,,,category,failed,"Page.goto: net::ERR_CONNECTION_RESET at https://yandex.ru/maps/213/moscow/category/veterinary_clinic/184107216/
+Call log:
+  - navigating to ""https://yandex.ru/maps/213/moscow/category/veterinary_clinic/184107216/"", waiting until ""domcontentloaded""
+",,,0,100.0

@@ -1,0 +1,770 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+  "final_url": "https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "connection": "keep-alive",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 04 May 2026 12:07:18 GMT",
+    "link": "<https://vetandlife.ru/wp-json/>; rel=\"https://api.w.org/\", <https://vetandlife.ru/wp-json/wp/v2/posts/49036>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://vetandlife.ru/?p=49036>; rel=shortlink",
+    "server": "nginx/1.25.3",
+    "transfer-encoding": "chunked",
+    "x-jetpack-boost-cache": "miss",
+    "x-pingback": "https://vetandlife.ru/xmlrpc.php",
+    "x-powered-by": "PHP/8.2.12"
+  },
+  "response_time_ms": 10009.589,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-04T12:07:26.608250+00:00",
+  "html": "<!DOCTYPE html><html lang=\"ru\"><head>\n        <meta charset=\"utf-8\">\n        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0\">\n        <meta name=\"yandex-verification\" content=\"22f98955910722f8\">\n        <meta name=\"zen-verification\" content=\"9Ui9YzVJgKUB7bIgRNnAZqdHCNI8v9REm3TDpW0kciEicYyuD640moNznBDbFqcT\">\n        <title>Как выбрать ветеринарную клинику и не ошибиться с врачом | Ветеринария и жизнь</title>\n        <link rel=\"stylesheet\" href=\"https://vetandlife.ru/wp-content/themes/vij/style.css?ver=1717522807\">\n        \n        <!--<link href=\"https://vetandlife.ru/wp-content/themes/vij/pub/fontawesome.css\" rel=\"stylesheet\">-->\n        <script async=\"\" src=\"https://www.googletagmanager.com/gtm.js?id=GTM-5TZNL954\"></script><script async=\"\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><script type=\"text/javascript\" async=\"\" id=\"tmr-code\" src=\"https://top-fwz1.mail.ru/js/code.js\"></script><script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-content/themes/vij/scripts/jquery-3.6.0.min.js\"></script>\n        <script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-content/themes/vij/scripts/golos.js\"></script>\n        <meta property=\"og:title\" content=\"Как выбрать ветеринарную клинику и не ошибиться с врачом | Ветеринария и жизнь\">\n        <link rel=\"apple-touch-icon\" sizes=\"57x57\" href=\"/apple-icon-57x57.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"60x60\" href=\"/apple-icon-60x60.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"72x72\" href=\"/apple-icon-72x72.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"/apple-icon-76x76.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"114x114\" href=\"/apple-icon-114x114.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"120x120\" href=\"/apple-icon-120x120.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"144x144\" href=\"/apple-icon-144x144.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"152x152\" href=\"/apple-icon-152x152.png\">\n        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-icon-180x180.png\">\n        <link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"/android-icon-192x192.png\">\n        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">\n        <link rel=\"icon\" type=\"image/png\" sizes=\"96x96\" href=\"/favicon-96x96.png\">\n        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">\n        <meta name=\"msapplication-TileColor\" content=\"#ffffff\">\n        <meta name=\"msapplication-TileImage\" content=\"/ms-icon-144x144.png\">\n        <meta name=\"theme-color\" content=\"#ffffff\">\n        <link type=\"image/x-icon\" href=\"https://vetandlife.ru/favicon.ico\" rel=\"shortcut icon\">\n        <link type=\"Image/x-icon\" href=\"https://vetandlife.ru/favicon.ico\" rel=\"icon\">\n        <link rel=\"preload\" href=\"/wp-content/themes/vij/pub/fonts/GrtskPeta-Regular.woff2\" as=\"font\" type=\"font/ttf\" crossorigin=\"\">\n        <link rel=\"preload\" href=\"/wp-content/themes/vij/pub/fonts/GrtskPeta-Bold.woff2\" as=\"font\" type=\"font/ttf\" crossorigin=\"\">\n                    <meta property=\"og:description\" content=\"Качество ветеринарной помощи напрямую влияет на здоровье и жизнь питомца, поэтому выбирать клинику лучше заранее, а не в экстренной ситуации. По каким признакам можно распознать хорошего специалиста и какие сигналы должны насторожить владельца животного, рассказала журналу «Питомцы» ветеринарный врач Тверской ветеринарной поликлиники ФГБУ «ВНИИЗЖ» Марина Сафронова.\">\n                            <meta property=\"og:image\" content=\"https://vetandlife.ru/wp-content/uploads/2024/10/DSC00915-1024x683.jpg\">\n               \n            \n        <style id=\"jetpack-boost-critical-css\" media=\"not all\">@media all{ul{box-sizing:border-box}}@media all{@font-face{font-display:swap;font-family:GrtskPeta;font-style:normal;font-weight:400}@font-face{font-display:swap;font-family:GrtskPeta;font-style:normal;font-weight:700}body,h1,h3,li,p,ul{margin:0}ul{list-style:none}a{color:#000;text-decoration:none}*{box-sizing:border-box}body{background-color:#fff;flex-direction:column;font-family:GrtskPeta;margin:0;min-height:100vh;overflow-x:hidden;width:100%}#main,body{display:flex}#main{flex:1}#main>#left,#main>#right{flex:0 0 20vw}#main>#left{order:-1}#mobmainbanner{display:none;padding:10px;width:100%}#mobmainbanner img{display:block;margin:auto;max-height:86px;max-width:554px;text-align:center;width:100%}#left{display:flex;flex-direction:column;max-width:330px}#vert-title{background:#f2f2f2;min-width:50px}#mainlogo{flex-shrink:0;margin-left:12px;width:240px}.right-info{text-align:center}.right-info{margin-bottom:12px;margin-top:8px;width:100%}#right{border-left:1px solid #e9eaeb;display:flex;flex-direction:column;max-width:330px;padding-top:42px}header{background-color:#fff;box-shadow:0 4px 53px #00000012;margin-right:12px;width:100%}#footer_menu,header{align-items:center;display:flex}#footer_menu{justify-content:center;padding-bottom:12px;padding-top:12px}#footer_up{text-align:right;width:30%}#footer_qr{display:grid;margin-right:12px;text-align:center;width:25%;grid-gap:.5rem;grid-template-columns:repeat(auto-fit,minmax(10px,1fr))}#img_qr{background-color:#fff;padding:4px}#footer-contact{text-align:center;width:20%}#footer_subscript{margin-left:32px;margin-right:22px;width:30%}#footer_logo{margin-left:12px;margin-right:32px;width:150px}.sub_button{height:55px}.sub_button{font-weight:700;line-height:110%;text-transform:uppercase}.left_button{background:#fff;border:1px solid #000;border-radius:55px;color:#000;display:table-cell;font-size:16px;font-size:11px;font-weight:700;height:45px;line-height:110%;padding-left:22px;padding-right:22px;text-decoration:none;text-transform:uppercase;vertical-align:middle}.left_center_block{margin-bottom:28px;margin-top:8px}.vazh{font-size:9px;text-transform:uppercase}#pere{color:#909294;font-size:12px;line-height:150%;margin-left:18px;width:40%}#svid{font-size:13px;line-height:150%}#svid{color:#444;display:flex;width:80%}#svid li{margin-right:18px}.fulltext{width:100%}.fulltext{margin-right:8px}#fulltext img{height:auto;width:100%}ul.menu_main{display:flex;padding:5px}ul.menu_main li{font-size:15px;font-weight:700;margin:5px;padding:15px}ul.menu_left{display:flex;flex-direction:column;padding:26px 22px 12px 32px}ul.menu_left li{font-size:12px;font-weight:700;height:23px;line-height:150%;margin-bottom:16px;padding-left:28px;padding-top:2px;text-transform:uppercase}ul.menu_left li a{color:#171717}a svg{display:inline-block;vertical-align:middle}ul.menu_footer{display:flex;padding:5px}ul.menu_footer li{font-size:15px;font-weight:700;margin:5px;padding:15px}#footer_up{font-size:12px;font-weight:700;text-transform:uppercase}#main{padding:0 8px}#header-contact{display:flex;flex-direction:column;margin-left:22px}#head_tel{font-weight:700}#head_mail a{color:#2d9cdb;text-decoration:underline}#header_icons{display:flex;margin-left:18px}#header_icons li{height:20px;margin-left:6px;width:20px}.btn_rss{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/rss.svg) no-repeat}.btn_lan{font-weight:700;margin-top:-2px}.btn_search{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/lupa.svg) no-repeat}#content{margin-left:58px;margin-right:58px;padding-bottom:28px;width:55%}#content p{margin-bottom:1em;margin-top:.5em}#content IMG{width:100%}#content ul li{padding:4px 0}#post-img{text-align:center}h1{font-family:GrtskPeta;font-size:36px;font-weight:700;margin-bottom:18px}.mobile_archive{display:none;margin-top:38px}.mobile_archive_img{margin-bottom:8px;margin-left:12px;margin-top:-32px;width:91px}.mobile_archive_text{display:block;font-size:14px;margin-bottom:22px;margin-left:12px}.mobile_archive_link{margin-top:8px}.mobile_archive_link a{color:#909294}#nav_content{border-bottom:1px solid #e9eaeb;display:flex;list-style-type:none;margin-bottom:28px;margin-top:28px;padding:0 0 18px}#nav_content li{color:#909294;font-size:12px;line-height:3,2px;margin-right:8px}#nav_content li a{color:#909294}.mosts{background-color:#00466a;margin-bottom:22px;padding:22px;width:100%}.publs_right{border-top:1px solid #e9eaeb;margin:22px;padding-bottom:18px;padding-top:18px}.publs_right_title{font-size:14px;font-weight:700;margin-top:12px;text-transform:uppercase}.publs_right_item{font-size:15px;padding-top:28px}.most_title{color:#2d9cdb}.most{font-size:16px;line-height:22.4px;padding:12px 0}.most,.most a{color:#fff}.left_preview{width:145px}.publ_expert{font-size:16px;font-weight:700;margin-bottom:18px}.post_info{color:#444;margin-bottom:12px}.post_img_title{color:#909294;padding:12px 0;text-align:center}.post_link_category a{color:#2d9cdb}.post_info{display:flex;font-size:14px}.post_info_sub{width:50%}.left_opinion{background:#f5f5f5;display:flex;flex-direction:column;padding:18px}.left_opinion img{margin-bottom:8px;margin-top:8px}.left_opinion_title{font-weight:700;margin-bottom:8px;text-transform:uppercase}.left_opinion_text{font-size:16px;font-weight:700}.moread_title{font-weight:700;margin-bottom:8px;margin-top:8px}.moread_card IMG{float:top;width:100%}.moread_date{color:#909294;font-size:13px}.right_archive{background:#fff;box-shadow:0 14px 27px #f2f2f2;margin:22px;padding-bottom:22px;padding-top:22px;text-align:center}.right_archive_img{margin-bottom:12px;width:147px}.right_archive_text{font-weight:700}.right_archive_link,.right_archive_text{font-size:15px;line-height:130%;text-align:center}.right_archive_link{margin-bottom:8px;margin-top:8px}.right_archive_link a{color:#909294}.post_author{color:#171717;font-size:14px;margin-bottom:14px}#subscript-mail{margin-bottom:22px;margin-top:18px;padding-left:22px;padding-right:22px}#subscript_box{text-align:center}#convert{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/mail.png) no-repeat;background-position:50%;border:1px solid #e9eaeb;box-sizing:border-box;height:87px;margin-left:auto;margin-right:auto;width:87px}.form-right input{font-size:15px;margin-bottom:12px;padding-left:28px;width:230px}.form-right input{background:#f2f2f2;border:1px solid #f2f2f2;border-radius:35px;height:50px}.right_title{font-size:15px;font-weight:600;line-height:130%;margin-bottom:12px;margin-top:22px;padding-left:28px;padding-right:28px}.form-right,.right_title,.sub_button{text-align:center}.sub_button{background:#f18129;border:1px solid #f18129;border-radius:55px;color:#fff;display:inline-block;font-size:16px;font-size:11px;padding:10px 28px;text-decoration:none}#socials{align-items:center;display:flex;justify-content:center;margin-bottom:18px;margin-left:12px}.btn_soc_post{margin-left:12px}.btn_soc_ru{border:1px solid #d5d5d6;border-radius:50%;margin-right:18px}.btn_soc{border:1px solid #d5d5d6;border-radius:50%;margin-right:18px;padding:12px}.toggle-nav{display:none!important}#mobile_main_menu{z-index:100}#mobile_main_menu,#mobile_rubrics_menu{background:#fff;border-top:1px solid #f5f5f5;bottom:0;display:none;left:0;max-height:1300px;max-width:100%;overflow-y:scroll;padding-top:42px;position:fixed;right:0;top:0;width:100%}#mobile_rubrics_menu{min-height:unset;overflow-x:scroll;z-index:500}#mobile_submenu{display:none;position:fixed;right:5%;top:20px;z-index:999}#closed_mobile_menu{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/closed.svg) 0;height:20px;width:20px}#lang_mobile_title{color:#909294;font-size:14px;font-weight:700;padding-right:28px;text-transform:uppercase}#closed_mobile_rubrics_menu{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/closed.svg) 0;height:20px;position:fixed;right:5%;top:20px;width:20px;z-index:1}#rubrics_back{color:#00466a;font-size:14px;line-height:110%;margin-left:38px}.rub_arrow{float:right;margin-right:12px}span.rub_back_title{margin-left:22px}#gamburer_menu li{border-bottom:1px solid #f5f5f5;font-size:13px;font-weight:700;line-height:19,5px;margin-bottom:28px;margin-top:22px;padding-bottom:22px;text-transform:uppercase}#gamburer_menu a{color:#00466a}.menu-rubrics,.mob-lite{display:none}.m_rubrics{display:flex;overflow-x:scroll;-webkit-overflow-scrolling:touch;border-bottom:1px solid #f2f2f2;margin-bottom:-20px;margin-left:-20px;padding-bottom:20px}.m_rubrics li{color:#909294;font-size:12px;margin-right:12px;padding-bottom:12px}.m_rubrics li a{color:#909294}.mob-subscript{display:none;margin-top:12px}.mob-block-button{margin:12px 0}.mob-sub-button{background:#f18129;border:1px solid #f18129;border-radius:55px;color:#fff;display:table-cell;font-size:16px;font-size:11px;font-weight:700;height:55px;line-height:110%;padding-left:22px;padding-right:22px;text-align:center;text-decoration:none;text-transform:uppercase;vertical-align:middle}.mob{display:none}@media (max-width:767px){.desc{display:none}.mob{display:block}.btn_lan{display:none}}@media screen and (max-width:580px){#left,#right{display:none}#mainlogo{margin:0;width:200px}#mobmainbanner{display:block}#header_icons{margin-left:0;padding-right:8px}#content{width:100%}.toggle-nav{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/gumburger.svg) no-repeat;display:inline-block!important;height:20px;padding-left:12px;width:20px}.btn_rss{display:none}.mob-lite{display:inline-block!important;margin-top:12px}.mob_menu_info{max-width:100%;padding-bottom:42px;padding-top:22px}.mob_menu_contacts{display:flex;flex-flow:row wrap;justify-content:space-between;margin-bottom:42px;margin-left:36px;margin-right:36px;padding-top:22px}.mob_menu_tel{font-weight:700}.mob_menu_mail a{color:#2d9cdb}.post-h1{font-weight:24px}.img-fluid{width:100%}#footer_logo,#footer_menu,#footer_qr{display:none}#pere{width:90%}#footer_subscript{display:none}.footer_sub{text-align:center;width:70%}#svid{display:none}#moread_5,#moread_6{display:none}}@media (max-width:1024px){.header-social-pets{display:none}}@media (max-width:920px){body{margin-right:8px;overflow-x:hidden;width:100%}h1{font-size:24px}#mainlogo{width:180px}#header-contact,#left,#mainmenu,#nav_content,#right,#vert-title,.header-social-pets{display:none}#footer-contact{display:none;text-align:center}#content{margin:8px;width:100%}#header_icons li{height:25px;margin-left:8px;width:25px}.toggle-nav{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/gumburger.svg) no-repeat;display:inline-block!important;height:20px;padding-left:12px;width:20px}.post_info_social{display:none}#mainlogo{left:0;margin:0;padding:0;top:0;width:250px}.menu-rubrics{display:inline-block;margin-top:22px;overflow:hidden}.mobile_archive{border:1px solid #f18129;margin-bottom:12px;margin-left:12px;margin-right:12px}.mob-subscript,.mobile_archive{align-items:center;display:flex}.mob-subscript{flex-direction:column;justify-content:center}}@media only screen and (min-device-width:340px) and (max-device-width:667px){#main{width:100%}h1{font-size:24px}body{margin-right:8px;width:100%}#content{margin:8px;width:100%}#mobmainbanner{display:block}#footer-contact{display:none}#mainlogo,#mainlogo IMG{width:200px}#header_icons li{height:25px;margin-left:6px;width:25px}.menu-rubrics{display:inline-block;margin:22px 22px 0 0;overflow:hidden;padding:0}.mobile_archive{border:1px solid #f18129;margin-bottom:12px;margin-left:12px;margin-right:12px}.mob-subscript,.mobile_archive{align-items:center;display:flex}.mob-subscript{flex-direction:column;justify-content:center}#pere{display:none}}body{overflow-x:hidden}.header-pets{align-items:center;background-color:#fff;box-shadow:0 4px 53px #00000012;display:flex;gap:2%;height:100px;width:100%}.petslogo{left:0;margin:0 0 0 2%;max-width:200px;padding:0;top:0}ul.menu_main_pets{display:flex;padding:5px}ul.menu_main_pets li{font-size:15px;font-weight:700;margin:5px;padding:15px}.head-mail-pets a{color:#f57825}.header-social-pets{align-items:center;display:flex;gap:20px;padding:5px}.footer-mail a{color:#f57825}.footer-qrs-pets img{height:80px;width:80px}.footer-qrs-pets p{color:#3f3f3f;font-size:.6em;font-style:normal;line-height:normal}ul.pets-menu-left{align-items:center;display:flex;flex-direction:column;gap:14px;margin:16px 0 0;padding:0}ul.pets-menu-left li{border-bottom:1px solid #e6e6e6;font-size:12px;font-weight:700;line-height:150%;padding:0 0 14px 28px;text-transform:uppercase;width:100%}ul.pets-menu-left li a{color:#171717}@media (max-width:375px){#petslogo{margin:0;max-width:100%;padding:0 0 0 4px;width:100%}}@media (max-width:920px){body{width:100%}header{margin:0}.toggle-nav-pets{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/gumburger.svg) no-repeat}.toggle-nav-pets{height:20px;width:20px}.btn_search{display:none}.petslogo-mob IMG{margin-left:8px;width:140px}#header-contact-pets,.header-social-pets{display:none}.header-pets{gap:0;max-width:100%}#pere,.footer-qr-pets{display:none}.m_rubrics_pets{display:flex;overflow-x:scroll;-webkit-overflow-scrolling:touch;border-bottom:1px solid #f2f2f2;margin-bottom:-20px;margin-left:-20px;padding-bottom:20px}.m_rubrics_pets li{color:#909294;font-size:12px;margin-right:12px;padding-bottom:12px;white-space:nowrap}.m_rubrics_pets li a{color:#909294}}.socs{background-position:50%;background-repeat:no-repeat;background-size:contain;display:block;height:40px;margin-right:18px;padding:12px;width:40px}.soc-vk{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'\\ fill=\\'none\\'%3E%3Ccircle\\ cx=\\'20\\'\\ cy=\\'20\\'\\ r=\\'19.5\\'\\ stroke=\\'%233B83B5\\'/%3E%3Cpath\\ fill=\\'%233B83B5\\'\\ d=\\'M29.579\\ 15.855c.14-.465\\ 0-.806-.662-.806h-2.193c-.558\\ 0-.813.295-.953.619\\ 0\\ 0-1.115\\ 2.719-2.695\\ 4.482-.51.513-.743.675-1.021.675-.139\\ 0-.341-.162-.341-.627v-4.343c0-.558-.161-.806-.626-.806h-3.446c-.348\\ 0-.558.258-.558.504\\ 0\\ .528.79.65.871\\ 2.138v3.228c0\\ .707-.127.836-.407.836-.743\\ 0-2.551-2.729-3.624-5.853-.209-.607-.42-.852-.98-.852h-2.192c-.627\\ 0-.752.295-.752.619\\ 0\\ .582.743\\ 3.462\\ 3.461\\ 7.271\\ 1.812\\ 2.601\\ 4.363\\ 4.011\\ 6.687\\ 4.011\\ 1.393\\ 0\\ 1.565-.313\\ 1.565-.853v-1.966c0-.626.133-.752.574-.752.324\\ 0\\ .882.164\\ 2.183\\ 1.417\\ 1.486\\ 1.486\\ 1.732\\ 2.153\\ 2.567\\ 2.153h2.192c.626\\ 0\\ .939-.313.759-.931-.197-.615-.907-1.51-1.849-2.569-.512-.604-1.277-1.254-1.51-1.579-.325-.419-.231-.604\\ 0-.976.001.001\\ 2.672-3.761\\ 2.95-5.04\\'/%3E%3C/svg%3E)}.soc-tg{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'\\ fill=\\'none\\'%3E%3Ccircle\\ cx=\\'20\\'\\ cy=\\'20\\'\\ r=\\'19.5\\'\\ stroke=\\'%233B83B5\\'/%3E%3Cpath\\ fill=\\'%233B83B5\\'\\ d=\\'m18.17\\ 22.227-.28\\ 3.909c.402\\ 0\\ .576-.171.785-.376l1.886-1.782\\ 3.909\\ 2.829c.717.395\\ 1.222.187\\ 1.415-.652l2.566-11.88c.228-1.048-.383-1.457-1.081-1.2L12.29\\ 18.78c-1.03.395-1.014.962-.176\\ 1.219l3.856\\ 1.185\\ 8.955-5.538c.422-.276.805-.123.49.153z\\'/%3E%3C/svg%3E)}.soc-rutube{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'\\ fill=\\'none\\'\\ viewBox=\\'0\\ 0\\ 192\\ 192\\'%3E%3Ccircle\\ cx=\\'96\\'\\ cy=\\'96\\'\\ r=\\'95\\'\\ stroke=\\'%23000\\'\\ stroke-width=\\'4\\'/%3E%3Cpath\\ fill=\\'%23fff\\'\\ d=\\'M128.689\\ 47.57H20.396v116.843h30.141V126.4h57.756l26.352\\ 38.013h33.75l-29.058-38.188q13.537-2.102\\ 19.493-9.985c3.97-5.255\\ 5.956-13.664\\ 5.956-24.875v-8.759c0-6.657-.721-11.912-1.985-15.941s-3.43-7.533-6.498-10.686c-3.249-2.978-6.858-5.08-11.19-6.481-4.332-1.226-9.747-1.927-16.424-1.927zm-4.873\\ 53.08H50.537V73.321h73.279c4.15\\ 0\\ 7.038.7\\ 8.482\\ 1.927\\ 1.444\\ 1.226\\ 2.347\\ 3.503\\ 2.347\\ 6.832v9.81c0\\ 3.503-.903\\ 5.78-2.347\\ 7.006s-4.331\\ 1.752-8.482\\ 1.752z\\'\\ style=\\'fill:none;stroke:%23000;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1\\'\\ transform=\\'matrix\\(.67\\ 0\\ 0\\ .67\\ 32\\ 32\\)\\'/%3E%3Ccircle\\ cx=\\'140\\'\\ cy=\\'50\\'\\ r=\\'10\\'\\ fill=\\'%23F41240\\'/%3E%3C/svg%3E)}.soc-dzen{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'\\ fill=\\'none\\'%3E%3Ccircle\\ cx=\\'20\\'\\ cy=\\'20\\'\\ r=\\'19.5\\'\\ stroke=\\'%233B83B5\\'/%3E%3Cg\\ fill=\\'%233B83B5\\'%3E%3Cpath\\ d=\\'M20.2\\ 11.8c0\\ 3.3.3\\ 5.2\\ 1.5\\ 6.5s3.1\\ 1.5\\ 6.5\\ 1.5c-.1-4.4-3.6-7.9-8-8M18.2\\ 18.2c1.2-1.3\\ 1.5-3.1\\ 1.5-6.5-4.4.1-7.9\\ 3.6-8\\ 8\\ 3.4.1\\ 5.3-.2\\ 6.5-1.5M11.8\\ 20.2c.1\\ 4.4\\ 3.6\\ 7.9\\ 8\\ 8\\ 0-3.3-.3-5.2-1.5-6.5s-3.2-1.4-6.5-1.5M28.2\\ 20.2c-3.3\\ 0-5.2.3-6.5\\ 1.5s-1.5\\ 3.1-1.5\\ 6.5c4.4-.1\\ 7.9-3.6\\ 8-8\\'/%3E%3C/g%3E%3C/svg%3E)}.soc{background-position:50%;background-repeat:no-repeat;background-size:40px 40px;display:inline-block;height:40px;width:40px}.soc-telegram{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'%3E%3Crect\\ width=\\'39\\'\\ height=\\'39\\'\\ x=\\'.5\\'\\ y=\\'.5\\'\\ fill=\\'none\\'\\ stroke=\\'%23000\\'\\ rx=\\'19.5\\'/%3E%3Cpath\\ d=\\'m18.17\\ 22.227-.28\\ 3.909c.402\\ 0\\ .576-.171.785-.376l1.886-1.782\\ 3.909\\ 2.829c.717.395\\ 1.222.187\\ 1.415-.652l2.566-11.88c.228-1.048-.383-1.457-1.081-1.2L12.29\\ 18.78c-1.03.395-1.014.962-.176\\ 1.219l3.856\\ 1.185\\ 8.955-5.538c.422-.276.805-.123.49.153z\\'/%3E%3C/svg%3E)}.soc-vk{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'%3E%3Crect\\ width=\\'39\\'\\ height=\\'39\\'\\ x=\\'.5\\'\\ y=\\'.5\\'\\ fill=\\'none\\'\\ stroke=\\'%23000\\'\\ rx=\\'19.5\\'/%3E%3Cpath\\ d=\\'M29.579\\ 14.855c.14-.465\\ 0-.806-.662-.806h-2.193c-.558\\ 0-.813.295-.953.619\\ 0\\ 0-1.115\\ 2.719-2.695\\ 4.482-.51.513-.743.675-1.021.675-.139\\ 0-.341-.162-.341-.627v-4.343c0-.558-.161-.806-.626-.806h-3.446c-.348\\ 0-.558.258-.558.504\\ 0\\ .528.79.65.871\\ 2.138v3.228c0\\ .707-.127.836-.407.836-.743\\ 0-2.551-2.729-3.624-5.853-.209-.607-.42-.852-.98-.852h-2.192c-.627\\ 0-.752.295-.752.619\\ 0\\ .582.743\\ 3.462\\ 3.461\\ 7.271\\ 1.812\\ 2.601\\ 4.363\\ 4.011\\ 6.687\\ 4.011\\ 1.393\\ 0\\ 1.565-.313\\ 1.565-.853v-1.966c0-.626.133-.752.574-.752.324\\ 0\\ .882.164\\ 2.183\\ 1.417\\ 1.486\\ 1.486\\ 1.732\\ 2.153\\ 2.567\\ 2.153h2.192c.626\\ 0\\ .939-.313.759-.931-.197-.615-.907-1.51-1.849-2.569-.512-.604-1.277-1.254-1.51-1.579-.325-.419-.231-.604\\ 0-.976.001.001\\ 2.672-3.761\\ 2.95-5.04\\'/%3E%3C/svg%3E)}.soc-ok{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'%3E%3Ccircle\\ cx=\\'20\\'\\ cy=\\'20\\'\\ r=\\'19.5\\'\\ fill=\\'none\\'\\ stroke=\\'%23000\\'/%3E%3Cpath\\ d=\\'M20.2\\ 11c-2.6\\ 0-4.7\\ 2.1-4.7\\ 4.7s2.1\\ 4.7\\ 4.7\\ 4.7\\ 4.7-2.1\\ 4.7-4.7-2.1-4.7-4.7-4.7m0\\ 6.6c-1.1\\ 0-1.9-.9-1.9-1.9\\ 0-1.1.9-1.9\\ 1.9-1.9s1.9.9\\ 1.9\\ 1.9c0\\ 1.1-.8\\ 1.9-1.9\\ 1.9m1.6\\ 6.4c1.1-.2\\ 2.1-.7\\ 3-1.3.6-.4.6-1.2.2-1.8s-1.2-.6-1.8-.2c-.9.6-2\\ .9-3.2.9-1.1\\ 0-2.2-.3-3.2-.9-.6-.4-1.4-.3-1.8.2-.4.6-.3\\ 1.4.2\\ 1.8.9.7\\ 2\\ 1.1\\ 3.1\\ 1.3l-2.7\\ 2.8c-.5.5-.5\\ 1.3\\ 0\\ 1.8s1.3.5\\ 1.8\\ 0l2.7-2.5\\ 2.7\\ 2.7c.5.5\\ 1.3.4\\ 1.8-.1s.5-1.2\\ 0-1.7z\\'/%3E%3C/svg%3E)}.soc-dzen{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'%3E%3Crect\\ width=\\'39\\'\\ height=\\'39\\'\\ x=\\'.5\\'\\ y=\\'.5\\'\\ fill=\\'none\\'\\ stroke=\\'%23000\\'\\ rx=\\'19.5\\'/%3E%3Cg\\ clip-path=\\'url\\(%23a\\)\\'%3E%3Cpath\\ d=\\'M27.882\\ 19.635h.004a.36.36\\ 0\\ 0\\ 0\\ .358-.393\\ 8.27\\ 8.27\\ 0\\ 0\\ 0-7.484-7.486.36.36\\ 0\\ 0\\ 0-.393.363c.063\\ 5.283.76\\ 7.442\\ 7.515\\ 7.516m0\\ .73c-6.755.074-7.452\\ 2.233-7.515\\ 7.516a.36.36\\ 0\\ 0\\ 0\\ .393.363\\ 8.266\\ 8.266\\ 0\\ 0\\ 0\\ 7.484-7.486.36.36\\ 0\\ 0\\ 0-.362-.393m-8.666-8.607a8.27\\ 8.27\\ 0\\ 0\\ 0-7.46\\ 7.485.36.36\\ 0\\ 0\\ 0\\ .359.392h.004c6.733-.077\\ 7.428-2.235\\ 7.492-7.515a.36.36\\ 0\\ 0\\ 0-.395-.362m-7.097\\ 8.607c-.112-.013-.2.04-.269.115a.36.36\\ 0\\ 0\\ 0-.094.277\\ 8.27\\ 8.27\\ 0\\ 0\\ 0\\ 7.494\\ 7.487.36.36\\ 0\\ 0\\ 0\\ .36-.365c-.063-5.28-.758-7.437-7.491-7.514\\'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath\\ id=\\'a\\'%3E%3Cpath\\ fill=\\'%23fff\\'\\ d=\\'M11\\ 11h18v18H11z\\'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E)}.soc-rutube{background-image:url(data:image/svg+xml;charset=utf-8,%3Csvg\\ xmlns=\\'http://www.w3.org/2000/svg\\'\\ width=\\'40\\'\\ height=\\'40\\'%3E%3Crect\\ width=\\'39\\'\\ height=\\'39\\'\\ x=\\'.5\\'\\ y=\\'.5\\'\\ fill=\\'none\\'\\ stroke=\\'%23000\\'\\ rx=\\'19.5\\'/%3E%3Cg\\ clip-path=\\'url\\(%23a\\)\\'%3E%3Cpath\\ fill=\\'%23100943\\'\\ d=\\'M23.01\\ 20.675h-7.029v-2.71h7.03c.41\\ 0\\ .695.07.838.191.144.122.232.348.232.678v.973c0\\ .347-.088.573-.232.695-.143.122-.428.174-.839.174zm.482-5.266H13V27h2.981v-3.771h5.494L24.08\\ 27h3.339l-2.874-3.789c1.06-.153\\ 1.535-.47\\ 1.927-.99.393-.522.59-1.356.59-2.468v-.87c0-.66-.072-1.18-.197-1.58a2.6\\ 2.6\\ 0\\ 0\\ 0-.643-1.06\\ 2.9\\ 2.9\\ 0\\ 0\\ 0-1.107-.643c-.428-.122-.964-.192-1.624-.192z\\'/%3E%3Cpath\\ fill=\\'%23ED143B\\'\\ d=\\'M29.71\\ 15.408c1.264\\ 0\\ 2.29-.987\\ 2.29-2.204S30.974\\ 11\\ 29.71\\ 11s-2.29.987-2.29\\ 2.204\\ 1.025\\ 2.204\\ 2.29\\ 2.204\\'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath\\ id=\\'a\\'%3E%3Cpath\\ fill=\\'%23fff\\'\\ d=\\'M13\\ 11h19v16H13z\\'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E)}.mytext{display:none}.re_text{font-size:.9em;margin-bottom:12px}.re_button{background:#f18129;border:none;border-radius:55px;color:#fff;font-size:1rem;height:30px;width:100px}.menu-item-11{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/molotok.svg) 0}.menu-item-12{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/epizoo.svg) 0}.menu-item-15{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/zoo.svg) 0}.menu-item-17{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/ptica.svg) 0}.menu-item-19{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/misc-bl.svg) -2px}.menu-item-20{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/zoobiz.svg) 0}.menu-item-21{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/pitoms-orange.svg) 0}#menu-item-16937 a,#menu-item-21 a{color:#f18129}.menu-item-22{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/potrbitel.svg) 0}.menu-item-26{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/events.svg) 0}.menu-item-16179{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/video.svg) 0}.menu-item-45536{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/nauka.svg) -2px}.menu-item-15679{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/vij.svg) 0}.menu-item-18{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/fish.svg) 0;padding-left:28px}.pets-widget{margin-bottom:8px;margin-top:6px;padding:18px}.pets-widget-grey{background-color:#f5f5f5}.pets-widget-maintitle{font-size:16px;font-weight:700;margin-bottom:12px;text-transform:uppercase}.pets-widget-maintitle a{color:#f18129}.pets-widget-title{font-size:16px;font-weight:700;margin-bottom:5px;margin-top:5px}.pets-widget img{height:auto;max-width:100%}@media (max-width:767px){.pets-widget{max-width:100%}}.cookie-consent{background:#00466a;bottom:0;box-shadow:0-2px 10px #0003;color:#fff;left:0;padding:15px;position:fixed;right:0;text-align:center;z-index:9999}.cookie-consent-content{align-items:center;display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin:0 auto;max-width:1200px}.cookie-consent-button{background:#f18129;border:none;border-radius:4px;color:#fff;font-weight:700;padding:8px 20px}.politics-izdanie{color:#666;font-size:.8em;margin-top:15px}.right_archive_pets_img{width:200px}@media (max-width:768px){.desc{display:none}}.slider-wrap-2{position:relative;width:236px}.slider-wrap-2:not(.slider-initialized-2) #knob2{opacity:0;visibility:hidden}.slider-wrap-2{min-width:100px}@media (max-width:1024px){.slider-wrap-2{width:200px}}@media (max-width:768px){#sliderSvg2,.slider-wrap-2{width:180px}}@media (max-width:480px){.slider-wrap-2{width:180px}}@media (max-width:360px){.slider-wrap-2{width:150px}}#sliderSvg2{display:block;height:auto;min-height:76px;overflow:visible!important;width:150px}#knob2{transform-origin:center}#knob2 circle,#knob2 path,#knob2 rect{vector-effect:non-scaling-stroke;stroke-width:1px;filter:none!important}#knob2 path{stroke-width:.5px}@media (max-width:768px){#knob2{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))!important}}.slider-wrap{margin-left:80px;min-width:120px;position:relative;width:236px}@media (max-width:1024px){.slider-wrap{width:200px}}@media (max-width:768px){.slider-wrap{margin-left:20px;width:150px}}@media (max-width:480px){.slider-wrap{width:180px}}@media (max-width:360px){.slider-wrap{width:120px}}#sliderSvg{display:block;height:auto;min-height:120px;overflow:visible!important;width:100%}#knob{display:block!important;opacity:1!important;transform-origin:center;visibility:visible!important}#knob circle,#knob path,#knob rect{vector-effect:non-scaling-stroke;stroke-width:1px;filter:none!important}#knob path{fill:#666!important;stroke:#666;stroke-width:.5px}@media (max-width:768px){#knob{filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))!important}}}@font-face{font-family:GrtskPeta;font-style:normal;font-weight:400}@font-face{font-family:GrtskPeta;font-style:normal;font-weight:700}body,h1,h3,li,p,ul{margin:0}ul{list-style:none}a{color:#000;text-decoration:none}*{box-sizing:border-box}body{display:flex;min-height:100vh;width:100%;overflow-x:hidden;font-family:GrtskPeta;flex-direction:column;margin:0;background-color:#fff}#main{display:flex;flex:1}#main>#left,#main>#right{flex:0 0 20vw}#main>#left{order:-1}#mobmainbanner{width:100%;display:none;padding:10px}#mobmainbanner img{display:block;width:100%;max-width:554px;max-height:86px;margin:auto;text-align:center}#left{max-width:330px;display:flex;flex-direction:column}#vert-title{min-width:50px;background:#f2f2f2}#mainlogo{margin-left:12px;min-width:200px;width:20%;flex-shrink:0}.right-info{margin-top:8px;margin-bottom:12px;text-align:center;width:100%}#right{max-width:330px;display:flex;flex-direction:column;border-left:1px solid #e9eaeb;padding-top:42px}header{background-color:#fff;display:flex;align-items:center;box-shadow:0 4px 53px rgba(0,0,0,.07);margin-right:12px;width:100%}#footer_menu{display:flex;align-items:center;justify-content:center;padding-top:12px;padding-bottom:12px}#footer_up{width:30%;text-align:right}#footer_qr{width:25%;display:grid;margin-right:12px;text-align:center;grid-gap:.5rem;grid-template-columns:repeat(auto-fit,minmax(10px,1fr))}#img_qr{padding:4px;background-color:#fff}#footer-contact{width:20%;text-align:center}#footer_subscript{margin-left:32px;margin-right:22px;width:30%}#footer_logo{margin-left:12px;margin-right:32px;width:150px}.sub_button{background:#f18129;border-radius:55px;border:1px solid #f18129;color:#fff;padding:10px 28px;text-align:center;text-decoration:none;text-transform:uppercase;font-weight:700;display:inline-block;font-size:16px;font-size:11px;line-height:110%;height:55px}.left_button{background:#fff;border-radius:55px;border:1px solid #000;color:#000;vertical-align:middle;text-decoration:none;text-transform:uppercase;font-weight:700;font-size:16px;font-size:11px;line-height:110%;display:table-cell;vertical-align:middle;height:45px;padding-left:22px;padding-right:22px}.left_center_block{margin-top:8px;margin-bottom:28px}.vazh{font-size:9px;text-transform:uppercase}#pere{width:40%;font-size:12px;line-height:150%;margin-left:18px;color:#909294}#svid{display:flex;color:#444;font-size:13px;line-height:150%;width:80%}#svid li{margin-right:18px}.fulltext{width:100%}.fulltext{margin-right:8px}#fulltext img{width:100%;height:auto}ul.menu_main{display:flex;padding:5px}ul.menu_main li{margin:5px;padding:15px;font-weight:700;font-size:15px}ul.menu_left{display:flex;flex-direction:column;padding:26px 22px 12px 32px}ul.menu_left li{font-weight:700;font-size:12px;height:23px;line-height:150%;text-transform:uppercase;padding-top:2px;padding-left:28px;margin-bottom:16px}ul.menu_left li a{color:#171717}.menu-item-11{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/molotok.svg) left center}.menu-item-12{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/epizoo.svg) left center}.menu-item-15{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/zoo.svg) left center}.menu-item-17{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/ptica.svg) left center}.menu-item-19{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/nauka.svg) left center}.menu-item-20{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/zoobiz.svg) left center}.menu-item-21{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/pitoms.svg) left center}.menu-item-22{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/potrbitel.svg) left center}.menu-item-26{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/events.svg) left center}.menu-item-16179{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/video.svg) left center}.menu-item-15679{background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/vij.svg) left center}.menu-item-18{padding-left:28px;background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/fish.svg) left center}a svg{display:inline-block;vertical-align:middle}ul.menu_footer{display:flex;padding:5px}ul.menu_footer li{margin:5px;padding:15px;font-weight:700;font-size:15px}#footer_up{text-transform:uppercase;font-weight:700;font-size:12px}#main{padding:0 8px 0 8px}#header-contact{display:flex;flex-direction:column;margin-left:22px}#head_tel{font-weight:700}#head_mail a{color:#2d9cdb;text-decoration:underline}#header_icons{display:flex;margin-left:18px}#header_icons li{width:20px;height:20px;margin-left:6px}.btn_rss{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/rss.svg) no-repeat}.btn_lan{font-weight:700;margin-top:-2px}.btn_search{background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/lupa.svg) no-repeat}#content{margin-right:58px;margin-left:58px;padding-bottom:28px;width:55%}#content p{margin-top:.5em;margin-bottom:1em}#content IMG{width:100%}#content ul li{padding:4px 0 4px 0}#post-img{text-align:center}h1{font-family:GrtskPeta;font-size:36px;font-weight:700;margin-bottom:18px}.mobile_archive{display:none;margin-top:38px}.mobile_archive_img{margin-top:-32px;margin-left:12px;margin-bottom:8px;width:91px}.mobile_archive_text{display:block;margin-left:12px;margin-bottom:22px;font-size:14px}.mobile_archive_link{margin-top:8px}.mobile_archive_link a{color:#909294}#nav_content{display:flex;list-style-type:none;padding:0;padding-bottom:18px;margin-top:28px;margin-bottom:28px;border-bottom:1px solid #e9eaeb}#nav_content li{margin-right:8px;color:#909294;font-size:12px;line-height:3,2px}#nav_content li a{color:#909294}.mosts{background-color:#00466a;width:100%;padding:22px;margin-bottom:22px}.publs_right{border-top:1px solid #e9eaeb;margin:22px;padding-top:18px;padding-bottom:18px}.publs_right_title{text-transform:uppercase;font-size:14px;font-weight:700;margin-top:12px}.publs_right_item{padding-top:28px;font-size:15px}.most_title{color:#2d9cdb}.most{padding:12px 0 12px 0;color:#fff;font-size:16px;line-height:22.4px}.most a{color:#fff}.left_preview{width:145px}.publ_expert{font-size:16px;font-weight:700;margin-bottom:18px}.post_info{font-size:14px;color:#444;margin-bottom:12px}.post_img_title{color:#909294;text-align:center;padding:12px 0 12px 0}.post_link_category a{color:#2d9cdb}.post_info{display:flex;font-size:14px}.post_info_sub{width:50%}.left_opinion{display:flex;flex-direction:column;background:#f5f5f5;padding:18px}.left_opinion img{margin-top:8px;margin-bottom:8px}.left_opinion_title{margin-bottom:8px;font-weight:700;text-transform:uppercase}.left_opinion_text{font-size:16px;font-weight:700}.moread_title{margin-top:8px;margin-bottom:8px;font-weight:700}.moread_card IMG{width:100%;float:top}.moread_date{color:#909294;font-size:13px}.right_archive{margin-bottom:22px;background:#fff;box-shadow:0 14px 27px #f2f2f2;text-align:center;margin:22px;padding-top:22px;padding-bottom:22px}.right_archive_img{margin-bottom:12px;width:147px}.right_archive_text{font-size:15px;line-height:130%;font-weight:700;text-align:center}.right_archive_link{font-size:15px;line-height:130%;text-align:center;margin-top:8px;margin-bottom:8px}.right_archive_link a{color:#909294}.post_author{color:#171717;font-size:14px;margin-bottom:14px}#subscript-mail{padding-left:22px;padding-right:22px;margin-top:18px;margin-bottom:22px}#subscript_box{text-align:center}#convert{width:87px;height:87px;border:1px solid #e9eaeb;box-sizing:border-box;background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/mail.png) no-repeat;background-position:center;margin-left:auto;margin-right:auto}.form-right input{width:230px;height:50px;font-size:15px;border-radius:35px;background:#f2f2f2;border:1px solid #f2f2f2;margin-bottom:12px;padding-left:28px}.right_title{font-weight:600;font-size:15px;line-height:130%;text-align:center;margin-top:22px;margin-bottom:12px;padding-left:28px;padding-right:28px}.form-right{text-align:center}.sub_button{background:#f18129;border-radius:55px;border:1px solid #f18129;color:#fff;padding:10px 28px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;font-size:11px}#socials{display:flex;margin-bottom:18px;margin-left:12px;justify-content:center;align-items:center}.btn_soc{margin-right:18px;padding:12px;border-radius:50%;border:1px solid #d5d5d6}.btn_soc_post{margin-left:12px}.btn_soc_ru{margin-right:18px;border-radius:50%;border:1px solid #d5d5d6}.btn_soc{margin-right:18px;padding:12px;border-radius:50%;border:1px solid #d5d5d6}.toggle-nav{display:none!important}#mobile_main_menu{display:none;position:fixed;max-height:1300px;overflow-y:scroll;top:0;bottom:0;left:0;right:0;z-index:100;width:100%;background:#fff;border-top:1px solid #f5f5f5;overflow-y:scroll;padding-top:42px}#mobile_rubrics_menu{display:none;position:fixed;min-height:unset;max-height:1300px;overflow-x:scroll;overflow-y:scroll;top:0;bottom:0;left:0;right:0;z-index:500;width:100%;background:#fff;border-top:1px solid #f5f5f5;padding-top:42px}#mobile_submenu{display:flex;position:fixed;z-index:1;top:20px;right:5%}#closed_mobile_menu{height:20px;width:20px;background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/closed.svg) left center}#lang_mobile_title{font-size:14px;font-weight:700;color:#909294;text-transform:uppercase;padding-right:28px}#closed_mobile_rubrics_menu{position:fixed;z-index:1;top:20px;right:5%;height:20px;width:20px;background:no-repeat url(https://vetandlife.ru/wp-content/themes/vij/pub/menu/closed.svg) left center}#rubrics_back{margin-left:38px;font-size:14px;color:#00466a;line-height:110%}.rub_arrow{float:right;margin-right:12px}span.rub_back_title{margin-left:22px}#gamburer_menu li{font-weight:700;font-size:13px;line-height:19,5px;text-transform:uppercase;border-bottom:1px solid #f5f5f5;margin-top:22px;padding-bottom:22px;margin-bottom:28px}#gamburer_menu a{color:#00466a}.mob-lite{display:none}.menu-rubrics{display:none}.m_rubrics{display:flex;overflow-x:scroll;-webkit-overflow-scrolling:touch;padding-bottom:20px;margin-left:-20px;margin-bottom:-20px;border-bottom:1px solid #f2f2f2}.m_rubrics li{font-size:12px;color:#909294;margin-right:12px;padding-bottom:12px}.m_rubrics li a{color:#909294}.mob-subscript{display:none;margin-top:12px}.mob-block-button{margin:12px 0}.mob-sub-button{background:#f18129;border-radius:55px;border:1px solid #f18129;color:#fff;vertical-align:middle;text-align:center;text-decoration:none;text-transform:uppercase;font-weight:700;font-size:16px;font-size:11px;line-height:110%;display:table-cell;vertical-align:middle;height:55px;padding-left:22px;padding-right:22px}@media screen and (max-width:580px){#left{display:none}#right{display:none}#mainlogo{width:200px;margin:0}#mobmainbanner{display:block}#header_icons{margin-left:0;padding-right:8px}#content{width:100%}.toggle-nav{display:inline-block!important;background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/gumburger.svg) no-repeat;width:20px;height:20px;padding-left:12px}.btn_rss{display:none}.mob-lite{display:inline-block!important;margin-top:12px}.mob_menu_info{padding-top:22px;padding-bottom:42px}.mob_menu_contacts{display:flex;flex-flow:row wrap;justify-content:space-between;margin-left:36px;margin-right:36px;padding-top:22px;margin-bottom:42px}.mob_menu_tel{font-weight:700}.mob_menu_mail a{color:#2d9cdb}.post-h1{font-weight:24px}.img-fluid{width:100%}#footer_logo{display:none}#footer_qr{display:none}#footer_menu{display:none}#pere{width:90%}#footer_subscript{display:none}.footer_sub{width:70%;text-align:center}#svid{display:none}#moread_5,#moread_6{display:none}}@media (max-width:820px){body{width:100%;margin-right:8px;overflow-x:hidden}h1{font-size:24px}#left{display:none}#mainmenu{display:none}#right{display:none}#vert-title{display:none}#nav_content{display:none}#header-contact{display:none}#footer-contact{display:none;text-align:center}#content{margin:8px;width:100%}#header_icons li{width:25px;height:25px;margin-left:8px}.toggle-nav{display:inline-block!important;background:url(https://vetandlife.ru/wp-content/themes/vij/pub/icons/gumburger.svg) no-repeat;width:20px;height:20px;padding-left:12px}.post_info_social{display:none}#mainlogo{max-width:200px;left:0;top:0;margin:0;padding:0}.menu-rubrics{display:inline-block;margin-top:22px;overflow:hidden}.mobile_archive{display:flex;border:1px solid #f18129;align-items:center;margin-left:12px;margin-right:12px;margin-bottom:12px}.mob-subscript{display:flex;flex-direction:column;align-items:center;justify-content:center}}@media only screen and (min-device-width:340px) and (max-device-width:667px){#main{width:100%}h1{font-size:24px}body{width:100%;margin-right:8px}#content{margin:8px;width:100%}#mobmainbanner{display:block}#footer-contact{display:none}#mainlogo{width:200px;text-align:left;margin:0}#header_icons li{width:25px;height:25px;margin-left:6px}.menu-rubrics{display:inline-block;margin:0;padding:0;margin-top:22px;margin-right:22px;overflow:hidden}.mobile_archive{display:flex;border:1px solid #f18129;align-items:center;margin-left:12px;margin-right:12px;margin-bottom:12px}.mob-subscript{display:flex;flex-direction:column;align-items:center;justify-content:center}#pere{display:none}}</style><meta name=\"robots\" content=\"max-image-preview:large\">\n\t<style>img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px }</style>\n\t<link rel=\"dns-prefetch\" href=\"//fonts.googleapis.com\">\n<link rel=\"alternate\" type=\"application/rss+xml\" title=\"Ветеринария и жизнь » Лента комментариев к «Как выбрать ветеринарную клинику и не ошибиться с врачом»\" href=\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/feed/\">\n<noscript><link rel='stylesheet' id='dashicons-css' href='https://vetandlife.ru/wp-includes/css/dashicons.min.css?ver=6.8.3' type='text/css' media='all' />\n</noscript><link rel=\"stylesheet\" id=\"dashicons-css\" href=\"https://vetandlife.ru/wp-includes/css/dashicons.min.css?ver=6.8.3\" type=\"text/css\" media=\"all\">\n<noscript><link rel='stylesheet' id='post-views-counter-frontend-css' href='https://vetandlife.ru/wp-content/plugins/post-views-counter/css/frontend.min.css?ver=1.5.7' type='text/css' media='all' />\n</noscript><link rel=\"stylesheet\" id=\"post-views-counter-frontend-css\" href=\"https://vetandlife.ru/wp-content/plugins/post-views-counter/css/frontend.min.css?ver=1.5.7\" type=\"text/css\" media=\"all\">\n<noscript><link rel='stylesheet' id='wp-block-library-css' href='https://vetandlife.ru/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3' type='text/css' media='all' />\n</noscript><link rel=\"stylesheet\" id=\"wp-block-library-css\" href=\"https://vetandlife.ru/wp-includes/css/dist/block-library/style.min.css?ver=6.8.3\" type=\"text/css\" media=\"all\">\n<style id=\"classic-theme-styles-inline-css\" type=\"text/css\">\n/*! This file is auto-generated */\n.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}\n</style>\n<style id=\"global-styles-inline-css\" type=\"text/css\">\n:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}\n:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}\n:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}\n:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}\n</style>\n<noscript><link rel='stylesheet' id='vij-style-css' href='https://vetandlife.ru/wp-content/themes/vij/frontend/dist/assets/style.css?ver=1771948130' type='text/css' media='all' />\n</noscript><link rel=\"stylesheet\" id=\"vij-style-css\" href=\"https://vetandlife.ru/wp-content/themes/vij/frontend/dist/assets/style.css?ver=1771948130\" type=\"text/css\" media=\"all\">\n<noscript><link rel='stylesheet' id='google-fonts-css' href='https://fonts.googleapis.com/css2?family=Playfair+Display%3Aital%2Cwght%400%2C400..900%3B1%2C400..900&#038;display=swap&#038;ver=6.8.3' type='text/css' media='all' />\n</noscript><link rel=\"stylesheet\" id=\"google-fonts-css\" href=\"https://fonts.googleapis.com/css2?family=Playfair+Display%3Aital%2Cwght%400%2C400..900%3B1%2C400..900&amp;display=swap&amp;ver=6.8.3\" type=\"text/css\" media=\"all\">\n<script type=\"text/javascript\" id=\"post-views-counter-frontend-js-before\">\n/* <![CDATA[ */\nvar pvcArgsFrontend = {\"mode\":\"js\",\"postID\":49036,\"requestURL\":\"https:\\/\\/vetandlife.ru\\/wp-admin\\/admin-ajax.php\",\"nonce\":\"1deb168dc0\",\"dataStorage\":\"cookies\",\"multisite\":false,\"path\":\"\\/\",\"domain\":\"\"};\n/* ]]> */\n</script>\n<script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-content/plugins/post-views-counter/js/frontend.min.js?ver=1.5.7\" id=\"post-views-counter-frontend-js\"></script>\n<script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-includes/js/jquery/jquery.min.js?ver=3.7.1\" id=\"jquery-core-js\"></script>\n<script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1\" id=\"jquery-migrate-js\"></script>\n<script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-content/themes/vij/frontend/dist/assets/main.js?ver=1773144922\" id=\"vij-script-js\"></script>\n<link rel=\"https://api.w.org/\" href=\"https://vetandlife.ru/wp-json/\"><link rel=\"alternate\" title=\"JSON\" type=\"application/json\" href=\"https://vetandlife.ru/wp-json/wp/v2/posts/49036\"><link rel=\"EditURI\" type=\"application/rsd+xml\" title=\"RSD\" href=\"https://vetandlife.ru/xmlrpc.php?rsd\">\n<meta name=\"generator\" content=\"WordPress 6.8.3\">\n<link rel=\"canonical\" href=\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\">\n<link rel=\"shortlink\" href=\"https://vetandlife.ru/?p=49036\">\n<link rel=\"alternate\" title=\"oEmbed (JSON)\" type=\"application/json+oembed\" href=\"https://vetandlife.ru/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvetandlife.ru%2Fpets%2Fzdorovie%2Fkak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom%2F\">\n<link rel=\"alternate\" title=\"oEmbed (XML)\" type=\"text/xml+oembed\" href=\"https://vetandlife.ru/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvetandlife.ru%2Fpets%2Fzdorovie%2Fkak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom%2F&amp;format=xml\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@id\":\"https://vetandlife.ru/pets/zdorovie/\",\"name\":\"Здоровье\"}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@id\":\"https://vetandlife.ru/sobytiya/\",\"name\":\"События\"}}]},{\"@type\":\"NewsArticle\",\"@id\":\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\",\"headline\":\"Как выбрать ветеринарную клинику и не ошибиться с врачом\",\"datePublished\":\"2025-12-25T09:00:00+03:00\",\"dateModified\":\"2025-12-24T17:19:14+03:00\",\"mainEntityOfPage\":\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\",\"author\":{\"@type\":\"Person\",\"name\":\"Маргарита Примачик\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Ветеринария и жизнь\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://vetandlife.ru/wp-content/uploads/2023/05/cropped-ms-icon-310x310-1.png\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://vetandlife.ru/wp-content/uploads/2024/10/DSC00915.jpg\"}}]}</script>\n    <style>\n        .responsive-video {\n            position: relative;\n            padding-bottom: 56.25%; /* Соотношение сторон 16:9 */\n            height: 0;\n            overflow: hidden;\n            max-width: 100%;\n            background: #000;\n        }\n\n        .responsive-video iframe {\n            position: absolute;\n            top: 0;\n            left: 0;\n            width: 100%;\n            height: 100%;\n        }\n    </style>\n    <link rel=\"amphtml\" href=\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/amp=1\"><link rel=\"icon\" href=\"https://vetandlife.ru/wp-content/uploads/2023/05/cropped-ms-icon-310x310-1-32x32.png\" sizes=\"32x32\">\n<link rel=\"icon\" href=\"https://vetandlife.ru/wp-content/uploads/2023/05/cropped-ms-icon-310x310-1-192x192.png\" sizes=\"192x192\">\n<link rel=\"apple-touch-icon\" href=\"https://vetandlife.ru/wp-content/uploads/2023/05/cropped-ms-icon-310x310-1-180x180.png\">\n<meta name=\"msapplication-TileImage\" content=\"https://vetandlife.ru/wp-content/uploads/2023/05/cropped-ms-icon-310x310-1-270x270.png\">\n\n\n<!-- Top.Mail.Ru counter -->\n<script type=\"text/javascript\">\nvar _tmr = window._tmr || (window._tmr = []);\n_tmr.push({id: \"3493038\", type: \"pageView\", start: (new Date()).getTime()});\n(function (d, w, id) {\n  if (d.getElementById(id)) return;\n  var ts = d.createElement(\"script\"); ts.type = \"text/javascript\"; ts.async = true; ts.id = id;\n  ts.src = \"https://top-fwz1.mail.ru/js/code.js\";\n  var f = function () {var s = d.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(ts, s);};\n  if (w.opera == \"[object Opera]\") { d.addEventListener(\"DOMContentLoaded\", f, false); } else { f(); }\n})(document, window, \"tmr-code\");\n</script>\n<noscript><div><img src=\"https://top-fwz1.mail.ru/counter?id=3493038;js=na\" style=\"position:absolute;left:-9999px;\" alt=\"Top.Mail.Ru\" /></div></noscript>\n<!-- /Top.Mail.Ru counter -->\n<script async=\"\" src=\"https://jsn.24smi.net/smi.js\"></script>\n    <style>.krutilka-rotation-container { transition: opacity 0.3s ease-in-out; display: inline-block; } .krutilka-rotation-container img { max-width: 100%; height: auto; }</style></head>\n    <body>\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})\n   (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");\n\n   ym(56480275, \"init\", {\n        clickmap:true,\n        trackLinks:true,\n        accurateTrackBounce:true,\n        webvisor:true\n   });\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/56480275\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n<!--LiveInternet counter--><script>\nnew Image().src = \"https://counter.yadro.ru/hit?r\"+\nescape(document.referrer)+((typeof(screen)==\"undefined\")?\"\":\n\";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?\nscreen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\n\";h\"+escape(document.title.substring(0,150))+\n\";\"+Math.random();</script><!--/LiveInternet-->\n\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-5TZNL954');</script>\n<!-- End Google Tag Manager -->\n<!-- Google Tag Manager (noscript) -->\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-5TZNL954\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<!-- End Google Tag Manager (noscript) -->\n\n \n    \n     \n        <div id=\"mainbanner\">\n            <a href=\"https://vetandlife.ru/pets/zdorovie/provereno-zvezdami-pochemu-teatr-koshek-kuklacheva-rekomenduet-preparat-ot-gk-vik/?erid=2VSb5w8pKqK\"><img data-picture=\"50907\" src=\"https://vetandlife.ru/wp-content/uploads/2026/02/2880х240-scaled.png\" alt=\"Куклачев рекомендует\" width=\"1280\" height=\"120\"></a>        </div>  \n        \n        <div id=\"mobmainbanner\">\n            <a href=\"https://vetandlife.ru/pets/zdorovie/provereno-zvezdami-pochemu-teatr-koshek-kuklacheva-rekomenduet-preparat-ot-gk-vik/?erid=2VSb5w8pKqK\"><img data-picture=\"50911\" src=\"https://vetandlife.ru/wp-content/uploads/2026/02/768х80.png\" alt=\"Куклачев рекомендует (моб)\"></a>        </div>    \n\n               \n        \n         \n        <header class=\"header-pets\">\n\n\n\n\n<div id=\"mobile_main_menu\">\n    <div class=\"main_main\">\n        <ul id=\"gamburer_menu\" class=\"menu\">\n            <li id=\"rubrics_start\"><a href=\"#\">Рубрики<span class=\"rub_arrow\">&gt;</span></a></li>\n            \n            <!-- Добавлена строка поиска в основное меню -->\n            <li class=\"mobile-search-item\">\n                <form role=\"search\" method=\"get\" class=\"mobile-search-form\" action=\"https://vetandlife.ru/\">\n                    <input type=\"search\" class=\"mobile-search-field\" placeholder=\"Поиск...\" value=\"\" name=\"s\">\n                    <button type=\"submit\" class=\"mobile-search-submit\">Найти</button>\n                </form>\n            </li>\n            \n                            <li><a href=\"https://vetandlife.ru/about-pets/\">О проекте</a></li>\n                            <li><a href=\"https://vetandlife.ru/parthers/\">Партнеры</a></li>\n                            <li><a href=\"https://vetandlife.ru/reklamodatelyam/\">Рекламодателям</a></li>\n               \n        </ul>\n    </div>  \n\n    <div class=\"mob_menu_contacts\">\n        <div class=\"mob_menu_tel\">+7 (495) 925 06 34</div>\n        <div class=\"mob_menu_mail\"><a href=\"mailto:info@vetandlife.ru\">info@vetandlife.ru</a></div>      \n    </div>    \n\n    <div class=\"mob_menu_info\"> \n        \n\t<div class=\"mobile_archive\">\t\n\t\t<a href=\"https://vetandlife.ru/arkhiv/nomer-03-106-mart-2026/\"><img width=\"91\" class=\"mobile_archive_img\" src=\"https://vetandlife.ru/wp-content/uploads/2026/04/vizh-106_cover-730x1024-1.jpg\" alt=\"Номер 03 (106) март 2026\"></a>\n   \t\t<div class=\"mobile_archive_text\">\n\t\t\t   <div><strong><a href=\"https://vetandlife.ru/arkhiv/nomer-03-106-mart-2026/\">Читать газету<br>«Ветеринария и Жизнь»</a></strong></div>\n\t\t\t     \n\t\t\t   \t\t<div class=\"mobile_archive_link\"><a href=\"https://vetandlife.ru/arkhiv/nomer-03-106-mart-2026/\">Номер 03 (106) март 2026</a></div>\n\t\t\t\t\t\n\t\t</div>\n\t</div>\t\n\t\t   \n\n    \n<div class=\"mob-subscript\">\n<div class=\"mob-block-button\">\n\t\t<a class=\"mob-sub-button\" href=\"https://vetandlife.ru/subscripts\">Газета ВиЖ. Купить</a>\n\t</div>\n</div>\t        <div class=\"mob-subscript\">\n\n\t<div class=\"right_title\">Подпишитесь на нашу рассылку и будьте в курсе всех новостей</div>\n\t<div id=\"subscript-mail\">\n        <form class=\"form-right\" id=\"form-right\" action=\"https://vetandlife.ru/subscript\" method=\"post\">\n            <input сlass=\"frm_mail\" type=\"email\" required=\"\" name=\"email\" placeholder=\"Введите эл. почту\">\n            <input type=\"hidden\" id=\"subscription_nonce\" name=\"subscription_nonce\" value=\"39bdeea3b7\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\">            <input type=\"text\" class=\"mytext\" name=\"mytext\" placeholder=\"Дополнительный текст\">\n            <input type=\"hidden\" name=\"re_code\" value=\"e9ca27bf076dd25b649b39d1abdf144702d6abb85544e4ab2a17d74b69cb7ec9\">\n            <div class=\"re_text\">и выберите большее число</div>\n            <button class=\"re_button\" type=\"submit\" name=\"re_num\" value=\"27\">27</button>\n            <button class=\"re_button\" type=\"submit\" name=\"re_num\" value=\"92\">92</button>\n        </form>\n        <div class=\"politics-izdanie\">Нажимая на кнопку, Вы соглашаетесь на обработку персональных данных в соответствии с\n            <a href=\"https://vetandlife.ru/politika-v-otnoshenii-obrabotki-i-zashhity-personalnyh-dannyh-ooo-da-vinchi-media/\" target=\"_blank\">«Политикой конфиденциальности»</a></div>\n        </div>\n    </div>\n\n</div>        \n\n<ul class=\"socials\">\n    <li>\n        <a href=\"https://rutube.ru/u/pitomcy/\" title=\"Rutube ПИТОМЦЫ\" target=\"_blank\">\n            <span class=\"soc soc-rutube\"></span>\n        </a>\n    </li>\n    <li>\n        <a href=\"https://t.me/pitomcy_vetandlife\" title=\"Telegram\" target=\"_blank\" class=\"soc soc-telegram\"></a>\n    </li>\n    <li>\n        <a href=\"https://vk.com/pitomcy_vetandlife\" title=\"ВКонтакте\" target=\"_blank\" class=\"soc soc-vk\"></a>\n    </li>\n    <li>\n        <a href=\"https://ok.ru/pitomcy.vetandlife\" title=\"Одноклассники\" target=\"_blank\" class=\"soc soc-ok\"></a>\n    </li>\n    <li>\n        <a href=\"https://dzen.ru/pitomcy_vetandlife?favid=254162793\" title=\"Дзен\" target=\"_blank\" class=\"soc soc-dzen\"></a>\n    </li>\n    <li>\n        <a href=\"https://max.ru/pitomcy\" title=\"Max\" target=\"_blank\" class=\"soc soc-max\"></a>\n    </li>\n</ul>\n\n    </div>\n               \n    <div id=\"mobile_submenu\">  \n        <div id=\"closed_mobile_menu\"></div>  \n    </div>              \n\n\n<div id=\"mobile_rubrics_menu\">\n    <div id=\"rubrics_back\"><strong>&lt;</strong> <span class=\"rub_back_title\">назад</span></div>\n    \n    <!-- Добавлена строка поиска в меню рубрик -->\n    <div class=\"rubrics-search-container\">\n        <form role=\"search\" method=\"get\" class=\"rubrics-search-form\" action=\"https://vetandlife.ru/\">\n            <input type=\"search\" class=\"rubrics-search-field\" placeholder=\"Поиск по сайту...\" value=\"\" name=\"s\">\n            <button type=\"submit\" class=\"rubrics-search-submit\">\n                <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                    <path d=\"M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n                </svg>\n            </button>\n        </form>\n    </div>\n    \n    <div class=\"menu-pets-leftmenu-container\"><ul id=\"menu-pets-leftmenu\" class=\"menu_left\"><li id=\"menu-item-32941\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32941\"><a href=\"https://vetandlife.ru/pets/news/\">Новости</a></li>\n<li id=\"menu-item-32936\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32936\"><a href=\"https://vetandlife.ru/pets/vospitanie/\">Воспитание</a></li>\n<li id=\"menu-item-32956\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32956\"><a href=\"https://vetandlife.ru/pets/care/\">Уход</a></li>\n<li id=\"menu-item-32938\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-32938\"><a href=\"https://vetandlife.ru/pets/zdorovie/\">Здоровье</a></li>\n<li id=\"menu-item-32939\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32939\"><a href=\"https://vetandlife.ru/pets/zoo-menu/\">Зооменю</a></li>\n<li id=\"menu-item-32937\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32937\"><a href=\"https://vetandlife.ru/pets/gotovimsya-k-vystavke/\">Готовимся к выставке</a></li>\n<li id=\"menu-item-32940\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32940\"><a href=\"https://vetandlife.ru/pets/nauka/\">Наука</a></li>\n<li id=\"menu-item-32945\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32945\"><a href=\"https://vetandlife.ru/pets/porody-koshek/\">Породы кошек</a></li>\n<li id=\"menu-item-32946\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32946\"><a href=\"https://vetandlife.ru/pets/porody-sobak/\">Породы собак</a></li>\n<li id=\"menu-item-35250\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-35250\"><a href=\"https://rutube.ru/u/pitomcy\">Видео</a></li>\n</ul></div>\n    <div id=\"closed_mobile_rubrics_menu\"></div>         \n</div>\n\n            <div id=\"petslogo\" class=\"petslogo petslogo-desc\">    \n                <a href=\"https://vetandlife.ru/pets\">\n                    <img src=\"https://vetandlife.ru/wp-content/themes/vij/pub/icons/pitomzy_logo_white.svg\" alt=\"Питомцы. Все о домашних животных\">\n                </a>\n            </div>\n\n\n            <div class=\"petslogo-mob\">    \n                <a href=\"https://vetandlife.ru/pets\">\n                    <img src=\"https://vetandlife.ru/wp-content/themes/vij/pub/logo/pitomcy-logo-mob.svg\" alt=\"Питомцы. Все о домашних животных\">\n                </a>\n            </div>\n\n            <div class=\"slider-wrap\">\n  <svg id=\"sliderSvg\" viewBox=\"0 0 236 76\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n    <!-- ФОН -->\n    <g filter=\"url(#filter0_i_113_11)\">\n      <rect x=\"2.6001\" y=\"0.6\" width=\"233\" height=\"70\" rx=\"35\" fill=\"#2D6197\"></rect>\n      <rect x=\"3.1001\" y=\"1.1\" width=\"232\" height=\"69\" rx=\"34.5\" stroke=\"#E9E9E9\" stroke-opacity=\"0.5\"></rect>\n    </g>\n\n    <!-- Логотип с маской -->\n    <g clip-path=\"url(#logoClip)\">\n      <g id=\"logoGroup\">\n        <path d=\"M157.165 50.6H188.001V20.6H157.165V50.6Z\" fill=\"#4D81B2\"></path>\n        <path d=\"M123.382 50.6H154.218V20.6H123.382V50.6Z\" fill=\"#F57825\"></path>\n        <path d=\"M89.6001 50.6H120.436V20.6H89.6001V50.6Z\" fill=\"#1E4874\"></path>\n        <path d=\"M103.078 36.9672V40.155H105.462C106.555 40.155 107.146 39.6088 107.146 38.5826C107.146 37.534 106.555 36.9672 105.483 36.9672H103.078ZM103.078 30.8738V33.975H105.177C106.314 33.975 106.839 33.429 106.839 32.4244C106.839 31.4426 106.314 30.8738 105.177 30.8738H103.078ZM99.4497 27.8824H105.636C108.588 27.8824 110.447 29.4101 110.447 31.8781C110.447 33.429 109.659 34.543 108.107 35.2417C109.945 35.8094 110.906 37.0757 110.906 38.976C110.906 41.5536 109.026 43.169 105.987 43.169H99.4497V27.8824Z\" fill=\"white\"></path>\n        <path d=\"M132.82 27.8824H136.318V37.382L141.282 27.8824H144.78V43.1686H141.282V33.6687L136.318 43.1686H132.82V27.8824Z\" fill=\"white\"></path>\n        <path d=\"M170.768 36.6178L167.138 43.1686H162.962L167.751 35.0886L163.072 27.8824H167.138L170.768 34.0839V27.8824H174.376V34.0405L178.027 27.8824H182.095L177.415 35.0013L182.203 43.1686H178.027L174.376 36.5081V43.1686H170.768V36.6178Z\" fill=\"white\"></path>\n      </g>\n    </g>\n\n    <!-- ДВИЖОК (круг со стрелкой): двигается -->\n    <g id=\"knob\" filter=\"url(#filter1_dd_113_11)\" transform=\"translate(0,0)\">\n      <rect x=\"6.6001\" y=\"4.6\" width=\"62\" height=\"62\" rx=\"31\" fill=\"#F2F2F2\"></rect>\n      <circle cx=\"37.6001\" cy=\"35.6\" r=\"29\" fill=\"#D9D9D9\"></circle>\n      <circle cx=\"37.6001\" cy=\"35.6\" r=\"29\" fill=\"url(#paint0_linear_113_11)\"></circle>\n      <path d=\"M26.6001 36.86C25.9097 36.86 25.3501 36.3004 25.3501 35.61C25.3501 34.9196 25.9097 34.36 26.6001 34.36L26.6001 35.61L26.6001 36.86ZM50.984 34.7261C51.4721 35.2143 51.4721 36.0057 50.984 36.4939L43.029 44.4488C42.5409 44.937 41.7494 44.937 41.2613 44.4488C40.7731 43.9607 40.7731 43.1692 41.2613 42.6811L48.3323 35.61L41.2613 28.5389C40.7731 28.0508 40.7731 27.2593 41.2613 26.7712C41.7494 26.283 42.5409 26.283 43.029 26.7712L50.984 34.7261ZM26.6001 35.61L26.6001 34.36L50.1001 34.36L50.1001 35.61L50.1001 36.86L26.6001 36.86L26.6001 35.61Z\" fill=\"#989898\"></path>\n    </g>\n\n    <defs>\n      <!-- Клип-путь для скрытия части логотипа слева -->\n      <clipPath id=\"logoClip\">\n        <rect id=\"logoMask\" x=\"89.6\" y=\"20.6\" width=\"98.401\" height=\"30\"></rect>\n      </clipPath>\n\n      <filter id=\"filter0_i_113_11\" x=\"2.6001\" y=\"0.6\" width=\"233\" height=\"74\" filterUnits=\"userSpaceOnUse\" color-interpolation-filters=\"sRGB\">\n        <feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"></feFlood>\n        <feBlend mode=\"normal\" in=\"SourceGraphic\" in2=\"BackgroundImageFix\" result=\"shape\"></feBlend>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\" result=\"hardAlpha\"></feColorMatrix>\n        <feOffset dy=\"4\"></feOffset>\n        <feGaussianBlur stdDeviation=\"2\"></feGaussianBlur>\n        <feComposite in2=\"hardAlpha\" operator=\"arithmetic\" k2=\"-1\" k3=\"1\"></feComposite>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0\"></feColorMatrix>\n        <feBlend mode=\"normal\" in2=\"shape\" result=\"effect1_innerShadow_113_11\"></feBlend>\n      </filter>\n\n      <filter id=\"filter1_dd_113_11\" x=\"0\" y=\"0\" width=\"75.2\" height=\"75.2\" filterUnits=\"userSpaceOnUse\" color-interpolation-filters=\"sRGB\">\n        <feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"></feFlood>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\" result=\"hardAlpha\"></feColorMatrix>\n        <feOffset dy=\"2\"></feOffset>\n        <feGaussianBlur stdDeviation=\"3.3\"></feGaussianBlur>\n        <feComposite in2=\"hardAlpha\" operator=\"out\"></feComposite>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0\"></feColorMatrix>\n        <feBlend mode=\"normal\" in2=\"BackgroundImageFix\" result=\"effect1_dropShadow_113_11\"></feBlend>\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\" result=\"hardAlpha\"></feColorMatrix>\n        <feOffset dy=\"2\"></feOffset>\n        <feGaussianBlur stdDeviation=\"3.3\"></feGaussianBlur>\n        <feComposite in2=\"hardAlpha\" operator=\"out\"></feComposite>\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0\"></feColorMatrix>\n        <feBlend mode=\"normal\" in2=\"effect1_dropShadow_113_11\" result=\"effect2_dropShadow_113_11\"></feBlend>\n        <feBlend mode=\"normal\" in=\"SourceGraphic\" in2=\"effect2_dropShadow_113_11\" result=\"shape\"></feBlend>\n      </filter>\n\n      <linearGradient id=\"paint0_linear_113_11\" x1=\"37.6001\" y1=\"64.6\" x2=\"37.6001\" y2=\"9.40645\" gradientUnits=\"userSpaceOnUse\">\n        <stop stop-color=\"#F2F2F2\"></stop>\n        <stop offset=\"1\" stop-color=\"#D0D0D0\"></stop>\n      </linearGradient>\n    </defs>\n  </svg>\n</div>\n            <div id=\"mainmenu\">    \n                \n                <div class=\"menu-mainmenu-pets-container\"><ul id=\"menu-mainmenu-pets\" class=\"menu_main_pets\"><li id=\"menu-item-32741\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-32741\"><a href=\"https://vetandlife.ru/about-pets/\">О проекте</a></li>\n<li id=\"menu-item-54350\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54350\"><a href=\"https://vetandlife.ru/parthers/\">Партнеры</a></li>\n<li id=\"menu-item-39829\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-39829\"><a href=\"https://vetandlife.ru/reklamodatelyam/\">Рекламодателям</a></li>\n</ul></div>            </div>        \n        \n       \n            <div id=\"header-contact-pets\">\n                <div class=\"head-tel-pets\"><a href=\"tel:79250634\">+7 (495) 925 06 34</a></div>\n                <div class=\"head-mail-pets\"><a href=\"mailto:info@vetandlife.ru\">info@vetandlife.ru</a></div>      \n            </div>\n\n            <ul id=\"header_icons\">\n                <a href=\"https://vetandlife.ru?s\"><li class=\"btn_search\"></li></a>\n                <div class=\"toggle-nav-pets\" id=\"toggle-nav\"></div> \n            </ul>  \n\n  <ul class=\"header-social-pets\">\n    <li>\n        <a href=\"https://rutube.ru/u/pitomcy/\" title=\"Rutube ПИТОМЦЫ\" target=\"_blank\">\n            <span class=\"soc soc-rutube\"></span>\n        </a>\n    </li>\n    <li>\n        <a href=\"https://t.me/pitomcy_vetandlife\" title=\"Telegram\" target=\"_blank\" class=\"soc soc-telegram\"></a>\n    </li>\n    <li>\n        <a href=\"https://vk.com/pitomcy_vetandlife\" title=\"ВКонтакте\" target=\"_blank\" class=\"soc soc-vk\"></a>\n    </li>\n    <li>\n        <a href=\"https://ok.ru/pitomcy.vetandlife\" title=\"Одноклассники\" target=\"_blank\" class=\"soc soc-ok\"></a>\n    </li>\n    <li>\n        <a href=\"https://dzen.ru/pitomcy_vetandlife?favid=254162793\" title=\"Дзен\" target=\"_blank\" class=\"soc soc-dzen\"></a>\n    </li>\n    <li>\n        <a href=\"https://max.ru/pitomcy\" title=\"Max\" target=\"_blank\" class=\"soc soc-max\"></a>\n    </li>\n</ul>\n\n            \n</header>\n\n<div class=\"menu-rubrics\">\n    \n    <div class=\"menu-pets-mobmenu-container\"><ul id=\"menu-pets-mobmenu\" class=\"m_rubrics_pets\"><li id=\"menu-item-32965\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-32965\"><a href=\"https://vetandlife.ru/pets/\">Питомцы</a></li>\n<li id=\"menu-item-32964\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32964\"><a href=\"https://vetandlife.ru/pets/news/\">Новости</a></li>\n<li id=\"menu-item-32966\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32966\"><a href=\"https://vetandlife.ru/pets/vospitanie/\">Воспитание</a></li>\n<li id=\"menu-item-32967\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32967\"><a href=\"https://vetandlife.ru/pets/care/\">Уход</a></li>\n<li id=\"menu-item-32968\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-32968\"><a href=\"https://vetandlife.ru/pets/zdorovie/\">Здоровье</a></li>\n<li id=\"menu-item-32969\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32969\"><a href=\"https://vetandlife.ru/pets/zoo-menu/\">Зооменю</a></li>\n<li id=\"menu-item-32970\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32970\"><a href=\"https://vetandlife.ru/pets/gotovimsya-k-vystavke/\">Готовимся к выставке</a></li>\n<li id=\"menu-item-32971\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32971\"><a href=\"https://vetandlife.ru/pets/nauka/\">Наука</a></li>\n<li id=\"menu-item-32972\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32972\"><a href=\"https://vetandlife.ru/pets/porody-koshek/\">Породы кошек</a></li>\n<li id=\"menu-item-32973\" class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32973\"><a href=\"https://vetandlife.ru/pets/porody-sobak/\">Породы собак</a></li>\n<li id=\"menu-item-50803\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-50803\"><a href=\"https://vetandlife.ru/?s\">Поиск</a></li>\n</ul></div></div>  \n\n\n\n\n \n                \n \n                \n        <div id=\"main\">\n\n        \n        <div id=\"vert-title\">\n            \n                \n             <!--<div>Главное</div>-->       \n        </div>\n\n\n  \n    <div id=\"content\"> \n        \n                    \n        \n                \n            <!-- pets:  Здоровье-->            <ul id=\"nav_content\">\n                <li><a href=\"https://vetandlife.ru/category/pets\">Питомцы</a></li><a href=\"https://vetandlife.ru/category/pets\">\n                <li>-</li><li> \n                </li></a><li><a href=\"https://vetandlife.ru/category/pets\"></a><a href=\"https://vetandlife.ru/pets/zdorovie/\">Здоровье</a></li>\n                <li>-</li><li>\n                </li><li>Как выбрать ветеринарную клинику и не ошибиться с ...</li>\n            </ul>    \n                    \n        \n\n        <div class=\"post_info\">\n            <div class=\"post_info_sub\">\n                                    <span class=\"post_link_category\"><a href=\"https://vetandlife.ru/pets/zdorovie/\">Здоровье</a></span>\n                                                <nobr>25 декабря 2025, 9:00</nobr>    \n            </div> \n            <div class=\"post_info_sub  post_info_social\">\n                <a href=\"http://vk.com/share.php?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/&amp;Как выбрать ветеринарную клинику и не ошибиться с врачом\" target=\"_blank\"><i class=\"fab fa-vk btn_soc_post\"></i></a>\n<a href=\"whatsapp://send?text=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\"><i class=\"fab fa-whatsapp btn_soc_post\"></i></a>\n<a href=\"https://telegram.me/share/url?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\"><i class=\"fab fa-telegram-plane btn_soc_post\"></i></a>            </div>\n        </div>\n        <div id=\"fulltext\">\n        <h1 class=\"post-h1\">  Как выбрать ветеринарную клинику и не ошибиться с врачом</h1>\n                    <div class=\"post_author\">\n                Автор: <a href=\"https://vetandlife.ru/author/margarita-primachik/\" title=\"Записи Маргарита Примачик\" rel=\"author\">Маргарита Примачик</a>                    \n            </div>  \n          \n\n        <div class=\"publ_expert\"><p>Качество ветеринарной помощи напрямую влияет на здоровье и жизнь питомца, поэтому выбирать клинику лучше заранее, а не в экстренной ситуации. По каким признакам можно распознать хорошего специалиста и какие сигналы должны насторожить владельца животного, рассказала журналу «Питомцы» ветеринарный врач Тверской ветеринарной поликлиники ФГБУ «ВНИИЗЖ» Марина Сафронова.</p>\n</div>\n         \n            <div id=\"post-img\">\n                <img class=\"img-fluid rounded\" src=\"https://vetandlife.ru/wp-content/uploads/2024/10/DSC00915.jpg\" alt=\"Как выбрать ветеринарную клинику и не ошибиться с врачом\">\n            </div>\n            <div class=\"post_img_title\">Фото: Александр Плонский / «ВиЖ»</div>\n            \n        <div class=\"fulltext\">\n            \n<p><strong>На что обратить внимание еще до визита</strong></p>\n\n\n\n<p>Оценка клиники начинается задолго до первого приема. По словам Марины Сафроновой, важно проверить легальность работы учреждения. Речь идет о наличии лицензии, регистрационных данных, понятных контактов, графика работы и возможности экстренной связи. Настораживает, если на сайте или в открытых источниках нет информации о врачах, их специализации и условиях приема.</p>\n\n\n\n<p>Опыт врача, оснащение и репутацию клиники нельзя рассматривать по отдельности. «Ключевым остается квалификация врача, однако без базового диагностического оснащения и выстроенных клинических протоколов даже опытный специалист ограничен в возможностях», — поясняет эксперт. Репутация учреждения при этом отражает не разовые удачные случаи, а системную работу.</p>\n\n\n\n<p><strong>Можно ли доверять сайту и отзывам</strong></p>\n\n\n\n<p>Онлайн-ресурсы дают лишь частичное представление об уровне клиники. Стоит обращать внимание на профессиональный язык, наличие образовательных материалов и готовность отвечать на вопросы владельцев. Избыточная реклама, обещания быстрого излечения и агрессивное продвижение услуг требуют осторожности.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img fetchpriority=\"high\" decoding=\"async\" width=\"1024\" height=\"683\" src=\"https://vetandlife.ru/wp-content/uploads/2023/09/john-schnobrich-FlPc9_VocJ4-unsplash-1024x683.jpg\" alt=\"\" class=\"wp-image-31071\" srcset=\"https://vetandlife.ru/wp-content/uploads/2023/09/john-schnobrich-FlPc9_VocJ4-unsplash-1024x683.jpg 1024w, https://vetandlife.ru/wp-content/uploads/2023/09/john-schnobrich-FlPc9_VocJ4-unsplash-300x200.jpg 300w, https://vetandlife.ru/wp-content/uploads/2023/09/john-schnobrich-FlPc9_VocJ4-unsplash-768x512.jpg 768w, https://vetandlife.ru/wp-content/uploads/2023/09/john-schnobrich-FlPc9_VocJ4-unsplash.jpg 1200w\" sizes=\"(max-width: 1024px) 100vw, 1024px\"><figcaption class=\"wp-element-caption\">Фото: john-schnobrich / unsplash</figcaption></figure>\n\n\n\n<p><strong>Признаки хорошего ветеринарного врача</strong></p>\n\n\n\n<p>Качественную помощь отличает сочетание профессиональной компетентности и клинического мышления. Важны аккуратность в назначениях и уважительное общение с владельцем животного. «Хороший врач не боится уточнять, консультироваться с коллегами и признавать пределы своей специализации», — отмечает Марина Сафронова.</p>\n\n\n\n<p>Подробный разговор с владельцем является обязательной частью приема. Врач должен доступно объяснить диагноз, варианты терапии, возможный прогноз и риски. Готовность отвечать на вопросы без давления и навязывания решений говорит о добросовестном подходе.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" width=\"1000\" height=\"667\" src=\"https://vetandlife.ru/wp-content/uploads/2025/09/10374.jpg\" alt=\"\" class=\"wp-image-45916\" srcset=\"https://vetandlife.ru/wp-content/uploads/2025/09/10374.jpg 1000w, https://vetandlife.ru/wp-content/uploads/2025/09/10374-300x200.jpg 300w, https://vetandlife.ru/wp-content/uploads/2025/09/10374-768x512.jpg 768w\" sizes=\"(max-width: 1000px) 100vw, 1000px\"><figcaption class=\"wp-element-caption\">Фото: Gpointstudio / Freepik</figcaption></figure>\n\n\n\n<p><strong>Как проходит корректный первичный прием</strong></p>\n\n\n\n<p>Первичный осмотр включает сбор анамнеза, клиническое обследование и формирование предварительных диагностических гипотез. После этого врач обосновывает необходимость анализов или исследований. Назначения без осмотра и сбора информации считаются недопустимыми.</p>\n\n\n\n<p>В большинстве случаев терапия без диагностики должна настораживать. Исключения возможны при неотложных состояниях или типичных клинических картинах, но и тогда обследование должно быть проведено при первой возможности.</p>\n\n\n\n<p><strong>Когда клинику лучше сменить</strong></p>\n\n\n\n<p>Поводом для поиска другого специалиста могут стать отсутствие объяснений, противоречивые назначения, отказ фиксировать диагноз и лечение в документации, навязывание услуг и пренебрежительное отношение к владельцу или животному.</p>\n\n\n\n<p><strong>Что подготовить заранее</strong></p>\n\n\n\n<p>Эксперт рекомендует выбрать клинику еще до экстренной ситуации, сохранить контакты круглосуточной помощи, иметь актуальные данные о вакцинациях и хронических заболеваниях питомца и регулярно проходить профилактические осмотры. Такой подход снижает риски и помогает быстрее получить квалифицированную помощь.</p>\n\n\n\n<p>Ранее журнал «Питомцы» <a href=\"https://vetandlife.ru/pet-business/kak-vybrat-perederzhku-dlya-pitomca-8-glavnyh-pravil/\" data-type=\"link\" data-id=\"https://vetandlife.ru/pet-business/kak-vybrat-perederzhku-dlya-pitomca-8-glavnyh-pravil/\">писал</a>, как выбрать передержку для питомца. </p>\n\n\n\n<p></p>\n    \n        </div>\n\n        <div class=\"promo-agregators\" style=\"text-align: center;\">    \n                            <p>Читайте нас в <span class=\"promo-telega\"><a href=\"https://t.me/pitomcy_vetandlife\" target=\"_blank\">Telegram</a></span></p>\n                \n        </div>    \n\n        <div id=\"tags\" style=\"margin-top: 22px;\">\n            Метки: <a href=\"https://vetandlife.ru/tag/%D0%B2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D1%80%D0%B0%D1%87/\" rel=\"tag\">ветеринарный врач</a>, <a href=\"https://vetandlife.ru/tag/%d0%b2%d0%b5%d1%82%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d0%ba/\" rel=\"tag\">ветклиник</a>, <a href=\"https://vetandlife.ru/tag/%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B5%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5/\" rel=\"tag\">домашние животные</a>, <a href=\"https://vetandlife.ru/tag/%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%82%D0%BE%D0%BC%D1%86%D1%8B/\" rel=\"tag\">домашние питомцы</a>, <a href=\"https://vetandlife.ru/tag/%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D1%85/\" rel=\"tag\">здоровье животных</a>, <a href=\"https://vetandlife.ru/tag/%d0%ba%d0%b0%d0%ba-%d0%b2%d1%8b%d0%b1%d1%80%d0%b0%d1%82%d1%8c-%d0%b2%d0%b5%d1%82%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d0%ba/\" rel=\"tag\">как выбрать ветклиник</a>        </div>\n       \n        <div class=\"post_panel_info\">\n            <div class=\"post_panel_info_sub\">\n                <span class=\"post_link_category\"><a href=\"https://vetandlife.ru/pets/zdorovie/\">Здоровье</a></span>, <nobr>25 декабря 2025, 9:00</nobr>\n            </div>\n            <div class=\"post_panel_info_sub\">\n                <!--Поделиться <i class=\"fas fa-share-square btn_soc_post\"></i>-->  <a href=\"http://vk.com/share.php?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/&amp;Как выбрать ветеринарную клинику и не ошибиться с врачом\" target=\"_blank\"><i class=\"fab fa-vk btn_soc_post\"></i></a>\n<a href=\"whatsapp://send?text=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\"><i class=\"fab fa-whatsapp btn_soc_post\"></i></a>\n<a href=\"https://telegram.me/share/url?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\"><i class=\"fab fa-telegram-plane btn_soc_post\"></i></a>            </div>\n        </div> \n\n        <div class=\"promo-poll\">\n            <strong>Какие новости интересны читателям «Ветеринарии и жизни»? <a href=\"https://vetandlife.ru/polls/opros-kakie-novosti-interesny-chitatelyam-veterinarii-i-zhizni/\">Пройти опрос</a></strong>\n        </div>\n\n        \n        <!--<p><small class=\"text-muted\"><a href=\"https://vetandlife.ru/tag/%D0%B2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D1%80%D0%B0%D1%87/\" rel=\"tag\">ветеринарный врач</a>, <a href=\"https://vetandlife.ru/tag/%d0%b2%d0%b5%d1%82%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d0%ba/\" rel=\"tag\">ветклиник</a>, <a href=\"https://vetandlife.ru/tag/%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B5%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5/\" rel=\"tag\">домашние животные</a>, <a href=\"https://vetandlife.ru/tag/%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%82%D0%BE%D0%BC%D1%86%D1%8B/\" rel=\"tag\">домашние питомцы</a>, <a href=\"https://vetandlife.ru/tag/%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D1%85/\" rel=\"tag\">здоровье животных</a>, <a href=\"https://vetandlife.ru/tag/%d0%ba%d0%b0%d0%ba-%d0%b2%d1%8b%d0%b1%d1%80%d0%b0%d1%82%d1%8c-%d0%b2%d0%b5%d1%82%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d0%ba/\" rel=\"tag\">как выбрать ветклиник</a></small></p> -->\n         \n\n       \n        <!-- Yandex.RTB R-A-4145099-6 -->\n<div id=\"yandex_rtb_R-A-4145099-6\"></div>\n<script>\nwindow.yaContextCb.push(()=>{\n\tYa.Context.AdvManager.render({\n\t\t\"blockId\": \"R-A-4145099-6\",\n\t\t\"renderTo\": \"yandex_rtb_R-A-4145099-6\"\n\t})\n})\n</script>       \n    \n                 \n\n \n\n        \n            \n    \n    <div class=\"yets_rubric\">Еще по теме</div>\n         \n    <div class=\"yets\">\n      \n            \n        <div class=\"yet_card\" id=\"yets-1\">\n            <div class=\"yet_title\"><a href=\"https://vetandlife.ru/pets/odin-kusochek-ne-strashno-pochemu-shashlyk-i-sobaka-nesovmestimy/\">«Один кусочек не страшно?» — почему шашлык и собака несовместимы</a></div>\n        </div>   \n\n            \n        <div class=\"yet_card\" id=\"yets-2\">\n            <div class=\"yet_title\"><a href=\"https://vetandlife.ru/pet-business/ne-prosto-eda-kak-korm-vliyaet-na-zdorove-pitomca/\">Не просто еда: как корм влияет на здоровье питомца</a></div>\n        </div>   \n\n            \n        <div class=\"yet_card\" id=\"yets-3\">\n            <div class=\"yet_title\"><a href=\"https://vetandlife.ru/pets/na-majskie-s-pitomcem-chto-mozhet-pojti-ne-tak/\">На майские с питомцем: что может пойти не так</a></div>\n        </div>   \n\n            \n        <div class=\"yet_card\" id=\"yets-4\">\n            <div class=\"yet_title\"><a href=\"https://vetandlife.ru/pets/evropa-obyavlyaet-vojnu-mopsam-i-buldogam-pod-zapretom-nepravilnye-pitomcy/\">Европа объявляет войну мопсам и бульдогам? Под запретом «неправильные» питомцы</a></div>\n        </div>   \n\n        \n    </div>\n\n       \n\n\n\n                \n        \n\n        </div>\n\n        \n    <div class=\"moread_rubric\">Читайте также:</div>\n\n    <div class=\"moread\">\n      \n            \n        <div class=\"moread_card\" id=\"moread_1\">\n                    <img src=\"https://img.vetandlife.ru/news/512x340/2026/05/DSC07797-1-1.jpg?ver=1\" alt=\"Почему «вздувается» корова: как спасти животное при тимпании рубца\">\n            <div class=\"moread_title\"><a href=\"https://vetandlife.ru/livestock/pochemu-vzduvaetsya-korova-kak-spasti-zhivotnoe-pri-timpanii-rubca/\">Почему «вздувается» корова: как спасти животное при тимпании рубца</a></div>\n            <div class=\"moread_date\">4 мая 2026, 13:44</div>\n        </div>   \n\n            \n        <div class=\"moread_card\" id=\"moread_2\">\n                    <img src=\"https://img.vetandlife.ru/news/512x340/2026/05/кт1.jpg?ver=1\" alt=\"Впервые в России аппарат КТ для животных установили в зоопарке\">\n            <div class=\"moread_title\"><a href=\"https://vetandlife.ru/pet-business/vpervye-v-rossii-apparat-kt-dlya-zhivotnyh-ustanovili-v-zooparke/\">Впервые в России аппарат КТ для животных установили в зоопарке</a></div>\n            <div class=\"moread_date\">4 мая 2026, 13:27</div>\n        </div>   \n\n            \n        <div class=\"moread_card\" id=\"moread_3\">\n                    <img src=\"https://img.vetandlife.ru/news/512x340/2026/05/КалмГАУ.jpg?ver=1\" alt=\"Калмыцкий университет будет готовить ветспециалистов совместно с китайским вузом\">\n            <div class=\"moread_title\"><a href=\"https://vetandlife.ru/education-career/kalmyckij-universitet-budet-gotovit-vetspecialistov-sovmestno-s-kitajskim-vuzom/\">Калмыцкий университет будет готовить ветспециалистов совместно с китайским вузом</a></div>\n            <div class=\"moread_date\">4 мая 2026, 10:28</div>\n        </div>   \n\n            \n        <div class=\"moread_card\" id=\"moread_4\">\n                    <img src=\"https://img.vetandlife.ru/news/512x340/2024/05/лошадь.jpeg?ver=1\" alt=\"Признаки сапа и алгоритм действий при подозрении на инфекцию\">\n            <div class=\"moread_title\"><a href=\"https://vetandlife.ru/livestock/priznaki-sapa-i-algoritm-dejstvij-pri-podozrenii-na-infekciju/\">Признаки сапа и алгоритм действий при подозрении на инфекцию</a></div>\n            <div class=\"moread_date\">3 мая 2026, 12:00</div>\n        </div>   \n\n            \n        <div class=\"moread_card\" id=\"moread_5\">\n                    <img src=\"https://img.vetandlife.ru/news/512x340/2022/07/alexas_fotos-OMCgkp1oZ3Q-unsplash.jpg?ver=1\" alt=\"Россиян предупредили об опасности проснувшихся ежей\">\n            <div class=\"moread_title\"><a href=\"https://vetandlife.ru/sobytiya/rossiyan-predupredili-ob-opasnosti-prosnuvshihsya-ezhej/\">Россиян предупредили об опасности проснувшихся ежей</a></div>\n            <div class=\"moread_date\">3 мая 2026, 10:00</div>\n        </div>   \n\n            \n        <div class=\"moread_card\" id=\"moread_6\">\n                    <img src=\"https://img.vetandlife.ru/news/512x340/2021/04/f2c3db59d23398140a40fe164e0c2d37.jpg?ver=1\" alt=\"Болезнь Ньюкасла и грипп птиц не сдают позиций в Европе\">\n            <div class=\"moread_title\"><a href=\"https://vetandlife.ru/poultry/bolezn-njukasla-i-gripp-ptic-ne-sdajut-pozicij-v-evrope/\">Болезнь Ньюкасла и грипп птиц не сдают позиций в Европе</a></div>\n            <div class=\"moread_date\">2 мая 2026, 10:00</div>\n        </div>   \n\n        \n    </div>\n\n       \n\n        <div class=\"publ-to-main\">\n            <button class=\"more_button\" onclick=\"location.href='https://vetandlife.ru/page/2'\" type=\"button\">\n                    На главную</button>\n        </div>\n\n       \n\n    </div>\n\n\n\n\n    <div id=\"left\">\n\n    \n        <div class=\"menu-left-block-pets\">\n             <div class=\"menu-pets-leftmenu-container\"><ul id=\"menu-pets-leftmenu-1\" class=\"pets-menu-left\"><li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32941\"><a href=\"https://vetandlife.ru/pets/news/\">Новости</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32936\"><a href=\"https://vetandlife.ru/pets/vospitanie/\">Воспитание</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32956\"><a href=\"https://vetandlife.ru/pets/care/\">Уход</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-32938\"><a href=\"https://vetandlife.ru/pets/zdorovie/\">Здоровье</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32939\"><a href=\"https://vetandlife.ru/pets/zoo-menu/\">Зооменю</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32937\"><a href=\"https://vetandlife.ru/pets/gotovimsya-k-vystavke/\">Готовимся к выставке</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32940\"><a href=\"https://vetandlife.ru/pets/nauka/\">Наука</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32945\"><a href=\"https://vetandlife.ru/pets/porody-koshek/\">Породы кошек</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32946\"><a href=\"https://vetandlife.ru/pets/porody-sobak/\">Породы собак</a></li>\n<li class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-35250\"><a href=\"https://rutube.ru/u/pitomcy\">Видео</a></li>\n</ul></div>        </div>        \n        \n\n        \n        \n                \n        \n                                \n            \n    <div class=\"pets-widget pets-widget-grey \">\n        <div class=\"pets-widget-maintitle\"><a href=\"/cats\">СПЕЦПРОЕКТ<br>«Кошки — звезды Донбасса»</a></div>\n        <a href=\"/cats\">\n                                 <img width=\"1280\" height=\"852\" src=\"https://vetandlife.ru/wp-content/uploads/2025/07/DSC_6482.webp\" class=\"attachment-full size-full wp-post-image\" alt=\"\" decoding=\"async\" srcset=\"https://vetandlife.ru/wp-content/uploads/2025/07/DSC_6482.webp 1280w, https://vetandlife.ru/wp-content/uploads/2025/07/DSC_6482-300x200.webp 300w, https://vetandlife.ru/wp-content/uploads/2025/07/DSC_6482-1024x682.webp 1024w, https://vetandlife.ru/wp-content/uploads/2025/07/DSC_6482-768x511.webp 768w\" sizes=\"(max-width: 1280px) 100vw, 1280px\">                        <h3 class=\"pets-widget-title\">Дмитрий Куклачев передал гуманитарную помощь донецкому приюту кошек — фоторепортаж</h3>\n    </a></div><a href=\"/cats\">\n    \n        \n        </a><div class=\"right-info\"><a href=\"/cats\">\n            </a><a href=\"https://rutube.ru/u/Pets/\" target=\"_blank\">       \n                <img src=\"https://vetandlife.ru/wp-content/uploads/2024/08/pets_rutube.jpg\" width=\"240\" height=\"200\"> \n            </a>\n        </div>    \n    \n    \n    \n\n    \n    </div>\n\n    \n    <div id=\"right\">\n        \n                \n         \n\t<div class=\"right_archive\">\t\n\t\t<a href=\"https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/\">\n                            <img width=\"220\" class=\"right_archive_pets_img\" src=\"https://vetandlife.ru/wp-content/uploads/2026/02/питомцы-5.jpg\" alt=\"Питомцы N° 5 / 2025\">\n                    </a>\n   \t\t<div class=\"right_archive_text\">\n            <a href=\"https://vetandlife.ru/pets-magazine/\"></a>\n        </div>\n\n\t\t            <div class=\"right_archive_text\"><a href=\"https://vetandlife.ru/pets-magazine/\">Читайте журнал</a></div>   \n\t\t\t<div class=\"right_archive_link\"><a href=\"https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/\">Питомцы N° 5 / 2025</a></div>\n\t\t\t\n\t\t\n\t\t<br>\n\t\t<center class=\"left_center_block\">\n        \t<a href=\"https://vetandlife.ru/pets-magazine/\" class=\"left_button\">Архив номеров</a>\n\t\t</center>\n\t</div>\t\n\n    \n        \n\n<div id=\"subscript_box\">    \n    <div id=\"convert\"></div>   \n    <div class=\"right_title\">Подпишитесь на нашу рассылку и будьте в курсе всех новостей</div>\n    <div id=\"subscript-mail\">\n        <form class=\"form-right\" id=\"form-right\" action=\"https://vetandlife.ru/subscript\" method=\"post\">\n            <input сlass=\"frm_mail\" type=\"email\" required=\"\" name=\"email\" placeholder=\"Введите эл. почту\">\n            <input type=\"hidden\" id=\"subscription_nonce\" name=\"subscription_nonce\" value=\"39bdeea3b7\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\">            <input type=\"text\" class=\"mytext\" name=\"mytext\" placeholder=\"Дополнительный текст\">\n            <input type=\"hidden\" name=\"re_code\" value=\"a1c2294d759c1fbd1ba77b8a31605c1266da69f0c77016c9c12c830c722c292c\">\n            <div class=\"re_text\">и выберите большее число</div>\n            <button class=\"re_button\" type=\"submit\" name=\"re_num\" value=\"23\">23</button>\n            <button class=\"re_button\" type=\"submit\" name=\"re_num\" value=\"22\">22</button>\n        </form>\n        <div class=\"politics-izdanie\">Нажимая на кнопку, Вы соглашаетесь на обработку персональных данных в соответствии с\n<a href=\"https://vetandlife.ru/politika-v-otnoshenii-obrabotki-i-zashhity-personalnyh-dannyh-ooo-da-vinchi-media/\" target=\"_blank\">«Политикой конфиденциальности»</a></div>\n    </div>\n</div>     \n        \n            \n        \n\t<div class=\"publs_right\">\n        \n        <div class=\"publs_right_title\">Законодательство</div>\n\n    \t   \n   \t\t\t<div class=\"publs_right_item\"> \n        \t\t<a href=\"https://vetandlife.ru/zakons/forum-gumannogo-otnosheniya-k-zhivotnym-projdet-v-moskve-18-maya/\">Форум гуманного отношения к животным пройдет в Москве 18 мая</a>\n    \t\t</div>\n\n       \n   \t\t\t<div class=\"publs_right_item\"> \n        \t\t<a href=\"https://vetandlife.ru/zakons/evrosojuz-vvel-obyazatelnoe-chipirovanie-sobak-i-koshek-no-zarabotajut-pravila-ne-srazu/\">Евросоюз ввел обязательное чипирование собак и кошек, но заработают правила не сразу&nbsp; &nbsp;</a>\n    \t\t</div>\n\n    \n\t</div>\n\n    \n        \n            \n                                    \n    <div class=\"mosts \">\n        <h3 class=\"most_title\">Самое читаемое</h3>\n        \n\t\t    \t\t<div class=\"most\"><a href=\"https://vetandlife.ru/sobytiya/minselhoz-ogranichil-vylov-lososya-na-dalnem-vostoke\">Минсельхоз ограничил вылов лосося на Дальнем Востоке</a></div>  \n\t\t    \t\t<div class=\"most\"><a href=\"https://vetandlife.ru/sobytiya/shpic-chihua-hua-i-korgi-vozglavili-top-populyarnyh-porod-sobak-2022-goda\">Шпиц, чихуа-хуа и корги возглавили топ популярных пород собак 2022 года</a></div>  \n\t\t    \t\t<div class=\"most\"><a href=\"https://vetandlife.ru/livestock/rekomendacii-po-vakcinacii-zhivotnyh-chto-vazhno-znat\">Рекомендации по вакцинации животных: что важно знать&nbsp;</a></div>  \n\t\t\n    </div>\n\n                          \n        \n\n        \n    \n\n</div>\n\n\n        \n\n\n  </div><!-- end main -->\n\n   \n\n\n<div class=\"mobile-info\">\n    <a href=\"https://www.youtube.com/channel/UCOXOjXmMNl8eVO4ldrv5c5Q\" target=\"_blank\">       \n        <img src=\"https://vetandlife.ru/wp-content/uploads/2021/10/melano-live.png\" width=\"240\" height=\"200\"> \n    </a>\n</div>  \n\n\n    <div class=\"mosts mob-lite\">\n        <h3 class=\"most_title\">Самое читаемое</h3>\n        \n\t\t    \t\t<div class=\"most\"><a href=\"https://vetandlife.ru/sobytiya/minselhoz-ogranichil-vylov-lososya-na-dalnem-vostoke\">Минсельхоз ограничил вылов лосося на Дальнем Востоке</a></div>  \n\t\t    \t\t<div class=\"most\"><a href=\"https://vetandlife.ru/sobytiya/shpic-chihua-hua-i-korgi-vozglavili-top-populyarnyh-porod-sobak-2022-goda\">Шпиц, чихуа-хуа и корги возглавили топ популярных пород собак 2022 года</a></div>  \n\t\t    \t\t<div class=\"most\"><a href=\"https://vetandlife.ru/livestock/rekomendacii-po-vakcinacii-zhivotnyh-chto-vazhno-znat\">Рекомендации по вакцинации животных: что важно знать&nbsp;</a></div>  \n\t\t\n    </div>\n\n    \n     \n\n\n\t<div class=\"mobile_archive\">\t\n\t\t<a href=\"https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/\"><img width=\"91\" class=\"mobile_archive_img\" src=\"https://vetandlife.ru/wp-content/uploads/2026/02/питомцы-5.jpg\" alt=\"Питомцы N° 5 / 2025\"></a>\n   \t\t<div class=\"mobile_archive_text\">\n\t\t\t   <div><strong><a href=\"https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/\">Читать журнал «Питомцы»</a></strong></div>\n\t\t\t     \n\t\t\t   \t\t<div class=\"mobile_archive_link\"><a href=\"https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/\">Питомцы N° 5 / 2025</a></div>\n\t\t\t\t\t\n\t\t</div>\n\t</div>\t\n\t\t   \n\n    \n\n  \n\n                    <div class=\"mobile-info\">\n                                    </div>\n               \n\n             \n            \n               \n        \n     \n\n      \n\n     \n\n<div class=\"mob-subscript\">\n\n\t<div class=\"right_title\">Подпишитесь на нашу рассылку и будьте в курсе всех новостей</div>\n\t<div id=\"subscript-mail\">\n        <form class=\"form-right\" id=\"form-right\" action=\"https://vetandlife.ru/subscript\" method=\"post\">\n            <input сlass=\"frm_mail\" type=\"email\" required=\"\" name=\"email\" placeholder=\"Введите эл. почту\">\n            <input type=\"hidden\" id=\"subscription_nonce\" name=\"subscription_nonce\" value=\"39bdeea3b7\"><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\">            <input type=\"text\" class=\"mytext\" name=\"mytext\" placeholder=\"Дополнительный текст\">\n            <input type=\"hidden\" name=\"re_code\" value=\"5f2a5e6bb178168034e1aa172fc65fe81dad7dd8911c2702e9529bd429c0bea5\">\n            <div class=\"re_text\">и выберите большее число</div>\n            <button class=\"re_button\" type=\"submit\" name=\"re_num\" value=\"7\">7</button>\n            <button class=\"re_button\" type=\"submit\" name=\"re_num\" value=\"20\">20</button>\n        </form>\n        <div class=\"politics-izdanie\">Нажимая на кнопку, Вы соглашаетесь на обработку персональных данных в соответствии с\n            <a href=\"https://vetandlife.ru/politika-v-otnoshenii-obrabotki-i-zashhity-personalnyh-dannyh-ooo-da-vinchi-media/\" target=\"_blank\">«Политикой конфиденциальности»</a></div>\n        </div>\n    </div>\n\n    \n\n\n\n\n  <footer id=\"footer\">  \n    \n        <div id=\"footer_menu\">\n            <script type=\"speculationrules\">\n{\"prefetch\":[{\"source\":\"document\",\"where\":{\"and\":[{\"href_matches\":\"\\/*\"},{\"not\":{\"href_matches\":[\"\\/wp-*.php\",\"\\/wp-admin\\/*\",\"\\/wp-content\\/uploads\\/*\",\"\\/wp-content\\/*\",\"\\/wp-content\\/plugins\\/*\",\"\\/wp-content\\/themes\\/vij\\/*\",\"\\/*\\\\?(.+)\"]}},{\"not\":{\"selector_matches\":\"a[rel~=\\\"nofollow\\\"]\"}},{\"not\":{\"selector_matches\":\".no-prefetch, .no-prefetch a\"}}]},\"eagerness\":\"conservative\"}]}\n</script>\n\t\t<script>window.addEventListener( 'load', function() {\n\t\t\t\tdocument.querySelectorAll( 'link' ).forEach( function( e ) {'not all' === e.media && e.dataset.media && ( e.media = e.dataset.media, delete e.dataset.media );} );\n\t\t\t\tvar e = document.getElementById( 'jetpack-boost-critical-css' );\n\t\t\t\te && ( e.media = 'not all' );\n\t\t\t} );</script>\n\t\t<script type=\"text/javascript\" id=\"krutilka-tracker-js-extra\">\n/* <![CDATA[ */\nvar krutilka_ajax = {\"ajax_url\":\"https:\\/\\/vetandlife.ru\\/wp-admin\\/admin-ajax.php\",\"nonce\":\"134014ed9a\"};\nvar krutilka_settings = {\"enabled\":\"1\",\"interval\":\"30000\",\"animation\":\"1\",\"prevent_repeat\":\"1\"};\n/* ]]> */\n</script>\n<script type=\"text/javascript\" src=\"https://vetandlife.ru/wp-content/plugins/krutilka/assets/js/krutilka.js?ver=0.5.3\" id=\"krutilka-tracker-js\"></script>\n\n            \n\n            <div class=\"footer_sub\">\n                <div class=\"menu-mainmenu-pets-container\"><ul id=\"menu-mainmenu-pets-1\" class=\"menu_footer\"><li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-32741\"><a href=\"https://vetandlife.ru/about-pets/\">О проекте</a></li>\n<li class=\"menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54350\"><a href=\"https://vetandlife.ru/parthers/\">Партнеры</a></li>\n<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-39829\"><a href=\"https://vetandlife.ru/reklamodatelyam/\">Рекламодателям</a></li>\n</ul></div>            </div>\n            <div id=\"footer_up\">\n                <a href=\"#main\">наверх&nbsp;&nbsp;<i class=\"fas fa-chevron-up\"></i></a>\n            </div>    \n        </div>  \n\n        <div class=\"footer-info-pets\">\n           <!-- <div id=\"footer_qr\">\n                <img id=\"img_qr\" src = \"https://vetandlife.ru/wp-content/themes/vij/pub/icons/qvij.svg\" width=\"100\" height=\"100\" />\n                <p class=\"vazh\">Важно</p>\n            </div> --> \n            \n            <div class=\"footer-qrs-pets\">\n            <div class=\"footer-qr-pets qr-telega-pets\">\n                    <a href=\"https://t.me/pitomcy_vetandlife\" target=\"_blank\"><img id=\"img_qr\" src=\"https://vetandlife.ru/wp-content/themes/vij/pub/icons/qt-te-pets.svg\" width=\"80\" height=\"80\"></a>\n                    <p class=\"vazh\">«Питомцы»<br>Telegram</p>\n                </div>\n                <div class=\"footer-qr-pets qr_vk\">\n                    <a href=\"https://vk.com/pitomcy_vetandlife\" target=\"_blank\"><img id=\"img_qr\" src=\"https://vetandlife.ru/wp-content/themes/vij/pub/icons/qr-vk-pets.svg\" width=\"80\" height=\"80\"></a>\n                    <p class=\"vazh\">«Питомцы»<br>ВКонтакте</p>\n                </div>\n                <div class=\"footer-qr-pets\">\n                    <a href=\"https://dzen.ru/pitomcy_vetandlife?favid=254162793\" target=\"_blank\"><img id=\"img_qr\" src=\"https://vetandlife.ru/wp-content/themes/vij/pub/icons/pitomcy_dzen.svg\" width=\"80\" height=\"80\"></a>\n                    <p class=\"vazh\">«Питомцы»<br>Дзен</p>\n                </div>\n        </div>    \n        \n        <div id=\"footer-logo-pets\">    \n               <a href=\"\"><img src=\"https://vetandlife.ru/wp-content/themes/vij/pub/icons/pets-logo-2.svg\" alt=\"Питомцы. Все о домашних животных\"></a>\n        </div>\n            \n            <div id=\"footer-contact\">\n                <div id=\"head_tel\"><a href=\"tel:79250634\">+7 (495) 925 06 34</a></div>\n                <div class=\"footer-mail\"><a href=\"mailto:info@vetandlife.ru\">info@vetandlife.ru</a></div>\n            </div>\n                   \n        </div>\n\n        <div class=\"socials-footer\">\n            \n\n<ul class=\"socials\">\n    <li>\n        <a href=\"https://rutube.ru/u/pitomcy/\" title=\"Rutube ПИТОМЦЫ\" target=\"_blank\">\n            <span class=\"soc soc-rutube\"></span>\n        </a>\n    </li>\n    <li>\n        <a href=\"https://t.me/pitomcy_vetandlife\" title=\"Telegram\" target=\"_blank\" class=\"soc soc-telegram\"></a>\n    </li>\n    <li>\n        <a href=\"https://vk.com/pitomcy_vetandlife\" title=\"ВКонтакте\" target=\"_blank\" class=\"soc soc-vk\"></a>\n    </li>\n    <li>\n        <a href=\"https://ok.ru/pitomcy.vetandlife\" title=\"Одноклассники\" target=\"_blank\" class=\"soc soc-ok\"></a>\n    </li>\n    <li>\n        <a href=\"https://dzen.ru/pitomcy_vetandlife?favid=254162793\" title=\"Дзен\" target=\"_blank\" class=\"soc soc-dzen\"></a>\n    </li>\n    <li>\n        <a href=\"https://max.ru/pitomcy\" title=\"Max\" target=\"_blank\" class=\"soc soc-max\"></a>\n    </li>\n</ul>\n\n        </div>\n        \n        <div id=\"footer_2\">\n            <div id=\"copy\">© Журнал Питомцы 2026</div> \n            <div>\n                \n\n\n            </div>\n            <ul id=\"svid\">\n                <li><a href=\"https://vetandlife.ru/rss/news.xml\" target=\"_blank\">RSS</a></li> \n                <li><a href=\"https://vetandlife.ru/wp-content/uploads/2021/11/vij-roskomnadzor.pdf\" target=\"_blank\">Свидетельство о регистрации СМИ</a></li>  \n                <li><a href=\"https://vetandlife.ru/wp-content/uploads/2021/10/privacy.pdf\" target=\"_blank\">Политика конфиденциальности</a></li>\n            </ul>\n        </div>\n       \n        <div id=\"footer_3\">\n        <div class=\"rating\">16+</div>\n            <div id=\"pere\">\n                При перепечатке и использовании информации с сайта «Ветеринария и жизнь» активная ссылка на использованный материал обязательна. При использовании материалов в печатных СМИ указывать источник — «Ветеринария и жизнь»            </div>\n\n\n            <div><!--LiveInternet logo--><a href=\"https://www.liveinternet.ru/click\" target=\"_blank\"><img src=\"https://counter.yadro.ru/logo?12.1\" title=\"LiveInternet: number of pageviews for 24 hours, of visitors for 24 hours and for today is shown\" alt=\"\" style=\"border:0\" width=\"88\" height=\"31\"></a><!--/LiveInternet-->\n</div>\n\n            <div style=\"margin-left: 12px;\">\n    <!-- Yandex.Metrika informer -->\n<a href=\"https://metrika.yandex.ru/stat/?id=56480275&amp;from=informer\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://informer.yandex.ru/informer/56480275/3_1_FFFFFFFF_EFEFEFFF_0_pageviews\" style=\"width:88px; height:31px; border:0;\" alt=\"Яндекс.Метрика\" title=\"Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)\" class=\"ym-advanced-informer\" data-cid=\"56480275\" data-lang=\"ru\"></a>\n<!-- /Yandex.Metrika informer --></div>\n        \n\n<div style=\"margin-left: 12px;\">\n<!--Rating::top.agroserver.ru counter-->\n<a href=\"https://agroserver.ru/\" target=\"_blank\">\n<script language=\"javascript\">\nvar r = escape(document.referrer);\nvar rd = Math.random();\nvar pr = 'https://top.agroserver.ru/ct/';\ndocument.write('<img src=\"'+pr+'?uid=18820&ref='+r+'&rd='+rd+'\" width=\"88\" height=\"31\" border=\"0\">');\n</script><img src=\"https://top.agroserver.ru/ct/?uid=18820&amp;ref=&amp;rd=0.9339960195624859\" width=\"88\" height=\"31\" border=\"0\"></a>\n<!--// Rating::top.agroserver.ru counter-->\n</div>\n         \n\n</div>\n            \n    </footer>\n    <script>\n    document.addEventListener('DOMContentLoaded', function() {\n    \n    let form = document.getElementById('form-right');\n    let inputAdded = false;\n\n    form.addEventListener('mouseenter', function() {\n    \n        if (!inputAdded) {\n\n            var hiddenInput = document.createElement(\"input\");\n            hiddenInput.type = \"hidden\";\n            hiddenInput.name = \"addrhash\"; // имя поля\n            hiddenInput.value = \"5ee16cf391465d6a1525af15243258dc\"; // значение поля\n            \n            form.appendChild(hiddenInput);\n            inputAdded = true;\n                \n        }\n    }, { once: true });\n});\n</script>\n \n   \n\n\n\n\n<div class=\"overlay\"></div><script type=\"text/javascript\" async=\"\" src=\"https://privacy-cs.mail.ru/static/sync-loader.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://top-fwz1.mail.ru/js/dyn-goal-config.js?ids=3493038\"></script></body></html>",
+  "text": "Как выбрать ветеринарную клинику и не ошибиться с врачом | Ветеринария и жизнь Рубрики > Найти О проекте Партнеры Рекламодателям +7 (495) 925 06 34 info@vetandlife.ru Читать газету «Ветеринария и Жизнь» Номер 03 (106) март 2026 Газета ВиЖ. Купить Подпишитесь на нашу рассылку и будьте в курсе всех новостей и выберите большее число 27 92 Нажимая на кнопку, Вы соглашаетесь на обработку персональных данных в соответствии с «Политикой конфиденциальности» < назад Новости Воспитание Уход Здоровье Зооменю Готовимся к выставке Наука Породы кошек Породы собак Видео О проекте Партнеры Рекламодателям +7 (495) 925 06 34 info@vetandlife.ru Питомцы Новости Воспитание Уход Здоровье Зооменю Готовимся к выставке Наука Породы кошек Породы собак Поиск Питомцы - Здоровье - Как выбрать ветеринарную клинику и не ошибиться с ... Здоровье 25 декабря 2025, 9:00 Как выбрать ветеринарную клинику и не ошибиться с врачом Автор: Маргарита Примачик Качество ветеринарной помощи напрямую влияет на здоровье и жизнь питомца, поэтому выбирать клинику лучше заранее, а не в экстренной ситуации. По каким признакам можно распознать хорошего специалиста и какие сигналы должны насторожить владельца животного, рассказала журналу «Питомцы» ветеринарный врач Тверской ветеринарной поликлиники ФГБУ «ВНИИЗЖ» Марина Сафронова. Фото: Александр Плонский / «ВиЖ» На что обратить внимание еще до визита Оценка клиники начинается задолго до первого приема. По словам Марины Сафроновой, важно проверить легальность работы учреждения. Речь идет о наличии лицензии, регистрационных данных, понятных контактов, графика работы и возможности экстренной связи. Настораживает, если на сайте или в открытых источниках нет информации о врачах, их специализации и условиях приема. Опыт врача, оснащение и репутацию клиники нельзя рассматривать по отдельности. «Ключевым остается квалификация врача, однако без базового диагностического оснащения и выстроенных клинических протоколов даже опытный специалист ограничен в возможностях», — поясняет эксперт. Репутация учреждения при этом отражает не разовые удачные случаи, а системную работу. Можно ли доверять сайту и отзывам Онлайн-ресурсы дают лишь частичное представление об уровне клиники. Стоит обращать внимание на профессиональный язык, наличие образовательных материалов и готовность отвечать на вопросы владельцев. Избыточная реклама, обещания быстрого излечения и агрессивное продвижение услуг требуют осторожности. Фото: john-schnobrich / unsplash Признаки хорошего ветеринарного врача Качественную помощь отличает сочетание профессиональной компетентности и клинического мышления. Важны аккуратность в назначениях и уважительное общение с владельцем животного. «Хороший врач не боится уточнять, консультироваться с коллегами и признавать пределы своей специализации», — отмечает Марина Сафронова. Подробный разговор с владельцем является обязательной частью приема. Врач должен доступно объяснить диагноз, варианты терапии, возможный прогноз и риски. Готовность отвечать на вопросы без давления и навязывания решений говорит о добросовестном подходе. Фото: Gpointstudio / Freepik Как проходит корректный первичный прием Первичный осмотр включает сбор анамнеза, клиническое обследование и формирование предварительных диагностических гипотез. После этого врач обосновывает необходимость анализов или исследований. Назначения без осмотра и сбора информации считаются недопустимыми. В большинстве случаев терапия без диагностики должна настораживать. Исключения возможны при неотложных состояниях или типичных клинических картинах, но и тогда обследование должно быть проведено при первой возможности. Когда клинику лучше сменить Поводом для поиска другого специалиста могут стать отсутствие объяснений, противоречивые назначения, отказ фиксировать диагноз и лечение в документации, навязывание услуг и пренебрежительное отношение к владельцу или животному. Что подготовить заранее Эксперт рекомендует выбрать клинику еще до экстренной ситуации, сохранить контакты круглосуточной помощи, иметь актуальные данные о вакцинациях и хронических заболеваниях питомца и регулярно проходить профилактические осмотры. Такой подход снижает риски и помогает быстрее получить квалифицированную помощь. Ранее журнал «Питомцы» писал , как выбрать передержку для питомца. Читайте нас в Telegram Метки: ветеринарный врач , ветклиник , домашние животные , домашние питомцы , здоровье животных , как выбрать ветклиник Здоровье , 25 декабря 2025, 9:00 Какие новости интересны читателям «Ветеринарии и жизни»? Пройти опрос Еще по теме «Один кусочек не страшно?» — почему шашлык и собака несовместимы Не просто еда: как корм влияет на здоровье питомца На майские с питомцем: что может пойти не так Европа объявляет войну мопсам и бульдогам? Под запретом «неправильные» питомцы Читайте также: Почему «вздувается» корова: как спасти животное при тимпании рубца 4 мая 2026, 13:44 Впервые в России аппарат КТ для животных установили в зоопарке 4 мая 2026, 13:27 Калмыцкий университет будет готовить ветспециалистов совместно с китайским вузом 4 мая 2026, 10:28 Признаки сапа и алгоритм действий при подозрении на инфекцию 3 мая 2026, 12:00 Россиян предупредили об опасности проснувшихся ежей 3 мая 2026, 10:00 Болезнь Ньюкасла и грипп птиц не сдают позиций в Европе 2 мая 2026, 10:00 На главную Новости Воспитание Уход Здоровье Зооменю Готовимся к выставке Наука Породы кошек Породы собак Видео СПЕЦПРОЕКТ «Кошки — звезды Донбасса» Дмитрий Куклачев передал гуманитарную помощь донецкому приюту кошек — фоторепортаж Читайте журнал Питомцы N° 5 / 2025 Архив номеров Подпишитесь на нашу рассылку и будьте в курсе всех новостей и выберите большее число 23 22 Нажимая на кнопку, Вы соглашаетесь на обработку персональных данных в соответствии с «Политикой конфиденциальности» Законодательство Форум гуманного отношения к животным пройдет в Москве 18 мая Евросоюз ввел обязательное чипирование собак и кошек, но заработают правила не сразу Самое читаемое Минсельхоз ограничил вылов лосося на Дальнем Востоке Шпиц, чихуа-хуа и корги возглавили топ популярных пород собак 2022 года Рекомендации по вакцинации животных: что важно знать Самое читаемое Минсельхоз ограничил вылов лосося на Дальнем Востоке Шпиц, чихуа-хуа и корги возглавили топ популярных пород собак 2022 года Рекомендации по вакцинации животных: что важно знать Читать журнал «Питомцы» Питомцы N° 5 / 2025 Подпишитесь на нашу рассылку и будьте в курсе всех новостей и выберите большее число 7 20 Нажимая на кнопку, Вы соглашаетесь на обработку персональных данных в соответствии с «Политикой конфиденциальности» О проекте Партнеры Рекламодателям наверх «Питомцы» Telegram «Питомцы» ВКонтакте «Питомцы» Дзен +7 (495) 925 06 34 info@vetandlife.ru © Журнал Питомцы 2026 RSS Свидетельство о регистрации СМИ Политика конфиденциальности 16+ При перепечатке и использовании информации с сайта «Ветеринария и жизнь» активная ссылка на использованный материал обязательна. При использовании материалов в печатных СМИ указывать источник — «Ветеринария и жизнь»",
+  "json_ld": [
+    "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@id\":\"https://vetandlife.ru/pets/zdorovie/\",\"name\":\"Здоровье\"}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@id\":\"https://vetandlife.ru/sobytiya/\",\"name\":\"События\"}}]},{\"@type\":\"NewsArticle\",\"@id\":\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\",\"headline\":\"Как выбрать ветеринарную клинику и не ошибиться с врачом\",\"datePublished\":\"2025-12-25T09:00:00+03:00\",\"dateModified\":\"2025-12-24T17:19:14+03:00\",\"mainEntityOfPage\":\"https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/\",\"author\":{\"@type\":\"Person\",\"name\":\"Маргарита Примачик\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Ветеринария и жизнь\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://vetandlife.ru/wp-content/uploads/2023/05/cropped-ms-icon-310x310-1.png\"}},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://vetandlife.ru/wp-content/uploads/2024/10/DSC00915.jpg\"}}]}"
+  ],
+  "document": {
+    "title": "Как выбрать ветеринарную клинику и не ошибиться с врачом | Ветеринария и жизнь",
+    "meta_description": "",
+    "meta_robots": "max-image-preview:large",
+    "viewport": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",
+    "canonical": "https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/provereno-zvezdami-pochemu-teatr-koshek-kuklacheva-rekomenduet-preparat-ot-gk-vik/?erid=2VSb5w8pKqK",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/provereno-zvezdami-pochemu-teatr-koshek-kuklacheva-rekomenduet-preparat-ot-gk-vik/?erid=2VSb5w8pKqK",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Рубрики >",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/about-pets/",
+        "text": "О проекте",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/parthers/",
+        "text": "Партнеры",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/reklamodatelyam/",
+        "text": "Рекламодателям",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@vetandlife.ru",
+        "text": "info@vetandlife.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/arkhiv/nomer-03-106-mart-2026/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/arkhiv/nomer-03-106-mart-2026/",
+        "text": "Читать газету «Ветеринария и Жизнь»",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/arkhiv/nomer-03-106-mart-2026/",
+        "text": "Номер 03 (106) март 2026",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/subscripts",
+        "text": "Газета ВиЖ. Купить",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/politika-v-otnoshenii-obrabotki-i-zashhity-personalnyh-dannyh-ooo-da-vinchi-media/",
+        "text": "«Политикой конфиденциальности»",
+        "rel": ""
+      },
+      {
+        "href": "https://rutube.ru/u/pitomcy/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://ok.ru/pitomcy.vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://dzen.ru/pitomcy_vetandlife?favid=254162793",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://max.ru/pitomcy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/news/",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/vospitanie/",
+        "text": "Воспитание",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/care/",
+        "text": "Уход",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/",
+        "text": "Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zoo-menu/",
+        "text": "Зооменю",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/gotovimsya-k-vystavke/",
+        "text": "Готовимся к выставке",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/nauka/",
+        "text": "Наука",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/porody-koshek/",
+        "text": "Породы кошек",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/porody-sobak/",
+        "text": "Породы собак",
+        "rel": ""
+      },
+      {
+        "href": "https://rutube.ru/u/pitomcy",
+        "text": "Видео",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/about-pets/",
+        "text": "О проекте",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/parthers/",
+        "text": "Партнеры",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/reklamodatelyam/",
+        "text": "Рекламодателям",
+        "rel": ""
+      },
+      {
+        "href": "tel:79250634",
+        "text": "+7 (495) 925 06 34",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@vetandlife.ru",
+        "text": "info@vetandlife.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru?s",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://rutube.ru/u/pitomcy/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://ok.ru/pitomcy.vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://dzen.ru/pitomcy_vetandlife?favid=254162793",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://max.ru/pitomcy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/",
+        "text": "Питомцы",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/news/",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/vospitanie/",
+        "text": "Воспитание",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/care/",
+        "text": "Уход",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/",
+        "text": "Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zoo-menu/",
+        "text": "Зооменю",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/gotovimsya-k-vystavke/",
+        "text": "Готовимся к выставке",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/nauka/",
+        "text": "Наука",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/porody-koshek/",
+        "text": "Породы кошек",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/porody-sobak/",
+        "text": "Породы собак",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/?s",
+        "text": "Поиск",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/category/pets",
+        "text": "Питомцы",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/category/pets",
+        "text": "-",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/category/pets",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/",
+        "text": "Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/",
+        "text": "Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "http://vk.com/share.php?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/&Как выбрать ветеринарную клинику и не ошибиться с врачом",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "whatsapp://send?text=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://telegram.me/share/url?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/author/margarita-primachik/",
+        "text": "Маргарита Примачик",
+        "rel": "author"
+      },
+      {
+        "href": "https://vetandlife.ru/pet-business/kak-vybrat-perederzhku-dlya-pitomca-8-glavnyh-pravil/",
+        "text": "писал",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/pitomcy_vetandlife",
+        "text": "Telegram",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/tag/%D0%B2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D0%B2%D1%80%D0%B0%D1%87/",
+        "text": "ветеринарный врач",
+        "rel": "tag"
+      },
+      {
+        "href": "https://vetandlife.ru/tag/%d0%b2%d0%b5%d1%82%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d0%ba/",
+        "text": "ветклиник",
+        "rel": "tag"
+      },
+      {
+        "href": "https://vetandlife.ru/tag/%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B5%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5/",
+        "text": "домашние животные",
+        "rel": "tag"
+      },
+      {
+        "href": "https://vetandlife.ru/tag/%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B8%D1%82%D0%BE%D0%BC%D1%86%D1%8B/",
+        "text": "домашние питомцы",
+        "rel": "tag"
+      },
+      {
+        "href": "https://vetandlife.ru/tag/%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5%20%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D1%85/",
+        "text": "здоровье животных",
+        "rel": "tag"
+      },
+      {
+        "href": "https://vetandlife.ru/tag/%d0%ba%d0%b0%d0%ba-%d0%b2%d1%8b%d0%b1%d1%80%d0%b0%d1%82%d1%8c-%d0%b2%d0%b5%d1%82%d0%ba%d0%bb%d0%b8%d0%bd%d0%b8%d0%ba/",
+        "text": "как выбрать ветклиник",
+        "rel": "tag"
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/",
+        "text": "Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "http://vk.com/share.php?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/&Как выбрать ветеринарную клинику и не ошибиться с врачом",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "whatsapp://send?text=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://telegram.me/share/url?url=https://vetandlife.ru/pets/zdorovie/kak-vybrat-veterinarnuju-kliniku-i-ne-oshibitsya-s-vrachom/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/polls/opros-kakie-novosti-interesny-chitatelyam-veterinarii-i-zhizni/",
+        "text": "Пройти опрос",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/odin-kusochek-ne-strashno-pochemu-shashlyk-i-sobaka-nesovmestimy/",
+        "text": "«Один кусочек не страшно?» — почему шашлык и собака несовместимы",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pet-business/ne-prosto-eda-kak-korm-vliyaet-na-zdorove-pitomca/",
+        "text": "Не просто еда: как корм влияет на здоровье питомца",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/na-majskie-s-pitomcem-chto-mozhet-pojti-ne-tak/",
+        "text": "На майские с питомцем: что может пойти не так",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/evropa-obyavlyaet-vojnu-mopsam-i-buldogam-pod-zapretom-nepravilnye-pitomcy/",
+        "text": "Европа объявляет войну мопсам и бульдогам? Под запретом «неправильные» питомцы",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/livestock/pochemu-vzduvaetsya-korova-kak-spasti-zhivotnoe-pri-timpanii-rubca/",
+        "text": "Почему «вздувается» корова: как спасти животное при тимпании рубца",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pet-business/vpervye-v-rossii-apparat-kt-dlya-zhivotnyh-ustanovili-v-zooparke/",
+        "text": "Впервые в России аппарат КТ для животных установили в зоопарке",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/education-career/kalmyckij-universitet-budet-gotovit-vetspecialistov-sovmestno-s-kitajskim-vuzom/",
+        "text": "Калмыцкий университет будет готовить ветспециалистов совместно с китайским вузом",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/livestock/priznaki-sapa-i-algoritm-dejstvij-pri-podozrenii-na-infekciju/",
+        "text": "Признаки сапа и алгоритм действий при подозрении на инфекцию",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/sobytiya/rossiyan-predupredili-ob-opasnosti-prosnuvshihsya-ezhej/",
+        "text": "Россиян предупредили об опасности проснувшихся ежей",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/poultry/bolezn-njukasla-i-gripp-ptic-ne-sdajut-pozicij-v-evrope/",
+        "text": "Болезнь Ньюкасла и грипп птиц не сдают позиций в Европе",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/news/",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/vospitanie/",
+        "text": "Воспитание",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/care/",
+        "text": "Уход",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zdorovie/",
+        "text": "Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/zoo-menu/",
+        "text": "Зооменю",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/gotovimsya-k-vystavke/",
+        "text": "Готовимся к выставке",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/nauka/",
+        "text": "Наука",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/porody-koshek/",
+        "text": "Породы кошек",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets/porody-sobak/",
+        "text": "Породы собак",
+        "rel": ""
+      },
+      {
+        "href": "https://rutube.ru/u/pitomcy",
+        "text": "Видео",
+        "rel": ""
+      },
+      {
+        "href": "/cats",
+        "text": "СПЕЦПРОЕКТ «Кошки — звезды Донбасса»",
+        "rel": ""
+      },
+      {
+        "href": "/cats",
+        "text": "Дмитрий Куклачев передал гуманитарную помощь донецкому приюту кошек — фоторепортаж",
+        "rel": ""
+      },
+      {
+        "href": "/cats",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/cats",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://rutube.ru/u/Pets/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/",
+        "text": "Читайте журнал",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/",
+        "text": "Питомцы N° 5 / 2025",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/",
+        "text": "Архив номеров",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/politika-v-otnoshenii-obrabotki-i-zashhity-personalnyh-dannyh-ooo-da-vinchi-media/",
+        "text": "«Политикой конфиденциальности»",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/zakons/forum-gumannogo-otnosheniya-k-zhivotnym-projdet-v-moskve-18-maya/",
+        "text": "Форум гуманного отношения к животным пройдет в Москве 18 мая",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/zakons/evrosojuz-vvel-obyazatelnoe-chipirovanie-sobak-i-koshek-no-zarabotajut-pravila-ne-srazu/",
+        "text": "Евросоюз ввел обязательное чипирование собак и кошек, но заработают правила не сразу",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/sobytiya/minselhoz-ogranichil-vylov-lososya-na-dalnem-vostoke",
+        "text": "Минсельхоз ограничил вылов лосося на Дальнем Востоке",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/sobytiya/shpic-chihua-hua-i-korgi-vozglavili-top-populyarnyh-porod-sobak-2022-goda",
+        "text": "Шпиц, чихуа-хуа и корги возглавили топ популярных пород собак 2022 года",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/livestock/rekomendacii-po-vakcinacii-zhivotnyh-chto-vazhno-znat",
+        "text": "Рекомендации по вакцинации животных: что важно знать",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/channel/UCOXOjXmMNl8eVO4ldrv5c5Q",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/sobytiya/minselhoz-ogranichil-vylov-lososya-na-dalnem-vostoke",
+        "text": "Минсельхоз ограничил вылов лосося на Дальнем Востоке",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/sobytiya/shpic-chihua-hua-i-korgi-vozglavili-top-populyarnyh-porod-sobak-2022-goda",
+        "text": "Шпиц, чихуа-хуа и корги возглавили топ популярных пород собак 2022 года",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/livestock/rekomendacii-po-vakcinacii-zhivotnyh-chto-vazhno-znat",
+        "text": "Рекомендации по вакцинации животных: что важно знать",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/",
+        "text": "Читать журнал «Питомцы»",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/pets-magazine/pitomcy-n-5-2025/",
+        "text": "Питомцы N° 5 / 2025",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/politika-v-otnoshenii-obrabotki-i-zashhity-personalnyh-dannyh-ooo-da-vinchi-media/",
+        "text": "«Политикой конфиденциальности»",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/about-pets/",
+        "text": "О проекте",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/parthers/",
+        "text": "Партнеры",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/reklamodatelyam/",
+        "text": "Рекламодателям",
+        "rel": ""
+      },
+      {
+        "href": "#main",
+        "text": "наверх",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://dzen.ru/pitomcy_vetandlife?favid=254162793",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "tel:79250634",
+        "text": "+7 (495) 925 06 34",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@vetandlife.ru",
+        "text": "info@vetandlife.ru",
+        "rel": ""
+      },
+      {
+        "href": "https://rutube.ru/u/pitomcy/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://t.me/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/pitomcy_vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://ok.ru/pitomcy.vetandlife",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://dzen.ru/pitomcy_vetandlife?favid=254162793",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://max.ru/pitomcy",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/rss/news.xml",
+        "text": "RSS",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/wp-content/uploads/2021/11/vij-roskomnadzor.pdf",
+        "text": "Свидетельство о регистрации СМИ",
+        "rel": ""
+      },
+      {
+        "href": "https://vetandlife.ru/wp-content/uploads/2021/10/privacy.pdf",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://www.liveinternet.ru/click",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://metrika.yandex.ru/stat/?id=56480275&from=informer",
+        "text": "",
+        "rel": "nofollow"
+      },
+      {
+        "href": "https://agroserver.ru/",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Найти",
+      "27",
+      "92",
+      "На главную",
+      "23",
+      "22",
+      "7",
+      "20"
+    ],
+    "h1_texts": [
+      "Как выбрать ветеринарную клинику и не ошибиться с врачом"
+    ],
+    "h2_texts": [],
+    "h3_texts": [
+      "Дмитрий Куклачев передал гуманитарную помощь донецкому приюту кошек — фоторепортаж",
+      "Самое читаемое",
+      "Самое читаемое"
+    ],
+    "counts": {
+      "paragraph": 22,
+      "h1": 1,
+      "h2": 0,
+      "h3": 3,
+      "link": 141,
+      "image": 28,
+      "list_item": 71,
+      "strong": 10,
+      "form": 5,
+      "input": 17
+    }
+  }
+}

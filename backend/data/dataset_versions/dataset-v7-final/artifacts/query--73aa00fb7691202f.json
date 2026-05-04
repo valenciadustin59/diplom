@@ -1,0 +1,1819 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://vseotzyvy.ru/category/228/veterinarnyie-kliniki",
+  "final_url": "https://vseotzyvy.ru/category/228/veterinarnyie-kliniki",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "9f6760f5c8552d7d-ARN",
+    "content-encoding": "zstd",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 04 May 2026 12:06:19 GMT",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tvDVI46oSYCX%2Fk76fd8Mc8pxYgCYCEX1WtfdA2CG2gFmD9%2F0juLhZwNCsz9U0Thh93iX23ZkeWw%2FgEhYfgTCNKWNCbYn%2B1w0YigaJ25OpBNTe%2B%2FJhiiKHtFQIHOkzqA%3D\"}]}",
+    "server": "cloudflare",
+    "server-timing": "cfCacheStatus;desc=\"DYNAMIC\", cfEdge;dur=6,cfOrigin;dur=135",
+    "vary": "Cookie, accept-encoding"
+  },
+  "response_time_ms": 5843.3242,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-04T12:06:24.221955+00:00",
+  "html": "<!DOCTYPE html><html class=\"no-js\" lang=\"ru\"><!--<![endif]--><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n    <meta charset=\"utf-8\">\n    <title>Отзывы на Ветеринарные клиники</title>\n    <meta name=\"description\" content=\"В разделе «Ветеринарные клиники» представлены отзывы реальных пользователей. Популярные, лучшие, новые отзывы на ветеринарные клиники, рейтинги. Читайте полезную информацию и делитесь собственным опытом.\">\n    <meta name=\"keywords\" content=\"\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"verify-admitad\" content=\"d40d29c57b\">\n\n    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/static/img/favicon/apple-touch-icon.png?v=8j82EPjd4B\">\n    <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/static/img/favicon/favicon-32x32.png?v=8j82EPjd4B\">\n    <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/static/img/favicon/favicon-16x16.png?v=8j82EPjd4B\">\n    <link rel=\"manifest\" href=\"/static/img/favicon/site.webmanifest?v=8j82EPjd4B\">\n    <link rel=\"mask-icon\" href=\"/static/img/favicon/safari-pinned-tab.svg?v=8j82EPjd4B\" color=\"#5bbad5\">\n    <link rel=\"shortcut icon\" href=\"/static/img/favicon/favicon.ico\">\n    <meta name=\"apple-mobile-web-app-title\" content=\"Все Отзывы\">\n    <meta name=\"application-name\" content=\"Все Отзывы\">\n    <meta name=\"msapplication-TileColor\" content=\"#2d89ef\">\n    <meta name=\"theme-color\" content=\"#ffffff\">\n    <meta property=\"og:type\" content=\"website\">\n    <meta property=\"og:image:width\" content=\"1200\">\n    <meta property=\"og:image:height\" content=\"628\">\n    <meta property=\"og:url\" content=\"https://vseotzyvy.ru\">\n    <meta property=\"og:image\" content=\"https://vseotzyvy.ru/static/img/favicon/og-image.jpg\">\n    <meta property=\"og:title\" content=\"Все Отзывы.ру\">\n    <meta property=\"og:description\" content=\"Отзывы реальных покупателей обо всем.\">\n\n    <!--<link rel=\"preconnect\" crossorigin href=\"//mc.yandex.ru\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//yastatic.net\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//www.googletagservices.com\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//ssl.google-analytics.com\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//pagead2.googlesyndication.com\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//www.google.com\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//ajax.googleapis.com\">-->\n    <!--<link rel=\"preconnect\" crossorigin href=\"//fonts.gstatic.com\">-->\n    <link rel=\"stylesheet\" href=\"/static/css/normalize.css\">\n    <link rel=\"stylesheet\" href=\"/static/css/skeleton.css\">\n    <link rel=\"stylesheet\" href=\"/static/css/grid.css\">\n    <link rel=\"stylesheet\" href=\"/static/css/forms.css\">\n    <link rel=\"stylesheet\" href=\"/static/css/icons.css\">\n    <link rel=\"stylesheet\" href=\"/static/css/main.css?v=2\">\n    <link rel=\"stylesheet\" href=\"/static/js/libs/fancybox-2.1.7/source/jquery.fancybox.css\">\n\n    \n\n\n\n\n\n\n\n\n\n    <!-- Global site tag (gtag.js) - Google Analytics -->\n    <!--<script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-31590231-1\"></script>-->\n    <!--<script>-->\n    <!--    window.dataLayer = window.dataLayer || [];-->\n    <!--    function gtag(){dataLayer.push(arguments);}-->\n    <!--    gtag('js', new Date());-->\n\n    <!--    gtag('config', 'UA-31590231-1');-->\n    <!--</script>-->\n\n    <!--<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>-->\n    <!--<script>-->\n    <!--    var googletag = googletag || {};-->\n    <!--    googletag.cmd = googletag.cmd || [];-->\n    <!--</script>-->\n\n    <!--<script>-->\n    <!--    googletag.cmd.push(function() {-->\n    <!--        googletag.defineSlot('/15044933/vseotzyvy_240_400', [240, 400], 'div-gpt-ad-1486430936484-0').addService(googletag.pubads());-->\n    <!--        googletag.pubads().enableSingleRequest();-->\n    <!--        googletag.enableServices();-->\n    <!--    });-->\n    <!--</script>-->\n\n    <!--<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>-->\n    <!--<script>-->\n    <!--    (adsbygoogle = window.adsbygoogle || []).push({-->\n    <!--        google_ad_client: \"ca-pub-8811463503267132\",-->\n    <!--        enable_page_level_ads: true-->\n    <!--    });-->\n    <!--</script>-->\n\n\n    <!-- Yandex.RTB -->\n    <script type=\"text/javascript\" async=\"\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script>window.yaContextCb=window.yaContextCb||[]</script>\n    <script src=\"https://yandex.ru/ads/system/context.js\" async=\"\"></script>\n\n<link rel=\"preconnect\" href=\"https://yastatic.net\"><link rel=\"preconnect\" href=\"https://avatars.mds.yandex.net\"><link rel=\"preconnect\" href=\"https://mc.yandex.ru\"><link rel=\"preconnect\" href=\"https://ads.adfox.ru\"><link rel=\"preload\" href=\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\" type=\"font/woff2\" as=\"font\" crossorigin=\"anonymous\"><style id=\"ysTextCssRule\">@font-face {\n        font-family: \"YS Text Variable\";\n        src: url(\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\") format(\"woff2\");\n        font-weight: 400 700;\n        font-display: optional;\n    }</style><script async=\"\" crossorigin=\"anonymous\" src=\"https://yastatic.net/safeframe-bundles/0.83/host.js\"></script><style type=\"text/css\">.fancybox-margin{margin-right:0px;}</style><style type=\"text/css\">.UZznxc{height:inherit;max-height:inherit;min-height:inherit;width:100%}</style><script async=\"\" crossorigin=\"anonymous\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://yastatic.net/partner-code-bundles/1304881/vas-bundles/bundles-es2017/loader.bundle.js\" charset=\"utf-8\" crossorigin=\"anonymous\"></script><style type=\"text/css\">\n                        #::-webkit-media-controls{\n                            display: none !important;\n                        }\n                    </style><style nonce=\"\">#65a5a55c24{width:1px;height:1px;position:relative;}</style><style nonce=\"\">#id6925{width:1px;height:1px;top:0px;left:0px;position:absolute;}</style></head>\n<body>\n<!--[if lt IE 7]><p class=\"notice center\">Ваш браузер <em>устарел!</em> <a href=\"http://browsehappy.com/\" target=\"_blank\">Обновите браузер</a>.</p><![endif]-->\n<header>\n    <div class=\"container\">\n\n        <div class=\"header_box_desktop_container row\">\n            <div class=\"header_box__logo_box\">\n                <a href=\"/\"><img src=\"/static/img/logo.svg\" width=\"200\" height=\"63\" title=\"Все отзывы\" alt=\"ВсеОтзывы.ру\"></a>\n            </div>\n            <div class=\"header_box__middle\">\n                <div class=\"top_menu_links\">\n                    <a href=\"/\">Главная</a> <a href=\"/users/\" rel=\"nofollow\">Пользователи</a> <a href=\"/rules/\">Правила</a> <a href=\"/about/\">О&nbsp;сайте</a>\n                    <!--<a href=\"/invite_friends/\" class=\"auth_check\">Пригласить&nbsp;друзей</a>-->\n                </div>\n\n                <div class=\"search_bar_box\">\n                    <form action=\"/search/\" method=\"get\">\n                        <div class=\"search_bar clearfix\">\n                            <img src=\"/static/img/icons/search_gr.svg\" alt=\"Поиск отзывов\" class=\"top_search_icon\" width=\"20\" height=\"20\">\n                            \n                            <input name=\"search\" maxlength=\"100\" placeholder=\"Найти отзывы на...\" type=\"search\" class=\"search_input\" id=\"id_top_search_input\"><button type=\"submit\" class=\"submit_button button_gray hidden_sm\">Найти</button>\n                        </div>\n                        <div class=\"search_checkbox_box plain_label_box\">\n                            \n                                <label for=\"id_top_search_current_cat\" class=\"plain\">\n                                    <input type=\"hidden\" name=\"search_cat\" value=\"228\">\n                                    <input type=\"checkbox\" name=\"this_cat_only\" value=\"yes\" id=\"id_top_search_current_cat\"> только в&nbsp;категории «Ветеринарные клиники»\n                                </label>\n                            \n                        </div>\n                        \n                    </form>\n                    <div class=\"clear\"></div>\n                </div>\n\n            </div>\n            <div class=\"header_box__user\">\n                \n                \n                    <div class=\"top_menu_links center\">\n                        <!--<a href=\"/my/profile/\" class=\"auth_check\">Регистрация / Вход</a>-->\n                        <a href=\"/registration/\">Регистрация</a>\n                        <a href=\"/login/\">Вход</a>\n                    </div>\n                    <div class=\"add_button_box center\">\n                        \n                            <a href=\"/add-review/search/?cat=228\" class=\"button add_button auth_check\">Написать&nbsp;отзыв</a>\n                        \n                    </div>\n                \n                \n            </div>\n        </div>\n\n        <div class=\"header_box_mobile_container\">\n            <div class=\"user_box_mobile_bar\">\n                <div class=\"user_box_mobile_logo\"><a href=\"/\"><img src=\"/static/img/logo.svg\" height=\"40\" title=\"Все отзывы\" alt=\"ВсеОтзывы.ру\"></a></div>\n                <a href=\"javascript:void(0)\" class=\"user_box_mob_btn-search\"><img src=\"/static/img/icons/search.svg\" width=\"20\" title=\"Поиск\" alt=\"Поиск\"></a>\n                <a href=\"javascript:void(0)\" class=\"user_box_mob_btn\"><img src=\"/static/img/icons/menu.svg\" width=\"20\" title=\"Меню\" alt=\"Меню\"></a>\n            </div>\n            <div class=\"user_box_mobile_search\">\n                <form action=\"/search/\" method=\"get\">\n                    <input name=\"search\" maxlength=\"100\" placeholder=\"Найти отзывы на...\" type=\"search\" autofocus=\"\">\n                </form>\n            </div>\n            <div class=\"user_box_mobile_menu\">\n\n                \n\n                    <div class=\"\">\n                        \n                            <a href=\"/add-review/search/?cat=228\" class=\"button large add_button auth_check\">Написать&nbsp;отзыв</a>\n                        \n\n                        <div class=\"top_menu_links_reg\">\n                            <a href=\"/my/profile/\">Регистрация</a> <a href=\"/my/profile/\">Вход</a>\n                        </div>\n\n                        <hr>\n                        <div class=\"top_menu_links top_menu_links--mobile\">\n                            <a href=\"/about/\">О сайте</a> <a href=\"/rules/\">Правила&nbsp;сайта</a> <a href=\"/users/\" rel=\"nofollow\">Пользователи</a> <a href=\"/invite_friends/\" class=\"auth_check\">Пригласить&nbsp;друзей</a> <a href=\"/ad/\">Реклама</a> <a href=\"/contacts/\">Контакты</a>\n                        </div>\n\n                    </div>\n\n                \n\n\n            </div>\n        </div>\n\n\n    </div>\n\n    <div class=\"top_cat_bar_bg\">\n        <div class=\"container\">\n            <div class=\"top_cat_bar_block clearfix\">\n                <ul class=\"dropdown cat_dropdown hidden_sm\">\n                    <li>\n                        <div class=\"category_select_box\">\n                            <div class=\"cat_select_title\">\n                                <a href=\"javascript:void(0)\">Категории</a> <div class=\"cat_select_down_ico icon ico_down_small_gray\"></div>\n                            </div>\n                        </div>\n                        <div id=\"cat_dropdown_placeholder\"><ul class=\"root_cat\"><li><a href=\"/category/1/byitovaya-tehnika\">Бытовая техника</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/1/\">Бытовая техника</a></strong></li><li><a href=\"/category/23/holodilniki\">Холодильники</a></li><li><a href=\"/category/24/stiralnyie-mashinyi\">Стиральные машины</a></li><li><a href=\"/category/25/pyilesosyi\">Пылесосы</a></li><li><a href=\"/category/26/utyugi-otparivateli\">Утюги, Отпариватели</a></li><li><a href=\"/category/27/mikrovolnovyie-pechi-aerogrili\">Микроволновые печи, Аэрогрили</a></li><li><a href=\"/category/28/plityi-duhovki-poverhnosti\">Плиты, Духовки, Поверхности</a></li><li><a href=\"/category/29/vyityazhki\">Вытяжки</a></li><li><a href=\"/category/30/posudomoechnyie-mashinyi\">Посудомоечные машины</a></li><li><a href=\"/category/31/elektrochajniki-i-termopotyi\">Электрочайники и Термопоты</a></li><li><a href=\"/category/32/kofevarki-kofemolki\">Кофеварки, Кофемолки</a></li><li><a href=\"/category/33/sokovyizhimalki\">Соковыжималки</a></li><li><a href=\"/category/34/kombajnyi-mikseryi-blenderyi\">Комбайны, Миксеры, Блендеры</a></li><li><a href=\"/category/35/myasorubki\">Мясорубки</a></li><li><a href=\"/category/36/tosteryi-mini-pechi\">Тостеры, Мини-печи</a></li><li><a href=\"/category/37/parovarki\">Пароварки</a></li><li><a href=\"/category/38/multivarki\">Мультиварки</a></li><li><a href=\"/category/39/hlebopechki\">Хлебопечки</a></li><li><a href=\"/category/40/filtryi-dlya-vodyi\">Фильтры для воды</a></li><li><a href=\"/category/41/konditsioneryi\">Кондиционеры</a></li><li><a href=\"/category/42/ventilyatoryi\">Вентиляторы</a></li><li><a href=\"/category/43/obogrevateli\">Обогреватели</a></li><li><a href=\"/category/44/vodonagrevateli\">Водонагреватели</a></li><li><a href=\"/category/45/uvlazhniteli-i-ochistiteli-vozduha\">Увлажнители и очистители воздуха</a></li><li><a href=\"/category/46/fenyi-i-priboryi-dlya-ukladki\">Фены и приборы для укладки</a></li><li><a href=\"/category/47/elektrobritvyi-epilyatoryi\">Электробритвы, Эпиляторы</a></li><li><a href=\"/category/48/shvejnyie-mashinyi\">Швейные машины</a></li><li><a href=\"/category/49/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/2/elektronika\">Электроника</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/2/\">Электроника</a></strong></li><li><a href=\"/category/50/kompyuteryi\">Компьютеры</a></li><li><a href=\"/category/51/noutbuki\">Ноутбуки</a></li><li><a href=\"/category/52/planshetyi\">Планшеты</a></li><li><a href=\"/category/53/kompyuternyie-komplektuyuschie\">Компьютерные комплектующие</a></li><li><a href=\"/category/54/kompyuternaya-periferiya-i-aksessuaryi\">Компьютерная периферия и аксессуары</a></li><li><a href=\"/category/55/kompyuternyie-programmyi\">Компьютерные программы</a></li><li><a href=\"/category/56/igryi-dlya-kompyutera-pristavok-telefonov\">Игры для компьютера, приставок, телефонов</a></li><li><a href=\"/category/57/igrovyie-pristavki\">Игровые приставки</a></li><li><a href=\"/category/58/mobilnyie-telefonyi\">Мобильные телефоны</a></li><li><a href=\"/category/59/fotoapparatyi\">Фотоаппараты</a></li><li><a href=\"/category/60/elektronnyie-chitalki\">Электронные читалки</a></li><li><a href=\"/category/61/televizoryi\">Телевизоры</a></li><li><a href=\"/category/62/proektoryi\">Проекторы</a></li><li><a href=\"/category/63/videokameryi\">Видеокамеры</a></li><li><a href=\"/category/64/dvd-blu-ray-pleeryi\">DVD, Blu-Ray плееры</a></li><li><a href=\"/category/66/pleeryi-diktofonyi-radio\">Плееры, Диктофоны, Радио</a></li><li><a href=\"/category/67/muzyikalnyie-tsentryi\">Музыкальные центры</a></li><li><a href=\"/category/68/avtomagnitolyi\">Автомагнитолы</a></li><li><a href=\"/category/69/kolonki-naushniki-mikrofonyi\">Колонки, Наушники, Микрофоны</a></li><li><a href=\"/category/70/domashnie-telefonyi-ratsii\">Домашние телефоны, Рации</a></li><li><a href=\"/category/71/gps-navigatoryi\">GPS-навигаторы</a></li><li><a href=\"/category/72/aksessuaryi-dlya-elektroniki\">Аксессуары для электроники</a></li><li><a href=\"/category/73/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/3/razvlecheniya\">Развлечения</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/3/\">Развлечения</a></strong></li><li><a href=\"/category/74/nochnyie-klubyi\">Ночные клубы</a></li><li><a href=\"/category/75/kinoteatryi\">Кинотеатры</a></li><li><a href=\"/category/76/teatryi-opera-balet\">Театры, Опера, Балет</a></li><li><a href=\"/category/77/muzei-galerei-vyistavki\">Музеи, Галереи, Выставки</a></li><li><a href=\"/category/78/tsirki-zooparki-akvariumyi\">Цирки, Зоопарки, Аквариумы</a></li><li><a href=\"/category/79/razvlekatelnyie-tsentryi\">Развлекательные центры</a></li><li><a href=\"/category/80/sportivnyie-zavedeniya\">Спортивные заведения</a></li><li><a href=\"/category/82/karaoke-klubyi\">Караоке клубы</a></li><li><a href=\"/category/84/attraktsionyi-i-parki-otdyiha\">Аттракционы и Парки отдыха</a></li><li><a href=\"/category/85/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/17/pitanie\">Питание</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/17/\">Питание</a></strong></li><li><a href=\"/category/86/restoranyi-kafe-baryi\">Рестораны, Кафе, Бары</a></li><li><a href=\"/category/87/blyuda\">Блюда</a></li><li><a href=\"/category/88/produktyi-pitaniya\">Продукты питания</a></li><li><a href=\"/category/89/detskoe-pitanie\">Детское питание</a></li><li><a href=\"/category/90/sportivnoe-pitanie\">Спортивное питание</a></li><li><a href=\"/category/91/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/4/turizm\">Туризм</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/4/\">Туризм</a></strong></li><li><a href=\"/category/92/oteli-i-hostelyi\">Отели и Хостелы</a></li><li><a href=\"/category/93/stranyi\">Страны</a></li><li><a href=\"/category/94/goroda\">Города</a></li><li><a href=\"/category/95/ostrova-i-poluostrova\">Острова и Полуострова</a></li><li><a href=\"/category/96/kurortyi-i-plyazhi\">Курорты и Пляжи</a></li><li><a href=\"/category/97/ekskursii\">Экскурсии</a></li><li><a href=\"/category/98/dostoprimechatelnosti\">Достопримечательности</a></li><li><a href=\"/category/99/kruizyi\">Круизы</a></li><li><a href=\"/category/100/pansionatyi-sanatorii-turbazyi\">Пансионаты, Санатории, Турбазы</a></li><li><a href=\"/category/101/turoperatoryi-i-turagentstva\">Туроператоры и Турагентства</a></li><li><a href=\"/category/102/aviakompanii\">Авиакомпании</a></li><li><a href=\"/category/103/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/5/odezhda-obuv-aksessuaryi\">Одежда, Обувь, Аксессуары</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/5/\">Одежда, Обувь, Аксессуары</a></strong></li><li><a href=\"/category/104/zhenskaya-odezhda\">Женская одежда</a></li><li><a href=\"/category/105/zhenskaya-obuv\">Женская обувь</a></li><li><a href=\"/category/106/muzhskaya-odezhda\">Мужская одежда</a></li><li><a href=\"/category/107/muzhskaya-obuv\">Мужская обувь</a></li><li><a href=\"/category/108/detskaya-odezhda-i-obuv\">Детская одежда и обувь</a></li><li><a href=\"/category/109/chasyi\">Часы</a></li><li><a href=\"/category/110/sumki-portfeli-chemodanyi\">Сумки, Портфели, Чемоданы</a></li><li><a href=\"/category/111/aksessuaryi\">Аксессуары</a></li><li><a href=\"/category/113/prochee\">Прочее</a></li><li><a href=\"/category/139/brendyi\">Бренды</a></li></ul></li><li><a href=\"/category/6/krasota-i-zdorove\">Красота и Здоровье</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/6/\">Красота и Здоровье</a></strong></li><li><a href=\"/category/114/kosmetika-i-parfyumeriya\">Косметика и Парфюмерия</a></li><li><a href=\"/category/115/kosmeticheskie-protseduryi\">Косметические процедуры</a></li><li><a href=\"/category/123/sportivnyie-zavedeniya\">Спортивные заведения</a></li><li><a href=\"/category/259/meditsinskie-priboryi\">Медицинские приборы</a></li><li><a href=\"/category/124/lekarstva\">Лекарства</a></li><li><a href=\"/category/126/meditsinskie-uchrezhdeniya\">Медицинские учреждения</a></li><li><a href=\"/category/127/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/14/detskoe\">Детское</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/14/\">Детское</a></strong></li><li><a href=\"/category/188/igrushki\">Игрушки</a></li><li><a href=\"/category/189/kolyaski\">Коляски</a></li><li><a href=\"/category/190/detskaya-mebel\">Детская мебель</a></li><li><a href=\"/category/191/detskoe-pitanie\">Детское питание</a></li><li><a href=\"/category/192/uhod-za-rebenkom\">Уход за ребенком</a></li><li><a href=\"/category/193/detskaya-odezhda-i-obuv\">Детская одежда и обувь</a></li><li><a href=\"/category/194/tovaryi-dlya-shkolyi\">Товары для школы</a></li><li><a href=\"/category/195/detskie-sadyi-yasli\">Детские сады, Ясли</a></li><li><a href=\"/category/196/detskie-lagerya\">Детские лагеря</a></li><li><a href=\"/category/197/shkolyi-litsei\">Школы, Лицеи</a></li><li><a href=\"/category/199/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/9/avto-moto\">Авто, Мото</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/9/\">Авто, Мото</a></strong></li><li><a href=\"/category/141/avtomobili\">Автомобили</a></li><li><a href=\"/category/142/moto-tehnika\">Мото-техника</a></li><li><a href=\"/category/143/katera-i-yahtyi\">Катера и Яхты</a></li><li><a href=\"/category/144/spetstehnika\">Спецтехника</a></li><li><a href=\"/category/145/shinyi-diski\">Шины, Диски</a></li><li><a href=\"/category/146/zapchasti\">Запчасти</a></li><li><a href=\"/category/147/aksessuaryi\">Аксессуары</a></li><li><a href=\"/category/148/avtohimiya-masla\">Автохимия, Масла</a></li><li><a href=\"/category/149/avtomagnitolyi\">Автомагнитолы</a></li><li><a href=\"/category/150/gps-navigatoryi\">GPS-навигаторы</a></li><li><a href=\"/category/151/protivougonnyie-sistemyi\">Противоугонные системы</a></li><li><a href=\"/category/157/azs\">АЗС</a></li><li><a href=\"/category/159/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/10/filmyi-kino-tv\">Фильмы, Кино, ТВ</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/10/\">Фильмы, Кино, ТВ</a></strong></li><li><a href=\"/category/160/filmyi-serialyi-multfilmyi\">Фильмы, Сериалы, Мультфильмы</a></li><li><a href=\"/category/161/teleperedachi\">Телепередачи</a></li><li><a href=\"/category/162/telekanalyi\">Телеканалы</a></li><li><a href=\"/category/163/zvezdyi-kino-i-tv\">Звезды кино и ТВ</a></li><li><a href=\"/category/164/kinoteatryi\">Кинотеатры</a></li><li><a href=\"/category/165/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/11/knigi-i-pressa\">Книги и Пресса</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/11/\">Книги и Пресса</a></strong></li><li><a href=\"/category/166/knigi\">Книги</a></li><li><a href=\"/category/167/gazetyi-zhurnalyi\">Газеты, Журналы</a></li><li><a href=\"/category/168/pisateli\">Писатели</a></li><li><a href=\"/category/169/izdatelstva\">Издательства</a></li><li><a href=\"/category/170/biblioteki\">Библиотеки</a></li><li><a href=\"/category/171/elektronnyie-chitalki\">Электронные читалки</a></li><li><a href=\"/category/172/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/12/muzyika\">Музыка</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/12/\">Музыка</a></strong></li><li><a href=\"/category/173/pesni\">Песни</a></li><li><a href=\"/category/174/albomyi\">Альбомы</a></li><li><a href=\"/category/175/ispolniteli\">Исполнители</a></li><li><a href=\"/category/176/radiostantsii\">Радиостанции</a></li><li><a href=\"/category/177/muzyikalnyie-instrumentyi\">Музыкальные инструменты</a></li><li><a href=\"/category/178/muzyikalnoe-oborudovanie\">Музыкальное оборудование</a></li><li><a href=\"/category/179/muzyikalnyie-shkolyi\">Музыкальные школы</a></li><li><a href=\"/category/181/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/15/dom-i-dacha\">Дом и Дача</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/15/\">Дом и Дача</a></strong></li><li><a href=\"/category/200/mebel\">Мебель</a></li><li><a href=\"/category/201/posuda\">Посуда</a></li><li><a href=\"/category/202/predmetyi-interera\">Предметы интерьера</a></li><li><a href=\"/category/203/tekstil-dlya-doma\">Текстиль для дома</a></li><li><a href=\"/category/204/tovaryi-dlya-sada-i-dachi\">Товары для сада и дачи</a></li><li><a href=\"/category/205/hoztovaryi\">Хозтовары</a></li><li><a href=\"/category/206/byitovaya-himiya\">Бытовая химия</a></li><li><a href=\"/category/207/santehnika-i-otoplenie\">Сантехника и Отопление</a></li><li><a href=\"/category/260/zhilischnyie-kompleksyi-zhk\">Жилищные комплексы (ЖК)</a></li><li><a href=\"/category/208/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/16/stroitelstvo-i-remont\">Строительство и Ремонт</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/16/\">Строительство и Ремонт</a></strong></li><li><a href=\"/category/209/instrumentyi\">Инструменты</a></li><li><a href=\"/category/210/sadovaya-tehnika\">Садовая техника</a></li><li><a href=\"/category/211/stroitelnaya-tehnika\">Строительная техника</a></li><li><a href=\"/category/212/santehnika-i-otoplenie\">Сантехника и Отопление</a></li><li><a href=\"/category/213/strojmaterialyi\">Стройматериалы</a></li><li><a href=\"/category/214/gotovyie-konstruktsii\">Готовые конструкции</a></li><li><a href=\"/category/216/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/7/sport\">Спорт</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/7/\">Спорт</a></strong></li><li><a href=\"/category/128/sportivnyie-zavedeniya\">Спортивные заведения</a></li><li><a href=\"/category/129/tovaryi-dlya-sporta-i-turizma\">Товары для спорта и туризма</a></li><li><a href=\"/category/131/sportivnyie-meropriyatiya\">Спортивные мероприятия</a></li><li><a href=\"/category/132/vidyi-sporta\">Виды спорта</a></li><li><a href=\"/category/133/sportivnoe-pitanie\">Спортивное питание</a></li><li><a href=\"/category/134/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/18/hobbi\">Хобби</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/18/\">Хобби</a></strong></li><li><a href=\"/category/217/ryibalka-i-ohota\">Рыбалка и Охота</a></li><li><a href=\"/category/218/tvorchestvo\">Творчество</a></li><li><a href=\"/category/219/rukodelie\">Рукоделие</a></li><li><a href=\"/category/221/remesla\">Ремесла</a></li><li><a href=\"/category/222/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/19/zhivotnyie-i-rasteniya\">Животные и Растения</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/19/\">Животные и Растения</a></strong></li><li><a href=\"/category/223/zhivotnyie\">Животные</a></li><li><a href=\"/category/224/rasteniya\">Растения</a></li><li><a href=\"/category/225/korm-dlya-zhivotnyih\">Корм для животных</a></li><li><a href=\"/category/226/tovaryi-dlya-zhivotnyih\">Товары для животных</a></li><li><a href=\"/category/227/lekarstva-dlya-zhivotnyih\">Лекарства для животных</a></li><li><a href=\"/category/228/veterinarnyie-kliniki\">Ветеринарные клиники</a></li><li><a href=\"/category/229/veterinarnyie-apteki\">Ветеринарные аптеки</a></li><li><a href=\"/category/230/pitomniki\">Питомники</a></li><li><a href=\"/category/231/gostinitsyi-dlya-zhivotnyih\">Гостиницы для животных</a></li><li><a href=\"/category/232/shkolyi-dressirovki\">Школы дрессировки</a></li><li><a href=\"/category/233/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/20/obrazovanie\">Образование</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/20/\">Образование</a></strong></li><li><a href=\"/category/234/shkolyi-litsei\">Школы, Лицеи</a></li><li><a href=\"/category/235/tehnikumyi-kolledzhi\">Техникумы, Колледжи</a></li><li><a href=\"/category/236/vuzyi\">ВУЗы</a></li><li><a href=\"/category/237/muzyikalnyie-shkolyi\">Музыкальные школы</a></li><li><a href=\"/category/238/treningi-kursyi-seminaryi\">Тренинги, Курсы, Семинары</a></li><li><a href=\"/category/241/distsiplinyi\">Дисциплины</a></li><li><a href=\"/category/242/prochee\">Прочее</a></li></ul></li><li><a href=\"/category/22/raznoe\">Разное</a><ul class=\"sub_menu\"><li><strong><a href=\"/category/22/\">Разное</a></strong></li><li><a href=\"/category/258/prochee\">Прочее</a></li></ul></li></ul></div>\n                    </li>\n                </ul>\n                <div class=\"category_links_box\">\n                    \n                        \n<a href=\"/category/225/korm-dlya-zhivotnyih\">Корм для животных</a> |\n\n<a href=\"/category/223/zhivotnyie\">Животные</a> |\n\n<a href=\"/category/226/tovaryi-dlya-zhivotnyih\">Товары для животных</a> |\n\n<a href=\"/category/224/rasteniya\">Растения</a> |\n\n<a href=\"/category/233/prochee\">Прочее</a> |\n\n<a href=\"/category/227/lekarstva-dlya-zhivotnyih\">Лекарства для животных</a> |\n\n<a href=\"/category/228/veterinarnyie-kliniki\">Ветеринарные клиники</a> |\n\n<a href=\"/category/230/pitomniki\">Питомники</a> |\n\n<a href=\"/category/231/gostinitsyi-dlya-zhivotnyih\">Гостиницы для животных</a> |\n\n<a href=\"/category/232/shkolyi-dressirovki\">Школы дрессировки</a> |\n\n<a href=\"/category/229/veterinarnyie-apteki\">Ветеринарные аптеки</a> |\n\n\n                    \n                </div>\n                <div class=\"category_links_shad\"></div>\n            </div>\n        </div>\n    </div>\n\n</header>\n\n<div class=\"container\">\n\n    \n\n<div class=\"col_cat_left\">\n    <a href=\"javascript:void(0)\" class=\"button button_gray\" id=\"show_options_button\">Параметры</a>\n\t<div class=\"lcat_box\">\n\t\t\n\n\t\t\t\n\n\t\t\t\t\n\n\t\t\t\t\t\n\t\t\t\t\t<strong>Город</strong>\n\t\t\t\t\t<ul class=\"lcat_param\">\n\t\t\t\t\t\t<li><a href=\"?prm1=Москва\" class=\"\">Москва</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Санкт-Петербург\" class=\"\">Санкт-Петербург</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Г. Москва\" class=\"\">Г. Москва</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Ростов-на-Дону\" class=\"\">Ростов-на-Дону</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Симферополь\" class=\"\">Симферополь</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Тверь\" class=\"\">Тверь</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Тольятти\" class=\"\">Тольятти</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Омск\" class=\"\">Омск</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Архангельск\" class=\"\">Архангельск</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li><a href=\"?prm1=Г  Москва\" class=\"\">Г  Москва</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li style=\"display: none;\"><a href=\"?prm1=Г. Санкт-Петербург\" class=\"\">Г. Санкт-Петербург</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li style=\"display: none;\"><a href=\"?prm1=Екатеринбург\" class=\"\">Екатеринбург</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<li style=\"display: none;\"><a href=\"?prm1=Г. Самара\" class=\"\">Г. Самара</a></li>\n\t\t\t\t\t\t\n\t\t\t\t\t</ul><p class=\"maxlist-more\"><a href=\"#\">Показать еще</a></p>\n\t\t\t\t\t\n\n\t\t\t\t\n\n\n\t\t\t\n\n\t\t\n\t</div>\n\n</div>\n<div class=\"col_cat_main\">\n\t<div class=\"breadcrumbs\">\n\t\t<ul>\n\t\t\t<li><a href=\"/\">Главная</a>&nbsp;› </li>\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n\t\t\t\t<li><a href=\"/category/19/zhivotnyie-i-rasteniya\">Животные и Растения</a>&nbsp;› </li><li>Ветеринарные клиники</li>\n\t\t\t\t\n\t\t</ul>\n\t</div>\n\n\t\n\t<h1>Отзывы на Ветеринарные клиники</h1>\n\t\n\n\t\n\t<div class=\"sort_block clearfix\">\n\t\t<div class=\"sort_add_buton\">\n\t\t\t<a href=\"/add-review/search/?cat=228\" class=\"button auth_check\">Написать отзыв</a>\n\t\t</div>\n\t\t<div class=\"sort_link_block\">\n\t\t\t\n            <strong>Популярные</strong>\n\t\t\t<a href=\"?&amp;sort=best\">Лучшие</a>\n\t\t\t<a href=\"?&amp;sort=new\">Новые</a>\n\n\t\t</div>\n\t</div>\n\t\n\n\t\n\n\t\n\t\n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/43932/reviews-veterinarnaya-klinika-vet-duh-moskva/\">\n            \n            <img src=\"/static/img/svg/picture.svg\" width=\"100\" height=\"100\" alt=\"\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/43932/reviews-veterinarnaya-klinika-vet-duh-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Вет-Дух&quot;, Москва\">Ветеринарная клиника \"Вет-Дух\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">24 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Спасибо за лечение</em><br>\n            Обращались в клинику с опухолью под кожей. Была назначена операция. очень переживали, так как собака... <span class=\"gray\">(Анна)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/43932/reviews-veterinarnaya-klinika-vet-duh-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Вет-Дух&quot;, Москва\">Отзывы (24)</a>\n\t\t\t<a href=\"/add-review/item/43932/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/15373/reviews-veterinarnaya-klinika-zoovet-moskva/\">\n            \n            <img src=\"/media/cache/67/6e/676e7bb04700c68b228ff8f5fee6cccc.jpg\" width=\"100\" height=\"67\" alt=\"Ветеринарная клиника &quot;Зоовет&quot;, Москва\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/15373/reviews-veterinarnaya-klinika-zoovet-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Зоовет&quot;, Москва\">Ветеринарная клиника \"Зоовет\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">17 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Отличные врачи</em><br>\n            Отличная ветеринарная клиника, хорошие грамотные специалисты, отзывчивые. Расположение достаточно уд... <span class=\"gray\">(Горова Э.Э.)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/15373/reviews-veterinarnaya-klinika-zoovet-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Зоовет&quot;, Москва\">Отзывы (17)</a>\n\t\t\t<a href=\"/add-review/item/15373/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/21357/reviews-veterinarnaya-klinika-vetuslugi-moskva/\">\n            \n            <img src=\"/static/img/svg/picture.svg\" width=\"100\" height=\"100\" alt=\"\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/21357/reviews-veterinarnaya-klinika-vetuslugi-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Ветуслуги&quot;, Москва\">Ветеринарная клиника \"Ветуслуги\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 46%\"></div></div>\n <b>2,3</b>&nbsp;&nbsp;<span class=\"gray small\">12 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Лапороскопия - в итоге сделали полосную операцию!</em><br>\n            20.03.15 назначено проведение стерилизации кошки методом лапароскопия специалистами ветеринарной слу... <span class=\"gray\">(Maryana1210)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/21357/reviews-veterinarnaya-klinika-vetuslugi-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Ветуслуги&quot;, Москва\">Отзывы (12)</a>\n\t\t\t<a href=\"/add-review/item/21357/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/91342/reviews-veterinarnaya-klinika-vet-union-moskva/\">\n            \n            <img src=\"/media/cache/79/d7/79d7ff1fe17212c6f3c3a8b38644610f.jpg\" width=\"100\" height=\"16\" alt=\"Ветеринарная клиника &quot;Vet Union&quot;, Москва\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/91342/reviews-veterinarnaya-klinika-vet-union-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Vet Union&quot;, Москва\">Ветеринарная клиника \"Vet Union\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">7 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Всё по делу</em><br>\n            Сдавали анализы кошки дома. На сайте нажала на кнопку обратный звонок, позвонили минут через 20. Сра... <span class=\"gray\">(Julia M)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/91342/reviews-veterinarnaya-klinika-vet-union-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Vet Union&quot;, Москва\">Отзывы (7)</a>\n\t\t\t<a href=\"/add-review/item/91342/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/39564/reviews-veterinarnaya-klinika-zoovet-ural-ekaterinbur/\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/39564/reviews-veterinarnaya-klinika-zoovet-ural-ekaterinbur/\" title=\"Отзывы на Ветеринарная клиника &quot;Зоовет-Урал&quot;, Екатеринбург\">Ветеринарная клиника \"Зоовет-Урал\", Екатеринбург</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 97%\"></div></div>\n <b>4,9</b>&nbsp;&nbsp;<span class=\"gray small\">8 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Операция прошла успешно</em><br>\n            Возила в Зоовет-Урал своего йорка на кастрацию. Как только щенок подрос, сразу же приняла решение ег... <span class=\"gray\">(Светлана Железнова)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/39564/reviews-veterinarnaya-klinika-zoovet-ural-ekaterinbur/\" title=\"Отзывы на Ветеринарная клиника &quot;Зоовет-Урал&quot;, Екатеринбург\">Отзывы (7)</a>\n\t\t\t<a href=\"/add-review/item/39564/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/104303/reviews-veterinarnaya-klinika-vetglobal-moskva/\">\n            \n            <img src=\"/media/cache/c1/41/c141979af57ae8441495f42826789f71.jpg\" width=\"100\" height=\"32\" alt=\"Ветеринарная клиника &quot;VetGlobal&quot;, Москва\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/104303/reviews-veterinarnaya-klinika-vetglobal-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;VetGlobal&quot;, Москва\">Ветеринарная клиника \"VetGlobal\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 20%\"></div></div>\n <b>1,0</b>&nbsp;&nbsp;<span class=\"gray small\">6 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Грязно и непрофессионально</em><br>\n            Первое впечатление о клинике - грязно в приемной, такое чувство, что там не убирались месяц, второе ... <span class=\"gray\">(Kirillpatrubov)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/104303/reviews-veterinarnaya-klinika-vetglobal-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;VetGlobal&quot;, Москва\">Отзывы (6)</a>\n\t\t\t<a href=\"/add-review/item/104303/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/42432/reviews-veterinarnaya-klinika-tsentralnaya-veterinarn/\">\n            \n            <img src=\"/static/img/svg/picture.svg\" width=\"100\" height=\"100\" alt=\"\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/42432/reviews-veterinarnaya-klinika-tsentralnaya-veterinarn/\" title=\"Отзывы на Ветеринарная клиника &quot;Центральная Ветеринарная Клиника&quot;, Архангельск\">Ветеринарная клиника \"Центральная Ветеринарная Клиника\", Архангельск</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">5 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Рекомендую</em><br>\n            Нашел сайт клиники https://www. cvc29.ru/\nРешил обратиться к ним по поводу своего кота, который заб... <span class=\"gray\">(Kollin)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/42432/reviews-veterinarnaya-klinika-tsentralnaya-veterinarn/\" title=\"Отзывы на Ветеринарная клиника &quot;Центральная Ветеринарная Клиника&quot;, Архангельск\">Отзывы (5)</a>\n\t\t\t<a href=\"/add-review/item/42432/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/39983/reviews-veterinarnaya-klinika-avva-simferopol/\">\n            \n            <img src=\"/media/cache/75/c7/75c725c7dda8e5b0f5b893e83a9f331f.jpg\" width=\"100\" height=\"38\" alt=\"Ветеринарная клиника &quot;AVVA&quot;, Симферополь\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/39983/reviews-veterinarnaya-klinika-avva-simferopol/\" title=\"Отзывы на Ветеринарная клиника &quot;AVVA&quot;, Симферополь\">Ветеринарная клиника \"AVVA\", Симферополь</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 68%\"></div></div>\n <b>3,4</b>&nbsp;&nbsp;<span class=\"gray small\">5 отзывов</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Выражаю глубокую благодарность коллективу ветклиники АВВА.</em><br>\n            Пришлось обратиться в выходной день, заболела моя кошка Ника, температура, красные уши с гнойными на... <span class=\"gray\">(Ирина)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/39983/reviews-veterinarnaya-klinika-avva-simferopol/\" title=\"Отзывы на Ветеринарная клиника &quot;AVVA&quot;, Симферополь\">Отзывы (5)</a>\n\t\t\t<a href=\"/add-review/item/39983/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/46848/reviews-veterinarnaya-klinika-epiona-moskva/\">\n            \n            <img src=\"/static/img/svg/picture.svg\" width=\"100\" height=\"100\" alt=\"\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/46848/reviews-veterinarnaya-klinika-epiona-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Эпиона&quot;, Москва\">Ветеринарная клиника \"Эпиона\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 80%\"></div></div>\n <b>4,0</b>&nbsp;&nbsp;<span class=\"gray small\">4 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Хорошая клиника!</em><br>\n            Спасли нашу собаку, о клинике узнали совершенно случайно, но попав остались благодарны. Провели опер... <span class=\"gray\">(Вера)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/46848/reviews-veterinarnaya-klinika-epiona-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Эпиона&quot;, Москва\">Отзывы (4)</a>\n\t\t\t<a href=\"/add-review/item/46848/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/43546/reviews-veterinarnaya-klinika-mos-veterinar-moskva/\">\n            \n            <img src=\"/media/cache/c3/8d/c38df05bfe05ba582c792bf3f798b4a5.jpg\" width=\"100\" height=\"50\" alt=\"Ветеринарная клиника &quot;Мос-Ветеринар&quot;, Москва\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/43546/reviews-veterinarnaya-klinika-mos-veterinar-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Мос-Ветеринар&quot;, Москва\">Ветеринарная клиника \"Мос-Ветеринар\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 80%\"></div></div>\n <b>4,0</b>&nbsp;&nbsp;<span class=\"gray small\">4 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Мошенники</em><br>\n            На дом был вызван вет. врач из клиники Мос Ветеринар (www. мос-ветеринар. рф) для забора крови у соб... <span class=\"gray\">(IrinaLev)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/43546/reviews-veterinarnaya-klinika-mos-veterinar-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Мос-Ветеринар&quot;, Москва\">Отзывы (4)</a>\n\t\t\t<a href=\"/add-review/item/43546/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n        <!-- Yandex.RTB R-A-185802-2 -->\n<!--<div id=\"yandex_rtb_R-A-185802-2\"></div>-->\n<!--<script>window.yaContextCb.push(()=>{-->\n<!--    Ya.Context.AdvManager.render({-->\n<!--        renderTo: 'yandex_rtb_R-A-185802-2',-->\n<!--        blockId: 'R-A-185802-2'-->\n<!--    })-->\n<!--})</script>-->\n\n\n<!-- HGV -->\n<!-- Yandex.RTB R-A-3337211-3 -->\n<div id=\"yandex_rtb_R-A-3337211-3\" data-dd2fd02ad5=\"\"></div>\n<script>\n    window.yaContextCb.push(()=>{\n        Ya.Context.AdvManager.render({\n            \"blockId\": \"R-A-3337211-3\",\n            \"renderTo\": \"yandex_rtb_R-A-3337211-3\"\n        })\n    })\n</script>\n\n\n\n<hr>\n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/2863/reviews-veterinarnaya-klinika-vetmir-k6417108-moskva/\">\n            \n            <img src=\"/static/img/svg/picture.svg\" width=\"100\" height=\"100\" alt=\"\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/2863/reviews-veterinarnaya-klinika-vetmir-k6417108-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Ветмир - К*6417108&quot;, Москва\">Ветеринарная клиника \"Ветмир - К*6417108\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 46%\"></div></div>\n <b>2,3</b>&nbsp;&nbsp;<span class=\"gray small\">3 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Равнодушие врачей</em><br>\n            У моего котика началась отдышка (шотландский вислоухий, 11 лет) и отнялась правая лапка. Прибежала в... <span class=\"gray\">(Irina)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/2863/reviews-veterinarnaya-klinika-vetmir-k6417108-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Ветмир - К*6417108&quot;, Москва\">Отзывы (4)</a>\n\t\t\t<a href=\"/add-review/item/2863/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/5556/reviews-veterinarnaya-klinika-le-murr-krasnoyarsk/\">\n            \n            <img src=\"/media/cache/61/49/61497a4b5306e529c826cf9eb1d8f140.jpg\" width=\"89\" height=\"100\" alt=\"Ветеринарная клиника &quot;Ле-Мурр&quot;, Красноярск\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/5556/reviews-veterinarnaya-klinika-le-murr-krasnoyarsk/\" title=\"Отзывы на Ветеринарная клиника &quot;Ле-Мурр&quot;, Красноярск\">Ветеринарная клиника \"Ле-Мурр\", Красноярск</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">3 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Класс</em><br>\n            В данную клинику приносила на осмотр маленького котенка. Помещение не боьшое, уютное. Девушка - ветв... <span class=\"gray\">(Leks)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/5556/reviews-veterinarnaya-klinika-le-murr-krasnoyarsk/\" title=\"Отзывы на Ветеринарная клиника &quot;Ле-Мурр&quot;, Красноярск\">Отзывы (3)</a>\n\t\t\t<a href=\"/add-review/item/5556/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/10299/reviews-veterinarnaya-klinika-tsentr-moskva/\">\n            \n            <img src=\"/media/cache/6c/ea/6ceab77138a02846dd03c05fdbb7a113.jpg\" width=\"100\" height=\"45\" alt=\"Ветеринарная клиника &quot;Центр&quot;, Москва\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/10299/reviews-veterinarnaya-klinika-tsentr-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Центр&quot;, Москва\">Ветеринарная клиника \"Центр\", Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">3 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Большой спектр предоставляемых услуг</em><br>\n            В ветеринарной клинике \"Центр\" мы бываем регулярно, так как дома у нас живет три собаки и две кошки ... <span class=\"gray\">(Алла Р.)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/10299/reviews-veterinarnaya-klinika-tsentr-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Центр&quot;, Москва\">Отзывы (3)</a>\n\t\t\t<a href=\"/add-review/item/10299/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/49099/reviews-veterinarnaya-klinika-gosudarstvennaya-gorods/\">\n            \n            <img src=\"/static/img/svg/picture.svg\" width=\"100\" height=\"100\" alt=\"\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/49099/reviews-veterinarnaya-klinika-gosudarstvennaya-gorods/\" title=\"Отзывы на Ветеринарная клиника &quot;Государственная городская ветеринарная клиника&quot;, Г. Самара\">Ветеринарная клиника \"Государственная городская ветеринарная клиника\", Г. Самара</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">3 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Все врачи хорошие,</em><br>\n            На самом деле, специалисты все грамотные и отзывчивые. Мы попадали к разным и каждый раз уходили с о... <span class=\"gray\">(Тихомирова  Александра)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/49099/reviews-veterinarnaya-klinika-gosudarstvennaya-gorods/\" title=\"Отзывы на Ветеринарная клиника &quot;Государственная городская ветеринарная клиника&quot;, Г. Самара\">Отзывы (3)</a>\n\t\t\t<a href=\"/add-review/item/49099/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n\n    \n\n\n    \n\n    \n\n\n<div class=\"item_list_block clearfix\">\n\t\n\t<div class=\"item_image\">\n        <div class=\"img_box img_box__100\">\n            <a href=\"/item/20317/reviews-veterinarnaya-klinika-vetdent-g-moskva/\">\n            \n            <img src=\"/media/cache/57/7b/577bcf5bee4152f93acdac945d74dfbb.jpg\" width=\"100\" height=\"91\" alt=\"Ветеринарная клиника &quot;Ветдент&quot;, Г. Москва\" class=\"img_box__img\">\n            \n            </a>\n        </div>\n\t</div>\n\t<div class=\"item_content\">\n\t\t<h3><a href=\"/item/20317/reviews-veterinarnaya-klinika-vetdent-g-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Ветдент&quot;, Г. Москва\">Ветеринарная клиника \"Ветдент\", Г. Москва</a></h3>\n\t\t<div class=\"item_rate\"><div class=\"star_outer\"><div class=\"star_inner\" style=\"width: 100%\"></div></div>\n <b>5,0</b>&nbsp;&nbsp;<span class=\"gray small\">3 отзыва</span></div>\n\t\t\n\t\t\n\t\t<div class=\"item_phrase\">\n\n            <p class=\"small\"><em>Хорошая клиника</em><br>\n            Клиника хорошая. Во первых по отношению к животным, ответственные врачи и медсестры. Что касается ст... <span class=\"gray\">(Ульяна)</span></p>\n\t\t</div>\n\t\t\n\t\t\n\t\t<div class=\"item_links\">\n\t\t\t<a href=\"/item/20317/reviews-veterinarnaya-klinika-vetdent-g-moskva/\" title=\"Отзывы на Ветеринарная клиника &quot;Ветдент&quot;, Г. Москва\">Отзывы (3)</a>\n\t\t\t<a href=\"/add-review/item/20317/select/\" class=\"auth_check\">Написать отзыв</a>\n\t\t</div>\n\t</div>\n\t\n</div>\n\n\n    \n\n    \n        <!-- Yandex.RTB R-A-185802-2 -->\n<!--<div id=\"yandex_rtb_R-A-185802-2\"></div>-->\n<!--<script>window.yaContextCb.push(()=>{-->\n<!--    Ya.Context.AdvManager.render({-->\n<!--        renderTo: 'yandex_rtb_R-A-185802-2',-->\n<!--        blockId: 'R-A-185802-2'-->\n<!--    })-->\n<!--})</script>-->\n\n\n<!-- HGV -->\n<!-- Yandex.RTB R-A-3337211-3 -->\n<div id=\"yandex_rtb_R-A-3337211-3\"></div>\n<script>\n    window.yaContextCb.push(()=>{\n        Ya.Context.AdvManager.render({\n            \"blockId\": \"R-A-3337211-3\",\n            \"renderTo\": \"yandex_rtb_R-A-3337211-3\"\n        })\n    })\n</script>\n\n\n\n<hr>\n\n    \n\n    \n\n\t\n\n<div class=\"pagination\">\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t<span class=\"current page\">1</span>\n\t\n\t\n\t\n\t\n\t\n\t<a href=\"?page=2\" class=\"page\">2</a>\n\t\n\t\n\t\n\t\n\t\n\t<a href=\"?page=3\" class=\"page\">3</a>\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t&nbsp; <a href=\"?page=2\" class=\"button\">Далее&nbsp;›</a>\n\t\n\t\n</div>\n\n\n</div>\n<div class=\"col_right\">\n\t<div class=\"ad_col_box\">\n\n    <!--&lt;!&ndash; Adsense new acc &ndash;&gt;-->\n    <!--<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script>-->\n    <!--&lt;!&ndash; Vsetozyvy sidebar adaptive &ndash;&gt;-->\n    <!--<ins class=\"adsbygoogle\"-->\n    <!--     style=\"display:block\"-->\n    <!--     data-ad-client=\"ca-pub-8811463503267132\"-->\n    <!--     data-ad-slot=\"8158182194\"-->\n    <!--     data-ad-format=\"auto\"-->\n    <!--     data-full-width-responsive=\"true\"></ins>-->\n    <!--<script>-->\n    <!--    (adsbygoogle = window.adsbygoogle || []).push({});-->\n    <!--</script>-->\n    <!--<br/>-->\n\n    <!-- Yandex.RTB R-A-185802-1 -->\n    <!--<div id=\"yandex_rtb_R-A-185802-1\"></div>-->\n    <!--<script type=\"text/javascript\">-->\n    <!--    (function(w, d, n, s, t) {-->\n    <!--        w[n] = w[n] || [];-->\n    <!--        w[n].push(function() {-->\n    <!--            Ya.Context.AdvManager.render({-->\n    <!--                blockId: \"R-A-185802-1\",-->\n    <!--                renderTo: \"yandex_rtb_R-A-185802-1\",-->\n    <!--                async: true-->\n    <!--            });-->\n    <!--        });-->\n    <!--        t = d.getElementsByTagName(\"script\")[0];-->\n    <!--        s = d.createElement(\"script\");-->\n    <!--        s.type = \"text/javascript\";-->\n    <!--        s.src = \"//an.yandex.ru/system/context.js\";-->\n    <!--        s.async = true;-->\n    <!--        t.parentNode.insertBefore(s, t);-->\n    <!--    })(this, this.document, \"yandexContextAsyncCallbacks\");-->\n    <!--</script>-->\n\n\n    <!-- HGV -->\n    <!-- Yandex.RTB R-A-3337211-1 -->\n    <!--<div id=\"yandex_rtb_R-A-3337211-1\"></div>-->\n    <!--<script>-->\n    <!--    window.yaContextCb.push(()=>{-->\n    <!--        Ya.Context.AdvManager.render({-->\n    <!--            \"blockId\": \"R-A-3337211-1\",-->\n    <!--            \"renderTo\": \"yandex_rtb_R-A-3337211-1\"-->\n    <!--        })-->\n    <!--    })-->\n    <!--</script>-->\n\n    <!--AdFox START-->\n    <!--yandex_khaliapinagv-->\n    <!--Площадка: ВсеОтзывы / правая колонка / баннер1-->\n    <!--Категория: <не задана>-->\n    <!--Тип баннера: Баннер ВсеОтзывы-->\n    <div id=\"adfox_17024807876574839\"><div id=\"yandex_rtb_3920879104\" class=\"UZznxc yandex_rtb_R-A-3337211-4\"><div style=\"width: 100%;\"></div></div></div>\n    <script>\n        window.yaContextCb.push(()=>{\n            Ya.adfoxCode.create({\n                ownerId: 1508962,\n                containerId: 'adfox_17024807876574839',\n                params: {\n                    p1: 'danxi',\n                    p2: 'itea'\n                }\n            })\n        })\n    </script>\n\n\n</div>\n\n\n\n</div>\n\n\n    <div class=\"clearfix\"></div>\n    <footer>\n        <div class=\"footer_block small gray\">\n            © <a href=\"/\">Все Отзывы.ру</a> — независимый сайт отзывов\n            <br>\n            <a href=\"/about/\">О сайте</a> |\n            <a href=\"/rules/\">Правила&nbsp;сайта</a> |\n            <a href=\"/users/\" rel=\"nofollow\">Пользователи</a> | <a href=\"/invite_friends/\" class=\"auth_check\">Пригласить&nbsp;друзей</a> | <a href=\"/ad/\">Реклама</a> | <a href=\"/contacts/\">Служба поддержки</a>\n            <br>\n            <a href=\"/privacy/\">Политика обарботки персональных данных</a> |\n            <a href=\"/privacy-agreement/\">Согласие на обработку персональных данных</a>\n            <p>\n                Использование материалов сайта запрещается без письменного согласия администрации.\n            </p>\n        </div>\n    </footer>\n</div>\n\n<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></script>\n<script type=\"text/javascript\" src=\"/static/js/libs/hideMaxListItem.js\"></script>\n<script type=\"text/javascript\" src=\"/static/js/libs/hoverIntent.js\"></script>\n<script type=\"text/javascript\" src=\"/static/js/libs/jquery.dropdown.js\"></script>\n<script type=\"text/javascript\" src=\"/static/js/libs/fancybox-2.1.7/source/jquery.fancybox.pack.js\"></script>\n<script src=\"/static/js/script.js?v=3\"></script>\n<script type=\"text/javascript\" src=\"/category/cat_placeholder.js\"></script>\n\n\n\n<script type=\"text/javascript\">\n    (function(g,o){g[o]=g[o]||function(){(g[o]['q']=g[o]['q']||[]).push(\n        arguments)},g[o]['t']=1*new Date})(window,'_googCsa');\n\n    $(document).ready(function(){\n        $('#show_options_button').click(function () {\n            $('.lcat_box').toggle();\n        });\n    });\n\n</script>\n\n\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">\n    (function (d, w, c) {\n        (w[c] = w[c] || []).push(function() {\n            try {\n                w.yaCounter14443072 = new Ya.Metrika({\n                    id:14443072,\n                    clickmap:true,\n                    trackLinks:true,\n                    accurateTrackBounce:true\n                });\n            } catch(e) { }\n        });\n\n        var n = d.getElementsByTagName(\"script\")[0],\n            s = d.createElement(\"script\"),\n            f = function () { n.parentNode.insertBefore(s, n); };\n        s.type = \"text/javascript\";\n        s.async = true;\n        s.src = \"https://mc.yandex.ru/metrika/watch.js\";\n\n        if (w.opera == \"[object Opera]\") {\n            d.addEventListener(\"DOMContentLoaded\", f, false);\n        } else { f(); }\n    })(document, window, \"yandex_metrika_callbacks\");\n</script>\n<noscript><div><img src=\"https://mc.yandex.ru/watch/14443072\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>\n<!-- /Yandex.Metrika counter -->\n\n\n<script defer=\"\" src=\"https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516\" integrity=\"sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==\" data-cf-beacon=\"{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;8a77c3d37cef405caa821e7642fcc497&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}\" crossorigin=\"anonymous\"></script>\n\n\n<div style=\"position: fixed; left: -99px;\"><div id=\"65a5a55c24\"><iframe frameborder=\"no\" scrolling=\"no\" allowtransparency=\"true\" hidefocus=\"true\" tabindex=\"-1\" marginwidth=\"0\" marginheight=\"0\" src=\"https://yastatic.net/safeframe-bundles/0.83/1-1-0/render.html\" id=\"id6925\" style=\"opacity: 1;\"></iframe></div></div></body></html>",
+  "text": "Отзывы на Ветеринарные клиники Главная Пользователи Правила О сайте Найти только в категории «Ветеринарные клиники» Регистрация Вход Написать отзыв Написать отзыв Регистрация Вход О сайте Правила сайта Пользователи Пригласить друзей Реклама Контакты Категории Бытовая техника Бытовая техника Холодильники Стиральные машины Пылесосы Утюги, Отпариватели Микроволновые печи, Аэрогрили Плиты, Духовки, Поверхности Вытяжки Посудомоечные машины Электрочайники и Термопоты Кофеварки, Кофемолки Соковыжималки Комбайны, Миксеры, Блендеры Мясорубки Тостеры, Мини-печи Пароварки Мультиварки Хлебопечки Фильтры для воды Кондиционеры Вентиляторы Обогреватели Водонагреватели Увлажнители и очистители воздуха Фены и приборы для укладки Электробритвы, Эпиляторы Швейные машины Прочее Электроника Электроника Компьютеры Ноутбуки Планшеты Компьютерные комплектующие Компьютерная периферия и аксессуары Компьютерные программы Игры для компьютера, приставок, телефонов Игровые приставки Мобильные телефоны Фотоаппараты Электронные читалки Телевизоры Проекторы Видеокамеры DVD, Blu-Ray плееры Плееры, Диктофоны, Радио Музыкальные центры Автомагнитолы Колонки, Наушники, Микрофоны Домашние телефоны, Рации GPS-навигаторы Аксессуары для электроники Прочее Развлечения Развлечения Ночные клубы Кинотеатры Театры, Опера, Балет Музеи, Галереи, Выставки Цирки, Зоопарки, Аквариумы Развлекательные центры Спортивные заведения Караоке клубы Аттракционы и Парки отдыха Прочее Питание Питание Рестораны, Кафе, Бары Блюда Продукты питания Детское питание Спортивное питание Прочее Туризм Туризм Отели и Хостелы Страны Города Острова и Полуострова Курорты и Пляжи Экскурсии Достопримечательности Круизы Пансионаты, Санатории, Турбазы Туроператоры и Турагентства Авиакомпании Прочее Одежда, Обувь, Аксессуары Одежда, Обувь, Аксессуары Женская одежда Женская обувь Мужская одежда Мужская обувь Детская одежда и обувь Часы Сумки, Портфели, Чемоданы Аксессуары Прочее Бренды Красота и Здоровье Красота и Здоровье Косметика и Парфюмерия Косметические процедуры Спортивные заведения Медицинские приборы Лекарства Медицинские учреждения Прочее Детское Детское Игрушки Коляски Детская мебель Детское питание Уход за ребенком Детская одежда и обувь Товары для школы Детские сады, Ясли Детские лагеря Школы, Лицеи Прочее Авто, Мото Авто, Мото Автомобили Мото-техника Катера и Яхты Спецтехника Шины, Диски Запчасти Аксессуары Автохимия, Масла Автомагнитолы GPS-навигаторы Противоугонные системы АЗС Прочее Фильмы, Кино, ТВ Фильмы, Кино, ТВ Фильмы, Сериалы, Мультфильмы Телепередачи Телеканалы Звезды кино и ТВ Кинотеатры Прочее Книги и Пресса Книги и Пресса Книги Газеты, Журналы Писатели Издательства Библиотеки Электронные читалки Прочее Музыка Музыка Песни Альбомы Исполнители Радиостанции Музыкальные инструменты Музыкальное оборудование Музыкальные школы Прочее Дом и Дача Дом и Дача Мебель Посуда Предметы интерьера Текстиль для дома Товары для сада и дачи Хозтовары Бытовая химия Сантехника и Отопление Жилищные комплексы (ЖК) Прочее Строительство и Ремонт Строительство и Ремонт Инструменты Садовая техника Строительная техника Сантехника и Отопление Стройматериалы Готовые конструкции Прочее Спорт Спорт Спортивные заведения Товары для спорта и туризма Спортивные мероприятия Виды спорта Спортивное питание Прочее Хобби Хобби Рыбалка и Охота Творчество Рукоделие Ремесла Прочее Животные и Растения Животные и Растения Животные Растения Корм для животных Товары для животных Лекарства для животных Ветеринарные клиники Ветеринарные аптеки Питомники Гостиницы для животных Школы дрессировки Прочее Образование Образование Школы, Лицеи Техникумы, Колледжи ВУЗы Музыкальные школы Тренинги, Курсы, Семинары Дисциплины Прочее Разное Разное Прочее Корм для животных | Животные | Товары для животных | Растения | Прочее | Лекарства для животных | Ветеринарные клиники | Питомники | Гостиницы для животных | Школы дрессировки | Ветеринарные аптеки | Параметры Город Москва Санкт-Петербург Г. Москва Ростов-на-Дону Симферополь Тверь Тольятти Омск Архангельск Г Москва Г. Санкт-Петербург Екатеринбург Г. Самара Показать еще Главная › Животные и Растения › Ветеринарные клиники Отзывы на Ветеринарные клиники Написать отзыв Популярные Лучшие Новые Ветеринарная клиника \"Вет-Дух\", Москва 5,0 24 отзыва Спасибо за лечение Обращались в клинику с опухолью под кожей. Была назначена операция. очень переживали, так как собака... (Анна) Отзывы (24) Написать отзыв Ветеринарная клиника \"Зоовет\", Москва 5,0 17 отзывов Отличные врачи Отличная ветеринарная клиника, хорошие грамотные специалисты, отзывчивые. Расположение достаточно уд... (Горова Э.Э.) Отзывы (17) Написать отзыв Ветеринарная клиника \"Ветуслуги\", Москва 2,3 12 отзывов Лапороскопия - в итоге сделали полосную операцию! 20.03.15 назначено проведение стерилизации кошки методом лапароскопия специалистами ветеринарной слу... (Maryana1210) Отзывы (12) Написать отзыв Ветеринарная клиника \"Vet Union\", Москва 5,0 7 отзывов Всё по делу Сдавали анализы кошки дома. На сайте нажала на кнопку обратный звонок, позвонили минут через 20. Сра... (Julia M) Отзывы (7) Написать отзыв Ветеринарная клиника \"Зоовет-Урал\", Екатеринбург 4,9 8 отзывов Операция прошла успешно Возила в Зоовет-Урал своего йорка на кастрацию. Как только щенок подрос, сразу же приняла решение ег... (Светлана Железнова) Отзывы (7) Написать отзыв Ветеринарная клиника \"VetGlobal\", Москва 1,0 6 отзывов Грязно и непрофессионально Первое впечатление о клинике - грязно в приемной, такое чувство, что там не убирались месяц, второе ... (Kirillpatrubov) Отзывы (6) Написать отзыв Ветеринарная клиника \"Центральная Ветеринарная Клиника\", Архангельск 5,0 5 отзывов Рекомендую Нашел сайт клиники https://www. cvc29.ru/ Решил обратиться к ним по поводу своего кота, который заб... (Kollin) Отзывы (5) Написать отзыв Ветеринарная клиника \"AVVA\", Симферополь 3,4 5 отзывов Выражаю глубокую благодарность коллективу ветклиники АВВА. Пришлось обратиться в выходной день, заболела моя кошка Ника, температура, красные уши с гнойными на... (Ирина) Отзывы (5) Написать отзыв Ветеринарная клиника \"Эпиона\", Москва 4,0 4 отзыва Хорошая клиника! Спасли нашу собаку, о клинике узнали совершенно случайно, но попав остались благодарны. Провели опер... (Вера) Отзывы (4) Написать отзыв Ветеринарная клиника \"Мос-Ветеринар\", Москва 4,0 4 отзыва Мошенники На дом был вызван вет. врач из клиники Мос Ветеринар (www. мос-ветеринар. рф) для забора крови у соб... (IrinaLev) Отзывы (4) Написать отзыв Ветеринарная клиника \"Ветмир - К*6417108\", Москва 2,3 3 отзыва Равнодушие врачей У моего котика началась отдышка (шотландский вислоухий, 11 лет) и отнялась правая лапка. Прибежала в... (Irina) Отзывы (4) Написать отзыв Ветеринарная клиника \"Ле-Мурр\", Красноярск 5,0 3 отзыва Класс В данную клинику приносила на осмотр маленького котенка. Помещение не боьшое, уютное. Девушка - ветв... (Leks) Отзывы (3) Написать отзыв Ветеринарная клиника \"Центр\", Москва 5,0 3 отзыва Большой спектр предоставляемых услуг В ветеринарной клинике \"Центр\" мы бываем регулярно, так как дома у нас живет три собаки и две кошки ... (Алла Р.) Отзывы (3) Написать отзыв Ветеринарная клиника \"Государственная городская ветеринарная клиника\", Г. Самара 5,0 3 отзыва Все врачи хорошие, На самом деле, специалисты все грамотные и отзывчивые. Мы попадали к разным и каждый раз уходили с о... (Тихомирова Александра) Отзывы (3) Написать отзыв Ветеринарная клиника \"Ветдент\", Г. Москва 5,0 3 отзыва Хорошая клиника Клиника хорошая. Во первых по отношению к животным, ответственные врачи и медсестры. Что касается ст... (Ульяна) Отзывы (3) Написать отзыв 1 2 3 Далее › © Все Отзывы.ру — независимый сайт отзывов О сайте | Правила сайта | Пользователи | Пригласить друзей | Реклама | Служба поддержки Политика обарботки персональных данных | Согласие на обработку персональных данных Использование материалов сайта запрещается без письменного согласия администрации.",
+  "json_ld": [],
+  "document": {
+    "title": "Отзывы на Ветеринарные клиники",
+    "meta_description": "В разделе «Ветеринарные клиники» представлены отзывы реальных пользователей. Популярные, лучшие, новые отзывы на ветеринарные клиники, рейтинги. Читайте полезную информацию и делитесь собственным опытом.",
+    "meta_robots": "",
+    "viewport": "width=device-width, initial-scale=1",
+    "canonical": "",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/users/",
+        "text": "Пользователи",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/rules/",
+        "text": "Правила",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "О сайте",
+        "rel": ""
+      },
+      {
+        "href": "/registration/",
+        "text": "Регистрация",
+        "rel": ""
+      },
+      {
+        "href": "/login/",
+        "text": "Вход",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/search/?cat=228",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/search/?cat=228",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/my/profile/",
+        "text": "Регистрация",
+        "rel": ""
+      },
+      {
+        "href": "/my/profile/",
+        "text": "Вход",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "О сайте",
+        "rel": ""
+      },
+      {
+        "href": "/rules/",
+        "text": "Правила сайта",
+        "rel": ""
+      },
+      {
+        "href": "/users/",
+        "text": "Пользователи",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/invite_friends/",
+        "text": "Пригласить друзей",
+        "rel": ""
+      },
+      {
+        "href": "/ad/",
+        "text": "Реклама",
+        "rel": ""
+      },
+      {
+        "href": "/contacts/",
+        "text": "Контакты",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "Категории",
+        "rel": ""
+      },
+      {
+        "href": "/category/1/byitovaya-tehnika",
+        "text": "Бытовая техника",
+        "rel": ""
+      },
+      {
+        "href": "/category/1/",
+        "text": "Бытовая техника",
+        "rel": ""
+      },
+      {
+        "href": "/category/23/holodilniki",
+        "text": "Холодильники",
+        "rel": ""
+      },
+      {
+        "href": "/category/24/stiralnyie-mashinyi",
+        "text": "Стиральные машины",
+        "rel": ""
+      },
+      {
+        "href": "/category/25/pyilesosyi",
+        "text": "Пылесосы",
+        "rel": ""
+      },
+      {
+        "href": "/category/26/utyugi-otparivateli",
+        "text": "Утюги, Отпариватели",
+        "rel": ""
+      },
+      {
+        "href": "/category/27/mikrovolnovyie-pechi-aerogrili",
+        "text": "Микроволновые печи, Аэрогрили",
+        "rel": ""
+      },
+      {
+        "href": "/category/28/plityi-duhovki-poverhnosti",
+        "text": "Плиты, Духовки, Поверхности",
+        "rel": ""
+      },
+      {
+        "href": "/category/29/vyityazhki",
+        "text": "Вытяжки",
+        "rel": ""
+      },
+      {
+        "href": "/category/30/posudomoechnyie-mashinyi",
+        "text": "Посудомоечные машины",
+        "rel": ""
+      },
+      {
+        "href": "/category/31/elektrochajniki-i-termopotyi",
+        "text": "Электрочайники и Термопоты",
+        "rel": ""
+      },
+      {
+        "href": "/category/32/kofevarki-kofemolki",
+        "text": "Кофеварки, Кофемолки",
+        "rel": ""
+      },
+      {
+        "href": "/category/33/sokovyizhimalki",
+        "text": "Соковыжималки",
+        "rel": ""
+      },
+      {
+        "href": "/category/34/kombajnyi-mikseryi-blenderyi",
+        "text": "Комбайны, Миксеры, Блендеры",
+        "rel": ""
+      },
+      {
+        "href": "/category/35/myasorubki",
+        "text": "Мясорубки",
+        "rel": ""
+      },
+      {
+        "href": "/category/36/tosteryi-mini-pechi",
+        "text": "Тостеры, Мини-печи",
+        "rel": ""
+      },
+      {
+        "href": "/category/37/parovarki",
+        "text": "Пароварки",
+        "rel": ""
+      },
+      {
+        "href": "/category/38/multivarki",
+        "text": "Мультиварки",
+        "rel": ""
+      },
+      {
+        "href": "/category/39/hlebopechki",
+        "text": "Хлебопечки",
+        "rel": ""
+      },
+      {
+        "href": "/category/40/filtryi-dlya-vodyi",
+        "text": "Фильтры для воды",
+        "rel": ""
+      },
+      {
+        "href": "/category/41/konditsioneryi",
+        "text": "Кондиционеры",
+        "rel": ""
+      },
+      {
+        "href": "/category/42/ventilyatoryi",
+        "text": "Вентиляторы",
+        "rel": ""
+      },
+      {
+        "href": "/category/43/obogrevateli",
+        "text": "Обогреватели",
+        "rel": ""
+      },
+      {
+        "href": "/category/44/vodonagrevateli",
+        "text": "Водонагреватели",
+        "rel": ""
+      },
+      {
+        "href": "/category/45/uvlazhniteli-i-ochistiteli-vozduha",
+        "text": "Увлажнители и очистители воздуха",
+        "rel": ""
+      },
+      {
+        "href": "/category/46/fenyi-i-priboryi-dlya-ukladki",
+        "text": "Фены и приборы для укладки",
+        "rel": ""
+      },
+      {
+        "href": "/category/47/elektrobritvyi-epilyatoryi",
+        "text": "Электробритвы, Эпиляторы",
+        "rel": ""
+      },
+      {
+        "href": "/category/48/shvejnyie-mashinyi",
+        "text": "Швейные машины",
+        "rel": ""
+      },
+      {
+        "href": "/category/49/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/2/elektronika",
+        "text": "Электроника",
+        "rel": ""
+      },
+      {
+        "href": "/category/2/",
+        "text": "Электроника",
+        "rel": ""
+      },
+      {
+        "href": "/category/50/kompyuteryi",
+        "text": "Компьютеры",
+        "rel": ""
+      },
+      {
+        "href": "/category/51/noutbuki",
+        "text": "Ноутбуки",
+        "rel": ""
+      },
+      {
+        "href": "/category/52/planshetyi",
+        "text": "Планшеты",
+        "rel": ""
+      },
+      {
+        "href": "/category/53/kompyuternyie-komplektuyuschie",
+        "text": "Компьютерные комплектующие",
+        "rel": ""
+      },
+      {
+        "href": "/category/54/kompyuternaya-periferiya-i-aksessuaryi",
+        "text": "Компьютерная периферия и аксессуары",
+        "rel": ""
+      },
+      {
+        "href": "/category/55/kompyuternyie-programmyi",
+        "text": "Компьютерные программы",
+        "rel": ""
+      },
+      {
+        "href": "/category/56/igryi-dlya-kompyutera-pristavok-telefonov",
+        "text": "Игры для компьютера, приставок, телефонов",
+        "rel": ""
+      },
+      {
+        "href": "/category/57/igrovyie-pristavki",
+        "text": "Игровые приставки",
+        "rel": ""
+      },
+      {
+        "href": "/category/58/mobilnyie-telefonyi",
+        "text": "Мобильные телефоны",
+        "rel": ""
+      },
+      {
+        "href": "/category/59/fotoapparatyi",
+        "text": "Фотоаппараты",
+        "rel": ""
+      },
+      {
+        "href": "/category/60/elektronnyie-chitalki",
+        "text": "Электронные читалки",
+        "rel": ""
+      },
+      {
+        "href": "/category/61/televizoryi",
+        "text": "Телевизоры",
+        "rel": ""
+      },
+      {
+        "href": "/category/62/proektoryi",
+        "text": "Проекторы",
+        "rel": ""
+      },
+      {
+        "href": "/category/63/videokameryi",
+        "text": "Видеокамеры",
+        "rel": ""
+      },
+      {
+        "href": "/category/64/dvd-blu-ray-pleeryi",
+        "text": "DVD, Blu-Ray плееры",
+        "rel": ""
+      },
+      {
+        "href": "/category/66/pleeryi-diktofonyi-radio",
+        "text": "Плееры, Диктофоны, Радио",
+        "rel": ""
+      },
+      {
+        "href": "/category/67/muzyikalnyie-tsentryi",
+        "text": "Музыкальные центры",
+        "rel": ""
+      },
+      {
+        "href": "/category/68/avtomagnitolyi",
+        "text": "Автомагнитолы",
+        "rel": ""
+      },
+      {
+        "href": "/category/69/kolonki-naushniki-mikrofonyi",
+        "text": "Колонки, Наушники, Микрофоны",
+        "rel": ""
+      },
+      {
+        "href": "/category/70/domashnie-telefonyi-ratsii",
+        "text": "Домашние телефоны, Рации",
+        "rel": ""
+      },
+      {
+        "href": "/category/71/gps-navigatoryi",
+        "text": "GPS-навигаторы",
+        "rel": ""
+      },
+      {
+        "href": "/category/72/aksessuaryi-dlya-elektroniki",
+        "text": "Аксессуары для электроники",
+        "rel": ""
+      },
+      {
+        "href": "/category/73/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/3/razvlecheniya",
+        "text": "Развлечения",
+        "rel": ""
+      },
+      {
+        "href": "/category/3/",
+        "text": "Развлечения",
+        "rel": ""
+      },
+      {
+        "href": "/category/74/nochnyie-klubyi",
+        "text": "Ночные клубы",
+        "rel": ""
+      },
+      {
+        "href": "/category/75/kinoteatryi",
+        "text": "Кинотеатры",
+        "rel": ""
+      },
+      {
+        "href": "/category/76/teatryi-opera-balet",
+        "text": "Театры, Опера, Балет",
+        "rel": ""
+      },
+      {
+        "href": "/category/77/muzei-galerei-vyistavki",
+        "text": "Музеи, Галереи, Выставки",
+        "rel": ""
+      },
+      {
+        "href": "/category/78/tsirki-zooparki-akvariumyi",
+        "text": "Цирки, Зоопарки, Аквариумы",
+        "rel": ""
+      },
+      {
+        "href": "/category/79/razvlekatelnyie-tsentryi",
+        "text": "Развлекательные центры",
+        "rel": ""
+      },
+      {
+        "href": "/category/80/sportivnyie-zavedeniya",
+        "text": "Спортивные заведения",
+        "rel": ""
+      },
+      {
+        "href": "/category/82/karaoke-klubyi",
+        "text": "Караоке клубы",
+        "rel": ""
+      },
+      {
+        "href": "/category/84/attraktsionyi-i-parki-otdyiha",
+        "text": "Аттракционы и Парки отдыха",
+        "rel": ""
+      },
+      {
+        "href": "/category/85/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/17/pitanie",
+        "text": "Питание",
+        "rel": ""
+      },
+      {
+        "href": "/category/17/",
+        "text": "Питание",
+        "rel": ""
+      },
+      {
+        "href": "/category/86/restoranyi-kafe-baryi",
+        "text": "Рестораны, Кафе, Бары",
+        "rel": ""
+      },
+      {
+        "href": "/category/87/blyuda",
+        "text": "Блюда",
+        "rel": ""
+      },
+      {
+        "href": "/category/88/produktyi-pitaniya",
+        "text": "Продукты питания",
+        "rel": ""
+      },
+      {
+        "href": "/category/89/detskoe-pitanie",
+        "text": "Детское питание",
+        "rel": ""
+      },
+      {
+        "href": "/category/90/sportivnoe-pitanie",
+        "text": "Спортивное питание",
+        "rel": ""
+      },
+      {
+        "href": "/category/91/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/4/turizm",
+        "text": "Туризм",
+        "rel": ""
+      },
+      {
+        "href": "/category/4/",
+        "text": "Туризм",
+        "rel": ""
+      },
+      {
+        "href": "/category/92/oteli-i-hostelyi",
+        "text": "Отели и Хостелы",
+        "rel": ""
+      },
+      {
+        "href": "/category/93/stranyi",
+        "text": "Страны",
+        "rel": ""
+      },
+      {
+        "href": "/category/94/goroda",
+        "text": "Города",
+        "rel": ""
+      },
+      {
+        "href": "/category/95/ostrova-i-poluostrova",
+        "text": "Острова и Полуострова",
+        "rel": ""
+      },
+      {
+        "href": "/category/96/kurortyi-i-plyazhi",
+        "text": "Курорты и Пляжи",
+        "rel": ""
+      },
+      {
+        "href": "/category/97/ekskursii",
+        "text": "Экскурсии",
+        "rel": ""
+      },
+      {
+        "href": "/category/98/dostoprimechatelnosti",
+        "text": "Достопримечательности",
+        "rel": ""
+      },
+      {
+        "href": "/category/99/kruizyi",
+        "text": "Круизы",
+        "rel": ""
+      },
+      {
+        "href": "/category/100/pansionatyi-sanatorii-turbazyi",
+        "text": "Пансионаты, Санатории, Турбазы",
+        "rel": ""
+      },
+      {
+        "href": "/category/101/turoperatoryi-i-turagentstva",
+        "text": "Туроператоры и Турагентства",
+        "rel": ""
+      },
+      {
+        "href": "/category/102/aviakompanii",
+        "text": "Авиакомпании",
+        "rel": ""
+      },
+      {
+        "href": "/category/103/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/5/odezhda-obuv-aksessuaryi",
+        "text": "Одежда, Обувь, Аксессуары",
+        "rel": ""
+      },
+      {
+        "href": "/category/5/",
+        "text": "Одежда, Обувь, Аксессуары",
+        "rel": ""
+      },
+      {
+        "href": "/category/104/zhenskaya-odezhda",
+        "text": "Женская одежда",
+        "rel": ""
+      },
+      {
+        "href": "/category/105/zhenskaya-obuv",
+        "text": "Женская обувь",
+        "rel": ""
+      },
+      {
+        "href": "/category/106/muzhskaya-odezhda",
+        "text": "Мужская одежда",
+        "rel": ""
+      },
+      {
+        "href": "/category/107/muzhskaya-obuv",
+        "text": "Мужская обувь",
+        "rel": ""
+      },
+      {
+        "href": "/category/108/detskaya-odezhda-i-obuv",
+        "text": "Детская одежда и обувь",
+        "rel": ""
+      },
+      {
+        "href": "/category/109/chasyi",
+        "text": "Часы",
+        "rel": ""
+      },
+      {
+        "href": "/category/110/sumki-portfeli-chemodanyi",
+        "text": "Сумки, Портфели, Чемоданы",
+        "rel": ""
+      },
+      {
+        "href": "/category/111/aksessuaryi",
+        "text": "Аксессуары",
+        "rel": ""
+      },
+      {
+        "href": "/category/113/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/139/brendyi",
+        "text": "Бренды",
+        "rel": ""
+      },
+      {
+        "href": "/category/6/krasota-i-zdorove",
+        "text": "Красота и Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "/category/6/",
+        "text": "Красота и Здоровье",
+        "rel": ""
+      },
+      {
+        "href": "/category/114/kosmetika-i-parfyumeriya",
+        "text": "Косметика и Парфюмерия",
+        "rel": ""
+      },
+      {
+        "href": "/category/115/kosmeticheskie-protseduryi",
+        "text": "Косметические процедуры",
+        "rel": ""
+      },
+      {
+        "href": "/category/123/sportivnyie-zavedeniya",
+        "text": "Спортивные заведения",
+        "rel": ""
+      },
+      {
+        "href": "/category/259/meditsinskie-priboryi",
+        "text": "Медицинские приборы",
+        "rel": ""
+      },
+      {
+        "href": "/category/124/lekarstva",
+        "text": "Лекарства",
+        "rel": ""
+      },
+      {
+        "href": "/category/126/meditsinskie-uchrezhdeniya",
+        "text": "Медицинские учреждения",
+        "rel": ""
+      },
+      {
+        "href": "/category/127/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/14/detskoe",
+        "text": "Детское",
+        "rel": ""
+      },
+      {
+        "href": "/category/14/",
+        "text": "Детское",
+        "rel": ""
+      },
+      {
+        "href": "/category/188/igrushki",
+        "text": "Игрушки",
+        "rel": ""
+      },
+      {
+        "href": "/category/189/kolyaski",
+        "text": "Коляски",
+        "rel": ""
+      },
+      {
+        "href": "/category/190/detskaya-mebel",
+        "text": "Детская мебель",
+        "rel": ""
+      },
+      {
+        "href": "/category/191/detskoe-pitanie",
+        "text": "Детское питание",
+        "rel": ""
+      },
+      {
+        "href": "/category/192/uhod-za-rebenkom",
+        "text": "Уход за ребенком",
+        "rel": ""
+      },
+      {
+        "href": "/category/193/detskaya-odezhda-i-obuv",
+        "text": "Детская одежда и обувь",
+        "rel": ""
+      },
+      {
+        "href": "/category/194/tovaryi-dlya-shkolyi",
+        "text": "Товары для школы",
+        "rel": ""
+      },
+      {
+        "href": "/category/195/detskie-sadyi-yasli",
+        "text": "Детские сады, Ясли",
+        "rel": ""
+      },
+      {
+        "href": "/category/196/detskie-lagerya",
+        "text": "Детские лагеря",
+        "rel": ""
+      },
+      {
+        "href": "/category/197/shkolyi-litsei",
+        "text": "Школы, Лицеи",
+        "rel": ""
+      },
+      {
+        "href": "/category/199/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/9/avto-moto",
+        "text": "Авто, Мото",
+        "rel": ""
+      },
+      {
+        "href": "/category/9/",
+        "text": "Авто, Мото",
+        "rel": ""
+      },
+      {
+        "href": "/category/141/avtomobili",
+        "text": "Автомобили",
+        "rel": ""
+      },
+      {
+        "href": "/category/142/moto-tehnika",
+        "text": "Мото-техника",
+        "rel": ""
+      },
+      {
+        "href": "/category/143/katera-i-yahtyi",
+        "text": "Катера и Яхты",
+        "rel": ""
+      },
+      {
+        "href": "/category/144/spetstehnika",
+        "text": "Спецтехника",
+        "rel": ""
+      },
+      {
+        "href": "/category/145/shinyi-diski",
+        "text": "Шины, Диски",
+        "rel": ""
+      },
+      {
+        "href": "/category/146/zapchasti",
+        "text": "Запчасти",
+        "rel": ""
+      },
+      {
+        "href": "/category/147/aksessuaryi",
+        "text": "Аксессуары",
+        "rel": ""
+      },
+      {
+        "href": "/category/148/avtohimiya-masla",
+        "text": "Автохимия, Масла",
+        "rel": ""
+      },
+      {
+        "href": "/category/149/avtomagnitolyi",
+        "text": "Автомагнитолы",
+        "rel": ""
+      },
+      {
+        "href": "/category/150/gps-navigatoryi",
+        "text": "GPS-навигаторы",
+        "rel": ""
+      },
+      {
+        "href": "/category/151/protivougonnyie-sistemyi",
+        "text": "Противоугонные системы",
+        "rel": ""
+      },
+      {
+        "href": "/category/157/azs",
+        "text": "АЗС",
+        "rel": ""
+      },
+      {
+        "href": "/category/159/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/10/filmyi-kino-tv",
+        "text": "Фильмы, Кино, ТВ",
+        "rel": ""
+      },
+      {
+        "href": "/category/10/",
+        "text": "Фильмы, Кино, ТВ",
+        "rel": ""
+      },
+      {
+        "href": "/category/160/filmyi-serialyi-multfilmyi",
+        "text": "Фильмы, Сериалы, Мультфильмы",
+        "rel": ""
+      },
+      {
+        "href": "/category/161/teleperedachi",
+        "text": "Телепередачи",
+        "rel": ""
+      },
+      {
+        "href": "/category/162/telekanalyi",
+        "text": "Телеканалы",
+        "rel": ""
+      },
+      {
+        "href": "/category/163/zvezdyi-kino-i-tv",
+        "text": "Звезды кино и ТВ",
+        "rel": ""
+      },
+      {
+        "href": "/category/164/kinoteatryi",
+        "text": "Кинотеатры",
+        "rel": ""
+      },
+      {
+        "href": "/category/165/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/11/knigi-i-pressa",
+        "text": "Книги и Пресса",
+        "rel": ""
+      },
+      {
+        "href": "/category/11/",
+        "text": "Книги и Пресса",
+        "rel": ""
+      },
+      {
+        "href": "/category/166/knigi",
+        "text": "Книги",
+        "rel": ""
+      },
+      {
+        "href": "/category/167/gazetyi-zhurnalyi",
+        "text": "Газеты, Журналы",
+        "rel": ""
+      },
+      {
+        "href": "/category/168/pisateli",
+        "text": "Писатели",
+        "rel": ""
+      },
+      {
+        "href": "/category/169/izdatelstva",
+        "text": "Издательства",
+        "rel": ""
+      },
+      {
+        "href": "/category/170/biblioteki",
+        "text": "Библиотеки",
+        "rel": ""
+      },
+      {
+        "href": "/category/171/elektronnyie-chitalki",
+        "text": "Электронные читалки",
+        "rel": ""
+      },
+      {
+        "href": "/category/172/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/12/muzyika",
+        "text": "Музыка",
+        "rel": ""
+      },
+      {
+        "href": "/category/12/",
+        "text": "Музыка",
+        "rel": ""
+      },
+      {
+        "href": "/category/173/pesni",
+        "text": "Песни",
+        "rel": ""
+      },
+      {
+        "href": "/category/174/albomyi",
+        "text": "Альбомы",
+        "rel": ""
+      },
+      {
+        "href": "/category/175/ispolniteli",
+        "text": "Исполнители",
+        "rel": ""
+      },
+      {
+        "href": "/category/176/radiostantsii",
+        "text": "Радиостанции",
+        "rel": ""
+      },
+      {
+        "href": "/category/177/muzyikalnyie-instrumentyi",
+        "text": "Музыкальные инструменты",
+        "rel": ""
+      },
+      {
+        "href": "/category/178/muzyikalnoe-oborudovanie",
+        "text": "Музыкальное оборудование",
+        "rel": ""
+      },
+      {
+        "href": "/category/179/muzyikalnyie-shkolyi",
+        "text": "Музыкальные школы",
+        "rel": ""
+      },
+      {
+        "href": "/category/181/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/15/dom-i-dacha",
+        "text": "Дом и Дача",
+        "rel": ""
+      },
+      {
+        "href": "/category/15/",
+        "text": "Дом и Дача",
+        "rel": ""
+      },
+      {
+        "href": "/category/200/mebel",
+        "text": "Мебель",
+        "rel": ""
+      },
+      {
+        "href": "/category/201/posuda",
+        "text": "Посуда",
+        "rel": ""
+      },
+      {
+        "href": "/category/202/predmetyi-interera",
+        "text": "Предметы интерьера",
+        "rel": ""
+      },
+      {
+        "href": "/category/203/tekstil-dlya-doma",
+        "text": "Текстиль для дома",
+        "rel": ""
+      },
+      {
+        "href": "/category/204/tovaryi-dlya-sada-i-dachi",
+        "text": "Товары для сада и дачи",
+        "rel": ""
+      },
+      {
+        "href": "/category/205/hoztovaryi",
+        "text": "Хозтовары",
+        "rel": ""
+      },
+      {
+        "href": "/category/206/byitovaya-himiya",
+        "text": "Бытовая химия",
+        "rel": ""
+      },
+      {
+        "href": "/category/207/santehnika-i-otoplenie",
+        "text": "Сантехника и Отопление",
+        "rel": ""
+      },
+      {
+        "href": "/category/260/zhilischnyie-kompleksyi-zhk",
+        "text": "Жилищные комплексы (ЖК)",
+        "rel": ""
+      },
+      {
+        "href": "/category/208/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/16/stroitelstvo-i-remont",
+        "text": "Строительство и Ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/category/16/",
+        "text": "Строительство и Ремонт",
+        "rel": ""
+      },
+      {
+        "href": "/category/209/instrumentyi",
+        "text": "Инструменты",
+        "rel": ""
+      },
+      {
+        "href": "/category/210/sadovaya-tehnika",
+        "text": "Садовая техника",
+        "rel": ""
+      },
+      {
+        "href": "/category/211/stroitelnaya-tehnika",
+        "text": "Строительная техника",
+        "rel": ""
+      },
+      {
+        "href": "/category/212/santehnika-i-otoplenie",
+        "text": "Сантехника и Отопление",
+        "rel": ""
+      },
+      {
+        "href": "/category/213/strojmaterialyi",
+        "text": "Стройматериалы",
+        "rel": ""
+      },
+      {
+        "href": "/category/214/gotovyie-konstruktsii",
+        "text": "Готовые конструкции",
+        "rel": ""
+      },
+      {
+        "href": "/category/216/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/7/sport",
+        "text": "Спорт",
+        "rel": ""
+      },
+      {
+        "href": "/category/7/",
+        "text": "Спорт",
+        "rel": ""
+      },
+      {
+        "href": "/category/128/sportivnyie-zavedeniya",
+        "text": "Спортивные заведения",
+        "rel": ""
+      },
+      {
+        "href": "/category/129/tovaryi-dlya-sporta-i-turizma",
+        "text": "Товары для спорта и туризма",
+        "rel": ""
+      },
+      {
+        "href": "/category/131/sportivnyie-meropriyatiya",
+        "text": "Спортивные мероприятия",
+        "rel": ""
+      },
+      {
+        "href": "/category/132/vidyi-sporta",
+        "text": "Виды спорта",
+        "rel": ""
+      },
+      {
+        "href": "/category/133/sportivnoe-pitanie",
+        "text": "Спортивное питание",
+        "rel": ""
+      },
+      {
+        "href": "/category/134/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/18/hobbi",
+        "text": "Хобби",
+        "rel": ""
+      },
+      {
+        "href": "/category/18/",
+        "text": "Хобби",
+        "rel": ""
+      },
+      {
+        "href": "/category/217/ryibalka-i-ohota",
+        "text": "Рыбалка и Охота",
+        "rel": ""
+      },
+      {
+        "href": "/category/218/tvorchestvo",
+        "text": "Творчество",
+        "rel": ""
+      },
+      {
+        "href": "/category/219/rukodelie",
+        "text": "Рукоделие",
+        "rel": ""
+      },
+      {
+        "href": "/category/221/remesla",
+        "text": "Ремесла",
+        "rel": ""
+      },
+      {
+        "href": "/category/222/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/19/zhivotnyie-i-rasteniya",
+        "text": "Животные и Растения",
+        "rel": ""
+      },
+      {
+        "href": "/category/19/",
+        "text": "Животные и Растения",
+        "rel": ""
+      },
+      {
+        "href": "/category/223/zhivotnyie",
+        "text": "Животные",
+        "rel": ""
+      },
+      {
+        "href": "/category/224/rasteniya",
+        "text": "Растения",
+        "rel": ""
+      },
+      {
+        "href": "/category/225/korm-dlya-zhivotnyih",
+        "text": "Корм для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/226/tovaryi-dlya-zhivotnyih",
+        "text": "Товары для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/227/lekarstva-dlya-zhivotnyih",
+        "text": "Лекарства для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/228/veterinarnyie-kliniki",
+        "text": "Ветеринарные клиники",
+        "rel": ""
+      },
+      {
+        "href": "/category/229/veterinarnyie-apteki",
+        "text": "Ветеринарные аптеки",
+        "rel": ""
+      },
+      {
+        "href": "/category/230/pitomniki",
+        "text": "Питомники",
+        "rel": ""
+      },
+      {
+        "href": "/category/231/gostinitsyi-dlya-zhivotnyih",
+        "text": "Гостиницы для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/232/shkolyi-dressirovki",
+        "text": "Школы дрессировки",
+        "rel": ""
+      },
+      {
+        "href": "/category/233/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/20/obrazovanie",
+        "text": "Образование",
+        "rel": ""
+      },
+      {
+        "href": "/category/20/",
+        "text": "Образование",
+        "rel": ""
+      },
+      {
+        "href": "/category/234/shkolyi-litsei",
+        "text": "Школы, Лицеи",
+        "rel": ""
+      },
+      {
+        "href": "/category/235/tehnikumyi-kolledzhi",
+        "text": "Техникумы, Колледжи",
+        "rel": ""
+      },
+      {
+        "href": "/category/236/vuzyi",
+        "text": "ВУЗы",
+        "rel": ""
+      },
+      {
+        "href": "/category/237/muzyikalnyie-shkolyi",
+        "text": "Музыкальные школы",
+        "rel": ""
+      },
+      {
+        "href": "/category/238/treningi-kursyi-seminaryi",
+        "text": "Тренинги, Курсы, Семинары",
+        "rel": ""
+      },
+      {
+        "href": "/category/241/distsiplinyi",
+        "text": "Дисциплины",
+        "rel": ""
+      },
+      {
+        "href": "/category/242/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/22/raznoe",
+        "text": "Разное",
+        "rel": ""
+      },
+      {
+        "href": "/category/22/",
+        "text": "Разное",
+        "rel": ""
+      },
+      {
+        "href": "/category/258/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/225/korm-dlya-zhivotnyih",
+        "text": "Корм для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/223/zhivotnyie",
+        "text": "Животные",
+        "rel": ""
+      },
+      {
+        "href": "/category/226/tovaryi-dlya-zhivotnyih",
+        "text": "Товары для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/224/rasteniya",
+        "text": "Растения",
+        "rel": ""
+      },
+      {
+        "href": "/category/233/prochee",
+        "text": "Прочее",
+        "rel": ""
+      },
+      {
+        "href": "/category/227/lekarstva-dlya-zhivotnyih",
+        "text": "Лекарства для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/228/veterinarnyie-kliniki",
+        "text": "Ветеринарные клиники",
+        "rel": ""
+      },
+      {
+        "href": "/category/230/pitomniki",
+        "text": "Питомники",
+        "rel": ""
+      },
+      {
+        "href": "/category/231/gostinitsyi-dlya-zhivotnyih",
+        "text": "Гостиницы для животных",
+        "rel": ""
+      },
+      {
+        "href": "/category/232/shkolyi-dressirovki",
+        "text": "Школы дрессировки",
+        "rel": ""
+      },
+      {
+        "href": "/category/229/veterinarnyie-apteki",
+        "text": "Ветеринарные аптеки",
+        "rel": ""
+      },
+      {
+        "href": "javascript:void(0)",
+        "text": "Параметры",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Москва",
+        "text": "Москва",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Санкт-Петербург",
+        "text": "Санкт-Петербург",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Г. Москва",
+        "text": "Г. Москва",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Ростов-на-Дону",
+        "text": "Ростов-на-Дону",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Симферополь",
+        "text": "Симферополь",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Тверь",
+        "text": "Тверь",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Тольятти",
+        "text": "Тольятти",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Омск",
+        "text": "Омск",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Архангельск",
+        "text": "Архангельск",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Г  Москва",
+        "text": "Г Москва",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Г. Санкт-Петербург",
+        "text": "Г. Санкт-Петербург",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Екатеринбург",
+        "text": "Екатеринбург",
+        "rel": ""
+      },
+      {
+        "href": "?prm1=Г. Самара",
+        "text": "Г. Самара",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Показать еще",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "/category/19/zhivotnyie-i-rasteniya",
+        "text": "Животные и Растения",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/search/?cat=228",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "?&sort=best",
+        "text": "Лучшие",
+        "rel": ""
+      },
+      {
+        "href": "?&sort=new",
+        "text": "Новые",
+        "rel": ""
+      },
+      {
+        "href": "/item/43932/reviews-veterinarnaya-klinika-vet-duh-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/43932/reviews-veterinarnaya-klinika-vet-duh-moskva/",
+        "text": "Ветеринарная клиника \"Вет-Дух\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/43932/reviews-veterinarnaya-klinika-vet-duh-moskva/",
+        "text": "Отзывы (24)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/43932/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/15373/reviews-veterinarnaya-klinika-zoovet-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/15373/reviews-veterinarnaya-klinika-zoovet-moskva/",
+        "text": "Ветеринарная клиника \"Зоовет\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/15373/reviews-veterinarnaya-klinika-zoovet-moskva/",
+        "text": "Отзывы (17)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/15373/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/21357/reviews-veterinarnaya-klinika-vetuslugi-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/21357/reviews-veterinarnaya-klinika-vetuslugi-moskva/",
+        "text": "Ветеринарная клиника \"Ветуслуги\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/21357/reviews-veterinarnaya-klinika-vetuslugi-moskva/",
+        "text": "Отзывы (12)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/21357/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/91342/reviews-veterinarnaya-klinika-vet-union-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/91342/reviews-veterinarnaya-klinika-vet-union-moskva/",
+        "text": "Ветеринарная клиника \"Vet Union\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/91342/reviews-veterinarnaya-klinika-vet-union-moskva/",
+        "text": "Отзывы (7)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/91342/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/39564/reviews-veterinarnaya-klinika-zoovet-ural-ekaterinbur/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/39564/reviews-veterinarnaya-klinika-zoovet-ural-ekaterinbur/",
+        "text": "Ветеринарная клиника \"Зоовет-Урал\", Екатеринбург",
+        "rel": ""
+      },
+      {
+        "href": "/item/39564/reviews-veterinarnaya-klinika-zoovet-ural-ekaterinbur/",
+        "text": "Отзывы (7)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/39564/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/104303/reviews-veterinarnaya-klinika-vetglobal-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/104303/reviews-veterinarnaya-klinika-vetglobal-moskva/",
+        "text": "Ветеринарная клиника \"VetGlobal\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/104303/reviews-veterinarnaya-klinika-vetglobal-moskva/",
+        "text": "Отзывы (6)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/104303/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/42432/reviews-veterinarnaya-klinika-tsentralnaya-veterinarn/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/42432/reviews-veterinarnaya-klinika-tsentralnaya-veterinarn/",
+        "text": "Ветеринарная клиника \"Центральная Ветеринарная Клиника\", Архангельск",
+        "rel": ""
+      },
+      {
+        "href": "/item/42432/reviews-veterinarnaya-klinika-tsentralnaya-veterinarn/",
+        "text": "Отзывы (5)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/42432/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/39983/reviews-veterinarnaya-klinika-avva-simferopol/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/39983/reviews-veterinarnaya-klinika-avva-simferopol/",
+        "text": "Ветеринарная клиника \"AVVA\", Симферополь",
+        "rel": ""
+      },
+      {
+        "href": "/item/39983/reviews-veterinarnaya-klinika-avva-simferopol/",
+        "text": "Отзывы (5)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/39983/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/46848/reviews-veterinarnaya-klinika-epiona-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/46848/reviews-veterinarnaya-klinika-epiona-moskva/",
+        "text": "Ветеринарная клиника \"Эпиона\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/46848/reviews-veterinarnaya-klinika-epiona-moskva/",
+        "text": "Отзывы (4)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/46848/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/43546/reviews-veterinarnaya-klinika-mos-veterinar-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/43546/reviews-veterinarnaya-klinika-mos-veterinar-moskva/",
+        "text": "Ветеринарная клиника \"Мос-Ветеринар\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/43546/reviews-veterinarnaya-klinika-mos-veterinar-moskva/",
+        "text": "Отзывы (4)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/43546/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/2863/reviews-veterinarnaya-klinika-vetmir-k6417108-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/2863/reviews-veterinarnaya-klinika-vetmir-k6417108-moskva/",
+        "text": "Ветеринарная клиника \"Ветмир - К*6417108\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/2863/reviews-veterinarnaya-klinika-vetmir-k6417108-moskva/",
+        "text": "Отзывы (4)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/2863/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/5556/reviews-veterinarnaya-klinika-le-murr-krasnoyarsk/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/5556/reviews-veterinarnaya-klinika-le-murr-krasnoyarsk/",
+        "text": "Ветеринарная клиника \"Ле-Мурр\", Красноярск",
+        "rel": ""
+      },
+      {
+        "href": "/item/5556/reviews-veterinarnaya-klinika-le-murr-krasnoyarsk/",
+        "text": "Отзывы (3)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/5556/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/10299/reviews-veterinarnaya-klinika-tsentr-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/10299/reviews-veterinarnaya-klinika-tsentr-moskva/",
+        "text": "Ветеринарная клиника \"Центр\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/10299/reviews-veterinarnaya-klinika-tsentr-moskva/",
+        "text": "Отзывы (3)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/10299/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/49099/reviews-veterinarnaya-klinika-gosudarstvennaya-gorods/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/49099/reviews-veterinarnaya-klinika-gosudarstvennaya-gorods/",
+        "text": "Ветеринарная клиника \"Государственная городская ветеринарная клиника\", Г. Самара",
+        "rel": ""
+      },
+      {
+        "href": "/item/49099/reviews-veterinarnaya-klinika-gosudarstvennaya-gorods/",
+        "text": "Отзывы (3)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/49099/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/item/20317/reviews-veterinarnaya-klinika-vetdent-g-moskva/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/item/20317/reviews-veterinarnaya-klinika-vetdent-g-moskva/",
+        "text": "Ветеринарная клиника \"Ветдент\", Г. Москва",
+        "rel": ""
+      },
+      {
+        "href": "/item/20317/reviews-veterinarnaya-klinika-vetdent-g-moskva/",
+        "text": "Отзывы (3)",
+        "rel": ""
+      },
+      {
+        "href": "/add-review/item/20317/select/",
+        "text": "Написать отзыв",
+        "rel": ""
+      },
+      {
+        "href": "?page=2",
+        "text": "2",
+        "rel": ""
+      },
+      {
+        "href": "?page=3",
+        "text": "3",
+        "rel": ""
+      },
+      {
+        "href": "?page=2",
+        "text": "Далее ›",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Все Отзывы.ру",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "О сайте",
+        "rel": ""
+      },
+      {
+        "href": "/rules/",
+        "text": "Правила сайта",
+        "rel": ""
+      },
+      {
+        "href": "/users/",
+        "text": "Пользователи",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/invite_friends/",
+        "text": "Пригласить друзей",
+        "rel": ""
+      },
+      {
+        "href": "/ad/",
+        "text": "Реклама",
+        "rel": ""
+      },
+      {
+        "href": "/contacts/",
+        "text": "Служба поддержки",
+        "rel": ""
+      },
+      {
+        "href": "/privacy/",
+        "text": "Политика обарботки персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "/privacy-agreement/",
+        "text": "Согласие на обработку персональных данных",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Найти"
+    ],
+    "h1_texts": [
+      "Отзывы на Ветеринарные клиники"
+    ],
+    "h2_texts": [],
+    "h3_texts": [
+      "Ветеринарная клиника \"Вет-Дух\", Москва",
+      "Ветеринарная клиника \"Зоовет\", Москва",
+      "Ветеринарная клиника \"Ветуслуги\", Москва",
+      "Ветеринарная клиника \"Vet Union\", Москва",
+      "Ветеринарная клиника \"Зоовет-Урал\", Екатеринбург",
+      "Ветеринарная клиника \"VetGlobal\", Москва",
+      "Ветеринарная клиника \"Центральная Ветеринарная Клиника\", Архангельск",
+      "Ветеринарная клиника \"AVVA\", Симферополь",
+      "Ветеринарная клиника \"Эпиона\", Москва",
+      "Ветеринарная клиника \"Мос-Ветеринар\", Москва",
+      "Ветеринарная клиника \"Ветмир - К*6417108\", Москва",
+      "Ветеринарная клиника \"Ле-Мурр\", Красноярск",
+      "Ветеринарная клиника \"Центр\", Москва",
+      "Ветеринарная клиника \"Государственная городская ветеринарная клиника\", Г. Самара",
+      "Ветеринарная клиника \"Ветдент\", Г. Москва"
+    ],
+    "counts": {
+      "paragraph": 17,
+      "h1": 1,
+      "h2": 0,
+      "h3": 15,
+      "link": 349,
+      "image": 20,
+      "list_item": 242,
+      "strong": 36,
+      "form": 2,
+      "input": 4
+    }
+  }
+}

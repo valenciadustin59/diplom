@@ -1,0 +1,1272 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://vetsystem.ru/clinic/",
+  "final_url": "https://vetsystem.ru/clinic/",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "accept-ranges": "bytes",
+    "age": "1317396",
+    "cache-control": "max-age=0, no-cache",
+    "content-encoding": "gzip",
+    "content-length": "13313",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sun, 19 Apr 2026 06:13:24 GMT",
+    "last-modified": "Sun, 19 Apr 2026 06:13:24 GMT",
+    "vary": "Accept-Encoding",
+    "wsr-cache": "HIT 11 (427)",
+    "x-bitrix-composite": "Cache (200)",
+    "x-page-speed": "1"
+  },
+  "response_time_ms": 9844.5098,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-04T12:10:09.091638+00:00",
+  "html": "<!DOCTYPE html><html xmlns=\"https://www.w3.org/1999/xhtml\" class=\"\"><head><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n<style>body{display:none}</style>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=1\">\n<title>Ветеринарные клиники: список ветклиник с адресами, телефонами и услугами ветеринарных клиник.</title>\n<meta name=\"copyright\" content=\"(С) Powered by BizAdv\">\n<link rel=\"shortcut icon\" href=\"/bitrix/templates/taby_red/favicon.ico\" type=\"image/x-icon\">\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n<meta name=\"robots\" content=\"index, follow\">\n<meta name=\"keywords\" content=\"ветеринарная клиника ветклиника ветеринарная помощь круглосуточная услуги\">\n<meta name=\"description\" content=\"Поиск ветеринарных клиник: адреса ветклиник, телефоны. Услуги и специализации ветеринарных клиник. Поиск по городам и услугам.\">\n<style type=\"text/css\">.bx-composite-btn {background: url(/bitrix/images/main/composite/sprite-1x.png) no-repeat right 0 #e94524;border-radius: 15px;color: #fff !important;display: inline-block;line-height: 30px;font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif !important;font-size: 12px !important;font-weight: bold !important;height: 31px !important;padding: 0 42px 0 17px !important;vertical-align: middle !important;text-decoration: none !important;}@media screen   and (min-device-width: 1200px)   and (max-device-width: 1600px)   and (-webkit-min-device-pixel-ratio: 2)  and (min-resolution: 192dpi) {.bx-composite-btn {background-image: url(/bitrix/images/main/composite/sprite-2x.png);background-size: 42px 124px;}}.bx-composite-btn-fixed {position: absolute;top: -45px;right: 15px;z-index: 10;}.bx-btn-white {background-position: right 0;color: #fff !important;}.bx-btn-black {background-position: right -31px;color: #000 !important;}.bx-btn-red {background-position: right -62px;color: #555 !important;}.bx-btn-grey {background-position: right -93px;color: #657b89 !important;}.bx-btn-border {border: 1px solid #d4d4d4;height: 29px !important;line-height: 29px !important;}.bx-composite-loading {display: block;width: 40px;height: 40px;background: url(/bitrix/images/main/composite/loading.gif);}</style>\n<script src=\"https://connect.facebook.net/ru_RU/bundle/sdk.js/\" async=\"\" crossorigin=\"anonymous\"></script><script type=\"text/javascript\" async=\"\" src=\"https://www.googletagmanager.com/gtag/js?id=G-LBP691KHE4&amp;cx=c&amp;_slc=1\"></script><script id=\"facebook-jssdk\" src=\"//connect.facebook.net/ru_RU/sdk.js#xfbml=1&amp;version=v2.0\"></script><script type=\"text/javascript\" async=\"\" src=\"https://stats.g.doubleclick.net/dc.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://mc.yandex.ru/metrika/watch.js\"></script><script type=\"text/javascript\" src=\"//an.yandex.ru/system/context.js\" async=\"\"></script><script async=\"\" src=\"//www.google-analytics.com/analytics.js\"></script><script type=\"text/javascript\" async=\"\" src=\"https://bitrix.info/ba.js\"></script><script data-skip-moving=\"true\">(function(w,d){var v=w.frameCacheVars={\"CACHE_MODE\":\"HTMLCACHE\",\"banner\":{\"url\":\"https:\\/\\/www.1c-bitrix.ru\\/composite\\/\",\"text\":\"Быстро с 1С-Битрикс\",\"bgcolor\":\"#FFFFFF\",\"style\":\"red\"},\"storageBlocks\":[],\"dynamicBlocks\":{\"7HdNDb\":\"d41d8cd98f00\",\"y0XwfU\":\"d41d8cd98f00\",\"AGUr9F\":\"7e49f3fb7b3b\",\"2DJmFo\":\"d41d8cd98f00\",\"iJBuqa\":\"853da5a6584f\",\"ALOAcH\":\"d41d8cd98f00\",\"Zg1Ab0\":\"d41d8cd98f00\"},\"AUTO_UPDATE\":true,\"AUTO_UPDATE_TTL\":120,\"version\":2};var inv=false;if(v.AUTO_UPDATE===false){if(v.AUTO_UPDATE_TTL&&v.AUTO_UPDATE_TTL>0){var lm=Date.parse(d.lastModified);if(!isNaN(lm)){var td=new Date().getTime();if((lm+v.AUTO_UPDATE_TTL*1000)>=td){w.frameRequestStart=false;w.preventAutoUpdate=true;return;}inv=true;}}else{w.frameRequestStart=false;w.preventAutoUpdate=true;return;}}var r=w.XMLHttpRequest?new XMLHttpRequest():(w.ActiveXObject?new w.ActiveXObject(\"Microsoft.XMLHTTP\"):null);if(!r){return;}w.frameRequestStart=true;var m=v.CACHE_MODE;var l=w.location;var x=new Date().getTime();var q=\"?bxrand=\"+x+(l.search.length>0?\"&\"+l.search.substring(1):\"\");var u=l.protocol+\"//\"+l.host+l.pathname+q;r.open(\"GET\",u,true);r.setRequestHeader(\"BX-ACTION-TYPE\",\"get_dynamic\");r.setRequestHeader(\"X-Bitrix-Composite\",\"get_dynamic\");r.setRequestHeader(\"BX-CACHE-MODE\",m);r.setRequestHeader(\"BX-CACHE-BLOCKS\",v.dynamicBlocks?JSON.stringify(v.dynamicBlocks):\"\");if(inv){r.setRequestHeader(\"BX-INVALIDATE-CACHE\",\"Y\");}try{r.setRequestHeader(\"BX-REF\",d.referrer||\"\");}catch(e){}if(m===\"APPCACHE\"){r.setRequestHeader(\"BX-APPCACHE-PARAMS\",JSON.stringify(v.PARAMS));r.setRequestHeader(\"BX-APPCACHE-URL\",v.PAGE_URL?v.PAGE_URL:\"\");}r.onreadystatechange=function(){if(r.readyState!=4){return;}var a=r.getResponseHeader(\"BX-RAND\");var b=w.BX&&w.BX.frameCache?w.BX.frameCache:false;if(a!=x||!((r.status>=200&&r.status<300)||r.status===304||r.status===1223||r.status===0)){var f={error:true,reason:a!=x?\"bad_rand\":\"bad_status\",url:u,xhr:r,status:r.status};if(w.BX&&w.BX.ready&&b){BX.ready(function(){setTimeout(function(){BX.onCustomEvent(\"onFrameDataRequestFail\",[f]);},0);});}w.frameRequestFail=f;return;}if(b){b.onFrameDataReceived(r.responseText);if(!w.frameUpdateInvoked){b.update(false);}w.frameUpdateInvoked=true;}else{w.frameDataString=r.responseText;}};r.send();var p=w.performance;if(p&&p.addEventListener&&p.getEntries&&p.setResourceTimingBufferSize){var e='resourcetimingbufferfull';var h=function(){if(w.BX&&w.BX.frameCache&&w.BX.frameCache.frameDataInserted){p.removeEventListener(e,h);}else{p.setResourceTimingBufferSize(p.getEntries().length+50);}};p.addEventListener(e,h);}})(window,document);</script>\n<link href=\"/bitrix/cache/css/s1/taby_red/page_34d4d08d90fa6998b9e994929939123c/page_34d4d08d90fa6998b9e994929939123c_v1.css?17591638341501\" type=\"text/css\" rel=\"stylesheet\">\n<link href=\"/bitrix/cache/css/s1/taby_red/template_f454e6b433885d8671e5b8cd20111bdf/template_f454e6b433885d8671e5b8cd20111bdf_v1.css?1759163723174355\" type=\"text/css\" data-template-style=\"true\" rel=\"stylesheet\">\n<script>if(!window.BX)window.BX={};if(!window.BX.message)window.BX.message=function(mess){if(typeof mess==='object'){for(let i in mess){BX.message[i]=mess[i];}return true;}};</script>\n<script>(window.BX||top.BX).message({\"JS_CORE_LOADING\":\"Загрузка...\",\"JS_CORE_NO_DATA\":\"- Нет данных -\",\"JS_CORE_WINDOW_CLOSE\":\"Закрыть\",\"JS_CORE_WINDOW_EXPAND\":\"Развернуть\",\"JS_CORE_WINDOW_NARROW\":\"Свернуть в окно\",\"JS_CORE_WINDOW_SAVE\":\"Сохранить\",\"JS_CORE_WINDOW_CANCEL\":\"Отменить\",\"JS_CORE_WINDOW_CONTINUE\":\"Продолжить\",\"JS_CORE_H\":\"ч\",\"JS_CORE_M\":\"м\",\"JS_CORE_S\":\"с\",\"JSADM_AI_HIDE_EXTRA\":\"Скрыть лишние\",\"JSADM_AI_ALL_NOTIF\":\"Показать все\",\"JSADM_AUTH_REQ\":\"Требуется авторизация!\",\"JS_CORE_WINDOW_AUTH\":\"Войти\",\"JS_CORE_IMAGE_FULL\":\"Полный размер\"});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"main.core\",\"namespace\":\"BX\",\"loaded\":true});</script>\n<script>BX.setJSList([\"\\/bitrix\\/js\\/main\\/core\\/core_ajax.js\",\"\\/bitrix\\/js\\/main\\/core\\/core_promise.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/promise\\/js\\/promise.js\",\"\\/bitrix\\/js\\/main\\/loadext\\/loadext.js\",\"\\/bitrix\\/js\\/main\\/loadext\\/extension.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/promise\\/js\\/promise.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/find\\/js\\/find.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/includes\\/js\\/includes.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/matches\\/js\\/matches.js\",\"\\/bitrix\\/js\\/ui\\/polyfill\\/closest\\/js\\/closest.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/fill\\/main.polyfill.fill.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/find\\/js\\/find.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/matches\\/js\\/matches.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/core\\/dist\\/polyfill.bundle.js\",\"\\/bitrix\\/js\\/main\\/core\\/core.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/intersectionobserver\\/js\\/intersectionobserver.js\",\"\\/bitrix\\/js\\/main\\/lazyload\\/dist\\/lazyload.bundle.js\",\"\\/bitrix\\/js\\/main\\/polyfill\\/core\\/dist\\/polyfill.bundle.js\",\"\\/bitrix\\/js\\/main\\/parambag\\/dist\\/parambag.bundle.js\"]);</script>\n<script>BX.Runtime.registerExtension({\"name\":\"ui.dexie\",\"namespace\":\"BX.Dexie3\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"ls\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"fx\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>BX.Runtime.registerExtension({\"name\":\"fc\",\"namespace\":\"window\",\"loaded\":true});</script>\n<script>(window.BX||top.BX).message({\"LANGUAGE_ID\":\"ru\",\"FORMAT_DATE\":\"DD.MM.YYYY\",\"FORMAT_DATETIME\":\"DD.MM.YYYY HH:MI:SS\",\"COOKIE_PREFIX\":\"BITRIX_SM\",\"SERVER_TZ_OFFSET\":\"10800\",\"UTF_MODE\":\"Y\",\"SITE_ID\":\"s1\",\"SITE_DIR\":\"\\/\"});</script>\n<script src=\"/bitrix/cache/js/s1/taby_red/kernel_main/kernel_main_v1.js?1761568539249964\"></script>\n<script src=\"/bitrix/js/ui/dexie/dist/dexie3.bundle.js?1758677535187520\"></script>\n<script>BX.setJSList([\"\\/bitrix\\/js\\/main\\/core\\/core_fx.js\",\"\\/bitrix\\/js\\/main\\/pageobject\\/pageobject.js\",\"\\/bitrix\\/js\\/main\\/core\\/core_window.js\",\"\\/bitrix\\/js\\/main\\/session.js\",\"\\/bitrix\\/js\\/main\\/date\\/main.date.js\",\"\\/bitrix\\/js\\/main\\/core\\/core_date.js\",\"\\/bitrix\\/js\\/main\\/utils.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jquery-1.8.3.min.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jquery-ui-1.9.2.custom.min.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jcarousellite_1.0.1.pack.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jquery.radio.min.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jquery.checkbox.min.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jquery.validate.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jQuery.Brazzers-Carousel.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/slick.js\\/slick\\/slick.min.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/chosen.jquery.min.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/custom.js\",\"\\/bitrix\\/templates\\/taby_red\\/fancybox\\/jquery.fancybox.pack.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/scripts.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/jsRun.js\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/message.js\"]);</script>\n<script>BX.setCSSList([\"\\/bitrix\\/templates\\/taby_red\\/components\\/dev\\/user\\/clinic\\/dev\\/user.list\\/.default\\/style.css\",\"\\/bitrix\\/templates\\/taby_red\\/components\\/bitrix\\/news.list\\/slider\\/style.css\",\"\\/bitrix\\/templates\\/taby_red\\/js\\/slick.js\\/slick\\/slick.css\",\"\\/bitrix\\/templates\\/taby_red\\/css\\/style.css\",\"\\/bitrix\\/templates\\/taby_red\\/css\\/nov14.css\",\"\\/bitrix\\/templates\\/taby_red\\/fancybox\\/jquery.fancybox.css\",\"\\/bitrix\\/templates\\/taby_red\\/css\\/mobile-screen.css\",\"\\/bitrix\\/templates\\/taby_red\\/css\\/chosen.css\",\"\\/bitrix\\/templates\\/taby_red\\/components\\/bitrix\\/menu\\/top14\\/style.css\",\"\\/bitrix\\/templates\\/.default\\/components\\/bitrix\\/news.list\\/last_video_main\\/style.css\",\"\\/bitrix\\/templates\\/.default\\/components\\/bitrix\\/news.list\\/puppies_on_sidebars\\/style.css\",\"\\/bitrix\\/templates\\/taby_red\\/components\\/bitrix\\/news.list\\/news_left_sidebar\\/style.css\",\"\\/bitrix\\/templates\\/taby_red\\/styles.css\",\"\\/bitrix\\/templates\\/taby_red\\/template_styles.css\"]);</script>\n<script src=\"/bitrix/cache/js/s1/taby_red/template_395c79aaffafac49b1c5eed20a572a20/template_395c79aaffafac49b1c5eed20a572a20_v1.js?1759163547253530\"></script>\n<script>var _ba=_ba||[];_ba.push([\"aid\",\"09f16b3f78553cbb1d05fbd2faa99252\"]);_ba.push([\"host\",\"vetsystem.ru\"]);(function(){var ba=document.createElement(\"script\");ba.type=\"text/javascript\";ba.async=true;ba.src=(document.location.protocol==\"https:\"?\"https://\":\"http://\")+\"bitrix.info/ba.js\";var s=document.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(ba,s);})();</script>\n<!--Google analytics-->\n<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-34977591-1','auto');ga('require','displayfeatures');ga('send','pageview');if(!document.referrer||document.referrer.split('/')[2].indexOf(location.hostname)!=0)setTimeout('gtag(\\'event\\', \\'sendform\\', {\\'event_category\\': \\'NoBounce\\',\\'event_action\\':\\'Over 15 seconds\\'})',15000);</script>\n<!--Google analytics--><style type=\"text/css\">.fancybox-margin{margin-right:0px;}</style><link rel=\"preconnect\" href=\"https://yastatic.net\"><link rel=\"preconnect\" href=\"https://avatars.mds.yandex.net\"><link rel=\"preconnect\" href=\"https://mc.yandex.ru\"><link rel=\"preconnect\" href=\"https://ads.adfox.ru\"><link rel=\"preload\" href=\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\" type=\"font/woff2\" as=\"font\" crossorigin=\"anonymous\"><style id=\"ysTextCssRule\">@font-face {\n        font-family: \"YS Text Variable\";\n        src: url(\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\") format(\"woff2\");\n        font-weight: 400 700;\n        font-display: optional;\n    }</style><script async=\"\" crossorigin=\"anonymous\" src=\"https://yastatic.net/safeframe-bundles/0.83/host.js\"></script><style type=\"text/css\">.UZznxc{height:inherit;max-height:inherit;min-height:inherit;width:100%}</style><style nonce=\"\">#0d52c7829a{width:1px;height:1px;position:relative;}</style><style nonce=\"\">#id2726{width:1px;height:1px;top:0px;left:0px;position:absolute;}</style><style type=\"text/css\" data-fbcssmodules=\"css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget\">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0px;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:lucida grande,tahoma,verdana,arial,sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:400;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{0%{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}\n\n.fb_dialog{background:#525252b3;position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://connect.facebook.net/rsrc.php/v4/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:700;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://connect.facebook.net/rsrc.php/v4/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://connect.facebook.net/rsrc.php/v4/ya/r/3rhSv5V8j3o.gif) #fff no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:#0006;inset:0;min-height:100%;position:absolute;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba),to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:#fff 0 1px 1px -1px inset;color:#fff;font:700 14px Helvetica,sans-serif;text-overflow:ellipsis;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2),to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:700 12px Helvetica,sans-serif;margin:2px -12px;padding:2px 6px 3px;text-shadow:rgba(0,30,84,.296875) 0px -1px 0px}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:700;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://connect.facebook.net/rsrc.php/v4/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4A4A4A;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4A4A4A;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://connect.facebook.net/rsrc.php/v4/y2/r/onuUJj0tCqE.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0)}to{transform:rotate(360deg)}}\n\n.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}\n</style></head>\n<body class=\"red\">\n<div id=\"fb-root\" class=\" fb_reset\"><div style=\"position: absolute; top: -10000px; width: 0px; height: 0px;\"><div></div></div></div>\n<div id=\"bxdynamic_7HdNDb_start\" style=\"display:none\"></div><div id=\"bxdynamic_7HdNDb_end\" style=\"display:none\"></div>\t<div id=\"panel\"></div>\n<div class=\"top_line\">\n<div class=\"container\">\n<div class=\"_right\">\n<a href=\"/auth/\">Войти</a>\n<a href=\"/new/\">Регистрация</a>\n</div>\n</div>\n</div>\n<header class=\"header mobiledevice\">\n<div class=\"container\">\n<div class=\"mobiletop\">\n<a href=\"/\" class=\"_logo\">\n<img src=\"/bitrix/templates/taby_red/images/mob_logo.png\" alt=\"\" class=\"logos\">\n<img src=\"/bitrix/templates/taby_red/images/mob_text.png\" alt=\"\" class=\"logotext\">\n</a>\n</div>\n<div class=\"_right\">\n<div id=\"bxdynamic_y0XwfU_start\" style=\"display:none\"></div><div id=\"bxdynamic_y0XwfU_end\" style=\"display:none\"></div>\n<div class=\"_bot\">\n<form class=\"_search\" action=\"/search/\" method=\"get\">\n<input type=\"text\" placeholder=\"Поиск…\" name=\"q\" class=\"input-block-level\">\n<input type=\"submit\">\n</form>\n<div class=\"_soc\">\n<a href=\"https://www.youtube.com/user/vetsystem\" target=\"_blank\">\n<img src=\"/bitrix/templates/taby_red/images/yts.png\" alt=\"\">\n</a>\n<a href=\"https://www.facebook.com/vetsistema\" target=\"_blank\">\n<img src=\"/bitrix/templates/taby_red/images/fb.png\" alt=\"\">\n</a>\n<a href=\"https://vk.com/vetsistema\" target=\"_blank\">\n<img src=\"/bitrix/templates/taby_red/images/vk.png\" alt=\"\">\n</a>\n</div>\n<div class=\"_feedback\">\n<a href=\"/feedback/\">\n<img src=\"/bitrix/templates/taby_red/images/contact.png\" alt=\"\">\n<span>Связаться с нами</span>\n</a>\n</div>\n</div>\n</div>\n</div>\n</header>\n<nav class=\"nav\">\n<a href=\"#\" class=\"main-menu-ch-bt\"></a>\n<div class=\"container\">\n<a href=\"/news/\">Новости</a>\n<a href=\"/pupies/\">Продажа щенков</a>\n<a href=\"/vopros/\">Вопросы ветеринару</a>\n<a href=\"/review/\">Отзывы</a>\n<a href=\"/blog/\">Публикации</a>\n<a href=\"/ads/\">Объявления</a>\n<a href=\"/sobaki/\">Породы собак</a>\n<a href=\"/koshki/\">Породы кошек</a>\n</div>\n</nav>\n<div id=\"wrapper\">\n<!-- #header-->\n<section id=\"middle\">\n<div id=\"container\">\n<div id=\"content\" class=\"vet-content\">\n<table>\n<tbody><tr>\n<td>\t<div class=\"breadcrumbs\"><ul><li><a href=\"/\">Главная</a></li><li class=\"arrow\">→</li><li>Ветеринарные клиники</li></ul></div>\t<div class=\"div-content-marleft\"><script src=\"/bitrix/templates/taby_red/js/ui/jquery.ui.core.min.js\"></script>\n<script src=\"/bitrix/templates/taby_red/js/ui/jquery.ui.widget.min.js\"></script>\n<script src=\"/bitrix/templates/taby_red/js/ui/jquery.ui.position.min.js\"></script>\n<script src=\"/bitrix/templates/taby_red/js/ui/jquery.ui.menu.min.js\"></script>\n<script src=\"/bitrix/templates/taby_red/js/ui/jquery.ui.autocomplete.js\"></script>\n<style>\n\t.ui-autocomplete-loading {\n\t\tbackground: white url('/bitrix/templates/taby_red/js/ui/ui-anim_basic_16x16.gif') right center no-repeat;\n\t}\n\t.styled-drop {\n\t\tbackground-color: #F6FBFC;\n\t\twidth: 150px;\n\t\tborder: 1px solid #8AE2F0;\n\t\tborder-radius: 3px;\n\t\tbox-shadow: 0px 5px 7px #BFBFBF;\n\t}\n\t.styled-drop li {\n\t\tlist-style: none;\n\t}\n\t.styled-drop li a {\n\t\tcursor: pointer;\n\t\tcolor: #3E93D0;\n\t\tmargin-left: 5px;\n\t}\n\t.filter2 input[type=\"text\"] {\n\t\tborder: 1px solid #CADBDE;\n\t\tborder-radius: 3px;\n\t\tbox-shadow: inset 0px 1px #D9D9D9, inset 0px 2px #EBEBEB;\n\t\tcolor: #6A8591;\n\t\tfont-style: normal;\n\t\theight: 28px;\n\t\tline-height: 30px;\n\t\tmargin-top: -2px;\n\t\toutline: medium none currentColor;\n\t\ttext-indent: 10px;\n\t\twidth: 160px;\n\t}\n</style>\n<script type=\"text/javascript\">$(document).ready(function(){$('select').change(function(){$('.filter2').submit();})\n$('.checkbox').click(function(){$('.filter2').submit();});$(\"#city_text\").autocomplete({source:\"/ajax/ajax.php?a=city\",minLength:3,subclass:'styled-drop',select:function(event,ui){if(ui.item){$('#city').val(ui.item.id+'|'+ui.item.value);$('.filter2').submit();}}});$('#city_text').keypress(function(e){if(e.which==13){var val=$(this).val();if(!val){$('#city').val('');$('.filter2').submit();}}});});</script>\n<div class=\"clh1\">\n<h1 style=\"float:none\">Ветеринарные клиники России</h1>\n<p>\nВетеринарные клиники с возможностью поиска по специализациям, услугам и городам. Для каждой ветеринарной клиники доступны описания, персональная фотогалерея, перечень специализаций и услуг, публикации новостей и статей для владельцев животных.\nМы призываем все ветклиники указывать полную и подробную информацию для удобного и объективного поиска и выбора владельцем животного.\t</p>\n<div style=\"\" class=\"bycity\">\n<a href=\"gorod/\">Список клиник по городам</a>\n</div>\n</div>\n<div style=\"clear:both\"></div>\n<article class=\"doc-clinic\">\n<form active=\"\" method=\"GET\" class=\"filter2\">\n<div class=\"filter\">\n<div class=\"item-filt\">\n<span>Город:</span>\n<span role=\"status\" aria-live=\"polite\" class=\"ui-helper-hidden-accessible\"></span><input type=\"text\" placeholder=\"любой\" id=\"city_text\" value=\"\" class=\"ui-autocomplete-input\" autocomplete=\"off\">\n<input type=\"hidden\" id=\"city\" name=\"city\" value=\"\">\n</div>\n<div class=\"item-filt\">\n<span>Название:</span>\n<input type=\"text\" placeholder=\"Название клиники\" id=\"doc_name\" name=\"doc_name\" value=\"\" style=\"width:235px;line-height:15px\">\n</div>\n<div class=\"item-filt\">\n<input type=\"submit\" value=\"Найти  →\" class=\"searchbtn\">\n</div>\n<div class=\"clear\"></div>\n</div>\n<div class=\"uslugi\">\n<span class=\"title\">Услуги</span>\n<div class=\"clear\"></div>\n<ul class=\"one\">\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2449\">Акушерство</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2458\">Анализы</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2470\">Анестезиология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2450\">Вакцинация</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2463\">Дерматология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2467\">Зоопсихология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2459\">Кардиология</li>\n</ul>\n<ul class=\"two\">\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2456\">Кастрация/стерилизация</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2468\">Неврология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"4039\">Нефрология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2461\">Онкология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2466\">Орнитология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2469\">Ортопедия</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2465\">Офтальмология</li>\n</ul>\n<ul class=\"three\">\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2462\">Реаниматология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2464\">Рентгенография</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2451\">Стоматология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2452\">Терапия</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2453\">УЗИ-диагностика</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"4038\">Урология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2457\">Усыпление</li>\n</ul>\n<ul class=\"four\">\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2454\">Хирургия</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2455\">Чипирование</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"2460\">Эндокринология</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"4921\">Компьютерная томография</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"5426\">ЭКГ</li>\n<li><input type=\"checkbox\" name=\"service[]\" value=\"5427\">ЭХО КГ</li>\n</ul>\n</div>\n</form>\n<div id=\"bxdynamic_AGUr9F_start\" style=\"display:none\"></div>\n<ul class=\"list-doc-clinic\">\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2713/\"><img src=\"/upload/60x60.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2713/\"></a></span>\n<p>\nВетеринарная клиника\n<br>\nгород </p>\n<a href=\"2713/#vet-tab6\">0 отзывов</a> | <a href=\"2713/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2700/\"><img src=\"/upload/resize_cache/main/351/100_160_240cd750bba9870f18aada2478b24840a/35195eea1ee0a1f79118c218294f93fa.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2700/\">МосВетПомощь</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Москва\t</p>\n<a href=\"2700/#vet-tab6\">0 отзывов</a> | <a href=\"2700/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li class=\"all_service\"><a href=\"2700/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2673/\"><img src=\"/upload/resize_cache/main/e96/100_160_240cd750bba9870f18aada2478b24840a/e96939f72ef8f7d57e943d74326cc9f7.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2673/\">BraVo</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Раменское\t</p>\n<a href=\"2673/#vet-tab6\">0 отзывов</a> | <a href=\"2673/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кастрация/стерилизация</li>\n<li>Неврология</li>\n<li class=\"all_service\"><a href=\"2673/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2656/\"><img src=\"/upload/resize_cache/main/96c/100_160_240cd750bba9870f18aada2478b24840a/96ca563718f1d5a823986ce4a02020a1.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2656/\">Добрый Доктор Ветеринарная клиника</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Москва\t</p>\n<a href=\"2656/#vet-tab6\">0 отзывов</a> | <a href=\"2656/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Анализы</li>\n<li>Вакцинация</li>\n<li>Дерматология</li>\n<li>Зоопсихология</li>\n</ul>\n<ul>\n<li>Кастрация/стерилизация</li>\n<li>Неврология</li>\n<li>Офтальмология</li>\n<li class=\"all_service\"><a href=\"2656/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2533/\"><img src=\"/upload/60x60.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2533/\">ВЕТЕРИНАРНАЯ КЛИНИКА</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород </p>\n<a href=\"2533/#vet-tab6\">0 отзывов</a> | <a href=\"2533/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n<li>Дерматология</li>\n</ul>\n<ul>\n<li>Зоопсихология</li>\n<li>Кастрация/стерилизация</li>\n<li>УЗИ-диагностика</li>\n<li class=\"all_service\"><a href=\"2533/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2400/\"><img src=\"/upload/resize_cache/main/e59/100_160_240cd750bba9870f18aada2478b24840a/e599a415bd8801882d3f6b85d70f5898.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2400/\">Сеть ветеринарных клиник Добрый Доктор 24 часа</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Жуковский\t</p>\n<a href=\"2400/#vet-tab6\">0 отзывов</a> | <a href=\"2400/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li>Неврология</li>\n<li class=\"all_service\"><a href=\"2400/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2368/\"><img src=\"/upload/resize_cache/main/3d2/100_160_240cd750bba9870f18aada2478b24840a/3d2cc4169cd8e2863e19ca34ff026b44.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2368/\">Ветклиника Веста</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Москва\t</p>\n<a href=\"2368/#vet-tab6\">0 отзывов</a> | <a href=\"2368/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li class=\"all_service\"><a href=\"2368/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2278/\"><img src=\"/upload/resize_cache/main/001/100_160_240cd750bba9870f18aada2478b24840a/001a1d76e6500b0015152a08de3ad162.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2278/\">Клиника ветеринарной стоматологии и пластической х</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Санкт-Петербург\t</p>\n<a href=\"2278/#vet-tab6\">0 отзывов</a> | <a href=\"2278/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Зоопсихология</li>\n<li>Кардиология</li>\n<li class=\"all_service\"><a href=\"2278/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2222/\"><img src=\"/upload/60x60.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2222/\">Ветеринарный центр Созвездие</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Москва\t</p>\n<a href=\"2222/#vet-tab6\">0 отзывов</a> | <a href=\"2222/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li class=\"all_service\"><a href=\"2222/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"2146/\"><img src=\"/upload/resize_cache/main/445/100_160_240cd750bba9870f18aada2478b24840a/445cd9cf878cb073dcc5eac964ee8e3e.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"2146/\">Скорая ветеринарная помощь</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Коломна\t</p>\n<a href=\"2146/#vet-tab6\">0 отзывов</a> | <a href=\"2146/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Вакцинация</li>\n<li>Дерматология</li>\n</ul>\n<ul>\n<li>Зоопсихология</li>\n<li>Кастрация/стерилизация</li>\n<li>Неврология</li>\n<li class=\"all_service\"><a href=\"2146/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1908/\"><img src=\"/upload/resize_cache/main/dd1/100_160_240cd750bba9870f18aada2478b24840a/dd18d73ae4fff91b174c52bbff9659e3.JPG\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1908/\">ОГБУ \"Челябинская ветстанция\"</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Челябинск\t</p>\n<a href=\"1908/#vet-tab6\">0 отзывов</a> | <a href=\"1908/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li class=\"all_service\"><a href=\"1908/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1902/\"><img src=\"/upload/60x60.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1902/\">VetBest</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Коломна\t</p>\n<a href=\"1902/#vet-tab6\">0 отзывов</a> | <a href=\"1902/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li class=\"all_service\"><a href=\"1902/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1874/\"><img src=\"/upload/60x60.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1874/\">Ветеринарная клиника Вет-Веста</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Лыткарино\t</p>\n<a href=\"1874/#vet-tab6\">0 отзывов</a> | <a href=\"1874/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Вакцинация</li>\n<li>Кастрация/стерилизация</li>\n</ul>\n<ul>\n<li>УЗИ-диагностика</li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1871/\"><img src=\"/upload/resize_cache/main/8ff/100_160_240cd750bba9870f18aada2478b24840a/8ff6d1f1ee0f0172ce4fffbe858289d2.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1871/\">Круглосуточная ветеринарная клиника АйБолит</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Нижний Новгород\t</p>\n<a href=\"1871/#vet-tab6\">0 отзывов</a> | <a href=\"1871/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Зоопсихология</li>\n<li>Кардиология</li>\n<li class=\"all_service\"><a href=\"1871/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1868/\"><img src=\"/upload/60x60.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1868/\">Ветеринарная клиника \"Чеширский кот\"</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Санкт-Петербург\t</p>\n<a href=\"1868/#vet-tab6\">0 отзывов</a> | <a href=\"1868/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Зоопсихология</li>\n<li>Кардиология</li>\n<li class=\"all_service\"><a href=\"1868/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1862/\"><img src=\"/upload/resize_cache/main/49d/100_160_240cd750bba9870f18aada2478b24840a/49d7d3081fe498f919308cc4a68e6248.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1862/\">МВЦ МРТ для животных</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Москва\t</p>\n<a href=\"1862/#vet-tab6\">0 отзывов</a> | <a href=\"1862/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Неврология</li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1858/\"><img src=\"/upload/resize_cache/main/776/100_160_240cd750bba9870f18aada2478b24840a/776dd552fd778f897d1f6ce9c0c3b2d7.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1858/\">АНО \"Центр зоозащиты \"Добрый город\"</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Королев\t</p>\n<a href=\"1858/#vet-tab6\">0 отзывов</a> | <a href=\"1858/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Вакцинация</li>\n<li>Кастрация/стерилизация</li>\n</ul>\n<ul>\n<li>Усыпление</li>\n<li>Чипирование</li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1857/\"><img src=\"/upload/resize_cache/main/7ea/100_160_240cd750bba9870f18aada2478b24840a/7ea259e997069ce0123175f6f73f9687.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1857/\">Ветеринарная клиника ГБОУ СПО «Калужский аграрный </a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Калуга\t</p>\n<a href=\"1857/#vet-tab6\">0 отзывов</a> | <a href=\"1857/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1855/\"><img src=\"/upload/resize_cache/main/71e/100_160_240cd750bba9870f18aada2478b24840a/71ecb0d7bed0558ac34a573c6ce750df.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1855/\">ВетАльянс</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Санкт-Петербург\t</p>\n<a href=\"1855/#vet-tab6\">0 отзывов</a> | <a href=\"1855/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Кардиология</li>\n<li>Кастрация/стерилизация</li>\n<li class=\"all_service\"><a href=\"1855/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n<li>\n<div class=\"center\">\n<div class=\"img\">\n<a href=\"1853/\"><img src=\"/upload/resize_cache/main/b4f/100_160_240cd750bba9870f18aada2478b24840a/b4f46964d2dcc2a0971d8f1720994fc5.jpg\"></a>\n</div>\n<div class=\"cont\">\n<span><a href=\"1853/\">Ветцентр Южный</a></span>\n<p>\nВетеринарная клиника\n<br>\nгород Хабаровск\t</p>\n<a href=\"1853/#vet-tab6\">0 отзывов</a> | <a href=\"1853/#vet-tab4\">0 пациентов</a>\n<div class=\"clear\"></div>\n<ul>\n<li>Акушерство</li>\n<li>Анализы</li>\n<li>Анестезиология</li>\n<li>Вакцинация</li>\n</ul>\n<ul>\n<li>Дерматология</li>\n<li>Зоопсихология</li>\n<li>Кардиология</li>\n<li class=\"all_service\"><a href=\"1853/#vet-tab2\">Все услуги</a></li>\n</ul>\n</div>\n</div>\n</li>\n</ul>\n<div class=\"clear\"></div>\n<nav class=\"page-nav\">\n<ul>\n<li><a href=\"#\" class=\"not-active\">← Назад</a></li>\n<li><a href=\"#\" class=\"active\">1</a></li>\n<li><a href=\"/clinic/?PAGEN_1=2\">2</a></li>\n<li><a href=\"/clinic/?PAGEN_1=3\">3</a></li>\n<li><a href=\"/clinic/?PAGEN_1=4\">4</a></li>\n<li><a href=\"/clinic/?PAGEN_1=5\">5</a></li>\n<li class=\"forth\"><a href=\"/clinic/?PAGEN_1=2\">Вперёд →</a></li>\n</ul>\n</nav>\t<div id=\"bxdynamic_AGUr9F_end\" style=\"display:none\"></div>\n<div class=\"output-number\">\n<ul>\n<li>Вывод:</li>\n<li><a href=\"index.php?count=20\" class=\"active\">20</a></li>\n<li><a href=\"index.php?count=50\">50</a></li>\n<li><a href=\"index.php?count=100\">100</a></li>\n</ul>\n</div>\n<div class=\"clear\"></div>\n</article>\n<div class=\"clear\"></div>\n<article class=\"block-item\">\n<div class=\"img-baner\">\n<div id=\"bxdynamic_2DJmFo_start\" style=\"display:none\"></div><div id=\"bxdynamic_2DJmFo_end\" style=\"display:none\"></div>\t</div>\n<div class=\"photo_block\">\n<h2>\n<a class=\"glav_links\" href=\"/photo/\">Отзывы</a>\n</h2>\n<div class=\"slider slick-initialized slick-slider\">\n<div class=\"slick-list draggable\" tabindex=\"0\"><div class=\"slick-track\" style=\"opacity: 1; width: 4000px; transform: translate3d(-800px, 0px, 0px);\"><div class=\"_slide slick-slide slick-cloned\" index=\"-1\" style=\"width: 800px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<div class=\"_img\">\n<img src=\"/upload/resize_cache/main/d48/150_200_2/d48994fe47591656315b9c32118cdcce.jpg\" alt=\"\">\n<small><b>Андрей Титов </b></small>\n</div>\n<div class=\"about\">\n<div class=\"_name\">\nСпасибо вам, Андрей!\t</div>\n<div class=\"_cont\">\nДавно пользуемся услугами Андрея, вызываем на дом.<br>\nАндрей профессионал своего дела, и нас, владельцев животных успокаивает и к собаке всегда внимателен, аккуратен и бдителен.<br>\nУспешно лечил нашу собаку, собаку родителей и кошку наших родственников. Честный и надежный врач. Спасибо Вам, Андрей!\t</div>\n<small>автор: <b>Богдан Сергеев </b></small>\n</div>\n</div>\n</div><div class=\"_slide slick-slide slick-active\" index=\"0\" style=\"width: 800px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<div class=\"_img\">\n<img src=\"/upload/resize_cache/main/3a0/150_200_2/3a0127c0a4fbb4c8dabdb3c3c0cca999.JPG\" alt=\"\">\n<small><b>Абрамов Олег </b></small>\n</div>\n<div class=\"about\">\n<div class=\"_name\">\nБлагодарность.\t</div>\n<div class=\"_cont\">\nСпасибо Олегу Владимировичу от самого упитанного и воспитанного кота Ермилы за любовь к животным и заботу о них. Спасибо!\t</div>\n<small>автор: <b>Медовщикова Татьяна Николаевна </b></small>\n</div>\n</div>\n</div><div class=\"_slide slick-slide\" index=\"1\" style=\"width: 800px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<div class=\"_img\">\n<img src=\"/upload/resize_cache/main/cae/150_200_2/caeaf04c68ded51537cd1f0f3c2e9fb8.jpg\" alt=\"\">\n<small><b>Цветкова Ольга Сергеевна </b></small>\n</div>\n<div class=\"about\">\n<div class=\"_name\">\nСпасибо Ольге!\t</div>\n<div class=\"_cont\">\nОльга, спасибо вам за оперативные консультации прямо на сайте. Обязательно к вам обратимся еще или пригласим домой, если, не дай Бог, нашему грозному Той-терьеру Кильке понадобиться помощь.\t</div>\n<small>автор: <b>Богдан Сергеев </b></small>\n</div>\n</div>\n</div><div class=\"_slide slick-slide\" index=\"2\" style=\"width: 800px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<div class=\"_img\">\n<img src=\"/upload/resize_cache/main/d48/150_200_2/d48994fe47591656315b9c32118cdcce.jpg\" alt=\"\">\n<small><b>Андрей Титов </b></small>\n</div>\n<div class=\"about\">\n<div class=\"_name\">\nСпасибо вам, Андрей!\t</div>\n<div class=\"_cont\">\nДавно пользуемся услугами Андрея, вызываем на дом.<br>\nАндрей профессионал своего дела, и нас, владельцев животных успокаивает и к собаке всегда внимателен, аккуратен и бдителен.<br>\nУспешно лечил нашу собаку, собаку родителей и кошку наших родственников. Честный и надежный врач. Спасибо Вам, Андрей!\t</div>\n<small>автор: <b>Богдан Сергеев </b></small>\n</div>\n</div>\n</div><div class=\"_slide slick-slide slick-cloned\" index=\"3\" style=\"width: 800px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<div class=\"_img\">\n<img src=\"/upload/resize_cache/main/3a0/150_200_2/3a0127c0a4fbb4c8dabdb3c3c0cca999.JPG\" alt=\"\">\n<small><b>Абрамов Олег </b></small>\n</div>\n<div class=\"about\">\n<div class=\"_name\">\nБлагодарность.\t</div>\n<div class=\"_cont\">\nСпасибо Олегу Владимировичу от самого упитанного и воспитанного кота Ермилы за любовь к животным и заботу о них. Спасибо!\t</div>\n<small>автор: <b>Медовщикова Татьяна Николаевна </b></small>\n</div>\n</div>\n</div></div></div>\n\n\n<button type=\"button\" data-role=\"none\" class=\"slick-prev\" style=\"display: block;\">Previous</button><button type=\"button\" data-role=\"none\" class=\"slick-next\" style=\"display: block;\">Next</button></div>\n</div>\n<div class=\"clear\"></div>\n</article>\n</div>\n</td>\n<td width=\"240px\">\n<aside id=\"sideRight\">\n<div class=\"photo_block\">\n<div class=\"h2textright\">\n<img src=\"/bitrix/templates/taby_red/images/photos.png\" alt=\"\">\n<a class=\"glav_links\" href=\"/photo/\">Новые видео</a>\n</div>\n<div class=\"slider slick-initialized slick-slider\">\n<div class=\"slick-list draggable\" tabindex=\"0\"><div class=\"slick-track\" style=\"opacity: 1; width: 189px; transform: translate3d(0px, 0px, 0px);\"><div class=\"_slide slick-slide slick-active\" index=\"0\" style=\"width: 189px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<a href=\"#11634\" class=\"_img fancybox\">\n<img src=\"https://img.youtube.com/vi/KQMbE437qbQ/hqdefault.jpg\" alt=\"\">\n<div class=\"_name\">\nВидеорепортаж с мероприятия \"Найди Друга\" - выставки-пристройстве собак из приютов.\t</div>\n</a>\nКоманда Ветсистемы\n<div id=\"11634\" style=\"display:none\">\n<iframe width=\"500\" height=\"360\" src=\"//www.youtube.com/embed/KQMbE437qbQ\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n</div>\n</div>\n<div class=\"_item\" data-match-height=\"photoblock\">\n<a href=\"#11254\" class=\"_img fancybox\">\n<img src=\"https://img.youtube.com/vi/PhkfSX2mpNI/hqdefault.jpg\" alt=\"\">\n<div class=\"_name\">\nМиними - свежая еда для собак и кошек\t</div>\n</a>\nMinime\n<div id=\"11254\" style=\"display:none\">\n<iframe width=\"500\" height=\"360\" src=\"//www.youtube.com/embed/PhkfSX2mpNI\" frameborder=\"0\" allowfullscreen=\"\"></iframe>\n</div>\n</div>\n</div></div></div>\n</div>\n<a href=\"/videos/\" class=\"btn\">Все видео →</a>\n</div>\n<div id=\"bxdynamic_iJBuqa_start\" style=\"display:none\"></div><div class=\"photo_block puppies_sidebar\">\n<span class=\"header_like_h2\">\n<img src=\"/bitrix/templates/taby_red/images/photos.png\" alt=\"\">\n<a class=\"glav_links\" href=\"/pupies/\">Продается щенок</a>\n</span>\n<div class=\"slider slick-initialized slick-slider\">\n<div class=\"slick-list draggable\" tabindex=\"0\"><div class=\"slick-track\" style=\"opacity: 1; width: 189px; transform: translate3d(0px, 0px, 0px);\"><div class=\"_slide slick-slide slick-active\" index=\"0\" style=\"width: 189px;\">\n<div class=\"_item\" data-match-height=\"photoblock\">\n<a href=\"/pupies/25502/\" class=\"_img\">\n<img src=\"/upload/resize_cache/iblock/614/320_200_2/6147775e38617c7ef5a9fd5b317cc7ca.jpg\" alt=\"\">\n</a>\n<div class=\"_name\">\n<div class=\"tile__text\">\n<div class=\"tile__p\" title=\"\">Экселлент Брайт Стар Ева - Немецкая овчарка</div>\n<div class=\"tile__p_price\">\n<span></span>\n</div>\n<div class=\"tile__p_year\">Санкт-Петербург</div>\n</div>\n</div>\n</div>\n</div></div></div>\n</div>\n<a href=\"/pupies/25502/\" class=\"btn\">Подробнее →</a>\n</div>\n<div id=\"bxdynamic_iJBuqa_end\" style=\"display:none\"></div>\n<!-- Yandex.RTB R-A-154026-4 -->\n<div id=\"yandex_rtb_R-A-154026-4\" data-ad27b39fda=\"\" style=\"position: relative;\"><div></div><div data-id=\"MARKER\" style=\"color-scheme: initial; forced-color-adjust: initial; mask: initial; math-depth: initial; position: absolute; position-anchor: initial; text-size-adjust: initial; appearance: initial; color: initial; font: initial; font-palette: initial; font-synthesis: initial; position-area: initial; text-orientation: initial; text-rendering: initial; text-spacing-trim: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; anchor-name: initial; anchor-scope: initial; animation-composition: initial; animation: initial; app-region: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; baseline-source: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; bottom: initial; box-decoration-break: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-animation: initial; caret-color: initial; caret-shape: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; container: initial; content: initial; content-visibility: initial; corner-shape: initial; corner-block-end-shape: initial; corner-block-start-shape: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; dynamic-range-limit: initial; empty-cells: initial; field-sizing: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: 2px; hyphenate-character: initial; hyphenate-limit-chars: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; initial-letter: initial; inline-size: initial; inset-block: initial; inset-inline: initial; interactivity: initial; interest-delay: initial; interpolate-size: initial; isolation: initial; left: 50%; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin-bottom: initial; margin-inline: initial; margin-left: -1px; margin-right: initial; margin-top: 0px; marker: initial; mask-type: initial; math-shift: initial; math-style: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; object-view-box: initial; offset: initial; opacity: initial; order: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-block: initial; overflow-clip-margin: initial; overflow-inline: initial; overflow-wrap: initial; overflow: initial; overlay: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: none; position-try: initial; position-visibility: initial; print-color-adjust: initial; quotes: initial; r: initial; reading-flow: initial; reading-order: initial; resize: initial; right: initial; rotate: initial; ruby-align: initial; ruby-position: initial; rx: initial; ry: initial; scale: initial; scroll-behavior: initial; scroll-initial-target: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-marker-group: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scroll-target-group: initial; scroll-timeline: initial; scrollbar-color: initial; scrollbar-gutter: initial; scrollbar-width: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-autospace: initial; text-box: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-emphasis: initial; text-emphasis-position: initial; text-indent: initial; text-justify: initial; text-overflow: initial; text-shadow: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; text-wrap: initial; timeline-scope: initial; top: 50%; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; translate: initial; user-select: initial; vector-effect: initial; vertical-align: initial; view-timeline: initial; view-transition-class: initial; view-transition-group: initial; view-transition-name: initial; visibility: initial; border-spacing: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-user-drag: initial; white-space-collapse: initial; widows: initial; width: 2px; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;\"></div><div data-r-a-154026-4-yandex_rtb_r-a-154026-4=\"\" class=\"csr-uniq3\"></div></div>\n<script type=\"text/javascript\">(function(w,d,n,s,t){w[n]=w[n]||[];w[n].push(function(){Ya.Context.AdvManager.render({blockId:\"R-A-154026-4\",renderTo:\"yandex_rtb_R-A-154026-4\",async:true});});t=d.getElementsByTagName(\"script\")[0];s=d.createElement(\"script\");s.type=\"text/javascript\";s.src=\"//an.yandex.ru/system/context.js\";s.async=true;t.parentNode.insertBefore(s,t);})(this,this.document,\"yandexContextAsyncCallbacks\");</script>\n<div class=\"articles_list\">\n</div>\n<div class=\"ajax block1\"><style type=\"text/css\">.new-face .element a{position:relative;background-image:none;width:auto;display:inline;text-decoration:none;color:#555;font-size:12px}</style>\n<div class=\"new-face\">\n<span class=\"title\">Новые лица</span>\n<button class=\"prev-new-face\"></button>\n<button class=\"next-new-face\"></button>\n<div class=\"gallery\" style=\"width: 230px; visibility: visible; overflow: hidden; position: relative; z-index: 2; left: 0px;\">\n<ul style=\"margin: 0px; padding: 0px; position: relative; list-style-type: none; z-index: 1; width: 920px; left: -230px;\"><li style=\"overflow: hidden; float: left; width: 230px; height: 372px;\">\n<div class=\"pink\">\n<div class=\"element\">\n<a href=\"/pets/26563/\"><img src=\"/upload/resize_cache/iblock/312/60_60_2/312073cb08c80cd709ac79c691ebed0b.jpg\"></a><br>\n<span></span>\n<a href=\"/pets/26563/\"><span> Шанти</span></a>\n<span>г. Навашино</span>\n</div>\n<div class=\"element\">\n<a href=\"/pets/26526/\"><img src=\"/upload/resize_cache/iblock/d33/60_60_2/d330befd67f520f6c0cbc8ed8262879d.jpg\"></a><br>\n<a href=\"/pets/26526/\"><span>Вильям Шекспир</span></a>\n<span></span>\n<span>г. Москва</span>\n</div>\n<a href=\"/pets/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-blue\">\n<div class=\"element\">\n<a href=\"/doctor/vetluch/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/doctor/vetluch/\"><span>Сорокина Юлия Эдуардовна</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Москва</span>\n</div>\n<div class=\"element\">\n<a href=\"/doctor/Shurikvet/\"><img src=\"/upload/resize_cache/main/20d/60_60_2/20d279014e913a2ae995acf892ebbc16.jpg\"></a><br>\n<a href=\"/doctor/Shurikvet/\"><span>Исаенко Александр Николае...</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/doctor/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-grey\">\n<div class=\"element\">\n<a href=\"/clinic/vetbravo/\"><img src=\"/upload/resize_cache/main/e96/60_60_2/e96939f72ef8f7d57e943d74326cc9f7.jpg\"></a><br>\n<a href=\"/clinic/vetbravo/\"><span>BraVo</span></a>\n<!-- <span>ветклиника</span> -->\n<span>г. Раменское</span>\n</div>\n<div class=\"element\">\n<a href=\"/clinic/dobrdoktor2016/\"><img src=\"/upload/resize_cache/main/96c/60_60_2/96ca563718f1d5a823986ce4a02020a1.jpg\"></a><br>\n<a href=\"/clinic/dobrdoktor2016/\"><span>Добрый Доктор Ветеринарна...</span></a>\n<!-- <span>ветклиника</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/clinic/\"></a>\n</div>\n<div class=\"clear\"></div>\n</li>\n<li style=\"overflow: hidden; float: left; width: 230px; height: 372px;\">\n<div class=\"pink\">\n<div class=\"element\">\n<a href=\"/pets/26715/\"><img src=\"/upload/resize_cache/iblock/8ff/60_60_2/8ffa2590831039cc6935ad24cd5a6410.jpg\"></a><br>\n<span></span>\n<a href=\"/pets/26715/\"><span>Цири</span></a>\n<span>г. Москва</span>\n</div>\n<div class=\"element\">\n<a href=\"/pets/26582/\"><img src=\"/upload/resize_cache/iblock/302/60_60_2/3028b619fb4e6065ef4200bd3d7168bb.jpg\"></a><br>\n<a href=\"/pets/26582/\"><span>Мультик</span></a>\n<span></span>\n<span>г. Красноярск</span>\n</div>\n<a href=\"/pets/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-blue\">\n<div class=\"element\">\n<a href=\"/doctor/89279486887/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/doctor/89279486887/\"><span>Рамзия</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Исянгулово</span>\n</div>\n<div class=\"element\">\n<a href=\"/doctor/Vchvet/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/doctor/Vchvet/\"><span>Чернышова Валентина Серге...</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/doctor/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-grey\">\n<div class=\"element\">\n<a href=\"/clinic/clinika_test@vetsystem.ru/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/clinic/clinika_test@vetsystem.ru/\"><span></span></a>\n<!-- <span>ветклиника</span> -->\n</div>\n<div class=\"element\">\n<a href=\"/clinic/mosvetpomosh/\"><img src=\"/upload/resize_cache/main/351/60_60_2/35195eea1ee0a1f79118c218294f93fa.jpg\"></a><br>\n<a href=\"/clinic/mosvetpomosh/\"><span>МосВетПомощь</span></a>\n<!-- <span>ветклиника</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/clinic/\"></a>\n</div>\n<div class=\"clear\"></div>\n</li>\n<li style=\"overflow: hidden; float: left; width: 230px; height: 372px;\">\n<div class=\"pink\">\n<div class=\"element\">\n<a href=\"/pets/26563/\"><img src=\"/upload/resize_cache/iblock/312/60_60_2/312073cb08c80cd709ac79c691ebed0b.jpg\"></a><br>\n<span></span>\n<a href=\"/pets/26563/\"><span> Шанти</span></a>\n<span>г. Навашино</span>\n</div>\n<div class=\"element\">\n<a href=\"/pets/26526/\"><img src=\"/upload/resize_cache/iblock/d33/60_60_2/d330befd67f520f6c0cbc8ed8262879d.jpg\"></a><br>\n<a href=\"/pets/26526/\"><span>Вильям Шекспир</span></a>\n<span></span>\n<span>г. Москва</span>\n</div>\n<a href=\"/pets/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-blue\">\n<div class=\"element\">\n<a href=\"/doctor/vetluch/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/doctor/vetluch/\"><span>Сорокина Юлия Эдуардовна</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Москва</span>\n</div>\n<div class=\"element\">\n<a href=\"/doctor/Shurikvet/\"><img src=\"/upload/resize_cache/main/20d/60_60_2/20d279014e913a2ae995acf892ebbc16.jpg\"></a><br>\n<a href=\"/doctor/Shurikvet/\"><span>Исаенко Александр Николае...</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/doctor/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-grey\">\n<div class=\"element\">\n<a href=\"/clinic/vetbravo/\"><img src=\"/upload/resize_cache/main/e96/60_60_2/e96939f72ef8f7d57e943d74326cc9f7.jpg\"></a><br>\n<a href=\"/clinic/vetbravo/\"><span>BraVo</span></a>\n<!-- <span>ветклиника</span> -->\n<span>г. Раменское</span>\n</div>\n<div class=\"element\">\n<a href=\"/clinic/dobrdoktor2016/\"><img src=\"/upload/resize_cache/main/96c/60_60_2/96ca563718f1d5a823986ce4a02020a1.jpg\"></a><br>\n<a href=\"/clinic/dobrdoktor2016/\"><span>Добрый Доктор Ветеринарна...</span></a>\n<!-- <span>ветклиника</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/clinic/\"></a>\n</div>\n<div class=\"clear\"></div>\n</li>\n<li style=\"overflow: hidden; float: left; width: 230px; height: 372px;\">\n<div class=\"pink\">\n<div class=\"element\">\n<a href=\"/pets/26715/\"><img src=\"/upload/resize_cache/iblock/8ff/60_60_2/8ffa2590831039cc6935ad24cd5a6410.jpg\"></a><br>\n<span></span>\n<a href=\"/pets/26715/\"><span>Цири</span></a>\n<span>г. Москва</span>\n</div>\n<div class=\"element\">\n<a href=\"/pets/26582/\"><img src=\"/upload/resize_cache/iblock/302/60_60_2/3028b619fb4e6065ef4200bd3d7168bb.jpg\"></a><br>\n<a href=\"/pets/26582/\"><span>Мультик</span></a>\n<span></span>\n<span>г. Красноярск</span>\n</div>\n<a href=\"/pets/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-blue\">\n<div class=\"element\">\n<a href=\"/doctor/89279486887/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/doctor/89279486887/\"><span>Рамзия</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Исянгулово</span>\n</div>\n<div class=\"element\">\n<a href=\"/doctor/Vchvet/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/doctor/Vchvet/\"><span>Чернышова Валентина Серге...</span></a>\n<!-- <span>ветврач</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/doctor/\"></a>\n</div>\n<div class=\"clear\"></div>\n<div class=\"light-grey\">\n<div class=\"element\">\n<a href=\"/clinic/clinika_test@vetsystem.ru/\"><img src=\"/upload/60x60.jpg\"></a><br>\n<a href=\"/clinic/clinika_test@vetsystem.ru/\"><span></span></a>\n<!-- <span>ветклиника</span> -->\n</div>\n<div class=\"element\">\n<a href=\"/clinic/mosvetpomosh/\"><img src=\"/upload/resize_cache/main/351/60_60_2/35195eea1ee0a1f79118c218294f93fa.jpg\"></a><br>\n<a href=\"/clinic/mosvetpomosh/\"><span>МосВетПомощь</span></a>\n<!-- <span>ветклиника</span> -->\n<span>г. Москва</span>\n</div>\n<a href=\"/clinic/\"></a>\n</div>\n<div class=\"clear\"></div>\n</li></ul>\n</div>\n</div>\n</div>\n<script>$(document).ready(function(){$.get(\"/ajax/get/block1.php\",{},function(data){$('.ajax.block1').html(data);});});</script>\n<div class=\"photo-baner\">\n<div id=\"bxdynamic_ALOAcH_start\" style=\"display:none\"></div><div id=\"bxdynamic_ALOAcH_end\" style=\"display:none\"></div>\t</div>\n</aside><!-- #sideRight -->\n<div class=\"clear\"></div>\n</td>\n</tr>\n</tbody></table>\n</div><!-- #content-->\n<div class=\"_sidebar\">\n<div class=\"nav_block\">\n<div class=\"_prim\">\n<a href=\"/clinic/\" class=\"_item\">\n<img src=\"/images/clinics.png\" alt=\"\">\n<span>Ветеринарные клиники</span>\n</a>\n<a href=\"/doctor/\" class=\"_item\">\n<img src=\"/images/doctors.png\" alt=\"\">\n<span>Ветеринарные врачи</span>\n</a>\n<a href=\"/producer/\" class=\"_item prodimg\">\n<span>Производители</span>\n</a>\n</div>\n</div>\n<div class=\"news_block leftcol\">\n<span class=\"header_like_h2\">\n<img src=\"/bitrix/templates/index_nov_14/images/papers.png\" alt=\"\">\n<a class=\"glav_links\" href=\"/news/\">Новости</a>\n</span>\n<div class=\"_item\">\n<a href=\"/news/27196/\" class=\"__txt\">Волонтеры Иркутска и Североморска готовятся к зимовке животных</a>\n<div class=\"_date\">\n<img src=\"/bitrix/templates/index_nov_14/images/clock.png\" alt=\"\">\n30.12.2019\t</div>\n</div>\n<div class=\"_item\">\n<a href=\"/news/27195/\" class=\"__txt\">Московское подразделение МЧС: спасение животных</a>\n<div class=\"_date\">\n<img src=\"/bitrix/templates/index_nov_14/images/clock.png\" alt=\"\">\n30.12.2019\t</div>\n</div>\n<div class=\"_item\">\n<a href=\"/news/27194/\" class=\"__txt\">В Омске выхаживают щенка от пуль и болезни</a>\n<div class=\"_date\">\n<img src=\"/bitrix/templates/index_nov_14/images/clock.png\" alt=\"\">\n30.12.2019\t</div>\n</div>\n<div class=\"_item\">\n<a href=\"/news/27193/\" class=\"__txt\">В России поддержали проект сургутских зоозащитников</a>\n<div class=\"_date\">\n<img src=\"/bitrix/templates/index_nov_14/images/clock.png\" alt=\"\">\n27.12.2019\t</div>\n</div>\n<div class=\"_item\">\n<a href=\"/news/27192/\" class=\"__txt\">В Петербурге около Орловского карьера спасают собаку со сломанной лапой </a>\n<div class=\"_date\">\n<img src=\"/bitrix/templates/index_nov_14/images/clock.png\" alt=\"\">\n27.12.2019\t</div>\n</div>\n<div class=\"_item\">\n<a href=\"/news/27191/\" class=\"__txt\">Уникальная коляска 3D к Новому году появилась у собаки-инвалида Жужи</a>\n<div class=\"_date\">\n<img src=\"/bitrix/templates/index_nov_14/images/clock.png\" alt=\"\">\n27.12.2019\t</div>\n</div>\n<a href=\"/news/\" class=\"_all btn\">Все новости →</a>\n</div>\t<div class=\"opinions_block\">\n<div class=\"_item\">\n<ul class=\"s_cat_list_1\">\n<li>\n<a href=\"/sobaki/\">Собаки</a>\n<ul class=\"s_cat_list_2\">\n<li>\n<a href=\"/sobaki/porody-sobak/\">Породы собак</a>\n</li><li>\n<a href=\"/sobaki/budushchim-vladeltsam-sobak/\">Будущим владельцам собак</a>\n</li><li>\n<a href=\"/sobaki/soderzhanie-sobak/\">Содержание собак</a>\n</li><li>\n<a href=\"/sobaki/kormlenie-sobak/\">Кормление собак</a>\n</li><li>\n<a href=\"/sobaki/ukhod-za-sobakoy/\">Уход за собакой</a>\n</li><li>\n<a href=\"/sobaki/klichki-dlya-sobak/\">Клички для собак</a>\n</li><li>\n<a href=\"/sobaki/dressirovka-sobak/\">Дрессировка собак</a>\n</li><li>\n<a href=\"/sobaki/zdorove-sobaki/\">Здоровье собаки</a>\n</li><li>\n<a href=\"/sobaki/kleshchi-u-sobak/\">Клещи у собак</a>\n</li><li>\n<a href=\"/sobaki/bolezni-sobak/\">Болезни собак</a>\n</li><li>\n<a href=\"/sobaki/perevozka-sobak/\">Перевозка собак</a>\n</li><li>\n<a href=\"/sobaki/fakty-o-sobakakh/\">Факты о собаках</a>\n</li></ul>\n</li>\n</ul>\n</div>\n</div>\n<div class=\"opinions_block\">\n<div class=\"_item\">\n<ul class=\"s_cat_list_1\">\n<li>\n<a href=\"/koshki/\">Кошки</a>\n<ul class=\"s_cat_list_2\">\n<li>\n<a href=\"/koshki/porody-koshek/\">Породы кошек</a>\n</li><li>\n<a href=\"/koshki/kormlenie-koshek/\">Кормление кошек</a>\n</li><li>\n<a href=\"/koshki/ukhod-i-soderzhanie-koshki/\">Уход и содержание кошки</a>\n</li><li>\n<a href=\"/koshki/vospitanie-koshek/\">Воспитание кошек</a>\n</li><li>\n<a href=\"/koshki/kastratsiya-kotov-i-sterilizatsiya-koshek/\">Кастрация котов и стерилизация кошек</a>\n</li><li>\n<a href=\"/koshki/zdorove-koshek/\">Здоровье кошек</a>\n</li><li>\n<a href=\"/koshki/bolezni-kotov-i-koshek/\">Болезни котов и кошек</a>\n</li><li>\n<a href=\"/koshki/fakty-o-koshkakh/\">Факты о кошках</a>\n</li></ul>\n</li>\n</ul>\n</div>\n</div>\n<div class=\"vk_block\">\n<script type=\"text/javascript\" src=\"//vk.com/js/api/openapi.js?115\"></script>\n<!-- VK Widget -->\n<div id=\"vk_groups\" style=\"width: 218px; height: 370px; background: none;\"><iframe name=\"fXD86bb3\" frameborder=\"0\" src=\"https://vk.com/widget_community.php?app=0&amp;width=218px&amp;_ver=1&amp;gid=59403847&amp;mode=0&amp;color1=FFFFFF&amp;color2=2B587A&amp;color3=5B7FA6&amp;class_name=&amp;height=370&amp;url=https%3A%2F%2Fvetsystem.ru%2Fclinic%2F&amp;referrer=&amp;title=%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BB%D0%B8%D0%BD%D0%B8%D0%BA%D0%B8%3A%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D0%B2%D0%B5%D1%82%D0%BA%D0%BB%D0%B8%D0%BD%D0%B8%D0%BA%20%D1%81%20%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%D0%BC%D0%B8%2C%20%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B0%D0%BC%D0%B8%20%D0%B8%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B0%D0%BC%D0%B8%20%D0%B2%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD...&amp;19df2e5352a\" width=\"218\" height=\"370\" scrolling=\"no\" id=\"vkwidget1\" style=\"overflow: hidden; height: 370px;\"></iframe></div>\n<script type=\"text/javascript\">VK.Widgets.Group(\"vk_groups\",{mode:0,width:\"218\",height:\"370\",color1:'FFFFFF',color2:'2B587A',color3:'5B7FA6'},59403847);</script>\n<div id=\"bxdynamic_Zg1Ab0_start\" style=\"display:none\"></div><div id=\"bxdynamic_Zg1Ab0_end\" style=\"display:none\"></div>\t</div>\n</div>\n</div><!-- #container-->\n</section><!-- #middle-->\n</div><!-- #wrapper -->\n<footer class=\"footer\">\n<div class=\"container\">\n<div class=\"layout_2\">\n<div class=\"_col\">\n© Ветсистема, 2014&nbsp;-&nbsp;2026<br><br>\nВетсистема - информационно-коммуникационный сервис для владельцев животных с ветеринарными клиниками и ветеринарными врачами. <br><br>\n<a href=\"/about/\">О проекте</a> | <a href=\"/partner/\">Партнерство</a><br>\n<a href=\"/user_agreement/\">Пользовательское соглашение</a><br>\n<a href=\"/personal_data/\">Политика обработки персональных данных</a><br>\n<a href=\"/privacy_policy/\">Политика конфиденциальности</a><br>\n</div>\t<div class=\"_col\">\n<div class=\"_nav\">\n<a href=\"/news/\">Новости</a>\n<a href=\"/pupies/\">Продажа щенков</a>\n<a href=\"/vopros/\">Вопросы ветеринару</a>\n<a href=\"/review/\">Отзывы</a>\n<a href=\"/blog/\">Публикации</a>\n<a href=\"/ads/\">Объявления</a>\n<a href=\"/sobaki/\">Породы собак</a>\n<a href=\"/koshki/\">Породы кошек</a>\n</div>\n</div>\n<div class=\"_col\">\n<div class=\"h3footer\">О нас</div>\n<div class=\"_txt\">\nМиссия проекта Ветсистема - создание информационно-коммуникационного ветеринарного сервиса для повышения качества жизни домашних животных.\n</div>\n</div>\n<div class=\"_col\">\n<div class=\"h3footer\">Мы в соц сетях</div>\n<div class=\"_soc\">\n<a href=\"https://share.yandex.ru/go.xml?service=twitter&amp;url=https%3A%2F%2Fvetsystem.ru%2F&amp;title=%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%92%D0%B5%D1%82%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.%20%D0%92%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D1%86%D0%B8%D1%8F%2C%20%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B5!\">\n<img src=\"/bitrix/templates/taby_red/images/soc/twitter.png\" alt=\"\">\n</a>\n<a href=\"https://www.facebook.com/vetsistema\">\n<img src=\"/bitrix/templates/taby_red/images/soc/fb.png\" alt=\"\">\n</a>\n<a href=\"https://share.yandex.ru/go.xml?service=odnoklassniki&amp;url=https%3A%2F%2Fvetsystem.ru%2F&amp;title=%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%92%D0%B5%D1%82%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.%20%D0%92%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D1%86%D0%B8%D1%8F%2C%20%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B5!\">\n<img src=\"/bitrix/templates/taby_red/images/soc/ok.png\" alt=\"\">\n</a>\n<a href=\"https://vk.com/vetsistema\">\n<img src=\"/bitrix/templates/taby_red/images/soc/vk.png\" alt=\"\">\n</a>\n</div>\n<form action=\"/search/\" method=\"get\" class=\"_search\">\n<input type=\"text\" name=\"q\" placeholder=\"Поиск…\" class=\"input-block-level\">\n<input type=\"submit\">\n</form>\n</div>\n<!-- Yandex.Metrika counter -->\n<script type=\"text/javascript\">(function(d,w,c){(w[c]=w[c]||[]).push(function(){try{w.yaCounter10097374=new Ya.Metrika({id:10097374,webvisor:true,clickmap:true,trackLinks:true,accurateTrackBounce:true});}catch(e){}});var n=d.getElementsByTagName(\"script\")[0],s=d.createElement(\"script\"),f=function(){n.parentNode.insertBefore(s,n);};s.type=\"text/javascript\";s.async=true;s.src=(d.location.protocol==\"https:\"?\"https:\":\"http:\")+\"//mc.yandex.ru/metrika/watch.js\";if(w.opera==\"[object Opera]\"){d.addEventListener(\"DOMContentLoaded\",f,false);}else{f();}})(document,window,\"yandex_metrika_callbacks\");</script><noscript><div><img src=\"//mc.yandex.ru/watch/10097374\" style=\"position:absolute;left:-9999px\" alt=\"\"/></div></noscript>\n<!-- /Yandex.Metrika counter -->\n<!--LiveInternet counter-->\n<script type=\"text/javascript\">document.write(\"<a class='li-link' href='https://www.liveinternet.ru/click' \"+\"target=_blank><img src='//counter.yadro.ru/hit?t44.1;r\"+escape(document.referrer)+((typeof(screen)==\"undefined\")?\"\":\";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\";\"+Math.random()+\"' alt='' title='LiveInternet' \"+\"border='0' width='31' height='31'><\\/a>\")</script><a class=\"li-link\" href=\"https://www.liveinternet.ru/click\" target=\"_blank\"><img src=\"//counter.yadro.ru/hit?t44.1;r;s1280*720*24;uhttps%3A//vetsystem.ru/clinic/;0.6053475499493658\" alt=\"\" title=\"LiveInternet\" border=\"0\" width=\"31\" height=\"31\"></a>\n<!--/LiveInternet-->\n<script type=\"text/javascript\">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-34977591-1']);_gaq.push(['_setDomainName','vetsystem.ru']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://':'http://')+'stats.g.doubleclick.net/dc.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>\n<script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src=\"//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0\";fjs.parentNode.insertBefore(js,fjs);}(document,'script','facebook-jssdk'));</script>\n<script type=\"text/javascript\">function initVk(){VK.init({apiId:4469622,onlyWidgets:true});}setTimeout(function(){let script=document.createElement(\"script\");script.type=\"text/javascript\";script.async=true;script.src='https://vk.com/js/api/openapi.js?160';script.onload=initVk;document.body.appendChild(script);},1500)</script>\n</div>\n</div>\n</footer>\n<div id=\"scroller\" class=\"b-top\" style=\"display:none\"><span class=\"b-top-but\">наверх</span></div>\n\n<ul class=\"ui-autocomplete ui-front styled-drop ui-menu ui-widget ui-widget-content ui-corner-all\" id=\"ui-id-1\" tabindex=\"0\" style=\"display: none;\"></ul><style id=\"91108bc5d8\">.csr-uniq3{position: absolute; display: none; visibility: hidden; width: 0; height: 0;}</style><script type=\"text/javascript\" async=\"\" src=\"https://vk.com/js/api/openapi.js?160\"></script><div style=\"position: fixed; left: -99px;\"><div id=\"0d52c7829a\"><iframe frameborder=\"no\" scrolling=\"no\" allowtransparency=\"true\" hidefocus=\"true\" tabindex=\"-1\" marginwidth=\"0\" marginheight=\"0\" src=\"https://yastatic.net/safeframe-bundles/0.83/1-1-0/render.html\" id=\"id2726\" style=\"opacity: 1;\"></iframe></div></div></body></html>",
+  "text": "Ветеринарные клиники: список ветклиник с адресами, телефонами и услугами ветеринарных клиник. Войти Регистрация Связаться с нами Новости Продажа щенков Вопросы ветеринару Отзывы Публикации Объявления Породы собак Породы кошек Главная → Ветеринарные клиники Ветеринарные клиники России Ветеринарные клиники с возможностью поиска по специализациям, услугам и городам. Для каждой ветеринарной клиники доступны описания, персональная фотогалерея, перечень специализаций и услуг, публикации новостей и статей для владельцев животных. Мы призываем все ветклиники указывать полную и подробную информацию для удобного и объективного поиска и выбора владельцем животного. Список клиник по городам Город: Название: Услуги Акушерство Анализы Анестезиология Вакцинация Дерматология Зоопсихология Кардиология Кастрация/стерилизация Неврология Нефрология Онкология Орнитология Ортопедия Офтальмология Реаниматология Рентгенография Стоматология Терапия УЗИ-диагностика Урология Усыпление Хирургия Чипирование Эндокринология Компьютерная томография ЭКГ ЭХО КГ Ветеринарная клиника город 0 отзывов | 0 пациентов МосВетПомощь Ветеринарная клиника город Москва 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кардиология Кастрация/стерилизация Все услуги BraVo Ветеринарная клиника город Раменское 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кастрация/стерилизация Неврология Все услуги Добрый Доктор Ветеринарная клиника Ветеринарная клиника город Москва 0 отзывов | 0 пациентов Анализы Вакцинация Дерматология Зоопсихология Кастрация/стерилизация Неврология Офтальмология Все услуги ВЕТЕРИНАРНАЯ КЛИНИКА Ветеринарная клиника город 0 отзывов | 0 пациентов Акушерство Анестезиология Вакцинация Дерматология Зоопсихология Кастрация/стерилизация УЗИ-диагностика Все услуги Сеть ветеринарных клиник Добрый Доктор 24 часа Ветеринарная клиника город Жуковский 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Кардиология Кастрация/стерилизация Неврология Все услуги Ветклиника Веста Ветеринарная клиника город Москва 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кардиология Кастрация/стерилизация Все услуги Клиника ветеринарной стоматологии и пластической х Ветеринарная клиника город Санкт-Петербург 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Зоопсихология Кардиология Все услуги Ветеринарный центр Созвездие Ветеринарная клиника город Москва 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кардиология Кастрация/стерилизация Все услуги Скорая ветеринарная помощь Ветеринарная клиника город Коломна 0 отзывов | 0 пациентов Акушерство Анализы Вакцинация Дерматология Зоопсихология Кастрация/стерилизация Неврология Все услуги ОГБУ \"Челябинская ветстанция\" Ветеринарная клиника город Челябинск 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кардиология Кастрация/стерилизация Все услуги VetBest Ветеринарная клиника город Коломна 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кардиология Кастрация/стерилизация Все услуги Ветеринарная клиника Вет-Веста Ветеринарная клиника город Лыткарино 0 отзывов | 0 пациентов Вакцинация Кастрация/стерилизация УЗИ-диагностика Круглосуточная ветеринарная клиника АйБолит Ветеринарная клиника город Нижний Новгород 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Зоопсихология Кардиология Все услуги Ветеринарная клиника \"Чеширский кот\" Ветеринарная клиника город Санкт-Петербург 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Зоопсихология Кардиология Все услуги МВЦ МРТ для животных Ветеринарная клиника город Москва 0 отзывов | 0 пациентов Неврология АНО \"Центр зоозащиты \"Добрый город\" Ветеринарная клиника город Королев 0 отзывов | 0 пациентов Вакцинация Кастрация/стерилизация Усыпление Чипирование Ветеринарная клиника ГБОУ СПО «Калужский аграрный Ветеринарная клиника город Калуга 0 отзывов | 0 пациентов ВетАльянс Ветеринарная клиника город Санкт-Петербург 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Кардиология Кастрация/стерилизация Все услуги Ветцентр Южный Ветеринарная клиника город Хабаровск 0 отзывов | 0 пациентов Акушерство Анализы Анестезиология Вакцинация Дерматология Зоопсихология Кардиология Все услуги ← Назад 1 2 3 4 5 Вперёд → Вывод: 20 50 100 Отзывы Андрей Титов Спасибо вам, Андрей! Давно пользуемся услугами Андрея, вызываем на дом. Андрей профессионал своего дела, и нас, владельцев животных успокаивает и к собаке всегда внимателен, аккуратен и бдителен. Успешно лечил нашу собаку, собаку родителей и кошку наших родственников. Честный и надежный врач. Спасибо Вам, Андрей! автор: Богдан Сергеев Абрамов Олег Благодарность. Спасибо Олегу Владимировичу от самого упитанного и воспитанного кота Ермилы за любовь к животным и заботу о них. Спасибо! автор: Медовщикова Татьяна Николаевна Цветкова Ольга Сергеевна Спасибо Ольге! Ольга, спасибо вам за оперативные консультации прямо на сайте. Обязательно к вам обратимся еще или пригласим домой, если, не дай Бог, нашему грозному Той-терьеру Кильке понадобиться помощь. автор: Богдан Сергеев Андрей Титов Спасибо вам, Андрей! Давно пользуемся услугами Андрея, вызываем на дом. Андрей профессионал своего дела, и нас, владельцев животных успокаивает и к собаке всегда внимателен, аккуратен и бдителен. Успешно лечил нашу собаку, собаку родителей и кошку наших родственников. Честный и надежный врач. Спасибо Вам, Андрей! автор: Богдан Сергеев Абрамов Олег Благодарность. Спасибо Олегу Владимировичу от самого упитанного и воспитанного кота Ермилы за любовь к животным и заботу о них. Спасибо! автор: Медовщикова Татьяна Николаевна Previous Next Новые видео Видеорепортаж с мероприятия \"Найди Друга\" - выставки-пристройстве собак из приютов. Команда Ветсистемы Миними - свежая еда для собак и кошек Minime Все видео → Продается щенок Экселлент Брайт Стар Ева - Немецкая овчарка Санкт-Петербург Подробнее → Новые лица Шанти г. Навашино Вильям Шекспир г. Москва Сорокина Юлия Эдуардовна г. Москва Исаенко Александр Николае... г. Москва BraVo г. Раменское Добрый Доктор Ветеринарна... г. Москва Цири г. Москва Мультик г. Красноярск Рамзия г. Исянгулово Чернышова Валентина Серге... г. Москва МосВетПомощь г. Москва Шанти г. Навашино Вильям Шекспир г. Москва Сорокина Юлия Эдуардовна г. Москва Исаенко Александр Николае... г. Москва BraVo г. Раменское Добрый Доктор Ветеринарна... г. Москва Цири г. Москва Мультик г. Красноярск Рамзия г. Исянгулово Чернышова Валентина Серге... г. Москва МосВетПомощь г. Москва Ветеринарные клиники Ветеринарные врачи Производители Новости Волонтеры Иркутска и Североморска готовятся к зимовке животных 30.12.2019 Московское подразделение МЧС: спасение животных 30.12.2019 В Омске выхаживают щенка от пуль и болезни 30.12.2019 В России поддержали проект сургутских зоозащитников 27.12.2019 В Петербурге около Орловского карьера спасают собаку со сломанной лапой 27.12.2019 Уникальная коляска 3D к Новому году появилась у собаки-инвалида Жужи 27.12.2019 Все новости → Собаки Породы собак Будущим владельцам собак Содержание собак Кормление собак Уход за собакой Клички для собак Дрессировка собак Здоровье собаки Клещи у собак Болезни собак Перевозка собак Факты о собаках Кошки Породы кошек Кормление кошек Уход и содержание кошки Воспитание кошек Кастрация котов и стерилизация кошек Здоровье кошек Болезни котов и кошек Факты о кошках © Ветсистема, 2014 - 2026 Ветсистема - информационно-коммуникационный сервис для владельцев животных с ветеринарными клиниками и ветеринарными врачами. О проекте | Партнерство Пользовательское соглашение Политика обработки персональных данных Политика конфиденциальности Новости Продажа щенков Вопросы ветеринару Отзывы Публикации Объявления Породы собак Породы кошек О нас Миссия проекта Ветсистема - создание информационно-коммуникационного ветеринарного сервиса для повышения качества жизни домашних животных. Мы в соц сетях наверх",
+  "json_ld": [],
+  "document": {
+    "title": "Ветеринарные клиники: список ветклиник с адресами, телефонами и услугами ветеринарных клиник.",
+    "meta_description": "Поиск ветеринарных клиник: адреса ветклиник, телефоны. Услуги и специализации ветеринарных клиник. Поиск по городам и услугам.",
+    "meta_robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1.0, user-scalable=1",
+    "canonical": "",
+    "lang": "",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/auth/",
+        "text": "Войти",
+        "rel": ""
+      },
+      {
+        "href": "/new/",
+        "text": "Регистрация",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.youtube.com/user/vetsystem",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.facebook.com/vetsistema",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/vetsistema",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/feedback/",
+        "text": "Связаться с нами",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/news/",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "/pupies/",
+        "text": "Продажа щенков",
+        "rel": ""
+      },
+      {
+        "href": "/vopros/",
+        "text": "Вопросы ветеринару",
+        "rel": ""
+      },
+      {
+        "href": "/review/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/blog/",
+        "text": "Публикации",
+        "rel": ""
+      },
+      {
+        "href": "/ads/",
+        "text": "Объявления",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/",
+        "text": "Породы собак",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/",
+        "text": "Породы кошек",
+        "rel": ""
+      },
+      {
+        "href": "/",
+        "text": "Главная",
+        "rel": ""
+      },
+      {
+        "href": "gorod/",
+        "text": "Список клиник по городам",
+        "rel": ""
+      },
+      {
+        "href": "2713/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2713/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2713/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2713/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2700/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2700/",
+        "text": "МосВетПомощь",
+        "rel": ""
+      },
+      {
+        "href": "2700/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2700/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2700/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2673/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2673/",
+        "text": "BraVo",
+        "rel": ""
+      },
+      {
+        "href": "2673/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2673/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2673/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2656/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2656/",
+        "text": "Добрый Доктор Ветеринарная клиника",
+        "rel": ""
+      },
+      {
+        "href": "2656/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2656/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2656/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2533/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2533/",
+        "text": "ВЕТЕРИНАРНАЯ КЛИНИКА",
+        "rel": ""
+      },
+      {
+        "href": "2533/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2533/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2533/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2400/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2400/",
+        "text": "Сеть ветеринарных клиник Добрый Доктор 24 часа",
+        "rel": ""
+      },
+      {
+        "href": "2400/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2400/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2400/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2368/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2368/",
+        "text": "Ветклиника Веста",
+        "rel": ""
+      },
+      {
+        "href": "2368/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2368/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2368/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2278/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2278/",
+        "text": "Клиника ветеринарной стоматологии и пластической х",
+        "rel": ""
+      },
+      {
+        "href": "2278/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2278/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2278/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2222/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2222/",
+        "text": "Ветеринарный центр Созвездие",
+        "rel": ""
+      },
+      {
+        "href": "2222/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2222/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2222/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "2146/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "2146/",
+        "text": "Скорая ветеринарная помощь",
+        "rel": ""
+      },
+      {
+        "href": "2146/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "2146/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "2146/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "1908/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1908/",
+        "text": "ОГБУ \"Челябинская ветстанция\"",
+        "rel": ""
+      },
+      {
+        "href": "1908/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1908/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1908/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "1902/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1902/",
+        "text": "VetBest",
+        "rel": ""
+      },
+      {
+        "href": "1902/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1902/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1902/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "1874/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1874/",
+        "text": "Ветеринарная клиника Вет-Веста",
+        "rel": ""
+      },
+      {
+        "href": "1874/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1874/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1871/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1871/",
+        "text": "Круглосуточная ветеринарная клиника АйБолит",
+        "rel": ""
+      },
+      {
+        "href": "1871/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1871/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1871/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "1868/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1868/",
+        "text": "Ветеринарная клиника \"Чеширский кот\"",
+        "rel": ""
+      },
+      {
+        "href": "1868/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1868/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1868/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "1862/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1862/",
+        "text": "МВЦ МРТ для животных",
+        "rel": ""
+      },
+      {
+        "href": "1862/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1862/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1858/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1858/",
+        "text": "АНО \"Центр зоозащиты \"Добрый город\"",
+        "rel": ""
+      },
+      {
+        "href": "1858/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1858/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1857/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1857/",
+        "text": "Ветеринарная клиника ГБОУ СПО «Калужский аграрный",
+        "rel": ""
+      },
+      {
+        "href": "1857/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1857/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1855/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1855/",
+        "text": "ВетАльянс",
+        "rel": ""
+      },
+      {
+        "href": "1855/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1855/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1855/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "1853/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "1853/",
+        "text": "Ветцентр Южный",
+        "rel": ""
+      },
+      {
+        "href": "1853/#vet-tab6",
+        "text": "0 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "1853/#vet-tab4",
+        "text": "0 пациентов",
+        "rel": ""
+      },
+      {
+        "href": "1853/#vet-tab2",
+        "text": "Все услуги",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "← Назад",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "1",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/?PAGEN_1=2",
+        "text": "2",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/?PAGEN_1=3",
+        "text": "3",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/?PAGEN_1=4",
+        "text": "4",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/?PAGEN_1=5",
+        "text": "5",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/?PAGEN_1=2",
+        "text": "Вперёд →",
+        "rel": ""
+      },
+      {
+        "href": "index.php?count=20",
+        "text": "20",
+        "rel": ""
+      },
+      {
+        "href": "index.php?count=50",
+        "text": "50",
+        "rel": ""
+      },
+      {
+        "href": "index.php?count=100",
+        "text": "100",
+        "rel": ""
+      },
+      {
+        "href": "/photo/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/photo/",
+        "text": "Новые видео",
+        "rel": ""
+      },
+      {
+        "href": "#11634",
+        "text": "Видеорепортаж с мероприятия \"Найди Друга\" - выставки-пристройстве собак из приютов.",
+        "rel": ""
+      },
+      {
+        "href": "#11254",
+        "text": "Миними - свежая еда для собак и кошек",
+        "rel": ""
+      },
+      {
+        "href": "/videos/",
+        "text": "Все видео →",
+        "rel": ""
+      },
+      {
+        "href": "/pupies/",
+        "text": "Продается щенок",
+        "rel": ""
+      },
+      {
+        "href": "/pupies/25502/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pupies/25502/",
+        "text": "Подробнее →",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26563/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26563/",
+        "text": "Шанти",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26526/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26526/",
+        "text": "Вильям Шекспир",
+        "rel": ""
+      },
+      {
+        "href": "/pets/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/vetluch/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/vetluch/",
+        "text": "Сорокина Юлия Эдуардовна",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Shurikvet/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Shurikvet/",
+        "text": "Исаенко Александр Николае...",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/vetbravo/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/vetbravo/",
+        "text": "BraVo",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/dobrdoktor2016/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/dobrdoktor2016/",
+        "text": "Добрый Доктор Ветеринарна...",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26715/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26715/",
+        "text": "Цири",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26582/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26582/",
+        "text": "Мультик",
+        "rel": ""
+      },
+      {
+        "href": "/pets/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/89279486887/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/89279486887/",
+        "text": "Рамзия",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Vchvet/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Vchvet/",
+        "text": "Чернышова Валентина Серге...",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/clinika_test@vetsystem.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/clinika_test@vetsystem.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/mosvetpomosh/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/mosvetpomosh/",
+        "text": "МосВетПомощь",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26563/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26563/",
+        "text": "Шанти",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26526/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26526/",
+        "text": "Вильям Шекспир",
+        "rel": ""
+      },
+      {
+        "href": "/pets/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/vetluch/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/vetluch/",
+        "text": "Сорокина Юлия Эдуардовна",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Shurikvet/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Shurikvet/",
+        "text": "Исаенко Александр Николае...",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/vetbravo/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/vetbravo/",
+        "text": "BraVo",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/dobrdoktor2016/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/dobrdoktor2016/",
+        "text": "Добрый Доктор Ветеринарна...",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26715/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26715/",
+        "text": "Цири",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26582/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/pets/26582/",
+        "text": "Мультик",
+        "rel": ""
+      },
+      {
+        "href": "/pets/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/89279486887/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/89279486887/",
+        "text": "Рамзия",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Vchvet/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/Vchvet/",
+        "text": "Чернышова Валентина Серге...",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/clinika_test@vetsystem.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/clinika_test@vetsystem.ru/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/mosvetpomosh/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/mosvetpomosh/",
+        "text": "МосВетПомощь",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/clinic/",
+        "text": "Ветеринарные клиники",
+        "rel": ""
+      },
+      {
+        "href": "/doctor/",
+        "text": "Ветеринарные врачи",
+        "rel": ""
+      },
+      {
+        "href": "/producer/",
+        "text": "Производители",
+        "rel": ""
+      },
+      {
+        "href": "/news/",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "/news/27196/",
+        "text": "Волонтеры Иркутска и Североморска готовятся к зимовке животных",
+        "rel": ""
+      },
+      {
+        "href": "/news/27195/",
+        "text": "Московское подразделение МЧС: спасение животных",
+        "rel": ""
+      },
+      {
+        "href": "/news/27194/",
+        "text": "В Омске выхаживают щенка от пуль и болезни",
+        "rel": ""
+      },
+      {
+        "href": "/news/27193/",
+        "text": "В России поддержали проект сургутских зоозащитников",
+        "rel": ""
+      },
+      {
+        "href": "/news/27192/",
+        "text": "В Петербурге около Орловского карьера спасают собаку со сломанной лапой",
+        "rel": ""
+      },
+      {
+        "href": "/news/27191/",
+        "text": "Уникальная коляска 3D к Новому году появилась у собаки-инвалида Жужи",
+        "rel": ""
+      },
+      {
+        "href": "/news/",
+        "text": "Все новости →",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/",
+        "text": "Собаки",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/porody-sobak/",
+        "text": "Породы собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/budushchim-vladeltsam-sobak/",
+        "text": "Будущим владельцам собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/soderzhanie-sobak/",
+        "text": "Содержание собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/kormlenie-sobak/",
+        "text": "Кормление собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/ukhod-za-sobakoy/",
+        "text": "Уход за собакой",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/klichki-dlya-sobak/",
+        "text": "Клички для собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/dressirovka-sobak/",
+        "text": "Дрессировка собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/zdorove-sobaki/",
+        "text": "Здоровье собаки",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/kleshchi-u-sobak/",
+        "text": "Клещи у собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/bolezni-sobak/",
+        "text": "Болезни собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/perevozka-sobak/",
+        "text": "Перевозка собак",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/fakty-o-sobakakh/",
+        "text": "Факты о собаках",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/",
+        "text": "Кошки",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/porody-koshek/",
+        "text": "Породы кошек",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/kormlenie-koshek/",
+        "text": "Кормление кошек",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/ukhod-i-soderzhanie-koshki/",
+        "text": "Уход и содержание кошки",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/vospitanie-koshek/",
+        "text": "Воспитание кошек",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/kastratsiya-kotov-i-sterilizatsiya-koshek/",
+        "text": "Кастрация котов и стерилизация кошек",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/zdorove-koshek/",
+        "text": "Здоровье кошек",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/bolezni-kotov-i-koshek/",
+        "text": "Болезни котов и кошек",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/fakty-o-koshkakh/",
+        "text": "Факты о кошках",
+        "rel": ""
+      },
+      {
+        "href": "/about/",
+        "text": "О проекте",
+        "rel": ""
+      },
+      {
+        "href": "/partner/",
+        "text": "Партнерство",
+        "rel": ""
+      },
+      {
+        "href": "/user_agreement/",
+        "text": "Пользовательское соглашение",
+        "rel": ""
+      },
+      {
+        "href": "/personal_data/",
+        "text": "Политика обработки персональных данных",
+        "rel": ""
+      },
+      {
+        "href": "/privacy_policy/",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "/news/",
+        "text": "Новости",
+        "rel": ""
+      },
+      {
+        "href": "/pupies/",
+        "text": "Продажа щенков",
+        "rel": ""
+      },
+      {
+        "href": "/vopros/",
+        "text": "Вопросы ветеринару",
+        "rel": ""
+      },
+      {
+        "href": "/review/",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/blog/",
+        "text": "Публикации",
+        "rel": ""
+      },
+      {
+        "href": "/ads/",
+        "text": "Объявления",
+        "rel": ""
+      },
+      {
+        "href": "/sobaki/",
+        "text": "Породы собак",
+        "rel": ""
+      },
+      {
+        "href": "/koshki/",
+        "text": "Породы кошек",
+        "rel": ""
+      },
+      {
+        "href": "https://share.yandex.ru/go.xml?service=twitter&url=https%3A%2F%2Fvetsystem.ru%2F&title=%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%92%D0%B5%D1%82%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.%20%D0%92%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D1%86%D0%B8%D1%8F%2C%20%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B5!",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.facebook.com/vetsistema",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://share.yandex.ru/go.xml?service=odnoklassniki&url=https%3A%2F%2Fvetsystem.ru%2F&title=%D0%92%D0%B5%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%D1%80%D0%BD%D1%8B%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%20%D0%92%D0%B5%D1%82%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0.%20%D0%92%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B5%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%B0%D1%8F%20%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D1%86%D0%B8%D1%8F%2C%20%D1%81%D0%BE%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F%20%D0%B2%20%D0%BE%D0%B4%D0%BD%D0%BE%D0%BC%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%D0%B5!",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.com/vetsistema",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "https://www.liveinternet.ru/click",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Previous",
+      "Next"
+    ],
+    "h1_texts": [
+      "Ветеринарные клиники России"
+    ],
+    "h2_texts": [
+      "Отзывы"
+    ],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 21,
+      "h1": 1,
+      "h2": 1,
+      "h3": 0,
+      "link": 242,
+      "image": 75,
+      "list_item": 215,
+      "strong": 10,
+      "form": 3,
+      "input": 35
+    }
+  }
+}

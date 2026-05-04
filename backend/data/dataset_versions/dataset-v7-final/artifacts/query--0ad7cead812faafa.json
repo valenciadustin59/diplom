@@ -1,0 +1,950 @@
+{
+  "artifact_version": "extraction-v2",
+  "feature_schema_version": "v2",
+  "requested_url": "https://irecommend.ru/catalog/list/57",
+  "final_url": "https://irecommend.ru/catalog/list/57",
+  "status_code": 200,
+  "redirect_chain": [],
+  "response_headers": {
+    "age": "0",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Mon, 04 May 2026 12:05:53 GMT",
+    "set-cookie": "ssu=1777896353623460638; Expires=Tue, 08-Apr-31 12:05:53 GMT; Max-Age=155520000; Path=/; SameSite=Lax",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "vary": "Accept-Encoding, Cookie",
+    "x-frame-options": "SameOrigin",
+    "x-varnish": "244996236 242966679",
+    "x-varnish-cache": "HIT",
+    "x-varnish-cache_hit_count": "1"
+  },
+  "response_time_ms": 9781.0064,
+  "fetch_method": "browser",
+  "fetched_at": "2026-05-04T12:06:02.150507+00:00",
+  "html": "<!DOCTYPE html><html class=\"ab11 js\" lang=\"ru\"><!--<![endif]--><head prefix=\"fb: http://ogp.me/ns/fb#\"><script src=\"https://mc.yandex.ru/metrika/tag_phono.js\" type=\"text/javascript\" charset=\"utf-8\" async=\"\"></script>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t<title>Ветклиники | отзывы</title>\n  <meta name=\"robots\" content=\"index,follow,max-image-preview:large\">\n  <meta property=\"fb:admins\" content=\"100001701105335\">\n  <script>\n\t\tvar geoip = {c: \"RU\", r: \"PER\"};\n\t</script>\n\t<meta id=\"metaviewport\" name=\"viewport\" content=\"width=1024\">\n\n  <link rel=\"preload\" crossorigin=\"anonymous\" href=\"/themes/irecommend_new/media/icon-fonts/fontello.woff2?37885219\" as=\"font\" type=\"font/woff2\">  \n  <style>body,button,input{font-family: \"Open Sans\", \"Arial\", sans-serif}</style>\n\n  <script>\n  !function (a) {\n    try\n    {\n      for (var e = a.document.getElementsByTagName(\"html\")[0].classList, t = /ab(\\d+)/, n = 0, c = 0; c < e.length; c++) {\n        var o;\n        (o = t.exec(e[c])) && (n = parseInt(o[1], 10))\n      }\n      var r = \"ab_var\";\n      a[r] = n, a.document.cookie = r + \"=\" + n + \"; path=/; expires=31536000\"\n    } catch (a) {\n    }\n  }(window);\n  </script>\n\n  <script>\n    window.adapt_middle_max = 980;\n    window.adapt_middle_min = 599;\n  </script>\n\n  <link rel=\"preload\" href=\"/sites/all/libraries/requirejs/require2_3_2.js\" as=\"script\">\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<link rel=\"canonical\" href=\"https://irecommend.ru/catalog/list/57\">\n<meta name=\"description\" content=\"1875 отзывов. большой спектр услуг\">\n<meta name=\"keywords\" content=\"Отзывы, косметика, техника, отели, опыт использования\">\n\n\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/cck/theme/content-module.css?v=b3&amp;hash=4b10ffc529b4bfc1\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/filefield/filefield.css?v=b3&amp;hash=dfb0d634027d8fa0\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/fivestar/css/fivestar.css?v=b3&amp;hash=38c58592632b264a\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/fivestar/widgets/irecommend/irecommend.css?v=b3&amp;hash=51df3941d980d343\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/node/node.css?v=b3&amp;hash=9a79c09d955195f5\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/system/defaults.css?v=b3&amp;hash=a99725fc0d7fd2d3\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/system/system.css?v=b3&amp;hash=f254245b1f94c979\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/user/user.css?v=b3&amp;hash=3ccbe774c71f463d\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/sites/all/modules/ckeditor/ckeditor.css?v=b3&amp;hash=d10d264789d3f79f\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/sites/all/modules/logintoboggan/logintoboggan.css?v=b3&amp;hash=49412a19c70278b2\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/sites/all/modules/video_filter/video_filter.css?v=b3&amp;hash=5c09aad8e9779e11\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/sites/all/modules/_custom/scrolltop/scrolltop.css?v=b3&amp;hash=a5d0cdd4f67c7cc3\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/views/css/views.css?v=b3&amp;hash=bf51a84fba75051e\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/sites/all/modules/_custom/site/site.all.css?v=b3&amp;hash=d7a41af724652f2f\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/modules/cck/modules/fieldgroup/fieldgroup.css?v=b3&amp;hash=62e9202e8332dafb\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/sites/all/modules/_custom/footable/footable.css?v=b3&amp;hash=9f598dd7f08956ba\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"all\" href=\"/themes/irecommend_new/css/style.css?v=b3&amp;hash=f779708487a76bbb\">\n<link type=\"text/css\" rel=\"stylesheet\" media=\"screen and (max-width: 980px)\" href=\"/themes/irecommend_new/css/adapt/adapt.css?v=b3&amp;hash=5a5c1637b2b205c5\">\n<link type=\"text/css\" rel=\"stylesheet\" href=\"/sites/all/libraries/nprogress/nprogress.css?ver=0.0.1b3&amp;hash=6fc863442248ddcd.css\"><style id=\"endofstyles\"></style><script type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\nvar Drupal = Drupal || {};Drupal.settings = {\"basePath\":\"\\/\",\"fivestar\":{\"titleUser\":\"Your rating: \",\"titleAverage\":\"\\u0421\\u0440\\u0435\\u0434\\u043d\\u0435\\u0435: \",\"feedbackSavingVote\":\"\\u0418\\u0434\\u0435\\u0442 \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u0435 \\u043e\\u0446\\u0435\\u043d\\u043a\\u0438...\",\"feedbackVoteSaved\":\"\\u0412\\u0430\\u0448 \\u0433\\u043e\\u043b\\u043e\\u0441 \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u0451\\u043d.\",\"feedbackDeletingVote\":\"Deleting your vote...\",\"feedbackVoteDeleted\":\"Your vote has been deleted.\"},\"ss\":{\"scroll\":true,\"scrollmax\":20},\"timeago\":{\"cutoff\":141200000,\"localetitle\":true,\"lang_path\":\"\\/sites\\/all\\/modules\\/timeago\\/jquery.timeago.ru.js\"},\"adapt\":{\"scrollable\":false},\"banners_inline\":{\"aabcookie\":\"kaswo\",\"aabscriptsrc\":\"\"},\"imglazy\":{\"threshold\":null,\"rateLimit\":18,\"burst\":200,\"cancelOnExit\":false,\"vanillaLazyLoad\":true},\"stats\":{\"cookies\":[],\"cookie_domain\":\"irecommend.ru\",\"jsurl\":\"\\/sites\\/all\\/modules\\/_custom\\/stats\\/stats.js.php\"},\"site\":{\"teasersBehold\":{\"timerDelay\":200,\"elemViewThreshold\":1000,\"observerThreshold\":0.9,\"countByContinuousTime\":true},\"theme\":\"irecommend_new\",\"uid\":0,\"type\":\"category\",\"breadcrumb\":[{\"name\":\"\\u0413\\u043b\\u0430\\u0432\\u043d\\u0430\\u044f\",\"path\":\"\\/\"},{\"name\":\"\\u041a\\u0430\\u0442\\u0430\\u043b\\u043e\\u0433 \\u043e\\u0442\\u0437\\u044b\\u0432\\u043e\\u0432\",\"path\":\"catalog\\/list\\/1\"},{\"name\":\"\\u0412 \\u043c\\u043e\\u0435\\u043c \\u0433\\u043e\\u0440\\u043e\\u0434\\u0435\",\"path\":\"catalog\\/list\\/12\"}]},\"catalog\":{\"info\":{\"catalog_filter_ajax_url\":\"catalog_filter\",\"catalog_base_path\":\"catalog\",\"conjunction_term\":[\"57\"],\"term_parents\":{\"57\":[\"12\"]},\"query_args\":{\"showall\":null}}},\"jslogLimit\":3,\"noti\":{\"counters\":[],\"refresh\":false,\"delay\":90000},\"requirejs_settings\":{\"baseUrl\":\"\\/sites\\/all\\/libraries\",\"paths\":{\"jquery.form\":[\"jquery.form\\/jquery.form.min.js?ver=0.0.1b3\\u0026hash=f448c593c242d134\"],\"jquery.scrollTo\":[\"jquery.scrollTo\\/jquery.scrollTo.js?ver=2.1.2b3\\u0026hash=6718b0a1034b21e7\"],\"jquery.ui\":[\"jquery.ui\\/1.13.3\\/jquery-ui.min.js?ver=0.0.1b3\\u0026hash=0b15bff6f3ec7e5e\"],\"jquery.ui.touch-punch\":[\"jquery.ui.touch-punch\\/jquery.ui.touch-punch.js?ver=0.0.1b3\\u0026hash=594c7fa31e788c18\"],\"jqueryuitheme\":[\"jquery.ui\\/1.13.3\\/jquery-ui.min.css?ver=0.0.1b3\\u0026hash=949ca8ab45fad510\"],\"footable\":[\"footable\\/footable.all.min.js?ver=0.0.1b3\\u0026hash=90ed750038fd0b73\"],\"footablecss\":[\"footable\\/css\\/footable.core.css?ver=0.0.1b3\\u0026hash=2f1cd43531597c94\"],\"awesome\":[\"awesome\\/css\\/font-awesome.min.css?ver=0.0.1b3\\u0026hash=269550530cc127b6\"],\"nprogress\":[\"nprogress\\/nprogress.js?ver=0.0.1b3\\u0026hash=353710a40c9db021\"],\"nprogress-style\":[\"nprogress\\/nprogress.css?ver=0.0.1b3\\u0026hash=6fc863442248ddcd\"],\"highlight\":[\"highlight\\/highlight.pack.js?ver=0.0.1b3\\u0026hash=94d5ab9eb7ca9be2\"],\"highlight-style\":[\"highlight\\/styles\\/color-brewer.css?ver=0.0.1b3\\u0026hash=0d7683a0a7a61c4b\"],\"modernizr\":[\"modernizr\\/modernizr.js?ver=0.0.1b3\\u0026hash=5b19845a8a17800c\"],\"polyfill.matchmedia\":[\"polyfill\\/matchmedia\\/matchMedia.js?ver=0.0.1b3\\u0026hash=8aba065dab77041d\"],\"polyfill.date-input-polyfill\":[\"polyfill\\/date-input-polyfill\\/date-input-polyfill.dist.js?ver=0.0.1b3\\u0026hash=c4131fb40d13a790\"],\"spin\":[\"spin\\/spin.min.js?ver=0.0.1b3\\u0026hash=f2b0a61b3a739d03\"],\"jquery.knob\":[\"mini-upload-form\\/assets\\/js\\/jquery.knob.js?ver=0.0.1b3\\u0026hash=2ff186c8a3348b28\"],\"jquery.iframe-transport\":[\"mini-upload-form\\/assets\\/js\\/jquery.iframe-transport.js?ver=0.0.1b3\\u0026hash=e041d8a3038edd18\"],\"jquery.ui.widget\":[\"mini-upload-form\\/assets\\/js\\/jquery.ui.widget.js?ver=0.0.1b3\\u0026hash=f479494e3c298af1\"],\"jquery.fileupload\":[\"mini-upload-form\\/assets\\/js\\/jquery.fileupload.js?ver=0.0.1b3\\u0026hash=f535ea5901ea522d\"],\"jquery.fileupload.style\":[\"mini-upload-form\\/assets\\/css\\/style.css?ver=0.0.1b3\\u0026hash=162178779a3f93cd\"],\"rangy-core\":[\"rangy\\/rangy-core.js?ver=0.0.1b3\\u0026hash=45c4f71d2213de88\"],\"rangy-serializer\":[\"rangy\\/rangy-serializer.js?ver=0.0.1b3\\u0026hash=f4104d003a720143\"],\"rangy-classapplier\":[\"rangy\\/rangy-classapplier.js?ver=0.0.1b3\\u0026hash=ee31e3066e7d8202\"],\"rangy-highlighter\":[\"rangy\\/rangy-highlighter.js?ver=0.0.1b3\\u0026hash=0dfdcfe866b0c13b\"],\"rangy-textrange\":[\"rangy\\/rangy-textrange.js?ver=0.0.1b3\\u0026hash=eff5d690f5e75a9a\"],\"rangy-selectionsaverestore\":[\"rangy\\/rangy-selectionsaverestore.js?ver=0.0.1b3\\u0026hash=b323431e8b3b1678\"],\"jquery.overlayScrollbars\":[\"jquery.overlayScrollbars\\/jquery.overlayScrollbars.js?ver=0.0.1b3\\u0026hash=7964c756f72cd270\"],\"jquery.overlayScrollbars-style\":[\"jquery.overlayScrollbars\\/jquery.overlayScrollbars.css?ver=0.0.1b3\\u0026hash=028afed797f6ebf6\"],\"chartjs\":[\"chartjs\\/Chart.js?ver=0.0.1b3\\u0026hash=995971f2a1bbcf30\"],\"stickyfill\":[\"stickyfill-2.1.0\\/stickyfill.js?ver=0.0.1b3\\u0026hash=6d5324ca2d034d18\"],\"beholder\":[\"beholder\\/dist\\/beholder.js?ver=0.1.0b3\\u0026hash=42cd8bbe4af0b723\"],\"lazyload\":[\"vanilla-lazyload\\/lazyload-19.1.3.min.js?ver=0.0.1b3\\u0026hash=b72ffdbf1a7ec170\"],\"@popperjs\\/core\":[\"popperjs\\/core\\/dist\\/umd\\/popper.js?ver=0.0.1b3\\u0026hash=31032b08bd8e7222\"],\"tippy\":[\"tippy\\/dist\\/tippy-bundle.umd.js?ver=0.0.1b3\\u0026hash=be40939a1df8aa4c\"],\"jquery.timeago\":[\"\\/sites\\/all\\/modules\\/timeago\\/jquery.timeago.min.js?ver=0.0.1b3\\u0026hash=5c17fa00e2897651\"],\"cropper\":[\"\\/sites\\/all\\/modules\\/_custom\\/imagefield_zip\\/cropper\\/src\\/cropper.js?ver=0.0.5b3\\u0026hash=2181817ffa0e5f04\"],\"cropperstyle\":[\"\\/sites\\/all\\/modules\\/_custom\\/imagefield_zip\\/cropper\\/src\\/cropper.css?ver=0.0.5b3\\u0026hash=4c0026bce2ea113c\"],\"jquery.lazyload\":[\"\\/sites\\/all\\/modules\\/_custom\\/imglazy\\/jquery.lazyload.min.js?ver=0.0.1b3\\u0026hash=89c45121934ed466\"],\"photoswipe\":[\"photoswipe\\/dist\\/photoswipe.js?ver=0.0.1b3\\u0026hash=b75b586ed2581b8d\"],\"photoswipeui\":[\"photoswipe\\/dist\\/photoswipe-ui-default.js?ver=0.0.1b3\\u0026hash=9cbb085640c43df8\"],\"seealso.block\":[\"\\/sites\\/all\\/modules\\/_custom\\/seealso\\/lib\\/dist\\/seealso-block.js?ver=0.3.1b3\\u0026hash=3177d744e5f3d363\"]},\"shim\":{\"jquery.ui\":[\"jquery\",\"css!jqueryuitheme\"],\"jquery.ui.touch-punch\":{\"deps\":[\"jquery.ui\"]},\"footable\":{\"exports\":\"$\",\"deps\":[\"jquery\",\"css!footablecss\"]},\"nprogress\":[\"css!nprogress-style\"],\"highlight\":[\"css!highlight-style\"],\"modernizr\":{\"exports\":\"Modernizr\"},\"polyfill.matchmedia\":{\"exports\":\"matchMedia\"},\"spin\":{\"exports\":\"Spinner\"},\"jquery.knob\":{\"exports\":\"$\",\"deps\":[\"jquery\"]},\"jquery.fileupload\":[\"jquery.knob\",\"jquery.iframe-transport\",\"jquery.ui.widget\"],\"jquery.overlayScrollbars\":{\"deps\":[\"css!jquery.overlayScrollbars-style\"]},\"stickyfill\":{\"exports\":\"Stickyfill\"},\"jquery.timeago\":[\"jquery\"],\"cropper\":[\"jquery\",\"css!cropperstyle\"],\"jquery.lazyload\":[\"jquery\"]},\"map\":{\"*\":{\"css\":\"require-css-v3\\/css\"}},\"waitSeconds\":0}};\n//--><!]]>\n</script>\n<script type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\n(function (window) {\n  function jw() {\n    this._functions = [];\n    this.run = function (func) {\n      this._functions.push(func);\n    };\n    this.resolve = function (arg) {\n      this.run = function (func) {\n        func(arg);\n      };\n      for (var i = 0; i < this._functions.length; i++) {\n        var func = this._functions[i];\n        delete this._functions[i];\n        func(arg);\n      }\n    };\n  }\n  var rqw = new jw();\n\n  window.rqw = function (fnc) {\n    rqw.run(fnc);\n  };\n  window.rqw.resolve = function () {\n    return rqw.resolve.apply(rqw, arguments);\n  };\n  var jqw = new jw();\n  window.jqw = function (fnc) {\n    jqw.run(fnc);\n  };\n  window.jqw.resolve = function () {\n    return jqw.resolve.apply(jqw, arguments);\n  };\n})(window);\n//--><!]]>\n</script><script type=\"text/javascript\">  \n\n<!--//--><![CDATA[//><!--\n\n(function (win) {\n\n  var middle_max = 800;\n  var middle_min = 700;\n  if (typeof win['adapt_middle_max'] !== 'undefined' && typeof win['adapt_middle_min'] !== 'undefined') {\n    middle_max = win.adapt_middle_max;\n    middle_min = win.adapt_middle_min;\n  }\n\n  win['Adapt'] = {\n    init: function () {\n    },\n    mobilecheck: function () {\n      var check = false;\n      (function (a) {\n        if (/android|ios|ipad|iphone|mobile|tablet|wp7|wp8|wp10/i.test(a))\n          check = true;\n      })(win.navigator.userAgent || win.navigator.vendor || win.opera);\n      return check;\n    },\n    checkcookie: function () {\n      try { if (document.cookie.match(new RegExp(\"(^| )adaptmode=0\")) !== null){return false;}} catch (e) {}\n      return null;\n    },\n    getCurrentState: function () {\n      if (typeof this['AdaptEnabled'] === 'undefined' || !this['AdaptEnabled']) {\n        return 'full';\n      }\n      var w = null;\n      var s = ['min', 'middle', 'full'];\n      if (typeof this['cachedstate'] !== 'undefined'){\n        return this['cachedstate'];\n      }\n      try {\n        w = Math.max(win.innerWidth || 0, win.document.documentElement.clientWidth || 0, win.document.body.clientWidth || 0);\n      } catch (e) {\n        w = null;\n      }\n      var ret = s[2];\n      switch (true) {\n        case (w > middle_max):\n          break;\n        case (w <= middle_max && w > middle_min):\n          ret = s[1];\n          break;\n        case (w <= middle_min):\n          ret = s[0];\n          break;\n        default:\n          ret = s[2];\n      }\n      this['cachedstate'] = ret;\n      return ret;\n    }\n  };\n  var A = win['Adapt'];\n  win.BANNERS_INLINE_GOOGLETAG = win.BANNERS_INLINE_GOOGLETAG || [];\n  win.BANNERS_INLINE_GOOGLETAG.push(function (googletag) {\n    googletag.pubads().setTargeting(\"at_\" + Adapt.getCurrentState(), \"T\");\n  });\n\n  if (A.mobilecheck() && A.checkcookie() !== false) {\n    A['AdaptEnabled'] = true;\n  } else {\n    A['AdaptEnabled'] = false;\n    try {\n      var mvp = win.document.getElementById('metaviewport');\n      mvp.setAttribute('content', 'width=1024');\n    } catch (e) {}\n  }\n})(window);\n\n//--><!]]>\n\n</script>\n\n<link rel=\"icon\" type=\"image/png\" href=\"/themes/irecommend_new/images/favicon.png?v=1\">\n<meta name=\"referrer\" content=\"no-referrer-when-downgrade\">\n\n    <script type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\n(function (win) {\n  win['page_tag_info'] ={\"gavgav\":\"gavgav_0\"};\n  try {\n    if (typeof win['page_tag_info']['tags'] == 'undefined') {\n      var tags = Drupal.settings.catalog.info.conjunction_term;\n      var termParents = Drupal.settings.catalog.info.term_parents;\n\n      if (typeof termParents === 'object') {\n        var conjunctionTermParents = [];\n        for (var tid in termParents) {\n          if (termParents.hasOwnProperty(tid)) {\n            conjunctionTermParents = conjunctionTermParents.concat(termParents[tid]);\n          }\n        }\n\n        if (conjunctionTermParents.length) {\n          tags = tags.concat(conjunctionTermParents);\n        }\n      }\n\n      win['page_tag_info']['tags'] = tags;\n    }\n  } catch (e) {\n  }\n  win['banners_inline'] = function (id) {\n    try {\n      var ob = Drupal.settings.banners_inline.banners[id];\n      var curstate;\n      if (typeof win.Adapt !== \"undefined\") {\n        curstate = win.Adapt.getCurrentState();\n      } else {\n        curstate = 'full';\n      }\n      for (var i = 0; i < ob.length; i++) {\n        var block = ob[i];\n        if ((typeof block.adapt_states !== \"undefined\" && block.adapt_states.length > 0 && -1 !== block.adapt_states.indexOf(curstate))\n            || ((!block.adapt_states || block.adapt_states.length === 0) && curstate === 'full')) {\n          var fallback = (typeof block.fallback !== 'undefined') ? block.fallback : '' \n              classes = (typeof block.classes !== 'undefined') ? block.classes : '' \n              ,pref = '<span class=\"brocock '+classes+'\" data-fallback=\"'+fallback+'\">', suf = '</span>';\n          win.document.write(pref+block.code+suf);\n          break;\n        }\n      }\n    } catch (e) {\n    }\n  };\n  win['banners_inline_framelistener'] = win['banners_inline_framelistener'] || {};\n})(this);\n//--><!]]>\n</script>\n<script type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\nDrupal.locale = { 'pluralFormula': function($n) { return Number((((($n%10)==1)&&(($n%100)!=11))?(0):((((($n%10)>=2)&&(($n%10)<=4))&&((($n%100)<10)||(($n%100)>=20)))?(1):2))); }, 'strings': {\"Drag to re-order\":\"\\u041f\\u0435\\u0440\\u0435\\u043c\\u0435\\u0441\\u0442\\u0438\\u0442\\u0435 \\u0434\\u043b\\u044f \\u0438\\u0437\\u043c\\u0435\\u043d\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u0440\\u044f\\u0434\\u043a\\u0430\",\"Changes made in this table will not be saved until the form is submitted.\":\"\\u0418\\u0437\\u043c\\u0435\\u043d\\u0435\\u043d\\u0438\\u044f, \\u0441\\u0434\\u0435\\u043b\\u0430\\u043d\\u043d\\u044b\\u0435 \\u0432 \\u0441\\u043f\\u0438\\u0441\\u043a\\u0435 \\u043d\\u0435 \\u0432\\u0441\\u0442\\u0443\\u043f\\u044f\\u0442 \\u0432 \\u0441\\u0438\\u043b\\u0443 \\u043f\\u043e\\u043a\\u0430 \\u0432\\u044b \\u043d\\u0435 \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u0435 \\u0438\\u0445.\",\"Deselect all rows in this table\":\"\\u0421\\u043d\\u044f\\u0442\\u044c \\u043e\\u0442\\u043c\\u0435\\u0442\\u043a\\u0443 \\u0441\\u043e \\u0432\\u0441\\u0435\\u0445 \\u043a\\u043e\\u043b\\u043e\\u043d\\u043e\\u043a \\u0442\\u0430\\u0431\\u043b\\u0438\\u0446\\u044b\",\"Select all rows in this table\":\"\\u041e\\u0442\\u043c\\u0435\\u0442\\u0438\\u0442\\u044c \\u0432\\u0441\\u0435 \\u043a\\u043e\\u043b\\u043e\\u043d\\u043a\\u0438 \\u0442\\u0430\\u0431\\u043b\\u0438\\u0446\\u044b\",\"Close\":\"\\u0417\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c\",\"Collapse all\":\"\\u0421\\u0432\\u0435\\u0440\\u043d\\u0443\\u0442\\u044c \\u0432\\u0441\\u0435\",\"Compact view\":\"\\u041a\\u043e\\u043c\\u043f\\u0430\\u043a\\u0442\\u043d\\u044b\\u0439 \\u0432\\u0438\\u0434\",\"edit (!seconds s. left)\":\"\\u0438\\u0437\\u043c\\u0435\\u043d\\u0438\\u0442\\u044c (\\u043e\\u0441\\u0442\\u0430\\u043b\\u043e\\u0441\\u044c !seconds \\u0441\\u0435\\u043a.)\",\"s.\":\"\\u0441\\u0435\\u043a.\",\"You can not edit it anymore.\":\"\\u0420\\u0435\\u0434\\u0430\\u043a\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0431\\u043e\\u043b\\u044c\\u0448\\u0435 \\u043d\\u0435 \\u0432\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e.\",\"Failed to load the image.\":\"\\u041d\\u0435 \\u0443\\u0434\\u0430\\u043b\\u043e\\u0441\\u044c \\u0437\\u0430\\u0433\\u0440\\u0443\\u0437\\u0438\\u0442\\u044c \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435.\",\"more...\":\"\\u0435\\u0449\\u0435...\",\"The titles usually begin with a capital letter.\":\"\\u041e\\u0431\\u044b\\u0447\\u043d\\u043e \\u043d\\u0430\\u0447\\u0438\\u043d\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441 \\u0437\\u0430\\u0433\\u043b\\u0430\\u0432\\u043d\\u043e\\u0439 \\u0431\\u0443\\u043a\\u0432\\u044b.\",\"You are writing in all capital letters, Caps Lock is probably on?\":\"\\u0412\\u044b \\u0432\\u0432\\u0435\\u043b\\u0438 \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0437\\u0430\\u0433\\u043b\\u0430\\u0432\\u043d\\u044b\\u0435 \\u0431\\u0443\\u043a\\u0432\\u044b. \\u0412\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0451\\u043d Caps Lock?\",\"Expand all\":\"\\u0420\\u0430\\u0441\\u043a\\u0440\\u044b\\u0442\\u044c \\u0432\\u0441\\u0435\",\"Full view\":\"\\u041f\\u043e\\u043b\\u043d\\u044b\\u0439 \\u0432\\u0438\\u0434\",\"Show quote\":\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c \\u0446\\u0438\\u0442\\u0430\\u0442\\u0443\",\"Hide quote\":\"\\u0421\\u043a\\u0440\\u044b\\u0442\\u044c \\u0446\\u0438\\u0442\\u0430\\u0442\\u0443\",\"ago\":\"\\u043d\\u0430\\u0437\\u0430\\u0434\",\"from now\":\"\",\"a moment\":\"\",\"about a minute\":\"\",\"%d minutes\":\"\",\"about an hour\":\"\",\"about %d hours\":\"\",\"a day\":\"\",\"%d days\":\"\",\"about a month\":\"\",\"%d months\":\"\",\"about a year\":\"\",\"%d years\":\"\",\"An error occurred during upload.\":\"\\u0412\\u043e \\u0432\\u0440\\u0435\\u043c\\u044f \\u0437\\u0430\\u0433\\u0440\\u0443\\u0437\\u043a\\u0438 \\u043f\\u0440\\u043e\\u0438\\u0437\\u043e\\u0448\\u043b\\u0430 \\u043e\\u0448\\u0438\\u0431\\u043a\\u0430.\",\"Please check network connection or try to reload page.\":\"\\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430, \\u043f\\u0440\\u043e\\u0432\\u0435\\u0440\\u044c\\u0442\\u0435 \\u0438\\u043d\\u0442\\u0435\\u0440\\u043d\\u0435\\u0442-\\u0441\\u043e\\u0435\\u0434\\u0438\\u043d\\u0435\\u043d\\u0438\\u0435 \\u0438\\u043b\\u0438 \\u043f\\u043e\\u043f\\u0440\\u043e\\u0431\\u0443\\u0439\\u0442\\u0435 \\u043f\\u0435\\u0440\\u0435\\u0437\\u0430\\u0433\\u0440\\u0443\\u0437\\u0438\\u0442\\u044c \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0443.\",\"A request to confirm your email will be sent after saving\":\"\\u0417\\u0430\\u043f\\u0440\\u043e\\u0441 \\u0434\\u043b\\u044f \\u043f\\u043e\\u0434\\u0442\\u0432\\u0435\\u0440\\u0436\\u0434\\u0435\\u043d\\u0438\\u044f email \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043e\\u0442\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f\",\"Show more\":\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c \\u0431\\u043e\\u043b\\u044c\\u0448\\u0435\",\"Back\":\"\\u041d\\u0430\\u0437\\u0430\\u0434\",\"Forward\":\"\\u0414\\u0430\\u043b\\u0435\\u0435\",\"Views\":\"\\u041f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u043e\\u0432\",\"Year\":\"\\u0413\\u043e\\u0434\",\"Month\":\"\\u041c\\u0435\\u0441\\u044f\\u0446\",\"Request error\":\"\\u041e\\u0448\\u0438\\u0431\\u043a\\u0430 \\u0437\\u0430\\u0433\\u0440\\u0443\\u0437\\u043a\\u0438 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445\",\"Apply changes\":\"\\u041f\\u0440\\u0438\\u043c\\u0435\\u043d\\u0438\\u0442\\u044c\",\"Reset\":\"\\u0421\\u0431\\u0440\\u043e\\u0441\\u0438\\u0442\\u044c\",\"Value must be !mindate or later.\":\"\\u0417\\u043d\\u0430\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0434\\u043e\\u043b\\u0436\\u043d\\u043e \\u0431\\u044b\\u0442\\u044c !mindate \\u0438\\u043b\\u0438 \\u043f\\u043e\\u0437\\u0436\\u0435.\",\"Value must be !maxdate or earlier.\":\"\\u0417\\u043d\\u0430\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0434\\u043e\\u043b\\u0436\\u043d\\u043e \\u0431\\u044b\\u0442\\u044c !maxdate \\u0438\\u043b\\u0438 \\u0440\\u0430\\u043d\\u044c\\u0448\\u0435.\",\"Please enter a valid value. The field is incomplete or has an invalid date.\":\"\\u041f\\u043e\\u0436\\u0430\\u043b\\u0443\\u0439\\u0441\\u0442\\u0430, \\u0432\\u0432\\u0435\\u0434\\u0438\\u0442\\u0435 \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0437\\u043d\\u0430\\u0447\\u0435\\u043d\\u0438\\u0435. \\u041f\\u043e\\u043b\\u0435 \\u043d\\u0435 \\u0437\\u0430\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u043e \\u0438\\u043b\\u0438 \\u0438\\u043c\\u0435\\u0435\\u0442 \\u043d\\u0435\\u0434\\u043e\\u043f\\u0443\\u0441\\u0442\\u0438\\u043c\\u0443\\u044e \\u0434\\u0430\\u0442\\u0443.\",\"You have !seconds seconds left to edit this comment.\":\"\\u0412\\u0440\\u0435\\u043c\\u044f \\u0440\\u0435\\u0434\\u0430\\u043a\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u043e. \\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0440\\u0435\\u0434\\u0430\\u043a\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u044d\\u0442\\u043e\\u0442 \\u043a\\u043e\\u043c\\u043c\\u0435\\u043d\\u0442\\u0430\\u0440\\u0438\\u0439 \\u0432 \\u0442\\u0435\\u0447\\u0435\\u043d\\u0438\\u0435 !seconds \\u0441\\u0435\\u043a. \\u041f\\u043e\\u0441\\u043b\\u0435 \\u044d\\u0442\\u043e\\u0433\\u043e \\u0440\\u0435\\u0434\\u0430\\u043a\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043d\\u0435\\u0432\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e.\",\"You can't edit your comment anymore.\":\"\\u0420\\u0435\\u0434\\u0430\\u043a\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0431\\u043e\\u043b\\u044c\\u0448\\u0435 \\u043d\\u0435\\u0432\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e.\",\"Enable search history\":\"\\u0412\\u043a\\u043b\\u044e\\u0447\\u0438\\u0442\\u044c \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u044e \\u043f\\u043e\\u0438\\u0441\\u043a\\u0430\",\"Disable and clear history\":\"\\u041e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0438\\u0442\\u044c \\u0438 \\u043e\\u0447\\u0438\\u0441\\u0442\\u0438\\u0442\\u044c \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u044e\",\"Show all\":\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c \\u0432\\u0441\\u0435\",\"Hide\":\"\\u0421\\u043a\\u0440\\u044b\\u0442\\u044c\",\"- Select -\":\"- \\u0412\\u044b\\u0431\\u0435\\u0440\\u0438\\u0442\\u0435 -\",\"Insert video\":\"\\u0412\\u0441\\u0442\\u0430\\u0432\\u0438\\u0442\\u044c \\u0432\\u0438\\u0434\\u0435\\u043e\",\"Show more reviews\":\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c \\u0435\\u0449\\u0451 \\u043e\\u0442\\u0437\\u044b\\u0432\\u044b\",\"Remove\":\"\\u0423\\u0434\\u0430\\u043b\\u0438\\u0442\\u044c\",\"Cancel\":\"\\u041e\\u0442\\u043c\\u0435\\u043d\\u0430\",\"Repeat password\":\"\\u041f\\u043e\\u0432\\u0442\\u043e\\u0440\\u0438\\u0442\\u0435 \\u043f\\u0430\\u0440\\u043e\\u043b\\u044c\",\"Weak password\":\"\\u0421\\u043b\\u0430\\u0431\\u044b\\u0439 \\u043f\\u0430\\u0440\\u043e\\u043b\\u044c\",\"The passwords do not match\":\"\\u041f\\u0430\\u0440\\u043e\\u043b\\u0438 \\u043d\\u0435 \\u0441\\u043e\\u0432\\u043f\\u0430\\u0434\\u0430\\u044e\\u0442\",\"Save the form to apply\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u0435 \\u0444\\u043e\\u0440\\u043c\\u0443, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u0440\\u0438\\u043c\\u0435\\u043d\\u0438\\u0442\\u044c\",\"show text\":\"\\u043f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c \\u0442\\u0435\\u043a\\u0441\\u0442\"} };\n//--><!]]>\n</script>\n  <script>\ntry{\nDrupal.settings.site.teasersBehold = {\"timerDelay\":200,\"elemViewThreshold\":1000,\"observerTreshold\":0.9,\"countByContinuousTime\":true};\n}catch(e){}\ntry{\n    Drupal.settings.cookies_ec = [];\n    Drupal.settings.cookies_ec['cc'] = 888;\n}catch(e){}\n\n\njqw(function ($) {\n  $(function () {\n      setTimeout(function () {\n        requirejs([\"/injector/gpu.js\"], function () {\n        });\n      }, 2500);\n  });\n});\n\njqw(function ($) {\n  $(function () {\n      setTimeout(function () {\n        try {\n          if (window.Drupal && Drupal.settings && Drupal.settings.site && Drupal.settings.site.type === 'review') {\n            requirejs([\"/injector/video.js\"], function () {\n            });\n          }\n        } catch (e) {}\n      }, 200);\n  });\n});\n\n</script>\n\n\n\n<script>\nwindow.yaContextCb = window.yaContextCb || []\n\ntry{\n    // if( [1,2,3,4,5,6].includes(window.ab_var)){\n    //       window.ab_test = 999010;\n    //   } else if( [7,8,9,10,11,12].includes(window.ab_var)){\n    //       window.ab_test = 999011;\n    //   }\n    \n      \n    let dfp_forbidden_tids = new Set([\n      1431471, 1633485, 1624787, 599435, 151711, 166251, 225558, 55314,\n      128585, 260874, 376538, 38702, 1019584, 38630, 774724, 947556,\n      1188419, 90911, 78816, 78810, 140401, 5690, 63114, 938, 50470,\n      70759, 143327, 62735, 489121, 405016, 1272308, 212391, 711632,\n      673904, 279793, 714008, 562519, 287819, 1397089, 18690, 46302]);\n      \n    let tags = (window.page_tag_info && window.page_tag_info.tags) ? window.page_tag_info.tags : [];\n\n    let dfp_forbidden = false;\n    tags.forEach(function(t) {\n        dfp_forbidden = dfp_forbidden || dfp_forbidden_tids.has(Number(t));\n      });\n\n    const dfp_forbidden_countries = [\n      \"TM\", \"EG\", \"TJ\", \"VN\", \"CN\", \"ID\", \"JO\", \"IN\", \"AR\", \"MY\", \"MA\", \"MN\", \"IQ\", \"MV\", \"TN\", \"AL\", \"PK\", \"LB\", \"BD\", \"SC\", \n      \"LK\", \"AD\", \"PS\", \"PE\", \"DZ\", \"BA\", \"MM\", \"CO\", \"MK\", \"DO\", \"EC\", \"KH\", \"CI\", \"KE\", \"PA\", \"LY\", \"VE\", \"JM\", \"MU\", \"CR\", \"BO\", \n      \"NP\", \"TZ\", \"YE\", \"NG\", \"GT\", \"CM\", \"UG\", \"PY\", \"GI\", \"ML\", \"ZM\", \"JE\", \"SV\", \"AF\", \"SX\", \"NI\", \"TG\", \"LA\", \"XK\", \"CG\", \"HN\", \n      \"MZ\", \"ET\", \"GH\", \"BJ\", \"MG\", \"CF\", \"CD\", \"GN\", \"GA\", \"SJ\", \"DJ\", \"RW\", \"TC\", \"GY\", \"ZW\", \"SD\", \"BF\", \"NC\", \"PG\", \"BN\", \"MW\", \n      \"EH\", \"GW\", \"PW\", \"BM\", \"CV\", \"NE\", \"BQ\", \"TT\", \"GU\", \"TO\", \"AW\", \"GQ\", \"SM\", \"BI\", \"VU\", \"MH\", \"SL\", \"LR\", \"YT\", \"SS\", \"BB\", \n      \"LC\", \"BT\"\n    ];\n\n    if( !dfp_forbidden\n        && !!window.geoip\n        && !!window.geoip.c\n        && !(window.geoip.c == 'RU')\n        && !(window.geoip.c == 'UA' && ['40','43','14','09','23','65'].includes(window.geoip.r))\n        && !(window.geoip.c == 'GE' && ['AB'].includes(window.geoip.r))\n        && !dfp_forbidden_countries.includes(window.geoip.c)\n        ){\n            rqw(function (r) {\n                r([\"/injector/reklamko_not_rus.js\"], function () {});\n            });\n        }else{\n            rqw(function (r) {\n                r([\"/injector/reklamko.js\"], function () {});\n            });\n        }\n}catch(e){};\n</script>\n\n\n\n\n<script src=\"/injector/botbot.js\" async=\"\"></script>\n\n\n<script>\n    if(!window.dataLayer){\n  \n      // counters init\n\n  \n      // Yandex.Metrika counter init + deleayed loading\n      (function(m,e,t,r,i,k,a){\n        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};\n        m[i].l=1*new Date();\n  \n        jqw(function ($) {\n          $(function () {\n            setTimeout(function () {\n              requirejs([r], function () { });\n            }, 500);\n          });\n        });\n  \n      })\n      (window, document, \"script\", \"https://mc.yandex.ru/metrika/tag.js\", \"ym\");       \n  \n  \n      jqw(function ($) {\n          $(function () {\n                requirejs([\"/injector/metrika-config.js\"], function () { });\n          });\n        });\n        \n  \n  \n        \n      // LiveInternet counter\n      jqw(function ($) {\n        $(function () {\n          setTimeout(function () {\n              new Image().src = \"https://counter.yadro.ru/hit?r\"+\n              escape(document.referrer)+((typeof(screen)==\"undefined\")?\"\":\n              \";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?\n              screen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\n              \";h\"+escape(document.title.substring(0,150))+\n              \";\"+Math.random();\n          }, 1000);\n        });\n      });\n  \n\n      // Script loading error into GA4 & YaMetrika\n      window.addEventListener('error', function(event) {\n            if (event.target.tagName === 'SCRIPT') {\n\n              // gtag('event', 'script_load_error', {\n              //       'event_category': 'Script Error',\n              //       'event_label': event.target.src,\n              //       'non_interaction': true\n              //   });\n\n              ym(8092381,'reachGoal','script_load_error',{ 'script_load_error': event.target.src });\n\n            }\n        }, true);\n  \n    }\n</script>\n\n\n<style>\n  /* adplay banner fix */\n  #adp2282968 { min-height: 190px; }\n</style>\n<script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"/injector/reklamko.js\" src=\"/injector/reklamko.js\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"lazyload\" src=\"/sites/all/libraries/vanilla-lazyload/lazyload-19.1.3.min.js?ver=0.0.1b3&amp;hash=b72ffdbf1a7ec170\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"require-css-v3/css\" src=\"/sites/all/libraries/require-css-v3/css.js\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"/injector/metrika-config.js\" src=\"/injector/metrika-config.js\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"beholder\" src=\"/sites/all/libraries/beholder/dist/beholder.js?ver=0.1.0b3&amp;hash=42cd8bbe4af0b723\"></script><script src=\"https://yandex.ru/ads/system/header-bidding.js\" async=\"\"></script><script src=\"https://yandex.ru/ads/system/context.js\" async=\"\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"nprogress\" src=\"/sites/all/libraries/nprogress/nprogress.js?ver=0.0.1b3&amp;hash=353710a40c9db021\"></script><link rel=\"preconnect\" href=\"https://yastatic.net\"><link rel=\"preconnect\" href=\"https://avatars.mds.yandex.net\"><link rel=\"preconnect\" href=\"https://mc.yandex.ru\"><link rel=\"preconnect\" href=\"https://ads.adfox.ru\"><link rel=\"preload\" href=\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\" type=\"font/woff2\" as=\"font\" crossorigin=\"anonymous\"><style id=\"ysTextCssRule\">@font-face {\n        font-family: \"YS Text Variable\";\n        src: url(\"https://yastatic.net/s3/home/fonts/ys/3/text-variable-full.woff2\") format(\"woff2\");\n        font-weight: 400 700;\n        font-display: optional;\n    }</style><script async=\"\" crossorigin=\"anonymous\" src=\"https://yastatic.net/safeframe-bundles/0.83/host.js\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"https://mc.yandex.ru/metrika/tag.js\" src=\"https://mc.yandex.ru/metrika/tag.js\"></script><style type=\"text/css\">.UZznxc{height:inherit;max-height:inherit;min-height:inherit;width:100%}</style><script src=\"https://content.adriver.ru/AdRiverFPS.js\" async=\"\"></script><script type=\"text/javascript\" charset=\"utf-8\" async=\"\" data-requirecontext=\"_\" data-requiremodule=\"/injector/gpu.js\" src=\"/injector/gpu.js\"></script></head>\n\n<body class=\"not-front not-logged-in page-catalog no-sidebars feast not-logged-in not-front layout-main\">\n\n<div class=\"page\">\n\n\t<header class=\"Header desktopWrap\">\n    <div class=\"logoline desktopStuff\">\n      <div id=\"logoAndSearch\">\n        <a href=\"/\">\n            <img class=\"site-logo full\" src=\"/themes/irecommend_new/images/Logo_101c.png\" heigth=\"35\" width=\"210\">\n        </a>\n        <form action=\"/srch\" accept-charset=\"UTF-8\" method=\"get\" id=\"search-theme-form\" name=\"searchForm\">\n            <div class=\"horizontal-group hGroup search\">\n                <div class=\"TextInput empty\">\n                    <input placeholder=\"Поиск\" type=\"text\" name=\"query\" class=\"field srch-ac srch-ac-processed\" autocomplete=\"OFF\">\n\n                    <svg class=\"IrecUiSvg resetSearch\" viewBox=\"0 0 20 20\">\n                        <path d=\"M10 8.6L1.7 0.3 1.7 0.3C1.3-0.1 0.7-0.1 0.3 0.3L0.3 0.3 0.3 0.3C-0.1 0.7-0.1 1.3 0.3 1.7L8.6 10 0.3 18.3 0.3 18.3C-0.1 18.7-0.1 19.3 0.3 19.7L0.3 19.7 0.3 19.7C0.7 20.1 1.3 20.1 1.7 19.7L10 11.4 18.3 19.7C18.7 20.1 19.3 20.1 19.7 19.7L19.7 19.7C20.1 19.3 20.1 18.7 19.7 18.3L11.4 10 19.7 1.7C20.1 1.3 20.1 0.7 19.7 0.3L19.7 0.3C19.3-0.1 18.7-0.1 18.3 0.3L18.3 0.3 10 8.6Z\"></path>\n                    </svg>\n                </div>\n                <button type=\"submit\" name=\"op\" class=\"Button\">Найти</button>\n            </div>\n        </form>\n      </div>\n\n      <div id=\"SearchAdaptButton\" style=\"width: 22px; margin: 8px 0 4px 8px; color: #c4c4c4;\">\n        <svg class=\"IrecUiSvg\" viewBox=\"0 0 18 18\" style=\"height: 20px; width: 20px; margin: 2px;\">\n          <path d=\"M11 10C11.6 9.1 12 8.1 12 7 12 4.2 9.8 2 7 2 4.2 2 2 4.2 2 7 2 9.8 4.2 12 7 12 8.1 12 9.1 11.6 10 11L10.6 10.6 11 10ZM17.7 16.3C18.1 16.7 18.1 17.3 17.7 17.7 17.3 18.1 16.7 18.1 16.3 17.7L11.2 12.6C10 13.5 8.6 14 7 14 3.1 14 0 10.9 0 7 0 3.1 3.1 0 7 0 10.9 0 14 3.1 14 7 14 8.6 13.5 10 12.6 11.2L17.7 16.3Z\"></path>\n        </svg>\n      </div>\n\n      <div id=\"newreviewButton\">\n        <a href=\"/landing\">\n          <div class=\"accent IrecUiTextButton icons-add-review\">Добавить отзыв</div>\n        </a>\n      </div>\n      <div class=\"IrecUiHamburgerIcon\" data-url=\"/user/login%3Fdestination%3Dhome\">\n          <div class=\"AvatarNotice\"></div>\n      </div>\n\n      <!-- start block.tpl.php -->\n<a class=\"headerLoginButton\" href=\"/user/login?destination=catalog%2Flist%2F57\"><button type=\"button\" class=\"Button\" style=\"min-width: auto; padding: 4px 18px;\">Войти</button></a><!-- /end block.tpl.php -->    </div> <!-- logoline end -->\n\n    <div class=\"IrecUiNavbarWrapper desktopWrap\">\n      <div class=\"IrecUiNavbar desktopStuff\">\n          <!-- start block.tpl.php -->\n<a href=\"/catalog/list/6\"><span class=\"nav-item-wrapper\">Красота и здоровье</span></a><a href=\"/catalog/list/9\"><span class=\"nav-item-wrapper\">Детское</span></a><a href=\"/catalog/list/3\"><span class=\"nav-item-wrapper\">Техника</span></a><a href=\"/catalog/list/11\"><span class=\"nav-item-wrapper\">Туризм</span></a><a href=\"/catalog/list/8\"><span class=\"nav-item-wrapper\">Животные</span></a><a href=\"/catalog/list/10\"><span class=\"nav-item-wrapper\">Кино</span></a><a href=\"/catalog/list/7\"><span class=\"nav-item-wrapper\">Книги</span></a><a href=\"/catalog/list/937\"><span class=\"nav-item-wrapper\">Продукты</span></a><a href=\"/catalog/list/3768\"><span class=\"nav-item-wrapper\">Посуда</span></a><a href=\"/catalog/list/2\"><span class=\"nav-item-wrapper\">Авто</span></a><a href=\"/category/katalog-otzyvov\"><span class=\"nav-item-wrapper\">Другие</span></a><!-- /end block.tpl.php -->      </div>\n      <div class=\"blurringLeft\"></div>\n      <div class=\"blurringRight\"></div>\n    </div>\n\n  </header>\n\n  \n  <div class=\"desktopStuff\">\n\n    <div id=\"sidebar-right-top\">\n          </div>\n\n    <div id=\"content\">\n\n\n      <div class=\"IrecUiBreadcrumbs\"><ol class=\"breadcrumb-list\" itemscope=\"\" itemtype=\"https://schema.org/BreadcrumbList\"><li class=\"breadcrumb-item\" itemprop=\"itemListElement\" itemscope=\"\" itemtype=\"https://schema.org/ListItem\">\n  <a href=\"/catalog/list/1\" itemprop=\"item\"><span itemprop=\"name\">Каталог отзывов</span></a>  <meta itemprop=\"position\" content=\"1\">\n</li><li class=\"breadcrumb-item\" itemprop=\"itemListElement\" itemscope=\"\" itemtype=\"https://schema.org/ListItem\">\n  <a href=\"/catalog/list/12\" itemprop=\"item\"><span itemprop=\"name\">В моем городе</span></a>  <meta itemprop=\"position\" content=\"2\">\n</li></ol></div><h1 class=\"largestHeader\">Ветклиники</h1><div id=\"content-top\"><!-- start block.tpl.php -->\n<script>\n\n  jqw(function ($) {\n    try {\n      if (Adapt && (Adapt.getCurrentState() == 'min'  ||  Adapt.getCurrentState() == 'middle') )     {\n        return;\n      }\n    } catch (e) {\n    }\n    var f = function () {\n      try {\n        var si = $('#sidebar > .sidebar-inset-wrapper');\n        var rt = 0;\n        if ($('#sidebar-right-top').length > 0) {\n          rt = $('#sidebar-right-top').height();\n        }\n\n        var mh = ($('#content').height() - rt) - 10;\n        //console.log('tt', mh)\n        si.css('min-height', mh);\n      } catch (e) {\n      }\n    };\n    f();\n    setInterval(f, 1300);\n  });\n\n</script>\n\n\n<style id=\"hotfix-flyingblock\" type=\"text/css\">\n\n  .flyingblock, .flyingblock.tofly {\n    position: sticky!important;\n    top: 0!important;\n  }\n\n  .flyingblock.sticky {\n    position: sticky!important;\n    top: 0!important;\n  }\n\n</style>\n<style id=\"hotfix-flyingblock\" type=\"text/css\">\n\n   .flyingblock, .flyingblock.tofly {\n        position: sticky!important;\n        top: 0!important;\n    }\n\n    .flyingblock.sticky {\n        position: sticky!important;\n        top: 0!important;\n    }\n\n</style><!-- /end block.tpl.php --></div>\n      <div class=\"taxonomy-category type-list\">\n  \n  <div class=\"Tabs\" data-type=\"list\" data-group=\"catalog\">\n\n    <div class=\"TabsSwitch\">\n      <a data-type=\"catalog\" class=\" active\" href=\"/catalog/list/57\">\n        <span>Каталог</span>\n      </a>\n      <a data-type=\"reviews\" class=\"\" href=\"/catalog/reviews/57\">\n        <span>Отзывы</span>\n      </a>\n    </div>\n\n    <div id=\"catalog-filters-control\" class=\"filters-control\">\n      <div id=\"relative-sort\">по дате</div>\n              <div data-text=\"фильтры\" id=\"catalog-filters-button\"></div>\n          </div>\n\n    <div class=\"TabsItems\">\n      <div class=\"group catalog active\" data-text=\"Сортировка:\">\n        <a class=\" active\" href=\"/catalog/list/57\">\n          <span>по дате</span>\n        </a>\n        <a class=\"\" href=\"/catalog/rating/57\">\n          <span>по рейтингу</span>\n        </a>\n      </div>\n    </div>\n\n    <div id=\"catalog-filters-container\"></div>\n            <div class=\"view-content\">      <div class=\"ProductTizer plate teaser-item tsr-processed tsr-viewed\" data-type=\"2\" data-nid=\"11452256\">\n      <div class=\"title\"><a href=\"/content/aibolit-veterinarnaya-klinika-tobolsk\">Айболит ветеринарная клиника, Тобольск</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/aibolit-veterinarnaya-klinika-tobolsk\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>5</span> </span> <span class=\"total-votes\">(<span>1</span> голос)</span></div></div>\n</div>\n</div>        <a href=\"/content/aibolit-veterinarnaya-klinika-tobolsk\" class=\"reviewsLink\">1 отзыв</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>0</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/aibolit-veterinarnaya-klinika-tobolsk\"><img class=\"lazy lazy-appear lazy-loaded\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/3504865/mfd9vp7fHIZbf4lqqq0vg.jpg\" src=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/3504865/mfd9vp7fHIZbf4lqqq0vg.jpg\" alt=\"\" title=\"\" data-ll-status=\"loaded\"></a></div>\n      <div class=\"extract\"><a href=\"/content/bolshoi-spektr-uslug-n11452291\">большой спектр услуг</a></div>\n      <a href=\"/content/aibolit-veterinarnaya-klinika-tobolsk\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed tsr-viewed\" data-type=\"2\" data-nid=\"11366601\">\n      <div class=\"title\"><a href=\"/content/veterinarnaya-klinika-promyau-rossiya-penza\">Ветеринарная клиника \"ПроМяу\", Россия, Пенза</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/veterinarnaya-klinika-promyau-rossiya-penza\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>5</span> </span> <span class=\"total-votes\">(<span>1</span> голос)</span></div></div>\n</div>\n</div>        <a href=\"/content/veterinarnaya-klinika-promyau-rossiya-penza\" class=\"reviewsLink\">1 отзыв</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>0</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/veterinarnaya-klinika-promyau-rossiya-penza\"><img class=\"lazy lazy-appear lazy-loaded\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/1191781/TAtVzf8zNFPO4BBDTm7PQ.jpg\" src=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/1191781/TAtVzf8zNFPO4BBDTm7PQ.jpg\" alt=\"\" title=\"\" data-ll-status=\"loaded\"></a></div>\n      <div class=\"extract\"><a href=\"/content/istoriya-3-koshek-klinika-nomer-kotoroi-ya-pomnyu-naizust-esli-moi-pitomtsy-doveryayut-etim\">История 3 кошек: клиника, номер которой я помню наизусть. Если мои питомцы доверяют этим врачам, то я тоже буду. </a></div>\n      <a href=\"/content/veterinarnaya-klinika-promyau-rossiya-penza\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"3726707\">\n      <div class=\"title\"><a href=\"/content/klever-veterinarnaya-klinika-moskva\">КЛЕВЕР ВЕТЕРИНАРНАЯ КЛИНИКА, Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/klever-veterinarnaya-klinika-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">3</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 33.3335%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>2.3</span> </span> <span class=\"total-votes\">(<span>3</span> голоса)</span></div></div>\n</div>\n</div>        <a href=\"/content/klever-veterinarnaya-klinika-moskva\" class=\"reviewsLink\">3 отзыва</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>2</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/klever-veterinarnaya-klinika-moskva\"><img class=\"lazy lazy-appear lazy-loaded\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/712176/P7eIC3kGXj41lanCgwnUA.JPG\" src=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/712176/P7eIC3kGXj41lanCgwnUA.JPG\" alt=\"\" title=\"\" data-ll-status=\"loaded\"></a></div>\n      <div class=\"extract\"><a href=\"/content/otnoshenie-k-klientu-eto-kakoi-chernyi-fars\">Отношение к клиенту - это какой-то чёрный фарс</a></div>\n      <a href=\"/content/klever-veterinarnaya-klinika-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">3</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"7236056\">\n      <div class=\"title\"><a href=\"/content/veterinarnaya-klinika-benivet-samara\">Ветеринарная клиника \"Бенивет\", Самара</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/veterinarnaya-klinika-benivet-samara\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">7</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>1</span> </span> <span class=\"total-votes\">(<span>7</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/veterinarnaya-klinika-benivet-samara\" class=\"reviewsLink\">7 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>0</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>7</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/veterinarnaya-klinika-benivet-samara\"><img class=\"lazy lazy-appear lazy-loaded\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/2081607/xiWNty5dbTlF6kxhI5w.jpg\" src=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/2081607/xiWNty5dbTlF6kxhI5w.jpg\" alt=\"\" title=\"\" data-ll-status=\"loaded\"></a></div>\n      <div class=\"extract\"><a href=\"/content/veterinarnaya-klinika-benivet\">Ветеринарная клиника \"БениВЕТ\"</a></div>\n      <a href=\"/content/veterinarnaya-klinika-benivet-samara\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">7</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"226032\">\n      <div class=\"title\"><a href=\"/content/veterinarnaya-klinika-belanta-moskva\">Ветеринарная клиника \"Беланта\", Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/veterinarnaya-klinika-belanta-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">41</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 70.7315%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>2.7</span> </span> <span class=\"total-votes\">(<span>41</span> голос)</span></div></div>\n</div>\n</div>        <a href=\"/content/veterinarnaya-klinika-belanta-moskva\" class=\"reviewsLink\">41 отзыв</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>17</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>24</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/veterinarnaya-klinika-belanta-moskva\"><img class=\"lazy lazy-appear lazy-loaded\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/24769/i1.jpg\" src=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/24769/i1.jpg\" alt=\"\" title=\"\" data-ll-status=\"loaded\"></a></div>\n      <div class=\"extract\"><a href=\"/content/vybor-etoi-kliniki-byl-fatalnoi-oshibkoi\">Выбор этой клиники был фатальной ошибкой</a></div>\n      <a href=\"/content/veterinarnaya-klinika-belanta-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">41</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"10784200\">\n      <div class=\"title\"><a href=\"/content/praid-rossiya-sankt-peterburg\">Прайд, Россия, Санкт-Петербург</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/praid-rossiya-sankt-peterburg\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">2</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>3</span> </span> <span class=\"total-votes\">(<span>2</span> голоса)</span></div></div>\n</div>\n</div>        <a href=\"/content/praid-rossiya-sankt-peterburg\" class=\"reviewsLink\">2 отзыва</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>1</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/praid-rossiya-sankt-peterburg\"><img class=\"lazy lazy-appear lazy-loaded\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/3317414/USkFWLpBHYAIXB0wegeA.jpg\" src=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/3317414/USkFWLpBHYAIXB0wegeA.jpg\" alt=\"\" title=\"\" data-ll-status=\"loaded\"></a></div>\n      <div class=\"extract\"><a href=\"/content/gde-naiti-dostoinykh-veterinarov-v-peterburge-klinika-praid-odno-vylechili-drugoe-slomali\"> Где найти достойных ветеринаров в Петербурге? Клиника Прайд. Одно вылечили, другое сломали.</a></div>\n      <a href=\"/content/praid-rossiya-sankt-peterburg\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">2</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"3501307\">\n      <div class=\"title\"><a href=\"/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg\">Ветеринарная клиника доктора Сотникова, Санкт-Петербург</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">50</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 4%\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>3</span> </span> <span class=\"total-votes\">(<span>50</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg\" class=\"reviewsLink\">50 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>25</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>25</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/399872/nYbE2xCXCVMd9wL52v3Gw.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/veterinarnaya-klinika-v-kotoruyu-priezzhayut-s-zhivotnymi-iz-raznykh-gorodov-rossii-5-let-na\">Ветеринарная клиника, в которую приезжают с животными из разных городов России. 5 лет назад я бы назвала эту клинику \"лучшая в Санкт-Петербурге!\". Но последние визиты в неё меня огорчили. </a></div>\n      <a href=\"/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">50</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"11287719\">\n      <div class=\"title\"><a href=\"/content/medeya-vet-moskovskaya-oblast\">Медея-вет, Россия, Подольск</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/medeya-vet-moskovskaya-oblast\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>1</span> </span> <span class=\"total-votes\">(<span>1</span> голос)</span></div></div>\n</div>\n</div>        <a href=\"/content/medeya-vet-moskovskaya-oblast\" class=\"reviewsLink\">1 отзыв</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>0</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>1</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/medeya-vet-moskovskaya-oblast\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/3480284/xpUPOiqSIlLZl1g7CtE1eQ.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/veterinarnaya-klinika-medeya-vet-podolsk\">Ветеринарная клиника \"Медея-вет\", Подольск</a></div>\n      <a href=\"/content/medeya-vet-moskovskaya-oblast\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"5410923\">\n      <div class=\"title\"><a href=\"/content/veterinarnaya-klinika-mosvet-moskva\">Ветеринарная клиника Мосвет, Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/veterinarnaya-klinika-mosvet-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 20%\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>3.2</span> </span> <span class=\"total-votes\">(<span>5</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/veterinarnaya-klinika-mosvet-moskva\" class=\"reviewsLink\">5 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>3</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>2</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/veterinarnaya-klinika-mosvet-moskva\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/1216121/iY5JciRLTqOFWgCL14ZbiA.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/rastsenki-vysokie-rezultata-net-ochen-neprofessionalny\">Расценки высокие, а результата - нет. Очень непрофессиональны!</a></div>\n      <a href=\"/content/veterinarnaya-klinika-mosvet-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"57427\">\n      <div class=\"title\"><a href=\"/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu\">С-Петербургская городская ветеринарная станция (2-ая Жерновская ул, д. 46), Санкт-Петербург</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">29</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 24.138%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>2.2</span> </span> <span class=\"total-votes\">(<span>29</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu\" class=\"reviewsLink\">29 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>11</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>18</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/1102/VETKLIN.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/uzhasnaya-klinika-ya-v-shoke\">Ужасная клиника, я в шоке!!!</a></div>\n      <a href=\"/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">29</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"2505597\">\n      <div class=\"title\"><a href=\"/content/vetklinika-obereg-simferopol\">Ветклиника \"Оберег\", Симферополь</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/vetklinika-obereg-simferopol\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">52</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 80.769%\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>3.8</span> </span> <span class=\"total-votes\">(<span>52</span> голоса)</span></div></div>\n</div>\n</div>        <a href=\"/content/vetklinika-obereg-simferopol\" class=\"reviewsLink\">52 отзыва</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>45</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>7</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/vetklinika-obereg-simferopol\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/417004/k1vuzpRBT4lXaMYSP2JDtQ.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/za-15-sutok-ugrobili-sobaku\">За 1,5 суток угробили собаку</a></div>\n      <a href=\"/content/vetklinika-obereg-simferopol\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">52</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"8197751\">\n      <div class=\"title\"><a href=\"/content/vetdocs-moskva\">Ветеринарная служба Vetdocs, Россия, Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/vetdocs-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 20%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>1.2</span> </span> <span class=\"total-votes\">(<span>5</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/vetdocs-moskva\" class=\"reviewsLink\">5 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>0</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>5</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/vetdocs-moskva\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/10297/Od0iJxfGmy387PBShHKjdA.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/plokho-1919\">Плохо</a></div>\n      <a href=\"/content/vetdocs-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"11338955\">\n      <div class=\"title\"><a href=\"/content/klinika-koshek-rossiya-moskva\">Клиника Кошек, Россия, Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/klinika-koshek-rossiya-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>5</span> </span> <span class=\"total-votes\">(<span>1</span> голос)</span></div></div>\n</div>\n</div>        <a href=\"/content/klinika-koshek-rossiya-moskva\" class=\"reviewsLink\">1 отзыв</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>0</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/klinika-koshek-rossiya-moskva\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/3488435/6LGCsfRPyu0ZfDquX6cDwA.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/vytyanuli-koshku-iz-kraine-tyazhelogo-sostoyaniya-pri-neirofip\">Вытянули кошку из крайне тяжёлого состояния при нейроФИП! </a></div>\n      <a href=\"/content/klinika-koshek-rossiya-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"5416994\">\n      <div class=\"title\"><a href=\"/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg\">Ветеринарная служба №1 на Ленинском, 106, Санкт-Петербург</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 20%\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>3.2</span> </span> <span class=\"total-votes\">(<span>5</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg\" class=\"reviewsLink\">5 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>2</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>3</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/529225/XJFWyHfZBF3HU11mWN0iQ.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/v-rode-vse-khorosho-no-est-zhirnenkii-minus\">В роде бы всё хорошо, но есть жирненький минус</a></div>\n      <a href=\"/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"8415291\">\n      <div class=\"title\"><a href=\"/content/pitomets-shchelkovo\">Питомец, Щёлково</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/pitomets-shchelkovo\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">2</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>5</span> </span> <span class=\"total-votes\">(<span>2</span> голоса)</span></div></div>\n</div>\n</div>        <a href=\"/content/pitomets-shchelkovo\" class=\"reviewsLink\">2 отзыва</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>2</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>0</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/pitomets-shchelkovo\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/318540/6COJ6ADpc3LZN7gHQOPKyg.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/kachestvo-tsena-uzkie-spetsialisty-vse-na-5\">Качество, цена, узкие специалисты - все на 5!</a></div>\n      <a href=\"/content/pitomets-shchelkovo\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">2</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"6201736\">\n      <div class=\"title\"><a href=\"/content/vetcity-clinic-moskva\">Vetcity Clinic, Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/vetcity-clinic-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">28</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 7.143%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>2.1</span> </span> <span class=\"total-votes\">(<span>28</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/vetcity-clinic-moskva\" class=\"reviewsLink\">28 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>7</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>21</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/vetcity-clinic-moskva\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/10297/SMcQwhe3mHLvwmbGsMJAoQ.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/privezla-pochti-zdorovogo-kota-uvezla-trup-zaplativ-140-000-rub-0\">Привезла почти ЗДОРОВОГО кота, увезла ТРУП, заплатив 140 000 руб.!</a></div>\n      <a href=\"/content/vetcity-clinic-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">28</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"64799\">\n      <div class=\"title\"><a href=\"/content/9-zhiznei-ryazan\">9 жизней, Рязань</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/9-zhiznei-ryazan\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">7</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 14.2855%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>2.1</span> </span> <span class=\"total-votes\">(<span>7</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/9-zhiznei-ryazan\" class=\"reviewsLink\">7 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>2</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>5</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/9-zhiznei-ryazan\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/9319/445127_428037.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/zhizn-samoe-dorogoe-chto-u-nas-est-esli-eto-zhizn-pitomtsa-dadut-li-vam-ee-eti-vrachi-moya-c\">Жизнь-самое дорогое, что у нас есть. А если это жизнь питомца, то дадут ли вам её эти врачи??? Моя честная история.</a></div>\n      <a href=\"/content/9-zhiznei-ryazan\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">7</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"3204779\">\n      <div class=\"title\"><a href=\"/content/bio-shans-moskva\">Био Шанс, Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/bio-shans-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">14</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 85.7145%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>1.9</span> </span> <span class=\"total-votes\">(<span>14</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/bio-shans-moskva\" class=\"reviewsLink\">14 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>3</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>11</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/bio-shans-moskva\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/586825/UMLk29tSyVVKZPna5JEHjw.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/laboratoriya-shans-bio-daet-nekorrektnye-rezultaty-analizov-kotorye-oprovergayutsya-drugimi\">Лаборатория Шанс Био дает некорректные результаты анализов, которые опровергаются другими лабораториями</a></div>\n      <a href=\"/content/bio-shans-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">14</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"6309467\">\n      <div class=\"title\"><a href=\"/content/zoostatus-moskva\">Зоостатус , Москва</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/zoostatus-moskva\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\" style=\"width: 60%\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div><div class=\"star\"><div class=\"off\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>1.6</span> </span> <span class=\"total-votes\">(<span>5</span> голосов)</span></div></div>\n</div>\n</div>        <a href=\"/content/zoostatus-moskva\" class=\"reviewsLink\">5 отзывов</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>4</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/zoostatus-moskva\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/1722400/NUlZkVNrOxx7knllzo5qw.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/otvratitelnaya-klinika-10\">Отвратительная клиника</a></div>\n      <a href=\"/content/zoostatus-moskva\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">5</span></a>    </div>\n        <div class=\"ProductTizer plate teaser-item tsr-processed\" data-type=\"2\" data-nid=\"11253493\">\n      <div class=\"title\"><a href=\"/content/zootsentr-chetyre-lapy-biisk\">Зооцентр \"Четыре лапы\", Бийск</a></div>\n      <div class=\"rating\">\n        <a href=\"/content/zootsentr-chetyre-lapy-biisk\" class=\"read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>        <div class=\"fivestar-static-form-item\"><div class=\"form-item\">\n <label>Среднее: </label>\n <div class=\"fivestarWidgetStatic fivestarWidgetStatic-vote fivestarWidgetStatic-5\"><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div><div class=\"star\"><div class=\"on\"></div></div></div>\n <div class=\"description\"><div class=\"fivestar-summary fivestar-summary-average-count\"><span class=\"average-rating\">Среднее: <span>5</span> </span> <span class=\"total-votes\">(<span>1</span> голос)</span></div></div>\n</div>\n</div>        <a href=\"/content/zootsentr-chetyre-lapy-biisk\" class=\"reviewsLink\">1 отзыв</a>\n                  <div class=\"RecommendRating\">\n            <span class=\"RecommendRating-like\">\n              <div class=\"RatingIcon\"></div>\n              <span>1</span>\n            </span>\n            <span class=\"RecommendRating-dislike\">\n              <div class=\"RatingIcon down\"></div>\n                <span>0</span>\n            </span>\n          </div>\n              </div>\n      <div class=\"image\"><a href=\"/content/zootsentr-chetyre-lapy-biisk\"><img class=\"lazy lazy-loader\" data-original=\"https://cdn-irec.r-99.com/sites/default/files/imagecache/150o/product-images/692899/eKYIEyx7YrDAU8s38DICjQ.jpg\" src=\"/themes/irecommend_new/images/ajax-loader.gif\" alt=\"\" title=\"\"></a></div>\n      <div class=\"extract\"><a href=\"/content/sterilizatsiya-vzrosloi-koshki-v-zootsentre-chetyre-lapy-g-biisk\">Стерилизация взрослой кошки в зооцентре \"Четыре лапы\" г. Бийск</a></div>\n      <a href=\"/content/zootsentr-chetyre-lapy-biisk\" class=\"read-all-reviews-link-bottom read-all-reviews-link\" data-shortcaption=\"Все отзывы\"><span class=\"caption\">Читать все отзывы</span> <span class=\"counter\">1</span></a>    </div>\n  </div>        <div class=\"item-list\"><ul class=\"pager\"><li class=\"pager-current first\">1</li>\n<li class=\"pager-ellipsis pager-ellipsis-0\">…</li>\n<li class=\"pager-item pager-item-neighbor-1 pager-item-ignore-hide-1\"><a href=\"/catalog/list/57?page=1\" rel=\"nofollow\" title=\"На страницу номер 2\" class=\"active\">2</a></li>\n<li class=\"pager-item pager-item-neighbor-2 pager-item-ignore-hide-2\"><a href=\"/catalog/list/57?page=2\" rel=\"nofollow\" title=\"На страницу номер 3\" class=\"active\">3</a></li>\n<li class=\"pager-item pager-item-neighbor-3 pager-item-ignore-hide-3\"><a href=\"/catalog/list/57?page=3\" rel=\"nofollow\" title=\"На страницу номер 4\" class=\"active\">4</a></li>\n<li class=\"pager-item pager-item-neighbor-4 pager-item-ignore-hide-4\"><a href=\"/catalog/list/57?page=4\" rel=\"nofollow\" title=\"На страницу номер 5\" class=\"active\">5</a></li>\n<li class=\"pager-item pager-item-neighbor-5 pager-item-ignore-hide-5\"><a href=\"/catalog/list/57?page=5\" rel=\"nofollow\" title=\"На страницу номер 6\" class=\"active\">6</a></li>\n<li class=\"pager-item pager-item-neighbor-6 pager-item-ignore-hide-6\"><a href=\"/catalog/list/57?page=6\" rel=\"nofollow\" title=\"На страницу номер 7\" class=\"active\">7</a></li>\n<li class=\"pager-item pager-item-neighbor-7 pager-item-ignore-hide-7\"><a href=\"/catalog/list/57?page=7\" rel=\"nofollow\" title=\"На страницу номер 8\" class=\"active\">8</a></li>\n<li class=\"pager-item pager-item-neighbor-8 pager-item-ignore-hide-8\"><a href=\"/catalog/list/57?page=8\" rel=\"nofollow\" title=\"На страницу номер 9\" class=\"active\">9</a></li>\n<li class=\"pager-ellipsis pager-ellipsis-27\">…</li>\n<li class=\"pager-last last\"><a href=\"/catalog/list/57?page=27\" rel=\"nofollow\" title=\"На страницу номер 28\" class=\"active\">28</a></li>\n</ul></div>  </div>\n</div>\n\n      \n          </div>\n\n    <div id=\"sidebar\">\n      <div class=\"sidebar-inset-wrapper\" style=\"min-height: 4404.27px;\">\n      <!-- start block.tpl.php -->\n    <div class=\"block-wrapper odd\">\n        <div id=\"block-catalog-1\" class=\"block block-catalog \">\n                        <div class=\"content text\">\n                <div class=\"catalog-filter filters-processed\" id=\"sc-tf-vid-12\" data-title=\"Город\"><div class=\"depth\">\n  <div class=\"item-list\">\n    <div class=\"filter-title\"><div class=\"h3\">Город</div></div>\n        <div class=\"filter-wrapper\">\n              <form class=\"catalog-filter-srch-form hide filters-processed\">\n          <div class=\"inputWrapper\">\n            <input type=\"text\" placeholder=\"Найти\">\n              <svg class=\"IrecUiSvg hide-filter filters-processed\" viewBox=\"0 0 20 20\">\n                <path d=\"M10 8.6L1.7 0.3 1.7 0.3C1.3-0.1 0.7-0.1 0.3 0.3L0.3 0.3 0.3 0.3C-0.1 0.7-0.1 1.3 0.3 1.7L8.6 10 0.3 18.3 0.3 18.3C-0.1 18.7-0.1 19.3 0.3 19.7L0.3 19.7 0.3 19.7C0.7 20.1 1.3 20.1 1.7 19.7L10 11.4 18.3 19.7C18.7 20.1 19.3 20.1 19.7 19.7L19.7 19.7C20.1 19.3 20.1 18.7 19.7 18.3L11.4 10 19.7 1.7C20.1 1.3 20.1 0.7 19.7 0.3L19.7 0.3C19.3-0.1 18.7-0.1 18.3 0.3L18.3 0.3 10 8.6Z\"></path>\n              </svg>\n          </div>\n        </form>\n            <div class=\"ul-wrapper\">\n        <div class=\"item-list\"><ul><li><a href=\"/catalog/list/57-736\" title=\"Россия, Москва\" class=\"depth-0 filter-link\" data-tid=\"736\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-736\" data-display=\"list\" data-terms=\"57-736\"><span>Россия, Москва</span> <span class=\"description\">144</span></a></li>\n<li><a href=\"/catalog/list/57-9700\" title=\"Россия, Санкт-Петербург\" class=\"depth-0 filter-link\" data-tid=\"9700\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-9700\" data-display=\"list\" data-terms=\"57-9700\"><span>Россия, Санкт-Петербург</span> <span class=\"description\">67</span></a></li>\n<li><a href=\"/catalog/list/57-14734\" title=\"Россия, Нижний Новгород\" class=\"depth-0 filter-link\" data-tid=\"14734\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-14734\" data-display=\"list\" data-terms=\"57-14734\"><span>Россия, Нижний Новгород</span> <span class=\"description\">16</span></a></li>\n<li><a href=\"/catalog/list/57-13805\" title=\"Россия, Самара\" class=\"depth-0 filter-link\" data-tid=\"13805\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-13805\" data-display=\"list\" data-terms=\"57-13805\"><span>Россия, Самара</span> <span class=\"description\">13</span></a></li>\n<li><a href=\"/catalog/list/57-5303\" title=\"Россия, Ростов-на-Дону\" class=\"depth-0 filter-link\" data-tid=\"5303\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-5303\" data-display=\"list\" data-terms=\"57-5303\"><span>Россия, Ростов-на-Дону</span> <span class=\"description\">12</span></a></li>\n<li><a href=\"/catalog/list/57-48784\" title=\"Россия, Краснодар\" class=\"depth-0 filter-link\" data-tid=\"48784\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-48784\" data-display=\"list\" data-terms=\"57-48784\"><span>Россия, Краснодар</span> <span class=\"description\">10</span></a></li>\n<li><a href=\"/catalog/list/57-25032\" title=\"Россия, Уфа\" class=\"depth-0 filter-link\" data-tid=\"25032\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-25032\" data-display=\"list\" data-terms=\"57-25032\"><span>Россия, Уфа</span> <span class=\"description\">10</span></a></li>\n<li><a href=\"/catalog/list/57-43027\" title=\"Республика Крым, Симферополь\" class=\"depth-0 filter-link\" data-tid=\"43027\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-43027\" data-display=\"list\" data-terms=\"57-43027\"><span>Республика Крым, Симферополь</span> <span class=\"description\">9</span></a></li>\n<li><a href=\"/catalog/list/57-11520\" title=\"Россия, Челябинск\" class=\"depth-0 filter-link\" data-tid=\"11520\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-11520\" data-display=\"list\" data-terms=\"57-11520\"><span>Россия, Челябинск</span> <span class=\"description\">9</span></a></li>\n<li><a href=\"/catalog/list/57-7002\" title=\"Россия, Воронеж\" class=\"depth-0 filter-link\" data-tid=\"7002\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-7002\" data-display=\"list\" data-terms=\"57-7002\"><span>Россия, Воронеж</span> <span class=\"description\">9</span></a></li>\n<li><a href=\"/catalog/list/57-6452\" title=\"Россия, Новосибирск\" class=\"depth-0 filter-link\" data-tid=\"6452\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-6452\" data-display=\"list\" data-terms=\"57-6452\"><span>Россия, Новосибирск</span> <span class=\"description\">9</span></a></li>\n<li><a href=\"/catalog/list/57-104231\" title=\"Россия, Ставрополь\" class=\"depth-0 filter-link\" data-tid=\"104231\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-104231\" data-display=\"list\" data-terms=\"57-104231\"><span>Россия, Ставрополь</span> <span class=\"description\">8</span></a></li>\n<li><a href=\"/catalog/list/57-11908\" title=\"Россия, Омск\" class=\"depth-0 filter-link\" data-tid=\"11908\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-11908\" data-display=\"list\" data-terms=\"57-11908\"><span>Россия, Омск</span> <span class=\"description\">8</span></a></li>\n<li><a href=\"/catalog/list/57-48466\" title=\"Россия, Барнаул\" class=\"depth-0 filter-link\" data-tid=\"48466\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-48466\" data-display=\"list\" data-terms=\"57-48466\"><span>Россия, Барнаул</span> <span class=\"description\">6</span></a></li>\n<li><a href=\"/catalog/list/57-22959\" title=\"Россия, Екатеринбург\" class=\"depth-0 filter-link\" data-tid=\"22959\" data-vid=\"12\" data-parent=\"\" data-load=\"0\" data-requrl=\"12/57-22959\" data-display=\"list\" data-terms=\"57-22959\"><span>Россия, Екатеринбург</span> <span class=\"description\">6</span></a></li>\n<li><!--noindex--><span class=\"sc-pager more-btn\"><a href=\"#\" data-load=\"1\" rel=\"nofollow\" data-vid=\"12\" data-display=\"list\" data-terms=\"57\" data-requrl=\"12/57\" data-showall=\"12\" class=\"more-btn filters-processed\" data-href=\"/catalog/reviews/57\"><span>Ещё</span></a></span><!--noindex--></li>\n</ul></div>      </div>\n    </div>\n  </div>\n</div></div>            </div>\n        </div>\n    </div>\n<!-- /end block.tpl.php --><!-- start block.tpl.php -->\n<!--sidebar1-->\n<div id=\"b_sidebar1\" style=\"width:300px;height:600px;padding-bottom:20px; padding-top:20px;\" class=\"flyingblock show-on-desktop tofly NOREFRESH\"><style type=\"text/css\"> .kf3ad32db{position:relative!important} .p47462bc9{left:4px!important} .p47462bc9, .p37b771c2{position:absolute!important;top:4px!important;z-index:10!important} .p37b771c2{right:4px!important} .s40bf198f{margin:0 auto!important}</style><div class=\"\" style=\"width: 300px; height: 300px;\"><iframe scrolling=\"no\" marginwidth=\"0\" marginheight=\"0\" frameborder=\"0\" style=\"min-height: 100%; height: 100%; min-width: 100%; width: 1px;\"></iframe></div></div>\n<!-- /end block.tpl.php -->      </div>\n    </div>\n  </div>\n\n  <div id=\"prefooter\" class=\"desktopStuff\">\n          <!-- start block.tpl.php -->\n<!--b_footer1-->\n<div style=\"min-height:250px; min-width:970px; width:100%; margin-top: 20px;\" class=\"show-on-desktop\">\n <div id=\"b_footer1\" style=\"min-height:250px; min-width:970px; width:100%;\"></div>\n</div>\n\n<!-- b_mobdown1-->\n<div id=\"b_mobdown1\" class=\"adfox_block show-on-tablet show-on-mobile\" style=\"text-align: center; min-height:300px; width:100%;\"></div><!-- /end block.tpl.php -->      </div>\n\n\t<footer class=\"Footer\">\n    <div class=\"colorbase desktopWrap\">\n      <div class=\"ftrNav desktopStuff\">\n        <div>\n          <ul>\n            <li><a href=\"/landing?src=footer\">Оплата авторам отзывов</a></li>\n            <li><a href=\"/faq\">Часто задаваемые вопросы</a></li>\n            <li><a onclick=\"(function(){document.location.href = '/nod'+'e/add/ti'+'cket?target='+encodeURIComponent(document.URL)})()\" href=\"#\">Служба поддержки</a></li>\n            <li><a href=\"/pravila\">Правила</a></li>\n            <li><a href=\"/money/offer\">Соглашение о монетизации</a></li>\n            <li><a href=\"/faq_brand\">Представителям брендов</a></li>\n          </ul>\n        </div>\n      </div>\n      <hr>\n      <div class=\"lowermost desktopStuff\">\n        <!-- start block.tpl.php -->\n<a href=\"#\" class=\"button adapt-switcher off processed-adaptswitcher\">Полная версия</a><a href=\"#\" class=\"button adapt-switcher on processed-adaptswitcher\">Мобильная версия</a><!-- /end block.tpl.php --><!-- start block.tpl.php -->\n<div class=\"copyright\">Копирование разрешается только с письменного разрешения администрации сайта.\n<br>По вопросам работы сайта пишите на <a href=\"mailto:info@irecommend.ru\">info@irecommend.ru</a>.  \n<br><a href=\"/politikakonfidentsialnosti\" style=\"text-decoration:underline\">Политика конфиденциальности</a> \n<br><a href=\"https://irecommend.ru/sites/default/files/public/mediakit_4.0.pdf\" target=\"_blank\" style=\"text-decoration:underline\">Реклама на сайте</a> \n<br><a href=\"https://vk.ru/irecommend_ru\" target=\"_blank\" style=\"text-decoration:underline\">Новости в VK</a> \n</div><!-- /end block.tpl.php --><!-- start block.tpl.php -->\n<script type=\"text/javascript\">\n    try{\n        let captcha_check = (document.cookie.match('(^|;) *captcha_check=([^;]*)')||[])[2] || 0;\n        Object.defineProperty(window.navigator, 'captcha_check', {   value: captcha_check, enumerable: true }); \n    }catch(e){}\n</script><!-- /end block.tpl.php -->      </div>\n    </div>\n  </footer>\n\n</div>\n\n    <!-- Adding require js library -->\n    <script type=\"text/javascript\" src=\"/sites/all/libraries/requirejs/require2_3_2.js\"></script>\n    <script type=\"text/javascript\">\n      require.config( Drupal.settings.requirejs_settings || {});\ndefine('jqw', {\n    load: function (name, req, onload, config) {\n        jqw(function($){  onload($);  });\n    }\n});\ndefine('jquery', ['jqw!'], function($){ return $; });\n      (function(window, require, undefined) {rqw.resolve(require);})(window, require);\n    </script>\n    <!-- End adding require js library --><script type=\"text/javascript\" src=\"/sites/all/libraries/jquery/jquery-3.7.1.min.js?v=b3&amp;hash=c9771cc3e90e18f5\"></script>\n<script type=\"text/javascript\">\n<!--//--><![CDATA[//><!--\n(function(window, $, jQuery, undefined) {try{jqw.resolve($, jQuery);}catch(e){}})(window, $, jQuery);\n//--><!]]>\n</script>\n<script type=\"text/javascript\" src=\"/misc/backport.js?v=b3&amp;hash=9afcf51824518008\"></script>\n<script type=\"text/javascript\" src=\"/misc/drupal.js?v=b3&amp;hash=c59c715821facb53\"></script>\n<script type=\"text/javascript\" src=\"/modules/fivestar/js/fivestar.js?v=b3&amp;hash=43f0b1e916196dd5\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/timeago/timeago.js?v=b3&amp;hash=2fb3ec9f66015991\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/adapt/adapt.js?v=b3&amp;hash=922fcc75106b7c94\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/banners_inline/js.js?v=b3&amp;hash=ff14c3c3e1bb521b\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/banners_inline/framelistener.js?v=b3&amp;hash=15c81d239d125147\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/banners_inline/brocock.js?v=b3&amp;hash=3fe0cdfb0b7bdb79\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/imglazy/imglazy.js?v=b3&amp;hash=9ec7cdb6566b406c\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/scrolltop/scrolltop.js?v=b3&amp;hash=93aff0194967fd36\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/srch/srch.js?v=b3&amp;hash=abf33a3a0a08485d\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/stats/stats.js?v=b3&amp;hash=ba49059575b3db39\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/site/site.all.js?v=b3&amp;hash=3de3fbe941bfd067\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/catalog/js/catalog.js?v=b3&amp;hash=7f41befb2280f838\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/jslog/jslog.js?v=b3&amp;hash=353c372a196d09e5\"></script>\n<script type=\"text/javascript\" src=\"/sites/all/modules/_custom/footable/footable.js?v=b3&amp;hash=27a19cf89d766faf\"></script>\n<script type=\"text/javascript\" src=\"/themes/irecommend_new/js/common.js?v=b3&amp;hash=7718742ab3a6e140\"></script>\n<script type=\"text/javascript\" src=\"/themes/irecommend_new/js/stickblocks.js?v=b3&amp;hash=e33fd7c82c1926d1\"></script>\n<script>\n<!--//--><![CDATA[//><!--\n\n//--><!]]>\n</script>\n<script type=\"text/javascript\" src=\"/ss_t/superstat2_057c1111f6bec12c752aee4bda95391c.js\"></script><script type=\"text/javascript\">(function(){superstat2_init({\"ids\":[[\"7636006695943761922\"]],\"timeout\":\"2000\",\"timeout_max_escape\":\"15\",\"url\":\"/ss_t/collect\",\"url_cross\":\"https://sst-irec.r-99.com/collect\"});})();</script><script>\n<!--//--><![CDATA[//><!--\n\n\n//--><!]]>\n</script>\n\n<div id=\"back-top\" class=\"hide back-top-hide\"><a href=\"#header\" class=\"icon\"></a></div><iframe width=\"0\" height=\"0\" src=\"//ads.betweendigital.com/sspmatch-iframe?p=41341&amp;randsalt=3840130533\"></iframe><iframe width=\"0\" height=\"0\" src=\"//www.acint.net/mc/?dp=14&amp;pi=1653371\"></iframe><img referrerpolicy=\"no-referrer-when-downgrade\" src=\"https://ev.adriver.ru/cgi-bin/rle.cgi?sid=1&amp;ad=774375&amp;bt=21&amp;cid=A0RbkpcyvaECdSgzcudoo0g&amp;custom=180=1&amp;pass=A0RbkpcyvaECdSgzcudoo0g\" alt=\"\" style=\"position: absolute; display: none; width: 0px; height: 0px;\"><img referrerpolicy=\"no-referrer-when-downgrade\" src=\"https://ev.adriver.ru/cgi-bin/rle.cgi?sid=1&amp;ad=790715&amp;bt=21&amp;cid=A0RbkpcyvaECdSgzcudoo0g&amp;custom=180=1&amp;pass=ieyfeytlobrxs5tbivbwiu3hpjrxkzdpn4ygo---\" alt=\"\" style=\"position: absolute; display: none; width: 0px; height: 0px;\"></body></html>",
+  "text": "Ветклиники | отзывы Найти Добавить отзыв Войти Красота и здоровье Детское Техника Туризм Животные Кино Книги Продукты Посуда Авто Другие Каталог отзывов В моем городе Ветклиники Каталог Отзывы по дате по дате по рейтингу Айболит ветеринарная клиника, Тобольск Читать все отзывы 1 Среднее: Среднее: 5 ( 1 голос) 1 отзыв 1 0 большой спектр услуг Читать все отзывы 1 Ветеринарная клиника \"ПроМяу\", Россия, Пенза Читать все отзывы 1 Среднее: Среднее: 5 ( 1 голос) 1 отзыв 1 0 История 3 кошек: клиника, номер которой я помню наизусть. Если мои питомцы доверяют этим врачам, то я тоже буду. Читать все отзывы 1 КЛЕВЕР ВЕТЕРИНАРНАЯ КЛИНИКА, Москва Читать все отзывы 3 Среднее: Среднее: 2.3 ( 3 голоса) 3 отзыва 1 2 Отношение к клиенту - это какой-то чёрный фарс Читать все отзывы 3 Ветеринарная клиника \"Бенивет\", Самара Читать все отзывы 7 Среднее: Среднее: 1 ( 7 голосов) 7 отзывов 0 7 Ветеринарная клиника \"БениВЕТ\" Читать все отзывы 7 Ветеринарная клиника \"Беланта\", Москва Читать все отзывы 41 Среднее: Среднее: 2.7 ( 41 голос) 41 отзыв 17 24 Выбор этой клиники был фатальной ошибкой Читать все отзывы 41 Прайд, Россия, Санкт-Петербург Читать все отзывы 2 Среднее: Среднее: 3 ( 2 голоса) 2 отзыва 1 1 Где найти достойных ветеринаров в Петербурге? Клиника Прайд. Одно вылечили, другое сломали. Читать все отзывы 2 Ветеринарная клиника доктора Сотникова, Санкт-Петербург Читать все отзывы 50 Среднее: Среднее: 3 ( 50 голосов) 50 отзывов 25 25 Ветеринарная клиника, в которую приезжают с животными из разных городов России. 5 лет назад я бы назвала эту клинику \"лучшая в Санкт-Петербурге!\". Но последние визиты в неё меня огорчили. Читать все отзывы 50 Медея-вет, Россия, Подольск Читать все отзывы 1 Среднее: Среднее: 1 ( 1 голос) 1 отзыв 0 1 Ветеринарная клиника \"Медея-вет\", Подольск Читать все отзывы 1 Ветеринарная клиника Мосвет, Москва Читать все отзывы 5 Среднее: Среднее: 3.2 ( 5 голосов) 5 отзывов 3 2 Расценки высокие, а результата - нет. Очень непрофессиональны! Читать все отзывы 5 С-Петербургская городская ветеринарная станция (2-ая Жерновская ул, д. 46), Санкт-Петербург Читать все отзывы 29 Среднее: Среднее: 2.2 ( 29 голосов) 29 отзывов 11 18 Ужасная клиника, я в шоке!!! Читать все отзывы 29 Ветклиника \"Оберег\", Симферополь Читать все отзывы 52 Среднее: Среднее: 3.8 ( 52 голоса) 52 отзыва 45 7 За 1,5 суток угробили собаку Читать все отзывы 52 Ветеринарная служба Vetdocs, Россия, Москва Читать все отзывы 5 Среднее: Среднее: 1.2 ( 5 голосов) 5 отзывов 0 5 Плохо Читать все отзывы 5 Клиника Кошек, Россия, Москва Читать все отзывы 1 Среднее: Среднее: 5 ( 1 голос) 1 отзыв 1 0 Вытянули кошку из крайне тяжёлого состояния при нейроФИП! Читать все отзывы 1 Ветеринарная служба №1 на Ленинском, 106, Санкт-Петербург Читать все отзывы 5 Среднее: Среднее: 3.2 ( 5 голосов) 5 отзывов 2 3 В роде бы всё хорошо, но есть жирненький минус Читать все отзывы 5 Питомец, Щёлково Читать все отзывы 2 Среднее: Среднее: 5 ( 2 голоса) 2 отзыва 2 0 Качество, цена, узкие специалисты - все на 5! Читать все отзывы 2 Vetcity Clinic, Москва Читать все отзывы 28 Среднее: Среднее: 2.1 ( 28 голосов) 28 отзывов 7 21 Привезла почти ЗДОРОВОГО кота, увезла ТРУП, заплатив 140 000 руб.! Читать все отзывы 28 9 жизней, Рязань Читать все отзывы 7 Среднее: Среднее: 2.1 ( 7 голосов) 7 отзывов 2 5 Жизнь-самое дорогое, что у нас есть. А если это жизнь питомца, то дадут ли вам её эти врачи??? Моя честная история. Читать все отзывы 7 Био Шанс, Москва Читать все отзывы 14 Среднее: Среднее: 1.9 ( 14 голосов) 14 отзывов 3 11 Лаборатория Шанс Био дает некорректные результаты анализов, которые опровергаются другими лабораториями Читать все отзывы 14 Зоостатус , Москва Читать все отзывы 5 Среднее: Среднее: 1.6 ( 5 голосов) 5 отзывов 1 4 Отвратительная клиника Читать все отзывы 5 Зооцентр \"Четыре лапы\", Бийск Читать все отзывы 1 Среднее: Среднее: 5 ( 1 голос) 1 отзыв 1 0 Стерилизация взрослой кошки в зооцентре \"Четыре лапы\" г. Бийск Читать все отзывы 1 1 … 2 3 4 5 6 7 8 9 … 28 Город Россия, Москва 144 Россия, Санкт-Петербург 67 Россия, Нижний Новгород 16 Россия, Самара 13 Россия, Ростов-на-Дону 12 Россия, Краснодар 10 Россия, Уфа 10 Республика Крым, Симферополь 9 Россия, Челябинск 9 Россия, Воронеж 9 Россия, Новосибирск 9 Россия, Ставрополь 8 Россия, Омск 8 Россия, Барнаул 6 Россия, Екатеринбург 6 Ещё Оплата авторам отзывов Часто задаваемые вопросы Служба поддержки Правила Соглашение о монетизации Представителям брендов Полная версия Мобильная версия Копирование разрешается только с письменного разрешения администрации сайта. По вопросам работы сайта пишите на info@irecommend.ru . Политика конфиденциальности Реклама на сайте Новости в VK",
+  "json_ld": [],
+  "document": {
+    "title": "Ветклиники | отзывы",
+    "meta_description": "1875 отзывов. большой спектр услуг",
+    "meta_robots": "index,follow,max-image-preview:large",
+    "viewport": "width=1024",
+    "canonical": "https://irecommend.ru/catalog/list/57",
+    "lang": "ru",
+    "hreflang_links": [],
+    "links": [
+      {
+        "href": "/",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/landing",
+        "text": "Добавить отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/user/login?destination=catalog%2Flist%2F57",
+        "text": "Войти",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/6",
+        "text": "Красота и здоровье",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/9",
+        "text": "Детское",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/3",
+        "text": "Техника",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/11",
+        "text": "Туризм",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/8",
+        "text": "Животные",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/10",
+        "text": "Кино",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/7",
+        "text": "Книги",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/937",
+        "text": "Продукты",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/3768",
+        "text": "Посуда",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/2",
+        "text": "Авто",
+        "rel": ""
+      },
+      {
+        "href": "/category/katalog-otzyvov",
+        "text": "Другие",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/1",
+        "text": "Каталог отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/12",
+        "text": "В моем городе",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57",
+        "text": "Каталог",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/reviews/57",
+        "text": "Отзывы",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57",
+        "text": "по дате",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/rating/57",
+        "text": "по рейтингу",
+        "rel": ""
+      },
+      {
+        "href": "/content/aibolit-veterinarnaya-klinika-tobolsk",
+        "text": "Айболит ветеринарная клиника, Тобольск",
+        "rel": ""
+      },
+      {
+        "href": "/content/aibolit-veterinarnaya-klinika-tobolsk",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/aibolit-veterinarnaya-klinika-tobolsk",
+        "text": "1 отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/content/aibolit-veterinarnaya-klinika-tobolsk",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/bolshoi-spektr-uslug-n11452291",
+        "text": "большой спектр услуг",
+        "rel": ""
+      },
+      {
+        "href": "/content/aibolit-veterinarnaya-klinika-tobolsk",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-promyau-rossiya-penza",
+        "text": "Ветеринарная клиника \"ПроМяу\", Россия, Пенза",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-promyau-rossiya-penza",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-promyau-rossiya-penza",
+        "text": "1 отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-promyau-rossiya-penza",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/istoriya-3-koshek-klinika-nomer-kotoroi-ya-pomnyu-naizust-esli-moi-pitomtsy-doveryayut-etim",
+        "text": "История 3 кошек: клиника, номер которой я помню наизусть. Если мои питомцы доверяют этим врачам, то я тоже буду.",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-promyau-rossiya-penza",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/klever-veterinarnaya-klinika-moskva",
+        "text": "КЛЕВЕР ВЕТЕРИНАРНАЯ КЛИНИКА, Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/klever-veterinarnaya-klinika-moskva",
+        "text": "Читать все отзывы 3",
+        "rel": ""
+      },
+      {
+        "href": "/content/klever-veterinarnaya-klinika-moskva",
+        "text": "3 отзыва",
+        "rel": ""
+      },
+      {
+        "href": "/content/klever-veterinarnaya-klinika-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/otnoshenie-k-klientu-eto-kakoi-chernyi-fars",
+        "text": "Отношение к клиенту - это какой-то чёрный фарс",
+        "rel": ""
+      },
+      {
+        "href": "/content/klever-veterinarnaya-klinika-moskva",
+        "text": "Читать все отзывы 3",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-benivet-samara",
+        "text": "Ветеринарная клиника \"Бенивет\", Самара",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-benivet-samara",
+        "text": "Читать все отзывы 7",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-benivet-samara",
+        "text": "7 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-benivet-samara",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-benivet",
+        "text": "Ветеринарная клиника \"БениВЕТ\"",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-benivet-samara",
+        "text": "Читать все отзывы 7",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-belanta-moskva",
+        "text": "Ветеринарная клиника \"Беланта\", Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-belanta-moskva",
+        "text": "Читать все отзывы 41",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-belanta-moskva",
+        "text": "41 отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-belanta-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/vybor-etoi-kliniki-byl-fatalnoi-oshibkoi",
+        "text": "Выбор этой клиники был фатальной ошибкой",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-belanta-moskva",
+        "text": "Читать все отзывы 41",
+        "rel": ""
+      },
+      {
+        "href": "/content/praid-rossiya-sankt-peterburg",
+        "text": "Прайд, Россия, Санкт-Петербург",
+        "rel": ""
+      },
+      {
+        "href": "/content/praid-rossiya-sankt-peterburg",
+        "text": "Читать все отзывы 2",
+        "rel": ""
+      },
+      {
+        "href": "/content/praid-rossiya-sankt-peterburg",
+        "text": "2 отзыва",
+        "rel": ""
+      },
+      {
+        "href": "/content/praid-rossiya-sankt-peterburg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/gde-naiti-dostoinykh-veterinarov-v-peterburge-klinika-praid-odno-vylechili-drugoe-slomali",
+        "text": "Где найти достойных ветеринаров в Петербурге? Клиника Прайд. Одно вылечили, другое сломали.",
+        "rel": ""
+      },
+      {
+        "href": "/content/praid-rossiya-sankt-peterburg",
+        "text": "Читать все отзывы 2",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg",
+        "text": "Ветеринарная клиника доктора Сотникова, Санкт-Петербург",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg",
+        "text": "Читать все отзывы 50",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg",
+        "text": "50 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-v-kotoruyu-priezzhayut-s-zhivotnymi-iz-raznykh-gorodov-rossii-5-let-na",
+        "text": "Ветеринарная клиника, в которую приезжают с животными из разных городов России. 5 лет назад я бы назвала эту клинику \"лучшая в Санкт-Петербурге!\". Но последние визиты в неё меня огорчили.",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-doktora-sotnikova-sankt-peterburg",
+        "text": "Читать все отзывы 50",
+        "rel": ""
+      },
+      {
+        "href": "/content/medeya-vet-moskovskaya-oblast",
+        "text": "Медея-вет, Россия, Подольск",
+        "rel": ""
+      },
+      {
+        "href": "/content/medeya-vet-moskovskaya-oblast",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/medeya-vet-moskovskaya-oblast",
+        "text": "1 отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/content/medeya-vet-moskovskaya-oblast",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-medeya-vet-podolsk",
+        "text": "Ветеринарная клиника \"Медея-вет\", Подольск",
+        "rel": ""
+      },
+      {
+        "href": "/content/medeya-vet-moskovskaya-oblast",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-mosvet-moskva",
+        "text": "Ветеринарная клиника Мосвет, Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-mosvet-moskva",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-mosvet-moskva",
+        "text": "5 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-mosvet-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/rastsenki-vysokie-rezultata-net-ochen-neprofessionalny",
+        "text": "Расценки высокие, а результата - нет. Очень непрофессиональны!",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-klinika-mosvet-moskva",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu",
+        "text": "С-Петербургская городская ветеринарная станция (2-ая Жерновская ул, д. 46), Санкт-Петербург",
+        "rel": ""
+      },
+      {
+        "href": "/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu",
+        "text": "Читать все отзывы 29",
+        "rel": ""
+      },
+      {
+        "href": "/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu",
+        "text": "29 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/uzhasnaya-klinika-ya-v-shoke",
+        "text": "Ужасная клиника, я в шоке!!!",
+        "rel": ""
+      },
+      {
+        "href": "/content/s-peterburgskaya-gorodskaya-veterinarnaya-stantsiya-2-aya-zhernovskaya-ul-d-46-sankt-peterbu",
+        "text": "Читать все отзывы 29",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetklinika-obereg-simferopol",
+        "text": "Ветклиника \"Оберег\", Симферополь",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetklinika-obereg-simferopol",
+        "text": "Читать все отзывы 52",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetklinika-obereg-simferopol",
+        "text": "52 отзыва",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetklinika-obereg-simferopol",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/za-15-sutok-ugrobili-sobaku",
+        "text": "За 1,5 суток угробили собаку",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetklinika-obereg-simferopol",
+        "text": "Читать все отзывы 52",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetdocs-moskva",
+        "text": "Ветеринарная служба Vetdocs, Россия, Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetdocs-moskva",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetdocs-moskva",
+        "text": "5 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetdocs-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/plokho-1919",
+        "text": "Плохо",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetdocs-moskva",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/klinika-koshek-rossiya-moskva",
+        "text": "Клиника Кошек, Россия, Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/klinika-koshek-rossiya-moskva",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/klinika-koshek-rossiya-moskva",
+        "text": "1 отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/content/klinika-koshek-rossiya-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/vytyanuli-koshku-iz-kraine-tyazhelogo-sostoyaniya-pri-neirofip",
+        "text": "Вытянули кошку из крайне тяжёлого состояния при нейроФИП!",
+        "rel": ""
+      },
+      {
+        "href": "/content/klinika-koshek-rossiya-moskva",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg",
+        "text": "Ветеринарная служба №1 на Ленинском, 106, Санкт-Петербург",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg",
+        "text": "5 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/v-rode-vse-khorosho-no-est-zhirnenkii-minus",
+        "text": "В роде бы всё хорошо, но есть жирненький минус",
+        "rel": ""
+      },
+      {
+        "href": "/content/veterinarnaya-sluzhba-1-na-leninskom-106-sankt-peterburg",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/pitomets-shchelkovo",
+        "text": "Питомец, Щёлково",
+        "rel": ""
+      },
+      {
+        "href": "/content/pitomets-shchelkovo",
+        "text": "Читать все отзывы 2",
+        "rel": ""
+      },
+      {
+        "href": "/content/pitomets-shchelkovo",
+        "text": "2 отзыва",
+        "rel": ""
+      },
+      {
+        "href": "/content/pitomets-shchelkovo",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/kachestvo-tsena-uzkie-spetsialisty-vse-na-5",
+        "text": "Качество, цена, узкие специалисты - все на 5!",
+        "rel": ""
+      },
+      {
+        "href": "/content/pitomets-shchelkovo",
+        "text": "Читать все отзывы 2",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetcity-clinic-moskva",
+        "text": "Vetcity Clinic, Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetcity-clinic-moskva",
+        "text": "Читать все отзывы 28",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetcity-clinic-moskva",
+        "text": "28 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetcity-clinic-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/privezla-pochti-zdorovogo-kota-uvezla-trup-zaplativ-140-000-rub-0",
+        "text": "Привезла почти ЗДОРОВОГО кота, увезла ТРУП, заплатив 140 000 руб.!",
+        "rel": ""
+      },
+      {
+        "href": "/content/vetcity-clinic-moskva",
+        "text": "Читать все отзывы 28",
+        "rel": ""
+      },
+      {
+        "href": "/content/9-zhiznei-ryazan",
+        "text": "9 жизней, Рязань",
+        "rel": ""
+      },
+      {
+        "href": "/content/9-zhiznei-ryazan",
+        "text": "Читать все отзывы 7",
+        "rel": ""
+      },
+      {
+        "href": "/content/9-zhiznei-ryazan",
+        "text": "7 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/9-zhiznei-ryazan",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/zhizn-samoe-dorogoe-chto-u-nas-est-esli-eto-zhizn-pitomtsa-dadut-li-vam-ee-eti-vrachi-moya-c",
+        "text": "Жизнь-самое дорогое, что у нас есть. А если это жизнь питомца, то дадут ли вам её эти врачи??? Моя честная история.",
+        "rel": ""
+      },
+      {
+        "href": "/content/9-zhiznei-ryazan",
+        "text": "Читать все отзывы 7",
+        "rel": ""
+      },
+      {
+        "href": "/content/bio-shans-moskva",
+        "text": "Био Шанс, Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/bio-shans-moskva",
+        "text": "Читать все отзывы 14",
+        "rel": ""
+      },
+      {
+        "href": "/content/bio-shans-moskva",
+        "text": "14 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/bio-shans-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/laboratoriya-shans-bio-daet-nekorrektnye-rezultaty-analizov-kotorye-oprovergayutsya-drugimi",
+        "text": "Лаборатория Шанс Био дает некорректные результаты анализов, которые опровергаются другими лабораториями",
+        "rel": ""
+      },
+      {
+        "href": "/content/bio-shans-moskva",
+        "text": "Читать все отзывы 14",
+        "rel": ""
+      },
+      {
+        "href": "/content/zoostatus-moskva",
+        "text": "Зоостатус , Москва",
+        "rel": ""
+      },
+      {
+        "href": "/content/zoostatus-moskva",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/zoostatus-moskva",
+        "text": "5 отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/content/zoostatus-moskva",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/otvratitelnaya-klinika-10",
+        "text": "Отвратительная клиника",
+        "rel": ""
+      },
+      {
+        "href": "/content/zoostatus-moskva",
+        "text": "Читать все отзывы 5",
+        "rel": ""
+      },
+      {
+        "href": "/content/zootsentr-chetyre-lapy-biisk",
+        "text": "Зооцентр \"Четыре лапы\", Бийск",
+        "rel": ""
+      },
+      {
+        "href": "/content/zootsentr-chetyre-lapy-biisk",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/content/zootsentr-chetyre-lapy-biisk",
+        "text": "1 отзыв",
+        "rel": ""
+      },
+      {
+        "href": "/content/zootsentr-chetyre-lapy-biisk",
+        "text": "",
+        "rel": ""
+      },
+      {
+        "href": "/content/sterilizatsiya-vzrosloi-koshki-v-zootsentre-chetyre-lapy-g-biisk",
+        "text": "Стерилизация взрослой кошки в зооцентре \"Четыре лапы\" г. Бийск",
+        "rel": ""
+      },
+      {
+        "href": "/content/zootsentr-chetyre-lapy-biisk",
+        "text": "Читать все отзывы 1",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57?page=1",
+        "text": "2",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=2",
+        "text": "3",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=3",
+        "text": "4",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=4",
+        "text": "5",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=5",
+        "text": "6",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=6",
+        "text": "7",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=7",
+        "text": "8",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=8",
+        "text": "9",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57?page=27",
+        "text": "28",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/catalog/list/57-736",
+        "text": "Россия, Москва 144",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-9700",
+        "text": "Россия, Санкт-Петербург 67",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-14734",
+        "text": "Россия, Нижний Новгород 16",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-13805",
+        "text": "Россия, Самара 13",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-5303",
+        "text": "Россия, Ростов-на-Дону 12",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-48784",
+        "text": "Россия, Краснодар 10",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-25032",
+        "text": "Россия, Уфа 10",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-43027",
+        "text": "Республика Крым, Симферополь 9",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-11520",
+        "text": "Россия, Челябинск 9",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-7002",
+        "text": "Россия, Воронеж 9",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-6452",
+        "text": "Россия, Новосибирск 9",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-104231",
+        "text": "Россия, Ставрополь 8",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-11908",
+        "text": "Россия, Омск 8",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-48466",
+        "text": "Россия, Барнаул 6",
+        "rel": ""
+      },
+      {
+        "href": "/catalog/list/57-22959",
+        "text": "Россия, Екатеринбург 6",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Ещё",
+        "rel": "nofollow"
+      },
+      {
+        "href": "/landing?src=footer",
+        "text": "Оплата авторам отзывов",
+        "rel": ""
+      },
+      {
+        "href": "/faq",
+        "text": "Часто задаваемые вопросы",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Служба поддержки",
+        "rel": ""
+      },
+      {
+        "href": "/pravila",
+        "text": "Правила",
+        "rel": ""
+      },
+      {
+        "href": "/money/offer",
+        "text": "Соглашение о монетизации",
+        "rel": ""
+      },
+      {
+        "href": "/faq_brand",
+        "text": "Представителям брендов",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Полная версия",
+        "rel": ""
+      },
+      {
+        "href": "#",
+        "text": "Мобильная версия",
+        "rel": ""
+      },
+      {
+        "href": "mailto:info@irecommend.ru",
+        "text": "info@irecommend.ru",
+        "rel": ""
+      },
+      {
+        "href": "/politikakonfidentsialnosti",
+        "text": "Политика конфиденциальности",
+        "rel": ""
+      },
+      {
+        "href": "https://irecommend.ru/sites/default/files/public/mediakit_4.0.pdf",
+        "text": "Реклама на сайте",
+        "rel": ""
+      },
+      {
+        "href": "https://vk.ru/irecommend_ru",
+        "text": "Новости в VK",
+        "rel": ""
+      },
+      {
+        "href": "#header",
+        "text": "",
+        "rel": ""
+      }
+    ],
+    "button_texts": [
+      "Найти",
+      "Войти"
+    ],
+    "h1_texts": [
+      "Ветклиники"
+    ],
+    "h2_texts": [],
+    "h3_texts": [],
+    "counts": {
+      "paragraph": 0,
+      "h1": 1,
+      "h2": 0,
+      "h3": 0,
+      "link": 178,
+      "image": 23,
+      "list_item": 36,
+      "strong": 0,
+      "form": 2,
+      "input": 2
+    }
+  }
+}

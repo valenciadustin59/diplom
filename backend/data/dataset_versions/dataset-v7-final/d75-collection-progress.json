@@ -1,0 +1,38 @@
+{
+  "task": "D75",
+  "status": "collection_started",
+  "dataset_version": "dataset-v7-final",
+  "generated_at": "2026-05-04T12:10:25+00:00",
+  "commands": [
+    "backend\\.venv\\Scripts\\python.exe -m app.ml.dataset_builder --versioned-layout --dataset-version dataset-v7-final --max-domain-rows-per-domain 12 --max-workers 3 --query-delay 0.2 --seed-offset 0 --seed-limit 3",
+    "backend\\.venv\\Scripts\\python.exe -m app.ml.dataset_builder --versioned-layout --dataset-version dataset-v7-final --max-domain-rows-per-domain 12 --max-workers 3 --query-delay 0.2 --seed-offset 3 --seed-limit 7"
+  ],
+  "coverage": {
+    "seed_queries": 500,
+    "collected_queries": 10,
+    "rows_count": 80,
+    "failures_count": 6,
+    "unique_domains": 64,
+    "artifact_snapshots": 80,
+    "failure_rate": 0.069767,
+    "empty_text_rate": 0.0
+  },
+  "collection_policy": {
+    "top_n": 10,
+    "pages_to_scan": 1,
+    "max_domain_rows_per_domain": 12,
+    "domain_cap_skipped_count": 0,
+    "max_rows_for_single_domain": 7,
+    "resume_checkpoint": "backend/data/dataset_versions/dataset-v7-final/checkpoint.json"
+  },
+  "training_readiness": {
+    "ready_for_training": false,
+    "reason": "Only the first controlled live collection batch is present. Final D75 completion still requires the remaining seed queries, deterministic expert-rubric labels, hard negatives, split validation and controlled model decision.",
+    "important_note": "The builder writes collection-time weak label placeholders in dataset.csv. They must not be treated as final labels for dataset-v7-final."
+  },
+  "runtime_impact": {
+    "model_artifact_replaced": false,
+    "controlled_publish_executed": false,
+    "runtime_scoring_changed": false
+  }
+}

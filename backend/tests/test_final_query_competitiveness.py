@@ -106,9 +106,11 @@ def test_apply_final_labels_writes_expert_rubric_columns(tmp_path: Path) -> None
     assert labeled_rows[0]["query_relevance_multiplier"] == "1.0"
 
 
-def test_validate_dataset_v7_blocks_seed_only_manifest() -> None:
+def test_validate_dataset_v7_blocks_collection_until_manifest_ready() -> None:
     validation = validate_final_dataset()
 
     assert validation["passed"] is False
     assert "manifest_ready_for_training" in validation["failed_checks"]
-    assert validation["queries_count"] == 0
+    assert "min_queries" in validation["failed_checks"]
+    assert validation["queries_count"] < 500
+    assert validation["rows_count"] >= validation["queries_count"]
