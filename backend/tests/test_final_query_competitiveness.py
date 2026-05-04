@@ -9,6 +9,7 @@ from app.ml.final_query_competitiveness import (
     HARD_NEGATIVE_SCORE_CAP,
     apply_final_labels,
     final_target_score,
+    materialize_final_split,
     validate_final_dataset,
 )
 from app.ml.model_schema import get_model_feature_schema
@@ -108,7 +109,7 @@ def test_apply_final_labels_writes_expert_rubric_columns(tmp_path: Path) -> None
     report_path = tmp_path / "d77-label-report.json"
     markdown_report_path = tmp_path / "d77-label-report.md"
     rows = [_feature_row(domain="a.example"), _feature_row(domain="b.example", query_core_keyword_coverage_ratio=0.0)]
-    fieldnames = list(rows[0].keys())
+    fieldnames = sorted({key for row in rows for key in row})
     with dataset_path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
@@ -132,11 +133,69 @@ def test_apply_final_labels_writes_expert_rubric_columns(tmp_path: Path) -> None
     assert labeled_rows[0]["query_relevance_multiplier"] == "1.0"
 
 
-def test_validate_dataset_v7_blocks_collection_until_manifest_ready() -> None:
+def test_materialize_final_split_writes_leakage_safe_manifest(tmp_path: Path) -> None:
+    dataset_path = tmp_path / "dataset.csv"
+    labeled_path = tmp_path / "dataset.labeled.csv"
+    split_path = tmp_path / "split.json"
+    validation_path = tmp_path / "d78-split-validation-report.json"
+    markdown_path = tmp_path / "d78-split-validation-report.md"
+    manifest_path = tmp_path / "manifest.json"
+    rows = []
+    for query, category in [
+        ("q-a-1", "category-a"),
+        ("q-a-2", "category-a"),
+        ("q-b-1", "category-b"),
+        ("q-b-2", "category-b"),
+    ]:
+        rows.append(_feature_row(query=query, category=category, domain=f"{query}.example"))
+        rows.append(
+            _feature_row(
+                query=query,
+                category=category,
+                domain=f"negative-{query}.example",
+                hard_negative=1,
+                hard_negative_source_category="other-category",
+            )
+        )
+    fieldnames = sorted({key for row in rows for key in row})
+    with dataset_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    manifest_path.write_text(
+        json.dumps({"dataset_version": "dataset-v7-final", "ready_for_training": False}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    apply_final_labels(dataset_path=dataset_path, output_path=labeled_path, report_path=None, markdown_report_path=None)
+
+    report = materialize_final_split(
+        labeled_dataset_path=labeled_path,
+        output_split_path=split_path,
+        output_validation_path=validation_path,
+        output_markdown_path=markdown_path,
+        manifest_path=manifest_path,
+        test_size=0.5,
+        random_state=42,
+    )
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+    assert report["validation"]["passed"] is True
+    assert report["validation"]["query_overlap_count"] == 0
+    assert report["validation"]["train_partition"]["categories_count"] == 2
+    assert report["validation"]["validation_partition"]["categories_count"] == 2
+    assert report["validation"]["hard_negative_above_cap_count"] == 0
+    assert split_path.exists()
+    assert validation_path.exists()
+    assert markdown_path.exists()
+    assert manifest["ready_for_training"] is True
+    assert manifest["quality_gates"]["ready_for_training"] is True
+
+
+def test_validate_dataset_v7_is_ready_after_d78_split_validation() -> None:
     validation = validate_final_dataset()
 
-    assert validation["passed"] is False
-    assert "manifest_ready_for_training" in validation["failed_checks"]
+    assert validation["passed"] is True
+    assert "manifest_ready_for_training" not in validation["failed_checks"]
     assert "hard_negatives_materialized" not in validation["failed_checks"]
     assert "hard_negatives_present" not in validation["failed_checks"]
     assert "min_queries" not in validation["failed_checks"]

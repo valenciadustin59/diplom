@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import random
 import shutil
+from collections import Counter, defaultdict
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -35,6 +37,8 @@ FINAL_LABEL_REPORT_JSON_PATH = FINAL_DATASET_DIR / "d77-final-label-report.json"
 FINAL_LABEL_REPORT_MD_PATH = FINAL_DATASET_DIR / "d77-final-label-report.md"
 FINAL_MANIFEST_PATH = FINAL_DATASET_DIR / "manifest.json"
 FINAL_SPLIT_PATH = FINAL_DATASET_DIR / "split.json"
+FINAL_SPLIT_VALIDATION_JSON_PATH = FINAL_DATASET_DIR / "d78-split-validation-report.json"
+FINAL_SPLIT_VALIDATION_MD_PATH = FINAL_DATASET_DIR / "d78-split-validation-report.md"
 FINAL_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / FINAL_DATASET_VERSION
 FINAL_REPORT_JSON_PATH = FINAL_OUTPUT_DIR / "final-query-competitiveness-report.json"
 FINAL_REPORT_MD_PATH = FINAL_OUTPUT_DIR / "final-query-competitiveness-report.md"
@@ -148,6 +152,110 @@ def _write_label_report_md(path: str | Path, report: Mapping[str, Any]) -> None:
         "- hard_negative: "
         + ", ".join(f"{key}={value}" for key, value in dict(report["hard_negative_band_counts"]).items())
     )
+    resolved_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _load_json(path: str | Path) -> dict[str, Any]:
+    resolved_path = Path(path)
+    if not resolved_path.exists():
+        return {}
+    payload = json.loads(resolved_path.read_text(encoding="utf-8"))
+    return payload if isinstance(payload, dict) else {}
+
+
+def _majority_value(rows: Sequence[Mapping[str, object]], key: str) -> str:
+    values = [str(row.get(key) or "").strip() for row in rows if str(row.get(key) or "").strip()]
+    if not values:
+        return ""
+    counter = Counter(values)
+    return sorted(counter.items(), key=lambda item: (-item[1], item[0]))[0][0]
+
+
+def _is_hard_negative(row: Mapping[str, object]) -> bool:
+    return _truthy(row.get("hard_negative"))
+
+
+def _partition_rows_by_queries(
+    rows: Sequence[dict[str, str]],
+    train_queries: set[str],
+    validation_queries: set[str],
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    train_rows: list[dict[str, str]] = []
+    validation_rows: list[dict[str, str]] = []
+    for row in rows:
+        query = str(row.get("query") or "").strip()
+        if query in validation_queries:
+            validation_rows.append(row)
+        elif query in train_queries:
+            train_rows.append(row)
+    return train_rows, validation_rows
+
+
+def _split_partition_stats(rows: Sequence[Mapping[str, object]]) -> dict[str, Any]:
+    queries = {str(row.get("query") or "").strip() for row in rows if str(row.get("query") or "").strip()}
+    categories = {str(row.get("category") or "").strip() for row in rows if str(row.get("category") or "").strip()}
+    cities = {str(row.get("city") or "").strip() for row in rows if str(row.get("city") or "").strip()}
+    domains = [str(row.get("domain") or "").strip() for row in rows if str(row.get("domain") or "").strip()]
+    domain_counts = Counter(domains)
+    score_values = [_float(row, "target_score") for row in rows]
+    hard_negative_rows = [row for row in rows if _is_hard_negative(row)]
+    return {
+        "rows_count": len(rows),
+        "queries_count": len(queries),
+        "categories_count": len(categories),
+        "cities_count": len(cities),
+        "domains_count": len(domain_counts),
+        "max_domain_rows": max(domain_counts.values(), default=0),
+        "hard_negative_rows_count": len(hard_negative_rows),
+        "regular_rows_count": len(rows) - len(hard_negative_rows),
+        "hard_negative_queries_count": len(
+            {str(row.get("query") or "").strip() for row in hard_negative_rows if str(row.get("query") or "").strip()}
+        ),
+        "hard_negative_above_cap_count": sum(
+            1 for row in hard_negative_rows if _float(row, "target_score") > HARD_NEGATIVE_SCORE_CAP
+        ),
+        "score_distribution": _score_summary(score_values),
+        "band_counts": dict(Counter(str(row.get("query_relevance_band") or "unknown") for row in rows)),
+        "label_source_counts": dict(Counter(str(row.get("label_source") or "unknown") for row in rows)),
+    }
+
+
+def _write_split_validation_markdown(path: str | Path, report: Mapping[str, Any]) -> None:
+    resolved_path = Path(path)
+    resolved_path.parent.mkdir(parents=True, exist_ok=True)
+    validation = report.get("validation") if isinstance(report.get("validation"), dict) else report
+    train = validation.get("train_partition") if isinstance(validation.get("train_partition"), dict) else {}
+    validation_partition = (
+        validation.get("validation_partition") if isinstance(validation.get("validation_partition"), dict) else {}
+    )
+    lines = [
+        "# D78 Leakage-Safe Split Validation",
+        "",
+        f"- Passed: `{validation.get('passed')}`",
+        f"- Split mode: `{validation.get('split_mode')}`",
+        f"- Labeled dataset: `{validation.get('labeled_dataset_path')}`",
+        f"- Split path: `{validation.get('split_path')}`",
+        f"- Query overlap: `{validation.get('query_overlap_count')}`",
+        f"- Uncovered queries: `{validation.get('uncovered_labeled_queries_count')}`",
+        f"- Hard negatives above cap: `{validation.get('hard_negative_above_cap_count')}`",
+        "",
+        "## Partitions",
+        "",
+        f"- Train: `{train.get('rows_count')}` rows, `{train.get('queries_count')}` queries, "
+        f"`{train.get('categories_count')}` categories, `{train.get('hard_negative_rows_count')}` hard negatives",
+        f"- Validation: `{validation_partition.get('rows_count')}` rows, "
+        f"`{validation_partition.get('queries_count')}` queries, "
+        f"`{validation_partition.get('categories_count')}` categories, "
+        f"`{validation_partition.get('hard_negative_rows_count')}` hard negatives",
+        "",
+        "## Failed Checks",
+        "",
+    ]
+    failed_checks = validation.get("failed_checks") if isinstance(validation.get("failed_checks"), list) else []
+    if failed_checks:
+        lines.extend(f"- `{check}`" for check in failed_checks)
+    else:
+        lines.append("- none")
     resolved_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -379,6 +487,242 @@ def apply_final_labels(
     return report
 
 
+def split_final_labeled_rows(
+    rows: Sequence[dict[str, str]],
+    *,
+    test_size: float = 0.2,
+    random_state: int = 42,
+) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, object]]:
+    query_rows: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        query = str(row.get("query") or "").strip()
+        if query:
+            query_rows[query].append(row)
+    if len(query_rows) < 2:
+        return split_dataset_rows(list(rows), test_size=test_size, random_state=random_state)
+
+    query_categories = {
+        query: _majority_value(query_group, "category") or "unknown"
+        for query, query_group in query_rows.items()
+    }
+    queries_by_category: dict[str, list[str]] = defaultdict(list)
+    for query, category in query_categories.items():
+        queries_by_category[category].append(query)
+
+    rng = random.Random(random_state)
+    validation_queries: set[str] = set()
+    validation_queries_by_category: dict[str, int] = {}
+    for category in sorted(queries_by_category):
+        category_queries = sorted(queries_by_category[category])
+        shuffled_queries = list(category_queries)
+        rng.shuffle(shuffled_queries)
+        validation_count = max(1, int(round(len(shuffled_queries) * test_size)))
+        if validation_count >= len(shuffled_queries) and len(shuffled_queries) > 1:
+            validation_count = len(shuffled_queries) - 1
+        selected_validation_queries = set(shuffled_queries[:validation_count])
+        validation_queries.update(selected_validation_queries)
+        validation_queries_by_category[category] = len(selected_validation_queries)
+
+    if not validation_queries or validation_queries == set(query_rows):
+        return split_dataset_rows(list(rows), test_size=test_size, random_state=random_state)
+
+    train_queries = set(query_rows) - validation_queries
+    train_rows, validation_rows = _partition_rows_by_queries(list(rows), train_queries, validation_queries)
+    return train_rows, validation_rows, {
+        "split_mode": "group_by_query_category_stratified",
+        "stratify_by": "category",
+        "validation_queries_by_category": validation_queries_by_category,
+    }
+
+
+def validate_final_split(
+    rows: Sequence[dict[str, str]],
+    split: Mapping[str, object],
+    *,
+    labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
+    split_path: str | Path = FINAL_SPLIT_PATH,
+) -> dict[str, Any]:
+    labeled_queries = {str(row.get("query") or "").strip() for row in rows if str(row.get("query") or "").strip()}
+    labeled_categories = {str(row.get("category") or "").strip() for row in rows if str(row.get("category") or "").strip()}
+    labeled_cities = {str(row.get("city") or "").strip() for row in rows if str(row.get("city") or "").strip()}
+    train_queries = {str(query).strip() for query in split.get("train_queries") or [] if str(query).strip()}
+    validation_queries = {
+        str(query).strip() for query in split.get("validation_queries") or [] if str(query).strip()
+    }
+    train_rows, validation_rows = _partition_rows_by_queries(list(rows), train_queries, validation_queries)
+    train_categories = {
+        str(row.get("category") or "").strip() for row in train_rows if str(row.get("category") or "").strip()
+    }
+    validation_categories = {
+        str(row.get("category") or "").strip()
+        for row in validation_rows
+        if str(row.get("category") or "").strip()
+    }
+    train_cities = {str(row.get("city") or "").strip() for row in train_rows if str(row.get("city") or "").strip()}
+    validation_cities = {
+        str(row.get("city") or "").strip() for row in validation_rows if str(row.get("city") or "").strip()
+    }
+    query_overlap = sorted(train_queries & validation_queries)
+    split_queries = train_queries | validation_queries
+    uncovered_queries = sorted(labeled_queries - split_queries)
+    extra_queries = sorted(split_queries - labeled_queries)
+    hard_negative_above_cap_count = sum(
+        1 for row in rows if _is_hard_negative(row) and _float(row, "target_score") > HARD_NEGATIVE_SCORE_CAP
+    )
+    target_score_missing_count = sum(1 for row in rows if str(row.get("target_score") or "").strip() == "")
+    label_schema_mismatch_count = sum(
+        1 for row in rows if str(row.get("label_schema_version") or "") != FINAL_LABEL_SCHEMA_VERSION
+    )
+    min_validation_rows = min(MIN_VALIDATION_ROWS, max(1, int(len(rows) * 0.2)))
+    checks = {
+        "split_exists": bool(split),
+        "split_mode_grouped": str(split.get("split_mode") or "").startswith("group_by_query"),
+        "query_overlap_absent": not query_overlap,
+        "all_labeled_queries_covered": not uncovered_queries,
+        "no_extra_split_queries": not extra_queries,
+        "train_rows_present": bool(train_rows),
+        "validation_rows_present": len(validation_rows) >= min_validation_rows,
+        "validation_queries_present": bool(validation_queries),
+        "categories_present_in_train": labeled_categories <= train_categories,
+        "categories_present_in_validation": labeled_categories <= validation_categories,
+        "cities_present_in_train": labeled_cities <= train_cities,
+        "cities_present_in_validation": labeled_cities <= validation_cities,
+        "hard_negatives_in_train": any(_is_hard_negative(row) for row in train_rows),
+        "hard_negatives_in_validation": any(_is_hard_negative(row) for row in validation_rows),
+        "hard_negative_cap_respected": hard_negative_above_cap_count == 0,
+        "target_scores_present": target_score_missing_count == 0,
+        "label_schema_consistent": label_schema_mismatch_count == 0,
+    }
+    failed_checks = [name for name, passed in checks.items() if not passed]
+    return {
+        "task": "D78",
+        "generated_at": datetime.now(UTC).isoformat(),
+        "passed": not failed_checks,
+        "checks": checks,
+        "failed_checks": failed_checks,
+        "labeled_dataset_path": str(Path(labeled_dataset_path)),
+        "split_path": str(Path(split_path)),
+        "split_mode": str(split.get("split_mode") or ""),
+        "rows_count": len(rows),
+        "labeled_queries_count": len(labeled_queries),
+        "train_queries_count": len(train_queries),
+        "validation_queries_count": len(validation_queries),
+        "query_overlap_count": len(query_overlap),
+        "query_overlap": query_overlap,
+        "uncovered_labeled_queries_count": len(uncovered_queries),
+        "uncovered_labeled_queries": uncovered_queries,
+        "extra_split_queries_count": len(extra_queries),
+        "extra_split_queries": extra_queries,
+        "categories_count": len(labeled_categories),
+        "train_missing_categories": sorted(labeled_categories - train_categories),
+        "validation_missing_categories": sorted(labeled_categories - validation_categories),
+        "cities_count": len(labeled_cities),
+        "train_missing_cities": sorted(labeled_cities - train_cities),
+        "validation_missing_cities": sorted(labeled_cities - validation_cities),
+        "target_score_missing_count": target_score_missing_count,
+        "label_schema_mismatch_count": label_schema_mismatch_count,
+        "hard_negative_cap": HARD_NEGATIVE_SCORE_CAP,
+        "hard_negative_above_cap_count": hard_negative_above_cap_count,
+        "min_validation_rows": min_validation_rows,
+        "train_partition": _split_partition_stats(train_rows),
+        "validation_partition": _split_partition_stats(validation_rows),
+    }
+
+
+def materialize_final_split(
+    *,
+    labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
+    output_split_path: str | Path = FINAL_SPLIT_PATH,
+    output_validation_path: str | Path = FINAL_SPLIT_VALIDATION_JSON_PATH,
+    output_markdown_path: str | Path = FINAL_SPLIT_VALIDATION_MD_PATH,
+    manifest_path: str | Path = FINAL_MANIFEST_PATH,
+    test_size: float = 0.2,
+    random_state: int = 42,
+) -> dict[str, Any]:
+    rows = load_dataset_rows(labeled_dataset_path)
+    if not rows:
+        raise ValueError("D78 requires a non-empty labeled dataset.")
+    train_rows, validation_rows, split_metadata = split_final_labeled_rows(
+        rows,
+        test_size=test_size,
+        random_state=random_state,
+    )
+    split = save_dataset_split_manifest(
+        train_rows,
+        validation_rows,
+        dataset_path=labeled_dataset_path,
+        dataset_version=FINAL_DATASET_VERSION,
+        test_size=test_size,
+        random_state=random_state,
+        split_metadata=split_metadata,
+        output_path=output_split_path,
+    )
+    validation = validate_final_split(
+        rows,
+        split,
+        labeled_dataset_path=labeled_dataset_path,
+        split_path=output_split_path,
+    )
+    report = {
+        "task": "D78",
+        "generated_at": datetime.now(UTC).isoformat(),
+        "dataset_version": FINAL_DATASET_VERSION,
+        "split": split,
+        "validation": validation,
+        "manifest_path": str(Path(manifest_path)),
+        "model_artifact_changed": False,
+    }
+    _write_json(output_validation_path, report)
+    _write_split_validation_markdown(output_markdown_path, report)
+
+    manifest = _read_manifest(manifest_path)
+    manifest["status"] = "split_validated" if validation["passed"] else "split_validation_failed"
+    manifest["ready_for_training"] = bool(validation["passed"])
+    manifest["reason"] = (
+        "Final labels and leakage-safe split validation completed. Dataset is ready for D79 training."
+        if validation["passed"]
+        else "D78 split validation failed; fix split evidence before training."
+    )
+    manifest["split_progress"] = {
+        "task": "D78",
+        "completed_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "split_path": str(Path(output_split_path).resolve()),
+        "split_validation_report_path": str(Path(output_validation_path).resolve()),
+        "split_validation_markdown_path": str(Path(output_markdown_path).resolve()),
+        "split_mode": validation["split_mode"],
+        "passed": validation["passed"],
+        "failed_checks": validation["failed_checks"],
+        "train_rows_count": validation["train_partition"]["rows_count"],
+        "validation_rows_count": validation["validation_partition"]["rows_count"],
+        "train_queries_count": validation["train_queries_count"],
+        "validation_queries_count": validation["validation_queries_count"],
+        "query_overlap_count": validation["query_overlap_count"],
+        "categories_count": validation["categories_count"],
+        "validation_categories_count": validation["validation_partition"]["categories_count"],
+        "cities_count": validation["cities_count"],
+        "validation_cities_count": validation["validation_partition"]["cities_count"],
+        "hard_negative_cap": validation["hard_negative_cap"],
+        "hard_negative_above_cap_count": validation["hard_negative_above_cap_count"],
+        "notes": "D78 creates split evidence only. No model was trained or published.",
+    }
+    manifest["quality_gates"] = {
+        "ready_for_training": bool(validation["passed"]),
+        "unmet_requirements": list(validation["failed_checks"]),
+        "split_validation_passed": bool(validation["passed"]),
+        "query_overlap_count": validation["query_overlap_count"],
+        "hard_negative_above_cap_count": validation["hard_negative_above_cap_count"],
+        "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
+    }
+    _write_json(manifest_path, manifest)
+    return {
+        **report,
+        "split_path": str(Path(output_split_path)),
+        "split_validation_path": str(Path(output_validation_path)),
+        "split_validation_markdown_path": str(Path(output_markdown_path)),
+    }
+
+
 def _candidate_name(candidate: Mapping[str, Any]) -> str:
     return str(candidate.get("model_type") or "candidate")
 
@@ -401,7 +745,40 @@ def train_final_candidate(
         resolved_training_dataset_path = Path(dataset_path)
     label_report = apply_final_labels(dataset_path=resolved_training_dataset_path, output_path=labeled_dataset_path)
     rows = load_dataset_rows(labeled_dataset_path)
-    train_rows, validation_rows, split_metadata = split_dataset_rows(rows, test_size=test_size, random_state=random_state)
+    existing_split = _load_json(split_output_path)
+    if existing_split:
+        train_queries = {
+            str(query).strip() for query in existing_split.get("train_queries") or [] if str(query).strip()
+        }
+        validation_queries = {
+            str(query).strip() for query in existing_split.get("validation_queries") or [] if str(query).strip()
+        }
+        split_validation = validate_final_split(
+            rows,
+            existing_split,
+            labeled_dataset_path=labeled_dataset_path,
+            split_path=split_output_path,
+        )
+        if not split_validation["passed"]:
+            raise ValueError(f"Existing D78 split is not valid for training: {split_validation['failed_checks']}")
+        train_rows, validation_rows = _partition_rows_by_queries(rows, train_queries, validation_queries)
+        split = {**existing_split, "split_path": str(Path(split_output_path))}
+    else:
+        train_rows, validation_rows, split_metadata = split_final_labeled_rows(
+            rows,
+            test_size=test_size,
+            random_state=random_state,
+        )
+        split = save_dataset_split_manifest(
+            train_rows,
+            validation_rows,
+            dataset_path=labeled_dataset_path,
+            dataset_version=FINAL_DATASET_VERSION,
+            test_size=test_size,
+            random_state=random_state,
+            split_metadata=split_metadata,
+            output_path=split_output_path,
+        )
     feature_schema = get_model_feature_schema(MODEL_SCHEMA_VERSION_V3)
     candidates, benchmark = train_candidate_models(
         train_rows,
@@ -414,16 +791,6 @@ def train_final_candidate(
     if not catboost_candidates:
         raise RuntimeError("Final D65 candidate must be CatBoostRegressor; CatBoost candidate was not produced.")
     selected = catboost_candidates[0]
-    split = save_dataset_split_manifest(
-        train_rows,
-        validation_rows,
-        dataset_path=labeled_dataset_path,
-        dataset_version=FINAL_DATASET_VERSION,
-        test_size=test_size,
-        random_state=random_state,
-        split_metadata=split_metadata,
-        output_path=split_output_path,
-    )
     metadata = {
         "source": "local_dataset",
         "model_type": _candidate_name(selected),
@@ -456,7 +823,7 @@ def train_final_candidate(
             **selected["metrics"],
             "train_rows": float(len(train_rows)),
             "validation_rows": float(len(validation_rows)),
-            **split_metadata,
+            "split_mode": str(split.get("split_mode") or "unknown"),
         },
         model_path=candidate_model_path,
         metadata=metadata,
@@ -662,6 +1029,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run D62-D68 final query-competitiveness model pipeline.")
     parser.add_argument("--validate", action="store_true")
     parser.add_argument("--label", action="store_true")
+    parser.add_argument("--split", action="store_true")
     parser.add_argument("--train", action="store_true")
     parser.add_argument("--decide", action="store_true")
     parser.add_argument("--publish", action="store_true")
@@ -669,6 +1037,11 @@ def main() -> None:
     parser.add_argument("--output", default="")
     parser.add_argument("--label-report", default="")
     parser.add_argument("--label-report-md", default="")
+    parser.add_argument("--split-output", default="")
+    parser.add_argument("--split-validation", default="")
+    parser.add_argument("--split-validation-md", default="")
+    parser.add_argument("--split-test-size", type=float, default=0.2)
+    parser.add_argument("--split-random-state", type=int, default=42)
     args = parser.parse_args()
     if args.validate:
         print(json.dumps(validate_final_dataset(), ensure_ascii=False, indent=2))
@@ -687,6 +1060,26 @@ def main() -> None:
                     output_path=label_output_path,
                     report_path=label_report_path,
                     markdown_report_path=label_report_md_path,
+                ),
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return
+    if args.split:
+        print(
+            json.dumps(
+                materialize_final_split(
+                    labeled_dataset_path=Path(args.dataset) if args.dataset else FINAL_LABELED_DATASET_PATH,
+                    output_split_path=Path(args.split_output) if args.split_output else FINAL_SPLIT_PATH,
+                    output_validation_path=Path(args.split_validation)
+                    if args.split_validation
+                    else FINAL_SPLIT_VALIDATION_JSON_PATH,
+                    output_markdown_path=Path(args.split_validation_md)
+                    if args.split_validation_md
+                    else FINAL_SPLIT_VALIDATION_MD_PATH,
+                    test_size=args.split_test_size,
+                    random_state=args.split_random_state,
                 ),
                 ensure_ascii=False,
                 indent=2,

@@ -197,6 +197,8 @@
 - D76 generated `1000` hard-negative rows, `2` per query for `500/500` target queries, across `50/50` target categories and `50/50` source categories, with `0` missing artifacts and `0` same-category pairs. `final_query_competitiveness --validate` now passes hard-negative checks and still blocks only because `manifest_ready_for_training=false`.
 - D77 completed local deterministic expert-rubric labeling over `dataset.with-hard-negatives.csv`. Local mirror: `plans/d77-dataset-v7-deterministic-labels.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.labeled.csv`, `d77-final-label-report.json` and `d77-final-label-report.md`.
 - D77 generated `4876` labeled rows: `3876` regular rows and `1000` hard negatives. Hard negatives are capped at `35.0`, `192` rows hit that cap, and `0` hard negatives are above cap. `manifest.json` status is now `deterministic_labels_materialized`, but `ready_for_training=false` remains intentional until D78 split validation.
+- D78 completed local leakage-safe split validation. Local mirror: `plans/d78-dataset-v7-split-validation.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/split.json`, `d78-split-validation-report.json` and `d78-split-validation-report.md`.
+- D78 uses `group_by_query_category_stratified` split over `dataset.labeled.csv`: `3898` train rows / `978` validation rows, `400` train queries / `100` validation queries, `0` query overlap, all `50` categories and all `5` non-empty cities represented in both partitions, hard negatives split `800/200`, and `0` hard negatives above cap. `manifest.json` is now `ready_for_training=true`; no model was trained or published.
 
 ## Current D70 Conservative Query Relevance Contract Evidence
 

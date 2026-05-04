@@ -45,9 +45,9 @@
   },
   "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
   "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv",
-  "status": "deterministic_labels_materialized",
-  "ready_for_training": false,
-  "reason": "Final top-10 raw collection, hard negatives and deterministic expert labels are materialized. Leakage-safe split validation must be produced before training.",
+  "status": "split_validated",
+  "ready_for_training": true,
+  "reason": "Final labels and leakage-safe split validation completed. Dataset is ready for D79 training.",
   "collection_progress": {
     "task": "D75",
     "started_at": "2026-05-04T12:10:25+00:00",
@@ -147,5 +147,36 @@
       "strong_match": 2
     },
     "notes": "D77 materializes deterministic labels over dataset.with-hard-negatives.csv. No model was trained or published."
+  },
+  "split_progress": {
+    "task": "D78",
+    "completed_at": "2026-05-04T18:18:26+00:00",
+    "split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\split.json",
+    "split_validation_report_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\d78-split-validation-report.json",
+    "split_validation_markdown_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\d78-split-validation-report.md",
+    "split_mode": "group_by_query_category_stratified",
+    "passed": true,
+    "failed_checks": [],
+    "train_rows_count": 3898,
+    "validation_rows_count": 978,
+    "train_queries_count": 400,
+    "validation_queries_count": 100,
+    "query_overlap_count": 0,
+    "categories_count": 50,
+    "validation_categories_count": 50,
+    "cities_count": 5,
+    "validation_cities_count": 5,
+    "hard_negative_cap": 35.0,
+    "hard_negative_above_cap_count": 0,
+    "notes": "D78 creates split evidence only. No model was trained or published."
+  },
+  "quality_gates": {
+    "ready_for_training": true,
+    "unmet_requirements": [],
+    "split_validation_passed": true,
+    "query_overlap_count": 0,
+    "hard_negative_above_cap_count": 0,
+    "label_schema_version": "query-competitiveness-rubric-v1",
+    "score_contract_version": "query-competitiveness-final-v2"
   }
 }
