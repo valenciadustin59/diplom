@@ -13,7 +13,7 @@
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
 - `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
-После `D26` проект уже соответствовал дипломной теме, а последующие волны довели ML/product layer до текущей product-aligned версии. Исторически D27-D44 построили dataset/model evidence, v3 rollout, runtime observability и second-pass experiment. D45-D54 проверили SEO-weighted и ranking-aware candidates. D55-D58 уточнили продуктовую цель: не копировать SERP top-3 как абсолютную истину, а оценивать конкурентоспособность страницы в top-N контексте. D58 опубликовал активный `dataset-v5` pointwise CatBoost artifact. D75-D81 построили fresh `dataset-v7-final` evidence path; D80/D81 оставили `dataset-v5` активной моделью, потому что v7 candidate провалил hard-negative release guardrail.
+После `D26` проект уже соответствовал дипломной теме, а последующие волны довели ML/product layer до текущей product-aligned версии. Исторически D27-D44 построили dataset/model evidence, v3 rollout, runtime observability и second-pass experiment. D45-D54 проверили SEO-weighted и ranking-aware candidates. D55-D58 уточнили продуктовую цель: не копировать SERP top-3 как абсолютную истину, а оценивать конкурентоспособность страницы в top-N контексте. D58 опубликовал активный `dataset-v5` pointwise CatBoost artifact. D75-D81 построили fresh `dataset-v7-final` evidence path; D80/D81 оставили `dataset-v5` активной моделью, потому что v7 candidate провалил hard-negative release guardrail. Retrospective GitHub issues `#81-#100` for `D62-D81` were created and closed on `2026-05-05`.
 
 Текущий runtime: `backend/artifacts/page_quality_model.pkl`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`, dataset `dataset-v5`, artifact `dataset-v5-20260502151507`, schema `v3`, `CatBoostRegressor`, `148` features. `top_3_hit_rate` теперь SERP-alignment diagnostics, not a release blocker.
 
@@ -191,6 +191,20 @@ Completed scope:
 - `D59` / GitHub `#78`: product UI cleanup, removing user-facing ML/debug clutter.
 - `D60` / GitHub `#79`: research artifact archiving and clearer runtime/evidence asset boundaries.
 - `D61` / GitHub `#80`: documentation rewrite around the clarified competitiveness goal.
+- `D62-D68` / GitHub `#81-#87`: completed retrospectively; final query-competitiveness score contract, dataset-v7 seed catalog, final pipeline architecture/training path, controlled release path and grouped score explanation UI.
+- `D69` / GitHub `#88`: completed retrospectively; dataset-v7 collection readiness with domain caps and hard-negative pipeline.
+- `D70` / GitHub `#89`: completed retrospectively; conservative query relevance contract with `0-5` full mismatch and bounded ambiguous cases.
+- `D71` / GitHub `#90`: completed retrospectively; backend preflight early stop for confident full mismatch.
+- `D72` / GitHub `#91`: completed retrospectively; typed runtime/API early-stop contract.
+- `D73` / GitHub `#92`: completed retrospectively; user-facing early-stop copy and UI state.
+- `D74` / GitHub `#93`: completed retrospectively; regression coverage for query relevance preflight behavior.
+- `D75` / GitHub `#94`: completed retrospectively; controlled live raw collection for `dataset-v7-final`.
+- `D76` / GitHub `#95`: completed retrospectively; hard negatives materialized from saved snapshot artifacts.
+- `D77` / GitHub `#96`: completed retrospectively; deterministic expert-rubric labels for `dataset-v7-final`.
+- `D78` / GitHub `#97`: completed retrospectively; leakage-safe split validation for `dataset-v7-final`.
+- `D79` / GitHub `#98`: completed retrospectively; non-production final candidate training on `dataset-v7-final`.
+- `D80` / GitHub `#99`: completed retrospectively; controlled decision recorded `no_publish` because hard negatives were still scored too high.
+- `D81` / GitHub `#100`: completed retrospectively; controlled release step recorded `no_publish` and kept production unchanged.
 
 D58 current runtime evidence:
 

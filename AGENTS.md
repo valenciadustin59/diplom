@@ -172,6 +172,7 @@
 
 ## Current D62-D68 Final Query-Competitiveness Evidence
 
+- GitHub issues `#81-#87` were created retroactively on `2026-05-05` and closed as completed.
 - `D62-D68` are implemented locally as the final-model direction; local mirror: `plans/d62-d68-final-query-competitiveness.md`.
 - Runtime query relevance was introduced in D62 and tightened in D70. Current contract is `query-relevance-contract-v2`: unusable pages stay in `0-10`, confident full query mismatch stays in `0-5`, ambiguous mismatch becomes `probable_mismatch` up to `25`, weak/partial matches use broader caps, and strong query fit keeps the model score.
 - Commercial words such as `купить`, `цена` and `заказать` remain intent modifiers. They affect relevance only when present in the query and are not treated as the core topic.
@@ -183,6 +184,7 @@
 
 ## Current D69 Dataset-v7 Collection Readiness Evidence
 
+- GitHub issue `#88` was created retroactively on `2026-05-05` and closed as completed.
 - `D69` is implemented locally; local mirror: `plans/d69-dataset-v7-collection-readiness.md`.
 - `backend/app/ml/dataset_builder.py` now supports `--max-domain-rows-per-domain` and enforces the cap before parallel fetch. Recommended value for `dataset-v7-final` is `12`.
 - The cap is resume-aware: existing successful dataset rows are counted before new SERP pages are scheduled.
@@ -190,22 +192,23 @@
 - `backend/app/ml/final_hard_negatives.py` materializes `dataset.with-hard-negatives.csv` from saved snapshot artifacts by cloning pages from other categories and recomputing query-dependent features under the target query.
 - `backend/app/ml/final_query_competitiveness.py` now blocks final training if the v7 manifest requires hard negatives and the hard-negative dataset is missing or empty.
 - D69 targeted verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_training_pipeline.py::test_build_dataset_enforces_domain_cap_before_parallel_fetch backend/tests/test_final_hard_negatives.py backend/tests/test_final_query_competitiveness.py -q` -> `6 passed`.
-- D75 completed live raw collection, not publish. Full seed pass plus repair pass produced `500/500` queries with successful rows, `3876` rows, `367` failures, `2253` domains, `50` categories, `5` cities, `3876` local snapshot artifacts and max single-domain repeat `12` under the D69 cap.
+- `D75` / GitHub `#94` completed live raw collection, not publish. Full seed pass plus repair pass produced `500/500` queries with successful rows, `3876` rows, `367` failures, `2253` domains, `50` categories, `5` cities, `3876` local snapshot artifacts and max single-domain repeat `12` under the D69 cap.
 - D75 local mirror: `plans/d75-dataset-v7-controlled-collection.md`; progress evidence: `backend/data/dataset_versions/dataset-v7-final/d75-collection-progress.json` and `.md`.
 - Keep `manifest.json` `ready_for_training=false` until deterministic expert labels, hard negatives and split validation are complete. Current `dataset.csv` weak-label fields are builder placeholders, not final v7 labels. Snapshot artifacts are large local/generated evidence and are ignored for new files by `.gitignore`.
-- D76 completed local hard-negative materialization from D75 snapshots. Local mirror: `plans/d76-dataset-v7-hard-negatives.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.with-hard-negatives.csv` and `d76-hard-negatives-report.json`.
+- `D76` / GitHub `#95` completed local hard-negative materialization from D75 snapshots. Local mirror: `plans/d76-dataset-v7-hard-negatives.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.with-hard-negatives.csv` and `d76-hard-negatives-report.json`.
 - D76 generated `1000` hard-negative rows, `2` per query for `500/500` target queries, across `50/50` target categories and `50/50` source categories, with `0` missing artifacts and `0` same-category pairs. `final_query_competitiveness --validate` now passes hard-negative checks and still blocks only because `manifest_ready_for_training=false`.
-- D77 completed local deterministic expert-rubric labeling over `dataset.with-hard-negatives.csv`. Local mirror: `plans/d77-dataset-v7-deterministic-labels.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.labeled.csv`, `d77-final-label-report.json` and `d77-final-label-report.md`.
+- `D77` / GitHub `#96` completed local deterministic expert-rubric labeling over `dataset.with-hard-negatives.csv`. Local mirror: `plans/d77-dataset-v7-deterministic-labels.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.labeled.csv`, `d77-final-label-report.json` and `d77-final-label-report.md`.
 - D77 generated `4876` labeled rows: `3876` regular rows and `1000` hard negatives. Hard negatives are capped at `35.0`, `192` rows hit that cap, and `0` hard negatives are above cap. `manifest.json` status is now `deterministic_labels_materialized`, but `ready_for_training=false` remains intentional until D78 split validation.
-- D78 completed local leakage-safe split validation. Local mirror: `plans/d78-dataset-v7-split-validation.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/split.json`, `d78-split-validation-report.json` and `d78-split-validation-report.md`.
+- `D78` / GitHub `#97` completed local leakage-safe split validation. Local mirror: `plans/d78-dataset-v7-split-validation.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/split.json`, `d78-split-validation-report.json` and `d78-split-validation-report.md`.
 - D78 uses `group_by_query_category_stratified` split over `dataset.labeled.csv`: `3898` train rows / `978` validation rows, `400` train queries / `100` validation queries, `0` query overlap, all `50` categories and all `5` non-empty cities represented in both partitions, hard negatives split `800/200`, and `0` hard negatives above cap. `manifest.json` is now `ready_for_training=true`; no model was trained or published.
-- D79 completed local non-production candidate training. Local mirror: `plans/d79-dataset-v7-candidate-training.md`; evidence: `backend/artifacts/page_quality_model.dataset-v7-final-candidate.pkl`, `.metadata.json`, and `backend/artifacts/ranking-benchmarks/dataset-v7-final-d79/d79-candidate-training-report.json` / `.md`.
+- `D79` / GitHub `#98` completed local non-production candidate training. Local mirror: `plans/d79-dataset-v7-candidate-training.md`; evidence: `backend/artifacts/page_quality_model.dataset-v7-final-candidate.pkl`, `.metadata.json`, and `backend/artifacts/ranking-benchmarks/dataset-v7-final-d79/d79-candidate-training-report.json` / `.md`.
 - D79 selected `final_query_competitiveness_catboost_v7` (`CatBoostRegressor`, schema `v3`, `148` features) with SHA1 `65c30b2611e6cde393fae52d1f820a00e7d42681`. Validation metrics on the D78 split: `MAE=1.699042`, `RMSE=2.584978`, `Spearman=0.929238`, `NDCG@10=0.996686`, `top_3_hit_rate=0.91` as diagnostic. The artifact is `non_production=true`, `runtime_enabled=false`; production SHA1 remains `5374ca30f48f70d8629e7d84ec3df0524ef35b52`.
-- D80 completed local controlled decision. Local mirror: `plans/d80-dataset-v7-controlled-decision.md`; evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d80/d80-controlled-decision-report.json` / `.md`. Decision is `no_publish`: runtime-adjusted candidate metrics beat the v5 reference (`MAE=2.387708` vs `6.322645`, `Spearman=0.930727`, `NDCG@10=0.996701`), but product guardrails failed because `25` validation hard-negative rows were predicted above the `35.0` cap; worst raw hard-negative prediction was `67.1677`.
-- D81 completed local controlled release/no-publish. Local mirror: `plans/d81-dataset-v7-controlled-release.md`; evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d81/d81-controlled-release-report.json` / `.md`. D81 recorded `no_publish` and did not mutate production: SHA1 before/after remained `5374ca30f48f70d8629e7d84ec3df0524ef35b52`. The active runtime remains `dataset-v5`; the D79 v7 candidate remains non-production evidence. `dataset-v7-final/manifest.json` status is `controlled_no_publish`.
+- `D80` / GitHub `#99` completed local controlled decision. Local mirror: `plans/d80-dataset-v7-controlled-decision.md`; evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d80/d80-controlled-decision-report.json` / `.md`. Decision is `no_publish`: runtime-adjusted candidate metrics beat the v5 reference (`MAE=2.387708` vs `6.322645`, `Spearman=0.930727`, `NDCG@10=0.996701`), but product guardrails failed because `25` validation hard-negative rows were predicted above the `35.0` cap; worst raw hard-negative prediction was `67.1677`.
+- `D81` / GitHub `#100` completed local controlled release/no-publish. Local mirror: `plans/d81-dataset-v7-controlled-release.md`; evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d81/d81-controlled-release-report.json` / `.md`. D81 recorded `no_publish` and did not mutate production: SHA1 before/after remained `5374ca30f48f70d8629e7d84ec3df0524ef35b52`. The active runtime remains `dataset-v5`; the D79 v7 candidate remains non-production evidence. `dataset-v7-final/manifest.json` status is `controlled_no_publish`.
 
 ## Current D70 Conservative Query Relevance Contract Evidence
 
+- GitHub issue `#89` was created retroactively on `2026-05-05` and closed as completed.
 - `D70` is implemented locally; local mirror: `plans/d70-conservative-query-relevance-contract.md`.
 - `backend/app/query_relevance.py` now exposes `build_query_relevance_preflight_decision` with schema `query-relevance-early-stop-v1`.
 - Early stop was only a decision contract at D70. D71 later wired it into audit orchestration for confident full query mismatch.
@@ -215,6 +218,7 @@
 
 ## Current D71-D74 Query Relevance Preflight Evidence
 
+- GitHub issues `#90-#93` were created retroactively on `2026-05-05` and closed as completed.
 - `D71`, `D72`, `D73` and `D74` are implemented locally; local mirrors: `plans/d71-d74-query-relevance-preflight-ui-regression.md` and `plans/d72-query-relevance-early-stop-runtime-contract.md`.
 - `D71` wires the D70 preflight into backend orchestration: target fetch now routes to feature extraction before heavy analysis, and only confident full query mismatch skips heavy analysis, competitor discovery, competitor fan-out and recommendations.
 - D71 early-stop audits finish as `completed`, keep score in the `0-5` band, set `competitor_processing_status=skipped_early_stop`, store `score_breakdown.relevance_guardrail.early_stop=true`, and write `comparison_summary.score_basis=query_relevance_early_stop`.
