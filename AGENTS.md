@@ -176,9 +176,9 @@
 - Runtime query relevance was introduced in D62 and tightened in D70. Current contract is `query-relevance-contract-v2`: unusable pages stay in `0-10`, confident full query mismatch stays in `0-5`, ambiguous mismatch becomes `probable_mismatch` up to `25`, weak/partial matches use broader caps, and strong query fit keeps the model score.
 - Commercial words such as `купить`, `цена` and `заказать` remain intent modifiers. They affect relevance only when present in the query and are not treated as the core topic.
 - `dataset-v6-query-relevance` is historical draft evidence, not the final training source.
-- `dataset-v7-final` has final seeds generated from `backend/data/query_relevance_v2/final_training_queries.csv`: `500` unique queries, `50` categories, `top_n=10`, `pages_to_scan=1`, five cities, and hard-negative instructions. Its manifest is intentionally `ready_for_training=false` until real top-10 collection and deterministic expert labels are produced.
+- `dataset-v7-final` now has raw top-10 collection, hard negatives and deterministic labels. Its manifest is intentionally `ready_for_training=false` until D78 produces leakage-safe split validation.
 - Final release pipeline module: `backend/app/ml/final_query_competitiveness.py`. It validates dataset readiness, applies deterministic expert-rubric labels, trains a v3 CatBoost candidate, runs product guardrails and only then allows controlled publish.
-- Running `cd backend && .venv\Scripts\python.exe -m app.ml.final_query_competitiveness` currently writes blocked evidence to `backend/artifacts/ranking-benchmarks/dataset-v7-final/final-query-competitiveness-report.json` because `dataset-v7-final/dataset.csv` has not been collected yet.
+- Running `cd backend && .venv\Scripts\python.exe -m app.ml.final_query_competitiveness` still blocks publish/training readiness until split validation marks the v7 manifest ready.
 - Score explanations now include `factor_groups` for user-facing UI: query relevance, content depth, commercial trust, technical access and competitor context. Old top positive/negative factors remain for legacy compatibility.
 
 ## Current D69 Dataset-v7 Collection Readiness Evidence
@@ -195,6 +195,8 @@
 - Keep `manifest.json` `ready_for_training=false` until deterministic expert labels, hard negatives and split validation are complete. Current `dataset.csv` weak-label fields are builder placeholders, not final v7 labels. Snapshot artifacts are large local/generated evidence and are ignored for new files by `.gitignore`.
 - D76 completed local hard-negative materialization from D75 snapshots. Local mirror: `plans/d76-dataset-v7-hard-negatives.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.with-hard-negatives.csv` and `d76-hard-negatives-report.json`.
 - D76 generated `1000` hard-negative rows, `2` per query for `500/500` target queries, across `50/50` target categories and `50/50` source categories, with `0` missing artifacts and `0` same-category pairs. `final_query_competitiveness --validate` now passes hard-negative checks and still blocks only because `manifest_ready_for_training=false`.
+- D77 completed local deterministic expert-rubric labeling over `dataset.with-hard-negatives.csv`. Local mirror: `plans/d77-dataset-v7-deterministic-labels.md`; evidence: `backend/data/dataset_versions/dataset-v7-final/dataset.labeled.csv`, `d77-final-label-report.json` and `d77-final-label-report.md`.
+- D77 generated `4876` labeled rows: `3876` regular rows and `1000` hard negatives. Hard negatives are capped at `35.0`, `192` rows hit that cap, and `0` hard negatives are above cap. `manifest.json` status is now `deterministic_labels_materialized`, but `ready_for_training=false` remains intentional until D78 split validation.
 
 ## Current D70 Conservative Query Relevance Contract Evidence
 

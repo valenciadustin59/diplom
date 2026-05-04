@@ -6,6 +6,7 @@ from pathlib import Path
 
 from app.ml.final_query_competitiveness import (
     FINAL_LABEL_SCHEMA_VERSION,
+    HARD_NEGATIVE_SCORE_CAP,
     apply_final_labels,
     final_target_score,
     validate_final_dataset,
@@ -86,9 +87,26 @@ def test_final_target_keeps_strong_relevance_without_buy_or_price_terms() -> Non
     assert label["target_score"] == label["competitiveness_base_score"]
 
 
+def test_final_target_caps_cross_category_hard_negative() -> None:
+    label = final_target_score(
+        _feature_row(
+            hard_negative=1,
+            hard_negative_source_category="wine_store",
+            hard_negative_source_query="buy wine online",
+        )
+    )
+
+    assert label["target_score"] == HARD_NEGATIVE_SCORE_CAP
+    assert label["query_relevance_band"] == "hard_negative_cap"
+    assert label["query_relevance_reason"] == "cross_category_hard_negative_cap"
+    assert label["hard_negative_cap_applied"] == 1
+
+
 def test_apply_final_labels_writes_expert_rubric_columns(tmp_path: Path) -> None:
     dataset_path = tmp_path / "dataset.csv"
     output_path = tmp_path / "dataset.labeled.csv"
+    report_path = tmp_path / "d77-label-report.json"
+    markdown_report_path = tmp_path / "d77-label-report.md"
     rows = [_feature_row(domain="a.example"), _feature_row(domain="b.example", query_core_keyword_coverage_ratio=0.0)]
     fieldnames = list(rows[0].keys())
     with dataset_path.open("w", encoding="utf-8", newline="") as file:
@@ -96,11 +114,19 @@ def test_apply_final_labels_writes_expert_rubric_columns(tmp_path: Path) -> None
         writer.writeheader()
         writer.writerows(rows)
 
-    report = apply_final_labels(dataset_path=dataset_path, output_path=output_path)
+    report = apply_final_labels(
+        dataset_path=dataset_path,
+        output_path=output_path,
+        report_path=report_path,
+        markdown_report_path=markdown_report_path,
+    )
     with output_path.open(encoding="utf-8", newline="") as file:
         labeled_rows = list(csv.DictReader(file))
 
     assert report["rows_count"] == 2
+    assert report["hard_negative_above_cap_count"] == 0
+    assert report_path.exists()
+    assert markdown_report_path.exists()
     assert labeled_rows[0]["label_schema_version"] == FINAL_LABEL_SCHEMA_VERSION
     assert labeled_rows[0]["label_source"] == "deterministic_expert_rubric_v7"
     assert labeled_rows[0]["query_relevance_multiplier"] == "1.0"

@@ -31,6 +31,8 @@ FINAL_DATASET_DIR = Path(__file__).resolve().parents[2] / "data" / "dataset_vers
 FINAL_DATASET_PATH = FINAL_DATASET_DIR / "dataset.csv"
 FINAL_HARD_NEGATIVE_DATASET_PATH = FINAL_DATASET_DIR / "dataset.with-hard-negatives.csv"
 FINAL_LABELED_DATASET_PATH = FINAL_DATASET_DIR / "dataset.labeled.csv"
+FINAL_LABEL_REPORT_JSON_PATH = FINAL_DATASET_DIR / "d77-final-label-report.json"
+FINAL_LABEL_REPORT_MD_PATH = FINAL_DATASET_DIR / "d77-final-label-report.md"
 FINAL_MANIFEST_PATH = FINAL_DATASET_DIR / "manifest.json"
 FINAL_SPLIT_PATH = FINAL_DATASET_DIR / "split.json"
 FINAL_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / FINAL_DATASET_VERSION
@@ -43,6 +45,7 @@ MIN_FINAL_QUERIES = 500
 MIN_FINAL_CATEGORIES = 50
 MIN_FINAL_CITIES = 5
 MIN_VALIDATION_ROWS = 40
+HARD_NEGATIVE_SCORE_CAP = 35.0
 
 
 def _float(row: Mapping[str, object], key: str, default: float = 0.0) -> float:
@@ -70,6 +73,30 @@ def _numeric_mapping(row: Mapping[str, object]) -> dict[str, float]:
     return numeric
 
 
+def _truthy(value: object) -> bool:
+    return str(value or "").strip().lower() in {"1", "true", "yes", "y"}
+
+
+def _score_summary(values: Sequence[float]) -> dict[str, float]:
+    if not values:
+        return {"count": 0.0, "min": 0.0, "p25": 0.0, "p50": 0.0, "p75": 0.0, "p90": 0.0, "max": 0.0}
+    sorted_values = sorted(float(value) for value in values)
+
+    def percentile(fraction: float) -> float:
+        index = min(len(sorted_values) - 1, int(len(sorted_values) * fraction))
+        return round(sorted_values[index], 4)
+
+    return {
+        "count": float(len(sorted_values)),
+        "min": round(sorted_values[0], 4),
+        "p25": percentile(0.25),
+        "p50": percentile(0.50),
+        "p75": percentile(0.75),
+        "p90": percentile(0.90),
+        "max": round(sorted_values[-1], 4),
+    }
+
+
 def _read_manifest(path: str | Path = FINAL_MANIFEST_PATH) -> dict[str, Any]:
     resolved_path = Path(path)
     if not resolved_path.exists():
@@ -82,6 +109,46 @@ def _write_json(path: str | Path, payload: Mapping[str, Any]) -> None:
     resolved_path = Path(path)
     resolved_path.parent.mkdir(parents=True, exist_ok=True)
     resolved_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _write_label_report_md(path: str | Path, report: Mapping[str, Any]) -> None:
+    resolved_path = Path(path)
+    resolved_path.parent.mkdir(parents=True, exist_ok=True)
+    lines = [
+        "# D77 deterministic labels for dataset-v7-final",
+        "",
+        f"- Dataset: `{report['dataset_path']}`",
+        f"- Labeled dataset: `{report['labeled_dataset_path']}`",
+        f"- Rows: `{report['rows_count']}`",
+        f"- Regular rows: `{report['regular_rows_count']}`",
+        f"- Hard negatives: `{report['hard_negative_rows_count']}`",
+        f"- Hard negative cap: `{report['hard_negative_cap']}`",
+        f"- Hard negatives above cap: `{report['hard_negative_above_cap_count']}`",
+        f"- Cap applications: `{report['hard_negative_cap_applied_count']}`",
+        f"- Label schema: `{report['label_schema_version']}`",
+        f"- Score contract: `{report['score_contract_version']}`",
+        "",
+        "## Score distribution",
+        "",
+    ]
+    for name, summary in [
+        ("all", report["score_distribution"]),
+        ("regular", report["regular_score_distribution"]),
+        ("hard_negative", report["hard_negative_score_distribution"]),
+    ]:
+        lines.append(
+            "- "
+            + name
+            + ": "
+            + ", ".join(f"{key}={value}" for key, value in dict(summary).items())
+        )
+    lines.extend(["", "## Query relevance bands", ""])
+    lines.append("- all: " + ", ".join(f"{key}={value}" for key, value in dict(report["band_counts"]).items()))
+    lines.append(
+        "- hard_negative: "
+        + ", ".join(f"{key}={value}" for key, value in dict(report["hard_negative_band_counts"]).items())
+    )
+    resolved_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def _domain_counts(rows: Sequence[Mapping[str, object]]) -> dict[str, int]:
@@ -203,13 +270,23 @@ def final_target_score(row: Mapping[str, object]) -> dict[str, Any]:
     base_score = competitiveness_base_score(row)
     guardrail = build_query_relevance_guardrail(_numeric_mapping(row), base_score)
     multiplier = float(guardrail["query_relevance_multiplier"])
+    guarded_score = float(guardrail["adjusted_score"])
+    is_hard_negative = _truthy(row.get("hard_negative"))
+    hard_negative_cap_applied = False
+    if is_hard_negative and guarded_score > HARD_NEGATIVE_SCORE_CAP:
+        guarded_score = HARD_NEGATIVE_SCORE_CAP
+        hard_negative_cap_applied = True
     return {
-        "target_score": _round_score(float(guardrail["adjusted_score"])),
+        "target_score": _round_score(guarded_score),
         "competitiveness_base_score": base_score,
         "query_relevance_multiplier": round(multiplier, 4),
-        "query_relevance_band": guardrail["band"] or "strong_match",
-        "query_relevance_reason": guardrail["reason"] or "strong_query_topic_fit",
+        "query_relevance_band": "hard_negative_cap" if hard_negative_cap_applied else guardrail["band"] or "strong_match",
+        "query_relevance_reason": "cross_category_hard_negative_cap"
+        if hard_negative_cap_applied
+        else guardrail["reason"] or "strong_query_topic_fit",
         "query_relevance_score": guardrail["metrics"]["relevance_score"],
+        "hard_negative_cap": HARD_NEGATIVE_SCORE_CAP if is_hard_negative else "",
+        "hard_negative_cap_applied": int(hard_negative_cap_applied),
     }
 
 
@@ -217,14 +294,25 @@ def apply_final_labels(
     *,
     dataset_path: str | Path = FINAL_DATASET_PATH,
     output_path: str | Path = FINAL_LABELED_DATASET_PATH,
+    report_path: str | Path | None = FINAL_LABEL_REPORT_JSON_PATH,
+    markdown_report_path: str | Path | None = FINAL_LABEL_REPORT_MD_PATH,
 ) -> dict[str, Any]:
     rows = load_dataset_rows(dataset_path)
     if not rows:
         raise ValueError("Final dataset is empty and cannot be labeled.")
     labeled_rows: list[dict[str, Any]] = []
     band_counts: dict[str, int] = {}
+    hard_negative_band_counts: dict[str, int] = {}
+    regular_band_counts: dict[str, int] = {}
+    label_source_counts: dict[str, int] = {}
+    score_values: list[float] = []
+    hard_negative_score_values: list[float] = []
+    regular_score_values: list[float] = []
+    hard_negative_cap_applied_count = 0
+    hard_negative_above_cap_count = 0
     for row in rows:
         label = final_target_score(row)
+        is_hard_negative = _truthy(row.get("hard_negative"))
         labeled_row = {
             **row,
             "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
@@ -236,9 +324,24 @@ def apply_final_labels(
             "query_relevance_band": label["query_relevance_band"],
             "query_relevance_reason": label["query_relevance_reason"],
             "query_relevance_score": label["query_relevance_score"],
+            "hard_negative_cap": label["hard_negative_cap"],
+            "hard_negative_cap_applied": label["hard_negative_cap_applied"],
         }
         band = str(label["query_relevance_band"])
         band_counts[band] = band_counts.get(band, 0) + 1
+        label_source = str(labeled_row["label_source"])
+        label_source_counts[label_source] = label_source_counts.get(label_source, 0) + 1
+        score = float(label["target_score"])
+        score_values.append(score)
+        if is_hard_negative:
+            hard_negative_score_values.append(score)
+            hard_negative_band_counts[band] = hard_negative_band_counts.get(band, 0) + 1
+            hard_negative_cap_applied_count += int(label["hard_negative_cap_applied"])
+            if score > HARD_NEGATIVE_SCORE_CAP:
+                hard_negative_above_cap_count += 1
+        else:
+            regular_score_values.append(score)
+            regular_band_counts[band] = regular_band_counts.get(band, 0) + 1
         labeled_rows.append(labeled_row)
 
     output = Path(output_path)
@@ -248,14 +351,32 @@ def apply_final_labels(
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(labeled_rows)
-    return {
+    report = {
+        "task": "D77",
         "dataset_path": str(Path(dataset_path)),
         "labeled_dataset_path": str(output),
         "rows_count": len(labeled_rows),
         "band_counts": band_counts,
+        "regular_band_counts": regular_band_counts,
+        "hard_negative_band_counts": hard_negative_band_counts,
+        "label_source_counts": label_source_counts,
+        "hard_negative_rows_count": len(hard_negative_score_values),
+        "regular_rows_count": len(regular_score_values),
+        "hard_negative_cap": HARD_NEGATIVE_SCORE_CAP,
+        "hard_negative_cap_applied_count": hard_negative_cap_applied_count,
+        "hard_negative_above_cap_count": hard_negative_above_cap_count,
+        "score_distribution": _score_summary(score_values),
+        "regular_score_distribution": _score_summary(regular_score_values),
+        "hard_negative_score_distribution": _score_summary(hard_negative_score_values),
         "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
         "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
     }
+    if report_path is not None:
+        Path(report_path).parent.mkdir(parents=True, exist_ok=True)
+        Path(report_path).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    if markdown_report_path is not None:
+        _write_label_report_md(markdown_report_path, report)
+    return report
 
 
 def _candidate_name(candidate: Mapping[str, Any]) -> str:
@@ -544,12 +665,33 @@ def main() -> None:
     parser.add_argument("--train", action="store_true")
     parser.add_argument("--decide", action="store_true")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument("--dataset", default="")
+    parser.add_argument("--output", default="")
+    parser.add_argument("--label-report", default="")
+    parser.add_argument("--label-report-md", default="")
     args = parser.parse_args()
     if args.validate:
         print(json.dumps(validate_final_dataset(), ensure_ascii=False, indent=2))
         return
     if args.label:
-        print(json.dumps(apply_final_labels(), ensure_ascii=False, indent=2))
+        label_dataset_path = Path(args.dataset) if args.dataset else (
+            FINAL_HARD_NEGATIVE_DATASET_PATH if FINAL_HARD_NEGATIVE_DATASET_PATH.exists() else FINAL_DATASET_PATH
+        )
+        label_output_path = Path(args.output) if args.output else FINAL_LABELED_DATASET_PATH
+        label_report_path = Path(args.label_report) if args.label_report else FINAL_LABEL_REPORT_JSON_PATH
+        label_report_md_path = Path(args.label_report_md) if args.label_report_md else FINAL_LABEL_REPORT_MD_PATH
+        print(
+            json.dumps(
+                apply_final_labels(
+                    dataset_path=label_dataset_path,
+                    output_path=label_output_path,
+                    report_path=label_report_path,
+                    markdown_report_path=label_report_md_path,
+                ),
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
         return
     if args.train:
         print(json.dumps(train_final_candidate(), ensure_ascii=False, indent=2))
