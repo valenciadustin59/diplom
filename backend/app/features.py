@@ -626,6 +626,102 @@ def _tokenize(value: str) -> list[str]:
     return re.findall(r"\w+", value.lower(), flags=re.UNICODE)
 
 
+QUERY_INTENT_MODIFIER_TERMS = frozenset(
+    {
+        "аренд",
+        "заказ",
+        "заказать",
+        "заказыва",
+        "записаться",
+        "запис",
+        "записа",
+        "куп",
+        "купит",
+        "купить",
+        "купл",
+        "магазин",
+        "недорог",
+        "онлайн",
+        "покупк",
+        "продаж",
+        "стоимост",
+        "цен",
+    }
+)
+
+_TOKEN_SUFFIXES = (
+    "иями",
+    "ями",
+    "ами",
+    "его",
+    "ему",
+    "ими",
+    "иях",
+    "ого",
+    "ому",
+    "ыми",
+    "ая",
+    "ев",
+    "ей",
+    "ем",
+    "ес",
+    "ий",
+    "им",
+    "их",
+    "ия",
+    "ой",
+    "ом",
+    "ов",
+    "ое",
+    "ую",
+    "ые",
+    "ый",
+    "ых",
+    "ью",
+    "ам",
+    "ах",
+    "ев",
+    "ей",
+    "ем",
+    "ие",
+    "ии",
+    "ию",
+    "ия",
+    "ой",
+    "ом",
+    "ям",
+    "ях",
+    "а",
+    "е",
+    "и",
+    "о",
+    "у",
+    "ы",
+    "ю",
+    "я",
+)
+
+
+def _normalize_query_token(token: str) -> str:
+    normalized = token.lower().replace("ё", "е")
+    if len(normalized) <= 4:
+        return normalized
+    for suffix in _TOKEN_SUFFIXES:
+        if normalized.endswith(suffix) and len(normalized) - len(suffix) >= 4:
+            return normalized[: -len(suffix)]
+    return normalized
+
+
+def _normalized_counter(words: list[str]) -> Counter[str]:
+    return Counter(_normalize_query_token(word) for word in words)
+
+
+def _coverage_ratio(query_words: list[str], word_freq: Counter[str]) -> float:
+    if not query_words:
+        return 0.0
+    return sum(1 for word in query_words if word in word_freq) / len(query_words)
+
+
 def _document_text_list(value: object) -> list[str]:
     if not isinstance(value, list):
         return []
@@ -1152,28 +1248,43 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
     query_terms_in_headings = 0
     heading_query_coverage_ratio = 0.0
     first_200_words_query_term_count = 0
+    query_core_term_count = 0
+    query_core_term_matches = 0
+    query_core_keyword_coverage_ratio = 0.0
+    query_intent_modifier_count = 0
+    query_intent_modifier_matches = 0
+    query_intent_modifier_coverage_ratio = 0.0
 
     if query_words:
-        word_freq = Counter(words)
-        first_200_word_freq = Counter(first_200_words)
-        title_word_freq = Counter(_tokenize(title_lower))
-        meta_word_freq = Counter(_tokenize(meta_description_lower))
-        heading_word_freq = Counter(_tokenize(heading_text_lower))
-        query_term_count = sum(word_freq[word] for word in query_words)
-        query_term_matches = sum(1 for word in query_words if word in word_freq)
+        normalized_query_words = [_normalize_query_token(word) for word in query_words]
+        word_freq = _normalized_counter(words)
+        first_200_word_freq = _normalized_counter(first_200_words)
+        title_word_freq = _normalized_counter(_tokenize(title_lower))
+        meta_word_freq = _normalized_counter(_tokenize(meta_description_lower))
+        heading_word_freq = _normalized_counter(_tokenize(heading_text_lower))
+        query_term_count = sum(word_freq[word] for word in normalized_query_words)
+        query_term_matches = sum(1 for word in normalized_query_words if word in word_freq)
         keyword_coverage_ratio = query_term_matches / len(query_words)
         exact_query_count = text_lower.count(query)
         query_density = query_term_count / word_count if word_count else 0.0
-        title_query_term_count = sum(title_word_freq[word] for word in query_words)
-        meta_query_term_count = sum(meta_word_freq[word] for word in query_words)
-        title_keyword_matches = sum(1 for word in query_words if word in title_word_freq)
-        meta_keyword_matches = sum(1 for word in query_words if word in meta_word_freq)
+        title_query_term_count = sum(title_word_freq[word] for word in normalized_query_words)
+        meta_query_term_count = sum(meta_word_freq[word] for word in normalized_query_words)
+        title_keyword_matches = sum(1 for word in normalized_query_words if word in title_word_freq)
+        meta_keyword_matches = sum(1 for word in normalized_query_words if word in meta_word_freq)
         title_keyword_coverage_ratio = title_keyword_matches / len(query_words)
         meta_keyword_coverage_ratio = meta_keyword_matches / len(query_words)
-        query_terms_in_headings = sum(heading_word_freq[word] for word in query_words)
-        heading_query_matches = sum(1 for word in query_words if word in heading_word_freq)
+        query_terms_in_headings = sum(heading_word_freq[word] for word in normalized_query_words)
+        heading_query_matches = sum(1 for word in normalized_query_words if word in heading_word_freq)
         heading_query_coverage_ratio = heading_query_matches / len(query_words)
-        first_200_words_query_term_count = sum(first_200_word_freq[word] for word in query_words)
+        first_200_words_query_term_count = sum(first_200_word_freq[word] for word in normalized_query_words)
+        core_query_words = [word for word in normalized_query_words if word not in QUERY_INTENT_MODIFIER_TERMS]
+        intent_modifier_words = [word for word in normalized_query_words if word in QUERY_INTENT_MODIFIER_TERMS]
+        query_core_term_count = sum(word_freq[word] for word in core_query_words)
+        query_core_term_matches = sum(1 for word in core_query_words if word in word_freq)
+        query_core_keyword_coverage_ratio = _coverage_ratio(core_query_words or normalized_query_words, word_freq)
+        query_intent_modifier_count = sum(word_freq[word] for word in intent_modifier_words)
+        query_intent_modifier_matches = sum(1 for word in intent_modifier_words if word in word_freq)
+        query_intent_modifier_coverage_ratio = _coverage_ratio(intent_modifier_words, word_freq)
 
     avg_word_length = (sum(len(word) for word in words) / word_count) if word_count else 0.0
     avg_sentence_length = (word_count / sentence_count) if sentence_count else 0.0
@@ -1212,6 +1323,12 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         "query_terms_in_headings": query_terms_in_headings,
         "heading_query_coverage_ratio": round(heading_query_coverage_ratio, 6),
         "first_200_words_query_term_count": first_200_words_query_term_count,
+        "query_core_term_count": query_core_term_count,
+        "query_core_term_matches": query_core_term_matches,
+        "query_core_keyword_coverage_ratio": round(query_core_keyword_coverage_ratio, 6),
+        "query_intent_modifier_count": query_intent_modifier_count,
+        "query_intent_modifier_matches": query_intent_modifier_matches,
+        "query_intent_modifier_coverage_ratio": round(query_intent_modifier_coverage_ratio, 6),
         "query_density": round(query_density, 6),
         "keyword_coverage_ratio": round(keyword_coverage_ratio, 6),
         "link_count": link_count,
