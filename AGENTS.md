@@ -190,9 +190,9 @@
 - `backend/app/ml/final_hard_negatives.py` materializes `dataset.with-hard-negatives.csv` from saved snapshot artifacts by cloning pages from other categories and recomputing query-dependent features under the target query.
 - `backend/app/ml/final_query_competitiveness.py` now blocks final training if the v7 manifest requires hard negatives and the hard-negative dataset is missing or empty.
 - D69 targeted verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_training_pipeline.py::test_build_dataset_enforces_domain_cap_before_parallel_fetch backend/tests/test_final_hard_negatives.py backend/tests/test_final_query_competitiveness.py -q` -> `6 passed`.
-- D75 has started live collection, not publish. First controlled batches ran with `--max-domain-rows-per-domain 12`, `--max-workers 3`, `--query-delay 0.2`, offsets `0-9`; current evidence is `10/500` queries, `80` successful rows, `6` failures, `64` domains, `80` snapshot artifacts, `0` domain-cap skips and max single-domain repeat `7`.
+- D75 completed live raw collection, not publish. Full seed pass plus repair pass produced `500/500` queries with successful rows, `3876` rows, `367` failures, `2253` domains, `50` categories, `5` cities, `3876` local snapshot artifacts and max single-domain repeat `12` under the D69 cap.
 - D75 local mirror: `plans/d75-dataset-v7-controlled-collection.md`; progress evidence: `backend/data/dataset_versions/dataset-v7-final/d75-collection-progress.json` and `.md`.
-- Continue D75 from `--seed-offset 10`; keep `manifest.json` `ready_for_training=false` until the remaining collection, deterministic expert labels, hard negatives and split validation are complete. Current `dataset.csv` weak-label fields are builder placeholders, not final v7 labels.
+- Keep `manifest.json` `ready_for_training=false` until deterministic expert labels, hard negatives and split validation are complete. Current `dataset.csv` weak-label fields are builder placeholders, not final v7 labels. Snapshot artifacts are large local/generated evidence and are ignored for new files by `.gitignore`.
 
 ## Current D70 Conservative Query Relevance Contract Evidence
 
@@ -213,7 +213,7 @@
 - `D73` adds a user-facing early-stop state across overview, competitors, report/export and history: `Страница не соответствует запросу`, without exposing raw ML fields such as `relevance_guardrail`, `early_stop` or `confident_full_query_mismatch`.
 - `D74` adds regression cases for unrelated good pages, relevant pages without commercial modifiers, near-topic false positives, informational queries, rare low-signal cases and insufficient extraction.
 - Verification passed after D72: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_audits_api.py backend/tests/test_audit_pipeline.py backend/tests/test_query_relevance_runtime.py -q` -> `54 passed`; `npm --prefix frontend run test -- --run src/lib/auditTimeline.test.ts src/lib/ui.test.tsx src/lib/auditReport.test.ts` -> `29 passed`; `npm --prefix frontend run build` -> passed.
-- No model artifact was replaced and no controlled publish/rollback was executed. D75 later started `dataset-v7-final` live collection with the first `10/500` seed queries collected.
+- No model artifact was replaced and no controlled publish/rollback was executed. D75 later completed `dataset-v7-final` raw collection with `500/500` seed queries represented by successful rows.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

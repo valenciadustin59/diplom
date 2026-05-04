@@ -5,11 +5,13 @@
   "extraction_artifact_version": "extraction-v2",
   "label_schema_version": "hybrid-v1",
   "paths": {
-    "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
-    "failures_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\failures.csv",
-    "checkpoint_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\checkpoint.json",
-    "artifacts_dir": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\artifacts",
-    "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv"
+    "dataset_path": "backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
+    "failures_path": "backend\\data\\dataset_versions\\dataset-v7-final\\failures.csv",
+    "checkpoint_path": "backend\\data\\dataset_versions\\dataset-v7-final\\checkpoint.json",
+    "artifacts_dir": "backend\\data\\dataset_versions\\dataset-v7-final\\artifacts",
+    "seeds_path": "backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv",
+    "repair_seeds_path": "backend\\data\\dataset_versions\\dataset-v7-final\\d75-repair-seeds.csv",
+    "repair_checkpoint_path": "backend\\data\\dataset_versions\\dataset-v7-final\\d75-repair.checkpoint.json"
   },
   "labeling": {
     "expert_labels_path": null,
@@ -19,14 +21,15 @@
   },
   "collection_policy": {
     "max_domain_rows_per_domain": 12,
-    "domain_cap_skipped_count": 0
+    "max_domain_rows_per_domain": 12,
+    "max_rows_for_single_domain": 12
   },
   "coverage": {
-    "rows_count": 80,
-    "failures_count": 6,
-    "unique_queries": 10,
-    "unique_domains": 64,
-    "failure_rate": 0.069767,
+    "rows_count": 3876,
+    "failures_count": 367,
+    "unique_queries": 500,
+    "unique_domains": 2253,
+    "failure_rate": 0.086495,
     "empty_text_rate": 0.0
   }
 }

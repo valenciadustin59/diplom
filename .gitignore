@@ -46,6 +46,8 @@ Thumbs.db
 backend/data/*.manifest.json
 !backend/data/ru_commercial_dataset.manifest.json
 backend/data/dataset_versions/dataset-v6-query-relevance/artifacts/
+backend/data/dataset_versions/dataset-v7-final/artifacts/
+output/d75-collection/
 !backend/artifacts/page_quality_model.pkl
 !backend/artifacts/page_quality_model.dataset-v2-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl

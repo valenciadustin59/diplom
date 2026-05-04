@@ -111,6 +111,8 @@ def test_validate_dataset_v7_blocks_collection_until_manifest_ready() -> None:
 
     assert validation["passed"] is False
     assert "manifest_ready_for_training" in validation["failed_checks"]
-    assert "min_queries" in validation["failed_checks"]
-    assert validation["queries_count"] < 500
+    assert "hard_negatives_materialized" in validation["failed_checks"]
+    assert "hard_negatives_present" in validation["failed_checks"]
+    assert "min_queries" not in validation["failed_checks"]
+    assert validation["queries_count"] >= 500
     assert validation["rows_count"] >= validation["queries_count"]
