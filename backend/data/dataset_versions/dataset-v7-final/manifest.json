@@ -45,9 +45,9 @@
   },
   "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
   "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv",
-  "status": "candidate_trained",
+  "status": "controlled_no_publish",
   "ready_for_training": true,
-  "reason": "D79 non-production candidate trained. Controlled decision/publish is still required before runtime changes.",
+  "reason": "D80/D81 recorded controlled no-publish. The v7 candidate remains non-production until hard-negative guardrails pass.",
   "collection_progress": {
     "task": "D75",
     "started_at": "2026-05-04T12:10:25+00:00",
@@ -179,7 +179,9 @@
     "label_schema_version": "query-competitiveness-rubric-v1",
     "score_contract_version": "query-competitiveness-final-v2",
     "candidate_training_completed": true,
-    "candidate_runtime_enabled": false
+    "candidate_runtime_enabled": false,
+    "controlled_release_decision_recorded": true,
+    "production_changed_only_for_controlled_publish": true
   },
   "training_progress": {
     "task": "D79",
@@ -207,5 +209,16 @@
     "runtime_enabled": false,
     "production_artifact_changed": false,
     "notes": "D79 trains a non-production candidate only. D80 must benchmark/decide before any publish."
+  },
+  "release_progress": {
+    "task": "D81",
+    "completed_at": "2026-05-04T18:55:52+00:00",
+    "decision": "no_publish",
+    "d80_report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d80\\d80-controlled-decision-report.json",
+    "d81_report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d81\\d81-controlled-release-report.json",
+    "candidate_sha1": "65c30b2611e6cde393fae52d1f820a00e7d42681",
+    "production_sha1_before": "5374ca30f48f70d8629e7d84ec3df0524ef35b52",
+    "production_sha1_after": "5374ca30f48f70d8629e7d84ec3df0524ef35b52",
+    "runtime_enabled": false
   }
 }

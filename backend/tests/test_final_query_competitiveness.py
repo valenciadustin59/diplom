@@ -6,6 +6,8 @@ from pathlib import Path
 
 from app.ml.final_query_competitiveness import (
     D79_REPORT_JSON_PATH,
+    D80_REPORT_JSON_PATH,
+    D81_REPORT_JSON_PATH,
     FINAL_MODEL_PATH,
     FINAL_LABEL_SCHEMA_VERSION,
     HARD_NEGATIVE_SCORE_CAP,
@@ -226,3 +228,30 @@ def test_d79_candidate_artifact_is_non_production_and_loadable() -> None:
     assert raw_payload["runtime_enabled"] is False
     assert artifact["model_schema_version"] == "v3"
     assert len(artifact["feature_columns"]) == 148
+
+
+def test_d80_blocks_candidate_when_hard_negatives_exceed_cap() -> None:
+    report = json.loads(D80_REPORT_JSON_PATH.read_text(encoding="utf-8"))
+    guardrails = report["product_guardrails"]
+
+    assert report["task"] == "D80"
+    assert report["split"]["split_mode"] == "group_by_query_category_stratified"
+    assert report["validation_rows_count"] == 978
+    assert report["decision"]["decision"] == "no_publish"
+    assert guardrails["passed"] is False
+    assert guardrails["checks"]["hard_negatives_learned_below_cap"] is False
+    assert "hard_negatives_learned_below_cap" in guardrails["failed_checks"]
+    assert guardrails["hard_negative_above_cap_count"] > 0
+    assert report["runtime_adjusted_metrics"]["mae"] < report["reference_runtime_adjusted_metrics"]["mae"]
+
+
+def test_d81_records_no_publish_without_runtime_mutation() -> None:
+    report = json.loads(D81_REPORT_JSON_PATH.read_text(encoding="utf-8"))
+
+    assert report["task"] == "D81"
+    assert report["decision"] == "no_publish"
+    assert report["publish_action"] == "no_publish"
+    assert report["production_changed"] is False
+    assert report["production_sha1_before"] == report["production_sha1_after"]
+    assert report["production_sha1_after"] == sha1_file(DEFAULT_MODEL_PATH)
+    assert report["candidate_sha1"] == sha1_file(FINAL_MODEL_PATH)

@@ -10,13 +10,21 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from app.ml.model import DEFAULT_MODEL_PATH, clear_model_cache, load_model_artifact, save_model
+from app.ml.controlled_publish import build_controlled_versioned_artifact_path, ensure_rollback_reference
+from app.ml.model import DEFAULT_MODEL_PATH, clear_model_cache, load_model_artifact, load_saved_model, save_model
 from app.ml.model_schema import MODEL_SCHEMA_VERSION_V3, get_model_feature_schema
-from app.ml.no_publish_decision import sha1_file
+from app.ml.no_publish_decision import build_production_artifact_state, sha1_file
+from app.ml.publish import (
+    build_artifact_metadata_path,
+    build_artifact_public_metadata,
+    build_primary_artifact_version,
+    write_artifact_public_metadata,
+)
 from app.ml.ranking_benchmark import build_feature_importance_summary
 from app.ml.train import (
     evaluate_model_rows,
     load_dataset_rows,
+    ranking_metrics,
     save_dataset_split_manifest,
     split_dataset_rows,
     train_candidate_models,
@@ -24,7 +32,7 @@ from app.ml.train import (
 from app.query_relevance import build_query_relevance_guardrail, build_query_topic_metrics
 
 
-TASK_RANGE = "D62-D70"
+TASK_RANGE = "D62-D81"
 FINAL_DATASET_VERSION = "dataset-v7-final"
 FINAL_ARTIFACT_VERSION = "dataset-v7-final-query-competitiveness"
 FINAL_SCORE_CONTRACT_VERSION = "query-competitiveness-final-v2"
@@ -46,6 +54,12 @@ FINAL_REPORT_MD_PATH = FINAL_OUTPUT_DIR / "final-query-competitiveness-report.md
 D79_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d79"
 D79_REPORT_JSON_PATH = D79_OUTPUT_DIR / "d79-candidate-training-report.json"
 D79_REPORT_MD_PATH = D79_OUTPUT_DIR / "d79-candidate-training-report.md"
+D80_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d80"
+D80_REPORT_JSON_PATH = D80_OUTPUT_DIR / "d80-controlled-decision-report.json"
+D80_REPORT_MD_PATH = D80_OUTPUT_DIR / "d80-controlled-decision-report.md"
+D81_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d81"
+D81_REPORT_JSON_PATH = D81_OUTPUT_DIR / "d81-controlled-release-report.json"
+D81_REPORT_MD_PATH = D81_OUTPUT_DIR / "d81-controlled-release-report.md"
 VERSIONED_ARTIFACTS_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "versions"
 
 DOMAIN_CAP_PER_DOMAIN = 12
@@ -984,40 +998,204 @@ def _predict_rows(model: Any, rows: Sequence[Mapping[str, str]], feature_columns
     return [_round_score(float(value)) for value in model.predict(matrix)]
 
 
-def final_product_guardrails(candidate_path: str | Path, validation_rows: Sequence[Mapping[str, str]]) -> dict[str, Any]:
+def _evaluate_predictions(rows: Sequence[Mapping[str, str]], predictions: Sequence[float]) -> dict[str, float]:
+    targets = [_float(row, "target_score") for row in rows]
+    if not targets:
+        return {
+            "rmse": 0.0,
+            "mae": 0.0,
+            "spearman_mean": 0.0,
+            "ndcg_at_10": 0.0,
+            "top_3_hit_rate": 0.0,
+            "validation_queries": 0.0,
+        }
+    errors = [float(prediction) - target for target, prediction in zip(targets, predictions, strict=False)]
+    rmse = (sum(error * error for error in errors) / len(errors)) ** 0.5
+    mae = sum(abs(error) for error in errors) / len(errors)
+    metrics = {"rmse": round(rmse, 6), "mae": round(mae, 6)}
+    metrics.update(ranking_metrics([dict(row) for row in rows], [float(value) for value in predictions]))
+    return metrics
+
+
+def _runtime_adjusted_predictions(rows: Sequence[Mapping[str, str]], predictions: Sequence[float]) -> list[float]:
+    adjusted: list[float] = []
+    for row, prediction in zip(rows, predictions, strict=False):
+        guardrail = build_query_relevance_guardrail(_numeric_mapping(row), float(prediction))
+        adjusted.append(float(guardrail["adjusted_score"]))
+    return adjusted
+
+
+def _prediction_summary(values: Sequence[float]) -> dict[str, float]:
+    return _score_summary([float(value) for value in values])
+
+
+def _rows_from_materialized_split(
+    rows: Sequence[dict[str, str]],
+    split_path: str | Path = FINAL_SPLIT_PATH,
+) -> tuple[list[dict[str, str]], list[dict[str, str]], dict[str, Any], dict[str, Any]]:
+    split = _load_json(split_path)
+    validation = validate_final_split(rows, split, split_path=split_path)
+    if not validation["passed"]:
+        failed = ", ".join(str(item) for item in validation["failed_checks"])
+        raise ValueError(f"Final split validation failed before D80 decision: {failed}")
+    train_queries = {str(query).strip() for query in split.get("train_queries") or [] if str(query).strip()}
+    validation_queries = {
+        str(query).strip() for query in split.get("validation_queries") or [] if str(query).strip()
+    }
+    train_rows, validation_rows = _partition_rows_by_queries(list(rows), train_queries, validation_queries)
+    return train_rows, validation_rows, split, validation
+
+
+def _query_has_commercial_modifier(query: object) -> bool:
+    normalized = str(query or "").lower()
+    return any(term in normalized for term in ("купить", "цена", "стоимость", "заказать"))
+
+
+def _sample_prediction_rows(
+    rows: Sequence[Mapping[str, str]],
+    raw_predictions: Sequence[float],
+    runtime_predictions: Sequence[float],
+    *,
+    predicate: Any,
+    limit: int = 8,
+) -> list[dict[str, Any]]:
+    samples: list[dict[str, Any]] = []
+    for row, raw_prediction, runtime_prediction in zip(rows, raw_predictions, runtime_predictions, strict=False):
+        if not predicate(row, raw_prediction, runtime_prediction):
+            continue
+        samples.append(
+            {
+                "query": row.get("query"),
+                "domain": row.get("domain"),
+                "url": row.get("url"),
+                "target_score": _float(row, "target_score"),
+                "competitiveness_base_score": _float(row, "competitiveness_base_score"),
+                "query_relevance_band": row.get("query_relevance_band"),
+                "hard_negative": _truthy(row.get("hard_negative")),
+                "hard_negative_source_query": row.get("hard_negative_source_query"),
+                "hard_negative_source_category": row.get("hard_negative_source_category"),
+                "raw_prediction": round(float(raw_prediction), 4),
+                "runtime_prediction": round(float(runtime_prediction), 4),
+                "semantic_similarity": _float(row, "semantic_similarity"),
+                "keyword_coverage_ratio": _float(row, "keyword_coverage_ratio"),
+                "query_density": _float(row, "query_density"),
+                "query_prominence_score": _float(row, "query_prominence_score"),
+            }
+        )
+        if len(samples) >= limit:
+            break
+    return samples
+
+
+def final_product_guardrails(
+    candidate_path: str | Path,
+    validation_rows: Sequence[Mapping[str, str]],
+    *,
+    split_validation: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
     artifact = load_model_artifact(candidate_path)
     if artifact is None:
         raise FileNotFoundError(f"Candidate artifact not found: {candidate_path}")
     feature_columns = artifact["feature_columns"]
     predictions = _predict_rows(artifact["model"], validation_rows, feature_columns)  # type: ignore[arg-type]
-    rows_with_predictions = list(zip(validation_rows, predictions, strict=False))
+    runtime_predictions = _runtime_adjusted_predictions(validation_rows, predictions)
+    rows_with_predictions = list(zip(validation_rows, predictions, runtime_predictions, strict=False))
     mismatch_rows = [
-        (row, prediction)
-        for row, prediction in rows_with_predictions
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
         if float(row.get("query_relevance_multiplier") or 1.0) <= 0.15
     ]
     strong_rows = [
-        (row, prediction)
-        for row, prediction in rows_with_predictions
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
         if str(row.get("query_relevance_band") or "") == "strong_match"
     ]
-    unrelated_above_35 = [prediction for _row, prediction in mismatch_rows if prediction > 35.0]
+    full_mismatch_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
+        if str(row.get("query_relevance_band") or "") == "full_mismatch"
+    ]
+    probable_mismatch_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
+        if str(row.get("query_relevance_band") or "") == "probable_mismatch"
+    ]
+    weak_match_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
+        if str(row.get("query_relevance_band") or "") == "weak_match"
+    ]
+    partial_match_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
+        if str(row.get("query_relevance_band") or "") == "partial_match"
+    ]
+    hard_negative_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in rows_with_predictions
+        if _truthy(row.get("hard_negative"))
+    ]
+    strong_low_base_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in strong_rows
+        if _float(row, "competitiveness_base_score", _float(row, "target_score")) <= 55.0
+    ]
+    noncommercial_strong_rows = [
+        (row, prediction, runtime_prediction)
+        for row, prediction, runtime_prediction in strong_rows
+        if not _query_has_commercial_modifier(row.get("query"))
+    ]
+    unrelated_above_35 = [runtime_prediction for _row, _prediction, runtime_prediction in mismatch_rows if runtime_prediction > 35.0]
     mismatch_below_20_ratio = (
-        sum(1 for _row, prediction in mismatch_rows if prediction <= 20.0) / len(mismatch_rows)
+        sum(1 for _row, _prediction, runtime_prediction in mismatch_rows if runtime_prediction <= 20.0) / len(mismatch_rows)
         if mismatch_rows
         else 1.0
     )
     strong_average_prediction = (
-        sum(prediction for _row, prediction in strong_rows) / len(strong_rows)
+        sum(runtime_prediction for _row, _prediction, runtime_prediction in strong_rows) / len(strong_rows)
         if strong_rows
         else 0.0
     )
+    hard_negative_above_cap = [
+        prediction for _row, prediction, _runtime_prediction in hard_negative_rows if prediction > HARD_NEGATIVE_SCORE_CAP
+    ]
+    strong_low_average_prediction = (
+        sum(runtime_prediction for _row, _prediction, runtime_prediction in strong_low_base_rows) / len(strong_low_base_rows)
+        if strong_low_base_rows
+        else 0.0
+    )
+    strong_low_max_prediction = max((runtime_prediction for _row, _prediction, runtime_prediction in strong_low_base_rows), default=0.0)
+    noncommercial_strong_average_prediction = (
+        sum(runtime_prediction for _row, _prediction, runtime_prediction in noncommercial_strong_rows)
+        / len(noncommercial_strong_rows)
+        if noncommercial_strong_rows
+        else 0.0
+    )
+    split_passed = True if split_validation is None else bool(split_validation.get("passed"))
     checks = {
         "candidate_available": True,
         "validation_rows_present": len(validation_rows) >= MIN_VALIDATION_ROWS,
+        "materialized_split_valid": split_passed,
         "unrelated_pages_not_above_35": not unrelated_above_35,
         "mismatch_below_20_ratio": mismatch_below_20_ratio >= 0.9,
+        "full_mismatch_runtime_cap_5": all(runtime_prediction <= 5.0 for _row, _prediction, runtime_prediction in full_mismatch_rows),
+        "probable_mismatch_runtime_cap_25": all(
+            runtime_prediction <= 25.0 for _row, _prediction, runtime_prediction in probable_mismatch_rows
+        ),
+        "weak_match_runtime_cap_55": all(runtime_prediction <= 55.0 for _row, _prediction, runtime_prediction in weak_match_rows),
+        "partial_match_runtime_cap_80": all(
+            runtime_prediction <= 80.0 for _row, _prediction, runtime_prediction in partial_match_rows
+        ),
+        "hard_negatives_learned_below_cap": not hard_negative_above_cap,
         "strong_relevance_not_collapsed": strong_average_prediction >= 45.0 if strong_rows else True,
+        "strong_relevance_with_weak_seo_not_overrated": (
+            strong_low_average_prediction <= 55.0 and strong_low_max_prediction <= 65.0
+        )
+        if strong_low_base_rows
+        else True,
+        "noncommercial_relevant_pages_not_cut": noncommercial_strong_average_prediction >= 45.0
+        if noncommercial_strong_rows
+        else True,
         "score_contract_version_present": artifact.get("artifact_version") == FINAL_ARTIFACT_VERSION
         or artifact.get("dataset_version") == FINAL_DATASET_VERSION,
     }
@@ -1027,61 +1205,129 @@ def final_product_guardrails(candidate_path: str | Path, validation_rows: Sequen
         "checks": checks,
         "failed_checks": failed_checks,
         "mismatch_rows": len(mismatch_rows),
+        "full_mismatch_rows": len(full_mismatch_rows),
+        "probable_mismatch_rows": len(probable_mismatch_rows),
+        "weak_match_rows": len(weak_match_rows),
+        "partial_match_rows": len(partial_match_rows),
+        "hard_negative_rows": len(hard_negative_rows),
+        "hard_negative_above_cap_count": len(hard_negative_above_cap),
+        "hard_negative_max_raw_prediction": round(max((prediction for _row, prediction, _runtime in hard_negative_rows), default=0.0), 6),
         "strong_rows": len(strong_rows),
+        "strong_low_base_rows": len(strong_low_base_rows),
+        "noncommercial_strong_rows": len(noncommercial_strong_rows),
         "mismatch_below_20_ratio": round(mismatch_below_20_ratio, 6),
         "strong_average_prediction": round(strong_average_prediction, 6),
+        "strong_low_average_prediction": round(strong_low_average_prediction, 6),
+        "strong_low_max_prediction": round(strong_low_max_prediction, 6),
+        "noncommercial_strong_average_prediction": round(noncommercial_strong_average_prediction, 6),
         "max_unrelated_prediction": max(unrelated_above_35, default=None),
+        "prediction_summaries": {
+            "raw": _prediction_summary(predictions),
+            "runtime_adjusted": _prediction_summary(runtime_predictions),
+        },
+        "failure_samples": {
+            "hard_negative_above_cap": _sample_prediction_rows(
+                validation_rows,
+                predictions,
+                runtime_predictions,
+                predicate=lambda row, raw, _runtime: _truthy(row.get("hard_negative"))
+                and raw > HARD_NEGATIVE_SCORE_CAP,
+            ),
+            "unrelated_above_35": _sample_prediction_rows(
+                validation_rows,
+                predictions,
+                runtime_predictions,
+                predicate=lambda row, _raw, runtime: float(row.get("query_relevance_multiplier") or 1.0) <= 0.15
+                and runtime > 35.0,
+            ),
+        },
     }
 
 
 def build_final_decision_report(
     *,
     candidate_model_path: str | Path = FINAL_MODEL_PATH,
+    reference_model_path: str | Path = DEFAULT_MODEL_PATH,
     labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
-    report_json_path: str | Path = FINAL_REPORT_JSON_PATH,
-    report_md_path: str | Path = FINAL_REPORT_MD_PATH,
+    split_path: str | Path = FINAL_SPLIT_PATH,
+    report_json_path: str | Path = D80_REPORT_JSON_PATH,
+    report_md_path: str | Path = D80_REPORT_MD_PATH,
 ) -> dict[str, Any]:
     rows = load_dataset_rows(labeled_dataset_path)
-    _train_rows, validation_rows, split_metadata = split_dataset_rows(rows, test_size=0.2, random_state=42)
+    train_rows, validation_rows, split_metadata, split_validation = _rows_from_materialized_split(rows, split_path=split_path)
     artifact = load_model_artifact(candidate_model_path)
     if artifact is None:
         raise FileNotFoundError(f"Candidate artifact not found: {candidate_model_path}")
-    metrics = evaluate_model_rows(artifact["model"], validation_rows, feature_columns=artifact["feature_columns"])  # type: ignore[arg-type]
-    guardrails = final_product_guardrails(candidate_model_path, validation_rows)
+    reference_artifact = load_model_artifact(reference_model_path)
+    if reference_artifact is None:
+        raise FileNotFoundError(f"Reference artifact not found: {reference_model_path}")
+
+    candidate_raw_predictions = _predict_rows(artifact["model"], validation_rows, artifact["feature_columns"])  # type: ignore[arg-type]
+    candidate_runtime_predictions = _runtime_adjusted_predictions(validation_rows, candidate_raw_predictions)
+    reference_raw_predictions = _predict_rows(reference_artifact["model"], validation_rows, reference_artifact["feature_columns"])  # type: ignore[arg-type]
+    reference_runtime_predictions = _runtime_adjusted_predictions(validation_rows, reference_raw_predictions)
+    metrics = _evaluate_predictions(validation_rows, candidate_raw_predictions)
+    runtime_metrics = _evaluate_predictions(validation_rows, candidate_runtime_predictions)
+    reference_metrics = _evaluate_predictions(validation_rows, reference_raw_predictions)
+    reference_runtime_metrics = _evaluate_predictions(validation_rows, reference_runtime_predictions)
+    guardrails = final_product_guardrails(candidate_model_path, validation_rows, split_validation=split_validation)
+    candidate_name = "final_query_competitiveness_catboost_v7"
     decision = {
         "decision": "publish_candidate" if guardrails["passed"] else "no_publish",
         "publish_action": "controlled_publish_required" if guardrails["passed"] else "no_publish",
-        "selected_candidate": "final_query_competitiveness_catboost" if guardrails["passed"] else None,
+        "selected_candidate": candidate_name if guardrails["passed"] else None,
         "reason": "final_product_guardrails_passed" if guardrails["passed"] else "final_product_guardrails_failed",
     }
     report = {
-        "task": "D66",
+        "task": "D80",
         "generated_at": datetime.now(UTC).isoformat(),
         "dataset_version": FINAL_DATASET_VERSION,
         "candidate_model_path": str(Path(candidate_model_path)),
         "candidate_sha1": sha1_file(Path(candidate_model_path)),
+        "reference_model_path": str(Path(reference_model_path)),
+        "reference_sha1": sha1_file(Path(reference_model_path)),
         "metrics": metrics,
+        "runtime_adjusted_metrics": runtime_metrics,
+        "reference_metrics": reference_metrics,
+        "reference_runtime_adjusted_metrics": reference_runtime_metrics,
+        "metric_deltas_vs_reference_runtime": {
+            "mae": round(runtime_metrics["mae"] - reference_runtime_metrics["mae"], 6),
+            "rmse": round(runtime_metrics["rmse"] - reference_runtime_metrics["rmse"], 6),
+            "spearman_mean": round(runtime_metrics["spearman_mean"] - reference_runtime_metrics["spearman_mean"], 6),
+            "ndcg_at_10": round(runtime_metrics["ndcg_at_10"] - reference_runtime_metrics["ndcg_at_10"], 6),
+        },
         "split": split_metadata,
+        "split_validation": split_validation,
+        "train_rows_count": len(train_rows),
+        "validation_rows_count": len(validation_rows),
         "product_guardrails": guardrails,
         "decision": decision,
         "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
         "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "next_step": "D81 controlled publish if decision is publish_candidate; otherwise D81 records no-publish evidence.",
     }
     _write_json(report_json_path, report)
     Path(report_md_path).parent.mkdir(parents=True, exist_ok=True)
     Path(report_md_path).write_text(
         "\n".join(
             [
-                "# D66 Final Query-Competitiveness Decision",
+                "# D80 Final Query-Competitiveness Controlled Decision",
                 "",
                 f"- Decision: `{decision['decision']}`",
                 f"- Reason: `{decision['reason']}`",
                 f"- Candidate: `{candidate_model_path}`",
-                f"- MAE: `{metrics.get('mae')}`",
-                f"- Spearman: `{metrics.get('spearman_mean')}`",
-                f"- NDCG@10: `{metrics.get('ndcg_at_10')}`",
+                f"- Candidate SHA1: `{report['candidate_sha1']}`",
+                f"- Reference SHA1: `{report['reference_sha1']}`",
+                f"- Split mode: `{split_metadata.get('split_mode')}`",
+                f"- Validation rows: `{len(validation_rows)}`",
+                f"- Raw MAE: `{metrics.get('mae')}`",
+                f"- Runtime-adjusted MAE: `{runtime_metrics.get('mae')}`",
+                f"- Runtime-adjusted Spearman: `{runtime_metrics.get('spearman_mean')}`",
+                f"- Runtime-adjusted NDCG@10: `{runtime_metrics.get('ndcg_at_10')}`",
+                f"- Reference runtime MAE: `{reference_runtime_metrics.get('mae')}`",
                 f"- Product guardrails passed: `{guardrails['passed']}`",
                 f"- Failed checks: `{', '.join(guardrails['failed_checks']) or 'none'}`",
+                f"- Hard negatives above cap: `{guardrails['hard_negative_above_cap_count']}`",
                 "",
             ]
         ),
@@ -1092,42 +1338,194 @@ def build_final_decision_report(
 
 def run_final_controlled_publish(
     *,
-    report_json_path: str | Path = FINAL_REPORT_JSON_PATH,
+    report_json_path: str | Path = D80_REPORT_JSON_PATH,
+    release_report_json_path: str | Path = D81_REPORT_JSON_PATH,
+    release_report_md_path: str | Path = D81_REPORT_MD_PATH,
     candidate_model_path: str | Path = FINAL_MODEL_PATH,
     production_model_path: str | Path = DEFAULT_MODEL_PATH,
 ) -> dict[str, Any]:
+    if not Path(report_json_path).exists():
+        build_final_decision_report(report_json_path=report_json_path)
     report = json.loads(Path(report_json_path).read_text(encoding="utf-8"))
     decision = report.get("decision") if isinstance(report.get("decision"), dict) else {}
-    if decision.get("decision") != "publish_candidate":
-        raise ValueError(f"Final publish requires a publish_candidate decision, got {decision.get('decision')!r}")
     production_path = Path(production_model_path)
     candidate_path = Path(candidate_model_path)
     if not candidate_path.exists():
         raise FileNotFoundError(f"Candidate artifact not found: {candidate_path}")
 
     before_sha1 = sha1_file(production_path) if production_path.exists() else None
-    VERSIONED_ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-    rollback_path = VERSIONED_ARTIFACTS_DIR / f"page_quality_model--rollback-before-{FINAL_ARTIFACT_VERSION}.pkl"
-    if production_path.exists():
-        shutil.copy2(production_path, rollback_path)
-    shutil.copy2(candidate_path, production_path)
-    clear_model_cache()
-    after_sha1 = sha1_file(production_path)
-    publish_report = {
-        "task": "D67",
-        "generated_at": datetime.now(UTC).isoformat(),
-        "decision": "publish_candidate",
-        "selected_candidate": "final_query_competitiveness_catboost",
+    production_before = build_production_artifact_state(production_path)
+    publish_result: dict[str, Any] | None = None
+    rollback_reference: dict[str, Any] | None = None
+    generated_at = datetime.now(UTC)
+
+    if decision.get("decision") == "publish_candidate":
+        candidate_raw = load_saved_model(candidate_path)
+        candidate_artifact = load_model_artifact(candidate_path)
+        if not isinstance(candidate_raw, dict) or candidate_artifact is None:
+            raise ValueError(f"Candidate artifact is not loadable: {candidate_path}")
+        if candidate_artifact.get("model_schema_version") != MODEL_SCHEMA_VERSION_V3:
+            raise ValueError(
+                f"D81 expects schema {MODEL_SCHEMA_VERSION_V3}, got {candidate_artifact.get('model_schema_version')!r}"
+            )
+        selected_candidate = str(decision.get("selected_candidate") or "")
+        if candidate_raw.get("candidate_name") != selected_candidate:
+            raise ValueError(
+                "Candidate artifact name does not match D80 decision: "
+                f"{candidate_raw.get('candidate_name')!r} vs {selected_candidate!r}"
+            )
+
+        rollback_reference = ensure_rollback_reference(production_before, model_path=production_path)
+        artifact_version = build_primary_artifact_version(FINAL_DATASET_VERSION, generated_at)
+        dataset_metadata = candidate_raw.get("dataset_metadata") if isinstance(candidate_raw.get("dataset_metadata"), dict) else {}
+        metrics = candidate_raw.get("metrics") if isinstance(candidate_raw.get("metrics"), dict) else {}
+        metadata = {
+            "artifact_version": artifact_version,
+            "artifact_family": production_path.stem,
+            "published_at": generated_at.isoformat(),
+            "trained_at": candidate_raw.get("trained_at"),
+            "source": candidate_raw.get("source", "local_dataset"),
+            "model_type": candidate_raw.get("model_type", candidate_artifact.get("model_type")),
+            "dataset_version": FINAL_DATASET_VERSION,
+            "rows_count": candidate_artifact.get("rows_count"),
+            "queries_count": candidate_artifact.get("queries_count"),
+            "domains_count": candidate_artifact.get("domains_count"),
+            "dataset_metadata": dataset_metadata,
+            "model_schema_version": candidate_artifact.get("model_schema_version"),
+            "feature_columns": candidate_artifact.get("feature_columns"),
+            "candidate_name": candidate_raw.get("candidate_name"),
+            "candidate_family": candidate_raw.get("candidate_family"),
+            "feature_importance_summary": candidate_raw.get("feature_importance_summary"),
+            "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
+            "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+            "non_production": False,
+            "runtime_enabled": True,
+            "publish_decision_required": "completed_d81",
+            "d81_publish": {
+                "source_candidate_path": str(candidate_path),
+                "source_candidate_sha1": sha1_file(candidate_path),
+                "d80_report_path": str(Path(report_json_path)),
+                "decision": dict(decision),
+                "product_guardrails": report.get("product_guardrails"),
+                "rollback_reference": dict(rollback_reference),
+            },
+        }
+        save_model(
+            model=candidate_raw["model"],
+            metrics=metrics,
+            model_path=production_path,
+            metadata=metadata,
+        )
+        clear_model_cache()
+        published_artifact = load_model_artifact(production_path)
+        if published_artifact is None:
+            raise RuntimeError(f"Published artifact is not loadable: {production_path}")
+
+        versioned_model_path = build_controlled_versioned_artifact_path(production_path, artifact_version)
+        versioned_model_path.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(production_path, versioned_model_path)
+        alias_metadata = {
+            **build_artifact_public_metadata(published_artifact, production_path),
+            "candidate_name": candidate_raw.get("candidate_name"),
+            "candidate_family": candidate_raw.get("candidate_family"),
+            "feature_importance_summary": candidate_raw.get("feature_importance_summary"),
+            "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
+            "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+            "d80_report_path": str(Path(report_json_path)),
+            "d80_decision": dict(decision),
+            "rollback_reference": dict(rollback_reference),
+        }
+        alias_metadata_path = write_artifact_public_metadata(
+            alias_metadata,
+            build_artifact_metadata_path(production_path),
+        )
+        versioned_metadata_path = write_artifact_public_metadata(
+            {**alias_metadata, "artifact_path": str(versioned_model_path)},
+            build_artifact_metadata_path(versioned_model_path),
+        )
+        publish_result = {
+            "artifact_version": artifact_version,
+            "candidate_model_path": str(candidate_path),
+            "candidate_model_sha1": sha1_file(candidate_path),
+            "published_model_path": str(production_path),
+            "published_model_sha1": sha1_file(production_path),
+            "published_metadata_path": str(alias_metadata_path),
+            "published_metadata_sha1": sha1_file(alias_metadata_path),
+            "versioned_model_path": str(versioned_model_path),
+            "versioned_model_sha1": sha1_file(versioned_model_path),
+            "versioned_metadata_path": str(versioned_metadata_path),
+            "versioned_metadata_sha1": sha1_file(versioned_metadata_path),
+        }
+
+    after_sha1 = sha1_file(production_path) if production_path.exists() else None
+    production_after = build_production_artifact_state(production_path)
+    release_decision = "published" if publish_result else "no_publish"
+    release_report = {
+        "task": "D81",
+        "generated_at": generated_at.isoformat(),
+        "decision": release_decision,
+        "publish_action": "controlled_publish" if publish_result else "no_publish",
+        "source_d80_report": str(Path(report_json_path)),
+        "d80_decision": decision,
         "candidate_model_path": str(candidate_path),
+        "candidate_sha1": sha1_file(candidate_path),
         "production_model_path": str(production_path),
-        "rollback_model_path": str(rollback_path) if rollback_path.exists() else None,
         "production_sha1_before": before_sha1,
         "production_sha1_after": after_sha1,
+        "production_changed": before_sha1 != after_sha1,
+        "production_changed_only_for_publish": (before_sha1 != after_sha1) == bool(publish_result),
+        "rollback_reference": rollback_reference,
+        "publish_result": publish_result,
+        "production_before": production_before,
+        "production_after": production_after,
         "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
-        "source_decision_report": str(Path(report_json_path)),
+        "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "reason": decision.get("reason") or "d80_decision",
     }
-    _write_json(FINAL_OUTPUT_DIR / "controlled-publish-report.json", publish_report)
-    return publish_report
+    _write_json(release_report_json_path, release_report)
+    Path(release_report_md_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(release_report_md_path).write_text(
+        "\n".join(
+            [
+                "# D81 Final Query-Competitiveness Controlled Release",
+                "",
+                f"- Decision: `{release_decision}`",
+                f"- Publish action: `{release_report['publish_action']}`",
+                f"- D80 decision: `{decision.get('decision')}`",
+                f"- Reason: `{release_report['reason']}`",
+                f"- Candidate SHA1: `{release_report['candidate_sha1']}`",
+                f"- Production SHA1 before: `{before_sha1}`",
+                f"- Production SHA1 after: `{after_sha1}`",
+                f"- Production changed: `{before_sha1 != after_sha1}`",
+                f"- Rollback available: `{bool(rollback_reference)}`",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    manifest = _read_manifest(FINAL_MANIFEST_PATH)
+    manifest["status"] = "runtime_published" if publish_result else "controlled_no_publish"
+    manifest["release_progress"] = {
+        "task": "D81",
+        "completed_at": generated_at.isoformat(timespec="seconds"),
+        "decision": release_decision,
+        "d80_report_path": str(Path(report_json_path).resolve()),
+        "d81_report_path": str(Path(release_report_json_path).resolve()),
+        "candidate_sha1": sha1_file(candidate_path),
+        "production_sha1_before": before_sha1,
+        "production_sha1_after": after_sha1,
+        "runtime_enabled": bool(publish_result),
+    }
+    quality_gates = manifest.get("quality_gates") if isinstance(manifest.get("quality_gates"), dict) else {}
+    manifest["quality_gates"] = {
+        **quality_gates,
+        "candidate_runtime_enabled": bool(publish_result),
+        "controlled_release_decision_recorded": True,
+        "production_changed_only_for_controlled_publish": (before_sha1 != after_sha1) == bool(publish_result),
+    }
+    _write_json(FINAL_MANIFEST_PATH, manifest)
+    return release_report
 
 
 def run_final_pipeline(*, publish: bool = False) -> dict[str, Any]:
@@ -1241,6 +1639,9 @@ def main() -> None:
         return
     if args.decide:
         print(json.dumps(build_final_decision_report(), ensure_ascii=False, indent=2))
+        return
+    if args.publish:
+        print(json.dumps(run_final_controlled_publish(), ensure_ascii=False, indent=2))
         return
     print(json.dumps(run_final_pipeline(publish=args.publish), ensure_ascii=False, indent=2))
 
