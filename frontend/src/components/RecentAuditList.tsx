@@ -1,5 +1,6 @@
 import type { AuditHistoryRow } from "../lib/auditHistory";
 import type { AuditSummary } from "../types";
+import { getEarlyStopMismatchView } from "../lib/earlyStop";
 import { getAuditStatusLabel } from "../lib/ui";
 
 type RecentAuditListProps = {
@@ -22,6 +23,9 @@ function getRowClassName(row: AuditHistoryRow, activeAuditId?: string | null): s
 
 function getRowFlags(row: AuditHistoryRow): string[] {
   const flags: string[] = [];
+  if (getEarlyStopMismatchView(row.audit.scoreBreakdown)) {
+    flags.push("Страница не соответствует запросу");
+  }
   if (row.isStale) {
     flags.push("Зависший/устаревший");
   } else if (row.isProblematic) {
@@ -51,12 +55,14 @@ export function RecentAuditList({
       {rows.map((row) => {
         const audit = row.audit;
         const flags = getRowFlags(row);
+        const earlyStopView = getEarlyStopMismatchView(audit.scoreBreakdown);
 
         return (
           <article key={audit.id} className={getRowClassName(row, activeAuditId)}>
             <div className="recent-list__content">
               <div className="recent-list__title">{audit.domain}</div>
               <div className="recent-list__sub">{audit.query}</div>
+              {earlyStopView ? <div className="recent-list__notice">{earlyStopView.message}</div> : null}
               <div className="recent-list__time">{audit.createdAt}</div>
               {flags.length > 0 ? (
                 <div className="recent-list__flags">

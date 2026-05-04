@@ -4,6 +4,7 @@ import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
 import { buildScoreConfidenceView } from "../lib/auditConfidence";
+import { getEarlyStopMismatchView } from "../lib/earlyStop";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import type { RuntimeHealthModel } from "../lib/runtimeHealth";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel, resolveAuditFailureContext } from "../lib/ui";
@@ -193,6 +194,11 @@ function formatScoreFactorDetail(item: ScoreFactor): string {
 }
 
 function getScoreMethodologyText(breakdown?: ScoreBreakdown | null): string {
+  const earlyStopView = getEarlyStopMismatchView(breakdown);
+  if (earlyStopView) {
+    return earlyStopView.message;
+  }
+
   if (hasCompetitivenessContext(breakdown)) {
     return "Оценка отвечает на практический вопрос: насколько эта страница подходит под введённый запрос и выглядит сильной на фоне найденных конкурентов. Если страница плохо отвечает на запрос, отдельные сильные элементы не смогут сделать результат высоким.";
   }
@@ -305,6 +311,23 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
   const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
   const factorGroups = breakdown.factor_groups ?? [];
   const methodology = getScoreMethodologyText(breakdown);
+  const earlyStopView = getEarlyStopMismatchView(breakdown);
+
+  if (earlyStopView) {
+    return (
+      <Card title="Что означает оценка" subtitle="Аудит остановлен до сравнения с выдачей, чтобы не смешивать разные темы.">
+        <div className="score-breakdown score-breakdown--early-stop">
+          <div className="early-stop-state">
+            <div>
+              <strong>{earlyStopView.title}</strong>
+              <p>{earlyStopView.message}</p>
+            </div>
+            {earlyStopView.score !== null ? <span>{formatScoreValue(earlyStopView.score)}</span> : null}
+          </div>
+        </div>
+      </Card>
+    );
+  }
 
   return (
     <Card
@@ -454,6 +477,8 @@ function OverviewPanel({
     comparisonSummary,
   });
   const showDataQualityBadge = scoreConfidence.warningCount > 0 || scoreConfidence.errorCount > 0;
+  const earlyStopView =
+    getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
 
   return (
     <div className="workspace-grid">
@@ -464,8 +489,9 @@ function OverviewPanel({
             <h2 className="workspace-hero__title">{currentAudit ? getDomain(currentAudit.target_url) : "Аудит"}</h2>
             {currentAudit ? <p className="workspace-hero__target">{getDisplayUrl(currentAudit.target_url)}</p> : null}
             <p className="workspace-hero__text">
-              {currentAudit?.query ?? "Запустите аудит, чтобы увидеть метрики, сравнение и рекомендации."}
+              {earlyStopView?.title ?? currentAudit?.query ?? "Запустите аудит, чтобы увидеть метрики, сравнение и рекомендации."}
             </p>
+            {earlyStopView ? <p className="workspace-hero__text workspace-hero__text--notice">{earlyStopView.message}</p> : null}
 
             {currentAudit ? (
               <div className="workspace-meta">
@@ -481,7 +507,7 @@ function OverviewPanel({
             ) : null}
           </div>
 
-          <ScoreRing value={Math.round(finalScore)} />
+          <ScoreRing value={Math.round(finalScore)} label={earlyStopView ? "Не подходит" : undefined} />
         </div>
       </Card>
 
@@ -504,7 +530,8 @@ function OverviewPanel({
         </div>
         <div className="metric-box">
           <span className="metric-box__label">Конкуренты</span>
-          <strong className="metric-box__value">{`${analyzedCount}/${foundCount}`}</strong>
+          <strong className="metric-box__value">{earlyStopView ? "Не запускалось" : `${analyzedCount}/${foundCount}`}</strong>
+          {earlyStopView ? <p className="metric-box__note">Страница не отвечает теме запроса.</p> : null}
         </div>
       </div>
 
@@ -512,7 +539,14 @@ function OverviewPanel({
         title="Сравнение с конкурентами"
         subtitle="График строится только по реально обработанным страницам из поисковой выдачи."
       >
-        {competitorScores.length > 0 ? (
+        {earlyStopView ? (
+          <div className="early-stop-state early-stop-state--compact">
+            <div>
+              <strong>{earlyStopView.title}</strong>
+              <p>{earlyStopView.message}</p>
+            </div>
+          </div>
+        ) : competitorScores.length > 0 ? (
           <>
             <ComparisonChart items={competitorScores} />
             {failedCount > 0 ? (
@@ -526,7 +560,7 @@ function OverviewPanel({
         )}
       </Card>
 
-      <ScoreBreakdownCard breakdown={currentResults?.score_breakdown} />
+      <ScoreBreakdownCard breakdown={currentResults?.score_breakdown ?? currentAudit?.score_breakdown} />
 
       <Card
         title="Ключевые рекомендации"
@@ -543,6 +577,7 @@ function OverviewPanel({
 }
 
 function CompetitorsPanel({
+  currentAudit,
   currentResults,
   competitorScores,
   comparisonSummary,
@@ -551,7 +586,7 @@ function CompetitorsPanel({
   failureContext,
 }: Pick<
   AuditWorkspaceProps,
-  "currentResults" | "competitorScores" | "comparisonSummary" | "loading" | "error"
+  "currentAudit" | "currentResults" | "competitorScores" | "comparisonSummary" | "loading" | "error"
 > & {
   failureContext: FailureContext | null;
 }) {
@@ -559,6 +594,8 @@ function CompetitorsPanel({
   const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
   const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
   const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
+  const earlyStopView =
+    getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
 
   return (
     <Card
@@ -567,17 +604,25 @@ function CompetitorsPanel({
     >
       {loading ? <div className="empty-state">Подбираем конкурентные страницы...</div> : null}
       {!loading && error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
+      {!loading && !error && earlyStopView ? (
+        <div className="early-stop-state early-stop-state--compact">
+          <div>
+            <strong>{earlyStopView.title}</strong>
+            <p>{earlyStopView.message}</p>
+          </div>
+        </div>
+      ) : null}
       {!loading && !error && failureContext?.stage === "search" ? (
         <FailureContextBanner context={failureContext} title="Сравнение с конкурентами не построено" />
       ) : null}
 
-      {!loading && !error && competitors.length === 0 && failureContext?.stage !== "search" ? (
+      {!loading && !error && !earlyStopView && competitors.length === 0 && failureContext?.stage !== "search" ? (
         <div className="empty-state">
           По этому запросу пока не удалось собрать релевантные страницы конкурентов. Повторите аудит позже или уточните поисковый запрос.
         </div>
       ) : null}
 
-      {!loading && !error && competitors.length > 0 ? (
+      {!loading && !error && !earlyStopView && competitors.length > 0 ? (
         <>
           <div className="metric-strip metric-strip--comparison">
             <div className="metric-box">
@@ -782,6 +827,7 @@ export function AuditWorkspace({
 
         {activeTab === "competitors" ? (
           <CompetitorsPanel
+            currentAudit={currentAudit}
             currentResults={currentResults}
             competitorScores={competitorScores}
             comparisonSummary={comparisonSummary}

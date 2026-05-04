@@ -98,10 +98,25 @@ export type ScoreFactorGroup = {
   items: ScoreFactor[];
 };
 
+export type EarlyStopDecision = {
+  reason?: "confident_full_query_mismatch" | string | null;
+  score?: number | null;
+  [key: string]: unknown;
+};
+
+export type RelevanceGuardrail = {
+  early_stop?: boolean | null;
+  early_stop_decision?: EarlyStopDecision | null;
+  [key: string]: unknown;
+};
+
 export type ScoreBreakdown = {
   final_score: number;
   rule_score: number;
   ml_score: number;
+  early_stop?: boolean | null;
+  early_stop_decision?: EarlyStopDecision | null;
+  relevance_guardrail?: RelevanceGuardrail | null;
   primary_page_score?: number;
   competitiveness_score?: number;
   competitiveness?: Record<string, unknown> | null;

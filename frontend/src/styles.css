@@ -497,6 +497,11 @@ select {
   overflow-wrap: anywhere;
 }
 
+.workspace-hero__text--notice {
+  margin-top: 10px;
+  color: #7a4a05;
+}
+
 .workspace-meta {
   display: flex;
   flex-wrap: wrap;
@@ -1466,6 +1471,42 @@ select {
   line-height: 1.55;
 }
 
+.early-stop-state {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid rgba(247, 144, 9, 0.24);
+  border-radius: 18px;
+  background: rgba(255, 248, 237, 0.92);
+  color: #7a4a05;
+}
+
+.early-stop-state--compact {
+  margin-top: 0;
+}
+
+.early-stop-state strong {
+  display: block;
+  color: #653400;
+  overflow-wrap: anywhere;
+}
+
+.early-stop-state p {
+  margin: 6px 0 0;
+  color: #7a4a05;
+  overflow-wrap: anywhere;
+}
+
+.early-stop-state span {
+  flex: 0 0 auto;
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 .metric-strip.score-explanation-principles {
   align-items: stretch;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1916,6 +1957,13 @@ select {
 .recent-list__time {
   margin-top: 6px;
   font-size: 0.8rem;
+}
+
+.recent-list__notice {
+  margin-top: 6px;
+  color: #7a4a05;
+  font-size: 0.84rem;
+  overflow-wrap: anywhere;
 }
 
 .recent-list__side {
@@ -2982,6 +3030,7 @@ select {
   .recommendation-group__header,
   .recommendation-item__top,
   .recommendation-deviation__top,
+  .early-stop-state,
   .runtime-status-hero,
   .runtime-model-mini,
   .runtime-model-registry-record__top,

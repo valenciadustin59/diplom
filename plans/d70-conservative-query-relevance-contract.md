@@ -30,14 +30,14 @@ The key product rule is conservative: a bad page may continue to a full audit wi
 ## Runtime Contract
 
 ```text
-full_mismatch       -> 0-5 and eligible for future preflight early stop
+full_mismatch       -> 0-5 and eligible for D71 preflight early stop
 probable_mismatch   -> 6-25, continue audit
 weak_match          -> up to 55, continue audit
 partial_match       -> up to 80, continue audit
 strong_match        -> no relevance cap
 ```
 
-Early stop is not wired into audit orchestration yet. That belongs to D71.
+At D70 this was a decision contract only. D71 later wired confident full mismatch into audit orchestration.
 
 ## Regression Cases
 

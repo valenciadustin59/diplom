@@ -41,6 +41,7 @@ from app.parser import (
     extraction_artifact_text,
     fetch_page,
 )
+from app.query_relevance import build_query_relevance_preflight_decision
 from app.recommendations import generate_recommendations, get_recommendation_count
 from app.runtime_capacity import evaluate_queue_dispatch
 
@@ -71,6 +72,7 @@ COMPETITOR_FAILED = "failed"
 COMPETITOR_PROCESSING_COLLECTING = "collecting"
 COMPETITOR_PROCESSING_AGGREGATING = "aggregating"
 COMPETITOR_PROCESSING_AGGREGATED = "aggregated"
+COMPETITOR_PROCESSING_SKIPPED_EARLY_STOP = "skipped_early_stop"
 
 
 def _resolve_stage_task(stage: str):
@@ -500,6 +502,60 @@ def _build_competitor_aggregation_result(
             serp_relative_summary=serp_relative_summary,
             requested_top_n=requested_top_n,
         ),
+    }
+
+
+def _is_relevance_early_stop(score_breakdown: dict[str, object]) -> bool:
+    guardrail = score_breakdown.get("relevance_guardrail")
+    return isinstance(guardrail, dict) and guardrail.get("early_stop") is True
+
+
+def _annotate_relevance_early_stop(score_breakdown: dict[str, object]) -> dict[str, object]:
+    guardrail = score_breakdown.get("relevance_guardrail")
+    if not isinstance(guardrail, dict) or guardrail.get("early_stop") is not True:
+        return score_breakdown
+
+    decision = guardrail.get("early_stop_decision") if isinstance(guardrail.get("early_stop_decision"), dict) else {}
+    annotated_guardrail = {
+        **guardrail,
+        "early_stop": True,
+        "early_stop_status": "completed",
+        "early_stop_reason": decision.get("reason") or guardrail.get("reason"),
+    }
+    return {
+        **score_breakdown,
+        "relevance_guardrail": annotated_guardrail,
+    }
+
+
+def _build_relevance_early_stop_summary(score: float, score_breakdown: dict[str, object]) -> dict[str, object]:
+    guardrail = score_breakdown.get("relevance_guardrail") if isinstance(score_breakdown.get("relevance_guardrail"), dict) else {}
+    decision = guardrail.get("early_stop_decision") if isinstance(guardrail.get("early_stop_decision"), dict) else {}
+    reason = str(decision.get("reason") or guardrail.get("reason") or "query_relevance_early_stop")
+    bounded_score = round(max(0.0, min(5.0, float(score))), 4)
+    return {
+        "user_score": bounded_score,
+        "primary_page_score": bounded_score,
+        "competitiveness_score": bounded_score,
+        "final_score": bounded_score,
+        "score_basis": "query_relevance_early_stop",
+        "competitors_count": 0,
+        "competitors_found": 0,
+        "competitors_analyzed": 0,
+        "competitors_failed": 0,
+        "relevance_guardrail": {
+            "early_stop": True,
+            "status": "completed",
+            "reason": reason,
+            "decision": decision.get("decision") or "stop",
+            "confidence": decision.get("confidence"),
+            "score_ceiling": decision.get("score_ceiling") or guardrail.get("band_max"),
+        },
+        "competitiveness": {
+            "status": "skipped",
+            "reason": reason,
+            "score_basis": "query_relevance_early_stop",
+        },
     }
 
 
@@ -1076,7 +1132,7 @@ def process_audit_fetch_target(audit_id: str, processing_version: int) -> dict[s
                 "error_code": audit.target_fetch_error_code,
             }
 
-        _set_next_orchestration_stage(audit, HEAVY_ANALYSIS_STAGE)
+        _set_next_orchestration_stage(audit, FEATURES_STAGE)
         _flush_audit_events(db, event_buffer)
         db.commit()
     except Exception as exc:
@@ -1087,7 +1143,7 @@ def process_audit_fetch_target(audit_id: str, processing_version: int) -> dict[s
     finally:
         db.close()
 
-    return _dispatch_stage_task(process_audit_run_heavy_analysis, audit_id, processing_version, preserve_queue_affinity=True)
+    return _dispatch_stage_task(process_audit_extract_features, audit_id, processing_version)
 
 
 @celery_app.task(name="app.process_audit_run_heavy_analysis")
@@ -1137,6 +1193,8 @@ def process_audit_run_heavy_analysis(audit_id: str, processing_version: int) -> 
 def process_audit_extract_features(audit_id: str, processing_version: int) -> dict[str, object]:
     db = SessionLocal()
     event_buffer: list[dict[str, object]] = []
+    next_task = process_audit_score_target
+    next_task_preserve_queue_affinity = False
     try:
         audit = _load_audit(db, audit_id, FEATURES_STAGE)
         if audit is None:
@@ -1187,7 +1245,37 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
         audit.query_intent = query_intent
         audit.features = features
         audit.target_html = None
-        _set_next_orchestration_stage(audit, SCORING_STAGE)
+        if isinstance(audit.heavy_analysis, dict):
+            _set_next_orchestration_stage(audit, SCORING_STAGE)
+        else:
+            preflight_decision = build_query_relevance_preflight_decision(features)
+            if preflight_decision.get("should_stop") is True:
+                _log_audit_step(
+                    logging.INFO,
+                    audit_id,
+                    FEATURES_STAGE,
+                    "preflight_stop",
+                    processing_version=processing_version,
+                    event_buffer=event_buffer,
+                    reason=preflight_decision.get("reason"),
+                    confidence=preflight_decision.get("confidence"),
+                    score_ceiling=preflight_decision.get("score_ceiling"),
+                )
+                _set_next_orchestration_stage(audit, SCORING_STAGE)
+            else:
+                _log_audit_step(
+                    logging.INFO,
+                    audit_id,
+                    FEATURES_STAGE,
+                    "preflight_continue",
+                    processing_version=processing_version,
+                    event_buffer=event_buffer,
+                    reason=preflight_decision.get("reason"),
+                    confidence=preflight_decision.get("confidence"),
+                )
+                _set_next_orchestration_stage(audit, HEAVY_ANALYSIS_STAGE)
+                next_task = process_audit_run_heavy_analysis
+                next_task_preserve_queue_affinity = True
         _flush_audit_events(db, event_buffer)
         db.commit()
     except Exception as exc:
@@ -1198,7 +1286,9 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
     finally:
         db.close()
 
-    return _dispatch_stage_task(process_audit_score_target, audit_id, processing_version)
+    if next_task_preserve_queue_affinity:
+        return _dispatch_stage_task(next_task, audit_id, processing_version, preserve_queue_affinity=True)
+    return _dispatch_stage_task(next_task, audit_id, processing_version)
 
 
 @celery_app.task(name="app.process_audit_score_target")
@@ -1229,8 +1319,47 @@ def process_audit_score_target(audit_id: str, processing_version: int) -> dict[s
             event_buffer=event_buffer,
             summarize_result=_summarize_score,
         )
+        if _is_relevance_early_stop(score_breakdown):
+            score_breakdown = _annotate_relevance_early_stop(score_breakdown)
         audit.score_breakdown = score_breakdown
         audit.score = float(score_breakdown["final_score"])
+        if _is_relevance_early_stop(score_breakdown):
+            audit.score = round(max(0.0, min(5.0, float(audit.score))), 4)
+            if isinstance(audit.score_breakdown, dict):
+                audit.score_breakdown = {
+                    **audit.score_breakdown,
+                    "final_score": audit.score,
+                }
+            audit.competitor_results = []
+            audit.comparison_summary = _build_relevance_early_stop_summary(audit.score, audit.score_breakdown)
+            audit.competitor_processing_status = COMPETITOR_PROCESSING_SKIPPED_EARLY_STOP
+            final_status = _mark_audit_completed(audit, recommendations=[], warnings=[])
+            _log_audit_step(
+                logging.INFO,
+                audit_id,
+                PIPELINE_STAGE,
+                "completed",
+                processing_version=processing_version,
+                event_buffer=event_buffer,
+                final_status=final_status,
+                score=float(audit.score),
+                early_stop=True,
+                early_stop_reason=audit.comparison_summary["relevance_guardrail"]["reason"],
+                competitors_found=0,
+                competitors_failed=0,
+                recommendations_count=0,
+                warnings_count=0,
+            )
+            _flush_audit_events(db, event_buffer)
+            db.commit()
+            return {
+                "audit_id": audit_id,
+                "status": final_status,
+                "score": float(audit.score),
+                "competitors_count": 0,
+                "recommendations_count": 0,
+                "early_stop": True,
+            }
         _set_next_orchestration_stage(audit, COMPETITORS_STAGE)
         _flush_audit_events(db, event_buffer)
         db.commit()

@@ -196,10 +196,21 @@
 
 - `D70` is implemented locally; local mirror: `plans/d70-conservative-query-relevance-contract.md`.
 - `backend/app/query_relevance.py` now exposes `build_query_relevance_preflight_decision` with schema `query-relevance-early-stop-v1`.
-- Early stop is only a decision contract at D70. It is not wired into audit orchestration yet; that belongs to D71.
+- Early stop was only a decision contract at D70. D71 later wired it into audit orchestration for confident full query mismatch.
 - The early-stop decision requires enough text, no unusable load/indexability state, very low relevance, very low semantic similarity, near-zero query core coverage/density, no exact query match, no title/heading signal and no query prominence.
 - `backend/app/ml/final_query_competitiveness.py` now records `query-competitiveness-final-v2` because v7 labels use the new full-mismatch `0-5` contract.
 - D70 targeted verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_query_relevance_runtime.py backend/tests/test_final_query_competitiveness.py backend/tests/test_model_schema.py::test_query_relevance_guardrail_caps_unrelated_commercial_page backend/tests/test_model_schema.py::test_query_relevance_guardrail_caps_partial_query_match -q` -> `16 passed`.
+
+## Current D71-D74 Query Relevance Preflight Evidence
+
+- `D71`, `D73` and `D74` are implemented locally; local mirror: `plans/d71-d74-query-relevance-preflight-ui-regression.md`.
+- `D71` wires the D70 preflight into backend orchestration: target fetch now routes to feature extraction before heavy analysis, and only confident full query mismatch skips heavy analysis, competitor discovery, competitor fan-out and recommendations.
+- D71 early-stop audits finish as `completed`, keep score in the `0-5` band, set `competitor_processing_status=skipped_early_stop`, store `score_breakdown.relevance_guardrail.early_stop=true`, and write `comparison_summary.score_basis=query_relevance_early_stop`.
+- Normal or ambiguous cases continue through heavy analysis, scoring, competitors and recommendations.
+- `D73` adds a user-facing early-stop state across overview, competitors, report/export and history: `Страница не соответствует запросу`, without exposing raw ML fields such as `relevance_guardrail`, `early_stop` or `confident_full_query_mismatch`.
+- `D74` adds regression cases for unrelated good pages, relevant pages without commercial modifiers, near-topic false positives, informational queries, rare low-signal cases and insufficient extraction.
+- Verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_audit_pipeline.py backend/tests/test_query_relevance_runtime.py backend/tests/test_model_schema.py backend/tests/test_final_query_competitiveness.py -q` -> `51 passed`; `npm --prefix frontend run test -- --run src/lib/ui.test.tsx src/lib/auditReport.test.ts` -> `23 passed`.
+- D72 was not changed in this pass. No model artifact was replaced, no controlled publish/rollback was executed, and no `dataset-v7-final` live collection was started.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

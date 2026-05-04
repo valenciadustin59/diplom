@@ -291,3 +291,187 @@ def test_unusable_page_is_kept_in_zero_to_ten_band():
     assert guardrail["band_max"] == 10.0
     assert guardrail["adjusted_score"] == 8.0
     assert "http_status_not_ok" in guardrail["unusable_reasons"]
+
+
+def test_d74_wine_store_for_buy_gantry_crane_is_confident_full_mismatch():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 950,
+        "text_length_chars": 6100,
+        "semantic_similarity": 0.06,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_intent_modifier_coverage_ratio": 1.0,
+        "query_density": 0.0,
+        "query_core_term_count": 0,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 0,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.0,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 92.0)
+
+    assert decision["should_stop"] is True
+    assert decision["reason"] == "confident_full_query_mismatch"
+    assert decision["score_ceiling"] == 5.0
+    assert guardrail["early_stop"] is True
+    assert guardrail["band"] == "full_mismatch"
+    assert 0.0 <= guardrail["adjusted_score"] <= 5.0
+
+
+def test_d74_relevant_gantry_crane_page_without_buy_word_does_not_early_stop():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 860,
+        "text_length_chars": 5200,
+        "semantic_similarity": 0.31,
+        "keyword_coverage_ratio": 0.666667,
+        "query_core_keyword_coverage_ratio": 1.0,
+        "query_intent_modifier_coverage_ratio": 0.0,
+        "query_density": 0.006,
+        "query_core_term_count": 8,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 1,
+        "title_semantic_alignment": 0.7,
+        "heading_semantic_alignment": 0.8,
+        "query_prominence_score": 0.62,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 81.0)
+
+    assert decision["should_stop"] is False
+    assert has_strong_query_topic_fit(features) is True
+    assert guardrail["early_stop"] is False
+    assert guardrail["active"] is False
+    assert guardrail["adjusted_score"] == 81.0
+
+
+def test_d74_similar_but_wrong_crane_equipment_is_capped_without_early_stop():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 780,
+        "text_length_chars": 4700,
+        "semantic_similarity": 0.3,
+        "keyword_coverage_ratio": 0.333333,
+        "query_core_keyword_coverage_ratio": 0.25,
+        "query_intent_modifier_coverage_ratio": 0.0,
+        "query_density": 0.001,
+        "query_core_term_count": 1,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 1,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.12,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 84.0)
+
+    assert decision["should_stop"] is False
+    assert guardrail["early_stop"] is False
+    assert guardrail["band"] in {"probable_mismatch", "weak_match"}
+    assert guardrail["adjusted_score"] < 84.0
+    assert guardrail["band_max"] <= 55.0
+
+
+def test_d74_informational_query_does_not_require_commercial_modifiers():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 720,
+        "text_length_chars": 4300,
+        "semantic_similarity": 0.28,
+        "keyword_coverage_ratio": 1.0,
+        "query_core_keyword_coverage_ratio": 1.0,
+        "query_intent_modifier_coverage_ratio": 0.0,
+        "query_density": 0.007,
+        "query_core_term_count": 7,
+        "exact_query_count": 1,
+        "query_in_title": 1,
+        "query_in_text": 1,
+        "title_semantic_alignment": 0.72,
+        "heading_semantic_alignment": 0.7,
+        "query_prominence_score": 0.68,
+    }
+
+    guardrail = build_query_relevance_guardrail(features, 76.0)
+
+    assert has_strong_query_topic_fit(features) is True
+    assert guardrail["early_stop"] is False
+    assert guardrail["active"] is False
+    assert guardrail["adjusted_score"] == 76.0
+
+
+def test_d74_rare_technical_synonym_or_translit_signal_does_not_early_stop():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 640,
+        "text_length_chars": 3900,
+        "semantic_similarity": 0.24,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_intent_modifier_coverage_ratio": 0.0,
+        "query_density": 0.0,
+        "query_core_term_count": 0,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 0,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.0,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 79.0)
+
+    assert decision["should_stop"] is False
+    assert decision["reason"] == "not_confident_enough_for_early_stop"
+    assert guardrail["early_stop"] is False
+    assert guardrail["band"] in {"probable_mismatch", "weak_match"}
+    assert guardrail["adjusted_score"] < 79.0
+
+
+def test_d74_insufficient_extracted_text_is_not_safe_for_early_stop():
+    features = {
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 35,
+        "text_length_chars": 260,
+        "semantic_similarity": 0.02,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_intent_modifier_coverage_ratio": 0.0,
+        "query_density": 0.0,
+        "query_core_term_count": 0,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 0,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.0,
+    }
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 70.0)
+
+    assert decision["content_evaluable"] is False
+    assert decision["should_stop"] is False
+    assert decision["confidence"] == "insufficient_content"
+    assert guardrail["early_stop"] is False

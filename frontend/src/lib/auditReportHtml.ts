@@ -68,6 +68,7 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
     h2 { font-size: 20px; }
     .muted, .metric span, small { color: #667085; }
     .score { font-size: 52px; font-weight: 800; color: #335fce; }
+    .notice { margin-top: 14px; padding: 14px 16px; border: 1px solid #ffd9a8; border-radius: 16px; background: #fff8ed; }
     .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
     .metric { padding: 14px; border-radius: 16px; background: #f8faff; border: 1px solid #edf1fa; }
     .metric strong { display: block; margin-top: 6px; font-size: 18px; }
@@ -88,6 +89,11 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
       <p>${escapeHtml(report.query)} · ${escapeHtml(report.targetUrl)}</p>
       <div class="score">${escapeHtml(report.scoreLabel)}</div>
       <p>${escapeHtml(report.scoreVerdict)}</p>
+      ${
+        report.scoreVerdict === "Страница не соответствует запросу"
+          ? `<div class="notice">${escapeHtml(report.scoreBreakdown.methodology)}</div>`
+          : ""
+      }
     </header>
     <section>
       <h2>Краткий вывод</h2>

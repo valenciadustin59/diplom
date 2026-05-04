@@ -9,7 +9,7 @@ This local mirror records the final-model implementation direction after the pro
 - `D64-D67`: `app.ml.final_query_competitiveness` now provides the final release pipeline: validate dataset readiness, apply deterministic expert-rubric labels, train a v3 CatBoost candidate, run product guardrails, and publish only after a `publish_candidate` decision.
 - `D68`: score explanation now supports five user-facing factor groups: query relevance, topic completeness, commercial trust, technical access, and competitor context. The UI keeps old top positive/negative factors as fallback for legacy audits.
 - `D69`: collection readiness was added after this wave. `dataset_builder` now has `--max-domain-rows-per-domain`, and `app.ml.final_hard_negatives` materializes `dataset.with-hard-negatives.csv` from saved snapshots before final training.
-- `D70`: conservative early-stop contract was added after this wave. Early stop is a decision payload only until D71 wires it into audit orchestration.
+- `D70`: conservative early-stop contract was added after this wave. D71 later wired confident full mismatch into audit orchestration, while ambiguous cases still continue the full audit.
 
 ## Current State
 

@@ -351,6 +351,51 @@ describe("audit report export", () => {
     expect(html.match(/TECHNICAL_/g)).toHaveLength(6);
   });
 
+  it("exports early stop mismatch as a product state without raw decision fields", () => {
+    const earlyStopBreakdown = {
+      final_score: 3,
+      rule_score: 3,
+      ml_score: 3,
+      relevance_guardrail: {
+        early_stop: true,
+        early_stop_decision: {
+          reason: "confident_full_query_mismatch",
+        },
+      },
+    };
+    const input = {
+      audit: {
+        ...createAudit(),
+        score: 3,
+        score_breakdown: earlyStopBreakdown,
+        comparison_summary: null,
+      },
+      results: {
+        ...createResults(),
+        score: 3,
+        score_breakdown: earlyStopBreakdown,
+        competitor_results: [],
+        comparison_summary: null,
+      },
+      recommendations: null,
+      diagnostics: null,
+      generatedAt: new Date("2026-01-01T12:00:00Z"),
+    };
+
+    const model = buildAuditReportModel(input);
+    const markdown = createAuditReportMarkdown(input);
+    const html = createAuditReportHtml(input);
+
+    expect(model.scoreVerdict).toBe("Страница не соответствует запросу");
+    expect(model.competitorMetrics[0].value).toBe("Не запускалось");
+    expect(markdown).toContain("Страница не соответствует запросу");
+    expect(markdown).toContain("Сравнение с конкурентами не запускалось");
+    expect(html).toContain("Страница не соответствует запросу");
+    expect(html).not.toContain("confident_full_query_mismatch");
+    expect(markdown).not.toContain("relevance_guardrail");
+    expect(markdown).not.toContain("early_stop");
+  });
+
   it("creates stable filenames and human-readable durations", () => {
     expect(buildAuditReportFilename(createAudit(), "md")).toBe("site-audit-report-example.com-2026-01-01.md");
     expect(formatReportDuration(850)).toBe("850 мс");

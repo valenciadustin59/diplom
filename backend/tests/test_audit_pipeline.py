@@ -44,6 +44,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
     monkeypatch.setattr(
         'app.tasks.fetch_page',
         lambda url, use_browser=True: {
@@ -347,6 +348,151 @@ def test_process_audit_fails_when_target_fetch_fails(monkeypatch, tmp_path):
         'status': 'failed',
         'error_code': 'http_403',
     }
+    Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+
+
+def test_process_audit_early_stops_relevance_mismatch_before_heavy_and_competitors(monkeypatch, tmp_path):
+    db_path = tmp_path / 'pipeline-relevance-early-stop.db'
+    engine = create_engine(
+        f'sqlite:///{db_path}',
+        connect_args={'check_same_thread': False},
+    )
+    testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
+    Base.metadata.create_all(bind=engine)
+    monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'final_url': url,
+            'http_status': 200,
+            'html': '<html><body><h1>Accounting</h1><p>Tax planning services for companies.</p></body></html>',
+            'text': 'Accounting and tax planning services for companies.',
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_features',
+        lambda html, text, query: {
+            'http_status_code': 200,
+            'http_status_ok': 1,
+            'page_indexable': 1,
+            'word_count': 220,
+            'text_length_chars': 1400,
+            'semantic_similarity': 0.02,
+            'keyword_coverage_ratio': 0.0,
+            'query_core_keyword_coverage_ratio': 0.0,
+            'query_intent_modifier_coverage_ratio': 0.0,
+            'query_density': 0.0,
+            'query_core_term_count': 0,
+            'exact_query_count': 0,
+            'query_in_title': 0,
+            'query_in_text': 0,
+            'title_semantic_alignment': 0.0,
+            'heading_semantic_alignment': 0.0,
+            'query_prominence_score': 0.0,
+        },
+    )
+
+    def fail_heavy(snapshot):
+        raise AssertionError('heavy analysis must be skipped for confident full mismatch')
+
+    def fail_competitors(query, target_url, limit):
+        raise AssertionError('competitor collection must be skipped for confident full mismatch')
+
+    monkeypatch.setattr('app.tasks.build_heavy_analysis_payload', fail_heavy)
+    monkeypatch.setattr('app.tasks.search_competitor_pages', fail_competitors)
+    monkeypatch.setattr(
+        'app.tasks.explain_score',
+        lambda features: {
+            'final_score': 4.2,
+            'uncapped_final_score': 84.0,
+            'rule_score': 81.0,
+            'ml_score': 84.0,
+            'relevance_guardrail': {
+                'schema_version': 'query-relevance-contract-v2',
+                'active': True,
+                'reason': 'confident_full_query_mismatch',
+                'band': 'full_mismatch',
+                'band_min': 0.0,
+                'band_max': 5.0,
+                'original_score': 84.0,
+                'adjusted_score': 4.2,
+                'score_delta': -79.8,
+                'metrics': {'relevance_score': 0.02},
+                'early_stop': True,
+                'early_stop_decision': {
+                    'schema_version': 'query-relevance-early-stop-v1',
+                    'decision': 'stop',
+                    'should_stop': True,
+                    'confidence': 'high',
+                    'reason': 'confident_full_query_mismatch',
+                    'score_ceiling': 5.0,
+                    'safe_to_skip_competitors': True,
+                },
+            },
+            'model_info': {'source': 'test'},
+            'weights': {'rule_weight': 0.0, 'ml_weight': 1.0},
+            'top_positive_factors': [],
+            'top_negative_factors': [],
+            'factor_groups': [],
+            'serp_relative_factors': [],
+        },
+    )
+    with testing_session_local() as db:
+        audit = Audit(
+            id='audit-relevance-stop',
+            query='buy plastic windows',
+            target_url='https://example.com/accounting',
+            top_n=5,
+            status='queued',
+            created_at=datetime.now(UTC).replace(tzinfo=None),
+        )
+        db.add(audit)
+        db.commit()
+
+    result = process_audit.run('audit-relevance-stop')
+
+    with testing_session_local() as db:
+        stored = db.get(Audit, 'audit-relevance-stop')
+        competitors = db.scalars(
+            select(AuditCompetitor).where(AuditCompetitor.audit_id == 'audit-relevance-stop')
+        ).all()
+        audit_events = db.scalars(
+            select(AuditEvent)
+            .where(AuditEvent.audit_id == 'audit-relevance-stop')
+            .order_by(AuditEvent.id.asc())
+        ).all()
+        assert stored is not None
+        assert stored.status == 'completed'
+        assert stored.score == 4.2
+        assert stored.heavy_analysis is None
+        assert stored.competitor_results == []
+        assert stored.competitor_processing_status == 'skipped_early_stop'
+        assert stored.comparison_summary['score_basis'] == 'query_relevance_early_stop'
+        assert stored.comparison_summary['competitors_found'] == 0
+        guardrail = stored.score_breakdown['relevance_guardrail']
+        assert guardrail['early_stop'] is True
+        assert guardrail['early_stop_status'] == 'completed'
+        assert guardrail['early_stop_decision']['reason'] == 'confident_full_query_mismatch'
+        assert competitors == []
+        assert not any(event.stage == 'heavy_analysis' for event in audit_events)
+        assert not any(event.stage == 'competitors' for event in audit_events)
+        assert any(event.stage == 'features' and event.event == 'preflight_stop' for event in audit_events)
+
+    assert result == {
+        'audit_id': 'audit-relevance-stop',
+        'status': 'completed',
+        'score': 4.2,
+        'competitors_count': 0,
+        'recommendations_count': 0,
+        'early_stop': True,
+    }
+
     Base.metadata.drop_all(bind=engine)
     engine.dispose()
 def test_process_audit_clears_stale_results_when_retry_fails(monkeypatch, tmp_path):
@@ -720,7 +866,7 @@ def test_process_audit_extract_features_rebuilds_from_saved_snapshot(monkeypatch
     monkeypatch.setattr('app.tasks.build_features', fake_build_features)
     monkeypatch.setattr(
         'app.tasks._dispatch_stage_task',
-        lambda task, audit_id, processing_version=None: {
+        lambda task, audit_id, processing_version=None, **kwargs: {
             'audit_id': audit_id,
             'status': 'processing',
             'next_stage': task.name,
@@ -780,7 +926,7 @@ def test_process_audit_extract_features_rebuilds_from_saved_snapshot(monkeypatch
     assert result == {
         'audit_id': 'audit-snapshot-features',
         'status': 'processing',
-        'next_stage': 'app.process_audit_score_target',
+        'next_stage': 'app.process_audit_run_heavy_analysis',
     }
 
     Base.metadata.drop_all(bind=engine)

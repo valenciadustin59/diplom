@@ -8,6 +8,7 @@ import {
   type ReportMetric,
 } from "../lib/auditReport";
 import { createAuditReportHtml } from "../lib/auditReportHtml";
+import { getEarlyStopMismatchView } from "../lib/earlyStop";
 import { getFailureStageLabel } from "../lib/ui";
 import type {
   AuditResultsResponse,
@@ -84,6 +85,7 @@ export function AuditReportPage({
     [currentAudit, currentResults, recommendations, timelineDiagnostics],
   );
   const report = useMemo(() => buildAuditReportModel(reportInput), [reportInput]);
+  const earlyStopView = getEarlyStopMismatchView(currentResults?.score_breakdown ?? currentAudit.score_breakdown);
 
   function handleDownloadMarkdown() {
     downloadTextFile(
@@ -129,7 +131,7 @@ export function AuditReportPage({
             </div>
           </div>
           <div className="report-score">
-            <span className="report-score__label">Оценка</span>
+            <span className="report-score__label">{earlyStopView ? "Не подходит" : "Оценка"}</span>
             <strong className="report-score__value">{report.scoreLabel}</strong>
           </div>
         </div>
@@ -151,6 +153,14 @@ export function AuditReportPage({
 
       {loading ? <div className="feedback-banner feedback-banner--info">Обновляем данные отчёта...</div> : null}
       {!loading && error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
+      {earlyStopView ? (
+        <div className="early-stop-state">
+          <div>
+            <strong>{earlyStopView.title}</strong>
+            <p>{earlyStopView.message}</p>
+          </div>
+        </div>
+      ) : null}
       {auditStatus === "failed" && failureContext ? (
         <div className="feedback-banner feedback-banner--warning">
           Отчёт частичный: аудит остановился на этапе {getFailureStageLabel(failureContext.stage)}. Причина: {failureContext.message}

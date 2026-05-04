@@ -891,6 +891,91 @@ describe("AuditWorkspace", () => {
     expect(markup).not.toContain("Доверие к score");
   });
 
+  it("renders early stop mismatch state without ML jargon in overview and competitors", () => {
+    const earlyStopBreakdown = {
+      final_score: 3,
+      rule_score: 3,
+      ml_score: 3,
+      relevance_guardrail: {
+        early_stop: true,
+        early_stop_decision: {
+          reason: "confident_full_query_mismatch",
+        },
+      },
+    };
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          status: "completed",
+          score: 3,
+          score_breakdown: earlyStopBreakdown,
+        })}
+        currentResults={createResults({
+          status: "completed",
+          score: 3,
+          score_breakdown: earlyStopBreakdown,
+          competitor_results: [],
+        })}
+        recommendations={null}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={null}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="overview"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Страница не соответствует запросу");
+    expect(markup).toContain("Сравнение с конкурентами не запускалось");
+    expect(markup).toContain("Не запускалось");
+    expect(markup).not.toContain("confident_full_query_mismatch");
+    expect(markup).not.toContain("relevance_guardrail");
+    expect(markup).not.toContain("early_stop");
+  });
+
+  it("marks early stop mismatch audits in history", () => {
+    const markup = renderToStaticMarkup(
+      <EmptyWorkspace
+        {...emptyWorkspaceBaseProps}
+        mode="history"
+        recentAudits={[
+          {
+            id: "audit-mismatch",
+            domain: "example.com",
+            query: "купить диван",
+            targetUrl: "https://example.com/about",
+            topN: 10,
+            score: 3,
+            status: "completed",
+            createdAt: "2 мая 2026 г., 10:00",
+            createdAtTimestamp: Date.UTC(2026, 4, 2, 10, 0, 0),
+            scoreBreakdown: {
+              final_score: 3,
+              rule_score: 3,
+              ml_score: 3,
+              relevance_guardrail: {
+                early_stop: true,
+                early_stop_decision: {
+                  reason: "confident_full_query_mismatch",
+                },
+              },
+            },
+          },
+        ]}
+      />,
+    );
+
+    expect(markup).toContain("Страница не соответствует запросу");
+    expect(markup).toContain("Выберите другую страницу или измените запрос");
+    expect(markup).not.toContain("confident_full_query_mismatch");
+  });
+
   it("renders score confidence warnings for incomplete audit data", () => {
     const longWarning =
       "Очень длинное предупреждение о неполном конкурентном покрытии, которое должно переноситься внутри карточки доверия к score без поломки узкой раскладки.";

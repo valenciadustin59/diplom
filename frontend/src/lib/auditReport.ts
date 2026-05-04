@@ -6,6 +6,7 @@ import type {
   CompetitorResult,
   RecommendationsBundle,
 } from "../types";
+import { getEarlyStopMismatchView } from "./earlyStop";
 import { flattenRecommendationItems } from "./recommendations";
 import { getFetchMethodLabel, getIntentLabel, getRecommendationGroupLabel } from "./terminology";
 
@@ -213,6 +214,16 @@ function getScoreVerdict(score: number | null | undefined): string {
 
 function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditStatusResponse) {
   const breakdown = results?.score_breakdown ?? audit.score_breakdown ?? null;
+  const earlyStopView = getEarlyStopMismatchView(breakdown);
+  if (earlyStopView) {
+    return {
+      finalScore: formatScore(breakdown?.final_score ?? earlyStopView.score ?? results?.score ?? audit.score),
+      ruleScore: "—",
+      mlScore: "—",
+      methodology: earlyStopView.message,
+    };
+  }
+
   const competitiveness = breakdown?.competitiveness;
   const hasCompetitivenessContext = Boolean(
     competitiveness &&
@@ -355,6 +366,21 @@ function getEffectiveRecommendations(input: AuditReportInput): RecommendationsBu
 }
 
 function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
+  const earlyStopView = getEarlyStopMismatchView(getReportScoreBreakdown(input));
+  if (earlyStopView) {
+    return [
+      {
+        label: "Конкурентный контекст",
+        value: "Не запускалось",
+        note: earlyStopView.message,
+      },
+      {
+        label: "Причина",
+        value: earlyStopView.title,
+      },
+    ];
+  }
+
   const summary = getReportComparisonSummary(input);
   const found = summary?.competitors_found ?? summary?.competitors_count ?? 0;
   const analyzed = summary?.competitors_analyzed ?? summary?.competitors_count ?? 0;
@@ -458,6 +484,7 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
   const generatedAt = input.generatedAt ?? new Date();
   const score = getReportFinalScore(input);
   const scoreBreakdown = getScoreBreakdown(input.results, input.audit);
+  const earlyStopView = getEarlyStopMismatchView(getReportScoreBreakdown(input));
   const comparisonSummary = getReportComparisonSummary(input);
   const marketDifference = getReportMarketDifference(input);
   const recommendations = getEffectiveRecommendations(input);
@@ -478,21 +505,27 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     createdAt: formatDateTime(input.audit.created_at),
     statusLabel: getStatusLabel(input.audit.status),
     scoreLabel: formatScore(score),
-    scoreVerdict: getScoreVerdict(score),
+    scoreVerdict: earlyStopView?.title ?? getScoreVerdict(score),
     scoreBreakdown,
-    summary: [
-      `Аудит по запросу "${input.audit.query}" для ${domain}.`,
-      `Итоговая оценка: ${formatScore(score)}. ${getScoreVerdict(score)}`,
-      `Конкурентный контекст: обработано ${analyzedCompetitors} страниц, разница с конкурентами ${formatSignedScore(
-        marketDifference,
-      )}.`,
-      `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
-        recommendationsSummary?.high_priority_count,
-      )} высокого приоритета.`,
-      `Распределённое выполнение: ${formatCount(input.diagnostics?.event_count)} событий таймлайна, критический путь ${formatReportDuration(
-        input.diagnostics?.critical_path_duration_ms,
-      )}.`,
-    ],
+    summary: earlyStopView
+      ? [
+          `Аудит по запросу "${input.audit.query}" для ${domain}.`,
+          earlyStopView.title,
+          earlyStopView.message,
+        ]
+      : [
+          `Аудит по запросу "${input.audit.query}" для ${domain}.`,
+          `Итоговая оценка: ${formatScore(score)}. ${getScoreVerdict(score)}`,
+          `Конкурентный контекст: обработано ${analyzedCompetitors} страниц, разница с конкурентами ${formatSignedScore(
+            marketDifference,
+          )}.`,
+          `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
+            recommendationsSummary?.high_priority_count,
+          )} высокого приоритета.`,
+          `Распределённое выполнение: ${formatCount(input.diagnostics?.event_count)} событий таймлайна, критический путь ${formatReportDuration(
+            input.diagnostics?.critical_path_duration_ms,
+          )}.`,
+        ],
     seoMetrics: buildSeoMetrics(input),
     recommendationMetrics: buildRecommendationMetrics(recommendations),
     competitorMetrics: buildCompetitorMetrics(input),
