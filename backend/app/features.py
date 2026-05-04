@@ -646,6 +646,9 @@ QUERY_INTENT_MODIFIER_TERMS = frozenset(
         "продаж",
         "стоимост",
         "цен",
+        "цена",
+        "цены",
+        "цену",
     }
 )
 
