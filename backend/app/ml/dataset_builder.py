@@ -281,6 +281,47 @@ def _deduplicate_search_results(
     return deduplicated
 
 
+def _read_existing_domain_counts(csv_path: Path) -> dict[str, int]:
+    if not csv_path.exists():
+        return {}
+    counts: dict[str, int] = {}
+    with csv_path.open("r", encoding="utf-8", newline="") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            domain = str(row.get("domain") or "").strip()
+            if not domain:
+                domain = _normalize_domain(str(row.get("url") or "").strip())
+            if not domain:
+                continue
+            counts[domain] = counts.get(domain, 0) + 1
+    return counts
+
+
+def _filter_search_results_by_domain_cap(
+    raw_results: list[dict[str, object]],
+    domain_counts: dict[str, int],
+    *,
+    max_domain_rows_per_domain: int | None,
+) -> tuple[list[dict[str, object]], int]:
+    if not max_domain_rows_per_domain or max_domain_rows_per_domain <= 0:
+        return raw_results, 0
+
+    accepted: list[dict[str, object]] = []
+    skipped = 0
+    for result in raw_results:
+        url = str(result.get("url") or "").strip()
+        domain = _normalize_domain(url) or url
+        if not domain:
+            skipped += 1
+            continue
+        if domain_counts.get(domain, 0) >= max_domain_rows_per_domain:
+            skipped += 1
+            continue
+        domain_counts[domain] = domain_counts.get(domain, 0) + 1
+        accepted.append(result)
+    return accepted, skipped
+
+
 def _read_existing_keys(csv_path: Path) -> set[str]:
     if not csv_path.exists():
         return set()
@@ -586,6 +627,7 @@ def build_dataset(
     artifacts_dir: str | Path | None = None,
     expert_labels_path: str | Path | None = None,
     freeze_baseline: bool = False,
+    max_domain_rows_per_domain: int | None = None,
 ) -> dict[str, object]:
     dataset_path = Path(output_path)
     failures_csv_path = Path(failures_path)
@@ -619,10 +661,12 @@ def build_dataset(
     checkpoint = _load_checkpoint(checkpoint_json_path)
     written_keys = checkpoint["written_keys"] | _read_existing_keys(dataset_path) | _read_existing_keys(failures_csv_path)
     completed_pages = checkpoint["completed_pages"]
+    domain_counts = _read_existing_domain_counts(dataset_path)
 
     success_count = 0
     failure_count = 0
     empty_text_count = 0
+    domain_cap_skipped_count = 0
     unique_domains: set[str] = set()
     unique_queries: set[str] = set()
     processed_seed_pages = 0
@@ -638,6 +682,12 @@ def build_dataset(
 
             raw_results = _fetch_seed_page(seed, serp_page=serp_page)
             raw_results = _deduplicate_search_results(seed, raw_results, written_keys)
+            raw_results, skipped_for_domain_cap = _filter_search_results_by_domain_cap(
+                raw_results,
+                domain_counts,
+                max_domain_rows_per_domain=max_domain_rows_per_domain,
+            )
+            domain_cap_skipped_count += skipped_for_domain_cap
 
             success_rows: list[dict[str, object]] = []
             failure_rows: list[dict[str, object]] = []
@@ -704,6 +754,10 @@ def build_dataset(
             "weak_label_source": "serp_rank",
             "hybrid_formula": "0.7 * expert_target_score + 0.3 * weak_target_score",
         },
+        "collection_policy": {
+            "max_domain_rows_per_domain": max_domain_rows_per_domain,
+            "domain_cap_skipped_count": domain_cap_skipped_count,
+        },
         "coverage": {
             **output_coverage,
         },
@@ -730,6 +784,8 @@ def build_dataset(
         "run_unique_domains": len(unique_domains),
         "run_failure_rate": run_failure_rate,
         "run_empty_text_rate": run_empty_text_rate,
+        "max_domain_rows_per_domain": max_domain_rows_per_domain,
+        "domain_cap_skipped_count": domain_cap_skipped_count,
     }
 
 
@@ -752,6 +808,7 @@ def main() -> None:
     parser.add_argument("--query-delay", type=float, default=1.0)
     parser.add_argument("--seed-offset", type=int, default=0)
     parser.add_argument("--seed-limit", type=int, default=0)
+    parser.add_argument("--max-domain-rows-per-domain", type=int, default=0)
     args = parser.parse_args()
 
     queries = list(args.query)
@@ -789,6 +846,7 @@ def main() -> None:
             artifacts_dir=artifacts_dir,
             expert_labels_path=args.expert_labels or None,
             freeze_baseline=args.freeze_baseline,
+            max_domain_rows_per_domain=args.max_domain_rows_per_domain or None,
         )
         print(result)
     except SerpConfigurationError as error:

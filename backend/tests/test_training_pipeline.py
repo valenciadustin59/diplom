@@ -378,6 +378,94 @@ def test_build_dataset_deduplicates_search_results_before_parallel_fetch(monkeyp
     assert len(checkpoint["written_keys"]) == 2
 
 
+def test_build_dataset_enforces_domain_cap_before_parallel_fetch(monkeypatch, tmp_path):
+    dataset_path = tmp_path / "dataset.csv"
+    failures_path = tmp_path / "failures.csv"
+    checkpoint_path = tmp_path / "checkpoint.json"
+    seeds_path = tmp_path / "seeds.csv"
+    fetched_urls: list[str] = []
+
+    with seeds_path.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(
+            file,
+            fieldnames=["query", "category", "intent", "city", "region_code", "top_n", "pages_to_scan"],
+        )
+        writer.writeheader()
+        writer.writerow(
+            {
+                "query": "аренда склада казань",
+                "category": "warehouse_rental",
+                "intent": "commercial",
+                "city": "Казань",
+                "region_code": 43,
+                "top_n": 5,
+                "pages_to_scan": 1,
+            }
+        )
+
+    monkeypatch.setattr(
+        "app.ml.dataset_builder.search_serp",
+        lambda query, top_n, region_code=None, page=0: [
+            {
+                "url": f"https://market.example/item-{index}",
+                "title": f"Market {index}",
+                "snippet": "Snippet",
+                "rank": index,
+                "serp_page": page,
+            }
+            for index in range(1, 5)
+        ]
+        + [
+            {
+                "url": "https://direct.example/warehouse",
+                "title": "Direct",
+                "snippet": "Snippet",
+                "rank": 5,
+                "serp_page": page,
+            }
+        ],
+    )
+
+    def fake_fetch(url: str, use_browser: bool = True):
+        fetched_urls.append(url)
+        return {
+            "status": "success",
+            "fetch_method": "http",
+            "fetch_error_code": None,
+            "fetch_error_message": None,
+            "final_url": url,
+            "http_status": 200,
+            "html": "<html><head><title>Example</title></head><body><h1>Header</h1><p>Body</p></body></html>",
+            "text": "Header Body",
+        }
+
+    monkeypatch.setattr("app.ml.dataset_builder.fetch_page", fake_fetch)
+    monkeypatch.setattr("app.ml.dataset_builder.build_features", lambda html, text, query: _feature_row(1.0))
+
+    result = build_dataset(
+        seeds_file=seeds_path,
+        output_path=dataset_path,
+        failures_path=failures_path,
+        checkpoint_path=checkpoint_path,
+        dataset_version="dataset-v7-final-test",
+        overwrite=True,
+        max_workers=2,
+        query_delay_seconds=0.0,
+        max_domain_rows_per_domain=2,
+    )
+
+    with dataset_path.open("r", encoding="utf-8", newline="") as file:
+        rows = list(csv.DictReader(file))
+    metadata = json.loads(Path(result["metadata_path"]).read_text(encoding="utf-8"))
+
+    assert result["rows_count"] == 3
+    assert result["domain_cap_skipped_count"] == 2
+    assert len(fetched_urls) == 3
+    assert [row["domain"] for row in rows].count("market.example") == 2
+    assert [row["domain"] for row in rows].count("direct.example") == 1
+    assert metadata["collection_policy"]["max_domain_rows_per_domain"] == 2
+
+
 def test_freeze_primary_dataset_as_baseline_copies_bundle(monkeypatch, tmp_path):
     dataset_path = tmp_path / "ru_commercial_dataset.csv"
     failures_path = tmp_path / "ru_commercial_dataset_failures.csv"

@@ -29,6 +29,7 @@ FINAL_LABEL_SCHEMA_VERSION = "query-competitiveness-rubric-v1"
 FINAL_MODEL_PATH = Path(__file__).resolve().parents[2] / "artifacts" / "page_quality_model.dataset-v7-final-candidate.pkl"
 FINAL_DATASET_DIR = Path(__file__).resolve().parents[2] / "data" / "dataset_versions" / FINAL_DATASET_VERSION
 FINAL_DATASET_PATH = FINAL_DATASET_DIR / "dataset.csv"
+FINAL_HARD_NEGATIVE_DATASET_PATH = FINAL_DATASET_DIR / "dataset.with-hard-negatives.csv"
 FINAL_LABELED_DATASET_PATH = FINAL_DATASET_DIR / "dataset.labeled.csv"
 FINAL_MANIFEST_PATH = FINAL_DATASET_DIR / "manifest.json"
 FINAL_SPLIT_PATH = FINAL_DATASET_DIR / "split.json"
@@ -96,10 +97,17 @@ def validate_final_dataset(
     *,
     dataset_path: str | Path = FINAL_DATASET_PATH,
     manifest_path: str | Path = FINAL_MANIFEST_PATH,
+    hard_negative_dataset_path: str | Path = FINAL_HARD_NEGATIVE_DATASET_PATH,
     domain_cap: int = DOMAIN_CAP_PER_DOMAIN,
 ) -> dict[str, Any]:
     manifest = _read_manifest(manifest_path)
     resolved_dataset_path = Path(dataset_path)
+    resolved_hard_negative_path = Path(hard_negative_dataset_path)
+    hard_negatives_required = (
+        manifest.get("collection_policy", {}).get("hard_negatives_required") is True
+        if isinstance(manifest.get("collection_policy"), dict)
+        else False
+    )
     checks: dict[str, bool] = {
         "dataset_exists": resolved_dataset_path.exists(),
         "manifest_exists": Path(manifest_path).exists(),
@@ -109,10 +117,18 @@ def validate_final_dataset(
         "weak_serp_labels_not_final": manifest.get("collection_policy", {}).get("weak_serp_labels_allowed") is False
         if isinstance(manifest.get("collection_policy"), dict)
         else True,
+        "hard_negatives_materialized": resolved_hard_negative_path.exists() if hard_negatives_required else True,
     }
     rows: list[dict[str, str]] = []
     if resolved_dataset_path.exists():
         rows = load_dataset_rows(resolved_dataset_path)
+    hard_negative_rows: list[dict[str, str]] = []
+    if resolved_hard_negative_path.exists():
+        hard_negative_rows = load_dataset_rows(resolved_hard_negative_path)
+    hard_negative_rows_count = sum(
+        1 for row in hard_negative_rows if str(row.get("hard_negative") or "").strip() in {"1", "true", "True"}
+    )
+    checks["hard_negatives_present"] = hard_negative_rows_count > 0 if hard_negatives_required else True
     queries = {str(row.get("query") or "") for row in rows if str(row.get("query") or "").strip()}
     categories = {str(row.get("category") or "") for row in rows if str(row.get("category") or "").strip()}
     cities = {str(row.get("city") or "") for row in rows if str(row.get("city") or "").strip()}
@@ -139,6 +155,9 @@ def validate_final_dataset(
         "max_domain_rows": max_domain_rows,
         "domain_cap": domain_cap,
         "dataset_path": str(resolved_dataset_path),
+        "hard_negative_dataset_path": str(resolved_hard_negative_path),
+        "hard_negative_rows_count": hard_negative_rows_count,
+        "training_rows_count": len(hard_negative_rows) if hard_negative_rows else len(rows),
         "manifest_path": str(Path(manifest_path)),
     }
 
@@ -246,6 +265,7 @@ def _candidate_name(candidate: Mapping[str, Any]) -> str:
 def train_final_candidate(
     *,
     dataset_path: str | Path = FINAL_DATASET_PATH,
+    training_dataset_path: str | Path = FINAL_HARD_NEGATIVE_DATASET_PATH,
     labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
     candidate_model_path: str | Path = FINAL_MODEL_PATH,
     split_output_path: str | Path = FINAL_SPLIT_PATH,
@@ -255,7 +275,10 @@ def train_final_candidate(
     validation = validate_final_dataset(dataset_path=dataset_path)
     if not validation["passed"]:
         raise ValueError(f"dataset-v7-final is not ready for training: {validation['failed_checks']}")
-    label_report = apply_final_labels(dataset_path=dataset_path, output_path=labeled_dataset_path)
+    resolved_training_dataset_path = Path(training_dataset_path)
+    if not resolved_training_dataset_path.exists():
+        resolved_training_dataset_path = Path(dataset_path)
+    label_report = apply_final_labels(dataset_path=resolved_training_dataset_path, output_path=labeled_dataset_path)
     rows = load_dataset_rows(labeled_dataset_path)
     train_rows, validation_rows, split_metadata = split_dataset_rows(rows, test_size=test_size, random_state=random_state)
     feature_schema = get_model_feature_schema(MODEL_SCHEMA_VERSION_V3)
@@ -302,6 +325,8 @@ def train_final_candidate(
             "categories_count": len({str(row.get("category") or "") for row in rows}),
             "cities_count": len({str(row.get("city") or "") for row in rows if str(row.get("city") or "").strip()}),
             "manifest_generated_at": _read_manifest().get("generated_at"),
+            "source_dataset_path": str(Path(dataset_path)),
+            "training_dataset_path": str(resolved_training_dataset_path),
         },
     }
     saved_path = save_model(
@@ -494,6 +519,7 @@ def run_final_pipeline(*, publish: bool = False) -> dict[str, Any]:
             "validation": validation,
             "next_command": (
                 "Collect dataset-v7-final top-10 pages, mark manifest ready_for_training=true, "
+                "materialize hard negatives with `python -m app.ml.final_hard_negatives`, "
                 "then run `python -m app.ml.final_query_competitiveness --train --decide`."
             ),
         }

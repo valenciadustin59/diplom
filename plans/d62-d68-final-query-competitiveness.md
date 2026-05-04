@@ -8,6 +8,7 @@ This local mirror records the final-model implementation direction after the pro
 - `D63`: `query_relevance_v2` seed catalog and `dataset-v7-final` seed manifest were generated from `scripts/generate_final_query_catalog.py`: `500` unique queries, `50` expanded categories, top-10 collection intent, and five cities.
 - `D64-D67`: `app.ml.final_query_competitiveness` now provides the final release pipeline: validate dataset readiness, apply deterministic expert-rubric labels, train a v3 CatBoost candidate, run product guardrails, and publish only after a `publish_candidate` decision.
 - `D68`: score explanation now supports five user-facing factor groups: query relevance, topic completeness, commercial trust, technical access, and competitor context. The UI keeps old top positive/negative factors as fallback for legacy audits.
+- `D69`: collection readiness was added after this wave. `dataset_builder` now has `--max-domain-rows-per-domain`, and `app.ml.final_hard_negatives` materializes `dataset.with-hard-negatives.csv` from saved snapshots before final training.
 
 ## Current State
 
@@ -31,10 +32,18 @@ cd backend
 .venv\Scripts\python.exe -m app.ml.final_query_competitiveness --validate
 ```
 
+Collect final top-10 dataset with domain cap:
+
+```powershell
+cd backend
+.venv\Scripts\python.exe -m app.ml.dataset_builder --versioned-layout --dataset-version dataset-v7-final --max-domain-rows-per-domain 12 --max-workers 6 --query-delay 1.0
+```
+
 After real top-10 collection and `ready_for_training=true`:
 
 ```powershell
 cd backend
+.venv\Scripts\python.exe -m app.ml.final_hard_negatives --max-negatives-per-query 2
 .venv\Scripts\python.exe -m app.ml.final_query_competitiveness --train
 .venv\Scripts\python.exe -m app.ml.final_query_competitiveness --decide
 .venv\Scripts\python.exe -m app.ml.final_query_competitiveness --publish

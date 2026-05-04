@@ -18,7 +18,9 @@
   "collection_policy": {
     "serp_depth": "top_10_full",
     "domain_dedupe": "domain_cap",
+    "max_domain_rows_per_domain": 12,
     "hard_negatives_required": true,
+    "hard_negative_materialization": "dataset.with-hard-negatives.csv via app.ml.final_hard_negatives",
     "weak_serp_labels_allowed": false,
     "current_dataset_v6_is_draft_only": true
   },

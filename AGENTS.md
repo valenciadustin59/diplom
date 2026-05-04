@@ -181,6 +181,17 @@
 - Running `cd backend && .venv\Scripts\python.exe -m app.ml.final_query_competitiveness` currently writes blocked evidence to `backend/artifacts/ranking-benchmarks/dataset-v7-final/final-query-competitiveness-report.json` because `dataset-v7-final/dataset.csv` has not been collected yet.
 - Score explanations now include `factor_groups` for user-facing UI: query relevance, content depth, commercial trust, technical access and competitor context. Old top positive/negative factors remain for legacy compatibility.
 
+## Current D69 Dataset-v7 Collection Readiness Evidence
+
+- `D69` is implemented locally; local mirror: `plans/d69-dataset-v7-collection-readiness.md`.
+- `backend/app/ml/dataset_builder.py` now supports `--max-domain-rows-per-domain` and enforces the cap before parallel fetch. Recommended value for `dataset-v7-final` is `12`.
+- The cap is resume-aware: existing successful dataset rows are counted before new SERP pages are scheduled.
+- Dataset metadata records `collection_policy.max_domain_rows_per_domain` and `domain_cap_skipped_count`.
+- `backend/app/ml/final_hard_negatives.py` materializes `dataset.with-hard-negatives.csv` from saved snapshot artifacts by cloning pages from other categories and recomputing query-dependent features under the target query.
+- `backend/app/ml/final_query_competitiveness.py` now blocks final training if the v7 manifest requires hard negatives and the hard-negative dataset is missing or empty.
+- D69 targeted verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_training_pipeline.py::test_build_dataset_enforces_domain_cap_before_parallel_fetch backend/tests/test_final_hard_negatives.py backend/tests/test_final_query_competitiveness.py -q` -> `6 passed`.
+- Next live step is collection, not publish: `cd backend && .venv\Scripts\python.exe -m app.ml.dataset_builder --versioned-layout --dataset-version dataset-v7-final --max-domain-rows-per-domain 12 --max-workers 6 --query-delay 1.0`. After collection, mark `manifest.json` `ready_for_training=true`, run `python -m app.ml.final_hard_negatives`, then validate/train/decide with `app.ml.final_query_competitiveness`.
+
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 
 Текущий корень репозитория:

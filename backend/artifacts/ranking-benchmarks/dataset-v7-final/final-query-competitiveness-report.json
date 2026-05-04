@@ -1,6 +1,6 @@
 {
   "task": "D62-D68",
-  "generated_at": "2026-05-04T09:51:06.435281+00:00",
+  "generated_at": "2026-05-04T10:10:44.242629+00:00",
   "status": "blocked_until_dataset_v7_collection",
   "validation": {
     "passed": false,
@@ -10,6 +10,8 @@
       "manifest_is_final_version": true,
       "manifest_ready_for_training": false,
       "weak_serp_labels_not_final": true,
+      "hard_negatives_materialized": false,
+      "hard_negatives_present": false,
       "min_queries": false,
       "min_categories": false,
       "min_cities": false,
@@ -18,6 +20,8 @@
     "failed_checks": [
       "dataset_exists",
       "manifest_ready_for_training",
+      "hard_negatives_materialized",
+      "hard_negatives_present",
       "min_queries",
       "min_categories",
       "min_cities"
@@ -30,7 +34,10 @@
     "max_domain_rows": 0,
     "domain_cap": 12,
     "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
+    "hard_negative_dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.with-hard-negatives.csv",
+    "hard_negative_rows_count": 0,
+    "training_rows_count": 0,
     "manifest_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\manifest.json"
   },
-  "next_command": "Collect dataset-v7-final top-10 pages, mark manifest ready_for_training=true, then run `python -m app.ml.final_query_competitiveness --train --decide`."
+  "next_command": "Collect dataset-v7-final top-10 pages, mark manifest ready_for_training=true, materialize hard negatives with `python -m app.ml.final_hard_negatives`, then run `python -m app.ml.final_query_competitiveness --train --decide`."
 }
