@@ -61,3 +61,4 @@ output/d75-collection/
 !backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v6-query-relevance-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v7-final-candidate.pkl

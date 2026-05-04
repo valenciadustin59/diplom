@@ -13,6 +13,7 @@ from typing import Any, Mapping, Sequence
 from app.ml.model import DEFAULT_MODEL_PATH, clear_model_cache, load_model_artifact, save_model
 from app.ml.model_schema import MODEL_SCHEMA_VERSION_V3, get_model_feature_schema
 from app.ml.no_publish_decision import sha1_file
+from app.ml.ranking_benchmark import build_feature_importance_summary
 from app.ml.train import (
     evaluate_model_rows,
     load_dataset_rows,
@@ -42,6 +43,9 @@ FINAL_SPLIT_VALIDATION_MD_PATH = FINAL_DATASET_DIR / "d78-split-validation-repor
 FINAL_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / FINAL_DATASET_VERSION
 FINAL_REPORT_JSON_PATH = FINAL_OUTPUT_DIR / "final-query-competitiveness-report.json"
 FINAL_REPORT_MD_PATH = FINAL_OUTPUT_DIR / "final-query-competitiveness-report.md"
+D79_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d79"
+D79_REPORT_JSON_PATH = D79_OUTPUT_DIR / "d79-candidate-training-report.json"
+D79_REPORT_MD_PATH = D79_OUTPUT_DIR / "d79-candidate-training-report.md"
 VERSIONED_ARTIFACTS_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "versions"
 
 DOMAIN_CAP_PER_DOMAIN = 12
@@ -256,6 +260,52 @@ def _write_split_validation_markdown(path: str | Path, report: Mapping[str, Any]
         lines.extend(f"- `{check}`" for check in failed_checks)
     else:
         lines.append("- none")
+    resolved_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def _write_training_report_markdown(path: str | Path, report: Mapping[str, Any]) -> None:
+    resolved_path = Path(path)
+    resolved_path.parent.mkdir(parents=True, exist_ok=True)
+    split = report.get("split") if isinstance(report.get("split"), dict) else {}
+    metrics = report.get("metrics") if isinstance(report.get("metrics"), dict) else {}
+    feature_importance = (
+        report.get("feature_importance_summary")
+        if isinstance(report.get("feature_importance_summary"), dict)
+        else {}
+    )
+    top_features = feature_importance.get("top_features") if isinstance(feature_importance.get("top_features"), list) else []
+    lines = [
+        "# D79 Dataset-v7 Final Candidate Training",
+        "",
+        f"- Dataset version: `{report.get('dataset_version')}`",
+        f"- Selected candidate: `{report.get('selected_candidate')}`",
+        f"- Candidate artifact: `{report.get('candidate_model_path')}`",
+        f"- Candidate SHA1: `{report.get('candidate_sha1')}`",
+        f"- Runtime enabled: `{report.get('runtime_enabled')}`",
+        f"- Production artifact changed: `{report.get('production_artifact_changed')}`",
+        f"- Split mode: `{split.get('split_mode')}`",
+        f"- Train rows: `{split.get('train_rows_count')}`",
+        f"- Validation rows: `{split.get('validation_rows_count')}`",
+        "",
+        "## Metrics",
+        "",
+        f"- MAE: `{metrics.get('mae')}`",
+        f"- RMSE: `{metrics.get('rmse')}`",
+        f"- Spearman: `{metrics.get('spearman_mean')}`",
+        f"- NDCG@10: `{metrics.get('ndcg_at_10')}`",
+        f"- Top-3 diagnostic: `{metrics.get('top_3_hit_rate')}`",
+        "",
+        "## Top Features",
+        "",
+    ]
+    if top_features:
+        lines.extend(
+            f"- `{item.get('feature')}`: `{item.get('importance')}`"
+            for item in top_features[:10]
+            if isinstance(item, dict)
+        )
+    else:
+        lines.append("- unavailable")
     resolved_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -734,8 +784,11 @@ def train_final_candidate(
     labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
     candidate_model_path: str | Path = FINAL_MODEL_PATH,
     split_output_path: str | Path = FINAL_SPLIT_PATH,
+    report_json_path: str | Path = D79_REPORT_JSON_PATH,
+    report_md_path: str | Path = D79_REPORT_MD_PATH,
     random_state: int = 42,
     test_size: float = 0.2,
+    relabel: bool = False,
 ) -> dict[str, Any]:
     validation = validate_final_dataset(dataset_path=dataset_path)
     if not validation["passed"]:
@@ -743,7 +796,10 @@ def train_final_candidate(
     resolved_training_dataset_path = Path(training_dataset_path)
     if not resolved_training_dataset_path.exists():
         resolved_training_dataset_path = Path(dataset_path)
-    label_report = apply_final_labels(dataset_path=resolved_training_dataset_path, output_path=labeled_dataset_path)
+    if relabel or not Path(labeled_dataset_path).exists():
+        label_report = apply_final_labels(dataset_path=resolved_training_dataset_path, output_path=labeled_dataset_path)
+    else:
+        label_report = _load_json(FINAL_LABEL_REPORT_JSON_PATH)
     rows = load_dataset_rows(labeled_dataset_path)
     existing_split = _load_json(split_output_path)
     if existing_split:
@@ -789,20 +845,31 @@ def train_final_candidate(
     )
     catboost_candidates = [candidate for candidate in candidates if candidate.get("model_type") == "CatBoostRegressor"]
     if not catboost_candidates:
-        raise RuntimeError("Final D65 candidate must be CatBoostRegressor; CatBoost candidate was not produced.")
+        raise RuntimeError("Final D79 candidate must be CatBoostRegressor; CatBoost candidate was not produced.")
     selected = catboost_candidates[0]
+    feature_importance_summary = build_feature_importance_summary(
+        selected["model"],
+        feature_schema.feature_columns,
+        top_n=15,
+    )
+    generated_at = datetime.now(UTC).isoformat()
     metadata = {
         "source": "local_dataset",
         "model_type": _candidate_name(selected),
         "dataset_version": FINAL_DATASET_VERSION,
         "artifact_version": FINAL_ARTIFACT_VERSION,
         "artifact_family": "page_quality_model.dataset-v7-final",
-        "candidate_name": "final_query_competitiveness_catboost",
+        "candidate_name": "final_query_competitiveness_catboost_v7",
         "candidate_family": "query_competitiveness",
+        "training_task": "D79",
+        "trained_at": generated_at,
         "model_schema_version": MODEL_SCHEMA_VERSION_V3,
         "feature_columns": list(feature_schema.feature_columns),
         "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
         "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "split_path": str(Path(split_output_path)),
+        "split_mode": str(split.get("split_mode") or "unknown"),
+        "feature_importance_summary": feature_importance_summary,
         "non_production": True,
         "runtime_enabled": False,
         "dataset_metadata": {
@@ -815,35 +882,101 @@ def train_final_candidate(
             "manifest_generated_at": _read_manifest().get("generated_at"),
             "source_dataset_path": str(Path(dataset_path)),
             "training_dataset_path": str(resolved_training_dataset_path),
+            "labeled_dataset_path": str(Path(labeled_dataset_path)),
         },
+    }
+    metrics = {
+        **selected["metrics"],
+        "train_rows": float(len(train_rows)),
+        "validation_rows": float(len(validation_rows)),
+        "split_mode": str(split.get("split_mode") or "unknown"),
     }
     saved_path = save_model(
         model=selected["model"],
-        metrics={
-            **selected["metrics"],
-            "train_rows": float(len(train_rows)),
-            "validation_rows": float(len(validation_rows)),
-            "split_mode": str(split.get("split_mode") or "unknown"),
-        },
+        metrics=metrics,
         model_path=candidate_model_path,
         metadata=metadata,
     )
     sidecar_path = Path(f"{saved_path}.metadata.json")
+    candidate_sha1 = sha1_file(Path(saved_path))
     sidecar_path.write_text(
-        json.dumps({**metadata, "metrics": selected["metrics"], "model_path": str(saved_path)}, ensure_ascii=False, indent=2),
+        json.dumps(
+            {
+                **metadata,
+                "metrics": metrics,
+                "model_path": str(saved_path),
+                "candidate_sha1": candidate_sha1,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
-    return {
-        "task": "D65",
+    report = {
+        "task": "D79",
+        "generated_at": generated_at,
+        "dataset_version": FINAL_DATASET_VERSION,
+        "artifact_version": FINAL_ARTIFACT_VERSION,
         "candidate_model_path": str(saved_path),
         "candidate_metadata_path": str(sidecar_path),
+        "candidate_sha1": candidate_sha1,
         "selected_candidate": _candidate_name(selected),
-        "metrics": selected["metrics"],
+        "candidate_name": "final_query_competitiveness_catboost_v7",
+        "metrics": metrics,
+        "candidates": [
+            {
+                "model_type": str(candidate.get("model_type") or "unknown"),
+                "metrics": candidate.get("metrics") if isinstance(candidate.get("metrics"), dict) else {},
+                "selected": candidate is selected,
+            }
+            for candidate in candidates
+        ],
         "benchmark": benchmark,
         "label_report": label_report,
         "split": split,
         "validation": validation,
+        "feature_importance_summary": feature_importance_summary,
+        "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
+        "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "model_schema_version": MODEL_SCHEMA_VERSION_V3,
+        "feature_count": len(feature_schema.feature_columns),
+        "runtime_enabled": False,
+        "production_artifact_changed": False,
+        "production_artifact_sha1": sha1_file(Path(DEFAULT_MODEL_PATH)),
     }
+    _write_json(report_json_path, report)
+    _write_training_report_markdown(report_md_path, report)
+
+    manifest = _read_manifest(FINAL_MANIFEST_PATH)
+    manifest["status"] = "candidate_trained"
+    manifest["ready_for_training"] = True
+    manifest["reason"] = "D79 non-production candidate trained. Controlled decision/publish is still required before runtime changes."
+    manifest["training_progress"] = {
+        "task": "D79",
+        "completed_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "candidate_model_path": str(Path(saved_path).resolve()),
+        "candidate_metadata_path": str(sidecar_path.resolve()),
+        "candidate_sha1": candidate_sha1,
+        "report_path": str(Path(report_json_path).resolve()),
+        "markdown_report_path": str(Path(report_md_path).resolve()),
+        "selected_candidate": report["candidate_name"],
+        "model_type": _candidate_name(selected),
+        "model_schema_version": MODEL_SCHEMA_VERSION_V3,
+        "feature_count": len(feature_schema.feature_columns),
+        "metrics": metrics,
+        "runtime_enabled": False,
+        "production_artifact_changed": False,
+        "notes": "D79 trains a non-production candidate only. D80 must benchmark/decide before any publish.",
+    }
+    quality_gates = manifest.get("quality_gates") if isinstance(manifest.get("quality_gates"), dict) else {}
+    manifest["quality_gates"] = {
+        **quality_gates,
+        "ready_for_training": True,
+        "candidate_training_completed": True,
+        "candidate_runtime_enabled": False,
+    }
+    _write_json(FINAL_MANIFEST_PATH, manifest)
+    return report
 
 
 def _predict_rows(model: Any, rows: Sequence[Mapping[str, str]], feature_columns: Sequence[str]) -> list[float]:
@@ -1042,6 +1175,10 @@ def main() -> None:
     parser.add_argument("--split-validation-md", default="")
     parser.add_argument("--split-test-size", type=float, default=0.2)
     parser.add_argument("--split-random-state", type=int, default=42)
+    parser.add_argument("--training-report", default="")
+    parser.add_argument("--training-report-md", default="")
+    parser.add_argument("--candidate-model-output", default="")
+    parser.add_argument("--relabel", action="store_true")
     args = parser.parse_args()
     if args.validate:
         print(json.dumps(validate_final_dataset(), ensure_ascii=False, indent=2))
@@ -1087,7 +1224,20 @@ def main() -> None:
         )
         return
     if args.train:
-        print(json.dumps(train_final_candidate(), ensure_ascii=False, indent=2))
+        print(
+            json.dumps(
+                train_final_candidate(
+                    candidate_model_path=Path(args.candidate_model_output)
+                    if args.candidate_model_output
+                    else FINAL_MODEL_PATH,
+                    report_json_path=Path(args.training_report) if args.training_report else D79_REPORT_JSON_PATH,
+                    report_md_path=Path(args.training_report_md) if args.training_report_md else D79_REPORT_MD_PATH,
+                    relabel=bool(args.relabel),
+                ),
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
         return
     if args.decide:
         print(json.dumps(build_final_decision_report(), ensure_ascii=False, indent=2))

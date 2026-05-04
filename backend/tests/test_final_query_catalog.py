@@ -41,7 +41,7 @@ def test_final_query_catalog_expands_categories_and_cities() -> None:
     assert cities == {"Москва", "Санкт-Петербург", "Екатеринбург", "Казань", "Новосибирск"}
 
 
-def test_dataset_v7_manifest_preserves_seed_policy_after_split_validation() -> None:
+def test_dataset_v7_manifest_preserves_seed_policy_after_candidate_training() -> None:
     catalog_rows = _load_rows(CATALOG_PATH)
     seed_rows = _load_rows(SEEDS_PATH)
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
@@ -54,6 +54,7 @@ def test_dataset_v7_manifest_preserves_seed_policy_after_split_validation() -> N
     assert manifest["collection_policy"]["current_dataset_v6_is_draft_only"] is True
     assert dataset_manifest["collection_policy"]["weak_serp_labels_allowed"] is False
     assert dataset_manifest["collection_policy"]["current_dataset_v6_is_draft_only"] is True
-    assert dataset_manifest["status"] == "split_validated"
+    assert dataset_manifest["status"] == "candidate_trained"
     assert dataset_manifest["ready_for_training"] is True
     assert dataset_manifest["split_progress"]["query_overlap_count"] == 0
+    assert dataset_manifest["training_progress"]["runtime_enabled"] is False

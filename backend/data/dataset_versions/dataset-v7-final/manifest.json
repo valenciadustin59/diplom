@@ -45,9 +45,9 @@
   },
   "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
   "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv",
-  "status": "split_validated",
+  "status": "candidate_trained",
   "ready_for_training": true,
-  "reason": "Final labels and leakage-safe split validation completed. Dataset is ready for D79 training.",
+  "reason": "D79 non-production candidate trained. Controlled decision/publish is still required before runtime changes.",
   "collection_progress": {
     "task": "D75",
     "started_at": "2026-05-04T12:10:25+00:00",
@@ -177,6 +177,35 @@
     "query_overlap_count": 0,
     "hard_negative_above_cap_count": 0,
     "label_schema_version": "query-competitiveness-rubric-v1",
-    "score_contract_version": "query-competitiveness-final-v2"
+    "score_contract_version": "query-competitiveness-final-v2",
+    "candidate_training_completed": true,
+    "candidate_runtime_enabled": false
+  },
+  "training_progress": {
+    "task": "D79",
+    "completed_at": "2026-05-04T18:33:25+00:00",
+    "candidate_model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v7-final-candidate.pkl",
+    "candidate_metadata_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v7-final-candidate.pkl.metadata.json",
+    "candidate_sha1": "65c30b2611e6cde393fae52d1f820a00e7d42681",
+    "report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d79\\d79-candidate-training-report.json",
+    "markdown_report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d79\\d79-candidate-training-report.md",
+    "selected_candidate": "final_query_competitiveness_catboost_v7",
+    "model_type": "CatBoostRegressor",
+    "model_schema_version": "v3",
+    "feature_count": 148,
+    "metrics": {
+      "rmse": 2.584978,
+      "mae": 1.699042,
+      "spearman_mean": 0.929238,
+      "ndcg_at_10": 0.996686,
+      "top_3_hit_rate": 0.91,
+      "validation_queries": 100.0,
+      "train_rows": 3898.0,
+      "validation_rows": 978.0,
+      "split_mode": "group_by_query_category_stratified"
+    },
+    "runtime_enabled": false,
+    "production_artifact_changed": false,
+    "notes": "D79 trains a non-production candidate only. D80 must benchmark/decide before any publish."
   }
 }
