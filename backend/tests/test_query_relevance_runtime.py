@@ -84,7 +84,10 @@ def test_unrelated_ecommerce_page_is_capped_when_only_intent_modifier_matches(mo
     assert features["query_core_keyword_coverage_ratio"] == 0.0
     assert guardrail["active"] is True
     assert guardrail["reason"] == "severe_query_topic_mismatch"
-    assert guardrail["adjusted_score"] == 35.0
+    assert guardrail["band"] == "mismatch"
+    assert guardrail["band_min"] == 10.0
+    assert guardrail["band_max"] == 35.0
+    assert guardrail["adjusted_score"] == 32.0
 
 
 def test_relevant_product_page_without_buy_word_keeps_value_for_commercial_query(monkeypatch):
@@ -140,3 +143,54 @@ def test_relevant_service_page_without_price_word_keeps_value_for_price_query(mo
     assert features["query_core_keyword_coverage_ratio"] == 1.0
     assert has_strong_query_topic_fit(features) is True
     assert guardrail["active"] is False
+
+
+def test_unrelated_good_page_keeps_quality_difference_inside_low_relevance_band(monkeypatch):
+    _patch_semantic_similarity(monkeypatch, 0.18)
+    html = """
+    <html>
+      <head>
+        <title>Курсы английского языка для взрослых</title>
+        <meta name="description" content="Групповые и индивидуальные занятия английским языком." />
+      </head>
+      <body>
+        <h1>Курсы английского языка</h1>
+        <p>Подготовка к собеседованию, разговорная практика, тестирование уровня,
+        расписание групп, преподаватели и онлайн-занятия для взрослых.</p>
+      </body>
+    </html>
+    """
+
+    features = build_features(html=html, text="", query="купить беговую дорожку")
+    weak_page = build_query_relevance_guardrail(features, 40.0)
+    strong_page = build_query_relevance_guardrail(features, 90.0)
+
+    assert weak_page["reason"] == "severe_query_topic_mismatch"
+    assert strong_page["reason"] == "severe_query_topic_mismatch"
+    assert weak_page["adjusted_score"] == 20.0
+    assert strong_page["adjusted_score"] == 32.5
+    assert weak_page["adjusted_score"] < strong_page["adjusted_score"] < 35.0
+
+
+def test_unusable_page_is_kept_in_zero_to_ten_band():
+    features = {
+        "http_status_code": 404,
+        "http_status_ok": 0,
+        "page_indexable": 0,
+        "robots_noindex": 1,
+        "word_count": 0,
+        "text_length_chars": 0,
+        "semantic_similarity": 0.0,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_density": 0.0,
+    }
+
+    guardrail = build_query_relevance_guardrail(features, 80.0)
+
+    assert guardrail["reason"] == "page_unusable"
+    assert guardrail["band"] == "unusable"
+    assert guardrail["band_min"] == 0.0
+    assert guardrail["band_max"] == 10.0
+    assert guardrail["adjusted_score"] == 8.0
+    assert "http_status_not_ok" in guardrail["unusable_reasons"]

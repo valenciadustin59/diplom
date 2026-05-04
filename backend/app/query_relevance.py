@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Mapping
 
 
-QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-guardrail-v3"
+QUERY_RELEVANCE_GUARDRAIL_VERSION = "query-relevance-bands-v1"
 SEMANTIC_LIMITING_FACTOR_KEYS = frozenset(
     {
         "semantic_relevance",
@@ -20,6 +20,35 @@ def _bounded_signal(value: float) -> float:
 def _feature_value(features: Mapping[str, object], key: str) -> float:
     value = features.get(key, 0.0)
     return float(value) if isinstance(value, (int, float)) else 0.0
+
+
+def _has_numeric_feature(features: Mapping[str, object], key: str) -> bool:
+    return isinstance(features.get(key), (int, float))
+
+
+def _page_unusable_reasons(features: Mapping[str, object]) -> list[str]:
+    reasons: list[str] = []
+    http_status_code = _feature_value(features, "http_status_code")
+    if http_status_code >= 100.0 and _feature_value(features, "http_status_ok") < 0.5:
+        reasons.append("http_status_not_ok")
+    if _has_numeric_feature(features, "page_indexable") and _feature_value(features, "page_indexable") < 0.5:
+        reasons.append("page_not_indexable")
+    if _has_numeric_feature(features, "robots_noindex") and _feature_value(features, "robots_noindex") > 0.5:
+        reasons.append("robots_noindex")
+    if (
+        _has_numeric_feature(features, "word_count")
+        and _has_numeric_feature(features, "text_length_chars")
+        and _feature_value(features, "word_count") < 20.0
+        and _feature_value(features, "text_length_chars") < 200.0
+    ):
+        reasons.append("empty_or_too_thin_content")
+    return reasons
+
+
+def _banded_score(score: float, lower_bound: float, upper_bound: float) -> tuple[float, float]:
+    quality_ratio = _bounded_signal(score / 100.0)
+    dynamic_limit = round(lower_bound + ((upper_bound - lower_bound) * quality_ratio), 4)
+    return round(max(0.0, min(100.0, min(score, dynamic_limit))), 4), dynamic_limit
 
 
 def build_query_topic_metrics(features: Mapping[str, object]) -> dict[str, float]:
@@ -99,10 +128,18 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
     query_prominence = metrics["query_prominence_score"]
     relevance_score = metrics["relevance_score"]
     strong_topic_fit = has_strong_query_topic_fit(features)
+    unusable_reasons = _page_unusable_reasons(features)
 
     reason: str | None = None
-    cap: float | None = None
-    if (
+    band: str | None = None
+    band_min: float | None = None
+    band_max: float | None = None
+    if unusable_reasons:
+        reason = "page_unusable"
+        band = "unusable"
+        band_min = 0.0
+        band_max = 10.0
+    elif (
         not strong_topic_fit
         and relevance_score < 0.35
         and core_keyword_coverage < 0.34
@@ -110,7 +147,9 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         and core_query_density < 0.002
     ):
         reason = "severe_query_topic_mismatch"
-        cap = 35.0
+        band = "mismatch"
+        band_min = 10.0
+        band_max = 35.0
     elif (
         not strong_topic_fit
         and relevance_score < 0.48
@@ -119,7 +158,9 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         and core_query_density < 0.004
     ):
         reason = "weak_query_topic_match"
-        cap = 55.0
+        band = "weak_match"
+        band_min = 35.0
+        band_max = 55.0
     elif (
         not strong_topic_fit
         and relevance_score < 0.58
@@ -128,16 +169,26 @@ def build_query_relevance_guardrail(features: Mapping[str, object], score: float
         and query_prominence < 0.35
     ):
         reason = "partial_query_topic_match"
-        cap = 72.0
+        band = "partial_match"
+        band_min = 55.0
+        band_max = 72.0
 
-    adjusted_score = round(max(0.0, min(100.0, min(score, cap))), 4) if cap is not None else score
+    adjusted_score, dynamic_cap = (
+        _banded_score(score, band_min, band_max)
+        if band_min is not None and band_max is not None
+        else (round(max(0.0, min(100.0, score)), 4), None)
+    )
     return {
         "schema_version": QUERY_RELEVANCE_GUARDRAIL_VERSION,
-        "active": cap is not None and adjusted_score < score,
+        "active": adjusted_score < score,
         "reason": reason,
-        "cap": cap,
+        "band": band,
+        "band_min": band_min,
+        "band_max": band_max,
+        "cap": dynamic_cap,
         "original_score": score,
         "adjusted_score": adjusted_score,
         "score_delta": round(adjusted_score - score, 4),
         "metrics": metrics,
+        "unusable_reasons": unusable_reasons,
     }
