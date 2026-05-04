@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from app.models import AuditEvent
 from app.schemas.audit import (
+    AuditEarlyStopRead,
     AuditTimelineCriticalPathStageRead,
     AuditTimelineDiagnosticsRead,
     AuditTimelineFanOutRead,
@@ -140,6 +141,7 @@ def build_audit_timeline_diagnostics(
     audit_status: str,
     processing_version: int | None,
     events: list[AuditEvent],
+    early_stop: AuditEarlyStopRead | None = None,
 ) -> AuditTimelineDiagnosticsRead:
     if not events:
         return AuditTimelineDiagnosticsRead(
@@ -157,6 +159,7 @@ def build_audit_timeline_diagnostics(
             critical_path_stages=[],
             stage_breakdown=[],
             fan_out=None,
+            early_stop=early_stop,
         )
 
     stage_groups: dict[str, list[AuditEvent]] = {}
@@ -217,4 +220,5 @@ def build_audit_timeline_diagnostics(
         critical_path_stages=critical_path_stages,
         stage_breakdown=stage_breakdown,
         fan_out=fan_out,
+        early_stop=early_stop,
     )

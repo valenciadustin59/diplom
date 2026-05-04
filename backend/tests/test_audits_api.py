@@ -142,7 +142,125 @@ def test_get_audit_timeline_diagnostics_returns_empty_timeline_for_new_audit(cli
         'critical_path_stages': [],
         'stage_breakdown': [],
         'fan_out': None,
+        'early_stop': None,
     }
+
+
+def test_early_stop_audit_exposes_runtime_contract_in_api_and_timeline(integration_client, monkeypatch):
+    monkeypatch.setattr(
+        'app.tasks.fetch_page',
+        lambda url, use_browser=True: {
+            'status': 'success',
+            'fetch_method': 'http',
+            'fetch_error_code': None,
+            'fetch_error_message': None,
+            'final_url': url,
+            'http_status': 200,
+            'html': '<html><body><h1>Wine shop</h1><p>Wine delivery and tasting sets.</p></body></html>',
+            'text': 'Wine shop with delivery and tasting sets.',
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_features',
+        lambda html, text, query: {
+            'http_status_ok': 1,
+            'page_indexable': 1,
+            'word_count': 240,
+            'text_length_chars': 1600,
+            'semantic_similarity': 0.02,
+            'keyword_coverage_ratio': 0.0,
+            'query_core_keyword_coverage_ratio': 0.0,
+            'query_intent_modifier_coverage_ratio': 0.0,
+            'query_density': 0.0,
+            'query_core_term_count': 0,
+            'exact_query_count': 0,
+            'query_in_title': 0,
+            'query_in_text': 0,
+            'title_semantic_alignment': 0.0,
+            'heading_semantic_alignment': 0.0,
+            'query_prominence_score': 0.0,
+        },
+    )
+    monkeypatch.setattr(
+        'app.tasks.build_heavy_analysis_payload',
+        lambda snapshot: (_ for _ in ()).throw(AssertionError('heavy analysis must be skipped')),
+    )
+    monkeypatch.setattr(
+        'app.tasks.search_competitor_pages',
+        lambda query, target_url, limit: (_ for _ in ()).throw(AssertionError('competitors must be skipped')),
+    )
+    monkeypatch.setattr(
+        'app.tasks.explain_score',
+        lambda features: {
+            'final_score': 3.6,
+            'rule_score': 80.0,
+            'ml_score': 82.0,
+            'relevance_guardrail': {
+                'active': True,
+                'reason': 'confident_full_query_mismatch',
+                'band': 'full_mismatch',
+                'band_min': 0.0,
+                'band_max': 5.0,
+                'adjusted_score': 3.6,
+                'early_stop': True,
+                'early_stop_decision': {
+                    'decision': 'stop',
+                    'should_stop': True,
+                    'confidence': 'high',
+                    'reason': 'confident_full_query_mismatch',
+                    'score_floor': 0.0,
+                    'score_ceiling': 5.0,
+                    'safe_to_skip_competitors': True,
+                },
+            },
+            'model_info': {'source': 'test'},
+            'weights': {'rule_weight': 0.0, 'ml_weight': 1.0},
+            'top_positive_factors': [],
+            'top_negative_factors': [],
+            'factor_groups': [],
+            'serp_relative_factors': [],
+        },
+    )
+
+    created = integration_client.post(
+        '/audits',
+        json={
+            'query': 'купить козловой кран',
+            'target_url': 'https://winemore.example/catalog',
+        },
+    )
+    audit_id = created.json()['id']
+
+    status_payload = integration_client.get(f'/audits/{audit_id}').json()
+    results_payload = integration_client.get(f'/audits/{audit_id}/results').json()
+    list_payload = integration_client.get('/audits').json()
+    events_payload = integration_client.get(f'/audits/{audit_id}/events').json()
+    diagnostics_payload = integration_client.get(f'/audits/{audit_id}/events/diagnostics').json()
+
+    assert status_payload['status'] == 'completed'
+    assert status_payload['score'] == 3.6
+    assert status_payload['early_stop']['active'] is True
+    assert status_payload['early_stop']['type'] == 'query_relevance_full_mismatch'
+    assert status_payload['early_stop']['title'] == 'Страница не соответствует запросу'
+    assert status_payload['early_stop']['score_ceiling'] == 5.0
+    assert 'competitors' in status_payload['early_stop']['skipped_stages']
+    assert status_payload['early_stop']['competitor_processing_status'] == 'skipped_early_stop'
+    assert results_payload['early_stop'] == status_payload['early_stop']
+    assert results_payload['comparison_summary']['score_basis'] == 'query_relevance_early_stop'
+    assert results_payload['comparison_summary']['skipped_stages'] == status_payload['early_stop']['skipped_stages']
+    assert results_payload['competitor_results'] == []
+    assert list_payload[0]['early_stop']['active'] is True
+    assert diagnostics_payload['early_stop'] == status_payload['early_stop']
+    assert diagnostics_payload['fan_out'] is None
+    assert not any(stage['stage'] == 'heavy_analysis' for stage in diagnostics_payload['stage_breakdown'])
+    assert not any(stage['stage'] == 'competitors' for stage in diagnostics_payload['stage_breakdown'])
+    assert any(
+        event['stage'] == 'features'
+        and event['event'] == 'preflight_stop'
+        and event['details']['safe_to_skip_competitors'] is True
+        and 'competitors' in event['details']['skipped_stages']
+        for event in events_payload['events']
+    )
 def test_create_audit_runs_full_lifecycle_and_returns_completed_payloads(integration_client, monkeypatch):
     monkeypatch.setattr(
         'app.tasks.fetch_page',
@@ -701,7 +819,7 @@ def test_create_audit_exposes_failed_timeline_for_exception_path(integration_cli
     assert diagnostics_payload['terminal_event'] == 'failed'
     assert diagnostics_payload['critical_path_duration_ms'] is not None
     assert stage_breakdown['fetch']['completed_count'] == 1
-    assert stage_breakdown['features']['completed_count'] == 1
+    assert stage_breakdown['features']['completed_count'] == 2
     assert stage_breakdown['scoring']['failed_count'] == 1
     assert stage_breakdown['pipeline']['failed_count'] == 1
     assert 'scoring' in critical_path_stages

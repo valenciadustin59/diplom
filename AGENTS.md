@@ -203,14 +203,15 @@
 
 ## Current D71-D74 Query Relevance Preflight Evidence
 
-- `D71`, `D73` and `D74` are implemented locally; local mirror: `plans/d71-d74-query-relevance-preflight-ui-regression.md`.
+- `D71`, `D72`, `D73` and `D74` are implemented locally; local mirrors: `plans/d71-d74-query-relevance-preflight-ui-regression.md` and `plans/d72-query-relevance-early-stop-runtime-contract.md`.
 - `D71` wires the D70 preflight into backend orchestration: target fetch now routes to feature extraction before heavy analysis, and only confident full query mismatch skips heavy analysis, competitor discovery, competitor fan-out and recommendations.
 - D71 early-stop audits finish as `completed`, keep score in the `0-5` band, set `competitor_processing_status=skipped_early_stop`, store `score_breakdown.relevance_guardrail.early_stop=true`, and write `comparison_summary.score_basis=query_relevance_early_stop`.
+- `D72` turns early stop into a typed API/runtime contract: `/audits`, `/audits/{id}`, `/audits/{id}/results` and `/audits/{id}/events/diagnostics` expose `early_stop` with title/message, score band, score basis, skipped stages and competitor skip status.
 - Normal or ambiguous cases continue through heavy analysis, scoring, competitors and recommendations.
 - `D73` adds a user-facing early-stop state across overview, competitors, report/export and history: `Страница не соответствует запросу`, without exposing raw ML fields such as `relevance_guardrail`, `early_stop` or `confident_full_query_mismatch`.
 - `D74` adds regression cases for unrelated good pages, relevant pages without commercial modifiers, near-topic false positives, informational queries, rare low-signal cases and insufficient extraction.
-- Verification passed: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_audit_pipeline.py backend/tests/test_query_relevance_runtime.py backend/tests/test_model_schema.py backend/tests/test_final_query_competitiveness.py -q` -> `51 passed`; `npm --prefix frontend run test -- --run src/lib/ui.test.tsx src/lib/auditReport.test.ts` -> `23 passed`.
-- D72 was not changed in this pass. No model artifact was replaced, no controlled publish/rollback was executed, and no `dataset-v7-final` live collection was started.
+- Verification passed after D72: `backend\.venv\Scripts\python.exe -m pytest backend/tests/test_audits_api.py backend/tests/test_audit_pipeline.py backend/tests/test_query_relevance_runtime.py -q` -> `54 passed`; `npm --prefix frontend run test -- --run src/lib/auditTimeline.test.ts src/lib/ui.test.tsx src/lib/auditReport.test.ts` -> `29 passed`; `npm --prefix frontend run build` -> passed.
+- No model artifact was replaced, no controlled publish/rollback was executed, and no `dataset-v7-final` live collection was started.
 
 Этот файл описывает текущее состояние репозитория и служит стартовой инструкцией для любого агента или разработчика, который начинает работу в проекте.
 

@@ -31,6 +31,13 @@ The runtime now stops only for a confident full query mismatch, keeps the audit 
 - UI intentionally hides raw fields such as `relevance_guardrail`, `early_stop` and `confident_full_query_mismatch`.
 - Competitor blocks show that comparison was not launched instead of rendering empty/failed competitor state.
 
+### D72 Runtime/API Contract
+
+- D72 was implemented after the initial D71/D73/D74 pass; detailed mirror: `plans/d72-query-relevance-early-stop-runtime-contract.md`.
+- Audit status, history, results and timeline diagnostics now expose a typed `early_stop` summary.
+- Timeline event details include score floor/ceiling, skipped stages and safe competitor-skip evidence.
+- Frontend timeline renders the early-stop state without requiring raw `relevance_guardrail` parsing.
+
 ### D74 Regression Cases
 
 Regression tests now cover:
@@ -51,14 +58,25 @@ backend\.venv\Scripts\python.exe -m pytest backend/tests/test_audit_pipeline.py 
 Result: `51 passed`.
 
 ```powershell
+backend\.venv\Scripts\python.exe -m pytest backend/tests/test_audits_api.py backend/tests/test_audit_pipeline.py backend/tests/test_query_relevance_runtime.py -q
+```
+
+Result after D72: `54 passed`.
+
+```powershell
 npm --prefix frontend run test -- --run src/lib/ui.test.tsx src/lib/auditReport.test.ts
 ```
 
 Result: `23 passed`.
+
+```powershell
+npm --prefix frontend run test -- --run src/lib/auditTimeline.test.ts src/lib/ui.test.tsx src/lib/auditReport.test.ts
+```
+
+Result after D72: `29 passed`.
 
 ## Non-Goals
 
 - No model artifact was replaced.
 - No controlled publish or rollback was executed.
 - No `dataset-v7-final` live collection was started.
-- D72 was not changed in this pass.

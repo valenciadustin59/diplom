@@ -13,6 +13,7 @@ from redis import Redis
 from redis.exceptions import RedisError
 from sqlalchemy import delete, func, select, update
 
+from app.audit_early_stop import QUERY_RELEVANCE_EARLY_STOP_SKIPPED_STAGES
 from app.audit_status import COMPLETED, COMPLETED_WITH_WARNINGS, FAILED, PROCESSING, transition_status
 from app.celery_app import celery_app, resolve_task_queue
 from app.competitors import (
@@ -543,12 +544,14 @@ def _build_relevance_early_stop_summary(score: float, score_breakdown: dict[str,
         "competitors_found": 0,
         "competitors_analyzed": 0,
         "competitors_failed": 0,
+        "skipped_stages": QUERY_RELEVANCE_EARLY_STOP_SKIPPED_STAGES,
         "relevance_guardrail": {
             "early_stop": True,
             "status": "completed",
             "reason": reason,
             "decision": decision.get("decision") or "stop",
             "confidence": decision.get("confidence"),
+            "score_floor": decision.get("score_floor") or guardrail.get("band_min"),
             "score_ceiling": decision.get("score_ceiling") or guardrail.get("band_max"),
         },
         "competitiveness": {
@@ -1259,7 +1262,10 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
                     event_buffer=event_buffer,
                     reason=preflight_decision.get("reason"),
                     confidence=preflight_decision.get("confidence"),
+                    score_floor=preflight_decision.get("score_floor"),
                     score_ceiling=preflight_decision.get("score_ceiling"),
+                    safe_to_skip_competitors=preflight_decision.get("safe_to_skip_competitors"),
+                    skipped_stages=QUERY_RELEVANCE_EARLY_STOP_SKIPPED_STAGES,
                 )
                 _set_next_orchestration_stage(audit, SCORING_STAGE)
             else:
@@ -1345,6 +1351,7 @@ def process_audit_score_target(audit_id: str, processing_version: int) -> dict[s
                 score=float(audit.score),
                 early_stop=True,
                 early_stop_reason=audit.comparison_summary["relevance_guardrail"]["reason"],
+                skipped_stages=QUERY_RELEVANCE_EARLY_STOP_SKIPPED_STAGES,
                 competitors_found=0,
                 competitors_failed=0,
                 recommendations_count=0,

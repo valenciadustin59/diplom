@@ -19,6 +19,23 @@ class AuditFailureContextRead(BaseModel):
     details: dict[str, object] | None = None
 
 
+class AuditEarlyStopRead(BaseModel):
+    schema_version: str
+    active: bool
+    type: str
+    reason: str
+    status: str
+    title: str
+    message: str
+    score: float | None = None
+    score_floor: float | None = None
+    score_ceiling: float | None = None
+    score_basis: str
+    safe_to_skip_competitors: bool
+    skipped_stages: list[str]
+    competitor_processing_status: str | None = None
+
+
 class AuditRecommendationEvidenceRead(BaseModel):
     label: str
     value: str
@@ -114,6 +131,7 @@ class AuditRead(BaseModel):
     features: dict[str, float | int] | None = None
     score: float | None = None
     score_breakdown: dict[str, object] | None = None
+    early_stop: AuditEarlyStopRead | None = None
     competitor_results: list[dict[str, object]] | None = None
     comparison_summary: dict[str, object] | None = None
     recommendations: AuditRecommendationPayloadRead | None = None
@@ -143,6 +161,7 @@ class AuditListItemRead(BaseModel):
     updated_at: datetime | None = None
     score: float | None = None
     score_breakdown: dict[str, object] | None = None
+    early_stop: AuditEarlyStopRead | None = None
     target_fetch_status: str | None = None
     warnings: list[str] | None = None
     error_message: str | None = None
@@ -159,6 +178,7 @@ class AuditResultsRead(BaseModel):
     query_intent: dict[str, object] | None = None
     features: dict[str, float | int] | None = None
     score_breakdown: dict[str, object] | None = None
+    early_stop: AuditEarlyStopRead | None = None
     competitor_results: list[dict[str, object]] | None = None
     comparison_summary: dict[str, object] | None = None
     target_fetch_status: str | None = None
@@ -254,3 +274,4 @@ class AuditTimelineDiagnosticsRead(BaseModel):
     critical_path_stages: list[AuditTimelineCriticalPathStageRead]
     stage_breakdown: list[AuditTimelineStageDiagnosticsRead]
     fan_out: AuditTimelineFanOutRead | None = None
+    early_stop: AuditEarlyStopRead | None = None

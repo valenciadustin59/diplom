@@ -110,6 +110,23 @@ export type RelevanceGuardrail = {
   [key: string]: unknown;
 };
 
+export type AuditEarlyStopSummary = {
+  schema_version: string;
+  active: boolean;
+  type: string;
+  reason: string;
+  status: string;
+  title: string;
+  message: string;
+  score: number | null;
+  score_floor: number | null;
+  score_ceiling: number | null;
+  score_basis: string;
+  safe_to_skip_competitors: boolean;
+  skipped_stages: string[];
+  competitor_processing_status: string | null;
+};
+
 export type ScoreBreakdown = {
   final_score: number;
   rule_score: number;
@@ -159,6 +176,7 @@ export type AuditStatusResponse = {
   features: Record<string, number> | null;
   score: number | null;
   score_breakdown: ScoreBreakdown | null;
+  early_stop?: AuditEarlyStopSummary | null;
   competitor_results: CompetitorResult[] | null;
   comparison_summary: ComparisonSummary | null;
   recommendations: RecommendationsBundle | null;
@@ -182,6 +200,7 @@ export type AuditListItemResponse = Pick<
   | "updated_at"
   | "score"
   | "score_breakdown"
+  | "early_stop"
   | "target_fetch_status"
   | "warnings"
   | "error_message"
@@ -198,6 +217,7 @@ export type AuditResultsResponse = {
   query_intent: Record<string, unknown> | null;
   features: Record<string, number> | null;
   score_breakdown: ScoreBreakdown | null;
+  early_stop?: AuditEarlyStopSummary | null;
   competitor_results: CompetitorResult[] | null;
   comparison_summary: ComparisonSummary | null;
   target_fetch_status: FetchStatus | null;
@@ -278,6 +298,7 @@ export type AuditTimelineDiagnosticsResponse = {
   critical_path_stages: AuditTimelineCriticalPathStage[];
   stage_breakdown: AuditTimelineStageDiagnostics[];
   fan_out: AuditTimelineFanOut | null;
+  early_stop?: AuditEarlyStopSummary | null;
 };
 
 export type AuditRecommendationsResponse = {

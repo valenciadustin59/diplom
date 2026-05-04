@@ -1,4 +1,5 @@
 import type {
+  AuditEarlyStopSummary,
   AuditResultsResponse,
   AuditStatusResponse,
   AuditTimelineDiagnosticsResponse,
@@ -117,6 +118,7 @@ export type AuditTimelineModel = {
   eventRows: TimelineEventRow[];
   warnings: string[];
   failure: TimelineFailureModel | null;
+  earlyStop: AuditEarlyStopSummary | null;
 };
 
 const TASK_STAGE_MAP: Record<string, string> = {
@@ -172,6 +174,9 @@ const EVENT_LABELS: Record<string, string> = {
   aborted: "Прервано",
 };
 
+EVENT_LABELS.preflight_stop = "Остановлено по соответствию запросу";
+EVENT_LABELS.preflight_continue = "Проверка соответствия пройдена";
+
 const STAGE_STATUS_LABELS: Record<TimelineStageStatus, string> = {
   pending: "Не запущено",
   dispatched: "В очереди",
@@ -218,6 +223,15 @@ const DETAIL_LABELS: Record<string, string> = {
   intent_alignment_score: "Соответствие намерению",
 };
 
+Object.assign(DETAIL_LABELS, {
+  early_stop: "Ранняя остановка",
+  early_stop_reason: "Причина остановки",
+  score_floor: "Минимум score",
+  score_ceiling: "Потолок score",
+  safe_to_skip_competitors: "Конкуренты пропущены безопасно",
+  skipped_stages: "Пропущенные этапы",
+});
+
 const PRIORITY_DETAIL_KEYS = [
   "queue",
   "status",
@@ -247,6 +261,15 @@ const PRIORITY_DETAIL_KEYS = [
   "semantic_similarity",
   "intent_alignment_score",
   "risk_level",
+] as const;
+
+const D72_PRIORITY_DETAIL_KEYS = [
+  "early_stop",
+  "early_stop_reason",
+  "score_floor",
+  "score_ceiling",
+  "safe_to_skip_competitors",
+  "skipped_stages",
 ] as const;
 
 const IGNORED_DETAIL_KEYS = new Set(["duration_ms"]);
@@ -433,6 +456,12 @@ function formatDetailValue(key: string, value: unknown): string | null {
     }
     return String(value);
   }
+  if (Array.isArray(value)) {
+    const entries = value
+      .map((item) => (typeof item === "string" || typeof item === "number" ? String(item) : null))
+      .filter((item): item is string => Boolean(item));
+    return entries.length > 0 ? entries.join(", ") : null;
+  }
   if (typeof value === "boolean") {
     return value ? "да" : "нет";
   }
@@ -446,7 +475,7 @@ function buildDetailSummary(details: Record<string, unknown> | null | undefined)
 
   const usedKeys = new Set<string>();
   const entries: string[] = [];
-  for (const key of PRIORITY_DETAIL_KEYS) {
+  for (const key of [...D72_PRIORITY_DETAIL_KEYS, ...PRIORITY_DETAIL_KEYS]) {
     const value = formatDetailValue(key, details[key]);
     if (value) {
       usedKeys.add(key);
@@ -670,11 +699,12 @@ function getRangeLabel(diagnostics: AuditTimelineDiagnosticsResponse | null, eve
 function buildSummaryMetrics(
   diagnostics: AuditTimelineDiagnosticsResponse | null,
   events: AuditTimelineEvent[],
+  earlyStop: AuditEarlyStopSummary | null,
 ): TimelineMetric[] {
   const terminalStage = diagnostics?.terminal_stage ? getTimelineStageLabel(diagnostics.terminal_stage) : "—";
   const terminalEvent = diagnostics?.terminal_event ? getEventLabel(diagnostics.terminal_event) : "—";
   const totalDurationMs = diagnostics?.total_duration_ms ?? getEventRangeDurationMs(events);
-  return [
+  const metrics: TimelineMetric[] = [
     {
       label: "События таймлайна",
       value: formatCount(getRawEventCount(diagnostics, events)),
@@ -696,6 +726,14 @@ function buildSummaryMetrics(
       note: `Оценка вклада из серверной диагностики; финальное событие: ${terminalStage} / ${terminalEvent}.`,
     },
   ];
+  if (earlyStop) {
+    metrics.push({
+      label: "Остановка аудита",
+      value: "До конкурентов",
+      note: earlyStop.message,
+    });
+  }
+  return metrics;
 }
 
 function buildFanOutFromDiagnostics(fanOut: AuditTimelineFanOut): TimelineFanOutModel {
@@ -803,6 +841,7 @@ function buildFailure(failureContext: FailureContext | null): TimelineFailureMod
 
 export function buildAuditTimelineModel(input: AuditTimelineInput): AuditTimelineModel {
   const events = input.events?.events ?? [];
+  const earlyStop = input.diagnostics?.early_stop ?? input.results?.early_stop ?? input.audit.early_stop ?? null;
   const stageRows = buildStageRows(input.diagnostics, events);
   const diagnosticsProcessingVersion = input.diagnostics?.processing_version ?? null;
   const eventProcessingVersion = input.events?.processing_version ?? null;
@@ -821,12 +860,13 @@ export function buildAuditTimelineModel(input: AuditTimelineInput): AuditTimelin
     processingVersionLabel: processingVersion === null ? "—" : `v${processingVersion}`,
     hasData: eventCount > 0 || (input.diagnostics?.stage_breakdown.length ?? 0) > 0,
     rangeLabel: getRangeLabel(input.diagnostics, events),
-    summaryMetrics: buildSummaryMetrics(input.diagnostics, events),
+    summaryMetrics: buildSummaryMetrics(input.diagnostics, events, earlyStop),
     stageRows,
     fanOut,
     fanOutStages,
     eventRows: buildEventRows(events),
     warnings: buildWarnings(input.audit, input.results),
     failure: buildFailure(input.failureContext),
+    earlyStop,
   };
 }

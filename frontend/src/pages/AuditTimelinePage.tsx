@@ -283,6 +283,15 @@ export function AuditTimelinePage({
         </div>
       ) : null}
       {error ? <div className="feedback-banner feedback-banner--error">{error}</div> : null}
+      {model.earlyStop ? (
+        <div className="early-stop-state early-stop-state--compact">
+          <div>
+            <strong>{model.earlyStop.title}</strong>
+            <p>{model.earlyStop.message}</p>
+          </div>
+          {model.earlyStop.score !== null ? <span>{Math.round(model.earlyStop.score)}</span> : null}
+        </div>
+      ) : null}
       {model.failure ? (
         <div className="feedback-banner feedback-banner--error">
           <strong>Конвейер остановился на этапе: {model.failure.stageLabel}</strong>

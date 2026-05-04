@@ -6,6 +6,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.api.dependencies import get_db_session
+from app.audit_early_stop import build_audit_early_stop_summary
 from app.audit_diagnostics import build_audit_timeline_diagnostics, load_audit_events
 from app.features import detect_query_intent
 from app.models import Audit
@@ -13,6 +14,7 @@ from app.parser import summarize_extraction_artifact
 from app.runtime_capacity import evaluate_new_audit_admission
 from app.schemas.audit import (
     AuditCreate,
+    AuditEarlyStopRead,
     AuditEventRead,
     AuditEventTimelineRead,
     AuditListItemRead,
@@ -33,10 +35,29 @@ def _get_audit_or_404(db: Session, audit_id: str) -> Audit:
     return audit
 
 
+def _audit_early_stop_read(audit: Audit) -> AuditEarlyStopRead | None:
+    summary = build_audit_early_stop_summary(audit)
+    if summary is None:
+        return None
+    return AuditEarlyStopRead.model_validate(summary)
+
+
+def _audit_read(audit: Audit) -> AuditRead:
+    return AuditRead.model_validate(audit).model_copy(
+        update={"early_stop": _audit_early_stop_read(audit)}
+    )
+
+
+def _audit_list_item_read(audit: Audit) -> AuditListItemRead:
+    return AuditListItemRead.model_validate(audit).model_copy(
+        update={"early_stop": _audit_early_stop_read(audit)}
+    )
+
+
 @router.get("/audits", response_model=list[AuditListItemRead])
 def list_audits_endpoint(db: Session = Depends(get_db_session)) -> list[AuditListItemRead]:
     audits = db.scalars(select(Audit).order_by(Audit.created_at.desc())).all()
-    return [AuditListItemRead.model_validate(audit) for audit in audits]
+    return [_audit_list_item_read(audit) for audit in audits]
 
 
 @router.post("/audits", response_model=AuditRead, status_code=status.HTTP_201_CREATED)
@@ -65,7 +86,7 @@ def create_audit_endpoint(
     db.commit()
     db.refresh(audit)
     enqueue_audit_processing(audit.id)
-    return AuditRead.model_validate(audit)
+    return _audit_read(audit)
 
 
 @router.get("/audits/{audit_id}", response_model=AuditRead)
@@ -74,7 +95,7 @@ def get_audit_endpoint(
     db: Session = Depends(get_db_session),
 ) -> AuditRead:
     audit = _get_audit_or_404(db, audit_id)
-    return AuditRead.model_validate(audit)
+    return _audit_read(audit)
 
 
 @router.get("/audits/{audit_id}/results", response_model=AuditResultsRead)
@@ -96,6 +117,7 @@ def get_audit_results_endpoint(
         features=audit.features,
         competitor_results=audit.competitor_results,
         comparison_summary=audit.comparison_summary,
+        early_stop=_audit_early_stop_read(audit),
         target_fetch_status=audit.target_fetch_status,
         target_fetch_method=audit.target_fetch_method,
         target_fetch_error_code=audit.target_fetch_error_code,
@@ -149,4 +171,5 @@ def get_audit_timeline_diagnostics_endpoint(
         audit_status=audit.status,
         processing_version=effective_processing_version,
         events=events,
+        early_stop=_audit_early_stop_read(audit),
     )

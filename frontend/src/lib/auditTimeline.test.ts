@@ -340,4 +340,77 @@ describe("audit timeline model", () => {
     expect(model.failure?.message).toBe("HTTP 403");
     expect(model.stageRows.find((stage) => stage.stage === "fetch")?.status).toBe("failed");
   });
+
+  it("surfaces query relevance early stop diagnostics without competitor fan-out", () => {
+    const earlyStop = {
+      schema_version: "early-stop-summary-v1",
+      active: true,
+      type: "query_relevance_full_mismatch",
+      reason: "confident_full_query_mismatch",
+      status: "completed",
+      title: "Страница не соответствует запросу",
+      message: "Сравнение с конкурентами не запускалось, потому что страница не отвечает теме запроса.",
+      score: 3,
+      score_floor: 0,
+      score_ceiling: 5,
+      score_basis: "query_relevance_early_stop",
+      safe_to_skip_competitors: true,
+      skipped_stages: ["heavy_analysis", "competitors"],
+      competitor_processing_status: "skipped_early_stop",
+    };
+    const model = buildAuditTimelineModel({
+      audit: createAudit({ score: 3, early_stop: earlyStop }),
+      results: createResults({ score: 3, early_stop: earlyStop }),
+      diagnostics: createDiagnostics({
+        critical_path_stages: [],
+        stage_breakdown: [
+          {
+            stage: "features",
+            dispatch_count: 0,
+            started_count: 1,
+            completed_count: 0,
+            failed_count: 0,
+            aborted_count: 0,
+            terminal_count: 0,
+            total_duration_ms: null,
+            average_duration_ms: null,
+            max_duration_ms: null,
+            critical_path_mode: "serial_sum",
+            critical_path_duration_ms: null,
+            first_event_at: "2026-01-01T10:00:01",
+            last_event_at: "2026-01-01T10:00:01",
+            latest_event: "preflight_stop",
+          },
+        ],
+        fan_out: null,
+        early_stop: earlyStop,
+      }),
+      events: createEvents({
+        events: [
+          {
+            id: 10,
+            audit_id: "audit-1",
+            processing_version: 1,
+            stage: "features",
+            event: "preflight_stop",
+            duration_ms: null,
+            details: {
+              early_stop: true,
+              score_ceiling: 5,
+              safe_to_skip_competitors: true,
+              skipped_stages: ["heavy_analysis", "competitors"],
+            },
+            created_at: "2026-01-01T10:00:01",
+          },
+        ],
+      }),
+      failureContext: null,
+    });
+
+    expect(model.earlyStop?.title).toBe("Страница не соответствует запросу");
+    expect(model.fanOutStages).toEqual([]);
+    expect(model.summaryMetrics.find((metric) => metric.label === "Остановка аудита")?.value).toBe("До конкурентов");
+    expect(model.eventRows[0]?.eventLabel).toBe("Остановлено по соответствию запросу");
+    expect(model.eventRows[0]?.detailSummary).toContain("Пропущенные этапы: heavy_analysis, competitors");
+  });
 });
