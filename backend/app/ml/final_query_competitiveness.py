@@ -83,6 +83,11 @@ D82_REPORT_JSON_PATH = D82_OUTPUT_DIR / "d82-query-core-hardening-report.json"
 D82_REPORT_MD_PATH = D82_OUTPUT_DIR / "d82-query-core-hardening-report.md"
 D82_DECISION_JSON_PATH = D82_OUTPUT_DIR / "d82-controlled-decision-report.json"
 D82_DECISION_MD_PATH = D82_OUTPUT_DIR / "d82-controlled-decision-report.md"
+D83_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d83"
+D83_READINESS_JSON_PATH = D83_OUTPUT_DIR / "d83-query-core-publish-readiness-report.json"
+D83_READINESS_MD_PATH = D83_OUTPUT_DIR / "d83-query-core-publish-readiness-report.md"
+D83_RELEASE_JSON_PATH = D83_OUTPUT_DIR / "d83-query-core-controlled-release-report.json"
+D83_RELEASE_MD_PATH = D83_OUTPUT_DIR / "d83-query-core-controlled-release-report.md"
 VERSIONED_ARTIFACTS_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "versions"
 
 DOMAIN_CAP_PER_DOMAIN = 12
@@ -1720,6 +1725,12 @@ def run_final_controlled_publish(
     release_report_md_path: str | Path = D81_REPORT_MD_PATH,
     candidate_model_path: str | Path = FINAL_MODEL_PATH,
     production_model_path: str | Path = DEFAULT_MODEL_PATH,
+    task: str = "D81",
+    source_decision_task: str = "D80",
+    markdown_title: str = "D81 Final Query-Competitiveness Controlled Release",
+    expected_model_schema_version: str = MODEL_SCHEMA_VERSION_V3,
+    publish_decision_required: str = "completed_d81",
+    publish_metadata_key: str = "d81_publish",
 ) -> dict[str, Any]:
     if not Path(report_json_path).exists():
         build_final_decision_report(report_json_path=report_json_path)
@@ -1741,14 +1752,14 @@ def run_final_controlled_publish(
         candidate_artifact = load_model_artifact(candidate_path)
         if not isinstance(candidate_raw, dict) or candidate_artifact is None:
             raise ValueError(f"Candidate artifact is not loadable: {candidate_path}")
-        if candidate_artifact.get("model_schema_version") != MODEL_SCHEMA_VERSION_V3:
+        if candidate_artifact.get("model_schema_version") != expected_model_schema_version:
             raise ValueError(
-                f"D81 expects schema {MODEL_SCHEMA_VERSION_V3}, got {candidate_artifact.get('model_schema_version')!r}"
+                f"{task} expects schema {expected_model_schema_version}, got {candidate_artifact.get('model_schema_version')!r}"
             )
         selected_candidate = str(decision.get("selected_candidate") or "")
         if candidate_raw.get("candidate_name") != selected_candidate:
             raise ValueError(
-                "Candidate artifact name does not match D80 decision: "
+                f"Candidate artifact name does not match {source_decision_task} decision: "
                 f"{candidate_raw.get('candidate_name')!r} vs {selected_candidate!r}"
             )
 
@@ -1777,16 +1788,19 @@ def run_final_controlled_publish(
             "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
             "non_production": False,
             "runtime_enabled": True,
-            "publish_decision_required": "completed_d81",
-            "d81_publish": {
+            "publish_decision_required": publish_decision_required,
+            publish_metadata_key: {
                 "source_candidate_path": str(candidate_path),
                 "source_candidate_sha1": sha1_file(candidate_path),
-                "d80_report_path": str(Path(report_json_path)),
+                "decision_report_path": str(Path(report_json_path)),
+                "decision_task": source_decision_task,
                 "decision": dict(decision),
                 "product_guardrails": report.get("product_guardrails"),
                 "rollback_reference": dict(rollback_reference),
             },
         }
+        if source_decision_task == "D80":
+            metadata[publish_metadata_key]["d80_report_path"] = str(Path(report_json_path))  # type: ignore[index]
         save_model(
             model=candidate_raw["model"],
             metrics=metrics,
@@ -1808,10 +1822,14 @@ def run_final_controlled_publish(
             "feature_importance_summary": candidate_raw.get("feature_importance_summary"),
             "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
             "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
-            "d80_report_path": str(Path(report_json_path)),
-            "d80_decision": dict(decision),
+            "decision_report_path": str(Path(report_json_path)),
+            "decision_task": source_decision_task,
+            "decision": dict(decision),
             "rollback_reference": dict(rollback_reference),
         }
+        if source_decision_task == "D80":
+            alias_metadata["d80_report_path"] = str(Path(report_json_path))
+            alias_metadata["d80_decision"] = dict(decision)
         alias_metadata_path = write_artifact_public_metadata(
             alias_metadata,
             build_artifact_metadata_path(production_path),
@@ -1838,12 +1856,13 @@ def run_final_controlled_publish(
     production_after = build_production_artifact_state(production_path)
     release_decision = "published" if publish_result else "no_publish"
     release_report = {
-        "task": "D81",
+        "task": task,
         "generated_at": generated_at.isoformat(),
         "decision": release_decision,
         "publish_action": "controlled_publish" if publish_result else "no_publish",
-        "source_d80_report": str(Path(report_json_path)),
-        "d80_decision": decision,
+        "source_decision_report": str(Path(report_json_path)),
+        "source_decision_task": source_decision_task,
+        "source_decision": decision,
         "candidate_model_path": str(candidate_path),
         "candidate_sha1": sha1_file(candidate_path),
         "production_model_path": str(production_path),
@@ -1859,16 +1878,19 @@ def run_final_controlled_publish(
         "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
         "reason": decision.get("reason") or "d80_decision",
     }
+    if source_decision_task == "D80":
+        release_report["source_d80_report"] = str(Path(report_json_path))
+        release_report["d80_decision"] = decision
     _write_json(release_report_json_path, release_report)
     Path(release_report_md_path).parent.mkdir(parents=True, exist_ok=True)
     Path(release_report_md_path).write_text(
         "\n".join(
             [
-                "# D81 Final Query-Competitiveness Controlled Release",
+                f"# {markdown_title}",
                 "",
                 f"- Decision: `{release_decision}`",
                 f"- Publish action: `{release_report['publish_action']}`",
-                f"- D80 decision: `{decision.get('decision')}`",
+                f"- {source_decision_task} decision: `{decision.get('decision')}`",
                 f"- Reason: `{release_report['reason']}`",
                 f"- Candidate SHA1: `{release_report['candidate_sha1']}`",
                 f"- Production SHA1 before: `{before_sha1}`",
@@ -1884,16 +1906,19 @@ def run_final_controlled_publish(
     manifest = _read_manifest(FINAL_MANIFEST_PATH)
     manifest["status"] = "runtime_published" if publish_result else "controlled_no_publish"
     manifest["release_progress"] = {
-        "task": "D81",
+        "task": task,
         "completed_at": generated_at.isoformat(timespec="seconds"),
         "decision": release_decision,
-        "d80_report_path": str(Path(report_json_path).resolve()),
-        "d81_report_path": str(Path(release_report_json_path).resolve()),
+        "decision_report_path": str(Path(report_json_path).resolve()),
+        "release_report_path": str(Path(release_report_json_path).resolve()),
         "candidate_sha1": sha1_file(candidate_path),
         "production_sha1_before": before_sha1,
         "production_sha1_after": after_sha1,
         "runtime_enabled": bool(publish_result),
     }
+    if source_decision_task == "D80":
+        manifest["release_progress"]["d80_report_path"] = str(Path(report_json_path).resolve())
+        manifest["release_progress"]["d81_report_path"] = str(Path(release_report_json_path).resolve())
     quality_gates = manifest.get("quality_gates") if isinstance(manifest.get("quality_gates"), dict) else {}
     manifest["quality_gates"] = {
         **quality_gates,
@@ -1903,6 +1928,143 @@ def run_final_controlled_publish(
     }
     _write_json(FINAL_MANIFEST_PATH, manifest)
     return release_report
+
+
+def build_query_core_publish_readiness_report(
+    *,
+    decision_report_path: str | Path = D82_DECISION_JSON_PATH,
+    candidate_model_path: str | Path = D82_MODEL_PATH,
+    production_model_path: str | Path = DEFAULT_MODEL_PATH,
+    report_json_path: str | Path = D83_READINESS_JSON_PATH,
+    report_md_path: str | Path = D83_READINESS_MD_PATH,
+) -> dict[str, Any]:
+    decision_path = Path(decision_report_path)
+    candidate_path = Path(candidate_model_path)
+    production_path = Path(production_model_path)
+    decision_report = _load_json(decision_path) if decision_path.exists() else {}
+    decision = decision_report.get("decision") if isinstance(decision_report.get("decision"), dict) else {}
+    guardrails = decision_report.get("product_guardrails") if isinstance(decision_report.get("product_guardrails"), dict) else {}
+    checks: dict[str, bool] = {
+        "decision_report_exists": decision_path.exists(),
+        "decision_is_publish_candidate": decision.get("decision") == "publish_candidate",
+        "decision_publish_action_is_controlled": decision.get("publish_action") == "controlled_publish_required",
+        "product_guardrails_passed": guardrails.get("passed") is True,
+        "hard_negatives_below_cap": guardrails.get("hard_negative_above_cap_count") == 0,
+        "candidate_exists": candidate_path.exists(),
+        "production_exists": production_path.exists(),
+    }
+    candidate_raw = load_saved_model(candidate_path) if candidate_path.exists() else None
+    candidate_artifact = load_model_artifact(candidate_path) if candidate_path.exists() else None
+    prediction_sample: float | None = None
+    if isinstance(candidate_artifact, dict):
+        feature_columns = candidate_artifact.get("feature_columns")
+        model = candidate_artifact.get("model")
+        if isinstance(feature_columns, (list, tuple)) and hasattr(model, "predict"):
+            try:
+                prediction_sample = round(max(0.0, min(100.0, float(model.predict([[0.0 for _ in feature_columns]])[0]))), 4)
+            except (TypeError, ValueError, IndexError):
+                prediction_sample = None
+    checks.update(
+        {
+            "candidate_loadable": isinstance(candidate_raw, dict) and isinstance(candidate_artifact, dict),
+            "candidate_name_matches_decision": isinstance(candidate_raw, dict)
+            and candidate_raw.get("candidate_name") == decision.get("selected_candidate"),
+            "candidate_schema_v4": isinstance(candidate_artifact, dict)
+            and candidate_artifact.get("model_schema_version") == MODEL_SCHEMA_VERSION_V4,
+            "candidate_feature_count_156": isinstance(candidate_artifact, dict)
+            and len(candidate_artifact.get("feature_columns") or []) == len(get_model_feature_schema(MODEL_SCHEMA_VERSION_V4).feature_columns),
+            "candidate_runtime_disabled_before_publish": isinstance(candidate_raw, dict)
+            and candidate_raw.get("runtime_enabled") is False
+            and candidate_raw.get("non_production") is True,
+            "candidate_prediction_smoke_bounded": prediction_sample is not None and 0.0 <= prediction_sample <= 100.0,
+            "production_matches_decision_reference": production_path.exists()
+            and bool(decision_report.get("reference_sha1"))
+            and sha1_file(production_path) == decision_report.get("reference_sha1"),
+            "production_not_already_candidate": production_path.exists()
+            and candidate_path.exists()
+            and sha1_file(production_path) != sha1_file(candidate_path),
+        }
+    )
+    failed_checks = [name for name, passed in checks.items() if not passed]
+    report = {
+        "task": "D83",
+        "generated_at": datetime.now(UTC).isoformat(),
+        "purpose": "query_core_candidate_publish_readiness",
+        "ready_for_controlled_publish": not failed_checks,
+        "checks": checks,
+        "failed_checks": failed_checks,
+        "decision_report_path": str(decision_path),
+        "candidate_model_path": str(candidate_path),
+        "candidate_sha1": sha1_file(candidate_path) if candidate_path.exists() else None,
+        "production_model_path": str(production_path),
+        "production_sha1": sha1_file(production_path) if production_path.exists() else None,
+        "expected_candidate_schema": MODEL_SCHEMA_VERSION_V4,
+        "expected_feature_count": len(get_model_feature_schema(MODEL_SCHEMA_VERSION_V4).feature_columns),
+        "prediction_sample": prediction_sample,
+        "decision": dict(decision),
+        "product_guardrails": guardrails,
+        "next_step": "Run --publish-query-core only after this readiness report passes and the user explicitly approves switching runtime.",
+    }
+    _write_json(report_json_path, report)
+    Path(report_md_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(report_md_path).write_text(
+        "\n".join(
+            [
+                "# D83 Query-Core Publish Readiness",
+                "",
+                f"- Ready for controlled publish: `{report['ready_for_controlled_publish']}`",
+                f"- Candidate SHA1: `{report['candidate_sha1']}`",
+                f"- Production SHA1: `{report['production_sha1']}`",
+                f"- Failed checks: `{', '.join(failed_checks) or 'none'}`",
+                f"- Expected schema: `{MODEL_SCHEMA_VERSION_V4}`",
+                f"- Expected feature count: `{report['expected_feature_count']}`",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return report
+
+
+def run_query_core_controlled_publish() -> dict[str, Any]:
+    readiness = build_query_core_publish_readiness_report()
+    if not readiness["ready_for_controlled_publish"]:
+        report = {
+            "task": "D83",
+            "generated_at": datetime.now(UTC).isoformat(),
+            "decision": "no_publish",
+            "publish_action": "blocked_by_readiness",
+            "readiness_report": readiness,
+            "reason": "query_core_publish_readiness_failed",
+        }
+        _write_json(D83_RELEASE_JSON_PATH, report)
+        D83_RELEASE_MD_PATH.parent.mkdir(parents=True, exist_ok=True)
+        D83_RELEASE_MD_PATH.write_text(
+            "\n".join(
+                [
+                    "# D83 Query-Core Controlled Release",
+                    "",
+                    "- Decision: `no_publish`",
+                    "- Publish action: `blocked_by_readiness`",
+                    f"- Failed checks: `{', '.join(readiness['failed_checks']) or 'none'}`",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+        return report
+    return run_final_controlled_publish(
+        report_json_path=D82_DECISION_JSON_PATH,
+        release_report_json_path=D83_RELEASE_JSON_PATH,
+        release_report_md_path=D83_RELEASE_MD_PATH,
+        candidate_model_path=D82_MODEL_PATH,
+        task="D83",
+        source_decision_task="D82",
+        markdown_title="D83 Query-Core Controlled Release",
+        expected_model_schema_version=MODEL_SCHEMA_VERSION_V4,
+        publish_decision_required="completed_d83",
+        publish_metadata_key="d83_publish",
+    )
 
 
 def run_final_pipeline(*, publish: bool = False) -> dict[str, Any]:
@@ -1942,6 +2104,8 @@ def main() -> None:
     parser.add_argument("--decide", action="store_true")
     parser.add_argument("--publish", action="store_true")
     parser.add_argument("--harden-query-core", action="store_true")
+    parser.add_argument("--prepare-query-core-publish", action="store_true")
+    parser.add_argument("--publish-query-core", action="store_true")
     parser.add_argument("--force-query-core-materialize", action="store_true")
     parser.add_argument("--dataset", default="")
     parser.add_argument("--output", default="")
@@ -2041,6 +2205,12 @@ def main() -> None:
                 indent=2,
             )
         )
+        return
+    if args.prepare_query_core_publish:
+        print(json.dumps(build_query_core_publish_readiness_report(), ensure_ascii=False, indent=2))
+        return
+    if args.publish_query_core:
+        print(json.dumps(run_query_core_controlled_publish(), ensure_ascii=False, indent=2))
         return
     if args.decide:
         print(json.dumps(build_final_decision_report(), ensure_ascii=False, indent=2))

@@ -797,6 +797,15 @@ D82 evidence:
 
 D82 controlled decision is `publish_candidate`, but the artifact remains non-production until a separate controlled publish task explicitly replaces `backend/artifacts/page_quality_model.pkl`. The current active runtime remains the D58 `dataset-v5` artifact.
 
+D83 closes the deployment-readiness gap. Before D83, the existing `--publish` path still targeted the old D80/D81 v3 flow and could not safely publish the D82 schema `v4` artifact. D83 parameterizes the controlled publish helper, adds a read-only readiness report and creates explicit commands:
+
+```powershell
+backend\.venv\Scripts\python.exe -m app.ml.final_query_competitiveness --prepare-query-core-publish
+backend\.venv\Scripts\python.exe -m app.ml.final_query_competitiveness --publish-query-core
+```
+
+The readiness report is stored in `backend/artifacts/ranking-benchmarks/dataset-v7-final-d83/` and currently passes with failed checks `[]`. It verifies the D82 decision, candidate loadability, schema `v4`, feature count `156`, hard-negative guardrails, production SHA matching the D82 reference and that production has not already been replaced by the candidate. `--publish-query-core` must only be run after an explicit user decision to switch runtime.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`

@@ -12,6 +12,7 @@ from app.ml.final_query_competitiveness import (
     D82_MODEL_PATH,
     D82_QUERY_CORE_DATASET_PATH,
     D82_REPORT_JSON_PATH,
+    D83_READINESS_JSON_PATH,
     FINAL_MODEL_PATH,
     FINAL_LABEL_SCHEMA_VERSION,
     HARD_NEGATIVE_SCORE_CAP,
@@ -283,3 +284,18 @@ def test_d82_query_core_candidate_passes_hard_negative_guardrail() -> None:
     assert guardrails["checks"]["hard_negatives_learned_below_cap"] is True
     assert guardrails["hard_negative_above_cap_count"] == 0
     assert decision_report["runtime_adjusted_metrics"]["mae"] < decision_report["reference_runtime_adjusted_metrics"]["mae"]
+
+
+def test_d83_query_core_publish_readiness_is_green_without_runtime_mutation() -> None:
+    report = json.loads(D83_READINESS_JSON_PATH.read_text(encoding="utf-8"))
+
+    assert report["task"] == "D83"
+    assert report["ready_for_controlled_publish"] is True
+    assert report["failed_checks"] == []
+    assert report["checks"]["candidate_schema_v4"] is True
+    assert report["checks"]["candidate_feature_count_156"] is True
+    assert report["checks"]["hard_negatives_below_cap"] is True
+    assert report["checks"]["production_matches_decision_reference"] is True
+    assert report["candidate_sha1"] == sha1_file(D82_MODEL_PATH)
+    assert report["production_sha1"] == sha1_file(DEFAULT_MODEL_PATH)
+    assert report["candidate_sha1"] != report["production_sha1"]
