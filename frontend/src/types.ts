@@ -650,8 +650,8 @@ export type ComparisonSummary = {
   primary_page_score?: number;
   competitiveness_score?: number;
   score_basis?: string;
-  competitors_average_score: number;
-  score_difference: number;
+  competitors_average_score: number | null;
+  score_difference: number | null;
   primary_score_difference?: number;
   competitors_count: number;
   competitors_found?: number;

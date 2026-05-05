@@ -13,6 +13,7 @@ from app.ml.final_query_competitiveness import (
     D82_QUERY_CORE_DATASET_PATH,
     D82_REPORT_JSON_PATH,
     D83_READINESS_JSON_PATH,
+    D83_RELEASE_JSON_PATH,
     FINAL_MODEL_PATH,
     FINAL_LABEL_SCHEMA_VERSION,
     HARD_NEGATIVE_SCORE_CAP,
@@ -217,6 +218,7 @@ def test_validate_dataset_v7_is_ready_after_d78_split_validation() -> None:
 
 def test_d79_candidate_artifact_is_non_production_and_loadable() -> None:
     report = json.loads(D79_REPORT_JSON_PATH.read_text(encoding="utf-8"))
+    d81_report = json.loads(D81_REPORT_JSON_PATH.read_text(encoding="utf-8"))
     artifact = load_model_artifact(FINAL_MODEL_PATH)
     raw_payload = load_saved_model(FINAL_MODEL_PATH)
 
@@ -224,7 +226,7 @@ def test_d79_candidate_artifact_is_non_production_and_loadable() -> None:
     assert isinstance(raw_payload, dict)
     assert report["task"] == "D79"
     assert report["candidate_sha1"] == sha1_file(FINAL_MODEL_PATH)
-    assert report["production_artifact_sha1"] == sha1_file(DEFAULT_MODEL_PATH)
+    assert report["production_artifact_sha1"] == d81_report["production_sha1_before"]
     assert report["production_artifact_changed"] is False
     assert report["runtime_enabled"] is False
     assert artifact["dataset_version"] == "dataset-v7-final"
@@ -252,13 +254,14 @@ def test_d80_blocks_candidate_when_hard_negatives_exceed_cap() -> None:
 
 def test_d81_records_no_publish_without_runtime_mutation() -> None:
     report = json.loads(D81_REPORT_JSON_PATH.read_text(encoding="utf-8"))
+    d83_report = json.loads(D83_RELEASE_JSON_PATH.read_text(encoding="utf-8"))
 
     assert report["task"] == "D81"
     assert report["decision"] == "no_publish"
     assert report["publish_action"] == "no_publish"
     assert report["production_changed"] is False
     assert report["production_sha1_before"] == report["production_sha1_after"]
-    assert report["production_sha1_after"] == sha1_file(DEFAULT_MODEL_PATH)
+    assert report["production_sha1_after"] == d83_report["production_sha1_before"]
     assert report["candidate_sha1"] == sha1_file(FINAL_MODEL_PATH)
 
 
@@ -286,8 +289,9 @@ def test_d82_query_core_candidate_passes_hard_negative_guardrail() -> None:
     assert decision_report["runtime_adjusted_metrics"]["mae"] < decision_report["reference_runtime_adjusted_metrics"]["mae"]
 
 
-def test_d83_query_core_publish_readiness_is_green_without_runtime_mutation() -> None:
+def test_d83_query_core_publish_readiness_was_green_before_publish() -> None:
     report = json.loads(D83_READINESS_JSON_PATH.read_text(encoding="utf-8"))
+    release_report = json.loads(D83_RELEASE_JSON_PATH.read_text(encoding="utf-8"))
 
     assert report["task"] == "D83"
     assert report["ready_for_controlled_publish"] is True
@@ -297,5 +301,24 @@ def test_d83_query_core_publish_readiness_is_green_without_runtime_mutation() ->
     assert report["checks"]["hard_negatives_below_cap"] is True
     assert report["checks"]["production_matches_decision_reference"] is True
     assert report["candidate_sha1"] == sha1_file(D82_MODEL_PATH)
-    assert report["production_sha1"] == sha1_file(DEFAULT_MODEL_PATH)
+    assert report["production_sha1"] == release_report["production_sha1_before"]
     assert report["candidate_sha1"] != report["production_sha1"]
+
+
+def test_d83_query_core_controlled_publish_selected_runtime() -> None:
+    report = json.loads(D83_RELEASE_JSON_PATH.read_text(encoding="utf-8"))
+    artifact = load_model_artifact(DEFAULT_MODEL_PATH)
+
+    assert artifact is not None
+    assert report["task"] == "D83"
+    assert report["decision"] == "published"
+    assert report["publish_action"] == "controlled_publish"
+    assert report["source_decision_task"] == "D82"
+    assert report["production_changed"] is True
+    assert report["production_changed_only_for_publish"] is True
+    assert report["candidate_sha1"] == sha1_file(D82_MODEL_PATH)
+    assert report["production_sha1_after"] == sha1_file(DEFAULT_MODEL_PATH)
+    assert artifact["dataset_version"] == "dataset-v7-final"
+    assert artifact["model_schema_version"] == "v4"
+    assert len(artifact["feature_columns"]) == 156
+    assert artifact["model_type"] == "QueryCoreGuardrailCatBoostRegressor"

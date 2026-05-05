@@ -17,7 +17,7 @@ In production terms, the model answers the following question:
 
 The active runtime artifact is trained as a regression model, but the product no longer treats the raw model prediction as the whole answer.
 
-The current `dataset-v5` target is built from a deterministic SEO-weighted rubric and query-level preference evidence. It is not a human-label dataset. The rubric intentionally gives more influence to factors that affect search interpretation and page competitiveness: crawl/indexability, canonical correctness, title/query fit, semantic/query fit, intent alignment, technical metadata and commercial trust. SERP position is retained as a small context signal and as diagnostics, not as the only definition of quality.
+The current `dataset-v7-final` target is built from deterministic expert-rubric labels over real top-10 pages plus hard negatives. It is not a human-label dataset. The rubric intentionally gives most influence to query-core relevance first, then to page usefulness, technical accessibility, commercial trust and competitor context. SERP position is retained as context and diagnostics, not as the only definition of quality.
 
 This means that the model does not predict "absolute website quality" in a universal sense. It predicts a query-dependent page-quality score that is later interpreted against the actual competitors found for the user's query.
 
@@ -36,22 +36,22 @@ The main training evidence is collected from real search results for RU commerci
 
 Current published snapshot:
 
-- `dataset_version`: `dataset-v5`
-- `artifact_version`: `dataset-v5-20260502151507`
-- `rows_count`: `885`
-- `queries_count`: `99`
-- `domains_count`: `568`
-- `label_schema`: `ranking-aware-v5`
-- `feature_policy`: `v5-shortcut-control-v1`
+- `dataset_version`: `dataset-v7-final`
+- `artifact_version`: `dataset-v7-final-20260505125858`
+- `rows_count`: `4876`
+- `queries_count`: `500`
+- `domains_count`: `2253`
+- `label_schema`: `query-competitiveness-final-v2`
+- `model_schema`: `v4`
 
 The active training/evidence bundle is stored in:
 
-- `backend/data/dataset_versions/dataset-v5/dataset.csv`
-- `backend/data/dataset_versions/dataset-v5/dataset.controlled.csv`
-- `backend/data/dataset_versions/dataset-v5/page_labels.csv`
-- `backend/data/dataset_versions/dataset-v5/preference_labels.csv`
-- `backend/data/dataset_versions/dataset-v5/manifest.json`
-- `backend/data/dataset_versions/dataset-v5/split.json`
+- `backend/data/dataset_versions/dataset-v7-final/dataset.csv`
+- `backend/data/dataset_versions/dataset-v7-final/dataset.with-hard-negatives.csv`
+- `backend/data/dataset_versions/dataset-v7-final/dataset.labeled.csv`
+- `backend/data/dataset_versions/dataset-v7-final/dataset.query-core.csv`
+- `backend/data/dataset_versions/dataset-v7-final/manifest.json`
+- `backend/data/dataset_versions/dataset-v7-final/split.json`
 
 ### Query sampling strategy
 
@@ -168,7 +168,7 @@ This project solves a relatively small-data, high-interpretability problem. In t
 
 ### Problem formulation
 
-The active runtime model is a `CatBoostRegressor` trained over tabular features with ranking-aware and product-aware evaluation.
+The active runtime model is a `QueryCoreGuardrailCatBoostRegressor`: a CatBoost regressor wrapped with a query-core guardrail that caps predictions when the page misses the core query.
 
 That means the model predicts a continuous `0..100` page score, but model selection is not based only on regression loss. It is also validated with metrics that reflect ordering quality and product behavior.
 
@@ -181,7 +181,7 @@ The current research pipeline has evaluated:
 - `CatBoostRanker`
 - a hybrid pointwise/ranker candidate
 
-The active published artifact after D58 is `pointwise_catboost_v5`, because it passed the D55/D56/D57 competitiveness scorecard and outperformed the previous v3 runtime on the blocking metrics.
+The active published artifact after D83 is `final_query_competitiveness_query_core_catboost_v7`, because D82 fixed the hard-negative blocker and D83 published it through the explicit controlled query-core path.
 
 ### Data split strategy
 
@@ -218,32 +218,34 @@ The currently published runtime artifact is:
 
 The system also stores an immutable versioned copy:
 
-- active D58 artifact: `backend/artifacts/versions/page_quality_model--dataset-v5-20260502151507.pkl`
+- active D83 artifact: `backend/artifacts/versions/page_quality_model--dataset-v7-final-20260505125858.pkl`
+- rollback v5 artifact: `backend/artifacts/versions/page_quality_model--dataset-v5-20260502151507.pkl`
 - rollback v3 artifact: `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`
 - archived v1 rollback artifact: `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`
 
 Public artifact metadata is stored in JSON sidecars:
 
 - `backend/artifacts/page_quality_model.metadata.json`
+- `backend/artifacts/versions/page_quality_model--dataset-v7-final-20260505125858.metadata.json`
 - `backend/artifacts/versions/page_quality_model--dataset-v5-20260502151507.metadata.json`
 - `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.metadata.json`
 - `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json`
 
 ### Current published validation summary
 
-According to the active D58 published artifact metadata, the current model has:
+According to the active D83 published artifact metadata, the current model has:
 
-- `dataset_version`: `dataset-v5`
-- `artifact_version`: `dataset-v5-20260502151507`
-- `model_schema_version`: `v3`
-- `model_type`: `CatBoostRegressor`
-- `feature_count`: `148`
-- `rmse`: `1.874197`
-- `mae`: `1.22855`
-- `spearman_mean`: `0.957788`
-- `ndcg_at_10`: `0.998374`
-- `top_3_hit_rate`: `0.6` as non-blocking SERP-alignment diagnostics
-- `validation_queries`: `20`
+- `dataset_version`: `dataset-v7-final`
+- `artifact_version`: `dataset-v7-final-20260505125858`
+- `model_schema_version`: `v4`
+- `model_type`: `QueryCoreGuardrailCatBoostRegressor`
+- `feature_count`: `156`
+- `rmse`: `7.242153`
+- `mae`: `4.253847`
+- `spearman_mean`: `0.917044`
+- `ndcg_at_10`: `0.996873`
+- `top_3_hit_rate`: `0.93` as non-blocking SERP-alignment diagnostics
+- `validation_queries`: `100`
 
 ### Runtime explainability metadata
 
@@ -758,14 +760,14 @@ Published metrics:
 - `NDCG@10=0.998374`
 - `top_3_hit_rate=0.6` as non-blocking SERP diagnostics
 
-The previous CatBoost v3 artifact remains available for rollback at `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`.
+The previous CatBoost v3 artifact remains available for historical rollback evidence at `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`. D83 later superseded the active alias with query-core v7 and preserved D58 v5 as the immediate rollback target.
 
 ## D59-D61 documentation and product cleanup
 
 D59 removes user-facing ML/debug clutter from the interface. D60 archives research artifacts and clarifies the difference between runtime assets and evidence/archive assets. D61 updates project documentation so future agents and readers see the current product framing first:
 
 - the project estimates query-specific competitiveness, not abstract page quality;
-- the active runtime model is `dataset-v5` pointwise CatBoost;
+- the active runtime model is `dataset-v7-final` query-core CatBoost after D83;
 - `primary_page_score` and `competitiveness_score` are separate;
 - `top_3_hit_rate` is diagnostics, not the main release truth;
 - recommendations are prioritized by competitor gaps and search importance.
@@ -795,7 +797,7 @@ D82 evidence:
 - runtime-adjusted candidate metrics: `MAE=4.253847`, `Spearman=0.917044`, `NDCG@10=0.996873`, `top_3_hit_rate=0.93` as diagnostics;
 - reference runtime on the same split: `MAE=6.556754`, `Spearman=0.77064`, `NDCG@10=0.984659`, `top_3_hit_rate=0.83`.
 
-D82 controlled decision is `publish_candidate`, but the artifact remains non-production until a separate controlled publish task explicitly replaces `backend/artifacts/page_quality_model.pkl`. The current active runtime remains the D58 `dataset-v5` artifact.
+D82 controlled decision is `publish_candidate`; D83 later made this artifact the active runtime through controlled publish.
 
 D83 closes the deployment-readiness gap. Before D83, the existing `--publish` path still targeted the old D80/D81 v3 flow and could not safely publish the D82 schema `v4` artifact. D83 parameterizes the controlled publish helper, adds a read-only readiness report and creates explicit commands:
 
@@ -804,7 +806,7 @@ backend\.venv\Scripts\python.exe -m app.ml.final_query_competitiveness --prepare
 backend\.venv\Scripts\python.exe -m app.ml.final_query_competitiveness --publish-query-core
 ```
 
-The readiness report is stored in `backend/artifacts/ranking-benchmarks/dataset-v7-final-d83/` and currently passes with failed checks `[]`. It verifies the D82 decision, candidate loadability, schema `v4`, feature count `156`, hard-negative guardrails, production SHA matching the D82 reference and that production has not already been replaced by the candidate. `--publish-query-core` must only be run after an explicit user decision to switch runtime.
+The readiness and controlled release reports are stored in `backend/artifacts/ranking-benchmarks/dataset-v7-final-d83/`. Pre-publish readiness passed with failed checks `[]`; controlled publish then replaced `backend/artifacts/page_quality_model.pkl` with SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0` and preserved the D58 v5 artifact as rollback.
 
 ## Files relevant to the ML appendix
 

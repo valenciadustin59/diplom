@@ -71,6 +71,21 @@ def test_comparison_summary_exposes_primary_and_competitiveness_scores():
     assert summary["score_basis"] == "competitiveness_score"
 
 
+def test_comparison_summary_keeps_competitor_average_empty_without_enough_context():
+    summary = build_comparison_summary(
+        user_features={"semantic_similarity": 0.7},
+        user_score=70.0,
+        competitor_results=[_competitor(85.0)],
+        requested_top_n=10,
+    )
+
+    assert summary["score_basis"] == "primary_page_score"
+    assert summary["competitors_average_score"] is None
+    assert summary["score_difference"] is None
+    assert summary["primary_score_difference"] is None
+    assert summary["competitiveness_position_band"] == "not_enough_data"
+
+
 def test_competitor_aggregation_promotes_competitiveness_score_to_summary():
     result = _build_competitor_aggregation_result(
         user_features={"semantic_similarity": 0.7, "technical_seo_score": 0.6},

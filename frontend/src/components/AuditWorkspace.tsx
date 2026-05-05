@@ -114,12 +114,12 @@ function formatImpact(value: number): string {
 }
 
 function formatScoreValue(value: number | null | undefined): string {
-  return typeof value === "number" && Number.isFinite(value) ? String(Math.round(value * 10) / 10) : "0";
+  return typeof value === "number" && Number.isFinite(value) ? String(Math.round(value * 10) / 10) : "—";
 }
 
 function formatSignedScoreValue(value: number | null | undefined): string {
   if (typeof value !== "number" || !Number.isFinite(value)) {
-    return "0";
+    return "—";
   }
   const rounded = Math.round(value * 10) / 10;
   return `${rounded > 0 ? "+" : ""}${rounded}`;

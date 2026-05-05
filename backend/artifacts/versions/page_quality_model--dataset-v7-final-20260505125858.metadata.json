@@ -1,7 +1,7 @@
 {
   "artifact_version": "dataset-v7-final-20260505125858",
   "artifact_family": "page_quality_model",
-  "artifact_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.pkl",
+  "artifact_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\versions\\page_quality_model--dataset-v7-final-20260505125858.pkl",
   "model_type": "QueryCoreGuardrailCatBoostRegressor",
   "model_schema_version": "v4",
   "source": "local_dataset",

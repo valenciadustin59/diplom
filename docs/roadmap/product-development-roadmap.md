@@ -13,9 +13,9 @@
 - `D1-D12` — distributed runtime foundation: stage-based Celery pipeline, per-stage queues, distributed fan-out, retry-safe orchestration, health/live, health/ready, health/metrics, event log, timeline diagnostics, queue pressure, admission control, worker topology profiles и benchmark/reporting workflow.
 - `D13-D26` — SEO/ML/product/frontend evidence wave: snapshot extraction, feature schema v2, technical SEO features, commercial/trust features, intent-aware and SERP-relative features, dataset-v2 workflow, model schema v2, artifact-driven training/publish flow, grouped recommendations API/UI, isolated `audits.heavy_analysis` queue, audit report/export dashboard, audit execution timeline UI, панель состояния рабочего стека/очередей, audit history management, recommendation action tracking и interface terminology polish.
 
-После `D26` проект уже соответствовал дипломной теме, а последующие волны довели ML/product layer до текущей product-aligned версии. Исторически D27-D44 построили dataset/model evidence, v3 rollout, runtime observability и second-pass experiment. D45-D54 проверили SEO-weighted и ranking-aware candidates. D55-D58 уточнили продуктовую цель: не копировать SERP top-3 как абсолютную истину, а оценивать конкурентоспособность страницы в top-N контексте. D58 опубликовал активный `dataset-v5` pointwise CatBoost artifact. D75-D81 построили fresh `dataset-v7-final` evidence path; D80/D81 оставили `dataset-v5` активной моделью, потому что v7 candidate провалил hard-negative release guardrail. Retrospective GitHub issues `#81-#100` for `D62-D81` were created and closed on `2026-05-05`.
+После `D26` проект уже соответствовал дипломной теме, а последующие волны довели ML/product layer до текущей product-aligned версии. Исторически D27-D44 построили dataset/model evidence, v3 rollout, runtime observability и second-pass experiment. D45-D54 проверили SEO-weighted и ranking-aware candidates. D55-D58 уточнили продуктовую цель: не копировать SERP top-3 как абсолютную истину, а оценивать конкурентоспособность страницы в top-N контексте. D58 опубликовал `dataset-v5` pointwise CatBoost artifact. D75-D82 построили fresh `dataset-v7-final` evidence path и query-core hardening; D83 опубликовал query-core v7 runtime through controlled publish. Retrospective GitHub issues `#81-#100` for `D62-D81` were created and closed on `2026-05-05`.
 
-Текущий runtime: `backend/artifacts/page_quality_model.pkl`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`, dataset `dataset-v5`, artifact `dataset-v5-20260502151507`, schema `v3`, `CatBoostRegressor`, `148` features. `top_3_hit_rate` теперь SERP-alignment diagnostics, not a release blocker.
+Текущий runtime: `backend/artifacts/page_quality_model.pkl`, SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`, dataset `dataset-v7-final`, artifact `dataset-v7-final-20260505125858`, schema `v4`, `QueryCoreGuardrailCatBoostRegressor`, `156` features. `top_3_hit_rate` теперь SERP-alignment diagnostics, not a release blocker.
 
 Важно: GitHub Issues приватного репозитория могут быть недоступны другим Codex-диалогам без авторизации и возвращать `404 Not Found`. Поэтому актуальный operational status продублирован локально в `AGENTS.md`, `README.md`, `backend/README.md`, `backend/docs/ml_methodology_appendix.md` и planning files.
 
@@ -110,7 +110,7 @@ D39 evidence:
 
 - backend endpoint: `GET /health/model`
 - endpoint status for current artifact: `active`
-- current runtime after D58: `CatBoostRegressor`, schema `v3`, dataset `dataset-v5`, artifact `dataset-v5-20260502151507`
+- current runtime after D83: `QueryCoreGuardrailCatBoostRegressor`, schema `v4`, dataset `dataset-v7-final`, artifact `dataset-v7-final-20260505125858`
 - rollback availability: `true`
 - UI surfaces: compact stack card, full `Стек` page, score breakdown, audit report, Markdown export, HTML export
 - verification: `backend/tests/test_health_api.py` -> `24 passed`; `npm --prefix frontend run test` -> `45 passed`
@@ -206,15 +206,15 @@ Completed scope:
 - `D80` / GitHub `#99`: completed retrospectively; controlled decision recorded `no_publish` because hard negatives were still scored too high.
 - `D81` / GitHub `#100`: completed retrospectively; controlled release step recorded `no_publish` and kept production unchanged.
 
-D58 current runtime evidence:
+D83 current runtime evidence:
 
 - production artifact: `backend/artifacts/page_quality_model.pkl`
-- SHA1: `5374ca30f48f70d8629e7d84ec3df0524ef35b52`
-- dataset: `dataset-v5`
-- artifact version: `dataset-v5-20260502151507`
-- model: `CatBoostRegressor`, schema `v3`, `148` features
-- metrics: `MAE=1.22855`, `Spearman=0.957788`, `NDCG@10=0.998374`, `top_3_hit_rate=0.6` as non-blocking SERP diagnostics
-- rollback artifact: `backend/artifacts/versions/page_quality_model--dataset-v3-d37-20260501200434.pkl`
+- SHA1: `da285ca34d8c19079373b1db86d818355c7b80e0`
+- dataset: `dataset-v7-final`
+- artifact version: `dataset-v7-final-20260505125858`
+- model: `QueryCoreGuardrailCatBoostRegressor`, schema `v4`, `156` features
+- metrics: `MAE=4.253847`, `Spearman=0.917044`, `NDCG@10=0.996873`, `top_3_hit_rate=0.93` as non-blocking SERP diagnostics
+- rollback artifact: `backend/artifacts/versions/page_quality_model--dataset-v5-20260502151507.pkl`
 
 The practical next tasks should now be product polish, documentation, evidence cleanup or carefully scoped new SEO capabilities. Do not re-run old D45-D54 no-publish logic as if it were still the current release policy.
 
@@ -340,9 +340,9 @@ The practical next tasks should now be product polish, documentation, evidence c
 
 This section is intentionally written in plain ASCII/English so future agents can read it even if local terminal encoding renders Russian text incorrectly.
 
-Canonical current status: `D1-D83` are complete locally through raw `dataset-v7-final` collection, hard-negative materialization, deterministic expert-rubric labels, leakage-safe split validation, non-production final candidate training, controlled no-publish evidence, query-core hard-negative hardening and publish-readiness evidence for the D82 candidate.
+Canonical current status: `D1-D83` are complete locally through raw `dataset-v7-final` collection, hard-negative materialization, deterministic expert-rubric labels, leakage-safe split validation, final candidate training, controlled no-publish evidence, query-core hard-negative hardening and controlled publish of the D82 query-core candidate.
 
-The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the current v5 pointwise CatBoost artifact. D62-D68 then made query relevance the strict final score gate, and D69 made the `dataset-v7-final` collection path safer with domain caps and snapshot-based hard negatives. D70 tightens the relevance contract again: confident full mismatch is `0-5`, while ambiguous low relevance continues the audit as `probable_mismatch` up to `25`. D71 now wires confident full mismatch into backend preflight so heavy analysis and competitor fan-out are skipped only when the mismatch is clear enough; D72 exposes that decision as typed API/timeline runtime contract; D73-D74 add the user-facing state and regression coverage. D75 completed controlled live raw collection for `dataset-v7-final`: `500/500` seed queries have successful rows, with `3876` rows across `2253` domains. D76 then materialized `1000` hard negatives from D75 snapshots across all `500` queries and all `50` target/source categories. D77 materialized deterministic expert-rubric labels for all `4876` rows and capped hard-negative labels at `35.0` with `0` hard negatives above cap. D78 produced a leakage-safe `group_by_query_category_stratified` split with `3898/978` train/validation rows, `400/100` queries, `0` query overlap and all `50` categories represented in validation. D79 trained the non-production CatBoost v7 final candidate. D80/D81 rejected publishing it because `25` validation hard negatives exceeded the cap. D82 hardened query-core features and trained a new non-production v4 candidate with `0` validation hard negatives above cap and `MAE=4.253847` after runtime adjustment. D83 fixes the deployment gap by adding explicit readiness and `--publish-query-core` paths for the D82 v4 artifact. Production artifact `backend/artifacts/page_quality_model.pkl` still points to CatBoost v5 (`dataset-v5`, schema `v3`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`) until `--publish-query-core` is explicitly run. `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
+The final ML evidence and model productization waves kept the old production model while D30/D35 recommended `keep_reference`; D37 then built a wider `v3` candidate and D38 published it. D40-D44 added post-publish operations and second-pass evidence. D45-D54 explored SEO-weighted and ranking-aware candidates. D55 corrected the release policy around the clarified product goal, D56 added the `competitiveness_score` layer, D57 added competitor-gap recommendation priority, and D58 published the v5 pointwise CatBoost artifact. D62-D68 then made query relevance the strict final score gate, and D69 made the `dataset-v7-final` collection path safer with domain caps and snapshot-based hard negatives. D70 tightens the relevance contract again: confident full mismatch is `0-5`, while ambiguous low relevance continues the audit as `probable_mismatch` up to `25`. D71 now wires confident full mismatch into backend preflight so heavy analysis and competitor fan-out are skipped only when the mismatch is clear enough; D72 exposes that decision as typed API/timeline runtime contract; D73-D74 add the user-facing state and regression coverage. D75 completed controlled live raw collection for `dataset-v7-final`: `500/500` seed queries have successful rows, with `3876` rows across `2253` domains. D76 then materialized `1000` hard negatives from D75 snapshots across all `500` queries and all `50` target/source categories. D77 materialized deterministic expert-rubric labels for all `4876` rows and capped hard-negative labels at `35.0` with `0` hard negatives above cap. D78 produced a leakage-safe `group_by_query_category_stratified` split with `3898/978` train/validation rows, `400/100` queries, `0` query overlap and all `50` categories represented in validation. D79 trained the CatBoost v7 final candidate. D80/D81 rejected publishing it because `25` validation hard negatives exceeded the cap. D82 hardened query-core features and trained a v4 candidate with `0` validation hard negatives above cap and `MAE=4.253847` after runtime adjustment. D83 published that query-core v4 artifact: active SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`, rollback to v5 preserved. `top_3_hit_rate` is retained as SERP-alignment diagnostics, not as the main release truth.
 
 Local source of truth:
 
@@ -414,11 +414,11 @@ Completed model rollout/interface tasks:
 - `D80`: completed locally; controlled decision recorded `no_publish` because `25` validation hard negatives exceeded the `35.0` cap.
 - `D81`: completed locally; controlled release step recorded `no_publish` and kept production unchanged at D58 `dataset-v5`.
 - `D82`: completed locally; query-core hardening candidate fixes the D80 blocker (`0` validation hard negatives above `35.0`) and recommends `publish_candidate`, but remains non-production until explicit controlled publish.
-- `D83`: completed locally; query-core publish readiness is green and the deployment path now supports the D82 schema `v4` candidate. Runtime remains unchanged until explicit `--publish-query-core`.
+- `D83`: completed locally; query-core controlled publish executed. Active runtime is `dataset-v7-final`, schema `v4`, SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`; rollback to D58 v5 is preserved.
 - `D72`: implemented locally; audit status, list, results and timeline diagnostics expose typed `early_stop` summary, and timeline events show skipped-stage evidence.
 - `D73`: implemented locally; overview, competitors, history and report/export show the early-stop state as clear product copy without raw ML fields.
 - `D74`: implemented locally; regression tests cover unrelated good pages, near-topic false positives, informational/commercial modifier behavior, rare low-signal pages and insufficient extraction.
 
-Current model next step: D82 produced a publishable non-production query-core candidate and D83 made the deployment path ready. Do not replace runtime automatically; run `--publish-query-core` only if the user explicitly chooses to make D82 active.
+Current model next step: D83 made the query-core v7 artifact active. Next work should monitor live audits, tighten relevance regression cases and improve competitor coverage/fetch robustness; do not repeat old publish flows unless a rollback or new candidate is explicitly chosen.
 
 Next agent instruction: select a new task explicitly before changing model/runtime behavior. Do not repeat old rollouts, publish the D44 candidate, add demo mode, or rewrite backend orchestration unless the user explicitly requests that scope.

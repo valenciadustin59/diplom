@@ -277,9 +277,10 @@ def analyze_competitor_snapshot(
     )
     html = str(normalized_snapshot.get("html") or "")
     text = str(normalized_snapshot.get("text") or "")
+    analysis_text = _build_competitor_analysis_text(text, result)
     features = merge_intent_alignment_features(
         merge_snapshot_auxiliary_features(
-            build_features(html=html, text=text, query=query),
+            build_features(html=html, text=analysis_text, query=query),
             normalized_snapshot,
         ),
         query_intent,
@@ -362,12 +363,11 @@ def build_comparison_summary(
     ]
     competitor_scores = [float(item["score"]) for item in analyzed_results if isinstance(item.get("score"), (int, float))]
 
+    competitors_average_score: float | None = None
+    score_difference: float | None = None
     if len(competitor_scores) >= MIN_COMPETITORS_FOR_COMPARISON:
         competitors_average_score = round(float(fmean(competitor_scores)), 4)
         score_difference = round(float(user_score) - competitors_average_score, 4)
-    else:
-        competitors_average_score = 0.0
-        score_difference = 0.0
 
     competitors_found = len(competitor_results)
     competitors_analyzed = len(analyzed_results)
@@ -381,12 +381,12 @@ def build_comparison_summary(
     competitiveness_score = float(competitiveness["competitiveness_score"])
     primary_score_difference = (
         round(float(user_score) - competitors_average_score, 4)
-        if competitors_analyzed >= MIN_COMPETITORS_FOR_COMPARISON
+        if competitors_analyzed >= MIN_COMPETITORS_FOR_COMPARISON and competitors_average_score is not None
         else score_difference
     )
     displayed_score_difference = (
         round(competitiveness_score - competitors_average_score, 4)
-        if competitors_analyzed >= MIN_COMPETITORS_FOR_COMPARISON
+        if competitors_analyzed >= MIN_COMPETITORS_FOR_COMPARISON and competitors_average_score is not None
         else score_difference
     )
 
@@ -418,3 +418,30 @@ def _extract_title(html: str) -> str:
     if not match:
         return ""
     return re.sub(r"\s+", " ", match.group(1)).strip()
+
+
+def _build_competitor_analysis_text(text: str, result: dict[str, object]) -> str:
+    """Use SERP title/snippet as query context when fetched competitor text is thin."""
+
+    parts = [text.strip()]
+    for key in ("title", "snippet"):
+        value = str(result.get(key) or "").strip()
+        if value:
+            parts.append(value)
+
+    url = str(result.get("url") or "").strip()
+    if url:
+        parsed = urlparse(url)
+        url_context = " ".join(
+            part
+            for part in [
+                parsed.netloc.removeprefix("www."),
+                unquote(parsed.path).replace("-", " ").replace("_", " "),
+                unquote(parsed.query).replace("+", " "),
+            ]
+            if part
+        )
+        if url_context:
+            parts.append(url_context)
+
+    return "\n".join(part for part in parts if part).strip()

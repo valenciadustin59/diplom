@@ -1,6 +1,6 @@
 {
   "task": "D83",
-  "generated_at": "2026-05-05T12:39:46.700803+00:00",
+  "generated_at": "2026-05-05T12:58:58.101013+00:00",
   "purpose": "query_core_candidate_publish_readiness",
   "ready_for_controlled_publish": true,
   "checks": {
