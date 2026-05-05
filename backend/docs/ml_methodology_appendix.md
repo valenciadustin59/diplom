@@ -808,6 +808,31 @@ backend\.venv\Scripts\python.exe -m app.ml.final_query_competitiveness --publish
 
 The readiness and controlled release reports are stored in `backend/artifacts/ranking-benchmarks/dataset-v7-final-d83/`. Pre-publish readiness passed with failed checks `[]`; controlled publish then replaced `backend/artifacts/page_quality_model.pkl` with SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0` and preserved the D58 v5 artifact as rollback.
 
+## D84-D87 post-publish quality evidence
+
+D84-D87 do not train or publish another model. They harden the active D83 runtime around live product risks.
+
+D84 adds a fresh deterministic relevance regression pack:
+
+- cases: `backend/data/query_relevance_regression/d84-live-regression-cases.json`;
+- report: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d84/d84-live-relevance-regression-report.json`;
+- coverage: `40` cases, `6` risk groups, `0` failures.
+
+D85 adds competitor context quality to runtime comparison summaries:
+
+- new payload fields: `competitor_context_status` and `competitor_context_quality`;
+- statuses: `ready`, `partial_but_usable`, `insufficient_processed_competitors`, `no_serp_results`;
+- market average/difference remain unavailable until at least `2` competitors are processed.
+
+D86 updates the frontend wording so the score is described as:
+
+1. query match first;
+2. page usefulness and completeness second;
+3. commercial readiness when the query is commercial;
+4. competitor context only when enough SERP pages are processed.
+
+D87 writes the diploma evidence rollup in `backend/artifacts/ranking-benchmarks/dataset-v7-final-d87/`. The report decision is `ready_for_diploma_evidence_pack` and links D83 controlled publish evidence, D84 relevance regression evidence and D85 competitor robustness evidence.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`

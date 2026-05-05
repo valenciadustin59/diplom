@@ -129,6 +129,20 @@ function getFiniteNumber(value: unknown): number | null {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
 
+function getCompetitorContextNotice(summary?: ComparisonSummary | null): string | null {
+  const status = summary?.competitor_context_status ?? summary?.competitor_context_quality?.status;
+  if (status === "insufficient_processed_competitors") {
+    return "Сравнение с рынком пока не используется в итоговой оценке: обработано слишком мало страниц из выдачи.";
+  }
+  if (status === "no_serp_results") {
+    return "По этому запросу не удалось получить страницы конкурентов, поэтому показана оценка самой страницы.";
+  }
+  if (status === "partial_but_usable") {
+    return "Часть страниц из выдачи ограничила автоматический доступ, но обработанных конкурентов достаточно для сравнения.";
+  }
+  return null;
+}
+
 function getCompetitivenessMetric(breakdown: ScoreBreakdown | null | undefined, key: string): number | null {
   return getFiniteNumber(breakdown?.competitiveness?.[key]);
 }
@@ -200,28 +214,28 @@ function getScoreMethodologyText(breakdown?: ScoreBreakdown | null): string {
   }
 
   if (hasCompetitivenessContext(breakdown)) {
-    return "Оценка отвечает на практический вопрос: насколько эта страница подходит под введённый запрос и выглядит сильной на фоне найденных конкурентов. Если страница плохо отвечает на запрос, отдельные сильные элементы не смогут сделать результат высоким.";
+    return "Сначала проверяется, отвечает ли страница именно на введённый запрос. Если тема совпадает, итоговая оценка учитывает качество страницы и то, как она выглядит на фоне реально обработанных страниц из выдачи.";
   }
 
-  return "Оценка сначала показывает, насколько сама страница отвечает введённому запросу: раскрывает тему, совпадает с намерением пользователя и содержит полезную информацию для действия. Сравнение с конкурентами появится после обработки страниц из выдачи.";
+  return "Сначала оценивается соответствие страницы запросу: тема, намерение пользователя и полнота ответа. Сравнение с конкурентами появится после обработки страниц из выдачи.";
 }
 
 const scoreExplanationPrinciples = [
   {
     title: "Соответствие запросу",
-    detail: "Страница должна реально отвечать на то, что пользователь ищет.",
+    detail: "Страница должна быть про тот же объект, услугу или вопрос, который ввёл пользователь.",
   },
   {
-    title: "Полезность страницы",
-    detail: "Проверяется полнота ответа, понятность структуры и достаточность информации для выбора.",
+    title: "Полнота ответа",
+    detail: "Учитывается, насколько страница раскрывает тему и помогает принять решение.",
   },
   {
-    title: "Коммерческая готовность",
-    detail: "Для коммерческих запросов важны контакты, действие, доверие и понятный путь к заявке.",
+    title: "Готовность к действию",
+    detail: "Для коммерческих запросов важны понятные контакты, доверие и путь к заявке или покупке.",
   },
   {
-    title: "Сравнение с выдачей",
-    detail: "Результат читается на фоне страниц, которые уже находятся рядом с пользователем в поиске.",
+    title: "Фон выдачи",
+    detail: "Когда конкуренты обработаны, оценка показывает, насколько страница сильна рядом с ними.",
   },
 ];
 
@@ -479,6 +493,7 @@ function OverviewPanel({
   const showDataQualityBadge = scoreConfidence.warningCount > 0 || scoreConfidence.errorCount > 0;
   const earlyStopView =
     getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
+  const competitorContextNotice = getCompetitorContextNotice(comparisonSummary);
 
   return (
     <div className="workspace-grid">
@@ -554,9 +569,14 @@ function OverviewPanel({
                 Обработано {analyzedCount} из {foundCount} конкурентных страниц, {failedCount} страниц ограничили автоматический доступ.
               </div>
             ) : null}
+            {competitorContextNotice ? (
+              <div className="feedback-banner feedback-banner--info">{competitorContextNotice}</div>
+            ) : null}
           </>
         ) : (
-          <div className="empty-state">Конкурентные страницы ещё не собраны или не удалось обработать ни одну страницу.</div>
+          <div className="empty-state">
+            {competitorContextNotice ?? "Конкурентные страницы ещё не собраны или не удалось обработать ни одну страницу."}
+          </div>
         )}
       </Card>
 
@@ -594,6 +614,7 @@ function CompetitorsPanel({
   const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
   const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
   const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
+  const competitorContextNotice = getCompetitorContextNotice(comparisonSummary);
   const earlyStopView =
     getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
 
@@ -640,6 +661,9 @@ function CompetitorsPanel({
           </div>
 
           {competitorScores.length > 0 ? <ComparisonChart items={competitorScores} /> : null}
+          {competitorContextNotice ? (
+            <div className="feedback-banner feedback-banner--info">{competitorContextNotice}</div>
+          ) : null}
 
           <div className="competitor-list">
             {competitors.map((competitor) => (

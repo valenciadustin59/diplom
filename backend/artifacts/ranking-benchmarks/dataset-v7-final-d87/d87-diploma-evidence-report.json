@@ -1,0 +1,48 @@
+{
+  "task": "D87",
+  "version": "d87-diploma-evidence-v1",
+  "status": "passed",
+  "decision": "ready_for_diploma_evidence_pack",
+  "checks": {
+    "active_model_is_v7": true,
+    "active_schema_is_v4": true,
+    "d83_controlled_publish_recorded": true,
+    "d84_relevance_regression_passed": true,
+    "d85_competitor_robustness_passed": true
+  },
+  "active_model": {
+    "path": "backend\\artifacts\\page_quality_model.pkl",
+    "sha1": "da285ca34d8c19079373b1db86d818355c7b80e0",
+    "dataset_version": "dataset-v7-final",
+    "artifact_version": "dataset-v7-final-20260505125858",
+    "model_schema_version": "v4",
+    "model_type": "QueryCoreGuardrailCatBoostRegressor",
+    "feature_count": 156
+  },
+  "evidence": {
+    "controlled_publish": {
+      "path": "backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d83\\d83-query-core-controlled-release-report.json",
+      "decision": "published",
+      "production_sha1_after": "da285ca34d8c19079373b1db86d818355c7b80e0"
+    },
+    "query_relevance_regression": {
+      "path": "backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d84\\d84-live-relevance-regression-report.json",
+      "status": "passed",
+      "cases_count": 40,
+      "failed_cases_count": 0
+    },
+    "competitor_fetch_robustness": {
+      "path": "backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d85\\d85-competitor-fetch-robustness-report.json",
+      "status": "passed",
+      "cases_count": 5,
+      "failed_cases_count": 0
+    }
+  },
+  "product_definition": "The product evaluates whether a chosen page can compete for a concrete search query: query relevance is checked first, then page quality and competitor context are used when enough SERP pages are processed.",
+  "verification_commands": [
+    "cd backend && .venv\\Scripts\\python.exe -m pytest tests\\test_live_relevance_regression.py tests\\test_query_relevance_runtime.py tests\\test_final_query_competitiveness.py -q -p no:cacheprovider",
+    "cd backend && .venv\\Scripts\\python.exe -m pytest tests\\test_competitiveness_score.py tests\\test_competitors.py tests\\test_competitor_fetch_robustness.py -q -p no:cacheprovider",
+    "npm --prefix frontend run test -- --run src/lib/ui.test.tsx src/lib/auditReport.test.ts",
+    "npm --prefix frontend run build"
+  ]
+}

@@ -881,14 +881,86 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Смысловое соответствие");
     expect(markup).toContain("Оффер и запись/заявка");
-    expect(markup).toContain("Оценка показывает, насколько страница подходит под запрос");
+    expect(markup).toContain("Сначала оценивается соответствие страницы запросу");
     expect(markup).toContain("Соответствие запросу");
+    expect(markup).toContain("Полнота ответа");
     expect(markup).toContain("Небольшое ограничение");
     expect(markup).not.toContain("Активная модель score");
     expect(markup).not.toContain("dataset-v3-d37");
     expect(markup).not.toContain("Значение фактора");
     expect(markup).not.toContain("вес -3.5");
     expect(markup).not.toContain("Доверие к score");
+  });
+
+  it("explains when competitor context is not strong enough for market comparison", () => {
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          status: "completed_with_warnings",
+          score: 71,
+          comparison_summary: {
+            user_score: 71,
+            competitors_average_score: null,
+            score_difference: null,
+            competitors_count: 1,
+            competitors_found: 3,
+            competitors_analyzed: 1,
+            competitors_failed: 2,
+            competitor_context_status: "insufficient_processed_competitors",
+            competitor_context_quality: {
+              status: "insufficient_processed_competitors",
+              score_safe_to_compare: false,
+            },
+          },
+        })}
+        currentResults={createResults({
+          status: "completed_with_warnings",
+          score: 71,
+          comparison_summary: {
+            user_score: 71,
+            competitors_average_score: null,
+            score_difference: null,
+            competitors_count: 1,
+            competitors_found: 3,
+            competitors_analyzed: 1,
+            competitors_failed: 2,
+            competitor_context_status: "insufficient_processed_competitors",
+            competitor_context_quality: {
+              status: "insufficient_processed_competitors",
+              score_safe_to_compare: false,
+            },
+          },
+        })}
+        recommendations={null}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={{
+          user_score: 71,
+          competitors_average_score: null,
+          score_difference: null,
+          competitors_count: 1,
+          competitors_found: 3,
+          competitors_analyzed: 1,
+          competitors_failed: 2,
+          competitor_context_status: "insufficient_processed_competitors",
+          competitor_context_quality: {
+            status: "insufficient_processed_competitors",
+            score_safe_to_compare: false,
+          },
+        }}
+        auditStatus="completed_with_warnings"
+        loading={false}
+        error={null}
+        activeTab="overview"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Сравнение с рынком пока не используется");
+    expect(markup).toContain("обработано слишком мало страниц из выдачи");
   });
 
   it("renders early stop mismatch state without ML jargon in overview and competitors", () => {

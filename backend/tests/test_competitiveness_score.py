@@ -1,5 +1,5 @@
 from app.competitiveness import build_competitiveness_score
-from app.competitors import build_comparison_summary
+from app.competitors import build_comparison_summary, build_competitor_context_quality
 from app.models import AuditCompetitor
 from app.tasks import _build_competitor_aggregation_result
 
@@ -8,6 +8,15 @@ def _competitor(score: float) -> dict[str, object]:
     return {
         "score": score,
         "features": {"semantic_similarity": 0.8},
+    }
+
+
+def _failed_competitor(code: str = "http_403") -> dict[str, object]:
+    return {
+        "score": None,
+        "features": None,
+        "fetch_status": "failed",
+        "fetch_error_code": code,
     }
 
 
@@ -69,6 +78,8 @@ def test_comparison_summary_exposes_primary_and_competitiveness_scores():
     assert summary["score_difference"] == round(summary["competitiveness_score"] - 87.5, 4)
     assert summary["primary_score_difference"] == -17.5
     assert summary["score_basis"] == "competitiveness_score"
+    assert summary["competitor_context_status"] == "ready"
+    assert summary["competitor_context_quality"]["score_safe_to_compare"] is True
 
 
 def test_comparison_summary_keeps_competitor_average_empty_without_enough_context():
@@ -84,6 +95,36 @@ def test_comparison_summary_keeps_competitor_average_empty_without_enough_contex
     assert summary["score_difference"] is None
     assert summary["primary_score_difference"] is None
     assert summary["competitiveness_position_band"] == "not_enough_data"
+    assert summary["competitor_context_status"] == "insufficient_processed_competitors"
+    assert summary["competitor_context_quality"]["score_safe_to_compare"] is False
+
+
+def test_competitor_context_quality_marks_partial_but_usable_fetch_context():
+    quality = build_competitor_context_quality(
+        [_competitor(83.0), _competitor(79.0), _failed_competitor("browser_blocked")],
+        requested_top_n=5,
+    )
+
+    assert quality["status"] == "partial_but_usable"
+    assert quality["context_available"] is True
+    assert quality["score_safe_to_compare"] is True
+    assert quality["coverage_ratio"] == 0.4
+    assert quality["fetch_error_codes"] == {"browser_blocked": 1}
+
+
+def test_competitor_context_quality_blocks_fake_average_when_all_competitors_fail():
+    summary = build_comparison_summary(
+        user_features={"semantic_similarity": 0.7},
+        user_score=70.0,
+        competitor_results=[_failed_competitor("http_403"), _failed_competitor("timeout")],
+        requested_top_n=10,
+    )
+
+    assert summary["competitors_average_score"] is None
+    assert summary["score_difference"] is None
+    assert summary["score_basis"] == "primary_page_score"
+    assert summary["competitor_context_status"] == "insufficient_processed_competitors"
+    assert summary["competitor_context_quality"]["fetch_error_codes"] == {"http_403": 1, "timeout": 1}
 
 
 def test_competitor_aggregation_promotes_competitiveness_score_to_summary():

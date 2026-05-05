@@ -214,6 +214,15 @@
 - D83 controlled publish was executed after explicit user approval. Active runtime is now `backend/artifacts/page_quality_model.pkl` SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`, dataset `dataset-v7-final`, artifact version `dataset-v7-final-20260505125858`, schema `v4`, model type `QueryCoreGuardrailCatBoostRegressor`, `156` features. Rollback to D58 v5 is preserved at `backend/artifacts/versions/page_quality_model--dataset-v5-20260502151507.pkl`.
 - D83 release evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d83/d83-query-core-controlled-release-report.json` and `.md`. Final smoke evidence: `output/runtime-smoke/d83-query-core-smoke-final.json`, audit `7a3a91ba-2279-4646-aa4e-88ea9b66e201`, readiness `ready`, `4` workers, missing queues `[]`, runtime model `dataset-v7-final` / schema `v4`, `competitor_page` fan-out dispatch/terminal `2/2`. The smoke completed with warnings because only `1/2` competitor pages was processed; the UI correctly shows unavailable competitor average/difference as `—`, not `0`.
 
+## Current D84-D87 Live Quality Hardening Evidence
+
+- `D84-D87` are completed locally after D83; local mirror: `plans/d84-d87-live-quality-hardening.md`.
+- `D84` adds a fresh deterministic relevance regression pack for the active `query-relevance-contract-v2`: `40` cases across `6` risk groups with `0` failures. Evidence: `backend/data/query_relevance_regression/d84-live-regression-cases.json` and `backend/artifacts/ranking-benchmarks/dataset-v7-final-d84/d84-live-relevance-regression-report.json` / `.md`.
+- `D85` adds explicit competitor context quality to `build_comparison_summary`: `competitor_context_status` and `competitor_context_quality` distinguish `ready`, `partial_but_usable`, `insufficient_processed_competitors` and `no_serp_results`. Fake competitor average/difference stays `None` unless at least `2` competitors are processed. Evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d85/d85-competitor-fetch-robustness-report.json` / `.md`.
+- `D86` updates the audit overview UX copy: score is explained as query match first, then page usefulness/commercial readiness, then competitor context only when enough SERP pages are processed. The UI now explains when market comparison is not used because competitor context is insufficient.
+- `D87` adds the diploma evidence rollup: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d87/d87-diploma-evidence-report.json` / `.md`. Decision is `ready_for_diploma_evidence_pack`; active runtime remains `dataset-v7-final` / schema `v4` / SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`.
+- D84-D87 did not retrain, publish, roll back or mutate the active runtime artifact.
+
 ## Current D70 Conservative Query Relevance Contract Evidence
 
 - GitHub issue `#89` was created retroactively on `2026-05-05` and closed as completed.

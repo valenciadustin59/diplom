@@ -657,6 +657,20 @@ export type ComparisonSummary = {
   competitors_found?: number;
   competitors_analyzed?: number;
   competitors_failed?: number;
+  competitor_context_status?: string;
+  competitor_context_quality?: {
+    schema_version?: string;
+    status?: string;
+    context_available?: boolean;
+    score_safe_to_compare?: boolean;
+    competitors_found?: number;
+    competitors_analyzed?: number;
+    competitors_failed?: number;
+    required_competitors?: number;
+    requested_top_n?: number | null;
+    coverage_ratio?: number;
+    fetch_error_codes?: Record<string, number>;
+  } | null;
   competitor_best_score?: number | null;
   competitor_median_score?: number | null;
   competitiveness_position_band?: string | null;

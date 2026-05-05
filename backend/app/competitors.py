@@ -348,6 +348,54 @@ def build_competitor_results(query: str, target_url: str, top_n: int) -> list[di
     return results
 
 
+def build_competitor_context_quality(
+    competitor_results: list[dict[str, object]],
+    *,
+    requested_top_n: int | None = None,
+    min_competitors: int = MIN_COMPETITORS_FOR_COMPARISON,
+) -> dict[str, object]:
+    analyzed_results = [
+        item
+        for item in competitor_results
+        if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float))
+    ]
+    found = len(competitor_results)
+    analyzed = len(analyzed_results)
+    failed = max(0, found - analyzed)
+    requested = requested_top_n if isinstance(requested_top_n, int) and requested_top_n > 0 else None
+    expected_context = requested or max(found, min_competitors)
+    coverage_ratio = round(analyzed / expected_context, 4) if expected_context else 0.0
+    fetch_error_codes: dict[str, int] = {}
+    for item in competitor_results:
+        if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float)):
+            continue
+        code = str(item.get("fetch_error_code") or item.get("fetch_status") or "unknown").strip() or "unknown"
+        fetch_error_codes[code] = fetch_error_codes.get(code, 0) + 1
+
+    if found == 0:
+        status = "no_serp_results"
+    elif analyzed < min_competitors:
+        status = "insufficient_processed_competitors"
+    elif failed > 0:
+        status = "partial_but_usable"
+    else:
+        status = "ready"
+
+    return {
+        "schema_version": "competitor-context-quality-v1",
+        "status": status,
+        "context_available": analyzed >= min_competitors,
+        "score_safe_to_compare": analyzed >= min_competitors,
+        "competitors_found": found,
+        "competitors_analyzed": analyzed,
+        "competitors_failed": failed,
+        "required_competitors": min_competitors,
+        "requested_top_n": requested_top_n,
+        "coverage_ratio": coverage_ratio,
+        "fetch_error_codes": fetch_error_codes,
+    }
+
+
 def build_comparison_summary(
     user_features: dict[str, float | int],
     user_score: float,
@@ -372,6 +420,11 @@ def build_comparison_summary(
     competitors_found = len(competitor_results)
     competitors_analyzed = len(analyzed_results)
     competitors_failed = competitors_found - competitors_analyzed
+    competitor_context_quality = build_competitor_context_quality(
+        competitor_results,
+        requested_top_n=requested_top_n,
+        min_competitors=MIN_COMPETITORS_FOR_COMPARISON,
+    )
     competitiveness = build_competitiveness_score(
         user_score=user_score,
         competitor_results=competitor_results,
@@ -402,6 +455,8 @@ def build_comparison_summary(
         "competitors_found": competitors_found,
         "competitors_analyzed": competitors_analyzed,
         "competitors_failed": competitors_failed,
+        "competitor_context_status": competitor_context_quality["status"],
+        "competitor_context_quality": competitor_context_quality,
         "competitor_best_score": competitiveness.get("competitor_best_score"),
         "competitor_median_score": competitiveness.get("competitor_median_score"),
         "competitiveness_position_band": competitiveness.get("position_band"),
