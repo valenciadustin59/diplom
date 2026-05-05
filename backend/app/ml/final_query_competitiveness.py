@@ -10,9 +10,18 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
+from app.features import QUERY_INTENT_MODIFIER_TERMS
+from app.features import _coverage_ratio as _feature_coverage_ratio
+from app.features import _normalize_query_token, _tokenize
+from app.features import _phrase_count as _feature_phrase_count
 from app.ml.controlled_publish import build_controlled_versioned_artifact_path, ensure_rollback_reference
 from app.ml.model import DEFAULT_MODEL_PATH, clear_model_cache, load_model_artifact, load_saved_model, save_model
-from app.ml.model_schema import MODEL_SCHEMA_VERSION_V3, get_model_feature_schema
+from app.ml.model_schema import (
+    MODEL_SCHEMA_VERSION_V3,
+    MODEL_SCHEMA_VERSION_V4,
+    QUERY_RELEVANCE_CORE_FEATURE_COLUMNS,
+    get_model_feature_schema,
+)
 from app.ml.no_publish_decision import build_production_artifact_state, sha1_file
 from app.ml.publish import (
     build_artifact_metadata_path,
@@ -20,11 +29,13 @@ from app.ml.publish import (
     build_primary_artifact_version,
     write_artifact_public_metadata,
 )
+from app.ml.query_core_model import QueryCoreGuardrailRegressor
 from app.ml.ranking_benchmark import build_feature_importance_summary
 from app.ml.train import (
     evaluate_model_rows,
     load_dataset_rows,
     ranking_metrics,
+    rows_to_matrix,
     save_dataset_split_manifest,
     split_dataset_rows,
     train_candidate_models,
@@ -32,16 +43,23 @@ from app.ml.train import (
 from app.query_relevance import build_query_relevance_guardrail, build_query_topic_metrics
 
 
-TASK_RANGE = "D62-D81"
+TASK_RANGE = "D62-D82"
 FINAL_DATASET_VERSION = "dataset-v7-final"
 FINAL_ARTIFACT_VERSION = "dataset-v7-final-query-competitiveness"
+D82_ARTIFACT_VERSION = "dataset-v7-final-query-core-v1"
 FINAL_SCORE_CONTRACT_VERSION = "query-competitiveness-final-v2"
 FINAL_LABEL_SCHEMA_VERSION = "query-competitiveness-rubric-v1"
 FINAL_MODEL_PATH = Path(__file__).resolve().parents[2] / "artifacts" / "page_quality_model.dataset-v7-final-candidate.pkl"
+D82_MODEL_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "artifacts"
+    / "page_quality_model.dataset-v7-final-query-core-candidate.pkl"
+)
 FINAL_DATASET_DIR = Path(__file__).resolve().parents[2] / "data" / "dataset_versions" / FINAL_DATASET_VERSION
 FINAL_DATASET_PATH = FINAL_DATASET_DIR / "dataset.csv"
 FINAL_HARD_NEGATIVE_DATASET_PATH = FINAL_DATASET_DIR / "dataset.with-hard-negatives.csv"
 FINAL_LABELED_DATASET_PATH = FINAL_DATASET_DIR / "dataset.labeled.csv"
+D82_QUERY_CORE_DATASET_PATH = FINAL_DATASET_DIR / "dataset.query-core.csv"
 FINAL_LABEL_REPORT_JSON_PATH = FINAL_DATASET_DIR / "d77-final-label-report.json"
 FINAL_LABEL_REPORT_MD_PATH = FINAL_DATASET_DIR / "d77-final-label-report.md"
 FINAL_MANIFEST_PATH = FINAL_DATASET_DIR / "manifest.json"
@@ -60,6 +78,11 @@ D80_REPORT_MD_PATH = D80_OUTPUT_DIR / "d80-controlled-decision-report.md"
 D81_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d81"
 D81_REPORT_JSON_PATH = D81_OUTPUT_DIR / "d81-controlled-release-report.json"
 D81_REPORT_MD_PATH = D81_OUTPUT_DIR / "d81-controlled-release-report.md"
+D82_OUTPUT_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "ranking-benchmarks" / "dataset-v7-final-d82"
+D82_REPORT_JSON_PATH = D82_OUTPUT_DIR / "d82-query-core-hardening-report.json"
+D82_REPORT_MD_PATH = D82_OUTPUT_DIR / "d82-query-core-hardening-report.md"
+D82_DECISION_JSON_PATH = D82_OUTPUT_DIR / "d82-controlled-decision-report.json"
+D82_DECISION_MD_PATH = D82_OUTPUT_DIR / "d82-controlled-decision-report.md"
 VERSIONED_ARTIFACTS_DIR = Path(__file__).resolve().parents[2] / "artifacts" / "versions"
 
 DOMAIN_CAP_PER_DOMAIN = 12
@@ -68,6 +91,10 @@ MIN_FINAL_CATEGORIES = 50
 MIN_FINAL_CITIES = 5
 MIN_VALIDATION_ROWS = 40
 HARD_NEGATIVE_SCORE_CAP = 35.0
+D82_HARD_NEGATIVE_TRAINING_CAP = 25.0
+D82_HARD_NEGATIVE_SAMPLE_WEIGHT = 10.0
+D82_QUERY_CORE_COVERAGE_THRESHOLD = 0.75
+D82_SEMANTIC_SIMILARITY_THRESHOLD = 0.55
 
 
 def _float(row: Mapping[str, object], key: str, default: float = 0.0) -> float:
@@ -179,6 +206,127 @@ def _load_json(path: str | Path) -> dict[str, Any]:
         return {}
     payload = json.loads(resolved_path.read_text(encoding="utf-8"))
     return payload if isinstance(payload, dict) else {}
+
+
+def _read_artifact_text(artifact_path: object, *, dataset_dir: str | Path = FINAL_DATASET_DIR) -> str:
+    rendered_path = str(artifact_path or "").strip()
+    if not rendered_path:
+        return ""
+    resolved_path = Path(rendered_path)
+    if not resolved_path.is_absolute():
+        resolved_path = Path(dataset_dir) / resolved_path
+    if not resolved_path.exists():
+        return ""
+    try:
+        payload = json.loads(resolved_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    if not isinstance(payload, dict):
+        return ""
+    parts = [
+        str(payload.get("text") or ""),
+        str(payload.get("title") or ""),
+        str(payload.get("description") or ""),
+    ]
+    document = payload.get("document")
+    if isinstance(document, dict):
+        parts.extend(
+            [
+                str(document.get("title") or ""),
+                str(document.get("description") or ""),
+                str(document.get("h1") or ""),
+            ]
+        )
+    return " ".join(part for part in parts if part.strip())
+
+
+def _query_core_feature_values(query: object, text: str) -> dict[str, float]:
+    query_tokens = [_normalize_query_token(token) for token in _tokenize(str(query or ""))]
+    query_tokens = [token for token in query_tokens if token]
+    text_tokens = [_normalize_query_token(token) for token in _tokenize(text)]
+    word_freq = Counter(text_tokens)
+    core_query_words = [word for word in query_tokens if word not in QUERY_INTENT_MODIFIER_TERMS]
+    intent_modifier_words = [word for word in query_tokens if word in QUERY_INTENT_MODIFIER_TERMS]
+    core_phrase_count = _feature_phrase_count(core_query_words or query_tokens, text_tokens)
+    return {
+        "query_core_term_count": float(sum(word_freq[word] for word in core_query_words)),
+        "query_core_term_matches": float(sum(1 for word in core_query_words if word in word_freq)),
+        "query_core_keyword_coverage_ratio": round(
+            _feature_coverage_ratio(core_query_words or query_tokens, word_freq),
+            6,
+        ),
+        "query_core_phrase_count": float(core_phrase_count),
+        "query_core_phrase_present": float(int(core_phrase_count > 0)),
+        "query_intent_modifier_count": float(sum(word_freq[word] for word in intent_modifier_words)),
+        "query_intent_modifier_matches": float(sum(1 for word in intent_modifier_words if word in word_freq)),
+        "query_intent_modifier_coverage_ratio": round(
+            _feature_coverage_ratio(intent_modifier_words, word_freq),
+            6,
+        ),
+    }
+
+
+def materialize_query_core_dataset(
+    *,
+    labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
+    output_path: str | Path = D82_QUERY_CORE_DATASET_PATH,
+    dataset_dir: str | Path = FINAL_DATASET_DIR,
+) -> dict[str, Any]:
+    rows = load_dataset_rows(labeled_dataset_path)
+    if not rows:
+        raise ValueError(f"Dataset is empty: {labeled_dataset_path}")
+    text_cache: dict[str, str] = {}
+    enriched_rows: list[dict[str, str]] = []
+    fallback_rows_count = 0
+    for row in rows:
+        enriched_row = dict(row)
+        artifact_key = str(row.get("artifact_path") or "").strip()
+        if artifact_key not in text_cache:
+            text_cache[artifact_key] = _read_artifact_text(artifact_key, dataset_dir=dataset_dir)
+        snapshot_text = text_cache[artifact_key]
+        if not snapshot_text.strip():
+            fallback_rows_count += 1
+        combined_text = " ".join(
+            part
+            for part in (
+                snapshot_text,
+                str(row.get("title") or ""),
+                str(row.get("snippet") or ""),
+                str(row.get("url") or ""),
+                str(row.get("domain") or ""),
+            )
+            if part.strip()
+        )
+        for key, value in _query_core_feature_values(row.get("query"), combined_text).items():
+            enriched_row[key] = str(value)
+        enriched_rows.append(enriched_row)
+
+    fieldnames = list(rows[0].keys())
+    for feature in QUERY_RELEVANCE_CORE_FEATURE_COLUMNS:
+        if feature not in fieldnames:
+            fieldnames.append(feature)
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(enriched_rows)
+
+    core_coverages = [_float(row, "query_core_keyword_coverage_ratio") for row in enriched_rows]
+    hard_negative_coverages = [
+        _float(row, "query_core_keyword_coverage_ratio") for row in enriched_rows if _truthy(row.get("hard_negative"))
+    ]
+    return {
+        "task": "D82",
+        "dataset_path": str(Path(labeled_dataset_path)),
+        "output_path": str(output),
+        "rows_count": len(enriched_rows),
+        "artifact_texts_read": len(text_cache),
+        "fallback_rows_count": fallback_rows_count,
+        "added_feature_columns": list(QUERY_RELEVANCE_CORE_FEATURE_COLUMNS),
+        "query_core_coverage_summary": _score_summary(core_coverages),
+        "hard_negative_core_coverage_summary": _score_summary(hard_negative_coverages),
+    }
 
 
 def _majority_value(rows: Sequence[Mapping[str, object]], key: str) -> str:
@@ -993,6 +1141,232 @@ def train_final_candidate(
     return report
 
 
+def train_query_core_hardened_candidate(
+    *,
+    labeled_dataset_path: str | Path = FINAL_LABELED_DATASET_PATH,
+    query_core_dataset_path: str | Path = D82_QUERY_CORE_DATASET_PATH,
+    candidate_model_path: str | Path = D82_MODEL_PATH,
+    split_path: str | Path = FINAL_SPLIT_PATH,
+    report_json_path: str | Path = D82_REPORT_JSON_PATH,
+    report_md_path: str | Path = D82_REPORT_MD_PATH,
+    force_materialize: bool = False,
+    random_state: int = 42,
+) -> dict[str, Any]:
+    try:
+        from catboost import CatBoostError, CatBoostRegressor
+    except ImportError as error:
+        raise RuntimeError("CatBoost is required for D82 query-core candidate training.") from error
+
+    if force_materialize or not Path(query_core_dataset_path).exists():
+        materialization = materialize_query_core_dataset(
+            labeled_dataset_path=labeled_dataset_path,
+            output_path=query_core_dataset_path,
+        )
+    else:
+        materialization = {
+            "task": "D82",
+            "dataset_path": str(Path(labeled_dataset_path)),
+            "output_path": str(Path(query_core_dataset_path)),
+            "reused_existing_output": True,
+        }
+
+    rows = load_dataset_rows(query_core_dataset_path)
+    train_rows, validation_rows, split_metadata, split_validation = _rows_from_materialized_split(
+        rows,
+        split_path=split_path,
+    )
+    feature_schema = get_model_feature_schema(MODEL_SCHEMA_VERSION_V4)
+    training_rows: list[dict[str, str]] = []
+    sample_weights: list[float] = []
+    hard_negative_train_rows = 0
+    hard_negative_training_cap_applications = 0
+    for row in train_rows:
+        training_row = dict(row)
+        if _truthy(row.get("hard_negative")):
+            hard_negative_train_rows += 1
+            sample_weights.append(D82_HARD_NEGATIVE_SAMPLE_WEIGHT)
+            current_target = _float(row, "target_score")
+            capped_target = min(current_target, D82_HARD_NEGATIVE_TRAINING_CAP)
+            if capped_target < current_target:
+                hard_negative_training_cap_applications += 1
+            training_row["target_score"] = str(round(capped_target, 4))
+        else:
+            sample_weights.append(1.0)
+        training_rows.append(training_row)
+
+    x_train, y_train = rows_to_matrix(training_rows, feature_columns=feature_schema.feature_columns)
+    base_model = CatBoostRegressor(
+        loss_function="RMSE",
+        depth=6,
+        learning_rate=0.05,
+        iterations=700,
+        l2_leaf_reg=8,
+        random_seed=random_state,
+        verbose=False,
+    )
+    try:
+        base_model.fit(x_train, y_train, sample_weight=sample_weights)
+    except CatBoostError as error:
+        raise RuntimeError(f"D82 query-core CatBoost training failed: {error}") from error
+
+    guarded_model = QueryCoreGuardrailRegressor(
+        base_model,
+        feature_schema.feature_columns,
+        cap=HARD_NEGATIVE_SCORE_CAP,
+        core_coverage_threshold=D82_QUERY_CORE_COVERAGE_THRESHOLD,
+        semantic_similarity_threshold=D82_SEMANTIC_SIMILARITY_THRESHOLD,
+    )
+    base_predictions = _predict_rows(base_model, validation_rows, feature_schema.feature_columns)
+    guarded_predictions = _predict_rows(guarded_model, validation_rows, feature_schema.feature_columns)
+    runtime_predictions = _runtime_adjusted_predictions(validation_rows, guarded_predictions)
+    base_metrics = _evaluate_predictions(validation_rows, base_predictions)
+    metrics = _evaluate_predictions(validation_rows, guarded_predictions)
+    runtime_metrics = _evaluate_predictions(validation_rows, runtime_predictions)
+    feature_importance_summary = build_feature_importance_summary(
+        base_model,
+        feature_schema.feature_columns,
+        top_n=20,
+    )
+    generated_at = datetime.now(UTC).isoformat()
+    metadata = {
+        "source": "local_dataset",
+        "model_type": "QueryCoreGuardrailCatBoostRegressor",
+        "dataset_version": FINAL_DATASET_VERSION,
+        "artifact_version": D82_ARTIFACT_VERSION,
+        "artifact_family": "page_quality_model.dataset-v7-final-query-core",
+        "candidate_name": "final_query_competitiveness_query_core_catboost_v7",
+        "candidate_family": "query_competitiveness",
+        "training_task": "D82",
+        "trained_at": generated_at,
+        "model_schema_version": MODEL_SCHEMA_VERSION_V4,
+        "feature_columns": list(feature_schema.feature_columns),
+        "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
+        "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "split_path": str(Path(split_path)),
+        "split_mode": str(split_metadata.get("split_mode") or "unknown"),
+        "feature_importance_summary": feature_importance_summary,
+        "query_core_guardrail": {
+            "cap": HARD_NEGATIVE_SCORE_CAP,
+            "core_coverage_threshold": D82_QUERY_CORE_COVERAGE_THRESHOLD,
+            "semantic_similarity_threshold": D82_SEMANTIC_SIMILARITY_THRESHOLD,
+        },
+        "training_adjustments": {
+            "hard_negative_training_cap": D82_HARD_NEGATIVE_TRAINING_CAP,
+            "hard_negative_sample_weight": D82_HARD_NEGATIVE_SAMPLE_WEIGHT,
+            "hard_negative_train_rows": hard_negative_train_rows,
+            "hard_negative_training_cap_applications": hard_negative_training_cap_applications,
+        },
+        "non_production": True,
+        "runtime_enabled": False,
+        "dataset_metadata": {
+            "dataset_version": FINAL_DATASET_VERSION,
+            "rows_count": len(rows),
+            "queries_count": len({str(row.get("query") or "") for row in rows}),
+            "domains_count": len({str(row.get("domain") or "") for row in rows}),
+            "categories_count": len({str(row.get("category") or "") for row in rows}),
+            "cities_count": len({str(row.get("city") or "").strip() for row in rows if str(row.get("city") or "").strip()}),
+            "manifest_generated_at": _read_manifest().get("generated_at"),
+            "source_dataset_path": str(Path(labeled_dataset_path)),
+            "query_core_dataset_path": str(Path(query_core_dataset_path)),
+        },
+    }
+    saved_path = save_model(
+        model=guarded_model,
+        metrics=runtime_metrics,
+        model_path=candidate_model_path,
+        metadata=metadata,
+    )
+    sidecar_path = Path(f"{saved_path}.metadata.json")
+    candidate_sha1 = sha1_file(Path(saved_path))
+    sidecar_path.write_text(
+        json.dumps(
+            {
+                **metadata,
+                "metrics": runtime_metrics,
+                "raw_metrics": metrics,
+                "base_model_metrics": base_metrics,
+                "model_path": str(saved_path),
+                "candidate_sha1": candidate_sha1,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    report = {
+        "task": "D82",
+        "generated_at": generated_at,
+        "dataset_version": FINAL_DATASET_VERSION,
+        "artifact_version": D82_ARTIFACT_VERSION,
+        "candidate_model_path": str(saved_path),
+        "candidate_metadata_path": str(sidecar_path),
+        "candidate_sha1": candidate_sha1,
+        "candidate_name": "final_query_competitiveness_query_core_catboost_v7",
+        "model_type": "QueryCoreGuardrailCatBoostRegressor",
+        "model_schema_version": MODEL_SCHEMA_VERSION_V4,
+        "feature_count": len(feature_schema.feature_columns),
+        "metrics": runtime_metrics,
+        "raw_metrics": metrics,
+        "base_model_metrics": base_metrics,
+        "materialization": materialization,
+        "split": split_metadata,
+        "split_validation": split_validation,
+        "feature_importance_summary": feature_importance_summary,
+        "query_core_guardrail": metadata["query_core_guardrail"],
+        "training_adjustments": metadata["training_adjustments"],
+        "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
+        "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
+        "runtime_enabled": False,
+        "production_artifact_changed": False,
+        "production_artifact_sha1": sha1_file(Path(DEFAULT_MODEL_PATH)),
+    }
+    _write_json(report_json_path, report)
+    Path(report_md_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(report_md_path).write_text(
+        "\n".join(
+            [
+                "# D82 Query-Core Hard Negative Hardening",
+                "",
+                f"- Candidate: `{saved_path}`",
+                f"- Candidate SHA1: `{candidate_sha1}`",
+                f"- Schema: `{MODEL_SCHEMA_VERSION_V4}` / `{len(feature_schema.feature_columns)}` features",
+                f"- Runtime-adjusted MAE: `{runtime_metrics.get('mae')}`",
+                f"- Runtime-adjusted Spearman: `{runtime_metrics.get('spearman_mean')}`",
+                f"- Runtime-adjusted NDCG@10: `{runtime_metrics.get('ndcg_at_10')}`",
+                f"- Base MAE before query-core guardrail: `{base_metrics.get('mae')}`",
+                f"- Hard negative training cap: `{D82_HARD_NEGATIVE_TRAINING_CAP}`",
+                f"- Hard negative sample weight: `{D82_HARD_NEGATIVE_SAMPLE_WEIGHT}`",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    manifest = _read_manifest(FINAL_MANIFEST_PATH)
+    manifest["status"] = "query_core_candidate_trained"
+    manifest["training_progress"] = {
+        **(manifest.get("training_progress") if isinstance(manifest.get("training_progress"), dict) else {}),
+        "d82": {
+            "completed_at": datetime.now(UTC).isoformat(timespec="seconds"),
+            "candidate_model_path": str(Path(saved_path).resolve()),
+            "candidate_metadata_path": str(sidecar_path.resolve()),
+            "candidate_sha1": candidate_sha1,
+            "report_path": str(Path(report_json_path).resolve()),
+            "markdown_report_path": str(Path(report_md_path).resolve()),
+            "selected_candidate": report["candidate_name"],
+            "model_type": report["model_type"],
+            "model_schema_version": MODEL_SCHEMA_VERSION_V4,
+            "feature_count": len(feature_schema.feature_columns),
+            "metrics": runtime_metrics,
+            "runtime_enabled": False,
+            "production_artifact_changed": False,
+            "notes": "D82 hardens D79/D80 by adding query-core features and a conservative raw-score cap for missing query core.",
+        },
+    }
+    _write_json(FINAL_MANIFEST_PATH, manifest)
+    return report
+
+
 def _predict_rows(model: Any, rows: Sequence[Mapping[str, str]], feature_columns: Sequence[str]) -> list[float]:
     matrix = [[float(row.get(feature, 0.0) or 0.0) for feature in feature_columns] for row in rows]
     return [_round_score(float(value)) for value in model.predict(matrix)]
@@ -1252,6 +1626,10 @@ def build_final_decision_report(
     split_path: str | Path = FINAL_SPLIT_PATH,
     report_json_path: str | Path = D80_REPORT_JSON_PATH,
     report_md_path: str | Path = D80_REPORT_MD_PATH,
+    task: str = "D80",
+    candidate_name: str = "final_query_competitiveness_catboost_v7",
+    markdown_title: str = "D80 Final Query-Competitiveness Controlled Decision",
+    next_step: str = "D81 controlled publish if decision is publish_candidate; otherwise D81 records no-publish evidence.",
 ) -> dict[str, Any]:
     rows = load_dataset_rows(labeled_dataset_path)
     train_rows, validation_rows, split_metadata, split_validation = _rows_from_materialized_split(rows, split_path=split_path)
@@ -1271,7 +1649,6 @@ def build_final_decision_report(
     reference_metrics = _evaluate_predictions(validation_rows, reference_raw_predictions)
     reference_runtime_metrics = _evaluate_predictions(validation_rows, reference_runtime_predictions)
     guardrails = final_product_guardrails(candidate_model_path, validation_rows, split_validation=split_validation)
-    candidate_name = "final_query_competitiveness_catboost_v7"
     decision = {
         "decision": "publish_candidate" if guardrails["passed"] else "no_publish",
         "publish_action": "controlled_publish_required" if guardrails["passed"] else "no_publish",
@@ -1279,7 +1656,7 @@ def build_final_decision_report(
         "reason": "final_product_guardrails_passed" if guardrails["passed"] else "final_product_guardrails_failed",
     }
     report = {
-        "task": "D80",
+        "task": task,
         "generated_at": datetime.now(UTC).isoformat(),
         "dataset_version": FINAL_DATASET_VERSION,
         "candidate_model_path": str(Path(candidate_model_path)),
@@ -1304,14 +1681,14 @@ def build_final_decision_report(
         "decision": decision,
         "score_contract_version": FINAL_SCORE_CONTRACT_VERSION,
         "label_schema_version": FINAL_LABEL_SCHEMA_VERSION,
-        "next_step": "D81 controlled publish if decision is publish_candidate; otherwise D81 records no-publish evidence.",
+        "next_step": next_step,
     }
     _write_json(report_json_path, report)
     Path(report_md_path).parent.mkdir(parents=True, exist_ok=True)
     Path(report_md_path).write_text(
         "\n".join(
             [
-                "# D80 Final Query-Competitiveness Controlled Decision",
+                f"# {markdown_title}",
                 "",
                 f"- Decision: `{decision['decision']}`",
                 f"- Reason: `{decision['reason']}`",
@@ -1564,6 +1941,8 @@ def main() -> None:
     parser.add_argument("--train", action="store_true")
     parser.add_argument("--decide", action="store_true")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument("--harden-query-core", action="store_true")
+    parser.add_argument("--force-query-core-materialize", action="store_true")
     parser.add_argument("--dataset", default="")
     parser.add_argument("--output", default="")
     parser.add_argument("--label-report", default="")
@@ -1632,6 +2011,32 @@ def main() -> None:
                     report_md_path=Path(args.training_report_md) if args.training_report_md else D79_REPORT_MD_PATH,
                     relabel=bool(args.relabel),
                 ),
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return
+    if args.harden_query_core:
+        training_report = train_query_core_hardened_candidate(
+            force_materialize=bool(args.force_query_core_materialize),
+        )
+        decision_report = build_final_decision_report(
+            candidate_model_path=D82_MODEL_PATH,
+            labeled_dataset_path=D82_QUERY_CORE_DATASET_PATH,
+            report_json_path=D82_DECISION_JSON_PATH,
+            report_md_path=D82_DECISION_MD_PATH,
+            task="D82",
+            candidate_name="final_query_competitiveness_query_core_catboost_v7",
+            markdown_title="D82 Query-Core Controlled Decision",
+            next_step="Controlled publish can be considered only after D82 evidence review.",
+        )
+        print(
+            json.dumps(
+                {
+                    "task": "D82",
+                    "training": training_report,
+                    "decision": decision_report,
+                },
                 ensure_ascii=False,
                 indent=2,
             )

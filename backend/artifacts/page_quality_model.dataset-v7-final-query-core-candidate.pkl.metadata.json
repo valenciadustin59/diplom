@@ -1,0 +1,310 @@
+{
+  "source": "local_dataset",
+  "model_type": "QueryCoreGuardrailCatBoostRegressor",
+  "dataset_version": "dataset-v7-final",
+  "artifact_version": "dataset-v7-final-query-core-v1",
+  "artifact_family": "page_quality_model.dataset-v7-final-query-core",
+  "candidate_name": "final_query_competitiveness_query_core_catboost_v7",
+  "candidate_family": "query_competitiveness",
+  "training_task": "D82",
+  "trained_at": "2026-05-05T12:17:29.111076+00:00",
+  "model_schema_version": "v4",
+  "feature_columns": [
+    "text_length_chars",
+    "html_length_chars",
+    "word_count",
+    "unique_word_count",
+    "unique_word_ratio",
+    "avg_word_length",
+    "sentence_count",
+    "avg_sentence_length",
+    "paragraph_count",
+    "h1_count",
+    "h2_count",
+    "h3_count",
+    "heading_count",
+    "title_present",
+    "title_length",
+    "meta_description_present",
+    "meta_description_length",
+    "query_in_title",
+    "query_in_text",
+    "exact_query_count",
+    "query_term_count",
+    "title_query_term_count",
+    "meta_query_term_count",
+    "title_keyword_coverage_ratio",
+    "meta_keyword_coverage_ratio",
+    "query_terms_in_headings",
+    "heading_query_coverage_ratio",
+    "first_200_words_query_term_count",
+    "query_density",
+    "keyword_coverage_ratio",
+    "link_count",
+    "image_count",
+    "list_item_count",
+    "strong_tag_count",
+    "form_count",
+    "input_count",
+    "inputs_per_form_ratio",
+    "avg_paragraph_length",
+    "link_density_per_1000_words",
+    "image_density_per_1000_words",
+    "list_density_per_1000_words",
+    "strong_density_per_1000_words",
+    "text_to_html_ratio",
+    "semantic_similarity",
+    "early_query_coverage_ratio",
+    "conversion_signal_score",
+    "content_link_ratio",
+    "heading_paragraph_balance",
+    "query_semantic_alignment",
+    "title_semantic_alignment",
+    "heading_semantic_alignment",
+    "title_heading_keyword_alignment",
+    "content_depth_semantic_score",
+    "query_prominence_score",
+    "title_length_quality",
+    "meta_length_quality",
+    "keyword_balance_score",
+    "semantic_content_richness",
+    "cta_semantic_score",
+    "http_status_code",
+    "http_status_ok",
+    "redirect_count",
+    "has_redirect",
+    "canonical_present",
+    "canonical_matches_final_url",
+    "meta_robots_present",
+    "x_robots_tag_present",
+    "robots_noindex",
+    "robots_nofollow",
+    "page_indexable",
+    "viewport_present",
+    "lang_present",
+    "hreflang_count",
+    "hreflang_present",
+    "url_depth",
+    "url_parameter_count",
+    "url_has_query_parameters",
+    "redirect_efficiency_score",
+    "url_hygiene_score",
+    "technical_metadata_score",
+    "canonical_signal_score",
+    "technical_seo_score",
+    "phone_present",
+    "phone_count",
+    "email_present",
+    "address_present",
+    "business_hours_present",
+    "price_present",
+    "currency_present",
+    "delivery_info_present",
+    "payment_info_present",
+    "warranty_info_present",
+    "returns_info_present",
+    "reviews_present",
+    "rating_present",
+    "faq_present",
+    "cta_present",
+    "cta_count",
+    "messenger_present",
+    "value_proposition_present",
+    "legal_requisites_present",
+    "company_identity_present",
+    "contact_options_score",
+    "commercial_signal_count",
+    "trust_signal_count",
+    "commercial_signals_score",
+    "trust_signals_score",
+    "commercial_trust_score",
+    "heavy_analysis_available",
+    "heavy_analysis_overall_score",
+    "structured_data_json_ld_count",
+    "structured_data_valid_json_ld_count",
+    "structured_data_malformed_json_ld_count",
+    "structured_data_schema_type_count",
+    "structured_data_business_schema_present",
+    "structured_data_offer_schema_present",
+    "structured_data_faq_schema_present",
+    "structured_data_breadcrumb_schema_present",
+    "structured_data_score",
+    "mobile_viewport_present",
+    "mobile_readiness_score",
+    "rendering_browser_fetch_used",
+    "rendering_js_dependency_risk",
+    "rendering_text_html_ratio",
+    "rendering_score",
+    "performance_html_size_kb",
+    "performance_dom_node_count",
+    "performance_script_count",
+    "performance_stylesheet_count",
+    "performance_image_count",
+    "performance_response_time_ms",
+    "performance_resource_complexity_score",
+    "performance_proxy_score",
+    "intent_is_commercial",
+    "intent_is_local_commercial",
+    "intent_is_informational",
+    "intent_is_navigational",
+    "intent_confidence",
+    "query_local_modifier",
+    "commercial_intent_score",
+    "local_intent_score",
+    "informational_intent_score",
+    "navigational_intent_score",
+    "commercial_intent_alignment",
+    "local_intent_alignment",
+    "informational_intent_alignment",
+    "navigational_intent_alignment",
+    "intent_alignment_score",
+    "query_core_term_count",
+    "query_core_term_matches",
+    "query_core_keyword_coverage_ratio",
+    "query_core_phrase_count",
+    "query_core_phrase_present",
+    "query_intent_modifier_count",
+    "query_intent_modifier_matches",
+    "query_intent_modifier_coverage_ratio"
+  ],
+  "score_contract_version": "query-competitiveness-final-v2",
+  "label_schema_version": "query-competitiveness-rubric-v1",
+  "split_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\split.json",
+  "split_mode": "group_by_query_category_stratified",
+  "feature_importance_summary": {
+    "available": true,
+    "top_features": [
+      {
+        "feature": "query_core_keyword_coverage_ratio",
+        "importance": 19.639401
+      },
+      {
+        "feature": "query_prominence_score",
+        "importance": 15.836597
+      },
+      {
+        "feature": "keyword_coverage_ratio",
+        "importance": 12.00003
+      },
+      {
+        "feature": "query_density",
+        "importance": 11.219264
+      },
+      {
+        "feature": "query_term_count",
+        "importance": 5.9435
+      },
+      {
+        "feature": "keyword_balance_score",
+        "importance": 5.770326
+      },
+      {
+        "feature": "query_semantic_alignment",
+        "importance": 2.867873
+      },
+      {
+        "feature": "query_core_term_count",
+        "importance": 2.269671
+      },
+      {
+        "feature": "query_core_term_matches",
+        "importance": 1.935999
+      },
+      {
+        "feature": "semantic_similarity",
+        "importance": 1.909326
+      },
+      {
+        "feature": "page_indexable",
+        "importance": 1.801757
+      },
+      {
+        "feature": "title_keyword_coverage_ratio",
+        "importance": 1.788376
+      },
+      {
+        "feature": "query_intent_modifier_matches",
+        "importance": 1.533011
+      },
+      {
+        "feature": "heading_query_coverage_ratio",
+        "importance": 1.400161
+      },
+      {
+        "feature": "title_semantic_alignment",
+        "importance": 1.296563
+      },
+      {
+        "feature": "early_query_coverage_ratio",
+        "importance": 1.033121
+      },
+      {
+        "feature": "semantic_content_richness",
+        "importance": 0.97492
+      },
+      {
+        "feature": "technical_seo_score",
+        "importance": 0.954194
+      },
+      {
+        "feature": "query_intent_modifier_coverage_ratio",
+        "importance": 0.938669
+      },
+      {
+        "feature": "title_heading_keyword_alignment",
+        "importance": 0.804525
+      }
+    ],
+    "feature_count": 156
+  },
+  "query_core_guardrail": {
+    "cap": 35.0,
+    "core_coverage_threshold": 0.75,
+    "semantic_similarity_threshold": 0.55
+  },
+  "training_adjustments": {
+    "hard_negative_training_cap": 25.0,
+    "hard_negative_sample_weight": 10.0,
+    "hard_negative_train_rows": 800,
+    "hard_negative_training_cap_applications": 358
+  },
+  "non_production": true,
+  "runtime_enabled": false,
+  "dataset_metadata": {
+    "dataset_version": "dataset-v7-final",
+    "rows_count": 4876,
+    "queries_count": 500,
+    "domains_count": 2253,
+    "categories_count": 50,
+    "cities_count": 5,
+    "manifest_generated_at": "2026-05-04T09:35:09.350627+00:00",
+    "source_dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.labeled.csv",
+    "query_core_dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.query-core.csv"
+  },
+  "metrics": {
+    "rmse": 7.242153,
+    "mae": 4.253847,
+    "spearman_mean": 0.917044,
+    "ndcg_at_10": 0.996873,
+    "top_3_hit_rate": 0.93,
+    "validation_queries": 100.0
+  },
+  "raw_metrics": {
+    "rmse": 5.347148,
+    "mae": 3.085885,
+    "spearman_mean": 0.923692,
+    "ndcg_at_10": 0.996786,
+    "top_3_hit_rate": 0.93,
+    "validation_queries": 100.0
+  },
+  "base_model_metrics": {
+    "rmse": 3.763253,
+    "mae": 2.376278,
+    "spearman_mean": 0.9247,
+    "ndcg_at_10": 0.9963,
+    "top_3_hit_rate": 0.9,
+    "validation_queries": 100.0
+  },
+  "model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v7-final-query-core-candidate.pkl",
+  "candidate_sha1": "2bbf84bfcc77662d66f62cfdafbb6ee4d8264e88"
+}

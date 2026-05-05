@@ -8,6 +8,9 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+backend/.pytest-tmp/
+output/pytest*/
+output/tmp/
 
 dist/
 build/
@@ -62,3 +65,4 @@ output/d75-collection/
 !backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v6-query-relevance-candidate.pkl
 !backend/artifacts/page_quality_model.dataset-v7-final-candidate.pkl
+!backend/artifacts/page_quality_model.dataset-v7-final-query-core-candidate.pkl

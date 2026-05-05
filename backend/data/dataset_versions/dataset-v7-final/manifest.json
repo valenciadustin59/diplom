@@ -45,7 +45,7 @@
   },
   "dataset_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\dataset.csv",
   "seeds_path": "E:\\codexPROJ\\diplom\\backend\\data\\dataset_versions\\dataset-v7-final\\seeds.csv",
-  "status": "controlled_no_publish",
+  "status": "query_core_candidate_trained",
   "ready_for_training": true,
   "reason": "D80/D81 recorded controlled no-publish. The v7 candidate remains non-production until hard-negative guardrails pass.",
   "collection_progress": {
@@ -208,7 +208,30 @@
     },
     "runtime_enabled": false,
     "production_artifact_changed": false,
-    "notes": "D79 trains a non-production candidate only. D80 must benchmark/decide before any publish."
+    "notes": "D79 trains a non-production candidate only. D80 must benchmark/decide before any publish.",
+    "d82": {
+      "completed_at": "2026-05-05T12:17:29+00:00",
+      "candidate_model_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v7-final-query-core-candidate.pkl",
+      "candidate_metadata_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\page_quality_model.dataset-v7-final-query-core-candidate.pkl.metadata.json",
+      "candidate_sha1": "2bbf84bfcc77662d66f62cfdafbb6ee4d8264e88",
+      "report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d82\\d82-query-core-hardening-report.json",
+      "markdown_report_path": "E:\\codexPROJ\\diplom\\backend\\artifacts\\ranking-benchmarks\\dataset-v7-final-d82\\d82-query-core-hardening-report.md",
+      "selected_candidate": "final_query_competitiveness_query_core_catboost_v7",
+      "model_type": "QueryCoreGuardrailCatBoostRegressor",
+      "model_schema_version": "v4",
+      "feature_count": 156,
+      "metrics": {
+        "rmse": 7.242153,
+        "mae": 4.253847,
+        "spearman_mean": 0.917044,
+        "ndcg_at_10": 0.996873,
+        "top_3_hit_rate": 0.93,
+        "validation_queries": 100.0
+      },
+      "runtime_enabled": false,
+      "production_artifact_changed": false,
+      "notes": "D82 hardens D79/D80 by adding query-core features and a conservative raw-score cap for missing query core."
+    }
   },
   "release_progress": {
     "task": "D81",

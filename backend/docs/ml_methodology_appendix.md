@@ -770,10 +770,39 @@ D59 removes user-facing ML/debug clutter from the interface. D60 archives resear
 - `top_3_hit_rate` is diagnostics, not the main release truth;
 - recommendations are prioritized by competitor gaps and search importance.
 
+## D62-D82 final query-competitiveness evidence
+
+D62-D68 changed the final model framing from abstract page quality to query-specific competitiveness: the score must first answer whether the page is about the concrete query, and only then use SEO quality, content depth, commercial trust, technical accessibility and competitor context.
+
+D75-D78 materialized the real `dataset-v7-final` evidence surface:
+
+- `3876` regular top-10 rows from `500/500` seed queries;
+- `1000` hard negatives materialized from saved snapshot artifacts;
+- `4876` deterministic expert-rubric labels;
+- leakage-safe `group_by_query_category_stratified` split with `3898/978` train/validation rows and `0` query overlap.
+
+D79 trained a non-production CatBoost v7 candidate with schema `v3` and `148` features. D80/D81 correctly kept production unchanged because `25` validation hard negatives were still predicted above the `35.0` hard-negative cap.
+
+D82 fixes that blocker by adding schema `v4` with `156` features: the original `148` v3 features plus `8` query-core features for core query term coverage, exact core phrase presence and intent modifier coverage. It also adds a pickle-safe `QueryCoreGuardrailRegressor` wrapper that caps raw predictions to `35.0` when the page misses the query core and semantic similarity is weak.
+
+D82 evidence:
+
+- candidate artifact: `backend/artifacts/page_quality_model.dataset-v7-final-query-core-candidate.pkl`;
+- candidate SHA1: `2bbf84bfcc77662d66f62cfdafbb6ee4d8264e88`;
+- dataset: `backend/data/dataset_versions/dataset-v7-final/dataset.query-core.csv`;
+- reports: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d82/`;
+- hard negatives above `35.0`: `0` instead of the D80 blocker `25`;
+- runtime-adjusted candidate metrics: `MAE=4.253847`, `Spearman=0.917044`, `NDCG@10=0.996873`, `top_3_hit_rate=0.93` as diagnostics;
+- reference runtime on the same split: `MAE=6.556754`, `Spearman=0.77064`, `NDCG@10=0.984659`, `top_3_hit_rate=0.83`.
+
+D82 controlled decision is `publish_candidate`, but the artifact remains non-production until a separate controlled publish task explicitly replaces `backend/artifacts/page_quality_model.pkl`. The current active runtime remains the D58 `dataset-v5` artifact.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
 - `backend/app/ml/dataset_builder.py`
+- `backend/app/ml/final_query_competitiveness.py`
+- `backend/app/ml/query_core_model.py`
 - `backend/app/ml/v3_dataset.py`
 - `backend/app/ml/v4_dataset.py`
 - `backend/app/ml/seo_weighted_labels.py`

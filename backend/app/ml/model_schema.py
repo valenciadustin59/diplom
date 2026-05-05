@@ -10,6 +10,7 @@ from app.heavy_analysis import HEAVY_ANALYSIS_FEATURE_COLUMNS
 MODEL_SCHEMA_VERSION_V1 = "v1"
 MODEL_SCHEMA_VERSION_V2 = "v2"
 MODEL_SCHEMA_VERSION_V3 = "v3"
+MODEL_SCHEMA_VERSION_V4 = "v4"
 CUSTOM_MODEL_SCHEMA_VERSION = "custom"
 DEFAULT_TRAINING_MODEL_SCHEMA_VERSION = MODEL_SCHEMA_VERSION_V2
 DEFAULT_RUNTIME_MODEL_SCHEMA_VERSION = MODEL_SCHEMA_VERSION_V1
@@ -76,6 +77,17 @@ BASELINE_FEATURE_COLUMNS = (
     "cta_semantic_score",
 )
 
+QUERY_RELEVANCE_CORE_FEATURE_COLUMNS = (
+    "query_core_term_count",
+    "query_core_term_matches",
+    "query_core_keyword_coverage_ratio",
+    "query_core_phrase_count",
+    "query_core_phrase_present",
+    "query_intent_modifier_count",
+    "query_intent_modifier_matches",
+    "query_intent_modifier_coverage_ratio",
+)
+
 MODEL_FEATURE_COLUMNS_BY_VERSION: dict[str, tuple[str, ...]] = {
     MODEL_SCHEMA_VERSION_V1: BASELINE_FEATURE_COLUMNS,
     MODEL_SCHEMA_VERSION_V2: BASELINE_FEATURE_COLUMNS + tuple(SNAPSHOT_AUXILIARY_FEATURE_COLUMNS),
@@ -84,6 +96,13 @@ MODEL_FEATURE_COLUMNS_BY_VERSION: dict[str, tuple[str, ...]] = {
         + tuple(SNAPSHOT_AUXILIARY_FEATURE_COLUMNS)
         + tuple(HEAVY_ANALYSIS_FEATURE_COLUMNS)
         + tuple(INTENT_ALIGNMENT_FEATURE_COLUMNS)
+    ),
+    MODEL_SCHEMA_VERSION_V4: (
+        BASELINE_FEATURE_COLUMNS
+        + tuple(SNAPSHOT_AUXILIARY_FEATURE_COLUMNS)
+        + tuple(HEAVY_ANALYSIS_FEATURE_COLUMNS)
+        + tuple(INTENT_ALIGNMENT_FEATURE_COLUMNS)
+        + QUERY_RELEVANCE_CORE_FEATURE_COLUMNS
     ),
 }
 

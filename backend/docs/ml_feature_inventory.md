@@ -1,15 +1,28 @@
 # ML Feature Inventory
 
-## Current schema status after D38
+## Current schema status after D82
 
-Production runtime artifact `backend/artifacts/page_quality_model.pkl` now uses the D38-published CatBoost `v3` artifact with `148` pre-competitor features:
+Production runtime artifact `backend/artifacts/page_quality_model.pkl` still uses the D58-published CatBoost `v3` artifact from `dataset-v5` with `148` pre-competitor features. D82 trained a non-production `v4` query-core candidate with `156` features, but it has not replaced the runtime alias.
+
+The active runtime `v3` feature groups are:
 
 - `59` baseline text/HTML/query features;
 - `49` snapshot technical and commercial features;
 - `25` heavy-analysis features;
 - `15` intent-alignment features.
 
-D37 intentionally does not include the `29` SERP-relative features in primary scoring, because they are available only after competitor aggregation. D37 dataset evidence is stored in `backend/data/dataset_versions/dataset-v3-d37/`, and D38 published the selected candidate to the production alias. Current production metadata: dataset `dataset-v3-d37`, artifact `dataset-v3-d37-20260501200434`, schema `v3`, model type `CatBoostRegressor`, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`. The previous `v1` RandomForest artifact remains available as rollback at `backend/artifacts/versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl`.
+D82 `v4` extends that set with `8` query-core features:
+
+- `query_core_term_count`
+- `query_core_term_matches`
+- `query_core_keyword_coverage_ratio`
+- `query_core_phrase_count`
+- `query_core_phrase_present`
+- `query_intent_modifier_count`
+- `query_intent_modifier_matches`
+- `query_intent_modifier_coverage_ratio`
+
+D37 intentionally does not include the `29` SERP-relative features in primary scoring, because they are available only after competitor aggregation. D58 is the current runtime publish: dataset `dataset-v5`, artifact `dataset-v5-20260502151507`, schema `v3`, model type `CatBoostRegressor`, SHA1 `5374ca30f48f70d8629e7d84ec3df0524ef35b52`. D82 candidate evidence is stored at `backend/artifacts/page_quality_model.dataset-v7-final-query-core-candidate.pkl` and `backend/artifacts/ranking-benchmarks/dataset-v7-final-d82/`; it is `non_production=true` until a separate controlled publish is run.
 
 Текущий runtime scoring использует `59` признаков страницы. Набор специально смещён не в сторону одиночных SEO-галочек, а в сторону комбинаций сигналов, потому что для дипломного проекта важно показать: модель оценивает не один параметр сам по себе, а то, как несколько параметров работают вместе.
 

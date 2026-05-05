@@ -649,6 +649,25 @@ QUERY_INTENT_MODIFIER_TERMS = frozenset(
         "цена",
         "цены",
         "цену",
+        "бизнес",
+        "бизнеса",
+        "выбрать",
+        "гарантией",
+        "гарант",
+        "для",
+        "екатеринбург",
+        "казань",
+        "как",
+        "ключ",
+        "консультация",
+        "лучшие",
+        "москва",
+        "новосибирск",
+        "отзывы",
+        "петербург",
+        "под",
+        "рядом",
+        "санкт",
     }
 )
 
@@ -723,6 +742,13 @@ def _coverage_ratio(query_words: list[str], word_freq: Counter[str]) -> float:
     if not query_words:
         return 0.0
     return sum(1 for word in query_words if word in word_freq) / len(query_words)
+
+
+def _phrase_count(needle: list[str], haystack: list[str]) -> int:
+    if not needle or not haystack or len(needle) > len(haystack):
+        return 0
+    needle_size = len(needle)
+    return sum(1 for index in range(0, len(haystack) - needle_size + 1) if haystack[index : index + needle_size] == needle)
 
 
 def _document_text_list(value: object) -> list[str]:
@@ -1254,12 +1280,15 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
     query_core_term_count = 0
     query_core_term_matches = 0
     query_core_keyword_coverage_ratio = 0.0
+    query_core_phrase_count = 0
+    query_core_phrase_present = 0
     query_intent_modifier_count = 0
     query_intent_modifier_matches = 0
     query_intent_modifier_coverage_ratio = 0.0
 
     if query_words:
         normalized_query_words = [_normalize_query_token(word) for word in query_words]
+        normalized_words = [_normalize_query_token(word) for word in words]
         word_freq = _normalized_counter(words)
         first_200_word_freq = _normalized_counter(first_200_words)
         title_word_freq = _normalized_counter(_tokenize(title_lower))
@@ -1285,6 +1314,8 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         query_core_term_count = sum(word_freq[word] for word in core_query_words)
         query_core_term_matches = sum(1 for word in core_query_words if word in word_freq)
         query_core_keyword_coverage_ratio = _coverage_ratio(core_query_words or normalized_query_words, word_freq)
+        query_core_phrase_count = _phrase_count(core_query_words or normalized_query_words, normalized_words)
+        query_core_phrase_present = int(query_core_phrase_count > 0)
         query_intent_modifier_count = sum(word_freq[word] for word in intent_modifier_words)
         query_intent_modifier_matches = sum(1 for word in intent_modifier_words if word in word_freq)
         query_intent_modifier_coverage_ratio = _coverage_ratio(intent_modifier_words, word_freq)
@@ -1329,6 +1360,8 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         "query_core_term_count": query_core_term_count,
         "query_core_term_matches": query_core_term_matches,
         "query_core_keyword_coverage_ratio": round(query_core_keyword_coverage_ratio, 6),
+        "query_core_phrase_count": query_core_phrase_count,
+        "query_core_phrase_present": query_core_phrase_present,
         "query_intent_modifier_count": query_intent_modifier_count,
         "query_intent_modifier_matches": query_intent_modifier_matches,
         "query_intent_modifier_coverage_ratio": round(query_intent_modifier_coverage_ratio, 6),

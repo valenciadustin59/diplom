@@ -8,6 +8,10 @@ from app.ml.final_query_competitiveness import (
     D79_REPORT_JSON_PATH,
     D80_REPORT_JSON_PATH,
     D81_REPORT_JSON_PATH,
+    D82_DECISION_JSON_PATH,
+    D82_MODEL_PATH,
+    D82_QUERY_CORE_DATASET_PATH,
+    D82_REPORT_JSON_PATH,
     FINAL_MODEL_PATH,
     FINAL_LABEL_SCHEMA_VERSION,
     HARD_NEGATIVE_SCORE_CAP,
@@ -255,3 +259,27 @@ def test_d81_records_no_publish_without_runtime_mutation() -> None:
     assert report["production_sha1_before"] == report["production_sha1_after"]
     assert report["production_sha1_after"] == sha1_file(DEFAULT_MODEL_PATH)
     assert report["candidate_sha1"] == sha1_file(FINAL_MODEL_PATH)
+
+
+def test_d82_query_core_candidate_passes_hard_negative_guardrail() -> None:
+    training_report = json.loads(D82_REPORT_JSON_PATH.read_text(encoding="utf-8"))
+    decision_report = json.loads(D82_DECISION_JSON_PATH.read_text(encoding="utf-8"))
+    artifact = load_model_artifact(D82_MODEL_PATH)
+    guardrails = decision_report["product_guardrails"]
+
+    assert training_report["task"] == "D82"
+    assert decision_report["task"] == "D82"
+    assert artifact is not None
+    assert D82_QUERY_CORE_DATASET_PATH.exists()
+    assert artifact["dataset_version"] == "dataset-v7-final"
+    assert artifact["model_schema_version"] == "v4"
+    raw_payload = load_saved_model(D82_MODEL_PATH)
+    assert raw_payload is not None
+    assert raw_payload["candidate_name"] == "final_query_competitiveness_query_core_catboost_v7"
+    assert raw_payload["non_production"] is True
+    assert raw_payload["runtime_enabled"] is False
+    assert decision_report["decision"]["decision"] == "publish_candidate"
+    assert guardrails["passed"] is True
+    assert guardrails["checks"]["hard_negatives_learned_below_cap"] is True
+    assert guardrails["hard_negative_above_cap_count"] == 0
+    assert decision_report["runtime_adjusted_metrics"]["mae"] < decision_report["reference_runtime_adjusted_metrics"]["mae"]

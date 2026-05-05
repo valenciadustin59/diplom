@@ -6,9 +6,10 @@ from app.ml.model import ARTIFACTS_DIR, DEFAULT_MODEL_PATH
 from app.ml.model import calculate_rule_score, load_model_artifact, save_model, train_model
 from app.features import INTENT_ALIGNMENT_FEATURE_COLUMNS, SERP_RELATIVE_FEATURE_COLUMNS, SNAPSHOT_AUXILIARY_FEATURE_COLUMNS
 from app.heavy_analysis import HEAVY_ANALYSIS_FEATURE_COLUMNS
-from app.ml.model_schema import get_model_feature_schema
+from app.ml.model_schema import QUERY_RELEVANCE_CORE_FEATURE_COLUMNS, get_model_feature_schema
 EXPECTED_V2_FEATURE_COUNT = len(get_model_feature_schema("v2").feature_columns)
 EXPECTED_V3_FEATURE_COUNT = len(get_model_feature_schema("v3").feature_columns)
+EXPECTED_V4_FEATURE_COUNT = len(get_model_feature_schema("v4").feature_columns)
 
 
 class ConstantScoreModel:
@@ -445,3 +446,13 @@ def test_model_schema_v3_combines_pre_competitor_feature_groups():
     assert "heavy_analysis_overall_score" in v3_columns
     assert "intent_alignment_score" in v3_columns
     assert not any(feature_name in v3_columns for feature_name in SERP_RELATIVE_FEATURE_COLUMNS)
+
+
+def test_model_schema_v4_extends_v3_with_query_core_features():
+    v3_columns = get_model_feature_schema("v3").feature_columns
+    v4_columns = get_model_feature_schema("v4").feature_columns
+
+    assert EXPECTED_V4_FEATURE_COUNT == EXPECTED_V3_FEATURE_COUNT + len(QUERY_RELEVANCE_CORE_FEATURE_COLUMNS)
+    assert v4_columns[: len(v3_columns)] == v3_columns
+    assert v4_columns[-len(QUERY_RELEVANCE_CORE_FEATURE_COLUMNS) :] == QUERY_RELEVANCE_CORE_FEATURE_COLUMNS
+    assert len(v4_columns) == len(set(v4_columns))
