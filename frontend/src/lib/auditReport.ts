@@ -6,6 +6,12 @@ import type {
   CompetitorResult,
   RecommendationsBundle,
 } from "../types";
+import { buildAuditLowScoreReason, type AuditLowScoreReason } from "./auditLowScoreReason";
+import {
+  buildCompetitorContextStats,
+  formatCompetitorContextSummary,
+  getAcceptedCompetitors,
+} from "./competitorContext";
 import { getEarlyStopMismatchView } from "./earlyStop";
 import { flattenRecommendationItems } from "./recommendations";
 import { getFetchMethodLabel, getIntentLabel, getRecommendationGroupLabel } from "./terminology";
@@ -58,6 +64,8 @@ export type AuditReportModel = {
     mlScore: string;
     methodology: string;
   };
+  lowScoreReason: AuditLowScoreReason;
+  recoveryActions: string[];
   summary: string[];
   seoMetrics: ReportMetric[];
   recommendationMetrics: ReportMetric[];
@@ -212,8 +220,21 @@ function getScoreVerdict(score: number | null | undefined): string {
   return "Страница слабо закрывает запрос или заметно уступает конкурентам по важным для пользователя элементам.";
 }
 
-function getScoreBreakdown(results: AuditResultsResponse | null, audit: AuditStatusResponse) {
+function getScoreBreakdown(
+  results: AuditResultsResponse | null,
+  audit: AuditStatusResponse,
+  lowScoreReason: AuditLowScoreReason,
+) {
   const breakdown = results?.score_breakdown ?? audit.score_breakdown ?? null;
+  if (lowScoreReason.isBlocking || lowScoreReason.category === "query_mismatch") {
+    return {
+      finalScore: formatScore(breakdown?.final_score ?? results?.score ?? audit.score),
+      ruleScore: lowScoreReason.isBlocking ? "—" : formatScore(breakdown?.rule_score),
+      mlScore: lowScoreReason.isBlocking ? "—" : formatScore(breakdown?.ml_score),
+      methodology: lowScoreReason.message,
+    };
+  }
+
   const earlyStopView = getEarlyStopMismatchView(breakdown);
   if (earlyStopView) {
     return {
@@ -335,7 +356,25 @@ function buildSeoMetrics(input: AuditReportInput): ReportMetric[] {
   ];
 }
 
-function buildRecommendationMetrics(recommendations: RecommendationsBundle | null): ReportMetric[] {
+function buildRecommendationMetrics(
+  recommendations: RecommendationsBundle | null,
+  lowScoreReason: AuditLowScoreReason,
+): ReportMetric[] {
+  if (lowScoreReason.isBlocking) {
+    return [
+      {
+        label: "Главный план",
+        value: "Восстановить доступ",
+        note: "Обычные SEO-рекомендации не являются главным выводом, пока целевая страница не открывается.",
+      },
+      {
+        label: "Действий восстановления",
+        value: formatCount(lowScoreReason.recoveryActions.length),
+        note: "Проверьте URL, редирект, доступность и индексируемость.",
+      },
+    ];
+  }
+
   const summary = recommendations?.summary;
   return [
     {
@@ -382,9 +421,12 @@ function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
   }
 
   const summary = getReportComparisonSummary(input);
-  const found = summary?.competitors_found ?? summary?.competitors_count ?? 0;
-  const analyzed = summary?.competitors_analyzed ?? summary?.competitors_count ?? 0;
-  const failed = summary?.competitors_failed ?? Math.max(0, found - analyzed);
+  const competitors = input.results?.competitor_results ?? input.audit.competitor_results;
+  const contextStats = buildCompetitorContextStats(summary, competitors);
+  const contextSummary = formatCompetitorContextSummary(contextStats);
+  const found = contextStats.collected;
+  const analyzed = contextStats.accepted;
+  const failed = contextStats.failed;
   const finalScore = getReportFinalScore(input);
   const primaryScore = getReportPrimaryScore(input);
   const averageScore = getReportCompetitorAverageScore(input);
@@ -411,7 +453,9 @@ function buildCompetitorMetrics(input: AuditReportInput): ReportMetric[] {
     {
       label: "Конкуренты",
       value: `${analyzed}/${found}`,
-      note: failed > 0 ? `${failed} страниц не удалось обработать автоматически.` : "Все найденные конкуренты обработаны.",
+      note:
+        contextSummary ??
+        (failed > 0 ? `${failed} страниц не удалось обработать автоматически.` : "Все найденные конкуренты обработаны."),
     },
   ];
 }
@@ -441,7 +485,14 @@ function buildRuntimeMetrics(diagnostics: AuditTimelineDiagnosticsResponse | nul
   ];
 }
 
-function buildRecommendationActions(recommendations: RecommendationsBundle | null): ReportRecommendation[] {
+function buildRecommendationActions(
+  recommendations: RecommendationsBundle | null,
+  lowScoreReason: AuditLowScoreReason,
+): ReportRecommendation[] {
+  if (lowScoreReason.isBlocking) {
+    return [];
+  }
+
   return flattenRecommendationItems(recommendations).map((item) => ({
     code: item.code,
     groupLabel: item.groupLabel,
@@ -452,7 +503,20 @@ function buildRecommendationActions(recommendations: RecommendationsBundle | nul
   }));
 }
 
-function buildGroupSummaries(recommendations: RecommendationsBundle | null): ReportMetric[] {
+function buildGroupSummaries(
+  recommendations: RecommendationsBundle | null,
+  lowScoreReason: AuditLowScoreReason,
+): ReportMetric[] {
+  if (lowScoreReason.isBlocking) {
+    return [
+      {
+        label: "Доступность страницы",
+        value: "Требует восстановления",
+        note: "Сначала страница должна открываться и быть доступной для индексации.",
+      },
+    ];
+  }
+
   return (recommendations?.groups ?? []).map((group) => ({
     label: getRecommendationGroupLabel(group.key),
     value: groupStatusLabels[group.status],
@@ -461,7 +525,7 @@ function buildGroupSummaries(recommendations: RecommendationsBundle | null): Rep
 }
 
 function buildCompetitorRows(competitors: CompetitorResult[] | null | undefined) {
-  return (competitors ?? []).map((competitor) => ({
+  return getAcceptedCompetitors(competitors).map((competitor) => ({
     domain: competitor.domain || getDomainFromUrl(competitor.url),
     url: competitor.url,
     score: formatScore(competitor.score),
@@ -483,18 +547,21 @@ function buildStageRows(diagnostics: AuditTimelineDiagnosticsResponse | null): R
 export function buildAuditReportModel(input: AuditReportInput): AuditReportModel {
   const generatedAt = input.generatedAt ?? new Date();
   const score = getReportFinalScore(input);
-  const scoreBreakdown = getScoreBreakdown(input.results, input.audit);
+  const lowScoreReason = buildAuditLowScoreReason(input);
+  const scoreBreakdown = getScoreBreakdown(input.results, input.audit, lowScoreReason);
   const earlyStopView = getEarlyStopMismatchView(getReportScoreBreakdown(input));
   const comparisonSummary = getReportComparisonSummary(input);
   const marketDifference = getReportMarketDifference(input);
   const recommendations = getEffectiveRecommendations(input);
   const recommendationsSummary = recommendations?.summary ?? null;
   const domain = getDomainFromUrl(input.audit.target_url);
-  const analyzedCompetitors =
-    comparisonSummary?.competitors_analyzed ??
-    comparisonSummary?.competitors_count ??
-    input.results?.competitor_results?.filter((competitor) => competitor.fetch_status === "success").length ??
-    0;
+  const competitorContextStats = buildCompetitorContextStats(
+    comparisonSummary,
+    input.results?.competitor_results ?? input.audit.competitor_results,
+  );
+  const competitorContextSummary = formatCompetitorContextSummary(competitorContextStats);
+  const competitorContextSummaryText = competitorContextSummary?.replace(/\.$/, "");
+  const analyzedCompetitors = competitorContextStats.accepted;
 
   return {
     title: `SEO-отчёт: ${domain}`,
@@ -505,9 +572,20 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
     createdAt: formatDateTime(input.audit.created_at),
     statusLabel: getStatusLabel(input.audit.status),
     scoreLabel: formatScore(score),
-    scoreVerdict: earlyStopView?.title ?? getScoreVerdict(score),
+    scoreVerdict: lowScoreReason.kind !== "unknown" ? lowScoreReason.title : earlyStopView?.title ?? getScoreVerdict(score),
     scoreBreakdown,
-    summary: earlyStopView
+    lowScoreReason,
+    recoveryActions: lowScoreReason.recoveryActions,
+    summary: lowScoreReason.kind !== "unknown"
+      ? [
+          `Аудит по запросу "${input.audit.query}" для ${domain}.`,
+          lowScoreReason.title,
+          lowScoreReason.message,
+          ...(lowScoreReason.recoveryActions.length > 0
+            ? [`Что сделать: ${lowScoreReason.recoveryActions.join(" ")}`]
+            : []),
+        ]
+      : earlyStopView
       ? [
           `Аудит по запросу "${input.audit.query}" для ${domain}.`,
           earlyStopView.title,
@@ -516,7 +594,9 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
       : [
           `Аудит по запросу "${input.audit.query}" для ${domain}.`,
           `Итоговая оценка: ${formatScore(score)}. ${getScoreVerdict(score)}`,
-          `Конкурентный контекст: обработано ${analyzedCompetitors} страниц, разница с конкурентами ${formatSignedScore(
+          `Конкурентный контекст: ${
+            competitorContextSummaryText ?? `обработано ${analyzedCompetitors} страниц`
+          }, разница с конкурентами ${formatSignedScore(
             marketDifference,
           )}.`,
           `Рекомендации: ${formatCount(recommendationsSummary?.total_recommendations)} всего, ${formatCount(
@@ -527,11 +607,11 @@ export function buildAuditReportModel(input: AuditReportInput): AuditReportModel
           )}.`,
         ],
     seoMetrics: buildSeoMetrics(input),
-    recommendationMetrics: buildRecommendationMetrics(recommendations),
+    recommendationMetrics: buildRecommendationMetrics(recommendations, lowScoreReason),
     competitorMetrics: buildCompetitorMetrics(input),
     runtimeMetrics: buildRuntimeMetrics(input.diagnostics),
-    recommendationActions: buildRecommendationActions(recommendations),
-    groupSummaries: buildGroupSummaries(recommendations),
+    recommendationActions: buildRecommendationActions(recommendations, lowScoreReason),
+    groupSummaries: buildGroupSummaries(recommendations, lowScoreReason),
     competitors: buildCompetitorRows(input.results?.competitor_results ?? input.audit.competitor_results),
     stageRows: buildStageRows(input.diagnostics),
   };
@@ -544,7 +624,9 @@ function renderMetricMarkdown(metric: ReportMetric): string {
 export function createAuditReportMarkdown(input: AuditReportInput): string {
   const report = buildAuditReportModel(input);
   const recommendationActions =
-    report.recommendationActions.length > 0
+    report.recoveryActions.length > 0
+      ? report.recoveryActions.map((action) => `- ${action}`).join("\n")
+      : report.recommendationActions.length > 0
       ? report.recommendationActions
           .map(
             (item) =>

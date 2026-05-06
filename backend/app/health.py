@@ -22,6 +22,10 @@ QUEUED_BACKLOG_THRESHOLD_SECONDS = 300.0
 DISPATCH_WAIT_THRESHOLD_SECONDS = 180.0
 QUEUE_BACKLOG_DEPTH_MULTIPLIER = 3.0
 DETECTOR_SAMPLE_LIMIT = 10
+WORKER_INSPECT_TIMEOUT_SECONDS = 0.5
+WORKER_RECENTLY_SEEN_GRACE_SECONDS = 300.0
+
+_RECENT_WORKER_QUEUE_OBSERVATIONS: dict[str, dict[str, Any]] = {}
 
 
 TASK_STAGE_NAMES: dict[str, str] = {
@@ -72,6 +76,82 @@ def _extract_task_name(task_payload: Any) -> str | None:
 
 def _checked_at() -> str:
     return datetime.now(UTC).isoformat()
+
+
+def _empty_queue_activity() -> dict[str, dict[str, Any]]:
+    return {
+        queue_name: {
+            "workers": [],
+            "observed_workers": [],
+            "recent_workers": [],
+            "worker_count": 0,
+            "observed_worker_count": 0,
+            "recent_worker_count": 0,
+            "estimated_concurrency": 0,
+            "active_tasks": 0,
+            "reserved_tasks": 0,
+            "scheduled_tasks": 0,
+            "inflight_tasks": 0,
+            "available_capacity_estimate": 0,
+            "worker_presence": "absent",
+        }
+        for queue_name in AUDIT_QUEUES
+    }
+
+
+def _reset_worker_runtime_observation_cache() -> None:
+    _RECENT_WORKER_QUEUE_OBSERVATIONS.clear()
+
+
+def _prune_worker_runtime_observations(now: datetime) -> None:
+    cutoff = now - timedelta(seconds=WORKER_RECENTLY_SEEN_GRACE_SECONDS)
+    stale_worker_names = [
+        worker_name
+        for worker_name, observation in _RECENT_WORKER_QUEUE_OBSERVATIONS.items()
+        if observation.get("observed_at") is None or observation["observed_at"] < cutoff
+    ]
+    for worker_name in stale_worker_names:
+        _RECENT_WORKER_QUEUE_OBSERVATIONS.pop(worker_name, None)
+
+
+def _remember_worker_runtime_observations(worker_payload: dict[str, dict[str, Any]], now: datetime) -> None:
+    _prune_worker_runtime_observations(now)
+    for worker_name, worker_info in worker_payload.items():
+        queue_names = sorted(str(queue_name) for queue_name in worker_info.get("queues") or [] if queue_name)
+        if not queue_names:
+            continue
+        _RECENT_WORKER_QUEUE_OBSERVATIONS[worker_name] = {
+            "worker_name": worker_name,
+            "queues": queue_names,
+            "pool_max_concurrency": int(worker_info.get("pool_max_concurrency") or 1),
+            "pid": worker_info.get("pid"),
+            "observed_at": now,
+        }
+
+
+def _recent_worker_runtime_observations(now: datetime) -> dict[str, dict[str, Any]]:
+    _prune_worker_runtime_observations(now)
+    return dict(_RECENT_WORKER_QUEUE_OBSERVATIONS)
+
+
+def _serialize_recent_worker_observations(
+    observations: dict[str, dict[str, Any]],
+    now: datetime,
+) -> list[dict[str, Any]]:
+    payload: list[dict[str, Any]] = []
+    for worker_name, observation in sorted(observations.items()):
+        observed_at = observation.get("observed_at")
+        age_seconds = _age_seconds(now, observed_at) if isinstance(observed_at, datetime) else None
+        payload.append(
+            {
+                "worker": worker_name,
+                "queues": list(observation.get("queues") or []),
+                "pool_max_concurrency": int(observation.get("pool_max_concurrency") or 1),
+                "observed_at": observed_at.isoformat() if isinstance(observed_at, datetime) else None,
+                "age_seconds": age_seconds,
+            }
+        )
+    return payload
 
 
 def _create_runtime_engine(database_url: str):
@@ -188,14 +268,24 @@ def check_celery_worker_health(settings: Settings) -> ComponentHealth:
         if isinstance(worker_info, dict)
     }
     topology = worker_metrics.get("topology") if isinstance(worker_metrics.get("topology"), dict) else {}
+    effective_worker_count = int(worker_metrics.get("effective_online_count") or worker_metrics.get("online_count") or 0)
     details = {
         "worker_count": int(worker_metrics.get("online_count") or 0),
+        "effective_worker_count": effective_worker_count,
+        "recent_worker_count": int(worker_metrics.get("recent_worker_count") or 0),
         "workers": worker_names,
+        "recent_workers": list(worker_metrics.get("recent_workers") or []),
         "worker_queues": worker_queues,
         "expected_queues": list(AUDIT_QUEUES),
         "missing_queues": list(worker_metrics.get("missing_queues") or []),
+        "inspect_missing_queues": list(worker_metrics.get("inspect_missing_queues") or []),
+        "inspect_status": worker_metrics.get("inspect_status"),
+        "inspect_transient_gap": bool(worker_metrics.get("inspect_transient_gap")),
+        "queue_activity": worker_metrics.get("queue_activity") or {},
         "topology": topology,
+        "inspect_topology": worker_metrics.get("inspect_topology") or {},
         "topology_contract": worker_metrics.get("topology_contract") or build_worker_topology_contract(),
+        "worker_liveness_policy": worker_metrics.get("worker_liveness_policy") or {},
     }
     if worker_metrics.get("status") == "error":
         return ComponentHealth(
@@ -206,7 +296,7 @@ def check_celery_worker_health(settings: Settings) -> ComponentHealth:
                 "error": str(worker_metrics.get("error") or "Unable to inspect Celery workers."),
             },
         )
-    if not worker_names:
+    if not worker_names and effective_worker_count == 0:
         return ComponentHealth(
             status="error",
             required=True,
@@ -510,6 +600,9 @@ def _infer_worker_queues_from_hostname(worker_name: str) -> list[str]:
                 or worker_prefix.endswith(f".{candidate}")
                 or worker_prefix.endswith(f"-{candidate}")
                 or worker_prefix.endswith(f"_{candidate}")
+                or f".{candidate}." in worker_prefix
+                or f"-{candidate}-" in worker_prefix
+                or f"_{candidate}_" in worker_prefix
             ):
                 return list(profile.queues)
     return []
@@ -517,41 +610,96 @@ def _infer_worker_queues_from_hostname(worker_name: str) -> list[str]:
 
 def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
     del settings
+    now = datetime.now(UTC)
     topology_contract = build_worker_topology_contract()
-    empty_queue_activity = {
-        queue_name: {
-            "workers": [],
-            "worker_count": 0,
-            "estimated_concurrency": 0,
-            "active_tasks": 0,
-            "reserved_tasks": 0,
-            "scheduled_tasks": 0,
-            "inflight_tasks": 0,
-            "available_capacity_estimate": 0,
-        }
-        for queue_name in AUDIT_QUEUES
-    }
+    empty_queue_activity = _empty_queue_activity()
     try:
-        inspector = celery_app.control.inspect(timeout=0.5)
+        inspector = celery_app.control.inspect(timeout=WORKER_INSPECT_TIMEOUT_SECONDS)
         stats_response = inspector.stats() or {}
         active_response = inspector.active() or {}
         reserved_response = inspector.reserved() or {}
         scheduled_response = inspector.scheduled() or {}
         active_queues_response = inspector.active_queues() or {}
     except Exception as exc:  # pragma: no cover - depends on broker availability
+        recent_observations = _recent_worker_runtime_observations(now)
+        if recent_observations:
+            for worker_name, observation in recent_observations.items():
+                worker_concurrency = int(observation.get("pool_max_concurrency") or 1)
+                for queue_name in observation.get("queues") or []:
+                    if queue_name not in empty_queue_activity:
+                        continue
+                    queue_snapshot = empty_queue_activity[queue_name]
+                    queue_snapshot["recent_workers"].append(worker_name)
+                    queue_snapshot["estimated_concurrency"] += worker_concurrency
+            for queue_name, snapshot in empty_queue_activity.items():
+                recent_workers = sorted(set(str(worker_name) for worker_name in snapshot["recent_workers"]))
+                snapshot["recent_workers"] = recent_workers
+                snapshot["workers"] = recent_workers
+                snapshot["worker_count"] = len(recent_workers)
+                snapshot["recent_worker_count"] = len(recent_workers)
+                snapshot["available_capacity_estimate"] = int(snapshot["estimated_concurrency"])
+                snapshot["worker_presence"] = "recent" if recent_workers else "absent"
+            effective_worker_queues = {
+                worker_name: list(observation.get("queues") or [])
+                for worker_name, observation in recent_observations.items()
+            }
+            topology = evaluate_worker_topology(effective_worker_queues)
+            if topology.get("status") == "error":
+                status = "degraded"
+            elif topology.get("missing_queues"):
+                status = "warning"
+            else:
+                status = "ok"
+            return {
+                "status": status,
+                "inspect_status": "error_recent_grace",
+                "inspect_transient_gap": True,
+                "online_count": 0,
+                "effective_online_count": len(effective_worker_queues),
+                "recent_worker_count": len(effective_worker_queues),
+                "workers": {},
+                "recent_workers": _serialize_recent_worker_observations(recent_observations, now),
+                "active_tasks_total": 0,
+                "reserved_tasks_total": 0,
+                "scheduled_tasks_total": 0,
+                "expected_queues": list(AUDIT_QUEUES),
+                "missing_queues": list(topology.get("missing_queues") or []),
+                "inspect_missing_queues": list(AUDIT_QUEUES),
+                "queue_activity": empty_queue_activity,
+                "topology": topology,
+                "inspect_topology": evaluate_worker_topology({}),
+                "topology_contract": topology_contract,
+                "worker_liveness_policy": {
+                    "inspect_timeout_seconds": WORKER_INSPECT_TIMEOUT_SECONDS,
+                    "recently_seen_grace_seconds": WORKER_RECENTLY_SEEN_GRACE_SECONDS,
+                },
+                "warning": "Celery worker inspect failed; recently seen queue ownership is used inside the grace window.",
+                "error": str(exc),
+            }
         empty_topology = evaluate_worker_topology({})
         return {
             "status": "error",
+            "inspect_status": "error",
+            "inspect_transient_gap": False,
             "online_count": 0,
+            "effective_online_count": 0,
+            "recent_worker_count": 0,
             "workers": {},
+            "recent_workers": [],
             "active_tasks_total": 0,
             "reserved_tasks_total": 0,
             "scheduled_tasks_total": 0,
             "expected_queues": list(AUDIT_QUEUES),
             "missing_queues": list(empty_topology.get("missing_queues") or []),
+            "inspect_missing_queues": list(empty_topology.get("missing_queues") or []),
             "queue_activity": empty_queue_activity,
             "topology": empty_topology,
+            "inspect_topology": empty_topology,
             "topology_contract": topology_contract,
+            "worker_liveness_policy": {
+                "inspect_timeout_seconds": WORKER_INSPECT_TIMEOUT_SECONDS,
+                "recently_seen_grace_seconds": WORKER_RECENTLY_SEEN_GRACE_SECONDS,
+            },
             "error": str(exc),
         }
     worker_names = sorted(
@@ -565,11 +713,16 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
     queue_activity: dict[str, dict[str, Any]] = {
         queue_name: {
             "workers": [],
+            "observed_workers": [],
+            "recent_workers": [],
             "worker_count": 0,
+            "observed_worker_count": 0,
+            "recent_worker_count": 0,
             "estimated_concurrency": 0,
             "active_tasks": 0,
             "reserved_tasks": 0,
             "scheduled_tasks": 0,
+            "worker_presence": "absent",
         }
         for queue_name in AUDIT_QUEUES
     }
@@ -600,14 +753,20 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
                 queue_name,
                 {
                     "workers": [],
+                    "observed_workers": [],
+                    "recent_workers": [],
                     "worker_count": 0,
+                    "observed_worker_count": 0,
+                    "recent_worker_count": 0,
                     "estimated_concurrency": 0,
                     "active_tasks": 0,
                     "reserved_tasks": 0,
                     "scheduled_tasks": 0,
+                    "worker_presence": "absent",
                 },
             )
             queue_snapshot["workers"].append(worker_name)
+            queue_snapshot["observed_workers"].append(worker_name)
             queue_snapshot["estimated_concurrency"] += worker_concurrency
         for task_payload in active_response.get(worker_name, []):
             task_name = _extract_task_name(task_payload)
@@ -624,9 +783,33 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             if task_name is None:
                 continue
             queue_activity[resolve_task_queue(task_name)]["scheduled_tasks"] += 1
+    _remember_worker_runtime_observations(worker_payload, now)
+    recent_observations = _recent_worker_runtime_observations(now)
+    for worker_name, observation in recent_observations.items():
+        observed_current_queues = set(worker_payload.get(worker_name, {}).get("queues") or [])
+        if observed_current_queues:
+            continue
+        worker_concurrency = int(observation.get("pool_max_concurrency") or 1)
+        for queue_name in observation.get("queues") or []:
+            if queue_name not in queue_activity:
+                continue
+            snapshot = queue_activity[queue_name]
+            if worker_name in snapshot["workers"] or worker_name in snapshot["recent_workers"]:
+                continue
+            snapshot["recent_workers"].append(worker_name)
+            snapshot["estimated_concurrency"] += worker_concurrency
     for queue_name, snapshot in queue_activity.items():
-        snapshot["workers"] = sorted(set(str(worker_name) for worker_name in snapshot["workers"]))
-        snapshot["worker_count"] = len(snapshot["workers"])
+        observed_workers = sorted(set(str(worker_name) for worker_name in snapshot["observed_workers"]))
+        recent_workers = sorted(
+            set(str(worker_name) for worker_name in snapshot["recent_workers"]) - set(observed_workers)
+        )
+        all_workers = sorted(set(observed_workers) | set(recent_workers))
+        snapshot["observed_workers"] = observed_workers
+        snapshot["recent_workers"] = recent_workers
+        snapshot["workers"] = all_workers
+        snapshot["observed_worker_count"] = len(observed_workers)
+        snapshot["recent_worker_count"] = len(recent_workers)
+        snapshot["worker_count"] = len(all_workers)
         snapshot["inflight_tasks"] = (
             int(snapshot["active_tasks"])
             + int(snapshot["reserved_tasks"])
@@ -636,10 +819,31 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             int(snapshot["estimated_concurrency"]) - int(snapshot["active_tasks"]),
             0,
         )
+        if observed_workers:
+            snapshot["worker_presence"] = "current"
+        elif recent_workers:
+            snapshot["worker_presence"] = "recent"
+        else:
+            snapshot["worker_presence"] = "absent"
+    inspect_worker_queues = {
+        worker_name: list(worker_info.get("queues") or [])
+        for worker_name, worker_info in worker_payload.items()
+    }
+    effective_worker_queues = {
+        worker_name: list(worker_info.get("queues") or [])
+        for worker_name, worker_info in worker_payload.items()
+        if worker_info.get("queues")
+    }
+    for worker_name, observation in recent_observations.items():
+        if effective_worker_queues.get(worker_name):
+            continue
+        effective_worker_queues[worker_name] = list(observation.get("queues") or [])
+    inspect_topology = evaluate_worker_topology(inspect_worker_queues)
     topology = evaluate_worker_topology(
         {
-            worker_name: list(worker_info.get("queues") or [])
-            for worker_name, worker_info in worker_payload.items()
+            worker_name: list(queue_names)
+            for worker_name, queue_names in effective_worker_queues.items()
+            if queue_names
         }
     )
     for worker_name, topology_entry in topology.get("worker_profiles", {}).items():
@@ -647,7 +851,16 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
             continue
         worker_payload[worker_name]["profile_name"] = topology_entry.get("profile_name")
         worker_payload[worker_name]["profile_status"] = topology_entry.get("status")
-    if not worker_names:
+    inspect_missing_queues = list(inspect_topology.get("missing_queues") or [])
+    effective_missing_queues = list(topology.get("missing_queues") or [])
+    inspect_transient_gap = bool(
+        recent_observations
+        and (
+            (inspect_missing_queues and len(effective_missing_queues) < len(inspect_missing_queues))
+            or len(effective_worker_queues) > len(worker_names)
+        )
+    )
+    if not worker_names and not recent_observations:
         status = "warning"
     elif topology.get("status") == "error":
         status = "degraded"
@@ -655,16 +868,27 @@ def collect_worker_runtime_metrics(settings: Settings) -> dict[str, Any]:
         status = "ok"
     return {
         "status": status,
+        "inspect_status": "partial_recent_grace" if inspect_transient_gap else ("empty" if not worker_names else "ok"),
+        "inspect_transient_gap": inspect_transient_gap,
         "online_count": len(worker_names),
+        "effective_online_count": len(effective_worker_queues),
+        "recent_worker_count": max(len(effective_worker_queues) - len(worker_names), 0),
         "workers": worker_payload,
+        "recent_workers": _serialize_recent_worker_observations(recent_observations, now),
         "active_tasks_total": sum(item["active_tasks"] for item in worker_payload.values()),
         "reserved_tasks_total": sum(item["reserved_tasks"] for item in worker_payload.values()),
         "scheduled_tasks_total": sum(item["scheduled_tasks"] for item in worker_payload.values()),
         "expected_queues": list(AUDIT_QUEUES),
         "missing_queues": list(topology.get("missing_queues") or []),
+        "inspect_missing_queues": inspect_missing_queues,
         "queue_activity": queue_activity,
         "topology": topology,
+        "inspect_topology": inspect_topology,
         "topology_contract": topology_contract,
+        "worker_liveness_policy": {
+            "inspect_timeout_seconds": WORKER_INSPECT_TIMEOUT_SECONDS,
+            "recently_seen_grace_seconds": WORKER_RECENTLY_SEEN_GRACE_SECONDS,
+        },
         **({"warning": "No Celery workers responded to inspect."} if not worker_names else {}),
     }
 
@@ -684,11 +908,14 @@ def build_queue_pressure_snapshots(
         queue_payload = queue_activity.get(queue_name) if isinstance(queue_activity.get(queue_name), dict) else {}
         depth = int(queue_depths.get(queue_name) or 0)
         worker_count = int(queue_payload.get("worker_count") or 0)
+        observed_worker_count = int(queue_payload.get("observed_worker_count") or 0)
+        recent_worker_count = int(queue_payload.get("recent_worker_count") or 0)
         estimated_concurrency = int(queue_payload.get("estimated_concurrency") or 0)
         active_tasks = int(queue_payload.get("active_tasks") or 0)
         reserved_tasks = int(queue_payload.get("reserved_tasks") or 0)
         scheduled_tasks = int(queue_payload.get("scheduled_tasks") or 0)
         inflight_tasks = int(queue_payload.get("inflight_tasks") or (active_tasks + reserved_tasks + scheduled_tasks))
+        worker_presence = str(queue_payload.get("worker_presence") or ("current" if worker_count > 0 else "absent"))
         available_capacity_estimate = int(
             queue_payload.get("available_capacity_estimate")
             if isinstance(queue_payload.get("available_capacity_estimate"), int)
@@ -697,10 +924,15 @@ def build_queue_pressure_snapshots(
 
         pressure_status = "idle"
         reasons: list[str] = []
+        if recent_worker_count > 0 and observed_worker_count == 0:
+            reasons.append("recent_workers_within_grace")
         if depth == 0:
             if inflight_tasks > 0:
                 pressure_status = "busy"
                 reasons.append("inflight_without_backlog")
+        elif worker_count == 0 and inflight_tasks > 0:
+            pressure_status = "draining"
+            reasons.append("inflight_tasks_observed_despite_missing_queue_owner")
         elif worker_count == 0:
             pressure_status = "stuck"
             reasons.append("no_workers_serving_queue")
@@ -725,7 +957,12 @@ def build_queue_pressure_snapshots(
         queue_snapshots[queue_name] = {
             "depth": depth,
             "workers": list(queue_payload.get("workers") or []),
+            "observed_workers": list(queue_payload.get("observed_workers") or []),
+            "recent_workers": list(queue_payload.get("recent_workers") or []),
             "worker_count": worker_count,
+            "observed_worker_count": observed_worker_count,
+            "recent_worker_count": recent_worker_count,
+            "worker_presence": worker_presence,
             "estimated_concurrency": estimated_concurrency,
             "active_tasks": active_tasks,
             "reserved_tasks": reserved_tasks,
@@ -740,6 +977,7 @@ def build_queue_pressure_snapshots(
         "status": "degraded" if backlogged_queues or stuck_queues else "ok",
         "thresholds": {
             "queue_backlog_depth_multiplier": QUEUE_BACKLOG_DEPTH_MULTIPLIER,
+            "worker_recently_seen_grace_seconds": WORKER_RECENTLY_SEEN_GRACE_SECONDS,
         },
         "queues": queue_snapshots,
         "backlogged_queues": backlogged_queues,

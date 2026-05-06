@@ -833,11 +833,56 @@ D86 updates the frontend wording so the score is described as:
 
 D87 writes the diploma evidence rollup in `backend/artifacts/ranking-benchmarks/dataset-v7-final-d87/`. The report decision is `ready_for_diploma_evidence_pack` and links D83 controlled publish evidence, D84 relevance regression evidence and D85 competitor robustness evidence.
 
+## D88-D95 RoSBERTa semantic runtime and competitor replacement
+
+D88-D96 improve the runtime semantic layer and competitor context without retraining or replacing the active `dataset-v7-final` query-core artifact.
+
+D88 introduces a provider abstraction for semantic embeddings. The intended Russian-segment provider is `ai-forever/ru-en-RoSBERTa`, while the previous multilingual MiniLM model remains available as fallback. Runtime metadata now records the provider/model used for semantic features.
+
+D89 calibrates the query relevance contract for provider-specific similarity scales. The goal is to avoid over-cutting approximate but genuinely relevant Russian pages, while preserving hard caps for confident full mismatches. Commercial modifiers such as buy/price/order still affect relevance only when they are present in the query.
+
+D90-D91 add competitor replacement. The SERP collector can gather reserve candidates beyond requested `top_n`, and competitor context selection excludes failed, blocked, suspiciously thin or very low-score pages. The accepted competitors drive market averages, competitiveness score, SERP-relative features and recommendations. Discarded and unused candidates remain as diagnostics only.
+
+D92-D93 add the distributed runtime surface for the heavier semantic model: queue `audits.semantic`, worker profile `semantic_cpu`, readiness/metrics coverage and optional dev autoscaling. The final integration deliberately keeps the existing pipeline stages instead of introducing a new mini-orchestration chain: target feature extraction and competitor semantic/ML analysis are routed to the semantic queue.
+
+D94 updates product UI/report behavior so only accepted competitors appear as scoring context. Discarded or unused candidates are visually separated and do not look like real competitors.
+
+D95 focused product benchmark evidence:
+
+- script: `backend/app/ml/d95_focused_product_benchmark.py`;
+- report directory: `backend/artifacts/ranking-benchmarks/d95-rosberta-competitor-replacement/`;
+- decision: `passed`;
+- `6/6` product cases passed;
+- full mismatch example: `94.0 -> 4.7`;
+- approximate relevant example: `86.0 -> 47.3`;
+- no buy/price modifier example: `82.0 -> 82.0`;
+- competitor replacement example: `3` accepted, `3` discarded, `2/3` replacements used.
+
+D96 live RoSBERTa smoke evidence:
+
+- script: `scripts/d96-rosberta-live-smoke.mjs`;
+- report: `output/runtime-smoke/d96-rosberta-live-smoke-summary.json`;
+- decision: `passed`;
+- runtime topology: `5` workers, including `semantic_cpu`, missing queues `[]`;
+- active runtime: `dataset-v7-final`, schema `v4`, SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`;
+- `козловой кран купить` / PZPO: score `68.3102`, RoSBERTa provider code `2`, `3` accepted competitors, `1` low-score candidate replaced;
+- `купить козловой кран` / winemore: score `7.1563`, RoSBERTa provider code `2`, unrelated page kept below mismatch cap, `2` low-score candidates replaced;
+- `занятия пилатес москва` / pilatesmed: score `64.1375`, RoSBERTa provider code `2`, relevant non-commercial-modifier query was not cut.
+
+Verification after integration:
+
+- backend targeted suite: `101 passed`;
+- frontend tests: `68 passed`;
+- frontend build: passed;
+- dev/smoke script tests: `13 passed`;
+- `python -m app.ml.d95_focused_product_benchmark`: `passed`.
+
 ## Files relevant to the ML appendix
 
 - `backend/app/ml/query_seeds.py`
 - `backend/app/ml/dataset_builder.py`
 - `backend/app/ml/final_query_competitiveness.py`
+- `backend/app/ml/d95_focused_product_benchmark.py`
 - `backend/app/ml/query_core_model.py`
 - `backend/app/ml/v3_dataset.py`
 - `backend/app/ml/v4_dataset.py`
@@ -853,6 +898,8 @@ D87 writes the diploma evidence rollup in `backend/artifacts/ranking-benchmarks/
 - `backend/app/ml/competitiveness_release_policy.py`
 - `backend/app/ml/v5_competitiveness_publish.py`
 - `backend/app/competitiveness.py`
+- `backend/app/semantic.py`
+- `backend/app/semantic_providers.py`
 - `backend/app/recommendations.py`
 - `backend/app/ml/dataset_quality.py`
 - `backend/app/ml/train.py`

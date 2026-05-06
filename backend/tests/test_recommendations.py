@@ -13,6 +13,15 @@ def get_group(payload: dict[str, object], key: str) -> dict[str, object]:
     return next(group for group in payload["groups"] if group["key"] == key)
 
 
+def get_item(payload: dict[str, object], code: str) -> dict[str, object]:
+    return next(
+        item
+        for group in payload["groups"]
+        for item in group["items"]
+        if item["code"] == code
+    )
+
+
 def test_generate_recommendations_returns_grouped_payload():
     page_features = {
         "title_present": 0,
@@ -396,6 +405,82 @@ def test_generate_recommendations_adds_intent_and_serp_relative_guidance():
     assert semantic_group["status"] in {"attention", "critical"}
     assert competitor_gap_group["status"] == "critical"
     assert any(deviation["code"] == "serp_relative_gap_score" for deviation in competitor_gap_group["deviations"])
+
+
+def test_literal_query_recommendations_are_softened_for_high_confidence_query_fit():
+    recommendations = generate_recommendations(
+        page_features={
+            "title_present": 1,
+            "query_in_title": 0,
+            "meta_description_present": 1,
+            "h1_count": 1,
+            "query_in_text": 0,
+            "keyword_coverage_ratio": 1.0,
+            "query_core_keyword_coverage_ratio": 1.0,
+            "semantic_similarity": 0.72,
+            "query_density": 0.03,
+            "query_core_term_count": 24,
+            "query_prominence_score": 0.4,
+            "text_length_chars": 2600,
+            "text_to_html_ratio": 0.18,
+            "intent_alignment_score": 0.72,
+            "serp_relative_context_available": 1,
+            "serp_relative_percentile": 0.45,
+            "serp_relative_gap_score": 0.62,
+            "relative_gap_to_top_intent_alignment": -0.16,
+        },
+        page_score=70.0,
+        competitor_pages_features=[
+            {
+                "_page_score": 72.0,
+                "semantic_similarity": 0.74,
+                "keyword_coverage_ratio": 1.0,
+                "intent_alignment_score": 0.74,
+            },
+            {
+                "_page_score": 73.0,
+                "semantic_similarity": 0.75,
+                "keyword_coverage_ratio": 1.0,
+                "intent_alignment_score": 0.75,
+            },
+        ],
+    )
+
+    title_item = get_item(recommendations, "QUERY_NOT_IN_TITLE")
+    text_item = get_item(recommendations, "QUERY_NOT_IN_TEXT")
+    intent_item = get_item(recommendations, "RELATIVE_INTENT_ALIGNMENT_GAP")
+
+    assert title_item["priority"] == "medium"
+    assert text_item["priority"] == "medium"
+    assert intent_item["priority"] == "medium"
+    assert title_item["priority_score"] < 42.0
+    assert text_item["priority_score"] < 42.0
+    assert intent_item["priority_score"] < 42.0
+
+
+def test_literal_query_recommendations_stay_high_for_weak_query_fit():
+    recommendations = generate_recommendations(
+        page_features={
+            "title_present": 1,
+            "query_in_title": 0,
+            "meta_description_present": 1,
+            "h1_count": 1,
+            "query_in_text": 0,
+            "keyword_coverage_ratio": 0.2,
+            "query_core_keyword_coverage_ratio": 0.2,
+            "semantic_similarity": 0.26,
+            "query_density": 0.001,
+            "query_core_term_count": 1,
+            "query_prominence_score": 0.0,
+            "text_length_chars": 2400,
+            "text_to_html_ratio": 0.18,
+        },
+        page_score=52.0,
+        competitor_pages_features=[],
+    )
+
+    assert get_item(recommendations, "QUERY_NOT_IN_TITLE")["priority"] == "high"
+    assert get_item(recommendations, "QUERY_NOT_IN_TEXT")["priority"] == "high"
 
 
 def test_competitor_deviation_priority_uses_metric_importance():

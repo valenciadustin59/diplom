@@ -223,6 +223,35 @@
 - `D87` adds the diploma evidence rollup: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d87/d87-diploma-evidence-report.json` / `.md`. Decision is `ready_for_diploma_evidence_pack`; active runtime remains `dataset-v7-final` / schema `v4` / SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`.
 - D84-D87 did not retrain, publish, roll back or mutate the active runtime artifact.
 
+## Current D88-D96 RoSBERTa And Distributed Semantic Evidence
+
+- `D88-D96` are implemented locally; local mirror: `plans/d88-d96-rosberta-distributed-semantic.md`.
+- The active model artifact was not retrained or replaced in this wave. `backend/artifacts/page_quality_model.pkl` remains the D83 `dataset-v7-final` query-core runtime artifact unless a later controlled publish explicitly changes it.
+- `D88` adds `backend/app/semantic_providers.py` and config knobs for a provider-based semantic layer. The intended Russian-segment provider is `ai-forever/ru-en-RoSBERTa`, with the previous multilingual MiniLM path kept as fallback.
+- `D89` calibrates query relevance thresholds by provider, so approximate but relevant Russian pages are not cut too aggressively. Commercial modifiers still matter only when present in the query.
+- `D90-D91` add competitor replacement and suspicious candidate filtering. Failed, blocked, suspiciously thin or very low-score competitors are excluded from market averages and recommendations; reserve SERP candidates can replace them.
+- New competitor result field: `competitor_context_status` with `accepted`, `discarded` or `unused`.
+- New comparison summary schema: `competitor-context-quality-v2`, including `requested_top_n`, `collected_candidates`, `accepted_competitors`, `discarded_competitors`, `unused_candidates`, `replacement_attempts`, `replacements_used` and `discard_reasons`.
+- `D92-D93` add required queue `audits.semantic` and worker profile `semantic_cpu`. Target feature extraction and competitor semantic/ML analysis route to this queue; no separate mini-orchestration task chain was introduced.
+- `scripts/dev.mjs` now starts at least one semantic worker and supports opt-in semantic autoscaling with `--semantic-autoscale=auto` plus `SEMANTIC_WORKER_*` settings.
+- `D94` updates UI/report behavior: charts, score lists and exports use accepted competitors only; discarded/unused candidates are separated under non-scoring context.
+- `D95` focused product benchmark evidence: `backend/app/ml/d95_focused_product_benchmark.py` and `backend/artifacts/ranking-benchmarks/d95-rosberta-competitor-replacement/`. Decision `passed`, `6/6` cases passed, `0` failed criteria.
+- `D96` live RoSBERTa smoke evidence: `scripts/d96-rosberta-live-smoke.mjs` and `output/runtime-smoke/d96-rosberta-live-smoke-summary.json`. Decision `passed`, API `http://127.0.0.1:8001`, frontend `http://127.0.0.1:5173`, `5` workers with `site-audit.semantic_cpu.1@Qonwick`, missing queues `[]`.
+- D96 live cases: `козловой кран купить` / PZPO score `68.3102`; `купить козловой кран` / winemore score `7.1563`; `занятия пилатес москва` / pilatesmed score `64.1375`. All used RoSBERTa provider code `2`, no fallback, no embedding failures.
+- Verification passed after integration: backend targeted suite `101 passed`, frontend tests `68 passed`, frontend build passed, script tests `13 passed`, and `app.ml.d95_focused_product_benchmark` returned `passed`.
+- D96 confirms real live SERP/runtime behavior. Remaining risk is normal live-network volatility: future SERP changes or site blocking can still affect competitor collection and should be captured as new regression cases.
+
+## Current D97-D102 Final Runtime Hardening Evidence
+
+- `D97-D102` are implemented locally as the final runtime/product hardening wave after RoSBERTa integration. Local mirror: `plans/d97-d102-final-runtime-hardening.md`.
+- `D97` adds runtime second-layer score rebalancing (`score-second-layer-rebalance-v1`) after ML/rule scoring and before query relevance guardrails. Strongly relevant pages can use a bounded rule-score uplift, while unrelated/partial pages still stay capped by query relevance.
+- `D98` stabilizes distributed stack readiness under live browser/network load. `GET /health/ready` now tracks recently observed worker queue ownership for `300s`, so a busy Windows `solo` worker does not make the stack falsely report missing queues while it is still processing.
+- `D99-D102` improve user-facing low-score explanations and unavailable-page handling. The UI/report/export layer now explains 404/noindex/unusable pages, query mismatch and competitor context without exposing raw ML/debug fields.
+- `D100-D101` add query-core mismatch signals for local/commercial false positives: city or commercial words alone are not enough if the primary service/product core is absent. Live regression confirmed `labirint.ru` for `детский стоматолог екатеринбург` is cut by `local_service_core_mismatch`.
+- D98-D102 final live smoke evidence: `output/runtime-smoke/d98-d102-final-live-smoke-summary.json`. It ran against API `http://127.0.0.1:8002` with `5/5` product checks passing and `health_not_ready_count=0`.
+- Final smoke cases: winter tires page score `80.4859`; 404 winter tires URL score `0` with `page_unusable`; `labirint.ru` / dentist query score `0` with `local_service_core_mismatch`; volcano Wikipedia score `66.4222` without guardrail; `winemore.ru` / gantry crane query score `0` with `commercial_modifier_only_core_mismatch`.
+- Verification after D98-D102 integration: backend targeted suite `129 passed`, frontend tests `73 passed`, frontend build passed, script tests `13 passed`, and `git diff --check` had only CRLF warnings.
+
 ## Current D70 Conservative Query Relevance Contract Evidence
 
 - GitHub issue `#89` was created retroactively on `2026-05-05` and closed as completed.

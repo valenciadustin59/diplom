@@ -10,6 +10,7 @@ import type {
   ScoreConfidenceMetric,
   ScoreConfidenceTone,
 } from "./auditConfidence";
+import { buildCompetitorContextStats } from "./competitorContext";
 import { flattenRecommendationItems } from "./recommendations";
 
 export type CompetitorCoverage = {
@@ -115,20 +116,13 @@ function getEffectiveCompetitors(input: ScoreConfidenceInput): CompetitorResult[
   return input.results?.competitor_results ?? input.audit?.competitor_results ?? [];
 }
 
-function countAnalyzedCompetitors(competitors: CompetitorResult[]): number {
-  return competitors.filter((competitor) => competitor.fetch_status === "success" && typeof competitor.score === "number").length;
-}
-
 function buildCompetitorCoverage(input: ScoreConfidenceInput): CompetitorCoverage {
   const summary = getEffectiveComparisonSummary(input);
   const competitors = getEffectiveCompetitors(input);
-  const found =
-    asFiniteNumber(summary?.competitors_found) ?? asFiniteNumber(summary?.competitors_count) ?? competitors.length;
-  const analyzed =
-    asFiniteNumber(summary?.competitors_analyzed) ??
-    asFiniteNumber(summary?.competitors_count) ??
-    countAnalyzedCompetitors(competitors);
-  const failed = asFiniteNumber(summary?.competitors_failed) ?? Math.max(0, found - analyzed);
+  const stats = buildCompetitorContextStats(summary, competitors);
+  const found = stats.collected;
+  const analyzed = stats.accepted;
+  const failed = stats.hasQualityV2 ? stats.discarded + stats.replacements : stats.failed;
 
   return {
     found: Math.max(0, Math.round(found)),

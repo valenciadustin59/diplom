@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 from app.ml import average_score
-from app.query_relevance import has_strong_query_topic_fit
+from app.query_relevance import build_query_topic_metrics, has_strong_query_topic_fit
 
 
 RecommendationPriority = Literal["high", "medium", "low"]
@@ -25,6 +25,10 @@ HIGH_PRIORITY_IMPORTANCE_THRESHOLD = 0.55
 MEDIUM_PRIORITY_IMPORTANCE_THRESHOLD = 0.3
 HIGH_PRIORITY_SCORE_THRESHOLD = 42.0
 MEDIUM_PRIORITY_SCORE_THRESHOLD = 18.0
+HIGH_CONFIDENCE_QUERY_RELEVANCE_MIN = 0.80
+HIGH_CONFIDENCE_QUERY_CORE_COVERAGE_MIN = 0.90
+LITERAL_QUERY_RECOMMENDATION_CODES = {"QUERY_NOT_IN_TITLE", "QUERY_NOT_IN_TEXT"}
+MODERATE_RELATIVE_INTENT_GAP_MIN = -0.22
 
 TECHNICAL_FEATURE_KEYS = {
     "page_indexable",
@@ -740,6 +744,50 @@ def _int_feature(features: dict[str, float | int], key: str) -> int:
     return int(features.get(key, 0))
 
 
+def _has_high_confidence_query_fit(features: dict[str, float | int]) -> bool:
+    metrics = build_query_topic_metrics(features)
+    return (
+        has_strong_query_topic_fit(features)
+        and metrics["relevance_score"] >= HIGH_CONFIDENCE_QUERY_RELEVANCE_MIN
+        and metrics["keyword_coverage_ratio"] >= 0.99
+        and metrics["query_core_keyword_coverage_ratio"] >= HIGH_CONFIDENCE_QUERY_CORE_COVERAGE_MIN
+    )
+
+
+def _soft_priority_cap_for_query_fit(code: str, page_features: dict[str, float | int]) -> RecommendationPriority | None:
+    if not _has_high_confidence_query_fit(page_features):
+        return None
+    if code in LITERAL_QUERY_RECOMMENDATION_CODES:
+        return "medium"
+    if (
+        code == "RELATIVE_INTENT_ALIGNMENT_GAP"
+        and _float_feature(page_features, "relative_gap_to_top_intent_alignment") >= MODERATE_RELATIVE_INTENT_GAP_MIN
+    ):
+        return "medium"
+    return None
+
+
+def _cap_priority_assessment(
+    assessment: dict[str, object],
+    priority_cap: RecommendationPriority | None,
+) -> dict[str, object]:
+    if priority_cap is None:
+        return assessment
+    current_priority = _normalize_priority(assessment.get("priority"))
+    if _priority_rank(current_priority) > _priority_rank(priority_cap):
+        return assessment
+
+    capped = dict(assessment)
+    capped["priority"] = priority_cap
+    score_ceiling = HIGH_PRIORITY_SCORE_THRESHOLD - 0.0001 if priority_cap == "medium" else MEDIUM_PRIORITY_SCORE_THRESHOLD - 0.0001
+    capped["priority_score"] = round(min(float(capped.get("priority_score") or 0.0), score_ceiling), 4)
+    capped["priority_reason"] = (
+        f"{capped.get('priority_reason') or ''} "
+        "Приоритет снижен: страница уже уверенно соответствует запросу, поэтому это не критический провал, а точечное усиление."
+    ).strip()
+    return capped
+
+
 def _normalize_priority(value: object) -> RecommendationPriority:
     if value in PRIORITY_ORDER:
         return value  # type: ignore[return-value]
@@ -1005,7 +1053,8 @@ def _resolve_recommendation_priority_details(
     page_score: float | None,
     competitors_average_score: float | None,
 ) -> dict[str, object]:
-    if code in CRITICAL_PRIORITY_CODES:
+    priority_cap = _soft_priority_cap_for_query_fit(code, page_features)
+    if code in CRITICAL_PRIORITY_CODES and priority_cap is None:
         base_priority = "high"
 
     importance = _template_importance(metric_codes)
@@ -1019,16 +1068,17 @@ def _resolve_recommendation_priority_details(
         competitors_average_score=competitors_average_score,
     )
     if gap_assessment is None:
-        return base_assessment
+        return _cap_priority_assessment(base_assessment, priority_cap)
 
     gap_priority = _normalize_priority(gap_assessment.get("priority"))
+    selected_assessment = base_assessment
     if _priority_rank(gap_priority) < _priority_rank(priority):
-        return gap_assessment
-    if _priority_rank(gap_priority) == _priority_rank(priority) and float(gap_assessment.get("priority_score") or 0.0) >= float(
+        selected_assessment = gap_assessment
+    elif _priority_rank(gap_priority) == _priority_rank(priority) and float(gap_assessment.get("priority_score") or 0.0) >= float(
         base_assessment.get("priority_score") or 0.0
     ):
-        return gap_assessment
-    return base_assessment
+        selected_assessment = gap_assessment
+    return _cap_priority_assessment(selected_assessment, priority_cap)
 
 
 def _resolve_recommendation_priority(
@@ -1399,10 +1449,16 @@ def generate_recommendations(
             "Добавьте заголовок title, чтобы улучшить соответствие запросу и CTR сниппета.",
         )
     elif _int_feature(page_features, "query_in_title") == 0:
+        title_query_priority = _soft_priority_cap_for_query_fit("QUERY_NOT_IN_TITLE", page_features) or "high"
         add_recommendation(
             "QUERY_NOT_IN_TITLE",
-            "high",
-            "Добавьте основной запрос в заголовок title, сохранив естественную формулировку.",
+            title_query_priority,
+            (
+                "Можно усилить title естественной формулировкой запроса. Страница уже релевантна по смыслу, "
+                "поэтому это точечная доработка, а не критический провал."
+                if title_query_priority == "medium"
+                else "Добавьте основной запрос в заголовок title, сохранив естественную формулировку."
+            ),
         )
 
     if _int_feature(page_features, "meta_description_present") == 0:
@@ -1427,10 +1483,16 @@ def generate_recommendations(
         )
 
     if _int_feature(page_features, "query_in_text") == 0:
+        text_query_priority = _soft_priority_cap_for_query_fit("QUERY_NOT_IN_TEXT", page_features) or "high"
         add_recommendation(
             "QUERY_NOT_IN_TEXT",
-            "high",
-            "Добавьте ключевой запрос в основной текст страницы естественным образом.",
+            text_query_priority,
+            (
+                "Можно аккуратно добавить формулировку запроса в основной текст. Смысловое покрытие уже сильное, "
+                "поэтому правка нужна для ясности, а не для спасения релевантности."
+                if text_query_priority == "medium"
+                else "Добавьте ключевой запрос в основной текст страницы естественным образом."
+            ),
         )
     elif _float_feature(page_features, "keyword_coverage_ratio") < 0.5:
         add_recommendation(
@@ -1777,7 +1839,7 @@ def generate_recommendations(
         if _float_feature(page_features, "relative_gap_to_top_intent_alignment") < -0.12:
             add_recommendation(
                 "RELATIVE_INTENT_ALIGNMENT_GAP",
-                "high",
+                _soft_priority_cap_for_query_fit("RELATIVE_INTENT_ALIGNMENT_GAP", page_features) or "high",
                 "Даже при наличии базовых SEO-сигналов страница хуже конкурентов соответствует намерению запроса. Пересоберите структуру страницы под сценарий пользователя.",
             )
 

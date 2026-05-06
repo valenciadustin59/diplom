@@ -106,6 +106,8 @@ def build_worker_topology_contract() -> dict[str, Any]:
     profiles = load_worker_topology_profiles()
     return {
         "profiles": [profile.to_dict() for profile in profiles],
+        "required_profile_count": len(profiles),
+        "required_profiles": [profile.name for profile in profiles],
         "expected_queues": sorted(AUDIT_QUEUES),
     }
 
@@ -220,6 +222,8 @@ def evaluate_worker_topology(worker_queues: dict[str, list[str] | tuple[str, ...
     return {
         "status": status,
         "profiles": profile_coverage,
+        "required_profile_count": len(profiles),
+        "required_profiles": [profile.name for profile in profiles],
         "worker_profiles": worker_profiles,
         "invalid_workers": sorted(invalid_workers),
         "missing_profiles": sorted(missing_profiles),

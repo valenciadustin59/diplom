@@ -9,6 +9,7 @@ import {
   type RecommendationActionStatus,
 } from "../lib/recommendationActions";
 import { getAuditStatusLabel, getFailureDetailEntries, getFailureStageLabel } from "../lib/ui";
+import type { AuditLowScoreReason } from "../lib/auditLowScoreReason";
 import type { AuditStatus, FailureContext, RecommendationsBundle } from "../types";
 
 const RECOMMENDATION_ACTION_STORAGE_PREFIX = "site-audit.recommendationActions.v1";
@@ -20,6 +21,7 @@ type RecommendationsPageProps = {
   loading: boolean;
   error: string | null;
   failureContext: FailureContext | null;
+  lowScoreReason?: AuditLowScoreReason | null;
 };
 
 type RecommendationActionStore = {
@@ -107,6 +109,23 @@ function formatScoreGap(value: number | null): string {
   return `${rounded > 0 ? "+" : ""}${rounded}`;
 }
 
+function RecoveryRecommendationBlock({ reason }: { reason: AuditLowScoreReason }) {
+  return (
+    <section className="recovery-panel" aria-label="Восстановление страницы">
+      <div className="recovery-panel__heading">
+        <span>{reason.badge}</span>
+        <h3>{reason.title}</h3>
+        <p>{reason.message}</p>
+      </div>
+      <ul className="recovery-panel__actions">
+        {reason.recoveryActions.map((action) => (
+          <li key={action}>{action}</li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function RecommendationsPage({
   auditId,
   recommendations,
@@ -114,6 +133,7 @@ export function RecommendationsPage({
   loading,
   error,
   failureContext,
+  lowScoreReason = null,
 }: RecommendationsPageProps) {
   const detailEntries = failureContext ? getFailureDetailEntries(failureContext) : [];
   const summary = recommendations?.summary ?? null;
@@ -189,10 +209,11 @@ export function RecommendationsPage({
           ))}
         </div>
       ) : null}
-      {!loading && !error && !recommendations && !(auditStatus === "failed" && failureContext) ? (
+      {!loading && !error && !recommendations && !lowScoreReason?.isBlocking && !(auditStatus === "failed" && failureContext) ? (
         <div className="empty-state">Рекомендации появятся после завершения обработки аудита.</div>
       ) : null}
-      {!loading && !error && recommendations ? (
+      {!loading && !error && lowScoreReason?.isBlocking ? <RecoveryRecommendationBlock reason={lowScoreReason} /> : null}
+      {!loading && !error && recommendations && !lowScoreReason?.isBlocking ? (
         <>
           <RecommendationActionProgress actionModel={actionModel} />
           <RecommendationList

@@ -422,3 +422,39 @@ Completed model rollout/interface tasks:
 Current model next step: D83 made the query-core v7 artifact active and D84-D87 added the first post-publish hardening/evidence layer. Next work should be real-user monitoring and adding newly discovered relevance bugs into the D84 regression pack before changing thresholds or retraining.
 
 Next agent instruction: select a new task explicitly before changing model/runtime behavior. Do not repeat old rollouts, publish the D44 candidate, add demo mode, or rewrite backend orchestration unless the user explicitly requests that scope.
+
+## D88-D96 Current Update: RoSBERTa And Distributed Semantic Runtime
+
+D88-D96 are implemented locally and documented in `plans/d88-d96-rosberta-distributed-semantic.md`.
+
+The active model artifact is still the D83 `dataset-v7-final` query-core runtime artifact. This wave improves runtime semantic evidence and distributed execution without retraining or publishing a new model:
+
+- provider-based semantic layer with `ai-forever/ru-en-RoSBERTa` as the intended Russian-segment provider and MiniLM fallback;
+- calibrated query relevance thresholds for the new semantic provider;
+- competitor replacement from reserve SERP candidates when candidates are blocked, thin or score below the usable threshold;
+- explicit `competitor-context-quality-v2` payload;
+- required queue `audits.semantic` and worker profile `semantic_cpu`;
+- optional semantic worker autoscaling in `scripts/dev.mjs`;
+- UI/report separation between accepted competitors and discarded/unused candidates;
+- focused D95 product benchmark with `6/6` cases passed;
+- live D96 RoSBERTa smoke with `3/3` real audits passed.
+
+D96 evidence is stored in `output/runtime-smoke/d96-rosberta-live-smoke-summary.json`. It confirmed `semantic_cpu`, `audits.semantic`, runtime model `dataset-v7-final` / schema `v4`, and live behavior on PZPO, winemore and pilatesmed cases.
+
+Remaining roadmap item: keep adding future live relevance mistakes into the regression pack; D96 itself passed, but live SERP and site blocking remain naturally volatile.
+
+## D97-D102 Current Update: Final Runtime And UX Hardening
+
+D97-D102 are implemented locally and documented in `plans/d97-d102-final-runtime-hardening.md`.
+
+This wave keeps the D83 query-core v7 runtime artifact active and focuses on final product reliability:
+
+- bounded `score-second-layer-rebalance-v1` for strongly relevant pages, still followed by query relevance guardrails;
+- distributed readiness hardening for long browser/network tasks with `300s` recently-seen worker grace;
+- low-score and unavailable-page explanations for UI, Markdown export and HTML report;
+- query-core mismatch logic for local/commercial false positives where city or commercial modifiers match but the main service/product does not;
+- final D98-D102 live smoke with `5/5` checks passed and `health_not_ready_count=0`.
+
+Final smoke evidence is stored in `output/runtime-smoke/d98-d102-final-live-smoke-summary.json`. It covers a relevant commercial page, a 404 target, a local-service core mismatch, a relevant informational page and a commercial modifier-only mismatch.
+
+Remaining roadmap item: do a final UX pass on launch/history/result screens, then run one broader 8-10 case smoke before demo/defense preparation.

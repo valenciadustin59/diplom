@@ -166,6 +166,15 @@ export function AuditReportPage({
           Отчёт частичный: аудит остановился на этапе {getFailureStageLabel(failureContext.stage)}. Причина: {failureContext.message}
         </div>
       ) : null}
+      {report.lowScoreReason.kind !== "unknown" && !earlyStopView ? (
+        <div className={`low-score-reason low-score-reason--${report.lowScoreReason.tone}`}>
+          <div className="low-score-reason__header">
+            <span>{report.lowScoreReason.badge}</span>
+            <strong>{report.lowScoreReason.title}</strong>
+          </div>
+          <p>{report.lowScoreReason.message}</p>
+        </div>
+      ) : null}
 
       <Card title="Краткий вывод" subtitle="Короткое резюме, которое можно показать без расшифровки внутренних полей.">
         <div className="report-summary-list">
@@ -225,6 +234,20 @@ export function AuditReportPage({
 
       <Card title="План рекомендаций" subtitle="Полный список действий: все рекомендации, отсортированные по приоритету.">
         <MetricGrid items={report.recommendationMetrics} />
+        {report.recoveryActions.length > 0 ? (
+          <section className="recovery-panel recovery-panel--report" aria-label="Восстановление страницы">
+            <div className="recovery-panel__heading">
+              <span>{report.lowScoreReason.badge}</span>
+              <h3>{report.lowScoreReason.title}</h3>
+              <p>{report.lowScoreReason.message}</p>
+            </div>
+            <ul className="recovery-panel__actions">
+              {report.recoveryActions.map((action) => (
+                <li key={action}>{action}</li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
         <div className="report-group-list">
           {report.groupSummaries.map((group) => (
             <article key={group.label} className="report-group-card">
@@ -245,7 +268,11 @@ export function AuditReportPage({
               </tr>
             </thead>
             <tbody>
-              {report.recommendationActions.length > 0 ? (
+              {report.recoveryActions.length > 0 ? (
+                <tr>
+                  <td colSpan={4}>Сначала восстановите доступность страницы; обычные SEO-рекомендации будут полезны после повторного аудита.</td>
+                </tr>
+              ) : report.recommendationActions.length > 0 ? (
                 report.recommendationActions.map((item) => (
                   <tr key={item.code}>
                     <td>{item.priorityLabel}</td>

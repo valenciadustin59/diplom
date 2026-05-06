@@ -23,6 +23,8 @@
 - technical SEO feature pack на основе snapshot-артефакта страницы;
 - commercial/trust feature pack для коммерческих landing pages;
 - изоляция тяжёлых analyzer-стадий в отдельную distributed queue;
+- отдельная semantic queue для RoSBERTa/MiniLM embedding-нагрузки;
+- добор конкурентов из reserve pool, если часть SERP страниц заблокирована, тонкая или набирает слишком низкий score;
 - итоговый `Конкурентный score`, который отделён от внутренней `Оценки самой страницы`;
 - выдача рекомендаций по улучшению страницы с competitor-gap priority model;
 - локальное отслеживание статусов рекомендаций как плана работ;
@@ -49,8 +51,9 @@
 
 - `audits.pipeline` — orchestration, admission control, dispatch стадий;
 - `audits.fetch` — загрузка целевой страницы;
-- `audits.heavy_analysis` — snapshot-based тяжёлые анализаторы target и semantic/ML анализ competitor pages;
+- `audits.heavy_analysis` — snapshot-based тяжёлые анализаторы target;
 - `audits.features` — извлечение признаков;
+- `audits.semantic` — семантические признаки и competitor semantic/ML analysis;
 - `audits.scoring` — rule-based и ML scoring;
 - `audits.competitors` — поиск и подготовка конкурентов;
 - `audits.competitor_pages` — fan-out обработка страниц конкурентов;
@@ -59,14 +62,17 @@
 
 ### Профили workers
 
-Начиная с `D20`, каноническая топология workers выглядит так:
+Начиная с `D88-D95`, каноническая топология workers выглядит так:
 
 - `pipeline` — orchestration и dispatch;
 - `network` — сетевые стадии: `fetch`, `competitors`, `competitor_pages`;
-- `heavy_analysis` — тяжёлые snapshot/semantic/ML analyzer-задачи;
-- `cpu_ml` — `features`, `scoring`, `recommendations`, `finalize`.
+- `heavy_analysis` — тяжёлые snapshot analyzer-задачи;
+- `semantic_cpu` — RoSBERTa/MiniLM semantic features и competitor semantic/ML analysis;
+- `cpu_ml` — `scoring`, `recommendations`, `finalize` и lightweight CPU work.
 
 Именно эта топология проверяется через `GET /health/ready` и `GET /health/metrics`.
+
+Семантический слой поддерживает provider-based runtime. Для русского сегмента можно использовать `ai-forever/ru-en-RoSBERTa`; предыдущая multilingual MiniLM модель остаётся fallback. Основные настройки: `SEMANTIC_PROVIDER`, `SEMANTIC_MODEL_NAME`, `SEMANTIC_FALLBACK_MODEL_NAME`, `SEMANTIC_MAX_TEXT_CHARS`, `SEMANTIC_BATCH_SIZE`.
 
 ## Структура репозитория
 
@@ -543,5 +549,7 @@ D44 decision: `do_not_continue_without_more_evidence`. Second-pass CatBoost cand
 - `D82` — completed locally: query-core hardening fixed the D80 hard-negative blocker. Candidate: `backend/artifacts/page_quality_model.dataset-v7-final-query-core-candidate.pkl`, SHA1 `2bbf84bfcc77662d66f62cfdafbb6ee4d8264e88`, schema `v4`, `156` features. D82 result: validation hard negatives above `35.0` are now `0` instead of `25`; runtime-adjusted metrics beat the D58 v5 reference (`MAE=4.253847` vs `6.556754`, `Spearman=0.917044` vs `0.77064`, `NDCG@10=0.996873` vs `0.984659`). Decision evidence says `publish_candidate`.
 - `D83` — completed locally: query-core controlled publish. Active `backend/artifacts/page_quality_model.pkl`: SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`, dataset `dataset-v7-final`, artifact `dataset-v7-final-20260505125858`, schema `v4`, `QueryCoreGuardrailCatBoostRegressor`, `156` features. Release evidence: `backend/artifacts/ranking-benchmarks/dataset-v7-final-d83/d83-query-core-controlled-release-report.json`; final runtime smoke: `output/runtime-smoke/d83-query-core-smoke-final.json`.
 - `D84-D87` — completed locally as live quality hardening after D83. Local mirror: `plans/d84-d87-live-quality-hardening.md`. D84 adds `40` fresh query relevance regression cases with `0` failures; D85 adds explicit `competitor_context_quality` and prevents fake market averages when competitor coverage is insufficient; D86 clarifies product-facing score copy; D87 writes the diploma evidence rollup at `backend/artifacts/ranking-benchmarks/dataset-v7-final-d87/d87-diploma-evidence-report.json`.
+- `D88-D96` — completed locally: RoSBERTa semantic runtime, calibrated query relevance thresholds, competitor replacement, `audits.semantic` / `semantic_cpu`, optional semantic autoscaling and competitor context UI. Evidence: `plans/d88-d96-rosberta-distributed-semantic.md`, `backend/artifacts/ranking-benchmarks/d95-rosberta-competitor-replacement/`, `output/runtime-smoke/d96-rosberta-live-smoke-summary.json`.
+- `D97-D102` — completed locally: bounded second-layer score rebalance, readiness stability under long browser/network tasks, low-score/unavailable-page explanations, and query-core mismatch handling for local/commercial false positives. Evidence: `plans/d97-d102-final-runtime-hardening.md` and `output/runtime-smoke/d98-d102-final-live-smoke-summary.json`; final smoke passed `5/5` checks with `health_not_ready_count=0`.
 
-Исторические планы `plans/d32-d36-model-productization.md`, `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `plans/d40-d44-post-publish-model-operations.md`, `plans/d45-d49-seo-weighted-score-retraining.md`, `plans/d50-d54-v5-ranking-aware-model.md`, `plans/d55-d61-product-aligned-competitiveness.md`, `plans/d62-d68-final-query-competitiveness.md`, `plans/d69-dataset-v7-collection-readiness.md`, `plans/d70-conservative-query-relevance-contract.md`, `plans/d72-query-relevance-early-stop-runtime-contract.md`, `plans/d71-d74-query-relevance-preflight-ui-regression.md`, `plans/d75-dataset-v7-controlled-collection.md`, `plans/d76-dataset-v7-hard-negatives.md`, `plans/d77-dataset-v7-deterministic-labels.md`, `plans/d78-dataset-v7-split-validation.md`, `plans/d79-dataset-v7-candidate-training.md`, `plans/d80-dataset-v7-controlled-decision.md`, `plans/d81-dataset-v7-controlled-release.md`, `plans/d82-query-core-hard-negative-hardening.md` и `plans/d83-query-core-publish-readiness.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, `AGENTS.md` и эти локальные планы считать актуальным backlog source of truth.
+Исторические планы `plans/d32-d36-model-productization.md`, `plans/d37-unified-v3-hybrid-ensemble-top3-guardrail.md`, `plans/d40-d44-post-publish-model-operations.md`, `plans/d45-d49-seo-weighted-score-retraining.md`, `plans/d50-d54-v5-ranking-aware-model.md`, `plans/d55-d61-product-aligned-competitiveness.md`, `plans/d62-d68-final-query-competitiveness.md`, `plans/d69-dataset-v7-collection-readiness.md`, `plans/d70-conservative-query-relevance-contract.md`, `plans/d72-query-relevance-early-stop-runtime-contract.md`, `plans/d71-d74-query-relevance-preflight-ui-regression.md`, `plans/d75-dataset-v7-controlled-collection.md`, `plans/d76-dataset-v7-hard-negatives.md`, `plans/d77-dataset-v7-deterministic-labels.md`, `plans/d78-dataset-v7-split-validation.md`, `plans/d79-dataset-v7-candidate-training.md`, `plans/d80-dataset-v7-controlled-decision.md`, `plans/d81-dataset-v7-controlled-release.md`, `plans/d82-query-core-hard-negative-hardening.md`, `plans/d83-query-core-publish-readiness.md`, `plans/d88-d96-rosberta-distributed-semantic.md` и `plans/d97-d102-final-runtime-hardening.md` оставлены как evidence. Если GitHub Issues недоступны и возвращают `404`, `AGENTS.md` и эти локальные планы считать актуальным backlog source of truth.

@@ -38,6 +38,21 @@ SEARCH_SOURCES = [
 ]
 SEARCH_ENGINE_DOMAINS = {"duckduckgo.com", "brave.com", "serpapi.com"}
 MIN_COMPETITORS_FOR_COMPARISON = 2
+MIN_ACCEPTED_COMPETITOR_SCORE = 10.0
+MAX_COMPETITOR_CANDIDATE_LIMIT = 100
+MIN_COMPETITOR_REPLACEMENT_RESERVE = 3
+MAX_COMPETITOR_REPLACEMENT_RESERVE = 10
+SUSPICIOUS_FETCH_ERROR_CODES = {
+    "http_401",
+    "http_403",
+    "http_429",
+    "browser_blocked",
+    "javascript_required",
+    "bot_protection_suspected",
+    "captcha_detected",
+    "access_denied",
+}
+THIN_FETCH_ERROR_CODES = {"empty_content"}
 
 
 def _normalize_domain(url: str) -> str:
@@ -215,6 +230,18 @@ def search_competitor_urls(query: str, target_url: str, limit: int) -> list[str]
     return [str(item["url"]) for item in search_competitor_pages(query=query, target_url=target_url, limit=limit)]
 
 
+def build_competitor_candidate_limit(requested_top_n: int | None) -> int:
+    requested = requested_top_n if isinstance(requested_top_n, int) and requested_top_n > 0 else 10
+    requested = min(requested, MAX_COMPETITOR_CANDIDATE_LIMIT)
+    available_reserve = max(0, MAX_COMPETITOR_CANDIDATE_LIMIT - requested)
+    reserve = min(
+        max(MIN_COMPETITOR_REPLACEMENT_RESERVE, (requested + 1) // 2),
+        MAX_COMPETITOR_REPLACEMENT_RESERVE,
+        available_reserve,
+    )
+    return requested + reserve
+
+
 def fetch_competitor_page(result: dict[str, object]) -> dict[str, object]:
     url = str(result["url"])
     fetch_result = fetch_page(url)
@@ -278,9 +305,10 @@ def analyze_competitor_snapshot(
     html = str(normalized_snapshot.get("html") or "")
     text = str(normalized_snapshot.get("text") or "")
     analysis_text = _build_competitor_analysis_text(text, result)
+    semantic_features = snapshot.get("semantic_features") if isinstance(snapshot.get("semantic_features"), dict) else None
     features = merge_intent_alignment_features(
         merge_snapshot_auxiliary_features(
-            build_features(html=html, text=analysis_text, query=query),
+            build_features(html=html, text=analysis_text, query=query, semantic_features=semantic_features),
             normalized_snapshot,
         ),
         query_intent,
@@ -334,8 +362,139 @@ def build_failed_competitor_result(
     }
 
 
+def _safe_float(value: object) -> float | None:
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    return None
+
+
+def _competitor_discard_reason(item: dict[str, object]) -> str | None:
+    fetch_error_code = str(item.get("fetch_error_code") or "").strip().lower()
+    fetch_status = str(item.get("fetch_status") or "").strip().lower()
+    features = item.get("features") if isinstance(item.get("features"), dict) else None
+    score = _safe_float(item.get("score"))
+
+    if fetch_error_code in SUSPICIOUS_FETCH_ERROR_CODES:
+        return "bot_block_suspected"
+    if fetch_error_code in THIN_FETCH_ERROR_CODES:
+        return "thin_content"
+    if fetch_status and fetch_status != "success" and (features is None or score is None):
+        return "fetch_failed"
+    if features is None or score is None:
+        return "not_analyzed"
+    if score < MIN_ACCEPTED_COMPETITOR_SCORE:
+        return "score_below_minimum"
+
+    word_count = _safe_float(features.get("word_count"))
+    text_length_chars = _safe_float(features.get("text_length_chars"))
+    if (
+        word_count is not None
+        and text_length_chars is not None
+        and word_count < 20.0
+        and text_length_chars < 200.0
+    ):
+        return "thin_content"
+
+    return None
+
+
+def _annotate_competitor_context(
+    item: dict[str, object],
+    *,
+    status: str,
+    candidate_index: int,
+    discard_reason: str | None = None,
+    replacement_candidate: bool = False,
+) -> dict[str, object]:
+    annotated = dict(item)
+    annotated["competitor_context_status"] = status
+    annotated["candidate_index"] = candidate_index
+    if discard_reason:
+        annotated["discard_reason"] = discard_reason
+    else:
+        annotated.pop("discard_reason", None)
+    if replacement_candidate:
+        annotated["replacement_candidate"] = True
+    else:
+        annotated.pop("replacement_candidate", None)
+    return annotated
+
+
+def select_competitor_context_candidates(
+    competitor_results: list[dict[str, object]],
+    *,
+    requested_top_n: int | None = None,
+) -> dict[str, object]:
+    requested = requested_top_n if isinstance(requested_top_n, int) and requested_top_n > 0 else None
+    accepted_results: list[dict[str, object]] = []
+    annotated_results: list[dict[str, object]] = []
+    discard_reasons: dict[str, int] = {}
+    replacement_attempts = 0
+    replacements_used = 0
+    unused_candidates = 0
+
+    for index, raw_item in enumerate(competitor_results, start=1):
+        item = dict(raw_item)
+        discard_reason = _competitor_discard_reason(item)
+        if discard_reason:
+            discard_reasons[discard_reason] = discard_reasons.get(discard_reason, 0) + 1
+            if requested is not None and len(accepted_results) < requested:
+                replacement_attempts += 1
+            annotated_results.append(
+                _annotate_competitor_context(
+                    item,
+                    status="discarded",
+                    candidate_index=index,
+                    discard_reason=discard_reason,
+                )
+            )
+            continue
+
+        if requested is None or len(accepted_results) < requested:
+            replacement_candidate = requested is not None and index > requested
+            annotated = _annotate_competitor_context(
+                item,
+                status="accepted",
+                candidate_index=index,
+                replacement_candidate=replacement_candidate,
+            )
+            if replacement_candidate:
+                replacements_used += 1
+            accepted_results.append(annotated)
+            annotated_results.append(annotated)
+            continue
+
+        unused_candidates += 1
+        annotated_results.append(
+            _annotate_competitor_context(
+                item,
+                status="unused",
+                candidate_index=index,
+            )
+        )
+
+    return {
+        "requested_top_n": requested_top_n,
+        "collected_candidates": len(competitor_results),
+        "accepted_competitors": len(accepted_results),
+        "discarded_competitors": sum(discard_reasons.values()),
+        "unused_candidates": unused_candidates,
+        "replacement_attempts": replacement_attempts,
+        "replacements_used": replacements_used,
+        "discard_reasons": discard_reasons,
+        "accepted_results": accepted_results,
+        "annotated_results": annotated_results,
+    }
+
+
 def build_competitor_results(query: str, target_url: str, top_n: int) -> list[dict[str, object]]:
-    competitor_pages = search_competitor_pages(query=query, target_url=target_url, limit=top_n)
+    competitor_pages = search_competitor_pages(
+        query=query,
+        target_url=target_url,
+        limit=build_competitor_candidate_limit(top_n),
+    )
     results: list[dict[str, object]] = []
 
     for competitor_page in competitor_pages:
@@ -354,35 +513,39 @@ def build_competitor_context_quality(
     requested_top_n: int | None = None,
     min_competitors: int = MIN_COMPETITORS_FOR_COMPARISON,
 ) -> dict[str, object]:
-    analyzed_results = [
-        item
-        for item in competitor_results
-        if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float))
-    ]
-    found = len(competitor_results)
-    analyzed = len(analyzed_results)
-    failed = max(0, found - analyzed)
+    selection = select_competitor_context_candidates(competitor_results, requested_top_n=requested_top_n)
+    found = int(selection["collected_candidates"])
+    analyzed = int(selection["accepted_competitors"])
+    failed = int(selection["discarded_competitors"])
     requested = requested_top_n if isinstance(requested_top_n, int) and requested_top_n > 0 else None
     expected_context = requested or max(found, min_competitors)
     coverage_ratio = round(analyzed / expected_context, 4) if expected_context else 0.0
     fetch_error_codes: dict[str, int] = {}
     for item in competitor_results:
-        if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float)):
+        discard_reason = _competitor_discard_reason(dict(item))
+        if discard_reason is None:
             continue
-        code = str(item.get("fetch_error_code") or item.get("fetch_status") or "unknown").strip() or "unknown"
+        code = (
+            str(item.get("fetch_error_code") or "").strip()
+            or (discard_reason if str(item.get("fetch_status") or "").strip().lower() == "success" else "")
+            or str(item.get("fetch_status") or "").strip()
+            or "unknown"
+        )
         fetch_error_codes[code] = fetch_error_codes.get(code, 0) + 1
 
     if found == 0:
         status = "no_serp_results"
     elif analyzed < min_competitors:
         status = "insufficient_processed_competitors"
+    elif requested is not None and analyzed >= requested:
+        status = "ready"
     elif failed > 0:
         status = "partial_but_usable"
     else:
         status = "ready"
 
     return {
-        "schema_version": "competitor-context-quality-v1",
+        "schema_version": "competitor-context-quality-v2",
         "status": status,
         "context_available": analyzed >= min_competitors,
         "score_safe_to_compare": analyzed >= min_competitors,
@@ -391,6 +554,13 @@ def build_competitor_context_quality(
         "competitors_failed": failed,
         "required_competitors": min_competitors,
         "requested_top_n": requested_top_n,
+        "collected_candidates": found,
+        "accepted_competitors": analyzed,
+        "discarded_competitors": failed,
+        "replacement_attempts": selection["replacement_attempts"],
+        "replacements_used": selection["replacements_used"],
+        "unused_candidates": selection["unused_candidates"],
+        "discard_reasons": selection["discard_reasons"],
         "coverage_ratio": coverage_ratio,
         "fetch_error_codes": fetch_error_codes,
     }
@@ -404,11 +574,8 @@ def build_comparison_summary(
     serp_relative_summary: dict[str, object] | None = None,
     requested_top_n: int | None = None,
 ) -> dict[str, object]:
-    analyzed_results = [
-        item
-        for item in competitor_results
-        if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float))
-    ]
+    selection = select_competitor_context_candidates(competitor_results, requested_top_n=requested_top_n)
+    analyzed_results = list(selection["accepted_results"])
     competitor_scores = [float(item["score"]) for item in analyzed_results if isinstance(item.get("score"), (int, float))]
 
     competitors_average_score: float | None = None
@@ -417,17 +584,17 @@ def build_comparison_summary(
         competitors_average_score = round(float(fmean(competitor_scores)), 4)
         score_difference = round(float(user_score) - competitors_average_score, 4)
 
-    competitors_found = len(competitor_results)
-    competitors_analyzed = len(analyzed_results)
-    competitors_failed = competitors_found - competitors_analyzed
     competitor_context_quality = build_competitor_context_quality(
         competitor_results,
         requested_top_n=requested_top_n,
         min_competitors=MIN_COMPETITORS_FOR_COMPARISON,
     )
+    competitors_found = int(competitor_context_quality["collected_candidates"])
+    competitors_analyzed = int(competitor_context_quality["accepted_competitors"])
+    competitors_failed = int(competitor_context_quality["discarded_competitors"])
     competitiveness = build_competitiveness_score(
         user_score=user_score,
-        competitor_results=competitor_results,
+        competitor_results=analyzed_results,
         requested_top_n=requested_top_n,
         min_competitors=MIN_COMPETITORS_FOR_COMPARISON,
     )
@@ -455,6 +622,12 @@ def build_comparison_summary(
         "competitors_found": competitors_found,
         "competitors_analyzed": competitors_analyzed,
         "competitors_failed": competitors_failed,
+        "requested_top_n": competitor_context_quality["requested_top_n"],
+        "collected_candidates": competitor_context_quality["collected_candidates"],
+        "accepted_competitors": competitor_context_quality["accepted_competitors"],
+        "discarded_competitors": competitor_context_quality["discarded_competitors"],
+        "replacement_attempts": competitor_context_quality["replacement_attempts"],
+        "discard_reasons": competitor_context_quality["discard_reasons"],
         "competitor_context_status": competitor_context_quality["status"],
         "competitor_context_quality": competitor_context_quality,
         "competitor_best_score": competitiveness.get("competitor_best_score"),

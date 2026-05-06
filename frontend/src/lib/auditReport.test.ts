@@ -3,6 +3,7 @@ import type {
   AuditResultsResponse,
   AuditStatusResponse,
   AuditTimelineDiagnosticsResponse,
+  ComparisonSummary,
   RecommendationsBundle,
 } from "../types";
 import {
@@ -349,6 +350,212 @@ describe("audit report export", () => {
     expect(html).toContain("Ключевые проверки страницы");
     expect(html).toContain("TECHNICAL_LOW");
     expect(html.match(/TECHNICAL_/g)).toHaveLength(6);
+  });
+
+  it("keeps discarded competitor candidates out of report competitor rows", () => {
+    const comparisonSummary: ComparisonSummary = {
+      user_score: 72.4,
+      competitors_average_score: 78.2,
+      score_difference: -5.8,
+      competitors_count: 1,
+      competitors_found: 3,
+      competitors_analyzed: 1,
+      competitors_failed: 0,
+      competitor_context_quality: {
+        schema_version: "competitor-context-quality-v2",
+        status: "ready",
+        context_available: true,
+        score_safe_to_compare: true,
+        requested_top_n: 3,
+        collected_candidates: 3,
+        accepted_competitors: 1,
+        discarded_competitors: 1,
+        replacement_attempts: 1,
+        discard_reasons: {
+          unrelated_snapshot: 1,
+        },
+      },
+    };
+    const input = {
+      audit: {
+        ...createAudit(),
+        comparison_summary: comparisonSummary,
+      },
+      results: {
+        ...createResults(),
+        comparison_summary: comparisonSummary,
+        competitor_results: [
+          {
+            url: "https://competitor.example/",
+            domain: "competitor.example",
+            title: "Competitor",
+            fetch_status: "success",
+            fetch_method: "http",
+            fetch_error_code: null,
+            fetch_error_message: null,
+            score: 78.2,
+            features: null,
+            competitor_context_status: "accepted",
+          },
+          {
+            url: "https://www.avito.ru/random",
+            domain: "avito.ru",
+            title: "Marketplace candidate",
+            fetch_status: "success",
+            fetch_method: "http",
+            fetch_error_code: null,
+            fetch_error_message: null,
+            score: 92,
+            features: null,
+            competitor_context_status: "discarded",
+          },
+        ],
+      },
+      recommendations: createRecommendations(),
+      diagnostics: createDiagnostics(),
+      generatedAt: new Date("2026-01-01T12:00:00Z"),
+    } satisfies Parameters<typeof buildAuditReportModel>[0];
+
+    const model = buildAuditReportModel(input);
+    const competitorsMetric = model.competitorMetrics.find((metric) => metric.label === "Конкуренты");
+    const markdown = createAuditReportMarkdown(input);
+
+    expect(competitorsMetric?.value).toBe("1/3");
+    expect(competitorsMetric?.note).toContain("В расчёт вошёл 1 валидный конкурент из 3");
+    expect(model.competitors.map((competitor) => competitor.domain)).toEqual(["competitor.example"]);
+    expect(markdown).toContain("competitor.example");
+    expect(markdown).not.toContain("avito.ru");
+    expect(markdown).not.toContain("unrelated_snapshot");
+  });
+
+  it("exports HTTP 404 target pages as unavailable with recovery actions instead of normal SEO actions", () => {
+    const unavailableFeatures = {
+      http_status_code: 404,
+      http_status_ok: 0,
+      page_indexable: 0,
+      robots_noindex: 0,
+      word_count: 0,
+      text_length_chars: 0,
+    };
+    const input = {
+      audit: {
+        ...createAudit(),
+        query: "купить зимние шины",
+        target_url: "https://mosautoshina.ru/catalog/tyre/winter",
+        score: 0,
+        features: unavailableFeatures,
+        score_breakdown: {
+          final_score: 0,
+          rule_score: 0,
+          ml_score: 0,
+        },
+        target_fetch_status: "success",
+        target_fetch_method: "http",
+      },
+      results: {
+        ...createResults(),
+        score: 0,
+        features: unavailableFeatures,
+        score_breakdown: {
+          final_score: 0,
+          rule_score: 0,
+          ml_score: 0,
+        },
+        target_snapshot_summary: {
+          status_code: 404,
+          fetch_method: "http",
+        },
+        target_fetch_status: "success",
+        target_fetch_method: "http",
+        competitor_results: [],
+        comparison_summary: null,
+      },
+      recommendations: createRecommendations(),
+      diagnostics: createDiagnostics(),
+      generatedAt: new Date("2026-01-01T12:00:00Z"),
+    } satisfies Parameters<typeof buildAuditReportModel>[0];
+
+    const model = buildAuditReportModel(input);
+    const markdown = createAuditReportMarkdown(input);
+    const html = createAuditReportHtml(input);
+
+    expect(model.scoreVerdict).toBe("Страница недоступна: HTTP 404");
+    expect(model.recoveryActions).toHaveLength(4);
+    expect(model.recommendationActions).toHaveLength(0);
+    expect(markdown).toContain("Страница недоступна: HTTP 404");
+    expect(markdown).toContain("Проверьте, что URL открывается");
+    expect(markdown).toContain("Настройте корректный редирект");
+    expect(markdown).not.toContain("TECHNICAL_TITLE");
+    expect(markdown).not.toContain("TECHNICAL_INDEXING");
+    expect(html).toContain("Страница недоступна: HTTP 404");
+    expect(html).toContain("обычные SEO-рекомендации будут полезны после повторного аудита");
+    expect(html).not.toContain("TECHNICAL_TITLE");
+  });
+
+  it("keeps normal relevant report exports in the regular recommendation flow", () => {
+    const input = {
+      audit: {
+        ...createAudit(),
+        query: "купить зимние шины",
+        target_url: "https://pokrishka.ru/zimnie-shiny",
+        score: 80.54,
+        features: {
+          http_status_code: 200,
+          http_status_ok: 1,
+          page_indexable: 1,
+          robots_noindex: 0,
+          technical_seo_score: 0.82,
+          commercial_trust_score: 0.76,
+          semantic_similarity: 0.74,
+          intent_alignment_score: 0.8,
+        },
+        score_breakdown: {
+          final_score: 80.54,
+          rule_score: 79,
+          ml_score: 82,
+        },
+        target_fetch_status: "success",
+        target_fetch_method: "http",
+      },
+      results: {
+        ...createResults(),
+        score: 80.54,
+        features: {
+          http_status_code: 200,
+          http_status_ok: 1,
+          page_indexable: 1,
+          robots_noindex: 0,
+          technical_seo_score: 0.82,
+          commercial_trust_score: 0.76,
+          semantic_similarity: 0.74,
+          intent_alignment_score: 0.8,
+        },
+        score_breakdown: {
+          final_score: 80.54,
+          rule_score: 79,
+          ml_score: 82,
+        },
+        target_snapshot_summary: {
+          status_code: 200,
+          fetch_method: "http",
+        },
+        target_fetch_status: "success",
+        target_fetch_method: "http",
+      },
+      recommendations: createRecommendations(),
+      diagnostics: createDiagnostics(),
+      generatedAt: new Date("2026-01-01T12:00:00Z"),
+    } satisfies Parameters<typeof buildAuditReportModel>[0];
+
+    const model = buildAuditReportModel(input);
+    const markdown = createAuditReportMarkdown(input);
+
+    expect(model.lowScoreReason.kind).toBe("unknown");
+    expect(model.recoveryActions).toHaveLength(0);
+    expect(model.recommendationActions).toHaveLength(6);
+    expect(markdown).toContain("TECHNICAL_TITLE");
+    expect(markdown).not.toContain("Страница недоступна");
+    expect(markdown).not.toContain("Проверьте, что URL открывается");
   });
 
   it("exports early stop mismatch as a product state without raw decision fields", () => {

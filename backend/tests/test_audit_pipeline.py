@@ -15,6 +15,7 @@ from app.celery_app import (
     AUDIT_PIPELINE_QUEUE,
     AUDIT_RECOMMENDATIONS_QUEUE,
     AUDIT_SCORING_QUEUE,
+    AUDIT_SEMANTIC_QUEUE,
     celery_app,
     resolve_task_queue,
 )
@@ -60,7 +61,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     )
     monkeypatch.setattr(
         'app.tasks.build_features',
-        lambda html, text, query: {
+        lambda html, text, query, semantic_features=None: {
             'text_length_chars': 10,
             'query_in_text': 1,
             'semantic_similarity': 0.81,
@@ -284,7 +285,7 @@ def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
         'audit_id': 'audit-1',
         'status': 'completed_with_warnings',
         'score': 77.5,
-        'competitors_count': 2,
+        'competitors_count': 1,
         'recommendations_count': 1,
     }
     Base.metadata.drop_all(bind=engine)
@@ -298,6 +299,7 @@ def test_process_audit_fails_when_target_fetch_fails(monkeypatch, tmp_path):
     testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
     monkeypatch.setattr(
         'app.tasks.fetch_page',
         lambda url, use_browser=True: {
@@ -377,7 +379,7 @@ def test_process_audit_early_stops_relevance_mismatch_before_heavy_and_competito
     )
     monkeypatch.setattr(
         'app.tasks.build_features',
-        lambda html, text, query: {
+        lambda html, text, query, semantic_features=None: {
             'http_status_code': 200,
             'http_status_ok': 1,
             'page_indexable': 1,
@@ -504,6 +506,7 @@ def test_process_audit_clears_stale_results_when_retry_fails(monkeypatch, tmp_pa
     testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
     monkeypatch.setattr(
         'app.tasks.fetch_page',
         lambda url, use_browser=True: {
@@ -581,6 +584,7 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
     testing_session_local = sessionmaker(bind=engine, autoflush=False, autocommit=False, class_=Session)
     Base.metadata.create_all(bind=engine)
     monkeypatch.setattr('app.tasks.SessionLocal', testing_session_local)
+    monkeypatch.setattr('app.tasks._redis_available', lambda: False)
     monkeypatch.setattr(
         'app.tasks.fetch_page',
         lambda url, use_browser=True: {
@@ -594,7 +598,7 @@ def test_process_audit_marks_unexpected_exception_as_failed_and_clears_outputs(m
             'text': 'Body',
         },
     )
-    def fail_build_features(html, text, query):
+    def fail_build_features(html, text, query, semantic_features=None):
         raise RuntimeError('feature extraction exploded')
     monkeypatch.setattr('app.tasks.build_features', fail_build_features)
     with testing_session_local() as db:
@@ -721,11 +725,11 @@ def test_stage_tasks_are_registered_for_distributed_execution():
     assert resolve_task_queue(process_audit.name) == AUDIT_PIPELINE_QUEUE
     assert resolve_task_queue(process_audit_fetch_target.name) == AUDIT_FETCH_QUEUE
     assert resolve_task_queue(process_audit_run_heavy_analysis.name) == AUDIT_HEAVY_ANALYSIS_QUEUE
-    assert resolve_task_queue(process_audit_extract_features.name) == AUDIT_FEATURES_QUEUE
+    assert resolve_task_queue(process_audit_extract_features.name) == AUDIT_SEMANTIC_QUEUE
     assert resolve_task_queue(process_audit_score_target.name) == AUDIT_SCORING_QUEUE
     assert resolve_task_queue(process_audit_collect_competitors.name) == AUDIT_COMPETITORS_QUEUE
     assert resolve_task_queue(process_audit_collect_competitor_page.name) == AUDIT_COMPETITOR_PAGES_QUEUE
-    assert resolve_task_queue(process_audit_analyze_competitor_page.name) == AUDIT_HEAVY_ANALYSIS_QUEUE
+    assert resolve_task_queue(process_audit_analyze_competitor_page.name) == AUDIT_SEMANTIC_QUEUE
     assert resolve_task_queue(process_audit_aggregate_competitors.name) == AUDIT_COMPETITORS_QUEUE
     assert resolve_task_queue(process_audit_generate_recommendations.name) == AUDIT_RECOMMENDATIONS_QUEUE
     assert resolve_task_queue(process_audit_finalize.name) == AUDIT_FINALIZE_QUEUE
@@ -853,7 +857,7 @@ def test_process_audit_extract_features_rebuilds_from_saved_snapshot(monkeypatch
 
     captured: dict[str, str] = {}
 
-    def fake_build_features(html, text, query):
+    def fake_build_features(html, text, query, semantic_features=None):
         captured['html'] = html
         captured['text'] = text
         captured['query'] = query
@@ -993,7 +997,7 @@ def test_process_audit_run_heavy_analysis_persists_payload_and_routes_to_feature
         'audit_id': 'audit-heavy-analysis',
         'status': 'processing',
         'next_stage': 'app.process_audit_extract_features',
-        'next_queue': AUDIT_FEATURES_QUEUE,
+        'next_queue': AUDIT_SEMANTIC_QUEUE,
     }
 
     Base.metadata.drop_all(bind=engine)
@@ -1417,7 +1421,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         'audit_id': 'audit-aggregation-race',
         'status': 'processing',
         'next_stage': 'app.process_audit_analyze_competitor_page',
-        'next_queue': AUDIT_HEAVY_ANALYSIS_QUEUE,
+        'next_queue': AUDIT_SEMANTIC_QUEUE,
         'dispatch_mode': 'queued',
     }
 
@@ -1433,11 +1437,11 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
     assert analysis_dispatched == [
         (
             ('audit-aggregation-race', 1, 'competitor-1'),
-            AUDIT_HEAVY_ANALYSIS_QUEUE,
+            AUDIT_SEMANTIC_QUEUE,
         ),
         (
             ('audit-aggregation-race', 1, 'competitor-2'),
-            AUDIT_HEAVY_ANALYSIS_QUEUE,
+            AUDIT_SEMANTIC_QUEUE,
         )
     ]
     assert aggregation_dispatched == []
@@ -1445,7 +1449,7 @@ def test_competitor_page_completion_dispatches_aggregation_once(monkeypatch, tmp
         'audit_id': 'audit-aggregation-race',
         'status': 'processing',
         'next_stage': 'app.process_audit_analyze_competitor_page',
-        'next_queue': AUDIT_HEAVY_ANALYSIS_QUEUE,
+        'next_queue': AUDIT_SEMANTIC_QUEUE,
         'dispatch_mode': 'queued',
     }
 
@@ -1700,6 +1704,7 @@ def test_celery_config_declares_stage_queues_and_routes():
         AUDIT_PIPELINE_QUEUE,
         AUDIT_FETCH_QUEUE,
         AUDIT_HEAVY_ANALYSIS_QUEUE,
+        AUDIT_SEMANTIC_QUEUE,
         AUDIT_FEATURES_QUEUE,
         AUDIT_SCORING_QUEUE,
         AUDIT_COMPETITORS_QUEUE,
@@ -1711,11 +1716,11 @@ def test_celery_config_declares_stage_queues_and_routes():
     assert celery_app.conf.task_routes['app.process_audit']['queue'] == AUDIT_PIPELINE_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_fetch_target']['queue'] == AUDIT_FETCH_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_run_heavy_analysis']['queue'] == AUDIT_HEAVY_ANALYSIS_QUEUE
-    assert celery_app.conf.task_routes['app.process_audit_extract_features']['queue'] == AUDIT_FEATURES_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_extract_features']['queue'] == AUDIT_SEMANTIC_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_score_target']['queue'] == AUDIT_SCORING_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_collect_competitors']['queue'] == AUDIT_COMPETITORS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_collect_competitor_page']['queue'] == AUDIT_COMPETITOR_PAGES_QUEUE
-    assert celery_app.conf.task_routes['app.process_audit_analyze_competitor_page']['queue'] == AUDIT_HEAVY_ANALYSIS_QUEUE
+    assert celery_app.conf.task_routes['app.process_audit_analyze_competitor_page']['queue'] == AUDIT_SEMANTIC_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_aggregate_competitors']['queue'] == AUDIT_COMPETITORS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_generate_recommendations']['queue'] == AUDIT_RECOMMENDATIONS_QUEUE
     assert celery_app.conf.task_routes['app.process_audit_finalize']['queue'] == AUDIT_FINALIZE_QUEUE

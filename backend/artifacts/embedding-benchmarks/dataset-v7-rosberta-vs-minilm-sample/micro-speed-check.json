@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-05-05T16:55:41Z",
+  "queries": 8,
+  "texts": 8,
+  "runs_per_model": 3,
+  "models": [
+    {
+      "key": "current_minilm",
+      "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "load_seconds": 7.2353,
+      "runs": [
+        {
+          "run": 1,
+          "query_seconds": 0.9801,
+          "doc_seconds": 1.6969,
+          "total_seconds": 2.677
+        },
+        {
+          "run": 2,
+          "query_seconds": 2.2085,
+          "doc_seconds": 1.3692,
+          "total_seconds": 3.5777
+        },
+        {
+          "run": 3,
+          "query_seconds": 0.5696,
+          "doc_seconds": 0.9817,
+          "total_seconds": 1.5513
+        }
+      ],
+      "median_total_seconds": 2.677,
+      "vectors_per_second_median": 5.9768,
+      "slowdown_vs_current_minilm_median": 1.0
+    },
+    {
+      "key": "ru_en_rosberta_plain",
+      "model_name": "ai-forever/ru-en-RoSBERTa",
+      "load_seconds": 5.6145,
+      "runs": [
+        {
+          "run": 1,
+          "query_seconds": 5.9261,
+          "doc_seconds": 7.3981,
+          "total_seconds": 13.3242
+        },
+        {
+          "run": 2,
+          "query_seconds": 6.4413,
+          "doc_seconds": 7.7191,
+          "total_seconds": 14.1603
+        },
+        {
+          "run": 3,
+          "query_seconds": 5.3034,
+          "doc_seconds": 8.3356,
+          "total_seconds": 13.6389
+        }
+      ],
+      "median_total_seconds": 13.6389,
+      "vectors_per_second_median": 1.1731,
+      "slowdown_vs_current_minilm_median": 5.0948
+    }
+  ]
+}

@@ -4,6 +4,14 @@ import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
 import { buildScoreConfidenceView } from "../lib/auditConfidence";
+import { buildAuditLowScoreReason, type AuditLowScoreReason } from "../lib/auditLowScoreReason";
+import {
+  buildCompetitorContextStats,
+  formatCompetitorContextSummary,
+  getAcceptedCompetitors,
+  getCompetitorContextStatusLabel,
+  getExcludedCompetitors,
+} from "../lib/competitorContext";
 import { getEarlyStopMismatchView } from "../lib/earlyStop";
 import { getTopRecommendationItems } from "../lib/recommendations";
 import type { RuntimeHealthModel } from "../lib/runtimeHealth";
@@ -26,6 +34,7 @@ import type {
   AuditTimelineDiagnosticsResponse,
   AuditTimelineEventsResponse,
   ComparisonSummary,
+  CompetitorResult,
   CompetitorScore,
   FailureContext,
   PageRow,
@@ -207,7 +216,14 @@ function formatScoreFactorDetail(item: ScoreFactor): string {
   return "";
 }
 
-function getScoreMethodologyText(breakdown?: ScoreBreakdown | null): string {
+function getScoreMethodologyText(
+  breakdown?: ScoreBreakdown | null,
+  lowScoreReason?: AuditLowScoreReason | null,
+): string {
+  if (lowScoreReason && (lowScoreReason.isBlocking || lowScoreReason.category === "query_mismatch")) {
+    return lowScoreReason.message;
+  }
+
   const earlyStopView = getEarlyStopMismatchView(breakdown);
   if (earlyStopView) {
     return earlyStopView.message;
@@ -238,6 +254,35 @@ const scoreExplanationPrinciples = [
     detail: "Когда конкуренты обработаны, оценка показывает, насколько страница сильна рядом с ними.",
   },
 ];
+
+function LowScoreReasonBanner({
+  reason,
+  compact = false,
+}: {
+  reason: AuditLowScoreReason | null;
+  compact?: boolean;
+}) {
+  if (!reason || reason.kind === "unknown") {
+    return null;
+  }
+
+  return (
+    <div className={`low-score-reason low-score-reason--${reason.tone}${compact ? " low-score-reason--compact" : ""}`}>
+      <div className="low-score-reason__header">
+        <span>{reason.badge}</span>
+        <strong>{reason.title}</strong>
+      </div>
+      <p>{reason.message}</p>
+      {reason.recoveryActions.length > 0 ? (
+        <ul className="low-score-reason__actions">
+          {reason.recoveryActions.map((action) => (
+            <li key={action}>{action}</li>
+          ))}
+        </ul>
+      ) : null}
+    </div>
+  );
+}
 
 function ScoreFactorList({
   title,
@@ -309,7 +354,13 @@ function ScoreFactorGroups({ groups }: { groups: ScoreFactorGroup[] }) {
   );
 }
 
-function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | undefined }) {
+function ScoreBreakdownCard({
+  breakdown,
+  lowScoreReason,
+}: {
+  breakdown: ScoreBreakdown | null | undefined;
+  lowScoreReason: AuditLowScoreReason | null;
+}) {
   if (!breakdown) {
     return (
       <Card
@@ -324,8 +375,27 @@ function ScoreBreakdownCard({ breakdown }: { breakdown: ScoreBreakdown | null | 
   const positiveFactors = breakdown.positives ?? breakdown.top_positive_factors ?? [];
   const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
   const factorGroups = breakdown.factor_groups ?? [];
-  const methodology = getScoreMethodologyText(breakdown);
+  const methodology = getScoreMethodologyText(breakdown, lowScoreReason);
   const earlyStopView = getEarlyStopMismatchView(breakdown);
+
+  if (lowScoreReason?.isBlocking) {
+    return (
+      <Card
+        title="Что означает оценка"
+        subtitle="Сначала нужно восстановить доступность страницы; обычные SEO-выводы сейчас не главный результат."
+      >
+        <div className="score-breakdown score-breakdown--recovery">
+          <LowScoreReasonBanner reason={lowScoreReason} />
+          <div className="metric-strip metric-strip--comparison">
+            <div className="metric-box">
+              <span className="metric-box__label">Итоговая оценка</span>
+              <strong className="metric-box__value">{breakdown.final_score}</strong>
+            </div>
+          </div>
+        </div>
+      </Card>
+    );
+  }
 
   if (earlyStopView) {
     return (
@@ -460,6 +530,84 @@ function AuditProgressBanner({ status }: { status: AuditStatus }) {
   );
 }
 
+function getCompetitorStatusText(competitor: CompetitorResult, excluded: boolean): string {
+  if (excluded) {
+    return getCompetitorContextStatusLabel(competitor.competitor_context_status);
+  }
+  if (competitor.competitor_context_status === "accepted") {
+    return "В расчёте";
+  }
+  return competitor.fetch_status === "success" ? "Обработан" : "Недоступен";
+}
+
+function getCompetitorNote(competitor: CompetitorResult, excluded: boolean): string {
+  if (excluded) {
+    return "Кандидат отделён от конкурентного расчёта.";
+  }
+  if (competitor.fetch_status === "failed") {
+    return competitor.fetch_error_message ?? competitor.fetch_error_code ?? "Страница не обработана";
+  }
+  return `Способ загрузки: ${getFetchMethodLabel(competitor.fetch_method)}`;
+}
+
+function CompetitorListItem({ competitor, excluded = false }: { competitor: CompetitorResult; excluded?: boolean }) {
+  const statusClass = excluded ? "status-pill--muted" : `status-pill--fetch-${competitor.fetch_status}`;
+
+  return (
+    <article className={`competitor-list__item${excluded ? " competitor-list__item--excluded" : ""}`}>
+      <div>
+        <div className="competitor-list__domain">{competitor.domain}</div>
+        <div className="competitor-list__title">{competitor.title || "Без заголовка"}</div>
+        <div className="competitor-list__url">{competitor.url}</div>
+        <div className="competitor-list__note">{getCompetitorNote(competitor, excluded)}</div>
+      </div>
+      <div className="competitor-list__side">
+        <span className={`status-pill ${statusClass}`}>{getCompetitorStatusText(competitor, excluded)}</span>
+        {!excluded ? <div className="competitor-list__score">{competitor.score !== null ? Math.round(competitor.score) : "—"}</div> : null}
+      </div>
+    </article>
+  );
+}
+
+function buildAcceptedComparisonItems(
+  targetUrl: string | undefined,
+  userScore: number,
+  competitors: CompetitorResult[] | null | undefined,
+  fallbackItems: CompetitorScore[],
+): CompetitorScore[] {
+  if (!competitors || competitors.length === 0) {
+    return fallbackItems;
+  }
+
+  const acceptedCompetitors = getAcceptedCompetitors(competitors).filter(
+    (competitor) => competitor.fetch_status === "success" && typeof competitor.score === "number",
+  );
+
+  if (acceptedCompetitors.length === 0) {
+    return [];
+  }
+
+  return [
+    {
+      name: getDomain(targetUrl ?? "Ваш сайт"),
+      score: Math.round(userScore),
+      isUser: true,
+    },
+    ...acceptedCompetitors.map((competitor) => ({
+      name: competitor.domain,
+      score: Math.round(competitor.score ?? 0),
+    })),
+  ];
+}
+
+function filterAcceptedPageRows(rows: PageRow[], competitors: CompetitorResult[] | null | undefined): PageRow[] {
+  const excludedUrls = new Set(getExcludedCompetitors(competitors).map((competitor) => competitor.url));
+  if (excludedUrls.size === 0) {
+    return rows;
+  }
+  return rows.filter((row) => !excludedUrls.has(row.url));
+}
+
 function OverviewPanel({
   currentAudit,
   currentResults,
@@ -471,10 +619,19 @@ function OverviewPanel({
   "currentAudit" | "currentResults" | "recommendations" | "competitorScores" | "comparisonSummary"
 >) {
   const topRecommendationItems = getTopRecommendationItems(recommendations, 3);
-  const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
-  const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
-  const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
+  const rawCompetitors = currentResults?.competitor_results ?? currentAudit?.competitor_results;
+  const contextStats = buildCompetitorContextStats(comparisonSummary, rawCompetitors);
+  const contextSummary = formatCompetitorContextSummary(contextStats);
+  const foundCount = contextStats.collected;
+  const analyzedCount = contextStats.accepted;
+  const failedCount = contextStats.failed;
   const finalScore = getDisplayedFinalScore({ currentAudit, currentResults, comparisonSummary });
+  const displayedCompetitorScores = buildAcceptedComparisonItems(
+    currentAudit?.target_url,
+    finalScore,
+    rawCompetitors,
+    competitorScores,
+  );
   const primaryScore = getDisplayedPrimaryScore({ currentAudit, currentResults, comparisonSummary });
   const competitorAverageScore =
     getCompetitivenessMetric(currentResults?.score_breakdown, "competitor_average_score") ??
@@ -494,6 +651,14 @@ function OverviewPanel({
   const earlyStopView =
     getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
   const competitorContextNotice = getCompetitorContextNotice(comparisonSummary);
+  const lowScoreReason = buildAuditLowScoreReason({
+    audit: currentAudit,
+    results: currentResults,
+    recommendations,
+    comparisonSummary,
+  });
+  const hasLowScoreReason = lowScoreReason.kind !== "unknown";
+  const heroTitle = earlyStopView?.title ?? (hasLowScoreReason ? lowScoreReason.title : currentAudit?.query);
 
   return (
     <div className="workspace-grid">
@@ -504,7 +669,7 @@ function OverviewPanel({
             <h2 className="workspace-hero__title">{currentAudit ? getDomain(currentAudit.target_url) : "Аудит"}</h2>
             {currentAudit ? <p className="workspace-hero__target">{getDisplayUrl(currentAudit.target_url)}</p> : null}
             <p className="workspace-hero__text">
-              {earlyStopView?.title ?? currentAudit?.query ?? "Запустите аудит, чтобы увидеть метрики, сравнение и рекомендации."}
+              {heroTitle ?? "Запустите аудит, чтобы увидеть метрики, сравнение и рекомендации."}
             </p>
             {earlyStopView ? <p className="workspace-hero__text workspace-hero__text--notice">{earlyStopView.message}</p> : null}
 
@@ -522,9 +687,14 @@ function OverviewPanel({
             ) : null}
           </div>
 
-          <ScoreRing value={Math.round(finalScore)} label={earlyStopView ? "Не подходит" : undefined} />
+          <ScoreRing
+            value={Math.round(finalScore)}
+            label={earlyStopView ? "Не подходит" : lowScoreReason.isBlocking ? "Недоступна" : undefined}
+          />
         </div>
       </Card>
+
+      {hasLowScoreReason ? <LowScoreReasonBanner reason={lowScoreReason} compact /> : null}
 
       <div className="metric-strip workspace-metric-strip">
         <div className="metric-box">
@@ -561,10 +731,11 @@ function OverviewPanel({
               <p>{earlyStopView.message}</p>
             </div>
           </div>
-        ) : competitorScores.length > 0 ? (
+        ) : displayedCompetitorScores.length > 0 ? (
           <>
-            <ComparisonChart items={competitorScores} />
-            {failedCount > 0 ? (
+            <ComparisonChart items={displayedCompetitorScores} />
+            {contextSummary ? <p className="competitor-context-summary">{contextSummary}</p> : null}
+            {!contextStats.hasQualityV2 && failedCount > 0 ? (
               <div className="feedback-banner feedback-banner--warning">
                 Обработано {analyzedCount} из {foundCount} конкурентных страниц, {failedCount} страниц ограничили автоматический доступ.
               </div>
@@ -575,18 +746,23 @@ function OverviewPanel({
           </>
         ) : (
           <div className="empty-state">
-            {competitorContextNotice ?? "Конкурентные страницы ещё не собраны или не удалось обработать ни одну страницу."}
+            {competitorContextNotice ?? contextSummary ?? "Конкурентные страницы ещё не собраны или не удалось обработать ни одну страницу."}
           </div>
         )}
       </Card>
 
-      <ScoreBreakdownCard breakdown={currentResults?.score_breakdown ?? currentAudit?.score_breakdown} />
+      <ScoreBreakdownCard
+        breakdown={currentResults?.score_breakdown ?? currentAudit?.score_breakdown}
+        lowScoreReason={lowScoreReason}
+      />
 
       <Card
         title="Ключевые рекомендации"
         subtitle="Первые действия, которые сильнее всего влияют на качество страницы."
       >
-        {topRecommendationItems.length > 0 ? (
+        {lowScoreReason.isBlocking ? (
+          <LowScoreReasonBanner reason={lowScoreReason} />
+        ) : topRecommendationItems.length > 0 ? (
           <RecommendationPreviewList items={topRecommendationItems} />
         ) : (
           <div className="empty-state">Рекомендации появятся после завершения обработки аудита.</div>
@@ -610,10 +786,21 @@ function CompetitorsPanel({
 > & {
   failureContext: FailureContext | null;
 }) {
-  const competitors = currentResults?.competitor_results ?? [];
-  const foundCount = comparisonSummary?.competitors_found ?? comparisonSummary?.competitors_count ?? 0;
-  const analyzedCount = comparisonSummary?.competitors_analyzed ?? comparisonSummary?.competitors_count ?? 0;
-  const failedCount = comparisonSummary?.competitors_failed ?? Math.max(0, foundCount - analyzedCount);
+  const competitors = currentResults?.competitor_results ?? currentAudit?.competitor_results ?? [];
+  const acceptedCompetitors = getAcceptedCompetitors(competitors);
+  const excludedCompetitors = getExcludedCompetitors(competitors);
+  const contextStats = buildCompetitorContextStats(comparisonSummary, competitors);
+  const contextSummary = formatCompetitorContextSummary(contextStats);
+  const foundCount = contextStats.collected;
+  const analyzedCount = contextStats.accepted;
+  const failedCount = contextStats.failed;
+  const finalScore = getDisplayedFinalScore({ currentAudit, currentResults, comparisonSummary });
+  const displayedCompetitorScores = buildAcceptedComparisonItems(
+    currentAudit?.target_url,
+    finalScore,
+    competitors,
+    competitorScores,
+  );
   const competitorContextNotice = getCompetitorContextNotice(comparisonSummary);
   const earlyStopView =
     getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
@@ -646,51 +833,63 @@ function CompetitorsPanel({
       {!loading && !error && !earlyStopView && competitors.length > 0 ? (
         <>
           <div className="metric-strip metric-strip--comparison">
-            <div className="metric-box">
-              <span className="metric-box__label">Найдено в SERP</span>
-              <strong className="metric-box__value">{foundCount}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">Успешно обработано</span>
-              <strong className="metric-box__value">{analyzedCount}</strong>
-            </div>
-            <div className="metric-box">
-              <span className="metric-box__label">Ограничили доступ</span>
-              <strong className="metric-box__value">{failedCount}</strong>
-            </div>
+            {contextStats.hasQualityV2 ? (
+              <>
+                <div className="metric-box">
+                  <span className="metric-box__label">В расчёте</span>
+                  <strong className="metric-box__value">{`${analyzedCount}/${foundCount}`}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Заменены</span>
+                  <strong className="metric-box__value">{contextStats.replacements}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Исключены</span>
+                  <strong className="metric-box__value">{contextStats.discarded}</strong>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="metric-box">
+                  <span className="metric-box__label">Найдено в SERP</span>
+                  <strong className="metric-box__value">{foundCount}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Успешно обработано</span>
+                  <strong className="metric-box__value">{analyzedCount}</strong>
+                </div>
+                <div className="metric-box">
+                  <span className="metric-box__label">Ограничили доступ</span>
+                  <strong className="metric-box__value">{failedCount}</strong>
+                </div>
+              </>
+            )}
           </div>
 
-          {competitorScores.length > 0 ? <ComparisonChart items={competitorScores} /> : null}
+          {displayedCompetitorScores.length > 0 ? <ComparisonChart items={displayedCompetitorScores} /> : null}
+          {contextSummary ? <p className="competitor-context-summary">{contextSummary}</p> : null}
           {competitorContextNotice ? (
             <div className="feedback-banner feedback-banner--info">{competitorContextNotice}</div>
           ) : null}
 
-          <div className="competitor-list">
-            {competitors.map((competitor) => (
-              <article key={competitor.url} className="competitor-list__item">
-                <div>
-                  <div className="competitor-list__domain">{competitor.domain}</div>
-                  <div className="competitor-list__title">{competitor.title || "Без заголовка"}</div>
-                  <div className="competitor-list__url">{competitor.url}</div>
-                  {competitor.fetch_status === "failed" ? (
-                    <div className="competitor-list__note">
-                      {competitor.fetch_error_message ?? competitor.fetch_error_code ?? "Страница не обработана"}
-                    </div>
-                  ) : (
-                    <div className="competitor-list__note">
-                      Способ загрузки: {getFetchMethodLabel(competitor.fetch_method)}
-                    </div>
-                  )}
-                </div>
-                <div className="competitor-list__side">
-                  <span className={`status-pill status-pill--fetch-${competitor.fetch_status}`}>
-                    {competitor.fetch_status === "success" ? "Обработан" : "Недоступен"}
-                  </span>
-                  <div className="competitor-list__score">{competitor.score !== null ? Math.round(competitor.score) : "—"}</div>
-                </div>
-              </article>
-            ))}
-          </div>
+          {acceptedCompetitors.length > 0 ? (
+            <div className="competitor-list">
+              {acceptedCompetitors.map((competitor) => (
+                <CompetitorListItem key={competitor.url} competitor={competitor} />
+              ))}
+            </div>
+          ) : (
+            <div className="empty-state">Валидные конкуренты для расчёта пока не найдены.</div>
+          )}
+
+          {excludedCompetitors.length > 0 ? (
+            <div className="competitor-list competitor-list--excluded">
+              <div className="competitor-list__section-title">Не вошли в расчёт</div>
+              {excludedCompetitors.map((competitor) => (
+                <CompetitorListItem key={competitor.url} competitor={competitor} excluded />
+              ))}
+            </div>
+          ) : null}
         </>
       ) : null}
     </Card>
@@ -787,6 +986,14 @@ export function AuditWorkspace({
   }
 
   const failureContext = resolveAuditFailureContext(currentAudit, currentResults);
+  const workspaceCompetitors = currentResults?.competitor_results ?? currentAudit.competitor_results;
+  const displayedPageRows = filterAcceptedPageRows(pageRows, workspaceCompetitors);
+  const lowScoreReason = buildAuditLowScoreReason({
+    audit: currentAudit,
+    results: currentResults,
+    recommendations,
+    comparisonSummary,
+  });
 
   return (
     <div className="workspace">
@@ -846,7 +1053,7 @@ export function AuditWorkspace({
         ) : null}
 
         {activeTab === "pages" ? (
-          <AuditPage rows={pageRows} auditStatus={auditStatus} loading={loading} error={error} />
+          <AuditPage rows={displayedPageRows} auditStatus={auditStatus} loading={loading} error={error} />
         ) : null}
 
         {activeTab === "competitors" ? (
@@ -869,6 +1076,7 @@ export function AuditWorkspace({
             loading={loading}
             error={error}
             failureContext={failureContext}
+            lowScoreReason={lowScoreReason}
           />
         ) : null}
       </div>

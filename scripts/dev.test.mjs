@@ -7,6 +7,9 @@ import {
   buildFrontendDevArgs,
   CELERY_AUDIT_QUEUES,
   CELERY_WORKER_PROFILES,
+  resolveSemanticAutoscaleConfig,
+  SEMANTIC_QUEUE_NAME,
+  SEMANTIC_WORKER_PROFILE_NAME,
 } from "./dev.mjs";
 test("buildBackendRuntimeEnv provides local development defaults", () => {
   const env = buildBackendRuntimeEnv({ BACKEND_PORT: "8000" }, {});
@@ -35,11 +38,18 @@ test("buildBackendRuntimeEnv preserves explicit source environment values", () =
   assert.equal(env.CELERY_RESULT_BACKEND, "redis://redis.internal:6380/1");
 });
 test("worker topology profiles cover distributed audit queues exactly once", () => {
-  assert.deepEqual(CELERY_WORKER_PROFILES.map((profile) => profile.name), ["pipeline", "network", "heavy_analysis", "cpu_ml"]);
+  assert.deepEqual(CELERY_WORKER_PROFILES.map((profile) => profile.name), [
+    "pipeline",
+    "network",
+    "heavy_analysis",
+    "semantic_cpu",
+    "cpu_ml",
+  ]);
   assert.deepEqual([...CELERY_AUDIT_QUEUES].sort(), [
     "audits.pipeline",
     "audits.fetch",
     "audits.heavy_analysis",
+    "audits.semantic",
     "audits.competitors",
     "audits.competitor_pages",
     "audits.features",
@@ -63,6 +73,23 @@ test("buildCeleryWorkerArgs subscribes network worker only to network-affinity q
   assert.doesNotMatch(args[queueIndex + 1], /audits\.heavy_analysis/);
 });
 
+test("buildCeleryWorkerArgs subscribes semantic worker only to semantic queue", () => {
+  const args = buildCeleryWorkerArgs(SEMANTIC_WORKER_PROFILE_NAME);
+  const queueIndex = args.indexOf("-Q");
+  const hostnameIndex = args.indexOf("--hostname");
+  assert.notEqual(queueIndex, -1);
+  assert.notEqual(hostnameIndex, -1);
+  assert.equal(args[hostnameIndex + 1], "site-audit.semantic_cpu@%h");
+  assert.equal(args[queueIndex + 1], SEMANTIC_QUEUE_NAME);
+});
+
+test("buildCeleryWorkerArgs can give scaled semantic workers unique hostnames", () => {
+  const args = buildCeleryWorkerArgs(SEMANTIC_WORKER_PROFILE_NAME, { hostnameSuffix: "2" });
+  const hostnameIndex = args.indexOf("--hostname");
+  assert.notEqual(hostnameIndex, -1);
+  assert.equal(args[hostnameIndex + 1], "site-audit.semantic_cpu.2@%h");
+});
+
 test("buildCeleryWorkerArgs subscribes heavy-analysis worker only to analyzer queue", () => {
   const args = buildCeleryWorkerArgs("heavy_analysis");
   const queueIndex = args.indexOf("-Q");
@@ -81,6 +108,37 @@ test("buildCeleryWorkerArgs preserves platform-specific execution settings", () 
     assert.equal(args.includes("--pool=solo"), false);
     assert.match(args.join(" "), /--concurrency 2/);
   }
+});
+
+test("resolveSemanticAutoscaleConfig defaults to fixed minimum semantic worker", () => {
+  const config = resolveSemanticAutoscaleConfig(["node", "scripts/dev.mjs"], {});
+  assert.equal(config.enabled, false);
+  assert.equal(config.mode, "off");
+  assert.equal(config.profileName, SEMANTIC_WORKER_PROFILE_NAME);
+  assert.equal(config.queueName, SEMANTIC_QUEUE_NAME);
+  assert.equal(config.minWorkers, 1);
+});
+
+test("resolveSemanticAutoscaleConfig enables auto mode from CLI and clamps max to min", () => {
+  const config = resolveSemanticAutoscaleConfig(
+    ["node", "scripts/dev.mjs", "--semantic-autoscale=auto"],
+    {
+      SEMANTIC_WORKER_MIN: "2",
+      SEMANTIC_WORKER_MAX: "1",
+      SEMANTIC_WORKER_SCALE_UP_DEPTH: "3",
+      SEMANTIC_WORKER_SCALE_UP_WAIT_MS: "7000",
+      SEMANTIC_WORKER_SCALE_DOWN_IDLE_MS: "9000",
+      SEMANTIC_WORKER_POLL_INTERVAL_MS: "1100",
+    },
+  );
+  assert.equal(config.enabled, true);
+  assert.equal(config.mode, "auto");
+  assert.equal(config.minWorkers, 2);
+  assert.equal(config.maxWorkers, 2);
+  assert.equal(config.scaleUpDepth, 3);
+  assert.equal(config.scaleUpWaitMs, 7000);
+  assert.equal(config.scaleDownIdleMs, 9000);
+  assert.equal(config.pollIntervalMs, 1100);
 });
 
 test("buildFrontendDevArgs binds Vite to loopback IPv4 for smoke checks", () => {

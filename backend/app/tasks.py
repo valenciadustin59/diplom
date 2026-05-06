@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import logging
 from datetime import UTC, datetime
+from inspect import signature
 from threading import Thread
 from time import perf_counter
 from typing import Any, Callable
@@ -19,10 +20,13 @@ from app.celery_app import celery_app, resolve_task_queue
 from app.competitors import (
     MIN_COMPETITORS_FOR_COMPARISON,
     analyze_competitor_snapshot,
+    build_competitor_candidate_limit,
+    build_competitor_context_quality,
     build_comparison_summary,
     build_failed_competitor_result,
     fetch_competitor_page,
     search_competitor_pages,
+    select_competitor_context_candidates,
 )
 from app.config import get_settings
 from app.db import SessionLocal
@@ -69,6 +73,18 @@ COMPETITOR_ANALYSIS_PENDING = "analysis_pending"
 COMPETITOR_ANALYZING = "analyzing"
 COMPETITOR_COMPLETED = "completed"
 COMPETITOR_FAILED = "failed"
+
+
+def _build_features_for_task(
+    *,
+    html: str,
+    text: str,
+    query: str,
+    semantic_features: dict[str, object] | None,
+) -> dict[str, float | int]:
+    if "semantic_features" in signature(build_features).parameters:
+        return build_features(html=html, text=text, query=query, semantic_features=semantic_features)
+    return build_features(html=html, text=text, query=query)
 
 COMPETITOR_PROCESSING_COLLECTING = "collecting"
 COMPETITOR_PROCESSING_AGGREGATING = "aggregating"
@@ -373,6 +389,7 @@ def _summarize_features(features: dict[str, float | int]) -> dict[str, object]:
         "feature_count": len(features),
         "text_length_chars": features.get("text_length_chars"),
         "semantic_similarity": features.get("semantic_similarity"),
+        "semantic_provider_code": features.get("semantic_provider_code"),
         "intent_alignment_score": features.get("intent_alignment_score"),
     }
 
@@ -389,17 +406,29 @@ def _summarize_score(score_breakdown: dict[str, object]) -> dict[str, object]:
 
 
 def _summarize_competitors(competitor_results: list[dict[str, object]]) -> dict[str, object]:
-    analyzed = sum(
-        1
-        for item in competitor_results
-        if isinstance(item.get("features"), dict) and isinstance(item.get("score"), (int, float))
-    )
-    total = len(competitor_results)
+    quality = build_competitor_context_quality(competitor_results)
     return {
-        "competitors_found": total,
-        "competitors_analyzed": analyzed,
-        "competitors_failed": total - analyzed,
+        "competitors_found": quality["collected_candidates"],
+        "competitors_analyzed": quality["accepted_competitors"],
+        "competitors_failed": quality["discarded_competitors"],
+        "discard_reasons": quality["discard_reasons"],
     }
+
+
+def _summarize_competitor_aggregation(payload: dict[str, object]) -> dict[str, object]:
+    summary = payload.get("comparison_summary") if isinstance(payload, dict) else None
+    if isinstance(summary, dict):
+        return {
+            "competitors_found": summary.get("collected_candidates", summary.get("competitors_found")),
+            "competitors_analyzed": summary.get("accepted_competitors", summary.get("competitors_analyzed")),
+            "competitors_failed": summary.get("discarded_competitors", summary.get("competitors_failed")),
+            "replacement_attempts": summary.get("replacement_attempts"),
+            "discard_reasons": summary.get("discard_reasons"),
+        }
+    competitor_results = payload.get("competitor_results") if isinstance(payload, dict) else None
+    if isinstance(competitor_results, list):
+        return _summarize_competitors(competitor_results)
+    return _summarize_competitors([])
 
 
 def _summarize_recommendations(recommendations: object) -> dict[str, object]:
@@ -486,19 +515,25 @@ def _build_competitor_aggregation_result(
     requested_top_n: int | None,
 ) -> dict[str, object]:
     competitor_results = [_serialize_audit_competitor(item) for item in competitors]
+    competitor_selection = select_competitor_context_candidates(
+        competitor_results,
+        requested_top_n=requested_top_n,
+    )
+    annotated_competitor_results = list(competitor_selection["annotated_results"])
+    accepted_competitor_results = list(competitor_selection["accepted_results"])
     competitor_features = [
         item["features"]
-        for item in competitor_results
+        for item in accepted_competitor_results
         if isinstance(item.get("features"), dict)
     ]
     enriched_user_features, serp_relative_summary = merge_serp_relative_features(user_features, competitor_features)
     return {
-        "competitor_results": competitor_results,
+        "competitor_results": annotated_competitor_results,
         "user_features": enriched_user_features,
         "comparison_summary": build_comparison_summary(
             user_features=enriched_user_features,
             user_score=user_score,
-            competitor_results=competitor_results,
+            competitor_results=annotated_competitor_results,
             query_intent=query_intent,
             serp_relative_summary=serp_relative_summary,
             requested_top_n=requested_top_n,
@@ -1146,7 +1181,7 @@ def process_audit_fetch_target(audit_id: str, processing_version: int) -> dict[s
     finally:
         db.close()
 
-    return _dispatch_stage_task(process_audit_extract_features, audit_id, processing_version)
+    return _dispatch_stage_task(process_audit_extract_features, audit_id, processing_version, preserve_queue_affinity=True)
 
 
 @celery_app.task(name="app.process_audit_run_heavy_analysis")
@@ -1189,7 +1224,7 @@ def process_audit_run_heavy_analysis(audit_id: str, processing_version: int) -> 
     finally:
         db.close()
 
-    return _dispatch_stage_task(process_audit_extract_features, audit_id, processing_version)
+    return _dispatch_stage_task(process_audit_extract_features, audit_id, processing_version, preserve_queue_affinity=True)
 
 
 @celery_app.task(name="app.process_audit_extract_features")
@@ -1212,6 +1247,7 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
         if skip_result is not None:
             return skip_result
 
+        semantic_features = audit.features if isinstance(audit.features, dict) else None
         target_snapshot = ensure_extraction_artifact(
             requested_url=audit.target_url,
             artifact=audit.target_snapshot if isinstance(audit.target_snapshot, dict) else None,
@@ -1231,10 +1267,15 @@ def process_audit_extract_features(audit_id: str, processing_version: int) -> di
             FEATURES_STAGE,
             lambda: merge_intent_alignment_features(
                 merge_heavy_analysis_features(
-                    merge_snapshot_auxiliary_features(
-                        build_features(html=html, text=text, query=audit.query),
-                        target_snapshot,
-                    ),
+                        merge_snapshot_auxiliary_features(
+                            _build_features_for_task(
+                                html=html,
+                                text=text,
+                                query=audit.query,
+                                semantic_features=semantic_features,
+                            ),
+                            target_snapshot,
+                        ),
                     audit.heavy_analysis if isinstance(audit.heavy_analysis, dict) else None,
                 ),
                 query_intent,
@@ -1435,7 +1476,7 @@ def process_audit_collect_competitors(audit_id: str, processing_version: int) ->
                 lambda: search_competitor_pages(
                     query=audit.query,
                     target_url=audit.target_url,
-                    limit=audit.top_n,
+                    limit=build_competitor_candidate_limit(audit.top_n),
                 ),
                 processing_version=processing_version,
                 event_buffer=event_buffer,
@@ -1820,7 +1861,7 @@ def process_audit_aggregate_competitors(audit_id: str, processing_version: int) 
             ),
             processing_version=processing_version,
             event_buffer=event_buffer,
-            summarize_result=lambda payload: _summarize_competitors(payload["competitor_results"]),
+            summarize_result=_summarize_competitor_aggregation,
         )
         audit.features = aggregation_result["user_features"]
         comparison_summary = aggregation_result["comparison_summary"]
@@ -1892,6 +1933,8 @@ def process_audit_generate_recommendations(audit_id: str, processing_version: in
 
         competitor_features: list[dict[str, object]] = []
         for item in audit.competitor_results or []:
+            if item.get("competitor_context_status") != "accepted":
+                continue
             features = item.get("features")
             if not isinstance(features, dict):
                 continue
@@ -1983,11 +2026,14 @@ def process_audit_finalize(audit_id: str, processing_version: int) -> dict[str, 
         )
         _flush_audit_events(db, event_buffer)
         db.commit()
+        accepted_competitors = audit.comparison_summary.get("accepted_competitors")
+        if not isinstance(accepted_competitors, (int, float)):
+            accepted_competitors = audit.comparison_summary.get("competitors_analyzed")
         return {
             "audit_id": audit_id,
             "status": final_status,
             "score": float(audit.score),
-            "competitors_count": len(audit.competitor_results or []),
+            "competitors_count": int(accepted_competitors or 0),
             "recommendations_count": get_recommendation_count(recommendations),
         }
     except Exception as exc:

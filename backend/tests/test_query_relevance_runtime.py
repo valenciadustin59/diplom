@@ -4,6 +4,11 @@ from app.query_relevance import (
     build_query_relevance_preflight_decision,
     has_strong_query_topic_fit,
 )
+from app.semantic_providers import (
+    DEFAULT_ROSBERTA_MODEL,
+    ROSBERTA_PROVIDER,
+    build_semantic_numeric_metadata,
+)
 
 
 def _patch_semantic_similarity(monkeypatch, value: float) -> None:
@@ -11,6 +16,272 @@ def _patch_semantic_similarity(monkeypatch, value: float) -> None:
         "app.features.build_semantic_features",
         lambda text, query: {"semantic_similarity": value},
     )
+
+
+def _rosberta_metadata() -> dict[str, float | int]:
+    return build_semantic_numeric_metadata(
+        provider=ROSBERTA_PROVIDER,
+        model_name=DEFAULT_ROSBERTA_MODEL,
+        fallback_used=False,
+    )
+
+
+def _rosberta_semantic_payload(similarity: float) -> dict[str, float | int]:
+    return {
+        "semantic_similarity": similarity,
+        "semantic_similarity_raw": max(0.0, similarity - 0.04),
+        **_rosberta_metadata(),
+    }
+
+
+def _base_relevance_features(**overrides: float | int) -> dict[str, float | int]:
+    features: dict[str, float | int] = {
+        "http_status_code": 200,
+        "http_status_ok": 1,
+        "page_indexable": 1,
+        "robots_noindex": 0,
+        "word_count": 1200,
+        "text_length_chars": 7200,
+        "semantic_similarity": 0.32,
+        "keyword_coverage_ratio": 0.0,
+        "query_core_keyword_coverage_ratio": 0.0,
+        "query_intent_modifier_coverage_ratio": 0.0,
+        "query_density": 0.0,
+        "query_core_term_count": 0,
+        "exact_query_count": 0,
+        "query_in_title": 0,
+        "query_in_text": 0,
+        "title_semantic_alignment": 0.0,
+        "heading_semantic_alignment": 0.0,
+        "query_prominence_score": 0.0,
+        **_rosberta_metadata(),
+    }
+    features.update(overrides)
+    return features
+
+
+def test_d88_rosberta_full_mismatch_still_stays_near_zero():
+    features = _base_relevance_features(semantic_similarity=0.06)
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 93.0)
+
+    assert decision["should_stop"] is True
+    assert guardrail["early_stop"] is True
+    assert guardrail["band"] == "full_mismatch"
+    assert 0.0 <= guardrail["adjusted_score"] <= 5.0
+    assert guardrail["semantic_layer"]["provider"] == ROSBERTA_PROVIDER
+    assert guardrail["semantic_layer"]["model_name"] == DEFAULT_ROSBERTA_MODEL
+
+
+def test_commercial_modifier_only_match_is_capped_near_zero():
+    features = _base_relevance_features(
+        semantic_similarity=0.505,
+        keyword_coverage_ratio=0.333333,
+        query_core_keyword_coverage_ratio=0.0,
+        query_intent_modifier_coverage_ratio=1.0,
+        query_density=0.000233,
+        query_core_term_count=0,
+        title_semantic_alignment=0.1683,
+        query_prominence_score=0.25,
+    )
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 93.0)
+
+    assert decision["should_stop"] is False
+    assert guardrail["early_stop"] is False
+    assert guardrail["reason"] == "commercial_modifier_only_core_mismatch"
+    assert guardrail["band"] == "core_mismatch"
+    assert guardrail["band_max"] == 8.0
+    assert guardrail["adjusted_score"] <= 8.0
+
+
+def test_d100_labirint_like_city_bookstore_is_not_soft_partial_match():
+    query = "детский стоматолог екатеринбург"
+    text = (
+        "Детские книги и учебные пособия в Екатеринбурге. "
+        "Каталог книжного магазина, доставка заказов, акции и подборки для детей. "
+        "На странице есть адрес пункта выдачи в Екатеринбурге, отзывы покупателей и условия оплаты. "
+        * 8
+    )
+    html = (
+        "<html><head><title>Детские книги в Екатеринбурге</title></head>"
+        f"<body><h1>Детские книги и учебники</h1><p>{text}</p></body></html>"
+    )
+
+    features = build_features(
+        html=html,
+        text=text,
+        query=query,
+        semantic_features=_rosberta_semantic_payload(0.50),
+    )
+    guardrail = build_query_relevance_guardrail(features, 82.0)
+
+    assert features["query_geo_modifier_coverage_ratio"] == 1.0
+    assert features["query_core_keyword_coverage_ratio"] == 0.5
+    assert features["query_primary_core_term_present"] == 0
+    assert features["core_missing_but_geo_present"] == 1
+    assert guardrail["early_stop"] is False
+    assert guardrail["reason"] == "local_service_core_mismatch"
+    assert guardrail["band"] == "probable_mismatch"
+    assert guardrail["adjusted_score"] == 20.5
+
+
+def test_d100_pokrishka_like_winter_tires_keeps_strong_core_fit():
+    query = "купить зимние шины"
+    text = (
+        "Зимние шины для легковых автомобилей: каталог размеров, цены, наличие и доставка. "
+        "Можно выбрать нешипованные и шипованные шины, сравнить бренды и оформить заказ. "
+        * 8
+    )
+    html = (
+        "<html><head><title>Купить зимние шины</title></head>"
+        f"<body><h1>Зимние шины купить онлайн</h1><p>{text}</p></body></html>"
+    )
+
+    features = build_features(
+        html=html,
+        text=text,
+        query=query,
+        semantic_features=_rosberta_semantic_payload(0.36),
+    )
+    guardrail = build_query_relevance_guardrail(features, 86.0)
+
+    assert features["query_primary_core_term_present"] == 1
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
+    assert has_strong_query_topic_fit(features) is True
+    assert guardrail["active"] is False
+    assert guardrail["adjusted_score"] == 86.0
+
+
+def test_d101_wikipedia_like_informational_query_has_no_commercial_penalty():
+    query = "что такое вулкан"
+    text = (
+        "Что такое вулкан: вулкан это геологическое образование, через которое магма, пепел и газы "
+        "выходят на поверхность Земли. Статья объясняет строение вулкана, извержения и типы лавы. "
+        * 8
+    )
+    html = (
+        "<html><head><title>Что такое вулкан</title></head>"
+        f"<body><h1>Что такое вулкан</h1><p>{text}</p></body></html>"
+    )
+
+    features = build_features(
+        html=html,
+        text=text,
+        query=query,
+        semantic_features=_rosberta_semantic_payload(0.34),
+    )
+    guardrail = build_query_relevance_guardrail(features, 77.0)
+
+    assert features["query_primary_core_term_present"] == 1
+    assert features["query_intent_modifier_coverage_ratio"] == 0.0
+    assert has_strong_query_topic_fit(features) is True
+    assert guardrail["early_stop"] is False
+    assert guardrail["active"] is False
+    assert guardrail["adjusted_score"] == 77.0
+
+
+def test_d89_rosberta_approximate_match_is_not_probable_mismatch():
+    features = _base_relevance_features(
+        semantic_similarity=0.34,
+        semantic_similarity_raw=0.29,
+        keyword_coverage_ratio=0.0,
+        query_core_keyword_coverage_ratio=0.0,
+        query_density=0.0,
+        query_core_term_count=0,
+    )
+
+    decision = build_query_relevance_preflight_decision(features)
+    guardrail = build_query_relevance_guardrail(features, 86.0)
+
+    assert decision["should_stop"] is False
+    assert guardrail["early_stop"] is False
+    assert guardrail["band"] == "weak_match"
+    assert guardrail["adjusted_score"] > 25.0
+    assert guardrail["adjusted_score"] == 47.3
+
+
+def test_d89_rosberta_relevant_page_without_commercial_modifier_keeps_score():
+    features = _base_relevance_features(
+        semantic_similarity=0.31,
+        keyword_coverage_ratio=0.666667,
+        query_core_keyword_coverage_ratio=1.0,
+        query_intent_modifier_coverage_ratio=0.0,
+        query_density=0.006,
+        query_core_term_count=8,
+        query_in_text=1,
+        title_semantic_alignment=0.55,
+        heading_semantic_alignment=0.62,
+        query_prominence_score=0.58,
+    )
+
+    guardrail = build_query_relevance_guardrail(features, 82.0)
+
+    assert has_strong_query_topic_fit(features) is True
+    assert guardrail["active"] is False
+    assert guardrail["adjusted_score"] == 82.0
+
+
+def test_d89_commercial_modifiers_are_counted_only_from_query(monkeypatch):
+    monkeypatch.setattr(
+        "app.features.build_semantic_features",
+        lambda text, query: {
+            "semantic_similarity": 0.42,
+            "semantic_similarity_raw": 0.36,
+            **_rosberta_metadata(),
+        },
+    )
+    query = "\u0447\u0435\u043a\u0430\u043f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u0430"
+    text = (
+        "\u0427\u0435\u043a\u0430\u043f \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u043c\u0430 "
+        "\u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442 \u043e\u0441\u043c\u043e\u0442\u0440, "
+        "\u0430\u043d\u0430\u043b\u0438\u0437\u044b \u0438 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u044e. "
+        "\u041d\u0430 \u0441\u0430\u0439\u0442\u0435 \u0435\u0441\u0442\u044c \u0441\u043b\u043e\u0432\u0430 "
+        "\u043a\u0443\u043f\u0438\u0442\u044c, \u0446\u0435\u043d\u0430 \u0438 \u0437\u0430\u043a\u0430\u0437\u0430\u0442\u044c, "
+        "\u043d\u043e \u043e\u043d\u0438 \u043d\u0435 \u0447\u0430\u0441\u0442\u044c \u0437\u0430\u043f\u0440\u043e\u0441\u0430."
+    )
+
+    features = build_features(html=f"<html><body><p>{text}</p></body></html>", text=text, query=query)
+
+    assert features["query_intent_modifier_count"] == 0
+    assert features["query_intent_modifier_matches"] == 0
+    assert features["query_intent_modifier_coverage_ratio"] == 0.0
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
+
+
+def test_d89_commercial_modifier_only_match_does_not_hide_core_mismatch(monkeypatch):
+    monkeypatch.setattr(
+        "app.features.build_semantic_features",
+        lambda text, query: {
+            "semantic_similarity": 0.29,
+            "semantic_similarity_raw": 0.24,
+            **_rosberta_metadata(),
+        },
+    )
+    query = "\u043a\u0443\u043f\u0438\u0442\u044c \u0430\u043d\u0430\u043b\u0438\u0437\u044b \u043a\u0440\u043e\u0432\u0438"
+    text = (
+        "\u041a\u0443\u043f\u0438\u0442\u044c \u043d\u043e\u0443\u0442\u0431\u0443\u043a "
+        "\u0441 \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u043e\u0439 \u0438 \u0433\u0430\u0440\u0430\u043d\u0442\u0438\u0435\u0439. "
+        "\u041a\u0430\u0442\u0430\u043b\u043e\u0433 \u043e\u043f\u0438\u0441\u044b\u0432\u0430\u0435\u0442 "
+        "\u044d\u043a\u0440\u0430\u043d, \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440, "
+        "\u043f\u0430\u043c\u044f\u0442\u044c, \u0430\u043a\u043a\u0443\u043c\u0443\u043b\u044f\u0442\u043e\u0440, "
+        "\u043f\u043e\u0440\u0442\u044b, \u043a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0443, "
+        "\u043c\u0430\u0442\u0435\u0440\u0438\u0430\u043b \u043a\u043e\u0440\u043f\u0443\u0441\u0430 "
+        "\u0438 \u0443\u0441\u043b\u043e\u0432\u0438\u044f \u0441\u0435\u0440\u0432\u0438\u0441\u0430 "
+        "\u0434\u043b\u044f \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u0438\u043a\u0438."
+    )
+
+    features = build_features(html=f"<html><body><p>{text}</p></body></html>", text=text, query=query)
+    guardrail = build_query_relevance_guardrail(features, 88.0)
+
+    assert features["query_intent_modifier_coverage_ratio"] == 1.0
+    assert features["query_core_keyword_coverage_ratio"] == 0.0
+    assert guardrail["active"] is True
+    assert guardrail["reason"] == "commercial_modifier_only_core_mismatch"
+    assert guardrail["band"] == "core_mismatch"
+    assert guardrail["adjusted_score"] <= 8.0
 
 
 def test_relevant_medical_page_keeps_score_with_russian_word_forms(monkeypatch):

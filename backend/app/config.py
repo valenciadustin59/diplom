@@ -17,6 +17,13 @@ class Settings(BaseSettings):
     searxng_base_url: str | None = Field(default=None, alias="SEARXNG_BASE_URL")
     searxng_language: str = Field(default="ru-RU", alias="SEARXNG_LANGUAGE")
     search_timeout: float = Field(default=20.0, alias="SEARCH_TIMEOUT")
+    semantic_provider: str = Field(default="rosberta", alias="SEMANTIC_PROVIDER")
+    semantic_model_name: str | None = Field(default=None, alias="SEMANTIC_MODEL_NAME")
+    semantic_fallback_provider: str = Field(default="minilm", alias="SEMANTIC_FALLBACK_PROVIDER")
+    semantic_fallback_model_name: str | None = Field(default=None, alias="SEMANTIC_FALLBACK_MODEL_NAME")
+    semantic_max_text_chars: int = Field(default=3000, alias="SEMANTIC_MAX_TEXT_CHARS")
+    semantic_max_query_chars: int = Field(default=300, alias="SEMANTIC_MAX_QUERY_CHARS")
+    semantic_batch_size: int = Field(default=16, alias="SEMANTIC_BATCH_SIZE")
 
     model_config = SettingsConfigDict(
         env_file=".env",

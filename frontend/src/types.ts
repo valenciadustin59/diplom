@@ -152,6 +152,7 @@ export type ScoreBreakdown = {
 
 export type FetchStatus = "success" | "failed";
 export type FetchMethod = "http" | "http_retry" | "browser" | null;
+export type CompetitorContextStatus = "accepted" | "discarded" | "unused";
 
 export type WarningMessage = string;
 
@@ -643,6 +644,7 @@ export type CompetitorResult = {
   fetch_error_message: string | null;
   score: number | null;
   features: Record<string, number> | null;
+  competitor_context_status?: CompetitorContextStatus | string | null;
 };
 
 export type ComparisonSummary = {
@@ -668,6 +670,11 @@ export type ComparisonSummary = {
     competitors_failed?: number;
     required_competitors?: number;
     requested_top_n?: number | null;
+    collected_candidates?: number;
+    accepted_competitors?: number;
+    discarded_competitors?: number;
+    replacement_attempts?: number;
+    discard_reasons?: Record<string, number>;
     coverage_ratio?: number;
     fetch_error_codes?: Record<string, number>;
   } | null;

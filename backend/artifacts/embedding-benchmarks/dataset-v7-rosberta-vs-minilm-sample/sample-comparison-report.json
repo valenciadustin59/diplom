@@ -1,0 +1,924 @@
+{
+  "generated_at": "2026-05-05T16:30:02Z",
+  "task": "sample_rosberta_vs_current_minilm_query_page_relevance_comparison",
+  "sample": {
+    "source_dataset": "backend\\data\\dataset_versions\\dataset-v7-final\\dataset.query-core.csv",
+    "rows": 226,
+    "queries": 90,
+    "max_queries": 90,
+    "random_seed": 42,
+    "role_counts": {
+      "positive": 90,
+      "hard_negative": 90,
+      "far_or_unusable_negative": 34,
+      "probable_mismatch": 12
+    },
+    "band_counts": {
+      "strong_match": 90,
+      "full_mismatch": 24,
+      "probable_mismatch": 33,
+      "unusable": 19,
+      "hard_negative_cap": 28,
+      "partial_match": 26,
+      "weak_match": 6
+    },
+    "hard_negative_rows": 119,
+    "sampling_policy": "stratified by category; each selected query contributes one strong positive and up to two problematic negatives"
+  },
+  "models": [
+    {
+      "key": "current_minilm",
+      "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "role": "current_runtime_semantic_baseline",
+      "load_seconds": 5.357,
+      "encode_seconds": 9.785,
+      "rows_evaluated": 226,
+      "unique_queries": 90,
+      "binary": {
+        "positive_rows": 90,
+        "negative_rows": 136,
+        "auc": 0.961275,
+        "best_threshold": {
+          "threshold": 0.35055,
+          "balanced_accuracy": 0.913235,
+          "positive_recall": 0.9,
+          "negative_recall": 0.926471,
+          "positive_precision": 0.89011,
+          "tp": 81,
+          "fp": 10,
+          "tn": 126,
+          "fn": 9
+        }
+      },
+      "query_level": {
+        "eligible_queries": 90,
+        "positive_top1_rate": 0.933333,
+        "pairwise_positive_vs_negative_accuracy": 0.948529,
+        "pair_count": 136,
+        "mean_margin": 0.357147,
+        "median_margin": 0.370371
+      },
+      "correlations": {
+        "spearman_vs_query_relevance_score": 0.823493,
+        "spearman_vs_target_score": 0.760226
+      },
+      "similarity_by_band": {
+        "full_mismatch": {
+          "count": 24,
+          "mean": 0.118243,
+          "median": 0.11084,
+          "p10": 0.064165,
+          "p90": 0.199985
+        },
+        "hard_negative_cap": {
+          "count": 28,
+          "mean": 0.244204,
+          "median": 0.240889,
+          "p10": 0.149203,
+          "p90": 0.382192
+        },
+        "partial_match": {
+          "count": 26,
+          "mean": 0.169531,
+          "median": 0.17327,
+          "p10": 0.081162,
+          "p90": 0.29303
+        },
+        "probable_mismatch": {
+          "count": 33,
+          "mean": 0.200158,
+          "median": 0.226393,
+          "p10": 0.046743,
+          "p90": 0.330992
+        },
+        "strong_match": {
+          "count": 90,
+          "mean": 0.553941,
+          "median": 0.570116,
+          "p10": 0.348571,
+          "p90": 0.747709
+        },
+        "unusable": {
+          "count": 19,
+          "mean": 0.273463,
+          "median": 0.248962,
+          "p10": 0.073068,
+          "p90": 0.583523
+        },
+        "weak_match": {
+          "count": 6,
+          "mean": 0.143202,
+          "median": 0.114219,
+          "p10": 0.084066,
+          "p90": 0.23132
+        }
+      },
+      "similarity_by_sample_role": {
+        "far_or_unusable_negative": {
+          "count": 34,
+          "mean": 0.206345,
+          "median": 0.173183
+        },
+        "hard_negative": {
+          "count": 90,
+          "mean": 0.191578,
+          "median": 0.194052
+        },
+        "positive": {
+          "count": 90,
+          "mean": 0.553941,
+          "median": 0.570116
+        },
+        "probable_mismatch": {
+          "count": 12,
+          "mean": 0.207152,
+          "median": 0.209501
+        }
+      },
+      "risk_queries": [
+        {
+          "query": "аренда вилочного погрузчика цена",
+          "top_label": "negative",
+          "top_domain": "baza.drom.ru",
+          "top_band": "unusable",
+          "top_similarity": 0.28837,
+          "pair_accuracy": 0.0,
+          "mean_margin": -0.108634
+        },
+        {
+          "query": "кейтеринг консультация",
+          "top_label": "negative",
+          "top_domain": "vetsy.ru",
+          "top_band": "hard_negative_cap",
+          "top_similarity": 0.404541,
+          "pair_accuracy": 0.0,
+          "mean_margin": -0.101017
+        },
+        {
+          "query": "фрезеровка на чпу рядом",
+          "top_label": "negative",
+          "top_domain": "refloor.ru",
+          "top_band": "hard_negative_cap",
+          "top_similarity": 0.277553,
+          "pair_accuracy": 0.0,
+          "mean_margin": -0.065923
+        },
+        {
+          "query": "логопед для ребенка консультация",
+          "top_label": "negative",
+          "top_domain": "logoped.online",
+          "top_band": "unusable",
+          "top_similarity": 0.656345,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.028401
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "top_label": "negative",
+          "top_domain": "traktat.com",
+          "top_band": "unusable",
+          "top_similarity": 0.565318,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.123717
+        },
+        {
+          "query": "как выбрать частный детский сад",
+          "top_label": "negative",
+          "top_domain": "wibes.ru",
+          "top_band": "unusable",
+          "top_similarity": 0.720297,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.311376
+        },
+        {
+          "query": "курьерская доставка цена",
+          "top_label": "positive",
+          "top_domain": "calculator-dostavki.ru",
+          "top_band": "strong_match",
+          "top_similarity": 0.422977,
+          "pair_accuracy": 1.0,
+          "mean_margin": 0.008159
+        }
+      ],
+      "false_positive_risks": [
+        {
+          "query": "как выбрать частный детский сад",
+          "domain": "wibes.ru",
+          "url": "https://wibes.ru/article/chastniy-detskiy-sad--skolko-stoit-i-kak-vybrat-2792790",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.720297,
+          "query_relevance_score": 0.9385
+        },
+        {
+          "query": "логопед для ребенка консультация",
+          "domain": "logoped.online",
+          "url": "https://logoped.online/",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.656345,
+          "query_relevance_score": 0.6
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "domain": "traktat.com",
+          "url": "https://www.traktat.com/notarialnye-",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.565318,
+          "query_relevance_score": 0.8399
+        },
+        {
+          "query": "изготовление вывесок цена",
+          "domain": "фрезеровка.москва",
+          "url": "https://фрезеровка.москва/цены-на-фрезеровку.html",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.443249,
+          "query_relevance_score": 0.5274
+        },
+        {
+          "query": "курьерская доставка цена",
+          "domain": "arenda-ap.ru",
+          "url": "https://www.arenda-ap.ru/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.414818,
+          "query_relevance_score": 0.5258
+        },
+        {
+          "query": "кейтеринг консультация",
+          "domain": "vetsy.ru",
+          "url": "https://vetsy.ru/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.404541,
+          "query_relevance_score": 0.5727
+        },
+        {
+          "query": "аудит информационной безопасности отзывы",
+          "domain": "eventcons.ru",
+          "url": "https://www.eventcons.ru/services/event-soprovozhdenie/event-consulting/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.372614,
+          "query_relevance_score": 0.5457
+        },
+        {
+          "query": "налоговый консультант Новосибирск",
+          "domain": "intype.ru",
+          "url": "https://intype.ru/",
+          "band": "probable_mismatch",
+          "role": "hard_negative",
+          "similarity": 0.370311,
+          "query_relevance_score": 0.0612
+        },
+        {
+          "query": "нотариус отзывы",
+          "domain": "9111.ru",
+          "url": "https://www.9111.ru/нотариус_отзывы/",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.362019,
+          "query_relevance_score": 0.8596
+        },
+        {
+          "query": "центр реабилитации Екатеринбург",
+          "domain": "luchshie-vrachi.ru",
+          "url": "https://luchshie-vrachi.ru/dermatologi_moskva",
+          "band": "probable_mismatch",
+          "role": "probable_mismatch",
+          "similarity": 0.352761,
+          "query_relevance_score": 0.2597
+        },
+        {
+          "query": "тепловой насос под ключ",
+          "domain": "rus-plotniki.ru",
+          "url": "https://rus-plotniki.ru/revue-o-bane/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.347835,
+          "query_relevance_score": 0.5003
+        },
+        {
+          "query": "строительство бани для бизнеса",
+          "domain": "kedrprom.ru",
+          "url": "https://kedrprom.ru/bani-dlya-kommerche",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.344435,
+          "query_relevance_score": 0.5277
+        },
+        {
+          "query": "фрезеровка на чпу отзывы",
+          "domain": "habr.com",
+          "url": "https://habr.com/ru/companies/regionsoft/articles/731500/",
+          "band": "partial_match",
+          "role": "hard_negative",
+          "similarity": 0.342229,
+          "query_relevance_score": 0.4953
+        },
+        {
+          "query": "промышленные полы отзывы",
+          "domain": "1lgroup.ru",
+          "url": "https://1lgroup.ru/stellazhi",
+          "band": "probable_mismatch",
+          "role": "hard_negative",
+          "similarity": 0.339711,
+          "query_relevance_score": 0.2572
+        },
+        {
+          "query": "утепление фасада консультация",
+          "domain": "quattro.space",
+          "url": "https://quattro.space/blog/kak-vybrat-banketnyj-zal/",
+          "band": "probable_mismatch",
+          "role": "hard_negative",
+          "similarity": 0.337076,
+          "query_relevance_score": 0.0742
+        }
+      ],
+      "false_negative_risks": [
+        {
+          "query": "аренда вилочного погрузчика цена",
+          "domain": "angaragrupp.ru",
+          "url": "https://angaragrupp.ru/katalog/arenda-skladskoj-tehniki/arenda-vilochnye-pogruzchiki",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.136166,
+          "query_relevance_score": 0.78
+        },
+        {
+          "query": "фрезеровка на чпу рядом",
+          "domain": "zub-x.ru",
+          "url": "https://zub-x.ru/frezerovka-chpu/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.21163,
+          "query_relevance_score": 0.6691
+        },
+        {
+          "query": "охранная сигнализация с гарантией",
+          "domain": "vyborexperta.ru",
+          "url": "https://vyborexperta.ru/cifrovaya-tekhnika-i-internet/luchshie-ohrannye-signalizacii/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.277989,
+          "query_relevance_score": 0.6574
+        },
+        {
+          "query": "кейтеринг консультация",
+          "domain": "lime-catering.ru",
+          "url": "https://lime-catering.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.303524,
+          "query_relevance_score": 0.8018
+        },
+        {
+          "query": "дерматолог цена",
+          "domain": "krasotaimedicina.ru",
+          "url": "https://www.krasotaimedicina.ru/treatment/consultation-dermatology/dermatologist",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.305229,
+          "query_relevance_score": 0.735
+        },
+        {
+          "query": "как выбрать нотариус",
+          "domain": "shpagatt.ru",
+          "url": "https://shpagatt.ru/kak-pravilno-vybrat-notariusa/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.310263,
+          "query_relevance_score": 0.8483
+        },
+        {
+          "query": "как выбрать ремонт кровли",
+          "domain": "anadyr.polyalpan-msk.ru",
+          "url": "https://anadyr.polyalpan-msk.ru/articles/remont_krovli_kak_professionalno_organizovat_raboty_i_vybrat_materialy",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.318596,
+          "query_relevance_score": 0.7444
+        },
+        {
+          "query": "кейтеринг под ключ",
+          "domain": "m-catering.ru",
+          "url": "https://m-catering.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.319569,
+          "query_relevance_score": 0.8253
+        },
+        {
+          "query": "ремонт кровли рядом",
+          "domain": "roof.ru",
+          "url": "https://roof.ru/landings/krovlya/remont_krovli/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.330762,
+          "query_relevance_score": 0.5825
+        },
+        {
+          "query": "фрезеровка на чпу отзывы",
+          "domain": "profifrez.ru",
+          "url": "https://profifrez.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.35055,
+          "query_relevance_score": 0.844
+        },
+        {
+          "query": "как выбрать курьерская доставка",
+          "domain": "epicris.ru",
+          "url": "https://epicris.ru/top-8-luchshix-kurerskix-sluzhb-dostavki",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.36108,
+          "query_relevance_score": 0.735
+        },
+        {
+          "query": "строительство бани для бизнеса",
+          "domain": "volkovpar.ru",
+          "url": "https://volkovpar.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.389844,
+          "query_relevance_score": 0.8301
+        },
+        {
+          "query": "частный детский сад рядом",
+          "domain": "zoon.ru",
+          "url": "https://zoon.ru/perm/kindergarten/type/chastnyj_detskij_sad/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.393271,
+          "query_relevance_score": 0.8215
+        },
+        {
+          "query": "порошковая покраска металла консультация",
+          "domain": "pokraska-ral.ru",
+          "url": "https://pokraska-ral.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.41039,
+          "query_relevance_score": 0.7294
+        },
+        {
+          "query": "корпоративное обучение рядом",
+          "domain": "lico.ru",
+          "url": "https://lico.ru/biznes_obuchenie/korporativnye_treningi/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.41317,
+          "query_relevance_score": 0.75
+        }
+      ]
+    },
+    {
+      "key": "ru_en_rosberta",
+      "model_name": "ai-forever/ru-en-RoSBERTa",
+      "role": "candidate_ru_focused_embedding",
+      "load_seconds": 4.941,
+      "encode_seconds": 413.004,
+      "rows_evaluated": 226,
+      "unique_queries": 90,
+      "binary": {
+        "positive_rows": 90,
+        "negative_rows": 136,
+        "auc": 0.97451,
+        "best_threshold": {
+          "threshold": 0.55078,
+          "balanced_accuracy": 0.963154,
+          "positive_recall": 0.977778,
+          "negative_recall": 0.948529,
+          "positive_precision": 0.926316,
+          "tp": 88,
+          "fp": 7,
+          "tn": 129,
+          "fn": 2
+        }
+      },
+      "query_level": {
+        "eligible_queries": 90,
+        "positive_top1_rate": 0.955556,
+        "pairwise_positive_vs_negative_accuracy": 0.970588,
+        "pair_count": 136,
+        "mean_margin": 0.239642,
+        "median_margin": 0.254075
+      },
+      "correlations": {
+        "spearman_vs_query_relevance_score": 0.816753,
+        "spearman_vs_target_score": 0.762205
+      },
+      "similarity_by_band": {
+        "full_mismatch": {
+          "count": 24,
+          "mean": 0.391167,
+          "median": 0.392417,
+          "p10": 0.340567,
+          "p90": 0.436157
+        },
+        "hard_negative_cap": {
+          "count": 28,
+          "mean": 0.450114,
+          "median": 0.451222,
+          "p10": 0.379351,
+          "p90": 0.534021
+        },
+        "partial_match": {
+          "count": 26,
+          "mean": 0.410742,
+          "median": 0.412351,
+          "p10": 0.355593,
+          "p90": 0.460219
+        },
+        "probable_mismatch": {
+          "count": 33,
+          "mean": 0.425169,
+          "median": 0.420504,
+          "p10": 0.346997,
+          "p90": 0.496732
+        },
+        "strong_match": {
+          "count": 90,
+          "mean": 0.667571,
+          "median": 0.668157,
+          "p10": 0.572955,
+          "p90": 0.73811
+        },
+        "unusable": {
+          "count": 19,
+          "mean": 0.470146,
+          "median": 0.411778,
+          "p10": 0.358674,
+          "p90": 0.666485
+        },
+        "weak_match": {
+          "count": 6,
+          "mean": 0.438551,
+          "median": 0.437491,
+          "p10": 0.406113,
+          "p90": 0.472049
+        }
+      },
+      "similarity_by_sample_role": {
+        "far_or_unusable_negative": {
+          "count": 34,
+          "mean": 0.432503,
+          "median": 0.395435
+        },
+        "hard_negative": {
+          "count": 90,
+          "mean": 0.423302,
+          "median": 0.421671
+        },
+        "positive": {
+          "count": 90,
+          "mean": 0.667571,
+          "median": 0.668157
+        },
+        "probable_mismatch": {
+          "count": 12,
+          "mean": 0.455233,
+          "median": 0.434379
+        }
+      },
+      "risk_queries": [
+        {
+          "query": "логопед для ребенка консультация",
+          "top_label": "negative",
+          "top_domain": "logoped.online",
+          "top_band": "unusable",
+          "top_similarity": 0.741477,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.070375
+        },
+        {
+          "query": "ортопедическая клиника цена",
+          "top_label": "negative",
+          "top_domain": "orthoclinica.ru",
+          "top_band": "probable_mismatch",
+          "top_similarity": 0.683187,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.083943
+        },
+        {
+          "query": "как выбрать частный детский сад",
+          "top_label": "negative",
+          "top_domain": "wibes.ru",
+          "top_band": "unusable",
+          "top_similarity": 0.801536,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.08803
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "top_label": "negative",
+          "top_domain": "traktat.com",
+          "top_band": "unusable",
+          "top_similarity": 0.647737,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.102203
+        }
+      ],
+      "false_positive_risks": [
+        {
+          "query": "как выбрать частный детский сад",
+          "domain": "wibes.ru",
+          "url": "https://wibes.ru/article/chastniy-detskiy-sad--skolko-stoit-i-kak-vybrat-2792790",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.801536,
+          "query_relevance_score": 0.9385
+        },
+        {
+          "query": "логопед для ребенка консультация",
+          "domain": "logoped.online",
+          "url": "https://logoped.online/",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.741477,
+          "query_relevance_score": 0.6
+        },
+        {
+          "query": "ортопедическая клиника цена",
+          "domain": "orthoclinica.ru",
+          "url": "https://orthoclinica.ru/prajs",
+          "band": "probable_mismatch",
+          "role": "probable_mismatch",
+          "similarity": 0.683187,
+          "query_relevance_score": 0.1862
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "domain": "traktat.com",
+          "url": "https://www.traktat.com/notarialnye-",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.647737,
+          "query_relevance_score": 0.8399
+        },
+        {
+          "query": "нотариус отзывы",
+          "domain": "9111.ru",
+          "url": "https://www.9111.ru/нотариус_отзывы/",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.646444,
+          "query_relevance_score": 0.8596
+        },
+        {
+          "query": "курьерская доставка цена",
+          "domain": "arenda-ap.ru",
+          "url": "https://www.arenda-ap.ru/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.577173,
+          "query_relevance_score": 0.5258
+        },
+        {
+          "query": "строительство бани для бизнеса",
+          "domain": "kedrprom.ru",
+          "url": "https://kedrprom.ru/bani-dlya-kommerche",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.563185,
+          "query_relevance_score": 0.5277
+        },
+        {
+          "query": "изготовление вывесок цена",
+          "domain": "фрезеровка.москва",
+          "url": "https://фрезеровка.москва/цены-на-фрезеровку.html",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.55078,
+          "query_relevance_score": 0.5274
+        },
+        {
+          "query": "типография с гарантией",
+          "domain": "signboard.pro",
+          "url": "https://signboard.pro/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.546901,
+          "query_relevance_score": 0.5789
+        },
+        {
+          "query": "строительство бассейна консультация",
+          "domain": "101siding.ru",
+          "url": "https://101siding.ru/stati/kak-pravilno-uteplit-fasad-chastnogo-doma/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.528501,
+          "query_relevance_score": 0.4163
+        },
+        {
+          "query": "лучшие корпоративное обучение",
+          "domain": "addamant.ru",
+          "url": "https://addamant.ru/blog/vnedrenie-crm-sistemy/",
+          "band": "hard_negative_cap",
+          "role": "hard_negative",
+          "similarity": 0.513927,
+          "query_relevance_score": 0.6301
+        },
+        {
+          "query": "аренда вилочного погрузчика цена",
+          "domain": "baza.drom.ru",
+          "url": "https://baza.drom.ru/service/spectech/+/��������+����������/",
+          "band": "unusable",
+          "role": "far_or_unusable_negative",
+          "similarity": 0.511809,
+          "query_relevance_score": 0.3169
+        },
+        {
+          "query": "промышленные полы отзывы",
+          "domain": "1lgroup.ru",
+          "url": "https://1lgroup.ru/stellazhi",
+          "band": "probable_mismatch",
+          "role": "hard_negative",
+          "similarity": 0.509221,
+          "query_relevance_score": 0.2572
+        },
+        {
+          "query": "подбор персонала Москва",
+          "domain": "kraska.kz",
+          "url": "https://kraska.kz/articles/poly-/promyshlennye-poly-vidy-i-kak-vybrat-idealnoe-pokrytie/",
+          "band": "probable_mismatch",
+          "role": "hard_negative",
+          "similarity": 0.507325,
+          "query_relevance_score": 0.2536
+        },
+        {
+          "query": "упаковочное оборудование цена",
+          "domain": "sollartek.com",
+          "url": "https://sollartek.com/",
+          "band": "partial_match",
+          "role": "hard_negative",
+          "similarity": 0.504907,
+          "query_relevance_score": 0.4271
+        }
+      ],
+      "false_negative_risks": [
+        {
+          "query": "частная школа рядом",
+          "domain": "smapse.ru",
+          "url": "https://smapse.ru/catalog/city-159/type-4/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.503976,
+          "query_relevance_score": 0.8502
+        },
+        {
+          "query": "корпоративное обучение рядом",
+          "domain": "lico.ru",
+          "url": "https://lico.ru/biznes_obuchenie/korporativnye_treningi/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.543793,
+          "query_relevance_score": 0.75
+        },
+        {
+          "query": "внедрение erp с гарантией",
+          "domain": "dialogit.ru",
+          "url": "https://dialogit.ru/uslugi-po-1c/vnedrenie-erp/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.559092,
+          "query_relevance_score": 0.7444
+        },
+        {
+          "query": "пожарная сигнализация рядом",
+          "domain": "perm.jsprav.ru",
+          "url": "https://perm.jsprav.ru/protivopozharnyie-sistemyi/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.56194,
+          "query_relevance_score": 0.7075
+        },
+        {
+          "query": "охранная сигнализация с гарантией",
+          "domain": "vyborexperta.ru",
+          "url": "https://vyborexperta.ru/cifrovaya-tekhnika-i-internet/luchshie-ohrannye-signalizacii/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.562058,
+          "query_relevance_score": 0.6574
+        },
+        {
+          "query": "ит аутсорсинг с гарантией",
+          "domain": "siabit.ru",
+          "url": "https://siabit.ru/abonentam/it-autsorsing-5/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.562546,
+          "query_relevance_score": 0.9048
+        },
+        {
+          "query": "как выбрать ит аутсорсинг",
+          "domain": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=r5UGnhVbuI0",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.563842,
+          "query_relevance_score": 0.6881
+        },
+        {
+          "query": "кейтеринг под ключ",
+          "domain": "m-catering.ru",
+          "url": "https://m-catering.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.564596,
+          "query_relevance_score": 0.8253
+        },
+        {
+          "query": "кейтеринг консультация",
+          "domain": "lime-catering.ru",
+          "url": "https://lime-catering.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.570152,
+          "query_relevance_score": 0.8018
+        },
+        {
+          "query": "частный детский сад рядом",
+          "domain": "zoon.ru",
+          "url": "https://zoon.ru/perm/kindergarten/type/chastnyj_detskij_sad/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.573266,
+          "query_relevance_score": 0.8215
+        },
+        {
+          "query": "офтальмологическая клиника Новосибирск",
+          "domain": "nsk.excimerclinic.ru",
+          "url": "https://nsk.excimerclinic.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.578782,
+          "query_relevance_score": 0.78
+        },
+        {
+          "query": "офтальмологическая клиника с гарантией",
+          "domain": "mgkl.ru",
+          "url": "https://mgkl.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.579121,
+          "query_relevance_score": 0.7256
+        },
+        {
+          "query": "внедрение crm под ключ",
+          "domain": "pinschercrm.ru",
+          "url": "https://pinschercrm.ru/",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.593637,
+          "query_relevance_score": 0.8902
+        },
+        {
+          "query": "промышленные полы отзывы",
+          "domain": "dreamjob.ru",
+          "url": "https://dreamjob.ru/employers/172449/city-ekaterinburg",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.603531,
+          "query_relevance_score": 0.78
+        },
+        {
+          "query": "внедрение erp цена",
+          "domain": "erp.band",
+          "url": "https://erp.band/stoimost-vnedreniya-1s-erp",
+          "band": "strong_match",
+          "role": "positive",
+          "similarity": 0.606295,
+          "query_relevance_score": 0.7675
+        }
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "key": "ru_en_rosberta",
+      "model_name": "ai-forever/ru-en-RoSBERTa",
+      "auc": 0.97451,
+      "query_top1": 0.955556,
+      "pairwise_accuracy": 0.970588,
+      "mean_margin": 0.239642,
+      "spearman_relevance": 0.816753,
+      "encode_seconds": 413.004
+    },
+    {
+      "key": "current_minilm",
+      "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "auc": 0.961275,
+      "query_top1": 0.933333,
+      "pairwise_accuracy": 0.948529,
+      "mean_margin": 0.357147,
+      "spearman_relevance": 0.823493,
+      "encode_seconds": 9.785
+    }
+  ],
+  "decision": "RoSBERTa improves binary separation on this sample, but needs more validation because pairwise/query-level gains are not decisive."
+}

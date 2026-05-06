@@ -18,7 +18,9 @@ function renderMetricHtml(metric: ReportMetric): string {
 export function createAuditReportHtml(input: AuditReportInput, options: { autoPrint?: boolean } = {}): string {
   const report = buildAuditReportModel(input);
   const recommendationRows =
-    report.recommendationActions.length > 0
+    report.recoveryActions.length > 0
+      ? '<tr><td colspan="4">Сначала восстановите доступность страницы; обычные SEO-рекомендации будут полезны после повторного аудита.</td></tr>'
+      : report.recommendationActions.length > 0
       ? report.recommendationActions
           .map(
             (item) =>
@@ -90,7 +92,7 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
       <div class="score">${escapeHtml(report.scoreLabel)}</div>
       <p>${escapeHtml(report.scoreVerdict)}</p>
       ${
-        report.scoreVerdict === "Страница не соответствует запросу"
+        report.lowScoreReason.kind !== "unknown"
           ? `<div class="notice">${escapeHtml(report.scoreBreakdown.methodology)}</div>`
           : ""
       }
@@ -119,6 +121,13 @@ export function createAuditReportHtml(input: AuditReportInput, options: { autoPr
     <section>
       <h2>План рекомендаций</h2>
       <div class="grid">${report.recommendationMetrics.map(renderMetricHtml).join("")}</div>
+      ${
+        report.recoveryActions.length > 0
+          ? `<div class="notice"><strong>${escapeHtml(report.lowScoreReason.title)}</strong><ul>${report.recoveryActions
+              .map((action) => `<li>${escapeHtml(action)}</li>`)
+              .join("")}</ul></div>`
+          : ""
+      }
       <table class="recommendations"><thead><tr><th>Приоритет</th><th>Группа</th><th>Рекомендация</th><th>Что изменить</th></tr></thead><tbody>${recommendationRows}</tbody></table>
     </section>
     <section>

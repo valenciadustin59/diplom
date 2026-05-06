@@ -110,32 +110,55 @@ def test_predict_score_accepts_legacy_v1_artifact(tmp_path):
     assert 0.0 <= score <= 100.0
 
 
-def test_published_model_score_is_not_inflated_by_rule_layer(tmp_path):
+def test_published_model_uses_bounded_second_layer_rebalance_for_strong_query_fit(tmp_path):
     model_path = tmp_path / "published-model.pkl"
-    features = {feature_name: 1.0 for feature_name in FEATURE_COLUMNS}
+    features = {feature_name: 0.0 for feature_name in FEATURE_COLUMNS}
     features.update(
         {
-            "word_count": 1800,
+            "word_count": 1600,
             "heading_count": 12,
             "title_present": 1,
-            "title_length_quality": 1,
+            "title_length_quality": 0.9,
             "meta_description_present": 1,
-            "meta_length_quality": 1,
-            "semantic_similarity": 0.9,
+            "meta_length_quality": 0.9,
+            "semantic_similarity": 0.71211,
             "keyword_coverage_ratio": 1,
-            "title_semantic_alignment": 0.9,
-            "heading_semantic_alignment": 0.9,
-            "content_depth_semantic_score": 0.9,
-            "semantic_content_richness": 0.9,
+            "query_core_keyword_coverage_ratio": 1,
+            "query_density": 0.032866,
+            "query_core_term_count": 52,
+            "exact_query_count": 0,
+            "query_in_title": 0,
+            "query_in_text": 0,
+            "title_semantic_alignment": 0,
+            "heading_semantic_alignment": 0,
+            "content_depth_semantic_score": 0.8,
+            "semantic_content_richness": 0.8,
             "keyword_balance_score": 1,
             "conversion_signal_score": 1,
-            "query_prominence_score": 1,
+            "query_prominence_score": 0.4,
             "text_to_html_ratio": 0.25,
-            "unique_word_ratio": 0.9,
+            "unique_word_ratio": 0.8,
+            "page_indexable": 1,
+            "canonical_present": 1,
+            "canonical_matches_final_url": 1,
+            "redirect_efficiency_score": 1,
+            "url_hygiene_score": 1,
+            "technical_metadata_score": 1,
+            "phone_present": 1,
+            "address_present": 1,
+            "business_hours_present": 1,
+            "cta_present": 1,
+            "value_proposition_present": 1,
+            "commercial_signals_score": 1,
+            "trust_signals_score": 1,
+            "contact_options_score": 1,
+            "intent_alignment_score": 0.75,
+            "intent_is_local_commercial": 1,
+            "local_intent_alignment": 0.75,
         }
     )
     save_model(
-        model=train_model(n_samples=40, seed=11),
+        model=ConstantScoreModel(61.6584),
         metrics={"rmse": 10.0},
         model_path=model_path,
         metadata={
@@ -146,13 +169,60 @@ def test_published_model_score_is_not_inflated_by_rule_layer(tmp_path):
 
     explanation = explain_score(features, model_path=model_path)
 
-    assert explanation["weights"] == {"rule_weight": 0.0, "ml_weight": 1.0}
-    assert explanation["final_score"] == explanation["ml_score"]
-    assert 0.0 <= explanation["rule_score"] < 100.0
+    rebalance = explanation["second_layer_rebalance"]
+    assert rebalance["version"] == "score-second-layer-rebalance-v1"
+    assert rebalance["active"] is True
+    assert rebalance["reason"] == "high_confidence_query_fit"
+    assert explanation["weights"] == {"rule_weight": 0.4, "ml_weight": 0.6}
+    assert explanation["final_score"] > explanation["ml_score"]
+    assert explanation["final_score"] <= explanation["ml_score"] + 8.0
+    assert explanation["relevance_guardrail"]["active"] is False
     assert any(
         factor.get("key") == "query_topic_fit" and float(factor.get("impact", 0.0)) > 0.0
         for factor in explanation["top_positive_factors"]
     )
+    assert not any(
+        factor.get("key") in {"title_semantic_alignment", "heading_semantic_alignment"}
+        for factor in explanation["top_negative_factors"]
+    )
+
+
+def test_second_layer_rebalance_does_not_lower_score_when_rule_score_is_weaker(tmp_path):
+    model_path = tmp_path / "published-high-model.pkl"
+    features = {feature_name: 0.0 for feature_name in FEATURE_COLUMNS}
+    features.update(
+        {
+            "word_count": 900,
+            "heading_count": 5,
+            "title_present": 1,
+            "title_length_quality": 0.7,
+            "meta_description_present": 1,
+            "meta_length_quality": 0.7,
+            "semantic_similarity": 0.7,
+            "keyword_coverage_ratio": 1,
+            "query_core_keyword_coverage_ratio": 1,
+            "query_density": 0.02,
+            "query_core_term_count": 18,
+            "content_depth_semantic_score": 0.6,
+            "semantic_content_richness": 0.5,
+            "keyword_balance_score": 0.8,
+            "query_prominence_score": 0.5,
+            "page_indexable": 1,
+        }
+    )
+    save_model(
+        model=ConstantScoreModel(92.0),
+        metrics={"rmse": 10.0},
+        model_path=model_path,
+        metadata={"source": "local_dataset", "dataset_version": "test-dataset"},
+    )
+
+    explanation = explain_score(features, model_path=model_path)
+
+    assert explanation["second_layer_rebalance"]["active"] is False
+    assert explanation["second_layer_rebalance"]["reason"] == "rule_score_not_higher"
+    assert explanation["weights"] == {"rule_weight": 0.0, "ml_weight": 1.0}
+    assert explanation["final_score"] == 92.0
 
 
 def test_query_relevance_guardrail_caps_unrelated_commercial_page(tmp_path):

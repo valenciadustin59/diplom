@@ -18,6 +18,7 @@ from app.ml.model_schema import (
 )
 from app.query_relevance import (
     SEMANTIC_LIMITING_FACTOR_KEYS,
+    build_query_topic_metrics,
     build_query_relevance_guardrail,
     has_strong_query_topic_fit,
 )
@@ -31,6 +32,14 @@ BACKEND_DIR = Path(__file__).resolve().parents[2]
 ARTIFACTS_DIR = BACKEND_DIR / "artifacts"
 DEFAULT_MODEL_PATH = ARTIFACTS_DIR / "page_quality_model.pkl"
 RULE_SCORE_REFERENCE_MAX = 150.0
+SECOND_LAYER_REBALANCE_VERSION = "score-second-layer-rebalance-v1"
+SECOND_LAYER_REBALANCE_MAX_UPLIFT = 8.0
+SECOND_LAYER_REBALANCE_STRONG_RULE_WEIGHT = 0.40
+SECOND_LAYER_REBALANCE_SOFT_RULE_WEIGHT = 0.25
+SECOND_LAYER_REBALANCE_STRONG_RELEVANCE_MIN = 0.80
+SECOND_LAYER_REBALANCE_CORE_COVERAGE_MIN = 0.90
+LITERAL_ALIGNMENT_LIMITING_FACTOR_KEYS = {"title_semantic_alignment", "heading_semantic_alignment"}
+SOFT_LIMITING_FACTOR_GAP_CAPS = {"query_prominence": 2.0}
 FACTOR_MAX_IMPACTS = {
     "content_depth": 4.0,
     "semantic_relevance": 20.0,
@@ -83,12 +92,105 @@ def _calibrate_rule_score(raw_score: float) -> float:
     return _rounded_score((raw_score / RULE_SCORE_REFERENCE_MAX) * 100.0)
 
 
+def _has_high_confidence_query_fit(features: dict[str, float | int]) -> bool:
+    metrics = build_query_topic_metrics(features)
+    return (
+        has_strong_query_topic_fit(features)
+        and metrics["relevance_score"] >= SECOND_LAYER_REBALANCE_STRONG_RELEVANCE_MIN
+        and metrics["query_core_keyword_coverage_ratio"] >= SECOND_LAYER_REBALANCE_CORE_COVERAGE_MIN
+    )
+
+
+def _build_second_layer_rebalance(
+    features: dict[str, float | int],
+    *,
+    ml_score: float,
+    rule_score: float,
+) -> dict[str, object]:
+    metrics = build_query_topic_metrics(features)
+    high_confidence_fit = _has_high_confidence_query_fit(features)
+    strong_topic_fit = has_strong_query_topic_fit(features)
+    payload: dict[str, object] = {
+        "version": SECOND_LAYER_REBALANCE_VERSION,
+        "active": False,
+        "reason": "not_applicable",
+        "ml_score": round(ml_score, 4),
+        "rule_score": round(rule_score, 4),
+        "rule_weight": 0.0,
+        "ml_weight": 1.0,
+        "uplift": 0.0,
+        "relevance_score": metrics["relevance_score"],
+        "query_core_keyword_coverage_ratio": metrics["query_core_keyword_coverage_ratio"],
+        "adjusted_score": round(ml_score, 4),
+    }
+
+    if rule_score <= ml_score:
+        payload["reason"] = "rule_score_not_higher"
+        return payload
+    if not strong_topic_fit:
+        payload["reason"] = "weak_or_partial_query_fit"
+        return payload
+
+    if high_confidence_fit:
+        rule_weight = SECOND_LAYER_REBALANCE_STRONG_RULE_WEIGHT
+        reason = "high_confidence_query_fit"
+    else:
+        rule_weight = SECOND_LAYER_REBALANCE_SOFT_RULE_WEIGHT
+        reason = "strong_query_fit"
+
+    blended_score = _rounded_score((rule_score * rule_weight) + (ml_score * (1.0 - rule_weight)))
+    adjusted_score = _rounded_score(min(ml_score + SECOND_LAYER_REBALANCE_MAX_UPLIFT, blended_score))
+    uplift = round(adjusted_score - ml_score, 4)
+    if uplift <= 0.0:
+        payload["reason"] = "uplift_not_positive"
+        return payload
+
+    payload.update(
+        {
+            "active": True,
+            "reason": reason,
+            "rule_weight": round(rule_weight, 4),
+            "ml_weight": round(1.0 - rule_weight, 4),
+            "uplift": uplift,
+            "adjusted_score": adjusted_score,
+        }
+    )
+    return payload
+
+
+def _build_bootstrap_second_layer_rebalance(
+    *,
+    ml_score: float,
+    rule_score: float,
+    rule_weight: float,
+    adjusted_score: float,
+    features: dict[str, float | int],
+) -> dict[str, object]:
+    metrics = build_query_topic_metrics(features)
+    return {
+        "version": SECOND_LAYER_REBALANCE_VERSION,
+        "active": False,
+        "reason": "bootstrap_fallback_uses_legacy_rule_blend",
+        "ml_score": round(ml_score, 4),
+        "rule_score": round(rule_score, 4),
+        "rule_weight": round(rule_weight, 4),
+        "ml_weight": round(1.0 - rule_weight, 4),
+        "uplift": round(adjusted_score - ml_score, 4),
+        "relevance_score": metrics["relevance_score"],
+        "query_core_keyword_coverage_ratio": metrics["query_core_keyword_coverage_ratio"],
+        "adjusted_score": round(adjusted_score, 4),
+    }
+
+
 def _build_limiting_factor(
     factor: dict[str, object],
     features: dict[str, float | int] | None = None,
 ) -> dict[str, object] | None:
     key = str(factor.get("key") or "")
     if features is not None and key in SEMANTIC_LIMITING_FACTOR_KEYS and has_strong_query_topic_fit(features):
+        return None
+    high_confidence_query_fit = features is not None and _has_high_confidence_query_fit(features)
+    if high_confidence_query_fit and key in LITERAL_ALIGNMENT_LIMITING_FACTOR_KEYS:
         return None
 
     max_impact = FACTOR_MAX_IMPACTS.get(key)
@@ -100,6 +202,8 @@ def _build_limiting_factor(
         return factor
 
     gap = round(max_impact - impact, 4)
+    if high_confidence_query_fit and key in SOFT_LIMITING_FACTOR_GAP_CAPS:
+        gap = min(gap, SOFT_LIMITING_FACTOR_GAP_CAPS[key])
     if gap < 1.25:
         return None
 
@@ -1039,9 +1143,26 @@ def explain_score(
     ml_score = _predict_model_score(features, model_path=model_path)
     rule_score, factors = calculate_rule_score(features)
 
-    rule_weight = 0.65 if artifact.get("source") == "bootstrap" else 0.0
-    ml_weight = 1.0 - rule_weight
-    raw_final_score = _rounded_score(rule_score * rule_weight + ml_score * ml_weight)
+    if artifact.get("source") == "bootstrap":
+        rule_weight = 0.65
+        ml_weight = 1.0 - rule_weight
+        raw_final_score = _rounded_score(rule_score * rule_weight + ml_score * ml_weight)
+        second_layer_rebalance = _build_bootstrap_second_layer_rebalance(
+            ml_score=ml_score,
+            rule_score=rule_score,
+            rule_weight=rule_weight,
+            adjusted_score=raw_final_score,
+            features=features,
+        )
+    else:
+        second_layer_rebalance = _build_second_layer_rebalance(
+            features,
+            ml_score=ml_score,
+            rule_score=rule_score,
+        )
+        rule_weight = float(second_layer_rebalance["rule_weight"])
+        ml_weight = float(second_layer_rebalance["ml_weight"])
+        raw_final_score = float(second_layer_rebalance["adjusted_score"])
     relevance_guardrail = build_query_relevance_guardrail(features, raw_final_score)
     final_score = float(relevance_guardrail["adjusted_score"])
     if relevance_guardrail["active"]:
@@ -1070,8 +1191,13 @@ def explain_score(
         )
 
     positives = _select_positive_factors(factors)
+    negative_factor_exclusions = LITERAL_ALIGNMENT_LIMITING_FACTOR_KEYS if _has_high_confidence_query_fit(features) else set()
     negatives = sorted(
-        [factor for factor in factors if float(factor["impact"]) <= 0],
+        [
+            factor
+            for factor in factors
+            if float(factor["impact"]) <= 0 and str(factor.get("key") or "") not in negative_factor_exclusions
+        ],
         key=lambda item: float(item["impact"]),
     )[:5]
     if len(negatives) < 5:
@@ -1094,6 +1220,7 @@ def explain_score(
         "uncapped_final_score": raw_final_score,
         "rule_score": rule_score,
         "ml_score": ml_score,
+        "second_layer_rebalance": second_layer_rebalance,
         "relevance_guardrail": relevance_guardrail,
         "model_info": _build_model_info(artifact),
         "weights": {

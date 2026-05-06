@@ -57,9 +57,16 @@ test("runD31RuntimeSmoke writes a validated summary from live endpoint shapes", 
           status: "ready",
           checks: {
             celery_workers: {
-              worker_count: 4,
-              workers: ["site-audit.cpu_ml@host", "site-audit.heavy_analysis@host", "site-audit.network@host", "site-audit.pipeline@host"],
+              worker_count: 5,
+              workers: [
+                "site-audit.cpu_ml@host",
+                "site-audit.heavy_analysis@host",
+                "site-audit.network@host",
+                "site-audit.pipeline@host",
+                "site-audit.semantic_cpu@host",
+              ],
               missing_queues: [],
+              topology_contract: { required_profile_count: 5 },
             },
           },
         });
@@ -150,7 +157,8 @@ test("runD31RuntimeSmoke writes a validated summary from live endpoint shapes", 
 
   assert.equal(summary.audit_id, "audit-1");
   assert.equal(summary.health_ready_status, "ready");
-  assert.equal(summary.ready_worker_count, 4);
+  assert.equal(summary.ready_worker_count, 5);
+  assert.equal(summary.ready_required_profile_count, 5);
   assert.equal(summary.competitors_analyzed, 2);
   assert.equal(summary.recommendation_total, 13);
   assert.equal(summary.critical_path_modes.competitor_page, "fan_out_max");

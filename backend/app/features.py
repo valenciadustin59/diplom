@@ -657,17 +657,44 @@ QUERY_INTENT_MODIFIER_TERMS = frozenset(
         "для",
         "екатеринбург",
         "казань",
+        "казан",
         "как",
         "ключ",
         "консультация",
         "лучшие",
         "москва",
+        "москв",
         "новосибирск",
         "отзывы",
         "петербург",
         "под",
         "рядом",
+        "ряд",
         "санкт",
+    }
+)
+
+QUERY_GEO_MODIFIER_TERMS = frozenset(
+    {
+        "адрес",
+        "город",
+        "екатеринбург",
+        "казан",
+        "казань",
+        "карт",
+        "краснодар",
+        "москва",
+        "москв",
+        "near",
+        "nearby",
+        "новосибирск",
+        "петербург",
+        "поблизост",
+        "район",
+        "ряд",
+        "рядом",
+        "санкт",
+        "спб",
     }
 )
 
@@ -1229,7 +1256,38 @@ def merge_serp_relative_features(
     }, relative_summary
 
 
-def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
+SEMANTIC_FEATURE_KEYS = frozenset(
+    {
+        "semantic_similarity",
+        "semantic_similarity_raw",
+        "semantic_provider_code",
+        "semantic_model_code",
+        "semantic_fallback_used",
+        "semantic_embedding_failure",
+    }
+)
+
+
+def _valid_semantic_features(value: dict[str, float | int] | None) -> dict[str, float | int] | None:
+    if not isinstance(value, dict):
+        return None
+    if not isinstance(value.get("semantic_similarity"), (int, float)):
+        return None
+    if int(value.get("semantic_embedding_failure") or 0) != 0:
+        return None
+    return {
+        key: raw_value
+        for key, raw_value in value.items()
+        if key in SEMANTIC_FEATURE_KEYS and isinstance(raw_value, (int, float)) and not isinstance(raw_value, bool)
+    }
+
+
+def build_features(
+    html: str,
+    text: str,
+    query: str,
+    semantic_features: dict[str, float | int] | None = None,
+) -> dict[str, float | int]:
     document = extract_document(html)
     counts = document.get("counts") if isinstance(document.get("counts"), dict) else {}
 
@@ -1285,6 +1343,16 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
     query_intent_modifier_count = 0
     query_intent_modifier_matches = 0
     query_intent_modifier_coverage_ratio = 0.0
+    query_geo_modifier_count = 0
+    query_geo_modifier_matches = 0
+    query_geo_modifier_coverage_ratio = 0.0
+    query_primary_core_term_count = 0
+    query_primary_core_term_matches = 0
+    query_primary_core_term_present = 0
+    query_primary_core_term_in_title = 0
+    query_primary_core_term_in_headings = 0
+    core_missing_but_geo_present = 0
+    modifier_or_geo_only_match = 0
 
     if query_words:
         normalized_query_words = [_normalize_query_token(word) for word in query_words]
@@ -1319,6 +1387,28 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         query_intent_modifier_count = sum(word_freq[word] for word in intent_modifier_words)
         query_intent_modifier_matches = sum(1 for word in intent_modifier_words if word in word_freq)
         query_intent_modifier_coverage_ratio = _coverage_ratio(intent_modifier_words, word_freq)
+        geo_modifier_words = [word for word in normalized_query_words if word in QUERY_GEO_MODIFIER_TERMS]
+        query_geo_modifier_count = sum(word_freq[word] for word in geo_modifier_words)
+        query_geo_modifier_matches = sum(1 for word in geo_modifier_words if word in word_freq)
+        query_geo_modifier_coverage_ratio = _coverage_ratio(geo_modifier_words, word_freq)
+        primary_core_words = core_query_words[-1:]
+        query_primary_core_term_count = sum(word_freq[word] for word in primary_core_words)
+        query_primary_core_term_matches = sum(1 for word in primary_core_words if word in word_freq)
+        query_primary_core_term_present = int(query_primary_core_term_matches > 0)
+        query_primary_core_term_in_title = int(any(title_word_freq[word] > 0 for word in primary_core_words))
+        query_primary_core_term_in_headings = int(any(heading_word_freq[word] > 0 for word in primary_core_words))
+        core_missing_but_geo_present = int(
+            bool(geo_modifier_words)
+            and query_geo_modifier_matches > 0
+            and query_primary_core_term_present == 0
+            and query_core_keyword_coverage_ratio < 0.75
+        )
+        modifier_or_geo_only_match = int(
+            query_term_matches > 0
+            and query_primary_core_term_present == 0
+            and query_core_keyword_coverage_ratio < 0.75
+            and (query_intent_modifier_matches > 0 or query_geo_modifier_matches > 0)
+        )
 
     avg_word_length = (sum(len(word) for word in words) / word_count) if word_count else 0.0
     avg_sentence_length = (word_count / sentence_count) if sentence_count else 0.0
@@ -1365,6 +1455,16 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         "query_intent_modifier_count": query_intent_modifier_count,
         "query_intent_modifier_matches": query_intent_modifier_matches,
         "query_intent_modifier_coverage_ratio": round(query_intent_modifier_coverage_ratio, 6),
+        "query_geo_modifier_count": query_geo_modifier_count,
+        "query_geo_modifier_matches": query_geo_modifier_matches,
+        "query_geo_modifier_coverage_ratio": round(query_geo_modifier_coverage_ratio, 6),
+        "query_primary_core_term_count": query_primary_core_term_count,
+        "query_primary_core_term_matches": query_primary_core_term_matches,
+        "query_primary_core_term_present": query_primary_core_term_present,
+        "query_primary_core_term_in_title": query_primary_core_term_in_title,
+        "query_primary_core_term_in_headings": query_primary_core_term_in_headings,
+        "core_missing_but_geo_present": core_missing_but_geo_present,
+        "modifier_or_geo_only_match": modifier_or_geo_only_match,
         "query_density": round(query_density, 6),
         "keyword_coverage_ratio": round(keyword_coverage_ratio, 6),
         "link_count": link_count,
@@ -1381,7 +1481,8 @@ def build_features(html: str, text: str, query: str) -> dict[str, float | int]:
         "strong_density_per_1000_words": round(strong_count * per_1000_words, 6),
         "text_to_html_ratio": round(text_to_html_ratio, 6),
     }
-    features.update(build_semantic_features(text=normalized_text, query=query))
+    semantic_payload = _valid_semantic_features(semantic_features)
+    features.update(semantic_payload if semantic_payload is not None else build_semantic_features(text=normalized_text, query=query))
 
     semantic_similarity = float(features.get("semantic_similarity", 0.0))
     conversion_signal_score = (

@@ -31,6 +31,7 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 - `app/api/routes/` — HTTP endpoints.
 - `app/tasks.py` — orchestration и Celery stages.
 - `app/heavy_analysis.py` — snapshot-based тяжёлые анализаторы для structured data, mobile/rendering и performance proxy.
+- `app/semantic.py` и `app/semantic_providers.py` — semantic feature layer с RoSBERTa/MiniLM provider abstraction.
 - `app/parser.py` — загрузка страниц, fallback-стратегии, snapshot/extraction artifact и DOM-derived document payload.
 - `app/features.py` — контентные, семантические, technical SEO и commercial/trust features.
 - `app/recommendations.py` — recommendation engine.
@@ -48,8 +49,9 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 
 - `audits.pipeline` — orchestration и dispatch;
 - `audits.fetch` — загрузка целевой страницы;
-- `audits.heavy_analysis` — target heavy analysis и competitor semantic/ML analysis;
+- `audits.heavy_analysis` — target heavy analysis;
 - `audits.features` — извлечение признаков;
+- `audits.semantic` — semantic feature extraction и competitor semantic/ML analysis;
 - `audits.scoring` — rule-based и ML scoring;
 - `audits.competitors` — поиск конкурентов;
 - `audits.competitor_pages` — fan-out обработка страниц конкурентов;
@@ -58,12 +60,13 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 
 ### 2. Каноническая worker topology
 
-Начиная с `D20`, backend ориентирован на четыре профиля workers:
+Начиная с `D88-D95`, backend ориентирован на пять профилей workers:
 
 - `pipeline` — orchestration и dispatch;
 - `network` — `fetch`, `competitors`, `competitor_pages`;
-- `heavy_analysis` — snapshot-based тяжёлые анализаторы и competitor semantic/ML scoring;
-- `cpu_ml` — `features`, `scoring`, `recommendations`, `finalize`.
+- `heavy_analysis` — snapshot-based тяжёлые анализаторы;
+- `semantic_cpu` — RoSBERTa/MiniLM semantic features и competitor semantic/ML scoring;
+- `cpu_ml` — `scoring`, `recommendations`, `finalize` и lightweight CPU work.
 
 Эта topology проверяется через readiness и runtime metrics. Single all-queues worker допустим только как debugging fallback.
 
@@ -93,12 +96,13 @@ Backend проекта `Site Audit` построен на `FastAPI` и отве�
 
 - target stage `heavy_analysis` после fetch и до feature extraction;
 - snapshot-based анализ structured data, mobile readiness, rendering/JS dependency risk и performance proxy;
-- competitor flow split: `competitor_pages` делает только network fetch и сохраняет snapshot, а `competitor_analysis` выполняет semantic feature extraction и ML scoring в heavy queue.
+- competitor flow split: `competitor_pages` делает только network fetch и сохраняет snapshot, а `competitor_analysis` выполняет semantic feature extraction и ML scoring в `audits.semantic`.
 
 Практический эффект для distributed runtime:
 
 - сетевой worker больше не блокируется CPU/semantic анализом competitors;
 - `GET /health/metrics` отдельно показывает pressure для `audits.heavy_analysis`;
+- `GET /health/ready` и `GET /health/metrics` отдельно проверяют required semantic queue/profile `audits.semantic` / `semantic_cpu`;
 - admission guard может отклонить новый audit при backlogged/stuck heavy queue;
 - benchmark report содержит `Topology Profiles` и признак `Heavy Analysis Isolated`.
 
@@ -573,5 +577,7 @@ D44 / GitHub `#63` реализован локально как non-production s
 - `D82` completes query-core hardening for the final v7 candidate. It adds schema `v4` with `156` features, materializes `data/dataset_versions/dataset-v7-final/dataset.query-core.csv`, trains `artifacts/page_quality_model.dataset-v7-final-query-core-candidate.pkl` (SHA1 `2bbf84bfcc77662d66f62cfdafbb6ee4d8264e88`) and records controlled decision evidence in `artifacts/ranking-benchmarks/dataset-v7-final-d82/`. D82 fixes the D80 blocker: validation hard negatives above `35.0` are now `0` instead of `25`; runtime-adjusted metrics are `MAE=4.253847`, `Spearman=0.917044`, `NDCG@10=0.996873`. Decision is `publish_candidate`.
 - `D83` publishes the D82 query-core candidate through the explicit controlled path. Current runtime artifact is `artifacts/page_quality_model.pkl`, SHA1 `da285ca34d8c19079373b1db86d818355c7b80e0`, dataset `dataset-v7-final`, artifact version `dataset-v7-final-20260505125858`, schema `v4`, model type `QueryCoreGuardrailCatBoostRegressor`, `156` features. Release evidence: `artifacts/ranking-benchmarks/dataset-v7-final-d83/d83-query-core-controlled-release-report.json`; rollback v5: `artifacts/versions/page_quality_model--dataset-v5-20260502151507.pkl`.
 - `D84-D87` complete the post-publish quality hardening layer without retraining or changing `artifacts/page_quality_model.pkl`. D84 stores `40` fresh relevance regression cases in `data/query_relevance_regression/d84-live-regression-cases.json` and passed with `0` failures. D85 adds `competitor_context_quality` to comparison summaries and writes `artifacts/ranking-benchmarks/dataset-v7-final-d85/d85-competitor-fetch-robustness-report.json`. D86 updates UX wording around the score contract. D87 writes the rollup evidence report in `artifacts/ranking-benchmarks/dataset-v7-final-d87/` with decision `ready_for_diploma_evidence_pack`.
+- `D88-D96` complete RoSBERTa/distributed semantic runtime work. Backend now has provider-based semantics, `audits.semantic`, `semantic_cpu`, competitor replacement and accepted/discarded/unused competitor context. Evidence: `../plans/d88-d96-rosberta-distributed-semantic.md`, `artifacts/ranking-benchmarks/d95-rosberta-competitor-replacement/`, `../output/runtime-smoke/d96-rosberta-live-smoke-summary.json`.
+- `D97-D102` complete final runtime hardening. Backend now applies bounded `score-second-layer-rebalance-v1`, has a `300s` worker liveness grace for readiness under long browser/network tasks, exposes query-core mismatch signals for local/commercial false positives, and supports clearer 404/noindex/unusable-page explanations in UI/export payloads. Evidence: `../plans/d97-d102-final-runtime-hardening.md`, `../output/runtime-smoke/d98-d102-final-live-smoke-summary.json`; final smoke passed `5/5` checks with `health_not_ready_count=0`.
 
-Если GitHub Issues недоступны из текущего окружения, actual source of truth находится в `../AGENTS.md`, `../README.md`, `../docs/roadmap/product-development-roadmap.md`, `../plans/d45-d49-seo-weighted-score-retraining.md`, `../plans/d50-d54-v5-ranking-aware-model.md`, `../plans/d55-d61-product-aligned-competitiveness.md`, `../plans/d62-d68-final-query-competitiveness.md`, `../plans/d69-dataset-v7-collection-readiness.md`, `../plans/d70-conservative-query-relevance-contract.md`, `../plans/d72-query-relevance-early-stop-runtime-contract.md`, `../plans/d71-d74-query-relevance-preflight-ui-regression.md`, `../plans/d75-dataset-v7-controlled-collection.md`, `../plans/d76-dataset-v7-hard-negatives.md`, `../plans/d77-dataset-v7-deterministic-labels.md`, `../plans/d78-dataset-v7-split-validation.md`, `../plans/d79-dataset-v7-candidate-training.md`, `../plans/d80-dataset-v7-controlled-decision.md`, `../plans/d81-dataset-v7-controlled-release.md`, `../plans/d82-query-core-hard-negative-hardening.md`, `../plans/d83-query-core-publish-readiness.md` и older historical plans. Не повторять rollout или менять runtime scoring без явно выбранной новой задачи.
+Если GitHub Issues недоступны из текущего окружения, actual source of truth находится в `../AGENTS.md`, `../README.md`, `../docs/roadmap/product-development-roadmap.md`, `../plans/d45-d49-seo-weighted-score-retraining.md`, `../plans/d50-d54-v5-ranking-aware-model.md`, `../plans/d55-d61-product-aligned-competitiveness.md`, `../plans/d62-d68-final-query-competitiveness.md`, `../plans/d69-dataset-v7-collection-readiness.md`, `../plans/d70-conservative-query-relevance-contract.md`, `../plans/d72-query-relevance-early-stop-runtime-contract.md`, `../plans/d71-d74-query-relevance-preflight-ui-regression.md`, `../plans/d75-dataset-v7-controlled-collection.md`, `../plans/d76-dataset-v7-hard-negatives.md`, `../plans/d77-dataset-v7-deterministic-labels.md`, `../plans/d78-dataset-v7-split-validation.md`, `../plans/d79-dataset-v7-candidate-training.md`, `../plans/d80-dataset-v7-controlled-decision.md`, `../plans/d81-dataset-v7-controlled-release.md`, `../plans/d82-query-core-hard-negative-hardening.md`, `../plans/d83-query-core-publish-readiness.md`, `../plans/d88-d96-rosberta-distributed-semantic.md`, `../plans/d97-d102-final-runtime-hardening.md` и older historical plans. Не повторять rollout или менять runtime scoring без явно выбранной новой задачи.

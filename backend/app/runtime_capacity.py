@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Literal
 
-from app.celery_app import AUDIT_HEAVY_ANALYSIS_QUEUE, resolve_task_queue
+from app.celery_app import AUDIT_HEAVY_ANALYSIS_QUEUE, AUDIT_SEMANTIC_QUEUE, resolve_task_queue
 from app.config import Settings, get_settings
 from app.health import (
     build_execution_detector_payload,
@@ -58,6 +58,7 @@ def evaluate_new_audit_admission(settings: Settings | None = None) -> RuntimeCap
     pipeline_queue = resolve_task_queue(PIPELINE_TASK_NAME)
     pipeline_snapshot = queue_pressure.get("queues", {}).get(pipeline_queue, {})
     heavy_analysis_snapshot = queue_pressure.get("queues", {}).get(AUDIT_HEAVY_ANALYSIS_QUEUE, {})
+    semantic_snapshot = queue_pressure.get("queues", {}).get(AUDIT_SEMANTIC_QUEUE, {})
 
     # If broker telemetry itself is unavailable, keep the existing inline-fallback behavior.
     if broker_metrics.get("status") != "ok":
@@ -94,6 +95,20 @@ def evaluate_new_audit_admission(settings: Settings | None = None) -> RuntimeCap
                 "depth": heavy_analysis_snapshot.get("depth"),
                 "worker_count": heavy_analysis_snapshot.get("worker_count"),
                 "reasons": heavy_analysis_snapshot.get("reasons"),
+            },
+        )
+
+    if semantic_snapshot.get("pressure_status") in {"backlogged", "stuck"}:
+        return RuntimeCapacityDecision(
+            action="reject",
+            reason="semantic_queue_capacity_exhausted",
+            message="Unable to start a new audit: the semantic processing queue is overloaded or has no workers.",
+            queue_name=AUDIT_SEMANTIC_QUEUE,
+            details={
+                "pressure_status": semantic_snapshot.get("pressure_status"),
+                "depth": semantic_snapshot.get("depth"),
+                "worker_count": semantic_snapshot.get("worker_count"),
+                "reasons": semantic_snapshot.get("reasons"),
             },
         )
 

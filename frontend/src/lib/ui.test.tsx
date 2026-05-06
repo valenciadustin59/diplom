@@ -10,6 +10,7 @@ import type {
   AuditStatusResponse,
   AuditTimelineDiagnosticsResponse,
   AuditTimelineEventsResponse,
+  ComparisonSummary,
   FailureContext,
   RecommendationsBundle,
 } from "../types";
@@ -961,6 +962,320 @@ describe("AuditWorkspace", () => {
 
     expect(markup).toContain("Сравнение с рынком пока не используется");
     expect(markup).toContain("обработано слишком мало страниц из выдачи");
+  });
+
+  it("explains HTTP 404 target pages as unavailable and shows recovery actions instead of SEO recommendations", () => {
+    const unavailableFeatures = {
+      http_status_code: 404,
+      http_status_ok: 0,
+      page_indexable: 0,
+      robots_noindex: 0,
+      word_count: 0,
+      text_length_chars: 0,
+    };
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          query: "купить зимние шины",
+          target_url: "https://mosautoshina.ru/catalog/tyre/winter",
+          status: "completed",
+          score: 0,
+          features: unavailableFeatures,
+          score_breakdown: {
+            final_score: 0,
+            rule_score: 0,
+            ml_score: 0,
+          },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
+        })}
+        currentResults={createResults({
+          status: "completed",
+          score: 0,
+          features: unavailableFeatures,
+          score_breakdown: {
+            final_score: 0,
+            rule_score: 0,
+            ml_score: 0,
+          },
+          target_snapshot_summary: {
+            status_code: 404,
+            fetch_method: "http",
+          },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
+          competitor_results: [],
+        })}
+        recommendations={createRecommendationsBundle()}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={null}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="overview"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Страница недоступна: HTTP 404");
+    expect(markup).toContain("проблема доступности URL");
+    expect(markup).toContain("Проверьте, что URL открывается");
+    expect(markup).toContain("Настройте корректный редирект");
+    expect(markup).toContain("доступна для индексации");
+    expect(markup).not.toContain("Есть блокирующая проблема индексации");
+    expect(markup).not.toContain("Страница закрыта от индексации.");
+  });
+
+  it("keeps normal relevant audits in the regular recommendations flow", () => {
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          query: "купить зимние шины",
+          target_url: "https://pokrishka.ru/zimnie-shiny",
+          status: "completed",
+          score: 80.54,
+          features: {
+            http_status_code: 200,
+            http_status_ok: 1,
+            page_indexable: 1,
+            robots_noindex: 0,
+            semantic_similarity: 0.72,
+          },
+          score_breakdown: {
+            final_score: 80.54,
+            rule_score: 79,
+            ml_score: 82,
+          },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
+        })}
+        currentResults={createResults({
+          status: "completed",
+          score: 80.54,
+          features: {
+            http_status_code: 200,
+            http_status_ok: 1,
+            page_indexable: 1,
+            robots_noindex: 0,
+            semantic_similarity: 0.72,
+          },
+          score_breakdown: {
+            final_score: 80.54,
+            rule_score: 79,
+            ml_score: 82,
+          },
+          target_snapshot_summary: {
+            status_code: 200,
+            fetch_method: "http",
+          },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
+        })}
+        recommendations={createRecommendationsBundle()}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={null}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="overview"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Есть блокирующая проблема индексации");
+    expect(markup).not.toContain("Страница недоступна");
+    expect(markup).not.toContain("Проверьте, что URL открывается");
+    expect(markup).not.toContain("Настройте корректный редирект");
+  });
+
+  it("shows recovery actions on the recommendations tab for unavailable target pages", () => {
+    const unavailableFeatures = {
+      http_status_code: 404,
+      http_status_ok: 0,
+      page_indexable: 0,
+      robots_noindex: 0,
+      word_count: 0,
+      text_length_chars: 0,
+    };
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          query: "купить зимние шины",
+          target_url: "https://mosautoshina.ru/catalog/tyre/winter",
+          status: "completed",
+          score: 0,
+          features: unavailableFeatures,
+          score_breakdown: {
+            final_score: 0,
+            rule_score: 0,
+            ml_score: 0,
+          },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
+        })}
+        currentResults={createResults({
+          status: "completed",
+          score: 0,
+          features: unavailableFeatures,
+          score_breakdown: {
+            final_score: 0,
+            rule_score: 0,
+            ml_score: 0,
+          },
+          target_snapshot_summary: {
+            status_code: 404,
+            fetch_method: "http",
+          },
+          target_fetch_status: "success",
+          target_fetch_method: "http",
+        })}
+        recommendations={createRecommendationsBundle()}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[]}
+        comparisonSummary={null}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="recommendations"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("Страница недоступна: HTTP 404");
+    expect(markup).toContain("Восстановление страницы");
+    expect(markup).toContain("Проверьте, что URL открывается");
+    expect(markup).not.toContain("План действий");
+    expect(markup).not.toContain("Есть блокирующая проблема индексации");
+  });
+
+  it("separates discarded competitor candidates from accepted competitor context", () => {
+    const comparisonSummary: ComparisonSummary = {
+      user_score: 74,
+      competitors_average_score: 81,
+      score_difference: -7,
+      competitors_count: 2,
+      competitors_found: 4,
+      competitors_analyzed: 2,
+      competitors_failed: 0,
+      competitor_context_quality: {
+        schema_version: "competitor-context-quality-v2",
+        status: "ready",
+        context_available: true,
+        score_safe_to_compare: true,
+        requested_top_n: 3,
+        collected_candidates: 4,
+        accepted_competitors: 2,
+        discarded_competitors: 1,
+        replacement_attempts: 1,
+        discard_reasons: {
+          irrelevant_marketplace: 1,
+        },
+      },
+    };
+    const markup = renderToStaticMarkup(
+      <AuditWorkspace
+        {...runtimeWorkspaceProps}
+        currentAudit={createAudit({
+          status: "completed",
+          score: 74,
+          comparison_summary: comparisonSummary,
+        })}
+        currentResults={createResults({
+          status: "completed",
+          score: 74,
+          comparison_summary: comparisonSummary,
+          competitor_results: [
+            {
+              url: "https://competitor.example/",
+              domain: "competitor.example",
+              title: "Accepted competitor",
+              fetch_status: "success",
+              fetch_method: "http",
+              fetch_error_code: null,
+              fetch_error_message: null,
+              score: 81,
+              features: null,
+              competitor_context_status: "accepted",
+            },
+            {
+              url: "https://second.example/",
+              domain: "second.example",
+              title: "Second accepted competitor",
+              fetch_status: "success",
+              fetch_method: "http",
+              fetch_error_code: null,
+              fetch_error_message: null,
+              score: 79,
+              features: null,
+              competitor_context_status: "accepted",
+            },
+            {
+              url: "https://www.avito.ru/random",
+              domain: "avito.ru",
+              title: "Marketplace candidate",
+              fetch_status: "success",
+              fetch_method: "http",
+              fetch_error_code: null,
+              fetch_error_message: null,
+              score: 91,
+              features: null,
+              competitor_context_status: "discarded",
+            },
+            {
+              url: "https://www.ozon.ru/product/123",
+              domain: "ozon.ru",
+              title: "Unused candidate",
+              fetch_status: "success",
+              fetch_method: "http",
+              fetch_error_code: null,
+              fetch_error_message: null,
+              score: 88,
+              features: null,
+              competitor_context_status: "unused",
+            },
+          ],
+        })}
+        recommendations={null}
+        timelineDiagnostics={null}
+        timelineEvents={null}
+        pageRows={[]}
+        competitorScores={[
+          { name: "example.com", score: 74, isUser: true },
+          { name: "competitor.example", score: 81 },
+          { name: "second.example", score: 79 },
+        ]}
+        comparisonSummary={comparisonSummary}
+        auditStatus="completed"
+        loading={false}
+        error={null}
+        activeTab="competitors"
+        onTabChange={() => undefined}
+      />,
+    );
+
+    expect(markup).toContain("В расчёт вошло 2 валидных конкурента из 4");
+    expect(markup).toContain("1 заменён");
+    expect(markup).toContain("1 исключён");
+    expect(markup).toContain("В расчёте");
+    expect(markup).toContain("competitor.example");
+    expect(markup).toContain("second.example");
+    expect(markup).toContain("Не вошли в расчёт");
+    expect(markup).toContain("avito.ru");
+    expect(markup).toContain("ozon.ru");
+    expect(markup).toContain("Кандидат отделён от конкурентного расчёта");
+    expect(markup).not.toContain(">91<");
+    expect(markup).not.toContain(">88<");
   });
 
   it("renders early stop mismatch state without ML jargon in overview and competitors", () => {

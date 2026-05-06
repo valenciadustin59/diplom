@@ -21,6 +21,17 @@ export const CELERY_WORKER_PROFILES = rawWorkerTopology.profiles.map((profile) =
   queues: [...new Set((profile.queues ?? []).map((queueName) => String(queueName)))].sort(),
 }));
 export const CELERY_AUDIT_QUEUES = [...new Set(CELERY_WORKER_PROFILES.flatMap((profile) => profile.queues))];
+export const SEMANTIC_WORKER_PROFILE_NAME = "semantic_cpu";
+export const SEMANTIC_QUEUE_NAME = "audits.semantic";
+export const SEMANTIC_AUTOSCALE_DEFAULTS = {
+  mode: "off",
+  minWorkers: 1,
+  maxWorkers: 3,
+  scaleUpDepth: 2,
+  scaleUpWaitMs: 15000,
+  scaleDownIdleMs: 60000,
+  pollIntervalMs: 5000,
+};
 const children = [];
 let shuttingDown = false;
 export function buildBackendRuntimeEnv(extraEnv = {}, sourceEnv = process.env) {
@@ -40,6 +51,78 @@ function resolveWorkerProfile(profileName) {
   }
   return profile;
 }
+
+function readArgValue(argv, name) {
+  const prefix = `${name}=`;
+  const inlineValue = argv.find((arg) => arg.startsWith(prefix));
+  if (inlineValue) {
+    return inlineValue.slice(prefix.length);
+  }
+  const index = argv.indexOf(name);
+  if (index !== -1) {
+    const nextValue = argv[index + 1];
+    if (typeof nextValue === "string" && !nextValue.startsWith("--")) {
+      return nextValue;
+    }
+    return "true";
+  }
+  return undefined;
+}
+
+function parsePositiveInteger(value, fallback) {
+  const parsed = Number.parseInt(String(value ?? ""), 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function normalizeAutoscaleMode(value) {
+  const normalized = String(value ?? SEMANTIC_AUTOSCALE_DEFAULTS.mode).trim().toLowerCase();
+  if (["1", "true", "yes", "on", "auto"].includes(normalized)) {
+    return "auto";
+  }
+  if (["0", "false", "no", "off", "fixed"].includes(normalized)) {
+    return "off";
+  }
+  return SEMANTIC_AUTOSCALE_DEFAULTS.mode;
+}
+
+export function resolveSemanticAutoscaleConfig(argv = process.argv, sourceEnv = process.env) {
+  const mode = normalizeAutoscaleMode(
+    readArgValue(argv, "--semantic-autoscale") ?? sourceEnv.SEMANTIC_WORKER_AUTOSCALE,
+  );
+  const minWorkers = Math.max(
+    1,
+    parsePositiveInteger(sourceEnv.SEMANTIC_WORKER_MIN, SEMANTIC_AUTOSCALE_DEFAULTS.minWorkers),
+  );
+  const maxWorkers = Math.max(
+    minWorkers,
+    parsePositiveInteger(sourceEnv.SEMANTIC_WORKER_MAX, SEMANTIC_AUTOSCALE_DEFAULTS.maxWorkers),
+  );
+  return {
+    mode,
+    enabled: mode === "auto",
+    profileName: SEMANTIC_WORKER_PROFILE_NAME,
+    queueName: SEMANTIC_QUEUE_NAME,
+    minWorkers,
+    maxWorkers,
+    scaleUpDepth: parsePositiveInteger(
+      sourceEnv.SEMANTIC_WORKER_SCALE_UP_DEPTH,
+      SEMANTIC_AUTOSCALE_DEFAULTS.scaleUpDepth,
+    ),
+    scaleUpWaitMs: parsePositiveInteger(
+      sourceEnv.SEMANTIC_WORKER_SCALE_UP_WAIT_MS,
+      SEMANTIC_AUTOSCALE_DEFAULTS.scaleUpWaitMs,
+    ),
+    scaleDownIdleMs: parsePositiveInteger(
+      sourceEnv.SEMANTIC_WORKER_SCALE_DOWN_IDLE_MS,
+      SEMANTIC_AUTOSCALE_DEFAULTS.scaleDownIdleMs,
+    ),
+    pollIntervalMs: parsePositiveInteger(
+      sourceEnv.SEMANTIC_WORKER_POLL_INTERVAL_MS,
+      SEMANTIC_AUTOSCALE_DEFAULTS.pollIntervalMs,
+    ),
+  };
+}
+
 function resolveBackendPython() {
   const candidates = [
     path.join(backendDir, ".venv", "Scripts", "python.exe"),
@@ -84,15 +167,21 @@ function runProcess(name, command, args, cwd, extraEnv = {}) {
     process.stderr.write(`[${name}] ${chunk}`);
   });
   child.on("exit", (code) => {
+    const childIndex = children.indexOf(child);
+    if (childIndex !== -1) {
+      children.splice(childIndex, 1);
+    }
     if (!shuttingDown && code && code !== 0) {
       console.error(`[${name}] ╨┐╤А╨╛╤Ж╨╡╤Б╤Б ╨╖╨░╨▓╨╡╤А╤И╨╕╨╗╤Б╤П ╤Б ╨║╨╛╨┤╨╛╨╝ ${code}`);
       stopAll(code);
     }
   });
   children.push(child);
+  return child;
 }
-export function buildCeleryWorkerArgs(profileName) {
+export function buildCeleryWorkerArgs(profileName, options = {}) {
   const profile = resolveWorkerProfile(profileName);
+  const hostnameSuffix = options.hostnameSuffix ? `.${String(options.hostnameSuffix)}` : "";
   const args = [
     "-m",
     "celery",
@@ -101,7 +190,7 @@ export function buildCeleryWorkerArgs(profileName) {
     "worker",
     "--loglevel=info",
     "--hostname",
-    `site-audit.${profile.name}@%h`,
+    `site-audit.${profile.name}${hostnameSuffix}@%h`,
     "-Q",
     profile.queues.join(","),
   ];
@@ -113,6 +202,143 @@ export function buildCeleryWorkerArgs(profileName) {
     args.push("--pool=solo");
   }
   return args;
+}
+
+function startCeleryWorker(profileName, hostnameSuffix = "") {
+  const displaySuffix = hostnameSuffix ? `#${hostnameSuffix}` : "";
+  return runProcess(
+    `worker:${profileName}${displaySuffix}`,
+    resolveBackendPython(),
+    buildCeleryWorkerArgs(profileName, { hostnameSuffix }),
+    backendDir,
+    buildBackendRuntimeEnv(),
+  );
+}
+
+function createSemanticWorkerAutoscaler(apiUrl, config) {
+  const workers = new Map();
+  let nextWorkerId = 1;
+  let timer = null;
+  let backlogSince = null;
+  let idleSince = null;
+
+  function activeWorkerEntries() {
+    for (const [workerId, child] of workers.entries()) {
+      if (child.exitCode !== null || child.killed) {
+        workers.delete(workerId);
+      }
+    }
+    return [...workers.entries()];
+  }
+
+  function startSemanticWorker() {
+    const workerId = nextWorkerId;
+    nextWorkerId += 1;
+    const child = startCeleryWorker(config.profileName, String(workerId));
+    workers.set(workerId, child);
+    child.on("exit", () => {
+      workers.delete(workerId);
+    });
+    console.log(`[semantic-autoscale] started ${config.profileName} worker ${workerId}/${config.maxWorkers}`);
+  }
+
+  function stopSemanticWorker() {
+    const entries = activeWorkerEntries();
+    if (entries.length <= config.minWorkers) {
+      return;
+    }
+    const [workerId, child] = entries.at(-1);
+    console.log(`[semantic-autoscale] stopping idle ${config.profileName} worker ${workerId}`);
+    child.kill();
+    workers.delete(workerId);
+  }
+
+  function ensureMinimumWorkers() {
+    while (activeWorkerEntries().length < config.minWorkers) {
+      startSemanticWorker();
+    }
+  }
+
+  async function fetchSemanticQueueSnapshot() {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), Math.min(config.pollIntervalMs, 5000));
+    try {
+      const response = await fetch(`${apiUrl}/health/metrics`, { signal: controller.signal });
+      if (!response.ok) {
+        throw new Error(`health metrics returned ${response.status}`);
+      }
+      const payload = await response.json();
+      return payload?.queue_pressure?.queues?.[config.queueName] ?? {};
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  async function tick() {
+    ensureMinimumWorkers();
+    let snapshot;
+    try {
+      snapshot = await fetchSemanticQueueSnapshot();
+    } catch (error) {
+      console.warn(`[semantic-autoscale] metrics unavailable: ${error instanceof Error ? error.message : String(error)}`);
+      return;
+    }
+
+    const now = Date.now();
+    const depth = Number(snapshot.depth ?? 0);
+    const inflight = Number(snapshot.inflight_tasks ?? 0);
+    const pressureStatus = String(snapshot.pressure_status ?? "idle");
+    const workerCount = activeWorkerEntries().length;
+    const hasWaitPressure = depth > 0 && ["waiting", "backlogged", "stuck"].includes(pressureStatus);
+    if (hasWaitPressure && backlogSince === null) {
+      backlogSince = now;
+    }
+    if (!hasWaitPressure) {
+      backlogSince = null;
+    }
+
+    const waitedLongEnough = backlogSince !== null && now - backlogSince >= config.scaleUpWaitMs;
+    if ((depth >= config.scaleUpDepth || waitedLongEnough) && workerCount < config.maxWorkers) {
+      startSemanticWorker();
+      backlogSince = now;
+      idleSince = null;
+      return;
+    }
+
+    const idle = depth === 0 && inflight === 0 && !["busy", "draining"].includes(pressureStatus);
+    if (idle && idleSince === null) {
+      idleSince = now;
+    }
+    if (!idle) {
+      idleSince = null;
+    }
+    if (idleSince !== null && now - idleSince >= config.scaleDownIdleMs) {
+      stopSemanticWorker();
+      idleSince = now;
+    }
+  }
+
+  return {
+    start() {
+      console.log(
+        `[semantic-autoscale] mode=auto queue=${config.queueName} min=${config.minWorkers} max=${config.maxWorkers} depth=${config.scaleUpDepth} wait_ms=${config.scaleUpWaitMs} idle_ms=${config.scaleDownIdleMs}`,
+      );
+      ensureMinimumWorkers();
+      void tick();
+      timer = setInterval(() => {
+        void tick();
+      }, config.pollIntervalMs);
+    },
+    stop() {
+      if (timer !== null) {
+        clearInterval(timer);
+      }
+      for (const [, child] of workers.entries()) {
+        child.kill();
+      }
+      workers.clear();
+    },
+  };
 }
 
 export function buildFrontendDevArgs(port = 5173, host = "127.0.0.1") {
@@ -140,9 +366,15 @@ async function main() {
 
   const backendPort = await findAvailablePort(8000);
   const apiUrl = `http://127.0.0.1:${backendPort}`;
+  const semanticAutoscaleConfig = resolveSemanticAutoscaleConfig(process.argv, process.env);
   console.log("╨Ч╨░╨┐╤Г╤Б╨║ backend ╨╕ frontend ╨╛╨┤╨╜╨╛╨╣ ╨║╨╛╨╝╨░╨╜╨┤╨╛╨╣...");
   console.log(`Backend API: ${apiUrl}`);
   console.log(`Celery worker topology: ${includeWorker ? CELERY_WORKER_PROFILES.map((profile) => profile.name).join(", ") : "disabled"}`);
+  if (includeWorker) {
+    console.log(
+      `Semantic workers: ${semanticAutoscaleConfig.enabled ? `auto min=${semanticAutoscaleConfig.minWorkers} max=${semanticAutoscaleConfig.maxWorkers}` : "fixed min=1"}`,
+    );
+  }
   runProcess(
     "backend",
     resolveBackendPython(),
@@ -154,14 +386,17 @@ async function main() {
     VITE_API_URL: apiUrl,
   });
   if (includeWorker) {
+    const semanticAutoscaler = semanticAutoscaleConfig.enabled
+      ? createSemanticWorkerAutoscaler(apiUrl, semanticAutoscaleConfig)
+      : null;
     for (const profile of CELERY_WORKER_PROFILES) {
-      runProcess(
-        `worker:${profile.name}`,
-        resolveBackendPython(),
-        buildCeleryWorkerArgs(profile.name),
-        backendDir,
-        buildBackendRuntimeEnv(),
-      );
+      if (semanticAutoscaler && profile.name === semanticAutoscaleConfig.profileName) {
+        continue;
+      }
+      startCeleryWorker(profile.name);
+    }
+    if (semanticAutoscaler) {
+      semanticAutoscaler.start();
     }
   }
   process.on("SIGINT", () => stopAll(0));

@@ -152,10 +152,14 @@ async function pollAudit(fetchImpl, sleepImpl, config, auditId) {
 
 function extractReadinessSummary(readyPayload) {
   const celeryWorkers = getObject(getNested(readyPayload, ["checks", "celery_workers"]));
+  const topologyContract = getObject(celeryWorkers.topology_contract);
+  const topology = getObject(celeryWorkers.topology);
 
   return {
     health_ready_status: typeof readyPayload?.status === "string" ? readyPayload.status : null,
     ready_worker_count: getNumber(celeryWorkers.worker_count),
+    ready_required_profile_count: getNumber(topologyContract.required_profile_count)
+      || getNumber(topology.required_profile_count),
     ready_workers: getArray(celeryWorkers.workers).map(String).sort(),
     ready_missing_queues: getArray(celeryWorkers.missing_queues).map(String).sort(),
   };
@@ -264,8 +268,10 @@ function assertSmokeSummary(summary, config) {
   if (summary.health_ready_status !== "ready") {
     failures.push(`expected /health/ready status ready, got ${summary.health_ready_status}`);
   }
-  if (summary.ready_worker_count !== 4) {
-    failures.push(`expected exactly 4 Celery workers, got ${summary.ready_worker_count}`);
+  if (summary.ready_worker_count < summary.ready_required_profile_count) {
+    failures.push(
+      `expected at least ${summary.ready_required_profile_count} Celery workers, got ${summary.ready_worker_count}`,
+    );
   }
   if (summary.ready_missing_queues.length > 0) {
     failures.push(`expected no missing queues, got ${summary.ready_missing_queues.join(",")}`);

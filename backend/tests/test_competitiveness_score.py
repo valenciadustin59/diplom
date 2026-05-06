@@ -1,18 +1,29 @@
 from app.competitiveness import build_competitiveness_score
-from app.competitors import build_comparison_summary, build_competitor_context_quality
+from app.competitors import (
+    build_comparison_summary,
+    build_competitor_candidate_limit,
+    build_competitor_context_quality,
+)
 from app.models import AuditCompetitor
 from app.tasks import _build_competitor_aggregation_result
 
 
-def _competitor(score: float) -> dict[str, object]:
+def _competitor(score: float, *, rank: int = 1, features: dict[str, object] | None = None) -> dict[str, object]:
     return {
+        "url": f"https://competitor-{rank}.example/",
+        "domain": f"competitor-{rank}.example",
+        "serp_rank": rank,
+        "fetch_status": "success",
         "score": score,
-        "features": {"semantic_similarity": 0.8},
+        "features": features or {"semantic_similarity": 0.8, "word_count": 500, "text_length_chars": 3200},
     }
 
 
-def _failed_competitor(code: str = "http_403") -> dict[str, object]:
+def _failed_competitor(code: str = "http_403", *, rank: int = 1) -> dict[str, object]:
     return {
+        "url": f"https://failed-{rank}.example/",
+        "domain": f"failed-{rank}.example",
+        "serp_rank": rank,
         "score": None,
         "features": None,
         "fetch_status": "failed",
@@ -127,6 +138,60 @@ def test_competitor_context_quality_blocks_fake_average_when_all_competitors_fai
     assert summary["competitor_context_quality"]["fetch_error_codes"] == {"http_403": 1, "timeout": 1}
 
 
+def test_competitor_candidate_limit_adds_bounded_replacement_pool():
+    assert build_competitor_candidate_limit(5) == 8
+    assert build_competitor_candidate_limit(10) == 15
+    assert build_competitor_candidate_limit(100) == 100
+
+
+def test_competitor_context_quality_v2_replaces_failed_and_low_score_candidates():
+    summary = build_comparison_summary(
+        user_features={"semantic_similarity": 0.7},
+        user_score=70.0,
+        competitor_results=[
+            _failed_competitor("http_403", rank=1),
+            _competitor(82.0, rank=2),
+            _competitor(1.6, rank=3),
+            _competitor(78.0, rank=4),
+            _competitor(88.0, rank=5),
+        ],
+        requested_top_n=2,
+    )
+
+    quality = summary["competitor_context_quality"]
+    assert quality["schema_version"] == "competitor-context-quality-v2"
+    assert quality["requested_top_n"] == 2
+    assert quality["collected_candidates"] == 5
+    assert quality["accepted_competitors"] == 2
+    assert quality["discarded_competitors"] == 2
+    assert quality["replacement_attempts"] == 2
+    assert quality["replacements_used"] == 1
+    assert quality["discard_reasons"] == {"bot_block_suspected": 1, "score_below_minimum": 1}
+    assert summary["competitor_context_status"] == "ready"
+    assert summary["competitors_average_score"] == 80.0
+
+
+def test_competitor_context_quality_discards_thin_successful_snapshot():
+    quality = build_competitor_context_quality(
+        [
+            _competitor(
+                66.0,
+                rank=1,
+                features={"semantic_similarity": 0.4, "word_count": 8, "text_length_chars": 80},
+            ),
+            _competitor(81.0, rank=2),
+            _competitor(84.0, rank=3),
+        ],
+        requested_top_n=2,
+    )
+
+    assert quality["accepted_competitors"] == 2
+    assert quality["discarded_competitors"] == 1
+    assert quality["replacement_attempts"] == 1
+    assert quality["discard_reasons"] == {"thin_content": 1}
+    assert quality["status"] == "ready"
+
+
 def test_competitor_aggregation_promotes_competitiveness_score_to_summary():
     result = _build_competitor_aggregation_result(
         user_features={"semantic_similarity": 0.7, "technical_seo_score": 0.6},
@@ -165,3 +230,74 @@ def test_competitor_aggregation_promotes_competitiveness_score_to_summary():
     assert summary["competitiveness_score"] == summary["user_score"]
     assert summary["competitiveness"]["requested_top_n"] == 10
     assert result["user_features"]["serp_relative_context_available"] == 1
+
+
+def test_competitor_aggregation_marks_discarded_candidates_and_uses_only_accepted_context():
+    result = _build_competitor_aggregation_result(
+        user_features={"semantic_similarity": 0.7, "technical_seo_score": 0.6},
+        user_score=72.0,
+        competitors=[
+            AuditCompetitor(
+                id="competitor-failed",
+                audit_id="audit-b",
+                url="https://failed.example",
+                domain="failed.example",
+                fetch_status="failed",
+                fetch_error_code="http_403",
+                score=None,
+                features=None,
+                serp_rank=1,
+                serp_page=0,
+            ),
+            AuditCompetitor(
+                id="competitor-low",
+                audit_id="audit-b",
+                url="https://low.example",
+                domain="low.example",
+                fetch_status="success",
+                score=2.5,
+                features={"semantic_similarity": 0.1, "technical_seo_score": 0.1, "word_count": 20, "text_length_chars": 220},
+                serp_rank=2,
+                serp_page=0,
+            ),
+            AuditCompetitor(
+                id="competitor-good-a",
+                audit_id="audit-b",
+                url="https://good-a.example",
+                domain="good-a.example",
+                fetch_status="success",
+                score=86.0,
+                features={"semantic_similarity": 0.8, "technical_seo_score": 0.7, "word_count": 700, "text_length_chars": 4200},
+                serp_rank=3,
+                serp_page=0,
+            ),
+            AuditCompetitor(
+                id="competitor-good-b",
+                audit_id="audit-b",
+                url="https://good-b.example",
+                domain="good-b.example",
+                fetch_status="success",
+                score=89.0,
+                features={"semantic_similarity": 0.9, "technical_seo_score": 0.8, "word_count": 800, "text_length_chars": 5000},
+                serp_rank=4,
+                serp_page=0,
+            ),
+        ],
+        query_intent=None,
+        requested_top_n=2,
+    )
+
+    statuses = {item["domain"]: item["competitor_context_status"] for item in result["competitor_results"]}
+    assert statuses == {
+        "failed.example": "discarded",
+        "low.example": "discarded",
+        "good-a.example": "accepted",
+        "good-b.example": "accepted",
+    }
+    assert result["comparison_summary"]["accepted_competitors"] == 2
+    assert result["comparison_summary"]["discard_reasons"] == {
+        "bot_block_suspected": 1,
+        "score_below_minimum": 1,
+    }
+    assert result["comparison_summary"]["competitors_average_score"] == 87.5
+    assert result["user_features"]["serp_relative_context_count"] == 2

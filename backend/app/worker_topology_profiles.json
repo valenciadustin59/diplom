@@ -23,10 +23,19 @@
     {
       "name": "heavy_analysis",
       "workload_class": "heavy_analysis",
-      "description": "Snapshot-based heavy analyzers, semantic feature extraction and competitor ML analysis.",
+      "description": "Snapshot-based heavy analyzers and competitor ML analysis; semantic embedding work is isolated in semantic_cpu.",
       "recommended_concurrency": 2,
       "queues": [
         "audits.heavy_analysis"
+      ]
+    },
+    {
+      "name": "semantic_cpu",
+      "workload_class": "semantic_cpu",
+      "description": "Dedicated CPU-bound semantic embedding and RoSBERTa processing isolated from other heavy analyzers.",
+      "recommended_concurrency": 1,
+      "queues": [
+        "audits.semantic"
       ]
     },
     {

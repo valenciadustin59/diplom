@@ -2,7 +2,14 @@ from datetime import UTC, datetime, timedelta
 
 import pytest
 
-from app.celery_app import AUDIT_HEAVY_ANALYSIS_QUEUE, AUDIT_QUEUES, resolve_task_queue
+from app.celery_app import (
+    AUDIT_COMPETITOR_PAGES_QUEUE,
+    AUDIT_HEAVY_ANALYSIS_QUEUE,
+    AUDIT_QUEUES,
+    AUDIT_RECOMMENDATIONS_QUEUE,
+    AUDIT_SEMANTIC_QUEUE,
+    resolve_task_queue,
+)
 from app.config import Settings
 from app.db import Base
 from app.health import (
@@ -11,20 +18,29 @@ from app.health import (
     build_metrics_payload,
     build_queue_pressure_snapshots,
     build_readiness_payload,
+    check_celery_worker_health,
     check_database_health,
     check_serp_health,
     collect_broker_runtime_metrics,
     collect_database_runtime_metrics,
     collect_worker_runtime_metrics,
+    _reset_worker_runtime_observation_cache,
 )
 from app.ml.model import FEATURE_COLUMNS, save_model
 from app.ml.publish import build_artifact_metadata_path
 from app.model_status import build_model_status_payload
 from app.models import Audit, AuditCompetitor, AuditEvent
-from app.runtime_capacity import evaluate_new_audit_admission
+from app.runtime_capacity import evaluate_new_audit_admission, evaluate_queue_dispatch
 from sklearn.dummy import DummyRegressor
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
+
+
+@pytest.fixture(autouse=True)
+def reset_worker_runtime_observation_cache():
+    _reset_worker_runtime_observation_cache()
+    yield
+    _reset_worker_runtime_observation_cache()
 
 
 def test_health_endpoint_returns_legacy_ok_payload(client):
@@ -416,6 +432,104 @@ def test_build_readiness_payload_includes_expected_queues(monkeypatch: pytest.Mo
     assert payload["status"] == "ready"
     assert payload["orchestration"]["expected_queues"] == list(AUDIT_QUEUES)
     assert payload["checks"]["celery_workers"]["expected_queues"] == list(AUDIT_QUEUES)
+
+
+def test_check_celery_worker_health_accepts_split_semantic_workers(monkeypatch: pytest.MonkeyPatch):
+    semantic_queue_activity = {
+        "workers": ["semantic-a@test", "semantic-b@test"],
+        "worker_count": 2,
+        "estimated_concurrency": 2,
+        "active_tasks": 1,
+        "reserved_tasks": 0,
+        "scheduled_tasks": 0,
+        "inflight_tasks": 1,
+        "available_capacity_estimate": 1,
+    }
+    monkeypatch.setattr(
+        "app.health.collect_worker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "online_count": 6,
+            "workers": {
+                "pipeline@test": {"queues": ["audits.pipeline"]},
+                "network@test": {"queues": ["audits.fetch", "audits.competitors", "audits.competitor_pages"]},
+                "heavy@test": {"queues": ["audits.heavy_analysis"]},
+                "semantic-a@test": {"queues": [AUDIT_SEMANTIC_QUEUE]},
+                "semantic-b@test": {"queues": [AUDIT_SEMANTIC_QUEUE]},
+                "cpu@test": {"queues": ["audits.features", "audits.scoring", "audits.recommendations", "audits.finalize"]},
+            },
+            "expected_queues": list(AUDIT_QUEUES),
+            "missing_queues": [],
+            "queue_activity": {AUDIT_SEMANTIC_QUEUE: semantic_queue_activity},
+            "topology": {
+                "status": "ok",
+                "profiles": {"semantic_cpu": {"worker_count": 2, "missing_queues": []}},
+                "missing_queues": [],
+                "invalid_workers": [],
+            },
+            "topology_contract": {"expected_queues": list(AUDIT_QUEUES)},
+        },
+    )
+
+    health = check_celery_worker_health(Settings())
+
+    assert health.status == "ok"
+    assert health.details["worker_count"] == 6
+    assert health.details["missing_queues"] == []
+    assert health.details["queue_activity"][AUDIT_SEMANTIC_QUEUE]["worker_count"] == 2
+    assert health.details["queue_activity"][AUDIT_SEMANTIC_QUEUE]["estimated_concurrency"] == 2
+
+
+def test_check_celery_worker_health_accepts_recent_seen_workers_during_transient_gap(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    monkeypatch.setattr(
+        "app.health.collect_worker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "inspect_status": "partial_recent_grace",
+            "inspect_transient_gap": True,
+            "online_count": 3,
+            "effective_online_count": 5,
+            "recent_worker_count": 2,
+            "workers": {
+                "pipeline@test": {"queues": ["audits.pipeline"]},
+                "heavy@test": {"queues": [AUDIT_HEAVY_ANALYSIS_QUEUE]},
+                "semantic@test": {"queues": [AUDIT_SEMANTIC_QUEUE]},
+            },
+            "recent_workers": [
+                {"worker": "network@test", "queues": ["audits.fetch", "audits.competitors", AUDIT_COMPETITOR_PAGES_QUEUE]},
+                {"worker": "cpu@test", "queues": ["audits.features", "audits.scoring", AUDIT_RECOMMENDATIONS_QUEUE, "audits.finalize"]},
+            ],
+            "expected_queues": list(AUDIT_QUEUES),
+            "missing_queues": [],
+            "inspect_missing_queues": ["audits.fetch", AUDIT_RECOMMENDATIONS_QUEUE],
+            "queue_activity": {
+                AUDIT_RECOMMENDATIONS_QUEUE: {
+                    "workers": ["cpu@test"],
+                    "worker_count": 1,
+                    "observed_worker_count": 0,
+                    "recent_worker_count": 1,
+                }
+            },
+            "topology": {
+                "status": "ok",
+                "profiles": {},
+                "missing_queues": [],
+                "invalid_workers": [],
+            },
+            "topology_contract": {"expected_queues": list(AUDIT_QUEUES)},
+            "worker_liveness_policy": {"recently_seen_grace_seconds": 300.0},
+        },
+    )
+
+    health = check_celery_worker_health(Settings())
+
+    assert health.status == "ok"
+    assert health.details["worker_count"] == 3
+    assert health.details["effective_worker_count"] == 5
+    assert health.details["inspect_transient_gap"] is True
+    assert health.details["missing_queues"] == []
 
 
 def test_build_readiness_payload_skips_serp_when_provider_is_not_searxng(monkeypatch: pytest.MonkeyPatch):
@@ -831,6 +945,88 @@ def test_collect_worker_runtime_metrics_aggregates_inspect_payload(monkeypatch: 
     assert payload["queue_activity"][resolve_task_queue("app.process_audit_finalize")]["scheduled_tasks"] == 1
 
 
+def test_collect_worker_runtime_metrics_uses_recent_seen_workers_during_transient_inspect_gap(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    class FullInspect:
+        def stats(self):
+            return {
+                "pipeline@test": {"pid": 1001, "pool": {"max-concurrency": 1}},
+                "network@test": {"pid": 1002, "pool": {"max-concurrency": 4}},
+                "heavy@test": {"pid": 1003, "pool": {"max-concurrency": 2}},
+                "semantic@test": {"pid": 1004, "pool": {"max-concurrency": 1}},
+                "cpu@test": {"pid": 1005, "pool": {"max-concurrency": 2}},
+            }
+
+        def active(self):
+            return {worker_name: [] for worker_name in self.stats()}
+
+        def reserved(self):
+            return {}
+
+        def scheduled(self):
+            return {}
+
+        def active_queues(self):
+            return {
+                "pipeline@test": [{"name": "audits.pipeline"}],
+                "network@test": [
+                    {"name": "audits.fetch"},
+                    {"name": "audits.competitors"},
+                    {"name": AUDIT_COMPETITOR_PAGES_QUEUE},
+                ],
+                "heavy@test": [{"name": AUDIT_HEAVY_ANALYSIS_QUEUE}],
+                "semantic@test": [{"name": AUDIT_SEMANTIC_QUEUE}],
+                "cpu@test": [
+                    {"name": "audits.features"},
+                    {"name": "audits.scoring"},
+                    {"name": AUDIT_RECOMMENDATIONS_QUEUE},
+                    {"name": "audits.finalize"},
+                ],
+            }
+
+    class PartialInspect(FullInspect):
+        def stats(self):
+            return {
+                "pipeline@test": {"pid": 1001, "pool": {"max-concurrency": 1}},
+                "heavy@test": {"pid": 1003, "pool": {"max-concurrency": 2}},
+                "semantic@test": {"pid": 1004, "pool": {"max-concurrency": 1}},
+            }
+
+        def active_queues(self):
+            return {
+                "pipeline@test": [{"name": "audits.pipeline"}],
+                "heavy@test": [{"name": AUDIT_HEAVY_ANALYSIS_QUEUE}],
+                "semantic@test": [{"name": AUDIT_SEMANTIC_QUEUE}],
+            }
+
+    inspections = [FullInspect(), PartialInspect()]
+
+    class FakeControl:
+        def inspect(self, timeout: float):
+            assert timeout == 0.5
+            return inspections.pop(0)
+
+    monkeypatch.setattr("app.health.celery_app.control", FakeControl())
+
+    first_payload = collect_worker_runtime_metrics(Settings())
+    second_payload = collect_worker_runtime_metrics(Settings())
+
+    assert first_payload["status"] == "ok"
+    assert second_payload["status"] == "ok"
+    assert second_payload["inspect_status"] == "partial_recent_grace"
+    assert second_payload["inspect_transient_gap"] is True
+    assert second_payload["online_count"] == 3
+    assert second_payload["effective_online_count"] == 5
+    assert second_payload["recent_worker_count"] == 2
+    assert second_payload["missing_queues"] == []
+    assert AUDIT_COMPETITOR_PAGES_QUEUE in second_payload["inspect_missing_queues"]
+    assert AUDIT_RECOMMENDATIONS_QUEUE in second_payload["inspect_missing_queues"]
+    assert second_payload["queue_activity"][AUDIT_COMPETITOR_PAGES_QUEUE]["worker_presence"] == "recent"
+    assert second_payload["queue_activity"][AUDIT_COMPETITOR_PAGES_QUEUE]["recent_worker_count"] == 1
+    assert second_payload["queue_activity"][AUDIT_RECOMMENDATIONS_QUEUE]["worker_presence"] == "recent"
+
+
 def test_build_queue_pressure_snapshots_marks_backlogged_and_stuck_queues():
     broker_metrics = {
         "status": "ok",
@@ -872,6 +1068,40 @@ def test_build_queue_pressure_snapshots_marks_backlogged_and_stuck_queues():
     assert AUDIT_QUEUES[1] in payload["stuck_queues"]
     assert payload["queues"][AUDIT_QUEUES[0]]["pressure_status"] == "backlogged"
     assert payload["queues"][AUDIT_QUEUES[1]]["pressure_status"] == "stuck"
+
+
+def test_build_queue_pressure_snapshots_treats_inflight_task_as_drain_activity_when_inspect_owner_is_missing():
+    broker_metrics = {
+        "status": "ok",
+        "queue_depths": {
+            AUDIT_COMPETITOR_PAGES_QUEUE: 2,
+        },
+    }
+    worker_metrics = {
+        "status": "ok",
+        "queue_activity": {
+            AUDIT_COMPETITOR_PAGES_QUEUE: {
+                "workers": [],
+                "worker_count": 0,
+                "observed_worker_count": 0,
+                "recent_worker_count": 0,
+                "estimated_concurrency": 0,
+                "active_tasks": 1,
+                "reserved_tasks": 0,
+                "scheduled_tasks": 0,
+                "inflight_tasks": 1,
+                "available_capacity_estimate": 0,
+            },
+        },
+    }
+
+    payload = build_queue_pressure_snapshots(broker_metrics, worker_metrics)
+
+    assert payload["status"] == "ok"
+    assert payload["stuck_queues"] == []
+    assert payload["queues"][AUDIT_COMPETITOR_PAGES_QUEUE]["pressure_status"] == "draining"
+    assert "no_workers_serving_queue" not in payload["queues"][AUDIT_COMPETITOR_PAGES_QUEUE]["reasons"]
+    assert "inflight_tasks_observed_despite_missing_queue_owner" in payload["queues"][AUDIT_COMPETITOR_PAGES_QUEUE]["reasons"]
 
 
 def test_build_queue_pressure_snapshots_marks_small_fresh_queue_as_waiting():
@@ -1018,3 +1248,94 @@ def test_evaluate_new_audit_admission_rejects_when_heavy_analysis_queue_is_backl
     assert decision.reason == "heavy_analysis_queue_capacity_exhausted"
     assert decision.queue_name == AUDIT_HEAVY_ANALYSIS_QUEUE
     assert decision.details["pressure_status"] == "backlogged"
+
+
+def test_evaluate_new_audit_admission_rejects_when_semantic_queue_is_backlogged(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_broker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "broker_url": runtime_settings.celery_broker_url,
+            "queue_depths": {AUDIT_SEMANTIC_QUEUE: 4},
+            "total_depth": 4,
+        },
+    )
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_worker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "online_count": 1,
+            "workers": {"semantic@test": {"queues": [AUDIT_SEMANTIC_QUEUE]}},
+            "queue_activity": {
+                AUDIT_SEMANTIC_QUEUE: {
+                    "workers": ["semantic@test"],
+                    "worker_count": 1,
+                    "estimated_concurrency": 1,
+                    "active_tasks": 0,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "inflight_tasks": 0,
+                    "available_capacity_estimate": 1,
+                }
+            },
+        },
+    )
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_database_runtime_metrics",
+        lambda runtime_settings: {"status": "ok", "audits": {}, "competitors": {}},
+    )
+
+    decision = evaluate_new_audit_admission(Settings())
+
+    assert decision.action == "reject"
+    assert decision.reason == "semantic_queue_capacity_exhausted"
+    assert decision.queue_name == AUDIT_SEMANTIC_QUEUE
+    assert decision.details["pressure_status"] == "backlogged"
+
+
+def test_evaluate_queue_dispatch_allows_recently_seen_worker_during_transient_inspect_gap(
+    monkeypatch: pytest.MonkeyPatch,
+):
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_broker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "broker_url": runtime_settings.celery_broker_url,
+            "queue_depths": {AUDIT_RECOMMENDATIONS_QUEUE: 1},
+            "total_depth": 1,
+        },
+    )
+    monkeypatch.setattr(
+        "app.runtime_capacity.collect_worker_runtime_metrics",
+        lambda runtime_settings: {
+            "status": "ok",
+            "inspect_status": "partial_recent_grace",
+            "online_count": 3,
+            "effective_online_count": 5,
+            "workers": {},
+            "queue_activity": {
+                AUDIT_RECOMMENDATIONS_QUEUE: {
+                    "workers": ["cpu@test"],
+                    "recent_workers": ["cpu@test"],
+                    "worker_count": 1,
+                    "observed_worker_count": 0,
+                    "recent_worker_count": 1,
+                    "estimated_concurrency": 2,
+                    "active_tasks": 0,
+                    "reserved_tasks": 0,
+                    "scheduled_tasks": 0,
+                    "inflight_tasks": 0,
+                    "available_capacity_estimate": 2,
+                    "worker_presence": "recent",
+                }
+            },
+        },
+    )
+
+    decision = evaluate_queue_dispatch(AUDIT_RECOMMENDATIONS_QUEUE, Settings())
+
+    assert decision.action == "allow"
+    assert decision.reason == "queue_capacity_available"
+    assert decision.details["pressure_status"] == "waiting"

@@ -1,0 +1,1453 @@
+{
+  "generated_at": "2026-05-05T16:04:37Z",
+  "task": "detailed_rosberta_vs_current_minilm_query_page_relevance_comparison",
+  "dataset": {
+    "path": "backend\\data\\dataset_versions\\dataset-v7-final\\dataset.query-core.csv",
+    "rows": 4876,
+    "queries": 500,
+    "bands": {
+      "strong_match": 3611,
+      "unusable": 234,
+      "probable_mismatch": 238,
+      "partial_match": 311,
+      "full_mismatch": 217,
+      "weak_match": 73,
+      "hard_negative_cap": 192
+    },
+    "hard_negative_rows": 1000,
+    "max_text_chars": 3000,
+    "max_query_chars": 300
+  },
+  "models": [
+    {
+      "key": "current_minilm",
+      "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "role": "current_runtime_semantic_baseline",
+      "query_prompt": null,
+      "doc_prompt": null,
+      "load_seconds": 4.86,
+      "encode_seconds": 141.707,
+      "rows_evaluated": 4876,
+      "unique_queries": 500,
+      "strict_binary": {
+        "positive_rows": 3609,
+        "negative_rows": 1221,
+        "auc": 0.944602,
+        "best_threshold": {
+          "threshold": 0.328532,
+          "balanced_accuracy": 0.876954,
+          "recall_positive": 0.880853,
+          "recall_negative": 0.873055,
+          "precision_positive": 0.953509,
+          "tp": 3179,
+          "fp": 155,
+          "tn": 1066,
+          "fn": 430
+        }
+      },
+      "hard_negative_binary": {
+        "positive_rows": 3609,
+        "hard_negative_rows": 1000,
+        "auc": 0.955988,
+        "best_threshold": {
+          "threshold": 0.330762,
+          "balanced_accuracy": 0.886041,
+          "recall_positive": 0.878083,
+          "recall_negative": 0.894,
+          "precision_positive": 0.967634,
+          "tp": 3169,
+          "fp": 106,
+          "tn": 894,
+          "fn": 440
+        }
+      },
+      "query_level": {
+        "eligible_queries": 499,
+        "positive_top1_rate": 0.97996,
+        "pairwise_positive_vs_negative_accuracy": 0.950947,
+        "pair_count": 8603,
+        "mean_positive_vs_negative_margin": 0.347863,
+        "median_positive_vs_negative_margin": 0.357962
+      },
+      "correlations": {
+        "spearman_vs_target_score": 0.667458,
+        "spearman_vs_query_relevance_score": 0.710988
+      },
+      "similarity_by_band": {
+        "full_mismatch": {
+          "count": 217,
+          "mean": 0.119466,
+          "median": 0.11382,
+          "p10": 0.043993,
+          "p90": 0.207079
+        },
+        "hard_negative_cap": {
+          "count": 192,
+          "mean": 0.244011,
+          "median": 0.23888,
+          "p10": 0.087621,
+          "p90": 0.404628
+        },
+        "partial_match": {
+          "count": 311,
+          "mean": 0.206358,
+          "median": 0.179337,
+          "p10": 0.060918,
+          "p90": 0.375584
+        },
+        "probable_mismatch": {
+          "count": 238,
+          "mean": 0.206266,
+          "median": 0.211631,
+          "p10": 0.068172,
+          "p90": 0.337506
+        },
+        "strong_match": {
+          "count": 3611,
+          "mean": 0.531244,
+          "median": 0.548383,
+          "p10": 0.310486,
+          "p90": 0.724515
+        },
+        "unusable": {
+          "count": 234,
+          "mean": 0.169987,
+          "median": 0.115395,
+          "p10": -0.033362,
+          "p90": 0.500941
+        },
+        "weak_match": {
+          "count": 73,
+          "mean": 0.178338,
+          "median": 0.152428,
+          "p10": 0.028431,
+          "p90": 0.381141
+        }
+      },
+      "similarity_by_hard_negative": {
+        "hard_negative": {
+          "count": 1000,
+          "mean": 0.179483,
+          "median": 0.16561
+        },
+        "regular": {
+          "count": 3876,
+          "mean": 0.510237,
+          "median": 0.536075
+        }
+      },
+      "risk_queries": [
+        {
+          "query": "ремонт кровли консультация",
+          "positive_count": 8,
+          "negative_count": 2,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "oe77.ru",
+          "top_similarity_url": "https://oe77.ru/",
+          "top_similarity_score": 0.394422,
+          "pair_accuracy": 0.4375,
+          "mean_margin": -0.078132
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "positive_count": 2,
+          "negative_count": 7,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "traktat.com",
+          "top_similarity_url": "https://www.traktat.com/notarialnye-",
+          "top_similarity_score": 0.565318,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.002894
+        },
+        {
+          "query": "фрезеровка на чпу с гарантией",
+          "positive_count": 10,
+          "negative_count": 2,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "101siding.ru",
+          "top_similarity_url": "https://101siding.ru/stati/kak-pravilno-uteplit-fasad-chastnogo-doma/",
+          "top_similarity_score": 0.433434,
+          "pair_accuracy": 0.5,
+          "mean_margin": 0.021148
+        },
+        {
+          "query": "центр реабилитации консультация",
+          "positive_count": 9,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "med-amko.ru",
+          "top_similarity_url": "https://med-amko.ru/services/reabilitacija/",
+          "top_similarity_score": 0.800497,
+          "pair_accuracy": 0.62963,
+          "mean_margin": 0.064272
+        },
+        {
+          "query": "порошковая покраска металла для бизнеса",
+          "positive_count": 9,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "metallera.ru",
+          "top_similarity_url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "top_similarity_score": 0.701914,
+          "pair_accuracy": 0.592593,
+          "mean_margin": 0.076899
+        },
+        {
+          "query": "лучшие юридический перевод документов",
+          "positive_count": 9,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "itrex.ru",
+          "top_similarity_url": "https://itrex.ru/yuridicheskie-perevody",
+          "top_similarity_score": 0.803248,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.1958
+        },
+        {
+          "query": "лучшие частная школа",
+          "positive_count": 6,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "klerk.ru",
+          "top_similarity_url": "https://www.klerk.ru/user/2159786/664964/",
+          "top_similarity_score": 0.644045,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.290158
+        },
+        {
+          "query": "лучшие офтальмологическая клиника",
+          "positive_count": 7,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "dzen.ru",
+          "top_similarity_url": "https://dzen.ru/a/Y7Cnnqq_PRqaQq2n",
+          "top_similarity_score": 0.659205,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.296127
+        },
+        {
+          "query": "лучшие порошковая покраска металла",
+          "positive_count": 9,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "metallera.ru",
+          "top_similarity_url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "top_similarity_score": 0.801892,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.315339
+        },
+        {
+          "query": "офтальмологическая клиника под ключ",
+          "positive_count": 6,
+          "negative_count": 2,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "afrodita-perm.ru",
+          "top_similarity_url": "https://www.afrodita-perm.ru/",
+          "top_similarity_score": 0.663124,
+          "pair_accuracy": 1.0,
+          "mean_margin": 0.424371
+        },
+        {
+          "query": "фрезеровка на чпу отзывы",
+          "positive_count": 4,
+          "negative_count": 2,
+          "top_similarity_label": "positive",
+          "top_similarity_domain": "profifrez.ru",
+          "top_similarity_url": "https://profifrez.ru/",
+          "top_similarity_score": 0.35055,
+          "pair_accuracy": 0.375,
+          "mean_margin": -0.047567
+        },
+        {
+          "query": "стеллажи для склада отзывы",
+          "positive_count": 6,
+          "negative_count": 3,
+          "top_similarity_label": "positive",
+          "top_similarity_domain": "reviews.yandex.ru",
+          "top_similarity_url": "https://reviews.yandex.ru/shop/1001stillage.ru",
+          "top_similarity_score": 0.46192,
+          "pair_accuracy": 0.555556,
+          "mean_margin": 0.003033
+        }
+      ],
+      "false_positive_risks": [
+        {
+          "query": "лучшие юридический перевод документов",
+          "domain": "itrex.ru",
+          "url": "https://itrex.ru/yuridicheskie-perevody",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.0497,
+          "query_relevance_score": 0.6323,
+          "similarity": 0.803248
+        },
+        {
+          "query": "лучшие порошковая покраска металла",
+          "domain": "metallera.ru",
+          "url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 3.4446,
+          "query_relevance_score": 0.5944,
+          "similarity": 0.801892
+        },
+        {
+          "query": "центр реабилитации консультация",
+          "domain": "med-amko.ru",
+          "url": "https://med-amko.ru/services/reabilitacija/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.4157,
+          "query_relevance_score": 0.5575,
+          "similarity": 0.800497
+        },
+        {
+          "query": "как выбрать ветеринарная клиника",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/XfZLxz1faQCx1scs",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 7.2478,
+          "query_relevance_score": 0.9423,
+          "similarity": 0.737864
+        },
+        {
+          "query": "как выбрать частный детский сад",
+          "domain": "wibes.ru",
+          "url": "https://wibes.ru/article/chastniy-detskiy-sad--skolko-stoit-i-kak-vybrat-2792790",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 7.0482,
+          "query_relevance_score": 0.9385,
+          "similarity": 0.720297
+        },
+        {
+          "query": "порошковая покраска металла для бизнеса",
+          "domain": "metallera.ru",
+          "url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.2288,
+          "query_relevance_score": 0.636,
+          "similarity": 0.701914
+        },
+        {
+          "query": "частная школа Екатеринбург",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Z7Dfe-ujqzCD1ay9",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.0952,
+          "query_relevance_score": 0.8973,
+          "similarity": 0.691916
+        },
+        {
+          "query": "лучшие офтальмологическая клиника",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Y7Cnnqq_PRqaQq2n",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.7586,
+          "query_relevance_score": 0.78,
+          "similarity": 0.659205
+        },
+        {
+          "query": "логопед для ребенка консультация",
+          "domain": "logoped.online",
+          "url": "https://logoped.online/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.9437,
+          "query_relevance_score": 0.6,
+          "similarity": 0.656345
+        },
+        {
+          "query": "лучшие частная школа",
+          "domain": "klerk.ru",
+          "url": "https://www.klerk.ru/user/2159786/664964/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.3561,
+          "query_relevance_score": 0.8432,
+          "similarity": 0.644045
+        },
+        {
+          "query": "груминг собак отзывы",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/aOfFtKckJhUb63CQ",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.9406,
+          "query_relevance_score": 0.8693,
+          "similarity": 0.621678
+        },
+        {
+          "query": "строительство бассейна отзывы",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/video/watch/68ad3fb3bb5c391cbab5db03",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.9668,
+          "query_relevance_score": 0.8779,
+          "similarity": 0.61556
+        },
+        {
+          "query": "как выбрать порошковая покраска металла",
+          "domain": "metallera.ru",
+          "url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.2304,
+          "query_relevance_score": 0.7766,
+          "similarity": 0.60503
+        },
+        {
+          "query": "лучшие налоговый консультант",
+          "domain": "tenchat.ru",
+          "url": "https://tenchat.ru/media/3520843-top13-luchshiye-nalogovyye-konsultanty-v-moskve-reyting-2025",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.8628,
+          "query_relevance_score": 0.9078,
+          "similarity": 0.580829
+        },
+        {
+          "query": "лучшие частный детский сад",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Z7NgwJHXMRuX2Z7Y",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.363,
+          "query_relevance_score": 0.8819,
+          "similarity": 0.565326
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "domain": "traktat.com",
+          "url": "https://www.traktat.com/notarialnye-",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.2918,
+          "query_relevance_score": 0.8399,
+          "similarity": 0.565318
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "domain": "traktat.com",
+          "url": "https://www.traktat.com/yuridiche",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.0694,
+          "query_relevance_score": 0.8399,
+          "similarity": 0.565318
+        },
+        {
+          "query": "свадебный фотограф консультация",
+          "domain": "mywed.com",
+          "url": "https://mywed.com/ru/photographer/katyazhevak/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.3791,
+          "query_relevance_score": 0.6458,
+          "similarity": 0.560435
+        },
+        {
+          "query": "банкетный зал для бизнеса",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Zmok81mkLh5j5_fx",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.1642,
+          "query_relevance_score": 0.8563,
+          "similarity": 0.551319
+        },
+        {
+          "query": "груминг собак рядом",
+          "domain": "vk.com",
+          "url": "https://vk.com/ryadomgroom",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.0412,
+          "query_relevance_score": 0.8453,
+          "similarity": 0.546797
+        },
+        {
+          "query": "лучшие подбор персонала",
+          "domain": "main.zigmund.online",
+          "url": "https://main.zigmund.online/corporate/",
+          "band": "hard_negative_cap",
+          "hard_negative": true,
+          "target_score": 35.0,
+          "query_relevance_score": 0.7156,
+          "similarity": 0.543752
+        },
+        {
+          "query": "фотостудия с гарантией",
+          "domain": "wedgo.ru",
+          "url": "https://wedgo.ru/fotograf-v-amsterdame.html",
+          "band": "partial_match",
+          "hard_negative": true,
+          "target_score": 27.7969,
+          "query_relevance_score": 0.3213,
+          "similarity": 0.528883
+        },
+        {
+          "query": "логопед для ребенка цена",
+          "domain": "logoped.online",
+          "url": "https://logoped.online/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.8332,
+          "query_relevance_score": 0.5712,
+          "similarity": 0.525411
+        },
+        {
+          "query": "свадебный фотограф Москва",
+          "domain": "ecootdelka.ru",
+          "url": "https://ecootdelka.ru/fasady/uteplenie",
+          "band": "hard_negative_cap",
+          "hard_negative": true,
+          "target_score": 35.0,
+          "query_relevance_score": 0.38,
+          "similarity": 0.521434
+        },
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "domain": "perevod.one",
+          "url": "https://perevod.one/written-tran",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.5856,
+          "query_relevance_score": 0.8289,
+          "similarity": 0.5156
+        }
+      ],
+      "false_negative_risks": [
+        {
+          "query": "ремонт кровли с гарантией",
+          "domain": "parketspektr.ru",
+          "url": "https://parketspektr.ru/garantiynye-sroki-kapitalnyh-remontov-krovli/",
+          "band": "strong_match",
+          "target_score": 57.1476,
+          "query_relevance_score": 0.7538,
+          "similarity": 0.036815
+        },
+        {
+          "query": "тепловой насос цена",
+          "domain": "market.yandex.ru",
+          "url": "https://market.yandex.ru/category/teplovyye-nasosy-dlya-otopleniya-doma-i-gvs",
+          "band": "strong_match",
+          "target_score": 59.2483,
+          "query_relevance_score": 0.7675,
+          "similarity": 0.047376
+        },
+        {
+          "query": "тепловой насос рядом",
+          "domain": "market.yandex.ru",
+          "url": "https://market.yandex.ru/category/teplovyye-nasosy-dlya-otopleniya-doma-i-gvs",
+          "band": "strong_match",
+          "target_score": 49.9034,
+          "query_relevance_score": 0.561,
+          "similarity": 0.051498
+        },
+        {
+          "query": "как выбрать груминг собак",
+          "domain": "market.yandex.ru",
+          "url": "https://market.yandex.ru/journal/grumingnabor-dlya-uhoda-za-sherstyu-sobak-top12-luchshih-2025-goda",
+          "band": "strong_match",
+          "target_score": 62.5648,
+          "query_relevance_score": 0.7927,
+          "similarity": 0.057894
+        },
+        {
+          "query": "ремонт кровли под ключ",
+          "domain": "stroy-garant-24.ru",
+          "url": "https://stroy-garant-24.ru/",
+          "band": "strong_match",
+          "target_score": 55.8094,
+          "query_relevance_score": 0.7163,
+          "similarity": 0.067393
+        },
+        {
+          "query": "порошковая покраска металла рядом",
+          "domain": "promexcut.ru",
+          "url": "https://promexcut.ru/poroshkovaya-okraska-metalla",
+          "band": "strong_match",
+          "target_score": 52.4129,
+          "query_relevance_score": 0.6225,
+          "similarity": 0.073648
+        },
+        {
+          "query": "утепление фасада под ключ",
+          "domain": "24stroydom.ru",
+          "url": "https://24stroydom.ru/service/fasadnye-raboty/",
+          "band": "strong_match",
+          "target_score": 58.581,
+          "query_relevance_score": 0.7713,
+          "similarity": 0.079719
+        },
+        {
+          "query": "порошковая покраска металла консультация",
+          "domain": "promexcut.ru",
+          "url": "https://promexcut.ru/poroshkovaya-okraska-metalla",
+          "band": "strong_match",
+          "target_score": 52.4181,
+          "query_relevance_score": 0.6225,
+          "similarity": 0.084468
+        },
+        {
+          "query": "аудит информационной безопасности отзывы",
+          "domain": "litres.ru",
+          "url": "https://www.litres.ru/book/vladimir-averchenkov/audit-informacionnoy-bezopasnosti-uchebnoe-posobie-3260875/otzivi/",
+          "band": "strong_match",
+          "target_score": 59.6741,
+          "query_relevance_score": 0.8002,
+          "similarity": 0.091968
+        },
+        {
+          "query": "порошковая покраска металла для бизнеса",
+          "domain": "promexcut.ru",
+          "url": "https://promexcut.ru/poroshkovaya-okraska-metalla",
+          "band": "strong_match",
+          "target_score": 48.6713,
+          "query_relevance_score": 0.6435,
+          "similarity": 0.097305
+        },
+        {
+          "query": "лучшие строительство бани",
+          "domain": "shop-project.ru",
+          "url": "https://www.shop-project.ru/catalog/proekty-ban/",
+          "band": "strong_match",
+          "target_score": 55.4887,
+          "query_relevance_score": 0.6739,
+          "similarity": 0.097354
+        },
+        {
+          "query": "тепловой насос с гарантией",
+          "domain": "haier.1clim.ru",
+          "url": "https://haier.1clim.ru/catalog/teplovye_nasosy/",
+          "band": "strong_match",
+          "target_score": 52.051,
+          "query_relevance_score": 0.6094,
+          "similarity": 0.100028
+        },
+        {
+          "query": "сиделка для пожилого для бизнеса",
+          "domain": "dobroyou.com",
+          "url": "https://dobroyou.com/sidelka-kompanionka",
+          "band": "strong_match",
+          "target_score": 48.737,
+          "query_relevance_score": 0.5775,
+          "similarity": 0.100718
+        },
+        {
+          "query": "порошковая покраска металла цена",
+          "domain": "promexcut.ru",
+          "url": "https://promexcut.ru/poroshkovaya-okraska-metalla",
+          "band": "strong_match",
+          "target_score": 60.2068,
+          "query_relevance_score": 0.8024,
+          "similarity": 0.101774
+        },
+        {
+          "query": "ремонт кровли отзывы",
+          "domain": "aystroika.info",
+          "url": "https://aystroika.info/novosti/remont-krovli-kryshi-chastnogo-krovelnye-raboty-otzyvy",
+          "band": "strong_match",
+          "target_score": 51.818,
+          "query_relevance_score": 0.78,
+          "similarity": 0.110386
+        },
+        {
+          "query": "лучшие груминг собак",
+          "domain": "market.yandex.ru",
+          "url": "https://market.yandex.ru/journal/grumingnabor-dlya-uhoda-za-sherstyu-sobak-top12-luchshih-2025-goda",
+          "band": "strong_match",
+          "target_score": 62.7485,
+          "query_relevance_score": 0.8044,
+          "similarity": 0.111071
+        },
+        {
+          "query": "строительство бани для бизнеса",
+          "domain": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=h9KDPOzR_9M",
+          "band": "strong_match",
+          "target_score": 49.3445,
+          "query_relevance_score": 0.5807,
+          "similarity": 0.11704
+        },
+        {
+          "query": "спил деревьев цена",
+          "domain": "dendroplan.ru",
+          "url": "https://www.dendroplan.ru/calculator/",
+          "band": "strong_match",
+          "target_score": 51.5895,
+          "query_relevance_score": 0.5665,
+          "similarity": 0.12048
+        },
+        {
+          "query": "порошковая покраска металла под ключ",
+          "domain": "promexcut.ru",
+          "url": "https://promexcut.ru/poroshkovaya-okraska-metalla",
+          "band": "strong_match",
+          "target_score": 48.4109,
+          "query_relevance_score": 0.528,
+          "similarity": 0.120749
+        },
+        {
+          "query": "ремонт кровли с гарантией",
+          "domain": "utk-group.ru",
+          "url": "https://utk-group.ru/garantiya-remont-krovli",
+          "band": "strong_match",
+          "target_score": 55.9459,
+          "query_relevance_score": 0.735,
+          "similarity": 0.121437
+        },
+        {
+          "query": "груминг собак с гарантией",
+          "domain": "market.yandex.ru",
+          "url": "https://market.yandex.ru/journal/grumingnabor-dlya-uhoda-za-sherstyu-sobak-top12-luchshih-2025-goda",
+          "band": "strong_match",
+          "target_score": 54.0108,
+          "query_relevance_score": 0.6281,
+          "similarity": 0.127607
+        },
+        {
+          "query": "лучшие фрезеровка на чпу",
+          "domain": "vsyametalloobrabotka.ru",
+          "url": "https://vsyametalloobrabotka.ru/articles/frezernaya_obrabotka_chpu/",
+          "band": "strong_match",
+          "target_score": 48.9855,
+          "query_relevance_score": 0.6154,
+          "similarity": 0.129789
+        },
+        {
+          "query": "строительство бассейна отзывы",
+          "domain": "profbass.ru",
+          "url": "https://profbass.ru/reviews",
+          "band": "strong_match",
+          "target_score": 49.1088,
+          "query_relevance_score": 0.7619,
+          "similarity": 0.13349
+        },
+        {
+          "query": "фрезеровка на чпу рядом",
+          "domain": "vsyametalloobrabotka.ru",
+          "url": "https://vsyametalloobrabotka.ru/articles/frezernaya_obrabotka_chpu/",
+          "band": "strong_match",
+          "target_score": 45.2061,
+          "query_relevance_score": 0.6163,
+          "similarity": 0.133571
+        },
+        {
+          "query": "ремонт кровли консультация",
+          "domain": "alexprom.ru",
+          "url": "https://alexprom.ru/services/krovelnye-raboty/remont-krovli/",
+          "band": "strong_match",
+          "target_score": 55.1472,
+          "query_relevance_score": 0.7625,
+          "similarity": 0.133589
+        }
+      ]
+    },
+    {
+      "key": "ru_en_rosberta",
+      "model_name": "ai-forever/ru-en-RoSBERTa",
+      "role": "candidate_ru_focused_embedding",
+      "query_prompt": "search_query",
+      "doc_prompt": "search_document",
+      "load_seconds": 4.487,
+      "encode_seconds": 6391.566,
+      "rows_evaluated": 4876,
+      "unique_queries": 500,
+      "strict_binary": {
+        "positive_rows": 3609,
+        "negative_rows": 1221,
+        "auc": 0.977467,
+        "best_threshold": {
+          "threshold": 0.537203,
+          "balanced_accuracy": 0.955867,
+          "recall_positive": 0.975617,
+          "recall_negative": 0.936118,
+          "precision_positive": 0.978327,
+          "tp": 3521,
+          "fp": 78,
+          "tn": 1143,
+          "fn": 88
+        }
+      },
+      "hard_negative_binary": {
+        "positive_rows": 3609,
+        "hard_negative_rows": 1000,
+        "auc": 0.995472,
+        "best_threshold": {
+          "threshold": 0.549543,
+          "balanced_accuracy": 0.972182,
+          "recall_positive": 0.965364,
+          "recall_negative": 0.979,
+          "precision_positive": 0.994009,
+          "tp": 3484,
+          "fp": 21,
+          "tn": 979,
+          "fn": 125
+        }
+      },
+      "query_level": {
+        "eligible_queries": 499,
+        "positive_top1_rate": 0.985972,
+        "pairwise_positive_vs_negative_accuracy": 0.979774,
+        "pair_count": 8603,
+        "mean_positive_vs_negative_margin": 0.258361,
+        "median_positive_vs_negative_margin": 0.266183
+      },
+      "correlations": {
+        "spearman_vs_target_score": 0.614999,
+        "spearman_vs_query_relevance_score": 0.691252
+      },
+      "similarity_by_band": {
+        "full_mismatch": {
+          "count": 217,
+          "mean": 0.392844,
+          "median": 0.394558,
+          "p10": 0.330458,
+          "p90": 0.451613
+        },
+        "hard_negative_cap": {
+          "count": 192,
+          "mean": 0.459687,
+          "median": 0.454056,
+          "p10": 0.382021,
+          "p90": 0.537103
+        },
+        "partial_match": {
+          "count": 311,
+          "mean": 0.440035,
+          "median": 0.425798,
+          "p10": 0.352235,
+          "p90": 0.54964
+        },
+        "probable_mismatch": {
+          "count": 238,
+          "mean": 0.418257,
+          "median": 0.414736,
+          "p10": 0.34985,
+          "p90": 0.48375
+        },
+        "strong_match": {
+          "count": 3611,
+          "mean": 0.679783,
+          "median": 0.68167,
+          "p10": 0.587872,
+          "p90": 0.767796
+        },
+        "unusable": {
+          "count": 234,
+          "mean": 0.417918,
+          "median": 0.378138,
+          "p10": 0.279161,
+          "p90": 0.674252
+        },
+        "weak_match": {
+          "count": 73,
+          "mean": 0.421058,
+          "median": 0.413759,
+          "p10": 0.359449,
+          "p90": 0.489591
+        }
+      },
+      "similarity_by_hard_negative": {
+        "hard_negative": {
+          "count": 1000,
+          "mean": 0.419366,
+          "median": 0.415787
+        },
+        "regular": {
+          "count": 3876,
+          "mean": 0.664026,
+          "median": 0.676499
+        }
+      },
+      "risk_queries": [
+        {
+          "query": "юридический перевод документов для бизнеса",
+          "positive_count": 2,
+          "negative_count": 7,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "traktat.com",
+          "top_similarity_url": "https://www.traktat.com/yuridiche",
+          "top_similarity_score": 0.652726,
+          "pair_accuracy": 0.714286,
+          "mean_margin": 0.05657
+        },
+        {
+          "query": "лучшие кейтеринг",
+          "positive_count": 7,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "dzen.ru",
+          "top_similarity_url": "https://dzen.ru/a/Zc-HqUamz0W6bHZo",
+          "top_similarity_score": 0.728643,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.088263
+        },
+        {
+          "query": "груминг собак рядом",
+          "positive_count": 9,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "vk.com",
+          "top_similarity_url": "https://vk.com/ryadomgroom",
+          "top_similarity_score": 0.710741,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.105614
+        },
+        {
+          "query": "лучшие налоговый консультант",
+          "positive_count": 5,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "tenchat.ru",
+          "top_similarity_url": "https://tenchat.ru/media/3520843-top13-luchshiye-nalogovyye-konsultanty-v-moskve-reyting-2025",
+          "top_similarity_score": 0.748475,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.105843
+        },
+        {
+          "query": "лучшие нотариус",
+          "positive_count": 6,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "dzen.ru",
+          "top_similarity_url": "https://dzen.ru/a/aMACa9LD_gWqY4uF",
+          "top_similarity_score": 0.724483,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.125316
+        },
+        {
+          "query": "ортопедическая клиника цена",
+          "positive_count": 1,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "orthoclinica.ru",
+          "top_similarity_url": "https://orthoclinica.ru/prajs",
+          "top_similarity_score": 0.683187,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.127589
+        },
+        {
+          "query": "ветеринарная клиника под ключ",
+          "positive_count": 8,
+          "negative_count": 3,
+          "top_similarity_label": "negative_or_weak",
+          "top_similarity_domain": "vk.com",
+          "top_similarity_url": "https://vk.com/vet_klinika_pod_klyuch",
+          "top_similarity_score": 0.746777,
+          "pair_accuracy": 0.666667,
+          "mean_margin": 0.136885
+        }
+      ],
+      "false_positive_risks": [
+        {
+          "query": "порошковая покраска металла для бизнеса",
+          "domain": "metallera.ru",
+          "url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.2288,
+          "query_relevance_score": 0.636,
+          "similarity": 0.816211
+        },
+        {
+          "query": "как выбрать аренда вилочного погрузчика",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/aWeQ3NSrMzjMpVod",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.4003,
+          "query_relevance_score": 0.762,
+          "similarity": 0.805649
+        },
+        {
+          "query": "как выбрать частный детский сад",
+          "domain": "wibes.ru",
+          "url": "https://wibes.ru/article/chastniy-detskiy-sad--skolko-stoit-i-kak-vybrat-2792790",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 7.0482,
+          "query_relevance_score": 0.9385,
+          "similarity": 0.801536
+        },
+        {
+          "query": "как выбрать порошковая покраска металла",
+          "domain": "metallera.ru",
+          "url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.2304,
+          "query_relevance_score": 0.7766,
+          "similarity": 0.792719
+        },
+        {
+          "query": "дерматолог консультация",
+          "domain": "vrachotvetit.ru",
+          "url": "https://vrachotvetit.ru/dermatologiya/consultations",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.1722,
+          "query_relevance_score": 0.7612,
+          "similarity": 0.751829
+        },
+        {
+          "query": "как выбрать ветеринарная клиника",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/XfZLxz1faQCx1scs",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 7.2478,
+          "query_relevance_score": 0.9423,
+          "similarity": 0.74971
+        },
+        {
+          "query": "лучшие налоговый консультант",
+          "domain": "tenchat.ru",
+          "url": "https://tenchat.ru/media/3520843-top13-luchshiye-nalogovyye-konsultanty-v-moskve-reyting-2025",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.8628,
+          "query_relevance_score": 0.9078,
+          "similarity": 0.748475
+        },
+        {
+          "query": "лучшие порошковая покраска металла",
+          "domain": "metallera.ru",
+          "url": "https://metallera.ru/blog/poroshkovaya-pokraska/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 3.4446,
+          "query_relevance_score": 0.5944,
+          "similarity": 0.747913
+        },
+        {
+          "query": "порошковая покраска металла отзывы",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/YRUPvxid2mWST_if",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.4759,
+          "query_relevance_score": 0.7163,
+          "similarity": 0.747283
+        },
+        {
+          "query": "ветеринарная клиника под ключ",
+          "domain": "vk.com",
+          "url": "https://vk.com/vet_klinika_pod_klyuch",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.627,
+          "query_relevance_score": 0.8509,
+          "similarity": 0.746777
+        },
+        {
+          "query": "логопед для ребенка консультация",
+          "domain": "logoped.online",
+          "url": "https://logoped.online/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.9437,
+          "query_relevance_score": 0.6,
+          "similarity": 0.741477
+        },
+        {
+          "query": "лучшие офтальмологическая клиника",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Y7Cnnqq_PRqaQq2n",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.7586,
+          "query_relevance_score": 0.78,
+          "similarity": 0.740051
+        },
+        {
+          "query": "груминг собак отзывы",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/aOfFtKckJhUb63CQ",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.9406,
+          "query_relevance_score": 0.8693,
+          "similarity": 0.733253
+        },
+        {
+          "query": "пожарная сигнализация для бизнеса",
+          "domain": "interesnie-fakty.ru",
+          "url": "https://www.interesnie-fakty.ru/nauka/remont/ohrannaya-signalizatsiya-dlya-biznesa-osobennosti-vybora-i-ustanovki/",
+          "band": "hard_negative_cap",
+          "hard_negative": true,
+          "target_score": 35.0,
+          "query_relevance_score": 0.8703,
+          "similarity": 0.73177
+        },
+        {
+          "query": "частная школа Екатеринбург",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Z7Dfe-ujqzCD1ay9",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.0952,
+          "query_relevance_score": 0.8973,
+          "similarity": 0.729985
+        },
+        {
+          "query": "лучшие кейтеринг",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Zc-HqUamz0W6bHZo",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.1589,
+          "query_relevance_score": 0.8602,
+          "similarity": 0.728643
+        },
+        {
+          "query": "лучшие банкетный зал",
+          "domain": "restoran.ru",
+          "url": "https://www.restoran.ru/msk/catalog/banket/all/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.9643,
+          "query_relevance_score": 0.7972,
+          "similarity": 0.724681
+        },
+        {
+          "query": "лучшие нотариус",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/aMACa9LD_gWqY4uF",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.3393,
+          "query_relevance_score": 0.8577,
+          "similarity": 0.724483
+        },
+        {
+          "query": "лучшие частный детский сад",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Z7NgwJHXMRuX2Z7Y",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.363,
+          "query_relevance_score": 0.8819,
+          "similarity": 0.717304
+        },
+        {
+          "query": "банкетный зал для бизнеса",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/a/Zmok81mkLh5j5_fx",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.1642,
+          "query_relevance_score": 0.8563,
+          "similarity": 0.713249
+        },
+        {
+          "query": "груминг собак рядом",
+          "domain": "vk.com",
+          "url": "https://vk.com/ryadomgroom",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 6.0412,
+          "query_relevance_score": 0.8453,
+          "similarity": 0.710741
+        },
+        {
+          "query": "строительство бассейна отзывы",
+          "domain": "dzen.ru",
+          "url": "https://dzen.ru/video/watch/68ad3fb3bb5c391cbab5db03",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 5.9668,
+          "query_relevance_score": 0.8779,
+          "similarity": 0.698745
+        },
+        {
+          "query": "логопед для ребенка цена",
+          "domain": "logoped.online",
+          "url": "https://logoped.online/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.8332,
+          "query_relevance_score": 0.5712,
+          "similarity": 0.687375
+        },
+        {
+          "query": "ортопедическая клиника цена",
+          "domain": "orthoclinica.ru",
+          "url": "https://orthoclinica.ru/prajs",
+          "band": "probable_mismatch",
+          "hard_negative": false,
+          "target_score": 8.1339,
+          "query_relevance_score": 0.1862,
+          "similarity": 0.683187
+        },
+        {
+          "query": "центр реабилитации консультация",
+          "domain": "med-amko.ru",
+          "url": "https://med-amko.ru/services/reabilitacija/",
+          "band": "unusable",
+          "hard_negative": false,
+          "target_score": 4.4157,
+          "query_relevance_score": 0.5575,
+          "similarity": 0.679693
+        }
+      ],
+      "false_negative_risks": [
+        {
+          "query": "фрезеровка на чпу под ключ",
+          "domain": "proleantech.com",
+          "url": "https://proleantech.com/ru/cnc-milling/",
+          "band": "strong_match",
+          "target_score": 56.9682,
+          "query_relevance_score": 0.6552,
+          "similarity": 0.383564
+        },
+        {
+          "query": "внедрение erp Новосибирск",
+          "domain": "top-pro54.ru",
+          "url": "https://top-pro54.ru/services/erp/",
+          "band": "strong_match",
+          "target_score": 62.0106,
+          "query_relevance_score": 0.7625,
+          "similarity": 0.45566
+        },
+        {
+          "query": "частный детский сад под ключ",
+          "domain": "reg-nko.ru",
+          "url": "https://reg-nko.ru/sub/sozdaem-chastnyj-detskij-sad-v-forme-nko-",
+          "band": "strong_match",
+          "target_score": 64.3904,
+          "query_relevance_score": 0.865,
+          "similarity": 0.459969
+        },
+        {
+          "query": "лучшие изготовление вывесок",
+          "domain": "saratov.spravker.ru",
+          "url": "https://saratov.spravker.ru/izgotovlenie-vyivesok/amsterdam-1.htm",
+          "band": "strong_match",
+          "target_score": 48.0696,
+          "query_relevance_score": 0.5605,
+          "similarity": 0.461156
+        },
+        {
+          "query": "банкетный зал для бизнеса",
+          "domain": "выгодный-вклад.рф",
+          "url": "https://выгодный-вклад.рф/biznes-plan/eda/kak-otkryt-banketnyj-zal-biznes-plan.html",
+          "band": "strong_match",
+          "target_score": 63.8768,
+          "query_relevance_score": 0.8248,
+          "similarity": 0.463918
+        },
+        {
+          "query": "упаковочное оборудование с гарантией",
+          "domain": "euro-pack.ru",
+          "url": "https://euro-pack.ru/catalog/upakovochnoe-oborudovanie",
+          "band": "strong_match",
+          "target_score": 58.9838,
+          "query_relevance_score": 0.7661,
+          "similarity": 0.465259
+        },
+        {
+          "query": "частная школа с гарантией",
+          "domain": "dialogexpert.se",
+          "url": "https://dialogexpert.se/",
+          "band": "strong_match",
+          "target_score": 40.1702,
+          "query_relevance_score": 0.5286,
+          "similarity": 0.46528
+        },
+        {
+          "query": "внедрение erp цена",
+          "domain": "cms1c.ru",
+          "url": "https://cms1c.ru/poleznoe/stoimost-vnedreniya-1c/",
+          "band": "strong_match",
+          "target_score": 48.3187,
+          "query_relevance_score": 0.75,
+          "similarity": 0.468585
+        },
+        {
+          "query": "ремонт кровли для бизнеса",
+          "domain": "de4ru.com",
+          "url": "https://de4ru.com/view/privet-berlin-stroitelnaya-kompaniya-s-7500-10070070-10965626",
+          "band": "strong_match",
+          "target_score": 46.535,
+          "query_relevance_score": 0.5737,
+          "similarity": 0.469587
+        },
+        {
+          "query": "сиделка для пожилого для бизнеса",
+          "domain": "dobroyou.com",
+          "url": "https://dobroyou.com/sidelka-kompanionka",
+          "band": "strong_match",
+          "target_score": 48.737,
+          "query_relevance_score": 0.5775,
+          "similarity": 0.471132
+        },
+        {
+          "query": "фильтр воды для дома цена",
+          "domain": "market.yandex.ru",
+          "url": "https://market.yandex.ru/category/filtry-dlya-chastnogo-doma",
+          "band": "strong_match",
+          "target_score": 58.1792,
+          "query_relevance_score": 0.729,
+          "similarity": 0.476614
+        },
+        {
+          "query": "лучшие типография",
+          "domain": "infoselection.ru",
+          "url": "https://infoselection.ru/infokatalog/literatura-knigi/literatura-obshchee/item/499-rejting-krupnejshikh-tipografij-rossii",
+          "band": "strong_match",
+          "target_score": 63.4256,
+          "query_relevance_score": 0.7931,
+          "similarity": 0.484218
+        },
+        {
+          "query": "внедрение erp с гарантией",
+          "domain": "it-1c.ru",
+          "url": "https://it-1c.ru/avtomatizatsiya-predpriyatij/vnedrenie-1s-erp",
+          "band": "strong_match",
+          "target_score": 55.7887,
+          "query_relevance_score": 0.78,
+          "similarity": 0.484668
+        },
+        {
+          "query": "как выбрать ит аутсорсинг",
+          "domain": "youtube.com",
+          "url": "https://www.youtube.com/watch?v=8ne4ruULC0M",
+          "band": "strong_match",
+          "target_score": 53.959,
+          "query_relevance_score": 0.6797,
+          "similarity": 0.485026
+        },
+        {
+          "query": "дерматолог цена",
+          "domain": "fdoctor.ru",
+          "url": "https://www.fdoctor.ru/dermatolog/",
+          "band": "strong_match",
+          "target_score": 45.8267,
+          "query_relevance_score": 0.465,
+          "similarity": 0.485145
+        },
+        {
+          "query": "пожарная сигнализация для бизнеса",
+          "domain": "business.market.yandex.ru",
+          "url": "https://business.market.yandex.ru/catalog--okhranno-pozharnaia-signalizatsiia/41341465/list",
+          "band": "strong_match",
+          "target_score": 57.0339,
+          "query_relevance_score": 0.7287,
+          "similarity": 0.48601
+        },
+        {
+          "query": "центр реабилитации цена",
+          "domain": "crclinic.ru",
+          "url": "https://crclinic.ru/",
+          "band": "strong_match",
+          "target_score": 44.2329,
+          "query_relevance_score": 0.4979,
+          "similarity": 0.488491
+        },
+        {
+          "query": "умный дом для бизнеса",
+          "domain": "ujin.tech",
+          "url": "https://ujin.tech/",
+          "band": "strong_match",
+          "target_score": 70.1472,
+          "query_relevance_score": 0.8323,
+          "similarity": 0.488643
+        },
+        {
+          "query": "груминг собак отзывы",
+          "domain": "zoon.ru",
+          "url": "https://zoon.ru/msk/vet/type/gruming-salon/",
+          "band": "strong_match",
+          "target_score": 64.5333,
+          "query_relevance_score": 0.8302,
+          "similarity": 0.488873
+        },
+        {
+          "query": "груминг собак рядом",
+          "domain": "2gis.ru",
+          "url": "https://2gis.ru/moscow/search/Грумер салоны рядом",
+          "band": "strong_match",
+          "target_score": 53.3787,
+          "query_relevance_score": 0.7504,
+          "similarity": 0.491451
+        },
+        {
+          "query": "внедрение erp отзывы",
+          "domain": "odysseyconsgroup.com",
+          "url": "https://odysseyconsgroup.com/articles/operatsionnyy-menedzhment-proizvodstvo-reteyl/vnedrenie-erp-10-rekomendatsiy-/",
+          "band": "strong_match",
+          "target_score": 55.4039,
+          "query_relevance_score": 0.75,
+          "similarity": 0.491957
+        },
+        {
+          "query": "типография с гарантией",
+          "domain": "fastprint.info",
+          "url": "https://fastprint.info/products/",
+          "band": "strong_match",
+          "target_score": 47.4343,
+          "query_relevance_score": 0.5225,
+          "similarity": 0.49254
+        },
+        {
+          "query": "частная школа рядом",
+          "domain": "zoon.ru",
+          "url": "https://zoon.ru/msk/education/type/chastnaya_shkola/",
+          "band": "strong_match",
+          "target_score": 63.8388,
+          "query_relevance_score": 0.8186,
+          "similarity": 0.492762
+        },
+        {
+          "query": "пожарная сигнализация с гарантией",
+          "domain": "aktivsb.ru",
+          "url": "https://www.aktivsb.ru/komplekty-ops/",
+          "band": "strong_match",
+          "target_score": 52.5331,
+          "query_relevance_score": 0.6094,
+          "similarity": 0.493858
+        },
+        {
+          "query": "промышленные полы рядом",
+          "domain": "alpha-pol.ru",
+          "url": "https://alpha-pol.ru/",
+          "band": "strong_match",
+          "target_score": 47.7185,
+          "query_relevance_score": 0.545,
+          "similarity": 0.498414
+        }
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "key": "ru_en_rosberta",
+      "model_name": "ai-forever/ru-en-RoSBERTa",
+      "strict_auc": 0.977467,
+      "hard_negative_auc": 0.995472,
+      "query_positive_top1_rate": 0.985972,
+      "pairwise_accuracy": 0.979774,
+      "spearman_query_relevance": 0.691252,
+      "encode_seconds": 6391.566
+    },
+    {
+      "key": "current_minilm",
+      "model_name": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "strict_auc": 0.944602,
+      "hard_negative_auc": 0.955988,
+      "query_positive_top1_rate": 0.97996,
+      "pairwise_accuracy": 0.950947,
+      "spearman_query_relevance": 0.710988,
+      "encode_seconds": 141.707
+    }
+  ],
+  "decision": "RoSBERTa is a promising semantic-signal candidate, but publish only after runtime calibration because it is slower and must be tested inside the full score guardrail."
+}

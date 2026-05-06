@@ -44,6 +44,33 @@ def test_build_features_includes_semantic_fields(monkeypatch):
     assert "cta_semantic_score" in features
 
 
+def test_build_features_reuses_valid_semantic_features(monkeypatch):
+    def fail_semantic_features(text: str, query: str) -> dict[str, float | int]:
+        raise AssertionError("semantic features should be reused from the semantic queue payload")
+
+    monkeypatch.setattr("app.features.build_semantic_features", fail_semantic_features)
+
+    features = build_features(
+        html="<html><head><title>Plastic windows</title></head><body><h1>Plastic windows</h1></body></html>",
+        text="Plastic windows installation and service",
+        query="plastic windows",
+        semantic_features={
+            "semantic_similarity": 0.72,
+            "semantic_similarity_raw": 0.66,
+            "semantic_provider_code": 2,
+            "semantic_model_code": 2,
+            "semantic_fallback_used": 0,
+            "semantic_embedding_failure": 0,
+        },
+    )
+
+    assert features["semantic_similarity"] == 0.72
+    assert features["semantic_similarity_raw"] == 0.66
+    assert features["semantic_provider_code"] == 2
+    assert features["query_semantic_alignment"] > 0
+    assert features["title_semantic_alignment"] > 0
+
+
 def test_build_technical_seo_features_from_snapshot():
     snapshot = {
         "requested_url": "https://example.com/catalog?utm_source=ads",

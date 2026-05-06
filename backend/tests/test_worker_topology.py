@@ -1,12 +1,27 @@
 ﻿import pytest
-from app.celery_app import AUDIT_QUEUES
+from app.celery_app import AUDIT_QUEUES, AUDIT_SEMANTIC_QUEUE
 from app.config import Settings
-from app.health import check_celery_worker_health, collect_worker_runtime_metrics
+from app.health import check_celery_worker_health, collect_worker_runtime_metrics, _reset_worker_runtime_observation_cache
 from app.worker_topology import build_worker_topology_contract, evaluate_worker_topology
+
+
+@pytest.fixture(autouse=True)
+def reset_worker_runtime_observation_cache():
+    _reset_worker_runtime_observation_cache()
+    yield
+    _reset_worker_runtime_observation_cache()
 def test_worker_topology_contract_covers_all_audit_queues():
     contract = build_worker_topology_contract()
-    assert [profile["name"] for profile in contract["profiles"]] == ["pipeline", "network", "heavy_analysis", "cpu_ml"]
+    assert [profile["name"] for profile in contract["profiles"]] == [
+        "pipeline",
+        "network",
+        "heavy_analysis",
+        "semantic_cpu",
+        "cpu_ml",
+    ]
+    assert contract["required_profile_count"] == 5
     assert sorted(queue_name for profile in contract["profiles"] for queue_name in profile["queues"]) == sorted(AUDIT_QUEUES)
+    assert AUDIT_SEMANTIC_QUEUE in contract["expected_queues"]
 def test_evaluate_worker_topology_accepts_split_workers_within_same_profile():
     payload = evaluate_worker_topology(
         {
@@ -14,6 +29,7 @@ def test_evaluate_worker_topology_accepts_split_workers_within_same_profile():
             "celery@network-fetch": ["audits.fetch"],
             "celery@network-competitors": ["audits.competitors", "audits.competitor_pages"],
             "celery@heavy": ["audits.heavy_analysis"],
+            "celery@semantic": [AUDIT_SEMANTIC_QUEUE],
             "celery@cpu": ["audits.features", "audits.scoring", "audits.recommendations", "audits.finalize"],
         }
     )
@@ -26,6 +42,8 @@ def test_evaluate_worker_topology_accepts_split_workers_within_same_profile():
         "audits.competitors",
         "audits.fetch",
     ]
+    assert payload["profiles"]["semantic_cpu"]["worker_count"] == 1
+    assert payload["profiles"]["semantic_cpu"]["covered_queues"] == [AUDIT_SEMANTIC_QUEUE]
     assert payload["worker_profiles"]["celery@network-fetch"]["profile_name"] == "network"
 def test_evaluate_worker_topology_rejects_cross_profile_queue_affinity():
     payload = evaluate_worker_topology(
@@ -46,13 +64,15 @@ def test_collect_worker_runtime_metrics_reports_valid_topology(monkeypatch: pyte
                 "pipeline@test": {"pid": 1001, "pool": {"max-concurrency": 1}},
                 "network@test": {"pid": 1002, "pool": {"max-concurrency": 4}},
                 "heavy@test": {"pid": 1003, "pool": {"max-concurrency": 2}},
-                "cpu@test": {"pid": 1004, "pool": {"max-concurrency": 2}},
+                "semantic@test": {"pid": 1004, "pool": {"max-concurrency": 1}},
+                "cpu@test": {"pid": 1005, "pool": {"max-concurrency": 2}},
             }
         def active(self):
             return {
                 "pipeline@test": [],
                 "network@test": [{"name": "app.process_audit_fetch_target"}],
                 "heavy@test": [{"name": "app.process_audit_run_heavy_analysis"}],
+                "semantic@test": [],
                 "cpu@test": [],
             }
         def reserved(self):
@@ -60,6 +80,7 @@ def test_collect_worker_runtime_metrics_reports_valid_topology(monkeypatch: pyte
                 "pipeline@test": [],
                 "network@test": [],
                 "heavy@test": [],
+                "semantic@test": [],
                 "cpu@test": [{"name": "app.process_audit_score_target"}],
             }
         def scheduled(self):
@@ -67,6 +88,7 @@ def test_collect_worker_runtime_metrics_reports_valid_topology(monkeypatch: pyte
                 "pipeline@test": [],
                 "network@test": [],
                 "heavy@test": [],
+                "semantic@test": [],
                 "cpu@test": [{"request": {"name": "app.process_audit_finalize"}}],
             }
         def active_queues(self):
@@ -78,6 +100,7 @@ def test_collect_worker_runtime_metrics_reports_valid_topology(monkeypatch: pyte
                     {"name": "audits.competitor_pages"},
                 ],
                 "heavy@test": [{"name": "audits.heavy_analysis"}],
+                "semantic@test": [{"name": AUDIT_SEMANTIC_QUEUE}],
                 "cpu@test": [
                     {"name": "audits.features"},
                     {"name": "audits.scoring"},
@@ -96,9 +119,12 @@ def test_collect_worker_runtime_metrics_reports_valid_topology(monkeypatch: pyte
     assert payload["missing_queues"] == []
     assert payload["workers"]["network@test"]["profile_name"] == "network"
     assert payload["workers"]["heavy@test"]["profile_name"] == "heavy_analysis"
+    assert payload["workers"]["semantic@test"]["profile_name"] == "semantic_cpu"
     assert payload["workers"]["cpu@test"]["profile_status"] == "ok"
     assert payload["queue_activity"]["audits.fetch"]["active_tasks"] == 1
     assert payload["queue_activity"]["audits.heavy_analysis"]["active_tasks"] == 1
+    assert payload["queue_activity"][AUDIT_SEMANTIC_QUEUE]["worker_count"] == 1
+    assert payload["queue_activity"][AUDIT_SEMANTIC_QUEUE]["estimated_concurrency"] == 1
     assert payload["queue_activity"]["audits.scoring"]["reserved_tasks"] == 1
     assert payload["queue_activity"]["audits.finalize"]["scheduled_tasks"] == 1
 
@@ -110,7 +136,8 @@ def test_collect_worker_runtime_metrics_uses_profile_hostname_when_active_queues
                 "site-audit.pipeline@test": {"pid": 1001, "pool": {"max-concurrency": 1}},
                 "site-audit.network@test": {"pid": 1002, "pool": {"max-concurrency": 4}},
                 "site-audit.heavy_analysis@test": {"pid": 1003, "pool": {"max-concurrency": 2}},
-                "site-audit.cpu_ml@test": {"pid": 1004, "pool": {"max-concurrency": 2}},
+                "site-audit.semantic_cpu.2@test": {"pid": 1004, "pool": {"max-concurrency": 1}},
+                "site-audit.cpu_ml@test": {"pid": 1005, "pool": {"max-concurrency": 2}},
             }
         def active(self):
             return {"site-audit.network@test": [{"name": "app.process_audit_collect_competitor_page"}]}
@@ -135,6 +162,7 @@ def test_collect_worker_runtime_metrics_uses_profile_hostname_when_active_queues
     assert payload["queue_activity"]["audits.competitor_pages"]["active_tasks"] == 1
     assert payload["queue_activity"]["audits.fetch"]["worker_count"] == 1
     assert payload["queue_activity"]["audits.heavy_analysis"]["worker_count"] == 1
+    assert payload["queue_activity"][AUDIT_SEMANTIC_QUEUE]["worker_count"] == 1
 
 
 def test_check_celery_worker_health_fails_when_queue_affinity_is_invalid(monkeypatch: pytest.MonkeyPatch):
@@ -170,8 +198,8 @@ def test_check_celery_worker_health_fails_when_queue_affinity_is_invalid(monkeyp
                     }
                 },
                 "profiles": {},
-                "missing_profiles": ["pipeline", "network", "heavy_analysis", "cpu_ml"],
-                "profiles_with_missing_queues": ["pipeline", "network", "heavy_analysis", "cpu_ml"],
+                "missing_profiles": ["pipeline", "network", "heavy_analysis", "semantic_cpu", "cpu_ml"],
+                "profiles_with_missing_queues": ["pipeline", "network", "heavy_analysis", "semantic_cpu", "cpu_ml"],
                 "missing_queues": list(AUDIT_QUEUES),
             },
             "topology_contract": build_worker_topology_contract(),
