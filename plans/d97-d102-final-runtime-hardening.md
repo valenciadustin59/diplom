@@ -2,6 +2,13 @@
 
 Status: D97-D102 implemented locally.
 
+Follow-up final demo smoke on 2026-05-06:
+
+- Added final query-core parsing polish for informational helper words: `что`, `такое`, `почему`, `какой/какая/какие`, `зачем`, `чем` and normalized variants are treated as modifiers instead of the main query topic.
+- This keeps the relevance filter strict for unrelated pages while avoiding false penalties for informational queries such as `что такое фотосинтез`.
+- Evidence: `output/runtime-smoke/final-demo-8case-smoke-summary.json`, passed `8/8` live cases.
+- UX screenshots: `output/playwright/final-ux-pass/*-live.png`.
+
 ## Summary
 
 This wave keeps the D83 `dataset-v7-final` query-core model as the active runtime artifact and hardens the last product/runtime edges discovered during live checks: overly strict second-layer penalties, misleading readiness under busy workers, unavailable-page UX, and false positives where only city/commercial modifiers match.

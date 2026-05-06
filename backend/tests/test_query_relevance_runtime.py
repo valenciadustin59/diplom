@@ -176,7 +176,7 @@ def test_d101_wikipedia_like_informational_query_has_no_commercial_penalty():
     guardrail = build_query_relevance_guardrail(features, 77.0)
 
     assert features["query_primary_core_term_present"] == 1
-    assert features["query_intent_modifier_coverage_ratio"] == 0.0
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
     assert has_strong_query_topic_fit(features) is True
     assert guardrail["early_stop"] is False
     assert guardrail["active"] is False

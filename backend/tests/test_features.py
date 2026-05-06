@@ -71,6 +71,32 @@ def test_build_features_reuses_valid_semantic_features(monkeypatch):
     assert features["title_semantic_alignment"] > 0
 
 
+def test_build_features_treats_informational_phrase_as_modifier(monkeypatch):
+    monkeypatch.setattr(
+        "app.features.build_semantic_features",
+        lambda text, query: {
+            "semantic_similarity": 0.74,
+            "semantic_similarity_raw": 0.71,
+            "semantic_provider_code": 2,
+            "semantic_model_code": 2,
+            "semantic_fallback_used": 0,
+            "semantic_embedding_failure": 0,
+        },
+    )
+
+    features = build_features(
+        html="<html><head><title>Фотосинтез</title></head><body><h1>Фотосинтез</h1></body></html>",
+        text="Фотосинтез - процесс образования органических веществ растениями на свету.",
+        query="что такое фотосинтез",
+    )
+
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
+    assert features["query_primary_core_term_present"] == 1
+    assert features["query_core_term_matches"] == 1
+    assert features["query_intent_modifier_coverage_ratio"] == 0.0
+    assert features["modifier_or_geo_only_match"] == 0
+
+
 def test_build_technical_seo_features_from_snapshot():
     snapshot = {
         "requested_url": "https://example.com/catalog?utm_source=ads",

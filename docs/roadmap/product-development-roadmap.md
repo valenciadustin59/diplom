@@ -457,4 +457,6 @@ This wave keeps the D83 query-core v7 runtime artifact active and focuses on fin
 
 Final smoke evidence is stored in `output/runtime-smoke/d98-d102-final-live-smoke-summary.json`. It covers a relevant commercial page, a 404 target, a local-service core mismatch, a relevant informational page and a commercial modifier-only mismatch.
 
+Follow-up final demo smoke on `2026-05-06` is stored in `output/runtime-smoke/final-demo-8case-smoke-summary.json` and passed `8/8` live checks. It also added a small query-core parsing polish: informational helper words (`что`, `такое`, `почему`, `какой/какая/какие`, `зачем`, `чем`) no longer count as the primary topic, preventing false penalties for queries like `что такое фотосинтез`.
+
 Remaining roadmap item: do a final UX pass on launch/history/result screens, then run one broader 8-10 case smoke before demo/defense preparation.
