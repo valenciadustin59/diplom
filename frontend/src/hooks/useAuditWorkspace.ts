@@ -56,6 +56,7 @@ function mapSummary(audit: AuditListItemResponse): AuditSummary {
     createdAt: formatCreatedAt(audit.created_at),
     createdAtTimestamp: getCreatedAtTimestamp(audit.created_at),
     scoreBreakdown: audit.score_breakdown,
+    comparisonSummary: audit.comparison_summary ?? null,
   };
 }
 

@@ -765,6 +765,16 @@ Completed product/ML/SEO/frontend evidence wave: `D13-D26`.
 
 Где смотреть параллельную работу в UI: кнопка/экран `Стек` показывает профили workers и очереди, а вкладка `Таймлайн` внутри аудита показывает fan-out ветки конкурентов, dispatch events и critical path.
 
+## Current Local Dev Autoscale And Competitor Warning Cleanup
+
+- `npm run dev:full` now starts the full stack with `--worker-autoscale=auto`.
+- Local elastic worker profiles default to `network`, `semantic_cpu` and `cpu_ml`; `pipeline` intentionally stays fixed as the single orchestration worker.
+- On Windows, Celery still uses `--pool=solo`; local parallelism is achieved by scaling worker processes per profile, not by increasing in-process concurrency.
+- `scripts/dev.mjs` supports `WORKER_AUTOSCALE_PROFILES`, profile-specific limits such as `NETWORK_WORKER_MIN/MAX`, and the legacy `SEMANTIC_WORKER_*` settings.
+- Completion warnings no longer mark an audit as `completed_with_warnings` just because replacement competitor candidates were discarded. If the requested competitor context is filled or `competitor_context_status=ready`, discarded/blocked extra candidates are treated as normal replacement noise.
+- The history list receives `comparison_summary` and uses competitor context quality when deciding whether a `completed_with_warnings` row is genuinely problematic.
+- Verification for this cleanup: `node --test scripts/dev.test.mjs`, targeted `backend/tests/test_audit_pipeline.py`, `backend/tests/test_audits_api.py`, `frontend/src/lib/auditHistory.test.ts`, and `npm --prefix frontend run build` passed.
+
 ## GitHub И Секреты
 
 - Для GitHub-операций на этой машине уже использовался локальный credential helper (`manager`).

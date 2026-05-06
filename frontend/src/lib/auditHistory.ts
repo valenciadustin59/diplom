@@ -59,8 +59,28 @@ export function isStaleAudit(audit: AuditSummary, now: number): boolean {
   return now - audit.createdAtTimestamp >= STALE_AUDIT_THRESHOLD_MS;
 }
 
+function hasRealCompletionWarning(audit: AuditSummary): boolean {
+  if (audit.status !== "completed_with_warnings") {
+    return false;
+  }
+
+  const summary = audit.comparisonSummary;
+  const quality = summary?.competitor_context_quality;
+  const status = summary?.competitor_context_status ?? quality?.status;
+  const requestedTopN = quality?.requested_top_n ?? summary?.competitors_found ?? null;
+  const accepted = quality?.accepted_competitors ?? summary?.competitors_analyzed ?? 0;
+  if (status === "ready") {
+    return false;
+  }
+  if (typeof requestedTopN === "number" && accepted >= requestedTopN) {
+    return false;
+  }
+
+  return true;
+}
+
 export function isProblematicAudit(audit: AuditSummary, now: number): boolean {
-  return audit.status === "failed" || audit.status === "completed_with_warnings" || isStaleAudit(audit, now);
+  return audit.status === "failed" || hasRealCompletionWarning(audit) || isStaleAudit(audit, now);
 }
 
 export function createRepeatAuditPayload(audit: AuditSummary): AuditCreatePayload {
@@ -134,7 +154,7 @@ export function buildAuditHistoryModel({
     return {
       audit,
       isHidden,
-      isProblematic: audit.status === "failed" || audit.status === "completed_with_warnings" || isStale,
+      isProblematic: audit.status === "failed" || hasRealCompletionWarning(audit) || isStale,
       isStale,
       isSuccessful,
     };

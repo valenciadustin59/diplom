@@ -8,8 +8,10 @@ import {
   CELERY_AUDIT_QUEUES,
   CELERY_WORKER_PROFILES,
   resolveSemanticAutoscaleConfig,
+  resolveWorkerAutoscaleConfigs,
   SEMANTIC_QUEUE_NAME,
   SEMANTIC_WORKER_PROFILE_NAME,
+  WORKER_AUTOSCALE_DEFAULT_PROFILES,
 } from "./dev.mjs";
 test("buildBackendRuntimeEnv provides local development defaults", () => {
   const env = buildBackendRuntimeEnv({ BACKEND_PORT: "8000" }, {});
@@ -139,6 +141,41 @@ test("resolveSemanticAutoscaleConfig enables auto mode from CLI and clamps max t
   assert.equal(config.scaleUpWaitMs, 7000);
   assert.equal(config.scaleDownIdleMs, 9000);
   assert.equal(config.pollIntervalMs, 1100);
+});
+
+test("resolveWorkerAutoscaleConfigs enables elastic dev workers for non-pipeline profiles", () => {
+  const configs = resolveWorkerAutoscaleConfigs(["node", "scripts/dev.mjs", "--worker-autoscale=auto"], {});
+  assert.deepEqual(configs.map((config) => config.profileName), WORKER_AUTOSCALE_DEFAULT_PROFILES);
+  assert.equal(configs.some((config) => config.profileName === "pipeline"), false);
+  const network = configs.find((config) => config.profileName === "network");
+  const networkProfile = CELERY_WORKER_PROFILES.find((profile) => profile.name === "network");
+  assert.ok(network);
+  assert.ok(networkProfile);
+  assert.deepEqual(network.queueNames, networkProfile.queues);
+  assert.equal(network.minWorkers, 1);
+  assert.equal(network.maxWorkers, 3);
+});
+
+test("resolveWorkerAutoscaleConfigs supports selected profiles and profile-specific limits", () => {
+  const configs = resolveWorkerAutoscaleConfigs(
+    ["node", "scripts/dev.mjs", "--worker-autoscale", "auto", "--worker-autoscale-profiles=network,cpu_ml"],
+    {
+      NETWORK_WORKER_MIN: "2",
+      NETWORK_WORKER_MAX: "4",
+      CPU_ML_WORKER_SCALE_UP_DEPTH: "5",
+    },
+  );
+  assert.deepEqual(configs.map((config) => config.profileName), ["network", "cpu_ml"]);
+  assert.equal(configs[0].minWorkers, 2);
+  assert.equal(configs[0].maxWorkers, 4);
+  assert.equal(configs[1].scaleUpDepth, 5);
+});
+
+test("resolveWorkerAutoscaleConfigs keeps pipeline as a fixed orchestration worker", () => {
+  assert.throws(
+    () => resolveWorkerAutoscaleConfigs(["node", "scripts/dev.mjs", "--worker-autoscale=auto", "--worker-autoscale-profiles=pipeline"], {}),
+    /pipeline worker must stay fixed/,
+  );
 });
 
 test("buildFrontendDevArgs binds Vite to loopback IPv4 for smoke checks", () => {

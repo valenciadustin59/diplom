@@ -22,6 +22,7 @@ from app.celery_app import (
 from app.db import Base
 from app.models import Audit, AuditCompetitor, AuditEvent
 from app.tasks import (
+    _build_completion_warnings,
     _dispatch_stage_task,
     enqueue_audit_processing,
     process_audit,
@@ -36,6 +37,53 @@ from app.tasks import (
     process_audit_run_heavy_analysis,
     process_audit_score_target,
 )
+
+
+def test_completion_warnings_ignore_discarded_candidates_when_context_is_ready():
+    warnings = _build_completion_warnings(
+        {
+            'competitors_found': 14,
+            'competitors_analyzed': 10,
+            'competitors_failed': 4,
+            'requested_top_n': 10,
+            'competitor_context_status': 'ready',
+            'competitor_context_quality': {
+                'schema_version': 'competitor-context-quality-v2',
+                'status': 'ready',
+                'score_safe_to_compare': True,
+                'accepted_competitors': 10,
+                'discarded_competitors': 4,
+                'requested_top_n': 10,
+            },
+        }
+    )
+
+    assert warnings == []
+
+
+def test_completion_warnings_report_competitor_shortfall_when_requested_context_is_not_filled():
+    warnings = _build_completion_warnings(
+        {
+            'competitors_found': 10,
+            'competitors_analyzed': 7,
+            'competitors_failed': 3,
+            'requested_top_n': 10,
+            'competitor_context_status': 'partial_but_usable',
+            'competitor_context_quality': {
+                'schema_version': 'competitor-context-quality-v2',
+                'status': 'partial_but_usable',
+                'score_safe_to_compare': True,
+                'accepted_competitors': 7,
+                'discarded_competitors': 3,
+                'requested_top_n': 10,
+            },
+        }
+    )
+
+    assert len(warnings) == 1
+    assert warnings[0].startswith('Обработано 7 из 10 конкурентных страниц')
+
+
 def test_process_audit_pipeline_saves_results(monkeypatch, tmp_path, caplog):
     db_path = tmp_path / 'pipeline.db'
     engine = create_engine(

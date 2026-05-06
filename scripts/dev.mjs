@@ -32,6 +32,26 @@ export const SEMANTIC_AUTOSCALE_DEFAULTS = {
   scaleDownIdleMs: 60000,
   pollIntervalMs: 5000,
 };
+export const WORKER_AUTOSCALE_DEFAULT_PROFILES = ["network", SEMANTIC_WORKER_PROFILE_NAME, "cpu_ml"];
+export const WORKER_AUTOSCALE_PROFILE_DEFAULTS = {
+  network: {
+    minWorkers: 1,
+    maxWorkers: 3,
+    scaleUpDepth: 2,
+    scaleUpWaitMs: 10000,
+    scaleDownIdleMs: 60000,
+    pollIntervalMs: 5000,
+  },
+  [SEMANTIC_WORKER_PROFILE_NAME]: SEMANTIC_AUTOSCALE_DEFAULTS,
+  cpu_ml: {
+    minWorkers: 1,
+    maxWorkers: 2,
+    scaleUpDepth: 2,
+    scaleUpWaitMs: 10000,
+    scaleDownIdleMs: 60000,
+    pollIntervalMs: 5000,
+  },
+};
 const children = [];
 let shuttingDown = false;
 export function buildBackendRuntimeEnv(extraEnv = {}, sourceEnv = process.env) {
@@ -85,6 +105,20 @@ function normalizeAutoscaleMode(value) {
   return SEMANTIC_AUTOSCALE_DEFAULTS.mode;
 }
 
+function normalizeProfileEnvName(profileName) {
+  return String(profileName).toUpperCase().replace(/[^A-Z0-9]+/g, "_");
+}
+
+function readProfileInteger(sourceEnv, profileName, suffix, fallback) {
+  const profilePrefix = normalizeProfileEnvName(profileName);
+  const legacySemanticValue =
+    profileName === SEMANTIC_WORKER_PROFILE_NAME ? sourceEnv[`SEMANTIC_WORKER_${suffix}`] : undefined;
+  return parsePositiveInteger(
+    sourceEnv[`${profilePrefix}_WORKER_${suffix}`] ?? legacySemanticValue ?? sourceEnv[`WORKER_AUTOSCALE_${suffix}`],
+    fallback,
+  );
+}
+
 export function resolveSemanticAutoscaleConfig(argv = process.argv, sourceEnv = process.env) {
   const mode = normalizeAutoscaleMode(
     readArgValue(argv, "--semantic-autoscale") ?? sourceEnv.SEMANTIC_WORKER_AUTOSCALE,
@@ -102,6 +136,7 @@ export function resolveSemanticAutoscaleConfig(argv = process.argv, sourceEnv = 
     enabled: mode === "auto",
     profileName: SEMANTIC_WORKER_PROFILE_NAME,
     queueName: SEMANTIC_QUEUE_NAME,
+    queueNames: [SEMANTIC_QUEUE_NAME],
     minWorkers,
     maxWorkers,
     scaleUpDepth: parsePositiveInteger(
@@ -121,6 +156,49 @@ export function resolveSemanticAutoscaleConfig(argv = process.argv, sourceEnv = 
       SEMANTIC_AUTOSCALE_DEFAULTS.pollIntervalMs,
     ),
   };
+}
+
+export function resolveWorkerAutoscaleConfigs(argv = process.argv, sourceEnv = process.env) {
+  const mode = normalizeAutoscaleMode(readArgValue(argv, "--worker-autoscale") ?? sourceEnv.WORKER_AUTOSCALE);
+  if (mode !== "auto") {
+    return [];
+  }
+
+  const selectedProfiles = [
+    ...new Set(
+      String(
+        readArgValue(argv, "--worker-autoscale-profiles") ??
+          sourceEnv.WORKER_AUTOSCALE_PROFILES ??
+          WORKER_AUTOSCALE_DEFAULT_PROFILES.join(","),
+      )
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean),
+    ),
+  ];
+
+  return selectedProfiles.map((profileName) => {
+    const profile = resolveWorkerProfile(profileName);
+    if (profile.name === "pipeline") {
+      throw new Error("pipeline worker must stay fixed; do not autoscale the orchestration queue");
+    }
+    const defaults = WORKER_AUTOSCALE_PROFILE_DEFAULTS[profile.name] ?? SEMANTIC_AUTOSCALE_DEFAULTS;
+    const minWorkers = Math.max(1, readProfileInteger(sourceEnv, profile.name, "MIN", defaults.minWorkers));
+    const maxWorkers = Math.max(minWorkers, readProfileInteger(sourceEnv, profile.name, "MAX", defaults.maxWorkers));
+    return {
+      mode,
+      enabled: true,
+      profileName: profile.name,
+      queueName: profile.queues[0],
+      queueNames: profile.queues,
+      minWorkers,
+      maxWorkers,
+      scaleUpDepth: readProfileInteger(sourceEnv, profile.name, "SCALE_UP_DEPTH", defaults.scaleUpDepth),
+      scaleUpWaitMs: readProfileInteger(sourceEnv, profile.name, "SCALE_UP_WAIT_MS", defaults.scaleUpWaitMs),
+      scaleDownIdleMs: readProfileInteger(sourceEnv, profile.name, "SCALE_DOWN_IDLE_MS", defaults.scaleDownIdleMs),
+      pollIntervalMs: readProfileInteger(sourceEnv, profile.name, "POLL_INTERVAL_MS", defaults.pollIntervalMs),
+    };
+  });
 }
 
 function resolveBackendPython() {
@@ -215,7 +293,7 @@ function startCeleryWorker(profileName, hostnameSuffix = "") {
   );
 }
 
-function createSemanticWorkerAutoscaler(apiUrl, config) {
+function createWorkerAutoscaler(apiUrl, config) {
   const workers = new Map();
   let nextWorkerId = 1;
   let timer = null;
@@ -231,7 +309,7 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
     return [...workers.entries()];
   }
 
-  function startSemanticWorker() {
+  function startScaledWorker() {
     const workerId = nextWorkerId;
     nextWorkerId += 1;
     const child = startCeleryWorker(config.profileName, String(workerId));
@@ -239,27 +317,27 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
     child.on("exit", () => {
       workers.delete(workerId);
     });
-    console.log(`[semantic-autoscale] started ${config.profileName} worker ${workerId}/${config.maxWorkers}`);
+    console.log(`[worker-autoscale:${config.profileName}] started worker ${workerId}/${config.maxWorkers}`);
   }
 
-  function stopSemanticWorker() {
+  function stopScaledWorker() {
     const entries = activeWorkerEntries();
     if (entries.length <= config.minWorkers) {
       return;
     }
     const [workerId, child] = entries.at(-1);
-    console.log(`[semantic-autoscale] stopping idle ${config.profileName} worker ${workerId}`);
+    console.log(`[worker-autoscale:${config.profileName}] stopping idle worker ${workerId}`);
     child.kill();
     workers.delete(workerId);
   }
 
   function ensureMinimumWorkers() {
     while (activeWorkerEntries().length < config.minWorkers) {
-      startSemanticWorker();
+      startScaledWorker();
     }
   }
 
-  async function fetchSemanticQueueSnapshot() {
+  async function fetchQueueSnapshot() {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), Math.min(config.pollIntervalMs, 5000));
     try {
@@ -268,7 +346,19 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
         throw new Error(`health metrics returned ${response.status}`);
       }
       const payload = await response.json();
-      return payload?.queue_pressure?.queues?.[config.queueName] ?? {};
+      const queues = payload?.queue_pressure?.queues ?? {};
+      const snapshots = config.queueNames.map((queueName) => queues?.[queueName] ?? {});
+      return {
+        depth: snapshots.reduce((sum, item) => sum + Number(item.depth ?? 0), 0),
+        inflight_tasks: snapshots.reduce((sum, item) => sum + Number(item.inflight_tasks ?? 0), 0),
+        pressure_status: snapshots.some((item) => ["stuck", "backlogged"].includes(String(item.pressure_status ?? "")))
+          ? "backlogged"
+          : snapshots.some((item) => String(item.pressure_status ?? "") === "waiting")
+            ? "waiting"
+            : snapshots.some((item) => ["busy", "draining"].includes(String(item.pressure_status ?? "")))
+              ? "busy"
+              : "idle",
+      };
     } finally {
       clearTimeout(timeout);
     }
@@ -278,9 +368,9 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
     ensureMinimumWorkers();
     let snapshot;
     try {
-      snapshot = await fetchSemanticQueueSnapshot();
+      snapshot = await fetchQueueSnapshot();
     } catch (error) {
-      console.warn(`[semantic-autoscale] metrics unavailable: ${error instanceof Error ? error.message : String(error)}`);
+      console.warn(`[worker-autoscale:${config.profileName}] metrics unavailable: ${error instanceof Error ? error.message : String(error)}`);
       return;
     }
 
@@ -299,7 +389,7 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
 
     const waitedLongEnough = backlogSince !== null && now - backlogSince >= config.scaleUpWaitMs;
     if ((depth >= config.scaleUpDepth || waitedLongEnough) && workerCount < config.maxWorkers) {
-      startSemanticWorker();
+      startScaledWorker();
       backlogSince = now;
       idleSince = null;
       return;
@@ -313,7 +403,7 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
       idleSince = null;
     }
     if (idleSince !== null && now - idleSince >= config.scaleDownIdleMs) {
-      stopSemanticWorker();
+      stopScaledWorker();
       idleSince = now;
     }
   }
@@ -321,7 +411,7 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
   return {
     start() {
       console.log(
-        `[semantic-autoscale] mode=auto queue=${config.queueName} min=${config.minWorkers} max=${config.maxWorkers} depth=${config.scaleUpDepth} wait_ms=${config.scaleUpWaitMs} idle_ms=${config.scaleDownIdleMs}`,
+        `[worker-autoscale:${config.profileName}] mode=auto queues=${config.queueNames.join(",")} min=${config.minWorkers} max=${config.maxWorkers} depth=${config.scaleUpDepth} wait_ms=${config.scaleUpWaitMs} idle_ms=${config.scaleDownIdleMs}`,
       );
       ensureMinimumWorkers();
       void tick();
@@ -339,6 +429,10 @@ function createSemanticWorkerAutoscaler(apiUrl, config) {
       workers.clear();
     },
   };
+}
+
+function createSemanticWorkerAutoscaler(apiUrl, config) {
+  return createWorkerAutoscaler(apiUrl, config);
 }
 
 export function buildFrontendDevArgs(port = 5173, host = "127.0.0.1") {
@@ -367,12 +461,24 @@ async function main() {
   const backendPort = await findAvailablePort(8000);
   const apiUrl = `http://127.0.0.1:${backendPort}`;
   const semanticAutoscaleConfig = resolveSemanticAutoscaleConfig(process.argv, process.env);
+  const workerAutoscaleConfigs = resolveWorkerAutoscaleConfigs(process.argv, process.env);
+  const activeAutoscaleConfigs =
+    workerAutoscaleConfigs.length > 0
+      ? workerAutoscaleConfigs
+      : semanticAutoscaleConfig.enabled
+        ? [semanticAutoscaleConfig]
+        : [];
+  const autoscaledProfiles = new Set(activeAutoscaleConfigs.map((config) => config.profileName));
   console.log("╨Ч╨░╨┐╤Г╤Б╨║ backend ╨╕ frontend ╨╛╨┤╨╜╨╛╨╣ ╨║╨╛╨╝╨░╨╜╨┤╨╛╨╣...");
   console.log(`Backend API: ${apiUrl}`);
   console.log(`Celery worker topology: ${includeWorker ? CELERY_WORKER_PROFILES.map((profile) => profile.name).join(", ") : "disabled"}`);
   if (includeWorker) {
     console.log(
-      `Semantic workers: ${semanticAutoscaleConfig.enabled ? `auto min=${semanticAutoscaleConfig.minWorkers} max=${semanticAutoscaleConfig.maxWorkers}` : "fixed min=1"}`,
+      activeAutoscaleConfigs.length > 0
+        ? `Elastic workers: ${activeAutoscaleConfigs
+            .map((config) => `${config.profileName} min=${config.minWorkers} max=${config.maxWorkers}`)
+            .join("; ")}`
+        : "Elastic workers: disabled",
     );
   }
   runProcess(
@@ -386,17 +492,15 @@ async function main() {
     VITE_API_URL: apiUrl,
   });
   if (includeWorker) {
-    const semanticAutoscaler = semanticAutoscaleConfig.enabled
-      ? createSemanticWorkerAutoscaler(apiUrl, semanticAutoscaleConfig)
-      : null;
+    const workerAutoscalers = activeAutoscaleConfigs.map((config) => createWorkerAutoscaler(apiUrl, config));
     for (const profile of CELERY_WORKER_PROFILES) {
-      if (semanticAutoscaler && profile.name === semanticAutoscaleConfig.profileName) {
+      if (autoscaledProfiles.has(profile.name)) {
         continue;
       }
       startCeleryWorker(profile.name);
     }
-    if (semanticAutoscaler) {
-      semanticAutoscaler.start();
+    for (const autoscaler of workerAutoscalers) {
+      autoscaler.start();
     }
   }
   process.on("SIGINT", () => stopAll(0));

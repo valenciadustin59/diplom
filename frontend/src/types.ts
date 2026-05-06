@@ -201,6 +201,7 @@ export type AuditListItemResponse = Pick<
   | "updated_at"
   | "score"
   | "score_breakdown"
+  | "comparison_summary"
   | "early_stop"
   | "target_fetch_status"
   | "warnings"
@@ -623,6 +624,7 @@ export type AuditSummary = {
   createdAt: string;
   createdAtTimestamp: number | null;
   scoreBreakdown: ScoreBreakdown | null;
+  comparisonSummary?: ComparisonSummary | null;
 };
 
 export type CompetitorScore = {

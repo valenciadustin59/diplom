@@ -896,17 +896,46 @@ def _dispatch_stage_task(task, *args: object, preserve_queue_affinity: bool = Fa
     return task.run(*args)
 
 
-def _build_completion_warnings(comparison_summary: dict[str, float | int] | None) -> list[str]:
+def _build_completion_warnings(comparison_summary: dict[str, object] | None) -> list[str]:
     if not isinstance(comparison_summary, dict):
         return []
 
     warnings: list[str] = []
-    competitors_found = int(comparison_summary.get("competitors_found") or 0)
-    competitors_analyzed = int(comparison_summary.get("competitors_analyzed") or 0)
-    competitors_failed = int(comparison_summary.get("competitors_failed") or 0)
-    if competitors_found and competitors_failed:
+    competitor_context_quality = comparison_summary.get("competitor_context_quality")
+    if not isinstance(competitor_context_quality, dict):
+        competitor_context_quality = {}
+    competitors_found = int(
+        comparison_summary.get("competitors_found")
+        or competitor_context_quality.get("collected_candidates")
+        or competitor_context_quality.get("competitors_found")
+        or 0
+    )
+    competitors_analyzed = int(
+        comparison_summary.get("competitors_analyzed")
+        or competitor_context_quality.get("accepted_competitors")
+        or competitor_context_quality.get("competitors_analyzed")
+        or 0
+    )
+    competitors_failed = int(
+        comparison_summary.get("competitors_failed")
+        or competitor_context_quality.get("discarded_competitors")
+        or competitor_context_quality.get("competitors_failed")
+        or 0
+    )
+    requested_top_n_raw = comparison_summary.get("requested_top_n") or competitor_context_quality.get("requested_top_n")
+    requested_top_n = int(requested_top_n_raw) if isinstance(requested_top_n_raw, (int, float)) and requested_top_n_raw > 0 else None
+    context_status = str(
+        comparison_summary.get("competitor_context_status")
+        or competitor_context_quality.get("status")
+        or ""
+    )
+    context_ready = context_status == "ready"
+    requested_context_filled = requested_top_n is not None and competitors_analyzed >= requested_top_n
+
+    if competitors_found and competitors_failed and not (context_ready or requested_context_filled):
+        expected_count = requested_top_n or competitors_found
         warnings.append(
-            f"Обработано {competitors_analyzed} из {competitors_found} конкурентных страниц, "
+            f"Обработано {competitors_analyzed} из {expected_count} конкурентных страниц, "
             f"{competitors_failed} страниц ограничили автоматический доступ."
         )
     if competitors_analyzed < MIN_COMPETITORS_FOR_COMPARISON:

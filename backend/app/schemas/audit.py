@@ -161,6 +161,7 @@ class AuditListItemRead(BaseModel):
     updated_at: datetime | None = None
     score: float | None = None
     score_breakdown: dict[str, object] | None = None
+    comparison_summary: dict[str, object] | None = None
     early_stop: AuditEarlyStopRead | None = None
     target_fetch_status: str | None = None
     warnings: list[str] | None = None

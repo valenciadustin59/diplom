@@ -78,6 +78,74 @@ describe("audit history model", () => {
     expect(model.rows[0].isProblematic).toBe(true);
   });
 
+  it("does not mark a completed warning row as problematic when competitor context is ready", () => {
+    const audit = createSummary({
+      id: "ready-with-replacements",
+      status: "completed_with_warnings",
+      comparisonSummary: {
+        user_score: 72,
+        competitors_average_score: 66,
+        score_difference: 6,
+        competitors_count: 10,
+        competitors_found: 14,
+        competitors_analyzed: 10,
+        competitors_failed: 4,
+        competitor_context_status: "ready",
+        competitor_context_quality: {
+          status: "ready",
+          score_safe_to_compare: true,
+          requested_top_n: 10,
+          accepted_competitors: 10,
+          discarded_competitors: 4,
+        },
+      },
+    });
+
+    const model = buildAuditHistoryModel({
+      audits: [audit],
+      filters: defaultAuditHistoryFilters,
+      hiddenAuditIds: [],
+      now,
+    });
+
+    expect(model.rows[0].isProblematic).toBe(false);
+    expect(model.summary.problematic).toBe(0);
+  });
+
+  it("keeps a completed warning row problematic when requested competitors were not filled", () => {
+    const audit = createSummary({
+      id: "shortfall",
+      status: "completed_with_warnings",
+      comparisonSummary: {
+        user_score: 72,
+        competitors_average_score: 66,
+        score_difference: 6,
+        competitors_count: 7,
+        competitors_found: 10,
+        competitors_analyzed: 7,
+        competitors_failed: 3,
+        competitor_context_status: "partial_but_usable",
+        competitor_context_quality: {
+          status: "partial_but_usable",
+          score_safe_to_compare: true,
+          requested_top_n: 10,
+          accepted_competitors: 7,
+          discarded_competitors: 3,
+        },
+      },
+    });
+
+    const model = buildAuditHistoryModel({
+      audits: [audit],
+      filters: defaultAuditHistoryFilters,
+      hiddenAuditIds: [],
+      now,
+    });
+
+    expect(model.rows[0].isProblematic).toBe(true);
+    expect(model.summary.problematic).toBe(1);
+  });
+
   it("builds a repeat-audit payload from the original row parameters", () => {
     const audit = createSummary({
       query: "купить диван",

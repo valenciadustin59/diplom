@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run dev:full",
     "dev": "node scripts/dev.mjs",
-    "dev:full": "npm run searxng:up && npm run searxng:check && npm run dev -- --with-worker",
+    "dev:full": "npm run searxng:up && npm run searxng:check && npm run dev -- --with-worker --worker-autoscale=auto",
     "build": "npm --prefix frontend run build",
     "site:check": "npm run build && node scripts/site-content-check.mjs",
     "test:scripts": "node --test scripts/dev.test.mjs scripts/searxng-healthcheck.test.mjs scripts/site-content-check.test.mjs scripts/d31-runtime-smoke.test.mjs",
