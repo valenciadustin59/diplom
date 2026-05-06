@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Card } from "../components/Card";
 import {
   buildAuditReportFilename,
@@ -75,6 +75,8 @@ export function AuditReportPage({
   failureContext,
 }: AuditReportPageProps) {
   const [exportMessage, setExportMessage] = useState<string | null>(null);
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
+  const reportRef = useRef<HTMLDivElement | null>(null);
   const reportInput = useMemo<AuditReportInput>(
     () => ({
       audit: currentAudit,
@@ -105,17 +107,63 @@ export function AuditReportPage({
     setExportMessage("HTML-отчёт скачан.");
   }
 
-  function handleOpenPrintable() {
-    const opened = openHtmlDocument(createAuditReportHtml(reportInput, { autoPrint: true }));
-    setExportMessage(
-      opened
-        ? "Печатная версия открыта в новой вкладке. В диалоге печати можно выбрать сохранение в PDF."
-        : "Браузер заблокировал новую вкладку. Используйте скачивание HTML или разрешите всплывающие окна для localhost.",
-    );
+  async function handleDownloadPdf() {
+    const element = reportRef.current;
+    if (!element || isGeneratingPdf) {
+      return;
+    }
+
+    try {
+      setIsGeneratingPdf(true);
+      setExportMessage("Готовим PDF-отчёт...");
+      const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
+        import("html2canvas"),
+        import("jspdf"),
+      ]);
+      const canvas = await html2canvas(element, {
+        backgroundColor: "#f4f7fd",
+        ignoreElements: (node) =>
+          node instanceof HTMLElement &&
+          (node.classList.contains("report-actions") || node.classList.contains("feedback-banner")),
+        scale: Math.min(window.devicePixelRatio || 1, 2),
+        useCORS: true,
+      });
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const margin = 10;
+      const imageWidth = pageWidth - margin * 2;
+      const imageHeight = (canvas.height * imageWidth) / canvas.width;
+      const image = canvas.toDataURL("image/png");
+
+      let remainingHeight = imageHeight;
+      let y = margin;
+      pdf.addImage(image, "PNG", margin, y, imageWidth, imageHeight);
+      remainingHeight -= pageHeight - margin * 2;
+
+      while (remainingHeight > 0) {
+        pdf.addPage();
+        y = margin - (imageHeight - remainingHeight);
+        pdf.addImage(image, "PNG", margin, y, imageWidth, imageHeight);
+        remainingHeight -= pageHeight - margin * 2;
+      }
+
+      pdf.save(buildAuditReportFilename(currentAudit, "pdf"));
+      setExportMessage("PDF-отчёт скачан.");
+    } catch {
+      const opened = openHtmlDocument(createAuditReportHtml(reportInput, { autoPrint: true }));
+      setExportMessage(
+        opened
+          ? "PDF не удалось собрать автоматически. Открыта резервная версия отчёта для сохранения через печать."
+          : "PDF не удалось собрать автоматически. Скачайте HTML-отчёт и сохраните его в PDF через браузер.",
+      );
+    } finally {
+      setIsGeneratingPdf(false);
+    }
   }
 
   return (
-    <div className="report-dashboard">
+    <div className="report-dashboard" ref={reportRef}>
       <Card className="report-hero">
         <div className="report-hero__content">
           <div>
@@ -137,8 +185,8 @@ export function AuditReportPage({
         </div>
 
         <div className="report-actions" aria-label="Экспорт отчёта">
-          <button type="button" className="primary-button" onClick={handleOpenPrintable}>
-            Открыть печатную версию
+          <button type="button" className="primary-button" onClick={handleDownloadPdf} disabled={isGeneratingPdf}>
+            {isGeneratingPdf ? "Готовим PDF..." : "Скачать PDF"}
           </button>
           <button type="button" className="secondary-button" onClick={handleDownloadHtml}>
             Скачать HTML

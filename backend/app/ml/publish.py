@@ -13,8 +13,8 @@ BACKEND_DIR = Path(__file__).resolve().parents[2]
 ARTIFACTS_DIR = BACKEND_DIR / "artifacts"
 VERSIONED_ARTIFACTS_DIR = ARTIFACTS_DIR / "versions"
 DATA_DIR = BACKEND_DIR / "data"
-DEFAULT_PRIMARY_DATASET_PATH = DATA_DIR / "ru_commercial_dataset.csv"
-DEFAULT_PRIMARY_MANIFEST_PATH = DATA_DIR / "ru_commercial_dataset.manifest.json"
+DEFAULT_PRIMARY_DATASET_PATH = DATA_DIR / "dataset_versions" / "dataset-v7-final" / "dataset.csv"
+DEFAULT_PRIMARY_MANIFEST_PATH = DATA_DIR / "dataset_versions" / "dataset-v7-final" / "manifest.json"
 def load_training_manifest(manifest_path: str | Path = DEFAULT_PRIMARY_MANIFEST_PATH) -> dict[str, Any]:
     resolved_path = Path(manifest_path)
     if not resolved_path.exists():

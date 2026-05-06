@@ -235,7 +235,7 @@ describe("audit timeline model", () => {
     expect(model.fanOutStages).toHaveLength(1);
     expect(model.fanOut?.branchCount).toBe(2);
     expect(model.fanOut?.maxDurationLabel).toBe("4 с");
-    expect(model.fanOut?.note).toContain("самую долгую");
+    expect(model.fanOut?.note).toContain("свободных worker-процессов");
   });
 
   it("surfaces every observed fan-out stage when diagnostics names only one", () => {

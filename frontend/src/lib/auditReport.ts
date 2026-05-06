@@ -697,7 +697,7 @@ export function createAuditReportMarkdown(input: AuditReportInput): string {
   ].join("\n");
 }
 
-export function buildAuditReportFilename(audit: AuditStatusResponse, extension: "html" | "md"): string {
+export function buildAuditReportFilename(audit: AuditStatusResponse, extension: "html" | "md" | "pdf"): string {
   const domain = getDomainFromUrl(audit.target_url)
     .toLowerCase()
     .replace(/[^a-z0-9а-яё.-]+/gi, "-")

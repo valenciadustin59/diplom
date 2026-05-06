@@ -1,5 +1,37 @@
 ﻿# AGENTS
 
+## Current Model Artifact Cleanup
+
+- The product now keeps only the active runtime model binary:
+  `backend/artifacts/page_quality_model.pkl` plus
+  `backend/artifacts/page_quality_model.metadata.json`.
+- Old `page_quality_model.dataset-*-candidate.pkl` binaries, candidate metadata
+  sidecars, and local rollback/versioned `.pkl` copies were removed from the
+  working tree to avoid UI/debug clutter and unnecessary storage.
+- Historical benchmark reports under `backend/artifacts/ranking-benchmarks/`
+  remain as text evidence. The only retained versioned training dataset is
+  `backend/data/dataset_versions/dataset-v7-final/`.
+- Old training dataset directories (`baseline-v1`, `dataset-v2`,
+  `dataset-v3-d37`, `dataset-v4`, `dataset-v5`,
+  `dataset-v6-query-relevance`) were removed from the working tree after the
+  final query-competitiveness model path was selected. Restore or regenerate
+  them only for an explicit retrospective experiment.
+- Legacy root training files (`backend/data/ru_commercial_dataset.*`,
+  `backend/data/training_queries.txt`, and
+  `backend/data/training_query_seeds.csv`) were also removed. ML publish and
+  dataset utilities now default to `dataset-v7-final` paths.
+- The old draft `backend/data/query_relevance_v1/` catalog and its generator
+  test/script were removed. Keep `query_relevance_v2/` as the final query
+  catalog behind `dataset-v7-final`, and keep `query_relevance_regression/` as
+  current regression evidence.
+- Current active runtime metadata: `dataset-v7-final`, schema `v4`, model type
+  `QueryCoreGuardrailCatBoostRegressor`, artifact version
+  `dataset-v7-final-20260505125858`.
+- Future agents should not assume old model binaries exist. If an old model is
+  needed for a retrospective experiment, restore/regenerate it explicitly from
+  Git history or the relevant training task, then remove it again after the
+  experiment.
+
 ## Current Clean D31 Evidence
 
 - D31 clean rerun supersedes the earlier `73128723-6a5b-41e6-81a7-d10aaa2570ad` smoke. Before rerun, all repo-scoped Celery/Uvicorn/Vite/dev processes were stopped; clean `npm start` showed four workers and no `DuplicateNodenameWarning`.

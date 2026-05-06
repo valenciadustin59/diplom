@@ -1,0 +1,14 @@
+backend/
+catboost_info/
+docs/
+infra/
+output/
+plans/
+scripts/
+.git/
+*.db
+*.log
+*.out.log
+*.err.log
+frontend/dist/
+frontend/*.tsbuildinfo

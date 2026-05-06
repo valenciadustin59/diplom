@@ -59,7 +59,7 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
       </div>
       <div className="timeline-stage-card__heading">
         <h3>{stage.label}</h3>
-        {stage.isCriticalPath ? <span className="timeline-badge">Вклад в критический путь</span> : null}
+        {stage.isCriticalPath ? <span className="timeline-badge" title="Этап влияет на общее время выполнения аудита">Критический путь</span> : null}
       </div>
       <p>{stage.description}</p>
       <dl className="timeline-stage-card__metrics">
@@ -87,8 +87,8 @@ function TimelineStageCard({ stage, index }: { stage: TimelineStageRow; index: n
 function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
   return (
     <Card
-      title="Параллельные ветки"
-      subtitle="Показывает все найденные параллельные этапы. Серверная диагностика может выбрать один признак ветвления, поэтому интерфейс дополнительно выводит ветвление по сырым событиям."
+      title="Ветки обработки"
+      subtitle="Показывает параллельное ветвление: сколько независимых задач ушло в очереди и сколько веток завершилось. Время в сыром журнале может отличаться по секундам, потому что страницы конкурентов загружаются с разной скоростью."
     >
       {fanOutStages.length > 0 ? (
         <div className="timeline-fanout">
@@ -144,7 +144,7 @@ function StageDiagnosticsTable({ stages }: { stages: TimelineStageRow[] }) {
       subtitle="Агрегированные счётчики по каждому логическому этапу конвейера аудита."
     >
       <div className="report-table-shell">
-        <table className="report-table timeline-table">
+        <table className="report-table timeline-table timeline-diagnostics-table">
           <thead>
             <tr>
               <th>Этап</th>
@@ -190,7 +190,7 @@ function EventStreamTable({ events }: { events: TimelineEventRow[] }) {
   return (
     <Card
       title="Поток событий"
-      subtitle="Сырые события из серверного журнала. Порядок строк сохраняет порядок записи событий; в параллельных ветках метки времени могут идти не строго по времени."
+      subtitle="Сырые события из серверного журнала. Эта таблица показывает факты запуска и завершения, а параллельность удобнее смотреть выше в блоке веток обработки."
     >
       {events.length > 0 ? (
         <div className="report-table-shell timeline-event-stream">

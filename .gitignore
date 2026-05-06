@@ -47,22 +47,8 @@ frontend/*.tsbuildinfo
 Thumbs.db
 
 backend/data/*.manifest.json
-!backend/data/ru_commercial_dataset.manifest.json
 backend/data/dataset_versions/dataset-v6-query-relevance/artifacts/
 backend/data/dataset_versions/dataset-v7-final/artifacts/
 output/d75-collection/
 !backend/artifacts/page_quality_model.pkl
-!backend/artifacts/page_quality_model.dataset-v2-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v2-expert-rf-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v2-expert-catboost-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v2-ranking-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v3-d37-rf-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v3-d37-catboost-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v3-d37-ranking-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v3-d44-second-pass-experiment.pkl
-!backend/artifacts/page_quality_model.dataset-v4-seo-weighted-rf-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v4-seo-weighted-catboost-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v4-seo-weighted-ranking-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v6-query-relevance-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v7-final-candidate.pkl
-!backend/artifacts/page_quality_model.dataset-v7-final-query-core-candidate.pkl
+.vercel

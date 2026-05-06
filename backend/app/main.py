@@ -17,10 +17,19 @@ async def lifespan(_: FastAPI):
 
 def create_application() -> FastAPI:
     settings = get_settings()
+    extra_origins = [
+        origin.strip()
+        for origin in settings.cors_allow_origins.split(",")
+        if origin.strip()
+    ]
     app = FastAPI(title=settings.app_name, lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+        allow_origins=[
+            "http://localhost:5173",
+            "http://127.0.0.1:5173",
+            *extra_origins,
+        ],
         allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
         allow_credentials=True,
         allow_methods=["*"],

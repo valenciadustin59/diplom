@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     semantic_max_text_chars: int = Field(default=3000, alias="SEMANTIC_MAX_TEXT_CHARS")
     semantic_max_query_chars: int = Field(default=300, alias="SEMANTIC_MAX_QUERY_CHARS")
     semantic_batch_size: int = Field(default=16, alias="SEMANTIC_BATCH_SIZE")
+    cors_allow_origins: str = Field(default="", alias="CORS_ALLOW_ORIGINS")
 
     model_config = SettingsConfigDict(
         env_file=".env",

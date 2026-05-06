@@ -14,14 +14,14 @@ DATA_DIR = BACKEND_DIR / "data"
 DATASET_VERSIONS_DIR = DATA_DIR / "dataset_versions"
 
 BASELINE_DATASET_VERSION = "baseline-v1"
-DEFAULT_DATASET_VERSION = "dataset-v2"
+DEFAULT_DATASET_VERSION = "dataset-v7-final"
 LABEL_SCHEMA_VERSION = "hybrid-v1"
 
-PRIMARY_DATASET_PATH = DATA_DIR / "ru_commercial_dataset.csv"
-PRIMARY_FAILURES_PATH = DATA_DIR / "ru_commercial_dataset_failures.csv"
-PRIMARY_MANIFEST_PATH = DATA_DIR / "ru_commercial_dataset.manifest.json"
-PRIMARY_CHECKPOINT_PATH = DATA_DIR / "ru_commercial_dataset.checkpoint.json"
-PRIMARY_SEEDS_PATH = DATA_DIR / "training_query_seeds.csv"
+PRIMARY_DATASET_PATH = DATASET_VERSIONS_DIR / "dataset-v7-final" / "dataset.csv"
+PRIMARY_FAILURES_PATH = DATASET_VERSIONS_DIR / "dataset-v7-final" / "failures.csv"
+PRIMARY_MANIFEST_PATH = DATASET_VERSIONS_DIR / "dataset-v7-final" / "manifest.json"
+PRIMARY_CHECKPOINT_PATH = DATASET_VERSIONS_DIR / "dataset-v7-final" / "checkpoint.json"
+PRIMARY_SEEDS_PATH = DATASET_VERSIONS_DIR / "dataset-v7-final" / "seeds.csv"
 
 
 @dataclass(frozen=True, slots=True)

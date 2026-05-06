@@ -78,6 +78,44 @@ function getGroupStatusLabel(status: RecommendationGroupStatus): string {
   }
 }
 
+function getPlainRecommendationAction(item: RecommendationPreviewItem | RecommendationGroup["items"][number]): string {
+  const code = item.code.toUpperCase();
+  const text = `${item.title} ${item.message}`.toLowerCase();
+
+  if (code.includes("TITLE")) {
+    return "Перепишите title так, чтобы в нём ясно были тема страницы и важные слова из запроса. Не набивайте фразами, сделайте заголовок понятным для человека.";
+  }
+  if (code.includes("DESCRIPTION") || code.includes("SNIPPET")) {
+    return "Добавьте короткое meta description: что предлагает страница, кому она подходит и почему по ней стоит перейти из выдачи.";
+  }
+  if (code.includes("CANONICAL")) {
+    return "Поставьте canonical на основную версию страницы, чтобы поисковик не делил сигналы между дублями URL.";
+  }
+  if (code.includes("INDEX") || code.includes("ROBOTS")) {
+    return "Проверьте robots, noindex и HTTP-статус: страница должна быть доступна поисковику и разрешена к индексации.";
+  }
+  if (code.includes("HEADING") || code.includes("H1")) {
+    return "Сделайте главный заголовок и подзаголовки ближе к реальной теме запроса: пользователь должен сразу понять, что попал на нужную страницу.";
+  }
+  if (code.includes("QUERY") || code.includes("INTENT") || code.includes("SEMANTIC") || text.includes("запрос")) {
+    return "Усилите ответ именно на введённый запрос: добавьте недостающие уточнения, примеры, условия, характеристики или разделы, которые ожидает пользователь.";
+  }
+  if (code.includes("COMMERCIAL") || code.includes("CONTACT") || code.includes("CTA") || code.includes("TRUST")) {
+    return "Сделайте путь к действию очевидным: контакты, форма заявки, условия работы, доверительные данные и следующий шаг должны быть видны без поиска по сайту.";
+  }
+  if (code.includes("TEXT") || code.includes("CONTENT")) {
+    return "Раскройте тему глубже: добавьте конкретику по услуге или товару, ответы на частые вопросы и детали, которых не хватает по сравнению с конкурентами.";
+  }
+  if (code.includes("URL") || code.includes("REDIRECT")) {
+    return "Упростите технический путь страницы: чистый URL, минимум лишних параметров и редиректов, корректный финальный адрес.";
+  }
+  if (code.includes("COMPETITOR") || text.includes("конкурент")) {
+    return "Посмотрите, в чём лидеры выдачи раскрывают запрос сильнее, и добавьте на страницу именно эти недостающие элементы.";
+  }
+
+  return "Исправьте указанный пункт на самой проверяемой странице и после правки повторите аудит, чтобы увидеть изменение score.";
+}
+
 function renderDeviation(deviation: RecommendationDeviation) {
   return (
     <article
@@ -156,6 +194,12 @@ function renderRecommendationCard(
         </div>
       </div>
       <p className="recommendation-item__message">{item.message}</p>
+      {!compact ? (
+        <div className="recommendation-item__plain-action">
+          <span>Что сделать</span>
+          <p>{getPlainRecommendationAction(item)}</p>
+        </div>
+      ) : null}
       {!compact ? <p className="recommendation-item__outcome">{item.expected_outcome}</p> : null}
       {!compact && actionControl && onActionStatusChange ? renderRecommendationActionControl(actionControl, onActionStatusChange) : null}
       {!compact && item.evidence.length > 0 ? (

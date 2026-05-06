@@ -414,46 +414,56 @@ function ScoreBreakdownCard({
   }
 
   return (
-    <Card
-      title="Что означает оценка"
-      subtitle="Оценка показывает, насколько страница подходит под запрос и насколько уверенно конкурирует в выдаче."
-    >
-      <div className="score-breakdown">
-        <p className="score-breakdown__methodology">{methodology}</p>
+    <div className="score-overview-section">
+      <Card
+        title="Что означает оценка"
+        subtitle="Оценка показывает, насколько страница подходит под запрос и насколько уверенно конкурирует в выдаче."
+      >
+        <div className="score-breakdown score-breakdown--meaning">
+          <p className="score-breakdown__methodology">{methodology}</p>
 
-        <div className="metric-strip metric-strip--comparison">
-          <div className="metric-box">
-            <span className="metric-box__label">Итоговая оценка</span>
-            <strong className="metric-box__value">{breakdown.final_score}</strong>
-          </div>
-        </div>
-
-        <div className="metric-strip metric-strip--comparison score-explanation-principles">
-          {scoreExplanationPrinciples.map((principle) => (
-            <div key={principle.title} className="metric-box">
-              <strong className="metric-box__value">{principle.title}</strong>
-              <p className="metric-box__note">{principle.detail}</p>
+          <div className="score-meaning-layout">
+            <div className="score-meaning-total">
+              <span>Итоговая оценка</span>
+              <strong>{formatScoreValue(breakdown.final_score)}</strong>
+              <p>Сначала проверяется соответствие запросу. Если страница подходит, дальше учитывается качество ответа и фон выдачи.</p>
             </div>
-          ))}
+
+            <div className="score-explanation-principles">
+              {scoreExplanationPrinciples.map((principle) => (
+                <article key={principle.title} className="score-principle-card">
+                  <strong>{principle.title}</strong>
+                  <p>{principle.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
+      </Card>
 
-        {breakdown.interaction_signals ? (
-          <div className="score-breakdown__context-note">
-            Отдельные проверки показываются ниже как сильные стороны и ограничения страницы. Они помогают понять, что
-            улучшать, но не раскрывают внутренний расчёт оценки.
-          </div>
-        ) : null}
+      <Card
+        title="Что влияет на оценку"
+        subtitle="Сильные стороны и ограничения вынесены отдельно, чтобы не смешивать смысл итогового score с конкретными факторами."
+      >
+        <div className="score-breakdown">
+          {breakdown.interaction_signals ? (
+            <div className="score-breakdown__context-note">
+              Эти факторы помогают понять, что улучшать в первую очередь. Они показывают объяснимые сигналы страницы, а
+              не внутреннюю формулу модели.
+            </div>
+          ) : null}
 
-        {factorGroups.length > 0 ? (
-          <ScoreFactorGroups groups={factorGroups} />
-        ) : (
-          <div className="score-breakdown__grid">
-            <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
-            <ScoreFactorList title="Что ограничивает оценку" items={negativeFactors} tone="negative" />
-          </div>
-        )}
-      </div>
-    </Card>
+          {factorGroups.length > 0 ? (
+            <ScoreFactorGroups groups={factorGroups} />
+          ) : (
+            <div className="score-breakdown__grid">
+              <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
+              <ScoreFactorList title="Что ограничивает оценку" items={negativeFactors} tone="negative" />
+            </div>
+          )}
+        </div>
+      </Card>
+    </div>
   );
 }
 
@@ -757,6 +767,7 @@ function OverviewPanel({
       />
 
       <Card
+        className="workspace-recommendations-card"
         title="Ключевые рекомендации"
         subtitle="Первые действия, которые сильнее всего влияют на качество страницы."
       >

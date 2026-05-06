@@ -1,55 +1,41 @@
-# Model Artifact Archive
+# Model Artifacts
 
-D60 archive note for GitHub #79. This directory intentionally mixes the
-production runtime alias with research and diploma evidence assets. The
-runtime contract is narrow: production code should load the default model from
-`backend/artifacts/page_quality_model.pkl` unless a command explicitly receives
-another path for an offline experiment, benchmark, publish, or rollback task.
+This directory is intentionally small now. The product keeps only the active
+runtime model binary here. Old candidate and rollback model binaries were
+removed after the final query-competitiveness model became the product path.
+Historical benchmark reports remain in `ranking-benchmarks/`. The working tree
+keeps only the final training dataset under `backend/data/dataset_versions/`.
+
+Runtime code should load the default model from
+`backend/artifacts/page_quality_model.pkl`. Do not infer a runtime model by
+scanning candidate filenames.
 
 ## Runtime Assets
 
 | Asset | Role | Current state |
 | --- | --- | --- |
-| `page_quality_model.pkl` | Production runtime alias loaded by `app.ml.model.DEFAULT_MODEL_PATH`. | Active CatBoost v3 model, SHA1 `29c4b29455f795a535da94b2c6f36ef603d003eb`. |
-| `page_quality_model.metadata.json` | Public sidecar for the production alias. | Dataset `dataset-v3-d37`, artifact version `dataset-v3-d37-20260501200434`, schema `v3`, model type `CatBoostRegressor`, 148 features. |
-| `versions/page_quality_model--dataset-v3-d37-20260501200434.pkl` | Immutable versioned copy of the current production alias. | Same SHA1 as `page_quality_model.pkl`; useful for registry/history display, not a separate runtime selector. |
-| `versions/page_quality_model--dataset-v3-d37-20260501200434.metadata.json` | Metadata sidecar for the current versioned copy. | Mirrors the active D38 publish metadata. |
+| `page_quality_model.pkl` | Production runtime alias loaded by `app.ml.model.DEFAULT_MODEL_PATH`. | Active final query-competitiveness model. |
+| `page_quality_model.metadata.json` | Public sidecar for the production alias. | Dataset `dataset-v7-final`, schema `v4`, model type `QueryCoreGuardrailCatBoostRegressor`, 156 features. |
 
 Runtime code must not infer "latest" by scanning candidate filenames. New
 research artifacts can coexist in this directory, but publication means copying
 one selected, guardrail-approved model into `page_quality_model.pkl` through a
 controlled publish workflow and refreshing `page_quality_model.metadata.json`.
 
-## Rollback Asset
+## Rollback Policy
 
-| Asset | Role | Current state |
-| --- | --- | --- |
-| `versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.pkl` | Preserved previous production model for controlled rollback. | RandomForest v1 rollback artifact, SHA1 `5600b5f3fff9b1b7590bc90b2b5fbc24ec5466f9`. |
-| `versions/page_quality_model--ru_commercial_dataset-20260421-primary-20260421174901.metadata.json` | Rollback metadata sidecar. | Dataset `ru_commercial_dataset-20260421-primary`, schema `v1`, 59 features. |
-
-Rollback is an engineering operation, not an automatic runtime fallback. The
-registry endpoint may display this asset as rollback evidence, but rollback
-still requires a deliberate copy back to the production alias followed by smoke
-verification.
+Local rollback binaries were removed to keep the project focused on the final
+runtime model. If a rollback is needed later, regenerate or restore the required
+artifact from Git history/evidence and then run a controlled publish or rollback
+smoke. The product should not show old models as selectable choices.
 
 ## Research And Candidate Artifacts
 
-The following files are research artifacts unless a future controlled publish
-explicitly promotes one of them into `page_quality_model.pkl`.
-
-| Pattern or file | Evidence wave | Runtime status |
-| --- | --- | --- |
-| `page_quality_model.dataset-v2-candidate.pkl` | D29/D30 early dataset-v2 benchmark. | Archived research candidate. |
-| `page_quality_model.dataset-v2-expert-*-candidate.pkl`, `page_quality_model.dataset-v2-ranking-candidate.pkl` | D34/D35 expert-label candidates. | Archived; D35/D36 recommended keep-reference/no-publish. |
-| `page_quality_model.dataset-v3-d37-*-candidate.pkl` | D37 unified v3 candidates. | D37 CatBoost candidate was later published through D38; the candidate files themselves remain evidence, not runtime aliases. |
-| `page_quality_model.dataset-v3-d44-second-pass-experiment.pkl` | D44 second-pass competitor-aware experiment. | Non-production experiment; D44 recommended not continuing without more evidence. |
-| `page_quality_model.dataset-v4-seo-weighted-*-candidate.pkl` | D47/D48 SEO-weighted candidates. | Non-production; D48/D49 recommended keep-current/no-publish. |
-| `page_quality_model.dataset-v5-*-candidate.pkl` | D53/D54 ranking-aware v5 candidates. | Non-production; D54 recommended keep-current/no-publish. |
-| `page_quality_model_batch50.pkl` | Older training artifact kept for historical traceability. | Archived evidence; not a runtime selector. |
-
-Many newer candidate files have `.metadata.json` sidecars with
-`non_production=true` and/or `runtime_enabled=false`. Treat missing sidecars on
-older artifacts as "archived research" rather than production eligibility.
+Old `page_quality_model.dataset-*-candidate.pkl` binaries and their metadata
+sidecars are no longer kept in the working tree. Their reports remain as
+historical text evidence under `ranking-benchmarks/`. Future experiments should
+write candidate binaries only while the experiment is active; if rejected, keep
+the report and remove the binary.
 
 ## Ranking Benchmarks And Decisions
 
@@ -80,29 +66,38 @@ updated and the controlled publish report records successful verification.
 
 ## Dataset Evidence
 
-Versioned dataset bundles live under `backend/data/dataset_versions/` and are
-evidence inputs for training, analysis, and reproducibility:
+Versioned dataset bundles live under `backend/data/dataset_versions/`. The
+working tree now keeps only the final production-aligned dataset:
 
 | Dataset | Purpose |
 | --- | --- |
-| `baseline-v1/` | Original baseline dataset evidence. |
-| `dataset-v2/` | D27-D36 dataset-v2, expert-label, and split evidence. |
-| `dataset-v3-d37/` | D37 unified v3 feature dataset used for the active D38 CatBoost publish. |
-| `dataset-v4/` | D45-D49 SEO-weighted label and candidate evidence; no publish. |
-| `dataset-v5/` | D50-D54 ranking-aware preference and controlled dataset evidence; no publish. |
+| `dataset-v7-final/` | Final query-competitiveness training dataset for the active runtime model. |
+
+Old training datasets (`baseline-v1`, `dataset-v2`, `dataset-v3-d37`,
+`dataset-v4`, `dataset-v5`, and `dataset-v6-query-relevance`) were removed from
+the working tree after the final model path was selected. Historical decisions
+remain documented in `ranking-benchmarks/`, plans and Git history. Restore or
+regenerate an old dataset only for an explicit retrospective experiment.
+Legacy root training files under `backend/data/ru_commercial_dataset.*` and
+`backend/data/training_*` were removed too; ML publish and dataset helpers now
+default to `dataset-v7-final`.
+The old draft `backend/data/query_relevance_v1/` catalog was removed as well.
+`backend/data/query_relevance_v2/` remains because it is the final query catalog
+that matches `dataset-v7-final`; `backend/data/query_relevance_regression/`
+remains because it stores current relevance regression cases.
 
 Dataset rows and raw extraction artifacts are not loaded by the product
-runtime. They support reproducible training, audits of decisions, and diploma
-evidence.
+runtime. The retained dataset supports final-model reproducibility and future
+training on the current contract.
 
 ## Quick Rules For Future Agents
 
 1. Use `backend/artifacts/page_quality_model.pkl` as the only default runtime
    model path.
-2. Do not delete research artifacts just because they are not production; they
-   are part of the diploma evidence trail.
+2. Keep old experiment reports, but do not keep rejected model binaries unless
+   a task explicitly needs them.
 3. Do not point runtime defaults at `*-candidate.pkl` files.
-4. Treat `versions/` as release history and rollback evidence. Copying from it
-   back to the alias is a controlled rollback task, not passive discovery.
+4. Treat `versions/` as optional local release history. It may be empty.
 5. Treat `ranking-benchmarks/` and `backend/data/dataset_versions/` as
-   reproducibility/evidence archives, not runtime asset roots.
+   reproducibility/evidence archives, not runtime asset roots. The only retained
+   dataset bundle is `dataset-v7-final/`.

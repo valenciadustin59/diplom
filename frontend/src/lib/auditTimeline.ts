@@ -139,31 +139,31 @@ const TERMINAL_EVENTS = new Set(["completed", "failed", "aborted"]);
 const FAN_OUT_STAGES = new Set(["competitor_page", "competitor_analysis"]);
 
 const STAGE_LABELS: Record<string, string> = {
-  pipeline: "Конвейер аудита",
-  fetch: "Загрузка целевой страницы",
-  heavy_analysis: "Углублённый анализ",
-  features: "Извлечение признаков",
-  scoring: "Расчёт оценки",
-  competitors: "Поиск конкурентов",
-  competitor_page: "Загрузка конкурентов",
-  competitor_analysis: "Анализ конкурентов",
-  competitor_aggregation: "Сводка конкурентов",
+  pipeline: "Старт аудита",
+  fetch: "Загрузка страницы",
+  heavy_analysis: "Глубокий анализ",
+  features: "Сигналы страницы",
+  scoring: "Расчёт score",
+  competitors: "Подбор конкурентов",
+  competitor_page: "Загрузка страниц",
+  competitor_analysis: "Оценка конкурентов",
+  competitor_aggregation: "Сравнение",
   recommendations: "Рекомендации",
-  finalize: "Финализация",
+  finalize: "Готовый результат",
 };
 
 const STAGE_DESCRIPTIONS: Record<string, string> = {
-  pipeline: "Родительский оркестратор запускает и завершает распределённый аудит.",
-  fetch: "Загружает целевую посадочную страницу и сохраняет диагностику загрузки.",
-  heavy_analysis: "Выполняет углублённый анализ контента и SEO-проверки по сохранённому снимку страницы.",
-  features: "Извлекает структурированные сигналы ранжирования, смыслового соответствия, технического качества и доверия.",
-  scoring: "Собирает правила и ML-сигналы в итоговую оценку.",
-  competitors: "Собирает конкурентов из поисковой выдачи и планирует параллельные ветки.",
-  competitor_page: "Задачи параллельного ветвления загружают посадочные страницы конкурентов.",
-  competitor_analysis: "Задачи параллельного ветвления анализируют успешно загруженных конкурентов.",
-  competitor_aggregation: "Собирает результаты конкурентных веток обратно в один аудит.",
-  recommendations: "Формирует список рекомендаций из данных целевой страницы и конкурентов.",
-  finalize: "Фиксирует финальный статус, оценку, предупреждения и сводные счётчики.",
+  pipeline: "Запускает аудит и распределяет работу по очередям.",
+  fetch: "Загружает страницу, которую проверяет пользователь.",
+  heavy_analysis: "Разбирает контент, структуру, технические и смысловые сигналы страницы.",
+  features: "Готовит понятные системе сигналы для расчёта оценки.",
+  scoring: "Считает score страницы по запросу.",
+  competitors: "Подбирает страницы из выдачи для сравнения.",
+  competitor_page: "Загружает страницы конкурентов из выдачи.",
+  competitor_analysis: "Считает score и основные сигналы для загруженных конкурентов.",
+  competitor_aggregation: "Сравнивает целевую страницу с обработанными конкурентами.",
+  recommendations: "Готовит список действий для улучшения страницы.",
+  finalize: "Сохраняет итоговый статус, score и данные отчёта.",
 };
 
 const EVENT_LABELS: Record<string, string> = {
@@ -751,7 +751,7 @@ function buildFanOutFromDiagnostics(fanOut: AuditTimelineFanOut): TimelineFanOut
     averageDurationLabel: formatTimelineDuration(fanOut.average_duration_ms),
     maxDurationLabel: formatTimelineDuration(fanOut.max_duration_ms),
     criticalPathDurationLabel: formatTimelineDuration(fanOut.critical_path_duration_ms),
-    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех параллельных задач.",
+    note: "Задачи создаются отдельными ветками. Разные секунды старта в журнале означают ожидание свободных worker-процессов или разную скорость загрузки страниц, а не что конвейер стал последовательным.",
   };
 }
 
@@ -768,7 +768,7 @@ function buildFanOutFromStageRow(row: TimelineStageRow): TimelineFanOutModel {
     averageDurationLabel: row.averageDurationLabel,
     maxDurationLabel: row.maxDurationLabel,
     criticalPathDurationLabel: row.criticalPathDurationLabel,
-    note: "Критический путь берёт самую долгую параллельную ветку, а не сумму всех параллельных задач.",
+    note: "Задачи создаются отдельными ветками. Разные секунды старта в журнале означают ожидание свободных worker-процессов или разную скорость загрузки страниц, а не что конвейер стал последовательным.",
   };
 }
 

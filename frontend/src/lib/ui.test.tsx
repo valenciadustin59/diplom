@@ -1534,6 +1534,7 @@ describe("AuditWorkspace", () => {
     );
 
     expect(markup).toContain("Отчёт аудита");
+    expect(markup).toContain("Скачать PDF");
     expect(markup).toContain("Скачать Markdown");
     expect(markup).not.toContain("Доверие к score");
     expect(markup).toContain("Ключевые проверки страницы");
@@ -1600,12 +1601,12 @@ describe("AuditWorkspace", () => {
     expect(markup).toContain("Отправлено в очереди");
     expect(markup).toContain("Критический путь");
     expect(markup).toContain("Жизненный цикл этапов");
-    expect(markup).toContain("Вклад в критический путь");
-    expect(markup).toContain("Параллельные ветки");
+    expect(markup).toContain("Критический путь");
+    expect(markup).toContain("Ветки обработки");
     expect(markup).toContain("Диагностика этапов");
     expect(markup).toContain("Поток событий");
     expect(markup).toContain("Сырые события из серверного журнала");
-    expect(markup).toContain("Углублённый анализ");
+    expect(markup).toContain("Глубокий анализ");
     expect(markup).toContain("audits.heavy_analysis");
     expect(markup).not.toContain(["Run", "time contributor"].join(""));
     expect(markup).not.toContain("Fan-out stages");
