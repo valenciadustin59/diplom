@@ -8,6 +8,7 @@ from statistics import median
 from typing import Any
 from urllib.parse import parse_qsl, urljoin, urlsplit
 
+from app import query_lexicons
 from app.parser import ensure_extraction_artifact, extract_document
 from app.semantic import build_semantic_features
 
@@ -129,97 +130,6 @@ QUERY_INTENT_LABELS = (
     "navigational",
     "other",
 )
-
-COMMERCIAL_INTENT_KEYWORDS = {
-    "buy",
-    "order",
-    "price",
-    "pricing",
-    "cost",
-    "service",
-    "services",
-    "quote",
-    "install",
-    "installation",
-    "repair",
-    "delivery",
-    "купить",
-    "заказать",
-    "цена",
-    "стоимость",
-    "прайс",
-    "услуга",
-    "услуги",
-    "монтаж",
-    "ремонт",
-    "доставка",
-}
-
-LOCAL_INTENT_KEYWORDS = {
-    "near",
-    "nearby",
-    "local",
-    "city",
-    "map",
-    "address",
-    "район",
-    "рядом",
-    "поблизости",
-    "карте",
-    "адрес",
-    "город",
-    "москва",
-    "спб",
-    "санкт",
-    "петербург",
-    "екатеринбург",
-    "казань",
-    "новосибирск",
-    "краснодар",
-}
-
-INFORMATIONAL_INTENT_KEYWORDS = {
-    "how",
-    "what",
-    "why",
-    "guide",
-    "review",
-    "reviews",
-    "comparison",
-    "examples",
-    "instruction",
-    "instructions",
-    "faq",
-    "как",
-    "что",
-    "почему",
-    "зачем",
-    "обзор",
-    "обзоры",
-    "отзывы",
-    "сравнение",
-    "пример",
-    "примеры",
-    "инструкция",
-    "инструкции",
-}
-
-NAVIGATIONAL_INTENT_KEYWORDS = {
-    "official",
-    "site",
-    "website",
-    "login",
-    "sign",
-    "account",
-    "cabinet",
-    "contacts",
-    "официальный",
-    "сайт",
-    "вход",
-    "личный",
-    "кабинет",
-    "контакты",
-}
 
 SERP_RELATIVE_GROUPS = {
     "query_match": (
@@ -626,89 +536,15 @@ def _tokenize(value: str) -> list[str]:
     return re.findall(r"\w+", value.lower(), flags=re.UNICODE)
 
 
-QUERY_INTENT_MODIFIER_TERMS = frozenset(
-    {
-        "аренд",
-        "заказ",
-        "заказать",
-        "заказыва",
-        "записаться",
-        "запис",
-        "записа",
-        "куп",
-        "купит",
-        "купить",
-        "купл",
-        "магазин",
-        "недорог",
-        "онлайн",
-        "покупк",
-        "продаж",
-        "стоимост",
-        "цен",
-        "цена",
-        "цены",
-        "цену",
-        "бизнес",
-        "бизнеса",
-        "выбрать",
-        "гарантией",
-        "гарант",
-        "для",
-        "екатеринбург",
-        "казань",
-        "казан",
-        "как",
-        "кака",
-        "какая",
-        "каки",
-        "какие",
-        "какой",
-        "почем",
-        "почему",
-        "тако",
-        "такое",
-        "что",
-        "чем",
-        "зачем",
-        "ключ",
-        "консультация",
-        "лучшие",
-        "москва",
-        "москв",
-        "новосибирск",
-        "отзывы",
-        "петербург",
-        "под",
-        "рядом",
-        "ряд",
-        "санкт",
-    }
-)
-
-QUERY_GEO_MODIFIER_TERMS = frozenset(
-    {
-        "адрес",
-        "город",
-        "екатеринбург",
-        "казан",
-        "казань",
-        "карт",
-        "краснодар",
-        "москва",
-        "москв",
-        "near",
-        "nearby",
-        "новосибирск",
-        "петербург",
-        "поблизост",
-        "район",
-        "ряд",
-        "рядом",
-        "санкт",
-        "спб",
-    }
-)
+COMMERCIAL_INTENT_KEYWORDS = query_lexicons.COMMERCIAL_INTENT_KEYWORDS
+LOCAL_INTENT_KEYWORDS = query_lexicons.LOCAL_INTENT_KEYWORDS
+INFORMATIONAL_INTENT_KEYWORDS = query_lexicons.INFORMATIONAL_INTENT_KEYWORDS
+NAVIGATIONAL_INTENT_KEYWORDS = query_lexicons.NAVIGATIONAL_INTENT_KEYWORDS
+QUERY_INTENT_MODIFIER_TERMS = query_lexicons.QUERY_INTENT_MODIFIER_TERMS
+QUERY_GEO_MODIFIER_TERMS = query_lexicons.QUERY_GEO_MODIFIER_TERMS
+QUERY_NON_CORE_MODIFIER_TERMS = query_lexicons.QUERY_NON_CORE_MODIFIER_TERMS
+GEO_TOKEN_ALIASES = query_lexicons.GEO_TOKEN_ALIASES
+INTENT_TOKEN_ALIASES = query_lexicons.INTENT_TOKEN_ALIASES
 
 _TOKEN_SUFFIXES = (
     "иями",
@@ -781,6 +617,28 @@ def _coverage_ratio(query_words: list[str], word_freq: Counter[str]) -> float:
     if not query_words:
         return 0.0
     return sum(1 for word in query_words if word in word_freq) / len(query_words)
+
+
+def _word_present_with_aliases(word: str, word_freq: Counter[str], aliases: dict[str, frozenset[str]]) -> bool:
+    if word in word_freq:
+        return True
+    return any(alias in word_freq for alias in aliases.get(word, ()))
+
+
+def _word_count_with_aliases(word: str, word_freq: Counter[str], aliases: dict[str, frozenset[str]]) -> int:
+    if word in word_freq:
+        return word_freq[word]
+    return sum(word_freq[alias] for alias in aliases.get(word, ()) if alias in word_freq)
+
+
+def _coverage_ratio_with_aliases(
+    query_words: list[str],
+    word_freq: Counter[str],
+    aliases: dict[str, frozenset[str]],
+) -> float:
+    if not query_words:
+        return 0.0
+    return sum(1 for word in query_words if _word_present_with_aliases(word, word_freq, aliases)) / len(query_words)
 
 
 def _phrase_count(needle: list[str], haystack: list[str]) -> int:
@@ -1389,20 +1247,32 @@ def build_features(
         heading_query_matches = sum(1 for word in normalized_query_words if word in heading_word_freq)
         heading_query_coverage_ratio = heading_query_matches / len(query_words)
         first_200_words_query_term_count = sum(first_200_word_freq[word] for word in normalized_query_words)
-        core_query_words = [word for word in normalized_query_words if word not in QUERY_INTENT_MODIFIER_TERMS]
+        core_query_words = [word for word in normalized_query_words if word not in QUERY_NON_CORE_MODIFIER_TERMS]
         intent_modifier_words = [word for word in normalized_query_words if word in QUERY_INTENT_MODIFIER_TERMS]
         query_core_term_count = sum(word_freq[word] for word in core_query_words)
         query_core_term_matches = sum(1 for word in core_query_words if word in word_freq)
         query_core_keyword_coverage_ratio = _coverage_ratio(core_query_words or normalized_query_words, word_freq)
         query_core_phrase_count = _phrase_count(core_query_words or normalized_query_words, normalized_words)
         query_core_phrase_present = int(query_core_phrase_count > 0)
-        query_intent_modifier_count = sum(word_freq[word] for word in intent_modifier_words)
-        query_intent_modifier_matches = sum(1 for word in intent_modifier_words if word in word_freq)
-        query_intent_modifier_coverage_ratio = _coverage_ratio(intent_modifier_words, word_freq)
+        query_intent_modifier_count = sum(
+            _word_count_with_aliases(word, word_freq, INTENT_TOKEN_ALIASES) for word in intent_modifier_words
+        )
+        query_intent_modifier_matches = sum(
+            1 for word in intent_modifier_words if _word_present_with_aliases(word, word_freq, INTENT_TOKEN_ALIASES)
+        )
+        query_intent_modifier_coverage_ratio = _coverage_ratio_with_aliases(
+            intent_modifier_words, word_freq, INTENT_TOKEN_ALIASES
+        )
         geo_modifier_words = [word for word in normalized_query_words if word in QUERY_GEO_MODIFIER_TERMS]
-        query_geo_modifier_count = sum(word_freq[word] for word in geo_modifier_words)
-        query_geo_modifier_matches = sum(1 for word in geo_modifier_words if word in word_freq)
-        query_geo_modifier_coverage_ratio = _coverage_ratio(geo_modifier_words, word_freq)
+        query_geo_modifier_count = sum(
+            _word_count_with_aliases(word, word_freq, GEO_TOKEN_ALIASES) for word in geo_modifier_words
+        )
+        query_geo_modifier_matches = sum(
+            1 for word in geo_modifier_words if _word_present_with_aliases(word, word_freq, GEO_TOKEN_ALIASES)
+        )
+        query_geo_modifier_coverage_ratio = _coverage_ratio_with_aliases(
+            geo_modifier_words, word_freq, GEO_TOKEN_ALIASES
+        )
         primary_core_words = core_query_words[-1:]
         query_primary_core_term_count = sum(word_freq[word] for word in primary_core_words)
         query_primary_core_term_matches = sum(1 for word in primary_core_words if word in word_freq)

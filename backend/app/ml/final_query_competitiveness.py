@@ -10,7 +10,6 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from app.features import QUERY_INTENT_MODIFIER_TERMS
 from app.features import _coverage_ratio as _feature_coverage_ratio
 from app.features import _normalize_query_token, _tokenize
 from app.features import _phrase_count as _feature_phrase_count
@@ -40,6 +39,7 @@ from app.ml.train import (
     split_dataset_rows,
     train_candidate_models,
 )
+from app.query_lexicons import QUERY_INTENT_MODIFIER_TERMS, QUERY_NON_CORE_MODIFIER_TERMS
 from app.query_relevance import build_query_relevance_guardrail, build_query_topic_metrics
 
 
@@ -250,7 +250,7 @@ def _query_core_feature_values(query: object, text: str) -> dict[str, float]:
     query_tokens = [token for token in query_tokens if token]
     text_tokens = [_normalize_query_token(token) for token in _tokenize(text)]
     word_freq = Counter(text_tokens)
-    core_query_words = [word for word in query_tokens if word not in QUERY_INTENT_MODIFIER_TERMS]
+    core_query_words = [word for word in query_tokens if word not in QUERY_NON_CORE_MODIFIER_TERMS]
     intent_modifier_words = [word for word in query_tokens if word in QUERY_INTENT_MODIFIER_TERMS]
     core_phrase_count = _feature_phrase_count(core_query_words or query_tokens, text_tokens)
     return {

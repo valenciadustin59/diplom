@@ -97,6 +97,64 @@ def test_build_features_treats_informational_phrase_as_modifier(monkeypatch):
     assert features["modifier_or_geo_only_match"] == 0
 
 
+def test_build_features_excludes_city_aliases_from_query_core(monkeypatch):
+    monkeypatch.setattr(
+        "app.features.build_semantic_features",
+        lambda text, query: {
+            "semantic_similarity": 0.68,
+            "semantic_similarity_raw": 0.65,
+            "semantic_provider_code": 2,
+            "semantic_model_code": 2,
+            "semantic_fallback_used": 0,
+            "semantic_embedding_failure": 0,
+        },
+    )
+
+    features = build_features(
+        html="<html><head><title>Детская стоматология в Санкт-Петербурге</title></head></html>",
+        text="Детская стоматология в Санкт-Петербурге: лечение зубов у детей.",
+        query="детская стоматология спб",
+    )
+
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
+    assert features["query_core_term_matches"] == 2
+    assert features["query_geo_modifier_matches"] == 1
+    assert features["query_geo_modifier_coverage_ratio"] == 1.0
+    assert features["modifier_or_geo_only_match"] == 0
+
+
+def test_build_features_matches_intent_synonyms_without_making_them_core(monkeypatch):
+    monkeypatch.setattr(
+        "app.features.build_semantic_features",
+        lambda text, query: {
+            "semantic_similarity": 0.72,
+            "semantic_similarity_raw": 0.69,
+            "semantic_provider_code": 2,
+            "semantic_model_code": 2,
+            "semantic_fallback_used": 0,
+            "semantic_embedding_failure": 0,
+        },
+    )
+
+    features = build_features(
+        html="<html><head><title>Козловой кран</title></head></html>",
+        text="Козловой кран в наличии. Покупка возможна по договору, указана стоимость и комплектация.",
+        query="купить козловой кран цена",
+    )
+
+    assert features["query_core_keyword_coverage_ratio"] == 1.0
+    assert features["query_core_term_matches"] == 2
+    assert features["query_intent_modifier_matches"] == 2
+    assert features["query_intent_modifier_coverage_ratio"] == 1.0
+
+
+def test_detect_query_intent_uses_city_aliases():
+    intent = detect_query_intent("ремонт холодильников питер")
+
+    assert intent["modifiers"]["local_modifier"] == 1
+    assert intent["label"] == "local_commercial"
+
+
 def test_build_technical_seo_features_from_snapshot():
     snapshot = {
         "requested_url": "https://example.com/catalog?utm_source=ads",
