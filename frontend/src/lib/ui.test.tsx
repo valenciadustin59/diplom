@@ -1363,7 +1363,7 @@ describe("AuditWorkspace", () => {
     expect(markup).not.toContain("confident_full_query_mismatch");
   });
 
-  it("renders score confidence warnings for incomplete audit data", () => {
+  it("renders audit warnings without noisy score confidence badge in overview", () => {
     const longWarning =
       "Очень длинное предупреждение о неполном конкурентном покрытии, которое должно переноситься внутри карточки доверия к score без поломки узкой раскладки.";
     const markup = renderToStaticMarkup(
@@ -1430,9 +1430,9 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Данные: частичные");
+    expect(markup).not.toContain("Данные: частичные");
     expect(markup).toContain(longWarning);
-    expect(markup).toContain("score-confidence__badge--warning");
+    expect(markup).not.toContain("score-confidence__badge--warning");
     expect(markup).not.toContain("Доверие к score");
   });
 

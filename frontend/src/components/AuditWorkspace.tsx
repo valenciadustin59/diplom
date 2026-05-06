@@ -3,7 +3,6 @@ import { AuditReportPage } from "../pages/AuditReportPage";
 import { AuditTimelinePage } from "../pages/AuditTimelinePage";
 import { RecommendationsPage } from "../pages/RecommendationsPage";
 import { RuntimeStatusCompactCard } from "../pages/RuntimeStatusPage";
-import { buildScoreConfidenceView } from "../lib/auditConfidence";
 import { buildAuditLowScoreReason, type AuditLowScoreReason } from "../lib/auditLowScoreReason";
 import {
   buildCompetitorContextStats,
@@ -702,13 +701,6 @@ function OverviewPanel({
     competitorAverageScore !== null
       ? finalScore - competitorAverageScore
       : getFiniteNumber(comparisonSummary?.score_difference);
-  const scoreConfidence = buildScoreConfidenceView({
-    audit: currentAudit,
-    results: currentResults,
-    recommendations,
-    comparisonSummary,
-  });
-  const showDataQualityBadge = scoreConfidence.warningCount > 0 || scoreConfidence.errorCount > 0;
   const earlyStopView =
     getEarlyStopMismatchView(currentResults?.score_breakdown) ?? getEarlyStopMismatchView(currentAudit?.score_breakdown);
   const competitorContextNotice = getCompetitorContextNotice(comparisonSummary);
@@ -739,11 +731,6 @@ function OverviewPanel({
                 <span className="workspace-meta__item">Статус: {getAuditStatusLabel(currentAudit.status as AuditStatus)}</span>
                 <span className="workspace-meta__item">Запущен: {formatDate(currentAudit.created_at)}</span>
                 <span className="workspace-meta__item">Загрузка: {getFetchMethodLabel(currentResults?.target_fetch_method ?? currentAudit.target_fetch_method)}</span>
-                {showDataQualityBadge ? (
-                  <span className={`score-confidence__badge score-confidence__badge--${scoreConfidence.tone}`}>
-                    {scoreConfidence.compactLabel}
-                  </span>
-                ) : null}
               </div>
             ) : null}
           </div>
