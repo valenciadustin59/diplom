@@ -41,7 +41,6 @@ import type {
   RecommendationsBundle,
   ScoreBreakdown,
   ScoreFactor,
-  ScoreFactorGroup,
 } from "../types";
 
 type AuditWorkspaceProps = {
@@ -109,17 +108,6 @@ function getDisplayUrl(url: string): string {
   } catch {
     return url;
   }
-}
-
-function formatImpact(value: number): string {
-  const magnitude = Math.abs(value);
-  if (magnitude >= 12) {
-    return value >= 0 ? "Сильно помогает" : "Сильно ограничивает";
-  }
-  if (magnitude >= 6) {
-    return value >= 0 ? "Заметно помогает" : "Заметно ограничивает";
-  }
-  return value >= 0 ? "Может помочь" : "Небольшое ограничение";
 }
 
 function formatScoreValue(value: number | null | undefined): string {
@@ -208,12 +196,106 @@ function getScoreFactorId(item: ScoreFactor, index: number): string {
   return item.code ?? item.key ?? `${item.label}:${index}`;
 }
 
-function formatScoreFactorDetail(item: ScoreFactor): string {
-  if (item.detail) {
-    return item.detail;
+function getFactorSearchText(item: ScoreFactor): string {
+  return `${item.label} ${item.code ?? ""} ${item.key ?? ""}`.toLowerCase();
+}
+
+function getFactorImpactLabel(value: number, tone: "positive" | "negative"): string {
+  const magnitude = Math.abs(value);
+  if (tone === "positive") {
+    if (magnitude >= 12) {
+      return "Сильно помогает";
+    }
+    if (magnitude >= 6) {
+      return "Заметно помогает";
+    }
+    return "Небольшой плюс";
   }
 
-  return "";
+  if (magnitude >= 12) {
+    return "Сильно мешает";
+  }
+  if (magnitude >= 6) {
+    return "Заметно мешает";
+  }
+  return "Небольшое ограничение";
+}
+
+function getScoreFactorUserExplanation(item: ScoreFactor, tone: "positive" | "negative"): string {
+  const text = getFactorSearchText(item);
+  const isPositive = tone === "positive";
+
+  if (/смысл|semantic|соответ|релевант|relevance|intent|тема|topic|query/.test(text)) {
+    return isPositive
+      ? "Страница хорошо попадает в тему запроса: пользователю проще понять, что это именно тот ответ или услуга."
+      : "Странице нужно яснее показать связь с запросом: объект, услуга или намерение пользователя считываются недостаточно уверенно.";
+  }
+
+  if (/ключ|keyword|coverage|phrase|вхожд|prominence/.test(text)) {
+    return isPositive
+      ? "Важные слова запроса уже заметны в содержании и помогают поисковой системе связать страницу с темой."
+      : "Важные слова запроса стоит добавить естественно: в заголовок, первый экран, описания услуги или ответы на вопросы.";
+  }
+
+  if (/title|заголов|heading|h1|h2/.test(text)) {
+    return isPositive
+      ? "Заголовки помогают быстро понять тему страницы и поддерживают соответствие запросу."
+      : "Заголовки стоит сделать точнее: пользователь и поисковая система должны сразу видеть, чему посвящена страница.";
+  }
+
+  if (/коммер|commercial|цена|price|стоим|купить|заказать|order|контакт|phone|trust|довер/.test(text)) {
+    return isPositive
+      ? "На странице есть признаки доверия и готовности к действию: контакты, понятные условия или путь к заявке."
+      : "Усилите коммерческую часть: добавьте понятные условия, контакты, доверие, форму заявки или ценовой ориентир там, где это уместно.";
+  }
+
+  if (/текст|content|word|полнот|depth|coverage|ответ/.test(text)) {
+    return isPositive
+      ? "Страница достаточно раскрывает тему и даёт пользователю полезный ответ по запросу."
+      : "Раскройте тему подробнее: добавьте важные детали, варианты выбора, ограничения, примеры или ответы на частые вопросы.";
+  }
+
+  if (/technical|index|canonical|redirect|viewport|status|fetch|http|доступ|индекс/.test(text)) {
+    return isPositive
+      ? "Техническая часть не мешает странице обрабатываться и попадать в сравнение."
+      : "Проверьте техническую доступность: индексацию, canonical, редиректы, корректный ответ страницы и мобильное отображение.";
+  }
+
+  return isPositive
+    ? "Этот фактор усиливает страницу в сравнении с запросом и конкурентами."
+    : "Этот фактор ограничивает конкурентность страницы. Его стоит проверить перед следующей итерацией улучшений.";
+}
+
+function getScoreFactorEmptyText(tone: "positive" | "negative"): string {
+  return tone === "positive"
+    ? "Сильные стороны появятся после завершения аудита."
+    : "Явных ограничений в этом блоке не найдено. Проверьте рекомендации ниже, если хотите усилить страницу точечно.";
+}
+
+function collectScoreFactors(breakdown: ScoreBreakdown, tone: "positive" | "negative"): ScoreFactor[] {
+  const directFactors =
+    tone === "positive"
+      ? breakdown.positives ?? breakdown.top_positive_factors ?? []
+      : breakdown.negatives ?? breakdown.top_negative_factors ?? [];
+  const sourceFactors =
+    directFactors.length > 0
+      ? directFactors
+      : (breakdown.factor_groups ?? []).flatMap((group) =>
+          group.items.filter((item) => (tone === "positive" ? item.impact >= 0 : item.impact < 0)),
+        );
+  const seen = new Set<string>();
+
+  return sourceFactors
+    .filter((item) => (tone === "positive" ? item.impact > 0 : item.impact < 0))
+    .filter((item) => {
+      const id = getScoreFactorId(item, seen.size);
+      if (seen.has(id)) {
+        return false;
+      }
+      seen.add(id);
+      return true;
+    })
+    .slice(0, 5);
 }
 
 function getScoreMethodologyText(
@@ -288,24 +370,31 @@ function ScoreFactorList({
   title,
   items = [],
   tone,
+  subtitle,
 }: {
   title: string;
   items?: ScoreFactor[];
   tone: "positive" | "negative";
+  subtitle: string;
 }) {
   return (
-    <div className="score-factor-group">
-      <h4 className="score-factor-group__title">{title}</h4>
+    <div className={`score-factor-group score-factor-group--${tone}`}>
+      <div className="score-factor-group__header">
+        <h4 className="score-factor-group__title">{title}</h4>
+        <p>{subtitle}</p>
+      </div>
       {items.length > 0 ? (
         <div className="score-factor-list">
           {items.map((item, index) => {
-            const detail = formatScoreFactorDetail(item);
+            const detail = getScoreFactorUserExplanation(item, tone);
 
             return (
               <article key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
                 <div className="score-factor__top">
                   <strong>{getHumanReadableLabel(item.label)}</strong>
-                  <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
+                  <span className={`score-factor__impact score-factor__impact--${tone}`}>
+                    {getFactorImpactLabel(item.impact, tone)}
+                  </span>
                 </div>
                 {detail ? <p className="score-factor__detail">{detail}</p> : null}
               </article>
@@ -313,43 +402,8 @@ function ScoreFactorList({
           })}
         </div>
       ) : (
-        <div className="empty-state">После завершения аудита здесь появятся объяснимые факторы оценки.</div>
+        <div className="empty-state">{getScoreFactorEmptyText(tone)}</div>
       )}
-    </div>
-  );
-}
-
-function ScoreFactorGroups({ groups }: { groups: ScoreFactorGroup[] }) {
-  return (
-    <div className="score-factor-groups">
-      {groups.map((group) => (
-        <article key={group.key} className="score-factor-summary">
-          <div className="score-factor-summary__header">
-            <strong>{group.title}</strong>
-            <p>{group.summary}</p>
-          </div>
-          {group.items.length > 0 ? (
-            <div className="score-factor-summary__items">
-              {group.items.slice(0, 4).map((item, index) => {
-                const tone = item.impact >= 0 ? "positive" : "negative";
-                const detail = formatScoreFactorDetail(item);
-
-                return (
-                  <div key={getScoreFactorId(item, index)} className={`score-factor score-factor--${tone}`}>
-                    <div className="score-factor__top">
-                      <strong>{getHumanReadableLabel(item.label)}</strong>
-                      <span className={`score-factor__impact score-factor__impact--${tone}`}>{formatImpact(item.impact)}</span>
-                    </div>
-                    {detail ? <p className="score-factor__detail">{detail}</p> : null}
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="empty-state">Явных просадок или сильных сигналов в этом блоке не найдено.</div>
-          )}
-        </article>
-      ))}
     </div>
   );
 }
@@ -372,9 +426,8 @@ function ScoreBreakdownCard({
     );
   }
 
-  const positiveFactors = breakdown.positives ?? breakdown.top_positive_factors ?? [];
-  const negativeFactors = breakdown.negatives ?? breakdown.top_negative_factors ?? [];
-  const factorGroups = breakdown.factor_groups ?? [];
+  const positiveFactors = collectScoreFactors(breakdown, "positive");
+  const negativeFactors = collectScoreFactors(breakdown, "negative");
   const methodology = getScoreMethodologyText(breakdown, lowScoreReason);
   const earlyStopView = getEarlyStopMismatchView(breakdown);
 
@@ -443,24 +496,23 @@ function ScoreBreakdownCard({
 
       <Card
         title="Что влияет на оценку"
-        subtitle="Сильные стороны и ограничения вынесены отдельно, чтобы не смешивать смысл итогового score с конкретными факторами."
+        subtitle="Сильные стороны и проблемы показаны простым языком: что уже помогает странице и что стоит улучшить, чтобы она увереннее конкурировала по запросу."
       >
         <div className="score-breakdown">
-          {breakdown.interaction_signals ? (
-            <div className="score-breakdown__context-note">
-              Эти факторы помогают понять, что улучшать в первую очередь. Они показывают объяснимые сигналы страницы, а
-              не внутреннюю формулу модели.
-            </div>
-          ) : null}
-
-          {factorGroups.length > 0 ? (
-            <ScoreFactorGroups groups={factorGroups} />
-          ) : (
-            <div className="score-breakdown__grid">
-              <ScoreFactorList title="Что помогает странице" items={positiveFactors} tone="positive" />
-              <ScoreFactorList title="Что ограничивает оценку" items={negativeFactors} tone="negative" />
-            </div>
-          )}
+          <div className="score-breakdown__grid">
+            <ScoreFactorList
+              title="Что помогает странице"
+              subtitle="Сигналы, из-за которых страница выглядит сильнее по этому запросу."
+              items={positiveFactors}
+              tone="positive"
+            />
+            <ScoreFactorList
+              title="Что мешает странице"
+              subtitle="Места, где страница может проигрывать запросу или конкурентам."
+              items={negativeFactors}
+              tone="negative"
+            />
+          </div>
         </div>
       </Card>
     </div>
@@ -634,7 +686,6 @@ function OverviewPanel({
   const contextSummary = formatCompetitorContextSummary(contextStats);
   const foundCount = contextStats.collected;
   const analyzedCount = contextStats.accepted;
-  const failedCount = contextStats.failed;
   const finalScore = getDisplayedFinalScore({ currentAudit, currentResults, comparisonSummary });
   const displayedCompetitorScores = buildAcceptedComparisonItems(
     currentAudit?.target_url,
@@ -731,8 +782,9 @@ function OverviewPanel({
       </div>
 
       <Card
+        className="workspace-competitor-card"
         title="Сравнение с конкурентами"
-        subtitle="График строится только по реально обработанным страницам из поисковой выдачи."
+        subtitle="Чем выше полоса, тем конкурентнее страница по этому запросу. Ваша страница выделена первой, рядом показаны реально обработанные конкуренты из выдачи."
       >
         {earlyStopView ? (
           <div className="early-stop-state early-stop-state--compact">
@@ -745,14 +797,6 @@ function OverviewPanel({
           <>
             <ComparisonChart items={displayedCompetitorScores} />
             {contextSummary ? <p className="competitor-context-summary">{contextSummary}</p> : null}
-            {!contextStats.hasQualityV2 && failedCount > 0 ? (
-              <div className="feedback-banner feedback-banner--warning">
-                Обработано {analyzedCount} из {foundCount} конкурентных страниц, {failedCount} страниц ограничили автоматический доступ.
-              </div>
-            ) : null}
-            {competitorContextNotice ? (
-              <div className="feedback-banner feedback-banner--info">{competitorContextNotice}</div>
-            ) : null}
           </>
         ) : (
           <div className="empty-state">

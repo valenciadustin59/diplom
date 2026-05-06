@@ -475,6 +475,10 @@ select {
   grid-column: 1 / -1;
 }
 
+.workspace-competitor-card {
+  grid-column: 1 / -1;
+}
+
 .score-overview-section {
   grid-column: 1 / -1;
   display: grid;
@@ -1830,25 +1834,51 @@ select {
 .score-breakdown__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  align-items: start;
+  gap: 18px;
+  align-items: stretch;
 }
 
 .score-factor-group {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   align-content: start;
-  align-self: start;
+  align-self: stretch;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.score-factor-group--positive {
+  border-color: rgba(62, 170, 112, 0.2);
+  background: linear-gradient(180deg, rgba(246, 255, 250, 0.86), rgba(255, 255, 255, 0.68));
+}
+
+.score-factor-group--negative {
+  border-color: rgba(236, 95, 95, 0.22);
+  background: linear-gradient(180deg, rgba(255, 248, 248, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+.score-factor-group__header {
+  display: grid;
+  gap: 6px;
 }
 
 .score-factor-group__title {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
+}
+
+.score-factor-group__header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .score-factor-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
   align-content: start;
 }
@@ -1889,7 +1919,7 @@ select {
 }
 
 .score-factor {
-  align-self: start;
+  align-self: stretch;
   min-width: 0;
   padding: 16px;
   border-radius: 18px;
@@ -1907,8 +1937,9 @@ select {
 
 .score-factor__top {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 12px;
+  align-items: start;
 }
 
 .score-factor__top strong {
@@ -1917,7 +1948,7 @@ select {
 
 .score-factor__impact {
   display: inline-flex;
-  justify-self: start;
+  justify-self: end;
   align-items: center;
   max-width: 100%;
   padding: 7px 10px;
@@ -1940,9 +1971,10 @@ select {
 }
 
 .score-factor__detail {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   color: var(--muted);
   font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .empty-guide {
@@ -3244,6 +3276,14 @@ select {
   .content__header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .score-factor__top {
+    grid-template-columns: 1fr;
+  }
+
+  .score-factor__impact {
+    justify-self: start;
   }
 
   .audit-form,
