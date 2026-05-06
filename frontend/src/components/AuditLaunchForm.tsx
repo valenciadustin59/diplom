@@ -67,7 +67,7 @@ export function AuditLaunchForm({
           value={targetUrl}
           onChange={(event) => setTargetUrl(event.target.value)}
           onBlur={() => setTargetUrl(normalizeTargetUrl(targetUrl))}
-          placeholder="example.com или https://example.com"
+          placeholder="seo-audit.ru или https://seo-audit.ru"
           inputMode="url"
           type="text"
           required

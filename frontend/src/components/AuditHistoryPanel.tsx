@@ -203,7 +203,7 @@ export function AuditHistoryPanel({
             <input
               value={filters.domain}
               onChange={(event) => updateFilter("domain", event.target.value)}
-              placeholder="example.com"
+              placeholder="seo-audit.ru"
             />
           </label>
 
