@@ -3,6 +3,7 @@ param(
   [switch]$SkipPortCleanup,
   [switch]$SafePortCleanup,
   [switch]$NoBrowser,
+  [switch]$NoPause,
   [switch]$DryRun
 )
 
@@ -67,7 +68,10 @@ function Stop-RepoDevProcesses {
     "npm.*run dev",
     "vite.*--port 5173",
     "uvicorn app\.main:app",
-    "celery .*app\.celery_app"
+    "celery .*app\.celery_app",
+    "ssh.*localhost\.run",
+    "localtunnel",
+    "lt\.js"
   )
 
   $candidates = Get-CimInstance Win32_Process |
@@ -91,6 +95,18 @@ function Stop-RepoDevProcesses {
   foreach ($processId in $candidates) {
     Stop-ProcessId $processId "old project process"
   }
+
+  $tunnelCandidates = Get-CimInstance Win32_Process |
+    Where-Object {
+      $commandLine = [string]$_.CommandLine
+      ($_.Name -eq "ssh.exe" -and $commandLine -match "localhost\.run") -or
+        ($commandLine -match "localtunnel|lt\.js|lt --port")
+    } |
+    Select-Object -ExpandProperty ProcessId -Unique
+
+  foreach ($processId in $tunnelCandidates) {
+    Stop-ProcessId $processId "old public tunnel"
+  }
 }
 
 function Stop-ListeningPorts {
@@ -100,21 +116,28 @@ function Stop-ListeningPorts {
   }
 
   Write-Step "Freeing project ports"
-  foreach ($port in $ports) {
-    $connections = Get-NetTCPConnection -State Listen -LocalPort $port -ErrorAction SilentlyContinue
-    foreach ($connection in $connections) {
-      $processId = [int]$connection.OwningProcess
-      if ($processId -le 0) {
-        continue
-      }
+  for ($attempt = 1; $attempt -le 3; $attempt += 1) {
+    foreach ($port in $ports) {
+      $connections = Get-NetTCPConnection -State Listen -LocalPort $port -ErrorAction SilentlyContinue
+      foreach ($connection in $connections) {
+        $processId = [int]$connection.OwningProcess
+        if ($processId -le 0) {
+          continue
+        }
 
-      if ($SafePortCleanup -and -not (Test-RepoProcess $processId)) {
-        $commandLine = Get-CommandLine $processId
-        Write-Host "Port $port is busy by PID $processId, but it is not repo-scoped. Skipping. Command: $commandLine" -ForegroundColor DarkYellow
-        continue
-      }
+        if ($SafePortCleanup -and -not (Test-RepoProcess $processId)) {
+          $commandLine = Get-CommandLine $processId
+          Write-Host "Port $port is busy by PID $processId, but it is not repo-scoped. Skipping. Command: $commandLine" -ForegroundColor DarkYellow
+          continue
+        }
 
-      Stop-ProcessId $processId "port $port"
+        Stop-ProcessId $processId "port $port"
+      }
+    }
+    Start-Sleep -Milliseconds 700
+    $stillBusy = Get-NetTCPConnection -State Listen -LocalPort $ports -ErrorAction SilentlyContinue
+    if ($null -eq $stillBusy) {
+      break
     }
   }
 }
@@ -160,7 +183,7 @@ Stop-ListeningPorts
 
 if ($StopOnly) {
   Write-Step "Stopped. You can close this window."
-  if (-not $DryRun) {
+  if (-not $DryRun -and -not $NoPause) {
     Read-Host "Press Enter to close"
   }
   exit 0
