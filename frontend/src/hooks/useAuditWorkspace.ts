@@ -16,7 +16,7 @@ import type {
   RecommendationsBundle,
 } from "../types";
 
-const ACTIVE_AUDIT_POLL_INTERVAL_MS = 3500;
+const ACTIVE_AUDIT_POLL_INTERVAL_MS = 1000;
 const ACTIVE_HISTORY_REFRESH_INTERVAL_MS = 12000;
 
 function getDomainFromUrl(url: string): string {
@@ -156,6 +156,7 @@ export function useAuditWorkspace() {
   const loadRequestRef = useRef(0);
   const lastSilentHistoryRefreshRef = useRef(0);
   const recentAuditsLoadedRef = useRef(false);
+  const selectedAuditIdRef = useRef<string | null>(null);
   const [recentAudits, setRecentAudits] = useState<AuditSummary[]>([]);
   const [selectedAuditId, setSelectedAuditId] = useState<string | null>(null);
   const [currentAudit, setCurrentAudit] = useState<AuditStatusResponse | null>(null);
@@ -170,6 +171,10 @@ export function useAuditWorkspace() {
   const [submissionError, setSubmissionError] = useState<string | null>(null);
   const [workspaceError, setWorkspaceError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+
+  useEffect(() => {
+    selectedAuditIdRef.current = selectedAuditId;
+  }, [selectedAuditId]);
 
   const refreshAudits = useCallback(async (options?: { silent?: boolean }) => {
     const shouldShowLoading = !options?.silent && !recentAuditsLoadedRef.current;
@@ -256,6 +261,39 @@ export function useAuditWorkspace() {
     [],
   );
 
+  const loadAuditProgress = useCallback(
+    async (auditId: string) => {
+      const [statusResult, timelineEventsResult] = await Promise.allSettled([
+        auditsApi.getStatus(auditId),
+        auditsApi.getTimelineEvents(auditId),
+      ] as const);
+
+      if (selectedAuditIdRef.current !== auditId) {
+        return;
+      }
+
+      if (statusResult.status === "fulfilled") {
+        const status = statusResult.value;
+        setCurrentAudit(status);
+        setWorkspaceError(null);
+
+        if (status.recommendations) {
+          setRecommendations((current) => current ?? status.recommendations ?? null);
+        }
+
+        if (status.status !== "queued" && status.status !== "processing") {
+          void loadAuditBundle(auditId, { silent: true });
+          void refreshAudits({ silent: true });
+        }
+      }
+
+      if (timelineEventsResult.status === "fulfilled") {
+        setTimelineEvents(timelineEventsResult.value);
+      }
+    },
+    [loadAuditBundle, refreshAudits],
+  );
+
   useEffect(() => {
     void refreshAudits();
   }, [refreshAudits]);
@@ -271,7 +309,7 @@ export function useAuditWorkspace() {
     }
 
     const timerId = window.setInterval(() => {
-      void loadAuditBundle(selectedAuditId, { silent: true });
+      void loadAuditProgress(selectedAuditId);
       const now = Date.now();
       if (now - lastSilentHistoryRefreshRef.current >= ACTIVE_HISTORY_REFRESH_INTERVAL_MS) {
         lastSilentHistoryRefreshRef.current = now;
@@ -282,7 +320,7 @@ export function useAuditWorkspace() {
     return () => {
       window.clearInterval(timerId);
     };
-  }, [currentAudit?.status, loadAuditBundle, refreshAudits, selectedAuditId]);
+  }, [currentAudit?.status, loadAuditProgress, refreshAudits, selectedAuditId]);
 
   const createAudit = useCallback(
     async (payload: AuditCreatePayload): Promise<AuditStatusResponse | null> => {
