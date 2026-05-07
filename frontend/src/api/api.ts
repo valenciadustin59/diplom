@@ -16,6 +16,37 @@ import type {
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
 
+export function isPublicTunnelApiUrl(url: string): boolean {
+  try {
+    const hostname = new URL(url).hostname.toLowerCase();
+    return (
+      hostname.endsWith(".loca.lt") ||
+      hostname.endsWith(".ngrok.app") ||
+      hostname.endsWith(".ngrok-free.app")
+    );
+  } catch {
+    const normalized = url.toLowerCase();
+    return normalized.includes(".loca.lt") || normalized.includes(".ngrok.app") || normalized.includes(".ngrok-free.app");
+  }
+}
+
+export function applyApiCompatibilityHeaders(headers: Headers, apiBaseUrl = API_BASE_URL): void {
+  if (!headers.has("Accept")) {
+    headers.set("Accept", "application/json");
+  }
+
+  if (!isPublicTunnelApiUrl(apiBaseUrl)) {
+    return;
+  }
+
+  if (!headers.has("bypass-tunnel-reminder")) {
+    headers.set("bypass-tunnel-reminder", "true");
+  }
+  if (!headers.has("ngrok-skip-browser-warning")) {
+    headers.set("ngrok-skip-browser-warning", "true");
+  }
+}
+
 export class ApiError extends Error {
   status: number;
   details: unknown;
@@ -40,6 +71,15 @@ function getStringField(source: Record<string, unknown> | null, key: string): st
 function getNumberField(source: Record<string, unknown> | null, key: string): number | null {
   const value = source?.[key];
   return typeof value === "number" ? value : null;
+}
+
+function looksLikeTunnelWarning(payload: unknown): boolean {
+  if (typeof payload !== "string") {
+    return false;
+  }
+
+  const normalized = payload.slice(0, 1000).toLowerCase();
+  return normalized.includes("tunnel website ahead") || normalized.includes("bypass-tunnel-reminder");
 }
 
 const queueProfileLabels: Record<string, string> = {
@@ -133,6 +173,7 @@ async function request<T>(
   if (requestInit.body !== undefined && !headers.has("Content-Type")) {
     headers.set("Content-Type", "application/json");
   }
+  applyApiCompatibilityHeaders(headers);
 
   try {
     response = await fetch(`${API_BASE_URL}${path}`, {
@@ -146,6 +187,14 @@ async function request<T>(
   const contentType = response.headers.get("content-type") ?? "";
   const isJson = contentType.includes("application/json");
   const payload = isJson ? await response.json() : await response.text();
+
+  if (looksLikeTunnelWarning(payload)) {
+    throw new ApiError(
+      "Публичный туннель API вернул страницу подтверждения вместо данных. Перезапустите Start SEO Audit Public и обновите страницу.",
+      response.status,
+      payload,
+    );
+  }
 
   if (!response.ok && !acceptedStatuses.includes(response.status)) {
     const message = getApiErrorMessage(payload, response.status);

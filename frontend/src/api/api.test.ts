@@ -1,5 +1,33 @@
 import { describe, expect, it } from "vitest";
-import { getApiErrorMessage } from "./api";
+import { applyApiCompatibilityHeaders, getApiErrorMessage, isPublicTunnelApiUrl } from "./api";
+
+describe("api compatibility headers", () => {
+  it("detects public tunnel api urls", () => {
+    expect(isPublicTunnelApiUrl("https://giant-eels-eat.loca.lt")).toBe(true);
+    expect(isPublicTunnelApiUrl("https://example.ngrok-free.app")).toBe(true);
+    expect(isPublicTunnelApiUrl("http://127.0.0.1:8000")).toBe(false);
+  });
+
+  it("adds tunnel bypass headers for public tunnel api urls", () => {
+    const headers = new Headers();
+
+    applyApiCompatibilityHeaders(headers, "https://giant-eels-eat.loca.lt");
+
+    expect(headers.get("Accept")).toBe("application/json");
+    expect(headers.get("bypass-tunnel-reminder")).toBe("true");
+    expect(headers.get("ngrok-skip-browser-warning")).toBe("true");
+  });
+
+  it("does not add tunnel bypass headers for local api urls", () => {
+    const headers = new Headers();
+
+    applyApiCompatibilityHeaders(headers, "http://127.0.0.1:8000");
+
+    expect(headers.get("Accept")).toBe("application/json");
+    expect(headers.has("bypass-tunnel-reminder")).toBe(false);
+    expect(headers.has("ngrok-skip-browser-warning")).toBe(false);
+  });
+});
 
 describe("getApiErrorMessage", () => {
   it("uses structured backend detail messages", () => {
