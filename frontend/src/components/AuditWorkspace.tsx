@@ -718,7 +718,6 @@ function OverviewPanel({
       <Card className="workspace-hero">
         <div className="workspace-hero__content">
           <div>
-            <span className="eyebrow-pill">Обзор аудита</span>
             <h2 className="workspace-hero__title">{currentAudit ? getDomain(currentAudit.target_url) : "Аудит"}</h2>
             {currentAudit ? <p className="workspace-hero__target">{getDisplayUrl(currentAudit.target_url)}</p> : null}
             <p className="workspace-hero__text">
@@ -965,11 +964,9 @@ function NewAuditWorkspace({
       <Card className="hero-card workspace-empty__hero">
         <div className="hero-card__content">
           <div>
-            <span className="eyebrow-pill">Новый аудит</span>
             <h2 className="hero-card__title">Запустите новую проверку сайта</h2>
             <p className="hero-card__text">
-              Введите поисковый запрос и URL сайта. После запуска откроется рабочее пространство аудита с итоговой оценкой,
-              сравнением и рекомендациями.
+              Введите запрос и страницу, которую нужно проверить. После запуска появятся оценка, сравнение с выдачей и рекомендации.
             </p>
           </div>
           <ScoreRing value={0} label="Старт" />
@@ -1041,7 +1038,6 @@ export function AuditWorkspace({
     <div className="workspace">
       <div className="workspace__header">
         <div>
-          <p className="content__eyebrow">Рабочее пространство аудита</p>
           <h1 className="content__title">{getDisplayUrl(currentAudit.target_url)}</h1>
           <p className="workspace__subtitle">{currentAudit.query}</p>
         </div>

@@ -88,7 +88,7 @@ function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
   return (
     <Card
       title="Ветки обработки"
-      subtitle="Показывает параллельное ветвление: сколько независимых задач ушло в очереди и сколько веток завершилось. Время в сыром журнале может отличаться по секундам, потому что страницы конкурентов загружаются с разной скоростью."
+      subtitle="Показывает, какие задачи запускались параллельно и сколько времени заняли самые долгие ветки."
     >
       {fanOutStages.length > 0 ? (
         <div className="timeline-fanout">
@@ -121,7 +121,7 @@ function FanOutCard({ fanOutStages }: { fanOutStages: TimelineFanOutModel[] }) {
                   <strong className="metric-box__value">{fanOut.averageDurationLabel}</strong>
                 </div>
                 <div className="metric-box">
-                  <span className="metric-box__label">Вклад в критический путь</span>
+                  <span className="metric-box__label">Критический путь</span>
                   <strong className="metric-box__value">{fanOut.criticalPathDurationLabel}</strong>
                 </div>
               </div>
@@ -261,11 +261,9 @@ export function AuditTimelinePage({
       <Card className="timeline-hero">
         <div className="timeline-hero__content">
           <div>
-            <span className="eyebrow-pill">Таймлайн выполнения аудита</span>
             <h2 className="timeline-hero__title">{model.title}</h2>
             <p className="timeline-hero__text">
-              Наглядный след распределённого конвейера Celery: очереди, этапы воркеров, параллельные ветки,
-              предупреждения, ошибки и оценка вклада в критический путь из диагностики.
+              Здесь видно, какие этапы уже прошли, какие задачи выполнялись параллельно и где аудит потратил больше всего времени.
             </p>
             <div className="workspace-meta">
               <span className="workspace-meta__item">Статус: {model.statusLabel}</span>
@@ -327,8 +325,8 @@ export function AuditTimelinePage({
       ) : (
         <>
           <Card
-            title="Жизненный цикл этапов"
-            subtitle="Упорядоченный вид этапов распределённого аудита. Метка показывает этапы, включённые в серверную диагностику вклада в критический путь, а не единственный эксклюзивный маршрут."
+            title="Этапы обработки"
+            subtitle="Показывает, как аудит проходил загрузку, анализ страницы, обработку конкурентов и финальный расчёт."
           >
             <div className="timeline-stage-grid">
               {model.stageRows.map((stage, index) => (

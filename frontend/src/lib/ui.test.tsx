@@ -1596,11 +1596,11 @@ describe("AuditWorkspace", () => {
       />,
     );
 
-    expect(markup).toContain("Таймлайн выполнения аудита");
+    expect(markup).toContain("Здесь видно, какие этапы уже прошли");
     expect(markup).toContain("События таймлайна");
     expect(markup).toContain("Отправлено в очереди");
     expect(markup).toContain("Критический путь");
-    expect(markup).toContain("Жизненный цикл этапов");
+    expect(markup).toContain("Этапы обработки");
     expect(markup).toContain("Критический путь");
     expect(markup).toContain("Ветки обработки");
     expect(markup).toContain("Диагностика этапов");

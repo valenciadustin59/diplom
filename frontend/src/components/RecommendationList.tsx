@@ -300,7 +300,7 @@ export function RecommendationList({ recommendations, actionModel, onActionStatu
     return (
       <div className="recommendation-list">
         <div className="empty-state">
-          Явных задач для улучшения не найдено. Если хотите усилить страницу, ориентируйтесь на обзор score и сравнение с конкурентами.
+          Явных задач для улучшения не найдено. Если хотите усилить страницу, ориентируйтесь на обзор оценки и сравнение с конкурентами.
         </div>
       </div>
     );

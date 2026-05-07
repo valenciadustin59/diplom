@@ -154,10 +154,9 @@ export function AuditHistoryPanel({
       <Card className="hero-card workspace-empty__hero history-hero">
         <div className="hero-card__content">
           <div>
-            <span className="eyebrow-pill">История</span>
             <h2 className="hero-card__title">История аудитов</h2>
             <p className="hero-card__text">
-              Здесь собраны все запуски. Отфильтруйте историю, повторите прошлый аудит или откройте последний успешный результат.
+              Здесь собраны запуски аудита. Можно открыть результат, повторить проверку или скрыть запись из локального списка.
             </p>
             <div className="history-hero__actions">
               <button
@@ -185,7 +184,7 @@ export function AuditHistoryPanel({
         <MetricBox label="Скрытые" value={model.summary.hidden} />
       </div>
 
-      <Card title="Фильтры" subtitle="Быстрый поиск по статусу, домену, запросу и проблемным запускам.">
+      <Card title="Фильтры" subtitle="Найдите аудит по статусу, домену или запросу.">
         <div className="filters filters--history">
           <label className="filter-field filter-field--compact">
             <span>Статус</span>
@@ -212,7 +211,7 @@ export function AuditHistoryPanel({
             <input
               value={filters.search}
               onChange={(event) => updateFilter("search", event.target.value)}
-              placeholder="query, домен или URL"
+              placeholder="запрос, домен или URL"
             />
           </label>
 

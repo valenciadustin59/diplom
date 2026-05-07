@@ -56,7 +56,7 @@ export function AuditLaunchForm({
         <input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="например: купить козловой кран"
+          placeholder="например: курсы английского онлайн"
           required
         />
       </label>
@@ -67,7 +67,7 @@ export function AuditLaunchForm({
           value={targetUrl}
           onChange={(event) => setTargetUrl(event.target.value)}
           onBlur={() => setTargetUrl(normalizeTargetUrl(targetUrl))}
-          placeholder="seo-audit.ru или https://seo-audit.ru"
+          placeholder="site.ru или https://site.ru/page"
           inputMode="url"
           type="text"
           required
