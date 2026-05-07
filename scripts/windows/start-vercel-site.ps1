@@ -175,6 +175,26 @@ Write-Step "Public site is ready"
 Write-Host "Frontend: $VercelUrl" -ForegroundColor Green
 Write-Host "Backend tunnel: $tunnelUrl" -ForegroundColor Green
 Write-Host "Local frontend: http://127.0.0.1:5173" -ForegroundColor Green
+
+Write-Step "Verifying deployed frontend uses the current backend"
+try {
+  $html = Invoke-WebRequest -Uri $VercelUrl -UseBasicParsing -TimeoutSec 30
+  $assetMatch = [regex]::Match($html.Content, "/assets/index-[^`"`']+\.js")
+  if ($assetMatch.Success) {
+    $assetUrl = "$VercelUrl$($assetMatch.Value)"
+    $bundle = Invoke-WebRequest -Uri $assetUrl -UseBasicParsing -TimeoutSec 30
+    if ($bundle.Content.Contains($tunnelUrl)) {
+      Write-Host "Verified: Vercel bundle points to $tunnelUrl" -ForegroundColor Green
+    } else {
+      Write-Host "Warning: Vercel opened, but the JS bundle does not contain $tunnelUrl yet. Wait a minute and refresh." -ForegroundColor Yellow
+    }
+  } else {
+    Write-Host "Warning: could not find frontend JS bundle for verification." -ForegroundColor Yellow
+  }
+} catch {
+  Write-Host "Warning: public frontend verification failed: $($_.Exception.Message)" -ForegroundColor Yellow
+}
+
 Write-Host ""
 Write-Host "Do not close this computer/session while people use Vercel: the backend runs here." -ForegroundColor Yellow
 Write-Host "Use Stop SEO Audit.cmd to stop local stack and tunnel." -ForegroundColor Yellow
