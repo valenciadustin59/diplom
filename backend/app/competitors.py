@@ -47,10 +47,15 @@ SUSPICIOUS_FETCH_ERROR_CODES = {
     "http_403",
     "http_429",
     "browser_blocked",
-    "javascript_required",
     "bot_protection_suspected",
     "captcha_detected",
     "access_denied",
+}
+RENDER_LIMITED_FETCH_ERROR_CODES = {
+    "javascript_required",
+    "browser_fetch_failed",
+    "browser_timeout",
+    "browser_unavailable",
 }
 THIN_FETCH_ERROR_CODES = {"empty_content"}
 
@@ -378,6 +383,8 @@ def _competitor_discard_reason(item: dict[str, object]) -> str | None:
 
     if fetch_error_code in SUSPICIOUS_FETCH_ERROR_CODES:
         return "bot_block_suspected"
+    if fetch_error_code in RENDER_LIMITED_FETCH_ERROR_CODES:
+        return "render_limited"
     if fetch_error_code in THIN_FETCH_ERROR_CODES:
         return "thin_content"
     if fetch_status and fetch_status != "success" and (features is None or score is None):

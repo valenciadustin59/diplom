@@ -171,6 +171,22 @@ def test_competitor_context_quality_v2_replaces_failed_and_low_score_candidates(
     assert summary["competitors_average_score"] == 80.0
 
 
+def test_browser_render_failures_are_not_reported_as_bot_blocks():
+    quality = build_competitor_context_quality(
+        [
+            _failed_competitor("browser_timeout", rank=1),
+            _failed_competitor("javascript_required", rank=2),
+            _competitor(81.0, rank=3),
+            _competitor(84.0, rank=4),
+        ],
+        requested_top_n=2,
+    )
+
+    assert quality["accepted_competitors"] == 2
+    assert quality["discard_reasons"] == {"render_limited": 2}
+    assert "bot_block_suspected" not in quality["discard_reasons"]
+
+
 def test_competitor_context_quality_discards_thin_successful_snapshot():
     quality = build_competitor_context_quality(
         [

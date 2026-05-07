@@ -1,6 +1,13 @@
 import httpx
 
-from app.parser import FEATURE_SCHEMA_VERSION, extract_document, extract_text, fetch_page, summarize_extraction_artifact
+from app.parser import (
+    FEATURE_SCHEMA_VERSION,
+    classify_browser_fetch_error,
+    extract_document,
+    extract_text,
+    fetch_page,
+    summarize_extraction_artifact,
+)
 from app.tasks import process_page
 
 
@@ -188,6 +195,13 @@ def test_fetch_page_uses_browser_fallback_for_javascript_required(monkeypatch):
     assert result["status"] == "success"
     assert result["fetch_method"] == "browser"
     assert result["snapshot"]["feature_schema_version"] == FEATURE_SCHEMA_VERSION
+
+
+def test_browser_fetch_error_classification_does_not_call_generic_timeout_bot_protection():
+    assert classify_browser_fetch_error("Timeout 30000ms exceeded") == "browser_timeout"
+    assert classify_browser_fetch_error("Playwright page crashed") == "browser_fetch_failed"
+    assert classify_browser_fetch_error("captcha challenge") == "captcha_detected"
+    assert classify_browser_fetch_error("Access denied") == "access_denied"
 
 
 def test_summarize_extraction_artifact_returns_compact_metadata():

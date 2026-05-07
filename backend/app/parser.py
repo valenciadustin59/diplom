@@ -581,6 +581,17 @@ def _looks_like_browser_required(html: str, text: str) -> bool:
     return len(text.strip()) < 120 and lowered_html.count("<script") >= 5
 
 
+def classify_browser_fetch_error(error: Exception | str) -> str:
+    message = str(error).lower()
+    if "captcha" in message:
+        return "captcha_detected"
+    if "access denied" in message or "forbidden" in message:
+        return "access_denied"
+    if "timeout" in message or "timed out" in message:
+        return "browser_timeout"
+    return "browser_fetch_failed"
+
+
 def _http_fetch_once(url: str, *, fetch_method: str, verify: bool = True) -> FetchResult:
     with httpx.Client(
         follow_redirects=True,
@@ -725,7 +736,7 @@ def _browser_fetch(url: str) -> FetchResult:
         result.update(
             {
                 "fetch_method": "browser",
-                "fetch_error_code": "bot_protection_suspected",
+                "fetch_error_code": classify_browser_fetch_error(error),
                 "fetch_error_message": str(error),
             }
         )
