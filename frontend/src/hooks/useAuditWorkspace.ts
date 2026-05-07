@@ -206,19 +206,25 @@ export function useAuditWorkspace() {
         }
         setWorkspaceError(null);
 
-        const status = await auditsApi.getStatus(auditId);
-        if (requestId !== loadRequestRef.current) {
-          return;
-        }
-        setCurrentAudit(status);
-        const statusRecommendations = status.recommendations ?? null;
-
-        const [nextResults, nextRecommendations, nextTimelineDiagnostics, nextTimelineEvents] = await Promise.allSettled([
+        const statusPromise = auditsApi.getStatus(auditId);
+        const detailsPromise = Promise.allSettled([
           auditsApi.getResults(auditId),
           auditsApi.getRecommendations(auditId),
           auditsApi.getTimelineDiagnostics(auditId),
           auditsApi.getTimelineEvents(auditId),
         ] as const);
+
+        const status = await statusPromise;
+        if (requestId !== loadRequestRef.current) {
+          return;
+        }
+        setCurrentAudit(status);
+        if (!silent) {
+          setLoadingAudit(false);
+        }
+        const statusRecommendations = status.recommendations ?? null;
+
+        const [nextResults, nextRecommendations, nextTimelineDiagnostics, nextTimelineEvents] = await detailsPromise;
 
         if (requestId !== loadRequestRef.current) {
           return;
