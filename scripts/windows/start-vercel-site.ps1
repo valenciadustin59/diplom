@@ -132,9 +132,11 @@ function Wait-BackendPort($stdoutPath, $stderrPath, $fallbackPort, $attempts = 6
 
 function Invoke-CmdChecked($command, $label, [switch]$AllowFailure) {
   Push-Location $frontendDir
+  $previousErrorActionPreference = $ErrorActionPreference
   try {
     Write-Host $command -ForegroundColor DarkGray
-    $output = cmd.exe /d /s /c $command 2>&1
+    $ErrorActionPreference = "Continue"
+    $output = & cmd.exe /d /s /c $command 2>&1
     $exitCode = $LASTEXITCODE
     if ($output) {
       $output | ForEach-Object { Write-Host $_ }
@@ -144,6 +146,7 @@ function Invoke-CmdChecked($command, $label, [switch]$AllowFailure) {
     }
     return ($output -join "`n")
   } finally {
+    $ErrorActionPreference = $previousErrorActionPreference
     Pop-Location
   }
 }
@@ -186,12 +189,13 @@ Write-Host "Backend port: $actualBackendPort" -ForegroundColor Green
 
 Write-Step "Opening public tunnel to backend"
 $tunnelUrl = Start-LocalTunnel $actualBackendPort
+Set-Content -Path (Join-Path $outputDir "vercel-api-url.txt") -Value $tunnelUrl -Encoding UTF8
 
 Write-Step "Checking tunnel CORS"
 $corsHeaders = @{
   Origin = $VercelUrl
   "Access-Control-Request-Method" = "POST"
-  "Access-Control-Request-Headers" = "content-type"
+  "Access-Control-Request-Headers" = "accept,bypass-tunnel-reminder,content-type,ngrok-skip-browser-warning"
 }
 $cors = Invoke-WebRequest -Uri "$tunnelUrl/audits" -Method OPTIONS -Headers $corsHeaders -UseBasicParsing -TimeoutSec 20
 if ($cors.StatusCode -ne 200 -or $cors.Headers["Access-Control-Allow-Origin"] -ne $VercelUrl) {
