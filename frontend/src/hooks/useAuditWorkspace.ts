@@ -16,6 +16,9 @@ import type {
   RecommendationsBundle,
 } from "../types";
 
+const ACTIVE_AUDIT_POLL_INTERVAL_MS = 3500;
+const ACTIVE_HISTORY_REFRESH_INTERVAL_MS = 12000;
+
 function getDomainFromUrl(url: string): string {
   try {
     return new URL(url).hostname;
@@ -151,6 +154,7 @@ function getErrorMessage(error: unknown): string {
 
 export function useAuditWorkspace() {
   const loadRequestRef = useRef(0);
+  const lastSilentHistoryRefreshRef = useRef(0);
   const recentAuditsLoadedRef = useRef(false);
   const [recentAudits, setRecentAudits] = useState<AuditSummary[]>([]);
   const [selectedAuditId, setSelectedAuditId] = useState<string | null>(null);
@@ -268,8 +272,12 @@ export function useAuditWorkspace() {
 
     const timerId = window.setInterval(() => {
       void loadAuditBundle(selectedAuditId, { silent: true });
-      void refreshAudits({ silent: true });
-    }, 3000);
+      const now = Date.now();
+      if (now - lastSilentHistoryRefreshRef.current >= ACTIVE_HISTORY_REFRESH_INTERVAL_MS) {
+        lastSilentHistoryRefreshRef.current = now;
+        void refreshAudits({ silent: true });
+      }
+    }, ACTIVE_AUDIT_POLL_INTERVAL_MS);
 
     return () => {
       window.clearInterval(timerId);

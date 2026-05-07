@@ -8,6 +8,8 @@ import type {
   RuntimeReadinessResponse,
 } from "../types";
 
+const RUNTIME_HEALTH_POLL_INTERVAL_MS = 15000;
+
 function getErrorMessage(error: unknown): string {
   if (error instanceof ApiError) {
     return error.message;
@@ -85,7 +87,7 @@ export function useRuntimeHealth() {
   useEffect(() => {
     const timerId = window.setInterval(() => {
       void loadRuntimeHealth({ silent: true });
-    }, 5000);
+    }, RUNTIME_HEALTH_POLL_INTERVAL_MS);
 
     return () => {
       window.clearInterval(timerId);
