@@ -748,13 +748,13 @@ describe("RecommendationsPage", () => {
     );
 
     expect(markup).toContain("Техническое SEO");
-    expect(markup).toContain("Коммерция и доверие");
     expect(markup).toContain("Есть блокирующая проблема индексации");
     expect(markup).toContain("План действий");
     expect(markup).toContain("Статус действия");
     expect(markup).toContain("Не начато");
     expect(markup).toContain("Закрыто 0/1");
     expect(markup).toContain("Среднее по конкурентам");
+    expect(markup).not.toContain("recommendation-deviation");
   });
 });
 

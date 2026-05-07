@@ -234,6 +234,7 @@ function RecommendationGroupSection({
 }) {
   const groupActionSummary = actionModel.groupSummariesByKey[group.key];
   const groupLabel = getRecommendationGroupLabel(group.key);
+  const showMetricComparison = false;
 
   return (
     <details className={`recommendation-group recommendation-group--${group.status}`} open={defaultOpen}>
@@ -255,7 +256,7 @@ function RecommendationGroupSection({
       </summary>
 
       <div className="recommendation-group__body">
-        {group.deviations.length > 0 ? (
+        {showMetricComparison && group.deviations.length > 0 ? (
           <section className="recommendation-subsection recommendation-subsection--metrics" aria-label="Сравнение с конкурентами">
             <div className="recommendation-subsection__header">
               <span className="recommendation-subsection__kicker">Сравнение</span>
@@ -292,13 +293,22 @@ function RecommendationGroupSection({
 }
 
 export function RecommendationList({ recommendations, actionModel, onActionStatusChange }: RecommendationListProps) {
-  const firstIssueIndex = recommendations.groups.findIndex(
-    (group) => group.items.length > 0 || group.deviations.length > 0,
-  );
+  const visibleGroups = recommendations.groups.filter((group) => group.items.length > 0);
+  const firstIssueIndex = visibleGroups.findIndex((group) => group.items.length > 0);
+
+  if (visibleGroups.length === 0) {
+    return (
+      <div className="recommendation-list">
+        <div className="empty-state">
+          Явных задач для улучшения не найдено. Если хотите усилить страницу, ориентируйтесь на обзор score и сравнение с конкурентами.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="recommendation-list">
-      {recommendations.groups.map((group, index) => (
+      {visibleGroups.map((group, index) => (
         <RecommendationGroupSection
           key={group.key}
           group={group}
