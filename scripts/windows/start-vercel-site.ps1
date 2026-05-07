@@ -87,7 +87,8 @@ function Start-LocalTunnel($port, $attempts = 4) {
 
     try {
       $candidateUrl = Wait-TunnelUrl $attemptOut 30
-      Wait-HttpReady "$candidateUrl/health/ready" "Tunnel" 10
+      Wait-HttpReady "$candidateUrl/health/live" "Tunnel" 45
+      Wait-HttpReady "$candidateUrl/audits" "Tunnel API" 12
       return $candidateUrl
     } catch {
       Write-Host "Tunnel attempt failed: $($_.Exception.Message)" -ForegroundColor Yellow
