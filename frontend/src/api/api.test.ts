@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyApiCompatibilityHeaders, getApiErrorMessage, isPublicTunnelApiUrl } from "./api";
+import { applyApiCompatibilityHeaders, getApiErrorMessage, getApiMaxAttempts, isPublicTunnelApiUrl } from "./api";
 
 describe("api compatibility headers", () => {
   it("detects public tunnel api urls", () => {
@@ -26,6 +26,13 @@ describe("api compatibility headers", () => {
     expect(headers.get("Accept")).toBe("application/json");
     expect(headers.has("bypass-tunnel-reminder")).toBe(false);
     expect(headers.has("ngrok-skip-browser-warning")).toBe(false);
+  });
+
+  it("retries safe tunnel reads but not audit creation posts", () => {
+    expect(getApiMaxAttempts("GET", "https://giant-eels-eat.loca.lt")).toBe(4);
+    expect(getApiMaxAttempts("OPTIONS", "https://giant-eels-eat.loca.lt")).toBe(4);
+    expect(getApiMaxAttempts("GET", "http://127.0.0.1:8000")).toBe(2);
+    expect(getApiMaxAttempts("POST", "https://giant-eels-eat.loca.lt")).toBe(1);
   });
 });
 

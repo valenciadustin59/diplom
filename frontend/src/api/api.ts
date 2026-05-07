@@ -15,6 +15,8 @@ import type {
 } from "../types";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000";
+const TRANSIENT_API_STATUSES = new Set([408, 425, 429, 500, 502, 503, 504]);
+const RETRYABLE_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 
 export function isPublicTunnelApiUrl(url: string): boolean {
   try {
@@ -80,6 +82,26 @@ function looksLikeTunnelWarning(payload: unknown): boolean {
 
   const normalized = payload.slice(0, 1000).toLowerCase();
   return normalized.includes("tunnel website ahead") || normalized.includes("bypass-tunnel-reminder");
+}
+
+function getRequestMethod(init: RequestInit): string {
+  return (init.method ?? "GET").toUpperCase();
+}
+
+export function getApiMaxAttempts(method: string, apiBaseUrl = API_BASE_URL): number {
+  if (!RETRYABLE_METHODS.has(method.toUpperCase())) {
+    return 1;
+  }
+
+  return isPublicTunnelApiUrl(apiBaseUrl) ? 4 : 2;
+}
+
+function getRetryDelayMs(attemptIndex: number): number {
+  return Math.min(300 * 2 ** attemptIndex, 1200);
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => window.setTimeout(resolve, ms));
 }
 
 const queueProfileLabels: Record<string, string> = {
@@ -167,42 +189,65 @@ async function request<T>(
   path: string,
   init?: RequestInit & { acceptedStatuses?: number[] },
 ): Promise<T> {
-  let response: Response;
   const { acceptedStatuses = [], ...requestInit } = init ?? {};
   const headers = new Headers(requestInit.headers);
   if (requestInit.body !== undefined && !headers.has("Content-Type")) {
     headers.set("Content-Type", "application/json");
   }
   applyApiCompatibilityHeaders(headers);
+  const method = getRequestMethod(requestInit);
+  const maxAttempts = getApiMaxAttempts(method);
+  let lastConnectionError: unknown = null;
 
-  try {
-    response = await fetch(`${API_BASE_URL}${path}`, {
-      ...requestInit,
-      headers,
-    });
-  } catch (error) {
-    throw new ApiError("Не удалось подключиться к серверному API", 0, error);
+  for (let attemptIndex = 0; attemptIndex < maxAttempts; attemptIndex += 1) {
+    let response: Response;
+
+    try {
+      response = await fetch(`${API_BASE_URL}${path}`, {
+        ...requestInit,
+        headers,
+      });
+    } catch (error) {
+      lastConnectionError = error;
+      if (attemptIndex < maxAttempts - 1) {
+        await sleep(getRetryDelayMs(attemptIndex));
+        continue;
+      }
+      throw new ApiError("Не удалось подключиться к серверному API", 0, error);
+    }
+
+    const contentType = response.headers.get("content-type") ?? "";
+    const isJson = contentType.includes("application/json");
+    const payload = isJson ? await response.json() : await response.text();
+
+    if (looksLikeTunnelWarning(payload)) {
+      if (attemptIndex < maxAttempts - 1) {
+        await sleep(getRetryDelayMs(attemptIndex));
+        continue;
+      }
+
+      throw new ApiError(
+        "Публичный туннель API вернул страницу подтверждения вместо данных. Перезапустите Start SEO Audit Public и обновите страницу.",
+        response.status,
+        payload,
+      );
+    }
+
+    if (!response.ok && !acceptedStatuses.includes(response.status)) {
+      if (TRANSIENT_API_STATUSES.has(response.status) && attemptIndex < maxAttempts - 1) {
+        await sleep(getRetryDelayMs(attemptIndex));
+        continue;
+      }
+
+      const message = getApiErrorMessage(payload, response.status);
+
+      throw new ApiError(message, response.status, payload);
+    }
+
+    return payload as T;
   }
 
-  const contentType = response.headers.get("content-type") ?? "";
-  const isJson = contentType.includes("application/json");
-  const payload = isJson ? await response.json() : await response.text();
-
-  if (looksLikeTunnelWarning(payload)) {
-    throw new ApiError(
-      "Публичный туннель API вернул страницу подтверждения вместо данных. Перезапустите Start SEO Audit Public и обновите страницу.",
-      response.status,
-      payload,
-    );
-  }
-
-  if (!response.ok && !acceptedStatuses.includes(response.status)) {
-    const message = getApiErrorMessage(payload, response.status);
-
-    throw new ApiError(message, response.status, payload);
-  }
-
-  return payload as T;
+  throw new ApiError("Не удалось подключиться к серверному API", 0, lastConnectionError);
 }
 
 export const auditsApi = {
