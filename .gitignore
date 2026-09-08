@@ -43,6 +43,18 @@ output/runtime-smoke/*.log
 output/playwright/
 output/vercel-api-url.txt
 output/vercel-tunnel.*
+output/
+tmp/
+thesis/
+BOOKS/
+plans/
+tools/
+AGENTS.md
+PLANS.md
+*.docx
+*.pptx
+*.pdf
+*.zip
 
 frontend/*.tsbuildinfo
 
@@ -50,8 +62,15 @@ frontend/*.tsbuildinfo
 Thumbs.db
 
 backend/data/*.manifest.json
+backend/data/dataset_versions/
+backend/data/query_relevance_regression/
+backend/data/query_relevance_v2/
 backend/data/dataset_versions/dataset-v6-query-relevance/artifacts/
 backend/data/dataset_versions/dataset-v7-final/artifacts/
+backend/artifacts/ranking-benchmarks/
+backend/artifacts/embedding-benchmarks/
+docs/roadmap/
 output/d75-collection/
 !backend/artifacts/page_quality_model.pkl
+!backend/artifacts/page_quality_model.metadata.json
 .vercel
